@@ -11,4 +11,8 @@ Host: x86_64 virtualized Intel Xeon Platinum 8573C, GCC/G++ 13.3.0, CMake 4.4.4,
 
 Raw build log, test log, commands, machine metadata and run outputs are under docs/validation/foundation/. These runs were functional validation only, with no power measurement, no warmup protocol, and only one repetition. Do not use their timing to claim mining efficiency or identify RISC-V bottlenecks. Initial run metadata precedes the final foundation commit; source pin remains exact.
 
-GitHub remote creation and CI execution remain pending. Local validation is not a claim that GitHub Actions ran.
+Private GitHub repository created and all 213 foundation files uploaded. Remote Git tree ae045776f5cdb41d2fa3afbf9d39ddf08f7bf29a exactly matched the prepared local tree.
+
+GitHub Actions foundation checks passed for commit 60f9cf6772f415e51306e609631c75d45c5ddfeb: source integrity, build, upstream correctness suite, both algorithm smoke runs and artifact upload. [Run evidence](https://github.com/jliu67/OpenRandomX/actions/runs/37716942121).
+
+Final documentation-only handoff uses [skip ci] because implementation and workload bytes are unchanged from the passing run.

@@ -30,7 +30,7 @@ RandomX v2.0.1 source is included in `vendor/randomx/` at commit `aaafe71322df66
 
 Runs create timestamped directories under `benchmarks/results/` with raw logs and JSON metadata. Commit selected, reviewed results alongside analysis. Never treat a cloud-host smoke test as SG2042 performance, or calculate hashes/J without a measured power boundary.
 
-Local validation: 107 upstream tests passed with no skips, and both full-dataset algorithm reference checks matched. See [validation evidence](docs/VALIDATION.md). GitHub CI has not run yet.
+Local validation: 107 upstream tests passed with no skips, and both full-dataset algorithm reference checks matched. See [validation evidence](docs/VALIDATION.md). [GitHub CI passed](https://github.com/jliu67/OpenRandomX/actions/runs/37716942121).
 
 ## Repository map
 

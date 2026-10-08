@@ -8,3 +8,5 @@ Validation completed: source integrity, build, all 107 upstream tests (no skips)
 
 ## Remote setup — 2026-10-08 UTC
 User authorized browser fallback. GitHub sign-in and device verification completed. Private jliu67/OpenRandomX created. Four initial research issues opened for native baseline, X5 evidence, simulator/core selection and Monero activation verification. Foundation upload and CI verification in progress.
+
+Remote foundation uploaded: commit 60f9cf6772f415e51306e609631c75d45c5ddfeb, 213 files, exact tree match ae045776f5cdb41d2fa3afbf9d39ddf08f7bf29a. GitHub Actions run 37716942121 passed all steps and preserved artifacts. Final documentation handoff records completion; next step is measured native baseline (issue #1), then evidence and simulator selection. Repository remains private.
