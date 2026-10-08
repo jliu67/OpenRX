@@ -1,31 +1,31 @@
 # Current state
 
-Updated 2026-10-08 UTC / 2026-10-07 Edmonton. **M0 complete; Phase 1 source/tooling, P1-05 timing and P1-06S importer implementation/testing complete. M1 measured hardware baseline remains OPEN.** P1-06S task [#13](https://github.com/jliu67/OpenRandomX/issues/13) remains open for independent review; implementation is not peer acceptance or a physical measurement. Project name: OpenRX; private remote: `jliu67/OpenRandomX`.
+Updated 2026-10-08 UTC / Edmonton. **M0 complete; M1 measured hardware baseline remains open. M3 has source-backed provisional selections and an actual scalar RISC-V functional preflight. M3/M4/M5 acceptance remains open.**
 
-## Latest engineering result
+## Latest result — M3 feasibility, PR #15
 
-Implementation `2b28d6fb4604a2b861241d38678e24c8541aed02` adds [power_import.py](../scripts/power_import.py) and 61 synthetic regression tests. The [power protocol](../benchmarks/power/README.md) defines whole-system AC point-power readings, run/digest binding, calibrated affine clock mapping, coverage/gap/error checks, rational timestamp-weighted integration and conditional uncertainty. Synthetic traces require explicit opt-in and never fill measured interval efficiency fields. Original inputs and failures are preserved; the importer cannot acquire or certify meter readings.
+[PR #15](https://github.com/jliu67/OpenRandomX/pull/15), branch `openrx/m3-riscv-preflight`, advances [task #3](https://github.com/jliu67/OpenRandomX/issues/3). Initial implementation `e5eafde50d074f19afb37d08ccec4c59dd88a33d` passed [RISC-V CI 37790683112](https://github.com/jliu67/OpenRandomX/actions/runs/37790683112) and existing [native CI 37790683131](https://github.com/jliu67/OpenRandomX/actions/runs/37790683131).
 
-[CI run 37726645625](https://github.com/jliu67/OpenRandomX/actions/runs/37726645625), job 113146214930, passed on that implementation: **182 Python tests, 107 upstream RandomX tests, six native steady tests**, with no skips; source/profile/build and existing references also passed. The 61 new tests passed locally on Python 3.13.5, including a final repeat. Native execution occurred in CI, not locally.
+Actual native and QEMU RV64GC controls passed **39 required checks each**: seven integer checks, 24 FP checks across four rounding modes, eight exact v2/v1 interpreter/JIT software-AES hashes. Hardware AES was explicitly not requested (one optional skip each). Light mode uses 256 MiB cache, no full dataset. QEMU 8.2.2 and cross GCC 14.2.0 were observed in the actual job, distinct from upstream source-review pins.
 
-Artifact 11528236706 was downloaded; the 68,046-byte ZIP SHA-256 matched `1eacda6564e038bc5933b04bc5030b20b5373b629551e801a64e6bed946a6358`. Actual suite logs were inspected. Three successful native streams joined to explicitly synthetic constant-power traces (12 measurement intervals); the duration-rejected run was refused. The [validation record](../docs/validation/p1-06s/README.md), digest ledger and locally executed reproduction helper retain these checks and the 2027-01-06 artifact retention deadline. No real energy or performance result is inferred from them.
+Downloaded artifact 11555544301 matched SHA-256 `5f042957866115a6eeb488953ec8d52c892896fd359353efac9da9d9334fadcb`; raw streams were replayed through the stricter current validator. The linked binary is ELF64 little-endian RISC-V (machine 243), with digest `61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657` matching the report. [Validation](../docs/validation/m3/README.md) retains logs, exact commands, inputs, versions and limits. Local Python suite passed **199 tests**, including 17 evidence-validator regressions. Final CI/review receipts are linked on #3/PR #15.
 
-## Prior implementation preserved
+[Source research](../simulator/README.md) provisionally selects Chipyard 1.14.0 / MediumBoomV3Config for open RTL research and gem5 v25.1.0.1 for architectural exploration. BOOM boot/hashes are unexecuted. gem5 SE has unsupported signal recovery for RandomX startup ISA probes, lacks Linux cache-flush syscall 259 and ignores mprotect; investigate full-system Linux in new independently claimable [#16](https://github.com/jliu67/OpenRandomX/issues/16). Generic O3 is not BOOM or C920. CVA6 is deferred with FP div/sqrt and memory-map concerns.
 
-- Unmodified RandomX v2.0.1 pinned at `aaafe71322df6602c21a5c72937ac284724ae561`; v2 primary, v1 comparisons, source integrity and all earlier evidence retained.
-- Initial Phase 1 `360a925`: source analysis, static profile and hardened upstream runner. That runner still uses separate-process warmup.
-- P1-05 `59b469c`, main integration `960b8b5`: separate persistent dataset/VM/worker adapter, known controls, same-process warmup, exact interval boundaries. Do not mix rates with the older harness. See [P1-05 evidence](../docs/validation/p1-05/INTEGRATION.md).
-- Protocol v2 `c387b824`: no coordinator, permanent roles or assumed running agents. Per-task issue comments are the sole live claim authority; Markdown summarizes evidence. The router, 57 communication tests, workflow, templates, AGENTS and issue histories are unchanged by P1-06S.
-- The entire previous [state](handoffs/pre-p106s-state-20261008.md) and [handoff](handoffs/pre-p106s-20261008.md) are retained byte-for-byte. Their relative links and earlier pending wording are historical; current entrypoints are here and HANDOFF.md. SESSION_LOG remains append-only.
+## Earlier work preserved
 
-## Next actions and external blockers
+- Pinned unchanged RandomX v2.0.1 `aaafe71322df6602c21a5c72937ac284724ae561`; v2 primary, v1 comparisons.
+- P1-05 persistent timing adapter remains implemented/validated.
+- P1-06S power importer remains implemented/tested with independent acceptance pending on #13. No physical power result was added.
+- Protocol v2, 57 router tests and per-task issue claims remain unchanged. No permanent roles, coordinator or always-running model workers.
+- Previous [state](handoffs/pre-m3-state-20261008.md) and [handoff](handoffs/pre-m3-20261008.md) retain full P1-06S history byte-for-byte; SESSION_LOG prefix is preserved.
 
-1. Any capable visiting agent: review [#13](https://github.com/jliu67/OpenRandomX/issues/13), especially the schema, conditional error model, synthetic isolation and retained failures. Reproduce the 61 tests and artifact join. Request fixes or record evidence-backed acceptance; do not reimplement completed code.
-2. [#8](https://github.com/jliu67/OpenRandomX/issues/8): obtain authorized controlled-host access, repeat correctness and collect the fixed-setting v1/v2/thread/AES experiment.
-3. [#10](https://github.com/jliu67/OpenRandomX/issues/10): after prerequisites are accepted, validate against real synchronized meter readings, declared physical boundary, response/calibration records and uncertainty. The importer deliberately does not support generic CSV, interval-averaged exports or cumulative energy counters; a real device may need a separately reviewed adapter.
-4. [#11](https://github.com/jliu67/OpenRandomX/issues/11): dynamic profiling on the controlled host with supported counters and measured overhead. No bottleneck has yet been established by this work.
-5. Independent research #2/#3/#4 may proceed without bypassing the M1/M4/M5 gates.
+## Next gates
 
-**No controlled hardware matrix, wall-power samples, dynamic bottleneck profile, RISC-V simulation or RTL result was obtained.** Calibration/synchronization declarations are not independent verification. No hardware purchase, paid compute, account change, model worker or autonomous agent was provisioned.
+1. Review/merge PR #15 as an M3 research/functional work package. Keep #3 open pending selected-runtime/core boot and full-dataset correctness.
+2. Claim #16 separately for gem5 full-system Linux correctness. Prepare sufficient consistent guest RAM and exact image/toolchain provenance.
+3. Demonstrate selected BOOM/Chipyard Linux configuration and full-dataset v1/v2 correctness before accepting core feasibility.
+4. #8 controlled hardware host, #10 real synchronized meter and #11 counters remain externally blocked; #13 still needs independent importer acceptance. M1 is open.
+5. #14 M4 calibration still depends on #1/#3; #12 M5 remains gated by #1/#3/#14.
 
-Read AGENTS, [protocol](../docs/COMMUNICATION.md), [task board](../docs/TASKS.md), hub #5 and the specific task's current comments/receipt before working. Use session-scoped claims, independent branches for overlaps and non-force expected-head updates. Final P1-06S editing-claim release/review request belongs on #13, not the parent milestone #1.
+No core RTL simulation, calibrated timing, dynamic hardware bottleneck, wall-power samples or hashes/J advantage has been established. QEMU functional results are real execution under emulation, not hardware performance. Read current #3/#16 receipts and branch/PR state before further edits.

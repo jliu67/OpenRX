@@ -42,11 +42,28 @@ for mode, number, values in (
 
 def validate_output(raw, *, expect_riscv=False):
     records = [json.loads(line) for line in raw.splitlines() if line.strip()]
+    if any(not isinstance(x, dict) for x in records):
+        raise ValueError("Every probe record must be a JSON object")
     if not records or records[0].get("type") != "config" or records[-1].get("type") != "summary":
         raise ValueError("Missing initial config or final summary")
     config, summary = records[0], records[-1]
-    if config.get("schema_version") != 1 or config.get("full_dataset") is not False:
+    if type(config.get("schema_version")) is not int or config.get("schema_version") != 1 or config.get("full_dataset") is not False:
         raise ValueError("Wrong probe schema or measurement scope")
+    expected_vectors = [
+        {"id": n, "input": s, "input_bytes": len(s), "v1": HASHES[("v1", n)], "v2": HASHES[("v2", n)]}
+        for n, s in (("a", "This is a test"), ("b", "Lorem ipsum dolor sit amet"))
+    ]
+    if (config.get("vendor_revision") != "aaafe71322df6602c21a5c72937ac284724ae561"
+            or config.get("key") != "test key 000" or config.get("key_bytes") != 12
+            or config.get("vectors") != expected_vectors or config.get("cache_size_bytes") != 268435456
+            or config.get("functional_only") is not True):
+        raise ValueError("Probe configuration differs from pinned light-mode control")
+    auto_flags = config.get("auto_flags")
+    if type(auto_flags) is not int or auto_flags < 0 or not auto_flags & 8:
+        raise ValueError("Required JIT capability is absent")
+    hardware_requested = config.get("hardware_aes_requested")
+    if type(hardware_requested) is not bool:
+        raise ValueError("Hardware AES request must be boolean")
     if expect_riscv and config.get("compiled_architecture") != "riscv64":
         raise ValueError("QEMU run must report a RISC-V compiled probe")
     middle = records[1:-1]
@@ -59,8 +76,10 @@ def validate_output(raw, *, expect_riscv=False):
         raise ValueError("Missing or inconsistent cache initialization stages")
     checks = [x for x in middle if x.get("type") == "check"]
     names = [x.get("name") for x in checks]
-    if len(set(names)) != len(names) or any(not isinstance(n, str) or not n for n in names):
+    if any(not isinstance(n, str) or not n for n in names) or len(set(names)) != len(names):
         raise ValueError("Duplicate or missing check identity")
+    if any(type(x.get("required")) is not bool for x in checks):
+        raise ValueError("Check requirement must be boolean")
     if any(x.get("status") not in ("pass", "skip") for x in checks):
         raise ValueError("Failed or unknown check outcome")
     required = [x for x in checks if x.get("required") is True]
@@ -76,25 +95,44 @@ def validate_output(raw, *, expect_riscv=False):
             raise ValueError("Semantic result differs from independent exact oracle")
     seen = set()
     for x in checks:
-        if x.get("aes") != "software" or "algorithm" not in x:
+        if "algorithm" not in x:
             continue
         key = (x.get("algorithm"), x.get("engine"), x.get("vector"))
-        if key in seen or key[1] not in ("interpreter", "jit"):
-            raise ValueError("Duplicate/unknown software hash case")
+        aes = x.get("aes")
+        if key[1] not in ("interpreter", "jit") or aes not in ("software", "hardware"):
+            raise ValueError("Unknown hash case")
         expected = HASHES.get((key[0], key[2]))
-        if (not expected or x.get("name") != "hash/" + "/".join((key[0], key[1], "software", key[2]))
-                or x.get("expected") != expected or x.get("actual") != expected or x.get("required") is not True):
+        expected_flags = (128 if key[0] == "v2" else 0) | ((8 | (auto_flags & 16)) if key[1] == "jit" else 0) | (2 if aes == "hardware" else 0)
+        if (not expected or x.get("name") != "hash/" + "/".join((key[0], key[1], aes, key[2]))
+                or x.get("expected") != expected or x.get("actual") != expected
+                or x.get("required") is not (aes == "software")
+                or x.get("vm_flags") != expected_flags or x.get("input_bytes") != (14 if key[2] == "a" else 26)):
             raise ValueError("Hash does not match independent pinned upstream vector")
-        seen.add(key)
+        if aes == "software":
+            if key in seen:
+                raise ValueError("Duplicate software hash case")
+            seen.add(key)
+        elif key[1] != "jit" or not config.get("hardware_aes_requested") or not auto_flags & 2:
+            raise ValueError("Unrequested or unsupported hardware AES case")
     expected_cases = {(v, e, n) for v in ("v1", "v2") for e in ("interpreter", "jit") for n in ("a", "b")}
     if seen != expected_cases:
         raise ValueError("Incomplete v1/v2 interpreter/JIT matrix")
+    optional = [x for x in checks if x.get("required") is False]
+    if hardware_requested and auto_flags & 2:
+        expected_optional = {f"hash/{v}/jit/hardware/{n}" for v in ("v1", "v2") for n in ("a", "b")}
+        if {x["name"] for x in optional} != expected_optional or any(x.get("status") != "pass" for x in optional):
+            raise ValueError("Incomplete requested hardware AES matrix")
+    elif (len(optional) != 1 or optional[0].get("name") != "hardware-aes"
+          or optional[0].get("status") != "skip" or not isinstance(optional[0].get("reason"), str)
+          or not optional[0]["reason"]):
+        raise ValueError("Unexpected optional check/skip")
     passed = sum(x.get("status") == "pass" for x in checks)
     skipped = sum(x.get("status") == "skip" for x in checks)
-    if (summary.get("status") != "pass" or summary.get("failures") != 0
+    if (any(type(summary.get(k)) is not int for k in ("checks", "failures", "skips", "required_checks", "required_passed"))
+            or summary.get("status") != "pass" or summary.get("failures") != 0
             or summary.get("checks") != len(checks) or summary.get("skips") != skipped
             or summary.get("required_checks") != 39 or summary.get("required_passed") != 39
-            or passed + skipped != len(checks)):
+            or summary.get("functional_only") is not True or passed + skipped != len(checks)):
         raise ValueError("Summary inconsistent with complete record stream")
     return {"required_checks_passed": 39, "optional_skips": skipped, "software_hash_cases": len(seen),
             "compiled_architecture": config["compiled_architecture"]}

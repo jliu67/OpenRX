@@ -31,14 +31,14 @@ jobs:
             dpkg-query -W cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu qemu-user libc6-riscv64-cross
             git rev-parse HEAD
           } > build/riscv-validation/environment.txt
-          cmake -S simulator/probe -B build/probe-native -DCMAKE_BUILD_TYPE=Release -DARCH=default 2>&1 | tee build/riscv-validation/native-configure.log
+          cmake -S simulator/probe -B build/probe-native -DCMAKE_BUILD_TYPE=Release -DARCH=default -DCMAKE_EXPORT_COMPILE_COMMANDS=ON 2>&1 | tee build/riscv-validation/native-configure.log
           cmake --build build/probe-native --target openrx-riscv-probe --parallel 2 2>&1 | tee build/riscv-validation/native-build.log
       - name: Native exact semantic and v1/v2 controls
         run: python3 tests/native_riscv_probe.py --binary build/probe-native/openrx-riscv-probe --output-dir build/riscv-validation/native
       - name: Build scalar RISC-V probe
         run: |
           set -o pipefail
-          cmake -S simulator/probe -B build/probe-riscv -DCMAKE_BUILD_TYPE=Release -DARCH=default -DCMAKE_TOOLCHAIN_FILE="$PWD/simulator/toolchains/riscv64-linux-gnu.cmake" 2>&1 | tee build/riscv-validation/riscv-configure.log
+          cmake -S simulator/probe -B build/probe-riscv -DCMAKE_BUILD_TYPE=Release -DARCH=default -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_TOOLCHAIN_FILE="$PWD/simulator/toolchains/riscv64-linux-gnu.cmake" 2>&1 | tee build/riscv-validation/riscv-configure.log
           cmake --build build/probe-riscv --target openrx-riscv-probe --parallel 2 2>&1 | tee build/riscv-validation/riscv-build.log
           riscv64-linux-gnu-readelf -h -A build/probe-riscv/openrx-riscv-probe > build/riscv-validation/riscv-elf.txt
           riscv64-linux-gnu-objdump -d build/probe-riscv/openrx-riscv-probe > build/riscv-validation/riscv-disassembly.txt
@@ -57,3 +57,4 @@ jobs:
             build/probe-riscv/CMakeCache.txt
             build/probe-riscv/compile_commands.json
             build/probe-native/CMakeCache.txt
+            build/probe-native/compile_commands.json
