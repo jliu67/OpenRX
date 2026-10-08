@@ -1,0 +1,10 @@
+scons: Reading SConscript files ...
+Mkdir("/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.build")
+Checking for linker -Wl,--as-needed support... yes
+Checking for compiler -gz support... yes
+Checking for linker -gz support... yes
+Info: Using Python config: /tmp/openrx-gem5-source/bin/python3-config
+Checking for C header file Python.h... yes
+Checking Python version... build/RISCV/gem5.build/scons_config/conftest_2176b2d932a60acfa5b4079f6e5ab92b_0_d86a12cdfc8735dfee7a91f4826e0548: error while loading shared libraries: libpython3.12.so.1.0: cannot open shared object file: No such file or directory
+no
+Error: Can't find a working Python installation

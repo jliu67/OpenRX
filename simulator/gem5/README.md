@@ -7,6 +7,12 @@ attempts the complete light-mode v2/v1 interpreter/JIT matrix. Neither step
 establishes full-dataset correctness, selected RTL behavior, calibrated timing,
 hardware power or competitive efficiency.
 
+The [2026-10-08 executed outcome](../../docs/validation/m3-fs/README.md) records
+successful resource/ELF preparation and native/QEMU runtime controls, followed
+by hosted/local source-build timeouts before a simulator executable linked.
+Linux boot and guest controls were not run. The reviewed recipe remains
+unaccepted for task #16 until its actual execution criteria pass.
+
 ## Exact inputs
 
 Simulator source: gem5 v25.1.0.1,

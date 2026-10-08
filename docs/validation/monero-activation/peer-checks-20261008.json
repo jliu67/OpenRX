@@ -1,0 +1,127 @@
+{
+  "independent_matching_source_count": 20,
+  "independent_source_hash_matches": [
+    {
+      "key": "latest",
+      "url": "https://api.github.com/repos/monero-project/monero/releases/latest",
+      "sha256": "c86627b8f40a52feb66b8619ae578d3b998733a76b62956eb82acca40b3b20ea",
+      "bytes": 8264
+    },
+    {
+      "key": "stable_tag",
+      "url": "https://api.github.com/repos/monero-project/monero/git/tags/a759b82b13ebb48eaf3ef3a8a4e01391a7b13eec",
+      "sha256": "8ddcacbcc25a26b086d7f50857f78d8378323749d38b481f2294aa8e8443f89f",
+      "bytes": 1890
+    },
+    {
+      "key": "stable_submodule",
+      "url": "https://api.github.com/repos/monero-project/monero/contents/external/randomx?ref=22578c3f7d7b4b6dd85ff7daa42a827d97cc53d0",
+      "sha256": "9c15969d1a19fa4c7e440ecc75310e4181b622c8d427cc1864d963fcad654bca",
+      "bytes": 866
+    },
+    {
+      "key": "stable_src/hardforks/hardforks.cpp",
+      "url": "https://raw.githubusercontent.com/monero-project/monero/22578c3f7d7b4b6dd85ff7daa42a827d97cc53d0/src/hardforks/hardforks.cpp",
+      "sha256": "30d512b3f38d9117abfdd26e8188fce9dc51cc8d90e9fb00eb46397c74fa7289",
+      "bytes": 5804
+    },
+    {
+      "key": "stable_src/cryptonote_core/cryptonote_tx_utils.cpp",
+      "url": "https://raw.githubusercontent.com/monero-project/monero/22578c3f7d7b4b6dd85ff7daa42a827d97cc53d0/src/cryptonote_core/cryptonote_tx_utils.cpp",
+      "sha256": "00da33a0013807851c3aba078cb2de85f84dcf47710a2951df4e9c08c5ae0676",
+      "bytes": 32660
+    },
+    {
+      "key": "stable_src/crypto/rx-slow-hash.c",
+      "url": "https://raw.githubusercontent.com/monero-project/monero/22578c3f7d7b4b6dd85ff7daa42a827d97cc53d0/src/crypto/rx-slow-hash.c",
+      "sha256": "a309aabedaf85a42473c24be356aab3152cfe308849b81be7984ff9cd6b9f700",
+      "bytes": 15939
+    },
+    {
+      "key": "rx123_src/randomx.h",
+      "url": "https://raw.githubusercontent.com/tevador/RandomX/12f2c2ffe2108d6cf54c391fee33c8bc3646cdab/src/randomx.h",
+      "sha256": "ba6784194be25810f0c25d4b767907e9aa133cb3cf8ba605ce94ab593856f4c3",
+      "bytes": 12438
+    },
+    {
+      "key": "master_src/hardforks/hardforks.cpp",
+      "url": "https://raw.githubusercontent.com/monero-project/monero/7778a369afdb788af245ba5ac4d5b17d5a2cc4c5/src/hardforks/hardforks.cpp",
+      "sha256": "919ce96a538abc81e2af0971a38765c4d4f2be64b5bdd00e3868fdb8ece72182",
+      "bytes": 5804
+    },
+    {
+      "key": "master_submodule",
+      "url": "https://api.github.com/repos/monero-project/monero/contents/external/randomx?ref=7778a369afdb788af245ba5ac4d5b17d5a2cc4c5",
+      "sha256": "1652fe14a212389b59b32bcc9ad8b6034f38401a1b3d0ecd98edc892561da53b",
+      "bytes": 866
+    },
+    {
+      "key": "stable_src/crypto/hash-ops.h",
+      "url": "https://raw.githubusercontent.com/monero-project/monero/22578c3f7d7b4b6dd85ff7daa42a827d97cc53d0/src/crypto/hash-ops.h",
+      "sha256": "2a78720488efa9529f64c30a21ad259f986bb33c2caf5bf620297e433f9b92ab",
+      "bytes": 4315
+    },
+    {
+      "key": "beta30_src/hardforks/hardforks.cpp",
+      "url": "https://raw.githubusercontent.com/seraphis-migration/monero/d816367cb1aa405bfa68a20ac3e034d0759d968e/src/hardforks/hardforks.cpp",
+      "sha256": "e6a6be2ccfe4de274e98a76363f63abab274eb53ee5765ee51e1ef5f0e5a8909",
+      "bytes": 6005
+    },
+    {
+      "key": "beta30_tag_object",
+      "url": "https://api.github.com/repos/seraphis-migration/monero/git/tags/71a62c82ee45da84ffe6ac116f06f0ad7c01ea27",
+      "sha256": "0f29ab13c68e1a3958e684c87788e67b71721b8a8139ad417280f59ba968b5ea",
+      "bytes": 707
+    },
+    {
+      "key": "beta30_src/cryptonote_config.h",
+      "url": "https://raw.githubusercontent.com/seraphis-migration/monero/d816367cb1aa405bfa68a20ac3e034d0759d968e/src/cryptonote_config.h",
+      "sha256": "b49d1b0a120308e7d4d106e5c75c0a0903333bde0674a7790bfe6cd55f724fe2",
+      "bytes": 21843
+    },
+    {
+      "key": "beta30_src/cryptonote_basic/cryptonote_format_utils.cpp",
+      "url": "https://raw.githubusercontent.com/seraphis-migration/monero/d816367cb1aa405bfa68a20ac3e034d0759d968e/src/cryptonote_basic/cryptonote_format_utils.cpp",
+      "sha256": "6ca08aeae04bae44978ce9e3ca9a50bc17a0c956773dbb9ad4165bc9bb6bcfbb",
+      "bytes": 93321
+    },
+    {
+      "key": "beta_tag",
+      "url": "https://api.github.com/repos/seraphis-migration/monero/git/ref/tags/v0.19.0.0-beta.3.1",
+      "sha256": "142d8acdf5d2fc6ab808b31388bdef6a584e43116202b6e91ec991b43205fa1e",
+      "bytes": 391
+    },
+    {
+      "key": "beta31_src/hardforks/hardforks.cpp",
+      "url": "https://raw.githubusercontent.com/seraphis-migration/monero/b13ab0cabadeb301b2ce5282b077945e9ab3a7ba/src/hardforks/hardforks.cpp",
+      "sha256": "e6a6be2ccfe4de274e98a76363f63abab274eb53ee5765ee51e1ef5f0e5a8909",
+      "bytes": 6005
+    },
+    {
+      "key": "beta31_src/cryptonote_config.h",
+      "url": "https://raw.githubusercontent.com/seraphis-migration/monero/b13ab0cabadeb301b2ce5282b077945e9ab3a7ba/src/cryptonote_config.h",
+      "sha256": "b49d1b0a120308e7d4d106e5c75c0a0903333bde0674a7790bfe6cd55f724fe2",
+      "bytes": 21843
+    },
+    {
+      "key": "beta31_src/cryptonote_basic/cryptonote_format_utils.cpp",
+      "url": "https://raw.githubusercontent.com/seraphis-migration/monero/b13ab0cabadeb301b2ce5282b077945e9ab3a7ba/src/cryptonote_basic/cryptonote_format_utils.cpp",
+      "sha256": "6ca08aeae04bae44978ce9e3ca9a50bc17a0c956773dbb9ad4165bc9bb6bcfbb",
+      "bytes": 93321
+    },
+    {
+      "key": "stable_src/cryptonote_core/blockchain.cpp",
+      "url": "https://raw.githubusercontent.com/monero-project/monero/22578c3f7d7b4b6dd85ff7daa42a827d97cc53d0/src/cryptonote_core/blockchain.cpp",
+      "sha256": "9a1c6962b83d9ae0f511909c68b00535a0577e8a0310e364353b448260ad986c",
+      "bytes": 220958
+    },
+    {
+      "key": "master_src/cryptonote_basic/cryptonote_format_utils.cpp",
+      "url": "https://raw.githubusercontent.com/monero-project/monero/7778a369afdb788af245ba5ac4d5b17d5a2cc4c5/src/cryptonote_basic/cryptonote_format_utils.cpp",
+      "sha256": "44943218bf19442f8abfa9f9454282c7c1c84b0d669b339a37abc2f2c1d191a9",
+      "bytes": 74721
+    }
+  ],
+  "author_capture_hash_matches": 30,
+  "no_live_tip_observation": true
+}

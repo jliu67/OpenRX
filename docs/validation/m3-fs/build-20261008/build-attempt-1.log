@@ -1,0 +1,9 @@
+scons: Reading SConscript files ...
+Mkdir("/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.build")
+Checking for linker -Wl,--as-needed support... yes
+Checking for compiler -gz support... yes
+Checking for linker -gz support... yes
+Info: Using Python config: python3-config
+Checking for C header file Python.h... yes
+Checking Python version... no
+Error: Can't find a working Python installation

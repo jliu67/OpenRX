@@ -1,0 +1,108 @@
+{
+  "schema": "openrx-gem5-build-provenance-v1",
+  "recorded_utc": "2026-10-08T15:47:07.988930+00:00",
+  "source_revision": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "source_archive_url": "https://codeload.github.com/gem5/gem5/tar.gz/c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "source_archive_sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3",
+  "archive_regular_file_count": 10933,
+  "modified_archive_files": [],
+  "source_directory": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "host_platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python_version": "3.12.14",
+  "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "scons_version": "4.9.1",
+  "build_jobs": 6,
+  "build_timeout_seconds": 1200,
+  "build_target": "build/RISCV/gem5.opt",
+  "build_status": "timeout",
+  "unavailable_optional_features": [
+    "protobuf tracing",
+    "PNG framebuffers",
+    "HDF5 statistics",
+    "capstone"
+  ],
+  "apt_packages": {
+    "m4_1.4.19-4build1_amd64.deb": "30ea715845a1863abd55d11e47ab91513130bf347852d4cdeae69e9d98fa795c",
+    "pkgconf-bin_1.8.1-2build1_amd64.deb": "7a812f05ee1610154b433e2ad54f6e4163fcbb306b9fb31afe959afb2e5e1545",
+    "libpkgconf3_1.8.1-2build1_amd64.deb": "fc3a57e8f931ec06cb7c51acc56878f1fec247ff02a7adcab26905c2faeb2792"
+  },
+  "notes": [
+    "No gem5 source modification; generated build output is outside archived source files.",
+    "Runtime Python unversioned shared-library symlink is broken; scratch symlinks and wrapper repair dependency discovery.",
+    "System dependency installation was unsuccessful; apt debs were extracted into scratch only.",
+    "Functional build only; not calibrated timing or hardware evidence.",
+    "Three incremental -j6 windows each reached timeout124 after1200s; gem5.opt did not link and Linux boot was not attempted. No simulator source or effective configuration change was made."
+  ],
+  "incremental_resumed_utc": "2026-10-08T15:49:31.315623+00:00",
+  "prior_build_attempts": [
+    {
+      "jobs": 2,
+      "result": "configuration_failure",
+      "tool_exit_code": 1,
+      "reason": "Runtime bundle libpython3.12.so symlink points to nonexistent temporary directory",
+      "log": "build-attempt-1.log",
+      "log_sha256": "16ff18b2b68202b3f66d41d18b3233125c26670dd1b82ee7a38d60f812ced39f"
+    },
+    {
+      "jobs": 2,
+      "result": "configuration_failure",
+      "tool_exit_code": 1,
+      "reason": "Scratch runtime link lacked SONAME libpython3.12.so.1.0 alias; embedded-Python executable could not load",
+      "log": "build-attempt-2.log",
+      "log_sha256": "f428056455072dbcb947c80c29f19f423f6516ee2505a401d09ce3549f457192"
+    },
+    {
+      "jobs": 2,
+      "result": "interrupted",
+      "tool_exit_code": 130,
+      "reason": "Increase compile workers to six with observed memory headroom and root authorization",
+      "log": "build-j2-interrupted.log"
+    },
+    {
+      "jobs": 6,
+      "result": "timeout",
+      "tool_exit_code": 124,
+      "timeout_seconds": 1200,
+      "compiled_object_count": 894,
+      "log": "build-j6-window-1.log",
+      "log_sha256": "e72acb37385b20fa0bc1d1d1f93c9dc5da91b678fb6df14141e83cf273285957"
+    },
+    {
+      "jobs": 6,
+      "result": "timeout",
+      "tool_exit_code": 124,
+      "timeout_seconds": 1200,
+      "compiled_object_count": 1650,
+      "log": "build-j6-window-2.log",
+      "log_sha256": "0264a33d90e9bcced41b3c9a581564a1767d7a7405abaa899105df789d0e7726",
+      "canonical_config_sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5"
+    },
+    {
+      "jobs": 6,
+      "result": "timeout",
+      "tool_exit_code": 124,
+      "timeout_seconds": 1200,
+      "compiled_output_path_count": 2266,
+      "log": "build-j6-window-3.log",
+      "log_sha256": "e407d1aa35967bb3b7cd664e428aa8d89d145cad77bdd9dc804315b3eca6eb44",
+      "canonical_config_sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5"
+    }
+  ],
+  "second_window_started_utc": "2026-10-08T16:09:52.867917+00:00",
+  "third_window_started_utc": "2026-10-08T16:30:21.785146+00:00",
+  "canonical_config_sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5",
+  "final_exit_code": 124,
+  "completed_utc": "2026-10-08T16:53:54.649127+00:00",
+  "compiled_output_path_count": 2266,
+  "object_count_command": "rg --files build/RISCV | rg '\\.(o|pyo)$' | wc -l",
+  "object_count_limit": "Path count includes configuration/partial compile outputs; it is not linked-executable or execution evidence.",
+  "expected_executable": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+  "expected_executable_exists": false,
+  "executable_preflight_executed": false,
+  "guest_boot_executed": false,
+  "full_dataset_executed": false,
+  "last_compilation_stage": "Generated RISC-V instruction constructors, decoder, generic CPU execution, and ISA instruction files",
+  "source_consistency_report": "source-consistency.json",
+  "source_consistency_sha256": "95e13dd30fe8f8d8c8623581ea381ee6d1af8cb61799e06ac18315cf3e7b4599",
+  "host_memory_events_at_completion": "low 0\nhigh 0\nmax 37862\noom 0\noom_kill 0\noom_group_kill 0\n"
+}

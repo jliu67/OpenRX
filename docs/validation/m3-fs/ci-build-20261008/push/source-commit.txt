@@ -1,0 +1,12 @@
+commit c8222cc67a399bfc01e8658dd14b30d5bfd634f9
+Author:     Bobby R. Bruce <bbruce@ucdavis.edu>
+AuthorDate: Tue Apr 21 11:35:05 2026 -0700
+Commit:     GitHub <noreply@github.com>
+CommitDate: Tue Apr 21 11:35:05 2026 -0700
+
+    misc: Hotfix Release: v25.1.0.1 (#3082)
+    
+    Includes:
+    
+    - PR #3001
+    - PR #2943

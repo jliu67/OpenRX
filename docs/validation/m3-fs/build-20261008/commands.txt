@@ -1,0 +1,46 @@
+# Source acquisition
+curl -fL --connect-timeout 20 --max-time 90 https://codeload.github.com/gem5/gem5/tar.gz/c8222cc67a399bfc01e8658dd14b30d5bfd634f9 -o /tmp/openrx-gem5-source/gem5-c8222cc.tar.gz
+cd /tmp/openrx-gem5-source
+tar -xzf gem5-c8222cc.tar.gz
+sha256sum gem5-c8222cc.tar.gz
+# Build dependency setup (scratch only)
+python3 -m pip install --target /tmp/openrx-gem5-source/python-build-deps scons==4.9.1
+# Initial apt update/install failed because this container cannot change uid/groups and /var/cache/apt/archives/partial is not writable.
+# Ordinary download/extraction worked; no installed system packages were changed.
+apt-get -o APT::Sandbox::User=root -o APT::Update::Post-Invoke::= update
+mkdir -p /tmp/openrx-gem5-source/apt-debs
+cd /tmp/openrx-gem5-source/apt-debs
+apt-get -o APT::Sandbox::User=root download m4 pkgconf-bin libpkgconf3
+cd /tmp/openrx-gem5-source
+mkdir -p apt-root
+for package in apt-debs/*.deb; do dpkg-deb -x "$package" apt-root; done
+ln -sf pkgconf apt-root/usr/bin/pkg-config
+# Runtime bundle has a broken libpython3.12.so symlink. Scratch symlinks point to its existing versioned library.
+mkdir -p /tmp/openrx-gem5-source/native-libs /tmp/openrx-gem5-source/bin
+ln -sf /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/libpython3.12.so.1.0 /tmp/openrx-gem5-source/native-libs/libpython3.12.so
+ln -sf /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/libpython3.12.so.1.0 /tmp/openrx-gem5-source/native-libs/libpython3.12.so.1.0
+# /tmp/openrx-gem5-source/bin/python3-config delegates to runtime python3-config and substitutes only its -L path to scratch/native-libs.
+# Bounded final build; source files unchanged.
+cd /tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9
+PATH=/tmp/openrx-gem5-source/apt-root/usr/bin:$PATH PYTHONPATH=/tmp/openrx-gem5-source/python-build-deps PYTHON_CONFIG=/tmp/openrx-gem5-source/bin/python3-config LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu timeout 1200 python3 -m SCons build/RISCV/gem5.opt -j2 --without-tcmalloc > /tmp/openrx-gem5-source/build.log 2>&1
+
+# First build was interrupted (tool exit130) to increase workers after RSS observation.
+PATH=/tmp/openrx-gem5-source/apt-root/usr/bin:$PATH PYTHONPATH=/tmp/openrx-gem5-source/python-build-deps PYTHON_CONFIG=/tmp/openrx-gem5-source/bin/python3-config LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu timeout 1200 python3 -m SCons build/RISCV/gem5.opt -j6 --without-tcmalloc > /tmp/openrx-gem5-source/build.log 2>&1
+
+# First -j6 window reached timeout124 after1200s; canonical config unchanged.
+# Second -j6 window uses the identical incremental build command with a fresh1200s bound.
+
+# Second -j6 window reached timeout124; canonical config unchanged.
+# Third/final parent-authorized -j6 window uses the identical command with a fresh1200s bound.
+
+# Earlier configuration-only failures; no working gem5 executable was produced.
+# Attempt1 failed because runtime Python's unversioned library symlink was broken.
+PYTHONPATH=/tmp/openrx-gem5-source/python-build-deps timeout 1200 python3 -m SCons build/RISCV/gem5.opt -j2 --without-tcmalloc PYTHON_CONFIG=/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3-config > /tmp/openrx-gem5-source/build.log 2>&1
+# Attempt2 used the scratch config wrapper but lacked the versioned SONAME alias; corrected before the successful configuration/partial compile.
+PYTHONPATH=/tmp/openrx-gem5-source/python-build-deps PYTHON_CONFIG=/tmp/openrx-gem5-source/bin/python3-config LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs timeout 1200 python3 -m SCons build/RISCV/gem5.opt -j2 --without-tcmalloc > /tmp/openrx-gem5-source/build.log 2>&1
+
+# Final window completed timeout124 at2026-10-08T16:50:20UTC; source build stopped.
+# Every archived source file was compared after compilation stopped:
+python3 verify-source.py --archive /tmp/openrx-gem5-source/gem5-c8222cc.tar.gz --extraction-root /tmp/openrx-gem5-source --output /tmp/openrx-gem5-source/source-consistency.json
+# Result:10933 regular files, zero modified or missing archive members.
+# Future incremental resume uses the unchanged final -j6 command; no usable gem5.opt/boot result exists.

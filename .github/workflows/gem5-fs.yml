@@ -10,16 +10,6 @@ on:
       - 'simulator/probe/**'
       - 'simulator/toolchains/**'
       - '.github/workflows/gem5-fs.yml'
-  push:
-    paths:
-      - 'simulator/gem5/**'
-      - 'simulator/runtime-probe/**'
-      - 'tests/native_runtime_probe.py'
-      - 'tests/native_riscv_probe.py'
-      - 'tests/test_gem5_fs.py'
-      - 'simulator/probe/**'
-      - 'simulator/toolchains/**'
-      - '.github/workflows/gem5-fs.yml'
   workflow_dispatch:
     inputs:
       light_hashes:

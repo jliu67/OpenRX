@@ -1,0 +1,111 @@
+name: gem5 full-system Linux functional gate
+on:
+  pull_request:
+    paths:
+      - 'simulator/gem5/**'
+      - 'simulator/runtime-probe/**'
+      - 'tests/native_runtime_probe.py'
+      - 'tests/native_riscv_probe.py'
+      - 'tests/test_gem5_fs.py'
+      - 'simulator/probe/**'
+      - 'simulator/toolchains/**'
+      - '.github/workflows/gem5-fs.yml'
+  push:
+    paths:
+      - 'simulator/gem5/**'
+      - 'simulator/runtime-probe/**'
+      - 'tests/native_runtime_probe.py'
+      - 'tests/native_riscv_probe.py'
+      - 'tests/test_gem5_fs.py'
+      - 'simulator/probe/**'
+      - 'simulator/toolchains/**'
+      - '.github/workflows/gem5-fs.yml'
+  workflow_dispatch:
+    inputs:
+      light_hashes:
+        description: 'Also attempt complete light-mode v2/v1 interpreter/JIT controls'
+        type: boolean
+        required: false
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: gem5-fs-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  atomic-linux-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    env:
+      GEM5_COMMIT: c8222cc67a399bfc01e8658dd14b30d5bfd634f9
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source and offline evidence controls
+        run: |
+          python3 scripts/verify_vendor.py
+          python3 -m unittest discover -s tests -p test_gem5_fs.py -v
+          mkdir -p build/gem5-validation
+      - name: Install build tools and scalar guest compiler
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential scons m4 pkg-config python3-dev zlib1g-dev libprotobuf-dev protobuf-compiler libboost-all-dev libhdf5-dev libpng-dev cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu
+          {
+            uname -a
+            git rev-parse HEAD
+            gcc --version
+            scons --version
+            riscv64-linux-gnu-gcc-14 --version
+            df -h .
+            free -h
+            dpkg-query -W build-essential scons m4 pkg-config python3-dev zlib1g-dev libprotobuf-dev protobuf-compiler libboost-all-dev libhdf5-dev libpng-dev cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu libc6-riscv64-cross
+          } > build/gem5-validation/environment.txt
+      - name: Pin and build real gem5 RISC-V
+        run: |
+          set -o pipefail
+          git clone --depth 1 --branch v25.1.0.1 https://github.com/gem5/gem5.git build/gem5-source
+          test "$(git -C build/gem5-source rev-parse HEAD)" = "$GEM5_COMMIT"
+          git -C build/gem5-source status --porcelain > build/gem5-validation/source-status-before.txt
+          test ! -s build/gem5-validation/source-status-before.txt
+          git -C build/gem5-source show --no-patch --format=fuller HEAD > build/gem5-validation/source-commit.txt
+          cd build/gem5-source
+          timeout --signal=TERM --kill-after=30s 45m scons build/RISCV/gem5.opt -j2 2>&1 | tee ../gem5-validation/build.log
+          cd ../..
+          git -C build/gem5-source diff --exit-code > build/gem5-validation/source-diff-after.txt
+          sha256sum build/gem5-source/build/RISCV/gem5.opt > build/gem5-validation/gem5-binary.sha256
+          ldd build/gem5-source/build/RISCV/gem5.opt > build/gem5-validation/gem5-ldd.txt
+      - name: Cross-build guest runtime controls
+        run: |
+          riscv64-linux-gnu-gcc-14 -O2 -std=c11 -Wall -Wextra -Werror -march=rv64gc -mabi=lp64d simulator/runtime-probe/main.c -o build/gem5-validation/openrx-runtime-probe
+          riscv64-linux-gnu-readelf -h -l -A build/gem5-validation/openrx-runtime-probe > build/gem5-validation/runtime-elf.txt
+          riscv64-linux-gnu-objdump -d build/gem5-validation/openrx-runtime-probe > build/gem5-validation/runtime-disassembly.txt
+          sha256sum build/gem5-validation/openrx-runtime-probe > build/gem5-validation/runtime-binary.sha256
+      - name: Prepare exact guest firmware, kernel and disk
+        run: python3 simulator/gem5/prepare.py --output-dir build/gem5-resources --resource-timeout 900
+      - name: Cross-build optional unchanged light-mode workload
+        if: inputs.light_hashes == true
+        run: |
+          set -o pipefail
+          cmake -S simulator/probe -B build/probe-gem5 -DCMAKE_BUILD_TYPE=Release -DARCH=default -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_TOOLCHAIN_FILE="$PWD/simulator/toolchains/riscv64-linux-gnu.cmake" 2>&1 | tee build/gem5-validation/hash-configure.log
+          cmake --build build/probe-gem5 --target openrx-riscv-probe --parallel 2 2>&1 | tee build/gem5-validation/hash-build.log
+          riscv64-linux-gnu-readelf -h -l -A build/probe-gem5/openrx-riscv-probe > build/gem5-validation/hash-elf.txt
+      - name: Attempt bounded real Linux boot and guest controls
+        run: |
+          extra=()
+          if [ '${{ inputs.light_hashes }}' = 'true' ]; then
+            extra=(--hash-binary build/probe-gem5/openrx-riscv-probe)
+          fi
+          python3 simulator/gem5/run.py --gem5 build/gem5-source/build/RISCV/gem5.opt --resources build/gem5-resources --runtime-binary build/gem5-validation/openrx-runtime-probe --output-dir build/gem5-validation/attempt --timeout 1200 --max-ticks 10000000000000 "${extra[@]}"
+      - name: Preserve preparation, actual execution and failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gem5-full-system-functional
+          retention-days: 90
+          if-no-files-found: warn
+          path: |
+            build/gem5-validation/
+            build/gem5-resources/preparation.json
+            build/gem5-resources/resources-input.json
+            build/probe-gem5/CMakeCache.txt
+            build/probe-gem5/compile_commands.json
+            build/probe-gem5/openrx-riscv-probe
