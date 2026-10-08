@@ -7,15 +7,18 @@ permissions:
   issues: write
 # One authorized command creates a single bot-authored, subscriber-notifiable post.
 # Only a hub comment explicitly beginning /openrx announce is eligible.
-concurrency:
-  group: openrx-hub-announcements
-  cancel-in-progress: false
 jobs:
   announce:
     if: >-
       github.event.issue.number == 5 &&
       github.event.comment.user.login == github.repository_owner &&
       startsWith(github.event.comment.body, '/openrx announce')
+    # Serialize eligible posts without replacing an older pending announcement.
+    # Unrelated comments do not occupy this queue; GitHub caps it at 100.
+    concurrency:
+      group: openrx-hub-announcements
+      queue: max
+      cancel-in-progress: false
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
