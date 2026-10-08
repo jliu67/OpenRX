@@ -1,6 +1,6 @@
 # EXP-001: controlled v1/v2 native baseline
 
-Status: source characterization, tooling/native correctness preflight and P1-05 same-process instrumentation complete; P1-06S power importer implemented/tested with independent acceptance pending on #13; controlled target-host experiment and power measurements pending. **Not a completed M1 experiment.**
+Status: source characterization, tooling/native correctness preflight and P1-05 same-process instrumentation complete; P1-06S power importer independently accepted as software, merged in PR #17 and #13 closed; controlled target-host experiment and power measurements pending. **Not a completed M1 experiment.**
 
 Hypothesis: the v2/v1 throughput ratio depends on available execution and memory resources; measure instead of assuming SG2042 behavior.
 
@@ -35,15 +35,19 @@ Do not mix throughput from the new static-stride first/next/last harness with th
 
 ## P1-06S offline analysis outcome — 2026-10-08 UTC
 
-Implementation `2b28d6fb4604a2b861241d38678e24c8541aed02` adds the [power importer](../benchmarks/power/README.md) and 61 deterministic synthetic tests. Independent software acceptance remains on [#13](https://github.com/jliu67/OpenRandomX/issues/13). Existing CI passed 182 Python, 107 upstream and six native tests. Its downloaded artifact and saved-data joins were checked; [validation and reproduction](../docs/validation/p1-06s/README.md) preserve the evidence.
+Implementation `2b28d6fb4604a2b861241d38678e24c8541aed02` adds the [power importer](../benchmarks/power/README.md) and 61 deterministic synthetic tests. Subsequent independent software acceptance and repairs are recorded below; [#13](https://github.com/jliu67/OpenRandomX/issues/13) is closed as completed after PR #17 merged. Initial CI passed 182 Python, 107 upstream and six native tests. Its downloaded artifact and saved-data joins were checked; [validation and reproduction](../docs/validation/p1-06s/README.md) preserve the evidence.
 
 The importer revalidates the benchmark and exact input binding, then applies explicit clock mapping, missing/gap/coverage rejection and conditional uncertainty-aware integration. Only measurement intervals count. All power traces exercised this session were synthetic; none establishes measured hashes/J or completes the controlled experiment. The point-power schema deliberately rejects interval-averaged/cumulative exports without a separately reviewed model or extension.
 
-Remaining blockers: controlled benchmark host (#8), dynamic profiler/counter access (#11), independent importer acceptance (#13), and real synchronized power-meter samples/physical validation (#10). Use the specific child issue for scoped claims; [#1](https://github.com/jliu67/OpenRandomX/issues/1) remains the parent milestone and discussion gate. Read [docs/TASKS.md](../docs/TASKS.md) and the current issue comments.
+Remaining blockers: controlled benchmark host (#8), dynamic profiler/counter access (#11), and real synchronized power-meter samples/physical validation (#10). Importer software acceptance (#13) is complete. Use the specific open child issue for scoped claims; [#1](https://github.com/jliu67/OpenRandomX/issues/1) remains the parent milestone and discussion gate. Read [docs/TASKS.md](../docs/TASKS.md) and the current issue comments.
 
 Follow-up: select a simulator that can reproduce exact workload behavior, then vary memory latency/cache/AES capacity independently in a calibrated model. Do not bypass the roadmap's baseline/model gates.
 
 
 ## Independent importer acceptance — 2026-10-08
 
-PR #17 repairs three malformed-input failure-report defects found in independent P1-06S review. A separate patch reviewer accepts the software after 64 importer tests, 327 wrong-type/13 Decimal cases, 10 unchanged valid-report comparisons and 9,024 numerical checks. See docs/validation/p1-06s/PATCH-REVIEW-20261008.md. No physical power samples were added; M1 remains open.
+PR #17 repairs three malformed-input failure-report defects found in independent P1-06S review. A separate patch reviewer accepts the software after 64 importer tests, 327 wrong-type/13 Decimal cases, 10 unchanged valid-report comparisons and 9,024 numerical checks. See docs/validation/p1-06s/PATCH-REVIEW-20261008.md. PR #17 is merged at `973cd0d94f987ad4a46b85f7b6d66170104c64a1` and #13 is closed as completed. No physical power samples were added; M1 remains open.
+
+## Network target context — 2026-10-08
+
+The independently reviewed [Monero source audit](../docs/validation/monero-activation/REVIEW-20261008.md), merged in PR #19, identifies RandomX v1 in the current released mainnet consensus. This is source-backed inference, not an observed chain tip. No v2 mainnet activation date appears in the audited schedule; the October 5 FCMP++ beta schedule is a separate stressnet/testnet. Keep v2-first research and exact v1 controls in this baseline. Raw RandomX hashes do not validate the beta's additional PoW commitment or complete block-validation pipeline.
