@@ -4,6 +4,10 @@ Session `codex/20261008-m3`, 2026-10-08 UTC / Edmonton. User requested continuin
 
 ## Delivered
 
+Final implementation `f9c3ee7debc94807a4a82b537079bdf455aea551` passed RISC-V run37791921197/job113361273431 and foundation run37791921307/job113361273371. Actual logs show **199 Python, 107 upstream and six native tests**, plus **39 required native and 39 required emulated-RISC-V checks**. Separate code/source/evidence review is complete. PR #15 merged on main at `83cbb3ec279a9fab9c5bb18b567fbbd7591f1aed`; milestone #3 remains open.
+
+Final artifact11557345367 (455549bytes) SHA256 matched `ca14f2e811cf6570d989928c0eafcbd046851b05830e08e624c569721ffafb99`. Native/QEMU streams, empty stderr, stable RISC-V binary digest and now-present compile_commands were revalidated. PR checkout SHA was `dc6de662bedc6136c4b1ae045ff7fc9b45f7fb92`, distinct from implementation/head SHA. [Final audit](../docs/validation/m3/final-ci-audit.json) retains both identities and expiry2027-01-06T14:22:28Z. Final evidence publication is docs-only; no further implementation or test changes.
+
 - Pinned-source core and simulator reports with exact revisions, licenses and confidence limits; provisional MediumBoomV3Config RTL candidate, gem5 exploration candidate, QEMU functional preflight.
 - Unchanged-RandomX light-mode C++ probe: seven integer, 24 FP and eight v2/v1 interpreter/JIT exact hash checks.
 - Independent complete-stream validator, retained failures/digests/commands, 17 malformed/tampered-evidence regressions.
@@ -29,3 +33,5 @@ New [#16](https://github.com/jliu67/OpenRandomX/issues/16) is independently read
 M1 controlled host/power/profile and P1-06S #13 acceptance remain outstanding; M4 #14 and M5 #12 gates remain intact. No timing/power estimate, silicon performance claim, RTL optimization, purchase, paid compute, account change or autonomous worker was produced.
 
 Previous [P1-06S handoff](handoffs/pre-m3-20261008.md) and [state](handoffs/pre-m3-state-20261008.md) are archived byte-for-byte.
+
+Archived relative links retain their historical locations; use the current STATE/HANDOFF entrypoints for working links.

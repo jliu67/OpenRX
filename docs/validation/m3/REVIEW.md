@@ -167,9 +167,9 @@ inspected saved execution evidence; the CI runner executed the RISC-V binary.
 ## Acceptance limits
 
 No remaining must-fix arithmetic/reference or successful-stream validation
-defect was identified in the revised required controls. The initial
-cross-build/emulator evidence was inspected as above; follow-up CI for the
-final validator/workflow edits remains a separate result. Distro packages are
+defect was identified in the revised required controls. Both initial and
+final cross-build/emulator evidence were inspected (final follow-up below).
+Distro packages are
 recorded, not frozen. The 600-second probe timeout and sequential 256 MiB light caches keep
 the pilot bounded, but do not establish simulator runtime or memory costs.
 Successful known hashes exercise repeated code generation; they do not replace
@@ -181,3 +181,35 @@ M3 remains open for an exact selected core/runtime build and boot/correctness
 path. gem5 full-system, BOOM/Verilator and CVA6 have not been executed by this
 review. M1 physical measurements and M4 timing calibration remain separate
 gates; this review establishes neither wall power nor a competitive miner.
+
+## Final CI follow-up
+
+The reviewer independently read GitHub metadata for
+[run 37791921197](https://github.com/jliu67/OpenRandomX/actions/runs/37791921197),
+which completed successfully as a `pull_request` run at PR #15 head
+`f9c3ee7debc94807a4a82b537079bdf455aea551`. The retained environment reports
+the actual checkout as `dc6de662bedc6136c4b1ae045ff7fc9b45f7fb92`, the
+pull-request merge checkout; these are distinct identifiers. Artifact
+`11557345367` metadata reports 455,549 bytes and SHA-256
+`ca14f2e811cf6570d989928c0eafcbd046851b05830e08e624c569721ffafb99`.
+
+Executed reviewer checks hashed `/tmp/openrx-m3-preflight-final.zip` against
+that metadata and byte-compared all 19 ZIP files with `build/m3-ci-final/`.
+Both saved native/QEMU streams passed the current validator: 39 required
+checks, eight software-AES hash cases and one optional hardware-AES skip.
+Both reports record return code zero, matching validation and empty stderr.
+The RISC-V ELF64 little-endian machine number is 243, and its SHA-256 remains
+`61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657`.
+All assertions passed; the reviewer inspected saved execution evidence and
+did not launch the target emulator.
+
+Both compilation databases are now present. Inspection with Python
+`json.loads` and `shlex.split` confirmed the cross probe uses
+`-march=rv64gc -mabi=lp64d` plus `-frounding-math -fno-fast-math
+-ffp-contract=off`. The native probe retains the same strict FP flags.
+For `aes_hash_rv64_zvkned.cpp` and `jit_compiler_rv64_vector_static.S`, the
+last architecture option is `-march=rv64gcv_zvkned`, overriding their earlier
+baseline options. This confirms the compilation-database evidence fix and
+the documented presence of dormant vector-crypto objects. The M3 core boot,
+full-memory, explicit cache/permission, M1 measurement and M4 calibration
+limits above still apply.

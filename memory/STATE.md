@@ -4,6 +4,8 @@ Updated 2026-10-08 UTC / Edmonton. **M0 complete; M1 measured hardware baseline 
 
 ## Latest result — M3 feasibility, PR #15
 
+**Merged on main at `83cbb3ec279a9fab9c5bb18b567fbbd7591f1aed`.** Reviewed final implementation `f9c3ee7debc94807a4a82b537079bdf455aea551` passed [RISC-V CI 37791921197](https://github.com/jliu67/OpenRandomX/actions/runs/37791921197) and [foundation CI 37791921307](https://github.com/jliu67/OpenRandomX/actions/runs/37791921307): **199 Python, 107 upstream, six native steady tests**, plus **39 native / 39 emulated RISC-V required probe checks**. One optional hardware-AES skip per probe was explicit. Final artifact/digest/compile-command audit is retained in [final-ci-audit.json](../docs/validation/m3/final-ci-audit.json).
+
 [PR #15](https://github.com/jliu67/OpenRandomX/pull/15), branch `openrx/m3-riscv-preflight`, advances [task #3](https://github.com/jliu67/OpenRandomX/issues/3). Initial implementation `e5eafde50d074f19afb37d08ccec4c59dd88a33d` passed [RISC-V CI 37790683112](https://github.com/jliu67/OpenRandomX/actions/runs/37790683112) and existing [native CI 37790683131](https://github.com/jliu67/OpenRandomX/actions/runs/37790683131).
 
 Actual native and QEMU RV64GC controls passed **39 required checks each**: seven integer checks, 24 FP checks across four rounding modes, eight exact v2/v1 interpreter/JIT software-AES hashes. Hardware AES was explicitly not requested (one optional skip each). Light mode uses 256 MiB cache, no full dataset. QEMU 8.2.2 and cross GCC 14.2.0 were observed in the actual job, distinct from upstream source-review pins.
@@ -22,7 +24,7 @@ Downloaded artifact 11555544301 matched SHA-256 `5f042957866115a6eeb488953ec8d52
 
 ## Next gates
 
-1. Review/merge PR #15 as an M3 research/functional work package. Keep #3 open pending selected-runtime/core boot and full-dataset correctness.
+1. PR #15 is merged as a reviewed M3 research/functional work package. Keep #3 open pending selected-runtime/core boot and full-dataset correctness.
 2. Claim #16 separately for gem5 full-system Linux correctness. Prepare sufficient consistent guest RAM and exact image/toolchain provenance.
 3. Demonstrate selected BOOM/Chipyard Linux configuration and full-dataset v1/v2 correctness before accepting core feasibility.
 4. #8 controlled hardware host, #10 real synchronized meter and #11 counters remain externally blocked; #13 still needs independent importer acceptance. M1 is open.

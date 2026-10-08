@@ -25,7 +25,7 @@ Parent milestone [#1](https://github.com/jliu67/OpenRandomX/issues/1) is a discu
 |---|---|---|
 | [#1](https://github.com/jliu67/OpenRandomX/issues/1) | Measured native baseline | Partial; tasks above |
 | [#2](https://github.com/jliu67/OpenRandomX/issues/2) | X5 / SG2042 evidence | Open; primary board/chip evidence needed |
-| [#3](https://github.com/jliu67/OpenRandomX/issues/3) | Core/simulator selection | [PR #15](https://github.com/jliu67/OpenRandomX/pull/15): source-backed provisional BOOM/gem5 selections; actual scalar QEMU 39-check preflight. OPEN for selected-core/runtime boot and full dataset; preserve M1/M4/M5 gates |
+| [#3](https://github.com/jliu67/OpenRandomX/issues/3) | Core/simulator selection | [PR #15](https://github.com/jliu67/OpenRandomX/pull/15) MERGED after review/CI: source-backed provisional BOOM/gem5 selections; actual scalar QEMU 39-check preflight. OPEN for selected-core/runtime boot and full dataset; preserve M1/M4/M5 gates |
 | [#4](https://github.com/jliu67/OpenRandomX/issues/4) | Monero activation | Open; verify primary current sources |
 | [#16](https://github.com/jliu67/OpenRandomX/issues/16) | gem5 full-system Linux correctness | Independently claimable exploration; address SE startup signal/cache-flush blockers; no calibrated timing |
 

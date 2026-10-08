@@ -17,7 +17,7 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## RISC-V feasibility progress
 
-[M3 work in PR #15](https://github.com/jliu67/OpenRandomX/pull/15) adds an
+[Merged M3 work in PR #15](https://github.com/jliu67/OpenRandomX/pull/15) adds an
 executable scalar RISC-V preflight, exact integer/FP controls and v2/v1
 interpreter/JIT references. Actual QEMU CI passed all 39 required checks;
 raw logs and binary digests were downloaded and independently revalidated.

@@ -1,0 +1,35 @@
+{
+  "implementation_sha": "f9c3ee7debc94807a4a82b537079bdf455aea551",
+  "run_id": 37791921197,
+  "job_id": 113361273431,
+  "artifact_id": 11557345367,
+  "archive_bytes": 455549,
+  "archive_sha256": "ca14f2e811cf6570d989928c0eafcbd046851b05830e08e624c569721ffafb99",
+  "artifact_expires_at": "2027-01-06T14:22:28Z",
+  "riscv_binary_sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+  "outcomes": {
+    "native": {
+      "required_checks_passed": 39,
+      "optional_skips": 1,
+      "software_hash_cases": 8,
+      "compiled_architecture": "x86_64"
+    },
+    "qemu": {
+      "required_checks_passed": 39,
+      "optional_skips": 1,
+      "software_hash_cases": 8,
+      "compiled_architecture": "riscv64"
+    }
+  },
+  "elf_machine": 243,
+  "compile_commands_verified": true,
+  "vendor_changed": false,
+  "timing_calibrated": false,
+  "power_measured": false,
+  "checkout_sha": "dc6de662bedc6136c4b1ae045ff7fc9b45f7fb92",
+  "foundation_run_id": 37791921307,
+  "foundation_job_id": 113361273371,
+  "python_tests_passed": 199,
+  "upstream_tests_passed": 107,
+  "native_steady_tests_passed": 6
+}

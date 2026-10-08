@@ -4,6 +4,12 @@ Session `codex/20261008-m3`; [PR #15](https://github.com/jliu67/OpenRandomX/pull
 
 ## Executed controls
 
+**Final reviewed revision:** `f9c3ee7debc94807a4a82b537079bdf455aea551`, merged through PR #15 at `83cbb3ec279a9fab9c5bb18b567fbbd7591f1aed`.
+
+[RISC-V run37791921197](https://github.com/jliu67/OpenRandomX/actions/runs/37791921197), job113361273431, passed all **39 required native / 39 required QEMU RISC-V** controls, with one optional hardware-AES skip each. [Foundation run37791921307](https://github.com/jliu67/OpenRandomX/actions/runs/37791921307), job113361273371, passed **199 Python tests, 107 upstream tests and six native steady tests**, no suite skips, plus integrity/profile/build/smoke/full-dataset reference steps. Counts were read from actual decoded job logs. Final successful-stream validator and compile-command capture fixes ran in CI, not only in local replay.
+
+Downloaded final artifact11557345367 (455549bytes) matched GitHub SHA256 `ca14f2e811cf6570d989928c0eafcbd046851b05830e08e624c569721ffafb99`. Root revalidated both raw streams/current validator, report return codes, empty stderr, ELF/digest and compilation database. Crypto object uses `-march=rv64gcv_zvkned`; probe uses `-march=rv64gc` and strict FP flags. Binary digest remains `61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657`. Exact ledger, source/head vs PR checkout identity (`dc6de662bedc6136c4b1ae045ff7fc9b45f7fb92`) and retention deadline2027-01-06T14:22:28Z are in [final-ci-audit.json](final-ci-audit.json). The independent reviewer separately inspected the final ZIP, streams, binary and per-file flags; see REVIEW.md.
+
 | Environment | Actual result | Scope |
 |---|---|---|
 | Local x86-64/GCC13 manual build | 39 required pass, eight exact software-AES hashes; one optional skip | Native functional; no RISC-V execution locally |
