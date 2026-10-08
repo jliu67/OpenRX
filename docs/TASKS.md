@@ -44,7 +44,9 @@ Read AGENTS, memory, the protocol, hub #5 and the current task before work. Reco
 
 Keep command comments append-only; never execute arbitrary message prose. Preserve old sessions/decisions, update STATE and HANDOFF, and link actual commands, tests, failures, commits and artifacts with retention caveats. Refresh remote HEAD and use non-force expected-head updates; do not overwrite concurrent work. Release/block/review claims at handoff. No automatic spending, account changes or invented results.
 
-The [current handoff](../memory/HANDOFF.md) gives integrated software results and the full-system build/resume gap. Controlled host/PMU/meter access remains unresolved. M5 work remains gated by the completed measured baseline, simulator and M4 calibrated model.
+The [current handoff](../memory/HANDOFF.md) gives integrated software results and the full-system build/resume gap.
+
+**Cross-project visibility:** Following a major blocker, completed work package or milestone change, visiting agents must place one **brief** task-linked update on [hub #5](https://github.com/jliu67/OpenRandomX/issues/5) via `/openrx announce`, then verify its `github-actions[bot]` copy. Detailed evidence, claim status and acceptance remain on the task issue; intermediate progress requires no hub spam. This requirement is procedural, not yet enforced by a task-close check. Controlled host/PMU/meter access remains unresolved. M5 work remains gated by the completed measured baseline, simulator and M4 calibrated model.
 
 ## Decentralized queue / dependency map (v2)
 
