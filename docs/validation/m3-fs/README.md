@@ -2,7 +2,7 @@
 
 **Actual gem5 Linux boot and all nine standalone runtime controls passed and
 were independently accepted. Task #16 remains open for the complete unchanged
-light-mode v2/v1 hash matrix, whose separate bounded attempt is running.**
+light-mode v2/v1 hash matrix, whose separate 1,200-second attempt timed out.**
 
 Native Linux and scalar QEMU controls already pass. PR #18 at
 `53933bac18e1c1ef0128ee8bd4f40c356dcf1165` also passed the foundation, RISC-V and
@@ -30,7 +30,7 @@ earlier runner; they do not claim this streaming revision ran inside gem5.
 | Acquisition implementation | Independent review accepted; 23 offline controls pass in actual PR CI | [Acquisition audit](ACQUISITION-20261008.md), [independent review](ACQUISITION-REVIEW-20261008.md), [CI ledger](acquisition-review-20261008/ci-review.json) |
 | Local gem5 startup/configuration | Real executable imported the configuration; generated core/cache/RAM/DTB and encoded RV64 ELF checked | [Startup/payload review](actual-runtime-review-20261008/startup-config-payload.json) |
 | Local gem5 Linux boot/runtime | Linux 6.8.12 booted; all nine fixed runtime oracles passed; child exit 0 and hypercalls 1/2/3 completed | [Actual execution](actual-runtime-20261008/README.md), [report](actual-runtime-20261008/report.json), [independent acceptance](ACTUAL-GEM5-REVIEW-20261008.md) |
-| gem5 unchanged light hashes | Separate attempt started at 18:00:27 UTC with a 1,200-second bound; result pending | Final light-mode execution record pending |
+| gem5 unchanged light hashes | Declared 1,200-second timeout; all nine runtime controls repeated, hash ELF verified/launched, no complete hash stream or hypercall 3 | [Raw timeout](actual-light-20261008/README.md), [independent review](ACTUAL-LIGHT-REVIEW-20261008.md) |
 | Full dataset, intended timing core, RTL, calibration | Not established by this functional attempt | Independent acceptance gates remain open |
 
 The successful executable is the unchanged, unstripped 957,300,488-byte
@@ -106,7 +106,7 @@ LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-
 python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources /tmp/openrx-fs-resource-audit --runtime-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe --output-dir /tmp/openrx-gem5-runtime-next-attempt --timeout 1200
 ```
 
-Wait for the current light-mode attempt's final report before starting another. If
+The completed light timeout consumed most of its bound in boot/payload setup. Reuse the built simulator and reviewed streaming runner with a new explicit bound justified by that evidence; do not repeat the identical 20-minute attempt expecting a complete matrix. If
 temporary inputs are absent, restore the saved simulator package and acquire
 the pinned resources with `simulator/gem5/prepare.py`; retain each attempt in
 a new output directory. Do not treat host loader or missing-input failures as
@@ -119,10 +119,14 @@ image emits it even after script failure. The runtime stage has passed. To
 reproduce the separate unchanged light-mode attempt, add
 `--hash-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe` and use a
 new output directory. Preserve timeout and partial output honestly; that
-matrix's final result remains pending.
+matrix was not completed within the first bound. The old script withheld hash stdout until exit, so no partial hash records were exposed; this is not evidence of a semantic mismatch. The streaming repair addresses that observability gap for future attempts.
 
 The actual startup review confirms one Atomic RISC-V core, RVV disabled,
 4 GiB RAM and private L1/L2/walk caches. This is a functional candidate.
 Full-dataset correctness, intended timing-core coherence, selected RTL boot
 and M1/M4 calibration remain independent gates. No physical throughput, power,
 hashes per joule or silicon advantage is established.
+
+## Final streaming revision CI
+
+All checks at `4f4cf17880ccfa2e904eb9d2dc23892b828bce12` passed: 245 Python, 107 upstream, six native steady and 26 gem5 offline controls; 39 RandomX and nine runtime controls in each native/QEMU environment. The [final CI ledger](streaming-ci-20261008/ci-review.json) binds all five successful push/PR runs, full decoded logs and final functional source digests. The guest CI job remains explicitly skipped. [Independent streaming acceptance](STREAMING-REVIEW-20261008.md) covers executed host Bash interruption/failure controls; actual gem5 runs retain the old runner snapshot.

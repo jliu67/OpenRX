@@ -1,8 +1,0 @@
-{
-  "repository": "https://github.com/tevador/RandomX",
-  "tag": "v2.0.1",
-  "commit": "aaafe71322df6602c21a5c72937ac284724ae561",
-  "retrieved_utc": "2026-10-08",
-  "license": "BSD-3-Clause",
-  "strategy": "unmodified vendored source snapshot"
-}

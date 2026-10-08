@@ -1,0 +1,18 @@
+Read-only command: debugfs -R 'stat /usr/bin/tee' /tmp/openrx-review-root.img
+The partition file was previously extracted from the independently hash-verified actual ubuntu.img. This stat does not launch a guest or modify the filesystem.
+Exit: 0
+debugfs 1.47.0 (5-Feb-2023)
+Inode: 256026   Type: regular    Mode:  0755   Flags: 0x80000
+Generation: 3752430205    Version: 0x00000000:00000003
+User:     0   Group:     0   Project:     0   Size: 43488
+File ACL: 0
+Links: 1   Blockcount: 88
+Fragment:  Address: 0    Number: 0    Size: 0
+ ctime: 0x662792ba:a9f26298 -- Tue Apr 23 06:51:38 2024
+ atime: 0x67b50f56:337f9800 -- Tue Feb 18 17:53:10 2025
+ mtime: 0x66100c89:00000000 -- Fri Apr  5 10:36:57 2024
+crtime: 0x662792ba:a9f26298 -- Tue Apr 23 06:51:38 2024
+Size of extra inode fields: 32
+Inode checksum: 0xf7cdf622
+EXTENTS:
+(0-10):578711-578721

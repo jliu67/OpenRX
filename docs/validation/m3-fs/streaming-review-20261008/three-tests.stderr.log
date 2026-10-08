@@ -1,0 +1,8 @@
+test_failed_producer_keeps_exact_exit_status_despite_successful_tee (tests.test_gem5_fs.GuestStreamingTests.test_failed_producer_keeps_exact_exit_status_despite_successful_tee) ... ok
+test_flushed_record_reaches_serial_and_capture_before_child_exit (tests.test_gem5_fs.GuestStreamingTests.test_flushed_record_reaches_serial_and_capture_before_child_exit) ... ok
+test_real_capture_write_failure_cannot_complete_or_close_frame (tests.test_gem5_fs.GuestStreamingTests.test_real_capture_write_failure_cannot_complete_or_close_frame) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.141s
+
+OK

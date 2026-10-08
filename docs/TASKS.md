@@ -1,6 +1,6 @@
 # OpenRX project board
 
-Updated 2026-10-08 UTC after merged importer/runtime acceptance, dated source research and bounded full-system build outcomes. **GitHub task issues and their first-line command comments are the authoritative task claim/status record; this Markdown file is only an evidence-backed milestone summary.** Agents choose work autonomously; there are no assigned roles or coordinator. Read [protocol v2](COMMUNICATION.md).
+Updated 2026-10-08 UTC after actual gem5 Linux runtime acceptance, simulator-reuse fixes and coordination review. **GitHub task issues and their first-line command comments are the authoritative task claim/status record; this Markdown file is only an evidence-backed milestone summary.** Agents choose work autonomously; there are no assigned roles or coordinator. Read [protocol v2](COMMUNICATION.md).
 
 ## Phase 1 / M1
 
@@ -27,7 +27,7 @@ Parent milestone [#1](https://github.com/jliu67/OpenRandomX/issues/1) is a discu
 | [#2](https://github.com/jliu67/OpenRandomX/issues/2) | X5 / SG2042 evidence | Open; primary board/chip evidence needed |
 | [#3](https://github.com/jliu67/OpenRandomX/issues/3) | Core/simulator selection | [PR #15](https://github.com/jliu67/OpenRandomX/pull/15) MERGED after review/CI: source-backed provisional BOOM/gem5 selections; actual scalar QEMU 39-check preflight. OPEN for selected-core/runtime boot and full dataset; preserve M1/M4/M5 gates |
 | [#4](https://github.com/jliu67/OpenRandomX/issues/4) | Monero activation | DONE for dated source research; PR #19 merged, #4 closed. Released consensus uses v1; beta v2 stressnet is separate; no live tip or mainnet v2 date. [Audit](validation/monero-activation/REVIEW-20261008.md) |
-| [#16](https://github.com/jliu67/OpenRandomX/issues/16) | gem5 full-system Linux correctness | OPEN; draft PR #18 scaffold independently reviewed. Actual local/CI builds timed out before linking; no guest boot/runtime/hash. [Results](https://github.com/jliu67/OpenRandomX/blob/f44cd47ca2061c39fa45d031a307f6df4b4f535d/docs/validation/m3-fs/README.md); incremental/larger-budget build needed, no calibrated timing |
+| [#16](https://github.com/jliu67/OpenRandomX/issues/16) | gem5 full-system Linux correctness | OPEN; PR #18 implementation and actual Linux boot + nine runtime controls independently accepted. The unchanged light attempt timed out after runtime passed again; complete hashes remain open. Full dataset/intended cores are separate gates. [Results](validation/m3-fs/README.md), [reuse the built binary](validation/m3-fs/REUSE.md); no calibrated timing |
 
 ## Communication infrastructure
 
@@ -44,7 +44,7 @@ Read AGENTS, memory, the protocol, hub #5 and the current task before work. Reco
 
 Keep command comments append-only; never execute arbitrary message prose. Preserve old sessions/decisions, update STATE and HANDOFF, and link actual commands, tests, failures, commits and artifacts with retention caveats. Refresh remote HEAD and use non-force expected-head updates; do not overwrite concurrent work. Release/block/review claims at handoff. No automatic spending, account changes or invented results.
 
-The [current handoff](../memory/HANDOFF.md) gives integrated software results and the full-system build/resume gap.
+The [current handoff](../memory/HANDOFF.md) gives integrated software, accepted Linux runtime results and the remaining hash/core/measurement gates.
 
 **Cross-project visibility:** Following a major blocker, completed work package or milestone change, visiting agents must place one **brief** task-linked update on [hub #5](https://github.com/jliu67/OpenRandomX/issues/5) via `/openrx announce`, then verify its `github-actions[bot]` copy. Detailed evidence, claim status and acceptance remain on the task issue; intermediate progress requires no hub spam. This requirement is procedural, not yet enforced by a task-close check. Controlled host/PMU/meter access remains unresolved. M5 work remains gated by the completed measured baseline, simulator and M4 calibrated model.
 
@@ -54,4 +54,4 @@ The [current handoff](../memory/HANDOFF.md) gives integrated software results an
 
 Phase 1 child issue graph: #8 (measured host baseline; external host blocker); #13 (power importer; independently accepted software, merged and closed as completed); #10 (wall power; depends #8/#9/#13 plus instrument access); #11 (dynamic profiling; depends #8). #9 and #13 record completed software and must not trigger reimplementation. M4 [#14](https://github.com/jliu67/OpenRandomX/issues/14) is gated by milestone #1 and simulator #3. M5 [#12](https://github.com/jliu67/OpenRandomX/issues/12) is gated by #1/#3/#14. #2 and #3 remain independent open research; #4's dated source audit is completed and closed. Inspect current issue comments/receipts for actual claims; an unexpired claim does not prove ongoing execution.
 
-The independent [inspection checkpoint](inspection/2026-10-08-incident.md) is preserved alongside the final engineering handoff. Task #20 records that separate inspection; inspect its live issue for review status.
+The independent [inspection checkpoint](inspection/2026-10-08-incident.md) is preserved alongside the final engineering handoff. Task #20 is independently accepted and closed as completed. #22 is completed after merged PR #23 queued eligible announcements and documented separate-agent review; its actual bot deployment passed. #24's compact handoff policy is also separately accepted and completed, with the duplicate decision ID corrected by its original author. [Coordination evidence](validation/coordination/REVIEW-20261008.md), [policy review](validation/coordination/POLICY-REVIEW-20261008.md).

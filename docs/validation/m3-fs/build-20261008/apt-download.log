@@ -1,4 +1,0 @@
-Get:1 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 libpkgconf3 amd64 1.8.1-2build1 [30.7 kB]
-Get:2 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 m4 amd64 1.4.19-4build1 [244 kB]
-Get:3 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 pkgconf-bin amd64 1.8.1-2build1 [20.7 kB]
-Fetched 295 kB in 10s (29.7 kB/s)

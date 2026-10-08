@@ -1,93 +1,39 @@
-# Handoff — integrated runtime controls and full-system exploration
+# Handoff — actual Linux runtime accepted; reuse the simulator
 
-2026-10-08 UTC / Edmonton. User requested continued OpenRX work. PR #17 is
-merged at `973cd0d94f987ad4a46b85f7b6d66170104c64a1`; #13 is closed as completed.
-[Draft PR #18](https://github.com/jliu67/OpenRandomX/pull/18) targets main and
-contains the separately reviewed gem5 configuration/runner for task #16.
+2026-10-08 UTC / Edmonton. The user requested another review of repository, messages and board, followed by fixes and continued implementation. Read live main, task [#16](https://github.com/jliu67/OpenRandomX/issues/16), [PR #18](https://github.com/jliu67/OpenRandomX/pull/18) and actual bot receipts before choosing work. Claims are issue-specific and advisory; no permanent coordinator or running worker is implied.
 
-## Accepted results
+## Accepted progress
 
-Three power-import failure-report defects are repaired without changing energy
-formulas. The two reviews under `docs/validation/p1-06s/` retain 64 importer
-tests, malformed inputs, valid-report comparisons and 9,024 numerical controls.
+The pinned gem5 v25.1.0.1 build now succeeds. Incremental compilation reused prior work; the ordinary link hit the 8-GiB host limit. The upstream-supported low-memory linker option recovered in 248.76 seconds with unchanged source/canonical config and no new OOM. All 10,933 archived source files match. The exact executable SHA-256 is `3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6`.
 
-The standalone Linux runtime probe passes nine native/QEMU controls including
-SIGILL recovery, RW/RX page permissions, generated code overwrite/re-execution and explicit RV64
-cache-flush syscall return. Final PR/main CI also passes 219 Python, 107
-upstream and six native tests, plus the existing 39 exact RandomX checks per
-native/QEMU environment. Optional hardware AES is explicitly skipped.
-The final main artifact `11563570169` matched ZIP SHA-256
-`0af776da4540bc9be627d0f768b59a4c675bbdf93830527633fd9b05e560e21a`;
-all four streams were independently replayed. See
-[final CI audit](../docs/validation/m3-fs/RUNTIME-CI.md).
+**Real full-system Linux boot and all nine scalar runtime controls passed**, independently replayed from actual serial/report and rehashed inputs. The test covered signal recovery, page permissions, explicit RV64 Linux flush-icache returns and generated code 7 → 19 → 7; child/status/stderr/completion and hypercalls 1/2/3 all passed. It used one Atomic core, RVV off, classic private caches and 4 GiB RAM. [Actual run](../docs/validation/m3-fs/actual-runtime-20261008/README.md), [separate acceptance](../docs/validation/m3-fs/ACTUAL-GEM5-REVIEW-20261008.md), [source/build recovery](../docs/validation/m3-fs/link-recovery-20261008/README.md).
 
-## Full-system outcome
+PR #18's final tested implementation at `4f4cf178` passed 245 Python, 107 upstream and six native tests, 39 RandomX plus nine runtime controls per native/QEMU environment, and 26 offline gem5 controls. [Exact CI ledger](../docs/validation/m3-fs/streaming-ci-20261008/ci-review.json). A later independently reviewed runner repair streams flushed probe output while preserving exact child status and rejecting capture failures. Its generated-Bash host controls pass; the actual guest runs retain the original runner snapshot and are not claimed to execute that revision. Ordinary PRs no longer start expensive source builds. The separate hosted manual builder and cache/artifact consumer are reviewed but have not run end to end; the actual local guest is distinct evidence.
 
-Pinned gem5 is v25.1.0.1,
-`c8222cc67a399bfc01e8658dd14b30d5bfd634f9`.
-The exact OpenSBI/kernel/Ubuntu resources were downloaded and verified, and
-both cross-built probes passed a static guest-library compatibility audit.
-[Preparation](https://github.com/jliu67/OpenRandomX/blob/f44cd47ca2061c39fa45d031a307f6df4b4f535d/docs/validation/m3-fs/PREPARATION.md) records commands and
-digests; [independent review](https://github.com/jliu67/OpenRandomX/blob/f44cd47ca2061c39fa45d031a307f6df4b4f535d/docs/validation/m3-fs/GEM5-REVIEW.md) accepts
-scaffolding after cache and input-integrity fixes.
+The unchanged light-mode attempt timed out at its declared 1,200-second child limit (1,261.24 seconds including wrapper checks). It repeated all nine runtime controls and verified/launched the hash ELF, but exposed no complete hash body/END/summary or final hypercall. Independent replay confirms exact inputs and truthful timeout; no hash mismatch is established. [Raw attempt](../docs/validation/m3-fs/actual-light-20261008/README.md), [review](../docs/validation/m3-fs/ACTUAL-LIGHT-REVIEW-20261008.md). Keep #16 and M3 open. No local gem5 build or guest remains running at this handoff.
 
-The selected recipe uses one AtomicSimpleCPU, RVV off, the upstream example's
-classic private L1/L2/walk-cache hierarchy and 4 GiB RAM. Hypercall 3 alone
-cannot pass: the wrapper needs the complete event sequence and exact validated
-guest streams, statuses, stderr, completion marker and stable input identities.
+## Reuse, do not rebuild
 
-The local source build stopped at its final bound on 2026-10-08T16:50:20Z.
-Three six-worker 20-minute windows exited 124; 2,266 `.o`/`.pyo` paths were
-retained, ending in generated RISC-V instruction execution/decoder compilation.
-No compiler source error or OOM was observed, but no simulator binary linked.
-Both 45-minute hosted builds also timed out. All guest stages were skipped.
-See [actual results](https://github.com/jliu67/OpenRandomX/blob/f44cd47ca2061c39fa45d031a307f6df4b4f535d/docs/validation/m3-fs/README.md),
-[local build provenance](https://github.com/jliu67/OpenRandomX/blob/f44cd47ca2061c39fa45d031a307f6df4b4f535d/docs/validation/m3-fs/build-20261008/build-provenance.json)
-and [verified CI failures](https://github.com/jliu67/OpenRandomX/blob/f44cd47ca2061c39fa45d031a307f6df4b4f535d/docs/validation/m3-fs/CI-BUILD.md).
-There is no gem5 Linux boot/runtime/hash result.
+The verified original binary, source archive/licenses, minimal Python runtime and complete build records are saved in two ordered archive parts. [REUSE.md](../docs/validation/m3-fs/REUSE.md) gives filenames, retrieval identities, SHA-256 checks, reconstruction and launch commands. The complete archive SHA-256 is `b9536aa9dbce308edcdb735c518395ebf2e02d20ecdf53b181deeded19d07769`. Clean-environment preflight and all 918 package file checks passed on this host; portability elsewhere was not tested.
 
-The independent scaffold review passes; the draft PR is retained for execution.
-Final documentation commits intentionally avoid repeating the already failed
-cold builds. No runtime/configuration implementation changed after its review;
-the heavy workflow's duplicate push trigger was removed and separately reviewed.
+If temporary inputs remain, the executable is at `/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt`; exact launch environment is in the actual run's `command.txt`. Runtime ELF SHA-256 is `8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac`. Unchanged hash ELF is `61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657`. Acquire pinned guest resources through `simulator/gem5/prepare.py` if absent; verify all identities, use a new output directory and retain raw failures as well as successes.
 
-## Dated network source result
+The first runtime wrapper completed in 958.249 host seconds, including input hashing; actual simulator host time was 917.34 seconds. Early firmware/kernel and shell startup can remain silent for minutes before progress. These are resource observations, not calibrated hardware throughput. Preserve the declared timeout and inspect actual phase/serial evidence. The light run spent most of its budget reaching the probe. Do not repeat the identical 20-minute attempt expecting complete hashes: reuse the binary, use the reviewed streaming runner, and select a new explicit bound justified by startup and observed workload progress. Do not shrink the algorithm or infer missing hashes.
 
-[PR #19](https://github.com/jliu67/OpenRandomX/pull/19) merged at
-`0592c630fb9b2d05d00550e0a387a3a89c0819f5`; #4 is closed for dated
-primary-source research. The released mainnet consensus targets RandomX v1,
-inferred from pinned stable/master source rather than a separately synced tip.
-No v2 mainnet date appears in the audited schedule. October 5 refers to the
-separate beta stressnet; its mainnet heights are explicitly mock test values.
-Beta HF17 adds PoW commitment beyond raw RandomX. Keep the v2-first project
-direction and exact v1 controls. [Source audit](../docs/validation/monero-activation/REVIEW-20261008.md)
-and peer review record reproducible source/metadata checks. The manifest records
-30 captures; 18 immutable files are refetchable; time-varying raw responses
-remain temporary.
+## Board and message fixes
 
-## Resume and acceptance
+#13 importer software and #4 dated source audit remain completed; their accepted PRs #17/#19 and historical artifacts are unchanged. #20's inspection was separately accepted and closed.
 
-Read live main, PR #18, task #16 and bot receipts before selecting work. The
-session claim `codex/20261008-fs` was released in comment 6064988893; inspect its
-actual receipt and obtain a fresh claim before editing. There are no permanent
-roles or implied running agents.
+#22 is completed: merged PR #23 queues eligible bot announcements and requires separate-agent acceptance evidence. Actual deployment passed eight tests and bot repost verification. The source review identified a potential pending-message replacement, not an observed missing message. #24's compact major-handoff announcement policy is independently accepted and closed; original-author correction `a2128b9` gives it unique D030. Our later decisions are D031/D032.
 
-After a successful exact build, run the explicit runtime gate first using
-`simulator/gem5/run.py`; commands and dependency environment are documented
-in preparation/build evidence. Retain serial/stdout/stderr, report, phase
-snapshots, DTB/configuration, source/toolchain provenance and binary digests.
-Then attempt the unchanged light-mode probe with `--hash-binary`, preserving
-runtime partial results if later hashes exceed the declared bound. Do not
-shrink RandomX constants or accept a partial hash matrix.
+The exact concurrent `511e173` SESSION_LOG prefix and policy are preserved. Earlier state/handoff files are archived exactly under `pre-fs-reuse-*-20261008.md`; original timeout/OOM reports stay historical. Major final handoffs require a concise hub #5 announcement and verified bot copy; full evidence and claim transitions remain on the task issue.
 
-M3 selected-core/full-dataset and M1/M4/M5 gates stay open. Generic atomic/O3
-does not model BOOM, C920 or SG2042, and host elapsed time is not simulated
-throughput or physical efficiency. Controlled host/meter/counters #8/#10/#11,
-hardware #2, future v2 activation and direct live-tip corroboration remain unresolved.
+## Open acceptance boundaries
 
-Local text snapshot lacks four vendored audit PDFs because the connector cannot
-fetch binary source files; real CI verified all 171 vendor files. Full native
-and cross RandomX builds ran in complete CI checkouts. Vendor and RTL are
-unchanged. Earlier state/handoff snapshots and session history are retained.
+M1 #1 still needs controlled host matrix #8, real synchronized meter #10 and counters/profiling #11; completed importer #13 supplies software only. Hardware #2 and future Monero activation/live-tip corroboration remain open. The dated Monero audit supports released v1 from source; beta v2 stressnet dates are not mainnet activation.
 
-The concurrent [inspection report](../docs/inspection/2026-10-08-incident.md) remains on main. Its complete session history and exact STATE/HANDOFF snapshots are preserved; this handoff reconciles its bounded-build findings with final local evidence.
+Complete unchanged light hashes, full dataset, intended timing-core/SMP coherence and selected BOOM/Chipyard boot remain separate. Atomic runtime controls do not establish BOOM/C920/SG2042 behavior, physical power or calibrated timing. M4/M5 remain gated; no RTL optimization, vendor edits, paid compute or account changes were made.
+
+This local text snapshot lacks four vendored audit PDFs; real hosted CI verified all 171 vendor files. Connector tree updates preserve those remote blobs. Consult original issue histories and final claim receipt before starting a new attempt.
+
+Session `codex/20261008-fs-reuse` records this work on #16; consult its final release/receipt before starting another attempt. This document is not a live ownership registry.

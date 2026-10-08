@@ -1,14 +1,15 @@
 # M3 — RISC-V core and simulator feasibility
 
-Updated 2026-10-08. OpenRX now has an executable scalar RISC-V correctness
-preflight and source-backed candidate selections. **M3 remains open** for
-selected-core/simulator boot, full-dataset controls and independent acceptance.
-QEMU functional success does not satisfy M4 timing calibration.
+Updated 2026-10-08. OpenRX has scalar RISC-V RandomX controls under QEMU and
+an independently accepted gem5 full-system Linux boot with nine standalone
+runtime controls. **M3 remains open** for complete gem5 RandomX controls,
+selected-core boot, full-dataset correctness and independent acceptance.
+Functional success does not satisfy M4 timing calibration.
 
 | Purpose | Provisional selection | Current evidence / limitation |
 |---|---|---|
 | First unchanged scalar Linux interpreter/JIT control | QEMU user mode, `rv64,v=false`, RV64GC/lp64d compilation, software AES | Actual CI light-mode v2/v1 controls pass; no cycle or power model |
-| Architectural exploration | gem5 v25.1.0.1; full-system Linux path to investigate | Generic O3 is not BOOM/C920. SE lacks guest SIGILL recovery and syscall 259 cache flushing; unchanged RandomX probes may fail before main |
+| Architectural exploration | gem5 v25.1.0.1; one-core Atomic full-system Linux runtime accepted | Nine standalone runtime controls pass; complete light matrix remains open after a bounded timeout. SE source blockers remain; generic Atomic/O3 is not BOOM/C920 or calibrated timing |
 | Open RTL research target | Chipyard 1.14.0 / `MediumBoomV3Config` (BOOM V3) | Source-supported scalar/FP candidate; Linux boot, sufficient guest memory, exact hashes and configuration unexecuted |
 | Alternative scalar RTL baseline | Rocket in the same Chipyard pin | Useful in-order comparison; no performance/efficiency selection evidence |
 | Deferred alternative | CVA6 v5.3.0 scalar FP configuration | Memory-map/harness capacity and pinned CVFPU div/sqrt compliance concerns; `ZKN` is not proof of AES implementation |
@@ -41,10 +42,31 @@ native controls, actual emulated RISC-V results and source-only candidate
 research. Reviewed upstream QEMU revisions and the distro version used by CI
 are different records.
 
+## Executed gem5 Linux runtime
+
+The pinned gem5 build booted Linux 6.8.12 with one Atomic RISC-V core, RVV
+disabled, 4 GiB mapped RAM and the declared classic L1/L2/walk caches. All
+**nine standalone runtime controls** passed: SIGILL recovery, denied RW
+execution/RX writes, generated returns 7 → 19 → 7 and successful explicit
+Linux RISC-V instruction-cache flush calls. Child exit, complete frames,
+empty probe stderr and hypercalls 1/2/3 were independently replayed.
+See [actual execution](../docs/validation/m3-fs/actual-runtime-20261008/README.md)
+and [independent acceptance](../docs/validation/m3-fs/ACTUAL-GEM5-REVIEW-20261008.md).
+
+This runtime-only attempt requested no RandomX hashes. The separate complete
+light-mode v2/v1 interpreter/JIT attempt timed out without a complete result; the nine runtime
+checks do not establish its 39 semantic/hash controls. Permission transitions
+may also synchronize instructions, so the result does not isolate flushing
+or prove SMP, migration or intended timing-core coherence. Reuse the verified
+executable via [REUSE.md](../docs/validation/m3-fs/REUSE.md); check the
+[latest execution record](../docs/validation/m3-fs/README.md) before launching
+another bounded attempt.
+
 ## Remaining engineering gates
 
-1. Demonstrate full-system gem5 Linux startup with an exact guest/toolchain,
-   SIGILL recovery and JIT synchronization; run the same light controls.
+1. Complete and independently accept unchanged light-mode v2/v1 interpreter/JIT
+   controls on the booted gem5 Linux configuration. The nine standalone runtime
+   controls passed; complete RandomX correctness remains a separate gate.
 2. Demonstrate selected BOOM/Chipyard Linux configuration with adequate
    backing, decode, PMA and device-tree memory. Default 256-MiB RAM cannot
    establish RandomX memory feasibility; plan at least 4 GiB for full mode.

@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "docs/validation/m3-fs/streaming-review-20261008/check_streaming.py",
+    "--repo",
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX",
+    "--output",
+    "docs/validation/m3-fs/streaming-review-20261008"
+  ],
+  "returncode": 0
+}

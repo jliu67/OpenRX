@@ -13,7 +13,7 @@ actual Linux 6.8.12 boot. All nine standalone guest runtime controls, the
 complete 1/2/3 hypercall sequence and input bindings passed
 [independent review](../../docs/validation/m3-fs/ACTUAL-GEM5-REVIEW-20261008.md).
 Task #16 remains open for the complete unchanged light-mode v2/v1 hash matrix;
-its separate 1,200-second attempt is running. The
+its separate 1,200-second attempt timed out after repeating the nine runtime controls and launching the hash probe. No hash mismatch or complete hash result was observed. The
 [saved executable package](../../docs/validation/m3-fs/REUSE.md) supports reuse
 without another source build. Earlier timeout/OOM records remain intact.
 

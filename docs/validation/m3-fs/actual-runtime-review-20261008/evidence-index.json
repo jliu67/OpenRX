@@ -1,5 +1,5 @@
 {
-  "scope": "independent actual runtime source/binary/config/guest/input/copy review; no simulator launch",
+  "scope": "independent actual runtime evidence read-only review",
   "files": [
     {
       "path": "guest-startup-inspection.json",
@@ -39,12 +39,12 @@
     {
       "path": "retained-copy.json",
       "bytes": 6812,
-      "sha256": "621d005ac59c8cf1eb04517a5e89b0690374456a69bda4eed76b1bc4ca80dc54"
+      "sha256": "1f4131b6d554437d09550f286a785478a747deb05717fdbb62b1867c973c977e"
     },
     {
       "path": "retained-copy.log",
       "bytes": 5760,
-      "sha256": "553390bee7052dd358e699b81d53f4690b4b448c97880bd8b31b1316fbd4c173"
+      "sha256": "3cb20f578876da047a29429a7464df09a98b881d411e2187a7b02dd2aa94253f"
     },
     {
       "path": "source-binary-binding-command.txt",

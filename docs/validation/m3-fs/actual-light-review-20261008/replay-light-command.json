@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "docs/validation/m3-fs/actual-light-review-20261008/replay_light.py",
+    "--attempt",
+    "/tmp/openrx-gem5-light-20261008-attempt1",
+    "--repo",
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX",
+    "--resources",
+    "/tmp/openrx-fs-resource-audit",
+    "--source-binding",
+    "docs/validation/m3-fs/actual-runtime-review-20261008/source-binary-binding.json",
+    "--output",
+    "docs/validation/m3-fs/actual-light-review-20261008/replay-light.json"
+  ],
+  "returncode": 0
+}

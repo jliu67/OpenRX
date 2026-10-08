@@ -1,0 +1,182 @@
+2026-10-08T18:14:13.9160170Z Current runner version: '2.337.0'
+2026-10-08T18:14:13.9199137Z ##[group]Runner Image Provisioner
+2026-10-08T18:14:13.9200574Z Hosted Compute Agent
+2026-10-08T18:14:13.9201812Z Version: 20261002.596
+2026-10-08T18:14:13.9202980Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T18:14:13.9204264Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T18:14:13.9205663Z Worker ID: {87f37fb5-6ce1-4ffe-bacb-16bca03e6f97}
+2026-10-08T18:14:13.9207323Z Region: westus
+2026-10-08T18:14:13.9208568Z Cloud: Azure
+2026-10-08T18:14:13.9209630Z ##[endgroup]
+2026-10-08T18:14:13.9212323Z ##[group]Operating System
+2026-10-08T18:14:13.9213584Z Ubuntu
+2026-10-08T18:14:13.9214543Z 24.04.5
+2026-10-08T18:14:13.9215504Z LTS
+2026-10-08T18:14:13.9216876Z ##[endgroup]
+2026-10-08T18:14:13.9217915Z ##[group]Runner Image
+2026-10-08T18:14:13.9219218Z Image: ubuntu-24.04
+2026-10-08T18:14:13.9220351Z Version: 20261004.327.1
+2026-10-08T18:14:13.9222757Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T18:14:13.9225584Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T18:14:13.9227787Z ##[endgroup]
+2026-10-08T18:14:13.9229764Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T18:14:13.9232898Z Contents: read
+2026-10-08T18:14:13.9233975Z Metadata: read
+2026-10-08T18:14:13.9235058Z ##[endgroup]
+2026-10-08T18:14:13.9238959Z Secret source: Actions
+2026-10-08T18:14:13.9240696Z Cache mode: write
+2026-10-08T18:14:13.9241936Z Prepare workflow directory
+2026-10-08T18:14:13.9918834Z Prepare all required actions
+2026-10-08T18:14:13.9996878Z Getting action download info
+2026-10-08T18:14:14.4392229Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T18:14:14.6466887Z Complete job name: offline-controls
+2026-10-08T18:14:14.7328443Z ##[group]Run actions/checkout@v4
+2026-10-08T18:14:14.7329437Z with:
+2026-10-08T18:14:14.7329939Z   persist-credentials: false
+2026-10-08T18:14:14.7330519Z   repository: jliu67/OpenRandomX
+2026-10-08T18:14:14.7334263Z   token: ***
+2026-10-08T18:14:14.7334723Z   ssh-strict: true
+2026-10-08T18:14:14.7335198Z   ssh-user: git
+2026-10-08T18:14:14.7335664Z   clean: true
+2026-10-08T18:14:14.7336381Z   sparse-checkout-cone-mode: true
+2026-10-08T18:14:14.7336969Z   fetch-depth: 1
+2026-10-08T18:14:14.7337434Z   fetch-tags: false
+2026-10-08T18:14:14.7337924Z   show-progress: true
+2026-10-08T18:14:14.7338419Z   lfs: false
+2026-10-08T18:14:14.7338865Z   submodules: false
+2026-10-08T18:14:14.7339356Z   set-safe-directory: true
+2026-10-08T18:14:14.7339901Z   allow-unsafe-pr-checkout: false
+2026-10-08T18:14:14.7340735Z ##[endgroup]
+2026-10-08T18:14:14.8766742Z Syncing repository: jliu67/OpenRandomX
+2026-10-08T18:14:14.8769647Z ##[group]Getting Git version info
+2026-10-08T18:14:14.8771029Z Working directory is '/home/runner/work/OpenRandomX/OpenRandomX'
+2026-10-08T18:14:14.8772786Z [command]/usr/bin/git version
+2026-10-08T18:14:14.8815055Z git version 2.55.0
+2026-10-08T18:14:14.8987397Z ##[endgroup]
+2026-10-08T18:14:14.8997463Z Temporarily overriding HOME='/home/runner/work/_temp/c0cf07ae-d013-4cf9-8edf-3f01ec2ef138' before making global git config changes
+2026-10-08T18:14:14.9000431Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T18:14:14.9002701Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRandomX/OpenRandomX
+2026-10-08T18:14:14.9008735Z Deleting the contents of '/home/runner/work/OpenRandomX/OpenRandomX'
+2026-10-08T18:14:14.9010650Z ##[group]Initializing the repository
+2026-10-08T18:14:14.9011867Z [command]/usr/bin/git init /home/runner/work/OpenRandomX/OpenRandomX
+2026-10-08T18:14:14.9227114Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T18:14:14.9229709Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T18:14:14.9231655Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T18:14:14.9234257Z hint: call:
+2026-10-08T18:14:14.9235267Z hint:
+2026-10-08T18:14:14.9237339Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T18:14:14.9238782Z hint:
+2026-10-08T18:14:14.9240640Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T18:14:14.9242701Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T18:14:14.9244965Z hint:
+2026-10-08T18:14:14.9246101Z hint: 	git branch -m <name>
+2026-10-08T18:14:14.9248259Z hint:
+2026-10-08T18:14:14.9268464Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T18:14:14.9292372Z Initialized empty Git repository in /home/runner/work/OpenRandomX/OpenRandomX/.git/
+2026-10-08T18:14:14.9295942Z [command]/usr/bin/git remote add origin https://github.com/jliu67/OpenRandomX
+2026-10-08T18:14:14.9299314Z ##[endgroup]
+2026-10-08T18:14:14.9300628Z ##[group]Disabling automatic garbage collection
+2026-10-08T18:14:14.9301930Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T18:14:14.9304606Z ##[endgroup]
+2026-10-08T18:14:14.9305853Z ##[group]Setting up auth
+2026-10-08T18:14:14.9307812Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T18:14:14.9387934Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T18:14:15.1015346Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T18:14:15.1021584Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T18:14:15.1028764Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T18:14:15.1033582Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T18:14:15.1039437Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T18:14:15.1063883Z ##[endgroup]
+2026-10-08T18:14:15.1066428Z ##[group]Fetching the repository
+2026-10-08T18:14:15.1077437Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +efd3084d1a29cc2f5dcae317c3b9eb6dae5b52de:refs/remotes/pull/18/merge
+2026-10-08T18:14:15.8963127Z From https://github.com/jliu67/OpenRandomX
+2026-10-08T18:14:15.8965231Z  * [new ref]         efd3084d1a29cc2f5dcae317c3b9eb6dae5b52de -> pull/18/merge
+2026-10-08T18:14:15.8978572Z ##[endgroup]
+2026-10-08T18:14:15.8980051Z ##[group]Determining the checkout info
+2026-10-08T18:14:15.8981975Z ##[endgroup]
+2026-10-08T18:14:15.8983153Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T18:14:15.8993653Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T18:14:15.9041420Z ##[group]Checking out the ref
+2026-10-08T18:14:15.9045274Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/18/merge
+2026-10-08T18:14:15.9598897Z Note: switching to 'refs/remotes/pull/18/merge'.
+2026-10-08T18:14:15.9599960Z 
+2026-10-08T18:14:15.9600775Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T18:14:15.9602568Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T18:14:15.9604323Z state without impacting any branches by switching back to a branch.
+2026-10-08T18:14:15.9605670Z 
+2026-10-08T18:14:15.9606711Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T18:14:15.9617657Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T18:14:15.9618254Z 
+2026-10-08T18:14:15.9618578Z   git switch -c <new-branch-name>
+2026-10-08T18:14:15.9618970Z 
+2026-10-08T18:14:15.9619217Z Or undo this operation with:
+2026-10-08T18:14:15.9619564Z 
+2026-10-08T18:14:15.9620140Z   git switch -
+2026-10-08T18:14:15.9620455Z 
+2026-10-08T18:14:15.9621694Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T18:14:15.9639320Z 
+2026-10-08T18:14:15.9641103Z HEAD is now at efd3084 Merge 4f4cf17880ccfa2e904eb9d2dc23892b828bce12 into a2128b9ee9dd93acdfc392bc4752e412f5e5a3d2
+2026-10-08T18:14:15.9645539Z ##[endgroup]
+2026-10-08T18:14:15.9681044Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T18:14:15.9711637Z efd3084d1a29cc2f5dcae317c3b9eb6dae5b52de
+2026-10-08T18:14:15.9724849Z ##[group]Removing auth
+2026-10-08T18:14:15.9730135Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T18:14:15.9773640Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T18:14:16.0033631Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T18:14:16.0067147Z http.https://github.com/.extraheader
+2026-10-08T18:14:16.0079373Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T18:14:16.0122865Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T18:14:16.0469236Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T18:14:16.0473615Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T18:14:16.0732126Z ##[endgroup]
+2026-10-08T18:14:16.0967766Z ##[group]Run python3 scripts/verify_vendor.py
+2026-10-08T18:14:16.0968656Z [36;1mpython3 scripts/verify_vendor.py[0m
+2026-10-08T18:14:16.0969508Z [36;1mpython3 -m unittest discover -s tests -p 'test_gem5*.py' -v[0m
+2026-10-08T18:14:16.1247365Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:16.1248573Z ##[endgroup]
+2026-10-08T18:14:16.1879818Z Vendor integrity OK (171 files)
+2026-10-08T18:14:16.2859040Z test_bad_requests_rejected_before_api_path_or_shell_use (test_gem5_bundle.BundleTests.test_bad_requests_rejected_before_api_path_or_shell_use) ... ok
+2026-10-08T18:14:16.2878792Z test_binary_missing_provenance_missing_and_extra_members_rejected (test_gem5_bundle.BundleTests.test_binary_missing_provenance_missing_and_extra_members_rejected) ... ok
+2026-10-08T18:14:16.2903769Z test_checkpoint_namespace_changes_after_config_or_toolchain_drift (test_gem5_bundle.BundleTests.test_checkpoint_namespace_changes_after_config_or_toolchain_drift) ... ok
+2026-10-08T18:14:16.3475963Z test_cli_preserves_failed_validation_report (test_gem5_bundle.BundleTests.test_cli_preserves_failed_validation_report) ... ok
+2026-10-08T18:14:16.3496641Z test_duplicate_manifest_json_field_rejected (test_gem5_bundle.BundleTests.test_duplicate_manifest_json_field_rejected) ... ok
+2026-10-08T18:14:16.3533529Z test_github_workflow_path_accepts_documented_ref_suffix (test_gem5_bundle.BundleTests.test_github_workflow_path_accepts_documented_ref_suffix) ... ok
+2026-10-08T18:14:16.3593766Z test_missing_provenance_and_self_consistent_wrong_source (test_gem5_bundle.BundleTests.test_missing_provenance_and_self_consistent_wrong_source) ... ok
+2026-10-08T18:14:16.3609394Z test_other_repo_wrong_workflow_pr_run_and_failed_build_are_rejected (test_gem5_bundle.BundleTests.test_other_repo_wrong_workflow_pr_run_and_failed_build_are_rejected) ... ok
+2026-10-08T18:14:16.3623841Z test_real_prefixless_kconfig_is_supported (test_gem5_bundle.BundleTests.test_real_prefixless_kconfig_is_supported) ... ok
+2026-10-08T18:14:16.3682836Z test_rehashed_build_options_version_and_runtime_feature_lies_rejected (test_gem5_bundle.BundleTests.test_rehashed_build_options_version_and_runtime_feature_lies_rejected) ... ok
+2026-10-08T18:14:16.3708878Z test_rehashed_substituted_binary_rejected_by_external_anchor (test_gem5_bundle.BundleTests.test_rehashed_substituted_binary_rejected_by_external_anchor) ... ok
+2026-10-08T18:14:16.3780125Z test_rehashed_wrong_isa_systemc_or_kvm_config_rejected (test_gem5_bundle.BundleTests.test_rehashed_wrong_isa_systemc_or_kvm_config_rejected) ... ok
+2026-10-08T18:14:16.3795504Z test_symlink_member_rejected (test_gem5_bundle.BundleTests.test_symlink_member_rejected) ... ok
+2026-10-08T18:14:16.3809969Z test_unauthenticated_metadata_shape_rejected (test_gem5_bundle.BundleTests.test_unauthenticated_metadata_shape_rejected) ... ok
+2026-10-08T18:14:16.3829802Z test_unbound_toolchain_cache_namespace_rejected (test_gem5_bundle.BundleTests.test_unbound_toolchain_cache_namespace_rejected) ... ok
+2026-10-08T18:14:16.3852402Z test_valid_offline_fixture_is_consistent (test_gem5_bundle.BundleTests.test_valid_offline_fixture_is_consistent) ... ok
+2026-10-08T18:14:16.4204783Z test_failed_producer_keeps_exact_exit_status_despite_successful_tee (test_gem5_fs.GuestStreamingTests.test_failed_producer_keeps_exact_exit_status_despite_successful_tee) ... ok
+2026-10-08T18:14:16.4474370Z test_flushed_record_reaches_serial_and_capture_before_child_exit (test_gem5_fs.GuestStreamingTests.test_flushed_record_reaches_serial_and_capture_before_child_exit) ... ok
+2026-10-08T18:14:16.4645767Z test_real_capture_write_failure_cannot_complete_or_close_frame (test_gem5_fs.GuestStreamingTests.test_real_capture_write_failure_cannot_complete_or_close_frame) ... ok
+2026-10-08T18:14:16.4653932Z test_changed_resource_rejected_even_with_matching_md5_field (test_gem5_fs.ResourceTests.test_changed_resource_rejected_even_with_matching_md5_field) ... ok
+2026-10-08T18:14:16.4658399Z test_resource_pins_have_exact_identity (test_gem5_fs.ResourceTests.test_resource_pins_have_exact_identity) ... ok
+2026-10-08T18:14:16.4663605Z test_clean_framing_preserves_only_probe_stream (test_gem5_fs.SerialTests.test_clean_framing_preserves_only_probe_stream) ... ok
+2026-10-08T18:14:16.4665739Z test_guest_stderr_rejected (test_gem5_fs.SerialTests.test_guest_stderr_rejected) ... ok
+2026-10-08T18:14:16.4668381Z test_script_exit_failure_cannot_pass_as_boot_success (test_gem5_fs.SerialTests.test_script_exit_failure_cannot_pass_as_boot_success) ... ok
+2026-10-08T18:14:16.4670962Z test_truncated_or_duplicate_stream_rejected (test_gem5_fs.SerialTests.test_truncated_or_duplicate_stream_rejected) ... ok
+2026-10-08T18:14:16.4672933Z test_wrong_elf_rejected (test_gem5_fs.SerialTests.test_wrong_elf_rejected) ... ok
+2026-10-08T18:14:16.4673864Z 
+2026-10-08T18:14:16.4674355Z ----------------------------------------------------------------------
+2026-10-08T18:14:16.4675474Z Ran 26 tests in 0.183s
+2026-10-08T18:14:16.4675941Z 
+2026-10-08T18:14:16.4676601Z OK
+2026-10-08T18:14:16.5042732Z Post job cleanup.
+2026-10-08T18:14:16.6379815Z [command]/usr/bin/git version
+2026-10-08T18:14:16.6380884Z git version 2.55.0
+2026-10-08T18:14:16.6414450Z Temporarily overriding HOME='/home/runner/work/_temp/a03b80e5-c5ff-401d-934e-cc1c13fa7077' before making global git config changes
+2026-10-08T18:14:16.6417672Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T18:14:16.6420206Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRandomX/OpenRandomX
+2026-10-08T18:14:16.6581701Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T18:14:16.6586764Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T18:14:16.7045251Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T18:14:16.7055081Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T18:14:16.7440079Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T18:14:16.7557659Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T18:14:16.8095626Z Cleaning up orphan processes
+2026-10-08T18:14:16.8508455Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
