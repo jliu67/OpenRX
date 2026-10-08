@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bound a real gem5 Linux boot and validate guest runtime/hash controls."""
+"""Run a real gem5 Linux boot and validate guest runtime/hash controls."""
 import argparse
 import base64
 import hashlib
@@ -79,18 +79,19 @@ def main():
     parser.add_argument("--runtime-binary", type=Path, required=True)
     parser.add_argument("--hash-binary", type=Path)
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--timeout", type=int, default=1200)
+    parser.add_argument("--timeout", type=int, default=0,
+                        help="Optional positive wall-clock limit in seconds; 0 (default) disables the limit")
     parser.add_argument("--max-ticks", type=int, default=10**13)
     args = parser.parse_args()
-    if args.timeout <= 0 or args.max_ticks <= 0:
-        parser.error("timeout and max-ticks must be positive")
+    if args.timeout < 0 or args.max_ticks <= 0:
+        parser.error("timeout must be nonnegative and max-ticks must be positive")
     args.output_dir = args.output_dir.resolve()
     args.output_dir.mkdir(parents=True, exist_ok=False)
     report = {"schema_version": 1, "evidence_class": "full-system-functional",
               "status": "fail", "boot_observed": False, "runtime_validated": False,
               "hash_controls_requested": bool(args.hash_binary), "full_dataset": False,
               "timing_calibrated": False, "power_measured": False,
-              "host": platform.platform(), "timeout_seconds": args.timeout,
+              "host": platform.platform(), "timeout_seconds": args.timeout or None,
               "gem5_source_commit_expected": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
               "source_build_provenance_required_separately": True,
               "max_ticks_per_simulate_call": args.max_ticks}
@@ -122,7 +123,7 @@ def main():
         with (args.output_dir / "stdout.log").open("wb") as stdout, (args.output_dir / "stderr.log").open("wb") as stderr:
             process = subprocess.Popen(command, stdout=stdout, stderr=stderr, start_new_session=True)
             try:
-                report["returncode"] = process.wait(timeout=args.timeout)
+                report["returncode"] = process.wait(timeout=args.timeout or None)
             except subprocess.TimeoutExpired:
                 os.killpg(process.pid, signal.SIGKILL)
                 process.wait()

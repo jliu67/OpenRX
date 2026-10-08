@@ -35,6 +35,20 @@ class ResourceTests(unittest.TestCase):
 
 
 class SerialTests(unittest.TestCase):
+    def test_simulator_wall_timeout_default_disabled(self):
+        import ast
+        source = (HERE / "run.py").read_text()
+        tree = ast.parse(source)
+        argument_calls = [node for node in ast.walk(tree) if isinstance(node, ast.Call)
+                          and isinstance(node.func, ast.Attribute) and node.func.attr == "add_argument"
+                          and node.args and isinstance(node.args[0], ast.Constant)
+                          and node.args[0].value == "--timeout"]
+        self.assertEqual(len(argument_calls), 1)
+        defaults = [kw.value.value for kw in argument_calls[0].keywords
+                    if kw.arg == "default" and isinstance(kw.value, ast.Constant)]
+        self.assertEqual(defaults, [0])
+        self.assertIn('process.wait(timeout=args.timeout or None)', source)
+
     def stream(self, status=0, stderr=""):
         return ("boot messages\nOPENRX_RUNTIME_BEGIN\n{\"type\":\"config\"}\n"
                 f"OPENRX_RUNTIME_END status={status}\nOPENRX_RUNTIME_STDERR_BEGIN\n"

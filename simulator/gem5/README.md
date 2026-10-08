@@ -154,7 +154,7 @@ APPROVED_GEM5_SHA256=replace_with_the_reviewed_64_character_digest
 printf '%s  %s\n' "$APPROVED_GEM5_SHA256" "$REVIEWED_GEM5_BINARY" | sha256sum -c -
 riscv64-linux-gnu-gcc-14 -O2 -std=c11 -Wall -Wextra -Werror -march=rv64gc -mabi=lp64d simulator/runtime-probe/main.c -o build/openrx-runtime-probe
 python3 simulator/gem5/prepare.py --output-dir build/gem5-resources
-python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources build/gem5-resources --runtime-binary build/openrx-runtime-probe --output-dir build/gem5-runtime --timeout 1200
+python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources build/gem5-resources --runtime-binary build/openrx-runtime-probe --output-dir build/gem5-runtime
 ```
 
 Add `--hash-binary build/probe-riscv/openrx-riscv-probe` after separately building
@@ -162,6 +162,21 @@ the unchanged scalar workload with the existing pinned toolchain. That is a
 **light-mode** control. Full-dataset memory, multithreading and every intended
 timing CPU remain separate acceptance gates. Do not shrink RandomX constants
 to make a simulation finish.
+
+
+### Execution timeouts
+
+The simulator runner **does not impose a wall-clock timeout by default**. Previous
+1,200-second attempts are retained as historical evidence, not a default limit.
+Use `--timeout SECONDS` explicitly only when a bounded experiment is desired;
+`--timeout 0` also disables the wall-clock limit. `--max-ticks` remains a
+separate simulator event/tick guard and is **not** a wall-clock timeout.
+
+The manually triggered GitHub Actions Linux execution job has no project-specific
+`timeout-minutes` override, but GitHub-hosted runners still impose their own
+platform limits and can terminate long jobs. Neither disabling the project's
+wall limit nor increasing a workflow budget guarantees completion. Keep logs,
+intermediate output and exact failure evidence; cancel stalled runs explicitly.
 
 ## Resource cost and evidence
 

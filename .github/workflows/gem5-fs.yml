@@ -46,7 +46,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     needs: offline-controls
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
+    # No project-specific execution cap; GitHub-hosted jobs still have a platform maximum.
     permissions:
       contents: read
       actions: read
@@ -110,13 +110,13 @@ jobs:
           cmake -S simulator/probe -B build/probe-gem5 -DCMAKE_BUILD_TYPE=Release -DARCH=default -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_TOOLCHAIN_FILE="$PWD/simulator/toolchains/riscv64-linux-gnu.cmake" 2>&1 | tee build/gem5-validation/hash-configure.log
           cmake --build build/probe-gem5 --target openrx-riscv-probe --parallel 2 2>&1 | tee build/gem5-validation/hash-build.log
           riscv64-linux-gnu-readelf -h -l -A build/probe-gem5/openrx-riscv-probe > build/gem5-validation/hash-elf.txt
-      - name: Attempt bounded real Linux boot and guest controls
+      - name: Run Linux boot and guest controls (no project wall-time limit)
         run: |
           extra=()
           if [ "$LIGHT_HASHES" = 'true' ]; then
             extra=(--hash-binary build/probe-gem5/openrx-riscv-probe)
           fi
-          python3 simulator/gem5/run.py --gem5 build/gem5-simulator/gem5.opt --resources build/gem5-resources --runtime-binary build/gem5-validation/openrx-runtime-probe --output-dir build/gem5-validation/attempt --timeout 1200 --max-ticks 10000000000000 "${extra[@]}"
+          python3 simulator/gem5/run.py --gem5 build/gem5-simulator/gem5.opt --resources build/gem5-resources --runtime-binary build/gem5-validation/openrx-runtime-probe --output-dir build/gem5-validation/attempt --max-ticks 10000000000000 "${extra[@]}"
       - name: Preserve preparation, actual execution and failures
         if: always()
         uses: actions/upload-artifact@v4
