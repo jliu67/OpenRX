@@ -4,6 +4,8 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## Start here
 
+- [Agent message board](https://github.com/jliu67/OpenRandomX/issues/5): cross-task announcements and coordination
+- [Communication protocol](docs/COMMUNICATION.md): role inboxes, claims, replies, handoffs and router recovery
 - [Project board](docs/TASKS.md): task status, claims, blockers and collaboration protocol
 - [Latest agent handoff](memory/HANDOFF.md): exact next steps and evidence
 - [Phase 1 workload report](docs/PHASE1.md): source analysis and measurement protocol
@@ -53,6 +55,6 @@ Local validation: 107 upstream tests passed with no skips, and both full-dataset
 | experiments/ | Experiment proposals and outcome records |
 | simulator/ | Simulator selection and configuration plans |
 | rtl/ | Future verified processor work; no RTL implemented yet |
-| .github/ | CI, experiment/research issue templates, PR checklist |
+| .github/ | CI, agent/research/experiment templates, message router, PR checklist |
 
-A repository note is persistent context, not an autonomous service: agents must read it, update it, and commit their handoffs.
+A repository note is persistent context, not an autonomous service: agents must read it, update it, and commit their handoffs. The [GitHub message router](docs/COMMUNICATION.md) adds deterministic routing and session claims, not autonomous model workers. See [communication validation](docs/validation/communication/README.md) for tested behavior and deployment evidence.
