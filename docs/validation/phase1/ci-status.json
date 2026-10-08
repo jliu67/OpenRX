@@ -1,0 +1,43 @@
+{
+  "record_kind": "connector-observed CI outcome, not raw benchmark measurements",
+  "implementation_commit": "360a9255703a28845a799cfcc1086d1fb84a2c48",
+  "run_id": 37719337133,
+  "job_id": 113123130624,
+  "run_url": "https://github.com/jliu67/OpenRandomX/actions/runs/37719337133",
+  "status": "completed",
+  "conclusion": "success",
+  "created_at_utc": "2026-10-08T02:44:24Z",
+  "updated_at_utc": "2026-10-08T02:45:43Z",
+  "configured_runner": "ubuntu-24.04",
+  "reported_os": "Ubuntu 24.04.5",
+  "compiler": "GNU 13.3.0",
+  "vendor_files_verified": 171,
+  "tooling_tests_passed": 42,
+  "upstream_tests_passed": 107,
+  "upstream_tests_skipped": 0,
+  "full_dataset_reference_step": "success",
+  "full_dataset_configuration": {
+    "versions": [
+      "v1",
+      "v2"
+    ],
+    "threads": 1,
+    "init_threads": 2,
+    "nonces": 1000,
+    "seed": 0,
+    "repeats": 1,
+    "timeout_seconds": 300
+  },
+  "job_log_inspected": true,
+  "individual_benchmark_json_downloaded": false,
+  "artifact": {
+    "id": 11524827413,
+    "name": "correctness-logs",
+    "files": 12,
+    "size_bytes": 18690,
+    "actions_reported_sha256": "9432a68b6e38a25fde57fdddb3557ad8cf2c108df57eafffc638bbc679032d06"
+  },
+  "power_watts": null,
+  "hashes_per_joule": null,
+  "measured_hardware_baseline_complete": false
+}

@@ -4,6 +4,9 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## Start here
 
+- [Project board](docs/TASKS.md): task status, claims, blockers and collaboration protocol
+- [Latest agent handoff](memory/HANDOFF.md): exact next steps and evidence
+- [Phase 1 workload report](docs/PHASE1.md): source analysis and measurement protocol
 - [Project memory](memory/PROJECT.md): goals and constraints
 - [Current state](memory/STATE.md): completed work and next actions
 - [Agent instructions](AGENTS.md): required startup and handoff procedure
@@ -12,12 +15,18 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 - [Hardware evidence](docs/HARDWARE.md): what remains unverified
 - [Experiments](experiments/README.md): hypothesis and result format
 
+## Phase 1 progress
+
+Source characterization, reproducible static profiling and benchmark-runner hardening are committed. The 42 new tooling tests and all 107 upstream tests passed in [CI run 37719337133](https://github.com/jliu67/OpenRandomX/actions/runs/37719337133), including both full-dataset reference controls. See [Phase 1 validation](docs/validation/phase1/README.md). The controlled target-host throughput matrix, dynamic bottleneck profiling and wall-power measurements remain open; CI success does not complete M1.
+
 ## Quick start (Linux)
 
 Install Git, CMake, a C/C++ toolchain, Make, and Python 3.10+. On Ubuntu: `sudo apt install git cmake build-essential python3`.
 
 ```bash
 python3 scripts/verify_vendor.py
+python3 -m unittest discover -s tests -v
+python3 scripts/workload_profile.py
 bash scripts/build.sh
 bash scripts/test.sh
 # Fast functional smoke test in verification mode; NOT mining throughput:

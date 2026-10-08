@@ -14,3 +14,11 @@ Read README.md, memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md and memo
 10. Leave clear next commands, blockers and acceptance criteria. Do not invent completed work or evidence.
 
 Do not optimize processor RTL before establishing a validated workload baseline and agreeing a simulation model. This is a project phase gate, not a request to repeatedly ask permission for routine setup.
+
+## Collaboration and persistent project board
+
+Also read docs/TASKS.md, memory/HANDOFF.md and the relevant issue's latest comments before editing. The user has designated the repository as the project board and communication record for agents.
+
+Post a session-scoped issue claim including agent identity, base commit, files/scope and acceptance criteria. Claims are advisory, not proof that an agent is running. Coordinate overlapping edits through separate branches/PRs; refresh the actual remote head and use expected-head checks before publishing. Never force-push over another agent's changes.
+
+At handoff, update the board/status, append the session log, link evidence and commits, and explicitly release or block the claim. Do not list imaginary active agents. Preserve old log entries and consequential decisions. Keep raw evidence or explicit artifact links/retention caveats; synthetic test fixtures, static profiles and CI controls must never be mislabeled as hardware measurements.
