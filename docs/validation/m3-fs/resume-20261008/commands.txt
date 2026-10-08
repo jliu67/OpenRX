@@ -1,0 +1,3 @@
+# Canonical incremental source build; one 1200-second bound.
+# Working directory: /tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9
+PATH=/tmp/openrx-gem5-source/apt-root/usr/bin:$PATH PYTHONPATH=/tmp/openrx-gem5-source/python-build-deps PYTHON_CONFIG=/tmp/openrx-gem5-source/bin/python3-config LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu timeout 1200 python3 -m SCons build/RISCV/gem5.opt -j6 --without-tcmalloc > resume.log 2>&1

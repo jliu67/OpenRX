@@ -1,0 +1,41 @@
+{
+  "archive": "gem5-c8222cc-linux-x86_64-20261008.tar.gz",
+  "archive_bytes": 936569944,
+  "archive_sha256": "b9536aa9dbce308edcdb735c518395ebf2e02d20ecdf53b181deeded19d07769",
+  "parts": [
+    {
+      "file": "gem5-c8222cc-linux-x86_64-20261008.tar.gz.part01",
+      "bytes": 503316480,
+      "sha256": "21b2411d3d03eeb7549f90e289d8ac4d70bc8b3c62ff395601bd14c1e5159a9f"
+    },
+    {
+      "file": "gem5-c8222cc-linux-x86_64-20261008.tar.gz.part02",
+      "bytes": 433253464,
+      "sha256": "39ef869beba8dba1a1eb26a399c69c838beacae6937fa449f093a2cdeaa78683"
+    }
+  ],
+  "reason": "Artifact service limit is 512 MiB per file; original archive is preserved by ordered binary splitting.",
+  "saved_files": [
+    {
+      "name": "gem5-c8222cc-linux-x86_64-20261008.tar.gz.part01",
+      "library_file_id": "libfile_e358d4ae38d08191aa42eec7a2839e84",
+      "status": "succeeded",
+      "version": 0
+    },
+    {
+      "name": "gem5-c8222cc-linux-x86_64-20261008.tar.gz.part02",
+      "library_file_id": "libfile_68698c2cac008191b1cfb05f9e87c20d",
+      "status": "succeeded",
+      "version": 0
+    },
+    {
+      "name": "gem5-reuse-download-manifest.json",
+      "library_file_id": "libfile_4df53f814ce08191bfc992b4c5d2670d",
+      "status": "succeeded",
+      "version": 0
+    }
+  ],
+  "initial_whole_file_upload": "Rejected before transfer: 936569944 bytes exceeds 536870912 per-file limit; two-part save succeeded.",
+  "whole_archive_in_git": false,
+  "host_portability_tested": false
+}

@@ -1,0 +1,42 @@
+{
+  "record_kind": "retrospective annotations from direct checkpoints reported to parent during the build; sparse checkpoints, not a complete time series",
+  "link_started_utc_observed": "2026-10-08T17:26:00+00:00",
+  "link_start_timestamp_precision": "minute only",
+  "anonymous_memory_checkpoint": {
+    "recorded_utc": "2026-10-08T17:28:00+00:00",
+    "timestamp_precision": "minute only",
+    "anon_bytes": 8212676608,
+    "gib": 7.648651123046875
+  },
+  "post_failure_checkpoint": {
+    "recorded_utc": "2026-10-08T17:29:22+00:00",
+    "memory_events_oom": 1,
+    "memory_events_oom_kill": 1
+  },
+  "completed_object_metadata": [
+    {
+      "path": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/arch/riscv/generated/decoder.o",
+      "size_bytes": 6514288,
+      "mtime_ns": 1791480074719353807,
+      "sha256": "6b78c4bb51bcf1dbbfb21cb16f5bd490038f33b5525a75949a1afa3ee98fe9b1"
+    },
+    {
+      "path": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/arch/riscv/generated/inst-constrs.o",
+      "size_bytes": 100616144,
+      "mtime_ns": 1791480355376050660,
+      "sha256": "c12985a7e125f6163b287bdf33199e4d449e678a31acf32f1b8da7fe307153f5"
+    },
+    {
+      "path": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/arch/riscv/generated/generic_cpu_exec.o",
+      "size_bytes": 60233248,
+      "mtime_ns": 1791480171298284144,
+      "sha256": "9c3a6fb4081334d9680187a50d6fdd23aa014780a9b5d930d87ad7d97b9b63c2"
+    },
+    {
+      "path": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/base/date.o",
+      "size_bytes": 3024,
+      "mtime_ns": 1791480369659889279,
+      "sha256": "02aa500ba0f5c9379a8a179bf7fe4a7dc496b29d9758c14a051b45fb7e76741f"
+    }
+  ]
+}

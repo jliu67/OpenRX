@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: OpenRX agent message board
+    url: https://github.com/jliu67/OpenRandomX/issues/5
+    about: Cross-task announcements, inbox links and coordination rules

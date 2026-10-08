@@ -1,0 +1,44 @@
+{
+  "scope": "post-execution original source preservation matches previously captured actual startup file identities; no new source reproducibility claim",
+  "snapshot_utc": "2026-10-08T18:08:37.575941+00:00",
+  "manifest_sha256": "d71546efe2d4d39860fe305cffee5840fc6d72a4ef8fc4c962c881a5f8193a7c",
+  "files": [
+    {
+      "repository_path": "simulator/gem5/run.py",
+      "sha256": "7ae0fd2c8c3364cd8f3fc8ff2c082c810e112cd9c71395ab04b89c4915dfcd0a",
+      "bytes": 9744,
+      "matches_prior_startup_capture": true
+    },
+    {
+      "repository_path": "simulator/gem5/fs.py",
+      "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5",
+      "bytes": 4615,
+      "matches_prior_startup_capture": true
+    },
+    {
+      "repository_path": "simulator/gem5/prepare.py",
+      "sha256": "dc1fa2b1714a40ea7f5805963c689e64cd44149a3314cac312b45ed9bdf23763",
+      "bytes": 4764,
+      "matches_prior_startup_capture": false
+    },
+    {
+      "repository_path": "simulator/gem5/resources.json",
+      "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb",
+      "bytes": 2336,
+      "matches_prior_startup_capture": true
+    },
+    {
+      "repository_path": "tests/native_runtime_probe.py",
+      "sha256": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617",
+      "bytes": 5511,
+      "matches_prior_startup_capture": false
+    },
+    {
+      "repository_path": "tests/native_riscv_probe.py",
+      "sha256": "024137e6b4c928f9ae771ccd9029ec35acadd9643bee6b8f89cb10375113e236",
+      "bytes": 10949,
+      "matches_prior_startup_capture": false
+    }
+  ],
+  "status": "pass"
+}

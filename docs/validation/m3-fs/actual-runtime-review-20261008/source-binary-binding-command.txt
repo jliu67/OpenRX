@@ -1,0 +1,5 @@
+Working directory: /workspace/scratch/62a7e35b1ac5/OpenRandomX
+
+PYTHONDONTWRITEBYTECODE=1 python3 docs/validation/m3-fs/actual-runtime-review-20261008/source-binary-binding.py > docs/validation/m3-fs/actual-runtime-review-20261008/source-binary-binding.log 2>&1
+
+Inputs are read only. The helper writes only the adjacent independent JSON report and stdout log. It launches no simulator, build, executable inspection tool or guest command.

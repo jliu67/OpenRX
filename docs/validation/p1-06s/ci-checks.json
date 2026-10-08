@@ -1,0 +1,81 @@
+{
+  "commit": "2b28d6fb4604a2b861241d38678e24c8541aed02",
+  "run_id": 37726645625,
+  "job_id": 113146214930,
+  "artifact_id": 11528236706,
+  "artifact_bytes": 68046,
+  "artifact_sha256": "1eacda6564e038bc5933b04bc5030b20b5373b629551e801a64e6bed946a6358",
+  "artifact_expires_utc": "2027-01-06T04:15:51Z",
+  "native_joins": [
+    {
+      "source_folder": "benchmarks/results/20261008T041653.458923Z-steady",
+      "source_status": "ok",
+      "power_class": "synthetic",
+      "raw_sha256": {
+        "run.json": "733ae86cf8e0d755ffedbe6139684d855938ae8123636a260dfc4c7e0d36ea32",
+        "adapter.jsonl": "30985699a4dd8570548c51b1faacc39d775f5c82d48bb038efc216561759844f",
+        "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "power.json": "0185cb44d428bc3f1270b7b62a8a10856f6533524a2a71055f0c675da2df229c"
+      },
+      "result": "validated-synthetic",
+      "measurements": 4,
+      "constant_integral_matches": true
+    },
+    {
+      "source_folder": "benchmarks/results/20261008T041720.832636Z-steady",
+      "source_status": "ok",
+      "power_class": "synthetic",
+      "raw_sha256": {
+        "run.json": "58cd1ac09482489c14bfb4a7de2c2ccaf38d8ada33774999b4177dc00a2b7df4",
+        "adapter.jsonl": "8f5f4cf1fcd689d97d9086f3e94e58cf08ad1a32cbba955c4c4d5c1371c2a6a2",
+        "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "power.json": "9faed3e22bfdff19f0ddae67411fddc412d257772dd716d69f196b91a5fbc052"
+      },
+      "result": "validated-synthetic",
+      "measurements": 4,
+      "constant_integral_matches": true
+    },
+    {
+      "source_folder": "benchmarks/results/20261008T041743.889738Z-steady",
+      "source_status": "ok",
+      "power_class": "synthetic",
+      "raw_sha256": {
+        "run.json": "192504cc8b8ba2de57c65101a0c0d1552dfdc6a5b1e7fcf68bfa1c968ca04bff",
+        "adapter.jsonl": "a49f90a0aca83bc3951c108b0224e87935287b7c0f23fc023ea3c1d49b4b6a66",
+        "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "power.json": "19d47facc464733de4064a597524f7ced00d1bb65830bab5b32792f0f9bdfe9c"
+      },
+      "result": "validated-synthetic",
+      "measurements": 4,
+      "constant_integral_matches": true
+    },
+    {
+      "source_folder": "benchmarks/results/20261008T041841.358185Z-steady",
+      "source_status": "rejected-duration",
+      "power_class": "synthetic",
+      "raw_sha256": {
+        "run.json": "b6eb685fc62f669f82ae8fdd5313a4c730c16edd5aee619f8ea1f4ef238fc351",
+        "adapter.jsonl": "20e63bcbe45c8dfcbf7b352071f65d3a34cf1472e6ae1744f5cb0e412f885818",
+        "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "power.json": "7d88888aa2a935207b5266bb5c427d4a1a8f843ccfce0092f82dfa26bc0406ed"
+      },
+      "result": "rejected-as-expected",
+      "error": "benchmark did not succeed"
+    }
+  ],
+  "build/validation/phase1-tests.log": {
+    "sha256": "8ab955b3183af93a349e1410420bdff7a1f34edaf22d36a71434406b7864bdbd",
+    "passed": 182,
+    "skipped": 0
+  },
+  "build/validation/randomx-tests.log": {
+    "sha256": "615ba28bb3b22a9e2aea687ba3cdd72b1a9f1c86acc2f62e845c0e10ef8bb375",
+    "passed": 107,
+    "skipped": 0
+  },
+  "build/validation/steady-native-tests.log": {
+    "sha256": "0989993d0d12644ca6e87b7403399cce8058fc800d90f2faf4c3910a112026ac",
+    "passed": 6,
+    "skipped": 0
+  }
+}

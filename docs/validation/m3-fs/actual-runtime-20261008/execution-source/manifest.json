@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "snapshot_utc": "2026-10-08T18:08:37.575941+00:00",
+  "purpose": "Bind original executing sources before post-attempt streaming diagnostics fix",
+  "streaming_stdout_fix_applied": false,
+  "files": [
+    {
+      "repository_path": "simulator/gem5/run.py",
+      "snapshot_path": "execution-source/simulator/gem5/run.py",
+      "bytes": 9744,
+      "sha256": "7ae0fd2c8c3364cd8f3fc8ff2c082c810e112cd9c71395ab04b89c4915dfcd0a"
+    },
+    {
+      "repository_path": "simulator/gem5/fs.py",
+      "snapshot_path": "execution-source/simulator/gem5/fs.py",
+      "bytes": 4615,
+      "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5"
+    },
+    {
+      "repository_path": "simulator/gem5/prepare.py",
+      "snapshot_path": "execution-source/simulator/gem5/prepare.py",
+      "bytes": 4764,
+      "sha256": "dc1fa2b1714a40ea7f5805963c689e64cd44149a3314cac312b45ed9bdf23763"
+    },
+    {
+      "repository_path": "simulator/gem5/resources.json",
+      "snapshot_path": "execution-source/simulator/gem5/resources.json",
+      "bytes": 2336,
+      "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb"
+    },
+    {
+      "repository_path": "tests/native_runtime_probe.py",
+      "snapshot_path": "execution-source/tests/native_runtime_probe.py",
+      "bytes": 5511,
+      "sha256": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617"
+    },
+    {
+      "repository_path": "tests/native_riscv_probe.py",
+      "snapshot_path": "execution-source/tests/native_riscv_probe.py",
+      "bytes": 10949,
+      "sha256": "024137e6b4c928f9ae771ccd9029ec35acadd9643bee6b8f89cb10375113e236"
+    }
+  ]
+}

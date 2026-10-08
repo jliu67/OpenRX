@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root/runtime_review",
+  "review_date_utc": "2026-10-08",
+  "gem5_revision": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "gem5_release": "v25.1.0.1",
+  "build_command": "timeout --signal=TERM --kill-after=30s 45m scons build/RISCV/gem5.opt -j2",
+  "build_timeout_seconds": 2700,
+  "runs": [
+    {
+      "event": "pull_request",
+      "run_id": 37805009018,
+      "job_id": 113406877620,
+      "job_status": "completed",
+      "job_conclusion": "failure",
+      "ci_branch_head": "47c8caa0b9b0c34f8b96efed11819a94a099caf4",
+      "actual_checkout": "4fe386da4ad72111556635a9f618abf46998408f",
+      "stage": "Pin and build real gem5 RISC-V",
+      "stage_exit_code": 124,
+      "stage_error_utc": "2026-10-08T16:43:34.5045889Z",
+      "cause": "bounded-host-build-timeout",
+      "offline_tests_passed": 7,
+      "vendor_files_verified": 171,
+      "downstream_steps": [
+        "Cross-build guest runtime controls",
+        "Prepare exact guest firmware, kernel and disk",
+        "Cross-build optional unchanged light-mode workload",
+        "Attempt bounded real Linux boot and guest controls"
+      ],
+      "artifact": {
+        "id": 11564847796,
+        "name": "gem5-full-system-functional",
+        "size_in_bytes": 18173,
+        "sha256": "40f0b6f3f8cb31cf1d2e65568637cf97928461a7c7814f810ffef20884624e2f",
+        "expires_at": "2027-01-06T15:57:47Z"
+      },
+      "artifact_download_verified": true,
+      "guest_boot_attempted": false,
+      "guest_runtime_attempted": false,
+      "randomx_guest_hashes_attempted": false,
+      "retained_files": {
+        "ci-build-20261008/pr/build.log": {
+          "sha256": "41473222068316c90694f2f109a35d0d0c92531c0aa9804f72075a16a3e95916",
+          "bytes": 142606
+        },
+        "ci-build-20261008/pr/environment.txt": {
+          "sha256": "7ac40a9b4b91d551e337e1fe68f0a90caaecf9fb0bcf9fa64420bfb448741ef2",
+          "bytes": 1737
+        },
+        "ci-build-20261008/pr/job.log": {
+          "sha256": "d2ee930f8f2c64dc354d46f26d44556deae393389e3a7c5e3455eda735270df0",
+          "bytes": 335790
+        },
+        "ci-build-20261008/pr/source-commit.txt": {
+          "sha256": "ae22163101d0add3a18c038d26dea9ff74615c9fecc6675b55bac8e7dbbb1766",
+          "bytes": 321
+        },
+        "ci-build-20261008/pr/source-status-before.txt": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "source_clean_before_build": true,
+      "source_diff_after_build_recorded": false,
+      "gem5_binary_digest_recorded": false,
+      "artifact_members": [
+        "build.log",
+        "environment.txt",
+        "source-commit.txt",
+        "source-status-before.txt"
+      ]
+    },
+    {
+      "event": "push",
+      "run_id": 37805005108,
+      "job_id": 113406864380,
+      "job_status": "completed",
+      "job_conclusion": "failure",
+      "ci_branch_head": "47c8caa0b9b0c34f8b96efed11819a94a099caf4",
+      "actual_checkout": "47c8caa0b9b0c34f8b96efed11819a94a099caf4",
+      "stage": "Pin and build real gem5 RISC-V",
+      "stage_exit_code": 124,
+      "stage_error_utc": "2026-10-08T16:43:44.4889110Z",
+      "cause": "bounded-host-build-timeout",
+      "offline_tests_passed": 7,
+      "vendor_files_verified": 171,
+      "downstream_steps": [
+        "Cross-build guest runtime controls",
+        "Prepare exact guest firmware, kernel and disk",
+        "Cross-build optional unchanged light-mode workload",
+        "Attempt bounded real Linux boot and guest controls"
+      ],
+      "artifact": {
+        "id": 11564613127,
+        "name": "gem5-full-system-functional",
+        "size_in_bytes": 20149,
+        "sha256": "89399c0ee6e718812f7c99405d21571f2591e220aa7e150f1ec0c5eda2cbefb0",
+        "expires_at": "2027-01-06T15:57:45Z"
+      },
+      "artifact_download_verified": true,
+      "guest_boot_attempted": false,
+      "guest_runtime_attempted": false,
+      "randomx_guest_hashes_attempted": false,
+      "retained_files": {
+        "ci-build-20261008/push/build.log": {
+          "sha256": "9973cd7747fcb0c4808f7ead0a940e297c977ccd4b1a45c099855fb04749519e",
+          "bytes": 168792
+        },
+        "ci-build-20261008/push/environment.txt": {
+          "sha256": "8ca66bf69054614a1308ff2acfe0d234fc835dc05827306e921c29822439aca2",
+          "bytes": 1737
+        },
+        "ci-build-20261008/push/job.log": {
+          "sha256": "80d7897d5dead3ebad13194a425a31fffe8e50f86c4ff588911c962af65653fb",
+          "bytes": 371274
+        },
+        "ci-build-20261008/push/source-commit.txt": {
+          "sha256": "ae22163101d0add3a18c038d26dea9ff74615c9fecc6675b55bac8e7dbbb1766",
+          "bytes": 321
+        },
+        "ci-build-20261008/push/source-status-before.txt": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      },
+      "source_clean_before_build": true,
+      "source_diff_after_build_recorded": false,
+      "gem5_binary_digest_recorded": false,
+      "artifact_members": [
+        "build.log",
+        "environment.txt",
+        "source-commit.txt",
+        "source-status-before.txt"
+      ]
+    }
+  ],
+  "timing_calibrated": false,
+  "power_measured": false,
+  "m3_accepted": false,
+  "workflow_at_ci_head": {
+    "path": "ci-build-20261008/workflow-at-ci-head.yml",
+    "sha256": "d105cad0268bba2805057514a624e32162140b5c4e218a99d654ebe2dc43cff0",
+    "git_blob_sha": "fe6c37fcdbd0d7a2a68c33675917416dd384052f"
+  }
+}

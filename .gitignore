@@ -1,0 +1,6 @@
+/build/
+/benchmarks/results/*
+!/benchmarks/results/README.md
+__pycache__/
+*.pyc
+.venv/

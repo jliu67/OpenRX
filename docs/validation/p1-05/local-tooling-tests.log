@@ -1,0 +1,27 @@
+test_duration_failure_keeps_structured_result (test_steady_records.ProcessTests.test_duration_failure_keeps_structured_result) ... ok
+test_malformed_output_is_retained (test_steady_records.ProcessTests.test_malformed_output_is_retained) ... ok
+test_nonzero_exit_is_not_success (test_steady_records.ProcessTests.test_nonzero_exit_is_not_success) ... ok
+test_success_and_evidence (test_steady_records.ProcessTests.test_success_and_evidence) ... ok
+test_timeout_is_retained (test_steady_records.ProcessTests.test_timeout_is_retained) ... ok
+test_clock_brackets_and_elapsed (test_steady_records.RecordTests.test_clock_brackets_and_elapsed) ... ok
+test_clock_jump_is_reported_not_called_calibrated (test_steady_records.RecordTests.test_clock_jump_is_reported_not_called_calibrated) ... ok
+test_completion_and_quality_must_agree (test_steady_records.RecordTests.test_completion_and_quality_must_agree) ... ok
+test_configuration_binding (test_steady_records.RecordTests.test_configuration_binding) ... ok
+test_duration_rejection_is_preserved (test_steady_records.RecordTests.test_duration_rejection_is_preserved) ... ok
+test_known_controls_independent_of_claimed_match (test_steady_records.RecordTests.test_known_controls_independent_of_claimed_match) ... ok
+test_odd_order_flag (test_steady_records.RecordTests.test_odd_order_flag) ... ok
+test_reference_applies_to_all_1000_nonce_phases (test_steady_records.RecordTests.test_reference_applies_to_all_1000_nonce_phases) ... ok
+test_repeated_inputs_must_be_deterministic (test_steady_records.RecordTests.test_repeated_inputs_must_be_deterministic) ... ok
+test_reversed_version_order (test_steady_records.RecordTests.test_reversed_version_order) ... ok
+test_strict_json (test_steady_records.RecordTests.test_strict_json) ... ok
+test_truncation_extra_records_and_duplicates (test_steady_records.RecordTests.test_truncation_extra_records_and_duplicates) ... ok
+test_unknown_reference_cannot_be_invented (test_steady_records.RecordTests.test_unknown_reference_cannot_be_invented) ... ok
+test_unsupported_configuration (test_steady_records.RecordTests.test_unsupported_configuration) ... ok
+test_valid_summary_excludes_controls_and_warmups (test_steady_records.RecordTests.test_valid_summary_excludes_controls_and_warmups) ... ok
+test_wrong_order_version_count_and_boolean_count (test_steady_records.RecordTests.test_wrong_order_version_count_and_boolean_count) ... ok
+test_zero_warmup_and_single_version (test_steady_records.RecordTests.test_zero_warmup_and_single_version) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 3.903s
+
+OK

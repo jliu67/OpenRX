@@ -1,0 +1,6 @@
+scons: Reading SConscript files ...
+Mkdir("/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.build")
+Checking for linker -Wl,--as-needed support... (cached) yes
+Checking for linker -Wl,--no-keep-memory support... 
+scons: *** "build/RISCV/gem5.build/scons_config/conftest_da935ab7a2c376c10f2ce1130ab88c51_1_56859156914c1a4ce466b3f5525568f9" is not yet built and cache is forced.
+File "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/site_scons/gem5_scons/configure.py", line 70, in CheckLinkFlag

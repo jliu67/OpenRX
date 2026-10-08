@@ -1,0 +1,76 @@
+{
+  "cache_bytes": 268435456,
+  "configuration_git_blob_sha1": "aac8914e0e8a52319600169bcc64b6cd9c967565",
+  "configuration_macros": {
+    "ARGON_MEMORY": 262144,
+    "DATASET_BASE_SIZE": 2147483648,
+    "DATASET_EXTRA_SIZE": 33554368,
+    "PROGRAM_COUNT": 8,
+    "PROGRAM_ITERATIONS": 2048,
+    "PROGRAM_SIZE_V1": 256,
+    "PROGRAM_SIZE_V2": 384,
+    "SCRATCHPAD_L1": 16384,
+    "SCRATCHPAD_L2": 262144,
+    "SCRATCHPAD_L3": 2097152
+  },
+  "configuration_sha256": "2eea9777204fd25fcd95225474dbec299e56bf56bd5915d4cf0e223ccc7be833",
+  "dataset_bytes": 2181038016,
+  "evidence_class": "source-derived static configuration; not measured or simulated",
+  "limitations": [
+    "Opcode weights describe random program generation, not measured dynamic execution.",
+    "Nominal VM slots exclude branch re-execution and JIT transformations; not host instructions.",
+    "L1/L2/L3 are nested scratchpad address regions, not physical CPU cache specifications.",
+    "The dataset may be shared across VMs; each VM needs its own scratchpad.",
+    "No cache-miss rate, DRAM traffic, latency, throughput, power or efficiency is inferred."
+  ],
+  "main_loop_iterations_per_hash": 16384,
+  "nominal_vm_slots_per_hash": {
+    "v1": 4194304,
+    "v2": 6291456
+  },
+  "opcode_groups_per_256": {
+    "control": 26,
+    "floating_point": 94,
+    "integer": 120,
+    "nop": 0,
+    "store": 16
+  },
+  "opcode_weights_per_256": {
+    "CBRANCH": 25,
+    "CFROUND": 1,
+    "FADD_M": 5,
+    "FADD_R": 16,
+    "FDIV_M": 4,
+    "FMUL_R": 32,
+    "FSCAL_R": 6,
+    "FSQRT_R": 6,
+    "FSUB_M": 5,
+    "FSUB_R": 16,
+    "FSWAP_R": 4,
+    "IADD_M": 7,
+    "IADD_RS": 16,
+    "IMULH_M": 1,
+    "IMULH_R": 4,
+    "IMUL_M": 4,
+    "IMUL_R": 16,
+    "IMUL_RCP": 8,
+    "INEG_R": 2,
+    "IROL_R": 2,
+    "IROR_R": 8,
+    "ISMULH_M": 1,
+    "ISMULH_R": 4,
+    "ISTORE": 16,
+    "ISUB_M": 7,
+    "ISUB_R": 16,
+    "ISWAP_R": 4,
+    "IXOR_M": 5,
+    "IXOR_R": 15,
+    "NOP": 0
+  },
+  "schema_version": 1,
+  "scratchpad_regions_bytes": {
+    "L1": 16384,
+    "L2": 262144,
+    "L3": 2097152
+  }
+}

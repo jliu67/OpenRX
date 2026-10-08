@@ -1,0 +1,561 @@
+{
+  "schema_version": 1,
+  "evidence_class": "independent-offline-guest-linkage-audit",
+  "execution_performed": false,
+  "tool": "GNU readelf (GNU Binutils for Ubuntu) 2.42",
+  "artifact_sha256": "a4cd49b7f6f54a94fed9d6b3087714eaa00063ad5f732c201b54464b0cc94d05",
+  "ci_observed_checkout_commit": "82398b9545c1bfc1d80bb7f79c41f783048fb89c",
+  "ci_environment_sha256": "0016544556e654d121d5e71cb8fc18f235c28c7b2be16c49e5f5b228b9d86222",
+  "compile_commands_sha256": "79514d0b414a652ced79fcaddd3a2a101746e04671171c95fe177b2135009a93",
+  "probe_compile_command": [
+    {
+      "directory": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv",
+      "command": "/usr/bin/riscv64-linux-gnu-g++-14 -DOPENRX_BUILD_ARCH_SETTING=\\\"default\\\" -DOPENRX_BUILD_COMPILER=\\\"/usr/bin/riscv64-linux-gnu-g++-14\\\" -DOPENRX_BUILD_COMPILER_FLAGS=\"\\\"-march=rv64gc -mabi=lp64d -O3 -DNDEBUG -Wall -Wextra -Werror -frounding-math -fno-fast-math -ffp-contract=off\\\"\" -DOPENRX_BUILD_COMPILER_ID=\\\"GNU\\\" -DOPENRX_BUILD_LIBRARY_PATH=\\\"/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/randomx/librandomx.a\\\" -DOPENRX_BUILD_SOURCE_ROOT=\\\"/home/runner/work/OpenRandomX/OpenRandomX\\\" -DOPENRX_BUILD_SYSTEM_PROCESSOR=\\\"riscv64\\\" -DOPENRX_BUILD_TYPE=\\\"Release\\\" -isystem /home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src -march=rv64gc -mabi=lp64d -O3 -DNDEBUG -Wall -Wextra -Werror -frounding-math -fno-fast-math -ffp-contract=off -o CMakeFiles/openrx-riscv-probe.dir/main.cpp.o -c /home/runner/work/OpenRandomX/OpenRandomX/simulator/probe/main.cpp",
+      "file": "/home/runner/work/OpenRandomX/OpenRandomX/simulator/probe/main.cpp",
+      "output": "CMakeFiles/openrx-riscv-probe.dir/main.cpp.o"
+    }
+  ],
+  "optional_isa_compile_commands": [
+    {
+      "directory": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/randomx",
+      "command": "/usr/bin/riscv64-linux-gnu-g++-14   -march=rv64gc -mabi=lp64d -march=rv64gc -O3 -DNDEBUG -std=gnu++11 -fPIC -O3 -march=rv64gcv -o CMakeFiles/randomx.dir/src/aes_hash_rv64_vector.cpp.o -c /home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/aes_hash_rv64_vector.cpp",
+      "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/aes_hash_rv64_vector.cpp",
+      "output": "randomx/CMakeFiles/randomx.dir/src/aes_hash_rv64_vector.cpp.o"
+    },
+    {
+      "directory": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/randomx",
+      "command": "/usr/bin/riscv64-linux-gnu-g++-14   -march=rv64gc -mabi=lp64d -march=rv64gc -O3 -DNDEBUG -std=gnu++11 -fPIC -O3 -march=rv64gcv_zvkned -o CMakeFiles/randomx.dir/src/aes_hash_rv64_zvkned.cpp.o -c /home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/aes_hash_rv64_zvkned.cpp",
+      "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/aes_hash_rv64_zvkned.cpp",
+      "output": "randomx/CMakeFiles/randomx.dir/src/aes_hash_rv64_zvkned.cpp.o"
+    },
+    {
+      "directory": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/randomx",
+      "command": "/usr/bin/riscv64-linux-gnu-g++-14   -march=rv64gc -mabi=lp64d -march=rv64gc -O3 -DNDEBUG -std=gnu++11 -fPIC -o CMakeFiles/randomx.dir/src/jit_compiler_rv64_vector.cpp.o -c /home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/jit_compiler_rv64_vector.cpp",
+      "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/jit_compiler_rv64_vector.cpp",
+      "output": "randomx/CMakeFiles/randomx.dir/src/jit_compiler_rv64_vector.cpp.o"
+    },
+    {
+      "directory": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/randomx",
+      "command": "/usr/bin/riscv64-linux-gnu-gcc-14   -march=rv64gc -mabi=lp64d -march=rv64gc -O3 -DNDEBUG -fPIC -march=rv64gcv_zvkned -o CMakeFiles/randomx.dir/src/jit_compiler_rv64_vector_static.S.o -c /home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/jit_compiler_rv64_vector_static.S",
+      "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/jit_compiler_rv64_vector_static.S",
+      "output": "randomx/CMakeFiles/randomx.dir/src/jit_compiler_rv64_vector_static.S.o"
+    }
+  ],
+  "runtime_compile_command_from_workflow": "riscv64-linux-gnu-gcc-14 -std=c11 -O2 -Wall -Wextra -Werror -march=rv64gc -mabi=lp64d simulator/runtime-probe/main.c -o build/probe-riscv/openrx-runtime-probe",
+  "workflow_path": "/workspace/scratch/62a7e35b1ac5/OpenRandomX/.github/workflows/riscv-preflight.yml",
+  "probe_binaries": {
+    "openrx-runtime-probe": {
+      "path": "/tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe",
+      "bytes": 13760,
+      "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+      "elf_class": "ELF64",
+      "machine": "RISC-V",
+      "type": "DYN (Position-Independent Executable file)",
+      "flags": "0x5, RVC, double-float ABI",
+      "interpreter": "/lib/ld-linux-riscv64-lp64d.so.1",
+      "needed_libraries": [
+        "libc.so.6",
+        "ld-linux-riscv64-lp64d.so.1"
+      ],
+      "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0_zmmul1p0",
+      "version_requirements": {
+        "ld-linux-riscv64-lp64d.so.1": [
+          "GLIBC_2.27"
+        ],
+        "libc.so.6": [
+          "GLIBC_2.27",
+          "GLIBC_2.34"
+        ]
+      },
+      "provided_versions": []
+    },
+    "openrx-riscv-probe": {
+      "path": "/tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe",
+      "bytes": 376824,
+      "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+      "elf_class": "ELF64",
+      "machine": "RISC-V",
+      "type": "DYN (Position-Independent Executable file)",
+      "flags": "0x5, RVC, double-float ABI",
+      "interpreter": "/lib/ld-linux-riscv64-lp64d.so.1",
+      "needed_libraries": [
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-riscv64-lp64d.so.1"
+      ],
+      "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_v1p0_zicsr2p0_zifencei2p0_zmmul1p0_zve32f1p0_zve32x1p0_zve64d1p0_zve64f1p0_zve64x1p0_zvkned1p0_zvl128b1p0_zvl32b1p0_zvl64b1p0",
+      "version_requirements": {
+        "libgcc_s.so.1": [
+          "GCC_3.0",
+          "GCC_3.4"
+        ],
+        "ld-linux-riscv64-lp64d.so.1": [
+          "GLIBC_2.27"
+        ],
+        "libm.so.6": [
+          "GLIBC_2.27"
+        ],
+        "libc.so.6": [
+          "GLIBC_2.34",
+          "GLIBC_2.27"
+        ],
+        "libstdc++.so.6": [
+          "GLIBCXX_3.4.32",
+          "GLIBCXX_3.4.11",
+          "CXXABI_1.3.9",
+          "GLIBCXX_3.4.9",
+          "CXXABI_1.3",
+          "GLIBCXX_3.4.21",
+          "GLIBCXX_3.4"
+        ]
+      },
+      "provided_versions": []
+    }
+  },
+  "guest_libraries": {
+    "libc.so.6": {
+      "path": "/tmp/openrx-fs-elf-audit/libc.so.6",
+      "bytes": 1534120,
+      "sha256": "1d577103e808d8457224b37097c0ecf94f4b0c3bab25f8dc0a1576679e7c3cf8",
+      "elf_class": "ELF64",
+      "machine": "RISC-V",
+      "type": "DYN (Shared object file)",
+      "flags": "0x5, RVC, double-float ABI",
+      "interpreter": "/lib/ld-linux-riscv64-lp64d.so.1",
+      "needed_libraries": [
+        "ld-linux-riscv64-lp64d.so.1"
+      ],
+      "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0_zmmul1p0",
+      "version_requirements": {
+        "ld-linux-riscv64-lp64d.so.1": [
+          "GLIBC_2.27",
+          "GLIBC_PRIVATE"
+        ]
+      },
+      "provided_versions": [
+        "GLIBC_2.27",
+        "GLIBC_2.28",
+        "GLIBC_2.29",
+        "GLIBC_2.30",
+        "GLIBC_2.31",
+        "GLIBC_2.32",
+        "GLIBC_2.33",
+        "GLIBC_2.34",
+        "GLIBC_2.35",
+        "GLIBC_2.36",
+        "GLIBC_2.38",
+        "GLIBC_2.39",
+        "GLIBC_ABI_DT_RELR",
+        "GLIBC_PRIVATE",
+        "libc.so.6"
+      ]
+    },
+    "libm.so.6": {
+      "path": "/tmp/openrx-fs-elf-audit/libm.so.6",
+      "bytes": 514440,
+      "sha256": "1720f57a384a55ca7b2443013e8e4439c70b3a719cd64b017f677a3a60de2dd1",
+      "elf_class": "ELF64",
+      "machine": "RISC-V",
+      "type": "DYN (Shared object file)",
+      "flags": "0x5, RVC, double-float ABI",
+      "interpreter": null,
+      "needed_libraries": [
+        "libc.so.6",
+        "ld-linux-riscv64-lp64d.so.1"
+      ],
+      "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0_zmmul1p0",
+      "version_requirements": {
+        "ld-linux-riscv64-lp64d.so.1": [
+          "GLIBC_2.27"
+        ],
+        "libc.so.6": [
+          "GLIBC_2.27",
+          "GLIBC_PRIVATE"
+        ]
+      },
+      "provided_versions": [
+        "GLIBC_2.27",
+        "GLIBC_2.28",
+        "GLIBC_2.29",
+        "GLIBC_2.31",
+        "GLIBC_2.32",
+        "GLIBC_2.35",
+        "GLIBC_2.38",
+        "GLIBC_2.39",
+        "libm.so.6"
+      ]
+    },
+    "libgcc_s.so.1": {
+      "path": "/tmp/openrx-fs-elf-audit/libgcc_s.so.1",
+      "bytes": 117288,
+      "sha256": "187b4949857344b99b069fb25cbeeef181f4ae259cd045da98514fdb5d84067e",
+      "elf_class": "ELF64",
+      "machine": "RISC-V",
+      "type": "DYN (Shared object file)",
+      "flags": "0x5, RVC, double-float ABI",
+      "interpreter": null,
+      "needed_libraries": [
+        "libc.so.6"
+      ],
+      "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0_zmmul1p0",
+      "version_requirements": {
+        "libc.so.6": [
+          "GLIBC_2.35",
+          "GLIBC_2.34",
+          "GLIBC_2.27"
+        ]
+      },
+      "provided_versions": [
+        "GCC_14.0.0",
+        "GCC_3.0",
+        "GCC_3.3",
+        "GCC_3.3.1",
+        "GCC_3.4",
+        "GCC_3.4.2",
+        "GCC_3.4.4",
+        "GCC_4.0.0",
+        "GCC_4.2.0",
+        "GCC_4.3.0",
+        "GCC_4.4.0",
+        "GCC_4.5.0",
+        "GCC_4.7.0",
+        "GCC_7.0.0",
+        "GLIBC_2.0",
+        "libgcc_s.so.1"
+      ]
+    },
+    "libstdc++.so.6": {
+      "path": "/tmp/openrx-fs-elf-audit/libstdc++.so.6",
+      "bytes": 2369296,
+      "sha256": "61d3215ef127c6ae90114ac9c478d8bcd85bb91c28a78c4ad356956dcbb0d1e1",
+      "elf_class": "ELF64",
+      "machine": "RISC-V",
+      "type": "DYN (Shared object file)",
+      "flags": "0x5, RVC, double-float ABI",
+      "interpreter": null,
+      "needed_libraries": [
+        "libm.so.6",
+        "libc.so.6",
+        "ld-linux-riscv64-lp64d.so.1",
+        "libgcc_s.so.1"
+      ],
+      "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0_zmmul1p0",
+      "version_requirements": {
+        "libm.so.6": [
+          "GLIBC_2.27"
+        ],
+        "ld-linux-riscv64-lp64d.so.1": [
+          "GLIBC_2.27"
+        ],
+        "libc.so.6": [
+          "GLIBC_2.38",
+          "GLIBC_2.32",
+          "GLIBC_2.33",
+          "GLIBC_2.36",
+          "GLIBC_2.34",
+          "GLIBC_2.27"
+        ],
+        "libgcc_s.so.1": [
+          "GCC_4.2.0",
+          "GCC_3.3",
+          "GCC_3.4",
+          "GCC_3.0",
+          "GCC_4.5.0"
+        ]
+      },
+      "provided_versions": [
+        "CXXABI_1.3",
+        "CXXABI_1.3.1",
+        "CXXABI_1.3.10",
+        "CXXABI_1.3.11",
+        "CXXABI_1.3.12",
+        "CXXABI_1.3.13",
+        "CXXABI_1.3.14",
+        "CXXABI_1.3.15",
+        "CXXABI_1.3.2",
+        "CXXABI_1.3.3",
+        "CXXABI_1.3.4",
+        "CXXABI_1.3.5",
+        "CXXABI_1.3.6",
+        "CXXABI_1.3.7",
+        "CXXABI_1.3.8",
+        "CXXABI_1.3.9",
+        "CXXABI_TM_1",
+        "GLIBCXX_3.4",
+        "GLIBCXX_3.4.1",
+        "GLIBCXX_3.4.10",
+        "GLIBCXX_3.4.11",
+        "GLIBCXX_3.4.12",
+        "GLIBCXX_3.4.13",
+        "GLIBCXX_3.4.14",
+        "GLIBCXX_3.4.15",
+        "GLIBCXX_3.4.16",
+        "GLIBCXX_3.4.17",
+        "GLIBCXX_3.4.18",
+        "GLIBCXX_3.4.19",
+        "GLIBCXX_3.4.2",
+        "GLIBCXX_3.4.20",
+        "GLIBCXX_3.4.21",
+        "GLIBCXX_3.4.22",
+        "GLIBCXX_3.4.23",
+        "GLIBCXX_3.4.24",
+        "GLIBCXX_3.4.25",
+        "GLIBCXX_3.4.26",
+        "GLIBCXX_3.4.27",
+        "GLIBCXX_3.4.28",
+        "GLIBCXX_3.4.29",
+        "GLIBCXX_3.4.3",
+        "GLIBCXX_3.4.30",
+        "GLIBCXX_3.4.31",
+        "GLIBCXX_3.4.32",
+        "GLIBCXX_3.4.33",
+        "GLIBCXX_3.4.4",
+        "GLIBCXX_3.4.5",
+        "GLIBCXX_3.4.6",
+        "GLIBCXX_3.4.7",
+        "GLIBCXX_3.4.8",
+        "GLIBCXX_3.4.9",
+        "libstdc++.so.6"
+      ]
+    },
+    "ld-linux-riscv64-lp64d.so.1": {
+      "path": "/tmp/openrx-fs-elf-audit/ld-linux-riscv64-lp64d.so.1",
+      "bytes": 154360,
+      "sha256": "861150abbef0a669bc3d475ca2f71b89371b3dc3e13731367a5549a492d78caa",
+      "elf_class": "ELF64",
+      "machine": "RISC-V",
+      "type": "DYN (Shared object file)",
+      "flags": "0x5, RVC, double-float ABI",
+      "interpreter": null,
+      "needed_libraries": [],
+      "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_zicsr2p0_zifencei2p0_zmmul1p0",
+      "version_requirements": {},
+      "provided_versions": [
+        "GLIBC_2.27",
+        "GLIBC_2.34",
+        "GLIBC_2.35",
+        "GLIBC_PRIVATE",
+        "ld-linux-riscv64-lp64d.so.1"
+      ]
+    }
+  },
+  "dependency_checks": [
+    {
+      "object": "openrx-runtime-probe",
+      "library": "ld-linux-riscv64-lp64d.so.1",
+      "required_versions": [
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 1,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "openrx-runtime-probe",
+      "library": "libc.so.6",
+      "required_versions": [
+        "GLIBC_2.27",
+        "GLIBC_2.34"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 20,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "openrx-riscv-probe",
+      "library": "libgcc_s.so.1",
+      "required_versions": [
+        "GCC_3.0",
+        "GCC_3.4"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 2,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "openrx-riscv-probe",
+      "library": "ld-linux-riscv64-lp64d.so.1",
+      "required_versions": [
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 1,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "openrx-riscv-probe",
+      "library": "libm.so.6",
+      "required_versions": [
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 5,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "openrx-riscv-probe",
+      "library": "libc.so.6",
+      "required_versions": [
+        "GLIBC_2.34",
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 18,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "openrx-riscv-probe",
+      "library": "libstdc++.so.6",
+      "required_versions": [
+        "GLIBCXX_3.4.32",
+        "GLIBCXX_3.4.11",
+        "CXXABI_1.3.9",
+        "GLIBCXX_3.4.9",
+        "CXXABI_1.3",
+        "GLIBCXX_3.4.21",
+        "GLIBCXX_3.4"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 51,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libc.so.6",
+      "library": "ld-linux-riscv64-lp64d.so.1",
+      "required_versions": [
+        "GLIBC_2.27",
+        "GLIBC_PRIVATE"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 21,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libm.so.6",
+      "library": "ld-linux-riscv64-lp64d.so.1",
+      "required_versions": [
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 1,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libm.so.6",
+      "library": "libc.so.6",
+      "required_versions": [
+        "GLIBC_2.27",
+        "GLIBC_PRIVATE"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 7,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libgcc_s.so.1",
+      "library": "libc.so.6",
+      "required_versions": [
+        "GLIBC_2.35",
+        "GLIBC_2.34",
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 20,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libstdc++.so.6",
+      "library": "libm.so.6",
+      "required_versions": [
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 4,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libstdc++.so.6",
+      "library": "ld-linux-riscv64-lp64d.so.1",
+      "required_versions": [
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 2,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libstdc++.so.6",
+      "library": "libc.so.6",
+      "required_versions": [
+        "GLIBC_2.38",
+        "GLIBC_2.32",
+        "GLIBC_2.33",
+        "GLIBC_2.36",
+        "GLIBC_2.34",
+        "GLIBC_2.27"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 167,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    },
+    {
+      "object": "libstdc++.so.6",
+      "library": "libgcc_s.so.1",
+      "required_versions": [
+        "GCC_4.2.0",
+        "GCC_3.3",
+        "GCC_3.4",
+        "GCC_3.0",
+        "GCC_4.5.0"
+      ],
+      "missing_versions": [],
+      "required_versioned_symbols_count": 25,
+      "missing_versioned_symbols": [],
+      "compatible": true
+    }
+  ],
+  "all_dependency_versions_and_symbols_present": true,
+  "guest_extraction_source": "/tmp/openrx-review-root.img",
+  "guest_library_directory": "/usr/lib/riscv64-linux-gnu",
+  "guest_symlink_resolution": {
+    "/lib": "usr/lib",
+    "/usr/lib/ld-linux-riscv64-lp64d.so.1": "riscv64-linux-gnu/ld-linux-riscv64-lp64d.so.1",
+    "/usr/lib/riscv64-linux-gnu/libstdc++.so.6": "libstdc++.so.6.0.33"
+  },
+  "limits": [
+    "This audit establishes available ELF providers/versioned symbols, not guest boot or executed target-core correctness.",
+    "Hash probe ELF attributes include optional V/Zvkned objects; mandatory scalar behavior is established only by actual non-vector execution and recovered startup SIGILL probes.",
+    "Dynamic libraries are extracted from the inspected guest root partition; no static executable is involved.",
+    "No timing calibration or measured power; no efficiency claim."
+  ],
+  "guest_partition_binding": {
+    "disk_image": "/tmp/openrx-fs-resource-audit/ubuntu.img",
+    "root_extraction": "/tmp/openrx-review-root.img",
+    "partition": 1,
+    "start_sector": 235520,
+    "end_sector": 10239966,
+    "offset_bytes": 120586240,
+    "partition_bytes": 5122276864,
+    "partition_sha256": "f248678270188fb39c62977ed83d96c3e415cc5b6ed40fad2761e0bfbafbc614",
+    "extracted_partition_sha256": "f248678270188fb39c62977ed83d96c3e415cc5b6ed40fad2761e0bfbafbc614",
+    "match": true,
+    "extraction_trailing_bytes": 16896
+  },
+  "resource_manifest_sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb"
+}

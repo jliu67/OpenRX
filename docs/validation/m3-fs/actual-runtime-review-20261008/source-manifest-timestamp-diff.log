@@ -1,0 +1,13 @@
+Command: diff -u /tmp/openrx-gem5-runtime-20261008-attempt1/execution-source/manifest.json docs/validation/m3-fs/actual-runtime-20261008/execution-source/manifest.json
+Exit: 1
+Initial generic copy check rejected this byte difference. The final checker accepts only the independently examined snapshot_utc difference, while requiring all other source-manifest fields and every source file to match.
+--- /tmp/openrx-gem5-runtime-20261008-attempt1/execution-source/manifest.json	2026-10-08 14:08:37.570111884 -0400
++++ docs/validation/m3-fs/actual-runtime-20261008/execution-source/manifest.json	2026-10-08 14:08:37.576257816 -0400
+@@ -1,6 +1,6 @@
+ {
+   "schema_version": 1,
+-  "snapshot_utc": "2026-10-08T18:08:37.569994+00:00",
++  "snapshot_utc": "2026-10-08T18:08:37.575941+00:00",
+   "purpose": "Bind original executing sources before post-attempt streaming diagnostics fix",
+   "streaming_stdout_fix_applied": false,
+   "files": [
