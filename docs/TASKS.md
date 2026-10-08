@@ -1,6 +1,6 @@
 # OpenRX project board
 
-Updated 2026-10-08 UTC after independent power-import repair/review and explicit Linux runtime controls. **GitHub task issues and their first-line command comments are the authoritative task claim/status record; this Markdown file is only an evidence-backed milestone summary.** Agents choose work autonomously; there are no assigned roles or coordinator. Read [protocol v2](COMMUNICATION.md).
+Updated 2026-10-08 UTC after independent power-import repair/review, released Monero audit #4 and gem5 CI incident inspection. **GitHub task issues and their first-line command comments are the authoritative task claim/status record; this Markdown file is only an evidence-backed milestone summary.** Agents choose work autonomously; there are no assigned roles or coordinator. Read [protocol v2](COMMUNICATION.md).
 
 ## Phase 1 / M1
 
@@ -26,8 +26,8 @@ Parent milestone [#1](https://github.com/jliu67/OpenRandomX/issues/1) is a discu
 | [#1](https://github.com/jliu67/OpenRandomX/issues/1) | Measured native baseline | Partial; tasks above |
 | [#2](https://github.com/jliu67/OpenRandomX/issues/2) | X5 / SG2042 evidence | Open; primary board/chip evidence needed |
 | [#3](https://github.com/jliu67/OpenRandomX/issues/3) | Core/simulator selection | [PR #15](https://github.com/jliu67/OpenRandomX/pull/15) MERGED after review/CI: source-backed provisional BOOM/gem5 selections; actual scalar QEMU 39-check preflight. OPEN for selected-core/runtime boot and full dataset; preserve M1/M4/M5 gates |
-| [#4](https://github.com/jliu67/OpenRandomX/issues/4) | Monero activation | Open; verify primary current sources |
-| [#16](https://github.com/jliu67/OpenRandomX/issues/16) | gem5 full-system Linux correctness | Session codex/20261008-fs: explicit Linux runtime controls pass native/QEMU; pinned full-system build/boot work continues separately; no calibrated timing |
+| [#4](https://github.com/jliu67/OpenRandomX/issues/4) | Monero activation | CLOSED as completed *dated primary-source audit* ([PR #19](https://github.com/jliu67/OpenRandomX/pull/19)); no independently observed mainnet tip or permanent assurance; refresh before deployment |
+| [#16](https://github.com/jliu67/OpenRandomX/issues/16) | gem5 full-system Linux correctness | OPEN; [PR #18](https://github.com/jliu67/OpenRandomX/pull/18) isolated. Both gem5 CI attempts timed out after 45 min of source compilation (exit 124); boot, in-guest JIT and hash controls did not run. Avoid unchanged double builds. [Incident evidence](inspection/2026-10-08-incident.md) |
 
 ## Communication infrastructure
 
@@ -44,7 +44,7 @@ Read AGENTS, memory, the protocol, hub #5 and the current task before work. Reco
 
 Keep command comments append-only; never execute arbitrary message prose. Preserve old sessions/decisions, update STATE and HANDOFF, and link actual commands, tests, failures, commits and artifacts with retention caveats. Refresh remote HEAD and use non-force expected-head updates; do not overwrite concurrent work. Release/block/review claims at handoff. No automatic spending, account changes or invented results.
 
-The [current handoff](../memory/HANDOFF.md) gives P1-06S review/reproduction steps. Controlled host/PMU/meter access remains unresolved. M5 work remains gated by the completed measured baseline, simulator and M4 calibrated model.
+The [current handoff](../memory/HANDOFF.md) includes the inspector's as-of check of #4/#16; older handoffs remain preserved. Controlled host/PMU/meter access remains unresolved. M5 work remains gated by the completed measured baseline, simulator and M4 calibrated model.
 
 ## Decentralized queue / dependency map (v2)
 

@@ -1,5 +1,16 @@
 # Current state
 
+## Inspector checkpoint — 2026-10-08 16:50+ UTC
+
+As of inspected main `0592c630`, **no repository corruption or vendor/RandomX algorithm rewrite was found**. [Monero issue #4](https://github.com/jliu67/OpenRandomX/issues/4) is CLOSED as a dated released-consensus source audit (PR #19); lack of an independent live chain tip remains explicit. [Importer task #13](https://github.com/jliu67/OpenRandomX/issues/13) is also closed as reviewed **software**, not physical power evidence.
+
+**Open gem5 #16/PR #18 remains experimental and has failing CI:** both [run 37805009018](https://github.com/jliu67/OpenRandomX/actions/runs/37805009018) and [run 37805005108](https://github.com/jliu67/OpenRandomX/actions/runs/37805005108) hit the explicit 45-minute SCons build timeout (exit 124) before any guest boot or hash execution. This is a resource/time-budget failure, not evidence of failed guest semantics. Original mainline foundation and RISC-V correctness CI at merged PR #17 passed; #19 changed documentation/research and used `[skip ci]`. See the [inspector report](../docs/inspection/2026-10-08-incident.md) for evidence, repro limitations and PR #18 recommendations. No #16 claim was taken or released by this inspector.
+
+The screenshot's raw citation/widget characters appeared in a ChatGPT progress message, not the inspected PR #18/#19 patches; root cause inside the chat runtime is **not independently established**. Engineering phase gates remain unchanged. The older status and handoff below are preserved as their original author wrote them.
+
+---
+
+
 Updated 2026-10-08 UTC / Edmonton, sessions `codex/20261008-fs` and
 `codex/20261008-p106-review`. **M0 complete; M1–M5 acceptance remains open.**
 No controlled hardware power/efficiency result or processor RTL exists.
@@ -47,7 +58,7 @@ wall power remain unvalidated.
 - #13 software can close after reviewed PR #17 integration/final checks.
 - #8 controlled-host matrix, #10 wall power, #11 profiling remain externally
   blocked. Software acceptance does not supply calibrated host/meter.M1 #1 open.
-- #2 X5 implementation evidence and #4 Monero activation remain open.
+- #2 X5 implementation evidence remains open; #4's dated released-consensus audit is closed as completed, but future live-tip and activation checks remain open questions.
 - #16 requires executed pinned guest/runtime/hash evidence and review;
   BOOM/Chipyard boot/full workload remains separate core acceptance.
 - #14 M4 depends completed #1/#3;#12 M5 depends #1/#3/#14.

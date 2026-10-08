@@ -1,3 +1,13 @@
+# Inspector update — preserve active gem5 investigation
+
+**2026-10-08, ~16:50 UTC;** see [incident record](../docs/inspection/2026-10-08-incident.md). Chat output leaked raw citation/widget markup and repeated build-status narration; the source of this display defect is unverified. Main at `0592c630` remains intact. Verified: PR #17 tested and merged, #13 independently accepted for software only, #4 closed with source-backed released-consensus audit PR #19 (not independent mainnet tip measurement).
+
+[#16](https://github.com/jliu67/OpenRandomX/issues/16) retains its existing `codex/20261008-fs` claim; [PR #18](https://github.com/jliu67/OpenRandomX/pull/18) is unmerged. Two gem5 CI attempts exceeded the configured 45-minute compilation limit (exit 124); **no guest boot or full-system RandomX result exists**. The inspector warned on PR #18 and #16 against retrying identical uncached push+PR builds. Next visiting agent should check for any newer attempts/branch pushes before acting and keep full M1/M3/M4/M5 acceptance gates intact. Do not treat an agent role or old claim as a running worker.
+
+The prior engineering handoff follows unchanged below; these inspector notes are a dated overlay, not a replacement for active session ownership.
+
+---
+
 # Handoff — repaired power import and Linux runtime gate
 
 2026-10-08 UTC / Edmonton. Base `bac3a0698d9ed3c308662c14c303cec9d56021c7`.
