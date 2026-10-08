@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import argparse
 from bisect import bisect_right
-from decimal import Decimal
+from decimal import Decimal, DecimalException
 from fractions import Fraction as F
 import hashlib
 import json
@@ -53,8 +53,13 @@ def sha(data):
 
 def decode(data, decimal=False):
     require(len(data) <= LIMIT, 'input exceeds 32 MiB limit')
-    return json.loads(data, object_pairs_hook=steady.strict_object,
-                      parse_constant=steady.reject_constant, parse_float=Decimal if decimal else float)
+    try:
+        return json.loads(data, object_pairs_hook=steady.strict_object,
+                          parse_constant=steady.reject_constant, parse_float=Decimal if decimal else float)
+    except DecimalException as exc:
+        # Decimal rejects exponents outside its representation; preserve the
+        # same fail-with-report contract as every other malformed JSON number.
+        raise ValueError('invalid JSON decimal number') from exc
 
 
 def finite(value):
@@ -80,6 +85,7 @@ def check_run(raw):
     require(not raw['adapter.stderr'].strip(), 'nonempty adapter stderr')
     keys(run['configuration'], 'threads init_threads nonces warmup_nonces repeats min_seconds aes versions', 'run configuration')
     expected = dict(run['configuration'])
+    require(type(expected['versions']) is str, 'invalid run version selection')
     expected['versions'] = expected['versions'].split(',')
     stream = raw['adapter.jsonl'].decode('utf-8')
     summary = steady.validate(stream, expected)
@@ -128,7 +134,9 @@ def trace(doc, raw, config):
     require(sync['valid_from_ns'] <= sync['source_anchor_ns'] <= sync['valid_to_ns'], 'anchor outside calibration')
     rate_value = sync['rate_correction_ppm']
     require(type(rate_value) in (int, float, Decimal), 'invalid rate correction')
-    rate_abs = number(abs(rate_value), 'rate correction', 10000)
+    # Decimal.__abs__ applies the ambient context and can overflow before the
+    # explicit cap check. copy_abs is exact and context independent.
+    rate_abs = number(Decimal(str(rate_value)).copy_abs(), 'rate correction', 10000)
     rate = 1 + (-rate_abs if rate_value < 0 else rate_abs) / 1_000_000
     drift = number(sync['drift_bound_ppm'], 'drift bound', 10000)
     uncertainty = doc['uncertainty']

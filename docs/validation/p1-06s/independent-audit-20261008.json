@@ -1,0 +1,209 @@
+{
+  "evidence_class": "synthetic",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "baseline_revision": "3f06f87b970cd1f8fc06f06dff9e9aa06cb5aad4",
+  "current_importer_sha256": "612d20c6e4b3cae80be1231d0c41c5ece29ece23a286f347482adf23f35cfbf7",
+  "mathematics": {
+    "seed": 2026100813,
+    "integration_oracle_cases": 500,
+    "bounded_true_waveform_cases": 8000,
+    "outward_serialization_cases": 500,
+    "affine_linear_join_intervals": 24
+  },
+  "original_cli": {
+    "label": "original, changes required",
+    "importer_sha256": "91f51352e98699c3fef9f0a8805d6946a780aa6218445928aa9c7304d34dd2e6",
+    "cases": {
+      "versions-array": {
+        "returncode": 1,
+        "report_exists": false,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 303, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 291, in main\n    report = analyze(raw, args.allow_synthetic)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 210, in analyze\n    records, checked = check_run(raw)\n                       ^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 83, in check_run\n    expected['versions'] = expected['versions'].split(',')\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'list' object has no attribute 'split'\n",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "bd271d8c619fb4032e57d6c5b3bb5d613d860d301ee91af63e011850ab608d8f",
+          "power.json": "17f3be913d8d9a83b37c0b91393b9834dc10202515e1bbd2e05f067b47c71937"
+        }
+      },
+      "versions-null": {
+        "returncode": 1,
+        "report_exists": false,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 303, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 291, in main\n    report = analyze(raw, args.allow_synthetic)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 210, in analyze\n    records, checked = check_run(raw)\n                       ^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 83, in check_run\n    expected['versions'] = expected['versions'].split(',')\n                           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'split'\n",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "5b87f799dcd7c17af444cbcaed463dba7d965506daebf59596dccd9dd76b7a88",
+          "power.json": "d3962dec2a5b27b737bc37f8e4fe93b5baaab7e9d9f7d0b40315235a5fb4a840"
+        }
+      },
+      "rate-overflow": {
+        "returncode": 1,
+        "report_exists": false,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 303, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 291, in main\n    report = analyze(raw, args.allow_synthetic)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 218, in analyze\n    times, powers, u, boundary_error, terms = trace(doc, raw, records[0])\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 131, in trace\n    rate_abs = number(abs(rate_value), 'rate correction', 10000)\n                      ^^^^^^^^^^^^^^^\ndecimal.Overflow: [<class 'decimal.Overflow'>]\n",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "36118ec3257557a8b8a0bb23327c86ef0751de1f8f47ae7e01a7d82910a817e1",
+          "power.json": "1a4c12efb982b2d3b819534c09a970f8bf92834fa5f3376ccd82c9ce59217806"
+        }
+      },
+      "decimal-overflow": {
+        "returncode": 1,
+        "report_exists": false,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"<frozen runpy>\", line 287, in run_path\n  File \"<frozen runpy>\", line 98, in _run_module_code\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 303, in <module>\n    raise SystemExit(main())\n                     ^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 291, in main\n    report = analyze(raw, args.allow_synthetic)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 212, in analyze\n    doc = decode(raw['power.json'], decimal=True)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/openrx-power-baseline-csx84p4v/power_import_baseline.py\", line 56, in decode\n    return json.loads(data, object_pairs_hook=steady.strict_object,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 359, in loads\n    return cls(**kw).decode(s)\n           ^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 338, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 354, in raw_decode\n    obj, end = self.scan_once(s, idx)\n               ^^^^^^^^^^^^^^^^^^^^^^\ndecimal.InvalidOperation: [<class 'decimal.InvalidOperation'>]\n",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "36118ec3257557a8b8a0bb23327c86ef0751de1f8f47ae7e01a7d82910a817e1",
+          "power.json": "585fb20ef35ec6b7aa1a532002d38479395e86e96690649372f5c7709f793a71"
+        }
+      }
+    }
+  },
+  "fixed_cli": {
+    "label": "patched, separate review required",
+    "importer_sha256": "612d20c6e4b3cae80be1231d0c41c5ece29ece23a286f347482adf23f35cfbf7",
+    "cases": {
+      "versions-array": {
+        "returncode": 1,
+        "report_exists": true,
+        "stdout": "/tmp/openrx-independent-power-sfgz3h89/output/energy-report.json\n",
+        "stderr": "",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "bd271d8c619fb4032e57d6c5b3bb5d613d860d301ee91af63e011850ab608d8f",
+          "power.json": "17f3be913d8d9a83b37c0b91393b9834dc10202515e1bbd2e05f067b47c71937"
+        },
+        "report": {
+          "schema_version": 1,
+          "status": "failed",
+          "baseline_accepted": false,
+          "power_watts": null,
+          "hashes_per_joule": null,
+          "error": "ValueError: invalid run version selection",
+          "inputs_sha256": {
+            "run.json": "bd271d8c619fb4032e57d6c5b3bb5d613d860d301ee91af63e011850ab608d8f",
+            "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+            "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "power.json": "17f3be913d8d9a83b37c0b91393b9834dc10202515e1bbd2e05f067b47c71937"
+          },
+          "invocation": {
+            "run_dir": "/tmp/openrx-independent-power-sfgz3h89/input",
+            "power": "/tmp/openrx-independent-power-sfgz3h89/input/power.json",
+            "allow_synthetic": true
+          },
+          "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+        }
+      },
+      "versions-null": {
+        "returncode": 1,
+        "report_exists": true,
+        "stdout": "/tmp/openrx-independent-power-7nj4z37e/output/energy-report.json\n",
+        "stderr": "",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "5b87f799dcd7c17af444cbcaed463dba7d965506daebf59596dccd9dd76b7a88",
+          "power.json": "d3962dec2a5b27b737bc37f8e4fe93b5baaab7e9d9f7d0b40315235a5fb4a840"
+        },
+        "report": {
+          "schema_version": 1,
+          "status": "failed",
+          "baseline_accepted": false,
+          "power_watts": null,
+          "hashes_per_joule": null,
+          "error": "ValueError: invalid run version selection",
+          "inputs_sha256": {
+            "run.json": "5b87f799dcd7c17af444cbcaed463dba7d965506daebf59596dccd9dd76b7a88",
+            "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+            "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "power.json": "d3962dec2a5b27b737bc37f8e4fe93b5baaab7e9d9f7d0b40315235a5fb4a840"
+          },
+          "invocation": {
+            "run_dir": "/tmp/openrx-independent-power-7nj4z37e/input",
+            "power": "/tmp/openrx-independent-power-7nj4z37e/input/power.json",
+            "allow_synthetic": true
+          },
+          "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+        }
+      },
+      "rate-overflow": {
+        "returncode": 1,
+        "report_exists": true,
+        "stdout": "/tmp/openrx-independent-power-i4d1h5jh/output/energy-report.json\n",
+        "stderr": "",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "36118ec3257557a8b8a0bb23327c86ef0751de1f8f47ae7e01a7d82910a817e1",
+          "power.json": "1a4c12efb982b2d3b819534c09a970f8bf92834fa5f3376ccd82c9ce59217806"
+        },
+        "report": {
+          "schema_version": 1,
+          "status": "failed",
+          "baseline_accepted": false,
+          "power_watts": null,
+          "hashes_per_joule": null,
+          "error": "ValueError: out-of-range/nonfinite/overprecise number: rate correction",
+          "inputs_sha256": {
+            "run.json": "36118ec3257557a8b8a0bb23327c86ef0751de1f8f47ae7e01a7d82910a817e1",
+            "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+            "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "power.json": "1a4c12efb982b2d3b819534c09a970f8bf92834fa5f3376ccd82c9ce59217806"
+          },
+          "invocation": {
+            "run_dir": "/tmp/openrx-independent-power-i4d1h5jh/input",
+            "power": "/tmp/openrx-independent-power-i4d1h5jh/input/power.json",
+            "allow_synthetic": true
+          },
+          "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+        }
+      },
+      "decimal-overflow": {
+        "returncode": 1,
+        "report_exists": true,
+        "stdout": "/tmp/openrx-independent-power-7s2ae5kq/output/energy-report.json\n",
+        "stderr": "",
+        "inputs_preserved": true,
+        "inputs_sha256": {
+          "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+          "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "run.json": "36118ec3257557a8b8a0bb23327c86ef0751de1f8f47ae7e01a7d82910a817e1",
+          "power.json": "585fb20ef35ec6b7aa1a532002d38479395e86e96690649372f5c7709f793a71"
+        },
+        "report": {
+          "schema_version": 1,
+          "status": "failed",
+          "baseline_accepted": false,
+          "power_watts": null,
+          "hashes_per_joule": null,
+          "error": "ValueError: invalid JSON decimal number",
+          "inputs_sha256": {
+            "run.json": "36118ec3257557a8b8a0bb23327c86ef0751de1f8f47ae7e01a7d82910a817e1",
+            "adapter.jsonl": "2d213f3d0dec7ab61a1c2fb69f1ffe69fb7011f110cc81ece9f2c57a9b59e353",
+            "adapter.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "power.json": "585fb20ef35ec6b7aa1a532002d38479395e86e96690649372f5c7709f793a71"
+          },
+          "invocation": {
+            "run_dir": "/tmp/openrx-independent-power-7s2ae5kq/input",
+            "power": "/tmp/openrx-independent-power-7s2ae5kq/input/power.json",
+            "allow_synthetic": true
+          },
+          "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]"
+        }
+      }
+    }
+  }
+}

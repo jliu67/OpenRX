@@ -262,6 +262,37 @@ class ImportTests(unittest.TestCase):
         report=self.run_cli(b'{"samples":NaN}',1)
         self.assertEqual(report['status'],'failed');self.assertIsNone(report['hashes_per_joule'])
 
+    def test_cli_preserves_extreme_decimal_failure(self):
+        data=fixture()['power.json'].replace(b'"watts": 100',b'"watts": 1e999999999999999999999')
+        report=self.run_cli(data,1)
+        self.assertEqual(report['status'],'failed')
+        self.assertIn('invalid JSON decimal',report['error'])
+
+    def test_cli_preserves_extreme_rate_failure(self):
+        data=fixture()['power.json'].replace(b'"rate_correction_ppm": 0',b'"rate_correction_ppm": 1e1000000')
+        report=self.run_cli(data,1)
+        self.assertEqual(report['status'],'failed')
+        self.assertIn('rate correction',report['error'])
+
+    def test_cli_preserves_malformed_run_versions(self):
+        for versions in (None, [], {}, 1, True):
+            with self.subTest(versions=versions), tempfile.TemporaryDirectory() as t:
+                raw=fixture();run=json.loads(raw['run.json'])
+                run['configuration']['versions']=versions
+                raw['run.json']=encode(run);rebind(raw)
+                root=Path(t);source=root/'input';source.mkdir();dest=root/'output'
+                for name,data in raw.items():(source/name).write_bytes(data)
+                completed=subprocess.run([sys.executable,str(Path(power.__file__)),
+                    '--run-dir',str(source),'--power',str(source/'power.json'),
+                    '--output-dir',str(dest),'--allow-synthetic'],capture_output=True,text=True,timeout=15)
+                self.assertEqual(completed.returncode,1,completed.stderr)
+                self.assertNotIn('Traceback',completed.stderr)
+                report=json.loads((dest/'energy-report.json').read_text())
+                self.assertEqual(report['status'],'failed')
+                self.assertIn('invalid run version selection',report['error'])
+                self.assertIsNone(report['hashes_per_joule'])
+                for name,data in raw.items():self.assertEqual((dest/name).read_bytes(),data)
+
 
 # One independently reported test per schema/quality rejection.
 BAD = {

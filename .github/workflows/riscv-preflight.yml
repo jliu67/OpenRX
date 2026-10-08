@@ -35,6 +35,10 @@ jobs:
           cmake --build build/probe-native --target openrx-riscv-probe --parallel 2 2>&1 | tee build/riscv-validation/native-build.log
       - name: Native exact semantic and v1/v2 controls
         run: python3 tests/native_riscv_probe.py --binary build/probe-native/openrx-riscv-probe --output-dir build/riscv-validation/native
+      - name: Native Linux signal, protection and code-overwrite controls
+        run: |
+          gcc -std=c11 -O2 -Wall -Wextra -Werror simulator/runtime-probe/main.c -o build/probe-native/openrx-runtime-probe
+          python3 tests/native_runtime_probe.py --binary build/probe-native/openrx-runtime-probe --output-dir build/riscv-validation/runtime-native
       - name: Build scalar RISC-V probe
         run: |
           set -o pipefail
@@ -45,6 +49,10 @@ jobs:
           sha256sum build/probe-riscv/openrx-riscv-probe > build/riscv-validation/riscv-binary.sha256
       - name: QEMU RV64GC exact semantic and v1/v2 controls
         run: python3 tests/native_riscv_probe.py --binary build/probe-riscv/openrx-riscv-probe --qemu qemu-riscv64 --sysroot /usr/riscv64-linux-gnu --output-dir build/riscv-validation/qemu
+      - name: QEMU Linux signal, protection and explicit cache-flush controls
+        run: |
+          riscv64-linux-gnu-gcc-14 -std=c11 -O2 -Wall -Wextra -Werror -march=rv64gc -mabi=lp64d simulator/runtime-probe/main.c -o build/probe-riscv/openrx-runtime-probe
+          python3 tests/native_runtime_probe.py --binary build/probe-riscv/openrx-runtime-probe --qemu qemu-riscv64 --sysroot /usr/riscv64-linux-gnu --output-dir build/riscv-validation/runtime-qemu
       - name: Preserve logs, binary and configuration even on failure
         if: always()
         uses: actions/upload-artifact@v4
@@ -54,6 +62,7 @@ jobs:
           path: |
             build/riscv-validation/
             build/probe-riscv/openrx-riscv-probe
+            build/probe-riscv/openrx-runtime-probe
             build/probe-riscv/CMakeCache.txt
             build/probe-riscv/compile_commands.json
             build/probe-native/CMakeCache.txt
