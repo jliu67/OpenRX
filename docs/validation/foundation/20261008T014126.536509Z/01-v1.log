@@ -1,0 +1,13 @@
+RandomX benchmark v2.0.1
+ - Argon2 implementation: reference
+ - light memory mode (256 MiB)
+ - JIT compiled mode 
+ - hardware AES mode
+ - small pages mode
+ - batch mode
+Initializing ...
+Memory initialized in 0.667225 s
+Initializing 1 virtual machine(s) ...
+Running benchmark (2 nonces) ...
+Calculated result: 4edcdb69ce25ddd6409dc0ebbb0f9dd6281819c74cf8cb05d2c0f20d4b6c4d7e
+Performance: 27.544 ms per hash

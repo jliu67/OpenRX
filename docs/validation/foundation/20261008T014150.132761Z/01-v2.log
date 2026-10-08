@@ -1,0 +1,14 @@
+RandomX benchmark v2.0.1
+ - Argon2 implementation: reference
+ - full memory mode (2080 MiB)
+ - JIT compiled mode 
+ - hardware AES mode
+ - small pages mode
+ - batch mode
+Initializing (2 threads) ...
+Memory initialized in 21.8062 s
+Initializing 1 virtual machine(s) ...
+Running benchmark (1000 nonces) ...
+Calculated result: b85d79e080b10b6ad28c2e6c993601a1361917dba979e03a0a8f7248aaf4ba52
+Reference result:  b85d79e080b10b6ad28c2e6c993601a1361917dba979e03a0a8f7248aaf4ba52
+Performance: 460.685 hashes per second

@@ -1,0 +1,29 @@
+name: Foundation checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  correctness:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source
+        run: python3 scripts/verify_vendor.py
+      - name: Build
+        run: bash scripts/build.sh
+      - name: Upstream correctness tests
+        run: bash scripts/test.sh
+      - name: Both algorithm smoke runs
+        run: python3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1
+      - name: Preserve validation logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: correctness-logs
+          path: |
+            build/validation/
+            benchmarks/results/
