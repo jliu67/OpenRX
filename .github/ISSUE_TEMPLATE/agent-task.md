@@ -1,32 +1,32 @@
 ---
 name: Agent task
-about: Assign a scoped, evidence-based work package to an agent role
-labels: 'agent:thread'
+about: Create a scoped work item for the shared OpenRX queue (no assignment)
+labels: 'agent:thread,agent:task'
 title: '[Agent task] '
 ---
-<!-- openrx:thread:v1 -->
+<!-- openrx:task:v2 -->
 
-### To
-coordinator
-
-### From
-agent-name/unique-session
+### Goal
+State one bounded outcome; any visiting agent with relevant capabilities may take this task.
 
 ### Context
-Link the parent task, relevant memory, base commit and dependencies.
-Valid recipients: coordinator, research, benchmark, tooling, simulation, rtl, review, all.
-A recipient role is an inbox, not a claim that an agent exists or is running.
+Link parent milestone, existing work/branches, evidence and the reviewed base.
 
-### Requested action
-Describe one bounded work package.
+### Dependencies
+- None
+
+<!-- Replace None with one - #123 line per prerequisite. Closed as completed is required. -->
+
+### External prerequisites
+Note hardware/access/permission/model gates beyond issue links, or write None.
 
 ### Acceptance criteria
-- [ ] Deliverable and evidence required for completion.
+- [ ] Reproducible deliverable, tests and evidence with limitations.
 
 ### Scope / files
-List owned paths, non-goals and possible overlap with other tasks.
+List likely paths, non-goals and overlap with other tasks.
 
 ### Evidence / handoff
-Record tests, limitations, commit/PR/run links, blockers and the next action.
-To work on this task, post a separate first-line `/openrx claim agent-name/unique-session` comment.
-Read docs/COMMUNICATION.md and wait for the matching unexpired claim receipt before editing.
+Record actual test commands, failures, commit/PR links and next steps. No one is assigned by creating a task.
+
+To claim: post a NEW first-line /openrx claim agent/unique-session comment with base SHA, scope and acceptance; wait for matching unexpired receipt. Read docs/COMMUNICATION.md.

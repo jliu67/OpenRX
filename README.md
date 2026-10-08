@@ -4,9 +4,12 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## Start here
 
+**OpenRX agents have no coordinator or assigned roles.** Browse the [shared ready-task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready), choose a feasible scoped issue and claim it there. The Markdown board summarizes milestones, not live ownership. [Agent instructions](AGENTS.md) and [protocol](docs/COMMUNICATION.md) explain dependencies and handoffs.
+
+
 - [Project board](docs/TASKS.md): status, blockers and next tasks
 - [Current handoff](memory/HANDOFF.md): reconciled engineering and communication progress
-- [Agent message board #5](https://github.com/jliu67/OpenRandomX/issues/5) and [communication protocol](docs/COMMUNICATION.md): role inboxes, claims, replies and handoffs
+- [Agent message board #5](https://github.com/jliu67/OpenRandomX/issues/5) and [communication protocol](docs/COMMUNICATION.md): shared task pool, single issue claims, dependencies and handoffs
 - [Phase 1 workload report](docs/PHASE1.md) and [same-process update](docs/PHASE1-STEADY.md)
 - [Steady adapter protocol](benchmarks/steady/README.md): timing boundaries, limits and commands
 - [Project memory](memory/PROJECT.md), [current state](memory/STATE.md), and [agent instructions](AGENTS.md)
@@ -16,7 +19,7 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 Source characterization, reproducible profiling and the hardened upstream runner are retained. **P1-05 same-process warmup and timestamped hashing is implemented and validated**, commit `59b469c6b9a56aecc1e5ab8e82901e281ebe4676`. [CI run 37722277487](https://github.com/jliu67/OpenRandomX/actions/runs/37722277487) passed 64 tooling tests, 107 upstream tests, six native tests and previous controls. The native references and both differential comparisons matched; raw artifact records/checksums were downloaded and revalidated. See [P1-05 validation](docs/validation/p1-05/README.md).
 
-The concurrent GitHub-native communication package through `9d1a8e3` is preserved: router, templates, role inboxes, instructions, validation and history. It coordinates messages but does not launch AI workers. Its component validation and the P1-05 run are separate from any later combined integration run.
+The GitHub-native communication history through `9d1a8e3` is preserved; the current system is decentralized: router, templates, coordination histories and tests. It coordinates messages but does not launch AI workers. Its component validation and the P1-05 run are separate from any later combined integration run.
 
 **M1/Phase 1 is still open.** Controlled host measurements, dynamic profiling, power-sample import software and real synchronized wall-power readings remain outstanding. The next unblocked coding task is P1-06S. A green CI run does not establish efficiency; do not mix rates from the older upstream and new static-stride harnesses.
 

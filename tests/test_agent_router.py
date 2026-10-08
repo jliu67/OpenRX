@@ -35,17 +35,17 @@ def reduce(comments, target=None, writers=None, now=None):
 class ProtocolTests(unittest.TestCase):
     def test_initial_routing(self):
         state = reduce([])
-        self.assertEqual((state["role"], state["status"], state["claim"]), ("research", "ready", None))
+        self.assertEqual((state["kind"], state["status"], state["claim"]), ("task", "ready", None))
 
-    def test_missing_or_duplicate_role_falls_back(self):
+    def test_no_coordinator_regardless_of_to_metadata(self):
         for body in (router.THREAD, router.THREAD + "\n### To\nevil\n", router.THREAD + "\n### To\nrtl\n### To\nresearch"):
             with self.subTest(body=body):
                 state = reduce([], issue(body=body))
-                self.assertEqual(state["role"], "coordinator")
-                self.assertTrue(state["warnings"])
+                self.assertEqual((state["kind"], state["status"]), ("task", "ready"))
+                self.assertFalse(state["warnings"])
 
     def test_crlf_metadata(self):
-        self.assertEqual(reduce([], issue(body=router.THREAD + "\r\n### To\r\ntooling\r\n"))["role"], "tooling")
+        self.assertEqual(router.parse_dependencies(router.TASK + "\r\n### Dependencies\r\n- #3\r\n"), ([3], []))
 
     def test_non_protocol_text_not_executed(self):
         for text in ("hello", "```\n/openrx claim x/y\n```", "text\n/openrx claim x/y", "$(touch /tmp/pwn)"):
@@ -122,20 +122,20 @@ class ProtocolTests(unittest.TestCase):
     def test_unauthorized_controls_rejected(self):
         state = reduce([comment(1, "/openrx claim outsider/a", actor="outsider"), comment(2, "/openrx route rtl", actor="outsider")])
         self.assertIsNone(state["claim"])
-        self.assertEqual(state["role"], "research")
+        self.assertEqual(state["kind"], "task")
 
     def test_untrusted_issue_requires_writer_optin(self):
         target = issue(user={"login": "outsider"})
         self.assertIsNone(reduce([], target))
-        self.assertEqual(reduce([comment(1, "/openrx route review")], target)["role"], "review")
+        self.assertEqual(reduce([comment(1, "/openrx route review")], target)["kind"], "task")
 
     def test_route_enrolls_existing_issue(self):
         target = issue(body="Existing baseline task")
         self.assertIsNone(reduce([], target))
-        self.assertEqual(reduce([comment(1, "/openrx route benchmark")], target)["role"], "benchmark")
+        self.assertEqual(reduce([comment(1, "/openrx route benchmark")], target)["kind"], "task")
 
-    def test_claim_does_not_silently_enroll(self):
-        self.assertIsNone(reduce([comment(1, "/openrx claim a/b")], issue(body="Not enrolled")))
+    def test_legacy_issue_claim_is_authoritative_without_role(self):
+        self.assertEqual(reduce([comment(1, "/openrx claim a/b")], issue(body="Not enrolled"))["claim"]["session"], "a/b")
 
     def test_edited_commands_ignored(self):
         state = reduce([comment(1, "/openrx claim a/b", updated_at="2026-10-08T04:01:00Z")])
@@ -296,6 +296,96 @@ class IntegrationTests(unittest.TestCase):
         api = router.GitHubAPI("owner/repo", "fixture")
         with patch.object(api, "request", return_value=[{}] * 100), self.assertRaises(RuntimeError):
             api.pages("/issues")
+
+
+class DecentralizedTests(unittest.TestCase):
+    def test_task_and_message_are_distinct_and_no_roles(self):
+        task = reduce([], issue(body=router.TASK))
+        note = reduce([], issue(body=router.MESSAGE))
+        self.assertEqual((task["kind"], task["status"]), ("task", "ready"))
+        self.assertEqual((note["kind"], note["status"]), ("message", "open"))
+        self.assertNotIn("role", task)
+        self.assertFalse(any(x.startswith("agent:to:") for x in router.desired_labels(task)))
+        self.assertEqual(router.command("/openrx route coordinator"), ("join", ""))
+
+    def test_new_message_cannot_be_claimed(self):
+        state = reduce([comment(1, "/openrx claim a/b")], issue(body=router.MESSAGE))
+        self.assertEqual(state["status"], "open")
+        self.assertIsNone(state["claim"])
+        self.assertIn("rejected", state["audit"][-1]["result"])
+
+    def test_dependencies_block_until_closed_completed(self):
+        target = issue(number=10, body=router.TASK + "\n### Dependencies\n- #2\n- #3")
+        index = {10: target, 2: issue(number=2, state="closed", state_reason="completed"),
+                 3: issue(number=3, state="open")}
+        blocked = router.reduce_thread(target, [comment(1, "/openrx claim a/b")], {"owner"}, NOW, index)
+        self.assertEqual((blocked["status"], blocked["blocked_by"]), ("blocked", [3]))
+        self.assertIsNone(blocked["claim"])
+        self.assertIn("unmet issue dependencies", blocked["audit"][-1]["result"])
+        index[3]["state"], index[3]["state_reason"] = "closed", "completed"
+        claimed = router.reduce_thread(target, [comment(1, "/openrx claim a/b")], {"owner"}, NOW, index)
+        self.assertEqual(claimed["status"], "claimed")
+        self.assertFalse(claimed["blocked_by"])
+
+    def test_invalid_dependencies_fail_closed(self):
+        index = {3: issue(number=3, state="closed", state_reason="completed")}
+        for bad in ("- #10", "- #999", "- #3\n- garbage", "- None\n- #3", "- #3\n- None"):
+            with self.subTest(bad=bad):
+                target = issue(number=10, body=router.TASK + "\n### Dependencies\n" + bad)
+                state = router.reduce_thread(target, [comment(1, "/openrx claim a/b")],
+                                             {"owner"}, NOW, {**index, 10: target})
+                self.assertEqual(state["status"], "blocked")
+                self.assertIsNone(state["claim"])
+
+    def test_closed_not_planned_not_satisfied(self):
+        target = issue(number=10, body=router.TASK + "\n### Dependencies\n- #3")
+        state = router.reduce_thread(target, [], {"owner"}, NOW, {10: target, 3: issue(number=3,
+                                                           state="closed", state_reason="not_planned")})
+        self.assertEqual(state["blocked_by"], [3])
+
+    def test_template_comment_allowed_in_dependencies(self):
+        body = router.TASK + "\n### Dependencies\n- None\n<!-- replace with issue refs -->\n### Next\nText"
+        self.assertEqual(router.parse_dependencies(body), ([], []))
+
+    def test_block_and_reopen_with_no_manager(self):
+        target = issue(body=router.TASK)
+        state = reduce([comment(1, "/openrx block"), comment(2, "/openrx claim x/y", minute=1)], target)
+        self.assertEqual(state["status"], "blocked")
+        self.assertIsNone(state["claim"])
+        again = reduce([comment(1, "/openrx block"), comment(2, "/openrx reopen", minute=1),
+                        comment(3, "/openrx claim x/y", minute=2)], target)
+        self.assertEqual(again["status"], "claimed")
+
+    def test_existing_issue_join_preserves_body(self):
+        target = issue(body="Existing hardware research with all original comments")
+        state = reduce([comment(1, "/openrx join")], target)
+        self.assertEqual((state["kind"], state["status"]), ("task", "ready"))
+
+    def test_legacy_role_label_cleanup_preserves_human_labels(self):
+        target = issue(body=router.TASK, labels=[{"name": "bug"}, {"name": "agent:to:coordinator"}])
+        api = FakeAPI(target=target)
+        router.run(api, {}, NOW)
+        names = {x["name"] for x in api.target["labels"]}
+        self.assertIn("agent:task", names)
+        self.assertIn("bug", names)
+        self.assertNotIn("agent:to:coordinator", names)
+
+    def test_dependency_block_visible_in_live_reconcile(self):
+        target = issue(body=router.TASK + "\n### Dependencies\n- #999")
+        api = FakeAPI(target=target, comments=[comment(1, "/openrx claim a/b")])
+        router.run(api, {}, NOW)
+        self.assertIn({"name": "agent:status:blocked"}, api.target["labels"])
+        self.assertIn('"blocked_by"', api.comments[-1]["body"])
+
+    def test_old_workflow_state_cannot_claim_without_comment(self):
+        target = issue(body=router.TASK, labels=[{"name": "agent:status:claimed"}])
+        self.assertEqual(reduce([], target)["status"], "ready")
+
+    def test_non_writer_claim_does_not_enroll(self):
+        target = issue(body="Old task", user={"login": "outsider"})
+        state = reduce([comment(1, "/openrx claim a/b", actor="outsider")], target)
+        self.assertIsNone(state)
+
 
 
 if __name__ == "__main__":

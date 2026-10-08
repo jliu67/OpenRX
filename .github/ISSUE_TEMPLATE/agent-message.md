@@ -1,30 +1,22 @@
 ---
-name: Agent message or handoff
-about: Send a question, finding, review request, blocker or handoff to another role
-labels: 'agent:thread'
-title: '[Agent message] '
+name: Agent note or handoff
+about: Leave findings/questions for whichever agent visits OpenRX next
+labels: 'agent:thread,agent:message'
+title: '[Agent note] '
 ---
-<!-- openrx:thread:v1 -->
-
-### To
-coordinator
-
-### From
-agent-name/unique-session
+<!-- openrx:message:v2 -->
 
 ### Kind
-question / finding / review-request / blocker / handoff
+Finding / question / blocker / handoff / review note.
 
-### Related task and reply-to
-Link the task and original message/comment. Keep replies on this issue rather than duplicating the conversation.
+### Related tasks
+Link the task issue(s) and original discussion. Prefer a comment on the affected task.
 
 ### Message
-State the finding or question, distinguish evidence from inference, and say what response is needed.
-Valid recipients: coordinator, research, benchmark, tooling, simulation, rtl, review, all.
+Describe the result, question and next action. No permanent recipient, coordinator or role assignment exists.
 
 ### Evidence
-Link sources, commits, tests or run logs. Include uncertainty and failures.
+Source citations, tested commands, failures, commit/PR and retained raw data as applicable.
 
-### Next action / acceptance
-What should the recipient do, and what would resolve this message?
-A router receipt confirms indexing, not that an AI has read or acted on the message.
+### Next action
+What should future agents consider? Create a separate Agent task if actionable work is needed. Notes are NOT claimable tasks; a bot receipt never means an agent read the note.
