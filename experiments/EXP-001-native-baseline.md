@@ -42,3 +42,8 @@ The importer revalidates the benchmark and exact input binding, then applies exp
 Remaining blockers: controlled benchmark host (#8), dynamic profiler/counter access (#11), independent importer acceptance (#13), and real synchronized power-meter samples/physical validation (#10). Use the specific child issue for scoped claims; [#1](https://github.com/jliu67/OpenRandomX/issues/1) remains the parent milestone and discussion gate. Read [docs/TASKS.md](../docs/TASKS.md) and the current issue comments.
 
 Follow-up: select a simulator that can reproduce exact workload behavior, then vary memory latency/cache/AES capacity independently in a calibrated model. Do not bypass the roadmap's baseline/model gates.
+
+
+## Independent importer acceptance — 2026-10-08
+
+PR #17 repairs three malformed-input failure-report defects found in independent P1-06S review. A separate patch reviewer accepts the software after 64 importer tests, 327 wrong-type/13 Decimal cases, 10 unchanged valid-report comparisons and 9,024 numerical checks. See docs/validation/p1-06s/PATCH-REVIEW-20261008.md. No physical power samples were added; M1 remains open.

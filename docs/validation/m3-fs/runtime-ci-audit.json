@@ -1,0 +1,25 @@
+{
+  "implementation": "288cebbc284f304e216cfcc907a544e2706198f3",
+  "riscv_run": 37803105634,
+  "foundation_run": 37803105632,
+  "artifact_id": 11561518954,
+  "artifact_sha256": "a4cd49b7f6f54a94fed9d6b3087714eaa00063ad5f732c201b54464b0cc94d05",
+  "artifact_expires_utc": "2027-01-06T15:43:35Z",
+  "required_runtime_checks_per_environment": 9,
+  "required_randomx_checks_per_environment": 39,
+  "optional_hardware_aes_skips_per_environment": 1,
+  "independent_stream_replay": true,
+  "stream_files": {
+    "ci-runtime-qemu-report.json": "27521d051e5aa37979aefb06552104f5362f990f0ee5863fd93955ef1a40262c",
+    "ci-runtime-native-runtime.jsonl": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116",
+    "ci-runtime-qemu-runtime.jsonl": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7",
+    "ci-runtime-native-report.json": "c85d7fff5ee7f484d29e739bdfc67da418d1a6c905b59567c2a570e3c35f9926",
+    "ci-environment.txt": "0016544556e654d121d5e71cb8fc18f235c28c7b2be16c49e5f5b228b9d86222"
+  },
+  "limits": [
+    "QEMU user-mode runtime evidence, not gem5 or hardware",
+    "Light-mode RandomX, no full-dataset RISC-V control",
+    "No calibrated timing or measured power"
+  ],
+  "actual_pr_merge_checkout": "82398b9545c1bfc1d80bb7f79c41f783048fb89c"
+}

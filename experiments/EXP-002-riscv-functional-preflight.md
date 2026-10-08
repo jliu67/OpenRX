@@ -83,3 +83,8 @@ See [M3 validation](../docs/validation/m3/README.md) for executed outcomes,
 failures, skipped paths and review. Candidate source analyses are
 [core feasibility](../simulator/CORE-FEASIBILITY.md) and
 [simulator feasibility](../simulator/SIMULATOR-FEASIBILITY.md).
+
+
+## Explicit Linux runtime controls — 2026-10-08
+
+PR #17 adds standalone SIGILL recovery, W^X and generated-code overwrite/cache-flush controls. Actual native and QEMU RV64GC execution passes nine controls each; existing39 exact RandomX controls remain passing. Separate review and digest-checked CI streams are in docs/validation/m3-fs/RUNTIME-CI.md. Permission transitions may synchronize instructions, and QEMU self-modification handling is distinct from hardware. These results prepare #16; they do not complete gem5 boot, selected-core feasibility, full dataset or M4 timing calibration.

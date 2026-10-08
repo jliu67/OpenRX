@@ -41,3 +41,11 @@ Integration note: D012-D014 already published by the communication package retai
 | D024 | Use unchanged scalar RV64GC/lp64d software-AES light controls as the first RISC-V execution gate | Pinned JIT has scalar fallback; actual QEMU exact hashes and all four rounding modes passed; optional vector/crypto objects still need compiler support | Full-dataset, candidate core or optional-vector paths are executed and reviewed |
 | D025 | Provisionally select Chipyard 1.14.0 / MediumBoomV3Config for open RTL research | Traceable scalar FP/div-sqrt core and configurable memory path; source choice is not a performance ranking or accepted boot | Exact emitted config/Linux/hash/memory evidence or measurements favors another candidate |
 | D026 | Investigate gem5 full-system Linux before accepting unchanged RandomX runtime; do not call generic O3 BOOM/C920 | SE signal handling cannot recover startup ISA probes, cache-flush syscall259 is missing, mprotect ignored; QEMU has different coherence semantics | Independently validated full-system runtime or separately reviewed simulator fixes exist |
+
+
+## Linux runtime/import review — 2026-10-08 UTC
+
+| ID | Decision | Reason | Revisit when |
+|---|---|---|---|
+| D027 | Require explicit Linux signal/protection/flush/overwrite controls before runtime hash acceptance | Known QEMU hashes do not independently establish OS/JIT contracts | Selected core/runtime and SMP/migration controls provide stronger evidence |
+| D028 | Accept repaired P1-06S software separately from physical measurements | Independent review repaired failure-report bugs; no actual meter/host evidence exists | Real calibrated synchronized power meets M1 |

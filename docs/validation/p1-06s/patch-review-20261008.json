@@ -1,0 +1,3194 @@
+{
+  "evidence_class": "synthetic",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "reviewer": "power_patch_review",
+  "baseline_revision": "3f06f87b970cd1f8fc06f06dff9e9aa06cb5aad4",
+  "baseline_importer_sha256": "91f51352e98699c3fef9f0a8805d6946a780aa6218445928aa9c7304d34dd2e6",
+  "git_HEAD": "3f06f87b970cd1f8fc06f06dff9e9aa06cb5aad4",
+  "importer_sha256": "612d20c6e4b3cae80be1231d0c41c5ece29ece23a286f347482adf23f35cfbf7",
+  "tests_sha256": "91ea2a5806a9235823caacc6cb97f69c456e504999bbf6e0feab8c505ead81d8",
+  "probe_script_sha256": "0f59c66e4c31835e6e9f77c6382429e73832bbe85b57ac39d4c2c7878646eaf4",
+  "type_failures": [
+    {
+      "file": "run.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": null,
+      "error": "ValueError: unsupported run schema"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": [],
+      "error": "ValueError: unsupported run schema"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": {},
+      "error": "ValueError: unsupported run schema"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": false,
+      "error": "ValueError: unsupported run schema"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": "invalid",
+      "error": "ValueError: unsupported run schema"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "status"
+      ],
+      "value": null,
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "status"
+      ],
+      "value": [],
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "status"
+      ],
+      "value": {},
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "status"
+      ],
+      "value": false,
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "status"
+      ],
+      "value": "invalid",
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "returncode"
+      ],
+      "value": null,
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "returncode"
+      ],
+      "value": [],
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "returncode"
+      ],
+      "value": {},
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "returncode"
+      ],
+      "value": false,
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "returncode"
+      ],
+      "value": "invalid",
+      "error": "ValueError: benchmark did not succeed"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity"
+      ],
+      "value": null,
+      "error": "TypeError: 'NoneType' object is not subscriptable"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity"
+      ],
+      "value": [],
+      "error": "TypeError: list indices must be integers or slices, not str"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity"
+      ],
+      "value": {},
+      "error": "KeyError: 'returncode'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity"
+      ],
+      "value": false,
+      "error": "TypeError: 'bool' object is not subscriptable"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity"
+      ],
+      "value": "invalid",
+      "error": "TypeError: string indices must be integers, not 'str'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity",
+        "returncode"
+      ],
+      "value": null,
+      "error": "ValueError: missing successful integrity check"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity",
+        "returncode"
+      ],
+      "value": [],
+      "error": "ValueError: missing successful integrity check"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity",
+        "returncode"
+      ],
+      "value": {},
+      "error": "ValueError: missing successful integrity check"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity",
+        "returncode"
+      ],
+      "value": false,
+      "error": "ValueError: missing successful integrity check"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "vendor_integrity",
+        "returncode"
+      ],
+      "value": "invalid",
+      "error": "ValueError: missing successful integrity check"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "binary_sha256"
+      ],
+      "value": null,
+      "error": "TypeError: expected string or bytes-like object, got 'NoneType'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "binary_sha256"
+      ],
+      "value": [],
+      "error": "TypeError: expected string or bytes-like object, got 'list'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "binary_sha256"
+      ],
+      "value": {},
+      "error": "TypeError: expected string or bytes-like object, got 'dict'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "binary_sha256"
+      ],
+      "value": false,
+      "error": "TypeError: expected string or bytes-like object, got 'bool'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "binary_sha256"
+      ],
+      "value": "invalid",
+      "error": "ValueError: missing binary digest"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256"
+      ],
+      "value": null,
+      "error": "TypeError: 'NoneType' object is not subscriptable"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256"
+      ],
+      "value": [],
+      "error": "TypeError: list indices must be integers or slices, not str"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256"
+      ],
+      "value": {},
+      "error": "KeyError: 'scripts/steady_benchmark.py'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256"
+      ],
+      "value": false,
+      "error": "TypeError: 'bool' object is not subscriptable"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256"
+      ],
+      "value": "invalid",
+      "error": "TypeError: string indices must be integers, not 'str'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256",
+        "scripts/steady_benchmark.py"
+      ],
+      "value": null,
+      "error": "ValueError: steady validator revision mismatch"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256",
+        "scripts/steady_benchmark.py"
+      ],
+      "value": [],
+      "error": "ValueError: steady validator revision mismatch"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256",
+        "scripts/steady_benchmark.py"
+      ],
+      "value": {},
+      "error": "ValueError: steady validator revision mismatch"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256",
+        "scripts/steady_benchmark.py"
+      ],
+      "value": false,
+      "error": "ValueError: steady validator revision mismatch"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "source_sha256",
+        "scripts/steady_benchmark.py"
+      ],
+      "value": "invalid",
+      "error": "ValueError: steady validator revision mismatch"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256"
+      ],
+      "value": null,
+      "error": "TypeError: 'NoneType' object is not subscriptable"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256"
+      ],
+      "value": [],
+      "error": "TypeError: list indices must be integers or slices, not str"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256"
+      ],
+      "value": {},
+      "error": "KeyError: 'adapter.jsonl'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256"
+      ],
+      "value": false,
+      "error": "TypeError: 'bool' object is not subscriptable"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256"
+      ],
+      "value": "invalid",
+      "error": "TypeError: string indices must be integers, not 'str'"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256",
+        "adapter.jsonl"
+      ],
+      "value": null,
+      "error": "ValueError: raw digest mismatch: adapter.jsonl"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256",
+        "adapter.jsonl"
+      ],
+      "value": [],
+      "error": "ValueError: raw digest mismatch: adapter.jsonl"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256",
+        "adapter.jsonl"
+      ],
+      "value": {},
+      "error": "ValueError: raw digest mismatch: adapter.jsonl"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256",
+        "adapter.jsonl"
+      ],
+      "value": false,
+      "error": "ValueError: raw digest mismatch: adapter.jsonl"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "raw_sha256",
+        "adapter.jsonl"
+      ],
+      "value": "invalid",
+      "error": "ValueError: raw digest mismatch: adapter.jsonl"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration"
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: run configuration"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration"
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: run configuration"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration"
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: run configuration"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration"
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: run configuration"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: run configuration"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "summary"
+      ],
+      "value": null,
+      "error": "ValueError: rejected or inconsistent run summary"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "summary"
+      ],
+      "value": [],
+      "error": "ValueError: rejected or inconsistent run summary"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "summary"
+      ],
+      "value": {},
+      "error": "ValueError: rejected or inconsistent run summary"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "summary"
+      ],
+      "value": false,
+      "error": "ValueError: rejected or inconsistent run summary"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "summary"
+      ],
+      "value": "invalid",
+      "error": "ValueError: rejected or inconsistent run summary"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "threads"
+      ],
+      "value": null,
+      "error": "ValueError: command/config mismatch: threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "threads"
+      ],
+      "value": [],
+      "error": "ValueError: command/config mismatch: threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "threads"
+      ],
+      "value": {},
+      "error": "ValueError: command/config mismatch: threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "threads"
+      ],
+      "value": false,
+      "error": "ValueError: command/config mismatch: threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "threads"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "init_threads"
+      ],
+      "value": null,
+      "error": "ValueError: command/config mismatch: init_threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "init_threads"
+      ],
+      "value": [],
+      "error": "ValueError: command/config mismatch: init_threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "init_threads"
+      ],
+      "value": {},
+      "error": "ValueError: command/config mismatch: init_threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "init_threads"
+      ],
+      "value": false,
+      "error": "ValueError: command/config mismatch: init_threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "init_threads"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: init_threads"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "nonces"
+      ],
+      "value": null,
+      "error": "ValueError: command/config mismatch: nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "nonces"
+      ],
+      "value": [],
+      "error": "ValueError: command/config mismatch: nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "nonces"
+      ],
+      "value": {},
+      "error": "ValueError: command/config mismatch: nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "nonces"
+      ],
+      "value": false,
+      "error": "ValueError: command/config mismatch: nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "nonces"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "warmup_nonces"
+      ],
+      "value": null,
+      "error": "ValueError: command/config mismatch: warmup_nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "warmup_nonces"
+      ],
+      "value": [],
+      "error": "ValueError: command/config mismatch: warmup_nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "warmup_nonces"
+      ],
+      "value": {},
+      "error": "ValueError: command/config mismatch: warmup_nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "warmup_nonces"
+      ],
+      "value": false,
+      "error": "ValueError: command/config mismatch: warmup_nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "warmup_nonces"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: warmup_nonces"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "repeats"
+      ],
+      "value": null,
+      "error": "ValueError: command/config mismatch: repeats"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "repeats"
+      ],
+      "value": [],
+      "error": "ValueError: command/config mismatch: repeats"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "repeats"
+      ],
+      "value": {},
+      "error": "ValueError: command/config mismatch: repeats"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "repeats"
+      ],
+      "value": false,
+      "error": "ValueError: command/config mismatch: repeats"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "repeats"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: repeats"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "min_seconds"
+      ],
+      "value": null,
+      "error": "ValueError: command/config mismatch: min_seconds"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "min_seconds"
+      ],
+      "value": [],
+      "error": "ValueError: command/config mismatch: min_seconds"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "min_seconds"
+      ],
+      "value": {},
+      "error": "ValueError: command/config mismatch: min_seconds"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "min_seconds"
+      ],
+      "value": false,
+      "error": "ValueError: command/config mismatch: min_seconds"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "min_seconds"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: min_seconds"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "aes"
+      ],
+      "value": null,
+      "error": "ValueError: command/config mismatch: aes"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "aes"
+      ],
+      "value": [],
+      "error": "ValueError: command/config mismatch: aes"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "aes"
+      ],
+      "value": {},
+      "error": "ValueError: command/config mismatch: aes"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "aes"
+      ],
+      "value": false,
+      "error": "ValueError: command/config mismatch: aes"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "aes"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: aes"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "versions"
+      ],
+      "value": null,
+      "error": "ValueError: invalid run version selection"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "versions"
+      ],
+      "value": [],
+      "error": "ValueError: invalid run version selection"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "versions"
+      ],
+      "value": {},
+      "error": "ValueError: invalid run version selection"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "versions"
+      ],
+      "value": false,
+      "error": "ValueError: invalid run version selection"
+    },
+    {
+      "file": "run.json",
+      "path": [
+        "configuration",
+        "versions"
+      ],
+      "value": "invalid",
+      "error": "ValueError: command/config mismatch: versions"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": null,
+      "error": "ValueError: unsupported power schema"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": [],
+      "error": "ValueError: unsupported power schema"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": {},
+      "error": "ValueError: unsupported power schema"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": false,
+      "error": "ValueError: unsupported power schema"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "schema_version"
+      ],
+      "value": "invalid",
+      "error": "ValueError: unsupported power schema"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "evidence_class"
+      ],
+      "value": null,
+      "error": "ValueError: invalid evidence class"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "evidence_class"
+      ],
+      "value": [],
+      "error": "ValueError: invalid evidence class"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "evidence_class"
+      ],
+      "value": {},
+      "error": "ValueError: invalid evidence class"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "evidence_class"
+      ],
+      "value": false,
+      "error": "ValueError: invalid evidence class"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "evidence_class"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid evidence class"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "benchmark_evidence"
+      ],
+      "value": null,
+      "error": "ValueError: synthetic benchmark cannot be relabeled as measured"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "benchmark_evidence"
+      ],
+      "value": [],
+      "error": "ValueError: synthetic benchmark cannot be relabeled as measured"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "benchmark_evidence"
+      ],
+      "value": {},
+      "error": "ValueError: synthetic benchmark cannot be relabeled as measured"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "benchmark_evidence"
+      ],
+      "value": false,
+      "error": "ValueError: synthetic benchmark cannot be relabeled as measured"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "benchmark_evidence"
+      ],
+      "value": "invalid",
+      "error": "ValueError: synthetic benchmark cannot be relabeled as measured"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding"
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: binding"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding"
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: binding"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding"
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: binding"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding"
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: binding"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: binding"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding",
+        "adapter_sha256"
+      ],
+      "value": null,
+      "error": "ValueError: power/benchmark binding mismatch"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding",
+        "adapter_sha256"
+      ],
+      "value": [],
+      "error": "ValueError: power/benchmark binding mismatch"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding",
+        "adapter_sha256"
+      ],
+      "value": {},
+      "error": "ValueError: power/benchmark binding mismatch"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding",
+        "adapter_sha256"
+      ],
+      "value": false,
+      "error": "ValueError: power/benchmark binding mismatch"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "binding",
+        "adapter_sha256"
+      ],
+      "value": "invalid",
+      "error": "ValueError: power/benchmark binding mismatch"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device"
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: device"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device"
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: device"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device"
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: device"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device"
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: device"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: device"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary"
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary"
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary"
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary"
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "units"
+      ],
+      "value": null,
+      "error": "ValueError: units must be ns and W"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "units"
+      ],
+      "value": [],
+      "error": "ValueError: units must be ns and W"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "units"
+      ],
+      "value": {},
+      "error": "ValueError: units must be ns and W"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "units"
+      ],
+      "value": false,
+      "error": "ValueError: units must be ns and W"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "units"
+      ],
+      "value": "invalid",
+      "error": "ValueError: units must be ns and W"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "sample_semantics"
+      ],
+      "value": null,
+      "error": "ValueError: unsupported sample semantics"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "sample_semantics"
+      ],
+      "value": [],
+      "error": "ValueError: unsupported sample semantics"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "sample_semantics"
+      ],
+      "value": {},
+      "error": "ValueError: unsupported sample semantics"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "sample_semantics"
+      ],
+      "value": false,
+      "error": "ValueError: unsupported sample semantics"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "sample_semantics"
+      ],
+      "value": "invalid",
+      "error": "ValueError: unsupported sample semantics"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization"
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: synchronization"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization"
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: synchronization"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization"
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: synchronization"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization"
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: synchronization"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: synchronization"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty"
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: uncertainty"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty"
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: uncertainty"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty"
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: uncertainty"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty"
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: uncertainty"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: uncertainty"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy"
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: policy"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy"
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: policy"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy"
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: policy"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy"
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: policy"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: policy"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples"
+      ],
+      "value": null,
+      "error": "ValueError: need 2..200000 samples"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples"
+      ],
+      "value": [],
+      "error": "ValueError: need 2..200000 samples"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples"
+      ],
+      "value": {},
+      "error": "ValueError: need 2..200000 samples"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples"
+      ],
+      "value": false,
+      "error": "ValueError: need 2..200000 samples"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples"
+      ],
+      "value": "invalid",
+      "error": "ValueError: need 2..200000 samples"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0
+      ],
+      "value": null,
+      "error": "ValueError: invalid fields: sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0
+      ],
+      "value": [],
+      "error": "ValueError: invalid fields: sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0
+      ],
+      "value": {},
+      "error": "ValueError: invalid fields: sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0
+      ],
+      "value": false,
+      "error": "ValueError: invalid fields: sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid fields: sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "calibration_reference"
+      ],
+      "value": null,
+      "error": "ValueError: missing text: calibration_reference"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "calibration_reference"
+      ],
+      "value": [],
+      "error": "ValueError: missing text: calibration_reference"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "calibration_reference"
+      ],
+      "value": {},
+      "error": "ValueError: missing text: calibration_reference"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "calibration_reference"
+      ],
+      "value": false,
+      "error": "ValueError: missing text: calibration_reference"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "id"
+      ],
+      "value": null,
+      "error": "ValueError: missing text: id"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "id"
+      ],
+      "value": [],
+      "error": "ValueError: missing text: id"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "id"
+      ],
+      "value": {},
+      "error": "ValueError: missing text: id"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "id"
+      ],
+      "value": false,
+      "error": "ValueError: missing text: id"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "max_watts"
+      ],
+      "value": null,
+      "error": "ValueError: invalid number: max_watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "max_watts"
+      ],
+      "value": [],
+      "error": "ValueError: invalid number: max_watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "max_watts"
+      ],
+      "value": {},
+      "error": "ValueError: invalid number: max_watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "max_watts"
+      ],
+      "value": false,
+      "error": "ValueError: invalid number: max_watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "max_watts"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid number: max_watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "model"
+      ],
+      "value": null,
+      "error": "ValueError: missing text: model"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "model"
+      ],
+      "value": [],
+      "error": "ValueError: missing text: model"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "model"
+      ],
+      "value": {},
+      "error": "ValueError: missing text: model"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "device",
+        "model"
+      ],
+      "value": false,
+      "error": "ValueError: missing text: model"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "description"
+      ],
+      "value": null,
+      "error": "ValueError: missing text: boundary description"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "description"
+      ],
+      "value": [],
+      "error": "ValueError: missing text: boundary description"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "description"
+      ],
+      "value": {},
+      "error": "ValueError: missing text: boundary description"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "description"
+      ],
+      "value": false,
+      "error": "ValueError: missing text: boundary description"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "excludes"
+      ],
+      "value": null,
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "excludes"
+      ],
+      "value": {},
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "excludes"
+      ],
+      "value": false,
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "excludes"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "includes"
+      ],
+      "value": null,
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "includes"
+      ],
+      "value": [],
+      "error": "ValueError: empty physical boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "includes"
+      ],
+      "value": {},
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "includes"
+      ],
+      "value": false,
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "includes"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid boundary component list"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "kind"
+      ],
+      "value": null,
+      "error": "ValueError: v1 requires whole-system AC boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "kind"
+      ],
+      "value": [],
+      "error": "ValueError: v1 requires whole-system AC boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "kind"
+      ],
+      "value": {},
+      "error": "ValueError: v1 requires whole-system AC boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "kind"
+      ],
+      "value": false,
+      "error": "ValueError: v1 requires whole-system AC boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "boundary",
+        "kind"
+      ],
+      "value": "invalid",
+      "error": "ValueError: v1 requires whole-system AC boundary"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "drift_bound_ppm"
+      ],
+      "value": null,
+      "error": "ValueError: invalid number: drift bound"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "drift_bound_ppm"
+      ],
+      "value": [],
+      "error": "ValueError: invalid number: drift bound"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "drift_bound_ppm"
+      ],
+      "value": {},
+      "error": "ValueError: invalid number: drift bound"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "drift_bound_ppm"
+      ],
+      "value": false,
+      "error": "ValueError: invalid number: drift bound"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "drift_bound_ppm"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid number: drift bound"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "evidence_reference"
+      ],
+      "value": null,
+      "error": "ValueError: missing text: synchronization evidence"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "evidence_reference"
+      ],
+      "value": [],
+      "error": "ValueError: missing text: synchronization evidence"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "evidence_reference"
+      ],
+      "value": {},
+      "error": "ValueError: missing text: synchronization evidence"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "evidence_reference"
+      ],
+      "value": false,
+      "error": "ValueError: missing text: synchronization evidence"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "method"
+      ],
+      "value": null,
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "method"
+      ],
+      "value": [],
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "method"
+      ],
+      "value": {},
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "method"
+      ],
+      "value": false,
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "method"
+      ],
+      "value": "invalid",
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "offset_bound_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: offset_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "offset_bound_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: offset_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "offset_bound_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: offset_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "offset_bound_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: offset_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "offset_bound_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: offset_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "rate_correction_ppm"
+      ],
+      "value": null,
+      "error": "ValueError: invalid rate correction"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "rate_correction_ppm"
+      ],
+      "value": [],
+      "error": "ValueError: invalid rate correction"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "rate_correction_ppm"
+      ],
+      "value": {},
+      "error": "ValueError: invalid rate correction"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "rate_correction_ppm"
+      ],
+      "value": false,
+      "error": "ValueError: invalid rate correction"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "rate_correction_ppm"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid rate correction"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "response_bound_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: response_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "response_bound_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: response_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "response_bound_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: response_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "response_bound_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: response_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "response_bound_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: response_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_anchor_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: source_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_anchor_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: source_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_anchor_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: source_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_anchor_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: source_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_anchor_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: source_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_clock"
+      ],
+      "value": null,
+      "error": "ValueError: missing text: source clock identity"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_clock"
+      ],
+      "value": [],
+      "error": "ValueError: missing text: source clock identity"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_clock"
+      ],
+      "value": {},
+      "error": "ValueError: missing text: source clock identity"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "source_clock"
+      ],
+      "value": false,
+      "error": "ValueError: missing text: source clock identity"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_anchor_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: target_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_anchor_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: target_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_anchor_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: target_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_anchor_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: target_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_anchor_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: target_anchor_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_clock"
+      ],
+      "value": null,
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_clock"
+      ],
+      "value": [],
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_clock"
+      ],
+      "value": {},
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_clock"
+      ],
+      "value": false,
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "target_clock"
+      ],
+      "value": "invalid",
+      "error": "ValueError: unsynchronized or unsupported clock mapping"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "timestamp_bound_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: timestamp_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "timestamp_bound_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: timestamp_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "timestamp_bound_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: timestamp_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "timestamp_bound_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: timestamp_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "timestamp_bound_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: timestamp_bound_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_from_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: valid_from_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_from_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: valid_from_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_from_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: valid_from_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_from_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: valid_from_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_from_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: valid_from_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_to_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: valid_to_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_to_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: valid_to_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_to_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: valid_to_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_to_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: valid_to_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "synchronization",
+        "valid_to_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: valid_to_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "absolute_watts"
+      ],
+      "value": null,
+      "error": "ValueError: invalid number: absolute error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "absolute_watts"
+      ],
+      "value": [],
+      "error": "ValueError: invalid number: absolute error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "absolute_watts"
+      ],
+      "value": {},
+      "error": "ValueError: invalid number: absolute error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "absolute_watts"
+      ],
+      "value": false,
+      "error": "ValueError: invalid number: absolute error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "absolute_watts"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid number: absolute error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "benchmark_boundary_bound_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: benchmark boundary error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "benchmark_boundary_bound_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: benchmark boundary error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "benchmark_boundary_bound_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: benchmark boundary error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "benchmark_boundary_bound_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: benchmark boundary error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "benchmark_boundary_bound_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: benchmark boundary error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "interpolation_bound_watts"
+      ],
+      "value": null,
+      "error": "ValueError: invalid number: interpolation error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "interpolation_bound_watts"
+      ],
+      "value": [],
+      "error": "ValueError: invalid number: interpolation error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "interpolation_bound_watts"
+      ],
+      "value": {},
+      "error": "ValueError: invalid number: interpolation error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "interpolation_bound_watts"
+      ],
+      "value": false,
+      "error": "ValueError: invalid number: interpolation error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "interpolation_bound_watts"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid number: interpolation error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "rationale"
+      ],
+      "value": null,
+      "error": "ValueError: missing text: uncertainty rationale"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "rationale"
+      ],
+      "value": [],
+      "error": "ValueError: missing text: uncertainty rationale"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "rationale"
+      ],
+      "value": {},
+      "error": "ValueError: missing text: uncertainty rationale"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "rationale"
+      ],
+      "value": false,
+      "error": "ValueError: missing text: uncertainty rationale"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "relative_fraction"
+      ],
+      "value": null,
+      "error": "ValueError: invalid number: relative error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "relative_fraction"
+      ],
+      "value": [],
+      "error": "ValueError: invalid number: relative error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "relative_fraction"
+      ],
+      "value": {},
+      "error": "ValueError: invalid number: relative error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "relative_fraction"
+      ],
+      "value": false,
+      "error": "ValueError: invalid number: relative error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "uncertainty",
+        "relative_fraction"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid number: relative error"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_clock_uncertainty_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: max_clock_uncertainty_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_clock_uncertainty_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: max_clock_uncertainty_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_clock_uncertainty_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: max_clock_uncertainty_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_clock_uncertainty_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: max_clock_uncertainty_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_clock_uncertainty_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: max_clock_uncertainty_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_gap_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: max_gap_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_gap_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: max_gap_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_gap_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: max_gap_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_gap_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: max_gap_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_gap_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: max_gap_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_relative_energy_error"
+      ],
+      "value": null,
+      "error": "ValueError: invalid number: relative energy limit"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_relative_energy_error"
+      ],
+      "value": [],
+      "error": "ValueError: invalid number: relative energy limit"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_relative_energy_error"
+      ],
+      "value": {},
+      "error": "ValueError: invalid number: relative energy limit"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_relative_energy_error"
+      ],
+      "value": false,
+      "error": "ValueError: invalid number: relative energy limit"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_relative_energy_error"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid number: relative energy limit"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_wall_offset_change_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: max_wall_offset_change_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_wall_offset_change_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: max_wall_offset_change_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_wall_offset_change_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: max_wall_offset_change_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_wall_offset_change_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: max_wall_offset_change_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "policy",
+        "max_wall_offset_change_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: max_wall_offset_change_ns"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "time_ns"
+      ],
+      "value": null,
+      "error": "ValueError: invalid integer: sample time"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "time_ns"
+      ],
+      "value": [],
+      "error": "ValueError: invalid integer: sample time"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "time_ns"
+      ],
+      "value": {},
+      "error": "ValueError: invalid integer: sample time"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "time_ns"
+      ],
+      "value": false,
+      "error": "ValueError: invalid integer: sample time"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "time_ns"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid integer: sample time"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "watts"
+      ],
+      "value": null,
+      "error": "ValueError: invalid number: sample watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "watts"
+      ],
+      "value": [],
+      "error": "ValueError: invalid number: sample watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "watts"
+      ],
+      "value": {},
+      "error": "ValueError: invalid number: sample watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "watts"
+      ],
+      "value": false,
+      "error": "ValueError: invalid number: sample watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "watts"
+      ],
+      "value": "invalid",
+      "error": "ValueError: invalid number: sample watts"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "status"
+      ],
+      "value": null,
+      "error": "ValueError: bad/missing/clipped sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "status"
+      ],
+      "value": [],
+      "error": "ValueError: bad/missing/clipped sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "status"
+      ],
+      "value": {},
+      "error": "ValueError: bad/missing/clipped sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "status"
+      ],
+      "value": false,
+      "error": "ValueError: bad/missing/clipped sample"
+    },
+    {
+      "file": "power.json",
+      "path": [
+        "samples",
+        0,
+        "status"
+      ],
+      "value": "invalid",
+      "error": "ValueError: bad/missing/clipped sample"
+    }
+  ],
+  "decimal_failures": [
+    {
+      "field": "rate_correction_ppm",
+      "token": "1e1000000",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: rate correction"
+    },
+    {
+      "field": "rate_correction_ppm",
+      "token": "-1e1000000",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: rate correction"
+    },
+    {
+      "field": "rate_correction_ppm",
+      "token": "10000.000000000000000001",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: rate correction"
+    },
+    {
+      "field": "rate_correction_ppm",
+      "token": "-10000.000000000000000001",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: rate correction"
+    },
+    {
+      "field": "rate_correction_ppm",
+      "token": "0.0000000000000000001",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: rate correction"
+    },
+    {
+      "field": "rate_correction_ppm",
+      "token": "-0.0000000000000000001",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: rate correction"
+    },
+    {
+      "field": "rate_correction_ppm",
+      "token": "1e999999999999999999999",
+      "error": "ValueError: invalid JSON decimal number"
+    },
+    {
+      "field": "rate_correction_ppm",
+      "token": "1e-999999999999999999999",
+      "error": "ValueError: invalid JSON decimal number"
+    },
+    {
+      "field": "watts",
+      "token": "1e1000000",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: sample watts"
+    },
+    {
+      "field": "watts",
+      "token": "-1e1000000",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: sample watts"
+    },
+    {
+      "field": "watts",
+      "token": "1e999999999999999999999",
+      "error": "ValueError: invalid JSON decimal number"
+    },
+    {
+      "field": "watts",
+      "token": "1e-999999999999999999999",
+      "error": "ValueError: invalid JSON decimal number"
+    },
+    {
+      "field": "watts",
+      "token": "0.0000000000000000001",
+      "error": "ValueError: out-of-range/nonfinite/overprecise number: sample watts"
+    }
+  ],
+  "accepted_compatibility": [
+    {
+      "kind": "unmodified fixture",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "-10000",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "10000",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "-9999.123456789012345678",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "9999.123456789012345678",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "0.000000000000000001",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "-0.000000000000000001",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "-0.0",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "rate",
+      "token": "0e1000000",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    },
+    {
+      "kind": "18-place power",
+      "totals": {
+        "v1": {
+          "energy_joules": 400.0,
+          "absolute_error_bound_joules": 8.000404400000003,
+          "energy_lower_joules": 391.99959559999996,
+          "energy_upper_joules": 408.00040440000004,
+          "average_watts": 100.0,
+          "hashes_per_joule": 5.0,
+          "hashes_per_joule_lower": 4.901955925610351,
+          "hashes_per_joule_upper": 5.1020460797638645
+        },
+        "v2": {
+          "energy_joules": 800.0,
+          "absolute_error_bound_joules": 16.000404400000004,
+          "energy_lower_joules": 783.9995955999999,
+          "energy_upper_joules": 816.0004044000001,
+          "average_watts": 100.0,
+          "hashes_per_joule": 2.5,
+          "hashes_per_joule_lower": 2.450979177480417,
+          "hashes_per_joule_upper": 2.55102172402192
+        }
+      }
+    }
+  ],
+  "unhandled_errors": 0
+}

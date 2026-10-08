@@ -27,14 +27,14 @@ and [validation](docs/validation/m3/README.md).
 Chipyard/MediumBoomV3Config is the provisional open RTL research target.
 gem5 requires a validated Linux runtime path: its SE signal/cache-flush gaps
 affect unchanged RandomX startup/JIT. [Task #16](https://github.com/jliu67/OpenRandomX/issues/16)
-tracks full-system Linux feasibility. M3 remains open for selected-core boot
+tracks full-system Linux feasibility. [Explicit Linux runtime controls](docs/validation/m3-fs/RUNTIME-CI.md) now pass natively and under scalar QEMU: actual SIGILL recovery, W^X enforcement and generated-code overwrite/flush/reexecution. M3 remains open for selected-core boot
 and full-dataset correctness; no calibrated timing or efficiency is established.
 
 ## Phase 1 progress
 
 Source characterization, reproducible profiling and the hardened upstream runner are retained. **P1-05 same-process warmup and timestamped hashing is implemented and validated**, commit `59b469c6b9a56aecc1e5ab8e82901e281ebe4676`, integrated on main at `960b8b5`. See [P1-05 validation](docs/validation/p1-05/INTEGRATION.md).
 
-**P1-06S power-data import is implemented and tested**, commit `2b28d6fb4604a2b861241d38678e24c8541aed02`. [CI run 37726645625](https://github.com/jliu67/OpenRandomX/actions/runs/37726645625) passed **182 Python tests, 107 upstream tests and six native tests**, no skips. The 61 new tests and saved-native-data joins use explicitly synthetic power; the downloaded CI archive/logs were inspected and rehashed. [Task #13](https://github.com/jliu67/OpenRandomX/issues/13) remains open for independent acceptance; see [validation and reproduction](docs/validation/p1-06s/README.md).
+**P1-06S power-data import is implemented and tested**, commit `2b28d6fb4604a2b861241d38678e24c8541aed02`. [CI run 37726645625](https://github.com/jliu67/OpenRandomX/actions/runs/37726645625) passed **182 Python tests, 107 upstream tests and six native tests**, no skips. The 61 new tests and saved-native-data joins use explicitly synthetic power; the downloaded CI archive/logs were inspected and rehashed. Independent review found and repaired three malformed-input failure-report defects in [PR #17](https://github.com/jliu67/OpenRandomX/pull/17). The repaired importer passes 64 tests and an independent numerical/error-report audit; [software acceptance](docs/validation/p1-06s/PATCH-REVIEW-20261008.md) does not certify physical measurements.
 
 The GitHub-native communication history is preserved; protocol v2 is decentralized, with per-task claims and dependencies. It coordinates messages but does not launch AI workers. P1-06S does not change its router, templates, instructions or workflow.
 

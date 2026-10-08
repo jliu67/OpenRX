@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "binary_sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+  "command": [
+    "qemu-riscv64",
+    "-cpu",
+    "rv64,v=false",
+    "-L",
+    "/usr/riscv64-linux-gnu",
+    "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/openrx-runtime-probe"
+  ],
+  "timeout_seconds": 60,
+  "host": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "evidence_class": "functional-emulation",
+  "timing_calibrated": false,
+  "power_measured": false,
+  "returncode": 0,
+  "validated": {
+    "checks_passed": 9,
+    "architecture": "riscv64",
+    "flush_path": "linux-riscv-flush-icache",
+    "timing_calibrated": false
+  },
+  "status": "pass",
+  "raw_sha256": {
+    "runtime.jsonl": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
