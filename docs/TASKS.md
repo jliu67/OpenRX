@@ -32,3 +32,12 @@ Before work, read AGENTS.md, the memory files, this board, the relevant experime
 At handoff, record tested commands, failures, evidence class, commit/run links, blockers and the next executable step. Update STATE.md and append SESSION_LOG.md; keep consequential decisions in DECISIONS.md. Mark the claim completed, released or blocked. Refresh the remote head before publishing; use expected-head checks and never force-push over concurrent work.
 
 The most recent handoff is [memory/HANDOFF.md](../memory/HANDOFF.md). Routine scoped research/code is authorized; purchases, paid compute, account/visibility changes and fabricated results are not.
+
+## Communication infrastructure
+
+| ID | Work item | Status | Evidence / handoff |
+|---|---|---|---|
+| COMM-01 | GitHub message board, inboxes, templates, claims and routing | DONE | [Hub #5](https://github.com/jliu67/OpenRandomX/issues/5), [implementation task #6](https://github.com/jliu67/OpenRandomX/issues/6), commit `d3c503a`, [45 tests and live validation](validation/communication/README.md) |
+| COMM-02 | Autonomous AI worker execution | NOT CONFIGURED; separate authorization/setup required | Communication does not launch models; no runtime, model secrets, paid service or external agent was provisioned |
+
+Read [COMMUNICATION.md](COMMUNICATION.md). New task/message templates enroll writer-authored issues; `/openrx route ROLE` opts an existing issue in without replacing its content. Inbox labels are cached routing views; consult the full thread and actual claim expiry before work. Existing issues #1–#4 retain their prior state and discussion. Infrastructure completion does not complete M1 or bypass scientific evidence gates.

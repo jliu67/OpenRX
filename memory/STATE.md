@@ -29,3 +29,11 @@ No vendored source changed. No controlled hardware throughput/AES/thread matrix,
 5. Continue issues #2/#4 primary-source hardware/network verification and #3 simulator feasibility without bypassing the roadmap gates.
 
 Routine scoped code/research commits are authorized. Do not spend money, alter account/visibility settings, fabricate results or claim agents are running between sessions. The completed session claim is released; future agents must inspect current issue comments and remote HEAD before editing.
+
+## GitHub communication package — 2026-10-08 UTC
+
+Implemented on main at `d3c503a5ad4154ba50e6f38119bb904cb41322d8`: [message board #5](https://github.com/jliu67/OpenRandomX/issues/5), task/message templates, role/status inbox labels, four-hour session claims and a deterministic Actions router. Read [docs/COMMUNICATION.md](../docs/COMMUNICATION.md) before using commands. Existing research issues and all Phase 1 evidence/gates are preserved.
+
+Validation: 45 new communication tests passed locally and in [router run 37722591259](https://github.com/jliu67/OpenRandomX/actions/runs/37722591259). Live routing accepted the installation claim and rejected a conflicting test session; repeated reconciliation did not duplicate the state receipt. [Foundation/native CI run 37722591236](https://github.com/jliu67/OpenRandomX/actions/runs/37722591236) also completed successfully. Details and limits: [communication validation](../docs/validation/communication/README.md).
+
+No autonomous model worker, external queue, scheduled polling, model credential or paid service was provisioned. Inbox roles do not imply active agents. The current installation/handoff claim lifecycle is recorded on [#6](https://github.com/jliu67/OpenRandomX/issues/6); no continuing worker is claimed by this package. Invoke an authorized agent to read an inbox and act. M1 remains open.
