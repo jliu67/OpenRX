@@ -30,3 +30,16 @@ Implementation `d3c503a5ad4154ba50e6f38119bb904cb41322d8`, handoff `9d1a8e3`: [p
 5. Continue hardware/network evidence and simulator feasibility through existing issues #2/#4/#3 without bypassing gates.
 
 Read [board](../docs/TASKS.md), [handoff](HANDOFF.md), AGENTS and current task comments before work. Post session-scoped claims and release them at handoff. No automatic spending, external worker provisioning, account changes or fabricated results. P1-05's final editing claim release belongs on #1; no background work is promised.
+
+
+## Decentralized GitHub task pool — 2026-10-08 UTC
+
+The user clarified OpenRX has **no coordinator, permanent agent roles or automatic assignments**. A new protocol v2 is implemented on main at [c387b824](https://github.com/jliu67/OpenRandomX/commit/c387b82409b3d945f8107e5bfc71e1abfcae3ebe) without modifying vendor/randomx, benchmark algorithms or P1-05. The previous role-based communication section above is historical; see current [COMMUNICATION.md](../docs/COMMUNICATION.md) and [hub #5](https://github.com/jliu67/OpenRandomX/issues/5).
+
+- GitHub task issue comments are the single live authority for actor/session claims; labels and bot receipts are derived views. docs/TASKS.md remains a summary, not a second ledger.
+- Task v2 and Note v2 templates, legacy v1 compatibility, no role inbox, four-hour advisory leases and strict dependency checks (all referenced issues closed as completed). Unknown external hardware and M4 validation remain human evidence gates.
+- Existing research issues #2/#3/#4 joined the shared pool without modifying original research bodies. #1 remains the milestone parent and its independent Phase 1 work is separated into #8 (controlled-host run, blocked), #13 (P1-06S importer, ready), #10 (wall power, blocked) and #11 (dynamic profile, blocked). #9 was closed as completed because P1-05 was already merged. #14 tracks M4 calibration; M5 #12 depends on #1, #3 and #14.
+- [Router run 37724872630](https://github.com/jliu67/OpenRandomX/actions/runs/37724872630) passed 57 protocol tests and live GitHub reconciliation; issue #7 had a matching claim, #8 was blocked, #13 ready, and original #6 became a closed shared-task record with obsolete recipient label removed.
+- [Combined CI 37724872611](https://github.com/jliu67/OpenRandomX/actions/runs/37724872611) succeeded on the exact upgrade commit: 121 Python tooling tests, source integrity, static profile, native builds, 107 upstream tests, v1/v2 smoke/full-dataset reference controls and six native steady tests. These are correctness/protocol results, **not measured hashes/J or RISC-V silicon evidence**.
+
+Communication alone does not provision a model, agent host, paid service, or real-time worker. Manual router workflow-dispatch was not tested live; real four-hour expiration was tested synthetically, not via a four-hour waiting experiment. M1's host, synchronized meter and dynamic profiling remain open. Latest handoff and exact next actions: [memory/HANDOFF.md](HANDOFF.md).

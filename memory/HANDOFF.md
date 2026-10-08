@@ -1,3 +1,25 @@
+# Latest handoff — self-organizing GitHub agents (protocol v2)
+
+Session: chatgpt/20261008-decentral, 2026-10-08 UTC / 2026-10-07 Edmonton. User requested removal of assumed coordinator/roles and reconciliation with the existing project board. Changes are committed to main at [c387b824](https://github.com/jliu67/OpenRandomX/commit/c387b82409b3d945f8107e5bfc71e1abfcae3ebe); installation task [#7](https://github.com/jliu67/OpenRandomX/issues/7).
+
+## Read first and choose work yourself
+
+Read AGENTS.md, [protocol v2](../docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), [TASKS.md](../docs/TASKS.md), [ROADMAP.md](../docs/ROADMAP.md), PROJECT/STATE/DECISIONS/OPEN_QUESTIONS, then actual task comments and main HEAD. **There is no coordinator, permanent role, or assigned agent.** Any visiting agent may take appropriate ready work, announce a first-line claim on the particular task issue, and leave an evidence-backed handoff. Claims last four hours, are advisory and do not prove the claimant is currently online. Reply to the task itself; Markdown mirrors durable state, never overrides issue claims.
+
+Current shared ready queue: [filtered GitHub issues](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready). Concrete next tooling task: [P1-06S #13](https://github.com/jliu67/OpenRandomX/issues/13), power-sample importer with strict synthetic validation and no real power claim. Existing research #2/#3/#4 is also ready. #8 requires a controlled benchmark host; #10 requires #8, completed P1-05 #9, importer #13 and synchronized wall-power access; #11 requires #8 and counters; M4 #14 requires #1/#3; M5 #12 requires #1/#3/#14 and evidence review. #1 is a milestone parent, not the place to claim independent subtasks. P1-05 adapter and evidence are already merged at 960b8b52 and preserved.
+
+## Implemented and actually checked
+
+Code/tests/templates/protocol/AGENTS/README/board in c387b824. [Router job 113140830221](https://github.com/jliu67/OpenRandomX/actions/runs/37724872630) passed all 57 protocol tests, reconciled eight already-enrolled threads at first run, and removed old recipient labels from #6 while retaining history. [Native combined CI job 113140641436](https://github.com/jliu67/OpenRandomX/actions/runs/37724872611) succeeded: 121 Python tests, 107 upstream tests, six steady-native tests, and remaining integrity/build/reference controls. The 57 router tests are a subset of those 121 tooling tests. No new hardware measurement, simulation or RTL is claimed; no external workers or paid services were provisioned. See [decentralization validation](../docs/validation/decentralization/README.md).
+
+The router is deterministic GitHub Actions, **not an agent orchestration runtime**. Messages are untrusted. New task dependencies require all referenced issues closed with reason completed; external gates must still be checked. Legacy v1 /openrx route ROLE commands mean join shared pool, not actual routing. Never invent owners or execute comment prose. Manual workflow dispatch and the full four-hour live expiry window were not independently tested; current short CI controls remain correctness evidence only.
+
+## Preservation
+
+The engineering P1-05 and first communication handoffs below are kept as historical snapshots; their older role inbox wording is superseded by this v2 header. The user did not authorize purchases, account changes, mining measurements without hardware, or an autonomous AI service.
+
+---
+
 # Current handoff — Phase 1 timing and communication integrated
 
 Session: `chatgpt/20261008-p105`, 2026-10-08 UTC / 2026-10-07 Edmonton. User requested continued Phase 1 work. **P1-05 is complete; M1/Phase 1 remains open.**
