@@ -1,6 +1,6 @@
 # EXP-001: controlled v1/v2 native baseline
 
-Status: source characterization, tooling/native correctness preflight and P1-05 same-process instrumentation complete; controlled target-host experiment and power measurements pending. **Not a completed M1 experiment.**
+Status: source characterization, tooling/native correctness preflight and P1-05 same-process instrumentation complete; P1-06S power importer implemented/tested with independent acceptance pending on #13; controlled target-host experiment and power measurements pending. **Not a completed M1 experiment.**
 
 Hypothesis: the v2/v1 throughput ratio depends on available execution and memory resources; measure instead of assuming SG2042 behavior.
 
@@ -12,7 +12,7 @@ Acceptance: every known reference matches; full logs and JSON stored; no skipped
 
 Source-derived analysis and original commands: [docs/PHASE1.md](../docs/PHASE1.md). Initial implementation: `360a9255703a28845a799cfcc1086d1fb84a2c48`. Validation: [docs/validation/phase1/README.md](../docs/validation/phase1/README.md).
 
-42 new tooling tests and all 107 upstream tests passed in the initial CI; both full-dataset reference controls passed. These were functional controls on a hosted runner, not the repeated known-host experiment. Static instruction slots, opcode weights and AES round-function counts are not dynamic profiles or hardware measurements.
+42 new tooling tests and all 107 upstream tests passed in the initial CI; both full-dataset reference-control runs passed. These were functional controls on a hosted runner, not the repeated known-host experiment. Static instruction slots, opcode weights and AES round-function counts are not dynamic profiles or hardware measurements.
 
 That original runner's schema 2 separates warmup/measurement records and preserves failed/too-short runs. Its warmups still use separate processes and its single-thread upstream affinity option is ignored/rejected. Use validated external process affinity.
 
@@ -33,6 +33,12 @@ python3 scripts/steady_benchmark.py --versions v1,v2 --threads 1 --aes hardware 
 
 Do not mix throughput from the new static-stride first/next/last harness with the upstream dynamic-scheduling harness. Compare configurations inside one declared harness. Clock mapping, meter latency and energy boundaries still require physical validation.
 
-Remaining blockers: controlled benchmark host, dynamic profiler/counter access, a tested power-data import/validation path (P1-06S, ready for software work), and real synchronized power-meter samples. Owner for the next measured experiment is unclaimed; coordinate on issue #1 and [docs/TASKS.md](../docs/TASKS.md).
+## P1-06S offline analysis outcome — 2026-10-08 UTC
+
+Implementation `2b28d6fb4604a2b861241d38678e24c8541aed02` adds the [power importer](../benchmarks/power/README.md) and 61 deterministic synthetic tests. Independent software acceptance remains on [#13](https://github.com/jliu67/OpenRandomX/issues/13). Existing CI passed 182 Python, 107 upstream and six native tests. Its downloaded artifact and saved-data joins were checked; [validation and reproduction](../docs/validation/p1-06s/README.md) preserve the evidence.
+
+The importer revalidates the benchmark and exact input binding, then applies explicit clock mapping, missing/gap/coverage rejection and conditional uncertainty-aware integration. Only measurement intervals count. All power traces exercised this session were synthetic; none establishes measured hashes/J or completes the controlled experiment. The point-power schema deliberately rejects interval-averaged/cumulative exports without a separately reviewed model or extension.
+
+Remaining blockers: controlled benchmark host (#8), dynamic profiler/counter access (#11), independent importer acceptance (#13), and real synchronized power-meter samples/physical validation (#10). Use the specific child issue for scoped claims; [#1](https://github.com/jliu67/OpenRandomX/issues/1) remains the parent milestone and discussion gate. Read [docs/TASKS.md](../docs/TASKS.md) and the current issue comments.
 
 Follow-up: select a simulator that can reproduce exact workload behavior, then vary memory latency/cache/AES capacity independently in a calibrated model. Do not bypass the roadmap's baseline/model gates.

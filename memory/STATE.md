@@ -1,45 +1,31 @@
 # Current state
 
-**M0 complete; Phase 1 source/tooling and P1-05 same-process instrumentation complete; M1 measured hardware baseline remains OPEN.** Project name is OpenRX; private remote remains `jliu67/OpenRandomX`.
+Updated 2026-10-08 UTC / 2026-10-07 Edmonton. **M0 complete; Phase 1 source/tooling, P1-05 timing and P1-06S importer implementation/testing complete. M1 measured hardware baseline remains OPEN.** P1-06S task [#13](https://github.com/jliu67/OpenRandomX/issues/13) remains open for independent review; implementation is not peer acceptance or a physical measurement. Project name: OpenRX; private remote: `jliu67/OpenRandomX`.
 
-## Engineering completed
+## Latest engineering result
 
-- Unmodified RandomX v2.0.1 pinned at `aaafe71322df6602c21a5c72937ac284724ae561`; source manifest, build/test tools, v1/v2 controls and initial profile retained.
-- Initial Phase 1 implementation `360a925`: [source analysis](../docs/PHASE1.md), static profile and hardened upstream runner schema 2. The older runner still has separate-process warmups.
-- P1-05 implementation `59b469c6b9a56aecc1e5ab8e82901e281ebe4676`: [separate adapter](../benchmarks/steady/README.md), persistent dataset/VM/worker reuse, same-process warmups, alternating version order, known-hash controls, precise interval boundaries, strict output validation and retained failures.
-- P1-05 evidence/handoff commit `fee2a3bd74a8d4f3a5e7fdc592c33edc760cc89e` was reconciled with concurrent main `9d1a8e3920d74a4dee75e66fe4df048876d11953`. Router/templates, AGENTS, communication evidence and session history were preserved. No force-push or vendor/old-runner modification.
+Implementation `2b28d6fb4604a2b861241d38678e24c8541aed02` adds [power_import.py](../scripts/power_import.py) and 61 synthetic regression tests. The [power protocol](../benchmarks/power/README.md) defines whole-system AC point-power readings, run/digest binding, calibrated affine clock mapping, coverage/gap/error checks, rational timestamp-weighted integration and conditional uncertainty. Synthetic traces require explicit opt-in and never fill measured interval efficiency fields. Original inputs and failures are preserved; the importer cannot acquire or certify meter readings.
 
-## Evidence
+[CI run 37726645625](https://github.com/jliu67/OpenRandomX/actions/runs/37726645625), job 113146214930, passed on that implementation: **182 Python tests, 107 upstream RandomX tests, six native steady tests**, with no skips; source/profile/build and existing references also passed. The 61 new tests passed locally on Python 3.13.5, including a final repeat. Native execution occurred in CI, not locally.
 
-[CI run 37722277487](https://github.com/jliu67/OpenRandomX/actions/runs/37722277487), job 113132440545, passed on P1-05 implementation `59b469c`: 171-file integrity, 64 tooling tests, deterministic profile, native builds, 107 upstream tests, all prior smoke/full-dataset controls, and six new native tests; no skips. Eight known-reference controls and both 17-nonce differential comparisons matched. Expected duration rejection was retained.
+Artifact 11528236706 was downloaded; the 68,046-byte ZIP SHA-256 matched `1eacda6564e038bc5933b04bc5030b20b5373b629551e801a64e6bed946a6358`. Actual suite logs were inspected. Three successful native streams joined to explicitly synthetic constant-power traces (12 measurement intervals); the duration-rejected run was refused. The [validation record](../docs/validation/p1-06s/README.md), digest ledger and locally executed reproduction helper retain these checks and the 2027-01-06 artifact retention deadline. No real energy or performance result is inferred from them.
 
-Artifact 11526487498 (66,083 bytes) was downloaded and SHA-256 checked against GitHub. All four native streams/36 intervals were revalidated locally and summaries/raw checksums matched. Exact evidence, native log and retention deadline: [P1-05 validation](../docs/validation/p1-05/README.md). Local new synthetic tooling tests passed (22); no local native build was possible due to source-download DNS failure. Native execution was in CI.
+## Prior implementation preserved
 
-**No controlled hardware experiment, wall-power samples, dynamic bottleneck attribution, RISC-V simulation or RTL result exists.** Hosted short controls are not an efficiency baseline; the three-worker case used two exposed CPUs. Clock brackets are not meter calibration. Power/hashes-per-joule fields remain null.
+- Unmodified RandomX v2.0.1 pinned at `aaafe71322df6602c21a5c72937ac284724ae561`; v2 primary, v1 comparisons, source integrity and all earlier evidence retained.
+- Initial Phase 1 `360a925`: source analysis, static profile and hardened upstream runner. That runner still uses separate-process warmup.
+- P1-05 `59b469c`, main integration `960b8b5`: separate persistent dataset/VM/worker adapter, known controls, same-process warmup, exact interval boundaries. Do not mix rates with the older harness. See [P1-05 evidence](../docs/validation/p1-05/INTEGRATION.md).
+- Protocol v2 `c387b824`: no coordinator, permanent roles or assumed running agents. Per-task issue comments are the sole live claim authority; Markdown summarizes evidence. The router, 57 communication tests, workflow, templates, AGENTS and issue histories are unchanged by P1-06S.
+- The entire previous [state](handoffs/pre-p106s-state-20261008.md) and [handoff](handoffs/pre-p106s-20261008.md) are retained byte-for-byte. Their relative links and earlier pending wording are historical; current entrypoints are here and HANDOFF.md. SESSION_LOG remains append-only.
 
-## GitHub communication package retained
+## Next actions and external blockers
 
-Implementation `d3c503a5ad4154ba50e6f38119bb904cb41322d8`, handoff `9d1a8e3`: [protocol](../docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), task/message templates, role/status inboxes, actor/session leases and deterministic router. Its 45 tests and live claim/conflict/no-op probes are documented in [communication validation](../docs/validation/communication/README.md). This is not an autonomous AI worker or a model runtime. Existing research issues are preserved. Combined integration CI is separate from the two previously verified component runs.
+1. Any capable visiting agent: review [#13](https://github.com/jliu67/OpenRandomX/issues/13), especially the schema, conditional error model, synthetic isolation and retained failures. Reproduce the 61 tests and artifact join. Request fixes or record evidence-backed acceptance; do not reimplement completed code.
+2. [#8](https://github.com/jliu67/OpenRandomX/issues/8): obtain authorized controlled-host access, repeat correctness and collect the fixed-setting v1/v2/thread/AES experiment.
+3. [#10](https://github.com/jliu67/OpenRandomX/issues/10): after prerequisites are accepted, validate against real synchronized meter readings, declared physical boundary, response/calibration records and uncertainty. The importer deliberately does not support generic CSV, interval-averaged exports or cumulative energy counters; a real device may need a separately reviewed adapter.
+4. [#11](https://github.com/jliu67/OpenRandomX/issues/11): dynamic profiling on the controlled host with supported counters and measured overhead. No bottleneck has yet been established by this work.
+5. Independent research #2/#3/#4 may proceed without bypassing the M1/M4/M5 gates.
 
-## Next actions
+**No controlled hardware matrix, wall-power samples, dynamic bottleneck profile, RISC-V simulation or RTL result was obtained.** Calibration/synchronization declarations are not independent verification. No hardware purchase, paid compute, account change, model worker or autonomous agent was provisioned.
 
-1. Claim P1-06S: implement strict power-data import/validation with declared units, clock mapping, coverage/gap checks, integration and clearly labeled synthetic tests.
-2. P1-04: obtain authorized access to a controlled host, rerun references and collect balanced sufficiently long v1/v2/thread/AES measurements.
-3. P1-06: validate the importer against real synchronized whole-system meter readings; no meter is provisioned.
-4. P1-07: profile actual bottlenecks on a controlled host with documented counter support and overhead.
-5. Continue hardware/network evidence and simulator feasibility through existing issues #2/#4/#3 without bypassing gates.
-
-Read [board](../docs/TASKS.md), [handoff](HANDOFF.md), AGENTS and current task comments before work. Post session-scoped claims and release them at handoff. No automatic spending, external worker provisioning, account changes or fabricated results. P1-05's final editing claim release belongs on #1; no background work is promised.
-
-
-## Decentralized GitHub task pool — 2026-10-08 UTC
-
-The user clarified OpenRX has **no coordinator, permanent agent roles or automatic assignments**. A new protocol v2 is implemented on main at [c387b824](https://github.com/jliu67/OpenRandomX/commit/c387b82409b3d945f8107e5bfc71e1abfcae3ebe) without modifying vendor/randomx, benchmark algorithms or P1-05. The previous role-based communication section above is historical; see current [COMMUNICATION.md](../docs/COMMUNICATION.md) and [hub #5](https://github.com/jliu67/OpenRandomX/issues/5).
-
-- GitHub task issue comments are the single live authority for actor/session claims; labels and bot receipts are derived views. docs/TASKS.md remains a summary, not a second ledger.
-- Task v2 and Note v2 templates, legacy v1 compatibility, no role inbox, four-hour advisory leases and strict dependency checks (all referenced issues closed as completed). Unknown external hardware and M4 validation remain human evidence gates.
-- Existing research issues #2/#3/#4 joined the shared pool without modifying original research bodies. #1 remains the milestone parent and its independent Phase 1 work is separated into #8 (controlled-host run, blocked), #13 (P1-06S importer, ready), #10 (wall power, blocked) and #11 (dynamic profile, blocked). #9 was closed as completed because P1-05 was already merged. #14 tracks M4 calibration; M5 #12 depends on #1, #3 and #14.
-- [Router run 37724872630](https://github.com/jliu67/OpenRandomX/actions/runs/37724872630) passed 57 protocol tests and live GitHub reconciliation; issue #7 had a matching claim, #8 was blocked, #13 ready, and original #6 became a closed shared-task record with obsolete recipient label removed.
-- [Combined CI 37724872611](https://github.com/jliu67/OpenRandomX/actions/runs/37724872611) succeeded on the exact upgrade commit: 121 Python tooling tests, source integrity, static profile, native builds, 107 upstream tests, v1/v2 smoke/full-dataset reference controls and six native steady tests. These are correctness/protocol results, **not measured hashes/J or RISC-V silicon evidence**.
-
-Communication alone does not provision a model, agent host, paid service, or real-time worker. Manual router workflow-dispatch was not tested live; real four-hour expiration was tested synthetically, not via a four-hour waiting experiment. M1's host, synchronized meter and dynamic profiling remain open. Latest handoff and exact next actions: [memory/HANDOFF.md](HANDOFF.md).
+Read AGENTS, [protocol](../docs/COMMUNICATION.md), [task board](../docs/TASKS.md), hub #5 and the specific task's current comments/receipt before working. Use session-scoped claims, independent branches for overlaps and non-force expected-head updates. Final P1-06S editing-claim release/review request belongs on #13, not the parent milestone #1.
