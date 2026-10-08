@@ -49,3 +49,4 @@ Integration note: D012-D014 already published by the communication package retai
 |---|---|---|---|
 | D027 | Require explicit Linux signal/protection/flush/overwrite controls before runtime hash acceptance | Known QEMU hashes do not independently establish OS/JIT contracts | Selected core/runtime and SMP/migration controls provide stronger evidence |
 | D028 | Accept repaired P1-06S software separately from physical measurements | Independent review repaired failure-report bugs; no actual meter/host evidence exists | Real calibrated synchronized power meets M1 |
+| D029 | Explore pinned gem5 full-system Linux with AtomicSimpleCPU, supported classic caches, scalar guest controls and 4 GiB backing | Pinned SE ignores required Linux signal/protection operations; the official full-system example supplies the declared cache/boot path | Accept only executed controls; repeat on intended cores before timing or coherence claims, and keep M1/M4/M5 gates |
