@@ -1,0 +1,264 @@
+{
+  "schema": "openrx-independent-light-payload-binding-v1",
+  "status": "pass",
+  "recorded_utc": "2026-10-08T18:09:07.923749+00:00",
+  "scope": "Read-only payload bytes, ELF metadata and retained successful scalar QEMU/build provenance; no probe or simulator execution.",
+  "checks": {
+    "binary_stable_read": true,
+    "binary_matches_qemu_report": true,
+    "binary_matches_retained_checksum": true,
+    "binary_matches_prior_elf_audit": true,
+    "all_archive_identities_match": true,
+    "original_extracted_members_match_archive": true,
+    "final_main_artifact_contains_same_binary_and_qemu_stream": true,
+    "retained_scalar_qemu_report_pass": true,
+    "environment_matches_retained_audit": true,
+    "compile_database_matches_retained_audit": true,
+    "retained_vendor_revision_matches_lock": true,
+    "all_present_vendor_files_match": true,
+    "only_four_known_audit_pdfs_absent": true,
+    "final_main_ci_records_full_vendor_check": true,
+    "readelf_succeeds": true,
+    "guest_hash_payload_matches_actual_binary": true
+  },
+  "binary": {
+    "path": "/tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe",
+    "bytes": 376824,
+    "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+    "elf_class": "ELF64",
+    "byte_order": "little",
+    "e_type": 3,
+    "machine": 243,
+    "flags": "0x5",
+    "interpreter": "/lib/ld-linux-riscv64-lp64d.so.1",
+    "needed_libraries": [
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6",
+      "ld-linux-riscv64-lp64d.so.1"
+    ],
+    "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_v1p0_zicsr2p0_zifencei2p0_zmmul1p0_zve32f1p0_zve32x1p0_zve64d1p0_zve64f1p0_zve64x1p0_zvkned1p0_zvl128b1p0_zvl32b1p0_zvl64b1p0"
+  },
+  "retained_qemu": {
+    "report_path": "/tmp/openrx-runtime-ci/riscv-validation/qemu/report.json",
+    "stream_path": "/tmp/openrx-runtime-ci/riscv-validation/qemu/probe.jsonl",
+    "command": [
+      "/usr/bin/qemu-riscv64",
+      "-cpu",
+      "rv64,v=false",
+      "-L",
+      "/usr/riscv64-linux-gnu",
+      "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/openrx-riscv-probe"
+    ],
+    "status": "pass",
+    "returncode": 0,
+    "validated": {
+      "required_checks_passed": 39,
+      "optional_skips": 1,
+      "software_hash_cases": 8,
+      "compiled_architecture": "riscv64"
+    },
+    "implementation_head": "288cebbc284f304e216cfcc907a544e2706198f3",
+    "original_ci_checkout": "82398b9545c1bfc1d80bb7f79c41f783048fb89c",
+    "run_id": 37803105634,
+    "artifact_id": 11561518954,
+    "artifact_expires_utc": "2027-01-06T15:43:35Z",
+    "final_main_checkout": "973cd0d94f987ad4a46b85f7b6d66170104c64a1",
+    "final_main_artifact_id": 11563570169
+  },
+  "compiler": {
+    "compiler": "/usr/bin/riscv64-linux-gnu-g++-14",
+    "compiler_version": "14.2.0",
+    "compiler_flags": "-march=rv64gc -mabi=lp64d -O3 -DNDEBUG -Wall -Wextra -Werror -frounding-math -fno-fast-math -ffp-contract=off",
+    "build_type": "Release",
+    "arch_setting": "default",
+    "compile_database_entries": 36,
+    "main_compile_commands": [
+      {
+        "directory": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv",
+        "command": "/usr/bin/riscv64-linux-gnu-g++-14 -DOPENRX_BUILD_ARCH_SETTING=\\\"default\\\" -DOPENRX_BUILD_COMPILER=\\\"/usr/bin/riscv64-linux-gnu-g++-14\\\" -DOPENRX_BUILD_COMPILER_FLAGS=\"\\\"-march=rv64gc -mabi=lp64d -O3 -DNDEBUG -Wall -Wextra -Werror -frounding-math -fno-fast-math -ffp-contract=off\\\"\" -DOPENRX_BUILD_COMPILER_ID=\\\"GNU\\\" -DOPENRX_BUILD_LIBRARY_PATH=\\\"/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/randomx/librandomx.a\\\" -DOPENRX_BUILD_SOURCE_ROOT=\\\"/home/runner/work/OpenRandomX/OpenRandomX\\\" -DOPENRX_BUILD_SYSTEM_PROCESSOR=\\\"riscv64\\\" -DOPENRX_BUILD_TYPE=\\\"Release\\\" -isystem /home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src -march=rv64gc -mabi=lp64d -O3 -DNDEBUG -Wall -Wextra -Werror -frounding-math -fno-fast-math -ffp-contract=off -o CMakeFiles/openrx-riscv-probe.dir/main.cpp.o -c /home/runner/work/OpenRandomX/OpenRandomX/simulator/probe/main.cpp",
+        "file": "/home/runner/work/OpenRandomX/OpenRandomX/simulator/probe/main.cpp",
+        "output": "CMakeFiles/openrx-riscv-probe.dir/main.cpp.o"
+      }
+    ],
+    "optional_isa_compile_commands": [
+      {
+        "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/aes_hash_rv64_vector.cpp",
+        "march_options": [
+          "rv64gc",
+          "rv64gc",
+          "rv64gcv"
+        ]
+      },
+      {
+        "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/aes_hash_rv64_zvkned.cpp",
+        "march_options": [
+          "rv64gc",
+          "rv64gc",
+          "rv64gcv_zvkned"
+        ]
+      },
+      {
+        "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/jit_compiler_rv64_vector.cpp",
+        "march_options": [
+          "rv64gc",
+          "rv64gc"
+        ]
+      },
+      {
+        "file": "/home/runner/work/OpenRandomX/OpenRandomX/vendor/randomx/src/jit_compiler_rv64_vector_static.S",
+        "march_options": [
+          "rv64gc",
+          "rv64gc",
+          "rv64gcv_zvkned"
+        ]
+      }
+    ],
+    "environment_checkout": "82398b9545c1bfc1d80bb7f79c41f783048fb89c"
+  },
+  "vendor": {
+    "lock": {
+      "repository": "https://github.com/tevador/RandomX",
+      "tag": "v2.0.1",
+      "commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+      "retrieved_utc": "2026-10-08",
+      "license": "BSD-3-Clause",
+      "strategy": "unmodified vendored source snapshot"
+    },
+    "manifest_files": 171,
+    "present_files": 167,
+    "changed_files": [],
+    "extra_files": [],
+    "missing_files": [
+      "audits/Report-Kudelski.pdf",
+      "audits/Report-Quarkslab.pdf",
+      "audits/Report-TrailOfBits.pdf",
+      "audits/Report-X41.pdf"
+    ],
+    "full_vendor_verification_boundary": "Retained final-main CI log records all 171 files; this local snapshot has only the 167 byte-matching available files."
+  },
+  "current_source_digests": {
+    "simulator/probe/main.cpp": "855762bdcfc687c53c8ebe7f4c419415773edaf7a156d2667b3eff5cd990281d",
+    "simulator/probe/CMakeLists.txt": "5076e44a8b46611ba4df1fc54bb198dc0046ed284d0d317ef82ca979febba58f",
+    "simulator/toolchains/riscv64-linux-gnu.cmake": "898248ed6d45480f61c6941765da49b0383fdd07ef87e5f415b811a6cf617ce6"
+  },
+  "archives": [
+    {
+      "path": "/tmp/openrx-runtime-ci.zip",
+      "sha256": "a4cd49b7f6f54a94fed9d6b3087714eaa00063ad5f732c201b54464b0cc94d05",
+      "expected_sha256": "a4cd49b7f6f54a94fed9d6b3087714eaa00063ad5f732c201b54464b0cc94d05",
+      "sha256_matches_retained_artifact_identity": true,
+      "members": {
+        "probe-riscv/openrx-riscv-probe": {
+          "bytes": 376824,
+          "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+          "matches_original_extraction": true,
+          "matches_actual_binary": true
+        },
+        "riscv-validation/qemu/report.json": {
+          "bytes": 813,
+          "sha256": "1633a5c7d515c655d5b8eda3687027d69537620d3e2f1d89d8a9509acf2b4688",
+          "matches_original_extraction": true,
+          "retained_status": "pass",
+          "binary_sha256_matches_actual": true,
+          "validated": {
+            "required_checks_passed": 39,
+            "optional_skips": 1,
+            "software_hash_cases": 8,
+            "compiled_architecture": "riscv64"
+          }
+        },
+        "riscv-validation/qemu/probe.jsonl": {
+          "bytes": 8699,
+          "sha256": "780d7ca6c4584c3dab2195b862c08a9662d173829a0c3b3b3da2f5991657b9b3",
+          "matches_original_extraction": true,
+          "matches_original_qemu_stream": true
+        },
+        "riscv-validation/environment.txt": {
+          "bytes": 1421,
+          "sha256": "0016544556e654d121d5e71cb8fc18f235c28c7b2be16c49e5f5b228b9d86222",
+          "matches_original_extraction": true
+        },
+        "probe-riscv/compile_commands.json": {
+          "bytes": 19044,
+          "sha256": "79514d0b414a652ced79fcaddd3a2a101746e04671171c95fe177b2135009a93",
+          "matches_original_extraction": true
+        },
+        "riscv-validation/riscv-binary.sha256": {
+          "bytes": 103,
+          "sha256": "32703a4da69101563f807cf5c9775e1af7ae10b1d78caed72824ef909a2a415b",
+          "matches_original_extraction": true
+        }
+      }
+    },
+    {
+      "path": "/workspace/scratch/62a7e35b1ac5/OpenRandomX/build/runtime-final-ci/main-riscv-final.zip",
+      "sha256": "0af776da4540bc9be627d0f768b59a4c675bbdf93830527633fd9b05e560e21a",
+      "expected_sha256": "0af776da4540bc9be627d0f768b59a4c675bbdf93830527633fd9b05e560e21a",
+      "sha256_matches_retained_artifact_identity": true,
+      "members": {
+        "probe-riscv/openrx-riscv-probe": {
+          "bytes": 376824,
+          "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+          "matches_actual_binary": true
+        },
+        "riscv-validation/qemu/report.json": {
+          "bytes": 813,
+          "sha256": "1633a5c7d515c655d5b8eda3687027d69537620d3e2f1d89d8a9509acf2b4688",
+          "retained_status": "pass",
+          "binary_sha256_matches_actual": true,
+          "validated": {
+            "required_checks_passed": 39,
+            "optional_skips": 1,
+            "software_hash_cases": 8,
+            "compiled_architecture": "riscv64"
+          }
+        },
+        "riscv-validation/qemu/probe.jsonl": {
+          "bytes": 8699,
+          "sha256": "780d7ca6c4584c3dab2195b862c08a9662d173829a0c3b3b3da2f5991657b9b3",
+          "matches_original_qemu_stream": true
+        },
+        "riscv-validation/environment.txt": {
+          "bytes": 1421,
+          "sha256": "6716371528316b77ded892af5ddf32dadf384d390308a0e756cad95d1d35cffa"
+        },
+        "probe-riscv/compile_commands.json": {
+          "bytes": 19044,
+          "sha256": "79514d0b414a652ced79fcaddd3a2a101746e04671171c95fe177b2135009a93"
+        },
+        "riscv-validation/riscv-binary.sha256": {
+          "bytes": 103,
+          "sha256": "32703a4da69101563f807cf5c9775e1af7ae10b1d78caed72824ef909a2a415b"
+        }
+      }
+    }
+  ],
+  "active_guest_transfer": {
+    "script_path": "/tmp/openrx-gem5-light-20261008-attempt1/guest.sh",
+    "script_sha256": "403fa537df55303f74793a5c9e27c735d812eb128f70e2d97c4d46441fa9fae2",
+    "decoded_payloads": {
+      "runtime": {
+        "bytes": 13760,
+        "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac"
+      },
+      "hash": {
+        "bytes": 376824,
+        "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657"
+      }
+    }
+  },
+  "historical_checkout_git_object": {
+    "checkout": "82398b9545c1bfc1d80bb7f79c41f783048fb89c",
+    "available": false,
+    "returncode": 128,
+    "stderr": "fatal: Not a valid object name 82398b9545c1bfc1d80bb7f79c41f783048fb89c^{commit}"
+  },
+  "gaps": [
+    "The original CI checkout Git object is unavailable locally; current source hashes do not independently rehash that historical checkout.",
+    "No fresh reproducible build or executable-to-source/compiler attestation was performed.",
+    "ELF attributes include optional vector/crypto objects; scalar execution is established by the retained RVV-disabled QEMU run, not whole-ELF RV64GC purity.",
+    "QEMU light success is not gem5 hash success, full-dataset acceptance, calibrated timing or measured power."
+  ]
+}

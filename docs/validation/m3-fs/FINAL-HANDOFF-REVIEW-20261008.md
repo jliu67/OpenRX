@@ -1,0 +1,9 @@
+# Final handoff review — 2026-10-08
+
+A separate capable agent (`/root/power_review`) accepted the final current-state, handoff, board, experiment, evidence-register and simulator documentation before publication. Root records that review here; this is not a router status or a claim that every review was performed by the implementation author.
+
+Verified boundaries: nine actual gem5 Linux runtime controls pass; the separate unchanged light attempt timed out with zero exposed hash records, so no complete matrix or hash mismatch is claimed. The retained actual guest used the original runner. The streaming revision has independent host Bash/failure/interruption checks and fresh CI, without a false new-gem5-execution claim. Source/binary reuse and unexecuted hosted manual cache/artifact paths are explicit. #16 and M1/M3/M4/M5, intended-core, full-dataset, calibration and power gates remain open.
+
+The final functional commit `4f4cf17880ccfa2e904eb9d2dc23892b828bce12` passed all five CI runs. The reviewer verified retained log hashes and all ten functional file bindings in `streaming-ci-20261008/ci-review.json`, including 245 Python and 26 gem5 controls. The final publication changes only documentation/evidence; root rechecked those ten source digests and both actual execution manifests before publication.
+
+The exact 27,003-character remote SESSION_LOG prefix at `a2128b9ee9dd93acdfc392bc4752e412f5e5a3d2` is preserved. All 30 original decision rows remain unchanged; D031/D032 are new unique entries. Evidence IDs E001–E018 are unique. Exact prior STATE/HANDOFF archives are retained. Scoped whitespace checks and all current local document links pass. Live API checks confirm #20/#22/#24 closed as completed; #16 stays open. No additional guest or build was required for this documentation acceptance.

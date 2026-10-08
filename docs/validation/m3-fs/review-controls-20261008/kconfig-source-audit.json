@@ -1,0 +1,22 @@
+{
+  "evidence_class": "in-memory-kconfig-source-audit-only",
+  "config_file_written": false,
+  "before": {
+    "BUILD_ISA": "y",
+    "USE_RISCV_ISA": "y",
+    "RUBY": "y",
+    "USE_SYSTEMC": "y",
+    "USE_KVM": "y",
+    "BUILD_GPU": "n",
+    "USE_TEST_OBJECTS": "n"
+  },
+  "after": {
+    "BUILD_ISA": "y",
+    "USE_RISCV_ISA": "y",
+    "RUBY": "n",
+    "USE_SYSTEMC": "n",
+    "USE_KVM": "n",
+    "BUILD_GPU": "n",
+    "USE_TEST_OBJECTS": "n"
+  }
+}

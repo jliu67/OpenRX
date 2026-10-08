@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "docs/validation/m3-fs/actual-light-review-20261008/verify_retained_light_copy.py",
+    "--retained",
+    "docs/validation/m3-fs/actual-light-20261008",
+    "--original",
+    "/tmp/openrx-gem5-light-20261008-attempt1",
+    "--output",
+    "docs/validation/m3-fs/actual-light-review-20261008/retained-copy.json"
+  ],
+  "returncode": 0,
+  "artifact_manifest_sha256": "fb95f5c0cbfad9fecb3c3cdd1f8d239e90df0f1031b6566968b69a74edb386b5",
+  "helper_derived_from": "docs/validation/m3-fs/actual-runtime-review-20261008/verify_retained_copy.py",
+  "original_helper_sha256": "ea28c3e089c21c27c35beef02051303399d157616a46e486a057e18d97522953",
+  "adaptations": "light scope label; publication wrapper-exit-code field allowed with no original byte-match claim"
+}

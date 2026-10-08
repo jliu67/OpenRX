@@ -1,0 +1,232 @@
+READ-ONLY ELF INSPECTION
+argv: ["readelf", "-h", "-l", "-A", "-d", "-V", "/tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe"]
+returncode: 0
+ELF Header:
+  Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00 
+  Class:                             ELF64
+  Data:                              2's complement, little endian
+  Version:                           1 (current)
+  OS/ABI:                            UNIX - System V
+  ABI Version:                       0
+  Type:                              DYN (Position-Independent Executable file)
+  Machine:                           RISC-V
+  Version:                           0x1
+  Entry point address:               0xd03c
+  Start of program headers:          64 (bytes into file)
+  Start of section headers:          374904 (bytes into file)
+  Flags:                             0x5, RVC, double-float ABI
+  Size of this header:               64 (bytes)
+  Size of program headers:           56 (bytes)
+  Number of program headers:         10
+  Size of section headers:           64 (bytes)
+  Number of section headers:         30
+  Section header string table index: 29
+
+Program Headers:
+  Type           Offset             VirtAddr           PhysAddr
+                 FileSiz            MemSiz              Flags  Align
+  PHDR           0x0000000000000040 0x0000000000000040 0x0000000000000040
+                 0x0000000000000230 0x0000000000000230  R      0x8
+  INTERP         0x0000000000000270 0x0000000000000270 0x0000000000000270
+                 0x0000000000000021 0x0000000000000021  R      0x1
+      [Requesting program interpreter: /lib/ld-linux-riscv64-lp64d.so.1]
+  RISCV_ATTRIBUT 0x0000000000048205 0x0000000000000000 0x0000000000000000
+                 0x00000000000000b3 0x0000000000000000  R      0x1
+  LOAD           0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x00000000000459a0 0x00000000000459a0  R E    0x1000
+  LOAD           0x0000000000045d98 0x0000000000046d98 0x0000000000046d98
+                 0x0000000000002440 0x0000000000002d90  RW     0x1000
+  DYNAMIC        0x0000000000047670 0x0000000000048670 0x0000000000048670
+                 0x0000000000000230 0x0000000000000230  RW     0x8
+  NOTE           0x0000000000000294 0x0000000000000294 0x0000000000000294
+                 0x0000000000000044 0x0000000000000044  R      0x4
+  GNU_EH_FRAME   0x0000000000040550 0x0000000000040550 0x0000000000040550
+                 0x0000000000000d34 0x0000000000000d34  R      0x4
+  GNU_STACK      0x0000000000000000 0x0000000000000000 0x0000000000000000
+                 0x0000000000000000 0x0000000000000000  RW     0x10
+  GNU_RELRO      0x0000000000045d98 0x0000000000046d98 0x0000000000046d98
+                 0x0000000000002268 0x0000000000002268  R      0x1
+
+ Section to Segment mapping:
+  Segment Sections...
+   00     
+   01     .interp 
+   02     .riscv.attributes 
+   03     .interp .note.gnu.build-id .note.ABI-tag .gnu.hash .dynsym .dynstr .gnu.version .gnu.version_r .rela.dyn .rela.plt .plt .text .rodata .eh_frame_hdr .eh_frame .gcc_except_table 
+   04     .preinit_array .init_array .fini_array .data.rel.ro .dynamic .got .data .bss 
+   05     .dynamic 
+   06     .note.gnu.build-id .note.ABI-tag 
+   07     .eh_frame_hdr 
+   08     
+   09     .preinit_array .init_array .fini_array .data.rel.ro .dynamic .got 
+
+Dynamic section at offset 0x47670 contains 31 entries:
+  Tag        Type                         Name/Value
+ 0x0000000000000001 (NEEDED)             Shared library: [libstdc++.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libm.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [libgcc_s.so.1]
+ 0x0000000000000001 (NEEDED)             Shared library: [libc.so.6]
+ 0x0000000000000001 (NEEDED)             Shared library: [ld-linux-riscv64-lp64d.so.1]
+ 0x0000000000000020 (PREINIT_ARRAY)      0x46d98
+ 0x0000000000000021 (PREINIT_ARRAYSZ)    8 (bytes)
+ 0x0000000000000019 (INIT_ARRAY)         0x46da0
+ 0x000000000000001b (INIT_ARRAYSZ)       32 (bytes)
+ 0x000000000000001a (FINI_ARRAY)         0x46dc0
+ 0x000000000000001c (FINI_ARRAYSZ)       8 (bytes)
+ 0x000000006ffffef5 (GNU_HASH)           0x2d8
+ 0x0000000000000005 (STRTAB)             0x1ec8
+ 0x0000000000000006 (SYMTAB)             0x800
+ 0x000000000000000a (STRSZ)              9748 (bytes)
+ 0x000000000000000b (SYMENT)             24 (bytes)
+ 0x0000000000000015 (DEBUG)              0x0
+ 0x0000000000000003 (PLTGOT)             0x488a0
+ 0x0000000000000002 (PLTRELSZ)           1320 (bytes)
+ 0x0000000000000014 (PLTREL)             RELA
+ 0x0000000000000017 (JMPREL)             0x9e58
+ 0x0000000000000007 (RELA)               0x47e8
+ 0x0000000000000008 (RELASZ)             23448 (bytes)
+ 0x0000000000000009 (RELAENT)            24 (bytes)
+ 0x000000000000001e (FLAGS)              BIND_NOW
+ 0x000000006ffffffb (FLAGS_1)            Flags: NOW PIE
+ 0x000000006ffffffe (VERNEED)            0x46c8
+ 0x000000006fffffff (VERNEEDNUM)         5
+ 0x000000006ffffff0 (VERSYM)             0x44dc
+ 0x000000006ffffff9 (RELACOUNT)          835
+ 0x0000000000000000 (NULL)               0x0
+
+Version symbols section '.gnu.version' contains 243 entries:
+ Addr: 0x00000000000044dc  Offset: 0x000044dc  Link: 5 (.dynsym)
+  000:   0 (*local*)       0 (*local*)       2 (GLIBCXX_3.4)   3 (GLIBC_2.27) 
+  004:   2 (GLIBCXX_3.4)   4 (GLIBC_2.27)    5 (GLIBCXX_3.4.21)    4 (GLIBC_2.27) 
+  008:   2 (GLIBCXX_3.4)   5 (GLIBCXX_3.4.21)    2 (GLIBCXX_3.4)   5 (GLIBCXX_3.4.21) 
+  00c:   6 (GLIBC_2.27)    7 (CXXABI_1.3)    3 (GLIBC_2.27)    7 (CXXABI_1.3) 
+  010:   3 (GLIBC_2.27)    2 (GLIBCXX_3.4)   5 (GLIBCXX_3.4.21)    3 (GLIBC_2.27) 
+  014:   2 (GLIBCXX_3.4)   2 (GLIBCXX_3.4)   8 (GLIBCXX_3.4.9)   2 (GLIBCXX_3.4)
+  018:   3 (GLIBC_2.27)    7 (CXXABI_1.3)    2 (GLIBCXX_3.4)   7 (CXXABI_1.3) 
+  01c:   9 (GLIBC_2.34)    3 (GLIBC_2.27)    3 (GLIBC_2.27)    2 (GLIBCXX_3.4)
+  020:   4 (GLIBC_2.27)    3 (GLIBC_2.27)    2 (GLIBCXX_3.4)   5 (GLIBCXX_3.4.21) 
+  024:   2 (GLIBCXX_3.4)   2 (GLIBCXX_3.4)   a (CXXABI_1.3.9)   2 (GLIBCXX_3.4)
+  028:   4 (GLIBC_2.27)    5 (GLIBCXX_3.4.21)    8 (GLIBCXX_3.4.9)   b (GLIBCXX_3.4.11) 
+  02c:   c (GCC_3.4)       3 (GLIBC_2.27)    5 (GLIBCXX_3.4.21)    3 (GLIBC_2.27) 
+  030:   2 (GLIBCXX_3.4)   3 (GLIBC_2.27)    2 (GLIBCXX_3.4)   2 (GLIBCXX_3.4)
+  034:   7 (CXXABI_1.3)    3 (GLIBC_2.27)    2 (GLIBCXX_3.4)   2 (GLIBCXX_3.4)
+  038:   5 (GLIBCXX_3.4.21)    3 (GLIBC_2.27)    d (GLIBCXX_3.4.32)    5 (GLIBCXX_3.4.21) 
+  03c:   7 (CXXABI_1.3)    7 (CXXABI_1.3)    2 (GLIBCXX_3.4)   4 (GLIBC_2.27) 
+  040:   3 (GLIBC_2.27)    7 (CXXABI_1.3)    7 (CXXABI_1.3)    1 (*global*)   
+  044:   e (GCC_3.0)       5 (GLIBCXX_3.4.21)    3 (GLIBC_2.27)    2 (GLIBCXX_3.4)
+  048:   2 (GLIBCXX_3.4)   5 (GLIBCXX_3.4.21)    7 (CXXABI_1.3)    1 (*global*)   
+  04c:   2 (GLIBCXX_3.4)   5 (GLIBCXX_3.4.21)    3 (GLIBC_2.27)    3 (GLIBC_2.27) 
+  050:   2 (GLIBCXX_3.4)   1 (*global*)      1 (*global*)      1 (*global*)   
+  054:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  058:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  05c:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  060:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  064:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  068:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  06c:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  070:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  074:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  078:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  07c:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  080:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  084:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  088:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  08c:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  090:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  094:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  098:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  09c:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0a0:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0a4:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0a8:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0ac:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0b0:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0b4:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0b8:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0bc:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0c0:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0c4:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0c8:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0cc:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0d0:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0d4:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0d8:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0dc:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0e0:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0e4:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0e8:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0ec:   1 (*global*)      1 (*global*)      1 (*global*)      1 (*global*)   
+  0f0:   1 (*global*)      1 (*global*)      1 (*global*)   
+
+Version needs section '.gnu.version_r' contains 5 entries:
+ Addr: 0x00000000000046c8  Offset: 0x000046c8  Link: 6 (.dynstr)
+  000000: Version: 1  File: libgcc_s.so.1  Cnt: 2
+  0x0010:   Name: GCC_3.0  Flags: none  Version: 14
+  0x0020:   Name: GCC_3.4  Flags: none  Version: 12
+  0x0030: Version: 1  File: ld-linux-riscv64-lp64d.so.1  Cnt: 1
+  0x0040:   Name: GLIBC_2.27  Flags: none  Version: 6
+  0x0050: Version: 1  File: libm.so.6  Cnt: 1
+  0x0060:   Name: GLIBC_2.27  Flags: none  Version: 4
+  0x0070: Version: 1  File: libc.so.6  Cnt: 2
+  0x0080:   Name: GLIBC_2.34  Flags: none  Version: 9
+  0x0090:   Name: GLIBC_2.27  Flags: none  Version: 3
+  0x00a0: Version: 1  File: libstdc++.so.6  Cnt: 7
+  0x00b0:   Name: GLIBCXX_3.4.32  Flags: none  Version: 13
+  0x00c0:   Name: GLIBCXX_3.4.11  Flags: none  Version: 11
+  0x00d0:   Name: CXXABI_1.3.9  Flags: none  Version: 10
+  0x00e0:   Name: GLIBCXX_3.4.9  Flags: none  Version: 8
+  0x00f0:   Name: CXXABI_1.3  Flags: none  Version: 7
+  0x0100:   Name: GLIBCXX_3.4.21  Flags: none  Version: 5
+  0x0110:   Name: GLIBCXX_3.4  Flags: none  Version: 2
+Attribute Section: riscv
+File Attributes
+  Tag_RISCV_stack_align: 16-bytes
+  Tag_RISCV_arch: "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_v1p0_zicsr2p0_zifencei2p0_zmmul1p0_zve32f1p0_zve32x1p0_zve64d1p0_zve64f1p0_zve64x1p0_zvkned1p0_zvl128b1p0_zvl32b1p0_zvl64b1p0"
+
+BINDING SUMMARY
+{
+  "status": "pass",
+  "checks": {
+    "binary_stable_read": true,
+    "binary_matches_qemu_report": true,
+    "binary_matches_retained_checksum": true,
+    "binary_matches_prior_elf_audit": true,
+    "all_archive_identities_match": true,
+    "original_extracted_members_match_archive": true,
+    "final_main_artifact_contains_same_binary_and_qemu_stream": true,
+    "retained_scalar_qemu_report_pass": true,
+    "environment_matches_retained_audit": true,
+    "compile_database_matches_retained_audit": true,
+    "retained_vendor_revision_matches_lock": true,
+    "all_present_vendor_files_match": true,
+    "only_four_known_audit_pdfs_absent": true,
+    "final_main_ci_records_full_vendor_check": true,
+    "readelf_succeeds": true,
+    "guest_hash_payload_matches_actual_binary": true
+  },
+  "binary": {
+    "path": "/tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe",
+    "bytes": 376824,
+    "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+    "elf_class": "ELF64",
+    "byte_order": "little",
+    "e_type": 3,
+    "machine": 243,
+    "flags": "0x5",
+    "interpreter": "/lib/ld-linux-riscv64-lp64d.so.1",
+    "needed_libraries": [
+      "libstdc++.so.6",
+      "libm.so.6",
+      "libgcc_s.so.1",
+      "libc.so.6",
+      "ld-linux-riscv64-lp64d.so.1"
+    ],
+    "riscv_arch_attribute": "rv64i2p1_m2p0_a2p1_f2p2_d2p2_c2p0_v1p0_zicsr2p0_zifencei2p0_zmmul1p0_zve32f1p0_zve32x1p0_zve64d1p0_zve64f1p0_zve64x1p0_zvkned1p0_zvl128b1p0_zvl32b1p0_zvl64b1p0"
+  },
+  "gaps": [
+    "The original CI checkout Git object is unavailable locally; current source hashes do not independently rehash that historical checkout.",
+    "No fresh reproducible build or executable-to-source/compiler attestation was performed.",
+    "ELF attributes include optional vector/crypto objects; scalar execution is established by the retained RVV-disabled QEMU run, not whole-ELF RV64GC purity.",
+    "QEMU light success is not gem5 hash success, full-dataset acceptance, calibrated timing or measured power."
+  ]
+}

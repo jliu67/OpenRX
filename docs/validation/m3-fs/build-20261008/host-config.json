@@ -1,0 +1,60 @@
+{
+  "recorded_utc": "2026-10-08T16:14:11.529043+00:00",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "os_release": "PRETTY_NAME=\"Ubuntu 24.04.3 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.3 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+  "python": "3.12.14",
+  "cpu_count_reported": 9,
+  "cpu_quota": "800000 100000",
+  "memory_limit_bytes": "8589934592",
+  "memory_events": "low 0\nhigh 0\nmax 24899\noom 0\noom_kill 0\noom_group_kill 0\n",
+  "runtime_python_config_wrapper": "#!/bin/sh\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3-config \"$@\" | sed 's@-L/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib@-L/tmp/openrx-gem5-source/native-libs@g'\n",
+  "runtime_python_shared_library": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/libpython3.12.so.1.0",
+  "system_packages_installation": "unsuccessful; dependency debs extracted into scratch; no successful installed package mutation",
+  "measurement_scope": "Build host/configuration only; not a controlled performance/power measurement",
+  "gcc": {
+    "command": [
+      "g++",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "stderr": ""
+  },
+  "make": {
+    "command": [
+      "make",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "GNU Make 4.3\nBuilt for x86_64-pc-linux-gnu\nCopyright (C) 1988-2020 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n",
+    "stderr": ""
+  },
+  "m4": {
+    "command": [
+      "/tmp/openrx-gem5-source/apt-root/usr/bin/m4",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "m4 (GNU M4) 1.4.19\nCopyright (C) 2021 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.\n\nWritten by Ren\u00e9 Seindal.\n",
+    "stderr": ""
+  },
+  "pkgconf": {
+    "command": [
+      "/tmp/openrx-gem5-source/apt-root/usr/bin/pkgconf",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "1.8.1\n",
+    "stderr": ""
+  },
+  "inherited_build_environment": {
+    "PATH": "/root/.codex/tmp/arg0/codex-arg0UWTHe0:/opt/codex/codex-path:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback"
+  },
+  "invocation_environment_overrides": {
+    "PATH": "/tmp/openrx-gem5-source/apt-root/usr/bin:/root/.codex/tmp/arg0/codex-arg0UWTHe0:/opt/codex/codex-path:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/override:/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/codex/runtimes/codex-primary-runtime/dependencies/bin/fallback",
+    "PYTHONPATH": "/tmp/openrx-gem5-source/python-build-deps",
+    "PYTHON_CONFIG": "/tmp/openrx-gem5-source/bin/python3-config",
+    "LD_LIBRARY_PATH": "/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-08T17:45:39.572533+00:00",
+  "status": "pass",
+  "archive": "/tmp/openrx-gem5-reuse/gem5-c8222cc-linux-x86_64-20261008.tar.gz",
+  "archive_size_bytes": 936569944,
+  "archive_sha256": "b9536aa9dbce308edcdb735c518395ebf2e02d20ecdf53b181deeded19d07769",
+  "archive_manifest_sha256": "1988092cdad38af3aceab196da4f6ded8c4fa072e37aa3082307ae64d323f511",
+  "regular_files_verified": 918,
+  "manifest_file_verified": true,
+  "file_bytes_verified": 1025438565,
+  "errors": [],
+  "missing_manifest_files": [],
+  "scope": "Streamed complete gzip/tar; every packaged regular-file digest, size and mode checked against packaged manifest, plus manifest digest; no extraction or executable mutation."
+}

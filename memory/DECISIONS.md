@@ -52,3 +52,12 @@ Integration note: D012-D014 already published by the communication package retai
 | D029 | Explore pinned gem5 full-system Linux with AtomicSimpleCPU, supported classic caches, scalar guest controls and 4 GiB backing | Pinned SE ignores required Linux signal/protection operations; the official full-system example supplies the declared cache/boot path | Accept only executed controls; repeat on intended cores before timing or coherence claims, and keep M1/M4/M5 gates |
 
 | D030 | Require a short hub #5 announcement for significant outcomes, blockers and milestone changes | Independent visiting agents need cross-task visibility without lengthy repeated logs or permanent coordination roles; task issues remain the claim/evidence authority | An audited automated gate or a different notification mechanism is justified |
+
+## Simulator reuse and coordination review — 2026-10-08 UTC
+
+| ID | Decision | Reason | Revisit when |
+|---|---|---|---|
+| D031 | Reuse an exact verified simulator binary for guest runs; keep source builds manual and checkpoint partial work | Repeated cold gem5 compilation exhausted CI before guest execution; the older upstream container lacks this setup's required guest API/fix | A compatible upstream binary is independently verified or the source/configuration changes |
+| D032 | Queue eligible hub announcements and require separate-agent acceptance evidence | A single pending workflow slot can replace an unprocessed announcement; router labels cannot certify independent review | GitHub scheduling or project governance changes |
+
+Reconciliation: the concurrent hub-policy entry reused D029, already assigned to atomic gem5. Separate review accepted its unchanged policy and the unique-ID correction to D030. The new simulator/queue decisions start at D031; all earlier decisions and session history remain preserved.

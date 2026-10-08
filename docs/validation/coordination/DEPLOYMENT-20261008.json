@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "date_utc": "2026-10-08",
+  "task": 22,
+  "implementation_pr": 23,
+  "merged_commit": "b562a941bec39c3a0747a2129903dd33bb471f62",
+  "independent_review": "REVIEW-20261008.md",
+  "local_announcement_tests": {
+    "passed": 8,
+    "skipped": 0
+  },
+  "live_workflow": {
+    "run_id": 37815826807,
+    "job_id": 113444078247,
+    "conclusion": "success",
+    "all_steps": "success"
+  },
+  "announcement": {
+    "source_comment": 6065291820,
+    "bot_comment": 6065295258,
+    "bot_author": "github-actions[bot]",
+    "marker_verified": true
+  },
+  "scope": {
+    "hub_status_corrected": true,
+    "incident_task20_closed_completed": true,
+    "task22_closed_completed": true,
+    "publisher_implementation_changed": false,
+    "live_burst_test_performed": false,
+    "observed_lost_announcement": false,
+    "email_delivery_verified": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "evidence_class": "full-system-functional",
+  "cpu": "AtomicSimpleCPU",
+  "cores": 1,
+  "rvv": false,
+  "guest_ram": "4GiB",
+  "cache_hierarchy": "PrivateL1PrivateL2WalkCacheHierarchy",
+  "l1d_size": "16KiB",
+  "l1i_size": "16KiB",
+  "l2_size": "256KiB",
+  "timing_calibrated": false,
+  "power_measured": false,
+  "events": [
+    {
+      "event": "kernel-booted",
+      "hypercall": 1,
+      "tick": 379381390000
+    },
+    {
+      "event": "after-boot-started",
+      "hypercall": 2,
+      "tick": 674367239000
+    },
+    {
+      "event": "after-boot-finished",
+      "hypercall": 3,
+      "tick": 749723178000
+    }
+  ],
+  "execution_stage": "finished",
+  "max_ticks_per_simulate_call": 10000000000000,
+  "last_tick": 749723178000,
+  "last_exit_cause": "m5_hypercall instruction encountered",
+  "last_exit_code": 0
+}

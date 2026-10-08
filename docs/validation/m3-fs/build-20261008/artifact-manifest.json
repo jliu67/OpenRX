@@ -1,0 +1,115 @@
+{
+  "source_revision": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "build_status": "timeout",
+  "final_exit_code": 124,
+  "files": {
+    "README.md": {
+      "bytes": 2881,
+      "sha256": "600c519a5a8da33a41369291ff9e162e5cc0725cbe9af71036f46ac5ae5be296"
+    },
+    "build-provenance.json": {
+      "bytes": 5195,
+      "sha256": "e7edcda907f39c686eae9bf97a7c2a1e052f10312c925e23d9e237e8623fe9a2"
+    },
+    "commands.txt": {
+      "bytes": 4309,
+      "sha256": "633989426889d8234ef6983c630f5263cb5f3b2ee9179d59ab24518cfe1370cf"
+    },
+    "host-config.json": {
+      "bytes": 4169,
+      "sha256": "5e105921e1c66bb716c982376169716c6ba30a16d2e653ffe19db766d41c5d00"
+    },
+    "minimal-future-build.txt": {
+      "bytes": 975,
+      "sha256": "48c90f98a5001b26f58c6a6b7fd9000a4700a66ba00508b5f4ca785781a3c22c"
+    },
+    "verify-source.py": {
+      "bytes": 2509,
+      "sha256": "d705276de3965494c5479b3f89d4faf63cc874d07048a75b698999e53a871bd8"
+    },
+    "source-consistency.json": {
+      "bytes": 587,
+      "sha256": "95e13dd30fe8f8d8c8623581ea381ee6d1af8cb61799e06ac18315cf3e7b4599"
+    },
+    "canonical-config": {
+      "bytes": 1117,
+      "sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5"
+    },
+    "canonical-config-window-2": {
+      "bytes": 1117,
+      "sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5"
+    },
+    "source-build-opts-RISCV": {
+      "bytes": 84,
+      "sha256": "d4f021c8bc7a615e4a2793f6cef47e4cadd81cd96f85e953f21eb80800e7ec75"
+    },
+    "scons-config.log": {
+      "bytes": 106706,
+      "sha256": "7bf1455eae47aa1b1a2294d81430cbd6268a89d694cc307a58079d8e1741d6e4"
+    },
+    "pip-install.log": {
+      "bytes": 725,
+      "sha256": "c16be40411cb6785749f378975d202f1ebe198397d72006b7fd38961a150901c"
+    },
+    "apt-update.log": {
+      "bytes": 1021,
+      "sha256": "1c5b6b1c143c1ee03b82d05413fad9ea7c3daaa2c7fe89a2faf1aaf1574ea8fb"
+    },
+    "apt-update-root.log": {
+      "bytes": 2068,
+      "sha256": "d1ee566cd68eca3fcfb3dcde896d1b367efdc63ed868e618839af81dbf49a5ce"
+    },
+    "apt-install.log": {
+      "bytes": 3874,
+      "sha256": "575fe34c1a3df603e25be37c832170802cb17b6f1f6ac84e4861b5681ade3fa4"
+    },
+    "apt-download.log": {
+      "bytes": 376,
+      "sha256": "6d29c2d9d29eb12a886bbfee7b029be526226b53f7d2c3aec4391a0c41ab988c"
+    },
+    "build-attempt-1.log": {
+      "bytes": 432,
+      "sha256": "16ff18b2b68202b3f66d41d18b3233125c26670dd1b82ee7a38d60f812ced39f"
+    },
+    "build-attempt-2.log": {
+      "bytes": 692,
+      "sha256": "f428056455072dbcb947c80c29f19f423f6516ee2505a401d09ce3549f457192"
+    },
+    "build-initial-exit-code.txt": {
+      "bytes": 2,
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865"
+    },
+    "build-j2-interrupted.log": {
+      "bytes": 10605,
+      "sha256": "8087c8c2d182c8e737e90ab9cf37d3faaa7d9463bbdbff56f923b11b22a7bb34"
+    },
+    "build-j2-interrupted-exit-code.txt": {
+      "bytes": 4,
+      "sha256": "f5bde7eb9f6c71611dc5726e8aca3eb4eba3e386da49e0a4ed5c295a90a73a0d"
+    },
+    "build-j6-window-1.log": {
+      "bytes": 131163,
+      "sha256": "e72acb37385b20fa0bc1d1d1f93c9dc5da91b678fb6df14141e83cf273285957"
+    },
+    "build-j6-window-1-exit-code.txt": {
+      "bytes": 4,
+      "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff"
+    },
+    "build-j6-window-2.log": {
+      "bytes": 103970,
+      "sha256": "0264a33d90e9bcced41b3c9a581564a1767d7a7405abaa899105df789d0e7726"
+    },
+    "build-j6-window-2-exit-code.txt": {
+      "bytes": 4,
+      "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff"
+    },
+    "build-j6-window-3.log": {
+      "bytes": 78650,
+      "sha256": "e407d1aa35967bb3b7cd664e428aa8d89d145cad77bdd9dc804315b3eca6eb44"
+    },
+    "build-j6-window-3-exit-code.txt": {
+      "bytes": 4,
+      "sha256": "ca2ebdf97d7469496b1f4b78958f9dc8447efdcb623953fee7b6996b762f6fff"
+    }
+  }
+}

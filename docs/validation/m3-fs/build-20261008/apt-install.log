@@ -1,0 +1,34 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libpkgconf3 pkgconf pkgconf-bin
+Suggested packages:
+  m4-doc
+The following NEW packages will be installed:
+  libpkgconf3 m4 pkg-config pkgconf pkgconf-bin
+0 upgraded, 5 newly installed, 0 to remove and 88 not upgraded.
+Need to get 319 kB of archives.
+After this operation, 922 kB of additional disk space will be used.
+Err:1 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 libpkgconf3 amd64 1.8.1-2build1
+  Could not open file /var/cache/apt/archives/partial/libpkgconf3_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+Err:2 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 m4 amd64 1.4.19-4build1
+  Could not open file /var/cache/apt/archives/partial/m4_1.4.19-4build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+Err:3 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 pkgconf-bin amd64 1.8.1-2build1
+  Could not open file /var/cache/apt/archives/partial/pkgconf-bin_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+Err:4 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 pkgconf amd64 1.8.1-2build1
+  Could not open file /var/cache/apt/archives/partial/pkgconf_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+Err:5 https://snapshot.ubuntu.com/ubuntu/20260828T000000Z noble/main amd64 pkg-config amd64 1.8.1-2build1
+  Could not open file /var/cache/apt/archives/partial/pkg-config_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+W: chmod 0700 of directory /var/cache/apt/archives/partial failed - SetupAPTPartialDirectory (1: Operation not permitted)
+W: Problem unlinking the file /var/cache/apt/archives/partial/libpkgconf3_1.8.1-2build1_amd64.deb - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/archives/partial/m4_1.4.19-4build1_amd64.deb - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/archives/partial/pkgconf-bin_1.8.1-2build1_amd64.deb - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/archives/partial/pkgconf_1.8.1-2build1_amd64.deb - PrepareFiles (13: Permission denied)
+W: Problem unlinking the file /var/cache/apt/archives/partial/pkg-config_1.8.1-2build1_amd64.deb - PrepareFiles (13: Permission denied)
+E: Failed to fetch https://snapshot.ubuntu.com/ubuntu/20260828T000000Z/pool/main/p/pkgconf/libpkgconf3_1.8.1-2build1_amd64.deb  Could not open file /var/cache/apt/archives/partial/libpkgconf3_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+E: Failed to fetch https://snapshot.ubuntu.com/ubuntu/20260828T000000Z/pool/main/m/m4/m4_1.4.19-4build1_amd64.deb  Could not open file /var/cache/apt/archives/partial/m4_1.4.19-4build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+E: Failed to fetch https://snapshot.ubuntu.com/ubuntu/20260828T000000Z/pool/main/p/pkgconf/pkgconf-bin_1.8.1-2build1_amd64.deb  Could not open file /var/cache/apt/archives/partial/pkgconf-bin_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+E: Failed to fetch https://snapshot.ubuntu.com/ubuntu/20260828T000000Z/pool/main/p/pkgconf/pkgconf_1.8.1-2build1_amd64.deb  Could not open file /var/cache/apt/archives/partial/pkgconf_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+E: Failed to fetch https://snapshot.ubuntu.com/ubuntu/20260828T000000Z/pool/main/p/pkgconf/pkg-config_1.8.1-2build1_amd64.deb  Could not open file /var/cache/apt/archives/partial/pkg-config_1.8.1-2build1_amd64.deb - open (13: Permission denied) [IP: 127.0.0.1 35261]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?

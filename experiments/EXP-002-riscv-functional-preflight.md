@@ -106,3 +106,11 @@ skipped. No gem5 Linux boot, runtime control or RandomX hash was executed.
 retain exact inputs, commands, versions, source consistency and failures.
 Task #16 remains open for incremental/larger-budget build and actual runtime,
 then complete unchanged light controls before full-dataset/intended-core work.
+
+## Successful simulator reuse and actual Linux runtime — 2026-10-08
+
+The earlier build-only failure record above is historical. One canonical incremental resume finished compilation, then hit the 8-GiB host linker limit. Upstream low-memory linking recovered in 248.76 seconds without source/configuration changes; all 10,933 archived source files match. The exact original simulator and its source/runtime/provenance are saved for reuse; no further cold build is needed. [Recovery](../docs/validation/m3-fs/link-recovery-20261008/README.md), [reuse recipe](../docs/validation/m3-fs/REUSE.md).
+
+Real Linux 6.8.12 boot and all nine standalone RV64 runtime oracles pass on one Atomic core, RVV off, classic caches and 4 GiB mapped RAM. Independent review replayed exact serial frames, zero status/empty stderr/completion, hypercalls1/2/3 and source/executable/resource/payload bindings. [Actual run](../docs/validation/m3-fs/actual-runtime-20261008/README.md), [separate acceptance](../docs/validation/m3-fs/ACTUAL-GEM5-REVIEW-20261008.md). Host elapsed time and memory are resource observations only.
+
+The separate unchanged light attempt timed out at its 1,200-second child bound after repeating all nine runtime controls and verifying/launching the hash ELF. It exposed no complete hash result; independent replay verifies inputs and the timeout, not a hash mismatch. [Light outcome](../docs/validation/m3-fs/ACTUAL-LIGHT-REVIEW-20261008.md). Task #16 stays open. A separately reviewed stdout-streaming repair now preserves flushed progress on future timeouts; its host tests and actual old-runner evidence are explicitly distinct. Runtime controls do not isolate cache-flush causality or prove SMP/migration, full-dataset, intended timing-core or RTL compatibility. The new manual hosted builder/cache/reuse workflow is reviewed and offline-tested but has not run end to end. Preserve M1/M3/M4/M5 gates and every earlier failure record.

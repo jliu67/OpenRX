@@ -1,0 +1,97 @@
+{
+  "scope": "host-only synthetic pipeline/control evidence; no gem5 boot or ELF execution",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "docs/validation/m3-fs/streaming-review-20261008/check_streaming.py",
+    "--repo",
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX",
+    "--output",
+    "docs/validation/m3-fs/streaming-review-20261008"
+  ],
+  "cases": [
+    {
+      "name": "complete-success",
+      "payload": "printf '%s\\n' '{\"synthetic\":\"complete\"}'\nexit 0\n",
+      "capture_failure": false,
+      "killed_after_observed_record": false,
+      "returncode": 0,
+      "stdout_sha256": "f29e79f4028ab0509c8b343ca7915c95eec94cde93476ab61fee5f8905dca6a9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "frame_accepted": true,
+      "status": "pass"
+    },
+    {
+      "name": "producer-exit-42",
+      "payload": "printf '%s\\n' '{\"synthetic\":\"producer-failure\"}'\nexit 42\n",
+      "capture_failure": false,
+      "killed_after_observed_record": false,
+      "returncode": 42,
+      "stdout_sha256": "11ab99723b1ea502542d8fed32f9534b7f9d86c8aa24bb221416e4f6830b5f8c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "frame_accepted": false,
+      "frame_error": "Guest runtime failed or wrote stderr",
+      "status": "pass"
+    },
+    {
+      "name": "capture-write-failure",
+      "payload": "printf '%s\\n' '{\"synthetic\":\"capture-failure\"}'\nexit 0\n",
+      "capture_failure": true,
+      "killed_after_observed_record": false,
+      "returncode": 1,
+      "stdout_sha256": "dfc5bcfd6a51c8a9ba54c465496305efc9436960c1532dda72c329a30f54ed2a",
+      "stderr_sha256": "7e1f3114b28954908a38c2078d5a8aae54bdd76384cdb92d232f7c8d6e614d3d",
+      "frame_accepted": false,
+      "frame_error": "Missing or duplicate framed runtime guest output",
+      "status": "pass"
+    },
+    {
+      "name": "both-producer-capture-fail",
+      "payload": "printf '%s\\n' '{\"synthetic\":\"both-fail\"}'\nexit 42\n",
+      "capture_failure": true,
+      "killed_after_observed_record": false,
+      "returncode": 1,
+      "stdout_sha256": "161f4bc3967a39ea6f117cb2032578ae92c5a54c43448e432e41906d17297f52",
+      "stderr_sha256": "7e1f3114b28954908a38c2078d5a8aae54bdd76384cdb92d232f7c8d6e614d3d",
+      "frame_accepted": false,
+      "frame_error": "Missing or duplicate framed runtime guest output",
+      "status": "pass"
+    },
+    {
+      "name": "producer-stderr",
+      "payload": "printf '%s\\n' '{\"synthetic\":\"stderr\"}'\nprintf 'synthetic error\\n' >&2\nexit 0\n",
+      "capture_failure": false,
+      "killed_after_observed_record": false,
+      "returncode": 0,
+      "stdout_sha256": "dd8c2b89a97cfbc2f5c2a2c81da07491fec9cbe347e685d22a5f7034ee20101b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "frame_accepted": false,
+      "frame_error": "Guest runtime failed or wrote stderr",
+      "status": "pass"
+    },
+    {
+      "name": "killed-incomplete-stream",
+      "payload": "printf '%s\\n' '{\"synthetic\":\"before-kill\"}'\nread -r release\n",
+      "capture_failure": false,
+      "killed_after_observed_record": true,
+      "partial_record_seen_while_active": true,
+      "returncode": -9,
+      "stdout_sha256": "d013d9d18cd6ad47bf22f0e117874aed2eae8b93027c2231bb94383001c1eb0c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "frame_accepted": false,
+      "frame_error": "Missing or duplicate framed runtime guest output",
+      "status": "pass"
+    }
+  ],
+  "inputs": {
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/simulator/gem5/run.py": {
+      "bytes": 9971,
+      "sha256": "26c32c0537f8b7982e512faa6680115f8e4946faf9c1a5c8d28df727f6d1d7b5"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/tests/test_gem5_fs.py": {
+      "bytes": 7271,
+      "sha256": "2b6b7451aa6a7a12112c59823d84d52307cd4d4e824d0cfbfe6698c18099031e"
+    }
+  },
+  "synthetic_adaptations": "relocate guest scratch directory; omit host/guest inventory commands; retain generated injection, pipeline, statuses, frame and completion commands",
+  "status": "pass"
+}

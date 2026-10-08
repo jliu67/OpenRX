@@ -1,0 +1,24 @@
+{
+  "/sbin/gem5_init.sh": {
+    "bytes": 1853,
+    "sha256": "f281f7ae77b8c362cb3422f9aa8e57ec28c7739503f089219bb0db40a589f916"
+  },
+  "/home/gem5/after_boot.sh": {
+    "bytes": 2184,
+    "sha256": "05c5b7824942fa0ada6eacd271e9c205c87e63fe81654778aa2167bebcd22965"
+  },
+  "/home/gem5/.bashrc": {
+    "bytes": 3876,
+    "sha256": "8b01643850bffd7107b81dcaf19dbc4c03baf91f479d5dd932ed398491bc789a"
+  },
+  "/usr/lib/os-release": {
+    "bytes": 396,
+    "sha256": "2535d8287bcc5dc28816ae7b0c917943a0f4baf45a6896e07d99a306c76e8d99"
+  },
+  "partition": {
+    "number": 1,
+    "start_sector": 235520,
+    "end_sector": 10239966,
+    "offset_bytes": 120586240
+  }
+}

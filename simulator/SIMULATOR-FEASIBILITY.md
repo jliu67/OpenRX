@@ -12,11 +12,35 @@ These tools serve different purposes. QEMU and Spike establish functional behavi
 |---|---|---|
 | Upstream source and API feasibility | Reviewed at exact revisions below | Source links, license inventory, identified compatibility gaps |
 | Project functional smoke under a RISC-V emulator | Not executed by this report's author | Retained preflight logs, versions, ELF/disassembly, exact expected output and exit status; use the session validation record for actual execution results |
-| Pinned gem5/Spike/RTL RandomX correctness | **Unexecuted** | FP and JIT probes plus matching full-algorithm v2 hashes and v1 regressions on each selected CPU/runtime |
+| Pinned gem5 full-system Linux standalone runtime | **Executed and independently accepted**, 2026-10-08 update | Actual Linux boot and nine signal/protection/overwrite/flush controls; complete report, serial and source/configuration/payload bindings linked below |
+| Pinned gem5/Spike/RTL RandomX correctness | **Pending for gem5; unexecuted for Spike/RTL** | FP and JIT probes plus matching full-algorithm v2 hashes and v1 regressions on each selected CPU/runtime |
 | Native versus simulated timing calibration | **Unexecuted** | Controlled native M1 measurements, declared comparable machine/configuration, ROI, model checks and uncertainty |
 | Energy/area/silicon performance | **Unknown** | Separately validated power/physical-design evidence; no conversion from emulator wall time |
 
 M3 remains open until the selected core/runtime has an executed reproducible correctness path. A green QEMU probe alone does not accept gem5, BOOM, CVA6 or M4.
+
+## Executed Linux runtime update — 2026-10-08
+
+After the dated source review, the pinned gem5 full-system configuration
+booted Linux 6.8.12 and passed all **nine standalone runtime controls** on
+one Atomic RISC-V core with RVV disabled, 4 GiB mapped RAM, 16 KiB L1I/L1D,
+256 KiB L2 and 8 KiB walker caches. Exact SIGILL, memory-permission,
+generated-code overwrite/reexecution and explicit Linux flush-icache oracles
+passed; child exit was zero with complete framed output, empty probe stderr
+and hypercalls 1/2/3. [Actual execution](../docs/validation/m3-fs/actual-runtime-20261008/README.md),
+[report](../docs/validation/m3-fs/actual-runtime-20261008/report.json) and
+[independent acceptance](../docs/validation/m3-fs/ACTUAL-GEM5-REVIEW-20261008.md)
+bind the source, executable, resources, emitted configuration and guest payload.
+
+This runtime-only attempt requested no RandomX hashes. The separate complete
+unchanged light-mode v2/v1 interpreter/JIT attempt timed out without a complete result. The result
+does not establish FP/RandomX correctness, full-dataset operation, intended
+timing-core/RTL behavior or SMP/migration coherence. Permission transitions
+can also synchronize instructions; these combined controls do not isolate
+the flush mechanism. The earlier SE source analysis remains valid and was
+not converted into an executed SE failure claim. Follow the verified
+[reuse recipe](../docs/validation/m3-fs/REUSE.md) and current execution record
+instead of repeating a source build.
 
 ## Exact review revisions and licenses
 
@@ -64,7 +88,7 @@ Separately, SE's RV64 syscall table jumps from 258 to 260 with **no syscall 259 
 
 The reviewed standard-library API supports [`BinaryResource(local_path=...)`](https://github.com/gem5/gem5/blob/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/src/python/gem5/resources/resource.py), [`SimpleProcessor(cpu_type=CPUTypes.ATOMIC, num_cores=1, isa=ISA.RISCV)`](https://github.com/gem5/gem5/blob/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/src/python/gem5/components/processors/simple_processor.py), `SimpleBoard`, and [`set_se_binary_workload(binary, arguments=[...])`](https://github.com/gem5/gem5/blob/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/src/python/gem5/components/boards/se_binary_workload.py). That workload API documents only partial dynamic-ELF support when host and guest ISAs match; use a **static guest ELF** for the x86-host/RISC-V SE control. These are source-checked APIs, not an executed configuration. Start with a local ELF and explicit guest memory to avoid an implicit download or changing resource revision. Repeat every correctness gate with the intended timing CPU, including O3 if selected; atomic success is not timing-model correctness.
 
-**gem5 full-system is the fallback candidate:** the pinned [RISC-V Ubuntu example](https://github.com/gem5/gem5/blob/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/configs/example/gem5_library/riscv-ubuntu-run.py) uses `RiscvBoard`, classic caches, DDR4 memory and `riscv-ubuntu-24.04-boot` resource version `2.0.0`. That example establishes a source-supported boot recipe; OpenRX has not executed it. Pin kernel, firmware, disk and guest toolchain digests, verify guest flush-icache implementation and retain boot logs before hashing. Increase guest RAM based on actual allocation needs rather than copying an example default.
+**gem5 full-system is the exercised functional path:** the pinned [RISC-V Ubuntu example](https://github.com/gem5/gem5/blob/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/configs/example/gem5_library/riscv-ubuntu-run.py) uses `RiscvBoard`, classic caches, DDR4 memory and `riscv-ubuntu-24.04-boot` resource version `2.0.0`. OpenRX's separately pinned configuration and resources now have an actual Linux boot and nine accepted standalone runtime controls, linked above. Preserve kernel, firmware, disk and guest toolchain digests, actual flush-icache results and boot logs before accepting unchanged hashes. The current 4 GiB mapped guest RAM has not yet established full-dataset allocation headroom; record actual workload allocation needs.
 
 **Spike is not a drop-in Linux-user substitute:** its README's simple path is `spike pk hello`, built for the proxy kernel. RandomX's Linux executable allocation, threads and runtime dependencies must be supported by the separately pinned proxy-kernel build or by a full Linux boot integration. Use a minimal static oracle for ISA probes first. Spike's sequentially consistent functional model is not an RVWMO timing calibration.
 
@@ -76,7 +100,7 @@ Pinned RandomX has a 256 MiB Argon/cache allocation, a `2,181,038,016`-byte data
 
 Propose **4 GiB guest RAM for a single-worker full-dataset trial**, then record actual peak RSS/guest allocation and adjust explicitly. Dataset, cache, runtime/kernel, JIT and simulator structures need headroom. The core report identifies Chipyard/CVA6 sample memory regions below this requirement; a larger RAM command-line setting alone does not fix a core's cacheable/executable range or device-tree map. Host memory must also cover simulator overhead, build/elaboration and disk/image storage. Chipyard documentation reports approximately 6.5 GB just to elaborate its default Rocket example; treat this as an upstream report, not a local measurement or a guarantee for BOOM.
 
-No simulator runtime cost has been measured here. Bound first attempts by wall timeout, guest/simulated instruction or cycle limit and explicit log-size limits. Retain timeout/nonzero-exit evidence. Start with small probes and light-mode complete known hashes, then progress to one full-dataset hash and repeated JIT regeneration; scale only after observing actual runtime and memory. Do not shrink algorithm constants and call the resulting hashes RandomX.
+The accepted runtime-only gem5 attempt recorded 958.249 host seconds including wrapper input checks, 917.34 host seconds in gem5's final stats and reported peak child RSS of 357,088 KiB. These are observed host costs for this one boot/runtime attempt, not RandomX throughput, calibrated processor timing or physical efficiency. The original attempt had a 1,200-second wall bound; retain limits and timeout/nonzero-exit evidence for each further attempt. Complete the unchanged light hash matrix before progressing to full-dataset hashes and repeated JIT regeneration; scale only after observing actual workload runtime and memory. Do not shrink algorithm constants and call the resulting hashes RandomX.
 
 For M4, record CPU width/queues/functional-unit latencies, branch prediction, I/D-cache geometry and policy, TLBs, dataset/scratchpad mapping, coherence, prefetch and DRAM model. A gem5 default configuration does not identify a real core. The [official O3 description](https://www.gem5.org/documentation/general_docs/cpu_models/O3CPU) identifies a model loosely based on Alpha 21264; parameter similarity does not turn it into BOOM or C920. Similarly, [Verilator's overview](https://verilator.org/guide/latest/overview.html) describes compiled RTL execution, not a physical-power engine.
 
@@ -84,8 +108,8 @@ Use controlled native measurements and separate microbenchmarks for calibration,
 
 ## Next acceptance work
 
-1. Execute and retain the bounded scalar Linux functional preflight, including exact compiler/package versions, ELF digest/disassembly and every failure; distinguish the CI's actual QEMU package from the upstream research pin.
-2. Build pinned gem5 and execute reduced scalar integer/FP probes. For the unchanged RandomX workload, demonstrate full-system Linux startup and JIT controls, or separately implement and test SE guest signal delivery/unsupported-instruction recovery plus syscall 259 and code-cache coherence.
+1. Use the [retained executed scalar Linux preflight](../docs/validation/m3/README.md), including exact compiler/package versions, ELF digest/disassembly and failures; repeat controls when the configuration changes and distinguish the CI's actual QEMU package from the upstream research pin.
+2. Reuse the completed pinned gem5 build and accepted Linux runtime stage; execute the complete unchanged light-mode scalar integer/FP and v2/v1 interpreter/JIT matrix. The SE signal/cache-flush gaps remain separately source-audited; no simulator or vendor workaround was added by the full-system runtime result.
 3. Match known complete v2 hashes plus v1 regressions in interpreter and JIT modes; record both software-AES controls and any separately enabled vector/crypto backend. Repeat correctness under each intended CPU model.
 4. Elaborate the chosen RTL candidate with compatible pinned dependencies, verify RAM/cacheable/executable mappings and run the same semantic probes and workload controls. Do not substitute generic gem5 O3 results for this RTL gate.
-5. Only after correctness and M1 evidence, propose an M4 calibration experiment with declared assumptions and uncertainty. Keep task #3 open while the selected core/simulator path is unexecuted.
+5. Only after workload correctness and M1 evidence, propose an M4 calibration experiment with declared assumptions and uncertainty. Keep task #3 open until the complete selected core/simulator workload path is independently accepted; the standalone gem5 runtime stage does not complete it.

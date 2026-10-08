@@ -1,0 +1,98 @@
+{
+  "schema": "openrx-independent-input-digests-v1",
+  "recorded_utc": "2026-10-08T18:09:07.923749+00:00",
+  "files": {
+    "/tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe": {
+      "bytes": 376824,
+      "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657"
+    },
+    "/tmp/openrx-runtime-ci/riscv-validation/qemu/report.json": {
+      "bytes": 813,
+      "sha256": "1633a5c7d515c655d5b8eda3687027d69537620d3e2f1d89d8a9509acf2b4688"
+    },
+    "/tmp/openrx-runtime-ci/riscv-validation/qemu/probe.jsonl": {
+      "bytes": 8699,
+      "sha256": "780d7ca6c4584c3dab2195b862c08a9662d173829a0c3b3b3da2f5991657b9b3"
+    },
+    "/tmp/openrx-runtime-ci/riscv-validation/environment.txt": {
+      "bytes": 1421,
+      "sha256": "0016544556e654d121d5e71cb8fc18f235c28c7b2be16c49e5f5b228b9d86222"
+    },
+    "/tmp/openrx-runtime-ci/probe-riscv/compile_commands.json": {
+      "bytes": 19044,
+      "sha256": "79514d0b414a652ced79fcaddd3a2a101746e04671171c95fe177b2135009a93"
+    },
+    "/tmp/openrx-runtime-ci/probe-riscv/CMakeCache.txt": {
+      "bytes": 18258,
+      "sha256": "742a125a3f3fccfee247d5220ceba802fd4ae14f4843cd31985afc81398d254e"
+    },
+    "/tmp/openrx-runtime-ci/riscv-validation/riscv-binary.sha256": {
+      "bytes": 103,
+      "sha256": "32703a4da69101563f807cf5c9775e1af7ae10b1d78caed72824ef909a2a415b"
+    },
+    "/tmp/openrx-runtime-ci/riscv-validation/qemu/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "/tmp/openrx-runtime-ci/riscv-validation/riscv-configure.log": {
+      "bytes": 1645,
+      "sha256": "5f8e049a916655125ccd237591971312cd05962b89fc98fb7b300568f8eadf02"
+    },
+    "/tmp/openrx-runtime-ci/riscv-validation/riscv-build.log": {
+      "bytes": 2776,
+      "sha256": "52d5d6e4648d08b73b595c966d406dcf0ab587d75421cbdefefa427964cad2c8"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/docs/validation/m3-fs/runtime-ci-audit.json": {
+      "bytes": 1278,
+      "sha256": "01b9500cbc9fff901a95cb0614f1242556d65c431205173f93f9471a72a0decb"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/docs/validation/m3-fs/guest-elf-audit-20261008.json": {
+      "bytes": 19287,
+      "sha256": "fe32d5a9964f008686d1b375b61fe373e5f027a217246bde3aeb06864b28256a"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/build/runtime-final-ci/replay.json": {
+      "bytes": 2005,
+      "sha256": "a88250a879c4504de62ae5c054c3d518fde027a76acd30111a67e316c30ac457"
+    },
+    "/tmp/openrx-runtime-ci.zip": {
+      "bytes": 462440,
+      "sha256": "a4cd49b7f6f54a94fed9d6b3087714eaa00063ad5f732c201b54464b0cc94d05"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/build/runtime-final-ci/main-riscv-final.zip": {
+      "bytes": 462436,
+      "sha256": "0af776da4540bc9be627d0f768b59a4c675bbdf93830527633fd9b05e560e21a"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/vendor/randomx.lock.json": {
+      "bytes": 247,
+      "sha256": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/vendor/randomx.sha256.json": {
+      "bytes": 17049,
+      "sha256": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/simulator/probe/main.cpp": {
+      "bytes": 15098,
+      "sha256": "855762bdcfc687c53c8ebe7f4c419415773edaf7a156d2667b3eff5cd990281d"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/simulator/probe/CMakeLists.txt": {
+      "bytes": 1929,
+      "sha256": "5076e44a8b46611ba4df1fc54bb198dc0046ed284d0d317ef82ca979febba58f"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/simulator/toolchains/riscv64-linux-gnu.cmake": {
+      "bytes": 755,
+      "sha256": "898248ed6d45480f61c6941765da49b0383fdd07ef87e5f415b811a6cf617ce6"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/build/runtime-final-ci/main-riscv.log": {
+      "bytes": 55929,
+      "sha256": "ec83f968059356105002ea41567cf1cfc1e4984bac67f8afd83d263a508014c2"
+    },
+    "/workspace/scratch/62a7e35b1ac5/OpenRandomX/docs/validation/m3-fs/RUNTIME-CI.md": {
+      "bytes": 5947,
+      "sha256": "03a8072f12a577ca7a7bcb359038d81d2dfbaa8f87727fa8009b76469f2fba72"
+    },
+    "/tmp/openrx-gem5-light-20261008-attempt1/guest.sh": {
+      "bytes": 521870,
+      "sha256": "403fa537df55303f74793a5c9e27c735d812eb128f70e2d97c4d46441fa9fae2"
+    }
+  }
+}

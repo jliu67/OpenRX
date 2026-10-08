@@ -1,0 +1,12 @@
+Global frequency set at 1000000000000 ticks per second
+      0: board.platform.rtc: Real-time clock set to Sun Jan  1 00:00:00 2012
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.1
+gem5 compiled Oct  8 2026 17:26:09
+gem5 started Oct  8 2026 13:42:36
+gem5 executing on 85cc06679faa, pid 6
+command line: /tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt --outdir=/tmp/openrx-gem5-runtime-20261008-attempt1/m5out /workspace/scratch/62a7e35b1ac5/OpenRandomX/simulator/gem5/fs.py --resources /tmp/openrx-fs-resource-audit --readfile /tmp/openrx-gem5-runtime-20261008-attempt1/guest.sh --max-ticks 10000000000000
+
+info: Standard input is not a terminal, disabling listeners.

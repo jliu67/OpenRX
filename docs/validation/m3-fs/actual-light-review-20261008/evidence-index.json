@@ -1,0 +1,75 @@
+{
+  "scope": "independent actual bounded light failure record and payload/source/input/copy replay; no guest launch",
+  "files": [
+    {
+      "path": "light-payload-binding-command.json",
+      "bytes": 1039,
+      "sha256": "395f6110029897e4480561b800a3cccf533eb4bc88651b3addee552e75e06359"
+    },
+    {
+      "path": "light-payload-binding-inputs.json",
+      "bytes": 4418,
+      "sha256": "b7d32834a821e9373d8cd8fd15f24e7b019e28d545caf22f91fb77e6bf88d17b"
+    },
+    {
+      "path": "light-payload-binding.json",
+      "bytes": 11442,
+      "sha256": "e89eb74a401da267380fc7f6320590f5480010c046a7b86b1e9f817d05ce4c35"
+    },
+    {
+      "path": "light-payload-binding.log",
+      "bytes": 13478,
+      "sha256": "5a8ae558cdd2fa6cfbfbd290c71359222b6b888171999c456a77148695d92e98"
+    },
+    {
+      "path": "replay-light-command.json",
+      "bytes": 582,
+      "sha256": "b6994ad30b0a4cde6eba7badd0be396597b24e209eba2d8d16b94ef13f60d614"
+    },
+    {
+      "path": "replay-light.json",
+      "bytes": 3632,
+      "sha256": "38d18b0d690c082416180ebb8cf449769fb609d025c089a8da9b324ad7814e26"
+    },
+    {
+      "path": "replay-light.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "replay-light.stdout.log",
+      "bytes": 3144,
+      "sha256": "7f58dd4fd0625cdafb42a24f14261a26981a95bbd3c9b632939a2921aa50e488"
+    },
+    {
+      "path": "replay_light.py",
+      "bytes": 10296,
+      "sha256": "5172f48fc5e87284f2d1f1aa12ec095718e7a1fc22bb6797b7a47674436e1fa7"
+    },
+    {
+      "path": "retained-copy-command.json",
+      "bytes": 851,
+      "sha256": "5f3f099ca2e3efec59764bb1fbcb48189bd20f650927ead268382d030cad66e6"
+    },
+    {
+      "path": "retained-copy.json",
+      "bytes": 7603,
+      "sha256": "619335c3a9b6e16ec5d12c23d78c0f751b4cf8963de226db899cfa4247377e04"
+    },
+    {
+      "path": "retained-copy.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "retained-copy.stdout.log",
+      "bytes": 6431,
+      "sha256": "e467c340a73a641a2dfe70ee99e2ba2300c67047df8984185367aafa36d22ca1"
+    },
+    {
+      "path": "verify_retained_light_copy.py",
+      "bytes": 3663,
+      "sha256": "4153b0e650da468a1cb0d0b6b4b48b58fee6e6f18f327c185ad4b5f7cf872334"
+    }
+  ]
+}

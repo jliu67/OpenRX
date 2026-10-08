@@ -1,0 +1,684 @@
+2026-10-08T18:14:14.1160365Z Current runner version: '2.337.0'
+2026-10-08T18:14:14.1197429Z ##[group]Runner Image Provisioner
+2026-10-08T18:14:14.1199049Z Hosted Compute Agent
+2026-10-08T18:14:14.1200303Z Version: 20261002.596
+2026-10-08T18:14:14.1201493Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T18:14:14.1202962Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T18:14:14.1204223Z Worker ID: {ff954697-ba9c-4c48-a7ab-eb62d8704308}
+2026-10-08T18:14:14.1205513Z Region: westus
+2026-10-08T18:14:14.1206683Z Cloud: Azure
+2026-10-08T18:14:14.1207701Z ##[endgroup]
+2026-10-08T18:14:14.1210849Z ##[group]Operating System
+2026-10-08T18:14:14.1211992Z Ubuntu
+2026-10-08T18:14:14.1212909Z 24.04.5
+2026-10-08T18:14:14.1213985Z LTS
+2026-10-08T18:14:14.1214986Z ##[endgroup]
+2026-10-08T18:14:14.1216084Z ##[group]Runner Image
+2026-10-08T18:14:14.1217296Z Image: ubuntu-24.04
+2026-10-08T18:14:14.1218346Z Version: 20261004.327.1
+2026-10-08T18:14:14.1221010Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T18:14:14.1223917Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T18:14:14.1225805Z ##[endgroup]
+2026-10-08T18:14:14.1228000Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T18:14:14.1231262Z Contents: read
+2026-10-08T18:14:14.1232282Z Metadata: read
+2026-10-08T18:14:14.1233345Z ##[endgroup]
+2026-10-08T18:14:14.1236322Z Secret source: Actions
+2026-10-08T18:14:14.1237983Z Cache mode: write
+2026-10-08T18:14:14.1239468Z Prepare workflow directory
+2026-10-08T18:14:14.1923699Z Prepare all required actions
+2026-10-08T18:14:14.1997554Z Getting action download info
+2026-10-08T18:14:14.6220146Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T18:14:14.7217922Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T18:14:14.9440756Z Complete job name: correctness
+2026-10-08T18:14:15.0226667Z ##[group]Run actions/checkout@v4
+2026-10-08T18:14:15.0227570Z with:
+2026-10-08T18:14:15.0228015Z   repository: jliu67/OpenRandomX
+2026-10-08T18:14:15.0232074Z   token: ***
+2026-10-08T18:14:15.0232515Z   ssh-strict: true
+2026-10-08T18:14:15.0232951Z   ssh-user: git
+2026-10-08T18:14:15.0233399Z   persist-credentials: true
+2026-10-08T18:14:15.0233885Z   clean: true
+2026-10-08T18:14:15.0234333Z   sparse-checkout-cone-mode: true
+2026-10-08T18:14:15.0234847Z   fetch-depth: 1
+2026-10-08T18:14:15.0235274Z   fetch-tags: false
+2026-10-08T18:14:15.0235714Z   show-progress: true
+2026-10-08T18:14:15.0236148Z   lfs: false
+2026-10-08T18:14:15.0236549Z   submodules: false
+2026-10-08T18:14:15.0236983Z   set-safe-directory: true
+2026-10-08T18:14:15.0237476Z   allow-unsafe-pr-checkout: false
+2026-10-08T18:14:15.0238388Z ##[endgroup]
+2026-10-08T18:14:15.1624469Z Syncing repository: jliu67/OpenRandomX
+2026-10-08T18:14:15.1627012Z ##[group]Getting Git version info
+2026-10-08T18:14:15.1628439Z Working directory is '/home/runner/work/OpenRandomX/OpenRandomX'
+2026-10-08T18:14:15.1641583Z [command]/usr/bin/git version
+2026-10-08T18:14:15.2801694Z git version 2.55.0
+2026-10-08T18:14:15.2863418Z ##[endgroup]
+2026-10-08T18:14:15.2874781Z Temporarily overriding HOME='/home/runner/work/_temp/573c0481-c38b-4662-a9c7-eb7e4f3484f7' before making global git config changes
+2026-10-08T18:14:15.2878385Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T18:14:15.2885812Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRandomX/OpenRandomX
+2026-10-08T18:14:15.2891406Z Deleting the contents of '/home/runner/work/OpenRandomX/OpenRandomX'
+2026-10-08T18:14:15.2893967Z ##[group]Initializing the repository
+2026-10-08T18:14:15.2896061Z [command]/usr/bin/git init /home/runner/work/OpenRandomX/OpenRandomX
+2026-10-08T18:14:15.2900766Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T18:14:15.2905458Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T18:14:15.2910251Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T18:14:15.2912980Z hint: call:
+2026-10-08T18:14:15.2915134Z hint:
+2026-10-08T18:14:15.2918449Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T18:14:15.2919889Z hint:
+2026-10-08T18:14:15.2920832Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T18:14:15.2929389Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T18:14:15.2930697Z hint:
+2026-10-08T18:14:15.2931391Z hint: 	git branch -m <name>
+2026-10-08T18:14:15.2932286Z hint:
+2026-10-08T18:14:15.2933491Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T18:14:15.2935291Z Initialized empty Git repository in /home/runner/work/OpenRandomX/OpenRandomX/.git/
+2026-10-08T18:14:15.2938113Z [command]/usr/bin/git remote add origin https://github.com/jliu67/OpenRandomX
+2026-10-08T18:14:15.2949514Z ##[endgroup]
+2026-10-08T18:14:15.2950937Z ##[group]Disabling automatic garbage collection
+2026-10-08T18:14:15.2952057Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T18:14:15.2954352Z ##[endgroup]
+2026-10-08T18:14:15.2955496Z ##[group]Setting up auth
+2026-10-08T18:14:15.2956658Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T18:14:15.2960782Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T18:14:15.3151217Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T18:14:15.3157284Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T18:14:15.3467683Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T18:14:15.3506618Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T18:14:15.3745558Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T18:14:15.3791046Z ##[endgroup]
+2026-10-08T18:14:15.3793217Z ##[group]Fetching the repository
+2026-10-08T18:14:15.3803592Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +efd3084d1a29cc2f5dcae317c3b9eb6dae5b52de:refs/remotes/pull/18/merge
+2026-10-08T18:14:16.5061586Z From https://github.com/jliu67/OpenRandomX
+2026-10-08T18:14:16.5063595Z  * [new ref]         efd3084d1a29cc2f5dcae317c3b9eb6dae5b52de -> pull/18/merge
+2026-10-08T18:14:16.5073123Z ##[endgroup]
+2026-10-08T18:14:16.5075707Z ##[group]Determining the checkout info
+2026-10-08T18:14:16.5078625Z ##[endgroup]
+2026-10-08T18:14:16.5083545Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T18:14:16.5147138Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T18:14:16.5190324Z ##[group]Checking out the ref
+2026-10-08T18:14:16.5193805Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/18/merge
+2026-10-08T18:14:16.5690031Z Note: switching to 'refs/remotes/pull/18/merge'.
+2026-10-08T18:14:16.5694905Z 
+2026-10-08T18:14:16.5696291Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T18:14:16.5699773Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T18:14:16.5702900Z state without impacting any branches by switching back to a branch.
+2026-10-08T18:14:16.5705883Z 
+2026-10-08T18:14:16.5707271Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T18:14:16.5710492Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T18:14:16.5712574Z 
+2026-10-08T18:14:16.5713537Z   git switch -c <new-branch-name>
+2026-10-08T18:14:16.5715339Z 
+2026-10-08T18:14:16.5716277Z Or undo this operation with:
+2026-10-08T18:14:16.5717562Z 
+2026-10-08T18:14:16.5718399Z   git switch -
+2026-10-08T18:14:16.5720137Z 
+2026-10-08T18:14:16.5722140Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T18:14:16.5724484Z 
+2026-10-08T18:14:16.5726961Z HEAD is now at efd3084 Merge 4f4cf17880ccfa2e904eb9d2dc23892b828bce12 into a2128b9ee9dd93acdfc392bc4752e412f5e5a3d2
+2026-10-08T18:14:16.5735363Z ##[endgroup]
+2026-10-08T18:14:16.5776878Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T18:14:16.5799057Z efd3084d1a29cc2f5dcae317c3b9eb6dae5b52de
+2026-10-08T18:14:16.6084397Z ##[group]Run python3 scripts/verify_vendor.py
+2026-10-08T18:14:16.6086104Z [36;1mpython3 scripts/verify_vendor.py[0m
+2026-10-08T18:14:16.6362927Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:16.6364541Z ##[endgroup]
+2026-10-08T18:14:16.6970443Z Vendor integrity OK (171 files)
+2026-10-08T18:14:16.7105633Z ##[group]Run mkdir -p build/validation
+2026-10-08T18:14:16.7107016Z [36;1mmkdir -p build/validation[0m
+2026-10-08T18:14:16.7108279Z [36;1mset -o pipefail[0m
+2026-10-08T18:14:16.7110434Z [36;1mpython3 -m unittest discover -s tests -v 2>&1 | tee build/validation/phase1-tests.log[0m
+2026-10-08T18:14:16.7177022Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:16.7178134Z ##[endgroup]
+2026-10-08T18:14:16.8973701Z test_authorization_denies_other_authors_and_bot (test_agent_announce.AnnouncementTests.test_authorization_denies_other_authors_and_bot) ... ok
+2026-10-08T18:14:16.8981184Z test_length_and_missing_source (test_agent_announce.AnnouncementTests.test_length_and_missing_source) ... ok
+2026-10-08T18:14:16.8987860Z test_no_actions_without_authorized_message (test_agent_announce.AnnouncementTests.test_no_actions_without_authorized_message) ... ok
+2026-10-08T18:14:16.8995282Z test_only_created_first_line_command (test_agent_announce.AnnouncementTests.test_only_created_first_line_command) ... ok
+2026-10-08T18:14:16.9001265Z test_parses_valid (test_agent_announce.AnnouncementTests.test_parses_valid) ... ok
+2026-10-08T18:14:16.9007141Z test_posts_once_and_idempotent_on_replay (test_agent_announce.AnnouncementTests.test_posts_once_and_idempotent_on_replay) ... ok
+2026-10-08T18:14:16.9014442Z test_spoofed_human_marker_does_not_block (test_agent_announce.AnnouncementTests.test_spoofed_human_marker_does_not_block) ... ok
+2026-10-08T18:14:16.9021725Z test_wrong_hub_and_pull_request_ignored (test_agent_announce.AnnouncementTests.test_wrong_hub_and_pull_request_ignored) ... ok
+2026-10-08T18:14:16.9028514Z test_block_and_reopen_with_no_manager (test_agent_router.DecentralizedTests.test_block_and_reopen_with_no_manager) ... ok
+2026-10-08T18:14:16.9035488Z test_closed_not_planned_not_satisfied (test_agent_router.DecentralizedTests.test_closed_not_planned_not_satisfied) ... ok
+2026-10-08T18:14:16.9042794Z test_dependencies_block_until_closed_completed (test_agent_router.DecentralizedTests.test_dependencies_block_until_closed_completed) ... ok
+2026-10-08T18:14:16.9050687Z test_dependency_block_visible_in_live_reconcile (test_agent_router.DecentralizedTests.test_dependency_block_visible_in_live_reconcile) ... ok
+2026-10-08T18:14:16.9057878Z test_existing_issue_join_preserves_body (test_agent_router.DecentralizedTests.test_existing_issue_join_preserves_body) ... ok
+2026-10-08T18:14:16.9064853Z test_invalid_dependencies_fail_closed (test_agent_router.DecentralizedTests.test_invalid_dependencies_fail_closed) ... ok
+2026-10-08T18:14:16.9072409Z test_legacy_role_label_cleanup_preserves_human_labels (test_agent_router.DecentralizedTests.test_legacy_role_label_cleanup_preserves_human_labels) ... ok
+2026-10-08T18:14:16.9091127Z test_new_message_cannot_be_claimed (test_agent_router.DecentralizedTests.test_new_message_cannot_be_claimed) ... ok
+2026-10-08T18:14:16.9097421Z test_non_writer_claim_does_not_enroll (test_agent_router.DecentralizedTests.test_non_writer_claim_does_not_enroll) ... ok
+2026-10-08T18:14:16.9104659Z test_old_workflow_state_cannot_claim_without_comment (test_agent_router.DecentralizedTests.test_old_workflow_state_cannot_claim_without_comment) ... ok
+2026-10-08T18:14:16.9112825Z test_task_and_message_are_distinct_and_no_roles (test_agent_router.DecentralizedTests.test_task_and_message_are_distinct_and_no_roles) ... ok
+2026-10-08T18:14:16.9120495Z test_template_comment_allowed_in_dependencies (test_agent_router.DecentralizedTests.test_template_comment_allowed_in_dependencies) ... ok
+2026-10-08T18:14:16.9127861Z test_closed_issue_recovery_without_original_event (test_agent_router.IntegrationTests.test_closed_issue_recovery_without_original_event) ... ok
+2026-10-08T18:14:16.9135169Z test_explicit_closed_issue_reconciled (test_agent_router.IntegrationTests.test_explicit_closed_issue_reconciled) ... ok
+2026-10-08T18:14:16.9142539Z test_idempotent_run_performs_no_duplicate_writes (test_agent_router.IntegrationTests.test_idempotent_run_performs_no_duplicate_writes) ... ok
+2026-10-08T18:14:16.9149547Z test_input_not_shell_or_api_path (test_agent_router.IntegrationTests.test_input_not_shell_or_api_path) ... ok
+2026-10-08T18:14:16.9155682Z test_invalid_repository_and_missing_token (test_agent_router.IntegrationTests.test_invalid_repository_and_missing_token) ... ok
+2026-10-08T18:14:16.9162054Z test_label_sync_and_receipt (test_agent_router.IntegrationTests.test_label_sync_and_receipt) ... ok
+2026-10-08T18:14:16.9167339Z test_owner_and_writer_permissions (test_agent_router.IntegrationTests.test_owner_and_writer_permissions) ... ok
+2026-10-08T18:14:16.9173755Z test_pagination_limit_is_not_partial_success (test_agent_router.IntegrationTests.test_pagination_limit_is_not_partial_success) ... ok
+2026-10-08T18:14:16.9182027Z test_pagination_reads_all_pages (test_agent_router.IntegrationTests.test_pagination_reads_all_pages) ... ok
+2026-10-08T18:14:16.9187939Z test_permission_lookup_fails_closed (test_agent_router.IntegrationTests.test_permission_lookup_fails_closed) ... ok
+2026-10-08T18:14:16.9193324Z test_pull_requests_skipped (test_agent_router.IntegrationTests.test_pull_requests_skipped) ... ok
+2026-10-08T18:14:16.9199803Z test_spoofed_bot_marker_not_overwritten (test_agent_router.IntegrationTests.test_spoofed_bot_marker_not_overwritten) ... ok
+2026-10-08T18:14:16.9206553Z test_status_change_updates_one_receipt (test_agent_router.IntegrationTests.test_status_change_updates_one_receipt) ... ok
+2026-10-08T18:14:16.9213079Z test_unrelated_issue_not_modified (test_agent_router.IntegrationTests.test_unrelated_issue_not_modified) ... ok
+2026-10-08T18:14:16.9219194Z test_writer_whitespace_command_identity (test_agent_router.IntegrationTests.test_writer_whitespace_command_identity) ... ok
+2026-10-08T18:14:16.9224270Z test_audit_bounded (test_agent_router.ProtocolTests.test_audit_bounded) ... ok
+2026-10-08T18:14:16.9229611Z test_cannot_claim_while_waiting_for_review (test_agent_router.ProtocolTests.test_cannot_claim_while_waiting_for_review) ... ok
+2026-10-08T18:14:16.9235457Z test_cannot_reopen_active_claim (test_agent_router.ProtocolTests.test_cannot_reopen_active_claim) ... ok
+2026-10-08T18:14:16.9241283Z test_claim_and_conflict_same_account (test_agent_router.ProtocolTests.test_claim_and_conflict_same_account) ... ok
+2026-10-08T18:14:16.9247023Z test_claim_conflict_other_account (test_agent_router.ProtocolTests.test_claim_conflict_other_account) ... ok
+2026-10-08T18:14:16.9252751Z test_closed_issue_releases_claim (test_agent_router.ProtocolTests.test_closed_issue_releases_claim) ... ok
+2026-10-08T18:14:16.9257565Z test_crlf_metadata (test_agent_router.ProtocolTests.test_crlf_metadata) ... ok
+2026-10-08T18:14:16.9262307Z test_done_requires_review (test_agent_router.ProtocolTests.test_done_requires_review) ... ok
+2026-10-08T18:14:16.9267250Z test_edited_commands_ignored (test_agent_router.ProtocolTests.test_edited_commands_ignored) ... ok
+2026-10-08T18:14:16.9272905Z test_expired_claim_can_be_replaced (test_agent_router.ProtocolTests.test_expired_claim_can_be_replaced) ... ok
+2026-10-08T18:14:16.9279361Z test_expired_heartbeat_does_not_resurrect (test_agent_router.ProtocolTests.test_expired_heartbeat_does_not_resurrect) ... ok
+2026-10-08T18:14:16.9285298Z test_expiry_at_boundary (test_agent_router.ProtocolTests.test_expiry_at_boundary) ... ok
+2026-10-08T18:14:16.9290363Z test_future_command_rejected (test_agent_router.ProtocolTests.test_future_command_rejected) ... ok
+2026-10-08T18:14:16.9295444Z test_heartbeat_extends_lease (test_agent_router.ProtocolTests.test_heartbeat_extends_lease) ... ok
+2026-10-08T18:14:16.9300466Z test_initial_routing (test_agent_router.ProtocolTests.test_initial_routing) ... ok
+2026-10-08T18:14:16.9305268Z test_invalid_commands (test_agent_router.ProtocolTests.test_invalid_commands) ... ok
+2026-10-08T18:14:16.9310280Z test_labels_are_allowlisted (test_agent_router.ProtocolTests.test_labels_are_allowlisted) ... ok
+2026-10-08T18:14:16.9316534Z test_legacy_issue_claim_is_authoritative_without_role (test_agent_router.ProtocolTests.test_legacy_issue_claim_is_authoritative_without_role) ... ok
+2026-10-08T18:14:16.9324301Z test_no_coordinator_regardless_of_to_metadata (test_agent_router.ProtocolTests.test_no_coordinator_regardless_of_to_metadata) ... ok
+2026-10-08T18:14:16.9330903Z test_non_protocol_text_not_executed (test_agent_router.ProtocolTests.test_non_protocol_text_not_executed) ... ok
+2026-10-08T18:14:16.9336419Z test_other_actor_cannot_release (test_agent_router.ProtocolTests.test_other_actor_cannot_release) ... ok
+2026-10-08T18:14:16.9342505Z test_release_block_review_relinquish_claim (test_agent_router.ProtocolTests.test_release_block_review_relinquish_claim) ... ok
+2026-10-08T18:14:16.9348027Z test_replay_is_identical (test_agent_router.ProtocolTests.test_replay_is_identical) ... ok
+2026-10-08T18:14:16.9353030Z test_review_done_reopen (test_agent_router.ProtocolTests.test_review_done_reopen) ... ok
+2026-10-08T18:14:16.9358088Z test_route_enrolls_existing_issue (test_agent_router.ProtocolTests.test_route_enrolls_existing_issue) ... ok
+2026-10-08T18:14:16.9363278Z test_sorted_history (test_agent_router.ProtocolTests.test_sorted_history) ... ok
+2026-10-08T18:14:16.9367634Z test_timezone_required (test_agent_router.ProtocolTests.test_timezone_required) ... ok
+2026-10-08T18:14:16.9373077Z test_unauthorized_controls_rejected (test_agent_router.ProtocolTests.test_unauthorized_controls_rejected) ... ok
+2026-10-08T18:14:16.9379437Z test_untrusted_issue_requires_writer_optin (test_agent_router.ProtocolTests.test_untrusted_issue_requires_writer_optin) ... ok
+2026-10-08T18:14:16.9385465Z test_wrong_session_cannot_release (test_agent_router.ProtocolTests.test_wrong_session_cannot_release) ... ok
+2026-10-08T18:14:16.9392282Z test_bad_requests_rejected_before_api_path_or_shell_use (test_gem5_bundle.BundleTests.test_bad_requests_rejected_before_api_path_or_shell_use) ... ok
+2026-10-08T18:14:16.9400572Z test_binary_missing_provenance_missing_and_extra_members_rejected (test_gem5_bundle.BundleTests.test_binary_missing_provenance_missing_and_extra_members_rejected) ... ok
+2026-10-08T18:14:16.9409097Z test_checkpoint_namespace_changes_after_config_or_toolchain_drift (test_gem5_bundle.BundleTests.test_checkpoint_namespace_changes_after_config_or_toolchain_drift) ... ok
+2026-10-08T18:14:16.9682947Z test_cli_preserves_failed_validation_report (test_gem5_bundle.BundleTests.test_cli_preserves_failed_validation_report) ... ok
+2026-10-08T18:14:16.9702149Z test_duplicate_manifest_json_field_rejected (test_gem5_bundle.BundleTests.test_duplicate_manifest_json_field_rejected) ... ok
+2026-10-08T18:14:16.9740086Z test_github_workflow_path_accepts_documented_ref_suffix (test_gem5_bundle.BundleTests.test_github_workflow_path_accepts_documented_ref_suffix) ... ok
+2026-10-08T18:14:16.9799283Z test_missing_provenance_and_self_consistent_wrong_source (test_gem5_bundle.BundleTests.test_missing_provenance_and_self_consistent_wrong_source) ... ok
+2026-10-08T18:14:16.9815478Z test_other_repo_wrong_workflow_pr_run_and_failed_build_are_rejected (test_gem5_bundle.BundleTests.test_other_repo_wrong_workflow_pr_run_and_failed_build_are_rejected) ... ok
+2026-10-08T18:14:16.9831556Z test_real_prefixless_kconfig_is_supported (test_gem5_bundle.BundleTests.test_real_prefixless_kconfig_is_supported) ... ok
+2026-10-08T18:14:16.9891279Z test_rehashed_build_options_version_and_runtime_feature_lies_rejected (test_gem5_bundle.BundleTests.test_rehashed_build_options_version_and_runtime_feature_lies_rejected) ... ok
+2026-10-08T18:14:16.9917399Z test_rehashed_substituted_binary_rejected_by_external_anchor (test_gem5_bundle.BundleTests.test_rehashed_substituted_binary_rejected_by_external_anchor) ... ok
+2026-10-08T18:14:16.9985991Z test_rehashed_wrong_isa_systemc_or_kvm_config_rejected (test_gem5_bundle.BundleTests.test_rehashed_wrong_isa_systemc_or_kvm_config_rejected) ... ok
+2026-10-08T18:14:17.0003071Z test_symlink_member_rejected (test_gem5_bundle.BundleTests.test_symlink_member_rejected) ... ok
+2026-10-08T18:14:17.0018744Z test_unauthenticated_metadata_shape_rejected (test_gem5_bundle.BundleTests.test_unauthenticated_metadata_shape_rejected) ... ok
+2026-10-08T18:14:17.0039705Z test_unbound_toolchain_cache_namespace_rejected (test_gem5_bundle.BundleTests.test_unbound_toolchain_cache_namespace_rejected) ... ok
+2026-10-08T18:14:17.0062124Z test_valid_offline_fixture_is_consistent (test_gem5_bundle.BundleTests.test_valid_offline_fixture_is_consistent) ... ok
+2026-10-08T18:14:17.0236730Z test_failed_producer_keeps_exact_exit_status_despite_successful_tee (test_gem5_fs.GuestStreamingTests.test_failed_producer_keeps_exact_exit_status_despite_successful_tee) ... ok
+2026-10-08T18:14:17.0487207Z test_flushed_record_reaches_serial_and_capture_before_child_exit (test_gem5_fs.GuestStreamingTests.test_flushed_record_reaches_serial_and_capture_before_child_exit) ... ok
+2026-10-08T18:14:17.0663804Z test_real_capture_write_failure_cannot_complete_or_close_frame (test_gem5_fs.GuestStreamingTests.test_real_capture_write_failure_cannot_complete_or_close_frame) ... ok
+2026-10-08T18:14:17.0674658Z test_changed_resource_rejected_even_with_matching_md5_field (test_gem5_fs.ResourceTests.test_changed_resource_rejected_even_with_matching_md5_field) ... ok
+2026-10-08T18:14:17.0681864Z test_resource_pins_have_exact_identity (test_gem5_fs.ResourceTests.test_resource_pins_have_exact_identity) ... ok
+2026-10-08T18:14:17.0687835Z test_clean_framing_preserves_only_probe_stream (test_gem5_fs.SerialTests.test_clean_framing_preserves_only_probe_stream) ... ok
+2026-10-08T18:14:17.0693618Z test_guest_stderr_rejected (test_gem5_fs.SerialTests.test_guest_stderr_rejected) ... ok
+2026-10-08T18:14:17.0708682Z test_script_exit_failure_cannot_pass_as_boot_success (test_gem5_fs.SerialTests.test_script_exit_failure_cannot_pass_as_boot_success) ... ok
+2026-10-08T18:14:17.0715813Z test_truncated_or_duplicate_stream_rejected (test_gem5_fs.SerialTests.test_truncated_or_duplicate_stream_rejected) ... ok
+2026-10-08T18:14:17.0721477Z test_wrong_elf_rejected (test_gem5_fs.SerialTests.test_wrong_elf_rejected) ... ok
+2026-10-08T18:14:17.0725898Z test_affinity_bounds (test_phase1.ArgumentTests.test_affinity_bounds) ... ok
+2026-10-08T18:14:17.0731779Z test_affinity_checks_process_cpu_set (test_phase1.ArgumentTests.test_affinity_checks_process_cpu_set) ... ok
+2026-10-08T18:14:17.0742132Z test_affinity_needs_enough_cpus (test_phase1.ArgumentTests.test_affinity_needs_enough_cpus) ... ok
+2026-10-08T18:14:17.0765395Z test_bounded_upstream_integer_options (test_phase1.ArgumentTests.test_bounded_upstream_integer_options) ... ok
+2026-10-08T18:14:17.0770753Z test_defaults (test_phase1.ArgumentTests.test_defaults) ... ok
+2026-10-08T18:14:17.0781073Z test_duplicate_versions (test_phase1.ArgumentTests.test_duplicate_versions) ... ok
+2026-10-08T18:14:17.0800115Z test_invalid_min_duration (test_phase1.ArgumentTests.test_invalid_min_duration) ... ok
+2026-10-08T18:14:17.0821328Z test_negative_seed (test_phase1.ArgumentTests.test_negative_seed) ... ok
+2026-10-08T18:14:17.0825766Z test_negative_warmups (test_phase1.ArgumentTests.test_negative_warmups) ... ok
+2026-10-08T18:14:17.0831079Z test_nonce_count_must_cover_threads (test_phase1.ArgumentTests.test_nonce_count_must_cover_threads) ... ok
+2026-10-08T18:14:17.0837269Z test_single_thread_upstream_affinity_ignored (test_phase1.ArgumentTests.test_single_thread_upstream_affinity_ignored) ... ok
+2026-10-08T18:14:17.0843765Z test_verify_requires_one_thread (test_phase1.ArgumentTests.test_verify_requires_one_thread) ... ok
+2026-10-08T18:14:17.0848538Z test_zero_threads (test_phase1.ArgumentTests.test_zero_threads) ... ok
+2026-10-08T18:14:17.0855804Z test_both_known_references (test_phase1.OutputTests.test_both_known_references) ... ok
+2026-10-08T18:14:17.0913263Z test_both_printed_hashes_wrong (test_phase1.OutputTests.test_both_printed_hashes_wrong) ... ok
+2026-10-08T18:14:17.0917498Z test_duplicate_calculated (test_phase1.OutputTests.test_duplicate_calculated) ... ok
+2026-10-08T18:14:17.0921676Z test_duplicate_performance (test_phase1.OutputTests.test_duplicate_performance) ... ok
+2026-10-08T18:14:17.0925737Z test_duplicate_reference (test_phase1.OutputTests.test_duplicate_reference) ... ok
+2026-10-08T18:14:17.0954982Z test_light_mode_interval (test_phase1.OutputTests.test_light_mode_interval) ... ok
+2026-10-08T18:14:17.0958570Z test_missing_calculated (test_phase1.OutputTests.test_missing_calculated) ... ok
+2026-10-08T18:14:17.0962729Z test_missing_known_reference (test_phase1.OutputTests.test_missing_known_reference) ... ok
+2026-10-08T18:14:17.0966522Z test_missing_performance (test_phase1.OutputTests.test_missing_performance) ... ok
+2026-10-08T18:14:17.0982790Z test_nonreference_smoke_allowed_but_not_verified (test_phase1.OutputTests.test_nonreference_smoke_allowed_but_not_verified) ... ok
+2026-10-08T18:14:17.0987959Z test_printed_reference_mismatch (test_phase1.OutputTests.test_printed_reference_mismatch) ... ok
+2026-10-08T18:14:17.0992360Z test_reject_invalid_rates (test_phase1.OutputTests.test_reject_invalid_rates) ... ok
+2026-10-08T18:14:17.0996480Z test_reject_overflowing_interval (test_phase1.OutputTests.test_reject_overflowing_interval) ... ok
+2026-10-08T18:14:17.1021463Z test_reported_upstream_errors (test_phase1.OutputTests.test_reported_upstream_errors) ... ok
+2026-10-08T18:14:17.1025711Z test_scientific_notation (test_phase1.OutputTests.test_scientific_notation) ... ok
+2026-10-08T18:14:17.1029607Z test_wrong_units (test_phase1.OutputTests.test_wrong_units) ... ok
+2026-10-08T18:14:17.1033019Z test_committed_snapshot (test_phase1.ProfileTests.test_committed_snapshot) ... ok
+2026-10-08T18:14:17.1036624Z test_duplicate_macro (test_phase1.ProfileTests.test_duplicate_macro) ... ok
+2026-10-08T18:14:17.1060528Z test_exact_source_blob (test_phase1.ProfileTests.test_exact_source_blob) ... ok
+2026-10-08T18:14:17.1064264Z test_expected_static_work (test_phase1.ProfileTests.test_expected_static_work) ... ok
+2026-10-08T18:14:17.1069066Z test_expression_not_silently_evaluated (test_phase1.ProfileTests.test_expression_not_silently_evaluated) ... ok
+2026-10-08T18:14:17.1073755Z test_invalid_frequency_total (test_phase1.ProfileTests.test_invalid_frequency_total) ... ok
+2026-10-08T18:14:17.1077967Z test_invalid_scratchpad_size (test_phase1.ProfileTests.test_invalid_scratchpad_size) ... ok
+2026-10-08T18:14:17.1085502Z test_missing_macro (test_phase1.ProfileTests.test_missing_macro) ... ok
+2026-10-08T18:14:17.1089451Z test_unknown_opcode_rejected (test_phase1.ProfileTests.test_unknown_opcode_rejected) ... ok
+2026-10-08T18:14:17.2268754Z test_nonzero_exit_retained (test_phase1.RunnerIntegrationTests.test_nonzero_exit_retained) ... ok
+2026-10-08T18:14:18.2559558Z test_timeout_retained (test_phase1.RunnerIntegrationTests.test_timeout_retained) ... ok
+2026-10-08T18:14:18.3369933Z test_too_short_measurement_rejected (test_phase1.RunnerIntegrationTests.test_too_short_measurement_rejected) ... ok
+2026-10-08T18:14:18.5600434Z test_warmups_separated_and_versions_alternate (test_phase1.RunnerIntegrationTests.test_warmups_separated_and_versions_alternate) ... ok
+2026-10-08T18:14:18.5635706Z test_additivity (test_power_import.ArithmeticTests.test_additivity) ... ok
+2026-10-08T18:14:18.5637862Z test_constant_clipped_boundaries (test_power_import.ArithmeticTests.test_constant_clipped_boundaries) ... ok
+2026-10-08T18:14:18.5640927Z test_error_interval (test_power_import.ArithmeticTests.test_error_interval) ... ok
+2026-10-08T18:14:18.5642826Z test_linear_irregular_sampling (test_power_import.ArithmeticTests.test_linear_irregular_sampling) ... ok
+2026-10-08T18:14:18.5644744Z test_nanosecond_precision_at_large_epoch (test_power_import.ArithmeticTests.test_nanosecond_precision_at_large_epoch) ... ok
+2026-10-08T18:14:18.5646641Z test_no_extrapolation (test_power_import.ArithmeticTests.test_no_extrapolation) ... ok
+2026-10-08T18:14:18.5699561Z test_affine_origin_invariance (test_power_import.ImportTests.test_affine_origin_invariance) ... ok
+2026-10-08T18:14:18.6699893Z test_bad_shape_is_cli_failure (test_power_import.ImportTests.test_bad_shape_is_cli_failure) ... ok
+2026-10-08T18:14:18.7750996Z test_cli_preserves_extreme_decimal_failure (test_power_import.ImportTests.test_cli_preserves_extreme_decimal_failure) ... ok
+2026-10-08T18:14:18.8775905Z test_cli_preserves_extreme_rate_failure (test_power_import.ImportTests.test_cli_preserves_extreme_rate_failure) ... ok
+2026-10-08T18:14:18.9740851Z test_cli_preserves_failure (test_power_import.ImportTests.test_cli_preserves_failure) ... ok
+2026-10-08T18:14:19.2250790Z test_cli_preserves_malformed_run_versions (test_power_import.ImportTests.test_cli_preserves_malformed_run_versions) ... ok
+2026-10-08T18:14:19.3250214Z test_cli_round_trip_and_no_overwrite (test_power_import.ImportTests.test_cli_round_trip_and_no_overwrite) ... ok
+2026-10-08T18:14:19.3260418Z test_corrupt_digest_before_power_join (test_power_import.ImportTests.test_corrupt_digest_before_power_join) ... ok
+2026-10-08T18:14:19.3289041Z test_declared_measured_branch_is_not_certification (test_power_import.ImportTests.test_declared_measured_branch_is_not_certification) ... ok
+2026-10-08T18:14:19.3299544Z test_failed_benchmark (test_power_import.ImportTests.test_failed_benchmark) ... ok
+2026-10-08T18:14:19.3320520Z test_incomplete_stream_even_after_rehash (test_power_import.ImportTests.test_incomplete_stream_even_after_rehash) ... ok
+2026-10-08T18:14:19.3349634Z test_missing_coverage (test_power_import.ImportTests.test_missing_coverage) ... ok
+2026-10-08T18:14:19.3362800Z test_missing_power_key (test_power_import.ImportTests.test_missing_power_key) ... ok
+2026-10-08T18:14:19.3399633Z test_power_gap (test_power_import.ImportTests.test_power_gap) ... ok
+2026-10-08T18:14:19.3480306Z test_rate_correction_sign (test_power_import.ImportTests.test_rate_correction_sign) ... ok
+2026-10-08T18:14:19.3495159Z test_reject_boolean_power (test_power_import.ImportTests.test_reject_boolean_power) ... ok
+2026-10-08T18:14:19.3511156Z test_reject_boundary (test_power_import.ImportTests.test_reject_boundary) ... ok
+2026-10-08T18:14:19.3525939Z test_reject_clock_drift (test_power_import.ImportTests.test_reject_clock_drift) ... ok
+2026-10-08T18:14:19.3544914Z test_reject_clock_error (test_power_import.ImportTests.test_reject_clock_error) ... ok
+2026-10-08T18:14:19.3559806Z test_reject_clock_evidence (test_power_import.ImportTests.test_reject_clock_evidence) ... ok
+2026-10-08T18:14:19.3591391Z test_reject_clock_method (test_power_import.ImportTests.test_reject_clock_method) ... ok
+2026-10-08T18:14:19.3617803Z test_reject_clock_range (test_power_import.ImportTests.test_reject_clock_range) ... ok
+2026-10-08T18:14:19.3639729Z test_reject_clock_rate (test_power_import.ImportTests.test_reject_clock_rate) ... ok
+2026-10-08T18:14:19.3648627Z test_reject_clock_target (test_power_import.ImportTests.test_reject_clock_target) ... ok
+2026-10-08T18:14:19.3668445Z test_reject_device_range (test_power_import.ImportTests.test_reject_device_range) ... ok
+2026-10-08T18:14:19.3698441Z test_reject_duplicate_time (test_power_import.ImportTests.test_reject_duplicate_time) ... ok
+2026-10-08T18:14:19.3713270Z test_reject_empty_boundary (test_power_import.ImportTests.test_reject_empty_boundary) ... ok
+2026-10-08T18:14:19.3735350Z test_reject_evidence (test_power_import.ImportTests.test_reject_evidence) ... ok
+2026-10-08T18:14:19.3773545Z test_reject_excess_error (test_power_import.ImportTests.test_reject_excess_error) ... ok
+2026-10-08T18:14:19.3793933Z test_reject_float_time (test_power_import.ImportTests.test_reject_float_time) ... ok
+2026-10-08T18:14:19.3829694Z test_reject_fraction_limit (test_power_import.ImportTests.test_reject_fraction_limit) ... ok
+2026-10-08T18:14:19.3849668Z test_reject_missing_power (test_power_import.ImportTests.test_reject_missing_power) ... ok
+2026-10-08T18:14:19.3856934Z test_reject_model (test_power_import.ImportTests.test_reject_model) ... ok
+2026-10-08T18:14:19.3879115Z test_reject_negative_interpolation (test_power_import.ImportTests.test_reject_negative_interpolation) ... ok
+2026-10-08T18:14:19.3909690Z test_reject_negative_power (test_power_import.ImportTests.test_reject_negative_power) ... ok
+2026-10-08T18:14:19.3924835Z test_reject_negative_time (test_power_import.ImportTests.test_reject_negative_time) ... ok
+2026-10-08T18:14:19.3947962Z test_reject_over_range_power (test_power_import.ImportTests.test_reject_over_range_power) ... ok
+2026-10-08T18:14:19.3968462Z test_reject_quality (test_power_import.ImportTests.test_reject_quality) ... ok
+2026-10-08T18:14:19.3999010Z test_reject_response_time (test_power_import.ImportTests.test_reject_response_time) ... ok
+2026-10-08T18:14:19.4026225Z test_reject_reverse_time (test_power_import.ImportTests.test_reject_reverse_time) ... ok
+2026-10-08T18:14:19.4049718Z test_reject_sample_semantics (test_power_import.ImportTests.test_reject_sample_semantics) ... ok
+2026-10-08T18:14:19.4069561Z test_reject_schema (test_power_import.ImportTests.test_reject_schema) ... ok
+2026-10-08T18:14:19.4089750Z test_reject_string_power (test_power_import.ImportTests.test_reject_string_power) ... ok
+2026-10-08T18:14:19.4114381Z test_reject_uncertainty_rationale (test_power_import.ImportTests.test_reject_uncertainty_rationale) ... ok
+2026-10-08T18:14:19.4139556Z test_reject_units (test_power_import.ImportTests.test_reject_units) ... ok
+2026-10-08T18:14:19.4155796Z test_reject_wrong_binding (test_power_import.ImportTests.test_reject_wrong_binding) ... ok
+2026-10-08T18:14:19.4172112Z test_reject_wrong_run_binding (test_power_import.ImportTests.test_reject_wrong_run_binding) ... ok
+2026-10-08T18:14:19.4190047Z test_reject_zero_boundary_error (test_power_import.ImportTests.test_reject_zero_boundary_error) ... ok
+2026-10-08T18:14:19.4201319Z test_reject_zero_gap (test_power_import.ImportTests.test_reject_zero_gap) ... ok
+2026-10-08T18:14:19.4216850Z test_strict_json_duplicate_nonfinite_and_underflow (test_power_import.ImportTests.test_strict_json_duplicate_nonfinite_and_underflow) ... ok
+2026-10-08T18:14:19.4232002Z test_synthetic_benchmark_cannot_be_relabelled (test_power_import.ImportTests.test_synthetic_benchmark_cannot_be_relabelled) ... ok
+2026-10-08T18:14:19.4259438Z test_synthetic_cannot_fill_measured_fields (test_power_import.ImportTests.test_synthetic_cannot_fill_measured_fields) ... ok
+2026-10-08T18:14:19.4273287Z test_synthetic_requires_opt_in (test_power_import.ImportTests.test_synthetic_requires_opt_in) ... ok
+2026-10-08T18:14:19.4287229Z test_tampered_run_summary (test_power_import.ImportTests.test_tampered_run_summary) ... ok
+2026-10-08T18:14:19.4298538Z test_validator_revision_mismatch (test_power_import.ImportTests.test_validator_revision_mismatch) ... ok
+2026-10-08T18:14:19.4324498Z test_wall_step_between_trials (test_power_import.ImportTests.test_wall_step_between_trials) ... ok
+2026-10-08T18:14:19.4353499Z test_weighted_totals_not_mean_ratios (test_power_import.ImportTests.test_weighted_totals_not_mean_ratios) ... ok
+2026-10-08T18:14:19.4375600Z test_zero_energy_rejected (test_power_import.ImportTests.test_zero_energy_rejected) ... ok
+2026-10-08T18:14:19.4383692Z test_actual_native_capture (test_riscv_probe.EvidenceTests.test_actual_native_capture) ... ok
+2026-10-08T18:14:19.4392782Z test_boolean_counter (test_riscv_probe.EvidenceTests.test_boolean_counter) ... ok
+2026-10-08T18:14:19.4401004Z test_duplicate_check (test_riscv_probe.EvidenceTests.test_duplicate_check) ... ok
+2026-10-08T18:14:19.4408921Z test_malformed_check_name (test_riscv_probe.EvidenceTests.test_malformed_check_name) ... ok
+2026-10-08T18:14:19.4426867Z test_mislabeled_full_dataset_flags (test_riscv_probe.EvidenceTests.test_mislabeled_full_dataset_flags) ... ok
+2026-10-08T18:14:19.4429180Z test_missing_cache_initialization (test_riscv_probe.EvidenceTests.test_missing_cache_initialization) ... ok
+2026-10-08T18:14:19.4437663Z test_missing_summary (test_riscv_probe.EvidenceTests.test_missing_summary) ... ok
+2026-10-08T18:14:19.4440984Z test_native_is_not_riscv_evidence (test_riscv_probe.EvidenceTests.test_native_is_not_riscv_evidence) ... ok
+2026-10-08T18:14:19.4448607Z test_non_object_record (test_riscv_probe.EvidenceTests.test_non_object_record) ... ok
+2026-10-08T18:14:19.4471419Z test_pinned_configuration_identity (test_riscv_probe.EvidenceTests.test_pinned_configuration_identity) ... ok
+2026-10-08T18:14:19.4479768Z test_self_consistent_wrong_hash (test_riscv_probe.EvidenceTests.test_self_consistent_wrong_hash) ... ok
+2026-10-08T18:14:19.4486878Z test_self_consistent_wrong_semantic_value (test_riscv_probe.EvidenceTests.test_self_consistent_wrong_semantic_value) ... ok
+2026-10-08T18:14:19.4494068Z test_semantic_check_replacement (test_riscv_probe.EvidenceTests.test_semantic_check_replacement) ... ok
+2026-10-08T18:14:19.4501887Z test_skipped_required_check (test_riscv_probe.EvidenceTests.test_skipped_required_check) ... ok
+2026-10-08T18:14:19.4508680Z test_truncated_hash_matrix (test_riscv_probe.EvidenceTests.test_truncated_hash_matrix) ... ok
+2026-10-08T18:14:19.4516274Z test_unknown_optional_skip (test_riscv_probe.EvidenceTests.test_unknown_optional_skip) ... ok
+2026-10-08T18:14:19.4524144Z test_wrong_required_passed_total (test_riscv_probe.EvidenceTests.test_wrong_required_passed_total) ... ok
+2026-10-08T18:14:19.4527723Z test_actual_native_capture (test_runtime_probe.RuntimeEvidenceTests.test_actual_native_capture) ... ok
+2026-10-08T18:14:19.4533764Z test_boolean_counter_and_extra_record (test_runtime_probe.RuntimeEvidenceTests.test_boolean_counter_and_extra_record) ... ok
+2026-10-08T18:14:19.4536017Z test_duplicate_json_field (test_runtime_probe.RuntimeEvidenceTests.test_duplicate_json_field) ... ok
+2026-10-08T18:14:19.4538010Z test_fabricated_flush_path (test_runtime_probe.RuntimeEvidenceTests.test_fabricated_flush_path) ... ok
+2026-10-08T18:14:19.4540601Z test_ignored_flush_failure (test_runtime_probe.RuntimeEvidenceTests.test_ignored_flush_failure) ... ok
+2026-10-08T18:14:19.4545143Z test_missing_or_duplicate_control (test_runtime_probe.RuntimeEvidenceTests.test_missing_or_duplicate_control) ... ok
+2026-10-08T18:14:19.4547218Z test_native_capture_not_riscv (test_runtime_probe.RuntimeEvidenceTests.test_native_capture_not_riscv) ... ok
+2026-10-08T18:14:19.4550018Z test_self_consistent_wrong_return (test_runtime_probe.RuntimeEvidenceTests.test_self_consistent_wrong_return) ... ok
+2026-10-08T18:14:19.4552224Z test_wrong_protection_signal (test_runtime_probe.RuntimeEvidenceTests.test_wrong_protection_signal) ... ok
+2026-10-08T18:14:19.4911826Z test_duration_failure_keeps_structured_result (test_steady_records.ProcessTests.test_duration_failure_keeps_structured_result) ... ok
+2026-10-08T18:14:19.5260118Z test_malformed_output_is_retained (test_steady_records.ProcessTests.test_malformed_output_is_retained) ... ok
+2026-10-08T18:14:19.5608468Z test_nonzero_exit_is_not_success (test_steady_records.ProcessTests.test_nonzero_exit_is_not_success) ... ok
+2026-10-08T18:14:19.5968592Z test_success_and_evidence (test_steady_records.ProcessTests.test_success_and_evidence) ... ok
+2026-10-08T18:14:20.6002796Z test_timeout_is_retained (test_steady_records.ProcessTests.test_timeout_is_retained) ... ok
+2026-10-08T18:14:20.6020107Z test_clock_brackets_and_elapsed (test_steady_records.RecordTests.test_clock_brackets_and_elapsed) ... ok
+2026-10-08T18:14:20.6030442Z test_clock_jump_is_reported_not_called_calibrated (test_steady_records.RecordTests.test_clock_jump_is_reported_not_called_calibrated) ... ok
+2026-10-08T18:14:20.6032763Z test_completion_and_quality_must_agree (test_steady_records.RecordTests.test_completion_and_quality_must_agree) ... ok
+2026-10-08T18:14:20.6037493Z test_configuration_binding (test_steady_records.RecordTests.test_configuration_binding) ... ok
+2026-10-08T18:14:20.6042260Z test_duration_rejection_is_preserved (test_steady_records.RecordTests.test_duration_rejection_is_preserved) ... ok
+2026-10-08T18:14:20.6048632Z test_known_controls_independent_of_claimed_match (test_steady_records.RecordTests.test_known_controls_independent_of_claimed_match) ... ok
+2026-10-08T18:14:20.6054084Z test_odd_order_flag (test_steady_records.RecordTests.test_odd_order_flag) ... ok
+2026-10-08T18:14:20.6061377Z test_reference_applies_to_all_1000_nonce_phases (test_steady_records.RecordTests.test_reference_applies_to_all_1000_nonce_phases) ... ok
+2026-10-08T18:14:20.6065681Z test_repeated_inputs_must_be_deterministic (test_steady_records.RecordTests.test_repeated_inputs_must_be_deterministic) ... ok
+2026-10-08T18:14:20.6070434Z test_reversed_version_order (test_steady_records.RecordTests.test_reversed_version_order) ... ok
+2026-10-08T18:14:20.6074203Z test_strict_json (test_steady_records.RecordTests.test_strict_json) ... ok
+2026-10-08T18:14:20.6082804Z test_truncation_extra_records_and_duplicates (test_steady_records.RecordTests.test_truncation_extra_records_and_duplicates) ... ok
+2026-10-08T18:14:20.6086816Z test_unknown_reference_cannot_be_invented (test_steady_records.RecordTests.test_unknown_reference_cannot_be_invented) ... ok
+2026-10-08T18:14:20.6106261Z test_unsupported_configuration (test_steady_records.RecordTests.test_unsupported_configuration) ... ok
+2026-10-08T18:14:20.6111588Z test_valid_summary_excludes_controls_and_warmups (test_steady_records.RecordTests.test_valid_summary_excludes_controls_and_warmups) ... ok
+2026-10-08T18:14:20.6125820Z test_wrong_order_version_count_and_boolean_count (test_steady_records.RecordTests.test_wrong_order_version_count_and_boolean_count) ... ok
+2026-10-08T18:14:20.6128038Z test_zero_warmup_and_single_version (test_steady_records.RecordTests.test_zero_warmup_and_single_version) ... ok
+2026-10-08T18:14:20.6129415Z 
+2026-10-08T18:14:20.6129765Z ----------------------------------------------------------------------
+2026-10-08T18:14:20.6130465Z Ran 245 tests in 3.716s
+2026-10-08T18:14:20.6130970Z 
+2026-10-08T18:14:20.6140195Z OK
+2026-10-08T18:14:20.6343566Z ##[group]Run python3 scripts/workload_profile.py --output build/validation/workload-profile.json
+2026-10-08T18:14:20.6344356Z [36;1mpython3 scripts/workload_profile.py --output build/validation/workload-profile.json[0m
+2026-10-08T18:14:20.6345062Z [36;1mdiff -u benchmarks/profiles/pinned-v2.0.1.json build/validation/workload-profile.json[0m
+2026-10-08T18:14:20.6411514Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:20.6411805Z ##[endgroup]
+2026-10-08T18:14:20.6935088Z ##[group]Run bash scripts/build_steady.sh
+2026-10-08T18:14:20.6935446Z [36;1mbash scripts/build_steady.sh[0m
+2026-10-08T18:14:20.7001243Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:20.7001531Z ##[endgroup]
+2026-10-08T18:14:20.7560994Z Vendor integrity OK (171 files)
+2026-10-08T18:14:21.3396057Z CMake Deprecation Warning at CMakeLists.txt:29 (cmake_minimum_required):
+2026-10-08T18:14:21.3397235Z   Compatibility with CMake < 3.10 will be removed from a future version of
+2026-10-08T18:14:21.3398068Z   CMake.
+2026-10-08T18:14:21.3398521Z 
+2026-10-08T18:14:21.3399593Z   Update the VERSION argument <min> value.  Or, use the <min>...<max> syntax
+2026-10-08T18:14:21.3401019Z   to tell CMake that the project requires at least <min> but has been updated
+2026-10-08T18:14:21.3402240Z   to work with policies introduced by <max> or earlier.
+2026-10-08T18:14:21.3403114Z 
+2026-10-08T18:14:21.3403278Z 
+2026-10-08T18:14:21.8050808Z -- The C compiler identification is GNU 13.3.0
+2026-10-08T18:14:22.8904315Z -- The CXX compiler identification is GNU 13.3.0
+2026-10-08T18:14:22.9953019Z -- Detecting C compiler ABI info
+2026-10-08T18:14:23.2197180Z -- Detecting C compiler ABI info - done
+2026-10-08T18:14:23.2374431Z -- Check for working C compiler: /usr/bin/cc - skipped
+2026-10-08T18:14:23.2425502Z -- Detecting C compile features
+2026-10-08T18:14:23.2478480Z -- Detecting C compile features - done
+2026-10-08T18:14:23.2833272Z -- Detecting CXX compiler ABI info
+2026-10-08T18:14:23.3921086Z -- Detecting CXX compiler ABI info - done
+2026-10-08T18:14:23.4104181Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2026-10-08T18:14:23.4109570Z -- Detecting CXX compile features
+2026-10-08T18:14:23.4117268Z -- Detecting CXX compile features - done
+2026-10-08T18:14:23.4573600Z -- Performing Test _march=native_cxx
+2026-10-08T18:14:23.5324386Z -- Performing Test _march=native_cxx - Success
+2026-10-08T18:14:23.5325365Z -- Setting CXX flag -march=native
+2026-10-08T18:14:23.5334696Z -- Performing Test _march=native_c
+2026-10-08T18:14:23.5874383Z -- Performing Test _march=native_c - Success
+2026-10-08T18:14:23.5875262Z -- Setting C flag -march=native
+2026-10-08T18:14:23.6141818Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2026-10-08T18:14:23.7377707Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2026-10-08T18:14:23.7479057Z -- Found Threads: TRUE
+2026-10-08T18:14:23.7485597Z -- Performing Test HAVE_CXX_ATOMICS
+2026-10-08T18:14:24.0868110Z -- Performing Test HAVE_CXX_ATOMICS - Success
+2026-10-08T18:14:24.0870035Z -- Performing Test HAVE_POSIX_MEMALIGN
+2026-10-08T18:14:24.1877970Z -- Performing Test HAVE_POSIX_MEMALIGN - Success
+2026-10-08T18:14:24.1880411Z -- Configuring done (2.9s)
+2026-10-08T18:14:24.2098771Z -- Generating done (0.0s)
+2026-10-08T18:14:24.2103300Z -- Build files have been written to: /home/runner/work/OpenRandomX/OpenRandomX/build/randomx
+2026-10-08T18:14:24.2368450Z [  2%] Building CXX object CMakeFiles/randomx.dir/src/aes_hash.cpp.o
+2026-10-08T18:14:24.2390324Z [  5%] Building C object CMakeFiles/randomx.dir/src/argon2_ref.c.o
+2026-10-08T18:14:24.7375906Z [  8%] Building C object CMakeFiles/randomx.dir/src/argon2_ssse3.c.o
+2026-10-08T18:14:25.2756920Z [ 11%] Building C object CMakeFiles/randomx.dir/src/argon2_avx2.c.o
+2026-10-08T18:14:25.3928054Z [ 14%] Building CXX object CMakeFiles/randomx.dir/src/bytecode_machine.cpp.o
+2026-10-08T18:14:25.7128146Z [ 17%] Building CXX object CMakeFiles/randomx.dir/src/cpu.cpp.o
+2026-10-08T18:14:25.7563702Z [ 20%] Building CXX object CMakeFiles/randomx.dir/src/dataset.cpp.o
+2026-10-08T18:14:26.8667787Z [ 23%] Building CXX object CMakeFiles/randomx.dir/src/soft_aes.cpp.o
+2026-10-08T18:14:26.8680598Z [ 26%] Building C object CMakeFiles/randomx.dir/src/virtual_memory.c.o
+2026-10-08T18:14:26.9096489Z [ 29%] Building CXX object CMakeFiles/randomx.dir/src/vm_interpreted.cpp.o
+2026-10-08T18:14:27.5719718Z [ 32%] Building CXX object CMakeFiles/randomx.dir/src/allocator.cpp.o
+2026-10-08T18:14:28.4420546Z [ 35%] Building CXX object CMakeFiles/randomx.dir/src/assembly_generator_x86.cpp.o
+2026-10-08T18:14:28.4960168Z [ 38%] Building CXX object CMakeFiles/randomx.dir/src/instruction.cpp.o
+2026-10-08T18:14:29.0280408Z [ 41%] Building CXX object CMakeFiles/randomx.dir/src/randomx.cpp.o
+2026-10-08T18:14:29.7860153Z [ 44%] Building CXX object CMakeFiles/randomx.dir/src/superscalar.cpp.o
+2026-10-08T18:14:30.4990136Z [ 47%] Building CXX object CMakeFiles/randomx.dir/src/vm_compiled.cpp.o
+2026-10-08T18:14:31.0139496Z [ 50%] Building CXX object CMakeFiles/randomx.dir/src/vm_interpreted_light.cpp.o
+2026-10-08T18:14:31.7015107Z [ 52%] Building C object CMakeFiles/randomx.dir/src/argon2_core.c.o
+2026-10-08T18:14:31.8307703Z [ 55%] Building CXX object CMakeFiles/randomx.dir/src/blake2_generator.cpp.o
+2026-10-08T18:14:31.8819964Z [ 58%] Building CXX object CMakeFiles/randomx.dir/src/instructions_portable.cpp.o
+2026-10-08T18:14:32.0639444Z [ 61%] Building C object CMakeFiles/randomx.dir/src/reciprocal.c.o
+2026-10-08T18:14:32.0950338Z [ 64%] Building CXX object CMakeFiles/randomx.dir/src/virtual_machine.cpp.o
+2026-10-08T18:14:32.8476118Z [ 67%] Building CXX object CMakeFiles/randomx.dir/src/vm_compiled_light.cpp.o
+2026-10-08T18:14:33.1670072Z [ 70%] Building C object CMakeFiles/randomx.dir/src/blake2/blake2b.c.o
+2026-10-08T18:14:33.3539735Z [ 73%] Building CXX object CMakeFiles/randomx.dir/src/jit_compiler_x86.cpp.o
+2026-10-08T18:14:33.3690286Z [ 76%] Building C object CMakeFiles/randomx.dir/src/jit_compiler_x86_static.S.o
+2026-10-08T18:14:34.2397698Z [ 79%] Linking CXX static library librandomx.a
+2026-10-08T18:14:43.6070197Z [ 79%] Built target randomx
+2026-10-08T18:14:43.6161137Z [ 85%] Building CXX object CMakeFiles/randomx-tests.dir/src/tests/tests.cpp.o
+2026-10-08T18:14:43.6176597Z [ 85%] Building CXX object CMakeFiles/randomx-codegen.dir/src/tests/code-generator.cpp.o
+2026-10-08T18:14:44.2290084Z [ 88%] Linking CXX executable randomx-codegen
+2026-10-08T18:14:44.2999168Z [ 88%] Built target randomx-codegen
+2026-10-08T18:14:44.3109854Z [ 91%] Building CXX object CMakeFiles/randomx-benchmark.dir/src/tests/benchmark.cpp.o
+2026-10-08T18:14:45.4434721Z [ 94%] Building CXX object CMakeFiles/randomx-benchmark.dir/src/tests/affinity.cpp.o
+2026-10-08T18:14:45.8410130Z [ 97%] Linking CXX executable randomx-benchmark
+2026-10-08T18:14:45.8950089Z /usr/bin/ld: warning: jit_compiler_x86_static.S.o: missing .note.GNU-stack section implies executable stack
+2026-10-08T18:14:45.8969763Z /usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+2026-10-08T18:14:45.9183625Z [ 97%] Built target randomx-benchmark
+2026-10-08T18:14:46.0021511Z [100%] Linking CXX executable randomx-tests
+2026-10-08T18:14:46.0409726Z /usr/bin/ld: warning: jit_compiler_x86_static.S.o: missing .note.GNU-stack section implies executable stack
+2026-10-08T18:14:46.0411483Z /usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+2026-10-08T18:14:46.0597667Z [100%] Built target randomx-tests
+2026-10-08T18:14:46.1227613Z -- The CXX compiler identification is GNU 13.3.0
+2026-10-08T18:14:46.1314695Z -- Detecting CXX compiler ABI info
+2026-10-08T18:14:46.1927062Z -- Detecting CXX compiler ABI info - done
+2026-10-08T18:14:46.2120006Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2026-10-08T18:14:46.2123113Z -- Detecting CXX compile features
+2026-10-08T18:14:46.2123665Z -- Detecting CXX compile features - done
+2026-10-08T18:14:46.2430529Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+2026-10-08T18:14:46.3134878Z -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+2026-10-08T18:14:46.3144988Z -- Found Threads: TRUE
+2026-10-08T18:14:46.3150886Z -- Configuring done (0.2s)
+2026-10-08T18:14:46.3188613Z -- Generating done (0.0s)
+2026-10-08T18:14:46.3192458Z -- Build files have been written to: /home/runner/work/OpenRandomX/OpenRandomX/build/steady
+2026-10-08T18:14:46.3364644Z [ 50%] Building CXX object CMakeFiles/openrx-steady.dir/main.cpp.o
+2026-10-08T18:14:47.8853814Z [100%] Linking CXX executable openrx-steady
+2026-10-08T18:14:47.9240479Z /usr/bin/ld: warning: jit_compiler_x86_static.S.o: missing .note.GNU-stack section implies executable stack
+2026-10-08T18:14:47.9241991Z /usr/bin/ld: NOTE: This behaviour is deprecated and will be removed in a future version of the linker
+2026-10-08T18:14:47.9427801Z [100%] Built target openrx-steady
+2026-10-08T18:14:47.9502295Z ##[group]Run bash scripts/test.sh
+2026-10-08T18:14:47.9502632Z [36;1mbash scripts/test.sh[0m
+2026-10-08T18:14:47.9564681Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:47.9565031Z ##[endgroup]
+2026-10-08T18:14:48.0095492Z Vendor integrity OK (171 files)
+2026-10-08T18:14:48.5006626Z [ 1] Cache initialization                         ... PASSED
+2026-10-08T18:14:48.5007323Z [ 2] SuperscalarHash generator                    ... PASSED
+2026-10-08T18:14:48.5007967Z [ 3] randomx_reciprocal                           ... PASSED
+2026-10-08T18:14:48.5008584Z [ 4] randomx_reciprocal_fast                      ... PASSED
+2026-10-08T18:14:48.5009451Z [ 5] Dataset initialization (interpreter)         ... PASSED
+2026-10-08T18:14:48.5010096Z [ 6] Dataset initialization (compiler)            ... PASSED
+2026-10-08T18:14:48.5010709Z [ 7] AesGenerator1R                               ... PASSED
+2026-10-08T18:14:48.5011284Z [ 8] IADD_RS (decode)                             ... PASSED
+2026-10-08T18:14:48.5012249Z [ 9] IADD_RS (execute)                            ... PASSED
+2026-10-08T18:14:48.5012851Z [10] IADD_RS with immediate (decode)              ... PASSED
+2026-10-08T18:14:48.5013448Z [11] IADD_RS with immediate (decode)              ... PASSED
+2026-10-08T18:14:48.5014033Z [12] IADD_M (decode)                              ... PASSED
+2026-10-08T18:14:48.5014593Z [13] ISUB_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5015156Z [14] ISUB_R (execute)                             ... PASSED
+2026-10-08T18:14:48.5015733Z [15] ISUB_R with immediate (decode)               ... PASSED
+2026-10-08T18:14:48.5016337Z [16] ISUB_R with immediate (decode)               ... PASSED
+2026-10-08T18:14:48.5016920Z [17] ISUB_M (decode)                              ... PASSED
+2026-10-08T18:14:48.5017486Z [18] IMUL_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5018049Z [19] IMUL_R (execute)                             ... PASSED
+2026-10-08T18:14:48.5018639Z [20] IMUL_R with immediate (decode)               ... PASSED
+2026-10-08T18:14:48.5019547Z [21] IMUL_R with immediate (execute)              ... PASSED
+2026-10-08T18:14:48.5020125Z [22] IMUL_M (decode)                              ... PASSED
+2026-10-08T18:14:48.5020708Z [23] IMULH_R (decode)                             ... PASSED
+2026-10-08T18:14:48.5021286Z [24] IMULH_R (execute)                            ... PASSED
+2026-10-08T18:14:48.5021881Z [25] IMULH_R squared (decode)                     ... PASSED
+2026-10-08T18:14:48.5022463Z [26] IMULH_M (decode)                             ... PASSED
+2026-10-08T18:14:48.5023039Z [27] ISMULH_R (decode)                            ... PASSED
+2026-10-08T18:14:48.5023626Z [28] ISMULH_R (execute)                           ... PASSED
+2026-10-08T18:14:48.5024221Z [29] ISMULH_R squared (decode)                    ... PASSED
+2026-10-08T18:14:48.5024813Z [30] ISMULH_M (decode)                            ... PASSED
+2026-10-08T18:14:48.5025396Z [31] IMUL_RCP (decode)                            ... PASSED
+2026-10-08T18:14:48.5025989Z [32] IMUL_RCP zero imm32 (decode)                 ... PASSED
+2026-10-08T18:14:48.5026565Z [33] INEG_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5027141Z [34] INEG_R (execute)                             ... PASSED
+2026-10-08T18:14:48.5027709Z [35] IXOR_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5028275Z [36] IXOR_R (execute)                             ... PASSED
+2026-10-08T18:14:48.5029023Z [37] IXOR_R with immediate (decode)               ... PASSED
+2026-10-08T18:14:48.5029629Z [38] IXOR_R with immediate (execute)              ... PASSED
+2026-10-08T18:14:48.5030231Z [39] IXOR_M (decode)                              ... PASSED
+2026-10-08T18:14:48.5030810Z [40] IROR_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5031379Z [41] IROR_R (execute)                             ... PASSED
+2026-10-08T18:14:48.5031943Z [42] IROL_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5032789Z [43] IROL_R (execute)                             ... PASSED
+2026-10-08T18:14:48.5033382Z [44] ISWAP_R (decode)                             ... PASSED
+2026-10-08T18:14:48.5033958Z [45] ISWAP_R (execute)                            ... PASSED
+2026-10-08T18:14:48.5034531Z [46] FSWAP_R (decode)                             ... PASSED
+2026-10-08T18:14:48.5035100Z [47] FSWAP_R (execute)                            ... PASSED
+2026-10-08T18:14:48.5035668Z [48] FADD_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5036256Z [49] FADD_R RoundToNearest (execute)              ... PASSED
+2026-10-08T18:14:48.5036854Z [50] FADD_R RoundDown (execute)                   ... PASSED
+2026-10-08T18:14:48.5037443Z [51] FADD_R RoundUp (execute)                     ... PASSED
+2026-10-08T18:14:48.5038047Z [52] FADD_R RoundToZero (execute)                 ... PASSED
+2026-10-08T18:14:48.5038626Z [53] FADD_M (decode)                              ... PASSED
+2026-10-08T18:14:48.5039384Z [54] FADD_M (execute)                             ... PASSED
+2026-10-08T18:14:48.5040110Z [55] FSUB_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5040667Z [56] FSUB_M (decode)                              ... PASSED
+2026-10-08T18:14:48.5041231Z [57] FSCAL_R (decode)                             ... PASSED
+2026-10-08T18:14:48.5041795Z [58] FSCAL_R (execute)                            ... PASSED
+2026-10-08T18:14:48.5042360Z [59] FMUL_R (decode)                              ... PASSED
+2026-10-08T18:14:48.5042942Z [60] FMUL_R RoundToNearest (execute)              ... PASSED
+2026-10-08T18:14:48.5043563Z [61] FMUL_R RoundDown/RoundToZero (execute)       ... PASSED
+2026-10-08T18:14:48.5044183Z [62] FMUL_R RoundUp (execute)                     ... PASSED
+2026-10-08T18:14:48.5044754Z [63] FDIV_M (decode)                              ... PASSED
+2026-10-08T18:14:48.5045340Z [64] FDIV_M RoundToNearest (execute)              ... PASSED
+2026-10-08T18:14:48.5045949Z [65] FDIV_M RoundDown/RoundToZero (execute)       ... PASSED
+2026-10-08T18:14:48.5046564Z [66] FDIV_M RoundUp (execute)                     ... PASSED
+2026-10-08T18:14:48.5047143Z [67] FSQRT_R (decode)                             ... PASSED
+2026-10-08T18:14:48.5047738Z [68] FSQRT_R RoundToNearest (execute)             ... PASSED
+2026-10-08T18:14:48.5048355Z [69] FSQRT_R RoundDown/RoundToZero (execute)      ... PASSED
+2026-10-08T18:14:48.5049140Z [70] FSQRT_R RoundUp (execute)                    ... PASSED
+2026-10-08T18:14:48.5049731Z [71] CBRANCH (decode) 100                         ... PASSED
+2026-10-08T18:14:48.5050304Z [72] CBRANCH (decode) 200                         ... PASSED
+2026-10-08T18:14:48.5050889Z [73] CBRANCH not taken (execute)                  ... PASSED
+2026-10-08T18:14:48.5051482Z [74] CBRANCH taken (execute)                      ... PASSED
+2026-10-08T18:14:48.5052063Z [75] CFROUND (decode)                             ... PASSED
+2026-10-08T18:14:48.5052637Z [76] ISTORE L1 (decode)                           ... PASSED
+2026-10-08T18:14:48.5053219Z [77] ISTORE L2 (decode)                           ... PASSED
+2026-10-08T18:14:48.5053806Z [78] ISTORE L3 (decode)                           ... PASSED
+2026-10-08T18:14:48.7210620Z [79] Hash test 1a (interpreter)                   ... PASSED
+2026-10-08T18:14:48.8862075Z [80] Hash test 1b (interpreter)                   ... PASSED
+2026-10-08T18:14:49.0602309Z [81] Hash test 1c (interpreter)                   ... PASSED
+2026-10-08T18:14:49.6940088Z [82] Hash test 1d (interpreter)                   ... PASSED
+2026-10-08T18:14:49.8709887Z [83] Hash test 1e (interpreter)                   ... PASSED
+2026-10-08T18:14:50.5155370Z [84] Hash test 1f (ISUB_R edge case, interpreter) ... PASSED
+2026-10-08T18:14:51.1825984Z [85] Hash test 1a (interpreter v2)                ... PASSED
+2026-10-08T18:14:51.3879011Z [86] Hash test 1b (interpreter v2)                ... PASSED
+2026-10-08T18:14:51.5929524Z [87] Hash test 1c (interpreter v2)                ... PASSED
+2026-10-08T18:14:52.2592784Z [88] Hash test 1d (interpreter v2)                ... PASSED
+2026-10-08T18:14:52.4603274Z [89] Hash test 1e (interpreter v2)                ... PASSED
+2026-10-08T18:14:52.9548469Z [90] Hash test 2a (compiler)                      ... PASSED
+2026-10-08T18:14:52.9732120Z [91] Hash test 2b (compiler)                      ... PASSED
+2026-10-08T18:14:52.9912211Z [92] Hash test 2c (compiler)                      ... PASSED
+2026-10-08T18:14:53.4701444Z [93] Hash test 2d (compiler)                      ... PASSED
+2026-10-08T18:14:53.4882974Z [94] Hash test 2e (compiler)                      ... PASSED
+2026-10-08T18:14:53.9679970Z [95] Hash test 2f (ISUB_R edge case, compiler)    ... PASSED
+2026-10-08T18:14:54.4511665Z [96] Hash test 2a (compiler v2)                   ... PASSED
+2026-10-08T18:14:54.4704692Z [97] Hash test 2b (compiler v2)                   ... PASSED
+2026-10-08T18:14:54.4900124Z [98] Hash test 2c (compiler v2)                   ... PASSED
+2026-10-08T18:14:54.9688166Z [99] Hash test 2d (compiler v2)                   ... PASSED
+2026-10-08T18:14:54.9880800Z [100] Hash test 2e (compiler v2)                   ... PASSED
+2026-10-08T18:14:55.3908670Z [101] Cache initialization: SSSE3                  ... PASSED
+2026-10-08T18:14:55.6660456Z [102] Cache initialization: AVX2                   ... PASSED
+2026-10-08T18:14:56.2471824Z [103] Hash batch test                              ... PASSED
+2026-10-08T18:14:56.4222763Z [104] Preserve rounding mode                       ... PASSED
+2026-10-08T18:14:56.6236626Z [105] Commitment test                              ... PASSED
+2026-10-08T18:14:57.1766055Z [106] Hash test (interpreter switch v1 <-> v2)     ... PASSED
+2026-10-08T18:14:57.2315149Z [107] Hash test (compiler switch v1 <-> v2)        ... PASSED
+2026-10-08T18:14:57.2326493Z 
+2026-10-08T18:14:57.2327160Z All tests PASSED
+2026-10-08T18:14:57.2380174Z ##[group]Run python3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1
+2026-10-08T18:14:57.2380889Z [36;1mpython3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1[0m
+2026-10-08T18:14:57.2442580Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:57.2442857Z ##[endgroup]
+2026-10-08T18:14:57.3399830Z Vendor integrity OK (171 files)
+2026-10-08T18:14:57.3808663Z Running v1 measurement 1
+2026-10-08T18:14:57.9488189Z Running v2 measurement 1
+2026-10-08T18:14:58.4660602Z /home/runner/work/OpenRandomX/OpenRandomX/benchmarks/results/20261008T181457.344531Z
+2026-10-08T18:14:58.4773137Z ##[group]Run python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --init-threads 2 --nonces 1000 --repeats 1 --timeout 300
+2026-10-08T18:14:58.4774137Z [36;1mpython3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --init-threads 2 --nonces 1000 --repeats 1 --timeout 300[0m
+2026-10-08T18:14:58.4836622Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:14:58.4836900Z ##[endgroup]
+2026-10-08T18:14:58.5743857Z Vendor integrity OK (171 files)
+2026-10-08T18:14:58.5965005Z Running v1 measurement 1
+2026-10-08T18:15:21.2313730Z Running v2 measurement 1
+2026-10-08T18:15:43.7159854Z /home/runner/work/OpenRandomX/OpenRandomX/benchmarks/results/20261008T181458.580366Z
+2026-10-08T18:15:43.7274585Z ##[group]Run set -o pipefail
+2026-10-08T18:15:43.7274950Z [36;1mset -o pipefail[0m
+2026-10-08T18:15:43.7275452Z [36;1mpython3 tests/native_steady.py 2>&1 | tee build/validation/steady-native-tests.log[0m
+2026-10-08T18:15:43.7337445Z shell: /usr/bin/bash -e {0}
+2026-10-08T18:15:43.7337771Z ##[endgroup]
+2026-10-08T18:15:43.8177126Z test_cli_rejects_bad_options_before_allocation (__main__.NativeTests.test_cli_rejects_bad_options_before_allocation) ... ok
+2026-10-08T18:16:15.8861966Z test_one_worker_hardware_repeated_known_hashes (__main__.NativeTests.test_one_worker_hardware_repeated_known_hashes) ... {"native_control": {"threads": 1, "aes": "hardware", "nonces": 1000, "warmup_nonces": 6, "status": "ok", "output": "/home/runner/work/OpenRandomX/OpenRandomX/benchmarks/results/20261008T181543.858560Z-steady", "control_digests": {"v1": "10b649a3f15c7c7f88277812f2e74b337a0f20ce909af09199cccb960771cfa1", "v2": "b85d79e080b10b6ad28c2e6c993601a1361917dba979e03a0a8f7248aaf4ba52"}}}
+2026-10-08T18:16:15.8870057Z ok
+2026-10-08T18:16:44.8433529Z test_one_worker_software (__main__.NativeTests.test_one_worker_software) ... {"native_control": {"threads": 1, "aes": "software", "nonces": 17, "warmup_nonces": 6, "status": "ok", "output": "/home/runner/work/OpenRandomX/OpenRandomX/benchmarks/results/20261008T181615.926163Z-steady", "control_digests": {"v1": "10b649a3f15c7c7f88277812f2e74b337a0f20ce909af09199cccb960771cfa1", "v2": "b85d79e080b10b6ad28c2e6c993601a1361917dba979e03a0a8f7248aaf4ba52"}}}
+2026-10-08T18:16:44.8436833Z ok
+2026-10-08T18:16:44.8437718Z test_source_contract (__main__.NativeTests.test_source_contract) ... ok
+2026-10-08T18:17:12.3544387Z test_three_workers_software_uneven_partition (__main__.NativeTests.test_three_workers_software_uneven_partition) ... {"native_control": {"threads": 3, "aes": "software", "nonces": 17, "warmup_nonces": 6, "status": "ok", "output": "/home/runner/work/OpenRandomX/OpenRandomX/benchmarks/results/20261008T181644.883757Z-steady", "control_digests": {"v1": "10b649a3f15c7c7f88277812f2e74b337a0f20ce909af09199cccb960771cfa1", "v2": "b85d79e080b10b6ad28c2e6c993601a1361917dba979e03a0a8f7248aaf4ba52"}}}
+2026-10-08T18:17:33.0264245Z Differential 17-nonce / 3-worker / software-AES v1: MATCH
+2026-10-08T18:17:53.7903951Z Differential 17-nonce / 3-worker / software-AES v2: MATCH
+2026-10-08T18:17:53.7905099Z ok
+2026-10-08T18:18:17.4387273Z test_two_workers_duration_rejection (__main__.NativeTests.test_two_workers_duration_rejection) ... {"native_control": {"threads": 2, "aes": "hardware", "nonces": 17, "warmup_nonces": 0, "status": "rejected-duration", "output": "/home/runner/work/OpenRandomX/OpenRandomX/benchmarks/results/20261008T181753.830227Z-steady", "control_digests": {"v1": "10b649a3f15c7c7f88277812f2e74b337a0f20ce909af09199cccb960771cfa1", "v2": "b85d79e080b10b6ad28c2e6c993601a1361917dba979e03a0a8f7248aaf4ba52"}}}
+2026-10-08T18:18:17.4391110Z ok
+2026-10-08T18:18:17.4391517Z 
+2026-10-08T18:18:17.4392003Z ----------------------------------------------------------------------
+2026-10-08T18:18:17.4392688Z Ran 6 tests in 153.643s
+2026-10-08T18:18:17.4393005Z 
+2026-10-08T18:18:17.4395145Z OK
+2026-10-08T18:18:17.4544529Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T18:18:17.4544820Z with:
+2026-10-08T18:18:17.4545011Z   name: correctness-logs
+2026-10-08T18:18:17.4545272Z   path: build/validation/
+benchmarks/results/
+
+2026-10-08T18:18:17.4545562Z   if-no-files-found: warn
+2026-10-08T18:18:17.4545783Z   compression-level: 6
+2026-10-08T18:18:17.4545986Z   overwrite: false
+2026-10-08T18:18:17.4546217Z   include-hidden-files: false
+2026-10-08T18:18:17.4546573Z ##[endgroup]
+2026-10-08T18:18:17.6363805Z (node:2745) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T18:18:17.6365511Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T18:18:17.7028296Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T18:18:17.7030721Z The least common ancestor is /home/runner/work/OpenRandomX/OpenRandomX. This will be the root directory of the artifact
+2026-10-08T18:18:17.7032014Z With the provided path, there will be 36 files uploaded
+2026-10-08T18:18:17.7033161Z Artifact name is valid!
+2026-10-08T18:18:17.7033721Z Root directory input is valid!
+2026-10-08T18:18:18.1076925Z Beginning upload of artifact content to blob storage
+2026-10-08T18:18:18.1873447Z (node:2745) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T18:18:18.7254130Z Uploaded bytes 68789
+2026-10-08T18:18:18.8024195Z Finished uploading artifact content to blob storage!
+2026-10-08T18:18:18.8025925Z SHA256 digest of uploaded artifact zip is 61f901f1889e0ae142ff5e176b8f29413550d1fcc9fa18606df8cfe9909b01dd
+2026-10-08T18:18:18.8027261Z Finalizing artifact upload
+2026-10-08T18:18:19.2786168Z Artifact correctness-logs.zip successfully finalized. Artifact ID 11569857378
+2026-10-08T18:18:19.2788191Z Artifact correctness-logs has been successfully uploaded! Final size is 68789 bytes. Artifact ID is 11569857378
+2026-10-08T18:18:19.2795358Z Artifact download URL: https://github.com/jliu67/OpenRandomX/actions/runs/37822693291/artifacts/11569857378
+2026-10-08T18:18:19.3015337Z Post job cleanup.
+2026-10-08T18:18:19.3999488Z [command]/usr/bin/git version
+2026-10-08T18:18:19.4055107Z git version 2.55.0
+2026-10-08T18:18:19.4124523Z Temporarily overriding HOME='/home/runner/work/_temp/36d5cb36-af4c-4e23-9bd5-f5e9c8455f2c' before making global git config changes
+2026-10-08T18:18:19.4126040Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T18:18:19.4127250Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRandomX/OpenRandomX
+2026-10-08T18:18:19.4183269Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T18:18:19.4232148Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T18:18:19.4631987Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T18:18:19.4664739Z http.https://github.com/.extraheader
+2026-10-08T18:18:19.4694545Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T18:18:19.4760501Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T18:18:19.5262045Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T18:18:19.5359871Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T18:18:19.6238412Z Cleaning up orphan processes
+2026-10-08T18:18:19.6494417Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
