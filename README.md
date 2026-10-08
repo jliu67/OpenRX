@@ -4,26 +4,25 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## Start here
 
-- [Agent message board](https://github.com/jliu67/OpenRandomX/issues/5): cross-task announcements and coordination
-- [Communication protocol](docs/COMMUNICATION.md): role inboxes, claims, replies, handoffs and router recovery
-- [Project board](docs/TASKS.md): task status, claims, blockers and collaboration protocol
-- [Latest agent handoff](memory/HANDOFF.md): exact next steps and evidence
-- [Phase 1 workload report](docs/PHASE1.md): source analysis and measurement protocol
-- [Project memory](memory/PROJECT.md): goals and constraints
-- [Current state](memory/STATE.md): completed work and next actions
-- [Agent instructions](AGENTS.md): required startup and handoff procedure
-- [Roadmap](docs/ROADMAP.md): milestones and evidence gates
-- [RandomX baseline](docs/RANDOMX.md): pinned implementation and v1/v2 selection
-- [Hardware evidence](docs/HARDWARE.md): what remains unverified
-- [Experiments](experiments/README.md): hypothesis and result format
+- [Project board](docs/TASKS.md): status, blockers and next tasks
+- [Current handoff](memory/HANDOFF.md): reconciled engineering and communication progress
+- [Agent message board #5](https://github.com/jliu67/OpenRandomX/issues/5) and [communication protocol](docs/COMMUNICATION.md): role inboxes, claims, replies and handoffs
+- [Phase 1 workload report](docs/PHASE1.md) and [same-process update](docs/PHASE1-STEADY.md)
+- [Steady adapter protocol](benchmarks/steady/README.md): timing boundaries, limits and commands
+- [Project memory](memory/PROJECT.md), [current state](memory/STATE.md), and [agent instructions](AGENTS.md)
+- [Roadmap](docs/ROADMAP.md), [RandomX baseline](docs/RANDOMX.md), [hardware evidence](docs/HARDWARE.md), and [experiments](experiments/README.md)
 
 ## Phase 1 progress
 
-Source characterization, reproducible static profiling and benchmark-runner hardening are committed. The 42 new tooling tests and all 107 upstream tests passed in [CI run 37719337133](https://github.com/jliu67/OpenRandomX/actions/runs/37719337133), including both full-dataset reference controls. See [Phase 1 validation](docs/validation/phase1/README.md). The controlled target-host throughput matrix, dynamic bottleneck profiling and wall-power measurements remain open; CI success does not complete M1.
+Source characterization, reproducible profiling and the hardened upstream runner are retained. **P1-05 same-process warmup and timestamped hashing is implemented and validated**, commit `59b469c6b9a56aecc1e5ab8e82901e281ebe4676`. [CI run 37722277487](https://github.com/jliu67/OpenRandomX/actions/runs/37722277487) passed 64 tooling tests, 107 upstream tests, six native tests and previous controls. The native references and both differential comparisons matched; raw artifact records/checksums were downloaded and revalidated. See [P1-05 validation](docs/validation/p1-05/README.md).
+
+The concurrent GitHub-native communication package through `9d1a8e3` is preserved: router, templates, role inboxes, instructions, validation and history. It coordinates messages but does not launch AI workers. Its component validation and the P1-05 run are separate from any later combined integration run.
+
+**M1/Phase 1 is still open.** Controlled host measurements, dynamic profiling, power-sample import software and real synchronized wall-power readings remain outstanding. The next unblocked coding task is P1-06S. A green CI run does not establish efficiency; do not mix rates from the older upstream and new static-stride harnesses.
 
 ## Quick start (Linux)
 
-Install Git, CMake, a C/C++ toolchain, Make, and Python 3.10+. On Ubuntu: `sudo apt install git cmake build-essential python3`.
+Install Git, CMake, C/C++ tools, Make and Python 3.10+. On Ubuntu: `sudo apt install git cmake build-essential python3`.
 
 ```bash
 python3 scripts/verify_vendor.py
@@ -31,30 +30,32 @@ python3 -m unittest discover -s tests -v
 python3 scripts/workload_profile.py
 bash scripts/build.sh
 bash scripts/test.sh
-# Fast functional smoke test in verification mode; NOT mining throughput:
+# Functional smoke only:
 python3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1
-# Full-dataset mining baseline, >2 GiB RAM; tune threads to your machine:
-python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --nonces 1000 --repeats 3
+# Full-dataset known-reference controls, >2 GiB RAM:
+python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --nonces 1000 --repeats 1
+# Optional same-process adapter and bounded native controls:
+bash scripts/build_steady.sh
+python3 tests/native_steady.py
 ```
 
-RandomX v2.0.1 source is included in `vendor/randomx/` at commit `aaafe71322df6602c21a5c72937ac284724ae561`; no submodule download is required. Its original BSD-3-Clause license and notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md).
+RandomX v2.0.1 is included in `vendor/randomx/` at upstream commit `aaafe71322df6602c21a5c72937ac284724ae561`; no submodule download is required. Original BSD-3-Clause licenses/notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md).
 
-Runs create timestamped directories under `benchmarks/results/` with raw logs and JSON metadata. Commit selected, reviewed results alongside analysis. Never treat a cloud-host smoke test as SG2042 performance, or calculate hashes/J without a measured power boundary.
-
-Local validation: 107 upstream tests passed with no skips, and both full-dataset algorithm reference checks matched. See [validation evidence](docs/VALIDATION.md). [GitHub CI passed](https://github.com/jliu67/OpenRandomX/actions/runs/37716942121).
+Timestamped runs under `benchmarks/results/` retain raw logs and JSON metadata. Commit selected reviewed evidence and analysis. Do not call cloud controls SG2042 measurements or derive hashes/J without a measured power boundary. Historical foundation and initial Phase 1 evidence remain in [VALIDATION.md](docs/VALIDATION.md) and [validation/phase1](docs/validation/phase1/README.md).
 
 ## Repository map
 
 | Directory | Purpose |
 |---|---|
-| memory/ | Durable goals, state, decisions, open questions, session log |
-| docs/ | Evidence register, methodology, hardware notes, roadmap |
-| vendor/randomx/ | Unmodified upstream source snapshot |
-| scripts/ | Source integrity check, build, tests, reproducible runs |
-| benchmarks/ | Results and measurement instructions |
-| experiments/ | Experiment proposals and outcome records |
-| simulator/ | Simulator selection and configuration plans |
-| rtl/ | Future verified processor work; no RTL implemented yet |
-| .github/ | CI, agent/research/experiment templates, message router, PR checklist |
+| memory/ | Persistent goals, state, decisions, session log and handoff snapshots |
+| docs/ | Evidence, methodology, communication, hardware notes and roadmap |
+| vendor/randomx/ | Unmodified pinned upstream source |
+| scripts/ | Integrity, builds, evidence runners and deterministic message routing |
+| tests/ | Tooling/communication regressions and explicit native controls |
+| benchmarks/ | Results, measurement protocol and opt-in steady adapter |
+| experiments/ | Experiment plans and outcomes |
+| simulator/ | Simulator selection/configuration plans |
+| rtl/ | Future verified processor work; no RTL yet |
+| .github/ | CI, message router, task templates and review checklist |
 
-A repository note is persistent context, not an autonomous service: agents must read it, update it, and commit their handoffs. The [GitHub message router](docs/COMMUNICATION.md) adds deterministic routing and session claims, not autonomous model workers. See [communication validation](docs/validation/communication/README.md) for tested behavior and deployment evidence.
+Repository memory and inboxes are not autonomous workers: an invoked agent must read, update and commit its handoff. No background model execution is implied.

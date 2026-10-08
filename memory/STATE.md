@@ -1,39 +1,32 @@
 # Current state
 
-Stage: M0 complete; Phase 1 source/tooling work package complete; **M1 measured hardware baseline still open**.
+**M0 complete; Phase 1 source/tooling and P1-05 same-process instrumentation complete; M1 measured hardware baseline remains OPEN.** Project name is OpenRX; private remote remains `jliu67/OpenRandomX`.
 
-Project name: OpenRX. GitHub remote remains private `jliu67/OpenRandomX`; repository administrative name was not changed.
+## Engineering completed
 
-## Completed
+- Unmodified RandomX v2.0.1 pinned at `aaafe71322df6602c21a5c72937ac284724ae561`; source manifest, build/test tools, v1/v2 controls and initial profile retained.
+- Initial Phase 1 implementation `360a925`: [source analysis](../docs/PHASE1.md), static profile and hardened upstream runner schema 2. The older runner still has separate-process warmups.
+- P1-05 implementation `59b469c6b9a56aecc1e5ab8e82901e281ebe4676`: [separate adapter](../benchmarks/steady/README.md), persistent dataset/VM/worker reuse, same-process warmups, alternating version order, known-hash controls, precise interval boundaries, strict output validation and retained failures.
+- P1-05 evidence/handoff commit `fee2a3bd74a8d4f3a5e7fdc592c33edc760cc89e` was reconciled with concurrent main `9d1a8e3920d74a4dee75e66fe4df048876d11953`. Router/templates, AGENTS, communication evidence and session history were preserved. No force-push or vendor/old-runner modification.
 
-- Official RandomX v2.0.1 source pinned at `aaafe71322df6602c21a5c72937ac284724ae561`, unmodified; same release supports v1/v2.
-- Foundation source manifest, scripts, CI, memory, evidence rules and experiments retained.
-- [Phase 1 workload report](../docs/PHASE1.md) and reproducible [static profile](../benchmarks/profiles/pinned-v2.0.1.json).
-- Benchmark runner schema 2: separated warmup records, balanced v1/v2 order, median/min/max and failure counts, minimum-duration checks, pinned-reference validation, integer/affinity safeguards, CPU/cgroup context.
-- [Project board](../docs/TASKS.md), issue #1 communication and [agent handoff](HANDOFF.md) now track completed work, ownership, blockers and next commands.
+## Evidence
 
-## Validation and remote status
+[CI run 37722277487](https://github.com/jliu67/OpenRandomX/actions/runs/37722277487), job 113132440545, passed on P1-05 implementation `59b469c`: 171-file integrity, 64 tooling tests, deterministic profile, native builds, 107 upstream tests, all prior smoke/full-dataset controls, and six new native tests; no skips. Eight known-reference controls and both 17-nonce differential comparisons matched. Expected duration rejection was retained.
 
-Original foundation validation remains in docs/VALIDATION.md and docs/validation/foundation/. The private remote was created and its original 213-file tree verified in the foundation session.
+Artifact 11526487498 (66,083 bytes) was downloaded and SHA-256 checked against GitHub. All four native streams/36 intervals were revalidated locally and summaries/raw checksums matched. Exact evidence, native log and retention deadline: [P1-05 validation](../docs/validation/p1-05/README.md). Local new synthetic tooling tests passed (22); no local native build was possible due to source-download DNS failure. Native execution was in CI.
 
-Implementation commit `360a9255703a28845a799cfcc1086d1fb84a2c48` is on main. Local tooling: 42 tests passed, no skips. Native integration: [GitHub Actions run 37719337133](https://github.com/jliu67/OpenRandomX/actions/runs/37719337133) passed source integrity (171 files), the same 42 tooling tests, deterministic profile reproduction, native build, all 107 upstream tests (no skips), both light smoke runs, both full-dataset reference controls, and artifact upload. See [Phase 1 validation](../docs/validation/phase1/README.md).
+**No controlled hardware experiment, wall-power samples, dynamic bottleneck attribution, RISC-V simulation or RTL result exists.** Hosted short controls are not an efficiency baseline; the three-worker case used two exposed CPUs. Clock brackets are not meter calibration. Power/hashes-per-joule fields remain null.
 
-No vendored source changed. No controlled hardware throughput/AES/thread matrix, wall-power samples, dynamic bottleneck attribution, RISC-V simulation or RTL result has been obtained. CI controls were one repetition per algorithm and are not a performance/efficiency baseline.
+## GitHub communication package retained
 
-## Next actions and blockers
+Implementation `d3c503a5ad4154ba50e6f38119bb904cb41322d8`, handoff `9d1a8e3`: [protocol](../docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), task/message templates, role/status inboxes, actor/session leases and deterministic router. Its 45 tests and live claim/conflict/no-op probes are documented in [communication validation](../docs/validation/communication/README.md). This is not an autonomous AI worker or a model runtime. Existing research issues are preserved. Combined integration CI is separate from the two previously verified component runs.
 
-1. Hardware-capable agent: claim P1-04 on issue #1; identify the actual host, repeat known references, then run the balanced controlled matrix in docs/PHASE1.md. Host access is currently unresolved.
-2. Tooling agent: P1-05 is ready for a separate adapter or reviewed patch providing same-process warmup and exact steady-state interval markers. Current warmups are separate-process preconditioning only.
-3. Complete P1-06 with real synchronized wall-power readings; no meter access or energy claims exist yet.
-4. Complete P1-07 dynamic profiling on a controlled host; record counter support and collection overhead.
-5. Continue issues #2/#4 primary-source hardware/network verification and #3 simulator feasibility without bypassing the roadmap gates.
+## Next actions
 
-Routine scoped code/research commits are authorized. Do not spend money, alter account/visibility settings, fabricate results or claim agents are running between sessions. The completed session claim is released; future agents must inspect current issue comments and remote HEAD before editing.
+1. Claim P1-06S: implement strict power-data import/validation with declared units, clock mapping, coverage/gap checks, integration and clearly labeled synthetic tests.
+2. P1-04: obtain authorized access to a controlled host, rerun references and collect balanced sufficiently long v1/v2/thread/AES measurements.
+3. P1-06: validate the importer against real synchronized whole-system meter readings; no meter is provisioned.
+4. P1-07: profile actual bottlenecks on a controlled host with documented counter support and overhead.
+5. Continue hardware/network evidence and simulator feasibility through existing issues #2/#4/#3 without bypassing gates.
 
-## GitHub communication package — 2026-10-08 UTC
-
-Implemented on main at `d3c503a5ad4154ba50e6f38119bb904cb41322d8`: [message board #5](https://github.com/jliu67/OpenRandomX/issues/5), task/message templates, role/status inbox labels, four-hour session claims and a deterministic Actions router. Read [docs/COMMUNICATION.md](../docs/COMMUNICATION.md) before using commands. Existing research issues and all Phase 1 evidence/gates are preserved.
-
-Validation: 45 new communication tests passed locally and in [router run 37722591259](https://github.com/jliu67/OpenRandomX/actions/runs/37722591259). Live routing accepted the installation claim and rejected a conflicting test session; repeated reconciliation did not duplicate the state receipt. [Foundation/native CI run 37722591236](https://github.com/jliu67/OpenRandomX/actions/runs/37722591236) also completed successfully. Details and limits: [communication validation](../docs/validation/communication/README.md).
-
-No autonomous model worker, external queue, scheduled polling, model credential or paid service was provisioned. Inbox roles do not imply active agents. The current installation/handoff claim lifecycle is recorded on [#6](https://github.com/jliu67/OpenRandomX/issues/6); no continuing worker is claimed by this package. Invoke an authorized agent to read an inbox and act. M1 remains open.
+Read [board](../docs/TASKS.md), [handoff](HANDOFF.md), AGENTS and current task comments before work. Post session-scoped claims and release them at handoff. No automatic spending, external worker provisioning, account changes or fabricated results. P1-05's final editing claim release belongs on #1; no background work is promised.
