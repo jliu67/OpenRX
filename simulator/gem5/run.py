@@ -72,6 +72,70 @@ def extract_probe(raw, name):
     return body, errors[0]
 
 
+def run_process(command, *, stdout, stderr, timeout):
+    """Wait for our new session, stopping its whole group on early exit.
+
+    Signals during Popen are recorded until the child object is available, so
+    an interruption cannot escape the launch window without cleaning up.
+    Restore the caller's handlers before validating the retained guest output.
+    """
+    process = None
+    interrupted_signal = None
+    handlers = {}
+    result = {"returncode": None}
+
+    def interrupt(signum, _frame):
+        nonlocal interrupted_signal
+        if interrupted_signal is None:
+            interrupted_signal = signum
+        result.update(returncode=None, interrupted=True,
+                      interruption_signal=signal.Signals(interrupted_signal).name)
+        # Never raise into arbitrary launch/wait/cleanup bytecode. Killing an
+        # unreaped session leader's group also wakes wait(), and its PID cannot
+        # have been reused. Before Popen returns, remember the signal instead.
+        if process is not None and process.returncode is None:
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            except OSError as exc:
+                result["signal_cleanup_error"] = str(exc)
+
+    try:
+        for signum in (signal.SIGINT, signal.SIGTERM):
+            handlers[signum] = signal.signal(signum, interrupt)
+        completed = False
+        try:
+            process = subprocess.Popen(command, stdout=stdout, stderr=stderr, start_new_session=True)
+            if interrupted_signal is not None:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+            result["returncode"] = process.wait(timeout=timeout or None)
+            completed = True
+        except subprocess.TimeoutExpired:
+            result["timed_out"] = True
+        finally:
+            # A normal reaped child must not trigger a kill against a potentially
+            # reused PID. Early exit also stops descendants ignoring SIGTERM.
+            if process is not None:
+                if not completed:
+                    try:
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
+                        pass
+                process.wait()
+        if result.get("interrupted"):
+            result["returncode"] = None
+        if result.get("timed_out") or result.get("interrupted"):
+            result["child_returncode"] = process.returncode
+        return result
+    finally:
+        for signum, handler in handlers.items():
+            signal.signal(signum, handler)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--gem5", type=Path, required=True)
@@ -121,14 +185,7 @@ def main():
                    "--max-ticks", str(args.max_ticks)]
         report["command"] = command
         with (args.output_dir / "stdout.log").open("wb") as stdout, (args.output_dir / "stderr.log").open("wb") as stderr:
-            process = subprocess.Popen(command, stdout=stdout, stderr=stderr, start_new_session=True)
-            try:
-                report["returncode"] = process.wait(timeout=args.timeout or None)
-            except subprocess.TimeoutExpired:
-                os.killpg(process.pid, signal.SIGKILL)
-                process.wait()
-                report["returncode"] = None
-                report["timed_out"] = True
+            report.update(run_process(command, stdout=stdout, stderr=stderr, timeout=args.timeout))
         simulation_path = outdir / "simulation.json"
         if simulation_path.exists():
             report["simulation"] = json.loads(simulation_path.read_text())
@@ -154,7 +211,7 @@ def main():
             if report["guest_binaries"][name] != elf_info(path):
                 raise ValueError("Guest binary changed during execution")
         # Extract and validate completed controls even if a later hash attempt
-        # times out, so useful partial execution is retained without greenwashing.
+        # times out or is interrupted; neither cancellation nor partial hashes pass.
         validations = {}
         for name in binaries:
             body, errors = extract_probe(raw, name)
@@ -165,13 +222,15 @@ def main():
             report["validated"] = validations
             if name == "runtime":
                 report["runtime_validated"] = True
-        if report.get("returncode") != 0 or "OPENRX_GUEST_COMPLETE" not in raw:
-            raise ValueError("gem5 failed/timed out or guest script did not complete")
+        if report.get("returncode") != 0 or report.get("interrupted") or "OPENRX_GUEST_COMPLETE" not in raw:
+            raise ValueError("gem5 failed/timed out/interrupted or guest script did not complete")
         if [x["hypercall"] for x in report.get("simulation", {}).get("events", [])] != [1, 2, 3]:
             raise ValueError("Incomplete Linux/after-boot event sequence")
         report["status"] = "pass"
     except (OSError, ValueError, UnicodeError) as exc:
         report["error"] = str(exc)
+        if report.get("interrupted"):
+            report["error"] = "Simulator interrupted by " + report["interruption_signal"] + "; " + report["error"]
     finally:
         report["host_elapsed_seconds"] = time.monotonic() - started
         report["host_child_max_rss_kib"] = resource.getrusage(resource.RUSAGE_CHILDREN).ru_maxrss

@@ -1,12 +1,17 @@
 """Fail-closed resource identity and guest-output evidence controls."""
 import json
+import inspect
+import ctypes
 import os
 from pathlib import Path
 import signal
+import shutil
 import subprocess
+import sys
 import tempfile
 import time
 import unittest
+from unittest import mock
 
 HERE = Path(__file__).resolve().parents[1] / "simulator" / "gem5"
 from simulator.gem5 import prepare, run
@@ -47,7 +52,7 @@ class SerialTests(unittest.TestCase):
         defaults = [kw.value.value for kw in argument_calls[0].keywords
                     if kw.arg == "default" and isinstance(kw.value, ast.Constant)]
         self.assertEqual(defaults, [0])
-        self.assertIn('process.wait(timeout=args.timeout or None)', source)
+        self.assertIn('process.wait(timeout=timeout or None)', source)
 
     def stream(self, status=0, stderr=""):
         return ("boot messages\nOPENRX_RUNTIME_BEGIN\n{\"type\":\"config\"}\n"
@@ -166,6 +171,262 @@ class GuestStreamingTests(unittest.TestCase):
         self.assertIn("runtime.jsonl", self.stderr.read_text())
         with self.assertRaises(ValueError):
             run.extract_probe(serial, "runtime")
+
+
+@unittest.skipUnless(sys.platform.startswith("linux"), "Linux process-group controls")
+class RunnerCancellationTests(unittest.TestCase):
+    """Real host processes and synthetic inputs; these never execute gem5."""
+
+    def setUp(self):
+        # /proc may be mounted from a different PID namespace. Adopt orphaned
+        # descendants in this test process and verify termination with waitpid.
+        self.libc = ctypes.CDLL(None, use_errno=True)
+        previous = ctypes.c_int()
+        if self.libc.prctl(37, ctypes.byref(previous), 0, 0, 0) != 0:
+            raise OSError(ctypes.get_errno(), "PR_GET_CHILD_SUBREAPER failed")
+        self.set_subreaper(1)
+        self.addCleanup(self.set_subreaper, previous.value)
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.runner = self.root / "simulator" / "gem5"
+        self.runner.mkdir(parents=True)
+        for name in ("run.py", "prepare.py", "fs.py"):
+            shutil.copyfile(HERE / name, self.runner / name)
+        (self.root / "tests").mkdir()
+        shutil.copyfile(HERE.parents[1] / "tests" / "native_runtime_probe.py",
+                        self.root / "tests" / "native_runtime_probe.py")
+        resources = self.root / "resources"
+        resources.mkdir()
+        manifest = {"resources": []}
+        for name in ("opensbi", "vmlinux", "ubuntu.img"):
+            path = resources / name
+            path.write_bytes(("synthetic-" + name).encode())
+            identity = prepare.hashes(path)
+            identity["upstream_md5"] = identity.pop("md5")
+            manifest["resources"].append(dict(identity, id=name, filename=name))
+        (self.runner / "resources.json").write_text(json.dumps(manifest))
+        self.payload = self.root / "synthetic-riscv-elf"
+        self.payload.write_bytes(b"\x7fELF\x02\x01" + b"\0" * 12 + b"\xf3\0" + b"\0" * 44)
+        # Reuse the independent runtime oracle on a clearly synthetic stream.
+        rows = [json.loads(line) for line in
+                (HERE.parents[1] / "docs/validation/m3-fs/runtime-native.jsonl").read_text().splitlines()]
+        rows[0].update(architecture="riscv64", flush_path="linux-riscv-flush-icache")
+        self.runtime_body = "".join(json.dumps(row) + "\n" for row in rows)
+        (self.root / "runtime-body.jsonl").write_text(self.runtime_body)
+        self.pids = self.root / "pids.json"
+        self.fake = self.root / "synthetic-simulator"
+        self.fake.write_text("#!" + sys.executable + "\n" + '''
+import json, os, signal, subprocess, sys, time
+from pathlib import Path
+root = Path(__file__).parent
+out = Path(next(arg.split("=", 1)[1] for arg in sys.argv if arg.startswith("--outdir=")))
+body = (root / "runtime-body.jsonl").read_text()
+serial = ("Kernel booted, In gem5 init...\\nOPENRX_RUNTIME_BEGIN\\n" + body +
+          "OPENRX_RUNTIME_END status=0\\nOPENRX_RUNTIME_STDERR_BEGIN\\nOPENRX_RUNTIME_STDERR_END\\n")
+complete = (root / "complete").exists()
+serial += "OPENRX_GUEST_COMPLETE\\n" if complete else "OPENRX_HASH_BEGIN\\n"
+(out / "system.terminal").write_text(serial)
+events = [{"hypercall": n} for n in ((1, 2, 3) if complete else (1, 2))]
+(out / "simulation.json").write_text(json.dumps({"events": events}))
+if complete:
+    sys.exit(0)
+child = subprocess.Popen([sys.executable, "-c",
+    "import os, signal, sys, time; from pathlib import Path; "
+    "signal.signal(signal.SIGTERM, signal.SIG_IGN); "
+    "Path(sys.argv[1]).write_text(str(os.getpid())); time.sleep(60)",
+    str(root / "descendant-ready")])
+while not (root / "descendant-ready").exists():
+    time.sleep(0.01)
+(root / "pids.json").write_text(json.dumps({"leader": os.getpid(), "descendant": child.pid}))
+print("synthetic simulator running", flush=True)
+time.sleep(60)
+''')
+        self.fake.chmod(0o700)
+        self.output = self.root / "attempt"
+        self.command = [sys.executable, str(self.runner / "run.py"), "--gem5", str(self.fake),
+                        "--resources", str(resources), "--runtime-binary", str(self.payload),
+                        "--hash-binary", str(self.payload), "--output-dir", str(self.output)]
+        self.addCleanup(self.stop_simulator)
+
+    def set_subreaper(self, enabled):
+        if self.libc.prctl(36, enabled, 0, 0, 0) != 0:
+            raise OSError(ctypes.get_errno(), "PR_SET_CHILD_SUBREAPER failed")
+
+    def stop_simulator(self):
+        if self.pids.exists():
+            pids = json.loads(self.pids.read_text())
+            try:
+                os.killpg(pids["leader"], signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            for pid in pids.values():
+                try:
+                    os.waitpid(pid, 0)
+                except ChildProcessError:
+                    pass
+
+    def start_runner(self, *extra):
+        process = subprocess.Popen(self.command + list(extra), stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE, start_new_session=True)
+
+        def cleanup():
+            if process.poll() is None:
+                os.killpg(process.pid, signal.SIGKILL)
+            process.wait(timeout=5)
+            process.stdout.close()
+            process.stderr.close()
+        self.addCleanup(cleanup)
+        return process
+
+    def wait_ready(self, process):
+        deadline = time.monotonic() + 5
+        while not self.pids.exists() and process.poll() is None and time.monotonic() < deadline:
+            time.sleep(0.01)
+        self.assertTrue(self.pids.exists(), "Synthetic simulator failed to reach its ready marker")
+        self.assert_group_live()
+
+    def assert_group_live(self):
+        for pid in json.loads(self.pids.read_text()).values():
+            os.kill(pid, 0)
+
+    def assert_reaped(self, pid):
+        with self.assertRaises(ChildProcessError):
+            os.waitpid(pid, os.WNOHANG)
+        with self.assertRaises(ProcessLookupError):
+            os.kill(pid, 0)
+
+    def assert_group_stopped(self):
+        pids = json.loads(self.pids.read_text())
+        self.assert_reaped(pids["leader"])
+        deadline = time.monotonic() + 5
+        while time.monotonic() < deadline:
+            pid, status = os.waitpid(pids["descendant"], os.WNOHANG)
+            if pid:
+                self.assertTrue(os.WIFSIGNALED(status))
+                self.assertEqual(os.WTERMSIG(status), signal.SIGKILL)
+                self.assert_reaped(pid)
+                return
+            time.sleep(0.01)
+        self.fail("Simulator descendant remained alive after cancellation")
+
+    def assert_partial_failure(self, process):
+        stdout, stderr = process.communicate(timeout=5)
+        self.assertEqual(process.returncode, 1, stderr.decode())
+        report = json.loads((self.output / "report.json").read_text())
+        self.assertEqual(json.loads(stdout), report)
+        self.assertEqual(report["status"], "fail")
+        self.assertTrue(report["boot_observed"])
+        self.assertTrue(report["runtime_validated"])
+        self.assertEqual(report["validated"]["runtime"]["checks_passed"], 9)
+        self.assertEqual((self.output / "runtime.jsonl").read_text(), self.runtime_body)
+        self.assertFalse((self.output / "hash.jsonl").exists())
+        self.assertIn("framed hash", report["error"])
+        self.assertIsNone(report["returncode"])
+        self.assertEqual(report["child_returncode"], -signal.SIGKILL)
+        self.assert_group_stopped()
+        return report
+
+    def test_sigint_cleans_group_and_retains_completed_runtime(self):
+        process = self.start_runner()
+        self.wait_ready(process)
+        process.send_signal(signal.SIGINT)
+        report = self.assert_partial_failure(process)
+        self.assertTrue(report["interrupted"])
+        self.assertEqual(report["interruption_signal"], "SIGINT")
+        self.assertIsNone(report["timeout_seconds"])
+        self.assertNotIn("timed_out", report)
+
+    def test_sigterm_cleans_group_and_retains_completed_runtime(self):
+        process = self.start_runner()
+        self.wait_ready(process)
+        process.send_signal(signal.SIGTERM)
+        report = self.assert_partial_failure(process)
+        self.assertTrue(report["interrupted"])
+        self.assertEqual(report["interruption_signal"], "SIGTERM")
+        self.assertNotIn("timed_out", report)
+
+    def test_opt_in_timeout_cleans_group_and_retains_completed_runtime(self):
+        process = self.start_runner("--timeout", "2")
+        self.wait_ready(process)
+        report = self.assert_partial_failure(process)
+        self.assertTrue(report["timed_out"])
+        self.assertNotIn("interrupted", report)
+
+    def test_successful_runtime_keeps_default_unlimited_and_strict_completion(self):
+        (self.root / "complete").touch()
+        index = self.command.index("--hash-binary")
+        del self.command[index:index + 2]
+        process = self.start_runner()
+        stdout, stderr = process.communicate(timeout=5)
+        self.assertEqual(process.returncode, 0, stderr.decode())
+        report = json.loads(stdout)
+        self.assertEqual(report["status"], "pass")
+        self.assertEqual(report["returncode"], 0)
+        self.assertIsNone(report["timeout_seconds"])
+        self.assertNotIn("interrupted", report)
+        self.assertNotIn("timed_out", report)
+
+    def test_signal_during_launch_is_cleaned_and_handlers_restored(self):
+        original_handlers = {n: signal.getsignal(n) for n in (signal.SIGINT, signal.SIGTERM)}
+        original_popen = subprocess.Popen
+        child = None
+
+        def interrupted_launch(*args, **kwargs):
+            nonlocal child
+            child = original_popen(*args, **kwargs)
+            os.kill(os.getpid(), signal.SIGTERM)
+            return child
+
+        with mock.patch.object(run.subprocess, "Popen", side_effect=interrupted_launch):
+            result = run.run_process([sys.executable, "-c", "import time; time.sleep(60)"],
+                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=0)
+        self.assertTrue(result["interrupted"])
+        self.assertEqual(result["interruption_signal"], "SIGTERM")
+        self.assertEqual(child.returncode, -signal.SIGKILL)
+        self.assert_reaped(child.pid)
+        self.assertEqual({n: signal.getsignal(n) for n in original_handlers}, original_handlers)
+
+    def signal_at_transition(self, statement, signum):
+        # A real signal at the specified bytecode boundary reproduces exception
+        # handler/finally races deterministically, without timing a second thread.
+        source, first_line = inspect.getsourcelines(run.run_process)
+        target = first_line + next(i for i, line in enumerate(source)
+                                   if line.strip() == statement)
+        injected = False
+
+        def trace(frame, event, _arg):
+            nonlocal injected
+            if (not injected and frame.f_code is run.run_process.__code__
+                    and event == "line" and frame.f_lineno == target):
+                injected = True
+                self.assert_group_live()
+                os.kill(os.getpid(), signum)
+            return trace
+
+        self.output.mkdir()
+        original_handlers = {n: signal.getsignal(n) for n in (signal.SIGINT, signal.SIGTERM)}
+        previous_trace = sys.gettrace()
+        sys.settrace(trace)
+        try:
+            result = run.run_process([str(self.fake), "--outdir=" + str(self.output)],
+                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=1)
+        finally:
+            sys.settrace(previous_trace)
+        self.assertTrue(injected)
+        self.assertTrue(result["interrupted"])
+        self.assertTrue(result["timed_out"])
+        self.assertEqual(result["interruption_signal"], signal.Signals(signum).name)
+        self.assertIsNone(result["returncode"])
+        self.assertEqual(result["child_returncode"], -signal.SIGKILL)
+        self.assert_group_stopped()
+        self.assertEqual({n: signal.getsignal(n) for n in original_handlers}, original_handlers)
+
+    def test_signal_during_timeout_handler_cannot_escape_cleanup(self):
+        self.signal_at_transition('result["timed_out"] = True', signal.SIGTERM)
+
+    def test_signal_at_cleanup_entry_cannot_skip_group_termination(self):
+        self.signal_at_transition("if process is not None:", signal.SIGINT)
 
 
 if __name__ == "__main__":

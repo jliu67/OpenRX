@@ -61,3 +61,9 @@ Integration note: D012-D014 already published by the communication package retai
 | D032 | Queue eligible hub announcements and require separate-agent acceptance evidence | A single pending workflow slot can replace an unprocessed announcement; router labels cannot certify independent review | GitHub scheduling or project governance changes |
 
 Reconciliation: the concurrent hub-policy entry reused D029, already assigned to atomic gem5. Separate review accepted its unchanged policy and the unique-ID correction to D030. The new simulator/queue decisions start at D031; all earlier decisions and session history remain preserved.
+
+## Long guest execution — 2026-10-08 UTC
+
+| ID | Decision | Reason | Revisit when |
+|---|---|---|---|
+| D033 | Keep guest wall cutoff opt-in; explicitly stop and reap the simulator on cancellation while retaining completed controls | The prior 1,200-second bound mostly covered boot and exposed no complete hash matrix; unlimited waits require reliable explicit cancellation and truthful partial evidence | Observed workload progress justifies a declared limit or a different execution model is accepted |

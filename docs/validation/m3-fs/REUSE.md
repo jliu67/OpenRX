@@ -28,7 +28,7 @@ printf '%s  %s\n' 3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0
 python3 - "$GEM5_REUSE_DIR" --gem5 "$GEM5_REUSE_DIR/bin/gem5.opt" \
   --resources /absolute/path/verified-resources \
   --runtime-binary /absolute/path/openrx-runtime-probe \
-  --output-dir /absolute/path/new-runtime-attempt --timeout 1200 <<'PY'
+  --output-dir /absolute/path/new-runtime-attempt <<'PY'
 import os, runpy, sys
 bundle = sys.argv[1]
 os.environ["LD_LIBRARY_PATH"] = bundle + "/python/lib"
@@ -44,6 +44,8 @@ bundled Python environment for the gem5 child. This avoids applying a Python
 3.12 standard library to a host interpreter of a different version.
 
 Use an existing verified guest ELF or build it using the project recipe. Pinned guest resources are acquired with `simulator/gem5/prepare.py`; they are not redistributed in this package. Retain each attempt in a new output directory. Add the unchanged light hash ELF only after the nine runtime controls pass. The package itself contains no guest pass, timing or power claim.
+
+The current runner defaults to no wall-clock cutoff. Monitor the serial stream and preserve evidence; positive `--timeout SECONDS` is an explicit opt-in. The simulated `--max-ticks` guard remains separate from host elapsed time. Keep historical 1,200-second attempt records unchanged.
 
 [Build and link evidence](link-recovery-20261008/README.md) and [latest execution results](README.md) are separate records. Hosted manual build/cache/download reuse has offline checks but has not been exercised end to end.
 
