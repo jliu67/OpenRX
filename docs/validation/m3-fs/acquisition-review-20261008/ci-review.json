@@ -1,0 +1,287 @@
+{
+  "schema": "openrx-gem5-acquisition-pr-ci-review-v1",
+  "recorded_utc": "2026-10-08T17:55:34.249Z",
+  "reviewer": "/root/runtime_review",
+  "repository": "jliu67/OpenRandomX",
+  "pull_request": 18,
+  "project_head": "53933bac18e1c1ef0128ee8bd4f40c356dcf1165",
+  "tested_merge_commit": "4213726345db1d697084ba05e9b66c045c1aeb9f",
+  "status": "passed-offline-and-foundation-ci",
+  "runs": [
+    {
+      "id": 37818302229,
+      "name": "Foundation and Phase 1 checks",
+      "head_sha": "53933bac18e1c1ef0128ee8bd4f40c356dcf1165",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "path": ".github/workflows/ci.yml",
+      "created_at": "2026-10-08T17:39:50Z",
+      "updated_at": "2026-10-08T17:44:05Z",
+      "url": "https://github.com/jliu67/OpenRandomX/actions/runs/37818302229",
+      "jobs": [
+        {
+          "id": 113452516788,
+          "name": "correctness",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37818302182,
+      "name": "RISC-V functional preflight",
+      "head_sha": "53933bac18e1c1ef0128ee8bd4f40c356dcf1165",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "path": ".github/workflows/riscv-preflight.yml",
+      "created_at": "2026-10-08T17:39:50Z",
+      "updated_at": "2026-10-08T17:41:09Z",
+      "url": "https://github.com/jliu67/OpenRandomX/actions/runs/37818302182",
+      "jobs": [
+        {
+          "id": 113452517141,
+          "name": "scalar-correctness",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 37818302193,
+      "name": "gem5 full-system Linux functional gate",
+      "head_sha": "53933bac18e1c1ef0128ee8bd4f40c356dcf1165",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "run_attempt": 1,
+      "path": ".github/workflows/gem5-fs.yml",
+      "created_at": "2026-10-08T17:39:50Z",
+      "updated_at": "2026-10-08T17:40:02Z",
+      "url": "https://github.com/jliu67/OpenRandomX/actions/runs/37818302193",
+      "jobs": [
+        {
+          "id": 113452517434,
+          "name": "offline-controls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "id": 113452589593,
+          "name": "atomic-linux-runtime",
+          "status": "completed",
+          "conclusion": "skipped"
+        }
+      ]
+    }
+  ],
+  "logs": {
+    "foundation-ci.log": {
+      "bytes": 70519,
+      "sha256": "dbe4d05ccb6a9713f09722b99555ba9d807331edb7dde9911e11343cc4901e36",
+      "job_id": 113452516788,
+      "retrieved_via": "GitHub fetch_workflow_job_logs",
+      "decoded_api_match_after_removing_initial_bom": true,
+      "normalization": "Initial UTF-8 BOM removed; all remaining decoded log text matched exactly."
+    },
+    "riscv-ci.log": {
+      "bytes": 56993,
+      "sha256": "42b2414b6b7e2edf08adf1b024cfae238578e05de194ef1ff5a6e8ecd69e9bf2",
+      "job_id": 113452517141,
+      "retrieved_via": "GitHub fetch_workflow_job_logs",
+      "decoded_api_match_after_removing_initial_bom": true,
+      "normalization": "Initial UTF-8 BOM removed; all remaining decoded log text matched exactly."
+    },
+    "offline-ci.log": {
+      "bytes": 16331,
+      "sha256": "f9025d822222ad6b7332b38030749e678bc4164607018c860dc9c72a25ac891d",
+      "job_id": 113452517434,
+      "retrieved_via": "GitHub fetch_workflow_job_logs",
+      "decoded_api_match_after_removing_initial_bom": true,
+      "normalization": "Initial UTF-8 BOM removed; all remaining decoded log text matched exactly."
+    }
+  },
+  "checks": {
+    "python_regressions": 242,
+    "upstream_controls": 107,
+    "same_process_native_controls": 6,
+    "offline_gem5_controls": 23,
+    "vendor_files_verified": 171,
+    "functional_reports": [
+      {
+        "binary": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-native/openrx-riscv-probe",
+        "binary_sha256": "96ed802237324587019011a644b33cb5820ba5295a0338c2d46d1eb64ab83643",
+        "command": [
+          "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-native/openrx-riscv-probe"
+        ],
+        "evidence_class": "native-functional",
+        "full_dataset": false,
+        "host": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "power_measured": false,
+        "returncode": 0,
+        "schema_version": 1,
+        "status": "pass",
+        "timeout_seconds": 600,
+        "timing_calibrated": false,
+        "validated": {
+          "compiled_architecture": "x86_64",
+          "optional_skips": 1,
+          "required_checks_passed": 39,
+          "software_hash_cases": 8
+        }
+      },
+      {
+        "binary_sha256": "5fe1fe4d4249001c58c9a16768af09b2fdda4dee5d183a400355d5dafc011a06",
+        "command": [
+          "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-native/openrx-runtime-probe"
+        ],
+        "evidence_class": "native-functional",
+        "host": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "power_measured": false,
+        "raw_sha256": {
+          "runtime.jsonl": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "returncode": 0,
+        "schema_version": 1,
+        "status": "pass",
+        "timeout_seconds": 60,
+        "timing_calibrated": false,
+        "validated": {
+          "architecture": "x86_64",
+          "checks_passed": 9,
+          "flush_path": "compiler-builtin",
+          "timing_calibrated": false
+        }
+      },
+      {
+        "binary": "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/openrx-riscv-probe",
+        "binary_sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+        "command": [
+          "/usr/bin/qemu-riscv64",
+          "-cpu",
+          "rv64,v=false",
+          "-L",
+          "/usr/riscv64-linux-gnu",
+          "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/openrx-riscv-probe"
+        ],
+        "evidence_class": "functional-emulation",
+        "full_dataset": false,
+        "host": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "power_measured": false,
+        "returncode": 0,
+        "schema_version": 1,
+        "status": "pass",
+        "timeout_seconds": 600,
+        "timing_calibrated": false,
+        "validated": {
+          "compiled_architecture": "riscv64",
+          "optional_skips": 1,
+          "required_checks_passed": 39,
+          "software_hash_cases": 8
+        }
+      },
+      {
+        "binary_sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+        "command": [
+          "qemu-riscv64",
+          "-cpu",
+          "rv64,v=false",
+          "-L",
+          "/usr/riscv64-linux-gnu",
+          "/home/runner/work/OpenRandomX/OpenRandomX/build/probe-riscv/openrx-runtime-probe"
+        ],
+        "evidence_class": "functional-emulation",
+        "host": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "power_measured": false,
+        "raw_sha256": {
+          "runtime.jsonl": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7",
+          "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "returncode": 0,
+        "schema_version": 1,
+        "status": "pass",
+        "timeout_seconds": 60,
+        "timing_calibrated": false,
+        "validated": {
+          "architecture": "riscv64",
+          "checks_passed": 9,
+          "flush_path": "linux-riscv-flush-icache",
+          "timing_calibrated": false
+        }
+      }
+    ]
+  },
+  "frozen_code": {
+    ".github/workflows/gem5-build.yml": {
+      "bytes": 8711,
+      "sha256": "248a9f47ac79920e1f3387bcb7f61880df69d10dfb8a4eb7bdd0706697a8589a",
+      "path": ".github/workflows/gem5-build.yml",
+      "byte_equal": true,
+      "git_blob_sha": "710a02f1910bec0bb970217e78daa6ecfb1a5ef5",
+      "remote_characters": 8709,
+      "local_characters": 8709
+    },
+    ".github/workflows/gem5-fs.yml": {
+      "bytes": 7137,
+      "sha256": "4fc824189cc35f5c5da6a5108a0224ed20bef51804bdfb73a7ad2e57b613c755",
+      "path": ".github/workflows/gem5-fs.yml",
+      "byte_equal": true,
+      "git_blob_sha": "858fad11aa061637fd68afd6a614ea67da49eec0",
+      "remote_characters": 7137,
+      "local_characters": 7137
+    },
+    "simulator/gem5/bundle.py": {
+      "bytes": 12960,
+      "sha256": "bac76036889773dc05861cfa9050f4cbf161424dda8b40fcbcc2f878de0ac6b1",
+      "path": "simulator/gem5/bundle.py",
+      "byte_equal": true,
+      "git_blob_sha": "67eade2e033db986a9b4cb349c2c31c9a311d1ba",
+      "remote_characters": 12960,
+      "local_characters": 12960
+    },
+    "tests/test_gem5_bundle.py": {
+      "bytes": 11563,
+      "sha256": "f699c51fde4f221874796630455fbf2d537b14b064d383a9681fdd61129da7e6",
+      "path": "tests/test_gem5_bundle.py",
+      "byte_equal": true,
+      "git_blob_sha": "e0f2d84cb8a8aa086eb743e31305e145e383188c",
+      "remote_characters": 11563,
+      "local_characters": 11563
+    },
+    "tests/fixtures/gem5-riscv-config.txt": {
+      "bytes": 1117,
+      "sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5",
+      "path": "tests/fixtures/gem5-riscv-config.txt",
+      "byte_equal": true,
+      "git_blob_sha": "c120cf8fa1303ff0fcfd09cf18ea287fe6e27ab3",
+      "remote_characters": 1117,
+      "local_characters": 1117
+    },
+    "simulator/gem5/README.md": {
+      "bytes": 12990,
+      "sha256": "9621575fb2c6b23117ae76281b33970f94cb8a03a29e7f9f5ba7a5002a5a9597",
+      "path": "simulator/gem5/README.md",
+      "byte_equal": true,
+      "git_blob_sha": "c6bc27198ff4399f549078da1a17e65035944162",
+      "remote_characters": 12988,
+      "local_characters": 12988
+    }
+  },
+  "boundaries": {
+    "hosted_manual_source_builder_executed": false,
+    "hosted_cache_restore_save_executed": false,
+    "hosted_manual_simulator_download_validation_boot_executed": false,
+    "pr_guest_job": "skipped by workflow_dispatch guard",
+    "local_linked_binary": "success; independently recorded in ../link-recovery-20261008/",
+    "local_kernel_boot": "hypercall1 observed in separate ongoing local attempt",
+    "gem5_guest_runtime_result": "pending; no required-control acceptance from this CI review",
+    "qemu_evidence": "scalar functional emulation, not gem5/selected processor/timing evidence",
+    "ci_artifact_download_replay": "not performed by this review; inspected successful job logs and structured validator summaries",
+    "timing_calibrated": false,
+    "power_measured": false
+  }
+}

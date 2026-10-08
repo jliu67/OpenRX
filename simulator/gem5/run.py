@@ -46,10 +46,14 @@ def guest_script(binaries):
         lines += [f"base64 -d > {name} <<'OPENRX_BINARY_BASE64'", encoded, "OPENRX_BINARY_BASE64",
                   f"printf '%s  %s\\n' '{digest}' '{name}' | sha256sum -c -", f"chmod 700 {name}",
                   f"printf 'OPENRX_{name.upper()}_BEGIN\\n'", "set +e",
-                  f"./{name} > {name}.jsonl 2> {name}.stderr", "status=$?", "set -e",
-                  f"cat {name}.jsonl", f"printf 'OPENRX_{name.upper()}_END status=%s\\n' \"$status\"",
+                  f"./{name} 2> {name}.stderr | tee {name}.jsonl",
+                  'statuses=("${PIPESTATUS[@]}")', 'status=${statuses[0]}',
+                  'capture_status=${statuses[1]}', "set -e",
+                  'if [ "$capture_status" -ne 0 ]; then exit "$capture_status"; fi',
+                  f"printf 'OPENRX_{name.upper()}_END status=%s\\n' \"$status\"",
                   f"printf 'OPENRX_{name.upper()}_STDERR_BEGIN\\n'", f"cat {name}.stderr",
-                  f"printf 'OPENRX_{name.upper()}_STDERR_END\\n'", 'test "$status" -eq 0']
+                  f"printf 'OPENRX_{name.upper()}_STDERR_END\\n'",
+                  'if [ "$status" -ne 0 ]; then exit "$status"; fi']
     lines += ["printf 'OPENRX_GUEST_COMPLETE\\n'"]
     return "\n".join(lines) + "\n"
 

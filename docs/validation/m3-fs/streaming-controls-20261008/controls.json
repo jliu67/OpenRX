@@ -1,0 +1,103 @@
+{
+  "schema": "openrx-guest-streaming-host-controls-v1",
+  "recorded_utc": "2026-10-08T18:11:55.746821+00:00",
+  "author": "/root/runtime_review",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "bash_version": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)",
+  "tee_version": "tee (GNU coreutils) 9.4",
+  "source": {
+    "simulator/gem5/run.py": {
+      "bytes": 9971,
+      "sha256": "26c32c0537f8b7982e512faa6680115f8e4946faf9c1a5c8d28df727f6d1d7b5"
+    },
+    "tests/test_gem5_fs.py": {
+      "bytes": 7271,
+      "sha256": "2b6b7451aa6a7a12112c59823d84d52307cd4d4e824d0cfbfe6698c18099031e"
+    }
+  },
+  "old_actual_runner": {
+    "path": "docs/validation/m3-fs/actual-runtime-20261008/execution-source/simulator/gem5/run.py",
+    "bytes": 9744,
+    "sha256": "7ae0fd2c8c3364cd8f3fc8ff2c082c810e112cd9c71395ab04b89c4915dfcd0a"
+  },
+  "checks": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_gem5*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 26,
+      "stdout": "gem5-tests.stdout",
+      "stderr": "gem5-tests.stderr"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "tests": 245,
+      "stdout": "all-tests.stdout",
+      "stderr": "all-tests.stderr"
+    },
+    {
+      "command": [
+        "bash",
+        "-n"
+      ],
+      "input": "guest_script generated with source file as nonexecuted payload",
+      "exit_code": 0
+    }
+  ],
+  "controls": [
+    "flushed synthetic record reaches actual serial/capture before child exits; incomplete frame rejected",
+    "producer exit42 remains exact when tee succeeds; no completion and frame rejected",
+    "real GNU tee cannot write a directory capture path while producer exits0; frame remains incomplete and no completion"
+  ],
+  "files": {
+    "gem5-tests.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "gem5-tests.stderr": {
+      "bytes": 3751,
+      "sha256": "b11565e59d47944021647c7ef6f22a51fbaacb92de60ca502f7e349aec061020"
+    },
+    "all-tests.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "all-tests.stderr": {
+      "bytes": 26453,
+      "sha256": "74ac2b5817b8e3aa8a3c1aa46ba9b2cbc8d5d36a7522b204bd7807ec929272f6"
+    }
+  },
+  "corrected_validation_path": {
+    "initial_attempt": "execution-source/run.py was missing (FileNotFoundError); no source mutation",
+    "actual_snapshot": "execution-source/simulator/gem5/run.py independently verified"
+  },
+  "boundaries": {
+    "synthetic_host_payloads_only": true,
+    "new_gem5_or_guest_launched": false,
+    "strict_extractor_and_oracles_changed": false,
+    "actual_runtime_and_active_light_evidence": "original redirected-stdout script and frozen execution-source snapshots",
+    "new_streaming_script_actual_guest_execution": "not executed",
+    "timing_calibrated": false,
+    "power_measured": false
+  },
+  "test_scheduling_guard": "Wait until both serial and capture contain the first flushed record while child remains blocked; then release stdin."
+}

@@ -1,88 +1,128 @@
-# Linux runtime controls and gem5 feasibility — 2026-10-08
+# Linux runtime controls and gem5 progress — 2026-10-08
 
-**The standalone Linux runtime controls passed native and scalar QEMU execution.
-The pinned gem5 source builds timed out before linking; gem5 Linux boot and
-guest runtime/hash controls remain unexecuted. Task #16 remains open.**
+**Actual gem5 Linux boot and all nine standalone runtime controls passed and
+were independently accepted. Task #16 remains open for the complete unchanged
+light-mode v2/v1 hash matrix, whose separate bounded attempt is running.**
 
-| Evidence stage | Actual outcome | Durable record |
+Native Linux and scalar QEMU controls already pass. PR #18 at
+`53933bac18e1c1ef0128ee8bd4f40c356dcf1165` also passed the foundation, RISC-V and
+new offline acquisition checks. Its guest job was intentionally skipped:
+actual hosted simulator acquisition/boot is manual.
+
+A subsequent runner repair streams each flushed probe record through `tee`
+while retaining its guest JSONL and exact child status. Capture failures and
+incomplete frames still fail closed. This prevents a future timeout from
+hiding all partial hash records behind the old post-exit `cat`. Generated-Bash
+host controls pass, including early output, producer failure and capture
+failure; [26 gem5 / 245 total tests](streaming-controls-20261008/controls.json)
+are retained separately. The actual guest records below used the preserved
+earlier runner; they do not claim this streaming revision ran inside gem5.
+
+| Evidence stage | Current actual outcome | Durable record |
 |---|---|---|
-| Native Linux runtime | Nine required controls passed | [Runtime review](RUNTIME-REVIEW.md), raw/report files in this directory |
-| Cross-built scalar QEMU runtime | Nine required controls passed; known workload matrix still passes 39 controls | [Executed runtime CI](RUNTIME-CI.md) and [CI audit](runtime-ci-audit.json) |
-| Guest input preparation | Exact firmware/kernel/disk bytes downloaded and pinned; all SHA-256/upstream MD5 checks passed | [Preparation](PREPARATION.md), [observed resource report](resource-preparation-20261008.json) |
+| Native/QEMU controls | Each passes 39 unchanged RandomX controls and nine Linux runtime controls; one optional AES skip per workload | [Prior executed runtime CI](RUNTIME-CI.md), [current PR CI ledger](acquisition-review-20261008/ci-review.json) |
+| Guest input preparation | Exact firmware/kernel/disk bytes downloaded and pinned; all SHA-256/upstream MD5 checks passed | [Preparation](PREPARATION.md), [resource report](resource-preparation-20261008.json) |
 | Guest ELF/library prerequisites | All 15 provider checks and 345 versioned symbols present in the inspected guest image | [ELF review](CROSS-ELF-REVIEW.md), [audit](guest-elf-audit-20261008.json) |
-| Pinned source/API/configuration review | Classic L1/L2/walk-cache configuration and guest transfer path approved; seven offline tests and ten explicitly synthetic fault cases passed | [Independent scaffold review](GEM5-REVIEW.md), [retained control inputs/logs](review-controls-20261008/README.md) |
-| Hosted gem5 source build | Both original PR/push attempts hit their 45-minute build bound, exit 124 | [CI failure review](CI-BUILD.md), [exact ledger](CI-BUILD.json), full downloaded logs |
-| Local gem5 source build | Three 20-minute six-worker windows timed out, final exit 124 at 16:50:20 UTC; 2,266 generated/object outputs retained; simulator not linked | [Local build evidence](build-20261008/README.md) |
-| gem5 Linux boot | **Not run:** no usable simulator executable | [Execution status](execution-status-20261008.json) |
-| gem5 runtime, light hashes, full dataset | **Not run:** Linux boot has not occurred | [Execution status](execution-status-20261008.json) |
+| Initial source builds | Original hosted/local windows timed out; historical outcomes preserved | [Hosted failure review](CI-BUILD.md), [original local build](build-20261008/README.md) |
+| Incremental source completion | Remaining large translation units completed; ordinary final link was OOM-killed at the 8 GiB host limit | [Resume/OOM evidence](resume-20261008/README.md) |
+| Supported link recovery | Exit 0 after 248.76 seconds; original canonical objects/source/config reused; real build-info and loader checks passed | [Link recovery](link-recovery-20261008/README.md), [binary identity](link-recovery-20261008/binary-identity.json) |
+| Durable executable reuse | Original binary/source/notices/runtime package verified and saved in two ordered parts | [Reuse instructions](REUSE.md), [saved identities](reusable-package-20261008.json) |
+| Acquisition implementation | Independent review accepted; 23 offline controls pass in actual PR CI | [Acquisition audit](ACQUISITION-20261008.md), [independent review](ACQUISITION-REVIEW-20261008.md), [CI ledger](acquisition-review-20261008/ci-review.json) |
+| Local gem5 startup/configuration | Real executable imported the configuration; generated core/cache/RAM/DTB and encoded RV64 ELF checked | [Startup/payload review](actual-runtime-review-20261008/startup-config-payload.json) |
+| Local gem5 Linux boot/runtime | Linux 6.8.12 booted; all nine fixed runtime oracles passed; child exit 0 and hypercalls 1/2/3 completed | [Actual execution](actual-runtime-20261008/README.md), [report](actual-runtime-20261008/report.json), [independent acceptance](ACTUAL-GEM5-REVIEW-20261008.md) |
+| gem5 unchanged light hashes | Separate attempt started at 18:00:27 UTC with a 1,200-second bound; result pending | Final light-mode execution record pending |
+| Full dataset, intended timing core, RTL, calibration | Not established by this functional attempt | Independent acceptance gates remain open |
 
-The local source integrity comparison covered all 10,933 regular archive files
-with zero differences. No compiler error or OOM was reported in the completed
-compilation windows; the terminal result was the declared host build timeout.
-Early dependency-discovery failures and the interrupted two-worker attempt are
-also retained in the local build record. There is no gem5 binary digest, guest
-serial log, generated device tree or real guest execution report from this
-session. Synthetic wrapper fixtures are labeled and cannot substitute for them.
+The successful executable is the unchanged, unstripped 957,300,488-byte
+`build/RISCV/gem5.opt`, SHA-256
+`3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6`.
+Actual `--build-info` returned gem5 25.1.0.1 and exit 0. All 10,933 archived
+regular source files still match the pinned archive; the canonical generated
+config retains SHA-256
+`e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5`.
 
-The first workflow revision triggered duplicate PR/push builds. The reviewed
-final workflow removes the heavy push trigger, retaining scoped PR execution
-and manual dispatch. It still uses the declared canonical source build with a
-45-minute bound; the evidence does not establish that a cold build fits that
-budget. Its downstream boot step is real code, not a mocked success. Failures
-remain visible and artifacts preserve the source/build environment and logs.
+The recovery used the upstream `--limit-ld-memory-usage` option, which enables
+GNU ld `--no-keep-memory`; no source, ISA or Kconfig change was made. It executed
+no target C++ compilations and reported no new OOM kill. Sparse memory samples
+do not establish an exact peak. The successful local build uses its recorded
+Python/native-library environment and `--without-tcmalloc`; it is separate
+from the new hosted Ubuntu builder recipe.
 
-The retained guest transfer decodes and verifies payloads inside Linux, runs
-runtime controls before the unchanged workload, and validates raw output
-independently. Hypercall 3 alone never accepts execution because the image emits
-it even after a child script fails. The declared simulator configuration is one
-Atomic RISC-V core, RVV disabled, 4 GiB RAM and classic private L1/L2/walk caches.
-This is a functional candidate, not a BOOM/C920 model or calibrated timing CPU.
+The [original execution-status snapshot](execution-status-20261008.json),
+earlier logs and build reports remain historical records from before recovery.
+Their “not linked/not run” state is superseded by the new build/progress
+records above, without rewriting those earlier outcomes.
 
-## Next commands
+The runtime-only guest attempt completed in 958.25 host seconds within its
+1,200-second bound. Independent replay accepted exactly one runtime frame,
+nine fixed oracles, zero child status, empty framed stderr, completion and the
+ordered hypercalls. The guest used the explicit Linux RISC-V flush-icache path;
+generated returns were 7 → 19 → 7. Source/binary/configuration/payload and all
+firmware/kernel/disk bindings were independently rechecked. These combined
+permission/overwrite/flush controls do not isolate the flush mechanism or prove
+SMP, migration or intended timing-core coherence.
 
-Resume the **unchanged canonical** build from the retained local source/build
-directory, with the exact environment in [the local build handoff](build-20261008/README.md).
-Preserve a new bounded log and source/configuration comparison:
+## Acquisition and CI boundary
+
+Pull requests now run fast vendor/offline controls. The new manual consumer
+requires a successful same-repository manual simulator-build run ID and an
+independently reviewed binary SHA-256. It validates source/configuration/build
+records and bytes before execution, then runs actual guest tests without
+rebuilding gem5. The separate manual fallback preserves matching partial SCons
+work on timeout and records the supported low-memory linker recipe.
+
+**The hosted manual builder, cache service operations and manual artifact
+download/guest path have not run end to end.** Their acceptance here covers
+reviewed code and executed offline controls. The locally completed executable,
+durable package and completed local Linux runtime attempt are separate evidence, and are not
+represented as an Actions-produced simulator artifact. Source assertions and
+self-digests are consistency records, not source reproducibility proof.
+
+The current [CI ledger](acquisition-review-20261008/ci-review.json) binds the
+three run/job IDs, retained log hashes, tested merge commit and frozen code
+digests. The foundation job passed 242 Python tests, 107 upstream controls and
+six same-process native controls. RISC-V CI passed the 39+9 native/QEMU controls;
+the gem5 job passed 23 offline controls and skipped actual guest execution by
+its manual-dispatch guard. No QEMU result is promoted to gem5 or processor
+evidence. These two current README status updates were made after that CI head.
+The CI ledger's documentation digests remain historical; no functional
+implementation changed in this documentation update.
+
+## Next commands: reuse the executable
+
+Follow [REUSE.md](REUSE.md) to retrieve the two saved parts, verify each part
+and the reconstructed archive, and restore the original binary plus its
+recorded runtime. That recipe initializes host Python before supplying the
+bundled Python environment to the gem5 child. **A new source build is not
+required.** Guest resources and payloads remain separately pinned inputs.
+
+If the current temporary inputs still exist, run from the repository root with
+the already reviewed original executable and a fresh output directory:
 
 ```bash
-cd /tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9
-PATH=/tmp/openrx-gem5-source/apt-root/usr/bin:$PATH \
-PYTHONPATH=/tmp/openrx-gem5-source/python-build-deps \
-PYTHON_CONFIG=/tmp/openrx-gem5-source/bin/python3-config \
+REVIEWED_GEM5_BINARY=/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt
+printf '%s  %s\n' 3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6 "$REVIEWED_GEM5_BINARY" | sha256sum -c -
 LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu \
-timeout 1200 python3 -m SCons build/RISCV/gem5.opt -j6 --without-tcmalloc
+python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources /tmp/openrx-fs-resource-audit --runtime-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe --output-dir /tmp/openrx-gem5-runtime-next-attempt --timeout 1200
 ```
 
-For a fresh build, a source-reviewed alternative omits unused Ruby/SystemC/KVM.
-It does not omit O3/Minor or the full RISC-V decoder, and it has **not built or
-booted in this session**. Keep it separate from the current incremental build:
+Wait for the current light-mode attempt's final report before starting another. If
+temporary inputs are absent, restore the saved simulator package and acquire
+the pinned resources with `simulator/gem5/prepare.py`; retain each attempt in
+a new output directory. Do not treat host loader or missing-input failures as
+guest results.
 
-```bash
-scons defconfig build/RISCV_CLASSIC build_opts/RISCV
-scons setconfig build/RISCV_CLASSIC RUBY=n USE_SYSTEMC=n USE_KVM=n
-timeout --signal=TERM --kill-after=30s 45m scons build/RISCV_CLASSIC/gem5.opt -j2
-```
+The guest transfer verifies the decoded payload inside Linux and requires all
+nine runtime controls, empty stderr, zero child status, completion marker and
+the complete hypercall sequence 1/2/3. Hypercall 3 alone cannot pass because the
+image emits it even after script failure. The runtime stage has passed. To
+reproduce the separate unchanged light-mode attempt, add
+`--hash-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe` and use a
+new output directory. Preserve timeout and partial output honestly; that
+matrix's final result remains pending.
 
-See the [exact source audit and reuse caveats](GEM5-REVIEW.md#future-supported-classic-only-build-alternative).
-Changing those options can invalidate existing compilation signatures; no
-build-time improvement is measured. Record the resulting configuration and
-binary identity rather than attributing an old canonical build to this recipe.
-
-After an actual successful source build, from the OpenRX repository root:
-
-```bash
-LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu \
-python3 simulator/gem5/run.py --gem5 /tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt --resources /tmp/openrx-fs-resource-audit --runtime-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe --output-dir /tmp/openrx-gem5-runtime-attempt --timeout 1200
-```
-
-Use the actual reduced-build executable path if choosing that separate recipe.
-The local environment needs its recorded native-library path; do not treat an
-absent binary or host loader error as a guest result. Re-download pinned inputs
-through `simulator/gem5/prepare.py` if temporary inputs are unavailable.
-
-Only after nine genuine gem5 guest runtime controls pass, repeat in a new output
-directory with `--hash-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe`.
-That attempts the unchanged **light-mode** v2/v1 interpreter/JIT matrix. Preserve
-timeout/partial output honestly. Full-dataset controls, intended timing-core
-correctness, RTL boot and M1/M4 calibration remain independent required gates.
-No physical throughput, power, hashes per joule or silicon advantage was added.
+The actual startup review confirms one Atomic RISC-V core, RVV disabled,
+4 GiB RAM and private L1/L2/walk caches. This is a functional candidate.
+Full-dataset correctness, intended timing-core coherence, selected RTL boot
+and M1/M4 calibration remain independent gates. No physical throughput, power,
+hashes per joule or silicon advantage is established.

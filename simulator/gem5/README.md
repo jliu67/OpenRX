@@ -8,10 +8,18 @@ establishes full-dataset correctness, selected RTL behavior, calibrated timing,
 hardware power or competitive efficiency.
 
 The [2026-10-08 executed outcome](../../docs/validation/m3-fs/README.md) records
-successful resource/ELF preparation and native/QEMU runtime controls, followed
-by hosted/local source-build timeouts before a simulator executable linked.
-Linux boot and guest controls were not run. The reviewed recipe remains
-unaccepted for task #16 until its actual execution criteria pass.
+successful resource/ELF preparation, a completed pinned simulator build and
+actual Linux 6.8.12 boot. All nine standalone guest runtime controls, the
+complete 1/2/3 hypercall sequence and input bindings passed
+[independent review](../../docs/validation/m3-fs/ACTUAL-GEM5-REVIEW-20261008.md).
+Task #16 remains open for the complete unchanged light-mode v2/v1 hash matrix;
+its separate 1,200-second attempt is running. The
+[saved executable package](../../docs/validation/m3-fs/REUSE.md) supports reuse
+without another source build. Earlier timeout/OOM records remain intact.
+
+This status update was made after PR #18's successful CI head
+`53933bac18e1c1ef0128ee8bd4f40c356dcf1165`; the retained CI documentation digest
+is historical. No functional implementation changed in this documentation update.
 
 ## Exact inputs
 
@@ -170,10 +178,12 @@ Offline controls exercise altered resources, wrong ELF, failed script status,
 stderr, truncated/duplicated streams, exact pins and rejected/tampered simulator
 bundles. The retained real prefixless Kconfig fixture checks parser compatibility;
 the header-only ELF bundle fixture is synthetic and is never executed.
-These tests verify the runner, **not a mocked Linux boot**. The local resource
-preparation was executed and verified; actual build/boot/workload status must
-be reported from the retained session/CI artifacts, not inferred from this
-recipe. Task #16 remains open until its executed acceptance criteria pass.
+These tests verify the runner, **not a mocked Linux boot**. Actual local build,
+boot and nine runtime controls are separately retained in the
+[execution record](../../docs/validation/m3-fs/actual-runtime-20261008/README.md)
+and independent review above. The new hosted manual builder/cache/artifact
+reuse path has not run end to end. The ongoing light-mode attempt must complete
+its unchanged 39-control matrix before that stage can pass; task #16 remains open.
 
 ## Primary sources
 
