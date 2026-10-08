@@ -87,4 +87,22 @@ failures, skipped paths and review. Candidate source analyses are
 
 ## Explicit Linux runtime controls — 2026-10-08
 
-PR #17 adds standalone SIGILL recovery, W^X and generated-code overwrite/cache-flush controls. Actual native and QEMU RV64GC execution passes nine controls each; existing39 exact RandomX controls remain passing. Separate review and digest-checked CI streams are in docs/validation/m3-fs/RUNTIME-CI.md. Permission transitions may synchronize instructions, and QEMU self-modification handling is distinct from hardware. These results prepare #16; they do not complete gem5 boot, selected-core feasibility, full dataset or M4 timing calibration.
+PR #17 adds standalone SIGILL recovery, RW/RX page-permission and generated-code overwrite/cache-flush controls. Actual native and QEMU RV64GC execution passes nine controls each; existing 39 exact RandomX controls remain passing. Separate review and digest-checked CI streams are in docs/validation/m3-fs/RUNTIME-CI.md. Permission transitions may synchronize instructions, and QEMU self-modification handling is distinct from hardware. These results prepare #16; they do not complete gem5 boot, selected-core feasibility, full dataset or M4 timing calibration.
+
+## Pinned full-system preparation and build outcome — 2026-10-08
+
+Draft PR #18 adds a separately reviewed one-core AtomicSimpleCPU/classic-cache
+Linux recipe with RVV off and 4 GiB backing, exact guest resource preparation,
+digest-checked payload transfer, strict independent oracles and bounded CI.
+Firmware/kernel/disk preparation and static ELF/guest-library checks actually
+ran. Seven wrapper tests and ten explicitly synthetic independent failure
+controls pass; they do not execute Linux.
+
+The local canonical source build reached three six-worker 20-minute limits
+without observed compiler source errors or OOM, but did not link a simulator binary.
+Both hosted cold builds reached their 45-minute limits; all guest stages were
+skipped. No gem5 Linux boot, runtime control or RandomX hash was executed.
+[Results and complete build evidence](https://github.com/jliu67/OpenRandomX/blob/f44cd47ca2061c39fa45d031a307f6df4b4f535d/docs/validation/m3-fs/README.md)
+retain exact inputs, commands, versions, source consistency and failures.
+Task #16 remains open for incremental/larger-budget build and actual runtime,
+then complete unchanged light controls before full-dataset/intended-core work.

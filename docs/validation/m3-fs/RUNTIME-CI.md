@@ -39,3 +39,56 @@ Single-thread execution does not establish hart migration or SMP shootdowns.
 Repeat on pinned gem5 full-system Linux and the selected RTL/core before
 acceptance. No timing calibration, hardware power, full-dataset RISC-V
 execution or architecture advantage is established.
+
+## Final PR and main integration audit
+
+Independent reviewer `/root/runtime_review` inspected the final job logs and
+fetched committed files at merge
+`973cd0d94f987ad4a46b85f7b6d66170104c64a1` on 2026-10-08. Both main
+jobs finished successfully; this supersedes earlier in-progress status.
+
+| Checkout | Foundation run / job | RISC-V run / job | Result |
+|---|---|---|---|
+| Final PR merge test `b4603869a5b99c6adfb54a0819e04a114f3e09d7`, head `87309b203865d16076e17818b516b6399caddc6a` | [37804856030](https://github.com/jliu67/OpenRandomX/actions/runs/37804856030) / `113406342652` | [37804856052](https://github.com/jliu67/OpenRandomX/actions/runs/37804856052) / `113406342129` | Both successful |
+| Published main `973cd0d94f987ad4a46b85f7b6d66170104c64a1` | [37805551737](https://github.com/jliu67/OpenRandomX/actions/runs/37805551737) / `113408747066` | [37805551604](https://github.com/jliu67/OpenRandomX/actions/runs/37805551604) / `113408744357` | Both successful |
+
+Each foundation job recorded **171 verified vendor files, 219 passing
+Python tests, 107 passing upstream tests and six passing native steady
+tests**, plus successful v1/v2 smoke/full-dataset reference steps. The native
+steady suite also recorded matching three-worker software-AES differential
+controls for both versions. These are hosted functional controls, not a
+controlled M1 hardware measurement.
+
+Each RISC-V job recorded **39 required RandomX checks and nine runtime
+checks per native/QEMU environment**; the RandomX matrix contains eight
+software-AES hash cases and one explicit optional hardware-AES skip. Reports
+showed zero exit status. QEMU was 8.2.2, package
+`1:8.2.2+ds-0ubuntu1.18`; cross GCC was 14.2.0, and execution used
+`rv64,v=false` with the declared RISC-V sysroot.
+
+The reviewer downloaded the final main artifact `11563570169`, verified its
+ZIP SHA-256
+`0af776da4540bc9be627d0f768b59a4c675bbdf93830527633fd9b05e560e21a`
+against GitHub, safely extracted it and independently replayed **all four
+complete native/QEMU RandomX/runtime streams**. All passed current validators
+with empty stderr. Both included cross binaries are ELF64 little-endian
+RISC-V (machine 243); their digests match the runtime/RandomX digests above.
+The final runtime stream digests also match the retained compact captures.
+The artifact expires `2027-01-06T16:01:46Z`.
+
+The following remote files at the published merge match the reviewed local
+bytes exactly. Runtime hashes match [the independent review](RUNTIME-REVIEW.md);
+importer hashes match the retained
+[patch review](../p1-06s/patch-review-20261008.json).
+
+| File | SHA-256 |
+|---|---|
+| `simulator/runtime-probe/main.c` | `c05ca5f23a81e8a60f528bdd4052fe63746eb1e1550a11872ed7885a4f5e4fc4` |
+| `tests/native_runtime_probe.py` | `99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617` |
+| `tests/test_runtime_probe.py` | `3bd3a8fc252a6db46ace2da9c84e03c7c6b81ec5c9c694c532a95923c3e16aa0` |
+| `scripts/power_import.py` | `612d20c6e4b3cae80be1231d0c41c5ece29ece23a286f347482adf23f35cfbf7` |
+| `tests/test_power_import.py` | `91ea2a5806a9235823caacc6cb97f69c456e504999bbf6e0feab8c505ead81d8` |
+
+Local full fetched logs, remote snapshots, archive and replay ledger are in
+`build/runtime-final-ci/`. This audit adds final integration evidence; the
+gem5, full-dataset RISC-V, timing and power limitations above still apply.
