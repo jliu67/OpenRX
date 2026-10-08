@@ -77,32 +77,76 @@ or a partial hash matrix, including any independently validated runtime stage.
 Original serial logs remain intact; extracted JSONL only removes UART CR bytes
 and framing text.
 
-## Reproduce
+## Acquire and reuse the simulator
 
-The ordinary Ubuntu 24.04 GitHub Actions workflow
-[`gem5-fs.yml`](../../.github/workflows/gem5-fs.yml) builds exact gem5 source with
-two workers, cross-builds the runtime probe, prepares the pinned images and
-**attempts a real Linux boot**. Build, preparation and simulator wall limits are
-45 minutes, 15 minutes per resource, and 20 minutes per execution respectively;
-the complete job is capped at 90 minutes. Logs/configuration/guest binaries and
-reports upload even on failure. Large source builds can exceed these limits;
-failure is retained and never relabeled as executed success. There is no paid
-runner/cloud provisioning in this workflow.
+Pull requests now run fast offline controls only. The actual Linux guest job in
+[`gem5-fs.yml`](../../.github/workflows/gem5-fs.yml) is manually invoked with a
+successful **same-repository** simulator-build run ID and a separately reviewed
+expected `gem5.opt` SHA-256. It downloads the fixed-name
+`gem5-simulator-riscv-opt` artifact, validates it before executing anything, then
+cross-builds guest controls and attempts boot. Guest tests never invoke a
+simulator source build.
 
-The local equivalent, after installing the documented native build dependencies
-and the scalar GCC 14 guest compiler:
+Review the producer run and its exact project commit before approving a binary
+digest. The [bundle validator](bundle.py) binds the expected binary bytes to
+the successful manual build's repository, run/attempt, project commit, pinned
+gem5 revision, canonical `build_opts/RISCV`, full generated Kconfig and recorded
+toolchain. It rejects changed bytes, missing provenance, alternate ISA/config
+records, extra members and symlinks. Only after this gate does the workflow make
+the binary executable, check its host dependencies and compare actual
+`--build-info` output with the producer record. An artifact's own digest alone
+is not an independent trust anchor. Producer records are source/build assertions
+checked for consistency; the validator cannot derive a source revision from an
+executable or establish source reproducibility.
+
+If a usable reviewed bundle is unavailable, run the separate **manual-only**
+[`gem5-build.yml`](../../.github/workflows/gem5-build.yml). It acquires unchanged
+source at the pin above, generates the canonical RISCV configuration and makes
+one bounded source-build attempt with two workers. The default bound is 60
+minutes, selectable from 10 to 90; the job cap is 120 minutes. The upstream
+`--limit-ld-memory-usage` option enables GNU ld's `--no-keep-memory` to reduce
+host link memory. The exact build command and linker setting are recorded in
+the bundle and the v2 cache recipe; simulator features are unchanged. Partial SCons
+work is checkpointed even after a build timeout. A later manual attempt restores
+only a matching source/target/recipe/full-installed-package/generated-config
+cache namespace. Cache keys include run/attempt so an interrupted attempt can
+save new progress. Lookup/checkpoint identities, full build logs, actual config
+and source status survive failure. Cache eviction, branch scope or changed
+packages/configuration can still cause a cold build. Cache reuse is an
+acceleration aid, not correctness or provenance proof.
+
+SCons reuse also requires the same absolute source/build paths. These workflows
+keep `GITHUB_WORKSPACE/build/gem5-source` stable for the same repository and
+hosted runner layout, and record the actual absolute paths. Moving or renaming
+that workspace can require a fresh manual build. Configuration/toolchain drift
+after restoration suppresses the checkpoint instead of saving it under an old
+namespace.
+
+The builder publishes a usable bundle only after a successful clean-source
+build, configuration validation and executable build-info check. It does not
+boot Linux. Once a reviewer approves that run/commit and binary digest, invoke
+the manual guest workflow with `simulator_run_id`, `simulator_sha256` and the
+optional `light_hashes` flag. Reuse the same bundle for later guest experiments;
+only a deliberate manual build attempt recompiles the simulator. Both workflows
+retain logs and failures with read-only repository permissions; only the guest
+consumer needs Actions read access to retrieve the selected artifact.
+
+## Reproduce with an already reviewed executable
+
+After installing the scalar GCC 14 guest compiler and the simulator's recorded
+shared-library dependencies, use the existing executable. Replace the binary
+path and approved digest below before running:
 
 ```bash
 python3 scripts/verify_vendor.py
-python3 -m unittest discover -s tests -p test_gem5_fs.py -v
-git clone --depth 1 --branch v25.1.0.1 https://github.com/gem5/gem5.git build/gem5-source
-test "$(git -C build/gem5-source rev-parse HEAD)" = c8222cc67a399bfc01e8658dd14b30d5bfd634f9
-cd build/gem5-source
-timeout --kill-after=30s 45m scons build/RISCV/gem5.opt -j2
-cd ../..
+python3 -m unittest discover -s tests -p 'test_gem5*.py' -v
+mkdir -p build
+REVIEWED_GEM5_BINARY=/path/to/reviewed/gem5.opt
+APPROVED_GEM5_SHA256=replace_with_the_reviewed_64_character_digest
+printf '%s  %s\n' "$APPROVED_GEM5_SHA256" "$REVIEWED_GEM5_BINARY" | sha256sum -c -
 riscv64-linux-gnu-gcc-14 -O2 -std=c11 -Wall -Wextra -Werror -march=rv64gc -mabi=lp64d simulator/runtime-probe/main.c -o build/openrx-runtime-probe
 python3 simulator/gem5/prepare.py --output-dir build/gem5-resources
-python3 simulator/gem5/run.py --gem5 build/gem5-source/build/RISCV/gem5.opt --resources build/gem5-resources --runtime-binary build/openrx-runtime-probe --output-dir build/gem5-runtime --timeout 1200
+python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources build/gem5-resources --runtime-binary build/openrx-runtime-probe --output-dir build/gem5-runtime --timeout 1200
 ```
 
 Add `--hash-binary build/probe-riscv/openrx-riscv-probe` after separately building
@@ -122,8 +166,10 @@ RSS on Linux, with no conversion to simulated throughput or hashes per joule.
 Atomic RAM allocation is not a promise that an arbitrary 7 GiB host can finish
 full-dataset simulation. Build and simulation should run sequentially.
 
-Offline evidence controls pass seven tests for altered resources, wrong ELF,
-failed script status, stderr, truncated/duplicated streams and exact pins.
+Offline controls exercise altered resources, wrong ELF, failed script status,
+stderr, truncated/duplicated streams, exact pins and rejected/tampered simulator
+bundles. The retained real prefixless Kconfig fixture checks parser compatibility;
+the header-only ELF bundle fixture is synthetic and is never executed.
 These tests verify the runner, **not a mocked Linux boot**. The local resource
 preparation was executed and verified; actual build/boot/workload status must
 be reported from the retained session/CI artifacts, not inferred from this
@@ -142,3 +188,6 @@ recipe. Task #16 remains open until its executed acceptance criteria pass.
 - [OpenSBI v1.3.1 notices](https://github.com/riscv-software-src/opensbi/blob/v1.3.1/COPYING.BSD)
 - [Linux v6.8 license rules](https://github.com/torvalds/linux/blob/v6.8/COPYING)
 - [Ubuntu licensing](https://ubuntu.com/legal/intellectual-property-policy)
+- [Cross-run same-repository artifact download](https://github.com/actions/download-artifact)
+- [Cache matching and eviction behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching)
+- [Pinned low-memory linker option](https://github.com/gem5/gem5/blob/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/SConstruct)

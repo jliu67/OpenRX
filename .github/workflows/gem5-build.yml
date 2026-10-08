@@ -1,0 +1,180 @@
+name: Build reusable pinned gem5 simulator
+on:
+  workflow_dispatch:
+    inputs:
+      build_minutes:
+        description: 'Bound each source-build attempt to 10–90 minutes; partial work is cached'
+        type: string
+        required: false
+        default: '60'
+permissions:
+  contents: read
+concurrency:
+  group: gem5-build-c8222cc-RISCV-opt
+  cancel-in-progress: false
+jobs:
+  simulator-build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    env:
+      GEM5_COMMIT: c8222cc67a399bfc01e8658dd14b30d5bfd634f9
+      BUILD_MINUTES: ${{ inputs.build_minutes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate bounded manual request
+        run: |
+          mkdir -p build/gem5-build-evidence
+          python3 - <<'PY'
+          import os, re
+          value = os.environ['BUILD_MINUTES']
+          if not re.fullmatch(r'[1-9][0-9]?', value) or not 10 <= int(value) <= 90:
+              raise SystemExit('build_minutes must be an integer from 10 to 90')
+          PY
+      - name: Install and record build dependencies
+        id: environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential scons m4 pkg-config python3-dev zlib1g-dev libprotobuf-dev protobuf-compiler libboost-all-dev libhdf5-dev libpng-dev
+          dpkg-query -W > build/gem5-build-evidence/toolchain-packages.txt
+          {
+            uname -a
+            git rev-parse HEAD
+            gcc --version
+            scons --version
+            cat build/gem5-build-evidence/toolchain-packages.txt
+          } > build/gem5-build-evidence/environment.txt
+      - name: Acquire unchanged pinned source
+        run: |
+          git clone --depth 1 --branch v25.1.0.1 https://github.com/gem5/gem5.git build/gem5-source
+          test "$(git -C build/gem5-source rev-parse HEAD)" = "$GEM5_COMMIT"
+          git -C build/gem5-source status --porcelain > build/gem5-build-evidence/source-status-before.txt
+          test ! -s build/gem5-build-evidence/source-status-before.txt
+          git -C build/gem5-source show --no-patch --format=fuller HEAD > build/gem5-build-evidence/source-commit.txt
+      - name: Generate canonical configuration before selecting a cache
+        id: configuration
+        run: |
+          set -o pipefail
+          cd build/gem5-source
+          timeout --kill-after=10s 120s scons defconfig build/RISCV build_opts/RISCV 2>&1 | tee ../gem5-build-evidence/configure.log
+          cd ../..
+          python3 - <<'PY'
+          import os
+          from simulator.gem5.bundle import cache_namespace
+          namespace = cache_namespace('build/gem5-build-evidence/toolchain-packages.txt',
+              'build/gem5-source/build/RISCV/gem5.build/config')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('cache_prefix=' + namespace + '\n')
+          PY
+      - name: Restore matching partial SCons work
+        id: restore
+        uses: actions/cache/restore@v4
+        with:
+          path: build/gem5-source/build
+          key: ${{ steps.configuration.outputs.cache_prefix }}${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: ${{ steps.configuration.outputs.cache_prefix }}
+      - name: Attempt bounded incremental source build
+        run: |
+          set +e
+          cd build/gem5-source
+          command=(scons build/RISCV/gem5.opt -j2 --limit-ld-memory-usage)
+          python3 -c 'import json,sys; print(json.dumps(sys.argv[1:]))' "${command[@]}" > ../gem5-build-evidence/build-command.json
+          timeout --signal=TERM --kill-after=30s "${BUILD_MINUTES}m" "${command[@]}" 2>&1 | tee ../gem5-build-evidence/build.log
+          statuses=("${PIPESTATUS[@]}")
+          set -e
+          printf '%s\n' "${statuses[0]}" > ../gem5-build-evidence/build-exit-code.txt
+          printf '%s\n' "${statuses[1]}" > ../gem5-build-evidence/log-exit-code.txt
+          if [ "${statuses[0]}" -ne 0 ]; then exit "${statuses[0]}"; fi
+          exit "${statuses[1]}"
+      - name: Package only a completed pinned canonical simulator
+        env:
+          CACHE_NAMESPACE: ${{ steps.configuration.outputs.cache_prefix }}
+        run: |
+          set -o pipefail
+          python3 simulator/gem5/bundle.py pack --source build/gem5-source --output build/gem5-simulator --environment build/gem5-build-evidence/environment.txt --toolchain build/gem5-build-evidence/toolchain-packages.txt --cache-namespace "$CACHE_NAMESPACE" 2>&1 | tee build/gem5-build-evidence/bundle-result.log
+      - name: Publish the reusable simulator bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: gem5-simulator-riscv-opt
+          path: build/gem5-simulator/
+          if-no-files-found: error
+          retention-days: 90
+      - name: Validate checkpoint namespace after every build attempt
+        if: always()
+        id: checkpoint
+        env:
+          CACHE_NAMESPACE: ${{ steps.configuration.outputs.cache_prefix }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          from simulator.gem5.bundle import cache_namespace
+          selected = os.environ.get('CACHE_NAMESPACE', '')
+          try:
+              observed = cache_namespace('build/gem5-build-evidence/toolchain-packages.txt',
+                  'build/gem5-source/build/RISCV/gem5.build/config')
+              error = ''
+          except OSError as exc:
+              observed, error = '', str(exc)
+          eligible = bool(selected) and selected == observed
+          evidence = Path('build/gem5-build-evidence')
+          evidence.mkdir(parents=True, exist_ok=True)
+          (evidence / 'checkpoint.json').write_text(json.dumps({'eligible': eligible,
+              'selected_namespace': selected, 'observed_namespace': observed,
+              'error': error}, indent=2) + '\n')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as out:
+              out.write('eligible=' + str(eligible).lower() + '\n')
+          PY
+      - name: Checkpoint matching partial SCons work even after build timeout
+        if: always() && steps.restore.outputs.cache-primary-key != '' && steps.checkpoint.outputs.eligible == 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: build/gem5-source/build
+          key: ${{ steps.restore.outputs.cache-primary-key }}
+      - name: Record cache lookup and checkpoint identities
+        if: always()
+        env:
+          CACHE_HIT: ${{ steps.restore.outputs.cache-hit }}
+          CACHE_MATCHED_KEY: ${{ steps.restore.outputs.cache-matched-key }}
+          CACHE_PRIMARY_KEY: ${{ steps.restore.outputs.cache-primary-key }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          out = Path('build/gem5-build-evidence/cache.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps({key: os.environ.get(key, '') for key in
+              ['CACHE_HIT', 'CACHE_MATCHED_KEY', 'CACHE_PRIMARY_KEY']}, indent=2) + '\n')
+          PY
+      - name: Preserve actual configuration and source status after every attempt
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json, shutil, subprocess
+          from pathlib import Path
+          source = Path('build/gem5-source')
+          evidence = Path('build/gem5-build-evidence')
+          evidence.mkdir(parents=True, exist_ok=True)
+          for relative, name in [('build_opts/RISCV', 'build-options.txt'),
+              ('build/RISCV/gem5.build/config', 'config.txt'),
+              ('build/RISCV/gem5.build/scons_config.log', 'scons-config.log')]:
+              path = source / relative
+              if path.is_file(): shutil.copyfile(path, evidence / name)
+          status = subprocess.run(['git', '-C', str(source), 'status', '--porcelain'],
+              capture_output=True, text=True)
+          (evidence / 'source-status-after.txt').write_text(status.stdout)
+          (evidence / 'source-status-after.stderr').write_text(status.stderr)
+          (evidence / 'paths-and-source-status.json').write_text(json.dumps({
+              'source_path': str(source.resolve()), 'build_path': str((source / 'build/RISCV').resolve()),
+              'source_status_returncode': status.returncode,
+              'source_clean': status.returncode == 0 and not status.stdout.strip()}, indent=2) + '\n')
+          PY
+      - name: Preserve complete build evidence and failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gem5-source-build-evidence
+          path: build/gem5-build-evidence/
+          if-no-files-found: warn
+          retention-days: 90

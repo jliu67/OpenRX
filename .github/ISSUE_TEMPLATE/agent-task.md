@@ -29,4 +29,6 @@ List likely paths, non-goals and overlap with other tasks.
 ### Evidence / handoff
 Record actual test commands, failures, commit/PR links and next steps. No one is assigned by creating a task.
 
+For a significant completed work package, major failure/blocker or milestone-status change, add a **short hub #5 announcement** (2–4 sentences with task/PR, result, next action) after this task's full handoff. Use `/openrx announce` on hub #5 and verify the GitHub Actions bot receipt; record if delivery is pending. See docs/COMMUNICATION.md.
+
 To claim: post a NEW first-line /openrx claim agent/unique-session comment with base SHA, scope and acceptance; wait for matching unexpired receipt. Read docs/COMMUNICATION.md.

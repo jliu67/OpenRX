@@ -4,14 +4,22 @@ on:
     paths:
       - 'simulator/gem5/**'
       - 'simulator/runtime-probe/**'
+      - 'tests/*gem5*.py'
       - 'tests/native_runtime_probe.py'
       - 'tests/native_riscv_probe.py'
-      - 'tests/test_gem5_fs.py'
       - 'simulator/probe/**'
       - 'simulator/toolchains/**'
-      - '.github/workflows/gem5-fs.yml'
+      - '.github/workflows/gem5-*.yml'
   workflow_dispatch:
     inputs:
+      simulator_run_id:
+        description: 'Successful same-repository manual gem5-build run ID'
+        type: string
+        required: true
+      simulator_sha256:
+        description: 'Independently checked gem5.opt SHA-256 (64 lowercase hex characters)'
+        type: string
+        required: true
       light_hashes:
         description: 'Also attempt complete light-mode v2/v1 interpreter/JIT controls'
         type: boolean
@@ -23,46 +31,70 @@ concurrency:
   group: gem5-fs-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  atomic-linux-runtime:
+  offline-controls:
     runs-on: ubuntu-24.04
-    timeout-minutes: 90
-    env:
-      GEM5_COMMIT: c8222cc67a399bfc01e8658dd14b30d5bfd634f9
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Verify source and offline evidence controls
         run: |
           python3 scripts/verify_vendor.py
-          python3 -m unittest discover -s tests -p test_gem5_fs.py -v
+          python3 -m unittest discover -s tests -p 'test_gem5*.py' -v
+  atomic-linux-runtime:
+    if: github.event_name == 'workflow_dispatch'
+    needs: offline-controls
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    permissions:
+      contents: read
+      actions: read
+    env:
+      BUILD_RUN_ID: ${{ inputs.simulator_run_id }}
+      BINARY_SHA256: ${{ inputs.simulator_sha256 }}
+      LIGHT_HASHES: ${{ inputs.light_hashes }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Validate artifact selection and obtain same-repository run provenance
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           mkdir -p build/gem5-validation
-      - name: Install build tools and scalar guest compiler
+          python3 simulator/gem5/bundle.py request --run-id "$BUILD_RUN_ID" --expected-sha256 "$BINARY_SHA256"
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$BUILD_RUN_ID" > build/gem5-validation/simulator-run.json
+      - name: Download the reusable simulator bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: gem5-simulator-riscv-opt
+          path: build/gem5-simulator
+          repository: ${{ github.repository }}
+          run-id: ${{ inputs.simulator_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Reject altered binary, source, configuration or build provenance
+        run: |
+          python3 simulator/gem5/bundle.py validate --bundle build/gem5-simulator --run-metadata build/gem5-validation/simulator-run.json --repository "$GITHUB_REPOSITORY" --run-id "$BUILD_RUN_ID" --expected-sha256 "$BINARY_SHA256" --report build/gem5-validation/simulator-validation.json
+          chmod 755 build/gem5-simulator/gem5.opt
+      - name: Install runtime libraries and scalar guest build dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential scons m4 pkg-config python3-dev zlib1g-dev libprotobuf-dev protobuf-compiler libboost-all-dev libhdf5-dev libpng-dev cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu
+          sudo apt-get install -y python3-dev zlib1g-dev libprotobuf-dev libboost-all-dev libhdf5-dev libpng-dev cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu
           {
             uname -a
             git rev-parse HEAD
-            gcc --version
-            scons --version
             riscv64-linux-gnu-gcc-14 --version
             df -h .
             free -h
-            dpkg-query -W build-essential scons m4 pkg-config python3-dev zlib1g-dev libprotobuf-dev protobuf-compiler libboost-all-dev libhdf5-dev libpng-dev cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu libc6-riscv64-cross
+            dpkg-query -W python3-dev zlib1g-dev libprotobuf-dev libboost-all-dev libhdf5-dev libpng-dev cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu libc6-riscv64-cross
           } > build/gem5-validation/environment.txt
-      - name: Pin and build real gem5 RISC-V
+      - name: Verify simulator starts with the retained build configuration
         run: |
-          set -o pipefail
-          git clone --depth 1 --branch v25.1.0.1 https://github.com/gem5/gem5.git build/gem5-source
-          test "$(git -C build/gem5-source rev-parse HEAD)" = "$GEM5_COMMIT"
-          git -C build/gem5-source status --porcelain > build/gem5-validation/source-status-before.txt
-          test ! -s build/gem5-validation/source-status-before.txt
-          git -C build/gem5-source show --no-patch --format=fuller HEAD > build/gem5-validation/source-commit.txt
-          cd build/gem5-source
-          timeout --signal=TERM --kill-after=30s 45m scons build/RISCV/gem5.opt -j2 2>&1 | tee ../gem5-validation/build.log
-          cd ../..
-          git -C build/gem5-source diff --exit-code > build/gem5-validation/source-diff-after.txt
-          sha256sum build/gem5-source/build/RISCV/gem5.opt > build/gem5-validation/gem5-binary.sha256
-          ldd build/gem5-source/build/RISCV/gem5.opt > build/gem5-validation/gem5-ldd.txt
+          ldd build/gem5-simulator/gem5.opt > build/gem5-validation/simulator-ldd.txt
+          python3 -c "from pathlib import Path; assert 'not found' not in Path('build/gem5-validation/simulator-ldd.txt').read_text(), 'missing simulator shared library'"
+          timeout --kill-after=5s 30s build/gem5-simulator/gem5.opt --build-info > build/gem5-validation/observed-build-info.txt 2> build/gem5-validation/observed-build-info.stderr
+          cmp build/gem5-simulator/build-info.txt build/gem5-validation/observed-build-info.txt
       - name: Cross-build guest runtime controls
         run: |
           riscv64-linux-gnu-gcc-14 -O2 -std=c11 -Wall -Wextra -Werror -march=rv64gc -mabi=lp64d simulator/runtime-probe/main.c -o build/gem5-validation/openrx-runtime-probe
@@ -81,10 +113,10 @@ jobs:
       - name: Attempt bounded real Linux boot and guest controls
         run: |
           extra=()
-          if [ '${{ inputs.light_hashes }}' = 'true' ]; then
+          if [ "$LIGHT_HASHES" = 'true' ]; then
             extra=(--hash-binary build/probe-gem5/openrx-riscv-probe)
           fi
-          python3 simulator/gem5/run.py --gem5 build/gem5-source/build/RISCV/gem5.opt --resources build/gem5-resources --runtime-binary build/gem5-validation/openrx-runtime-probe --output-dir build/gem5-validation/attempt --timeout 1200 --max-ticks 10000000000000 "${extra[@]}"
+          python3 simulator/gem5/run.py --gem5 build/gem5-simulator/gem5.opt --resources build/gem5-resources --runtime-binary build/gem5-validation/openrx-runtime-probe --output-dir build/gem5-validation/attempt --timeout 1200 --max-ticks 10000000000000 "${extra[@]}"
       - name: Preserve preparation, actual execution and failures
         if: always()
         uses: actions/upload-artifact@v4
@@ -94,6 +126,14 @@ jobs:
           if-no-files-found: warn
           path: |
             build/gem5-validation/
+            build/gem5-simulator/manifest.json
+            build/gem5-simulator/build-options.txt
+            build/gem5-simulator/config.txt
+            build/gem5-simulator/build-info.txt
+            build/gem5-simulator/source-commit.txt
+            build/gem5-simulator/environment.txt
+            build/gem5-simulator/ldd.txt
+            build/gem5-simulator/toolchain-packages.txt
             build/gem5-resources/preparation.json
             build/gem5-resources/resources-input.json
             build/probe-gem5/CMakeCache.txt
