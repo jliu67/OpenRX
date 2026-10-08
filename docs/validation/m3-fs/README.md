@@ -103,10 +103,10 @@ the already reviewed original executable and a fresh output directory:
 REVIEWED_GEM5_BINARY=/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt
 printf '%s  %s\n' 3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6 "$REVIEWED_GEM5_BINARY" | sha256sum -c -
 LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu \
-python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources /tmp/openrx-fs-resource-audit --runtime-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe --output-dir /tmp/openrx-gem5-runtime-next-attempt --timeout 1200
+python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources /tmp/openrx-fs-resource-audit --runtime-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe --output-dir /tmp/openrx-gem5-runtime-next-attempt
 ```
 
-The completed light timeout consumed most of its bound in boot/payload setup. Reuse the built simulator and reviewed streaming runner with a new explicit bound justified by that evidence; do not repeat the identical 20-minute attempt expecting a complete matrix. If
+The completed light timeout consumed most of its bound in boot/payload setup. Reuse the built simulator and reviewed streaming runner with the current no-wall-cutoff default, monitor actual progress, and declare the separate simulated tick budget. Positive `--timeout SECONDS` remains an opt-in; do not repeat the identical 20-minute attempt expecting a complete matrix. If
 temporary inputs are absent, restore the saved simulator package and acquire
 the pinned resources with `simulator/gem5/prepare.py`; retain each attempt in
 a new output directory. Do not treat host loader or missing-input failures as

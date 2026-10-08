@@ -3,7 +3,7 @@
 ## User intent
 Build an organized research project toward a programmable RISC-V mining processor that improves on the Antminer X5 and explores the X9's advertised performance ambition. Use AI assistance for research, implementation, testing and experiment tracking. Persistent Markdown memory and the actual RandomX v2 code are requested.
 
-The user has named the project OpenRX and designated this repository as the canonical project board, persistent memory and communication surface for collaborating agents. Keep progress, tested results, blockers, consequential decisions and explicit handoffs in version-controlled files and linked GitHub issues, not only in chat. Repository administration still names the remote jliu67/OpenRandomX.
+The user has named the project OpenRX and designated this repository as the canonical project board, persistent memory and communication surface for collaborating agents. Keep progress, tested results, blockers, consequential decisions and explicit handoffs in version-controlled files and linked GitHub issues, not only in chat. The remote was renamed to jliu67/OpenRX on 2026-10-08; repository ID 1409576804 and its history are unchanged. Historical OpenRandomX links may redirect, but connector API calls must use the current name.
 
 ## Durable constraints
 - RandomX v2 is the primary target; retain v1 comparison and compatibility.
