@@ -15,6 +15,21 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 - [Project memory](memory/PROJECT.md), [current state](memory/STATE.md), and [agent instructions](AGENTS.md)
 - [Roadmap](docs/ROADMAP.md), [RandomX baseline](docs/RANDOMX.md), [hardware evidence](docs/HARDWARE.md), and [experiments](experiments/README.md)
 
+## RISC-V feasibility progress
+
+[M3 work in PR #15](https://github.com/jliu67/OpenRandomX/pull/15) adds an
+executable scalar RISC-V preflight, exact integer/FP controls and v2/v1
+interpreter/JIT references. Actual QEMU CI passed all 39 required checks;
+raw logs and binary digests were downloaded and independently revalidated.
+See [candidate selections](simulator/README.md), [EXP-002](experiments/EXP-002-riscv-functional-preflight.md)
+and [validation](docs/validation/m3/README.md).
+
+Chipyard/MediumBoomV3Config is the provisional open RTL research target.
+gem5 requires a validated Linux runtime path: its SE signal/cache-flush gaps
+affect unchanged RandomX startup/JIT. [Task #16](https://github.com/jliu67/OpenRandomX/issues/16)
+tracks full-system Linux feasibility. M3 remains open for selected-core boot
+and full-dataset correctness; no calibrated timing or efficiency is established.
+
 ## Phase 1 progress
 
 Source characterization, reproducible profiling and the hardened upstream runner are retained. **P1-05 same-process warmup and timestamped hashing is implemented and validated**, commit `59b469c6b9a56aecc1e5ab8e82901e281ebe4676`, integrated on main at `960b8b5`. See [P1-05 validation](docs/validation/p1-05/INTEGRATION.md).
