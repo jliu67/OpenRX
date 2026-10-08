@@ -1,20 +1,23 @@
 # OpenRX project board
 
-Updated 2026-10-08 UTC. This file is the durable overview; GitHub issues hold discussion and session claims. Status reflects evidence, not intention. No other agents have been launched or assigned by this session.
+Updated 2026-10-08 UTC after P1-05 validation. This file is the durable overview; GitHub issues hold discussion and session claims. Status reflects evidence, not intention. No other agents have been launched or assigned by this session.
 
 ## Phase 1 / M1
 
 | ID | Work item | Status | Owner / handoff | Acceptance / evidence |
 |---|---|---|---|---|
-| P1-01 | Pinned workload anatomy and static profile | DONE | ChatGPT, completed this session | [Report](PHASE1.md), reproducible [profile](../benchmarks/profiles/pinned-v2.0.1.json) |
-| P1-02 | Harden runner and add regression coverage | DONE | ChatGPT, completed this session | Commit `360a925`; 42 tooling tests pass locally and in CI |
-| P1-03 | Integrated native correctness controls | DONE for CI host; target-host repeat READY | Next hardware agent unclaimed | 171 vendor files verified; 107 upstream tests; both full-dataset controls; [CI evidence](validation/phase1/README.md) |
-| P1-04 | Known-host v1/v2 thread and AES matrix | BLOCKED: benchmark host access | Unclaimed; claim on [#1](https://github.com/jliu67/OpenRandomX/issues/1) | Fixed settings, correct controls, balanced order, sufficient durations, all repeats/raw logs |
-| P1-05 | Same-process warmup and exact hashing interval markers | READY for scoped implementation/review | Unclaimed; coordinate on #1 | Separate adapter or explicit reviewed patch; preserve hashes; timestamped interval excludes initialization |
-| P1-06 | Time-aligned wall-power measurement | BLOCKED: meter/host/instrumentation | Unclaimed; coordinate on #1 | Declared whole-system boundary, synchronized samples, uncertainty and hashes/J from measured energy |
+| P1-01 | Pinned workload anatomy and static profile | DONE | Prior ChatGPT session | [Report](PHASE1.md), reproducible [profile](../benchmarks/profiles/pinned-v2.0.1.json) |
+| P1-02 | Harden upstream runner and regression coverage | DONE | Prior ChatGPT session | Commit `360a925`; original 42 tooling tests retained |
+| P1-03 | Integrated native correctness controls | DONE for CI host; target-host repeat READY | Next hardware agent unclaimed | 171 vendor files verified; 107 upstream tests; both upstream full-dataset controls; new CI also passes |
+| P1-04 | Known-host v1/v2 thread and AES matrix | BLOCKED: controlled benchmark host access | Unclaimed; claim on [#1](https://github.com/jliu67/OpenRandomX/issues/1) | Fixed settings, correct controls, balanced order, sufficient durations, all repeats/raw logs |
+| P1-05 | Same-process warmup and hashing interval markers | DONE | ChatGPT; session claim released at handoff | Commit `59b469c`; [adapter protocol](../benchmarks/steady/README.md); [validation](validation/p1-05/README.md); 64 tooling + 107 upstream + 6 native tests passed |
+| P1-06S | Power-sample import and validation software | READY for implementation; NOT done | Unclaimed; next unblocked software task | Declared CSV/schema and clock mapping; reject missing coverage/gaps/clock jumps; tested integration/units/boundary; synthetic tests clearly labeled |
+| P1-06 | Time-aligned wall-power measurement | BLOCKED: meter/host plus P1-06S | Unclaimed; coordinate on #1 | Declared whole-system boundary, synchronized real samples, uncertainty and hashes/J from measured energy |
 | P1-07 | Dynamic bottleneck attribution | BLOCKED: controlled host/counters | Unclaimed; coordinate on #1 | Dynamic instruction/cache/stall evidence with event limitations; no proxy from opcode probabilities |
 
-**M1 remains OPEN.** A passing CI run is correctness evidence, not a completed measured efficiency baseline. Code for P1-02 uses schema version 2; warmup records are excluded from measurement summaries.
+**M1 remains OPEN.** P1-05 closes the instrumentation task, not the measured hardware/efficiency experiment. Its four hosted correctness configurations are not P1-04. The three-worker case ran on a runner exposing two logical CPUs, so it must not be used as scaling evidence.
+
+The original `scripts/benchmark.py` keeps schema 2 and separate-process warmups. New `scripts/steady_benchmark.py` / `build/steady/openrx-steady` is a separate, opt-in path with persistent dataset/VMs/workers and explicit timestamps. Its scheduling and batch tail differ from the upstream harness; compare configurations within one harness, not mixed throughput figures. Clock brackets do not establish meter synchronization. Power fields remain null.
 
 ## Existing research queue (preserved)
 

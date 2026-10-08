@@ -1,6 +1,6 @@
 # Current state
 
-Stage: M0 complete; Phase 1 source/tooling work package complete; **M1 measured hardware baseline still open**.
+Stage: M0 complete; Phase 1 source/tooling work and **P1-05 same-process instrumentation complete**; **M1 measured hardware baseline still open**.
 
 Project name: OpenRX. GitHub remote remains private `jliu67/OpenRandomX`; repository administrative name was not changed.
 
@@ -8,24 +8,27 @@ Project name: OpenRX. GitHub remote remains private `jliu67/OpenRandomX`; reposi
 
 - Official RandomX v2.0.1 source pinned at `aaafe71322df6602c21a5c72937ac284724ae561`, unmodified; same release supports v1/v2.
 - Foundation source manifest, scripts, CI, memory, evidence rules and experiments retained.
-- [Phase 1 workload report](../docs/PHASE1.md) and reproducible [static profile](../benchmarks/profiles/pinned-v2.0.1.json).
-- Benchmark runner schema 2: separated warmup records, balanced v1/v2 order, median/min/max and failure counts, minimum-duration checks, pinned-reference validation, integer/affinity safeguards, CPU/cgroup context.
-- [Project board](../docs/TASKS.md), issue #1 communication and [agent handoff](HANDOFF.md) now track completed work, ownership, blockers and next commands.
+- [Phase 1 workload report](../docs/PHASE1.md), reproducible static profile, and upstream runner schema 2 from implementation `360a925` retained.
+- New opt-in [same-process adapter](../benchmarks/steady/README.md), implementation `59b469c6b9a56aecc1e5ab8e82901e281ebe4676`: persistent dataset/VMs/workers, independent v1/v2 controls, balanced trial order, immediate warmups, explicit monotonic/realtime clock brackets, range checks, FP-state restoration and exact completed counts.
+- New evidence wrapper preserves raw intervals/stderr/metadata, rejects incomplete or inconsistent records and short trials, kills/reaps timed-out process groups, and summarizes only accepted measured-phase records. It does not measure power.
+- [Project board](../docs/TASKS.md), issue #1 communications and [agent handoff](HANDOFF.md) track completion, ownership, blockers and next commands.
 
 ## Validation and remote status
 
-Original foundation validation remains in docs/VALIDATION.md and docs/validation/foundation/. The private remote was created and its original 213-file tree verified in the foundation session.
+Historical foundation and initial Phase 1 evidence remain in docs/VALIDATION.md and docs/validation/phase1/. P1-05 was developed on `openrx/p1-05-steady-timing` before integration.
 
-Implementation commit `360a9255703a28845a799cfcc1086d1fb84a2c48` is on main. Local tooling: 42 tests passed, no skips. Native integration: [GitHub Actions run 37719337133](https://github.com/jliu67/OpenRandomX/actions/runs/37719337133) passed source integrity (171 files), the same 42 tooling tests, deterministic profile reproduction, native build, all 107 upstream tests (no skips), both light smoke runs, both full-dataset reference controls, and artifact upload. See [Phase 1 validation](../docs/validation/phase1/README.md).
+[CI run 37722277487](https://github.com/jliu67/OpenRandomX/actions/runs/37722277487), job `113132440545`, passed on implementation `59b469c`: 171-file integrity, 64 tooling tests (42 previous plus 22 new), deterministic profile, native library/adapter build, all 107 upstream tests, previous smoke/full-dataset controls, and all 6 new native tests. No test skips. New native checks include 8 known-reference controls, repeated known hashes, 1/2/3-worker and AES cases, both 17-nonce differential comparisons, and expected duration rejection.
 
-No vendored source changed. No controlled hardware throughput/AES/thread matrix, wall-power samples, dynamic bottleneck attribution, RISC-V simulation or RTL result has been obtained. CI controls were one repetition per algorithm and are not a performance/efficiency baseline.
+The actual 66,083-byte CI artifact was downloaded; its SHA-256 matched GitHub metadata. All four raw adapter streams (36 intervals) were revalidated locally, archived summaries matched, and raw/source checksums were checked. See [P1-05 validation](../docs/validation/p1-05/README.md). Local new synthetic tooling tests passed (22); no local RandomX build was possible because direct source download failed. Actual native execution was in CI.
+
+No vendored source or older runner changed. No controlled hardware throughput/AES/thread experiment, wall-power samples, dynamic bottleneck attribution, RISC-V simulation or RTL result exists. The CI runner exposed two logical CPUs; its three-worker case is correctness-only oversubscription, not scaling data. Short native trials do not establish thermal equilibrium or efficiency.
 
 ## Next actions and blockers
 
-1. Hardware-capable agent: claim P1-04 on issue #1; identify the actual host, repeat known references, then run the balanced controlled matrix in docs/PHASE1.md. Host access is currently unresolved.
-2. Tooling agent: P1-05 is ready for a separate adapter or reviewed patch providing same-process warmup and exact steady-state interval markers. Current warmups are separate-process preconditioning only.
-3. Complete P1-06 with real synchronized wall-power readings; no meter access or energy claims exist yet.
-4. Complete P1-07 dynamic profiling on a controlled host; record counter support and collection overhead.
-5. Continue issues #2/#4 primary-source hardware/network verification and #3 simulator feasibility without bypassing the roadmap gates.
+1. Tooling agent: claim **P1-06S**, the next unblocked software task. Implement a strict power-sample import/validation path against the new clock brackets. Declare CSV units, clock synchronization and power boundary; fail on missing coverage, gaps, invalid timestamps or unsupported alignment; distinguish synthetic tests from real readings. No energy result exists yet.
+2. Hardware-capable agent: claim P1-04; identify an actually controlled host, repeat reference controls there, then collect the balanced thread/AES matrix with sufficiently long trials and complete settings.
+3. Complete P1-06 only with real synchronized whole-system power measurements and a validated importer. Meter/host access remains unresolved.
+4. Complete P1-07 profiling on a controlled host; record counter support, permissions and instrumentation overhead.
+5. Continue issues #2/#4 primary-source verification and #3 simulator feasibility without bypassing roadmap gates.
 
-Routine scoped code/research commits are authorized. Do not spend money, alter account/visibility settings, fabricate results or claim agents are running between sessions. The completed session claim is released; future agents must inspect current issue comments and remote HEAD before editing.
+Routine scoped code/research commits are authorized. Do not spend money, alter account/visibility settings, fabricate results or claim agents are running between sessions. P1-05's session editing claim is released at handoff; future agents must read current issue comments and remote HEAD before editing.

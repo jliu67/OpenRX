@@ -1,32 +1,42 @@
-# Phase 1 handoff
+# Phase 1 handoff — P1-05 completed
 
-Session: 2026-10-08 UTC / 2026-10-07 Edmonton. Agent: ChatGPT. User instruction: begin Phase 1 and keep progress and agent communication in this repository.
+Session: 2026-10-08 UTC / 2026-10-07 Edmonton. Agent: ChatGPT. User instruction: continue Phase 1 and keep persistent progress/communication in the repository.
 
 ## Resume here
 
-1. Read AGENTS.md and [docs/TASKS.md](../docs/TASKS.md), then issue #1 and its latest comments. The previous session's editing claim is released at handoff; no background agent is running.
-2. Review implementation `360a9255703a28845a799cfcc1086d1fb84a2c48` and [PHASE1.md](../docs/PHASE1.md). The initial reviewed base was `2e6f3653883c4a8b344be4c4c7e4b1d8dfec0df4`.
-3. Reproduce `python3 -m unittest discover -s tests -v` and `python3 scripts/workload_profile.py`; then follow the report's native control commands on the intended benchmark host.
+1. Read AGENTS.md, memory/PROJECT.md, STATE.md, DECISIONS.md, OPEN_QUESTIONS.md, [docs/TASKS.md](../docs/TASKS.md), and current issue #1 comments. This session's editing claim is released at handoff; no background agent is running.
+2. Review implementation `59b469c6b9a56aecc1e5ab8e82901e281ebe4676` (base `ea90554c486ed6c7eae6fafc2e1c16b90193b1d2`), the [adapter protocol](../benchmarks/steady/README.md) and [validation](../docs/validation/p1-05/README.md).
+3. Claim the next scoped task on #1 with identity, current base commit, files and acceptance criteria. Refresh actual main before publishing; do not force-push over concurrent work.
 
-## Completed and verified
+## Completed and actually verified
 
-- Source-derived workload map and deterministic profile; no vendored source changes.
-- Runner schema 2: warmup separation, median/range summaries, duration gate, pinned-reference checks, integer bounds and affinity safeguards; resource restrictions captured.
-- 42 tooling tests passed locally and in CI. Synthetic fixture outputs in these tests are NOT mining measurements.
-- CI run [37719337133](https://github.com/jliu67/OpenRandomX/actions/runs/37719337133), job 113123130624, succeeded at implementation commit `360a925`: 171-file vendor integrity, native build, 107 upstream tests (no skips), v1/v2 smoke, v1/v2 full-dataset reference controls, artifact upload.
+P1-05 adds an opt-in Linux/C++17 adapter linked to unchanged pinned RandomX. Dataset, VMs and workers persist through known controls, warmups and balanced v1/v2 trials. It records explicit monotonic/realtime clock brackets, restores worker FP state, counts completed hashes and separates logging/setup from the timed envelope. The older upstream harness is untouched. The new static-stride and public `first/next/last` batch schedule has different overhead; do not combine its rates with the older harness's rates.
 
-## Next work, in priority order
+CI run **37722277487**, job **113132440545**, passed on `59b469c`: all 171 vendor files, 64 tooling tests, reproducible profile, native builds, all 107 upstream tests, existing smoke/full-dataset checks, and 6 new native tests. No skipped tests. Native coverage includes 8 reference controls across version/configuration pairs, repeated known hashes, hardware/software AES, 1/2/3 workers, 16 invalid-argument cases, expected short-duration failures, and two differential 17-nonce checks against upstream.
 
-A hardware-capable agent should claim P1-04 on issue #1, identify the actual host and available cores/memory, repeat known-hash controls, then collect the balanced v1/v2/AES/thread matrix. Keep uninstrumented throughput trials separate from profiler runs. Record all raw results and configuration, not just best values.
+Downloaded artifact **11526487498**, SHA-256 **98c2a158d5ad3795c31fb4fd1fb52fc5f199bc34604ba979a4078fa0788844a3**, was rehashed successfully. All four raw streams/36 intervals were revalidated locally and their raw checksums/archived summaries matched. Core local source matched the published blob hashes and CI source metadata. Native-suite log/check ledger are committed; the full artifact expires **2027-01-06T03:20:48Z** unless retention changes. Promote additional raw files into reviewed Git history before relying on them after expiry.
 
-A tooling agent can independently claim P1-05: implement and test explicit same-process warmup and timestamped steady-state hashing intervals in a separate adapter or reviewed patch. Do not silently change vendor/randomx. The current `--warmups` only preconditions via separate processes; `hashing_seconds_approx` is not a power-meter synchronization marker.
+## Reproduce
 
-P1-06 requires real meter access and synchronized energy samples. P1-07 requires appropriate host counters and a documented method. No host, meter or external agent has been provisioned or assigned in this session. Do not spend money automatically.
+```bash
+python3 -m unittest discover -s tests -v
+bash scripts/build_steady.sh
+bash scripts/test.sh
+python3 tests/native_steady.py
+```
 
-## Known caveats and preserved failures
+For actual host trials use `scripts/steady_benchmark.py` and the protocol's pilot/duration/placement requirements. Example counts are not a guarantee of adequate duration. Use even repeats for balanced order and retain all rejected trials. Controls are not a thermal soak.
 
-The local execution workspace could not resolve codeload.github.com; public web fetches were unavailable. Therefore this session did not download/build the full native source locally. Connector reads and a Git-blob-verified configuration copy supported local tooling tests; native integration was actually executed by the existing GitHub CI workflow.
+## Next unblocked software task: P1-06S
 
-CI retained upstream CMake minimum-version and missing GNU-stack/executable-stack linker warnings, plus inherited Node.js action-runtime deprecation warnings. Do not hide them or change vendor code without an explicit reviewed patch. The full CI job log was inspected. Individual benchmark JSON/raw files were uploaded in artifact 11524827413 but were not independently downloaded through the connector in this session; the successful runner enforced the known reference constants.
+Design and implement a strict power-sample importer and validator. Require explicit time/units/device/boundary metadata, a defensible clock mapping to the recorded brackets, complete interval coverage, gap and clock-step rejection, tested numerical integration and uncertainty handling. Power-model estimates, CPU telemetry and wall-meter observations must remain distinct. Use labeled synthetic fixtures to test parsing/integration; do not populate real power or hashes/J from fixtures. Real meter access is still needed to validate the physical measurement chain.
 
-CI logs/artifacts may have a retention limit. Preserve any results used in future performance claims in reviewed repository evidence before they expire. Do not infer throughput or hashes/J from CI step durations. No controlled hardware efficiency result, PMU profile, RISC-V simulation, RTL implementation, or competitiveness claim was produced.
+A hardware-capable agent can independently claim P1-04 (controlled host thread/AES trials), then P1-07 (dynamic profiling). Coordinate shared files on #1. P1-06 physical wall-power measurement is blocked on host/meter access and the import path. No other agent, host or meter has been provisioned in this session. M1/Phase 1 remains open.
+
+## Caveats and preserved limitations
+
+The local workspace again could not resolve the upstream source-download host; public-web retrieval was unavailable. Therefore only 22 new synthetic harness tests, syntax checks and downloaded-artifact validation ran locally. The real RandomX builds and native controls ran in CI. A synthetic compile-only header is not vendored source or a real build.
+
+The hosted runner exposed two logical CPUs (AMD EPYC model text, Microsoft hypervisor). The three-worker correctness case is deliberate oversubscription, not scaling evidence. Clock bracket widths/resolution do not certify meter synchronization; the timing envelope includes worker scheduling, per-worker aggregation and FP restoration. Native logs were emitted outside it. Dataset initialization is excluded, not amortized into energy.
+
+No controlled hardware efficiency result, PMU profile, RISC-V simulation, RTL implementation or competitiveness claim was produced. No vendor modifications, paid compute, hardware purchase, account permission or visibility change occurred.
