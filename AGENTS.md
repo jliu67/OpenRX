@@ -17,13 +17,17 @@ Do not optimize processor RTL before establishing a validated workload baseline 
 
 ## Critical local infrastructure migration — task #27
 
-**STAGING: the new designated execution infrastructure is NOT YET ACTIVE.** Read
+**LOCAL_VALIDATING: the new designated execution infrastructure is NOT YET ACTIVE.** Read
 [local execution policy](docs/LOCAL_EXECUTION.md), [migration runbook](docs/LOCAL_MIGRATION.md),
 [acceptance receipt](docs/validation/local-migration-20261009/ACCEPTANCE.md) and
 [task #27](https://github.com/jliu67/OpenRX/issues/27) before simulator/build/large-workload work.
 Do not launch expensive full-scale experiments in a temporary sandbox or before migration gates pass.
-Only scoped migration validation may run on the staging local host after verified prerequisite gates.
-Once `LOCAL_ACTIVE` is independently evidenced, expensive gem5/architecture/RandomX/profiling/builds and large generated artifacts use the owner's Ubuntu host.
+Only scoped migration validation may run on the local host after verified prerequisite gates.
+Build 03 and loader/input preflight completed; runtime-only execution `20261009T193937Z-576aa858c033`
+has started, with guest correctness and actual gem5 stop still unverified.
+Expensive gem5/architecture/RandomX/profiling/builds and large generated artifacts use the owner's Ubuntu host
+only after #27 publishes independently verified matching acceptance/`LOCAL_ACTIVE` evidence and an explicit
+release bound to the actual reviewed merge and merged-document audit. `LOCAL_ACTIVE` alone does not release work.
 
 Remote agents have no direct execution or retrieval access. Submit a complete request on the appropriate
 GitHub task; the owner or an explicitly authorized local session reviews/submits it locally and publishes

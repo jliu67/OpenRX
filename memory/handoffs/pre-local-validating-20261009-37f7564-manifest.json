@@ -1,0 +1,106 @@
+{
+  "schema": "openrx.local-migration.documentation-preservation.v1",
+  "at": "2026-10-09T19:45:47.168868+00:00",
+  "purpose": "Exact current37f documentation before LOCAL_VALIDATING reconciliation; prior scientific history unchanged",
+  "relative_link_scope": "Snapshot bytes preserve links as written at source_path; resolve archival links from original source location. Archived status/recipes never authorize current execution.",
+  "records": [
+    {
+      "source_path": "AGENTS.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 7394,
+      "sha256": "1fe2d5e518b225f52c47a3a74c2c9aecb3a9d0fd2a7bd6928e7d48d82c479201"
+    },
+    {
+      "source_path": "README.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 9745,
+      "sha256": "dffb78749dc4ede2fbdf046332e5ad40603190cf38a94cb0bcf15ae22a2193f9"
+    },
+    {
+      "source_path": "docs/LOCAL_EXECUTION.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 19150,
+      "sha256": "5d0b321d90d4687c72ac790cfe9a3b299353bc3d872654c52877cb4e49f643d0"
+    },
+    {
+      "source_path": "docs/LOCAL_MIGRATION.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 16035,
+      "sha256": "323b37f51f9cfc73cbb7774cf4d191130f2487d9b984477cc644f2a85bf56e07"
+    },
+    {
+      "source_path": "docs/ROADMAP.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 2613,
+      "sha256": "8f4e3ed3e4affc0e41ddede8639d70aa9b89c72450cc2fe665f2368b3799762b"
+    },
+    {
+      "source_path": "docs/TASKS.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 11489,
+      "sha256": "d9ffc0cf241b63f9d45f90dde6844049988bbfab71dc82069a38e7b04c2a81bc"
+    },
+    {
+      "source_path": "docs/validation/local-migration-20261009/ACCEPTANCE.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 10243,
+      "sha256": "2b90559c27ab322c0784a7466b2ac5ffbbed35b67b554412a9426bbbd2cd187d"
+    },
+    {
+      "source_path": "memory/STATE.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 17528,
+      "sha256": "df2e400e28b9d23358f1eb70596fcf1affdc19e7475425ac1eab5f2a32f1e88b",
+      "exact_snapshot_path": "memory/handoffs/pre-local-validating-state-20261009-37f7564.md"
+    },
+    {
+      "source_path": "memory/HANDOFF.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 14014,
+      "sha256": "d1a9497d3b97a997f1f07cf981c1fa9e7bf63e00b5f75ec76203a0d3e6bab370",
+      "exact_snapshot_path": "memory/handoffs/pre-local-validating-handoff-20261009-37f7564.md"
+    },
+    {
+      "source_path": "memory/SESSION_LOG.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 50215,
+      "sha256": "58a7237dc5909544528eb162353e51221d128f39c4785455f19721294c1d0d57"
+    },
+    {
+      "source_path": "memory/PROJECT.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 3547,
+      "sha256": "4a8093c8ee4e1b199016b1234f76915f81cd86adbffc0d4b5ac6a0cf88fa3197"
+    },
+    {
+      "source_path": "simulator/gem5/README.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 17541,
+      "sha256": "3b65ea2e9b2305c15d03d225ddffd7b12db991296e70d83da8193785c404b29c"
+    },
+    {
+      "source_path": "docs/COMMUNICATION.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 12426,
+      "sha256": "7a8e67416c1a0fa95e4bda03704c1f3b0af1620a5ceb8f32a2109c5f84135ba4"
+    },
+    {
+      "source_path": "simulator/README.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 5662,
+      "sha256": "7078f220ff23fa3b019db38dfcd7a3b4c09c748c5dde378da5d01879dae0f45a"
+    },
+    {
+      "source_path": "docs/validation/m3-fs/REUSE.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 5838,
+      "sha256": "781771ff90d61e9a0d3eb2d2ff995c04d3b4e4fb64dbae067693dcc5bb8d177a"
+    },
+    {
+      "source_path": "experiments/README.md",
+      "source_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+      "bytes": 958,
+      "sha256": "71622578146ce7439e1d84f7e7d27c48145bbfba9eb4a6fc587742fa3a81dbfe"
+    }
+  ]
+}

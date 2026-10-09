@@ -1,0 +1,387 @@
+{
+  "accepted_documentation_diff": true,
+  "actions": "Read-only file/hash/Git diff queries; exclusive new fsynced peer review only. No source/docs changes, imports from project source, simulators, services, state transitions, commits or GitHub mutations.",
+  "actual_gem5_stop_accepted": false,
+  "actual_state_observed": "LOCAL_VALIDATING",
+  "at": "2026-10-09T20:02:34.930298+00:00",
+  "author_final_check": {
+    "bytes": 7580,
+    "path": "migrations/20261009/local-validating-docs-final-check-20261009T195806Z.json",
+    "sha256": "78347b1a5d21358df3edea2849f1a5284a46069c386be95f196742f825721c19"
+  },
+  "base_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+  "diff_bytes": 71555,
+  "diff_sha256": "ea68d027480b4c8f822c062eb3e4b743fca83113de84cec583feae97d65e654a",
+  "document_snapshot_utc": "2026-10-09T19:57:09.253251Z",
+  "export_transform": "Exactly designated-root prefix then original-checkout prefix; raw/public hashes and substitution counts independently verified; no reserialization or scientific row changes",
+  "files": [
+    {
+      "bytes": 7745,
+      "path": "AGENTS.md",
+      "sha256": "ec3614043ec1e9566bbf371ef477a6c90f62c57aee601bd662eaa207692a7a62"
+    },
+    {
+      "bytes": 10307,
+      "path": "README.md",
+      "sha256": "14ac60b1b2a7ac64e85383b71252950318b0d1b1e2373db9f87418fd0b79c639"
+    },
+    {
+      "bytes": 21091,
+      "path": "docs/LOCAL_EXECUTION.md",
+      "sha256": "84a395e2b3ce63722335cc4df01237da3f6b0b41dceb63f012f1e8c3e9f1b3b4"
+    },
+    {
+      "bytes": 18281,
+      "path": "docs/LOCAL_MIGRATION.md",
+      "sha256": "2f12f9d64101f265064781a3098e3ea91af668a4ba5667d6c76d905642eb9946"
+    },
+    {
+      "bytes": 2926,
+      "path": "docs/ROADMAP.md",
+      "sha256": "633223bcc112a6d6fde1ef169481777800c64eb7f47998317559a9f200284e08"
+    },
+    {
+      "bytes": 11589,
+      "path": "docs/TASKS.md",
+      "sha256": "4acaed86f565712440625de505984269e2a589b523c931d98687635877946ba5"
+    },
+    {
+      "bytes": 12516,
+      "path": "docs/validation/local-migration-20261009/ACCEPTANCE.md",
+      "sha256": "abab8b724acb137a48378bbb290d7ae5428fe8eeaa3b58784e6861009a20580c"
+    },
+    {
+      "bytes": 19276,
+      "path": "memory/STATE.md",
+      "sha256": "eba69fdc93c72ee016a7b3d51d08fb3064c15180f0a48bb3f285006e8f6a6765"
+    },
+    {
+      "bytes": 15422,
+      "path": "memory/HANDOFF.md",
+      "sha256": "f07039c09ec8481db41c9620df410ee25563e0d292d90c5e924939418bd877ce"
+    },
+    {
+      "bytes": 53177,
+      "path": "memory/SESSION_LOG.md",
+      "sha256": "32ed5828d1b9cd0b5c711fb0019584c16dc4843b57d771215c10b37ae3207bb5"
+    },
+    {
+      "bytes": 3921,
+      "path": "memory/PROJECT.md",
+      "sha256": "dcd0bfcd4ad136e0cf0e5831c34650dcf54226c525bb07311b241fa65b0a939d"
+    },
+    {
+      "bytes": 17859,
+      "path": "simulator/gem5/README.md",
+      "sha256": "14a87cffbe9fd7f72fde0050c721481a96afc9376e2d19cbbc8048f5c20eb953"
+    },
+    {
+      "bytes": 12730,
+      "path": "docs/COMMUNICATION.md",
+      "sha256": "9e89492e3b0f4fff4e505b4ecb54f7e86c0a1d0c5715882df2a864390690e60e"
+    },
+    {
+      "bytes": 5988,
+      "path": "simulator/README.md",
+      "sha256": "e3544afc14e03e6b87f00a9a7dc8ab04886e23c61bc816f6e885bafa354e2629"
+    },
+    {
+      "bytes": 6177,
+      "path": "docs/validation/m3-fs/REUSE.md",
+      "sha256": "62fc18d411ca7d8d8d837f8483d68733b21371296ed0d997155c519e26f0f249"
+    },
+    {
+      "bytes": 1252,
+      "path": "experiments/README.md",
+      "sha256": "037068b85fd66ed551921f8096ac50857e6484311456c3c91506059983d36ceb"
+    }
+  ],
+  "files_stable_before_after": true,
+  "findings": [],
+  "git_diff_check_passed": true,
+  "guest_correctness_accepted": false,
+  "local_links_checked": 206,
+  "migration_complete": false,
+  "missing_local_links": [],
+  "original_total_bytes": 133605,
+  "policy_active": false,
+  "preflight": {
+    "bytes": 1512,
+    "path": "migrations/20261009/local-validation-preflight.json",
+    "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+  },
+  "preservation": {
+    "baseline_git_document_digests_verified": 16,
+    "exact_state_handoff_archives": [
+      {
+        "bytes": 17528,
+        "path": "checkouts/migration/memory/handoffs/pre-local-validating-state-20261009-37f7564.md",
+        "sha256": "df2e400e28b9d23358f1eb70596fcf1affdc19e7475425ac1eab5f2a32f1e88b"
+      },
+      {
+        "bytes": 14014,
+        "path": "checkouts/migration/memory/handoffs/pre-local-validating-handoff-20261009-37f7564.md",
+        "sha256": "d1a9497d3b97a997f1f07cf981c1fa9e7bf63e00b5f75ec76203a0d3e6bab370"
+      }
+    ],
+    "historical_suffixes_byte_exact": [
+      "memory/HANDOFF.md",
+      "memory/STATE.md",
+      "simulator/README.md",
+      "simulator/gem5/README.md",
+      "docs/validation/m3-fs/REUSE.md"
+    ],
+    "manifest": {
+      "bytes": 4329,
+      "path": "checkouts/migration/memory/handoffs/pre-local-validating-20261009-37f7564-manifest.json",
+      "sha256": "49a2132ccf53b38c90f1921b52c3f835ca939aae633dc25024746fd500da0e82"
+    },
+    "roadmap_scientific_prefix_byte_exact": true,
+    "scientific_task_board_suffix_byte_exact": true,
+    "session_log_old_prefix_byte_exact": true
+  },
+  "public_export_index": {
+    "bytes": 9248,
+    "path": "checkouts/migration/docs/validation/local-migration-20261009/local-validating-live-v1/index.json",
+    "sha256": "c455b22636766d319a7132c3b330b3322765409d0f4fa6857a7c3886965c2bc1"
+  },
+  "public_exports_verified": [
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 400,
+      "original_sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f",
+      "public_bytes": 400,
+      "public_path": "build-result.json",
+      "public_sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f",
+      "source": "migrations/20261009/build-attempt-03/build-result.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1156,
+      "original_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+      "public_bytes": 1156,
+      "public_path": "canonical-config",
+      "public_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+      "source": "migrations/20261009/build-attempt-03/canonical-config"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1640,
+      "original_sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312",
+      "public_bytes": 1640,
+      "public_path": "build-info.log",
+      "public_sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312",
+      "source": "migrations/20261009/build-attempt-03/build-info.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 3348,
+      "original_sha256": "4b4781aeb1b54afaae90aa3149325aac7e37e440f1ebc596f5f3952dce2d96da",
+      "public_bytes": 3348,
+      "public_path": "loader.log",
+      "public_sha256": "4b4781aeb1b54afaae90aa3149325aac7e37e440f1ebc596f5f3952dce2d96da",
+      "source": "migrations/20261009/build-attempt-03/loader.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1512,
+      "original_sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626",
+      "public_bytes": 1512,
+      "public_path": "preflight.json",
+      "public_sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626",
+      "source": "migrations/20261009/local-validation-preflight.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 54,
+      "original_sha256": "0b116e6f6485be1ea7226e1a51a4c01126f0933d34d038859f7dfb4e47ddc64b",
+      "public_bytes": 54,
+      "public_path": "runtime-execution-id.json",
+      "public_sha256": "0b116e6f6485be1ea7226e1a51a4c01126f0933d34d038859f7dfb4e47ddc64b",
+      "source": "migrations/20261009/runtime-execution-id.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        15,
+        0
+      ],
+      "original_bytes": 1905,
+      "original_sha256": "f48f8e4bf52081d880e75b5674a5484a81e6677515c3f5f981d09de5a4756fd9",
+      "public_bytes": 1755,
+      "public_path": "runtime-submission-argv.json",
+      "public_sha256": "1e9e007177ef1d59574529bba0ce1849b0d7727e133f620bddaa12b3393afd42",
+      "source": "migrations/20261009/runtime-submission-argv.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 16304,
+      "original_sha256": "0ffde8f6d5e1ce8d30914ceb636b0f8e722b73c1d1b9732174dfb98071f35fa6",
+      "public_bytes": 16294,
+      "public_path": "observe_runtime_production_v1.py",
+      "public_sha256": "8a3436b59655089ffb6751c255016021e66b6b9d07cc66ca42dc4d4f3ca18010",
+      "source": "migrations/20261009/observe_runtime_production_v1.py"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        9,
+        0
+      ],
+      "original_bytes": 5067,
+      "original_sha256": "625e316aa9eb5a732d3d265f28597acfa95ab6740891547ff109f97e624a078e",
+      "public_bytes": 4977,
+      "public_path": "production-observation-194045.json",
+      "public_sha256": "16df60de81835a2aca9d9569c7f542234bc82b020003dfa21ddb8008e2ed66b6",
+      "source": "migrations/20261009/runtime-live-production-observation-20261009T194045375434Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 3485,
+      "original_sha256": "3f43340fcf085a11c2bfccf8094377ad36b67f36e069e0a42033e57b8b996b88",
+      "public_bytes": 3435,
+      "public_path": "listener-confirmation-194217.json",
+      "public_sha256": "b10dc69c9bb1afc4a332c4e107d1256ab872c195a03e63132fb912deaa7067b1",
+      "source": "migrations/20261009/runtime-live-production-observation-20261009T194217041172Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        4,
+        0
+      ],
+      "original_bytes": 1855,
+      "original_sha256": "f77839b315d12d8e41fa82d5b8dbeddfac94328e91b36fc21044e2aa84ad70ab",
+      "public_bytes": 1815,
+      "public_path": "listener-source-review.json",
+      "public_sha256": "85e1317a5586220289ef77d37329d3b1cef8224ecc914a6cd32a488fa2264cf8",
+      "source": "migrations/20261009/noninteractive-listener-source-review-20261009T190910Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1269,
+      "original_sha256": "8daddfd844886e3adc23a5ad30c8d35a7ced221dbbdcacfcc72fef8e115a283b",
+      "public_bytes": 1269,
+      "public_path": "build03-resource-adjustment-guard-audit.json",
+      "public_sha256": "8daddfd844886e3adc23a5ad30c8d35a7ced221dbbdcacfcc72fef8e115a283b",
+      "source": "migrations/20261009/build03-resource-adjustment-guard-audit-20261009T194415Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 699,
+      "original_sha256": "ac08d5e22ca9b4df6e86c9c576c474eeeca75ef918838faa671400c990e1ba25",
+      "public_bytes": 689,
+      "public_path": "new-gem5-binary-mode-protection.json",
+      "public_sha256": "07d71590c41aa5dbc1316b52222abfca246bad73149064b00b8df1699ce6c540",
+      "source": "migrations/20261009/new-gem5-binary-mode-protection-20261009T194442Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        118,
+        2
+      ],
+      "original_bytes": 59803,
+      "original_sha256": "8e7452af42467a1c85a8dffeaf278cb063c9abc00d5d446890b654c54e60d768",
+      "public_bytes": 58635,
+      "public_path": "independent-build-preflight-postbuild-review.json",
+      "public_sha256": "4989e8cd5af804d3755fd0e6f1836f35e70d69d71c5d47df86f061709910d531",
+      "source": "migrations/20261009/independent-build-preflight-postbuild-review-20261009T195019798138Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        127,
+        0
+      ],
+      "original_bytes": 35108,
+      "original_sha256": "fda84e150259de5f5f3208700dd0d5eb3a9e967150285bf29a0b9c6dc1bb7a40",
+      "public_bytes": 33838,
+      "public_path": "runtime-library-profile.json",
+      "public_sha256": "0fa270882a689dc116a62fbc48a849974b98dc08ae684fa9d8a9ead2528a84e5",
+      "source": "toolchains/gem5-runtime-e4129f163773/runtime-libraries.json"
+    }
+  ],
+  "public_total_bytes": 130817,
+  "reviewer": "durable_runner peer agent; documentation authored by migration_docs",
+  "schema": "openrx.local-validating.documentation-independent-review.v1",
+  "scope": "Read-only exact current 16-document diff against 37f plus 15 static public metadata exports and their retained originals; premerge documentation consistency only",
+  "semantic_review": [
+    "Final three headers distinguish actual 19:57:09.253251Z document snapshot from LOCAL_VALIDATING since19:38:51Z; build/preflight, runtime submission and postbuild review all precede snapshot.",
+    "Completed distinct binary/build/loader provenance is separated from unavailable original Library binary and pending guest/runtime correctness, actual gem5 stop, final output integrity, reviewed merge and cutover.",
+    "Expensive-work release remains held for independently verified acceptance, matching LOCAL_ACTIVE and explicit #27 release bound to actual reviewed merge and merged-document audit; mechanical local state alone is insufficient.",
+    "Remote execution/retrieval remains unavailable; authorized local operator performs reviewed request submission and sanitized result publication; no permanent roles, listener, SSH mechanism or issue poller is claimed.",
+    "Current branch hosted guards are deferred controls and are not claimed as mainline policy before reviewed merge.",
+    "Historical scientific bodies, original criteria, milestones and partial/failed evidence remain preserved; M0 complete and M1-M5/#16 open.",
+    "Manager Result while active, instantaneous socket samples and listener-disable notice are not declared scientific pass, whole Codex termination/reboot proof, perpetual security or complete UID/ancestry proof.",
+    "Global lock covers payload/descendant drain; prior FINALIZED ordering is empirical and dependent consumers must verify the prior receipt."
+  ],
+  "state_journal_observation": {
+    "bytes": 1607,
+    "last_event": {
+      "at": "2026-10-09T19:38:51.340903+00:00",
+      "evidence": {
+        "bytes": 1512,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+        "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+      },
+      "from_state": "STAGING",
+      "previous_sha256": "3c366572944796705ab3de4a6a8a1b4a7bd4789392bddafad939f599f7c145e0",
+      "reason": "Completed pinned-source rebuild and guest/dependency/loader inputs verified; strict runtime smoke only",
+      "remote_execution": "unavailable",
+      "sha256": "14860897b1ecb94bc1156b6d1d5c161c10463d5f58cffff1532573203835137d",
+      "state": "LOCAL_VALIDATING"
+    },
+    "path": "state/events.jsonl",
+    "sha256": "78a09a72999e5f801475738546d05c79a7ee9cbf269dd54e6431973d545ceb16"
+  },
+  "stop_controller_readiness": {
+    "controller": {
+      "bytes": 21944,
+      "path": "migrations/20261009/prove_gem5_stop_v1.py",
+      "sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817"
+    },
+    "controller_unlaunched_by_reviewer": true,
+    "first_capture_exists_at_review": false,
+    "limitations": "Generic controller prerequisite receipt.verify proves integrity only. Independent unchanged nine-control expected-guest correctness review remains separately required. Actual stop must truthfully retain fail/interrupted/stop-file/-SIGKILL, pidfd/cgroup and post-input/source bindings; no scientific pass/graceful stats/checkpoint resume inferred.",
+    "owner_spec": {
+      "bytes": 4144,
+      "path": "requests/spec-issue-27-gem5-stop-migration-attempt-01.json",
+      "sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14"
+    },
+    "runtime_execution": "20261009T193937Z-576aa858c033",
+    "runtime_receipt_exists_at_review": false,
+    "static_result": "Previously reviewed exact controller/spec remains unchanged. Stop requires first finalized verified capture and separate independent scientific acceptance; no new static readiness blocker. Actual controller invocation remains held while either prerequisite is absent."
+  },
+  "supporting_postbuild_review": {
+    "bytes": 59803,
+    "path": "migrations/20261009/independent-build-preflight-postbuild-review-20261009T195019798138Z.json",
+    "sha256": "8e7452af42467a1c85a8dffeaf278cb063c9abc00d5d446890b654c54e60d768"
+  },
+  "transition_time_documented_to_seconds": "2026-10-09T19:38:51Z"
+}

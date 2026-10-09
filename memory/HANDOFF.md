@@ -1,6 +1,7 @@
 # Handoff — critical local infrastructure migration (inactive)
 
-2026-10-09 UTC. Migration task [#27](https://github.com/jliu67/OpenRX/issues/27) is **STAGING; NOT YET ACTIVE**.
+2026-10-09 UTC. Migration task [#27](https://github.com/jliu67/OpenRX/issues/27) is **LOCAL_VALIDATING; NOT YET ACTIVE**.
+Actual preflight supported the transition at19:38:51Z; no scientific or cutover pass follows from that state.
 Read live task receipts, [local policy](../docs/LOCAL_EXECUTION.md), [migration/recovery runbook](../docs/LOCAL_MIGRATION.md),
 [acceptance receipt](../docs/validation/local-migration-20261009/ACCEPTANCE.md), hub #5 and actual remote HEAD.
 A dedicated migration branch and fresh persistent host paths preserve the original checkout.
@@ -10,9 +11,16 @@ The native Ubuntu 22.04 host and user systemd/lingering have been identified; de
 The original saved gem5 Library binary is unavailable through callable tools, so a new pinned local simulator
 build attempt 02 failed at its 6-GiB cgroup limit; the failed tree/logs and pipeline's missing-result failure
 are preserved in [failure evidence](../docs/validation/local-migration-20261009/build-failure-02/README.md).
-A copied partial-build attempt 03 is running with one worker and recorded 8-GiB RAM/2-GiB swap/100% CPU budget;
-no state advance, guest launch or simulator pass is claimed. Exact historical guest ELFs are recovered/digest-verified;
-pinned firmware/kernel/compressed/expanded disk are verified. Host native smoke passes original 257 Python tests,
+A copied partial-build attempt03 completed at19:37:51.079045Z with one worker and recorded
+8-GiB RAM/2-GiB swap/100% CPU budget:rc0/source_changed[]/configf839a59b…/build-info0/loader0.
+New binary1,036,720,416bytes/SHAe4129f16… is a distinct rebuild, not recovered original bytes.
+Preflight raw SHAd2043b27… bound source/runner/request03/41 package pins/resources/runtime/profile
+and actual LOCAL_VALIDATING. Exact historical guest ELFs are recovered/digest-verified.
+The [15-file actual build/preflight export index](../docs/validation/local-migration-20261009/local-validating-live-v1/index.json)
+and [independent postbuild integrity review](../docs/validation/local-migration-20261009/local-validating-live-v1/independent-build-preflight-postbuild-review.json)
+bind the newly rehashed binary/source/packages/resources/43 runtime libraries and actual state/request,
+without guest acceptance. Bounded live manager/socket/console observations preserve explicit limitations.
+Pinned firmware/kernel/compressed/expanded disk are verified. Host native smoke passes original 257 Python tests,
 171 vendor files, 106 upstream controls plus one explicit unsupported-AVX2 skip,
 39 exact semantic/hash controls (optional AES skip) and nine runtime controls. No local gem5 pass is claimed. Historical runtime/partial-light evidence below is preserved and remains historical.
 
@@ -24,8 +32,10 @@ verify the corrected wrapper5c275/source/toolchain/owner specification.
 [Runtime request03](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085838632) key
 `issue-27-local-runtime-b4b5ffc-attempt-01` / SHA
 `d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972` is published.
-Driver ace55beda… runs as `openrx-migration-validation-pipeline-v3-20261009.service`, waiting for build03
-and all verified build/loader/input/state prerequisites. No guest has run and expensive research remains held.
+Driver ace55beda… under `openrx-migration-validation-pipeline-v3-20261009.service` submitted runtime-only
+execution `20261009T193937Z-576aa858c033` after the verified build/loader/input/state prerequisites.
+The last bounded observations find it running, with guest correctness/actual stop/final outputs unverified.
+Expensive research remains held.
 
 Accepted corrected source passes287 full tests (including28 runner controls) and40 targeted wrapper controls.
 A55.1219-second finalizer delay/six notifications/receipt integrity prove extension beyond45 seconds;
@@ -35,8 +45,8 @@ with [retained export bindings](../docs/validation/local-migration-20261009/runn
 receipt/source verification, exited-launcher log progress, duplicate rejection, serialized payload/descendant
 drain and truthful stop/exit-7/hard-kill/OOM failures. Five live samples measure tiny64-MiB/48-MiB OOM,
 CPU10%, swap0, tasks16 limits, not the production baseline. Prior FINALIZED ordering is empirical only.
-Whole Codex daemon termination/host reboot were not performed. Actual build/loader/preflight/guest/gem5
-stop/merge remain pending; this host-only acceptance leaves STAGING and expensive-research hold unchanged.
+Whole Codex daemon termination/host reboot were not performed. Actual guest/gem5 stop/final outputs/
+merge/release remain pending; this host-only acceptance does not release expensive research.
 
 [Stop controller](../docs/validation/local-migration-20261009/stop-controller-independent-review.json)
 SHA `1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817` and fixed specification
@@ -52,22 +62,25 @@ Runner916 overall future execution acceptance remains withdrawn; its fsync-only2
 wrapper timing audit, initial source/frozen6f and every earlier fixture are preserved.
 The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6085149398) remains verified.
 
-Next: finish source-bound build03 and verify loader/runtime closure; allow the reviewed fixed pipeline to
-record actual preflight/LOCAL_VALIDATING and execute runtime-only smoke. Independently replay expected guest/
-runtime evidence, then launch the separately reviewed stop controller only after its capture/prerequisite gates.
+Next: inspect the recorded running runtime-only execution and preserve all output. Independently replay
+complete expected-guest/runtime evidence when it exists, then launch the separately reviewed stop controller
+only after its verified capture/prerequisite gates.
 Verify actual gem5 report/termination/empty-cgroup/output integrity; retain every failed or partial outcome.
 Branch workflow guards defer expensive hosted gem5/full-dataset/native steady controls to reviewed local
 requests. Their commands/criteria remain; skipped work is never passed. Mainline guards await reviewed
 merge, with no self-hosted Actions runner configured.
 
-Then obtain separate review, reconcile authoritative documentation, merge the migration PR, finalize acceptance
-and publish the effective policy only when all required gates pass. See the acceptance table for unfinished gates.
+Then obtain separate review, reconcile authoritative documentation, merge the migration PR and verify
+acceptance/LOCAL_ACTIVE. Hold expensive submissions until #27 verifies explicit release bound to actual
+reviewed merge/merged-document audit; publish effective-policy hub notice after release, verify bot and
+complete final synchronized acceptance. See the receipt for unfinished gates.
 Use the installed immutable runner for local inspection:
 
 ```bash
 export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
 export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py"
 python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status 20261009T193937Z-576aa858c033
 ```
 
 Host-only progress/commands are under `$OPENRX_LOCAL_ROOT/migrations/20261009/`; per-attempt records under `executions/ID/`.
@@ -82,10 +95,12 @@ This supplies no remote access or authority from arbitrary issue text. No listen
 If offline, mark expensive requests blocked and continue independent lightweight work.
 Do not launch expensive full-scale sandbox or staging-host research to bypass migration gates.
 #16/M1–M5 retain their existing open scientific acceptance criteria.
-Only live #27 proof bound to the actual reviewed merge and final receipt authorizes LOCAL_ACTIVE;
-this dated STAGING handoff is not activation evidence.
+Only independently verified matching acceptance/LOCAL_ACTIVE and explicit #27 release bound to actual
+reviewed merge/merged-document audit release expensive work; this dated LOCAL_VALIDATING handoff is not release evidence.
 
 Exact pre-migration documents and a digest manifest are preserved under `memory/handoffs/pre-local-migration-*`.
+The immediately preceding37f STATE/HANDOFF are byte-exact in the
+[pre-LOCAL_VALIDATING snapshot manifest](handoffs/pre-local-validating-20261009-37f7564-manifest.json).
 The following earlier handoff is retained for provenance; its temporary-path execution recipe is **inactive**.
 
 ## Previous handoff — reviewed cancellation; partial guest and tick-budget proof

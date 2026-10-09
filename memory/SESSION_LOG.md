@@ -310,3 +310,38 @@ correction records are preserved. Whole Codex daemon termination/host reboot and
 were not performed;55-second finalizer proof remains separate. Migration stays STAGING/inactive,
 build03 continues and successful build/loader/preflight/guest/actual gem5 stop/reviewed merge/final
 cutover remain pending. No repository history or prior scientific acceptance criterion was changed.
+
+## Verified build03 and actual LOCAL_VALIDATING runtime-only submission — 2026-10-09 UTC
+
+Distinct pinned simulator build03 completed19:37:51.079045Z with returncode0/source_changed[] and
+unchanged configf839a59b…. Build-info and loader exit0 are recorded; build-result raw SHA
+8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f identifies retained bytes.
+New binary1,036,720,416bytes/SHAe4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902
+is distinct from the unavailable original. Failed build02/source/partial/logs and every safety withdrawal
+remain preserved. No original simulator restoration or scientific acceptance is inferred.
+
+Actual preflight19:38:51.228039Z/SHA d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626
+bound b4b5ffc source/runner988/request03,41 package pins, exact resources/runtime ELF and
+runtime-library profilefda84e15…. Matching migration/runner journals record LOCAL_VALIDATING.
+Pipelinev3 submitted runtime-only execution20261009T193937Z-576aa858c033 at19:39:37Z; the last bounded
+manager/process observations find it running without accepted complete guest/runtime correctness.
+Actual gem5 stop/final outputs, final independent reviews, merged PR and release/cutover remain pending.
+
+Current discoverability docs are reconciled to LOCAL_VALIDATING/NOT YET ACTIVE. Exact preceding37f
+STATE/HANDOFF snapshots and16 documentation digests are retained in
+memory/handoffs/pre-local-validating-20261009-37f7564-manifest.json; prior SESSION_LOG prefix/historical
+handoff/science records are preserved. Conditional instructions now require matching independently
+verified acceptance/LOCAL_ACTIVE and explicit #27 release bound to actual reviewed merge/merged-document
+audit before expensive submissions; local active state alone is insufficient. Effective-policy hub notice
+and final synchronized acceptance remain future steps. No expensive research, milestone closure,
+checkpoint resume, remote access or fabricated pass is authorized by this validation transition.
+
+Public local-validating-live-v1/index.json SHA c455b22636766d319a7132c3b330b3322765409d0f4fa6857a7c3886965c2bc1
+now binds15 selected metadata/source exports (133,605 raw bytes) using exactly two ordered prefix substitutions.
+Independent postbuild raw review8e7452af…/public4989e8cd… accepts build/preflight integrity after new binary,
+694 original files,10,933 simulator source entries,41 package/archive pins,43 runtime-library bindings and
+exact guest assets were freshly rehashed. Public preflight/build-result digests remain unchanged because
+their bytes contained no substituted prefixes. Both bounded production observations and the listener-source
+audit retain explicit active-manager/nonperpetual-socket/ancestry/UID limitations. This is not guest/runtime
+correctness, actual stop or cutover acceptance. Current docs link actual existing exports; no future proof link
+or full-scale authorization was created.

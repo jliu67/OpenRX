@@ -6,10 +6,11 @@ Updated 2026-10-09 UTC after PR #25 integration and independently reviewed parti
 
 | Issue | State | Gates / execution availability |
 |---|---|---|
-| [#27](https://github.com/jliu67/OpenRX/issues/27) | **STAGING — NOT YET ACTIVE** | [Acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md): original state preservation, pinned assets/build, guest/regression/lifecycle/stop/recovery/integrity and reviewed-merge gates in progress. Original Library gem5 package currently inaccessible; separate pinned build 03 is running after preserved build 02 OOM. Pipelinev2 stopped/runner 916 acceptance withdrawn; corrected runner 988/wrapper 5c (287 full/40 targeted controls), readonly b4b5ffc and request/pipeline v3 bindings are now reviewed. Pipelinev3 is waiting for build 03/preflight; actual guest/stop/cutover gates pending. |
+| [#27](https://github.com/jliu67/OpenRX/issues/27) | **LOCAL_VALIDATING — NOT YET ACTIVE** | [Acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md): original state/pinned assets preserved; distinct build 03 completed 19:37:51Z, build-info/loader succeeded and preflight bound LOCAL_VALIDATING at 19:38:51Z. Runtime-only execution `20261009T193937Z-576aa858c033` has started; guest correctness/actual stop/output-finalization/cutover remain pending. Original Library binary unavailable and build02 OOM preserved. Pipelinev2 stopped/runner916 withdrawn; corrected988/wrapper5c, readonly b4b5ffc and request/pipelinev3 retain exact reviewed bindings. |
 
 Read [local execution policy](LOCAL_EXECUTION.md) and [migration runbook](LOCAL_MIGRATION.md).
-After verified `LOCAL_ACTIVE`, resource-intensive work runs on the owner's Ubuntu host.
+Resource-intensive work uses the owner's Ubuntu host only after #27 publishes independently verified
+acceptance/matching `LOCAL_ACTIVE` and explicit release bound to actual reviewed merge/merged-document audit.
 Remote execution/retrieval is unavailable; agents submit GitHub specifications for owner-mediated local execution
 and result publication. Resource/request locks prevent local duplicates and conflicts. An offline host blocks
 expensive requests; continue lightweight work. No permanent coordinator, assigned roles or autonomous poller is introduced.

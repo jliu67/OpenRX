@@ -2,8 +2,11 @@
 
 **2026-10-09 migration availability update:** the original Library parts recorded below are currently
 unavailable through callable migration tools. Their successful historic save and digests are preserved;
-no transfer to the designated host is claimed. A separate pinned local rebuild is in progress under
-[task #27](https://github.com/jliu67/OpenRX/issues/27). Migration is **STAGING; NOT YET ACTIVE**.
+no transfer to the designated host is claimed. A distinct pinned local rebuild03/loader/input preflight
+completed under [task #27](https://github.com/jliu67/OpenRX/issues/27). Migration is **LOCAL_VALIDATING; NOT YET ACTIVE**.
+Runtime-only execution `20261009T193937Z-576aa858c033` has started; guest correctness and actual stop
+remain unverified. The new binary is not the restored original; expensive work still requires verified
+acceptance/matching LOCAL_ACTIVE and explicit #27 release bound to actual reviewed merge/document audit.
 [Current policy](../../LOCAL_EXECUTION.md) and [acceptance gates](../local-migration-20261009/ACCEPTANCE.md)
 control new expensive execution. The recipe below is retained provenance; inspect current availability before use.
 

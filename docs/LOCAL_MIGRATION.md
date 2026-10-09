@@ -1,13 +1,15 @@
 # Loss-intolerant local infrastructure migration
 
 Migration task: [#27](https://github.com/jliu67/OpenRX/issues/27).
-Snapshot state: **STAGING — NOT YET ACTIVE**, 2026-10-09 UTC; [published staging evidence](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6084197043).
+Snapshot updated 2026-10-09T19:57:09.253251Z; state **LOCAL_VALIDATING — NOT YET ACTIVE** since 2026-10-09T19:38:51Z.
+The [earlier staging evidence](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6084197043) remains historical.
 The [initial hub announcement](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6084177837)
 records the critical migration and inactive policy. The [acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md)
 contains actual gate outcomes and blockers; the [execution policy](LOCAL_EXECUTION.md) defines agents' interface.
 Dated snapshots are historical status records. Expensive execution becomes effective only after #27
-publishes verified `LOCAL_ACTIVE` evidence bound to the actual reviewed merge commit and final acceptance
-receipt; otherwise defer full-scale work. Use that live proof and local status for current availability.
+publishes independently verified acceptance, matching `LOCAL_ACTIVE` and an explicit release bound to the
+actual reviewed merge/merged-document audit; local active state alone is insufficient. Otherwise defer
+full-scale work. Use that live proof and local status for current availability.
 
 ## State transitions and evidence
 
@@ -17,7 +19,7 @@ receipt; otherwise defer full-scale work. Use that live proof and local status f
 | `STAGING` | Preserve original assets; populate fresh persistent paths; verify each transfer digest or explicitly record unavailable artifact and pinned rebuild recipe. Prepare runner/dependencies. |
 | `LOCAL_VALIDATING` | Required inputs/dependencies are bound and checked; execute bounded guest/regression/lifecycle tests in new output directories. Full-scale research remains gated. |
 | `CUTOVER_PENDING` | All technical acceptance gates have recorded passes; independent review, documentation consistency, merge and cutover announcement remain. |
-| `LOCAL_ACTIVE` | All acceptance gates, reviewed merged PR, consistent authoritative documents and final receipt are verified; publish prominent effective-policy announcement. |
+| `LOCAL_ACTIVE` | All eligibility gates, reviewed merged PR and consistent authoritative documents are verified. Hold expensive submissions until #27 verifies explicit release bound to acceptance/event/merge/document audit; then publish effective-policy hub notice, verify bot and complete final synchronized acceptance. |
 | `BLOCKED` | An exact missing external dependency/safety gate prevents advancement. Preserve previous working state and complete independent work. Return to the appropriate earlier state with evidence when resolved. |
 | `ROLLBACK_REQUIRED` | A preservation/integrity/regression failure threatens correctness or loss. Stop new admission, preserve failed assets/logs and repair using verified previous inputs. |
 
@@ -38,7 +40,7 @@ The currently callable tools have not exposed a download path for those saved bi
 **The original simulator binary is unavailable in this migration so far; its earlier successful save is not a verified local transfer.**
 Keep its identity and investigate retrieval; do not mark it restored or silently replace it.
 
-A separate persistent rebuild is being attempted from pinned gem5 v25.1.0.1,
+A distinct persistent rebuild completed from pinned gem5 v25.1.0.1,
 commit `c8222cc67a399bfc01e8658dd14b30d5bfd634f9`, using recorded Ubuntu 22.04 dependencies.
 Capture source archive/tree, configuration, compiler/linker/Python/SCons versions, package versions,
 complete build logs, executable digest/size and loader/build-info checks. A changed binary digest is expected
@@ -56,7 +58,23 @@ The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issue
 is verified; full technical failure evidence remains on task #27/PR #28.
 A separate copied partial-build attempt 03 started with one worker and a separately recorded
 8-GiB RAM/2-GiB swap/100% CPU budget. This is a scoped migration-build override; normal runner service
-limits remain 6-GiB RAM/1-GiB swap/200% CPU, with the same single-resource discipline. Do not infer incremental-copy effectiveness, build completion or scientific acceptance.
+limits remain 6-GiB RAM/1-GiB swap/200% CPU, with the same single-resource discipline.
+Attempt03 completed at 2026-10-09T19:37:51.079045Z with returncode0, `source_changed:[]`, unchanged
+configf839a59b…, build-info exit0 and loader exit0. Build-result raw SHA-256 is
+`8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f`.
+The new binary is 1,036,720,416 bytes, SHA-256
+`e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902`.
+This is a verified new build record, not restored original bytes or a scientific pass.
+Actual preflight at 19:38:51.228039Z bound sourceb4b5ffc, runner988, request03, 41 package pins,
+exact guest resources/runtime and runtime-library profilefda84e15…; preflight raw SHA-256 is
+`d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626`.
+It supports LOCAL_VALIDATING; expected guest correctness and actual stop remain pending.
+The [completed build/preflight export index](validation/local-migration-20261009/local-validating-live-v1/index.json)
+binds15 actual metadata/source files using exactly two ordered prefix substitutions.
+[Independent postbuild integrity review](validation/local-migration-20261009/local-validating-live-v1/independent-build-preflight-postbuild-review.json)
+freshly rehashed the new binary, original694 scientific files/10,933 simulator source entries,41 packages,
+43 runtime-library bindings and exact guest assets. It revalidates actual source/state/request integrity,
+not guest correctness, safe stop or cutover. Bounded manager/socket observations retain their stated limits.
 
 The exact already-audited runtime/hash ELFs were recovered from tracked base64 payloads and their
 lengths/ELF metadata/SHA-256 independently reverified. Runtime SHA-256 is
@@ -88,8 +106,11 @@ exact redaction method/export digest. Do not feed redacted records to the host i
    Retain exact commands, tool versions, logs, inputs and skipped controls. A boot is not a correctness pass.
 6. Independently review preservation, runner lifecycle and scientific smoke evidence. Reconcile AGENTS,
    README, board, memory/handoff, roadmap and this runbook to actual architecture/state.
-7. Merge the separately reviewed migration PR, complete the final acceptance receipt and verified state transition,
-   then publish the prominent effective-policy announcement on hub #5 and task #27.
+7. Merge the separately reviewed migration PR and independently audit the actual merged documents/source.
+   Complete immutable eligibility evidence/certificate, review it separately, and verify the actual LOCAL_ACTIVE
+   transition. Hold expensive submissions until #27 publishes a verified explicit release binding certificate,
+   event, actual merge and merged-document audit. Publish the effective-policy hub notice after release, verify
+   its bot copy, then complete the final synchronized acceptance/report. No future/self-referential proof is inferred.
 
 The complete gem5 unchanged light matrix, full dataset, intended-core/SMP and selected BOOM Linux gates remain
 in #16/M3. Migration runtime smoke acceptance does not close those scientific gates or M1/M4/M5.
@@ -119,9 +140,11 @@ request revision 03 and pipeline v3 have [independently verified exact bindings]
 [Runtime request](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085838632) key
 `issue-27-local-runtime-b4b5ffc-attempt-01` has SHA-256
 `d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972`.
-Driver `ace55beda…` is now running as `openrx-migration-validation-pipeline-v3-20261009.service`,
-waiting for build 03 and mandatory build/loader/toolchain/input/state preflight. No guest has run at this snapshot.
-No expensive research is authorized before verified cutover.
+Driver `ace55beda…` runs as `openrx-migration-validation-pipeline-v3-20261009.service` and submitted
+runtime-only execution `20261009T193937Z-576aa858c033` after completed build/loader/toolchain/input
+preflight and actual LOCAL_VALIDATING. The last bounded observations find it running; complete expected
+guest/runtime results and actual gem5 stop/final output verification remain pending.
+No expensive research is authorized before the independently verified explicit release.
 The branch also guards hosted full gem5 build/full-system and full-dataset/native steady steps with literal
 skips while retaining commands/criteria. They are deferred to reviewed local requests, not counted as passes.
 The guards are not effective on main until reviewed merge; no self-hosted Actions execution channel exists.

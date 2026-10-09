@@ -17,7 +17,7 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## Critical local infrastructure migration
 
-**STAGING — the new infrastructure is NOT YET ACTIVE.**
+**LOCAL_VALIDATING — the new infrastructure is NOT YET ACTIVE.**
 [Task #27](https://github.com/jliu67/OpenRX/issues/27) is migrating persistent, expensive execution to the
 owner's Ubuntu computer. [Local execution policy](docs/LOCAL_EXECUTION.md),
 [migration/recovery runbook](docs/LOCAL_MIGRATION.md) and
@@ -25,7 +25,12 @@ owner's Ubuntu computer. [Local execution policy](docs/LOCAL_EXECUTION.md),
 submission, locks, evidence and remaining gates. Remote execution/retrieval is unavailable;
 GitHub requests require owner-mediated local submission and result publication.
 
-Defer full-scale simulations until verified cutover. After `LOCAL_ACTIVE`, gem5 full-system work,
+Pinned local build 03 completed at 2026-10-09T19:37:51Z; verified loader/input preflight supported
+`LOCAL_VALIDATING` at 19:38:51Z. Runtime-only execution `20261009T193937Z-576aa858c033` has started;
+guest correctness, actual gem5 stop and final cutover remain pending.
+Defer full-scale simulations until #27 publishes verified acceptance/`LOCAL_ACTIVE` evidence and an
+explicit release bound to the actual reviewed merge and merged-document audit. `LOCAL_ACTIVE` alone
+does not release work. After that release, gem5 full-system work,
 long architecture/RandomX workloads, expensive profiling/builds and large artifacts use that host.
 Sandboxes continue supporting code/review, lightweight tests, static analysis and small reproductions.
 Scientific #16 and M1–M5 remain open independently of infrastructure acceptance.
@@ -50,7 +55,9 @@ and full-dataset correctness; no calibrated timing or efficiency is established.
 
 [PR #18](https://github.com/jliu67/OpenRandomX/pull/18) now includes a successfully built pinned simulator and **actual Linux boot with all nine standalone runtime controls passing**, independently replayed. The unchanged light-mode RandomX matrix is a separate open gate under #16. [Executed results](docs/validation/m3-fs/README.md) retain original timeout/OOM failures, supported link recovery and raw guest evidence. [Saved simulator provenance](docs/validation/m3-fs/REUSE.md) remains intact; ordinary PR checks no longer rebuild it.
 The original Library binary is currently unavailable to the migration's callable tools, so a separately
-recorded pinned local rebuild is in progress; successful historical saving is not a verified local transfer. This one-core Atomic result does not establish selected RTL behavior or timing.
+recorded pinned local rebuild completed with a new binary identity. Its runtime-only local guest is running
+without an accepted correctness result; successful historical saving is not a verified original transfer.
+The historical one-core Atomic result does not establish selected RTL behavior or timing.
 
 [PR #19](https://github.com/jliu67/OpenRandomX/pull/19) records the dated Monero source audit: current released mainnet consensus targets RandomX v1, inferred from source rather than a live tip. The beta's October 5 v2 fork is a separate stressnet/testnet schedule. Keep v2-first research and exact v1 controls; [audit](docs/validation/monero-activation/REVIEW-20261008.md) retains remaining activation questions.
 

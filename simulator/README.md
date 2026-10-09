@@ -1,12 +1,15 @@
 # M3 — RISC-V core and simulator feasibility
 
-**Current execution gate — migration #27 is STAGING; NOT YET ACTIVE.**
+**Current execution gate — migration #27 is LOCAL_VALIDATING; NOT YET ACTIVE.**
 Read [local execution policy](../docs/LOCAL_EXECUTION.md) and
 [acceptance receipt](../docs/validation/local-migration-20261009/ACCEPTANCE.md).
-Full-scale simulation is held until cutover; later expensive runs use the owner's Ubuntu host through
+Full-scale simulation is held until independently verified acceptance/matching LOCAL_ACTIVE and explicit
+#27 release bound to actual reviewed merge/merged-document audit; later expensive runs use the owner's Ubuntu host through
 owner-mediated GitHub requests/results. Remote agents have no direct host access.
 Historical simulator/guest acceptance below remains intact; it does not validate the new host.
-The saved original Library binary is currently inaccessible to migration tools; a separately recorded pinned rebuild is in progress.
+The saved original Library binary is currently inaccessible to migration tools. A distinct pinned build03
+and loader/input preflight completed; runtime-only execution `20261009T193937Z-576aa858c033` has started,
+with guest correctness and actual stop still pending. Local active state alone does not release expensive work.
 
 Updated 2026-10-08. OpenRX has scalar RISC-V RandomX controls under QEMU and
 an independently accepted gem5 full-system Linux boot with nine standalone

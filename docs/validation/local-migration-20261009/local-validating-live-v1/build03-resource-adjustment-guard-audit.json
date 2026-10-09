@@ -1,0 +1,23 @@
+{
+  "utc": "2026-10-09T19:44:15.259459+00:00",
+  "operation": "guarded planned build-only MemoryMax 8G to10G",
+  "outcome": "guard rejected before set-property: build no longer active",
+  "observed_failure": "AssertionError at before-state assertion, no set-property call reached",
+  "adjustment_receipt_files": [],
+  "current_manager_show": "MainPID=0\nResult=success\nExecMainStatus=0\nMemoryMax=infinity\nActiveState=inactive\nSubState=dead\n",
+  "build_result": {
+    "returncode": 0,
+    "source_changed": [],
+    "config_sha256_after": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+    "completion_utc": "2026-10-09T19:37:51.079045+00:00",
+    "scientific_validation": "not performed",
+    "binary_sha256": "e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902",
+    "binary_bytes": 1036720416,
+    "build-info_exit": 0,
+    "loader_exit": 0
+  },
+  "build_result_sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f",
+  "original_launch_budget": "8G RAM/2G swap/CPU100/Tasks256",
+  "mutation_performed": false,
+  "interpretation": "Terminal transient unit default MemoryMax=infinity is garbage-collected metadata, not an execution budget. Original launch and live ownership receipt remain authoritative."
+}

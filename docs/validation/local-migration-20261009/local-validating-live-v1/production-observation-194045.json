@@ -1,0 +1,125 @@
+{
+  "accepted_architecture_observation": true,
+  "actions": "Read-only observation of existing pipeline; no submit, signal, recover, state, service, or GitHub mutation",
+  "actual_manager": {
+    "ActiveState": "active",
+    "CPUQuotaPerSecUSec": "2s",
+    "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T193937Z-576aa858c033.service",
+    "ExecMainCode": "0",
+    "ExecMainStatus": "0",
+    "KillMode": "mixed",
+    "KillSignal": "2",
+    "LoadState": "loaded",
+    "MainPID": "84179",
+    "MemoryMax": "6442450944",
+    "MemorySwapMax": "1073741824",
+    "Nice": "10",
+    "NoNewPrivileges": "yes",
+    "NotifyAccess": "exec",
+    "Restart": "no",
+    "Result": "success",
+    "SubState": "running",
+    "TasksMax": "256",
+    "TimeoutStopUSec": "45s",
+    "UMask": "0077",
+    "query_returncode": 0,
+    "unit": "openrx-20261009T193937Z-576aa858c033.service"
+  },
+  "build_result": {
+    "bytes": 400,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/build-attempt-03/build-result.json",
+    "sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f"
+  },
+  "built_simulator": {
+    "bytes": 1036720416,
+    "path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+    "sha256": "e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902"
+  },
+  "execution_id": "20261009T193937Z-576aa858c033",
+  "expected_actual_properties": {
+    "CPUQuotaPerSecUSec": "2s",
+    "KillMode": "mixed",
+    "MemoryMax": "6442450944",
+    "MemorySwapMax": "1073741824",
+    "Nice": "10",
+    "NoNewPrivileges": "yes",
+    "NotifyAccess": "exec",
+    "Restart": "no",
+    "TasksMax": "256",
+    "TimeoutStopUSec": "45s",
+    "UMask": "0077"
+  },
+  "finished_at": "2026-10-09T19:40:45.375199+00:00",
+  "guest_correctness_accepted": false,
+  "input_id_record": {
+    "bytes": 54,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runtime-execution-id.json",
+    "sha256": "0b116e6f6485be1ea7226e1a51a4c01126f0933d34d038859f7dfb4e47ddc64b"
+  },
+  "manifest": {
+    "bytes": 158317,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/manifest.json",
+    "sha256": "80a2394eefbec478f10607dcd8c8b0463c2c08cd2200421b1b573c3010ef402c"
+  },
+  "missing_evidence": [],
+  "noninteractive_listener_notice": {
+    "exact_message": null,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/stdout.log",
+    "present": false,
+    "whole_console_intentionally_not_retained": "May contain physical hostname; raw remains in execution outputs"
+  },
+  "observer": {
+    "bytes": 16304,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/observe_runtime_production_v1.py",
+    "sha256": "0ffde8f6d5e1ce8d30914ceb636b0f8e722b73c1d1b9732174dfb98071f35fa6"
+  },
+  "pinned_live_simulator": {
+    "cgroup_membership": [
+      "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T193937Z-576aa858c033.service"
+    ],
+    "exe": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+    "exe_device": 2051,
+    "exe_inode": 22574966,
+    "observed_at": "2026-10-09T19:40:45.374870+00:00",
+    "parent_pid": 84255,
+    "pid": 84417,
+    "pidfd_not_exited_before_or_after_reads": true,
+    "pidfd_opened_while_live": true,
+    "sockets": {
+      "fd_snapshot_stable_during_read": true,
+      "matching_owned_rows": [],
+      "owned_socket_inodes": [],
+      "scope": "One live pinned-process FD snapshot, not a perpetual network guarantee; no other host socket rows retained",
+      "unmapped_owned_socket_inodes": []
+    },
+    "start_ticks": 40042017,
+    "stdin_fd0": "/dev/null"
+  },
+  "request_spec": {
+    "bytes": 2973,
+    "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-local-runtime-b4b5ffc-attempt-01.json",
+    "sha256": "d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972"
+  },
+  "retained_cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T193937Z-576aa858c033.service",
+  "runner": {
+    "bytes": 38227,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/runner.py",
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  },
+  "schema": "openrx.runtime.live-production-observation.v1",
+  "scientific_scope": "Manager/process/security architecture only; not boot, smoke, timing, or migration acceptance",
+  "source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "source_directory_sha256": "64cddad250569a5a6c1e0afdc31279d16fd27b8e095257a90f4e8f2558f054fe",
+  "source_files": 890,
+  "started_at": "2026-10-09T19:39:06.971003+00:00",
+  "worker_parent": {
+    "environment_not_read": true,
+    "exe": "/usr/lib/systemd/systemd",
+    "is_user_systemd": true,
+    "parent_pid": 825,
+    "pidfd_opened_while_live": true,
+    "raw_commandline_intentionally_not_retained": true,
+    "worker_pid": 84179,
+    "worker_start_ticks": 40035272
+  }
+}

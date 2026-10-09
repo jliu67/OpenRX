@@ -1,31 +1,44 @@
 # Current state
 
-Updated 2026-10-09 UTC during local migration staging; prior PR #25/26 integration and partial scientific evidence remain preserved. **M0 is complete; M1–M5 acceptance remains open.**
-Historical pinned gem5 Linux runtime evidence passes nine controls; the new local guest is still untested. There is still no controlled hardware power/efficiency result or processor RTL.
+Updated 2026-10-09 UTC during LOCAL_VALIDATING; prior PR #25/26 integration and partial scientific evidence remain preserved. **M0 is complete; M1–M5 acceptance remains open.**
+Historical pinned gem5 Linux runtime evidence passes nine controls; the new local runtime-only guest has started without accepted correctness. There is still no controlled hardware power/efficiency result or processor RTL.
 
 ## Critical local migration — task #27
 
-**STAGING — local execution policy NOT YET ACTIVE.** The owner's native Ubuntu 22.04 computer has been
-identified and a fresh versioned persistent installation is staging separately from the original checkout.
+**LOCAL_VALIDATING — local execution policy NOT YET ACTIVE**, supported by preflight at 2026-10-09T19:38:51Z.
+The owner's native Ubuntu 22.04 computer has been identified and a fresh versioned persistent installation
+is validating separately from the original checkout.
 [Task #27](https://github.com/jliu67/OpenRX/issues/27), [policy](../docs/LOCAL_EXECUTION.md),
 [runbook](../docs/LOCAL_MIGRATION.md) and [acceptance receipt](../docs/validation/local-migration-20261009/ACCEPTANCE.md)
 record actual migration gates. Original current documentation snapshots are retained byte-for-byte with digests in
 `memory/handoffs/pre-local-migration-20261009-manifest.json`; [independent preservation review](../docs/validation/local-migration-20261009/native-independent-review.json)
 verifies694 original tracked bytes and10,933 pinned simulator source entries unchanged; unavailable historical artifacts are explicit.
+The immediately preceding37f STATE/HANDOFF are retained exactly in the
+[pre-LOCAL_VALIDATING snapshot manifest](handoffs/pre-local-validating-20261009-37f7564-manifest.json);
+its16 document digests preserve the previous authoritative prose and prior SESSION_LOG prefix.
 
 The original saved gem5 Library binary/package is currently inaccessible via callable tools.
 Its prior successful save and digests are preserved; no transfer is claimed. A separate pinned local source
 rebuild attempt 02 failed at its 6-GiB cgroup memory limit; the failed source/partial build/logs are retained.
 Its waiting pipeline failed on the absent final build-result file, started no guest and advanced no state.
-A separate copied partial-build attempt 03 is running with one worker and an 8-GiB RAM/2-GiB swap/100% CPU
-budget, distinct from normal runner service limits.
+A separate copied partial-build attempt03 completed at 19:37:51.079045Z with one worker and recorded
+8-GiB RAM/2-GiB swap/100% CPU budget, distinct from normal runner limits. Returncode0, source_changed[],
+unchanged configf839a59b…, build-info0 and loader0 are recorded; new binary1,036,720,416bytes/SHA
+`e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902` is distinct from the original.
 [Failure evidence](../docs/validation/local-migration-20261009/build-failure-02/README.md) remains explicit.
 Exact original guest runtime/hash payloads have been recovered and digest-verified;
-pinned firmware/kernel/compressed/expanded disk now match the exact resource manifest; local simulator execution remains pending.
+pinned firmware/kernel/compressed/expanded disk match the exact resource manifest. Actual preflight SHA
+`d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626` bound these inputs/source/runner,
+41 package pins and runtime-library profilefda84e15…, then supported LOCAL_VALIDATING. This is not guest correctness.
+[Public build/preflight/live-observation index](../docs/validation/local-migration-20261009/local-validating-live-v1/index.json)
+binds15 metadata/source exports; [independent postbuild review](../docs/validation/local-migration-20261009/local-validating-live-v1/independent-build-preflight-postbuild-review.json)
+freshly verifies binary/original694/source10,933/packages41/runtime libraries43 and actual state/source/request.
+This accepts build/preflight integrity only; sampled manager/socket/console observations retain explicit limits.
 Host native smoke passes 257 Python tests, 171 vendor files, 106 upstream controls plus one explicit
 unsupported-AVX2 skip, 39 exact semantic/hash controls (optional AES skip) and nine runtime controls;
 this is not a gem5 pass.
-Local simulator build/loader/boot/correctness, actual gem5 stop and merged PR remain unverified; runner/source/input reviews are linked below.
+Local build/loader/input preflight completed; expected guest boot/correctness, actual gem5 stop/final outputs
+and reviewed merge/cutover remain unverified; runner/source/input reviews are linked below.
 Host fixture evidence demonstrates launch-process independence, serialized admission, duplicate rejection,
 retained status/logs, stop/process-failure/recovery and verified receipt integrity; a full ChatGPT session
 termination or host reboot was not performed. [Independent final runner review](../docs/validation/local-migration-20261009/runner-independent-review.json)
@@ -47,7 +60,7 @@ duplicate rejection, serialized payload/descendant drain and truthful stop/exit-
 The [export index](../docs/validation/local-migration-20261009/runner-final988-actual-v3/index.json) binds raw/public bytes.
 Five live samples measure tiny 64-MiB/48-MiB OOM, CPU10%, swap0, tasks16 overrides, not production limits.
 Observed prior FINALIZED ordering is empirical only. No guest pass, full daemon termination, host reboot
-or cutover is inferred; STAGING/build/loader/preflight/actual gem5 stop/merge gates remain pending.
+or cutover is inferred; actual guest/gem5 stop/final outputs/reviewed merge/release remain pending.
 Old keys01/02 never submitted. New readonly source
 `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`, runner988, runtime request03 and pipelinev3 now have
 [independently verified bindings](../docs/validation/local-migration-20261009/pipeline-independent-review-v3.json)
@@ -55,10 +68,15 @@ and [exact-head review](https://github.com/jliu67/OpenRX/pull/28#pullrequestrevi
 Request key `issue-27-local-runtime-b4b5ffc-attempt-01` / SHA
 `d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972` is
 [published](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085838632).
-Driver `ace55beda…` is active as `openrx-migration-validation-pipeline-v3-20261009.service`, waiting for
-build03 and mandatory actual preflight. The [stop controller](../docs/validation/local-migration-20261009/stop-controller-independent-review.json)
+Driver `ace55beda…` under `openrx-migration-validation-pipeline-v3-20261009.service` submitted
+runtime-only execution `20261009T193937Z-576aa858c033` after actual preflight/LOCAL_VALIDATING.
+The last bounded observations find the smoke running without accepted correctness.
+The [stop controller](../docs/validation/local-migration-20261009/stop-controller-independent-review.json)
 (1d65cc6e…/fixed specification76218e47…) is reviewed but unlaunched until the first verified capture.
-Original checkout/frozen6f and all prior safety evidence remain untouched. Build03 continues; no guest or activation is claimed.
+Original checkout/frozen6f and prior safety evidence remain untouched. Completed build03 and a running
+runtime-only job do not establish guest acceptance or activation. Expensive research requires matching
+acceptance/LOCAL_ACTIVE and explicit #27 release bound to actual reviewed merge/merged-document audit;
+local active state alone is insufficient.
 Branch workflow guards defer expensive hosted gem5/full-dataset/native steady steps to reviewed local
 requests, preserve commands/criteria and never count skips as passes. Guards require reviewed merge
 before mainline enforcement; no self-hosted Actions runner is configured. Corrupt/torn durable records still fail closed and

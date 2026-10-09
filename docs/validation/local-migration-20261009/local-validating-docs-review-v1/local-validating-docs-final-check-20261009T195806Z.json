@@ -1,0 +1,196 @@
+{
+  "schema": "openrx.local-validating.documentation-final-diff-check.v1",
+  "at": "2026-10-09T19:58:06.924236+00:00",
+  "base_commit": "37f7564e8797a724c2fdd8ae38eeebd04448684d",
+  "state_documented": "LOCAL_VALIDATING",
+  "state_transition_utc": "2026-10-09T19:38:51.228039Z",
+  "document_snapshot_utc": "2026-10-09T19:57:09.253251Z",
+  "policy_active": false,
+  "runtime_execution": "20261009T193937Z-576aa858c033",
+  "guest_correctness_accepted": false,
+  "actual_gem5_stop_accepted": false,
+  "migration_complete": false,
+  "existing_historical_bodies_unchanged": [
+    "memory/HANDOFF.md",
+    "memory/STATE.md",
+    "simulator/README.md",
+    "simulator/gem5/README.md",
+    "docs/validation/m3-fs/REUSE.md"
+  ],
+  "session_log_prefix_preserved": true,
+  "state_handoff_archives_byte_exact": true,
+  "baseline_document_preservation_digests_checked": 16,
+  "local_links_checked": 206,
+  "missing_local_links": [],
+  "public_metadata_exports_rehashed": 15,
+  "public_export_original_bytes": 133605,
+  "build_preflight_integrity_independently_accepted": true,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 7745,
+      "sha256": "ec3614043ec1e9566bbf371ef477a6c90f62c57aee601bd662eaa207692a7a62"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10307,
+      "sha256": "14ac60b1b2a7ac64e85383b71252950318b0d1b1e2373db9f87418fd0b79c639"
+    },
+    {
+      "path": "docs/LOCAL_EXECUTION.md",
+      "bytes": 21091,
+      "sha256": "84a395e2b3ce63722335cc4df01237da3f6b0b41dceb63f012f1e8c3e9f1b3b4"
+    },
+    {
+      "path": "docs/LOCAL_MIGRATION.md",
+      "bytes": 18281,
+      "sha256": "2f12f9d64101f265064781a3098e3ea91af668a4ba5667d6c76d905642eb9946"
+    },
+    {
+      "path": "docs/ROADMAP.md",
+      "bytes": 2926,
+      "sha256": "633223bcc112a6d6fde1ef169481777800c64eb7f47998317559a9f200284e08"
+    },
+    {
+      "path": "docs/TASKS.md",
+      "bytes": 11589,
+      "sha256": "4acaed86f565712440625de505984269e2a589b523c931d98687635877946ba5"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/ACCEPTANCE.md",
+      "bytes": 12516,
+      "sha256": "abab8b724acb137a48378bbb290d7ae5428fe8eeaa3b58784e6861009a20580c"
+    },
+    {
+      "path": "memory/STATE.md",
+      "bytes": 19276,
+      "sha256": "eba69fdc93c72ee016a7b3d51d08fb3064c15180f0a48bb3f285006e8f6a6765"
+    },
+    {
+      "path": "memory/HANDOFF.md",
+      "bytes": 15422,
+      "sha256": "f07039c09ec8481db41c9620df410ee25563e0d292d90c5e924939418bd877ce"
+    },
+    {
+      "path": "memory/SESSION_LOG.md",
+      "bytes": 53177,
+      "sha256": "32ed5828d1b9cd0b5c711fb0019584c16dc4843b57d771215c10b37ae3207bb5"
+    },
+    {
+      "path": "memory/PROJECT.md",
+      "bytes": 3921,
+      "sha256": "dcd0bfcd4ad136e0cf0e5831c34650dcf54226c525bb07311b241fa65b0a939d"
+    },
+    {
+      "path": "simulator/gem5/README.md",
+      "bytes": 17859,
+      "sha256": "14a87cffbe9fd7f72fde0050c721481a96afc9376e2d19cbbc8048f5c20eb953"
+    },
+    {
+      "path": "docs/COMMUNICATION.md",
+      "bytes": 12730,
+      "sha256": "9e89492e3b0f4fff4e505b4ecb54f7e86c0a1d0c5715882df2a864390690e60e"
+    },
+    {
+      "path": "simulator/README.md",
+      "bytes": 5988,
+      "sha256": "e3544afc14e03e6b87f00a9a7dc8ab04886e23c61bc816f6e885bafa354e2629"
+    },
+    {
+      "path": "docs/validation/m3-fs/REUSE.md",
+      "bytes": 6177,
+      "sha256": "62fc18d411ca7d8d8d837f8483d68733b21371296ed0d997155c519e26f0f249"
+    },
+    {
+      "path": "experiments/README.md",
+      "bytes": 1252,
+      "sha256": "037068b85fd66ed551921f8096ac50857e6484311456c3c91506059983d36ceb"
+    }
+  ],
+  "public_export_files": [
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/build-result.json",
+      "bytes": 400,
+      "sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/canonical-config",
+      "bytes": 1156,
+      "sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/build-info.log",
+      "bytes": 1640,
+      "sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/loader.log",
+      "bytes": 3348,
+      "sha256": "4b4781aeb1b54afaae90aa3149325aac7e37e440f1ebc596f5f3952dce2d96da"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/preflight.json",
+      "bytes": 1512,
+      "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/runtime-execution-id.json",
+      "bytes": 54,
+      "sha256": "0b116e6f6485be1ea7226e1a51a4c01126f0933d34d038859f7dfb4e47ddc64b"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/runtime-submission-argv.json",
+      "bytes": 1755,
+      "sha256": "1e9e007177ef1d59574529bba0ce1849b0d7727e133f620bddaa12b3393afd42"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/observe_runtime_production_v1.py",
+      "bytes": 16294,
+      "sha256": "8a3436b59655089ffb6751c255016021e66b6b9d07cc66ca42dc4d4f3ca18010"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/production-observation-194045.json",
+      "bytes": 4977,
+      "sha256": "16df60de81835a2aca9d9569c7f542234bc82b020003dfa21ddb8008e2ed66b6"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/listener-confirmation-194217.json",
+      "bytes": 3435,
+      "sha256": "b10dc69c9bb1afc4a332c4e107d1256ab872c195a03e63132fb912deaa7067b1"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/listener-source-review.json",
+      "bytes": 1815,
+      "sha256": "85e1317a5586220289ef77d37329d3b1cef8224ecc914a6cd32a488fa2264cf8"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/build03-resource-adjustment-guard-audit.json",
+      "bytes": 1269,
+      "sha256": "8daddfd844886e3adc23a5ad30c8d35a7ced221dbbdcacfcc72fef8e115a283b"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/new-gem5-binary-mode-protection.json",
+      "bytes": 689,
+      "sha256": "07d71590c41aa5dbc1316b52222abfca246bad73149064b00b8df1699ce6c540"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/independent-build-preflight-postbuild-review.json",
+      "bytes": 58635,
+      "sha256": "4989e8cd5af804d3755fd0e6f1836f35e70d69d71c5d47df86f061709910d531"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/runtime-library-profile.json",
+      "bytes": 33838,
+      "sha256": "0fa270882a689dc116a62fbc48a849974b98dc08ae684fa9d8a9ead2528a84e5"
+    },
+    {
+      "path": "docs/validation/local-migration-20261009/local-validating-live-v1/index.json",
+      "bytes": 9248,
+      "sha256": "c455b22636766d319a7132c3b330b3322765409d0f4fa6857a7c3886965c2bc1"
+    }
+  ],
+  "archive_manifest_sha256": "49a2132ccf53b38c90f1921b52c3f835ca939aae633dc25024746fd500da0e82",
+  "supersedes_pre_timestamp_check_sha256": "d15369c08e72e36f2373a7482f55fc9e6ebde439ded98540871ee2cf5da65564",
+  "git_diff_check_passed": true,
+  "actions": "Documentation edits only; no GitHub/commit/services/execution/state mutation"
+}

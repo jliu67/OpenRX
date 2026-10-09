@@ -1,0 +1,33 @@
+{
+  "state": "LOCAL_VALIDATING",
+  "utc": "2026-10-09T19:38:51.228039+00:00",
+  "build": {
+    "returncode": 0,
+    "source_changed": [],
+    "config_sha256_after": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+    "completion_utc": "2026-10-09T19:37:51.079045+00:00",
+    "scientific_validation": "not performed",
+    "binary_sha256": "e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902",
+    "binary_bytes": 1036720416,
+    "build-info_exit": 0,
+    "loader_exit": 0
+  },
+  "build_unit": {
+    "Result": "success",
+    "ExecMainStatus": "0",
+    "ActiveState": "inactive"
+  },
+  "build_result_sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f",
+  "original_binary_restored": false,
+  "new_binary_pinned": true,
+  "source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "runner_sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882",
+  "request_key": "issue-27-local-runtime-b4b5ffc-attempt-01",
+  "request_spec_sha256": "d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972",
+  "guest_resources_verified": true,
+  "guest_runtime_sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+  "runtime_library_profile_sha256": "fda84e150259de5f5f3208700dd0d5eb3a9e967150285bf29a0b9c6dc1bb7a40",
+  "core_package_pins_verified": 41,
+  "scientific_validation": "pending actual runtime; no full-scale workload authorized",
+  "remote_execution": "unavailable; fixed owner-authorized request only"
+}

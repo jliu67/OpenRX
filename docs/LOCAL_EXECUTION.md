@@ -1,6 +1,6 @@
 # Local execution policy and interface
 
-**Migration snapshot: STAGING, 2026-10-09 UTC. The designated policy is NOT YET ACTIVE at this snapshot.**
+**Snapshot updated 2026-10-09T19:57:09.253251Z; state LOCAL_VALIDATING since 2026-10-09T19:38:51Z. The policy is NOT YET ACTIVE.**
 [Task #27](https://github.com/jliu67/OpenRX/issues/27) and the
 [acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md) record the evidence and open gates.
 The owner's native Ubuntu computer is being prepared as the persistent execution host.
@@ -8,11 +8,12 @@ No agent may infer activation from a message, successful install, boot, process 
 Activation requires all migration gates, a separate review, a merged migration PR and consistent GitHub documentation.
 
 **Execution authorization:** expensive execution becomes effective only when [task #27](https://github.com/jliu67/OpenRX/issues/27)
-publishes a verified `LOCAL_ACTIVE` transition bound to the actual reviewed merge commit and final acceptance
-receipt. Until that proof exists, defer full-scale work. Dated repository snapshots preserve history;
+publishes independently verified acceptance, its matching `LOCAL_ACTIVE` transition and an explicit release
+bound to the actual reviewed merge and merged-document audit. Local active state alone does not release work.
+Until that release is verified, defer full-scale work. Dated repository snapshots preserve history;
 they never activate execution. Consult the live proof and local status for current availability.
 
-Once verified cutover reaches `LOCAL_ACTIVE`, this computer is the designated host for gem5 full-system runs,
+Once the verified #27 release exists, this computer is the designated host for gem5 full-system runs,
 long CPU architecture experiments, large RandomX workloads, expensive profiling/toolchain builds and large generated artifacts.
 Temporary agent sandboxes remain available for code/review, documentation, static analysis, lightweight tests,
 experimental design and small inexpensive reproductions. During migration, defer full-scale experiments;
@@ -23,8 +24,8 @@ The independent scientific gates in #16 and M1–M5 retain their original criter
 
 | Question | Current answer |
 |---|---|
-| Where do expensive runs execute? | The owner's Ubuntu host after verified `LOCAL_ACTIVE`; the host is currently staging. |
-| Is the runner available? | The reviewed runner `988cf13f…`, readonly `b4b5ffc…` source and fixed runtime request/pipeline v3 are staged. The host-managed pipeline is waiting for build 03; guest submission still requires successful build/loader/input preflight. Full-scale operation remains inactive. Prior runner 916 overall acceptance stays withdrawn and pipeline v2 stopped. Check #27 and the acceptance receipt before use. |
+| Where do expensive runs execute? | The owner's Ubuntu host after matching acceptance/LOCAL_ACTIVE and verified explicit #27 release; the host is currently LOCAL_VALIDATING and full-scale work is held. |
+| Is the runner available? | Immutable runner `988cf13f…`, readonly `b4b5ffc…` source and fixed runtime request/pipeline v3 have reviewed bindings. Build03/loader/input preflight completed; runtime-only execution `20261009T193937Z-576aa858c033` has started. Guest correctness, actual stop/final outputs and cutover are unverified. Prior runner916 acceptance stays withdrawn and pipelinev2 stopped. Check #27/latest local status before use. |
 | How is a request submitted? | A GitHub task issue with the complete execution specification below; the owner or an explicitly authorized local session reviews and submits it locally. |
 | Can a remote agent execute directly? | **No. Remote execution and retrieval are unavailable.** There is no SSH access, network listener or autonomous issue poller provisioned by this migration. |
 | How are collisions prevented? | The local runner serializes admission, binds a request key to one execution ID and uses one host resource lock. GitHub claims coordinate source work and are not CPU locks. |
@@ -41,7 +42,7 @@ foundation full-dataset/native steady workload steps. Their original commands an
 retained; skipped expensive controls are **DEFERRED to reviewed local requests, never passed**.
 Lightweight Python/vendor/upstream controls, two-nonce verify and one-cache native/QEMU correctness remain.
 These branch guards become mainline policy only after the reviewed PR merges; main is not yet updated
-at this staging snapshot. No self-hosted GitHub Actions runner has been provisioned. Do not dispatch the
+at this LOCAL_VALIDATING snapshot. No self-hosted GitHub Actions runner has been provisioned. Do not dispatch the
 retained expensive hosted jobs to bypass migration or an offline local host.
 
 ## Owner-mediated GitHub submission and retrieval
@@ -75,14 +76,30 @@ now binds key `issue-27-local-runtime-b4b5ffc-attempt-01`, specification SHA-256
 [pipeline binding review](validation/local-migration-20261009/pipeline-independent-review-v3.json)
 verify those actual source/request/toolchain bindings. Fixed driver
 `ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910` is running as
-`openrx-migration-validation-pipeline-v3-20261009.service`, waiting for build 03 and all prerequisites.
-No full-scale workload, executed guest or active policy is claimed. A fixed local driver is not a remote issue poller.
+`openrx-migration-validation-pipeline-v3-20261009.service`. It verified completed build03/loader/input
+preflight and submitted runtime-only execution `20261009T193937Z-576aa858c033` at 19:39:37Z.
+The new simulator is a distinct 1,036,720,416-byte binary, SHA-256
+`e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902`.
+Preflight SHA-256 `d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626`
+supports LOCAL_VALIDATING at 19:38:51Z, not scientific acceptance. Last bounded observations find the
+smoke running; complete expected-guest/runtime results, actual gem5 stop and final output verification
+remain pending. No full-scale workload or active policy is claimed. The fixed driver is not a remote issue poller.
+
+[Completed build/preflight exports](validation/local-migration-20261009/local-validating-live-v1/index.json)
+bind the actual [preflight](validation/local-migration-20261009/local-validating-live-v1/preflight.json),
+new binary/config/build-info/loader, source/input/request and bounded live observations.
+[Independent postbuild review](validation/local-migration-20261009/local-validating-live-v1/independent-build-preflight-postbuild-review.json)
+rehashed the binary,694 original files,10,933 simulator source entries,41 package pins and43 runtime-library
+bindings. It accepts build/preflight integrity only. Live manager success while active is not terminal success;
+instantaneous socket observations and listener-disable notice do not prove perpetual listener absence,
+whole Codex shutdown/host reboot survival or guest correctness. Raw/public evidence identities remain distinct.
 
 The local operator verifies the reviewed request, resolves its paths to the local installation, submits it with the local CLI,
 and posts the execution ID plus manifest digest to the task. The local operator later exports sanitized receipts,
 required raw evidence and integrity records to GitHub or a deliberately configured artifact channel.
 Remote agents can review those publications. **This workflow requires the host online and an owner or explicitly authorized local session to act locally;
-end-to-end request/retrieval has not yet been demonstrated.** GitHub comments alone cannot launch a process.
+the reviewed runtime request has been submitted, but final scientific-result retrieval remains pending.**
+GitHub comments alone cannot launch a process.
 
 Before accepting results, match execution/request IDs, source commit/configuration/input digests, complete logs,
 actual exit/status and strict scientific validation. A runner `PROCESS_EXITED` status establishes zero process exit;
@@ -126,7 +143,8 @@ The source implementation is `scripts/local_execution.py`. Owner operations use 
 release in `$OPENRX_RUNNER`, selected from the installation receipt, rather than a mutable checkout.
 The interface below matches the reviewed runner988 release.
 Host fixture records and narrow source reviews are preserved. The corrected source/request/pipeline
-bindings are now reviewed; guest submission remains gated on actual build/loader/input preflight.
+bindings are now reviewed; actual build/loader/input preflight passed and the runtime-only request has
+been submitted. Further submissions still require their own verified prerequisites and reviewed scope.
 Prior runner 916 overall future execution acceptance was withdrawn; its fsync review remains scoped durability evidence.
 [Signal-safety review](validation/local-migration-20261009/runner-signal-safety-independent-review.json)
 accepts only the narrow f6ea revision with 25 focused tests. Corrected runner `988cf13f…` removes post-reap group
@@ -178,7 +196,9 @@ The runner records digests at submission and rechecks them under the resource lo
 `guest-runtime-smoke` or `regression-smoke`. The template above uses a lifecycle fixture;
 a guest smoke request uses `--validation-scope guest-runtime-smoke` and the unchanged gem5 runtime oracle.
 `--kind simulation` is admitted only after `LOCAL_ACTIVE`; validation and build requests remain allowed
-in active state. Pre-cutover validation and migration builds must be deliberately scoped.
+in active state. This mechanical admission does not verify GitHub release: the operator must hold expensive
+submission until the matching explicit #27 release is independently verified. Pre-cutover validation and
+migration builds must be deliberately scoped.
 Allowed explicit environment keys are recorded in `scripts/local_execution.py`; unsupported keys fail admission.
 Use paths without whitespace, quotes, backslashes or percent signs for the execution root and runner interpreter,
 because the durable systemd finalizer rejects unsupported path syntax.

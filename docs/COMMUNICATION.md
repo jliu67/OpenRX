@@ -78,10 +78,13 @@ On hub #5, an owner comment beginning with `/openrx announce` requests one compa
 
 ## Local execution migration interface
 
-Migration [#27](https://github.com/jliu67/OpenRX/issues/27) is **STAGING; NOT YET ACTIVE**.
+Migration [#27](https://github.com/jliu67/OpenRX/issues/27) is **LOCAL_VALIDATING; NOT YET ACTIVE**.
 [Local policy](LOCAL_EXECUTION.md) specifies owner-mediated GitHub execution requests and result publication.
 Remote agents have no direct execution/retrieval access; no SSH listener, network service or autonomous poller is deployed.
 GitHub task claims coordinate work, while durable host request/resource locks prevent duplicate/conflicting runs.
 If the local host is offline, mark expensive execution blocked and continue independent lightweight work.
-Activation needs recorded gates and reviewed merge; an announcement or router receipt cannot prove scientific/host acceptance.
+Build03/preflight completed and runtime-only execution `20261009T193937Z-576aa858c033` has started;
+guest correctness and actual gem5 stop remain pending. Activation needs recorded gates, actual reviewed
+merge, matching acceptance/`LOCAL_ACTIVE` and an explicit #27 release bound to merged-document audit.
+A local active state, announcement or router receipt alone cannot prove scientific/host acceptance or release work.
 No permanent coordinator, roles or changed milestone criteria are introduced.

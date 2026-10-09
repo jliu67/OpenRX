@@ -17,13 +17,16 @@ The user has named the project OpenRX and designated this repository as the cano
 
 The user designated their Ubuntu computer as the future resource-intensive execution host while retaining
 GitHub as the authority for agent coordination, source/PRs, scientific evidence, manifests, memory and gates.
-Migration [#27](https://github.com/jliu67/OpenRX/issues/27) is **STAGING; NOT YET ACTIVE**.
+Migration [#27](https://github.com/jliu67/OpenRX/issues/27) is **LOCAL_VALIDATING; NOT YET ACTIVE**.
 [Policy](../docs/LOCAL_EXECUTION.md), [runbook](../docs/LOCAL_MIGRATION.md) and
 [acceptance receipt](../docs/validation/local-migration-20261009/ACCEPTANCE.md) describe actual availability.
 Remote agents must not assume host access. Requests/results use the owner-mediated GitHub/local
 workflow, operated by the owner or an explicitly authorized local session; the owner need not be present.
 The current migration session is authorized locally, without provisioning a remote execution interface.
-Actual end-to-end result retrieval remains untested.
+Pinned build03/loader/input preflight completed; runtime-only execution `20261009T193937Z-576aa858c033`
+has started, with guest correctness and actual stop unverified. Final scientific-result retrieval remains
+pending. Expensive-work release requires #27's independently verified acceptance, matching LOCAL_ACTIVE
+and explicit release bound to actual reviewed merge/merged-document audit; state alone is insufficient.
 No permanent roles or coordinator, network listener, SSH deployment or autonomous job poller is introduced.
 
 Preserve every prior scientific artifact/configuration/build/result/checkpoint/log and all milestone history.

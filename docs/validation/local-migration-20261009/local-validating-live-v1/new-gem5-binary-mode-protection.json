@@ -1,0 +1,12 @@
+{
+  "utc": "2026-10-09T19:44:42.272213+00:00",
+  "path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+  "sha256": "e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902",
+  "bytes": 1036720416,
+  "mode_before": "0o775",
+  "mode_after": "0o555",
+  "action": "Remove write bits only from newly generated verified build03 executable after build completed. Existing source, configuration, data and prior build attempts unchanged.",
+  "byte_integrity_verified_before_protection": true,
+  "scientific_acceptance": "unverified",
+  "build_manager_readback": "Result=success\nExecMainStatus=0\nActiveState=inactive\n"
+}
