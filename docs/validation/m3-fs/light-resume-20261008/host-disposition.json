@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-10-08T23:55:27.905905+00:00",
+  "session_id": 97340,
+  "session_reported_exit_code": 1,
+  "final_runner_report": "absent",
+  "gem5_process_observed_after_stop": false,
+  "wrapper_process_observed_after_stop": false,
+  "partial_hash_stream": true,
+  "wall_timeout_observed": false,
+  "tick_guard_exit_observed": false,
+  "hash_mismatch_observed": false
+}

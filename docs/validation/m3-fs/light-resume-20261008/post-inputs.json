@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "evidence_class": "independent post-session input audit; not a runner report",
+  "observed_utc": "2026-10-08T23:55:54.225894+00:00",
+  "sources": {
+    "simulator/gem5/run.py": {
+      "sha256": "e0bd968231f5d4d6a3f99d45fa630013ed9894d9b4b4f7e74917095cf4fb7a17",
+      "bytes": 12692,
+      "matches_launch_snapshot": true
+    },
+    "simulator/gem5/fs.py": {
+      "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5",
+      "bytes": 4615,
+      "matches_launch_snapshot": true
+    },
+    "simulator/gem5/prepare.py": {
+      "sha256": "dc1fa2b1714a40ea7f5805963c689e64cd44149a3314cac312b45ed9bdf23763",
+      "bytes": 4764,
+      "matches_launch_snapshot": true
+    },
+    "simulator/gem5/resources.json": {
+      "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb",
+      "bytes": 2336,
+      "matches_launch_snapshot": true
+    },
+    "tests/native_runtime_probe.py": {
+      "sha256": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617",
+      "bytes": 5511,
+      "matches_launch_snapshot": true
+    },
+    "tests/native_riscv_probe.py": {
+      "sha256": "024137e6b4c928f9ae771ccd9029ec35acadd9643bee6b8f89cb10375113e236",
+      "bytes": 10949,
+      "matches_launch_snapshot": true
+    },
+    "simulator/probe/main.cpp": {
+      "sha256": "855762bdcfc687c53c8ebe7f4c419415773edaf7a156d2667b3eff5cd990281d",
+      "bytes": 15098,
+      "matches_launch_snapshot": true
+    },
+    "simulator/runtime-probe/main.c": {
+      "sha256": "c05ca5f23a81e8a60f528bdd4052fe63746eb1e1550a11872ed7885a4f5e4fc4",
+      "bytes": 4572,
+      "matches_launch_snapshot": true
+    }
+  },
+  "resources": [
+    {
+      "role": "bootloader",
+      "id": "riscv-bootloader-opensbi-1.3.1",
+      "resource_version": "1.0.0",
+      "url": "https://dist.gem5.org/dist/develop/kernels/riscv/static/riscv-bootloader-opensbi-1.3.1-20231129",
+      "filename": "opensbi",
+      "gzip": false,
+      "bytes": 1292496,
+      "upstream_md5": "44b3fe636c9d38567b04ef54ea362f0d",
+      "sha256": "510f5b9cbc6d2c8c97dacc395b29d47e897c1abe91e4df5a7d8893c0fad8ae0a",
+      "catalog_license": "",
+      "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-opensbi",
+      "observed": {
+        "bytes": 1292496,
+        "md5": "44b3fe636c9d38567b04ef54ea362f0d",
+        "sha256": "510f5b9cbc6d2c8c97dacc395b29d47e897c1abe91e4df5a7d8893c0fad8ae0a"
+      }
+    },
+    {
+      "role": "kernel",
+      "id": "riscv-linux-6.8.12-kernel",
+      "resource_version": "1.0.0",
+      "url": "https://dist.gem5.org/dist/develop/kernels/riscv/static/riscv-vmlinux-6.8.12",
+      "filename": "vmlinux",
+      "gzip": false,
+      "bytes": 19749472,
+      "upstream_md5": "c29f3fce21f128870ebf769f8caef720",
+      "sha256": "57e9a7ab9553fb6c58078913b12687455bc46c072539266b14cbb0142b7bffdd",
+      "catalog_license": "",
+      "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-fs",
+      "observed": {
+        "bytes": 19749472,
+        "md5": "c29f3fce21f128870ebf769f8caef720",
+        "sha256": "57e9a7ab9553fb6c58078913b12687455bc46c072539266b14cbb0142b7bffdd"
+      }
+    },
+    {
+      "role": "disk_image",
+      "id": "riscv-ubuntu-24.04-img",
+      "resource_version": "2.0.0",
+      "url": "https://dist.gem5.org/dist/develop/images/riscv/ubuntu-24-04/riscv-ubuntu-24.04-20250515.gz",
+      "filename": "ubuntu.img",
+      "gzip": true,
+      "root_partition": "1",
+      "compressed_bytes": 1517651202,
+      "compressed_sha256": "217f9a700742f136255bb715066f3665c523187350583bbd1c7b95b5a7322d27",
+      "bytes": 5242880000,
+      "upstream_md5": "1c1191dfe51857076aee800def85bc76",
+      "sha256": "ddf1ebb56454ef37e88d6de8aefdef7180fc9a2328a3bf8cff02f7a043e7127b",
+      "catalog_license": "",
+      "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-fs/riscv-ubuntu-22.04-24.04",
+      "observed": {
+        "bytes": 5242880000,
+        "md5": "1c1191dfe51857076aee800def85bc76",
+        "sha256": "ddf1ebb56454ef37e88d6de8aefdef7180fc9a2328a3bf8cff02f7a043e7127b"
+      }
+    }
+  ],
+  "gem5": {
+    "path": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+    "bytes": 957300488,
+    "md5": "f0abadb11fbd571105a65cf82ae4966c",
+    "sha256": "3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6"
+  },
+  "guest_script_sha256": "09f195dd10de4e90bdd8edc17c8ea6bf8a18a66f74c3cf9abcd213af01c8db5d",
+  "payloads": {
+    "runtime": {
+      "path": "/tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe",
+      "bytes": 13760,
+      "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+      "equals_exact_embedded_guest_payload": true
+    },
+    "hash": {
+      "path": "/tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe",
+      "bytes": 376824,
+      "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+      "equals_exact_embedded_guest_payload": true
+    }
+  }
+}

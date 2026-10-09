@@ -49,3 +49,24 @@ The current runner defaults to no wall-clock cutoff. Monitor the serial stream a
 
 [Build and link evidence](link-recovery-20261008/README.md) and [latest execution results](README.md) are separate records. Hosted manual build/cache/download reuse has offline checks but has not been exercised end to end.
 
+
+## Light matrix execution allowance
+
+The extended unchanged attempt independently passed nine runtime and 31
+arithmetic controls, then was manually stopped after proof that its `10^13`
+per-call tick allowance cannot cover both mandatory cache initializations.
+[Exact ELF/configuration budget review](light-resume-20261008/BUDGET-REVIEW.md)
+establishes a conservative minimum of 10,519,287,679,000 ticks for the Argon
+round loops alone. Use an explicit larger allowance such as
+`--max-ticks 100000000000000` for the next unchanged light matrix, retaining
+a fresh output directory and complete monitoring. This is a finite proposed
+guard, not a guarantee of completion or a wall-time estimate.
+
+The execution-session stop generated no final runner report;
+[the saved actual review](light-resume-20261008/REVIEW.md) preserves that
+limitation, complete runtime frames and incomplete hash output. The new
+optional `--stop-file PATH` allows a stop request from a separate tool/PID
+namespace: choose a nonexistent path at launch, then create it to request
+the runner's own SIGINT/cleanup/report path. Use a fresh stop path for every
+attempt. Tool/session termination itself must not be assumed to yield a
+runner report.

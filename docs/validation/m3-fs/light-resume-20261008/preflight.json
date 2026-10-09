@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "session": "codex/20261008-light-resume",
+  "base_commit": "50ba83166a9df0fca243af57a7c889ec752a59fc",
+  "evidence_class": "execution-preflight",
+  "host": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "host_python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "timeout_seconds": null,
+  "max_ticks_per_simulate_call": 10000000000000,
+  "sources": {
+    "simulator/gem5/run.py": {
+      "sha256": "e0bd968231f5d4d6a3f99d45fa630013ed9894d9b4b4f7e74917095cf4fb7a17",
+      "bytes": 12692
+    },
+    "simulator/gem5/fs.py": {
+      "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5",
+      "bytes": 4615
+    },
+    "simulator/gem5/prepare.py": {
+      "sha256": "dc1fa2b1714a40ea7f5805963c689e64cd44149a3314cac312b45ed9bdf23763",
+      "bytes": 4764
+    },
+    "simulator/gem5/resources.json": {
+      "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb",
+      "bytes": 2336
+    },
+    "tests/native_runtime_probe.py": {
+      "sha256": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617",
+      "bytes": 5511
+    },
+    "tests/native_riscv_probe.py": {
+      "sha256": "024137e6b4c928f9ae771ccd9029ec35acadd9643bee6b8f89cb10375113e236",
+      "bytes": 10949
+    },
+    "simulator/probe/main.cpp": {
+      "sha256": "855762bdcfc687c53c8ebe7f4c419415773edaf7a156d2667b3eff5cd990281d",
+      "bytes": 15098
+    },
+    "simulator/runtime-probe/main.c": {
+      "sha256": "c05ca5f23a81e8a60f528bdd4052fe63746eb1e1550a11872ed7885a4f5e4fc4",
+      "bytes": 4572
+    }
+  },
+  "execution_commit": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+  "pull_request": 25,
+  "launch_requested_utc": "2026-10-08T23:09:15.601341+00:00"
+}

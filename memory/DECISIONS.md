@@ -67,3 +67,10 @@ Reconciliation: the concurrent hub-policy entry reused D029, already assigned to
 | ID | Decision | Reason | Revisit when |
 |---|---|---|---|
 | D033 | Keep guest wall cutoff opt-in; explicitly stop and reap the simulator on cancellation while retaining completed controls | The prior 1,200-second bound mostly covered boot and exposed no complete hash matrix; unlimited waits require reliable explicit cancellation and truthful partial evidence | Observed workload progress justifies a declared limit or a different execution model is accepted |
+
+## Extended guest budget and stop control — 2026-10-09 UTC
+
+| ID | Decision | Reason | Revisit when |
+|---|---|---|---|
+| D034 | Declare `10^14` ticks explicitly for the next unchanged light matrix; retain the runtime-only default and all strict completion checks | Exact retained-ELF loops and actual width/clock prove a conservative 10,519,287,679,000-tick minimum for two mandatory cache round loops alone, exceeding `10^13`; the proposed margin is not a sufficient-budget proof | Executed complete matrix or a changed ELF/model provides new evidence |
+| D035 | Offer an optional fresh stop marker observed inside the runner's main wait loop | Tool-session control-C ended the actual attempt without a final runner report; a shared-filesystem request can reach the runner's own signal/cleanup/report path across PID namespaces | A verified tool/process interface provides equivalent lifecycle control; source/host review must remain separate from actual gem5 acceptance |

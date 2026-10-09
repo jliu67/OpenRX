@@ -157,7 +157,8 @@ python3 simulator/gem5/prepare.py --output-dir build/gem5-resources
 python3 simulator/gem5/run.py --gem5 "$REVIEWED_GEM5_BINARY" --resources build/gem5-resources --runtime-binary build/openrx-runtime-probe --output-dir build/gem5-runtime
 ```
 
-Add `--hash-binary build/probe-riscv/openrx-riscv-probe` after separately building
+Add `--hash-binary build/probe-riscv/openrx-riscv-probe` and an explicit
+`--max-ticks 100000000000000` after separately building
 the unchanged scalar workload with the existing pinned toolchain. That is a
 **light-mode** control. Full-dataset memory, multithreading and every intended
 timing CPU remain separate acceptance gates. Do not shrink RandomX constants
@@ -216,3 +217,25 @@ its unchanged 39-control matrix before that stage can pass; task #16 remains ope
 - [Cross-run same-repository artifact download](https://github.com/actions/download-artifact)
 - [Cache matching and eviction behavior](https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching)
 - [Pinned low-memory linker option](https://github.com/gem5/gem5/blob/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/SConstruct)
+
+## Extended light attempt and external stop requests
+
+[The extended actual attempt](../../docs/validation/m3-fs/light-resume-20261008/README.md)
+passed all nine runtime and 31 arithmetic controls, with zero completed hash
+values. It was manually stopped after independent exact-ELF/configuration
+review proved the default `10^13` per-call tick guard insufficient for both
+mandatory cache initializations. The next recipe declares `10^14` explicitly;
+that larger finite guard still requires executed completion and strict review.
+Default values and historical attempt records remain unchanged.
+
+For a monitored long run, pass `--stop-file /tmp/openrx-stop-next-attempt`
+with a path that does not exist. From another tool session, create that file
+to request the runner's own SIGINT cleanup and failed final report, including
+completed runtime controls. The runner never creates or removes the file;
+choose a fresh path for each attempt. Polling this optional control introduces
+no wall-clock cutoff. An existing stop path is rejected before launch.
+
+The actual tool-level control-C stop above yielded no final runner report.
+[Saved serial/input review](../../docs/validation/m3-fs/light-resume-20261008/REVIEW.md)
+distinguishes this limitation from passing host lifecycle tests and from any
+future use of the new control. No simulator remains running at that handoff.
