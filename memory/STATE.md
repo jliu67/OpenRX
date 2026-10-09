@@ -14,7 +14,12 @@ record actual migration gates. Original current documentation snapshots are reta
 
 The original saved gem5 Library binary/package is currently inaccessible via callable tools.
 Its prior successful save and digests are preserved; no transfer is claimed. A separate pinned local source
-rebuild is in progress. Exact original guest runtime/hash payloads have been recovered and digest-verified;
+rebuild attempt 02 failed at its 6-GiB cgroup memory limit; the failed source/partial build/logs are retained.
+Its waiting pipeline failed on the absent final build-result file, started no guest and advanced no state.
+A separate copied partial-build attempt 03 is running with one worker and an 8-GiB RAM/2-GiB swap/100% CPU
+budget, distinct from normal runner service limits.
+[Failure evidence](../docs/validation/local-migration-20261009/build-failure-02/README.md) remains explicit.
+Exact original guest runtime/hash payloads have been recovered and digest-verified;
 pinned firmware/kernel/compressed/expanded disk now match the exact resource manifest; local simulator execution remains pending.
 Host native smoke passes 257 Python tests, 171 vendor files, 106 upstream controls plus one explicit
 unsupported-AVX2 skip, 39 exact semantic/hash controls (optional AES skip) and nine runtime controls;
@@ -22,7 +27,15 @@ this is not a gem5 pass.
 Local simulator boot/correctness, final independent runner/asset review and merged PR remain unverified.
 Host fixture evidence demonstrates launch-process independence, serialized admission, duplicate rejection,
 retained status/logs, stop/process-failure/recovery and verified receipt integrity; a full ChatGPT session
-termination or host reboot was not performed. Final source/evidence reconciliation remains pending. Remote host execution/retrieval is unavailable;
+termination or host reboot was not performed. [Independent final runner review](../docs/validation/local-migration-20261009/runner-independent-review.json)
+accepts the final inventory safety changes (22 focused tests/targeted v6 controls); v4 ten-fixture lifecycle
+and full 277-test evidence retain their separate prior source identity. A later full 279-test root run binds cd90.
+The current immutable runner916b6b0d release adds pre-receipt fsync and passes23 focused controls;
+[Independent durability review](../docs/validation/local-migration-20261009/runner-durability-independent-review.json)
+accepts the latest-source23-test/flush-failure control and architectural session independence with explicit
+whole-daemon/host-reboot limits. Runtime request revision02 binds this release/new key/specification,
+but build03/loader/reviewed local-validation prerequisites still gate submission. Corrupt/torn durable records fail
+closed and require preserved forensic copies plus manual additive reconciliation, not automatic reruns. Remote host execution/retrieval is unavailable;
 requests require owner-mediated GitHub submission and result publication.
 Hold full-scale research until verified cutover; a rebuilt simulator is a separate artifact and must pass local gates.
 The historical sections below retain earlier accepted evidence and do not declare the new host validated.

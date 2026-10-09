@@ -1,0 +1,30 @@
+{
+  "utc": "2026-10-09T16:43:36.989550+00:00",
+  "scope": "retained actual host scripts and owner spec; derivatives for review, not directly executable or original runner.verify inputs",
+  "files": [
+    {
+      "name": "build_gem5_attempt03.py",
+      "host_original_sha256": "1e0f8593a823295c33c89b7145daa9d7fd73e05b0aed6bfe9f26ceeace803b24",
+      "host_original_bytes": 3778,
+      "public_derivative_sha256": "61a99d4e63fec777c539222d6c9837d5004c0db8d25730abc1f27e5c3b0d50cf",
+      "public_derivative_bytes": 3770,
+      "redaction": "literal root prefix -> ${OPENRX_LOCAL_ROOT}; no other changes"
+    },
+    {
+      "name": "validate_when_ready_v2.py",
+      "host_original_sha256": "dab2f21ee221adfbba425ed562c68b88bb40e87bdb26e5f6b1bcde90f7c895b5",
+      "host_original_bytes": 12963,
+      "public_derivative_sha256": "297ef845e00fc7d74bac6bec2e33c189a64959eef2384a2d2f85975931cf8251",
+      "public_derivative_bytes": 12955,
+      "redaction": "literal root prefix -> ${OPENRX_LOCAL_ROOT}; no other changes"
+    },
+    {
+      "name": "spec-issue-27-local-runtime-6f54052-attempt-02.json",
+      "host_original_sha256": "b0117492ebcf3681fcd28d5b0ae04c7ede200a1deb341566890647d09fdf8ecd",
+      "host_original_bytes": 2623,
+      "public_derivative_sha256": "b0117492ebcf3681fcd28d5b0ae04c7ede200a1deb341566890647d09fdf8ecd",
+      "public_derivative_bytes": 2623,
+      "redaction": "literal root prefix -> ${OPENRX_LOCAL_ROOT}; no other changes"
+    }
+  ]
+}

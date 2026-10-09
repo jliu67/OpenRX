@@ -15,6 +15,7 @@ from pathlib import Path
 import re
 import shutil
 import signal
+import stat
 import subprocess
 import sys
 import time
@@ -84,11 +85,33 @@ def identity(path):
 
 
 def sync_directory(path):
-    fd = os.open(path, os.O_RDONLY | os.O_DIRECTORY)
+    fd = os.open(path, os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW)
     try:
         os.fsync(fd)
     finally:
         os.close(fd)
+
+
+def sync_regular_file(path):
+    """Flush retained bytes without following links or blocking on special files."""
+    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+    try:
+        if not stat.S_ISREG(os.fstat(fd).st_mode):
+            raise ValueError(f"Cannot durably flush a nonregular artifact: {path}")
+        os.fsync(fd)
+    finally:
+        os.close(fd)
+
+
+def flush_retained(directory, retained):
+    """Persist scientific files and nested directory entries before a receipt."""
+    for path in retained:
+        sync_regular_file(path)
+    directories = {directory, *(path for path in directory.rglob("*") if path.is_dir())}
+    for path in sorted(directories, key=lambda path: len(path.parts), reverse=True):
+        sync_directory(path)
+    # The ID namespace itself must survive after the nested contents are flushed.
+    sync_directory(directory.parent)
 
 
 def write_new(path, data):
@@ -152,14 +175,19 @@ def append_event(path, event):
 
 def init(root):
     root = Path(root).absolute()
-    if root.is_symlink():
-        raise ValueError("Execution root must not be a symlink")
+    if any(path.is_symlink() for path in (root, *root.parents)):
+        raise ValueError("Execution root and its parent directories must not be symlinks")
     root.mkdir(mode=0o700, parents=True, exist_ok=True)
     for name in ("executions", "requests", "locks", "state"):
         child = root / name
         if child.is_symlink():
             raise ValueError(f"Execution directory is a symlink: {child}")
         child.mkdir(mode=0o700, exist_ok=True)
+        sync_directory(child)
+    # mkdir(parents=True) may have introduced more than one namespace level.
+    # Flush existing parents as well; their contents and permissions are untouched.
+    for directory in (root, *root.parents):
+        sync_directory(directory)
     with locked(root / "locks" / "state.lock"):
         if not events(root / "state" / "events.jsonl"):
             append_event(root / "state" / "events.jsonl", {
@@ -286,6 +314,7 @@ def submit(root, request_key, kind, cwd, argv, inputs, sources=(), env_items=(),
         execution_id = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ-") + uuid.uuid4().hex[:12]
         directory = root / "executions" / execution_id
         directory.mkdir(mode=0o700)
+        sync_directory(directory.parent)
         argv_template = argv
         argv = [item.replace("{execution_dir}", str(directory)) for item in argv]
         manifest = {
@@ -530,6 +559,7 @@ def finalize(root, execution_id, service_env=None):
             if not bindings:
                 # Recover a crash between exclusive receipt creation and its journal append.
                 verify_artifacts(directory, read_json(directory / "receipt.json"))
+                flush_retained(directory, [*finalized_files(directory), directory / "receipt.json"])
                 append_event(Path(root) / "state" / "execution-receipts.jsonl", {
                     "execution_id": execution_id, "receipt": actual, "recovered_binding": True,
                     "limitation": "Receipt origin was not journal-bound before interruption; retained artifact digests rechecked"})
@@ -544,6 +574,7 @@ def finalize(root, execution_id, service_env=None):
         if manager["SERVICE_RESULT"] not in {None, "success"} and status == "PROCESS_EXITED":
             status = "SERVICE_FAILED"
         retained = finalized_files(directory)
+        flush_retained(directory, retained)
         append_event(directory / "events.jsonl", {"status": "FINALIZED", "process_status": status, "systemd": manager})
         artifacts = [digest(path) for path in retained]
         receipt = {"schema": "openrx.local.receipt.v1", "execution_id": execution_id, "at": now(),

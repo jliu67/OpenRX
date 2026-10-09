@@ -8,10 +8,23 @@ No current claim/assigned role is implied by this document.
 
 The native Ubuntu 22.04 host and user systemd/lingering have been identified; deployment/gate evidence is being gathered.
 The original saved gem5 Library binary is unavailable through callable tools, so a new pinned local simulator
-build is in progress with separate provenance. Exact historical guest ELFs are recovered/digest-verified;
+build attempt 02 failed at its 6-GiB cgroup limit; the failed tree/logs and pipeline's missing-result failure
+are preserved in [failure evidence](../docs/validation/local-migration-20261009/build-failure-02/README.md).
+A copied partial-build attempt 03 is running with one worker and recorded 8-GiB RAM/2-GiB swap/100% CPU budget;
+no state advance, guest launch or simulator pass is claimed. Exact historical guest ELFs are recovered/digest-verified;
 pinned firmware/kernel/compressed/expanded disk are verified. Host native smoke passes original 257 Python tests,
 171 vendor files, 106 upstream controls plus one explicit unsupported-AVX2 skip,
 39 exact semantic/hash controls (optional AES skip) and nine runtime controls. No local gem5 pass is claimed. Historical runtime/partial-light evidence below is preserved and remains historical.
+
+The current immutable runner release916b6b0d adds pre-receipt durable flushing and passes23 focused
+controls; [Independent durability review](../docs/validation/local-migration-20261009/runner-durability-independent-review.json)
+accepts the latest-source23-test/flush-failure control and architectural session independence with explicit
+whole-daemon/host-reboot limits. Earlier v4/full277 and cd90/full279/22-focused/v6
+runs retain separate exact snapshot identities. [Revised runtime request](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085115884)
+key `issue-27-local-runtime-6f54052-attempt-02` is pending build03/loader/input/runner/state prerequisites;
+the old cd90 request was never submitted. The independently reviewed fixed pipelinev2 is a host-managed
+service waiting for build03 and must satisfy every preflight before runtime-only submission.
+The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6085149398) is verified.
 
 Next: verify original asset preservation, pinned local build/dependencies/inputs, runner durability/locks/resource limits,
 status/log/output integrity, safe stop/failure/recovery, expected guest boot and strict regression/runtime smoke.
@@ -19,6 +32,8 @@ Then obtain separate review, reconcile authoritative documentation, merge the mi
 and publish the effective policy only when all required gates pass. See the acceptance table for unfinished gates.
 Host-only progress/commands are under `$OPENRX_LOCAL_ROOT/migrations/20261009/`; per-attempt records under `executions/ID/`.
 No scientific checkpoint resume is verified.
+Malformed/torn manifests/receipts or broken ledgers fail closed; preserve bytes and an additive forensic
+copy/incident record, hold execution as `BLOCKED` for manual independent reconciliation and never overwrite or automatically rerun.
 
 Remote execution/retrieval is unavailable: visiting agents submit a complete GitHub task specification;
 the owner reviews/submits locally and publishes sanitized evidence. No listener, SSH setup or autonomous poller exists.

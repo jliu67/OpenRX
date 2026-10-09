@@ -176,3 +176,60 @@ c8222cc67a399bfc01e8658dd14b30d5bfd634f9 is in progress with separate Ubuntu 22.
 Exact guest/resource recovery, local boot/runtime/regressions, durable-runner/lifecycle/integrity gates,
 independent review and merged migration PR remain pending. No expensive research run, scientific milestone
 closure, new timing/power claim, resume guarantee, remote listener or permanent coordinator is asserted.
+
+
+## Local staging evidence and preserved source-build OOM — 2026-10-09 UTC
+
+Independent review verifies all 694 original tracked scientific files and 10,933 pinned simulator source
+entries unchanged; exact guest ELFs and all pinned firmware/kernel/compressed/expanded disk identities
+are recovered/verified. Selected 41 toolchain archives and installed versions match; no complete offline
+dependency closure is claimed. Native strict39/hash8/runtime9 controls, vendor171 and upstream106 plus
+one valid unsupported-AVX2 skip are accepted, without completing gem5 or M1–M5.
+
+Host runner lifecycle evidence retains exact source snapshots: v4 ten fixtures/full277 tests bind
+24717a7f, final cd90f1d0 inventory safety correction has separately reviewed22 focused tests and targetedv6
+regular-output/FIFO evidence. Launching process absence, advancing logs and host-manager ancestry establish
+observed launch-session independence; whole ChatGPT termination/host reboot were not performed.
+Malformed/torn files or broken ledgers require preserved additive forensic records and manual reconciliation,
+never overwritten records, invented acceptance or automatic scientific replay.
+
+Persistent build attempt02 failed with actual systemd Result=oom-kill at6GiB while compiling generated
+RISC-V units. Source, partial state and full logs are preserved. No final build-result.json was created;
+the waiting pipeline failed on that missing record and launched no simulator or state transition.
+Sanitized failure evidence retains separate host/public digests under local-migration-20261009/build-failure-02/.
+A separate copied partial-build attempt03 is being prepared with one worker and a recorded larger memory
+budget. Migration remains STAGING and execution policy inactive; local boot/runtime and reviewed merged
+cutover remain required. No build or simulator correctness was fabricated from partial progress.
+
+
+## Additive build recovery and durability-runner revision — 2026-10-09 UTC
+
+Attempt03 begins in a separate full copy of preserved attempt02 partial build state with one SCons worker,
+8GiB RAM/2GiB swap/100% CPU limits and no wall cutoff; normal runner defaults remain6GiB/1GiB/200%.
+Its build/config/toolchain records remain separate and no completed simulator or guest result is asserted.
+Final durability runner916b6b0d is stored as a new immutable release. It adds fsync of retained output files/
+directories before receipt publication and passes23 focused tests including injected flush failure with
+preserved outputs/no false receipt. Independent latest-source review is pending; old v4/full277 and
+cd90/full279/22focused/v6 evidence retain their exact snapshots.
+
+Runtime request revision02 on #27 binds new key issue-27-local-runtime-6f54052-attempt-02,
+request specification b0117492ebcf3681fcd28d5b0ae04c7ede200a1deb341566890647d09fdf8ecd and
+runner916b6b0d. The earlier cd90 request was never submitted after build02 OOM. Revised request/pipeline
+prerequisites still require completed simulator/loader/source/input review and evidence-backed local validation.
+Migration remains STAGING/inactive; neither a request comment nor build progress authorizes full-scale research.
+
+
+Latest runner916b6b0d durability revision is independently accepted in runner-durability-independent-review.json:
+23 focused controls pass13.357s with unchanged source identities, including preserved flush failure/no receipt.
+Architecture session independence is accepted from observed launcher exit, continued host-manager logs and
+systemd ancestry; whole ChatGPT daemon termination and host reboot were not performed. Reviewed pipelinev2
+binds runner916/specb011/new runtime request attempt02 and immutable scientific source6f54052, with enforced
+build/loader/toolchain/input/local-validation prerequisites. This is guard/source review, not executed guest
+acceptance or cutover. Earlier test/fixture snapshots remain intact; no final full280-suite claim is made.
+
+
+The reviewed pipelinev2 runs as openrx-migration-validation-pipeline-v2-20261009.service, waiting for
+build03 and every pinned preflight; this fixed owner-authorized driver does not poll remote issues or
+claim any guest outcome. Major failure hub request produced verified botcopy6085149398.
+Staged documentation links current reviews/evidence and retains STAGING/inactive with no fabricated
+state advance. Remote direct execution remains unavailable; final technical/cutover gates still apply.

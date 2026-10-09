@@ -192,6 +192,31 @@ class RunnerTests(unittest.TestCase):
         self.assertTrue(fifo.exists())
         self.assertFalse((directory / "receipt.json").exists())
 
+    def test_nested_output_flush_failure_cannot_publish_receipt_or_discard_data(self):
+        execution_id = self.submit("flush-failure")
+        self.assertEqual(runner.worker(self.root, execution_id), 0)
+        directory = self.directory(execution_id)
+        nested = directory / "payload" / "nested"
+        nested.mkdir(parents=True)
+        output = nested / "scientific-result.dat"
+        output.write_bytes(b"retained output requiring durable flush")
+        expected_stat = output.stat()
+        original_fsync = os.fsync
+        def fail_output_fsync(fd):
+            actual = os.fstat(fd)
+            if (actual.st_dev, actual.st_ino) == (expected_stat.st_dev, expected_stat.st_ino):
+                raise OSError("synthetic storage failure while flushing nested output")
+            return original_fsync(fd)
+        with mock.patch.object(runner.os, "fsync", side_effect=fail_output_fsync):
+            with self.assertRaisesRegex(OSError, "storage failure"):
+                runner.finalize(self.root, execution_id, {"SERVICE_RESULT": "success"})
+        self.assertEqual(output.read_bytes(), b"retained output requiring durable flush")
+        self.assertFalse((directory / "receipt.json").exists())
+        self.assertEqual(runner.events(directory / "events.jsonl")[-1]["status"], "PROCESS_EXITED")
+        # A new finalization attempt preserves every file and records honest process status.
+        runner.finalize(self.root, execution_id, {"SERVICE_RESULT": "success"})
+        self.assertTrue(runner.verify(self.root, execution_id)["integrity_verified"])
+
     def test_validation_needs_explicit_allowed_scope(self):
         with self.assertRaisesRegex(ValueError, "validation scope"):
             runner.submit(self.root, "unscoped", "validation", self.base,

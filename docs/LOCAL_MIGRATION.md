@@ -46,6 +46,14 @@ the only additions to the unchanged original config are detected optional PNG/HD
 with no configured workload/model usage. [Configuration review](validation/local-migration-20261009/rebuild-config-review.json)
 accepts this as a distinct rebuild config; it does not establish a simulator or scientific pass.
 Preserve the old timeout/OOM/recovery history and original binary digest.
+The local attempt 02 also failed with an actual 6-GiB cgroup OOM; its SCons partial build/source/logs
+are retained. The waiting pipeline then failed because no final build-result file existed and started no guest.
+[Failure evidence](validation/local-migration-20261009/build-failure-02/README.md) binds original and sanitized logs.
+The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6085149398)
+is verified; full technical failure evidence remains on task #27/PR #28.
+A separate copied partial-build attempt 03 started with one worker and a separately recorded
+8-GiB RAM/2-GiB swap/100% CPU budget. This is a scoped migration-build override; normal runner service
+limits remain 6-GiB RAM/1-GiB swap/200% CPU, with the same single-resource discipline. Do not infer incremental-copy effectiveness, build completion or scientific acceptance.
 
 The exact already-audited runtime/hash ELFs were recovered from tracked base64 payloads and their
 lengths/ELF metadata/SHA-256 independently reverified. Runtime SHA-256 is
@@ -82,7 +90,13 @@ exact redaction method/export digest. Do not feed redacted records to the host i
 
 The complete gem5 unchanged light matrix, full dataset, intended-core/SMP and selected BOOM Linux gates remain
 in #16/M3. Migration runtime smoke acceptance does not close those scientific gates or M1/M4/M5.
-No expensive research run is authorized before technical gates and cutover.
+The independently reviewed local driver `validate_when_ready_v2.py` is running as the host-managed
+`openrx-migration-validation-pipeline-v2-20261009.service`, waiting for attempt03. Its fixed request is
+`issue-27-local-runtime-6f54052-attempt-02`; [pipeline review](validation/local-migration-20261009/pipeline-independent-review-v2.json)
+binds driver `dab2f21e…`, runner `916b6b0d…` and specification `b0117492…`.
+It must verify build/loader/toolchain/inputs and publish evidence-backed `LOCAL_VALIDATING` before
+submitting runtime-only smoke. It is a finite owner-authorized local driver, not a remote listener or issue poller.
+No simulator has run at this staging snapshot. No expensive research run is authorized before technical gates and cutover.
 
 ## Stop, failure and recovery procedures
 
@@ -102,5 +116,22 @@ If integrity fails, stop new admission and record `ROLLBACK_REQUIRED` with exact
 Keep both originals and staged/rebuilt assets. Restore operation only from verified existing copies
 or a separately reproducible rebuild; unavailable originals remain recorded as unavailable.
 Rollback means hold/revert the execution-policy cutover and preserve data, not resume expensive sandbox execution.
+### Torn-file and journal recovery limit
+
+Power loss can leave an exclusively created manifest/result/receipt incomplete, or an event line torn.
+Such malformed records, a broken digest/event chain, output symlinks or nonregular artifacts fail closed:
+submission/verification/finalization must not invent a valid receipt or rerun the scientific command.
+The runner fsyncs finalized records/directories, but storage/power-loss durability is not a complete
+transactional journal guarantee. A host reboot or physical power-loss test has not been performed.
+
+Preserve every affected file byte-for-byte. Make a new forensic copy and record its digest, observed service/
+cgroup state, parsing/integrity error and last intact event in a separate incident record.
+Hold new admission and record `BLOCKED` with evidence using an intact state ledger; if that ledger is broken,
+its own CLI must refuse mutation, and the GitHub task/incident explicitly records the blocked condition.
+Do not truncate a torn tail, overwrite a malformed file, erase request mappings or construct a success receipt.
+Manual, independently reviewed reconciliation is required before execution can resume, with an additive
+recovery record preserving prior ledger bytes and duplicate-prevention bindings. No automatic replay or
+scientific checkpoint recovery is implemented.
+
 Before activation, external blockers leave state non-complete; after activation, an offline host leaves
 execution requests queued/blocked and agents continue lightweight work.

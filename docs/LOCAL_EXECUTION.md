@@ -40,6 +40,15 @@ output retention requirement, duplicate-prevention request key and all prerequis
 Use a stable key such as `issue-16-runtime-<source-prefix>-attempt-01`; a changed specification or deliberate retry needs a new key and execution ID.
 Never embed credentials, owner identity, personal paths or shell instructions received from an untrusted issue as executable authorization.
 
+The staging [runtime request revision 02](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085115884)
+binds key `issue-27-local-runtime-6f54052-attempt-02`, specification SHA-256
+`b0117492ebcf3681fcd28d5b0ae04c7ede200a1deb341566890647d09fdf8ecd` and runner
+`916b6b0d33956c847350dc54124132020968aa5a6ff11576911141fa27460977`.
+The [independent pipeline review](validation/local-migration-20261009/pipeline-independent-review-v2.json)
+accepts the fixed host-managed one-request validation driver's guards; the driver is not a remote issue poller.
+It requests only strict runtime smoke after build/loader/input/runner/state prerequisites; it does not authorize
+a full-scale workload or claim execution. The retained earlier `cd90f1d0…` request was never submitted after build 02 failed.
+
 The owner verifies the reviewed request, resolves its paths to the local installation, submits it with the local CLI,
 and posts the execution ID plus manifest digest to the task. The owner later exports sanitized receipts,
 required raw evidence and integrity records to GitHub or a deliberately configured artifact channel.
@@ -62,6 +71,7 @@ export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
 | Relative path | Purpose |
 |---|---|
 | `checkouts/` | Separate dedicated migration checkout and pinned execution source trees; original checkout preserved |
+| `releases/runner-v1-DIGEST/` | Immutable runner releases; every execution also captures its own runner bytes |
 | `sources/`, `builds/`, `toolchains/` | Immutable source captures, persistent incremental simulator builds and pinned dependency records |
 | `artifacts/` | Checksummed firmware, kernel, disk, runtime/hash ELFs and restored/rebuilt artifacts |
 | `executions/ID/` | Per-attempt manifest, runner snapshot, events, stdout/stderr, process result and receipt |
@@ -79,8 +89,16 @@ A rebuild from pinned source is a new artifact with a new digest, never recovery
 ## Local runner contract
 
 The staged CLI is `scripts/local_execution.py`; the interface below matches the implemented runner.
-Host fixture lifecycle validation has executed, while final independent acceptance and simulator guest gates
-remain pending. Full-scale operational use requires verified cutover. Execute them on the host from the checked-out source tree.
+Host fixture lifecycle and latest durability-source validation are independently accepted;
+simulator guest and cutover gates remain pending. Full-scale operational use requires verified cutover.
+[Independent runner review](validation/local-migration-20261009/runner-independent-review.json)
+accepts the output-inventory safety snapshot `cd90f1d0…`. The original v4 ten-run lifecycle fixture and
+full 277-test run bind `24717a7f…`; `cd90f1d0…` has separate 22-test/targeted v6 evidence and a root full
+279-test run. The current immutable release `916b6b0d…` adds durable flushing before receipt publication;
+23 focused tests pass, including injected storage-flush failure that preserves outputs without a false receipt.
+[Independent durability review](validation/local-migration-20261009/runner-durability-independent-review.json)
+accepts the latest release and 23-test result, including demonstrated architectural session independence.
+It does not claim a physical full-daemon termination or host reboot test. Do not treat these as one identical source snapshot. Execute them on the host from the checked-out source tree.
 
 ```bash
 python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" init
@@ -139,6 +157,9 @@ Public exports replace personal paths and are reviewed derivatives. Original art
 in those records identify the retained host bytes, not the sanitized files. Public derivatives cannot be
 passed through the host runner's digest/event-chain verifier as if byte-identical originals.
 Review the published export index/digests and exact redaction method, then the separate acceptance review
-of untouched host records. Preserve host originals and their external journal. Files still being written are not final immutable outputs.
+of untouched host records. Preserve host originals and their external journal.
+Malformed or torn manifests/receipts or a broken ledger fail closed; preserve them and record `BLOCKED`
+for manual, additive forensic reconciliation. Neither cleanup nor `recover` overwrites broken records
+or automatically reruns scientific work. See the runbook's power-loss limitation. Files still being written are not final immutable outputs.
 Inspect raw logs and the scientific report even when integrity succeeds. Do not edit final outputs to make validation pass.
 See the [migration and recovery runbook](LOCAL_MIGRATION.md) for gate order and failure handling.

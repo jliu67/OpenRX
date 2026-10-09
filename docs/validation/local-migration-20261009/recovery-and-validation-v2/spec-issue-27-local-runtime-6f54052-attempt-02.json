@@ -1,0 +1,57 @@
+{
+  "schema": "openrx.local.request.v1",
+  "request_key": "issue-27-local-runtime-6f54052-attempt-02",
+  "task": "https://github.com/jliu67/OpenRX/issues/27",
+  "source_commit": "6f54052a2be04b6967f65d6645e9a531270721d7",
+  "runner_sha256": "916b6b0d33956c847350dc54124132020968aa5a6ff11576911141fa27460977",
+  "kind": "validation",
+  "validation_scope": "guest-runtime-smoke",
+  "dirty_tree_policy": "immutable fresh checkout; all scientific files unchanged from original base3a7ff8f",
+  "simulator": "distinct pinned-source rebuild; binary hash to be bound after completed build/loader review",
+  "simulator_source_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "guest_runtime_sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+  "resources_manifest": "simulator/gem5/resources.json unchanged SHA pins; base image read-only/COW",
+  "argv_template": [
+    "/usr/bin/python3",
+    "simulator/gem5/run.py",
+    "--gem5",
+    "VERIFIED_REBUILT_GEM5",
+    "--resources",
+    "VERIFIED_RESOURCES",
+    "--runtime-binary",
+    "RECOVERED_RUNTIME_ELF",
+    "--output-dir",
+    "{execution_dir}/payload",
+    "--max-ticks",
+    "10000000000000",
+    "--stop-file",
+    "{execution_dir}/stop.request"
+  ],
+  "wall_timeout_seconds": null,
+  "resource_budget": {
+    "MemoryMax": "6G",
+    "MemorySwapMax": "1G",
+    "CPUQuota": "200%",
+    "TasksMax": 256,
+    "slots": 1
+  },
+  "oracle": "expected Linux6.8.12; exact9RISC-V runtime checks; exit0/empty framedstderr; guestcomplete; hypercalls1,2,3; unchanged config/resources/readfile/ELF/binary before-after; independent replay; functionalmodel only",
+  "prohibited_claims": [
+    "complete gem5 RandomX matrix",
+    "full dataset",
+    "selected RTL behavior",
+    "calibrated timing",
+    "physical energy",
+    "scientific checkpoint resume"
+  ],
+  "retention": "all rawlogs/manifests/failed outcomes retained; public sanitized small evidence with original digest binding; no large binaries inGit",
+  "prerequisites": [
+    "completed rebuilt simulator integrity/loader/build-info and canonical config provenance",
+    "all guest inputpins verified",
+    "independently accepted durable runner/lifecycle",
+    "LOCAL_VALIDATING transition supported by objective evidence"
+  ],
+  "remote_execution": "unavailable; owner local CLI required; this request comment does not execute acommand",
+  "supersedes": "issue-27-local-runtime-6f54052-attempt-01; never submitted after failed build02",
+  "revision_reason": "durable namespace and scientific-output flush before receipt; revised builder03 singleworker; unchanged scientific scope and oracle"
+}

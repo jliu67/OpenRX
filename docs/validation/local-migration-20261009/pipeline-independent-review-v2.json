@@ -1,0 +1,54 @@
+{
+  "schema": "openrx.local.validation-pipeline-independent-review.v2",
+  "reviewer": "scientific_inventory",
+  "date_utc": "2026-10-09T16:41:30.290140+00:00",
+  "disposition": "ACCEPT filled finite host-managed validation driver for waiting and strict runtime-only submission after all verified prerequisites; no activation or cutover acceptance",
+  "driver": {
+    "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/validate_when_ready_v2.py",
+    "bytes": 12963,
+    "sha256": "dab2f21ee221adfbba425ed562c68b88bb40e87bdb26e5f6b1bcde90f7c895b5"
+  },
+  "reviewed_runner": {
+    "path": "${OPENRX_LOCAL_ROOT}/releases/runner-v1-916b6b0d/local_execution.py",
+    "bytes": 35725,
+    "sha256": "916b6b0d33956c847350dc54124132020968aa5a6ff11576911141fa27460977"
+  },
+  "reviewed_request": {
+    "path": "${OPENRX_LOCAL_ROOT}/requests/spec-issue-27-local-runtime-6f54052-attempt-02.json",
+    "bytes": 2623,
+    "sha256": "b0117492ebcf3681fcd28d5b0ae04c7ede200a1deb341566890647d09fdf8ecd"
+  },
+  "request_key": "issue-27-local-runtime-6f54052-attempt-02",
+  "source_commit": "6f54052a2be04b6967f65d6645e9a531270721d7",
+  "source_snapshot_clean": true,
+  "static_guards_reviewed": [
+    "explicit require/ValueError guards remain active with Python optimization",
+    "successful source-bound builder03 service and result required; binary SHA/size and canonical/actual generated config SHA verified",
+    "source commit/clean tree, runner/spec/archive/resource-manifest and exact41package-manifest/archive bindings checked",
+    "essential inputs/build provenance and runtime copy/evidence files flushed durably",
+    "host startup libraries copied by SONAME and reread digests; intended LD_LIBRARY_PATH ldd closure verifies every mapped library uses pinned copy and interpreter digest matches",
+    "build-info repeated in pinned runtime profile; Python standard library dependency and nonhermetic/offline limits explicit",
+    "LOCAL_VALIDATING evidence recorded in both host state ledgers and owner-authorized GitHub progress",
+    "only guest-runtime-smoke request through reviewed resource lock/dedup/manifest runner; no hash binary or full-scale workload",
+    "candidate results retain independent actual guest review requirement; no LOCAL_ACTIVE, merge or milestone completion command"
+  ],
+  "static_path_checks": {
+    "actual_generated_config_path": "G.parent/gem5.build/config",
+    "package_archive_directory": "${OPENRX_LOCAL_ROOT}/toolchains/ubuntu22-20261009",
+    "all41referenced_archives_exist": true
+  },
+  "not_executed": [
+    "driver top-level code",
+    "simulator build/boot",
+    "new systemd service",
+    "physical host/Codex shutdown"
+  ],
+  "remaining_actual_checks": [
+    "completed verified simulator rebuild",
+    "actual observed pinned loader closure after binary exists",
+    "strict expected guest/runtime output and immutable before/after inputs",
+    "actual simulator stop/report and recovery review",
+    "final documentation/reviewed merge/acceptance and cutover"
+  ],
+  "migration_state_at_review": "STAGING"
+}
