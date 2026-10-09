@@ -49,3 +49,9 @@ The concurrent #24 policy and its session history are preserved. A separate agen
 - #14 M4 requires completed #1/#3; #12 M5 requires #1/#3/#14. No RTL optimization before measured baseline and calibrated model acceptance.
 
 Read live task comments and bot receipts for claims. Exact prior STATE/HANDOFF snapshots are archived under `memory/handoffs/pre-fs-reuse-*-20261008.md`; earlier snapshots and the full session-log prefix, including the concurrent inspector/policy entries, remain preserved.
+
+## Final package integration and handoff
+
+[PR #26](https://github.com/jliu67/OpenRX/pull/26) merged at `77a1641fb85f386bce4a5b51e00dedbe257376f6`, with the exact tested `78599e2812053c85037401e3f2e4d00191428427` tree. All five hosted source-head jobs passed; the independent reviewer checked 257 Python / 107 upstream / six native controls, 38 gem5 host controls, and native/QEMU 39 required plus nine runtime outcomes. Actual hosted guest execution was skipped. [Integration ledger](../docs/validation/m3-fs/stop-file-20261008/integration.json).
+
+The session's [release](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6071620898) is accepted (ready, claim null, no warnings); the required [hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6071623180) is verified. No project simulator or wrapper remains running. Task #16 stays open for the complete unchanged light matrix.

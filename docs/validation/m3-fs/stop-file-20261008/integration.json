@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "evidence_class": "source integration and hosted check/coordination receipt metadata; not actual guest execution",
+  "pull_request": 26,
+  "source_head": "78599e2812053c85037401e3f2e4d00191428427",
+  "synthetic_pr_checkout": "72e0e67588c9d19457a3ff95457a457a4850fb88",
+  "merge_commit": "77a1641fb85f386bce4a5b51e00dedbe257376f6",
+  "identical_source_head_synthetic_merge_and_integrated_tree": "7706ef68a1d7123cc10dcbc8ccef8348a7e95848",
+  "source_sha256": {
+    "simulator/gem5/run.py": "90edcae3facc3e6348dd5902ed85627919afb0616c9187b75f995695466caaf5",
+    "tests/test_gem5_fs.py": "99f3471f2405e16208f730ef778a7e4d9581685d257bb656c4c403e879bad2da",
+    ".github/workflows/gem5-fs.yml": "df121f7abe162994ec0093e34d6da20f422c98fb188bdf104e69a850bd02cac7"
+  },
+  "independent_reviewer": "state_review",
+  "checks": [
+    {
+      "name": "Foundation PR",
+      "run": 37863334601,
+      "job": 113604059216,
+      "status": "success",
+      "python": 257,
+      "upstream": 107,
+      "native": 6,
+      "vendor": 171
+    },
+    {
+      "name": "Foundation push",
+      "run": 37863331428,
+      "job": 113604048238,
+      "status": "success",
+      "python": 257,
+      "upstream": 107,
+      "native": 6,
+      "vendor": 171
+    },
+    {
+      "name": "RISC-V PR",
+      "run": 37863334632,
+      "job": 113604059915,
+      "status": "success",
+      "native_and_qemu_each": {
+        "required_semantic_hash": 39,
+        "runtime": 9,
+        "optional_aes_skip": 1
+      }
+    },
+    {
+      "name": "RISC-V push",
+      "run": 37863331416,
+      "job": 113604048124,
+      "status": "success",
+      "native_and_qemu_each": {
+        "required_semantic_hash": 39,
+        "runtime": 9,
+        "optional_aes_skip": 1
+      }
+    },
+    {
+      "name": "gem5 offline PR",
+      "run": 37863334749,
+      "job": 113604060824,
+      "status": "success",
+      "host_controls": 38
+    }
+  ],
+  "actual_hosted_guest": {
+    "job": 113604128246,
+    "status": "skipped",
+    "reason": "workflow_dispatch-only guard"
+  },
+  "probe_artifact_replay_repeated": false,
+  "limits": "Hosted source checks add no actual gem5 guest, timing, power or RTL acceptance. Raw hosted logs remain subject to GitHub retention; local final257 test log is committed separately. Historical PR25 artifact replay remains independently bound.",
+  "task_release": {
+    "issue": 16,
+    "comment": 6071620898,
+    "receipt_comment": 6061877773,
+    "accepted": true,
+    "status": "ready",
+    "claim": null,
+    "warnings": []
+  },
+  "hub": {
+    "issue": 5,
+    "request_comment": 6071621109,
+    "bot_comment": 6071623180,
+    "verified": true
+  }
+}
