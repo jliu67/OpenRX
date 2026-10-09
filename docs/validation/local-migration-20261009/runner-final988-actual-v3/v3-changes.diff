@@ -1,0 +1,123 @@
+--- preserved-replay-v2-bea72913.py
++++ replay-v3.py
+@@ -18,7 +18,7 @@
+ ROOT = BASE / 'fixture-root'
+ SELF = Path(__file__).resolve()
+ PAYLOAD = BASE / 'toy_payload.py'
+-PLAN = BASE / 'plan-v2.json'
++PLAN = BASE / 'plan-v3.json'
+ RELEASE = Path('$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py')
+ RUNNER_SHA = '988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882'
+ PROPS = ('LoadState', 'ActiveState', 'SubState', 'Result', 'MainPID', 'ControlPID',
+@@ -226,7 +226,52 @@
+         raise
+ 
+ 
+-def execute(runner, plan):
++def cleanup_discovered_units(runner, returned_ids):
++    records = []
++    candidates = set(returned_ids)
++    namespace = ROOT / 'executions'
++    try:
++        require(ROOT.is_dir() and not ROOT.is_symlink(), 'Unsafe or missing isolated fixture root')
++        require(namespace.is_dir() and not namespace.is_symlink(), 'Unsafe or missing fixture execution namespace')
++        candidates.update(path.name for path in namespace.iterdir())
++    except BaseException as exc:
++        records.append({'discovery_error': repr(exc), 'path': str(namespace),
++                        'instruction': 'Preserve partial directories; do not infer absent service or replay.'})
++    for eid in sorted(candidates):
++        try:
++            require(bool(runner.ID_RE.fullmatch(eid)), 'Partial entry is not a valid execution ID')
++            directory = runner.execution_dir(ROOT, eid)
++            manifest = readjson(directory / 'manifest.json')
++            unit = 'openrx-' + eid + '.service'
++            require(manifest.get('execution_id') == eid and manifest.get('unit') == unit,
++                    'Partial manifest does not bind its exact derived unit name')
++            require(manifest.get('request_key') in {
++                'final988-stop-detached', 'final988-instant-0', 'final988-instant-1',
++                'final988-instant-2', 'final988-exit-seven', 'final988-worker-killed',
++                'final988-oom', 'final988-independent-launcher', 'final988-serialize-first',
++                'final988-serialize-second'}, 'Partial manifest does not match a fixed fixture request')
++            require(manifest.get('resource_lock') == str(ROOT / 'locks' / 'execution.lock')
++                    and manifest.get('runner', {}).get('sha256') == RUNNER_SHA,
++                    'Partial manifest is outside the fixture root/release')
++            if (directory / 'receipt.json').exists():
++                records.append({'execution_id': eid, 'receipt_present': True,
++                                'instruction': 'Preserve finalized evidence; inspect/verify separately.'})
++                continue
++            # The external failure receipt records this stop. Avoid appending
++            # an execution event that could race its concurrent final receipt.
++            # The exact derived unit is used, never arbitrary manifest text.
++            stopped = command(['systemctl', '--user', 'stop', unit])
++            records.append({'execution_id': eid, 'unit': unit, 'stop': stopped,
++                            'after': properties(unit), 'discovered_from_isolated_namespace': True})
++        except BaseException as exc:
++            records.append({'execution_id': eid, 'partial_or_cleanup_error': repr(exc),
++                            'instruction': 'Preserve all entries and inspect manually; no automatic resubmission.'})
++    return records
++
++
++def execute(runner, plan, expected_plan_sha256):
++    approved_plan = binding(PLAN)
++    require(approved_plan['sha256'] == expected_plan_sha256, 'Externally approved plan changed before execution')
+     require(not ROOT.exists(), 'Fixture root already exists; inspect/recover retained executions rather than replaying keys')
+     require(not (BASE / 'replay-receipt.json').exists(), 'Replay receipt already exists')
+     runner.init(ROOT)
+@@ -386,13 +431,15 @@
+             second_result = finalized(runner, second, parent_group + '/' + second_unit)
+             first_end = next(item['at'] for item in history(runner, first_directory) if item.get('status') == 'FINALIZED')
+             second_start = next(item['at'] for item in history(runner, second_directory) if item.get('status') == 'CHILD_STARTED')
+-            require(second_start > first_end, 'Second payload started before prior cgroup/finalizer admission barrier cleared')
++            require(second_start > first_end,
++                    'This replay did not observe second CHILD_STARTED after first FINALIZED; retain the failure for review')
+             require(bool(select.select([fd], [], [], 0)[0]), 'First detached descendant survived serialization')
+             require(first_result['integrity']['status'] == 'INTERRUPTED', 'Serialized first stop was not recorded')
+             require(second_result['integrity']['status'] == 'PROCESS_EXITED', 'Serialized second payload failed')
+             cases.extend([{'case': 'serialized-first-stopped-and-drained', **first_result, 'live_descendant': live},
+                           {'case': 'serialized-second-admitted-after-finalized', **second_result,
+-                           'first_finalized_at': first_end, 'second_child_started_at': second_start}])
++                           'first_finalized_at': first_end, 'second_child_started_at': second_start,
++                           'ordering_scope': 'Empirical observation in this replay, not a formal runner guarantee that a previous FINALIZED event always precedes new payload admission.'}])
+         finally:
+             os.close(fd)
+ 
+@@ -413,10 +460,13 @@
+         for item in plan['files']:
+             require(binding(Path(item['path'])) == item, 'Fixture source changed while executing')
+         require(binding(RELEASE) == plan['runner'], 'Installed runner changed while executing')
++        require(binding(PLAN) == approved_plan and approved_plan['sha256'] == expected_plan_sha256,
++                'Externally approved plan changed while executing')
+         newjson(BASE / 'replay-receipt.json', {
+             'schema': 'openrx.final988.actual.host-lifecycle-replay.v1', 'accepted': True,
+             'started_at': start, 'completed_at': runner.now(), 'runner': binding(RELEASE),
+-            'plan': binding(PLAN), 'fixture_root': str(ROOT), 'cases': cases,
++            'plan': approved_plan, 'externally_approved_plan_sha256': expected_plan_sha256,
++            'fixture_root': str(ROOT), 'cases': cases,
+             'duplicate_rejected_in_fresh_process': True, 'final_reverified': reverified,
+             'scientific_acceptance': 'unverified', 'migration_activation': False,
+             'limitations': plan['limitations'], 'actual_fixture_resources': plan['actual_fixture_resources'],
+@@ -425,14 +475,7 @@
+                           'receipt': binding(BASE / 'replay-receipt.json'),
+                           'scientific_acceptance': 'unverified'}, sort_keys=True))
+     except BaseException as exc:
+-        cleanup = []
+-        for eid in active:
+-            try:
+-                directory = runner.execution_dir(ROOT, eid)
+-                if not (directory / 'receipt.json').exists():
+-                    cleanup.append({'execution_id': eid, 'stop': runner.stop(ROOT, eid)})
+-            except BaseException as cleanup_error:
+-                cleanup.append({'execution_id': eid, 'error': repr(cleanup_error)})
++        cleanup = cleanup_discovered_units(runner, active)
+         newjson(BASE / 'replay-failure.json', {'accepted': False, 'error': repr(exc), 'started_at': start,
+                                             'at': runner.now(), 'completed_cases': cases, 'active_ids': active,
+                                             'cleanup': cleanup, 'scientific_acceptance': 'unverified',
+@@ -458,7 +501,7 @@
+         require(ROOT.is_dir() and runner.current_state(ROOT) == 'INVENTORY', 'Unexpected launcher fixture state')
+         print(submit(runner, 'independent-launcher', 'independent'), flush=True)
+     else:
+-        execute(runner, plan)
++        execute(runner, plan, args.expected_plan_sha256)
+ 
+ 
+ if __name__ == '__main__':

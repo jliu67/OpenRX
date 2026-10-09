@@ -1,0 +1,870 @@
+{
+  "accepted": true,
+  "actual_fixture_resources": {
+    "CPUQuota": "10%",
+    "KillMode": "mixed",
+    "KillSignal": "SIGINT",
+    "MemoryMax": "64M (OOM control48M)",
+    "MemorySwapMax": 0,
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "NotifyAccess": "exec",
+    "Restart": "no",
+    "TasksMax": 16,
+    "TimeoutStopSec": "45s",
+    "unit_runtime_timeout": "none"
+  },
+  "cases": [
+    {
+      "case": "safe-stop-detached-descendant",
+      "execution_id": "20261009T181830Z-36d71158df4c",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181830Z-36d71158df4c.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181830Z-36d71158df4c",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      "live_descendant": {
+        "membership": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181830Z-36d71158df4c.service\n",
+        "pid": 75065,
+        "pidfd_live": true,
+        "stat": "75065 (python3.10) S 75063 75065 75065 0 -1 4194304 1438 0 0 0 2 0 0 0 30 10 1 0 39548605 22577152 2848 18446744073709551615 96003733946368 96003736786445 140721048511808 0 0 0 0 16797698 0 1 0 0 17 4 0 0 0 0 0 96003739158576 96003739442648 96004007948288 140721048514201 140721048514485 140721048514485 140721048514532 0\n"
+      },
+      "partial_log_before": "detached-child heartbeat 0\ndetached heartbeat 0\n",
+      "pidfd_observed_exit": true,
+      "process": {
+        "finished_at": "2026-10-09T18:18:31.564405+00:00",
+        "returncode": -2,
+        "scientific_acceptance": "unverified",
+        "signals": [
+          2
+        ],
+        "status": "INTERRUPTED"
+      },
+      "receipt": {
+        "bytes": 3176,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/receipt.json",
+        "sha256": "99b0068b84a4629958d7a0d0549a50fcb5b4895213b8361b71a7efe320b49a16"
+      },
+      "stop": {
+        "execution_id": "20261009T181830Z-36d71158df4c",
+        "stop_requested": true,
+        "unit": {
+          "ActiveState": "failed",
+          "ControlGroup": "",
+          "ExecMainCode": "1",
+          "ExecMainStatus": "130",
+          "LoadState": "loaded",
+          "Result": "exit-code",
+          "SubState": "failed",
+          "query_returncode": 0
+        }
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "130",
+        "SERVICE_RESULT": "exit-code"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181830Z-36d71158df4c.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "failed",
+          "CPUQuotaPerSecUSec": "100ms",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "1",
+          "ExecMainStatus": "130",
+          "KillMode": "mixed",
+          "KillSignal": "2",
+          "LoadState": "loaded",
+          "MainPID": "0",
+          "MemoryMax": "67108864",
+          "MemorySwapMax": "0",
+          "Nice": "10",
+          "NoNewPrivileges": "yes",
+          "NotifyAccess": "exec",
+          "Restart": "no",
+          "Result": "exit-code",
+          "SendSIGKILL": "yes",
+          "SubState": "failed",
+          "TasksMax": "16",
+          "TimeoutStopUSec": "45s",
+          "UMask": "0077"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=0\nControlPID=0\nResult=exit-code\nExecMainCode=1\nExecMainStatus=130\nControlGroup=\nCPUQuotaPerSecUSec=100ms\nMemoryMax=67108864\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      },
+      "unit": "openrx-20261009T181830Z-36d71158df4c.service"
+    },
+    {
+      "case": "instant-exit-admission-finalizer-race",
+      "execution_id": "20261009T181831Z-a2db3f07985b",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181831Z-a2db3f07985b.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181831Z-a2db3f07985b",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      "process": {
+        "finished_at": "2026-10-09T18:18:32.527715+00:00",
+        "returncode": 0,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_EXITED"
+      },
+      "receipt": {
+        "bytes": 2659,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/receipt.json",
+        "sha256": "b8878066e662999c293443839f0ffae751ce827ab1c49c6cfbb3091773f172da"
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "0",
+        "SERVICE_RESULT": "success"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181831Z-a2db3f07985b.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "inactive",
+          "CPUQuotaPerSecUSec": "infinity",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "0",
+          "ExecMainStatus": "0",
+          "KillMode": "control-group",
+          "KillSignal": "15",
+          "LoadState": "not-found",
+          "MainPID": "0",
+          "MemoryMax": "infinity",
+          "MemorySwapMax": "infinity",
+          "Nice": "0",
+          "NoNewPrivileges": "no",
+          "NotifyAccess": "none",
+          "Restart": "no",
+          "Result": "success",
+          "SendSIGKILL": "yes",
+          "SubState": "dead",
+          "TasksMax": "19039",
+          "TimeoutStopUSec": "1min 30s",
+          "UMask": "0002"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=none\nTimeoutStopUSec=1min 30s\nMainPID=0\nControlPID=0\nResult=success\nExecMainCode=0\nExecMainStatus=0\nControlGroup=\nCPUQuotaPerSecUSec=infinity\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19039\nUMask=0002\nNice=0\nNoNewPrivileges=no\nKillMode=control-group\nKillSignal=15\nSendSIGKILL=yes\nLoadState=not-found\nActiveState=inactive\nSubState=dead\n"
+      },
+      "unit": "openrx-20261009T181831Z-a2db3f07985b.service"
+    },
+    {
+      "case": "instant-exit-admission-finalizer-race",
+      "execution_id": "20261009T181832Z-25d801e2dc11",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181832Z-25d801e2dc11.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181832Z-25d801e2dc11",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      "process": {
+        "finished_at": "2026-10-09T18:18:33.498290+00:00",
+        "returncode": 0,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_EXITED"
+      },
+      "receipt": {
+        "bytes": 2659,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/receipt.json",
+        "sha256": "ff2c9666f5c9935ba4b9a2057a1594c31d56328be326892375e7d744c8457307"
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "0",
+        "SERVICE_RESULT": "success"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181832Z-25d801e2dc11.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "inactive",
+          "CPUQuotaPerSecUSec": "infinity",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "0",
+          "ExecMainStatus": "0",
+          "KillMode": "control-group",
+          "KillSignal": "15",
+          "LoadState": "not-found",
+          "MainPID": "0",
+          "MemoryMax": "infinity",
+          "MemorySwapMax": "infinity",
+          "Nice": "0",
+          "NoNewPrivileges": "no",
+          "NotifyAccess": "none",
+          "Restart": "no",
+          "Result": "success",
+          "SendSIGKILL": "yes",
+          "SubState": "dead",
+          "TasksMax": "19039",
+          "TimeoutStopUSec": "1min 30s",
+          "UMask": "0002"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=none\nTimeoutStopUSec=1min 30s\nMainPID=0\nControlPID=0\nResult=success\nExecMainCode=0\nExecMainStatus=0\nControlGroup=\nCPUQuotaPerSecUSec=infinity\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19039\nUMask=0002\nNice=0\nNoNewPrivileges=no\nKillMode=control-group\nKillSignal=15\nSendSIGKILL=yes\nLoadState=not-found\nActiveState=inactive\nSubState=dead\n"
+      },
+      "unit": "openrx-20261009T181832Z-25d801e2dc11.service"
+    },
+    {
+      "case": "instant-exit-admission-finalizer-race",
+      "execution_id": "20261009T181833Z-55843e05d93a",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181833Z-55843e05d93a.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181833Z-55843e05d93a",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      "process": {
+        "finished_at": "2026-10-09T18:18:34.385528+00:00",
+        "returncode": 0,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_EXITED"
+      },
+      "receipt": {
+        "bytes": 2659,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/receipt.json",
+        "sha256": "41faf5597a5f600fd33f7d11c45b6d571669ae489d121ef0d1c8d616b83662e9"
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "0",
+        "SERVICE_RESULT": "success"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181833Z-55843e05d93a.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "inactive",
+          "CPUQuotaPerSecUSec": "infinity",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "0",
+          "ExecMainStatus": "0",
+          "KillMode": "control-group",
+          "KillSignal": "15",
+          "LoadState": "not-found",
+          "MainPID": "0",
+          "MemoryMax": "infinity",
+          "MemorySwapMax": "infinity",
+          "Nice": "0",
+          "NoNewPrivileges": "no",
+          "NotifyAccess": "none",
+          "Restart": "no",
+          "Result": "success",
+          "SendSIGKILL": "yes",
+          "SubState": "dead",
+          "TasksMax": "19039",
+          "TimeoutStopUSec": "1min 30s",
+          "UMask": "0002"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=none\nTimeoutStopUSec=1min 30s\nMainPID=0\nControlPID=0\nResult=success\nExecMainCode=0\nExecMainStatus=0\nControlGroup=\nCPUQuotaPerSecUSec=infinity\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19039\nUMask=0002\nNice=0\nNoNewPrivileges=no\nKillMode=control-group\nKillSignal=15\nSendSIGKILL=yes\nLoadState=not-found\nActiveState=inactive\nSubState=dead\n"
+      },
+      "unit": "openrx-20261009T181833Z-55843e05d93a.service"
+    },
+    {
+      "case": "intentional-nonzero-failure",
+      "execution_id": "20261009T181834Z-e588186bf436",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181834Z-e588186bf436.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181834Z-e588186bf436",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_FAILED"
+      },
+      "process": {
+        "finished_at": "2026-10-09T18:18:35.339794+00:00",
+        "returncode": 7,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_FAILED"
+      },
+      "receipt": {
+        "bytes": 2664,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/receipt.json",
+        "sha256": "d7f079672af3cb57f9c8e36f39f2eab08b068a8323e71183a48fbecf5721e893"
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "1",
+        "SERVICE_RESULT": "exit-code"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181834Z-e588186bf436.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "failed",
+          "CPUQuotaPerSecUSec": "100ms",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "1",
+          "ExecMainStatus": "1",
+          "KillMode": "mixed",
+          "KillSignal": "2",
+          "LoadState": "loaded",
+          "MainPID": "0",
+          "MemoryMax": "67108864",
+          "MemorySwapMax": "0",
+          "Nice": "10",
+          "NoNewPrivileges": "yes",
+          "NotifyAccess": "exec",
+          "Restart": "no",
+          "Result": "exit-code",
+          "SendSIGKILL": "yes",
+          "SubState": "failed",
+          "TasksMax": "16",
+          "TimeoutStopUSec": "45s",
+          "UMask": "0077"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=0\nControlPID=0\nResult=exit-code\nExecMainCode=1\nExecMainStatus=1\nControlGroup=\nCPUQuotaPerSecUSec=100ms\nMemoryMax=67108864\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      },
+      "unit": "openrx-20261009T181834Z-e588186bf436.service"
+    },
+    {
+      "case": "worker-sigkill-inspect-recover",
+      "execution_id": "20261009T181835Z-d18f6a4f5a9b",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181835Z-d18f6a4f5a9b.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181835Z-d18f6a4f5a9b",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED_UNREAPED"
+      },
+      "live_descendant": {
+        "membership": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181835Z-d18f6a4f5a9b.service\n",
+        "pid": 75141,
+        "pidfd_live": true,
+        "stat": "75141 (python3.10) S 75139 75141 75141 0 -1 4194304 1435 0 0 0 2 0 0 0 30 10 1 0 39549098 22577152 2816 18446744073709551615 97657188454400 97657191294477 140725001298400 0 0 0 0 16797698 0 1 0 0 17 3 0 0 0 0 0 97657193666608 97657193950680 97657346863104 140725001305753 140725001306037 140725001306037 140725001306084 0\n"
+      },
+      "pidfd_observed_exit": true,
+      "process": null,
+      "receipt": {
+        "bytes": 2797,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/receipt.json",
+        "sha256": "ad71890d4b46324ead31faae73a894763f155b62819ab6a43b39745ad8a64408"
+      },
+      "recovery": {
+        "execution_id": "20261009T181835Z-d18f6a4f5a9b",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED_UNREAPED"
+      },
+      "systemd": {
+        "EXIT_CODE": "killed",
+        "EXIT_STATUS": "KILL",
+        "SERVICE_RESULT": "signal"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181835Z-d18f6a4f5a9b.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "failed",
+          "CPUQuotaPerSecUSec": "100ms",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "2",
+          "ExecMainStatus": "9",
+          "KillMode": "mixed",
+          "KillSignal": "2",
+          "LoadState": "loaded",
+          "MainPID": "0",
+          "MemoryMax": "67108864",
+          "MemorySwapMax": "0",
+          "Nice": "10",
+          "NoNewPrivileges": "yes",
+          "NotifyAccess": "exec",
+          "Restart": "no",
+          "Result": "signal",
+          "SendSIGKILL": "yes",
+          "SubState": "failed",
+          "TasksMax": "16",
+          "TimeoutStopUSec": "45s",
+          "UMask": "0077"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=0\nControlPID=0\nResult=signal\nExecMainCode=2\nExecMainStatus=9\nControlGroup=\nCPUQuotaPerSecUSec=100ms\nMemoryMax=67108864\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      },
+      "unit": "openrx-20261009T181835Z-d18f6a4f5a9b.service"
+    },
+    {
+      "actual_fixture_limits": {
+        "MemoryMax": "48M",
+        "MemorySwapMax": 0
+      },
+      "case": "fixture-only-small-budget-oom",
+      "execution_id": "20261009T181836Z-d6236011c4ef",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181836Z-d6236011c4ef.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181836Z-d6236011c4ef",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      "process": {
+        "finished_at": "2026-10-09T18:18:37.575901+00:00",
+        "returncode": -9,
+        "scientific_acceptance": "unverified",
+        "signals": [
+          2
+        ],
+        "status": "INTERRUPTED"
+      },
+      "receipt": {
+        "bytes": 2902,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/receipt.json",
+        "sha256": "c98cbdb603cf92b367bdf05b3e1e0df2798a0ae44fdb012661d599da5c17dc51"
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "130",
+        "SERVICE_RESULT": "oom-kill"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181836Z-d6236011c4ef.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "failed",
+          "CPUQuotaPerSecUSec": "100ms",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "1",
+          "ExecMainStatus": "130",
+          "KillMode": "mixed",
+          "KillSignal": "2",
+          "LoadState": "loaded",
+          "MainPID": "0",
+          "MemoryMax": "50331648",
+          "MemorySwapMax": "0",
+          "Nice": "10",
+          "NoNewPrivileges": "yes",
+          "NotifyAccess": "exec",
+          "Restart": "no",
+          "Result": "oom-kill",
+          "SendSIGKILL": "yes",
+          "SubState": "failed",
+          "TasksMax": "16",
+          "TimeoutStopUSec": "45s",
+          "UMask": "0077"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=0\nControlPID=0\nResult=oom-kill\nExecMainCode=1\nExecMainStatus=130\nControlGroup=\nCPUQuotaPerSecUSec=100ms\nMemoryMax=50331648\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      },
+      "unit": "openrx-20261009T181836Z-d6236011c4ef.service"
+    },
+    {
+      "case": "launching-process-session-exited-service-progressed",
+      "execution_id": "20261009T181838Z-74e4322ad038",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181838Z-74e4322ad038.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181838Z-74e4322ad038",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      "limitation": "Launching process/session was ended; no active Codex daemon shutdown or physical host reboot performed.",
+      "observation": {
+        "launcher_absent": true,
+        "launcher_pid": 75179,
+        "main_live": {
+          "membership": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181838Z-74e4322ad038.service\n",
+          "pid": 75183,
+          "pidfd_live": true,
+          "stat": "75183 (python3.10) S 825 75183 75183 0 -1 4194304 3164 0 0 0 6 1 0 0 30 10 1 0 39549384 31735808 4697 18446744073709551615 103117715734528 103117718574605 140733027038864 0 0 0 0 16781312 16386 1 0 0 17 3 0 0 0 0 0 103117720946736 103117721230808 103118481645568 140733027043671 140733027043963 140733027043963 140733027045348 0\n"
+        },
+        "parent_command": "/lib/systemd/systemd --user ",
+        "parent_pid": 825,
+        "stdout_after": "independent heartbeat 0\nindependent heartbeat 1\n",
+        "stdout_before": "independent heartbeat 0\n"
+      },
+      "process": {
+        "finished_at": "2026-10-09T18:18:39.739614+00:00",
+        "returncode": -2,
+        "scientific_acceptance": "unverified",
+        "signals": [
+          2
+        ],
+        "status": "INTERRUPTED"
+      },
+      "receipt": {
+        "bytes": 2653,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/receipt.json",
+        "sha256": "26bb63deaa5c7d05f8b811171b281b321c34d506d3e2942ed75d6cbc0f3d5358"
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "130",
+        "SERVICE_RESULT": "exit-code"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181838Z-74e4322ad038.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "failed",
+          "CPUQuotaPerSecUSec": "100ms",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "1",
+          "ExecMainStatus": "130",
+          "KillMode": "mixed",
+          "KillSignal": "2",
+          "LoadState": "loaded",
+          "MainPID": "0",
+          "MemoryMax": "67108864",
+          "MemorySwapMax": "0",
+          "Nice": "10",
+          "NoNewPrivileges": "yes",
+          "NotifyAccess": "exec",
+          "Restart": "no",
+          "Result": "exit-code",
+          "SendSIGKILL": "yes",
+          "SubState": "failed",
+          "TasksMax": "16",
+          "TimeoutStopUSec": "45s",
+          "UMask": "0077"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=0\nControlPID=0\nResult=exit-code\nExecMainCode=1\nExecMainStatus=130\nControlGroup=\nCPUQuotaPerSecUSec=100ms\nMemoryMax=67108864\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      },
+      "unit": "openrx-20261009T181838Z-74e4322ad038.service"
+    },
+    {
+      "case": "serialized-first-stopped-and-drained",
+      "execution_id": "20261009T181840Z-231e7b66fa4d",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-231e7b66fa4d.service",
+        "present": false
+      },
+      "integrity": {
+        "execution_id": "20261009T181840Z-231e7b66fa4d",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      "live_descendant": {
+        "membership": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-231e7b66fa4d.service\n",
+        "pid": 75202,
+        "pidfd_live": true,
+        "stat": "75202 (python3.10) S 75200 75202 75202 0 -1 4194304 1434 0 0 0 2 0 0 0 30 10 1 0 39549541 22577152 2848 18446744073709551615 109625901793280 109625904633357 140727744233600 0 0 0 0 16797698 0 1 0 0 17 5 0 0 0 0 0 109625907005488 109625907289560 109625984565248 140727744237209 140727744237493 140727744237493 140727744237540 0\n"
+      },
+      "process": {
+        "finished_at": "2026-10-09T18:18:41.330785+00:00",
+        "returncode": -2,
+        "scientific_acceptance": "unverified",
+        "signals": [
+          2
+        ],
+        "status": "INTERRUPTED"
+      },
+      "receipt": {
+        "bytes": 3177,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/receipt.json",
+        "sha256": "e1c01be2a0b009ef8404a4d816b5999d5f7cee41c638ba95e200651309db55fb"
+      },
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "130",
+        "SERVICE_RESULT": "exit-code"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181840Z-231e7b66fa4d.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "failed",
+          "CPUQuotaPerSecUSec": "100ms",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "1",
+          "ExecMainStatus": "130",
+          "KillMode": "mixed",
+          "KillSignal": "2",
+          "LoadState": "loaded",
+          "MainPID": "0",
+          "MemoryMax": "67108864",
+          "MemorySwapMax": "0",
+          "Nice": "10",
+          "NoNewPrivileges": "yes",
+          "NotifyAccess": "exec",
+          "Restart": "no",
+          "Result": "exit-code",
+          "SendSIGKILL": "yes",
+          "SubState": "failed",
+          "TasksMax": "16",
+          "TimeoutStopUSec": "45s",
+          "UMask": "0077"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=0\nControlPID=0\nResult=exit-code\nExecMainCode=1\nExecMainStatus=130\nControlGroup=\nCPUQuotaPerSecUSec=100ms\nMemoryMax=67108864\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=failed\nSubState=failed\n"
+      },
+      "unit": "openrx-20261009T181840Z-231e7b66fa4d.service"
+    },
+    {
+      "case": "serialized-second-admitted-after-finalized",
+      "execution_id": "20261009T181840Z-90ae0a243b21",
+      "final_cgroup": {
+        "empty": true,
+        "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-90ae0a243b21.service",
+        "present": false
+      },
+      "first_finalized_at": "2026-10-09T18:18:41.548494+00:00",
+      "integrity": {
+        "execution_id": "20261009T181840Z-90ae0a243b21",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      "ordering_scope": "Empirical observation in this replay, not a formal runner guarantee that a previous FINALIZED event always precedes new payload admission.",
+      "process": {
+        "finished_at": "2026-10-09T18:18:42.041829+00:00",
+        "returncode": 0,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_EXITED"
+      },
+      "receipt": {
+        "bytes": 2659,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/receipt.json",
+        "sha256": "b4a530d105ec0db117b4f0f946a8ad76c0e9c056c6f3787552436bbfdc44bdfe"
+      },
+      "second_child_started_at": "2026-10-09T18:18:41.858195+00:00",
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "0",
+        "SERVICE_RESULT": "success"
+      },
+      "terminal_properties": {
+        "argv": [
+          "systemctl",
+          "--user",
+          "show",
+          "openrx-20261009T181840Z-90ae0a243b21.service",
+          "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+        ],
+        "properties": {
+          "ActiveState": "inactive",
+          "CPUQuotaPerSecUSec": "infinity",
+          "ControlGroup": "",
+          "ControlPID": "0",
+          "ExecMainCode": "0",
+          "ExecMainStatus": "0",
+          "KillMode": "control-group",
+          "KillSignal": "15",
+          "LoadState": "not-found",
+          "MainPID": "0",
+          "MemoryMax": "infinity",
+          "MemorySwapMax": "infinity",
+          "Nice": "0",
+          "NoNewPrivileges": "no",
+          "NotifyAccess": "none",
+          "Restart": "no",
+          "Result": "success",
+          "SendSIGKILL": "yes",
+          "SubState": "dead",
+          "TasksMax": "19039",
+          "TimeoutStopUSec": "1min 30s",
+          "UMask": "0002"
+        },
+        "returncode": 0,
+        "stderr": "",
+        "stdout": "Restart=no\nNotifyAccess=none\nTimeoutStopUSec=1min 30s\nMainPID=0\nControlPID=0\nResult=success\nExecMainCode=0\nExecMainStatus=0\nControlGroup=\nCPUQuotaPerSecUSec=infinity\nMemoryMax=infinity\nMemorySwapMax=infinity\nTasksMax=19039\nUMask=0002\nNice=0\nNoNewPrivileges=no\nKillMode=control-group\nKillSignal=15\nSendSIGKILL=yes\nLoadState=not-found\nActiveState=inactive\nSubState=dead\n"
+      },
+      "unit": "openrx-20261009T181840Z-90ae0a243b21.service"
+    }
+  ],
+  "completed_at": "2026-10-09T18:18:42.546505+00:00",
+  "duplicate_rejected_in_fresh_process": true,
+  "externally_approved_plan_sha256": "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837",
+  "final_reverified": [
+    {
+      "execution_id": "20261009T181830Z-36d71158df4c",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "INTERRUPTED"
+    },
+    {
+      "execution_id": "20261009T181831Z-a2db3f07985b",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    },
+    {
+      "execution_id": "20261009T181832Z-25d801e2dc11",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    },
+    {
+      "execution_id": "20261009T181833Z-55843e05d93a",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    },
+    {
+      "execution_id": "20261009T181834Z-e588186bf436",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_FAILED"
+    },
+    {
+      "execution_id": "20261009T181835Z-d18f6a4f5a9b",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "INTERRUPTED_UNREAPED"
+    },
+    {
+      "execution_id": "20261009T181836Z-d6236011c4ef",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "INTERRUPTED"
+    },
+    {
+      "execution_id": "20261009T181838Z-74e4322ad038",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "INTERRUPTED"
+    },
+    {
+      "execution_id": "20261009T181840Z-231e7b66fa4d",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "INTERRUPTED"
+    },
+    {
+      "execution_id": "20261009T181840Z-90ae0a243b21",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    }
+  ],
+  "fixture_root": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root",
+  "limitations": [
+    "Only finite host-only toy Python processes; no gem5, RandomX, dataset initialization or scientific validation.",
+    "Actual fixture resource overrides are deliberately tiny; manifest retains unmodified production baseline and must not be mistaken for observed fixture limits.",
+    "Session independence means the launching subprocess/session exited while systemd-owned service/log progress continued; no active Codex daemon termination or physical reboot is performed.",
+    "Prior independently accepted final988 >45s finalizer-delay fixture remains separate evidence; this replay keeps its ExecStopPost private CLI unchanged and exercises normal finalization.",
+    "Fixture initializes only its new isolated INVENTORY root, never the production root or migration state; expensive-work admission and scientific acceptance remain unverified.",
+    "Whole replay is single-use. Existing partial root/evidence prevents repetition; preserve every outcome and inspect/recover individual execution IDs without clearing request claims.",
+    "Runner serializes payloads and drains workload descendants. A transient empty-cgroup gap between worker exit and private finalizer startup means prior FINALIZED ordering is observed in this replay, not a formal admission guarantee. The strict observation is retained; a mismatch is recorded as a failed fixture, not silently accepted."
+  ],
+  "migration_activation": false,
+  "plan": {
+    "bytes": 6633,
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/plan-v3.json",
+    "sha256": "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837"
+  },
+  "production_resource_baseline": {
+    "CPUQuota": "200%",
+    "MemoryMax": "6G",
+    "MemorySwapMax": "1G",
+    "TasksMax": 256,
+    "global_slots": 1
+  },
+  "runner": {
+    "bytes": 38227,
+    "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  },
+  "schema": "openrx.final988.actual.host-lifecycle-replay.v1",
+  "scientific_acceptance": "unverified",
+  "started_at": "2026-10-09T18:18:30.727037+00:00"
+}

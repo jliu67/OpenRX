@@ -41,6 +41,13 @@ accepts runner988cf13f (sole main reaper/private finalizer extension) and wrappe
 only, unchanged scientific oracles/model/resources):287 full tests including28 runner controls,40 targeted
 wrapper controls and55.1219-second delayed finalizer with six notifications/verified receipt. The original
 false harness is retained with a corrected audit; terminal manager status and large-output throughput are unknown.
+The exact final988 runner's [ten actual host-only lifecycle controls](../docs/validation/local-migration-20261009/runner-final988-actual-v3/independent-review/runner-final988-replay-actual-independent-review.json)
+are independently accepted, including retained receipt/source checks, exited-launcher log progress,
+duplicate rejection, serialized payload/descendant drain and truthful stop/exit-7/hard-kill/OOM failures.
+The [export index](../docs/validation/local-migration-20261009/runner-final988-actual-v3/index.json) binds raw/public bytes.
+Five live samples measure tiny 64-MiB/48-MiB OOM, CPU10%, swap0, tasks16 overrides, not production limits.
+Observed prior FINALIZED ordering is empirical only. No guest pass, full daemon termination, host reboot
+or cutover is inferred; STAGING/build/loader/preflight/actual gem5 stop/merge gates remain pending.
 Old keys01/02 never submitted. New readonly source
 `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`, runner988, runtime request03 and pipelinev3 now have
 [independently verified bindings](../docs/validation/local-migration-20261009/pipeline-independent-review-v3.json)

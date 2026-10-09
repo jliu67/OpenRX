@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/toy_payload.py", line 50, in <module>
+    time.sleep(0.25)
+KeyboardInterrupt

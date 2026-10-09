@@ -184,8 +184,12 @@ Use paths without whitespace, quotes, backslashes or percent signs for the execu
 because the durable systemd finalizer rejects unsupported path syntax.
 
 The runner uses a user systemd transient service under a lingering user manager,
-so execution does not depend on a Codex session or open terminal. One resource flock serializes every workload class;
-parallel resource-intensive execution is not supported. Admission and request bindings prevent duplicate submission.
+so execution does not depend on a Codex session or open terminal. The global resource flock covers
+payload execution and descendant drain for every workload class; parallel resource-intensive payload
+execution is not supported. Admission and request bindings prevent duplicate submission.
+Finalization is recorded separately and may overlap the next payload's admission. Dependent result
+consumers must wait for the prior execution's receipt and successfully run `verify EXECUTION_ID`
+before using its outputs.
 The demonstrated service budget is 6 GiB `MemoryMax`, 1 GiB `MemorySwapMax`, 200% `CPUQuota`,
 256 `TasksMax`, `Nice=10` and `NoNewPrivileges=yes`, with cgroup/process-group cleanup.
 [Actual properties](validation/local-migration-20261009/runner-lifecycle/v4-service-properties.json)

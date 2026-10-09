@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-09T18:23:05.467043+00:00",
+  "scope": "Independent reviewer field assumption, not lifecycle/scientific failure",
+  "accepted_receipt_published": false,
+  "error": "KeyError: events",
+  "location": "Queued serialization witness second status object uses event_history, not events",
+  "actual_source_keys": [
+    "execution_id",
+    "latest_event",
+    "logs",
+    "receipt",
+    "unit"
+  ],
+  "replay_receipt_sha256": "930729e0936583cb33237d549b98e39c3027ce07883504e81b00fcaab1ace229",
+  "action": "Correct reviewer schema assumption and recheck all independent acceptance conditions; preserve all raw lifecycle outcomes"
+}

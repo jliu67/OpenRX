@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "systemctl",
+    "--user",
+    "kill",
+    "--kill-who=main",
+    "--signal=SIGKILL",
+    "openrx-20261009T181835Z-d18f6a4f5a9b.service"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

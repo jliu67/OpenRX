@@ -1,0 +1,99 @@
+{
+  "schema": "openrx.final988.host-lifecycle-replay-static-independent-review.v1",
+  "at": "2026-10-09T18:17:42.589614+00:00",
+  "reviewer": "scientific_inventory subagent independently reviewing durable_runner-authored fixture; shared owner account, not independent human approval",
+  "source_bindings": [
+    {
+      "path": "validation/runner-lifecycle-final988-20261009/replay-v3.py",
+      "bytes": 29508,
+      "sha256": "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72"
+    },
+    {
+      "path": "validation/runner-lifecycle-final988-20261009/plan-v3.json",
+      "bytes": 6633,
+      "sha256": "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837"
+    },
+    {
+      "path": "validation/runner-lifecycle-final988-20261009/toy_payload.py",
+      "bytes": 2300,
+      "sha256": "3e04fade4ef3f9a436be96b6295cba1d66ca8b55993e1d7803fa8081818328e6"
+    },
+    {
+      "path": "validation/runner-lifecycle-final988-20261009/v3-changes.diff",
+      "bytes": 8080,
+      "sha256": "a6ff8f8190162beb00d2f24a129954b83fabd40faa5829c9098f96aca625bd10"
+    },
+    {
+      "path": "validation/runner-lifecycle-final988-20261009/preparation-v3-receipt.json",
+      "bytes": 2131,
+      "sha256": "f37f8191ea3f05a06b98f7524613fbe1deb285f288dff1ada7a01f22f3afe6da"
+    },
+    {
+      "path": "releases/runner-v1-988cf13f/local_execution.py",
+      "bytes": 38227,
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    }
+  ],
+  "static_review_accepted": true,
+  "actual_fixture_launched": false,
+  "actual_lifecycle_controls_passed": false,
+  "production_or_scientific_state_changed": false,
+  "migration_complete": false,
+  "scope": "Eligible for explicitly authorized finite isolated host-only toy replay on exact final988 runner; no scientific acceptance or activation",
+  "read_only_checks": [
+    "Read full v1 source and toy payload; reviewed exact v2/v3 changes and final plan",
+    "AST parsed final v3 and toy source without executing/importing either",
+    "Rehashed all reviewed candidate/preparation/diff/release bindings",
+    "Confirmed new fixture-root absent and exact plan inputs/baseline budget"
+  ],
+  "resolved_findings": [
+    {
+      "finding": "ready.json may precede first log print",
+      "resolution": "wait_evidence waits actual heartbeat/log progress with predicate recheck after manager query"
+    },
+    {
+      "finding": "terminal missing receipt or failed/unknown manager query could cause indefinite evidence wait",
+      "resolution": "known manager query/state guards fail closed on terminal missing evidence; healthy waits unbounded, no wall deadline"
+    },
+    {
+      "finding": "cleanup could miss service created before submit or launcher returned execution ID",
+      "resolution": "Discover this new isolated execution namespace; require ID/exact unit/fixed request/lock/release mapping; named systemd stop only, preserve malformed partial entries and errors"
+    },
+    {
+      "finding": "PLAN bytes were not rechecked against external approval before accepted receipt",
+      "resolution": "Bind external expected PLAN SHA before execution and require exact approved binding unchanged at final accepted publication"
+    },
+    {
+      "finding": "prior FINALIZED timing is not a formal runner admission guarantee",
+      "resolution": "Strict observed timestamp assertion remains; plan/case explicitly disclose empirical scope and transient empty-cgroup gap. No production runner change or scientific criterion weakening."
+    }
+  ],
+  "reviewed_controls": [
+    "Exact38227-byte runner release, worker/private finalizer snapshots unchanged",
+    "Host-only intentional rc7 retained PROCESS_FAILED; no false exit0 or scientific verdict",
+    "Named manager main-worker SIGKILL with live descendant pidfd/owned cgroup evidence; unreaped failure and recovery stay truthful",
+    "Actual fixture48MiB budget+96MiB allocation requires preserved manager oom-kill and non-success outcome",
+    "Exited/reaped independent launching process plus later log growth and systemd-user worker ancestry",
+    "Live second queued worker has no child/log before first stop; receipt-integrity and cgroup empty checks for both",
+    "Persisted duplicate rejected in fresh process with unchanged10 execution count; all10 receipts reverified"
+  ],
+  "fixture_override_scope": "Only initial systemd submission properties CPU10%,64MiB(or48MiB OOM),swap0,tasks16; exact production6G/1G/CPU200/Tasks256 manifest baseline separately identified, not claimed as measured fixture resources",
+  "safety": [
+    "No gem5/RandomX/build/dataset workload imported or launched by harness",
+    "No os.killpg or numerical PID signaling; observation uses pidfds and killing/stopping uses exact named systemd units",
+    "Cleanup writes separate failure evidence and avoids late runner STOP_REQUESTED event mutation",
+    "No deletion/overwrite/reset/reclaim/autoresubmit; all records exclusive/fsynced",
+    "Only new fixture INVENTORY root, never production migration root/state"
+  ],
+  "limitations": [
+    "STATIC acceptance only: root must freeze exact candidate/plan/payload and inspect actual terminal evidence before calling controls passed",
+    "Actual fixtures may fail; strict empirical FINALIZED ordering failure must be retained/reviewed, never silently accepted",
+    "Whole Codex daemon shutdown and physical host reboot not demonstrated; launcher/session independence is a separately scoped architectural witness",
+    "Finalizer long-duration55s proof remains separate existing actual988 evidence",
+    "Partial init/abrupt harness SIGKILL may leave artifacts without replay receipt; absence never implies acceptance"
+  ],
+  "pending": [
+    "Root reviewed launch and observed terminal replay receipt",
+    "Independent actual output/execution/receipt/limits/control review"
+  ]
+}

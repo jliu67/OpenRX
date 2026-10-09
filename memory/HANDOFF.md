@@ -30,6 +30,14 @@ and all verified build/loader/input/state prerequisites. No guest has run and ex
 Accepted corrected source passes287 full tests (including28 runner controls) and40 targeted wrapper controls.
 A55.1219-second finalizer delay/six notifications/receipt integrity prove extension beyond45 seconds;
 original false harness and corrected audit are retained, without terminal manager or large-output claims.
+The exact final988 release also has [independent acceptance of ten actual host-only controls](../docs/validation/local-migration-20261009/runner-final988-actual-v3/independent-review/runner-final988-replay-actual-independent-review.json)
+with [retained export bindings](../docs/validation/local-migration-20261009/runner-final988-actual-v3/index.json):
+receipt/source verification, exited-launcher log progress, duplicate rejection, serialized payload/descendant
+drain and truthful stop/exit-7/hard-kill/OOM failures. Five live samples measure tiny64-MiB/48-MiB OOM,
+CPU10%, swap0, tasks16 limits, not the production baseline. Prior FINALIZED ordering is empirical only.
+Whole Codex daemon termination/host reboot were not performed. Actual build/loader/preflight/guest/gem5
+stop/merge remain pending; this host-only acceptance leaves STAGING and expensive-research hold unchanged.
+
 [Stop controller](../docs/validation/local-migration-20261009/stop-controller-independent-review.json)
 SHA `1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817` and fixed specification
 `76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14` are reviewed but unlaunched;

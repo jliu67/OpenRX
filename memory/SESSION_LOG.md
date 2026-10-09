@@ -292,3 +292,21 @@ receipt via OPENRX_RUNNER; mutable scripts/local_execution.py remains source ref
 The fixed stop request is published/readback-verified on #27 at6085930183 but still unlaunched pending
 first-capture and exact ownership/preflight gates. Public source/driver exports are sanitized derivatives;
 actual local execution binds untouched host bytes. No simulator or stop outcome is inferred from publication.
+
+## Exact final988 actual host controls independently accepted — 2026-10-09 UTC
+
+The immutable runner988cf13f release now has independent acceptance of ten actual host-only lifecycle
+controls: receipt/source integrity, expected stop/exit7/hard-kill/OOM failure statuses, retained logs,
+exited-launcher/systemd-owned progress, fresh-process duplicate rejection and serialized payload/descendant
+drain. Five live property samples use tiny64-MiB/48-MiB OOM, CPU10%, swap0, tasks16 overrides; they do
+not measure the unchanged production6G/1G/200%/256 baseline. Observed first FINALIZED before the second
+child is empirical only; the actual admission contract is global flock plus drained workload/descendants.
+
+Public evidence is under docs/validation/local-migration-20261009/runner-final988-actual-v3/;
+index6cf8987c… binds152 exports, public independent reviewfcb2d305… corresponds to raw978aec36…,
+and public replay1348c4c3… corresponds to raw930729e0…. All public export hashes were rechecked before
+the additive staging documentation update; untouched originals remain retained. Reviewer schema-error/
+correction records are preserved. Whole Codex daemon termination/host reboot and scientific validation
+were not performed;55-second finalizer proof remains separate. Migration stays STAGING/inactive,
+build03 continues and successful build/loader/preflight/guest/actual gem5 stop/reviewed merge/final
+cutover remain pending. No repository history or prior scientific acceptance criterion was changed.

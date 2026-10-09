@@ -8,6 +8,15 @@ The corrected immutable runner 988/wrapper 5c and readonly source
 The pipeline is waiting for build 03; actual build/loader/guest/stop/cutover gates remain pending.
 Prior pipeline v2 is stopped and runner 916 overall acceptance remains withdrawn.
 
+The exact runner988 release now has [independent acceptance of ten actual host-only lifecycle controls](runner-final988-actual-v3/independent-review/runner-final988-replay-actual-independent-review.json),
+with [retained replay evidence](runner-final988-actual-v3/replay-receipt.json) and a [152-file export index](runner-final988-actual-v3/index.json).
+Receipt/source verification, exited-launcher log progress, duplicate rejection, serialized payloads/descendant
+drain and truthful expected stop/exit-7/hard-kill/OOM outcomes were verified. Five live resource samples
+use 64-MiB limits (48 MiB for OOM), CPU 10%, swap 0 and 16 tasks; they do not measure the production
+6-GiB/1-GiB/200%/256 baseline. Observed prior `FINALIZED` ordering is empirical, not an admission guarantee.
+Whole Codex daemon termination/host reboot and scientific execution were not performed. Migration remains
+STAGING; successful build/loader/preflight, actual guest/stop, reviewed merge and final cutover remain pending.
+
 **Activation authority:** this dated receipt cannot activate execution. Only a verified `LOCAL_ACTIVE`
 transition on [#27](https://github.com/jliu67/OpenRX/issues/27), bound to the actual reviewed merge commit
 and final acceptance receipt, makes the designated policy effective. Otherwise defer full-scale work.

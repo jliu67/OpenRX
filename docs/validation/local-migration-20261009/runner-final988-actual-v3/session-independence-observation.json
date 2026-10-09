@@ -1,0 +1,14 @@
+{
+  "launcher_absent": true,
+  "launcher_pid": 75179,
+  "main_live": {
+    "membership": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181838Z-74e4322ad038.service\n",
+    "pid": 75183,
+    "pidfd_live": true,
+    "stat": "75183 (python3.10) S 825 75183 75183 0 -1 4194304 3164 0 0 0 6 1 0 0 30 10 1 0 39549384 31735808 4697 18446744073709551615 103117715734528 103117718574605 140733027038864 0 0 0 0 16781312 16386 1 0 0 17 3 0 0 0 0 0 103117720946736 103117721230808 103118481645568 140733027043671 140733027043963 140733027043963 140733027045348 0\n"
+  },
+  "parent_command": "/lib/systemd/systemd --user ",
+  "parent_pid": 825,
+  "stdout_after": "independent heartbeat 0\nindependent heartbeat 1\n",
+  "stdout_before": "independent heartbeat 0\n"
+}
