@@ -1,0 +1,31 @@
+{
+  "schema": "openrx.local-migration.independent-runtime-reviewer-candidate-controls.v1",
+  "at": "2026-10-09T17:52:52.335422+00:00",
+  "candidate_sha256": "97430d48d73eb1014ce1c1acd5e1de14aa2815da285ad5d84771329aa8bbd62e",
+  "candidate_bytes": 42975,
+  "initial_root_reviewed_draft_sha256": "4df85ea04b06e447f7b39c8383aed9fa97330f096bf2680c3324ffc49d56785e",
+  "changes_diff_sha256": "4df428010d22b6ef48af2be92d3898bab81e6d7b6d20ac429ce1cbf2b5d9a9eb",
+  "ast": "pass",
+  "pure_historical_config_model_control": {
+    "cpu": "gem5::AtomicSimpleCPU",
+    "cores": 1,
+    "rvv": false,
+    "clock_period_ticks": 1000,
+    "ram_bytes": 4294967296,
+    "cache_sizes_bytes": {
+      "l1d-cache-0": 16384,
+      "l1i-cache-0": 16384,
+      "l2-cache-0": 262144
+    },
+    "base_image_read_only": true,
+    "cow": true
+  },
+  "pure_loader_decoder_positive_and_negative_controls": "pass",
+  "runtime_capture_checker_launched": false,
+  "new_host_build_metadata_invoked": false,
+  "actual_new_host_guest_accepted": false,
+  "migration_complete": false,
+  "limitations": [
+    "Historical/parser controls demonstrate decoder behavior only, never local simulator/runtime acceptance"
+  ]
+}

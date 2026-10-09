@@ -1,0 +1,77 @@
+{
+  "author_candidate_control_receipt": {
+    "bytes": 1179,
+    "path": "migrations/20261009/independent-runtime-reviewer-candidate-controls.json",
+    "sha256": "dcb5177261d55f808c0d8675aa886a8d669d0f2b57ae016de90b4def03894788"
+  },
+  "checker": {
+    "bytes": 42975,
+    "path": "migrations/20261009/independent_runtime_review_v1.py",
+    "sha256": "97430d48d73eb1014ce1c1acd5e1de14aa2815da285ad5d84771329aa8bbd62e"
+  },
+  "decision": {
+    "activation_authorized": false,
+    "actual_guest_acceptance": false,
+    "actual_stop_demonstrated": false,
+    "checker_runtime_mode_launched_by_reviewer": false,
+    "migration_complete": false,
+    "remaining_static_findings": [],
+    "static_checker_eligible_to_observe_and_replay_existing_authorized_runtime_capture": true
+  },
+  "exact_candidate_changes": {
+    "bytes": 7143,
+    "path": "migrations/20261009/independent-runtime-review-v1-changes.diff",
+    "sha256": "4df428010d22b6ef48af2be92d3898bab81e6d7b6d20ac429ce1cbf2b5d9a9eb"
+  },
+  "limitations": [
+    "Static approval does not establish actual checker run, completed simulator rebuild, guest boot/runtime, safe stop, output correctness, migration completion or cutover",
+    "Author historical pure-model/loader controls are separately source-bound evidence, not new-host simulation acceptance; this reviewer ran only AST parsing/read-only metadata inspections",
+    "Build/source/config/loader provenance remains checked for consistency against preserved artifacts; no binary-derived source proof or complete hermetic/offline closure is inferred",
+    "Interrupted checker may leave partial exclusive evidence without a final receipt; absence never implies acceptance",
+    "Host output exports must sanitize both designated root and original checkout absolute prefixes with explicitly recorded derivative hashes; untouched host bytes retain execution bindings",
+    "Root must invoke the exact externally bound final SHA and preserve all accepted/failed reviewer evidence; no checker runtime mode or service was launched during this static review"
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Frozen helper imports occurred before prepare/bundle/all source validation",
+      "resolution": "All helpers and reviewed runner imported only after890 commit-tree byte identities/full file set/read-only/unlinked tree/scientific equality/AST checks; fs.py is never imported or executed by checker"
+    },
+    {
+      "finding": "Unknown or failed systemctl query could be treated as a terminal unit",
+      "resolution": "Requires successful query, known loaded/not-found and inactive/failed states; loaded terminal Resultsuccess/ExecMainStatus0; any supplied owned cgroup must be empty/unpopulated; absent unit defaults are expressly not terminal Result evidence"
+    },
+    {
+      "finding": "Pinned gem5 --build-info creates default m5out before metadata-only early exit",
+      "resolution": "Explicit new reviewer-only --outdir plus cwd=new-output confines metadata directory writes to the exclusive review directory; scientific workload argv remains unchanged"
+    },
+    {
+      "finding": "Git metadata query could refresh index or honor replacement objects",
+      "resolution": "All Git calls add --no-optional-locks and --no-replace-objects; source bytes compare to exact SOURCE_COMMIT ls-tree rather than mutable index; ignored bytecode/extra regular files rejected"
+    }
+  ],
+  "retained_initial_draft": {
+    "bytes": 40828,
+    "path": "migrations/20261009/independent_runtime_review_draft_4df85ea0.py",
+    "sha256": "4df85ea04b06e447f7b39c8383aed9fa97330f096bf2680c3324ffc49d56785e"
+  },
+  "review_scope": [
+    "Read entire initial checker and final exact diff; source unchanged after final static read and AST parse",
+    "Checked field assumptions against actual source: build03 command/result generator, pipelinev3 profile/preflight/capture generator, runner988 manifest/receipt/event/status parser, unchanged wrapper/extractor/runtime validator",
+    "Read-only metadata confirmed frozen source890 Git entries, original HEAD3a7ff8f and recovered13760-byte ELF; this is not execution or whole source-inventory acceptance",
+    "Reviewed all import/command/write paths: no submit,recover,state,stop,simulation,build,GitHub or network operation; only package/loader/build-info metadata and manager reads after existing capture",
+    "Reviewed original694/upstream10933/exact890 source controls, pinned packages41 and loader binding, evidence-backed LOCAL_VALIDATING, exact7 inputs/source/env/resources/request/runner snapshots and external receipt integrity",
+    "Reviewed full raw-serial extraction and strict nine-control validator reuse, framed status0/empty stderr, expectedLinux/Ubuntu, guest complete, ordered1/2/3 hypercalls, concreteAtomic/scalar/cache/RAM/COW config, exact readfile and final input/receipt rechecks"
+  ],
+  "reviewed_at": "2026-10-09T17:54:52.743849+00:00",
+  "reviewer": "durable_runner independent subagent reviewing checker authored by scientific_inventory; shared owner account, not independent human approval",
+  "schema": "openrx.independent.runtime-checker-static-review.v1",
+  "scientific_scope_preserved": {
+    "milestone_or_activation_changes": false,
+    "no_checkpoint_resume": true,
+    "no_scientific_oracle_changes": true,
+    "no_status_from_boot_or_returncode_alone": true,
+    "no_wall_deadline": true,
+    "runtime_only_no_RandomX_gem5_hash_matrix": true,
+    "strict_original_runtime_extractor_and_nine_case_validator": true
+  }
+}
