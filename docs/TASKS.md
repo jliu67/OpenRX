@@ -6,7 +6,7 @@ Updated 2026-10-09 UTC after PR #25 integration and independently reviewed parti
 
 | Issue | State | Gates / execution availability |
 |---|---|---|
-| [#27](https://github.com/jliu67/OpenRX/issues/27) | **STAGING — NOT YET ACTIVE** | [Acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md): original state preservation, pinned assets/build, guest/regression/lifecycle/stop/recovery/integrity and reviewed-merge gates in progress. Original Library gem5 package currently inaccessible; separate pinned rebuild in progress. |
+| [#27](https://github.com/jliu67/OpenRX/issues/27) | **STAGING — NOT YET ACTIVE** | [Acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md): original state preservation, pinned assets/build, guest/regression/lifecycle/stop/recovery/integrity and reviewed-merge gates in progress. Original Library gem5 package currently inaccessible; separate pinned build 03 is running after preserved build 02 OOM. Guest submission is held: pipeline v2 stopped before preflight and runner 916 overall acceptance withdrawn; corrected runner 988/wrapper5c are independently accepted (287 full/40 targeted controls), while fresh codecommit/request/source/pipeline bindings and guest validation remain pending. |
 
 Read [local execution policy](LOCAL_EXECUTION.md) and [migration runbook](LOCAL_MIGRATION.md).
 After verified `LOCAL_ACTIVE`, resource-intensive work runs on the owner's Ubuntu host.

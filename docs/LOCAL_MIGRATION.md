@@ -90,13 +90,30 @@ exact redaction method/export digest. Do not feed redacted records to the host i
 
 The complete gem5 unchanged light matrix, full dataset, intended-core/SMP and selected BOOM Linux gates remain
 in #16/M3. Migration runtime smoke acceptance does not close those scientific gates or M1/M4/M5.
-The independently reviewed local driver `validate_when_ready_v2.py` is running as the host-managed
-`openrx-migration-validation-pipeline-v2-20261009.service`, waiting for attempt03. Its fixed request is
-`issue-27-local-runtime-6f54052-attempt-02`; [pipeline review](validation/local-migration-20261009/pipeline-independent-review-v2.json)
-binds driver `dab2f21e…`, runner `916b6b0d…` and specification `b0117492…`.
-It must verify build/loader/toolchain/inputs and publish evidence-backed `LOCAL_VALIDATING` before
-submitting runtime-only smoke. It is a finite owner-authorized local driver, not a remote listener or issue poller.
-No simulator has run at this staging snapshot. No expensive research run is authorized before technical gates and cutover.
+The previously reviewed fixed pipeline v2 is **stopped before preflight or guest execution**.
+[Safety hold](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771) and
+[review correction](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322) withdraw runner 916
+overall future execution acceptance after a post-reap numerical PID/process-group signal risk; its narrow
+fsync evidence remains retained. A [controlled wrapper audit](validation/local-migration-20261009/wrapper-reap-safety-audit.json)
+also confirms the race in the untouched frozen execution wrapper, with all signals intercepted.
+
+Corrected runner `988cf13f…` and wrapper `5c275bf3…` are now independently accepted for a new immutable
+local validation release; [final review](validation/local-migration-20261009/final-runner-wrapper-independent-review.json)
+records exact source bindings. The generic runner's reviewed
+f6ea signal fix (25 focused controls) and tiny [systemd-notify component fixtures](validation/local-migration-20261009/systemd-notify-component/)
+are separate earlier evidence. Final accepted source passes 287 complete repository tests, including 28 runner
+controls, plus 40 targeted wrapper controls. A55.1219-second controlled finalizer delay with six actual
+notifications and receipt integrity proves extension beyond 45 seconds. The original false test harness
+result and [audit addendum](validation/local-migration-20261009/finalizer-extension-integration/audit-addendum.json)
+are preserved with [the export index](validation/local-migration-20261009/finalizer-extension-integration/export-index.json); terminal manager properties were not captured, and no actual
+large-artifact throughput or guest correctness is inferred.
+The worker stop budget remains 45 seconds; only its private `Type=simple` / `NotifyAccess=exec` finalizer
+may extend its deadline while flushing/checksumming large outputs.
+
+Preserve original/frozen source and old request keys01/02 (never submitted). A new immutable execution
+checkout from the forthcoming reviewed source commit and new request/pipeline revision03 must bind both
+accepted corrected source digests and receive separate source/request/pipeline binding review. Build03 continues under its recorded limit; no guest
+has run at this staging snapshot and no expensive research is authorized before verified cutover.
 
 ## Stop, failure and recovery procedures
 

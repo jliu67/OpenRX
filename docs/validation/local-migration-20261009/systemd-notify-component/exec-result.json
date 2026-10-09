@@ -1,0 +1,774 @@
+{
+  "access": "exec",
+  "commands": {
+    "journal": [
+      "journalctl",
+      "--user",
+      "-u",
+      "openrx-notify-component-exec-b810fe666b.service",
+      "--no-pager",
+      "-o",
+      "short-iso"
+    ],
+    "status": [
+      "systemctl",
+      "--user",
+      "show",
+      "openrx-notify-component-exec-b810fe666b.service"
+    ]
+  },
+  "expected_behavior_verified": true,
+  "final_properties": {
+    "ActiveState": "inactive",
+    "CPUQuotaPerSecUSec": "infinity",
+    "ControlGroup": "",
+    "ControlPID": "0",
+    "MainPID": "0",
+    "MemoryMax": "infinity",
+    "NotifyAccess": "none",
+    "Result": "success",
+    "SubState": "dead",
+    "TasksMax": "19039",
+    "TimeoutStopUSec": "1min 30s"
+  },
+  "finalizer_events": [
+    {
+      "at": "2026-10-09T16:59:34.315639+00:00",
+      "elapsed": 9.205902460962534e-05,
+      "event": "started",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:34.337501+00:00",
+      "elapsed": 0.021958910045213997,
+      "event": "socket_present",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:34.362646+00:00",
+      "elapsed": 0.047104420023970306,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:35.388790+00:00",
+      "elapsed": 1.0732476830016822,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:36.422393+00:00",
+      "elapsed": 2.106850285024848,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:37.447364+00:00",
+      "elapsed": 3.1318220420507714,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:38.482583+00:00",
+      "elapsed": 4.167040247994009,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:39.507886+00:00",
+      "elapsed": 5.192342701018788,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:40.541391+00:00",
+      "elapsed": 6.2258491850225255,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:41.576388+00:00",
+      "elapsed": 7.260845198994502,
+      "event": "notification_sent",
+      "pid": 61131
+    },
+    {
+      "at": "2026-10-09T16:59:42.618455+00:00",
+      "elapsed": 8.302911936014425,
+      "event": "finished",
+      "pid": 61131
+    }
+  ],
+  "launch": {
+    "returncode": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "observations": [
+    {
+      "at": "2026-10-09T16:59:34.287386+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:34.543187+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:34.799009+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:35.054959+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:35.310820+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:35.566691+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:35.822705+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:36.078663+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:36.334555+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:36.590451+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:36.846233+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:37.102157+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:37.358007+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:37.614011+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:37.869851+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:38.125767+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:38.381704+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:38.637651+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:38.893557+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:39.149581+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:39.405490+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:39.661488+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:39.917414+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:40.173357+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:40.429546+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:40.685370+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:40.941091+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:41.197114+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:41.453020+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:41.708890+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:41.964793+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:42.220739+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:42.476789+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:42.732785+00:00",
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-notify-component-exec-b810fe666b.service",
+        "ControlPID": "61131",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec ; ignore_errors=no ; start_time=[Fri 2026-10-09 10:59:34 MDT] ; stop_time=[n/a] ; pid=61131 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "3s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T16:59:42.989034+00:00",
+      "properties": {
+        "ActiveState": "inactive",
+        "CPUQuotaPerSecUSec": "infinity",
+        "ControlGroup": "",
+        "ControlPID": "0",
+        "MainPID": "0",
+        "MemoryMax": "infinity",
+        "NotifyAccess": "none",
+        "Result": "success",
+        "SubState": "dead",
+        "TasksMax": "19039",
+        "TimeoutStopUSec": "1min 30s"
+      },
+      "returncode": 0,
+      "stderr": ""
+    }
+  ],
+  "unit": "openrx-notify-component-exec-b810fe666b.service"
+}

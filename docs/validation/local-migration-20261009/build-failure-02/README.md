@@ -15,3 +15,8 @@ A build failure is an actionable staging failure, not migration completion or a 
 
 Public paths are sanitized; the receipt binds both original-host and exported bytes.
 Original logs and partial files remain on the host under the recorded portable installation root.
+
+`failure-receipt.json` is an authored audit record combining freshly observed unit status, checked
+absence of the result file and original/export log digests. It is not a redaction of one pre-existing
+host JSON receipt. The build/pipeline logs and build-command export use only the declared path-prefix
+replacement; their separate original and public digests are recorded. The audit JSON remains unchanged.

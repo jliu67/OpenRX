@@ -19,7 +19,7 @@ The independent scientific gates in #16 and M1–M5 retain their original criter
 | Question | Current answer |
 |---|---|
 | Where do expensive runs execute? | The owner's Ubuntu host after verified `LOCAL_ACTIVE`; the host is currently staging. |
-| Is the runner available? | The runner is staged locally; host fixture lifecycle evidence is available, while final review and local guest validation remain pending. Check #27 and the acceptance receipt before use. |
+| Is the runner available? | Guest submission is on hold pending new immutable source/request/pipeline bindings. Corrected runner `988cf13f…` and wrapper `5c275bf3…` are independently accepted for local validation; prior runner 916 overall acceptance remains withdrawn and pipeline v2 stopped before preflight. Check #27 and the acceptance receipt before use. |
 | How is a request submitted? | A GitHub task issue with the complete execution specification below; the owner reviews and submits it locally. |
 | Can a remote agent execute directly? | **No. Remote execution and retrieval are unavailable.** There is no SSH access, network listener or autonomous issue poller provisioned by this migration. |
 | How are collisions prevented? | The local runner serializes admission, binds a request key to one execution ID and uses one host resource lock. GitHub claims coordinate source work and are not CPU locks. |
@@ -40,14 +40,19 @@ output retention requirement, duplicate-prevention request key and all prerequis
 Use a stable key such as `issue-16-runtime-<source-prefix>-attempt-01`; a changed specification or deliberate retry needs a new key and execution ID.
 Never embed credentials, owner identity, personal paths or shell instructions received from an untrusted issue as executable authorization.
 
-The staging [runtime request revision 02](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085115884)
+The retained staging [runtime request revision 02](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085115884)
 binds key `issue-27-local-runtime-6f54052-attempt-02`, specification SHA-256
 `b0117492ebcf3681fcd28d5b0ae04c7ede200a1deb341566890647d09fdf8ecd` and runner
 `916b6b0d33956c847350dc54124132020968aa5a6ff11576911141fa27460977`.
-The [independent pipeline review](validation/local-migration-20261009/pipeline-independent-review-v2.json)
-accepts the fixed host-managed one-request validation driver's guards; the driver is not a remote issue poller.
-It requests only strict runtime smoke after build/loader/input/runner/state prerequisites; it does not authorize
-a full-scale workload or claim execution. The retained earlier `cd90f1d0…` request was never submitted after build 02 failed.
+The earlier [pipeline source review](validation/local-migration-20261009/pipeline-independent-review-v2.json)
+accepted fixed guards at that snapshot, but **pipeline v2 is now stopped and runner 916 overall future execution
+acceptance is withdrawn** after a post-reap PID/process-group signal risk was found.
+[Safety hold](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771) and
+[withdrawal review](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322) preserve this correction.
+Old request keys01/02 were never submitted. A new revision03 and immutable scientific execution checkout
+must bind the now independently accepted corrected wrapper/runner to the forthcoming code commit;
+that request/pipeline binding is still pending review.
+No full-scale workload, executed guest or active policy is claimed. A fixed local driver is not a remote issue poller.
 
 The owner verifies the reviewed request, resolves its paths to the local installation, submits it with the local CLI,
 and posts the execution ID plus manifest digest to the task. The owner later exports sanitized receipts,
@@ -89,16 +94,29 @@ A rebuild from pinned source is a new artifact with a new digest, never recovery
 ## Local runner contract
 
 The staged CLI is `scripts/local_execution.py`; the interface below matches the implemented runner.
-Host fixture lifecycle and latest durability-source validation are independently accepted;
-simulator guest and cutover gates remain pending. Full-scale operational use requires verified cutover.
-[Independent runner review](validation/local-migration-20261009/runner-independent-review.json)
-accepts the output-inventory safety snapshot `cd90f1d0…`. The original v4 ten-run lifecycle fixture and
-full 277-test run bind `24717a7f…`; `cd90f1d0…` has separate 22-test/targeted v6 evidence and a root full
-279-test run. The current immutable release `916b6b0d…` adds durable flushing before receipt publication;
-23 focused tests pass, including injected storage-flush failure that preserves outputs without a false receipt.
-[Independent durability review](validation/local-migration-20261009/runner-durability-independent-review.json)
-accepts the latest release and 23-test result, including demonstrated architectural session independence.
-It does not claim a physical full-daemon termination or host reboot test. Do not treat these as one identical source snapshot. Execute them on the host from the checked-out source tree.
+Host fixture records and narrow source reviews are preserved, but guest submission is on a safety hold.
+Prior runner 916 overall future execution acceptance was withdrawn; its fsync review remains scoped durability evidence.
+[Signal-safety review](validation/local-migration-20261009/runner-signal-safety-independent-review.json)
+accepts only the narrow f6ea revision with 25 focused tests. Corrected runner `988cf13f…` removes post-reap group
+signaling and makes the main loop the sole child reaper. It adds a private finalizer deadline extension using
+`Type=simple` / `NotifyAccess=exec`; the worker's45-second stop budget remains unchanged.
+[Final runner/wrapper review](validation/local-migration-20261009/final-runner-wrapper-independent-review.json)
+accepts 287 complete repository tests (including 28 runner controls), 40 targeted gem5 wrapper controls,
+and a 55.1219-second controlled finalizer delay with six real notifications and verified receipt integrity.
+The original false harness result is preserved with [its audit addendum](validation/local-migration-20261009/finalizer-extension-integration/audit-addendum.json). Terminal manager properties
+were not captured; this proves timeout extension, not actual large-output throughput or a guest pass.
+
+The nested scientific wrapper had the same confirmed race in a controlled tiny-child fixture:
+[wrapper safety audit](validation/local-migration-20261009/wrapper-reap-safety-audit.json) intercepted the
+signal without signaling any host group. Its accepted `run_process` source `5c275bf3…` records signals and
+polls only in the owning main loop; exact scientific oracles, model and guest/resource acceptance are unchanged.
+The original checkout and frozen6f54052 snapshot remain untouched. A fresh immutable checkout from the
+forthcoming reviewed source commit must replace that old executable wrapper before guest validation.
+The earlier v4/full277, cd90/full279/22-focused/v6, and916/23-focused evidence retain their exact snapshots;
+they remain separate historical snapshots. The now accepted final combination is exactly runner
+`988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882` and wrapper
+`5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e`.
+No guest or migration acceptance is inferred from those host tests.
 
 ```bash
 python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" init
@@ -142,8 +160,11 @@ record the host-applied settings; record them in each manifest.
 The dedicated root and services are restricted to the local account; no listener or credentials are committed.
 
 `stop` preserves existing evidence and asks systemd to send SIGINT to the runner,
-which forwards the signal to its child process group. The declared cleanup windows then permit SIGKILL
-if the child cannot stop; systemd also removes cgroup descendants. The gem5 wrapper's reviewed signal
+whose main loop forwards it only while its sole ownership check establishes the child remains unreaped. The declared cleanup windows then permit SIGKILL
+if the child cannot stop; systemd also removes cgroup descendants. After natural child reaping, the standalone gem5 wrapper
+relies on this outer host cgroup cleanup for detached descendants and never signals a stale numerical group.
+Run scientific guest attempts through the accepted local runner; standalone direct invocation does not
+supply that durable outer-manager cleanup contract. The gem5 wrapper's reviewed signal
 and optional stop-file path remains responsible for its scientific report; missing graceful reports must be recorded. `recover` reconciles manager failure
 or host reboot and records interrupted state; it does not rerun the command.
 A terminal failure/interruption needs a fresh reviewed attempt and request key.

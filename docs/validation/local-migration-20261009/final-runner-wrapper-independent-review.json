@@ -1,0 +1,135 @@
+{
+  "decision": {
+    "guest_acceptance": false,
+    "migration_complete": false,
+    "request_and_pipeline_bindings_still_require_review": true,
+    "reviewed_code_eligible_for_immutable_local_validation_release": true
+  },
+  "finalizer_review": {
+    "NotifyAccess": "exec",
+    "Type_change": false,
+    "actual_integration": {
+      "audit_addendum": {
+        "bytes": 2983,
+        "sha256": "8a5e0bde17f59ef0a5764fecb71fba1a573b07dfea43e4476166726ce3b07465"
+      },
+      "behavior_accepted": true,
+      "controlled_delay_seconds": 55.12187797395745,
+      "original_harness_false_retained": true,
+      "real_notifications": 6,
+      "receipt_integrity_reverified": true,
+      "stop_post_live_beyond45_seconds": true,
+      "terminal_manager_properties_not_captured": true
+    },
+    "failure_behavior": "Startup notification failure preserves output with no receipt; late notification error adds an exclusive error artifact and makes immutable artifact-set verification fail closed",
+    "notification": "EXTEND_TIMEOUT_USEC=45000000 immediately and every10seconds during private_finalize only",
+    "socket_scope": "Manager-tracked main/control processes; manifest environment excludes NOTIFY_SOCKET from child",
+    "worker_stop_grace_seconds": 45
+  },
+  "independent_tests": {
+    "complete_repository": {
+      "hashes_stable": true,
+      "host_receipt": {
+        "bytes": 2055,
+        "sha256": "b58556c1e59b5faee7e489ccc550d99eb9e4fb36fc453ad75bab52cbc1b405c8"
+      },
+      "passed": 287,
+      "public_log": {
+        "bytes": 22612,
+        "file": "independent-final-all-tests.log",
+        "sha256": "953adde47be72e9962377fbfe773f6cbeaca0d35eeb8e8536658548573ac413d"
+      },
+      "returncode": 0,
+      "seconds": 25.823556956020184
+    },
+    "runner_controls_in_full_suite": 28,
+    "targeted_gem5": {
+      "hashes_stable": true,
+      "host_receipt": {
+        "bytes": 2098,
+        "sha256": "3d025c73e7f442c4beb75a0b6acbb740b7afe14120e062faba95976569d277eb"
+      },
+      "passed": 40,
+      "public_log": {
+        "bytes": 3890,
+        "file": "independent-final-gem5-targeted.log",
+        "sha256": "dbf6c1286fd3de7f5c3ffb8ae85a94c25a6e447169f1cd128465fc996fb6dfb1"
+      },
+      "returncode": 0,
+      "seconds": 5.8782137939706445
+    }
+  },
+  "limitations": [
+    "Tiny host controls and287 tests do not establish simulator guest correctness.",
+    "Host reboot and full active Codex daemon termination were not exercised; prior demonstrated systemd manager ownership/launcher absence supports architectural session independence.",
+    "No automatic simulator checkpoint resume.",
+    "Standalone scientific wrapper after a naturally reaped leader relies on outer manager cgroup cleanup for surviving detached descendants; no stale numeric-group signal is attempted.",
+    "A55-second controlled delay proves finalizer extension behavior; no actual large artifact finalization throughput or physical I/O-failure recovery is claimed."
+  ],
+  "local_execution_active": false,
+  "migration_state": "STAGING",
+  "review_scope": "Corrected runner and nested scientific wrapper control flow; not simulator boot, scientific guest acceptance, full migration, request submission, PR merge or cutover",
+  "reviewed_at": "2026-10-09T17:12:52.845898+00:00",
+  "reviewer": "scientific_inventory independent subagent; second read-only wrapper_safety_review peer audit; shared GitHub owner account",
+  "safety_findings": {
+    "previous_acceptance_scope": "Original reviewed snapshots and passing test evidence preserved; earlier overall execution acceptance withdrawn by exact-head GitHub safety comment. Prior fsync-only review remains scoped evidence.",
+    "previous_nested_wrapper_signal_risk": "Actual waitpid/SIGINT timing audit exposed a post-reap handler signal. An intermediate candidate also allowed handler returncode mutation to invalidate a completed-poll guard. Both resolved in5c275bf3 by record-only handler and immutable local ownership guard, with real-child tests of both gaps in both stop modes.",
+    "previous_runner_signal_risk": "Resolved by handler-only signal recording, exclusive main-thread reaping/signaling and removal of post-reap killpg"
+  },
+  "schema": "openrx.independent.final-runner-wrapper-review.v1",
+  "scientific_criteria_preservation": {
+    "default_unlimited_timeout": true,
+    "milestones_advanced": false,
+    "no_scientific_oracle_or_model_changes": true,
+    "one_opt_in_explicit_deadline": true,
+    "only_changed_wrapper_function": [
+      "run_process"
+    ],
+    "unchanged_control_files": [
+      {
+        "bytes": 4615,
+        "file": "simulator/gem5/fs.py",
+        "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5"
+      },
+      {
+        "bytes": 12960,
+        "file": "simulator/gem5/bundle.py",
+        "sha256": "bac76036889773dc05861cfa9050f4cbf161424dda8b40fcbcc2f878de0ac6b1"
+      },
+      {
+        "bytes": 2336,
+        "file": "simulator/gem5/resources.json",
+        "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb"
+      },
+      {
+        "bytes": 5511,
+        "file": "tests/native_runtime_probe.py",
+        "sha256": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617"
+      },
+      {
+        "bytes": 10949,
+        "file": "tests/native_riscv_probe.py",
+        "sha256": "024137e6b4c928f9ae771ccd9029ec35acadd9643bee6b8f89cb10375113e236"
+      }
+    ],
+    "unchanged_wrapper_main_and_extractors": true
+  },
+  "sources": {
+    "scripts/local_execution.py": {
+      "bytes": 38227,
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    "simulator/gem5/run.py": {
+      "bytes": 14953,
+      "sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e"
+    },
+    "tests/test_gem5_fs.py": {
+      "bytes": 29193,
+      "sha256": "247957b3d085d85ad1356fcb589b1cd4bff1b44f9cc18bc7e09576427f99cf71"
+    },
+    "tests/test_local_execution.py": {
+      "bytes": 24680,
+      "sha256": "326bdd14bf0c4cf3fc529ca014500d7faf0d7648fe1c92faa47751d8c2c8a695"
+    }
+  }
+}

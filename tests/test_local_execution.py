@@ -4,11 +4,14 @@ import json
 import os
 from pathlib import Path
 import signal
+import socket
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 import unittest
+import uuid
 from unittest import mock
 
 from scripts import local_execution as runner
@@ -127,6 +130,7 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("--property=NoNewPrivileges=yes", command)
         self.assertIn("--property=KillMode=mixed", command)
         self.assertIn("--property=Restart=no", command)
+        self.assertIn("--property=NotifyAccess=exec", command)
         self.assertTrue(any(item.startswith("--property=ExecStopPost=") for item in command))
         self.assertNotIn("--scope", command)
         self.assertNotIn("--pipe", command)
@@ -284,6 +288,74 @@ class RunnerTests(unittest.TestCase):
         self.assertIn("partial evidence", path.read_text())
         self.assertFalse(receipt["resume_allowed"])
         self.assertTrue(runner.verify(self.root, execution_id)["integrity_verified"])
+
+    def test_completed_child_never_signals_a_potentially_reused_process_group(self):
+        execution_id = self.submit("completed-leader-reuse")
+        with mock.patch.object(runner.os, "killpg", side_effect=AssertionError("Reaped leader PID may now identify another process group")):
+            self.assertEqual(runner.worker(self.root, execution_id), 0)
+        receipt = runner.finalize(self.root, execution_id, {"SERVICE_RESULT": "success"})
+        self.assertEqual(receipt["process"]["returncode"], 0)
+        self.assertTrue(runner.verify(self.root, execution_id)["integrity_verified"])
+
+    def test_signal_during_real_child_reap_does_not_reenter_poll_or_signal_stale_pid(self):
+        execution_id = self.submit("signal-during-reap")
+        original_popen = subprocess.Popen
+        observation = {"signal_delivered": False}
+        def launch(*args, **kwargs):
+            child = original_popen(*args, **kwargs)
+            original_poll = child.poll
+            in_poll = False
+            def poll():
+                nonlocal in_poll
+                if in_poll:
+                    raise AssertionError("Signal handler reentered the child poll/reap path")
+                in_poll = True
+                try:
+                    result = original_poll()
+                    if result is not None and not observation["signal_delivered"]:
+                        observation["signal_delivered"] = True
+                        signal.raise_signal(signal.SIGINT)
+                    return result
+                finally:
+                    in_poll = False
+            child.poll = poll
+            return child
+        with mock.patch.object(runner.subprocess, "Popen", side_effect=launch), mock.patch.object(
+                runner.os, "killpg", side_effect=AssertionError("Reaped PID must not be signaled")):
+            self.assertEqual(runner.worker(self.root, execution_id), 130)
+        self.assertTrue(observation["signal_delivered"])
+        receipt = runner.finalize(self.root, execution_id, {"SERVICE_RESULT": "exit-code"})
+        self.assertEqual(receipt["status"], "INTERRUPTED")
+        self.assertEqual(receipt["process"]["returncode"], 0)
+        self.assertEqual(receipt["process"]["signals"], [signal.SIGINT])
+
+    def test_finalizer_timeout_protocol_handles_path_and_abstract_socket_and_joins_thread(self):
+        for address in (str(self.base / "notify.sock"), "@openrx-test-" + uuid.uuid4().hex):
+            with socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM) as server:
+                server.bind("\0" + address[1:] if address.startswith("@") else address)
+                server.settimeout(2)
+                with mock.patch.dict(os.environ, {"NOTIFY_SOCKET": address}):
+                    with runner.finalizer_timeout_extension() as health_check:
+                        self.assertEqual(server.recv(1024), b"EXTEND_TIMEOUT_USEC=45000000")
+                        health_check()
+                    self.assertFalse(any(t.name == "openrx-finalizer-heartbeat" for t in threading.enumerate()))
+
+    def test_private_finalizer_notification_startup_failure_never_publishes_receipt(self):
+        execution_id = self.submit("notify-startup-failure")
+        self.assertEqual(runner.worker(self.root, execution_id), 0)
+        with mock.patch.dict(os.environ, {"NOTIFY_SOCKET": str(self.base / "nonexistent-notify-socket")}):
+            with mock.patch.object(sys, "stderr"):
+                self.assertEqual(runner.main(["--root", str(self.root), "_finalize", execution_id]), 1)
+        directory = self.directory(execution_id)
+        self.assertFalse((directory / "receipt.json").exists())
+        self.assertEqual(len(list(directory.glob("finalizer-timeout-error-*.json"))), 1)
+        self.assertIn("synthetic output", (directory / "stdout.log").read_text())
+
+    def test_manual_finalization_without_notify_socket_is_a_noop_for_extension(self):
+        with mock.patch.dict(os.environ, {}, clear=True):
+            with runner.finalizer_timeout_extension() as health_check:
+                health_check()
+        self.assertFalse(any(t.name == "openrx-finalizer-heartbeat" for t in threading.enumerate()))
 
     def test_global_lock_serializes_jobs_and_queued_stop_never_launches_child(self):
         self.payload.write_text("import time\nprint('running', flush=True)\ntime.sleep(60)\n")

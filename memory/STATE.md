@@ -30,15 +30,20 @@ retained status/logs, stop/process-failure/recovery and verified receipt integri
 termination or host reboot was not performed. [Independent final runner review](../docs/validation/local-migration-20261009/runner-independent-review.json)
 accepts the final inventory safety changes (22 focused tests/targeted v6 controls); v4 ten-fixture lifecycle
 and full 277-test evidence retain their separate prior source identity. A later full 279-test root run binds cd90.
-The current immutable runner916b6b0d release adds pre-receipt fsync and passes23 focused controls;
-[Independent durability review](../docs/validation/local-migration-20261009/runner-durability-independent-review.json)
-accepts the latest-source23-test/flush-failure control and architectural session independence with explicit
-whole-daemon/host-reboot limits. Runtime request revision02 binds this release/new key/specification,
-but build03/loader/reviewed local-validation prerequisites still gate submission. Corrupt/torn durable records fail
-closed and require preserved forensic copies plus manual additive reconciliation, not automatic reruns. Remote host execution/retrieval is unavailable;
-requests require owner-mediated GitHub submission and result publication.
-Hold full-scale research until verified cutover; a rebuilt simulator is a separate artifact and must pass local gates.
-The historical sections below retain earlier accepted evidence and do not declare the new host validated.
+The runner916 durability/23-test review is retained as narrow fsync evidence; overall future execution
+acceptance is withdrawn after a post-reap PID/process-group signal risk. Pipelinev2 stopped before
+preflight/guest execution; [safety hold](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771)
+and [review correction](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322) are authoritative.
+Controlled tiny-child wrapper audit confirms the same race in frozen source, intercepting every signal.
+[Final corrected combination review](../docs/validation/local-migration-20261009/final-runner-wrapper-independent-review.json)
+accepts runner988cf13f (sole main reaper/private finalizer extension) and wrapper5c275bf3 (`run_process`
+only, unchanged scientific oracles/model/resources):287 full tests including28 runner controls,40 targeted
+wrapper controls and55.1219-second delayed finalizer with six notifications/verified receipt. The original
+false harness is retained with a corrected audit; terminal manager status and large-output throughput are unknown.
+Old keys01/02 never submitted. New readonly source checkout/request/pipeline revision03 must bind the
+forthcoming reviewed code commit; original checkout/frozen6f source remain untouched.
+Build03 continues; no guest or activation is claimed. Corrupt/torn durable records still fail closed and
+require preserved forensic copies/manual additive reconciliation, never automatic scientific replay.
 
 ## Actual gem5 Linux runtime — PR #18 / task #16
 

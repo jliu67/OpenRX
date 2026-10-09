@@ -233,3 +233,29 @@ build03 and every pinned preflight; this fixed owner-authorized driver does not 
 claim any guest outcome. Major failure hub request produced verified botcopy6085149398.
 Staged documentation links current reviews/evidence and retains STAGING/inactive with no fabricated
 state advance. Remote direct execution remains unavailable; final technical/cutover gates still apply.
+
+
+## Preventive staging signal-safety hold — 2026-10-09 UTC
+
+Root identified a post-reap numerical PID/process-group reuse hazard in the previously reviewed916
+runner. Pipelinev2 was stopped before preflight/guest execution and overall916 future execution acceptance
+was withdrawn on #27/PR28; the fsync-only review remains scoped historical evidence. No expensive guest
+request ran and keys01/02 were never submitted. A controlled true-child fixture confirmed the same race
+in the untouched frozen6f gem5 wrapper, intercepting signals without signaling any host group.
+
+Runner988cf13f candidate uses append-only signal recording/sole-main-loop reaping and private finalizer
+NotifyAccess=exec timeout extension; worker45-second stop remains unchanged. Wrapper5c275bf3 alters
+only run_process lifecycle ownership, not model/resources/scientific oracles. Independent f6ea signal-only
+25tests and tiny notify components are separate proof; final28/wrapper40/full287/actual55-second-finalizer
+proof and fresh reviewed-code readonly checkout/new request/pipelinev3 binding remain pending.
+Original source, historical evidence and ongoing build03 are preserved. Migration stays STAGING/inactive.
+
+
+Corrected final runner988cf13f and wrapper5c275bf3 are independently accepted for local validation:
+287 complete repository controls including28 runner tests,40 targeted gem5 host controls and stable exact
+source identities. Actual private finalizer delayed55.1219 seconds with six manager notifications and
+verified receipt integrity proves extension beyond its45-second grace; original false harness result and
+corrected audit are preserved. Terminal manager properties were not captured; actual large-output
+throughput/physical I/O-failure recovery and guest correctness are not asserted. Final immutable codecommit/
+execution checkout/request03/pipeline3 bindings still need review before guest submission. Migration stays
+STAGING/inactive; old execution acceptance withdrawals and every prior snapshot remain preserved.

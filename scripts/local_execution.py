@@ -15,9 +15,11 @@ from pathlib import Path
 import re
 import shutil
 import signal
+import socket
 import stat
 import subprocess
 import sys
+import threading
 import time
 import uuid
 
@@ -112,6 +114,55 @@ def flush_retained(directory, retained):
         sync_directory(path)
     # The ID namespace itself must survive after the nested contents are flushed.
     sync_directory(directory.parent)
+
+
+def notify_finalizer_timeout():
+    """Extend only the manager's finalization timeout; never signal readiness."""
+    address = os.environ.get("NOTIFY_SOCKET")
+    if not address:
+        return False
+    if address.startswith("@"):
+        address = "\0" + address[1:]
+    elif not address.startswith("/"):
+        raise ValueError("Invalid systemd notification socket address")
+    message = b"EXTEND_TIMEOUT_USEC=45000000"
+    with socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM) as client:
+        client.settimeout(2)
+        client.connect(address)
+        if client.send(message) != len(message):
+            raise OSError("Incomplete systemd finalizer timeout notification")
+    return True
+
+
+@contextmanager
+def finalizer_timeout_extension():
+    """Keep receipt hashing/flushing alive without extending the worker stop grace."""
+    if not notify_finalizer_timeout():
+        yield lambda: None
+        return
+    stopped = threading.Event()
+    errors = []
+
+    def health_check():
+        if errors:
+            raise OSError("Systemd finalizer timeout extension failed: " + str(errors[0]))
+
+    def heartbeat():
+        while not stopped.wait(10):
+            try:
+                notify_finalizer_timeout()
+            except (OSError, ValueError) as exc:
+                errors.append(exc)
+                stopped.set()
+
+    thread = threading.Thread(target=heartbeat, name="openrx-finalizer-heartbeat", daemon=True)
+    thread.start()
+    try:
+        yield health_check
+    finally:
+        stopped.set()
+        thread.join()
+        health_check()
 
 
 def write_new(path, data):
@@ -269,6 +320,7 @@ def systemd_command(root, directory, manifest):
             "--property=KillMode=mixed", "--property=KillSignal=SIGINT",
             "--property=TimeoutStopSec=45s", "--property=SendSIGKILL=yes",
             "--property=UMask=0077", "--property=Restart=no",
+            "--property=NotifyAccess=exec",
             f"--property=ExecStopPost={finalizer}",
             python, runner, "--root", str(root), "_worker", manifest["execution_id"]]
 
@@ -328,6 +380,7 @@ def submit(root, request_key, kind, cwd, argv, inputs, sources=(), env_items=(),
             "resources": {"MemoryMax": "6G", "MemorySwapMax": "1G", "CPUQuota": "200%",
                           "TasksMax": 256, "Nice": 10, "NoNewPrivileges": True, "global_slots": 1},
             "resource_lock": str(root / "locks" / "execution.lock"),
+            "finalizer_timeout": "Private ExecStopPost extends its own timeout while durable flush/hash work continues; worker stop grace remains 45s",
             "output_rule": "All scientific output must be under {execution_dir}; use this literal argv placeholder",
             "resume": "forbidden; separately reviewed incremental build uses a new ID and request key",
             "remote_execution": "unavailable; owner-mediated local submission only",
@@ -439,12 +492,9 @@ def worker(root, execution_id):
     old_handlers = {}
 
     def handle(signum, _frame):
+        # Never reenter Popen's poll/wait while it is updating reaping state.
+        # The main loop alone owns child signaling and reaping.
         interrupted.append(signum)
-        if process is not None and process.poll() is None:
-            try:
-                os.killpg(process.pid, signum)
-            except ProcessLookupError:
-                pass
 
     for sig in (signal.SIGINT, signal.SIGTERM):
         old_handlers[sig] = signal.signal(sig, handle)
@@ -474,26 +524,22 @@ def worker(root, execution_id):
                 process = subprocess.Popen(manifest["argv"], cwd=manifest["cwd"], env=manifest["env"],
                                            stdin=subprocess.DEVNULL, stdout=out, stderr=err, start_new_session=True)
                 append_event(directory / "events.jsonl", {"status": "CHILD_STARTED", "pid": process.pid})
-                # A signal between the last check and Popen is forwarded here.
-                if interrupted and process.poll() is None:
-                    try:
-                        os.killpg(process.pid, interrupted[-1])
-                    except ProcessLookupError:
-                        pass
                 stop_started = None
                 while process.poll() is None:
                     if interrupted:
                         if stop_started is None:
                             stop_started = time.monotonic()
+                            try:
+                                os.killpg(process.pid, interrupted[0])
+                            except ProcessLookupError:
+                                pass
                         elif time.monotonic() - stop_started > 25:
-                            os.killpg(process.pid, signal.SIGKILL)
+                            try:
+                                os.killpg(process.pid, signal.SIGKILL)
+                            except ProcessLookupError:
+                                pass
                     time.sleep(0.1)
                 returncode = process.wait()
-                # Kill any surviving same-session grandchildren before releasing lock.
-                try:
-                    os.killpg(process.pid, signal.SIGKILL)
-                except ProcessLookupError:
-                    pass
                 out.flush()
                 err.flush()
                 os.fsync(out.fileno())
@@ -547,7 +593,7 @@ def finalized_files(directory):
     return retained
 
 
-def finalize(root, execution_id, service_env=None):
+def finalize(root, execution_id, service_env=None, health_check=None):
     directory = execution_dir(root, execution_id)
     # submit holds admission until its durable submission receipt is written.
     # --no-block prevents systemd-run from waiting for this finalizer.
@@ -560,6 +606,8 @@ def finalize(root, execution_id, service_env=None):
                 # Recover a crash between exclusive receipt creation and its journal append.
                 verify_artifacts(directory, read_json(directory / "receipt.json"))
                 flush_retained(directory, [*finalized_files(directory), directory / "receipt.json"])
+                if health_check:
+                    health_check()
                 append_event(Path(root) / "state" / "execution-receipts.jsonl", {
                     "execution_id": execution_id, "receipt": actual, "recovered_binding": True,
                     "limitation": "Receipt origin was not journal-bound before interruption; retained artifact digests rechecked"})
@@ -581,6 +629,8 @@ def finalize(root, execution_id, service_env=None):
                    "status": status, "systemd": manager, "process": process_result,
                    "artifacts": artifacts, "scientific_acceptance": "unverified",
                    "resume_allowed": False}
+        if health_check:
+            health_check()
         json_new(directory / "receipt.json", receipt)
         append_event(Path(root) / "state" / "execution-receipts.jsonl", {
             "execution_id": execution_id, "receipt": digest(directory / "receipt.json")})
@@ -701,6 +751,18 @@ def main(argv=None):
             if own_cgroup(manifest["unit"]) is None:
                 raise ValueError("Private worker entrypoint requires its own named systemd cgroup")
             return worker(args.root, args.execution_id)
+        elif args.command == "_finalize":
+            try:
+                with finalizer_timeout_extension() as health_check:
+                    result = finalize(args.root, args.execution_id, health_check=health_check)
+            except (OSError, ValueError) as exc:
+                # An immutable late failure record prevents verify from accepting
+                # a receipt if notification failed after that receipt was written.
+                directory = execution_dir(args.root, args.execution_id)
+                json_new(directory / ("finalizer-timeout-error-" + uuid.uuid4().hex + ".json"), {
+                    "at": now(), "error": str(exc), "scientific_acceptance": "unverified",
+                    "reason": "Private finalizer failed; preserve all outputs and inspect/recover"})
+                raise
         else:
             functions = {"status": status, "stop": stop, "recover": recover, "verify": verify, "_finalize": finalize}
             result = functions[args.command](args.root, args.execution_id)

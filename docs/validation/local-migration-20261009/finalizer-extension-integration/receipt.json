@@ -1,0 +1,1392 @@
+{
+  "accepted": false,
+  "actual_stop_post_observed_beyond_default_deadline": true,
+  "commands": {
+    "default": [
+      "systemd-run",
+      "--user",
+      "--quiet",
+      "--no-block",
+      "--unit",
+      "openrx-20261009T170845Z-09a14b95264a.service",
+      "--property=MemoryMax=6G",
+      "--property=CPUQuota=200%",
+      "--property=TasksMax=256",
+      "--property=MemorySwapMax=1G",
+      "--property=Nice=10",
+      "--property=NoNewPrivileges=yes",
+      "--property=KillMode=mixed",
+      "--property=KillSignal=SIGINT",
+      "--property=TimeoutStopSec=45s",
+      "--property=SendSIGKILL=yes",
+      "--property=UMask=0077",
+      "--property=Restart=no",
+      "--property=NotifyAccess=exec",
+      "--property=ExecStopPost=/usr/bin/python3.10 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py --root ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root _finalize 20261009T170845Z-09a14b95264a",
+      "/usr/bin/python3.10",
+      "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py",
+      "--root",
+      "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root",
+      "_worker",
+      "20261009T170845Z-09a14b95264a"
+    ],
+    "fixture": [
+      "systemd-run",
+      "--user",
+      "--quiet",
+      "--no-block",
+      "--unit",
+      "openrx-20261009T170845Z-09a14b95264a.service",
+      "--property=MemoryMax=64M",
+      "--property=CPUQuota=10%",
+      "--property=TasksMax=16",
+      "--property=MemorySwapMax=0",
+      "--property=Nice=10",
+      "--property=NoNewPrivileges=yes",
+      "--property=KillMode=mixed",
+      "--property=KillSignal=SIGINT",
+      "--property=TimeoutStopSec=45s",
+      "--property=SendSIGKILL=yes",
+      "--property=UMask=0077",
+      "--property=Restart=no",
+      "--property=NotifyAccess=exec",
+      "--property=ExecStopPost=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a",
+      "/usr/bin/python3.10",
+      "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py",
+      "--root",
+      "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root",
+      "_worker",
+      "20261009T170845Z-09a14b95264a"
+    ]
+  },
+  "completed_at": "2026-10-09T17:09:42.842291+00:00",
+  "controlled_delay_seconds": 55.12187797395745,
+  "elapsed_seconds": 57.492485422000755,
+  "execution_id": "20261009T170845Z-09a14b95264a",
+  "execution_receipt": {
+    "bytes": 2754,
+    "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/receipt.json",
+    "sha256": "491f862f82b26c0e8c74341c522e9d7640e59698f3c899e7085701ae73dd89b8"
+  },
+  "final_properties": {
+    "ActiveState": "inactive",
+    "CPUQuotaPerSecUSec": "infinity",
+    "ControlGroup": "",
+    "ControlPID": "0",
+    "MainPID": "0",
+    "MemoryMax": "infinity",
+    "MemorySwapMax": "infinity",
+    "NotifyAccess": "none",
+    "Result": "success",
+    "SubState": "dead",
+    "TasksMax": "19039",
+    "TimeoutStopUSec": "1min 30s"
+  },
+  "notifications": 6,
+  "observations": [
+    {
+      "at": "2026-10-09T17:08:45.691239+00:00",
+      "elapsed": 0.3414099629735574,
+      "properties": {
+        "ActiveState": "active",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "0",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }",
+        "MainPID": "63642",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "running",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:46.698026+00:00",
+      "elapsed": 1.3481971109868027,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:47.703854+00:00",
+      "elapsed": 2.3540247989585623,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:48.710499+00:00",
+      "elapsed": 3.360669899964705,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:49.716765+00:00",
+      "elapsed": 4.366935918980744,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:50.723455+00:00",
+      "elapsed": 5.3736257259733975,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:51.730257+00:00",
+      "elapsed": 6.380427763971966,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:52.736926+00:00",
+      "elapsed": 7.387097194965463,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:53.743743+00:00",
+      "elapsed": 8.393913745007012,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:54.750288+00:00",
+      "elapsed": 9.400459110969678,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:55.757017+00:00",
+      "elapsed": 10.4071882260032,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:56.763864+00:00",
+      "elapsed": 11.4140350180096,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:57.769830+00:00",
+      "elapsed": 12.420000578975305,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:58.776478+00:00",
+      "elapsed": 13.42664858797798,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:08:59.783085+00:00",
+      "elapsed": 14.433256658958271,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:00.789264+00:00",
+      "elapsed": 15.439434756990522,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:01.795839+00:00",
+      "elapsed": 16.446009975974448,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:02.802830+00:00",
+      "elapsed": 17.452989770972636,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:03.809471+00:00",
+      "elapsed": 18.459641960973386,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:04.815797+00:00",
+      "elapsed": 19.465968280972447,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:05.822593+00:00",
+      "elapsed": 20.47276391700143,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:06.829264+00:00",
+      "elapsed": 21.479434820997994,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:07.835984+00:00",
+      "elapsed": 22.486154607962817,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:08.842657+00:00",
+      "elapsed": 23.49282826599665,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:09.849356+00:00",
+      "elapsed": 24.499526857980527,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:10.856026+00:00",
+      "elapsed": 25.50619771395577,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:11.861805+00:00",
+      "elapsed": 26.511975948000327,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:12.868606+00:00",
+      "elapsed": 27.51877655298449,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:13.874750+00:00",
+      "elapsed": 28.52492075099144,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:14.881460+00:00",
+      "elapsed": 29.531631187011953,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:15.888150+00:00",
+      "elapsed": 30.538320486957673,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:16.895756+00:00",
+      "elapsed": 31.54592668201076,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:17.902365+00:00",
+      "elapsed": 32.552536032977514,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:18.908735+00:00",
+      "elapsed": 33.55890575796366,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:19.915612+00:00",
+      "elapsed": 34.56578291795449,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:20.922350+00:00",
+      "elapsed": 35.57252119196346,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:21.928911+00:00",
+      "elapsed": 36.57908283697907,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:22.935502+00:00",
+      "elapsed": 37.585673331981525,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:23.942369+00:00",
+      "elapsed": 38.59253944497323,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:24.949127+00:00",
+      "elapsed": 39.59929804300191,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:25.955794+00:00",
+      "elapsed": 40.60596545797307,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:26.962529+00:00",
+      "elapsed": 41.612699813966174,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:27.969261+00:00",
+      "elapsed": 42.61943114595488,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:28.976057+00:00",
+      "elapsed": 43.6262275549816,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:29.982729+00:00",
+      "elapsed": 44.632899682968855,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:30.989521+00:00",
+      "elapsed": 45.63969195797108,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:31.996317+00:00",
+      "elapsed": 46.646487149002496,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:33.003150+00:00",
+      "elapsed": 47.65332121698884,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:34.009454+00:00",
+      "elapsed": 48.6596247649868,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:35.016314+00:00",
+      "elapsed": 49.66648555395659,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:36.022475+00:00",
+      "elapsed": 50.67264536197763,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:37.029042+00:00",
+      "elapsed": 51.67921239399584,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:38.035139+00:00",
+      "elapsed": 52.68530993297463,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:39.041846+00:00",
+      "elapsed": 53.69201792700915,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:40.047811+00:00",
+      "elapsed": 54.69798170897411,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:41.054002+00:00",
+      "elapsed": 55.704172926954925,
+      "properties": {
+        "ActiveState": "deactivating",
+        "CPUQuotaPerSecUSec": "100ms",
+        "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+        "ControlPID": "63645",
+        "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+        "MainPID": "0",
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "NotifyAccess": "exec",
+        "Result": "success",
+        "SubState": "stop-post",
+        "TasksMax": "16",
+        "TimeoutStopUSec": "45s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    },
+    {
+      "at": "2026-10-09T17:09:42.061180+00:00",
+      "elapsed": 56.71135120495455,
+      "properties": {
+        "ActiveState": "inactive",
+        "CPUQuotaPerSecUSec": "infinity",
+        "ControlGroup": "",
+        "ControlPID": "0",
+        "MainPID": "0",
+        "MemoryMax": "infinity",
+        "MemorySwapMax": "infinity",
+        "NotifyAccess": "none",
+        "Result": "success",
+        "SubState": "dead",
+        "TasksMax": "19039",
+        "TimeoutStopUSec": "1min 30s"
+      },
+      "query_returncode": 0,
+      "stderr": ""
+    }
+  ],
+  "output_integrity": {
+    "execution_id": "20261009T170845Z-09a14b95264a",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "schema": "openrx.independent.finalizer-extension-integration.v1",
+  "scope": "Actual final runner private CLI finalization; controlled delay represents slow I/O/hash work on tiny retained data. No guest simulation, production root, physical host reboot, full Codex shutdown, or real large dataset.",
+  "snapshot": {
+    "bytes": 38227,
+    "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py",
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  },
+  "sources": [
+    {
+      "bytes": 38227,
+      "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/local_execution.py",
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    {
+      "bytes": 1502,
+      "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py",
+      "sha256": "441bef61caac3275193b49bece16dee42ef437f6a854ee61e3b158b57fc2c181"
+    },
+    {
+      "bytes": 169,
+      "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/payload.py",
+      "sha256": "93522c58a830c7326383358925108ed05e744111c99ebdadcd45595f04038ab2"
+    },
+    {
+      "bytes": 5776,
+      "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/run-integration.py",
+      "sha256": "314cecfd23f55bbf0ef21bedeab8d4aa703edd372354960538e326e0729ad599"
+    }
+  ],
+  "started_at": "2026-10-09T17:08:45.349805+00:00",
+  "unit": "openrx-20261009T170845Z-09a14b95264a.service",
+  "witness": [
+    {
+      "event": "private-finalizer-started",
+      "monotonic": 391300.902416887,
+      "pid": 63645,
+      "runner_path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py",
+      "utc": "2026-10-09T17:08:46.047592+00:00"
+    },
+    {
+      "event": "timeout-notification-returned",
+      "monotonic": 391300.931042483,
+      "pid": 63645,
+      "sent": true,
+      "utc": "2026-10-09T17:08:46.076203+00:00"
+    },
+    {
+      "event": "controlled-output-flush-delay-start",
+      "monotonic": 391300.959506714,
+      "pid": 63645,
+      "seconds": 55,
+      "utc": "2026-10-09T17:08:46.104667+00:00"
+    },
+    {
+      "event": "timeout-notification-returned",
+      "monotonic": 391310.958614185,
+      "pid": 63645,
+      "sent": true,
+      "utc": "2026-10-09T17:08:56.103776+00:00"
+    },
+    {
+      "event": "timeout-notification-returned",
+      "monotonic": 391321.059984958,
+      "pid": 63645,
+      "sent": true,
+      "utc": "2026-10-09T17:09:06.205147+00:00"
+    },
+    {
+      "event": "timeout-notification-returned",
+      "monotonic": 391331.101883155,
+      "pid": 63645,
+      "sent": true,
+      "utc": "2026-10-09T17:09:16.247045+00:00"
+    },
+    {
+      "event": "timeout-notification-returned",
+      "monotonic": 391341.14765761,
+      "pid": 63645,
+      "sent": true,
+      "utc": "2026-10-09T17:09:26.292819+00:00"
+    },
+    {
+      "event": "timeout-notification-returned",
+      "monotonic": 391351.17812276,
+      "pid": 63645,
+      "sent": true,
+      "utc": "2026-10-09T17:09:36.323285+00:00"
+    },
+    {
+      "event": "controlled-output-flush-delay-finished",
+      "monotonic": 391356.081384688,
+      "pid": 63645,
+      "utc": "2026-10-09T17:09:41.226547+00:00"
+    },
+    {
+      "event": "private-finalizer-returned",
+      "monotonic": 391356.229638372,
+      "pid": 63645,
+      "returncode": 0,
+      "utc": "2026-10-09T17:09:41.374800+00:00"
+    }
+  ]
+}

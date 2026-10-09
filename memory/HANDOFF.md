@@ -16,15 +16,25 @@ pinned firmware/kernel/compressed/expanded disk are verified. Host native smoke 
 171 vendor files, 106 upstream controls plus one explicit unsupported-AVX2 skip,
 39 exact semantic/hash controls (optional AES skip) and nine runtime controls. No local gem5 pass is claimed. Historical runtime/partial-light evidence below is preserved and remains historical.
 
-The current immutable runner release916b6b0d adds pre-receipt durable flushing and passes23 focused
-controls; [Independent durability review](../docs/validation/local-migration-20261009/runner-durability-independent-review.json)
-accepts the latest-source23-test/flush-failure control and architectural session independence with explicit
-whole-daemon/host-reboot limits. Earlier v4/full277 and cd90/full279/22-focused/v6
-runs retain separate exact snapshot identities. [Revised runtime request](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085115884)
-key `issue-27-local-runtime-6f54052-attempt-02` is pending build03/loader/input/runner/state prerequisites;
-the old cd90 request was never submitted. The independently reviewed fixed pipelinev2 is a host-managed
-service waiting for build03 and must satisfy every preflight before runtime-only submission.
-The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6085149398) is verified.
+**Current safety hold:** pipelinev2 stopped before preflight or guest execution and runner916 overall
+future execution acceptance is withdrawn. Its fsync/23-focused proof remains narrow history.
+[Task safety record](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771) and
+[review correction](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322) preserve the reason.
+A controlled tiny-child audit also confirms post-reap group signaling in the frozen gem5 wrapper;
+signals were intercepted and no real host group was signaled.
+
+Independently accepted runner988cf13f makes the main loop sole reaper and permits only its private finalizer to
+extend timeout during large retained-output hashing/fsync; worker45-second stop remains unchanged.
+Corrected wrapper5c275bf3 changes only `run_process` signal/reap ownership, retaining all scientific oracles,
+model and resource pins. [Final exact-source review](../docs/validation/local-migration-20261009/final-runner-wrapper-independent-review.json)
+passes287 full tests (including28 runner controls),40 targeted wrapper controls and a55.1219-second
+controlled finalizer delay with six real notifications/verified receipt. The original false harness result
+and corrected audit are retained; no terminal manager status or actual large-output throughput is claimed.
+The narrow f6ea signal-only25-test review and notify-component fixtures are separately retained.
+Old request keys01/02 never submitted; new readonly execution checkout from the forthcoming reviewed
+source commit and request/pipeline revision03 must bind accepted corrected source bytes before guest validation.
+Original/frozen6f source, earlier fixture/test evidence and build03 are preserved. No guest has executed.
+The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6085149398) remains verified.
 
 Next: verify original asset preservation, pinned local build/dependencies/inputs, runner durability/locks/resource limits,
 status/log/output integrity, safe stop/failure/recovery, expected guest boot and strict regression/runtime smoke.

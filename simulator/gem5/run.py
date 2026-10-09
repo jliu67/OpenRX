@@ -93,18 +93,12 @@ def run_process(command, *, stdout, stderr, timeout, stop_file=None):
             # a coincident host SIGINT cannot be distinguished from our SIGINT.
             result["interruption_source"] = (
                 "stop-file" if stop_requested and signum == signal.SIGINT else "host-signal")
-        result.update(returncode=None, interrupted=True,
+        result.update(interrupted=True,
                       interruption_signal=signal.Signals(interrupted_signal).name)
-        # Never raise into arbitrary launch/wait/cleanup bytecode. Killing an
-        # unreaped session leader's group also wakes wait(), and its PID cannot
-        # have been reused. Before Popen returns, remember the signal instead.
-        if process is not None and process.returncode is None:
-            try:
-                os.killpg(process.pid, signal.SIGKILL)
-            except ProcessLookupError:
-                pass
-            except OSError as exc:
-                result["signal_cleanup_error"] = str(exc)
+        # Only record context here. A handler may run after waitpid reaps the
+        # child but before Popen updates returncode; it must never signal that
+        # potentially reused numerical process group. The main loop owns both
+        # reaping and signaling while the leader remains unreaped.
 
     try:
         if stop_file is not None and os.path.lexists(stop_file):
@@ -114,38 +108,38 @@ def run_process(command, *, stdout, stderr, timeout, stop_file=None):
         completed = False
         try:
             process = subprocess.Popen(command, stdout=stdout, stderr=stderr, start_new_session=True)
-            if interrupted_signal is not None:
-                try:
-                    os.killpg(process.pid, signal.SIGKILL)
-                except ProcessLookupError:
-                    pass
-            if stop_file is None:
-                result["returncode"] = process.wait(timeout=timeout or None)
-            else:
-                deadline = time.monotonic() + timeout if timeout else None
-                while True:
-                    result["returncode"] = process.poll()
-                    if result["returncode"] is not None:
-                        break
-                    if interrupted_signal is None and os.path.lexists(stop_file):
-                        result["stop_file_observed"] = True
-                        stop_requested = True
-                        signal.raise_signal(signal.SIGINT)
-                        result["returncode"] = process.wait()
-                        break
-                    wait_seconds = 0.2
-                    if deadline is not None:
-                        remaining = deadline - time.monotonic()
-                        if remaining <= 0:
-                            raise subprocess.TimeoutExpired(command, timeout)
-                        wait_seconds = min(wait_seconds, remaining)
+            deadline = time.monotonic() + timeout if timeout else None
+            while True:
+                observed_returncode = process.poll()
+                result["returncode"] = observed_returncode
+                if observed_returncode is not None:
+                    break
+                if interrupted_signal is None and stop_file is not None and os.path.lexists(stop_file):
+                    result["stop_file_observed"] = True
+                    stop_requested = True
+                    signal.raise_signal(signal.SIGINT)
+                if interrupted_signal is not None:
+                    # The last poll returned None and the handler cannot reap:
+                    # this leader still reserves its PID, even if it just exited.
                     try:
-                        result["returncode"] = process.wait(timeout=wait_seconds)
-                        break
-                    except subprocess.TimeoutExpired:
-                        # A polling interval is not a wall timeout. The one
-                        # original deadline is checked again on the next pass.
+                        os.killpg(process.pid, signal.SIGKILL)
+                    except ProcessLookupError:
                         pass
+                    result["returncode"] = process.wait()
+                    break
+                wait_seconds = 0.2
+                if deadline is not None:
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        raise subprocess.TimeoutExpired(command, timeout)
+                    wait_seconds = min(wait_seconds, remaining)
+                try:
+                    result["returncode"] = process.wait(timeout=wait_seconds)
+                    break
+                except subprocess.TimeoutExpired:
+                    # An interruptible polling interval never introduces a wall
+                    # deadline. Only the explicit original timeout can do that.
+                    pass
             completed = True
         except subprocess.TimeoutExpired:
             result["timed_out"] = True
@@ -153,7 +147,7 @@ def run_process(command, *, stdout, stderr, timeout, stop_file=None):
             # A normal reaped child must not trigger a kill against a potentially
             # reused PID. Early exit also stops descendants ignoring SIGTERM.
             if process is not None:
-                if not completed:
+                if not completed and process.poll() is None:
                     try:
                         os.killpg(process.pid, signal.SIGKILL)
                     except ProcessLookupError:
