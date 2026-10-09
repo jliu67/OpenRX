@@ -1,0 +1,123 @@
+{
+  "cases": [
+    {
+      "case": "instant-success",
+      "execution_id": "20261009T155721Z-847ac3bd6533",
+      "receipt": {
+        "bytes": 2349,
+        "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4/executions/20261009T155721Z-847ac3bd6533/receipt.json",
+        "sha256": "563b89484f9865ad29f12a9024b9675e3ff253fe7773d419ce63de89a5c5d81b"
+      },
+      "verified": {
+        "execution_id": "20261009T155721Z-847ac3bd6533",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      }
+    },
+    {
+      "case": "instant-success",
+      "execution_id": "20261009T155723Z-5e596a80828f",
+      "receipt": {
+        "bytes": 2349,
+        "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4/executions/20261009T155723Z-5e596a80828f/receipt.json",
+        "sha256": "c3899e5d0212f802ba4173be8bbfe434bbb9765f5a9a7e4bb21f2a5cbc85ef14"
+      },
+      "verified": {
+        "execution_id": "20261009T155723Z-5e596a80828f",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      }
+    },
+    {
+      "case": "instant-success",
+      "execution_id": "20261009T155725Z-b9fb39066e20",
+      "receipt": {
+        "bytes": 2349,
+        "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4/executions/20261009T155725Z-b9fb39066e20/receipt.json",
+        "sha256": "9def616a1cb1bc84d075b35e429e9f1faa87a4a50ceba84132099545feda17c1"
+      },
+      "verified": {
+        "execution_id": "20261009T155725Z-b9fb39066e20",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      }
+    },
+    {
+      "case": "process-failure",
+      "execution_id": "20261009T155727Z-1d49e1c355f8",
+      "receipt": {
+        "bytes": 2351,
+        "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4/executions/20261009T155727Z-1d49e1c355f8/receipt.json",
+        "sha256": "4f780f9e0dac9c397de09d970adccb4d88070deff27375b33b32573209957dec"
+      },
+      "verified": {
+        "execution_id": "20261009T155727Z-1d49e1c355f8",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_FAILED"
+      }
+    },
+    {
+      "case": "safe-stop-detached-descendant",
+      "execution_id": "20261009T155729Z-3f7aab016d7f",
+      "receipt": {
+        "bytes": 2597,
+        "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4/executions/20261009T155729Z-3f7aab016d7f/receipt.json",
+        "sha256": "87651422dade6bd7c55de6e67bc1279d9415da2535071b6f4183f6baee8c568f"
+      },
+      "verified": {
+        "execution_id": "20261009T155729Z-3f7aab016d7f",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      }
+    },
+    {
+      "case": "worker-hard-kill",
+      "execution_id": "20261009T155731Z-89780016a68a",
+      "receipt": {
+        "bytes": 1979,
+        "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4/executions/20261009T155731Z-89780016a68a/receipt.json",
+        "sha256": "d8af20a61826c4b3478c27e605d4ca450b520dd66b7b26e60fe7c52e98b5a39b"
+      },
+      "verified": {
+        "execution_id": "20261009T155731Z-89780016a68a",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED_UNREAPED"
+      }
+    },
+    {
+      "case": "small-budget-oom",
+      "execution_id": "20261009T155733Z-e1a148850cc8",
+      "limit_override": "48M; swap0; host-only synthetic",
+      "receipt": {
+        "bytes": 2348,
+        "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4/executions/20261009T155733Z-e1a148850cc8/receipt.json",
+        "sha256": "f2d1e354b30ed1bac5a5e7e6ffb624d9e2106b176a94394458544c236d993ee8"
+      },
+      "verified": {
+        "execution_id": "20261009T155733Z-e1a148850cc8",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      }
+    }
+  ],
+  "duplicate_rejection": true,
+  "limitations": [
+    "Host-only synthetic controls; no gem5 or RandomX workload executed",
+    "Submitting process independence observed; full ChatGPT session termination cannot be initiated during current assignment"
+  ],
+  "root": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v4",
+  "runner": {
+    "bytes": 33719,
+    "path": "${OPENRX_LOCAL_ROOT}/checkouts/migration/scripts/local_execution.py",
+    "sha256": "24717a7f2e0fd6c508add25ba5b5f7b000525b14d9917b9e5226f00b5b64a1e4"
+  },
+  "schema": "openrx.runner.lifecycle.controls.v1",
+  "scientific_acceptance": "unverified"
+}

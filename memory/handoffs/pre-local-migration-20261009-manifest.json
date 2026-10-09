@@ -1,0 +1,77 @@
+{
+  "purpose": "Exact pre-migration project documentation snapshots; prior evidence and history retained.",
+  "files": [
+    {
+      "source": "AGENTS.md",
+      "snapshot": "memory/handoffs/pre-local-migration-AGENTS-20261009.md",
+      "bytes": 5107,
+      "sha256": "289df066b0ae65b5d5258f642dd872c312222c1fcacab07bd17fba437dc97388"
+    },
+    {
+      "source": "README.md",
+      "snapshot": "memory/handoffs/pre-local-migration-README-20261009.md",
+      "bytes": 7965,
+      "sha256": "5b66bea6b48e91a8979fb04d52e9886e4d84939bd478ac34233d424d32971a8c"
+    },
+    {
+      "source": "docs/TASKS.md",
+      "snapshot": "memory/handoffs/pre-local-migration-docs-TASKS-20261009.md",
+      "bytes": 9726,
+      "sha256": "536d99975b28de7cd96f1e5b8e384352aca69f07d7148fa822abe45fb7776d72"
+    },
+    {
+      "source": "docs/ROADMAP.md",
+      "snapshot": "memory/handoffs/pre-local-migration-docs-ROADMAP-20261009.md",
+      "bytes": 1136,
+      "sha256": "00ae3e3c1bc6a6f86188dda56cd4863b30d78f3b15943181e8a357f2019e2784"
+    },
+    {
+      "source": "memory/PROJECT.md",
+      "snapshot": "memory/handoffs/pre-local-migration-memory-PROJECT-20261009.md",
+      "bytes": 1999,
+      "sha256": "2b1d6a5366fc3a31286c0141e1c3559c5cfb8c22436c2ae91b8905d508502368"
+    },
+    {
+      "source": "memory/STATE.md",
+      "snapshot": "memory/handoffs/pre-local-migration-memory-STATE-20261009.md",
+      "bytes": 10897,
+      "sha256": "1ff5f422130ec381c14a3bc03bcbd5d806d4e6c35524e2196c3efeb6f2bb05ec"
+    },
+    {
+      "source": "memory/HANDOFF.md",
+      "snapshot": "memory/handoffs/pre-local-migration-memory-HANDOFF-20261009.md",
+      "bytes": 6244,
+      "sha256": "8c98def1fabccd5a8c33fed1733931f267968532ba8b194ddea87757faa35a28"
+    },
+    {
+      "source": "simulator/README.md",
+      "snapshot": "memory/handoffs/pre-local-migration-simulator-README-20261009.md",
+      "bytes": 5033,
+      "sha256": "ad7a4784215f1f75ef271a6ba885e2bd830364fefe07084d98ae9712777712f9"
+    },
+    {
+      "source": "simulator/gem5/README.md",
+      "snapshot": "memory/handoffs/pre-local-migration-simulator-gem5-README-20261009.md",
+      "bytes": 15985,
+      "sha256": "0cf24bdc1e00316e0176dcf16cc6edf0853a4caef383cd16c22a0c6c39a00664"
+    },
+    {
+      "source": "docs/validation/m3-fs/REUSE.md",
+      "snapshot": "memory/handoffs/pre-local-migration-docs-validation-m3-fs-REUSE-20261009.md",
+      "bytes": 5209,
+      "sha256": "47cdebfb07109bda2c1b1c804c7f62a72b46831cb6a3bd32b5818a8de162ecb4"
+    },
+    {
+      "source": "docs/COMMUNICATION.md",
+      "snapshot": "memory/handoffs/pre-local-migration-docs-COMMUNICATION-20261009.md",
+      "bytes": 11634,
+      "sha256": "b034123ca3f0d6041b6b98e6165ae5ef6e2bc43eb4711a4a3452bb97f462fa8c"
+    },
+    {
+      "source": "experiments/README.md",
+      "snapshot": "memory/handoffs/pre-local-migration-experiments-README-20261009.md",
+      "bytes": 334,
+      "sha256": "6fac3463d069d7a9efe44dbda34d689c57a44d9eabcb0cb14190a2114d1d84a8"
+    }
+  ]
+}

@@ -3,13 +3,38 @@
 Updated 2026-10-09 UTC after PR #25 integration, extended actual evidence and execution-budget review. **M0 is complete; M1–M5 acceptance remains open.**
 The pinned gem5 Linux runtime now passes its nine controls. There is still no controlled hardware power/efficiency result or processor RTL.
 
+## Critical local migration — task #27
+
+**STAGING — local execution policy NOT YET ACTIVE.** The owner's native Ubuntu 22.04 computer has been
+identified and a fresh versioned persistent installation is staging separately from the original checkout.
+[Task #27](https://github.com/jliu67/OpenRX/issues/27), [policy](../docs/LOCAL_EXECUTION.md),
+[runbook](../docs/LOCAL_MIGRATION.md) and [acceptance receipt](../docs/validation/local-migration-20261009/ACCEPTANCE.md)
+record actual migration gates. Original current documentation snapshots are retained byte-for-byte with digests in
+`memory/handoffs/pre-local-migration-20261009-manifest.json`; original scientific asset inventory is in progress.
+
+The original saved gem5 Library binary/package is currently inaccessible via callable tools.
+Its prior successful save and digests are preserved; no transfer is claimed. A separate pinned local source
+rebuild is in progress. Exact original guest runtime/hash payloads have been recovered and digest-verified;
+pinned firmware/kernel/compressed/expanded disk now match the exact resource manifest; local simulator execution remains pending.
+Host native smoke passes 257 Python tests, 171 vendor files, 106 upstream controls plus one explicit
+unsupported-AVX2 skip, 39 exact semantic/hash controls (optional AES skip) and nine runtime controls;
+this is not a gem5 pass.
+Local simulator boot/correctness, final independent runner/asset review and merged PR remain unverified.
+Host fixture evidence demonstrates launch-process independence, serialized admission, duplicate rejection,
+retained status/logs, stop/process-failure/recovery and verified receipt integrity; a full ChatGPT session
+termination or host reboot was not performed. Final source/evidence reconciliation remains pending. Remote host execution/retrieval is unavailable;
+requests require owner-mediated GitHub submission and result publication.
+Hold full-scale research until verified cutover; a rebuilt simulator is a separate artifact and must pass local gates.
+The historical sections below retain earlier accepted evidence and do not declare the new host validated.
+
 ## Actual gem5 Linux runtime — PR #18 / task #16
 
 [PR #18](https://github.com/jliu67/OpenRandomX/pull/18) contains the independently accepted configuration, runner, simulator acquisition workflow and actual runtime evidence. The declared model is one AtomicSimpleCPU, RVV disabled, 16-KiB L1I/L1D, 256-KiB L2, walker caches and 4 GiB RAM. It is functional exploration, not a BOOM/C920/SG2042 or calibrated timing model.
 
 The original local and hosted builds timed out. One incremental resume completed the remaining large compilation units but hit an 8-GiB host linker OOM. A bounded recovery using upstream `--limit-ld-memory-usage` then linked successfully in 248.76 seconds, without recompiling target C++ or changing source/configuration. All 10,933 archived source files match. [Build and recovery evidence](../docs/validation/m3-fs/link-recovery-20261008/README.md) preserves both failure and success.
 
-The original executable is 957,300,488 bytes, SHA-256 `3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6`. Real build-info identifies gem5 25.1.0.1. A verified package containing the original binary, immutable source/notices, build evidence and minimal Python runtime is saved in two parts. [Reuse it](../docs/validation/m3-fs/REUSE.md); another source build is unnecessary.
+The original executable is 957,300,488 bytes, SHA-256 `3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6`. Real build-info identifies gem5 25.1.0.1. A verified package containing the original binary, immutable source/notices, build evidence and minimal Python runtime is saved in two parts. [Prior reuse provenance](../docs/validation/m3-fs/REUSE.md) remains preserved. That binary is currently
+unavailable to the migration; the separately recorded pinned local rebuild is a new artifact.
 
 **Actual Linux 6.8.12 boot and all nine RV64 runtime controls passed.** SIGILL recovery, RW/RX page permissions, explicit Linux flush-icache returns and generated-code execution 7 → 19 → 7 matched their exact oracles. The child exited zero with empty framed stderr, a completion marker and ordered hypercalls 1/2/3. A different agent independently replayed the raw serial/report and rehashed the simulator, firmware, kernel, disk and payload bindings. [Executed evidence](../docs/validation/m3-fs/actual-runtime-20261008/README.md) and [acceptance](../docs/validation/m3-fs/ACTUAL-GEM5-REVIEW-20261008.md).
 
@@ -43,7 +68,8 @@ The concurrent #24 policy and its session history are preserved. A separate agen
 
 ## Remaining gates and next work
 
-- #16: complete unchanged light v2/v1 interpreter/JIT controls using the retained binary, explicit larger tick guard and reliable stop control; preserve partial results. Then address full dataset and every intended core/runtime separately.
+- #27: finish and independently verify migration acceptance; expensive research remains held. Inspect the linked acceptance receipt for exact pending gates and resume records.
+- #16: after verified cutover, complete unchanged light v2/v1 interpreter/JIT controls on the designated local host, with a verified retained/rebuilt binary, explicit larger tick guard and reliable stop control; preserve partial results. Then address full dataset and every intended core/runtime separately.
 - #8/#10/#11: controlled host matrix, synchronized wall power and dynamic profiling require actual host/counter/meter access. #13's software dependency is satisfied; parent M1 #1 stays open.
 - #2: hardware identity/evidence remains open. Future Monero mainnet v2 activation and direct live-tip corroboration remain questions.
 - #14 M4 requires completed #1/#3; #12 M5 requires #1/#3/#14. No RTL optimization before measured baseline and calibrated model acceptance.

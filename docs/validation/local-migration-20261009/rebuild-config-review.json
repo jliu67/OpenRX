@@ -1,0 +1,75 @@
+{
+  "schema": "openrx-migration-rebuild-config-independent-review-v1",
+  "recorded_utc": "2026-10-09T15:46:46.682445+00:00",
+  "reviewer": "scientific_inventory",
+  "old_config_path": "${ORIGINAL_CHECKOUT}/docs/validation/m3-fs/build-20261008/canonical-config",
+  "old_config_sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5",
+  "new_config_path": "${OPENRX_LOCAL_ROOT}/builds/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.build/config",
+  "new_config_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+  "exact_diff": [
+    "+HAVE_PNG=y",
+    "+HAVE_HDF5=y",
+    "+HAVE_PROTOBUF=y"
+  ],
+  "new_config_with_only_three_added_lines_removed_equals_original_bytes": true,
+  "unchanged_project_bundle_check_config": "pass",
+  "capabilities": {
+    "HAVE_PNG": "detected png.h enables optional PNG framebuffer writer; no framebuffer configured in project fs.py",
+    "HAVE_HDF5": "detected HDF5 headers/libraries enables optional h5 statistics visitor; default stats.txt retained",
+    "HAVE_PROTOBUF": "detected protoc/libprotobuf enables optional protobuf traces/traffic generators; project uses Atomic CPU default ExeTracer without enabled protobuf tracing/generators"
+  },
+  "canonical_source_isa_ruby_kvm_systemc_choices_unchanged": true,
+  "acceptance": "Accept new observed host capability configuration for a distinct pinned-source rebuild, requiring its own binary/provenance/boot/runtime evidence. Existing exact-hash acceptance unchanged. No byte-identical binary reproduction or new scientific runtime pass claimed.",
+  "required_next_steps": [
+    "Preserve original config and failed defconfig log; use a new build execution ID and retain new actual config/toolchain manifest",
+    "Rebuild unchanged pinned upstream source with recorded supported GCC11/Python3.10 and actual optional library versions",
+    "Verify source consistency, actual binary SHA256/build-info/loader/config and current strict real runtime guest before migration acceptance"
+  ],
+  "read_sources": [
+    {
+      "path": "SConstruct",
+      "sha256": "55dd95785c05623adc0cb8886b36185ec09c7edaea085986fa2bffa3789893ee"
+    },
+    {
+      "path": "src/base/SConsopts",
+      "sha256": "ef1add72853f5a3f1b459ee39d8a09396c9eb1c4c95d5461943fe7af836988f5"
+    },
+    {
+      "path": "src/base/SConscript",
+      "sha256": "242a89441a28d691faae2dcf7e4769ca23b0444916e1a070dbac148f12e47fd8"
+    },
+    {
+      "path": "src/base/stats/SConsopts",
+      "sha256": "6a639c64e24efbd1f705d2534d60258653a941b0b2045a4ad7633103faf29024"
+    },
+    {
+      "path": "src/base/stats/SConscript",
+      "sha256": "ee65a9a27ba1ced8f9435219a0ae37cd89d47b8dfc1e3650fa5e40759aea3f20"
+    },
+    {
+      "path": "src/proto/SConsopts",
+      "sha256": "871ccea54b6fd4ddc554a51f31f9b26953acc32ef8e25a6393d5646cc0ec065b"
+    },
+    {
+      "path": "src/proto/SConscript",
+      "sha256": "18e949131fcaf661c109ee8153c5a1146abb265eec0537633550aafbae4f77be"
+    },
+    {
+      "path": "src/cpu/SConscript",
+      "sha256": "bc44c37d30e7b6bbc6b10aa58925e1b0145c6cdb00eacc0896f65e67d6722894"
+    },
+    {
+      "path": "src/cpu/BaseCPU.py",
+      "sha256": "8d854a5283a5458845fbb56fc5c4092961761ad4efd448e8fedf33e0027d9979"
+    },
+    {
+      "path": "src/python/m5/main.py",
+      "sha256": "e28647e40a4f8185f17f55d0d3db8f3bcf892ffaa5f866157883bc4a069c3ea0"
+    },
+    {
+      "path": "src/python/m5/stats/__init__.py",
+      "sha256": "beccdf87039d982ebf0dba15628ac6779b4e8be8c281c6853d6b57f47b034509"
+    }
+  ],
+  "changes_made_by_reviewer": []
+}

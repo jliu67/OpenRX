@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "systemctl",
+    "--user",
+    "show",
+    "--property=MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec",
+    "openrx-20261009T155729Z-3f7aab016d7f.service"
+  ],
+  "stdout": "TimeoutStopUSec=45s\nCPUQuotaPerSecUSec=2s\nMemoryMax=6442450944\nMemorySwapMax=1073741824\nTasksMax=256\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\n"
+}

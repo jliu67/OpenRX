@@ -1,0 +1,24 @@
+{
+  "schema": "openrx.local.native-regression.v1",
+  "date_utc": "2026-10-09T15:51:07.247526+00:00",
+  "project_base_commit": "3a7ff8fd3529dfc7e0fd46d28ee90b267b8df2f2",
+  "original_checkout_unchanged": true,
+  "original_tracked_files": 694,
+  "original_inventory_sha256": "a7d58ca2b8de7828011cc4213309f8059c68177036b57ea0c318fee4177c6fef",
+  "python_tests_passed": 257,
+  "vendor_files_verified": 171,
+  "upstream_controls_executed": 107,
+  "upstream_controls_passed": 106,
+  "upstream_skips": [
+    "Cache initialization: AVX2; incompatible host/configuration (Xeon E5-1650 lacks AVX2, ARCH=default)"
+  ],
+  "native_required_semantic_hash_checks": 39,
+  "native_software_hash_cases": 8,
+  "native_optional_skips": 1,
+  "native_optional_skip": "hardware AES path not enabled in scalar probe configuration",
+  "native_runtime_checks": 9,
+  "systemd_native_smoke_result": "Result=success\nExecMainStatus=0",
+  "local_gem5_boot": "pending",
+  "qemu_new_host_repeat": "not run; existing QEMU evidence preserved; recovered guest ELFs unchanged; actual local gem5 runtime remains required",
+  "scientific_milestones_completed": false
+}

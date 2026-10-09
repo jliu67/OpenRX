@@ -1,5 +1,14 @@
 # gem5 full-system Linux functional gate — task #16
 
+**Current execution gate — migration #27 is STAGING; NOT YET ACTIVE.**
+Read [local policy](../../docs/LOCAL_EXECUTION.md), [runbook](../../docs/LOCAL_MIGRATION.md) and
+[acceptance receipt](../../docs/validation/local-migration-20261009/ACCEPTANCE.md).
+Only declared migration smoke tests may execute on the staging host after prerequisite gates.
+Full-scale research is held until cutover; thereafter expensive gem5 runs/builds use the designated Ubuntu host.
+Remote agents have no access; owner-mediated GitHub submission/results is the current interface.
+The direct/hosted command recipes below are retained technical references and do not authorize independent expensive sandbox execution.
+Original binary saving/boot evidence is historical; that Library binary is currently inaccessible and a separately verified pinned local rebuild is in progress.
+
 This path targets **unchanged scalar RandomX under actual guest Linux**, avoiding
 the pinned simulator's syscall-emulation signal/cache-flush gaps. It first boots
 the guest and runs the standalone Linux runtime controls. A separate opt-in step

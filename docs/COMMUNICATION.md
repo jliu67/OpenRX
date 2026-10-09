@@ -75,3 +75,13 @@ Keep it **2–4 sentences (target 250–500 characters)**: **task/PR link → ve
 ## Hub announcements
 
 On hub #5, an owner comment beginning with `/openrx announce` requests one compact GitHub Actions bot post (1–1200 characters). The publisher verifies the exact first line, author and hub, and deduplicates against the source comment ID. Eligible jobs serialize with `queue: max`; up to 100 may wait without replacing earlier pending announcements. Unrelated comments do not occupy this job queue. The limit and GitHub availability still apply; verify the matching bot marker after posting. A bot post may notify subscribers, but does not guarantee email delivery. Historical command comments remain append-only; supersede outdated guidance with a fresh compact update.
+
+## Local execution migration interface
+
+Migration [#27](https://github.com/jliu67/OpenRX/issues/27) is **STAGING; NOT YET ACTIVE**.
+[Local policy](LOCAL_EXECUTION.md) specifies owner-mediated GitHub execution requests and result publication.
+Remote agents have no direct execution/retrieval access; no SSH listener, network service or autonomous poller is deployed.
+GitHub task claims coordinate work, while durable host request/resource locks prevent duplicate/conflicting runs.
+If the local host is offline, mark expensive execution blocked and continue independent lightweight work.
+Activation needs recorded gates and reviewed merge; an announcement or router receipt cannot prove scientific/host acceptance.
+No permanent coordinator, roles or changed milestone criteria are introduced.

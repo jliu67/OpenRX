@@ -155,3 +155,24 @@ Added optional fresh stop-file requests through the runner's own wait/signal/cle
 Publish this separate reviewed source/evidence package from refreshed main using non-force expected-head updates. Final integration, claim transition and verified compact hub copy are indexed on #16/#5. Keep #16/M3 open for complete unchanged 39 semantic/hash plus nine runtime controls, then full dataset/intended-core work. M1 physical host/counter/meter and M4/M5 gates remain open. No simulator rebuild, vendor/workload/RTL change, paid compute or account change was made.
 
 Final integration: PR #26 merged at `77a1641fb85f386bce4a5b51e00dedbe257376f6`; its whole tree equals source head `78599e2812053c85037401e3f2e4d00191428427` and synthetic PR checkout `72e0e67588c9d19457a3ff95457a457a4850fb88`. All five hosted checks passed and were independently checked from decoded logs; exact job/run/count/source identities are recorded in stop-file-20261008/integration.json. Claim release 6071620898 is accepted with ready status, null claim and no warnings. Hub request 6071621109 produced verified bot copy 6071623180. No matching simulator/wrapper remains; #16 and remaining milestone gates stay open.
+
+
+## Critical local infrastructure migration — staging, 2026-10-09 UTC
+
+User authorized a loss-intolerant infrastructure migration from temporary sandboxes to the owner's Ubuntu host.
+Task #27 and initial inactive hub announcement were published. Native Ubuntu 22.04, physical hardware,
+persistent storage and user systemd/lingering were identified; a fresh versioned migration checkout/install tree
+is separate from the preserved original checkout. This entry records **STAGING, not activation or completion**.
+
+Exact pre-migration AGENTS/README/board/roadmap/project/state/handoff snapshots were saved and digest-verified
+under `memory/handoffs/pre-local-migration-*`; prior experiment/milestone and session-log history is retained.
+Draft policy/runbook/incomplete acceptance receipt now describe local-only expensive execution after cutover,
+owner-mediated GitHub submission/results, unavailable remote access, duplicate/resource locks, lifecycle recovery
+and unverified checkpoint resume. Historic sandbox next-run recipes are retained but explicitly inactive.
+
+The saved 936,569,944-byte simulator package is not currently retrievable through callable tools; its earlier
+save IDs/digests and original 957,300,488-byte binary identity remain preserved. A new build from pinned gem5
+c8222cc67a399bfc01e8658dd14b30d5bfd634f9 is in progress with separate Ubuntu 22.04/toolchain provenance.
+Exact guest/resource recovery, local boot/runtime/regressions, durable-runner/lifecycle/integrity gates,
+independent review and merged migration PR remain pending. No expensive research run, scientific milestone
+closure, new timing/power claim, resume guarantee, remote listener or permanent coordinator is asserted.

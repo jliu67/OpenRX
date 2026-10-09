@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "binary_sha256": "8a83fa984040e3caa2e2cc08dbf3431a2f540a0fbf3ba3c65da2676b11c330d1",
+  "command": [
+    "${OPENRX_LOCAL_ROOT}/builds/probe-native-20261009/openrx-runtime-probe"
+  ],
+  "timeout_seconds": 60,
+  "host": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "evidence_class": "native-functional",
+  "timing_calibrated": false,
+  "power_measured": false,
+  "returncode": 0,
+  "validated": {
+    "checks_passed": 9,
+    "architecture": "x86_64",
+    "flush_path": "compiler-builtin",
+    "timing_calibrated": false
+  },
+  "status": "pass",
+  "raw_sha256": {
+    "runtime.jsonl": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116",
+    "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

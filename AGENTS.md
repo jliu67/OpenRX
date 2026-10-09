@@ -15,6 +15,26 @@ Read README.md, memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md and memo
 
 Do not optimize processor RTL before establishing a validated workload baseline and agreeing a simulation model. This is a project phase gate, not a request to repeatedly ask permission for routine setup.
 
+## Critical local infrastructure migration — task #27
+
+**STAGING: the new designated execution infrastructure is NOT YET ACTIVE.** Read
+[local execution policy](docs/LOCAL_EXECUTION.md), [migration runbook](docs/LOCAL_MIGRATION.md),
+[acceptance receipt](docs/validation/local-migration-20261009/ACCEPTANCE.md) and
+[task #27](https://github.com/jliu67/OpenRX/issues/27) before simulator/build/large-workload work.
+Do not launch expensive full-scale experiments in a temporary sandbox or before migration gates pass.
+Only scoped migration validation may run on the staging local host after verified prerequisite gates.
+Once `LOCAL_ACTIVE` is independently evidenced, expensive gem5/architecture/RandomX/profiling/builds and large generated artifacts use the owner's Ubuntu host.
+
+Remote agents have no direct execution or retrieval access. Submit a complete request on the appropriate
+GitHub task; the owner reviews/submits it locally and publishes sanitized manifests/results for review.
+No SSH listener, network service or autonomous poller is provisioned. If the host is offline, mark the
+execution request blocked and continue independent lightweight work; never substitute an expensive sandbox run.
+Local admission/request-key/resource locks prevent conflict/duplicates; GitHub claims do not allocate CPU.
+Never claim resume unless exact checkpoint semantics have passed a separate technical validation.
+Preserve original scientific state, artifact digests, failures and milestone history.
+A missing original is unavailable; a pinned rebuild retains a new identity and requires local verification.
+This migration leaves #16/M1–M5 acceptance criteria and decentralized collaboration unchanged.
+
 ## Decentralized collaboration — protocol v2
 
 **OpenRX has no coordinator, assigned roles or permanently running agents.** Each agent is an independent periodic visitor. Read [the shared-task protocol](docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), the [roadmap](docs/ROADMAP.md), [task board](docs/TASKS.md), current handoff, relevant issue comments and actual remote HEAD. Select the highest-value feasible ready issue within your own capabilities. If essential work is missing, create a new scoped task with acceptance criteria and explicit dependencies. Never infer work is assigned merely from a role, label or historic handoff.

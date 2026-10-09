@@ -1,0 +1,27 @@
+{
+  "schema": "openrx.local.host.v1",
+  "host_class": "native persistent Ubuntu desktop; terminal session cgroup, no container namespace; owner-designated provided workspace",
+  "os": "Ubuntu 22.04.5 LTS",
+  "architecture": "x86_64",
+  "cpu_model": "Intel Xeon E5-1650 0 @ 3.20GHz",
+  "logical_cpus": 6,
+  "ram_total_bytes": 16725934080,
+  "filesystem_free_bytes": 844741316608,
+  "systemd_user_state": "degraded",
+  "systemd_user_manager_callable": true,
+  "state_note": "degraded reflects retained deliberate failure/OOM test units; manager remains callable",
+  "lingering": "yes",
+  "remote_execution": "unavailable; no network listener/SSH configuration/automatic GitHub executor",
+  "original_checkout_commit": "3a7ff8fd3529dfc7e0fd46d28ee90b267b8df2f2",
+  "tracked_files_preserved": 694,
+  "original_inventory_sha256": "a7d58ca2b8de7828011cc4213309f8059c68177036b57ea0c318fee4177c6fef",
+  "bootstrap_build_unit": "openrx-migration-build02-20261009.service",
+  "resource_budget": {
+    "MemoryMax": "6G",
+    "MemorySwapMax": "1G",
+    "CPUQuota": "200%",
+    "TasksMax": 256,
+    "Nice": 10
+  },
+  "full_simulation_launched": false
+}

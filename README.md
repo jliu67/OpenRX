@@ -15,6 +15,21 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 - [Project memory](memory/PROJECT.md), [current state](memory/STATE.md), and [agent instructions](AGENTS.md)
 - [Roadmap](docs/ROADMAP.md), [RandomX baseline](docs/RANDOMX.md), [hardware evidence](docs/HARDWARE.md), and [experiments](experiments/README.md)
 
+## Critical local infrastructure migration
+
+**STAGING — the new infrastructure is NOT YET ACTIVE.**
+[Task #27](https://github.com/jliu67/OpenRX/issues/27) is migrating persistent, expensive execution to the
+owner's Ubuntu computer. [Local execution policy](docs/LOCAL_EXECUTION.md),
+[migration/recovery runbook](docs/LOCAL_MIGRATION.md) and
+[acceptance receipt](docs/validation/local-migration-20261009/ACCEPTANCE.md) explain actual availability,
+submission, locks, evidence and remaining gates. Remote execution/retrieval is unavailable;
+GitHub requests require owner-mediated local submission and result publication.
+
+Defer full-scale simulations until verified cutover. After `LOCAL_ACTIVE`, gem5 full-system work,
+long architecture/RandomX workloads, expensive profiling/builds and large artifacts use that host.
+Sandboxes continue supporting code/review, lightweight tests, static analysis and small reproductions.
+Scientific #16 and M1–M5 remain open independently of infrastructure acceptance.
+
 ## RISC-V feasibility progress
 
 [Merged M3 work in PR #15](https://github.com/jliu67/OpenRandomX/pull/15) adds an
@@ -30,7 +45,9 @@ affect unchanged RandomX startup/JIT. [Task #16](https://github.com/jliu67/OpenR
 tracks full-system Linux feasibility. [Explicit Linux runtime controls](docs/validation/m3-fs/RUNTIME-CI.md) now pass natively and under scalar QEMU: actual SIGILL recovery, RW/RX page permissions and generated-code overwrite/flush/reexecution. M3 remains open for selected-core boot
 and full-dataset correctness; no calibrated timing or efficiency is established.
 
-[PR #18](https://github.com/jliu67/OpenRandomX/pull/18) now includes a successfully built pinned simulator and **actual Linux boot with all nine standalone runtime controls passing**, independently replayed. The unchanged light-mode RandomX matrix is a separate open gate under #16. [Executed results](docs/validation/m3-fs/README.md) retain original timeout/OOM failures, supported link recovery and raw guest evidence. [Reuse the saved simulator](docs/validation/m3-fs/REUSE.md); ordinary PR checks no longer rebuild it. This one-core Atomic result does not establish selected RTL behavior or timing.
+[PR #18](https://github.com/jliu67/OpenRandomX/pull/18) now includes a successfully built pinned simulator and **actual Linux boot with all nine standalone runtime controls passing**, independently replayed. The unchanged light-mode RandomX matrix is a separate open gate under #16. [Executed results](docs/validation/m3-fs/README.md) retain original timeout/OOM failures, supported link recovery and raw guest evidence. [Saved simulator provenance](docs/validation/m3-fs/REUSE.md) remains intact; ordinary PR checks no longer rebuild it.
+The original Library binary is currently unavailable to the migration's callable tools, so a separately
+recorded pinned local rebuild is in progress; successful historical saving is not a verified local transfer. This one-core Atomic result does not establish selected RTL behavior or timing.
 
 [PR #19](https://github.com/jliu67/OpenRandomX/pull/19) records the dated Monero source audit: current released mainnet consensus targets RandomX v1, inferred from source rather than a live tip. The beta's October 5 v2 fork is a separate stressnet/testnet schedule. Keep v2-first research and exact v1 controls; [audit](docs/validation/monero-activation/REVIEW-20261008.md) retains remaining activation questions.
 
@@ -56,13 +73,18 @@ bash scripts/build.sh
 bash scripts/test.sh
 # Functional smoke only:
 python3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1
-# Full-dataset known-reference controls, >2 GiB RAM:
-python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --nonces 1000 --repeats 1
 # Optional same-process adapter and bounded native controls:
 bash scripts/build_steady.sh
 python3 tests/native_steady.py
 # Offline power-schema tests; synthetic inputs, NOT measured power:
 python3 -m unittest discover -s tests -p test_power_import.py -v
+```
+
+Full-dataset known-reference controls (>2 GiB RAM) belong on the designated local host after verified cutover,
+with a reviewed request and fresh persistent execution ID:
+
+```bash
+python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --nonces 1000 --repeats 1
 ```
 
 RandomX v2.0.1 is included in `vendor/randomx/` at upstream commit `aaafe71322df6602c21a5c72937ac284724ae561`; no submodule download is required. Original BSD-3-Clause licenses/notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md).

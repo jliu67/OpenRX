@@ -1,0 +1,49 @@
+{
+  "schema": "openrx-guest-artifact-recovery-v1",
+  "recovered_utc": "2026-10-09T15:41:47.361737+00:00",
+  "source_script": "${ORIGINAL_CHECKOUT}/docs/validation/m3-fs/actual-light-20261008/guest.sh",
+  "source_script_sha256": "403fa537df55303f74793a5c9e27c735d812eb128f70e2d97c4d46441fa9fae2",
+  "source_repository_commit": "3a7ff8fd3529dfc7e0fd46d28ee90b267b8df2f2",
+  "method": "Extract exact base64 heredoc payloads from retained guest.sh, base64 strict validation, verify pinned original length/ELF magic/SHA256, exclusive file create, reread SHA256, inspect ELF without executing",
+  "artifacts": [
+    {
+      "role": "runtime",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-runtime-probe",
+      "bytes": 13760,
+      "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+      "mode": "0555",
+      "readelf_command": [
+        "readelf",
+        "-h",
+        "-l",
+        "-A",
+        "--version-info",
+        "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-runtime-probe"
+      ],
+      "readelf_returncode": 0,
+      "readelf_output": "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-runtime-probe.readelf.txt",
+      "readelf_sha256": "4de3291d0436d30fe1a43d2a84beedad5907e198ab642d77c3bf682e94231491"
+    },
+    {
+      "role": "hash",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-riscv-probe",
+      "bytes": 376824,
+      "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+      "mode": "0555",
+      "readelf_command": [
+        "readelf",
+        "-h",
+        "-l",
+        "-A",
+        "--version-info",
+        "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-riscv-probe"
+      ],
+      "readelf_returncode": 0,
+      "readelf_output": "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-riscv-probe.readelf.txt",
+      "readelf_sha256": "4ec1635ee8a084270338d31223ed3063966820c041209c9ef02b26aaedeb7f5d"
+    }
+  ],
+  "original_files_mutated": false,
+  "artifacts_executed": false,
+  "scientific_acceptance": "Recovery and ELF inspection only; no new guest/runtime/hash pass claimed"
+}

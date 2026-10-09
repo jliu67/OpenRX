@@ -1,5 +1,12 @@
 # Reuse the completed gem5 build
 
+**2026-10-09 migration availability update:** the original Library parts recorded below are currently
+unavailable through callable migration tools. Their successful historic save and digests are preserved;
+no transfer to the designated host is claimed. A separate pinned local rebuild is in progress under
+[task #27](https://github.com/jliu67/OpenRX/issues/27). Migration is **STAGING; NOT YET ACTIVE**.
+[Current policy](../../LOCAL_EXECUTION.md) and [acceptance gates](../local-migration-20261009/ACCEPTANCE.md)
+control new expensive execution. The recipe below is retained provenance; inspect current availability before use.
+
 The exact local build succeeded on 2026-10-08. Reuse it before considering another source build. This is a locally built upstream executable, separate from the unexecuted manual GitHub build/artifact path.
 
 The saved package is split into two ordered files because the artifact service accepts at most 512 MiB per file:
