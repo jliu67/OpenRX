@@ -1,0 +1,122 @@
+{
+  "at": "2026-10-09T20:04:28.223438+00:00",
+  "check": "actual_guest_boot_and_strict_nine_case_runtime",
+  "evidence": {
+    "actual_model": {
+      "base_image_read_only": true,
+      "cache_sizes_bytes": {
+        "l1d-cache-0": 16384,
+        "l1i-cache-0": 16384,
+        "l2-cache-0": 262144
+      },
+      "clock_period_ticks": 1000,
+      "cores": 1,
+      "cow": true,
+      "cpu": "gem5::AtomicSimpleCPU",
+      "ram_bytes": 4294967296,
+      "rvv": false
+    },
+    "framed_runtime_stderr_empty": true,
+    "guest_complete": true,
+    "guest_distribution": "Ubuntu24.04LTS",
+    "guest_linux": "6.8.12",
+    "hypercall_events": [
+      {
+        "event": "kernel-booted",
+        "hypercall": 1,
+        "tick": 379381390000
+      },
+      {
+        "event": "after-boot-started",
+        "hypercall": 2,
+        "tick": 674367239000
+      },
+      {
+        "event": "after-boot-finished",
+        "hypercall": 3,
+        "tick": 750242284000
+      }
+    ],
+    "outer_stderr_policy": "Retained and inspectable; empty only required for framed runtime probe stderr",
+    "readfile": {
+      "bytes": 19142,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/guest.sh",
+      "sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44"
+    },
+    "retained_raw_logs_and_model": [
+      {
+        "bytes": 18286,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/board.platform.terminal",
+        "sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b"
+      },
+      {
+        "bytes": 960,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/runtime.jsonl",
+        "sha256": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7"
+      },
+      {
+        "bytes": 0,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/runtime-stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 949,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/stdout.log",
+        "sha256": "4ba318f3b230c4239a54361b2654851960f9dc789fce85b902b552171ddf90c6"
+      },
+      {
+        "bytes": 1722,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/stderr.log",
+        "sha256": "5fcc971d60fd763d6ba0e6970bec8a46abcd5fea98458c2b1b6969a64adb2b4c"
+      },
+      {
+        "bytes": 4961,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/stdout.log",
+        "sha256": "5a2bb48964ba9664f4dcb5ec376daf2261482105aa4c33b7fa15c04f29837c1a"
+      },
+      {
+        "bytes": 0,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 104772,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/config.json",
+        "sha256": "cf64cddd2fa8a8cffe5bbf94f609dde1febbf9cc0b548a3db26c861953299d7e"
+      },
+      {
+        "bytes": 41495,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/config.ini",
+        "sha256": "73a754aae105d6067ff9ac2370f2d14e52786f0b8c162f78e22e1db508f43cbd"
+      },
+      {
+        "bytes": 2206,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/device.dtb",
+        "sha256": "b87f9fcf8b1e3f58f0cf671c6d70a344eeaf642d9988a012fd5897baadc68260"
+      },
+      {
+        "bytes": 3709,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/device.dts",
+        "sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051"
+      },
+      {
+        "bytes": 235876,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/stats.txt",
+        "sha256": "d4941df29cf9f967dcc74f7db62473fdab4174bcbf09572eaa02b6bfce611db8"
+      }
+    ],
+    "scientific_report": {
+      "bytes": 5689,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/report.json",
+      "sha256": "315552c987a0b58ad20b5a57061f159bd3f78ebbd05e3225408ec1ef3b61489c"
+    },
+    "scientific_scope": "functional runtime-only; no RandomX gem5 matrix/timing/power/resume acceptance",
+    "strict_validator_result": {
+      "architecture": "riscv64",
+      "checks_passed": 9,
+      "flush_path": "linux-riscv-flush-icache",
+      "timing_calibrated": false
+    }
+  },
+  "passed": true
+}

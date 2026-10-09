@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-09T20:09:36.397813+00:00",
+  "current_manager": {
+    "ActiveState": "inactive",
+    "ControlGroup": "",
+    "LoadState": "not-found",
+    "SubState": "dead",
+    "query_returncode": 0
+  },
+  "exact_earlier_live_cgroup": {
+    "exists": false,
+    "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T193937Z-576aa858c033.service",
+    "pids": [],
+    "populated": false
+  },
+  "execution_id": "20261009T193937Z-576aa858c033",
+  "external_receipt_journal_binding": {
+    "at": "2026-10-09T20:02:53.674935+00:00",
+    "execution_id": "20261009T193937Z-576aa858c033",
+    "previous_sha256": null,
+    "receipt": {
+      "bytes": 4662,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/receipt.json",
+      "sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856"
+    },
+    "sha256": "a4e0127af7632ad3b9faf4de982cd56142ca910edb1f9e0f7bb935a4230501ba"
+  },
+  "independent_review": {
+    "bytes": 33067,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+    "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+  },
+  "migration_complete": false,
+  "not_inferred": "Transient manager defaults are not terminal service-result evidence; no rerun, recovery, stop, state transition, or cutover.",
+  "prior_live_observation": {
+    "bytes": 5067,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runtime-live-production-observation-20261009T194045375434Z.json",
+    "sha256": "625e316aa9eb5a732d3d265f28597acfa95ab6740891547ff109f97e624a078e"
+  },
+  "read_only_recheck_accepted": true,
+  "receipt": {
+    "bytes": 4662,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/receipt.json",
+    "sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856"
+  },
+  "retained_artifacts_verified": 22,
+  "schema": "openrx.runtime.postreview.integrity.v1",
+  "scope": "Additional retained output path/hash and external receipt binding recheck, plus the actual earlier live cgroup namespace now empty or absent. Accepted guest correctness comes from the exact separately pinned independent checker receipt.",
+  "source": {
+    "bytes": 5764,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/actual_runtime_postreview_v1.py",
+    "sha256": "c52eb2715ced369907e629a2bc576b5a3dd2d42e53451453b55c5573a60bd711"
+  }
+}

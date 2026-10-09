@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "$OPENRX_LOCAL_ROOT/migrations/20261009/independent_runtime_review_v1.py",
+    "--self-sha256",
+    "97430d48d73eb1014ce1c1acd5e1de14aa2815da285ad5d84771329aa8bbd62e",
+    "--wait",
+    "--output-dir",
+    "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1"
+  ],
+  "at": "2026-10-09T17:56:11.618085+00:00",
+  "checker": {
+    "bytes": 42975,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent_runtime_review_v1.py",
+    "sha256": "97430d48d73eb1014ce1c1acd5e1de14aa2815da285ad5d84771329aa8bbd62e"
+  },
+  "criteria": {
+    "completion": "exit0, empty framed probe stderr, guest-complete, ordered hypercalls1/2/3",
+    "model": "single scalar RV64 AtomicSimpleCPU,1GHz,4GiB,16KiB L1d/L1i,256KiB L2,read-only base image with COW",
+    "not_accepted": [
+      "full RandomX gem5 matrix",
+      "full dataset",
+      "timing calibration",
+      "power",
+      "scientific checkpoint resume",
+      "migration completion",
+      "LOCAL_ACTIVE"
+    ],
+    "provenance": "exact source/config/archive/toolchain/loader/guest/input and full output receipt bindings",
+    "science": "Original extractor and native_runtime_probe.validate_output, expect_architecture=riscv64",
+    "scope": "distinct local gem5 rebuild and runtime-only nine-case functional smoke",
+    "waiting": "No wall deadline; observe existing pipeline only. No jobs, transitions or GitHub writes."
+  },
+  "launches_science_or_services": false,
+  "writes": "new reviewer evidence only"
+}

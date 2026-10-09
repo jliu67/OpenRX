@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-09T20:04:07.667260+00:00",
+  "check": "evidence_backed_local_validating_transition",
+  "evidence": {
+    "authoritative_transition": {
+      "at": "2026-10-09T19:38:51.340903+00:00",
+      "evidence": {
+        "bytes": 1512,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+        "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+      },
+      "from_state": "STAGING",
+      "previous_sha256": "3c366572944796705ab3de4a6a8a1b4a7bd4789392bddafad939f599f7c145e0",
+      "reason": "Completed pinned-source rebuild and guest/dependency/loader inputs verified; strict runtime smoke only",
+      "remote_execution": "unavailable",
+      "sha256": "14860897b1ecb94bc1156b6d1d5c161c10463d5f58cffff1532573203835137d",
+      "state": "LOCAL_VALIDATING"
+    },
+    "observed_state": "LOCAL_VALIDATING",
+    "preflight": {
+      "bytes": 1512,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+      "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,718 @@
+{
+  "accepted_scope": "Expected pinned guest boot and original strict nine-case functional runtime smoke, source/input/output integrity, and actual model. Complete RandomX matrix, full dataset, calibrated timing, power, resume and cutover remain outside scope.",
+  "activation_authorized": false,
+  "earlier_build_preflight_and_live_production_observations_reference": "../local-validating-live-v1/index.json",
+  "execution_id": "20261009T193937Z-576aa858c033",
+  "files": [
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 1460,
+      "original_sha256": "3383a1ea7de9b1175600555302c4164c742d18e272743afaece88795e593957d",
+      "public_bytes": 1450,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/events.jsonl",
+      "public_sha256": "6cbdefd4d86d6c7391065bf392db6a18f870e94fe5af452a634b3fc3592a0f15",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/events.jsonl"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        20,
+        0
+      ],
+      "original_bytes": 158317,
+      "original_sha256": "80a2394eefbec478f10607dcd8c8b0463c2c08cd2200421b1b573c3010ef402c",
+      "public_bytes": 158117,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/manifest.json",
+      "public_sha256": "eac7995e8a3473312cb25b0df611674c3ff48efec36663d2cfd509a2b5060c5f",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/manifest.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 19142,
+      "original_sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44",
+      "public_bytes": 19142,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/guest.sh",
+      "public_sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/guest.sh"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 18286,
+      "original_sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b",
+      "public_bytes": 18286,
+      "public_cr_count": 328,
+      "public_nul_count": 1,
+      "public_path": "execution/payload/m5out/board.platform.terminal",
+      "public_sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b",
+      "raw_cr_count": 328,
+      "raw_nul_count": 1,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/m5out/board.platform.terminal"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 5095,
+      "original_sha256": "457fb6f1b6d14393c87a9c71c4ab85e3dd9c5f2a84c728fe6eb628ccb58258db",
+      "public_bytes": 5095,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/m5out/citations.bib",
+      "public_sha256": "457fb6f1b6d14393c87a9c71c4ab85e3dd9c5f2a84c728fe6eb628ccb58258db",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/m5out/citations.bib"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 41495,
+      "original_sha256": "73a754aae105d6067ff9ac2370f2d14e52786f0b8c162f78e22e1db508f43cbd",
+      "public_bytes": 41445,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/m5out/config.ini",
+      "public_sha256": "c4703b5bfe3125110c105c6c7c630212437538390cb102b5c8be5b03a4077dcc",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/m5out/config.ini"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 104772,
+      "original_sha256": "cf64cddd2fa8a8cffe5bbf94f609dde1febbf9cc0b548a3db26c861953299d7e",
+      "public_bytes": 104722,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/m5out/config.json",
+      "public_sha256": "3ccbd3638992e9c45ac438c4d0216a7044915371c97b6b04c09da6d3e0e3e791",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/m5out/config.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 3709,
+      "original_sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051",
+      "public_bytes": 3709,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/m5out/device.dts",
+      "public_sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/m5out/device.dts"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 846,
+      "original_sha256": "b24a4889ceaf3244a2462148ee6fd84bf9f76b38c1052ad59109c75d971e25cc",
+      "public_bytes": 846,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/m5out/simulation.json",
+      "public_sha256": "b24a4889ceaf3244a2462148ee6fd84bf9f76b38c1052ad59109c75d971e25cc",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/m5out/simulation.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 235876,
+      "original_sha256": "d4941df29cf9f967dcc74f7db62473fdab4174bcbf09572eaa02b6bfce611db8",
+      "public_bytes": 235876,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/m5out/stats.txt",
+      "public_sha256": "d4941df29cf9f967dcc74f7db62473fdab4174bcbf09572eaa02b6bfce611db8",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/m5out/stats.txt"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        7,
+        0
+      ],
+      "original_bytes": 5689,
+      "original_sha256": "315552c987a0b58ad20b5a57061f159bd3f78ebbd05e3225408ec1ef3b61489c",
+      "public_bytes": 5619,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/report.json",
+      "public_sha256": "32aca92662644104fdeedc8abfe1cf3f9d1c4cc04a00c3f872a78c38b5a012f1",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/report.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/runtime-stderr.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/runtime-stderr.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 960,
+      "original_sha256": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7",
+      "public_bytes": 960,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/runtime.jsonl",
+      "public_sha256": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/runtime.jsonl"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 1722,
+      "original_sha256": "5fcc971d60fd763d6ba0e6970bec8a46abcd5fea98458c2b1b6969a64adb2b4c",
+      "public_bytes": 1692,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/stderr.log",
+      "public_sha256": "63ba971578f31f6569fb1a37dd6f58e1d7b9aa9d64efc45a9cc216fc531be87c",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/stderr.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 1,
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 949,
+      "original_sha256": "4ba318f3b230c4239a54361b2654851960f9dc789fce85b902b552171ddf90c6",
+      "public_bytes": 917,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/payload/stdout.log",
+      "public_sha256": "243aad452713c54f650911136b2ffceadf83461fdba83b8b9536111750b19efa",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/payload/stdout.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 142,
+      "original_sha256": "8479c347c78d151cf407d51edcccbdea466bf2b987dfc29f49e036791f0fad69",
+      "public_bytes": 142,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/process-result.json",
+      "public_sha256": "8479c347c78d151cf407d51edcccbdea466bf2b987dfc29f49e036791f0fad69",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/process-result.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/stderr.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/stderr.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        7,
+        0
+      ],
+      "original_bytes": 4961,
+      "original_sha256": "5a2bb48964ba9664f4dcb5ec376daf2261482105aa4c33b7fa15c04f29837c1a",
+      "public_bytes": 4891,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/stdout.log",
+      "public_sha256": "971069f6bc715feef00e8fe090bc065f0b0310520eb90d9d5e44af74356ae6d5",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/stdout.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        4,
+        0
+      ],
+      "original_bytes": 863,
+      "original_sha256": "aa6101833165cec56f2f0bdde0538315bdfc0c8d69a527d664b63b156b712c5b",
+      "public_bytes": 823,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/submission-command.json",
+      "public_sha256": "ede49bbeefd69d713305318ddc410318cf4f575704edea5fe1e0119615366370",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/submission-command.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 41,
+      "original_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_bytes": 41,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/submission-result.json",
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/submission-result.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        22,
+        0
+      ],
+      "original_bytes": 4662,
+      "original_sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856",
+      "public_bytes": 4442,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "execution/receipt.json",
+      "public_sha256": "db3013e95e5d0918f5b1158936a82ad97cc058f46d654d2e271f827f798ebe96",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "executions/20261009T193937Z-576aa858c033/receipt.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 461,
+      "original_sha256": "2ebd35a036250ede87e54c507c89762471a1913705073aa7b0a797407192dbf4",
+      "public_bytes": 461,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "runtime-capture-summary.json",
+      "public_sha256": "2ebd35a036250ede87e54c507c89762471a1913705073aa7b0a797407192dbf4",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/runtime-capture-summary.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 2482,
+      "original_sha256": "6fd8cdce385b1e2eee0c697eb750974c2c01e24eac65f39bd38d33b46327fcb2",
+      "public_bytes": 2432,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "postreview-integrity.json",
+      "public_sha256": "4f10cefe0096755a262bb054818f217da90bb75120a5f5ce13269b7c5165d6f8",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/actual-runtime-postreview-integrity-20261009T200936398234Z.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 5764,
+      "original_sha256": "c52eb2715ced369907e629a2bc576b5a3dd2d42e53451453b55c5573a60bd711",
+      "public_bytes": 5754,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "actual_runtime_postreview_v1.py",
+      "public_sha256": "7c9fb3a4de21a56bb12845cb6f9105d672b6956e10000d3c9c0d3115d155b1d9",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/actual_runtime_postreview_v1.py"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        1,
+        1
+      ],
+      "original_bytes": 10209,
+      "original_sha256": "770c15ce88827325ffeeba8d165d4b0723ebe7e74d1adc11a504c30763c327aa",
+      "public_bytes": 10205,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "export_actual_runtime_v1.py",
+      "public_sha256": "18ff1cd0d9b738cf0710c2fb4432dfb7a6ef0994a71cf40693a2b8cce4e6d04f",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/export_actual_runtime_v1.py"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        79,
+        0
+      ],
+      "original_bytes": 33067,
+      "original_sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae",
+      "public_bytes": 32277,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/independent-runtime-review.json",
+      "public_sha256": "941753ae00bc1ca14ee325d03364fa8ca1293cbeca37071c0747467dfbc3d226",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 1526,
+      "original_sha256": "3fc9c4a3b85dbf40c631457e4b71e1678ba801d2422aa02d242128e3c155c3e4",
+      "public_bytes": 1496,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/review-intent.json",
+      "public_sha256": "90b45d46eed9d10e343831165677397377bd46c6750648d30c7ad322fad93917",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/review-intent.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        42,
+        0
+      ],
+      "original_bytes": 5364,
+      "original_sha256": "d597bd8bf3fb69b5fe89bb07b45a0ddbdb4613014d0f6a0f4f932d15924a5417",
+      "public_bytes": 4944,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/actual-pinned-ldd.log",
+      "public_sha256": "e47810e8183f6143c7f99e671d009ecd7fea6a5562e5faa92a4aeaef3347b178",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/actual-pinned-ldd.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1640,
+      "original_sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312",
+      "public_bytes": 1640,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/actual-pinned-build-info.log",
+      "public_sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/actual-pinned-build-info.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 46166,
+      "original_sha256": "57ca4d7f56857c87e4e635e2bd72e9bae0e3154cfc7d273ff5a2addb937ba40c",
+      "public_bytes": 46156,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/service.log",
+      "public_sha256": "ad727df1b453bbd4200e14de20d3ee03a79e81b11083055621783a3411158214",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1-service.log"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        12,
+        0
+      ],
+      "original_bytes": 2686,
+      "original_sha256": "5b8cfd36a8ecd1218c2e242878a8e471622f8c82c9869ef51a872a6f50c6585c",
+      "public_bytes": 2566,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-01.json",
+      "public_sha256": "e195bede374b99a13ada8d3d9f417a232eae8f99ac650470d6a7ee208da9fa6b",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-01.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 762,
+      "original_sha256": "599f07b8faaacbe91d90dcee94f120781ae6aa3c05d0e158699b550eeaca2d3c",
+      "public_bytes": 762,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-02.json",
+      "public_sha256": "599f07b8faaacbe91d90dcee94f120781ae6aa3c05d0e158699b550eeaca2d3c",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-02.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 2009,
+      "original_sha256": "4fc5cfe2b0220b4648c9e3d649c9fb0af66a1d732288846e1f7b68f66faf62e7",
+      "public_bytes": 1979,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-03.json",
+      "public_sha256": "ed44778d2de1a557a58244aaef06491912a168a322f3920649a8942f68ce1f75",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-03.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        44,
+        0
+      ],
+      "original_bytes": 11835,
+      "original_sha256": "5dde72f775b4c988176931150394d6cd003925f3711240fbd34e0caa773ae4bb",
+      "public_bytes": 11395,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-04.json",
+      "public_sha256": "b5b8b4c57f6de43a2b19343580b49f57f2b09d677187d78df0ef3ac2d4f411ea",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-04.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 3068,
+      "original_sha256": "79793ee7f273b15841cff34b7dfbf1ac798a2f4f7b1f3059518367e6863c8a91",
+      "public_bytes": 3058,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-05.json",
+      "public_sha256": "620c71b6a56f140a10d84c85598e683f85ccd0a7c460825b7347b53bd6e997d3",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-05.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        2,
+        0
+      ],
+      "original_bytes": 1144,
+      "original_sha256": "2318513b64483e87edb90415fafa13af9107dae2f9cc3d8e20d0dc1c93330cb0",
+      "public_bytes": 1124,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-06.json",
+      "public_sha256": "ebae26729ace6aa5a7fe3ec92f83c574078b7f070f2bdf8102602e1cd3192460",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-06.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        2,
+        0
+      ],
+      "original_bytes": 2034,
+      "original_sha256": "77d65a78d925c66073c32de3d21dc4e6c2cb3aab0d86efff012dd60b1f4abe03",
+      "public_bytes": 2014,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-07.json",
+      "public_sha256": "3b543274b1181e56a56658da608e8c33e69f881fbc039bd6d47c815eb0dc780d",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-07.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        14,
+        0
+      ],
+      "original_bytes": 4748,
+      "original_sha256": "38ef681aebccab581531a62d6f5aea009bd90dfcfcb5a0481e1e205028c1a0e8",
+      "public_bytes": 4608,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-08.json",
+      "public_sha256": "99d596fe536a997b0618ba995d5e6648594ce5f06edb56dc9a0f3b8a2c35f556",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-08.json"
+    },
+    {
+      "gem5_physical_hostname_field_redactions": 0,
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 321,
+      "original_sha256": "3e08531e4d9ddb1a8c66da737257c636ecffdf053c04180e8e8fe44b0fe38709",
+      "public_bytes": 321,
+      "public_cr_count": 0,
+      "public_nul_count": 0,
+      "public_path": "independent-review/check-09.json",
+      "public_sha256": "3e08531e4d9ddb1a8c66da737257c636ecffdf053c04180e8e8fe44b0fe38709",
+      "raw_cr_count": 0,
+      "raw_nul_count": 0,
+      "source": "migrations/20261009/independent-runtime-review-v1/check-09.json"
+    }
+  ],
+  "hostname_method": "Exact anchored byte pattern: ^(gem5 executing on )([^,\\r\\n]+)(, pid [0-9]+). Only captured group2 replaced by $OWNER_HOSTNAME_REDACTED; original SHA binds the retained host field without disclosing it.",
+  "independent_checker_source_reference": "../runtime-checker-v1/index.json (original final source97430d48... bound by accepted review)",
+  "limitations": [
+    "Runtime-only nine-case acceptance; complete gem5 RandomX matrix remains open",
+    "No calibrated timing/power or scientific checkpoint resume acceptance",
+    "No whole Codex-session shutdown or physical host reboot demonstration",
+    "Host interpreter/core pins verified; no hermetic offline dependency closure claimed",
+    "Original unavailable simulator has not been recovered; new rebuilt identity retained"
+  ],
+  "method": "Exact ordered byte-prefix substitutions (local root first, original checkout second), followed only in the actual gem5 stdout by replacement of the one physical-hostname field in its exact gem5 executing on HEADER. No JSON reserialization, CR/NUL/newline change, scientific row change, trimming or other normalization.",
+  "migration_complete": false,
+  "omitted_retained_artifacts": [
+    {
+      "bytes": 2206,
+      "path": "executions/20261009T193937Z-576aa858c033/payload/m5out/device.dtb",
+      "reason": "Small binary device-tree retained locally and digest-bound; text device.dts/config and full receipt exported",
+      "sha256": "b87f9fcf8b1e3f58f0cf671c6d70a344eeaf642d9988a012fd5897baadc68260"
+    },
+    {
+      "bytes": 38227,
+      "path": "executions/20261009T193937Z-576aa858c033/runner.py",
+      "reason": "Duplicate exact988 immutable runner bytes already versioned in repository; execution-specific identity retained in manifest/receipt",
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    }
+  ],
+  "ordered_substitutions": [
+    {
+      "from": "designated local root absolute prefix",
+      "to": "$OPENRX_LOCAL_ROOT"
+    },
+    {
+      "from": "original checkout absolute prefix",
+      "to": "$OPENRX_ORIGINAL_CHECKOUT"
+    }
+  ],
+  "original_guest_serial_and_runtime_rows_exported_byte_identically": true,
+  "remaining_gates": [
+    "actual gem5 safe-stop evidence and independent review",
+    "GitHub docs/handoffs consistency",
+    "reviewed PR merge",
+    "final cutover receipt"
+  ],
+  "schema": "openrx.actual-runtime.export.v1",
+  "small_utf8_with_nul_note": "Raw serial UTF-8 contains retained NUL/CR bytes if present; no normalization was applied.",
+  "state": "LOCAL_VALIDATING",
+  "total_physical_hostname_fields_redacted": 1,
+  "utc": "2026-10-09T20:12:22.461905+00:00"
+}
