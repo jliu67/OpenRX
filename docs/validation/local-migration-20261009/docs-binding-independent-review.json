@@ -1,0 +1,240 @@
+{
+  "baseline_source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "corrections_resolved_by_document_author": [
+    "Moved intact full-dataset native steady commands out of lightweight README block and added explicit local-only/after-cutover/reviewed-request annotation",
+    "Clarified kind simulation requires LOCAL_ACTIVE while validation/build remain allowed in active state",
+    "Scoped retained hosted and old light-attempt prose as historical/deferred and explicitly distinguished20261008 boot evidence from new migration-host acceptance",
+    "Clarified local operator can be owner or explicitly authorized local session without owner presence or new remote authority"
+  ],
+  "decision": {
+    "actual_guest_acceptance": false,
+    "actual_stop_demonstrated": false,
+    "github_merge_verified": false,
+    "local_execution_active": false,
+    "migration_complete": false,
+    "remaining_findings": [],
+    "staging_documentation_consistent": true
+  },
+  "documentation_checks": [
+    "All current state headers/gates consistently say STAGING and NOT YET ACTIVE; preflight, expected guest, actual stop, output, merged PR and final receipt remain incomplete",
+    "Versioned layout and owner/explicitly-authorized local-session mechanism accurately describe the online host; owner presence is not required and no direct remote access, issue-command execution, SSH listener, autonomous poller or self-hosted Actions channel is introduced",
+    "Actual frozen b4/runner988/wrapper5c/runtime requestd11/stop request762/controller1d65/driverace5 hashes and immutable release CLI match documentation",
+    "One global execution.lock, request-key dedup, persistent user-manager ownership, exact resource budgets and limited cleanup/recovery semantics match source and retained scoped evidence; build03 override is explicit",
+    "Full-dataset native steady README commands are preserved under reviewed local-only/after-cutover request gate; light checks remain general quick start",
+    "Four expensive hosted paths are guarded only on the migration branch and accurately deferred/not passed; documentation explicitly requires reviewed merge before mainline enforcement",
+    "Hosted gem5 recipes are explicitly historical/deferred, and the old light attempt is accurately described as incomplete historical evidence rather than a currently running simulation",
+    "287 full/28 runner/40 targeted corrected-source results and55.1219-second/six-notification finalizer witness match linked review; earlier24717/cd90/916/f6ea snapshots, withdrawal, false harness and technical limits remain separate",
+    "All relative Markdown links resolve; immutable installed-runner operation examples match actual parser; malformed/torn ledger/output fails closed and scientific checkpoint resume is unavailable",
+    "M0 history preserved; #16 complete light/full dataset/intended core and M1\u2013M5 remain open; no architecture timing, RTL or hardware-power result is invented",
+    "Session log retains complete b4 prefix byte-for-byte; previous handoff section remains byte-identical; prior source/artifact/failed build/unavailable original identities remain explicit"
+  ],
+  "documents": [
+    {
+      "bytes": 7394,
+      "path": "AGENTS.md",
+      "sha256": "1fe2d5e518b225f52c47a3a74c2c9aecb3a9d0fd2a7bd6928e7d48d82c479201"
+    },
+    {
+      "bytes": 9745,
+      "path": "README.md",
+      "sha256": "dffb78749dc4ede2fbdf046332e5ad40603190cf38a94cb0bcf15ae22a2193f9"
+    },
+    {
+      "bytes": 18874,
+      "path": "docs/LOCAL_EXECUTION.md",
+      "sha256": "0a03b08369a3c1e215b8c756a348cf7748cd563413fb83b76104fd0eaebbd356"
+    },
+    {
+      "bytes": 16035,
+      "path": "docs/LOCAL_MIGRATION.md",
+      "sha256": "323b37f51f9cfc73cbb7774cf4d191130f2487d9b984477cc644f2a85bf56e07"
+    },
+    {
+      "bytes": 2613,
+      "path": "docs/ROADMAP.md",
+      "sha256": "8f4e3ed3e4affc0e41ddede8639d70aa9b89c72450cc2fe665f2368b3799762b"
+    },
+    {
+      "bytes": 11489,
+      "path": "docs/TASKS.md",
+      "sha256": "d9ffc0cf241b63f9d45f90dde6844049988bbfab71dc82069a38e7b04c2a81bc"
+    },
+    {
+      "bytes": 9245,
+      "path": "docs/validation/local-migration-20261009/ACCEPTANCE.md",
+      "sha256": "dcd200c1a49e9c97270d5762eabbaf34a89e493a082b50b491ee4042906b66c3"
+    },
+    {
+      "bytes": 16671,
+      "path": "memory/STATE.md",
+      "sha256": "49238e20d0ef379af89f7c7a015ddbc089df9701424f6b3033872ea86362f940"
+    },
+    {
+      "bytes": 13131,
+      "path": "memory/HANDOFF.md",
+      "sha256": "7dedfb754a8507f0f02c9829e6e397782e4ef701854453da6cc85db4cc442cc6"
+    },
+    {
+      "bytes": 48698,
+      "path": "memory/SESSION_LOG.md",
+      "sha256": "a562be1fac147a00f6f112d10c8f86a5c45fb9d18899e46f2b3fbf02ca0be8ba"
+    },
+    {
+      "bytes": 3547,
+      "path": "memory/PROJECT.md",
+      "sha256": "4a8093c8ee4e1b199016b1234f76915f81cd86adbffc0d4b5ac6a0cf88fa3197"
+    },
+    {
+      "bytes": 17541,
+      "path": "simulator/gem5/README.md",
+      "sha256": "3b65ea2e9b2305c15d03d225ddffd7b12db991296e70d83da8193785c404b29c"
+    }
+  ],
+  "frozen_execution_source": {
+    "clean_git_status": true,
+    "commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+    "relative_path": "checkouts/execution-b4b5ffc",
+    "writable_or_symlink_paths": 0
+  },
+  "host_observation": {
+    "active_services_Result_field_is_not_a_completed_build_or_simulation_pass": true,
+    "build03_final_result_absent": true,
+    "migration_journal_latest_state": "STAGING",
+    "preflight_absent": true,
+    "runner_state_last_event_sha256": "3c366572944796705ab3de4a6a8a1b4a7bd4789392bddafad939f599f7c145e0",
+    "runner_status": {
+      "executions": [],
+      "migration_state": "STAGING",
+      "remote_execution": "unavailable"
+    },
+    "runtime_capture_absent": true,
+    "state_ledgers": [
+      {
+        "bytes": 1015,
+        "path": "state/events.jsonl",
+        "sha256": "bddac1a395e8a9975c06b6696c386f4ce615f594559998691ea34da4d7a9ae70"
+      },
+      {
+        "bytes": 808,
+        "path": "migrations/20261009/state-events.jsonl",
+        "sha256": "b2ffdf4cf4108d42f221f6fdf662a0daad1568af47a3418867fde227608f3258"
+      }
+    ],
+    "stop_controller_never_invoked": true,
+    "units": {
+      "openrx-migration-build03-20261009.service": {
+        "ActiveState": "active",
+        "CPUQuotaPerSecUSec": "1s",
+        "LoadState": "loaded",
+        "MainPID": "55904",
+        "MemoryMax": "8589934592",
+        "MemorySwapMax": "2147483648",
+        "Nice": "10",
+        "NoNewPrivileges": "no",
+        "Result": "success",
+        "SubState": "running",
+        "TasksMax": "256"
+      },
+      "openrx-migration-validation-pipeline-v2-20261009.service": {
+        "ActiveState": "inactive",
+        "CPUQuotaPerSecUSec": "infinity",
+        "LoadState": "not-found",
+        "MainPID": "0",
+        "MemoryMax": "infinity",
+        "MemorySwapMax": "infinity",
+        "Nice": "0",
+        "NoNewPrivileges": "no",
+        "Result": "success",
+        "SubState": "dead",
+        "TasksMax": "19039"
+      },
+      "openrx-migration-validation-pipeline-v3-20261009.service": {
+        "ActiveState": "active",
+        "CPUQuotaPerSecUSec": "1s",
+        "LoadState": "loaded",
+        "MainPID": "66415",
+        "MemoryMax": "1073741824",
+        "MemorySwapMax": "268435456",
+        "Nice": "10",
+        "NoNewPrivileges": "yes",
+        "Result": "success",
+        "SubState": "running",
+        "TasksMax": "64"
+      }
+    }
+  },
+  "immutable_bindings": [
+    {
+      "bytes": 38227,
+      "path": "releases/runner-v1-988cf13f/local_execution.py",
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    {
+      "bytes": 14953,
+      "path": "checkouts/execution-b4b5ffc/simulator/gem5/run.py",
+      "sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e"
+    },
+    {
+      "bytes": 13936,
+      "path": "migrations/20261009/validate_when_ready_v3.py",
+      "sha256": "ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910"
+    },
+    {
+      "bytes": 21944,
+      "path": "migrations/20261009/prove_gem5_stop_v1.py",
+      "sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817"
+    },
+    {
+      "bytes": 2973,
+      "path": "requests/spec-issue-27-local-runtime-b4b5ffc-attempt-01.json",
+      "sha256": "d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972"
+    },
+    {
+      "bytes": 4144,
+      "path": "requests/spec-issue-27-gem5-stop-migration-attempt-01.json",
+      "sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14"
+    }
+  ],
+  "limitations": [
+    "This acceptance is a dated staging documentation review, not migration completion, source-code self-review, scientific validation, merge or activation",
+    "Live state/service/output can change after observation; use authoritative append-only objective evidence and current status",
+    "GitHub issue/review links were not refetched in this scope; root retains publication/readback authority and must verify final merged/activation receipts",
+    "Host reboot/power loss/full active Codex-daemon termination, full dataset, checkpoint resume, actual new guest and actual gem5 stop are not claimed"
+  ],
+  "linked_review_bindings": [
+    {
+      "bytes": 6945,
+      "path": "docs/validation/local-migration-20261009/pipeline-independent-review-v3.json",
+      "sha256": "1115b87df5ee37cd6605cfd9bd0c2ace9205c5b2ea35df7b2189256ec22ca05c"
+    },
+    {
+      "bytes": 4000,
+      "path": "docs/validation/local-migration-20261009/stop-controller-independent-review.json",
+      "sha256": "381e1c5ec495461ff3c2d5ded0e004aec82cc14f8207359f3373cd97b350025d"
+    },
+    {
+      "bytes": 6099,
+      "path": "docs/validation/local-migration-20261009/final-runner-wrapper-independent-review.json",
+      "sha256": "b9d0dfad52aa22d345f858dea1d4a872491c5dcc96af3b0fa5a86ff97eeb5895"
+    },
+    {
+      "bytes": 14549,
+      "path": "docs/validation/local-migration-20261009/hosted-workflow-guard-audit.json",
+      "sha256": "71a7d029b7d7ef0f47dee4700b20b44884191f304e171f96b62149ae3801baff"
+    }
+  ],
+  "local_branch": "migration/local-infrastructure-20261009",
+  "reviewed_at": "2026-10-09T17:44:04.492759+00:00",
+  "reviewer": "durable_runner independent subagent reviewing documentation authored by migration_docs; shared owner account, not independent human approval",
+  "schema": "openrx.independent.docs-bindings-review.v1",
+  "scope": "Twelve frozen documentation files and actual staging/request/source/service bindings; no new scientific/code/workflow acceptance",
+  "validation": {
+    "documents_unchanged_during_final_binding_check": true,
+    "git_diff_check": "passed",
+    "github_operations": "none; existing citations checked against retained review bindings, remote availability not refetched",
+    "local_markdown_links_checked": 158,
+    "missing_local_links": [],
+    "new_services_or_workloads": "none",
+    "new_tests": "none; review only"
+  }
+}

@@ -1,11 +1,16 @@
 # Local execution policy and interface
 
-**Migration state: STAGING. The designated local execution policy is NOT YET ACTIVE.**
+**Migration snapshot: STAGING, 2026-10-09 UTC. The designated policy is NOT YET ACTIVE at this snapshot.**
 [Task #27](https://github.com/jliu67/OpenRX/issues/27) and the
 [acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md) record the evidence and open gates.
 The owner's native Ubuntu computer is being prepared as the persistent execution host.
 No agent may infer activation from a message, successful install, boot, process launch or status label.
 Activation requires all migration gates, a separate review, a merged migration PR and consistent GitHub documentation.
+
+**Execution authorization:** expensive execution becomes effective only when [task #27](https://github.com/jliu67/OpenRX/issues/27)
+publishes a verified `LOCAL_ACTIVE` transition bound to the actual reviewed merge commit and final acceptance
+receipt. Until that proof exists, defer full-scale work. Dated repository snapshots preserve history;
+they never activate execution. Consult the live proof and local status for current availability.
 
 Once verified cutover reaches `LOCAL_ACTIVE`, this computer is the designated host for gem5 full-system runs,
 long CPU architecture experiments, large RandomX workloads, expensive profiling/toolchain builds and large generated artifacts.
@@ -19,8 +24,8 @@ The independent scientific gates in #16 and M1–M5 retain their original criter
 | Question | Current answer |
 |---|---|
 | Where do expensive runs execute? | The owner's Ubuntu host after verified `LOCAL_ACTIVE`; the host is currently staging. |
-| Is the runner available? | Guest submission is on hold pending new immutable source/request/pipeline bindings. Corrected runner `988cf13f…` and wrapper `5c275bf3…` are independently accepted for local validation; prior runner 916 overall acceptance remains withdrawn and pipeline v2 stopped before preflight. Check #27 and the acceptance receipt before use. |
-| How is a request submitted? | A GitHub task issue with the complete execution specification below; the owner reviews and submits it locally. |
+| Is the runner available? | The reviewed runner `988cf13f…`, readonly `b4b5ffc…` source and fixed runtime request/pipeline v3 are staged. The host-managed pipeline is waiting for build 03; guest submission still requires successful build/loader/input preflight. Full-scale operation remains inactive. Prior runner 916 overall acceptance stays withdrawn and pipeline v2 stopped. Check #27 and the acceptance receipt before use. |
+| How is a request submitted? | A GitHub task issue with the complete execution specification below; the owner or an explicitly authorized local session reviews and submits it locally. |
 | Can a remote agent execute directly? | **No. Remote execution and retrieval are unavailable.** There is no SSH access, network listener or autonomous issue poller provisioned by this migration. |
 | How are collisions prevented? | The local runner serializes admission, binds a request key to one execution ID and uses one host resource lock. GitHub claims coordinate source work and are not CPU locks. |
 | Where is evidence? | Persistent per-execution manifests/logs/receipts on the host; reviewed, sanitized manifests/summaries and small evidence are attached or linked from the task/PR. Large binaries stay outside Git. |
@@ -31,7 +36,20 @@ GitHub remains the shared coordination authority: task claims/dependencies, sour
 manifests/summaries, project memory and milestone gates. No permanent roles or central coordinator are introduced.
 Host paths, transient service status and local locks describe execution, not agent ownership.
 
+The migration branch is adding literal skip guards for hosted full-system gem5 execution/source builds and
+foundation full-dataset/native steady workload steps. Their original commands and scientific criteria remain
+retained; skipped expensive controls are **DEFERRED to reviewed local requests, never passed**.
+Lightweight Python/vendor/upstream controls, two-nonce verify and one-cache native/QEMU correctness remain.
+These branch guards become mainline policy only after the reviewed PR merges; main is not yet updated
+at this staging snapshot. No self-hosted GitHub Actions runner has been provisioned. Do not dispatch the
+retained expensive hosted jobs to bypass migration or an offline local host.
+
 ## Owner-mediated GitHub submission and retrieval
+
+Here, the local operator means **the owner or an explicitly authorized local session**, including the
+current migration session. The host must be online; the owner need not be physically present.
+This definition grants no remote access, and a GitHub issue/comment alone grants no execution authority.
+The same reviewed request, pinned inputs, resource locks and gate requirements apply to either operator.
 
 Use one scoped task issue per independent work item and the existing [claim protocol](COMMUNICATION.md).
 An execution request comment must record the source commit and dirty-tree policy, immutable input identities,
@@ -49,15 +67,21 @@ accepted fixed guards at that snapshot, but **pipeline v2 is now stopped and run
 acceptance is withdrawn** after a post-reap PID/process-group signal risk was found.
 [Safety hold](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771) and
 [withdrawal review](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322) preserve this correction.
-Old request keys01/02 were never submitted. A new revision03 and immutable scientific execution checkout
-must bind the now independently accepted corrected wrapper/runner to the forthcoming code commit;
-that request/pipeline binding is still pending review.
+Old request keys 01/02 were never submitted. The replacement [runtime request revision 03](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085838632)
+now binds key `issue-27-local-runtime-b4b5ffc-attempt-01`, specification SHA-256
+`d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972`, runner 988 and readonly source
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`.
+[Exact-head review](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473259439) and
+[pipeline binding review](validation/local-migration-20261009/pipeline-independent-review-v3.json)
+verify those actual source/request/toolchain bindings. Fixed driver
+`ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910` is running as
+`openrx-migration-validation-pipeline-v3-20261009.service`, waiting for build 03 and all prerequisites.
 No full-scale workload, executed guest or active policy is claimed. A fixed local driver is not a remote issue poller.
 
-The owner verifies the reviewed request, resolves its paths to the local installation, submits it with the local CLI,
-and posts the execution ID plus manifest digest to the task. The owner later exports sanitized receipts,
+The local operator verifies the reviewed request, resolves its paths to the local installation, submits it with the local CLI,
+and posts the execution ID plus manifest digest to the task. The local operator later exports sanitized receipts,
 required raw evidence and integrity records to GitHub or a deliberately configured artifact channel.
-Remote agents can review those publications. **This workflow requires the owner to be online and act locally;
+Remote agents can review those publications. **This workflow requires the host online and an owner or explicitly authorized local session to act locally;
 end-to-end request/retrieval has not yet been demonstrated.** GitHub comments alone cannot launch a process.
 
 Before accepting results, match execution/request IDs, source commit/configuration/input digests, complete logs,
@@ -65,12 +89,17 @@ actual exit/status and strict scientific validation. A runner `PROCESS_EXITED` s
 scientific acceptance additionally requires the declared oracle and independent review.
 A missing result is unavailable evidence, not a pass or a scientific failure.
 
+The [separate stop request](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085930183) is published
+and statically reviewed; its controller is still unlaunched until the first verified capture and exact
+source/input/owned-cgroup prerequisites. It supplies no actual stop, guest or activation claim.
+
 ## Versioned persistent layout
 
 The installation receipt on the host maps the portable variable below to the actual owner-controlled path:
 
 ```bash
 export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
+export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py"
 ```
 
 | Relative path | Purpose |
@@ -93,13 +122,16 @@ A rebuild from pinned source is a new artifact with a new digest, never recovery
 
 ## Local runner contract
 
-The staged CLI is `scripts/local_execution.py`; the interface below matches the implemented runner.
-Host fixture records and narrow source reviews are preserved, but guest submission is on a safety hold.
+The source implementation is `scripts/local_execution.py`. Owner operations use the immutable installed
+release in `$OPENRX_RUNNER`, selected from the installation receipt, rather than a mutable checkout.
+The interface below matches the reviewed runner988 release.
+Host fixture records and narrow source reviews are preserved. The corrected source/request/pipeline
+bindings are now reviewed; guest submission remains gated on actual build/loader/input preflight.
 Prior runner 916 overall future execution acceptance was withdrawn; its fsync review remains scoped durability evidence.
 [Signal-safety review](validation/local-migration-20261009/runner-signal-safety-independent-review.json)
 accepts only the narrow f6ea revision with 25 focused tests. Corrected runner `988cf13f…` removes post-reap group
 signaling and makes the main loop the sole child reaper. It adds a private finalizer deadline extension using
-`Type=simple` / `NotifyAccess=exec`; the worker's45-second stop budget remains unchanged.
+`Type=simple` / `NotifyAccess=exec`; the worker's 45-second stop budget remains unchanged.
 [Final runner/wrapper review](validation/local-migration-20261009/final-runner-wrapper-independent-review.json)
 accepts 287 complete repository tests (including 28 runner controls), 40 targeted gem5 wrapper controls,
 and a 55.1219-second controlled finalizer delay with six real notifications and verified receipt integrity.
@@ -110,27 +142,27 @@ The nested scientific wrapper had the same confirmed race in a controlled tiny-c
 [wrapper safety audit](validation/local-migration-20261009/wrapper-reap-safety-audit.json) intercepted the
 signal without signaling any host group. Its accepted `run_process` source `5c275bf3…` records signals and
 polls only in the owning main loop; exact scientific oracles, model and guest/resource acceptance are unchanged.
-The original checkout and frozen6f54052 snapshot remain untouched. A fresh immutable checkout from the
-forthcoming reviewed source commit must replace that old executable wrapper before guest validation.
-The earlier v4/full277, cd90/full279/22-focused/v6, and916/23-focused evidence retain their exact snapshots;
+The original checkout and frozen6f54052 snapshot remain untouched. The reviewed readonly `checkouts/execution-b4b5ffc` now supplies the corrected wrapper and clean,
+byte-verified source for local validation. The old frozen executable wrapper remains retained.
+The earlier v4/full 277, cd90/full 279/22-focused/v6, and916/23-focused evidence retain their exact snapshots;
 they remain separate historical snapshots. The now accepted final combination is exactly runner
 `988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882` and wrapper
 `5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e`.
 No guest or migration acceptance is inferred from those host tests.
 
 ```bash
-python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" init
-python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" status
-python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" status EXECUTION_ID
-python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" verify EXECUTION_ID
-python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" stop EXECUTION_ID
-python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" recover EXECUTION_ID
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" init
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status EXECUTION_ID
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" verify EXECUTION_ID
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" stop EXECUTION_ID
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" recover EXECUTION_ID
 ```
 
 Submission records absolute local inputs and argv without an intervening shell:
 
 ```bash
-python3 scripts/local_execution.py --root "$OPENRX_LOCAL_ROOT" submit \
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" submit \
   --request-key UNIQUE_REQUEST_KEY --kind validation --validation-scope lifecycle \
   --cwd "$OPENRX_LOCAL_ROOT/checkouts/EXECUTION_CHECKOUT" \
   --input "$OPENRX_LOCAL_ROOT/artifacts/VERIFIED_INPUT" \
@@ -145,7 +177,8 @@ The runner records digests at submission and rechecks them under the resource lo
 `--kind validation` requires an explicit scope: `lifecycle`, `unit`, `vendor-integrity`,
 `guest-runtime-smoke` or `regression-smoke`. The template above uses a lifecycle fixture;
 a guest smoke request uses `--validation-scope guest-runtime-smoke` and the unchanged gem5 runtime oracle.
-Only `simulation` is admitted after `LOCAL_ACTIVE`; pre-cutover validation and migration builds must be deliberately scoped.
+`--kind simulation` is admitted only after `LOCAL_ACTIVE`; validation and build requests remain allowed
+in active state. Pre-cutover validation and migration builds must be deliberately scoped.
 Allowed explicit environment keys are recorded in `scripts/local_execution.py`; unsupported keys fail admission.
 Use paths without whitespace, quotes, backslashes or percent signs for the execution root and runner interpreter,
 because the durable systemd finalizer rejects unsupported path syntax.

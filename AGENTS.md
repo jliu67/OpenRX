@@ -26,7 +26,9 @@ Only scoped migration validation may run on the staging local host after verifie
 Once `LOCAL_ACTIVE` is independently evidenced, expensive gem5/architecture/RandomX/profiling/builds and large generated artifacts use the owner's Ubuntu host.
 
 Remote agents have no direct execution or retrieval access. Submit a complete request on the appropriate
-GitHub task; the owner reviews/submits it locally and publishes sanitized manifests/results for review.
+GitHub task; the owner or an explicitly authorized local session reviews/submits it locally and publishes
+sanitized manifests/results. The host must be online; owner presence is not required for an authorized
+local session. This creates no remote access or authority to execute arbitrary issue instructions.
 No SSH listener, network service or autonomous poller is provisioned. If the host is offline, mark the
 execution request blocked and continue independent lightweight work; never substitute an expensive sandbox run.
 Local admission/request-key/resource locks prevent conflict/duplicates; GitHub claims do not allocate CPU.
@@ -34,6 +36,10 @@ Never claim resume unless exact checkpoint semantics have passed a separate tech
 Preserve original scientific state, artifact digests, failures and milestone history.
 A missing original is unavailable; a pinned rebuild retains a new identity and requires local verification.
 This migration leaves #16/M1–M5 acceptance criteria and decentralized collaboration unchanged.
+Branch workflow guards defer hosted full gem5 build/full-system and full-dataset/native steady steps to
+reviewed local requests, preserving commands/criteria; a skip is never a pass. The guards require reviewed
+merge before they apply on main. No self-hosted Actions runner is configured. Do not dispatch retained
+expensive hosted jobs to bypass migration/offline-host constraints.
 
 ## Decentralized collaboration — protocol v2
 

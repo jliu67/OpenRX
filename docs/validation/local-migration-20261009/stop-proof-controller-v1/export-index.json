@@ -1,0 +1,26 @@
+{
+  "utc": "2026-10-09T17:23:04.274146+00:00",
+  "scope": "Prepared owner stop controller and exact fixed request for independent review; no service/simulator launch performed. Public files are sole-prefix derivatives, not direct execution inputs. No scientific/migration completion claimed.",
+  "files": [
+    {
+      "name": "prove_gem5_stop_v1.py",
+      "host_original_sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817",
+      "host_original_bytes": 21944,
+      "public_derivative_sha256": "81ff55aeb5281669abb100392d8b1d7ff33060360638bf14a75daa3243fdfcfc",
+      "public_derivative_bytes": 21936,
+      "redaction": "literal root prefix -> ${OPENRX_LOCAL_ROOT}; no other changes"
+    },
+    {
+      "name": "spec-issue-27-gem5-stop-migration-attempt-01.json",
+      "host_original_sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14",
+      "host_original_bytes": 4144,
+      "public_derivative_sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14",
+      "public_derivative_bytes": 4144,
+      "redaction": "literal root prefix -> ${OPENRX_LOCAL_ROOT}; no other changes"
+    }
+  ],
+  "execution": "python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/prove_gem5_stop_v1.py --request-sha256 76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14",
+  "controller_request_key": "issue-27-gem5-stop-migration-attempt-01",
+  "source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "runner_sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+}

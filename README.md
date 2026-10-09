@@ -29,6 +29,9 @@ Defer full-scale simulations until verified cutover. After `LOCAL_ACTIVE`, gem5 
 long architecture/RandomX workloads, expensive profiling/builds and large artifacts use that host.
 Sandboxes continue supporting code/review, lightweight tests, static analysis and small reproductions.
 Scientific #16 and M1–M5 remain open independently of infrastructure acceptance.
+Migration-branch guards defer hosted expensive gem5/full-dataset/native steady steps to reviewed local
+requests; skipped controls are unexecuted, never passed. Those guards require reviewed merge before
+main is updated, and no self-hosted Actions runner is configured.
 
 ## RISC-V feasibility progress
 
@@ -73,18 +76,19 @@ bash scripts/build.sh
 bash scripts/test.sh
 # Functional smoke only:
 python3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1
-# Optional same-process adapter and bounded native controls:
-bash scripts/build_steady.sh
-python3 tests/native_steady.py
 # Offline power-schema tests; synthetic inputs, NOT measured power:
 python3 -m unittest discover -s tests -p test_power_import.py -v
 ```
 
-Full-dataset known-reference controls (>2 GiB RAM) belong on the designated local host after verified cutover,
-with a reviewed request and fresh persistent execution ID:
+Full-dataset known-reference controls and `native_steady.py` allocate the full dataset (over 2 GiB).
+Run them only through the designated immutable local runner **after verified cutover**, with a reviewed
+owner-local request and fresh persistent execution ID. Retain these scientific commands in that request:
 
 ```bash
 python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --nonces 1000 --repeats 1
+# Optional same-process adapter and full-dataset native controls:
+bash scripts/build_steady.sh
+python3 tests/native_steady.py
 ```
 
 RandomX v2.0.1 is included in `vendor/randomx/` at upstream commit `aaafe71322df6602c21a5c72937ac284724ae561`; no submodule download is required. Original BSD-3-Clause licenses/notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md).

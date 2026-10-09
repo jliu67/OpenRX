@@ -21,6 +21,9 @@ expensive profiling/toolchain builds and large generated artifacts after verifie
 [gate receipt](validation/local-migration-20261009/ACCEPTANCE.md) specify availability, owner-mediated GitHub
 submission/retrieval, single-resource locking, offline behavior and incomplete migration gates.
 Remote execution is unavailable; no direct host access is implied. Expensive research remains held until cutover.
+Branch workflow guards defer hosted full gem5/full-dataset/native steady steps to reviewed local requests,
+without deleting commands or changing criteria. Skipped controls remain unexecuted; mainline enforcement
+awaits reviewed merge and no self-hosted Actions runner has been provisioned.
 
 This is an infrastructure prerequisite, not a new scientific milestone or completion of M1–M5.
 M0's historical completion and all existing milestone acceptance criteria are preserved.

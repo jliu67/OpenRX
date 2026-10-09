@@ -14,6 +14,10 @@ concurrency:
   cancel-in-progress: false
 jobs:
   simulator-build:
+    # Local-only under docs/LOCAL_EXECUTION.md and https://github.com/jliu67/OpenRX/issues/27.
+    # Retained commands document historical hosted provenance; this skipped job is not a build pass.
+    # Submit a reviewed owner-local request; no hosted or self-hosted runner access is provisioned here.
+    if: ${{ false }}
     runs-on: ubuntu-24.04
     timeout-minutes: 120
     env:

@@ -1,0 +1,299 @@
+{
+  "schema": "openrx.local-migration.hosted-workflow-guard-independent-review.v1",
+  "recorded_utc": "2026-10-09T17:40:20.830193+00:00",
+  "baseline_source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "author_audit_sha256": "71a7d029b7d7ef0f47dee4700b20b44884191f304e171f96b62149ae3801baff",
+  "independent_review_accepted": true,
+  "scope": "static admission configuration only; no workflows/science execution",
+  "changed_admission_guards": [
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "step": "Full-dataset reference controls (not a performance baseline)"
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "step": "Same-process native controls (not a performance baseline)"
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build"
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime"
+    }
+  ],
+  "normalized_yaml_equal_baseline_after_only_four_condition_restorations": true,
+  "workflows_parsed": 6,
+  "bash_run_blocks_checked": 38,
+  "bash_checks": [
+    {
+      "workflow": ".github/workflows/agent-announcements.yml",
+      "job": "announce",
+      "step": "Test announcement authorization and deduplication",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/agent-announcements.yml",
+      "job": "announce",
+      "step": "Publish one GitHub Actions bot announcement",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/agent-router.yml",
+      "job": "route",
+      "step": "Test coordination logic before writes",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/agent-router.yml",
+      "job": "route",
+      "step": "Reconcile GitHub message threads",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Verify source",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Phase 1 tooling regression tests",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Reproduce static workload profile",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Build pinned source and steady adapter",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Upstream correctness tests",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Both algorithm smoke runs",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Full-dataset reference controls (not a performance baseline)",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/ci.yml",
+      "job": "correctness",
+      "step": "Same-process native controls (not a performance baseline)",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Validate bounded manual request",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Install and record build dependencies",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Acquire unchanged pinned source",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Generate canonical configuration before selecting a cache",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Attempt bounded incremental source build",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Package only a completed pinned canonical simulator",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Validate checkpoint namespace after every build attempt",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Record cache lookup and checkpoint identities",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-build.yml",
+      "job": "simulator-build",
+      "step": "Preserve actual configuration and source status after every attempt",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "offline-controls",
+      "step": "Verify source and offline evidence controls",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Validate artifact selection and obtain same-repository run provenance",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Reject altered binary, source, configuration or build provenance",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Install runtime libraries and scalar guest build dependencies",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Verify simulator starts with the retained build configuration",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Cross-build guest runtime controls",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Prepare exact guest firmware, kernel and disk",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Cross-build optional unchanged light-mode workload",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/gem5-fs.yml",
+      "job": "atomic-linux-runtime",
+      "step": "Run Linux boot and guest controls (no project wall-time limit)",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "Verify unchanged pinned source",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "Install compiler and functional emulator",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "Record environment and build native probe",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "Native exact semantic and v1/v2 controls",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "Native Linux signal, protection and code-overwrite controls",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "Build scalar RISC-V probe",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "QEMU RV64GC exact semantic and v1/v2 controls",
+      "returncode": 0
+    },
+    {
+      "workflow": ".github/workflows/riscv-preflight.yml",
+      "job": "scalar-correctness",
+      "step": "QEMU Linux signal, protection and explicit cache-flush controls",
+      "returncode": 0
+    }
+  ],
+  "source_bindings_verified": [
+    {
+      "path": "vendor/randomx/src/tests/tests.cpp",
+      "sha256": "3b04c9a36945750749932b267720ee3826a79c4b49179e4f85248d1d0a343962"
+    },
+    {
+      "path": "benchmarks/steady/main.cpp",
+      "sha256": "ca8bff0cb6ecbbd0eb8bf9b65a5166a34f6dd56f05ac21acebc1fde1af4cc275"
+    },
+    {
+      "path": "tests/native_steady.py",
+      "sha256": "b4f1f5f3c8c8cd2aeaa6fd0b07d03c679c67e448bbc7cbfb7db6cb7033bb2d80"
+    },
+    {
+      "path": "simulator/probe/main.cpp",
+      "sha256": "855762bdcfc687c53c8ebe7f4c419415773edaf7a156d2667b3eff5cd990281d"
+    },
+    {
+      "path": ".github/workflows/riscv-preflight.yml",
+      "sha256": "980d57b9a81aeb442baf3b0c52c252ae989728f8c1376338c1f02f2092bf61af"
+    },
+    {
+      "path": ".github/workflows/agent-announcements.yml",
+      "sha256": "447867f74522806dcb566a098527bd3312bf3acd319e9ff57cad52eb2ba9dbd2"
+    },
+    {
+      "path": ".github/workflows/agent-router.yml",
+      "sha256": "212efaa6dd8ca5e2414098daaf84975e3f19d0fa6db591302efdc46addc040b5"
+    }
+  ],
+  "upstream_selected_item_controls_preserved": true,
+  "full_dataset_and_full_gem5_workloads_deferred_not_passed": true,
+  "git_diff_check": "pass",
+  "local_activation_claimed": false,
+  "migration_complete": false,
+  "limitations": [
+    "Default branch policy changes require reviewed merge",
+    "Queued/running older workflow revisions remain independent; inspect separately",
+    "PyYAML and bash syntax checks do not execute GitHub Actions"
+  ]
+}

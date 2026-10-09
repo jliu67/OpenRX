@@ -29,8 +29,15 @@ jobs:
       - name: Both algorithm smoke runs
         run: python3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1
       - name: Full-dataset reference controls (not a performance baseline)
+        # Deferred, not passed: full-dataset workloads require a reviewed owner-local request.
+        # See docs/LOCAL_EXECUTION.md and https://github.com/jliu67/OpenRX/issues/27.
+        if: ${{ false }}
         run: python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --init-threads 2 --nonces 1000 --repeats 1 --timeout 300
       - name: Same-process native controls (not a performance baseline)
+        # native_steady.py initializes the full dataset, including its upstream --mine differential.
+        # Deferred to the local runner; a green hosted check does not certify these controls.
+        # See docs/LOCAL_EXECUTION.md and https://github.com/jliu67/OpenRX/issues/27.
+        if: ${{ false }}
         run: |
           set -o pipefail
           python3 tests/native_steady.py 2>&1 | tee build/validation/steady-native-tests.log

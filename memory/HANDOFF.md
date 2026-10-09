@@ -16,40 +16,66 @@ pinned firmware/kernel/compressed/expanded disk are verified. Host native smoke 
 171 vendor files, 106 upstream controls plus one explicit unsupported-AVX2 skip,
 39 exact semantic/hash controls (optional AES skip) and nine runtime controls. No local gem5 pass is claimed. Historical runtime/partial-light evidence below is preserved and remains historical.
 
-**Current safety hold:** pipelinev2 stopped before preflight or guest execution and runner916 overall
-future execution acceptance is withdrawn. Its fsync/23-focused proof remains narrow history.
-[Task safety record](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771) and
-[review correction](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322) preserve the reason.
-A controlled tiny-child audit also confirms post-reap group signaling in the frozen gem5 wrapper;
-signals were intercepted and no real host group was signaled.
+**Current validation binding:** the readonly execution checkout is
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726` and immutable runner release988cf13f.
+[Exact-head review](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473259439) and
+[pipelinev3 binding review](../docs/validation/local-migration-20261009/pipeline-independent-review-v3.json)
+verify the corrected wrapper5c275/source/toolchain/owner specification.
+[Runtime request03](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085838632) key
+`issue-27-local-runtime-b4b5ffc-attempt-01` / SHA
+`d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972` is published.
+Driver ace55beda… runs as `openrx-migration-validation-pipeline-v3-20261009.service`, waiting for build03
+and all verified build/loader/input/state prerequisites. No guest has run and expensive research remains held.
 
-Independently accepted runner988cf13f makes the main loop sole reaper and permits only its private finalizer to
-extend timeout during large retained-output hashing/fsync; worker45-second stop remains unchanged.
-Corrected wrapper5c275bf3 changes only `run_process` signal/reap ownership, retaining all scientific oracles,
-model and resource pins. [Final exact-source review](../docs/validation/local-migration-20261009/final-runner-wrapper-independent-review.json)
-passes287 full tests (including28 runner controls),40 targeted wrapper controls and a55.1219-second
-controlled finalizer delay with six real notifications/verified receipt. The original false harness result
-and corrected audit are retained; no terminal manager status or actual large-output throughput is claimed.
-The narrow f6ea signal-only25-test review and notify-component fixtures are separately retained.
-Old request keys01/02 never submitted; new readonly execution checkout from the forthcoming reviewed
-source commit and request/pipeline revision03 must bind accepted corrected source bytes before guest validation.
-Original/frozen6f source, earlier fixture/test evidence and build03 are preserved. No guest has executed.
+Accepted corrected source passes287 full tests (including28 runner controls) and40 targeted wrapper controls.
+A55.1219-second finalizer delay/six notifications/receipt integrity prove extension beyond45 seconds;
+original false harness and corrected audit are retained, without terminal manager or large-output claims.
+[Stop controller](../docs/validation/local-migration-20261009/stop-controller-independent-review.json)
+SHA `1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817` and fixed specification
+`76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14` are reviewed but unlaunched;
+first capture integrity plus exact source/input/cgroup/report gates are still prerequisites.
+[Stop request publication](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085930183) is verified;
+a published request is not executed stop evidence.
+
+Earlier pipelinev2 stopped before preflight and old request keys01/02 were never submitted.
+Runner916 overall future execution acceptance remains withdrawn; its fsync-only23-test proof is retained.
+[Safety record](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771),
+[review correction](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322), intercepted
+wrapper timing audit, initial source/frozen6f and every earlier fixture are preserved.
 The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6085149398) remains verified.
 
-Next: verify original asset preservation, pinned local build/dependencies/inputs, runner durability/locks/resource limits,
-status/log/output integrity, safe stop/failure/recovery, expected guest boot and strict regression/runtime smoke.
+Next: finish source-bound build03 and verify loader/runtime closure; allow the reviewed fixed pipeline to
+record actual preflight/LOCAL_VALIDATING and execute runtime-only smoke. Independently replay expected guest/
+runtime evidence, then launch the separately reviewed stop controller only after its capture/prerequisite gates.
+Verify actual gem5 report/termination/empty-cgroup/output integrity; retain every failed or partial outcome.
+Branch workflow guards defer expensive hosted gem5/full-dataset/native steady controls to reviewed local
+requests. Their commands/criteria remain; skipped work is never passed. Mainline guards await reviewed
+merge, with no self-hosted Actions runner configured.
+
 Then obtain separate review, reconcile authoritative documentation, merge the migration PR, finalize acceptance
 and publish the effective policy only when all required gates pass. See the acceptance table for unfinished gates.
+Use the installed immutable runner for local inspection:
+
+```bash
+export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
+export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py"
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status
+```
+
 Host-only progress/commands are under `$OPENRX_LOCAL_ROOT/migrations/20261009/`; per-attempt records under `executions/ID/`.
 No scientific checkpoint resume is verified.
 Malformed/torn manifests/receipts or broken ledgers fail closed; preserve bytes and an additive forensic
 copy/incident record, hold execution as `BLOCKED` for manual independent reconciliation and never overwrite or automatically rerun.
 
 Remote execution/retrieval is unavailable: visiting agents submit a complete GitHub task specification;
-the owner reviews/submits locally and publishes sanitized evidence. No listener, SSH setup or autonomous poller exists.
+the owner or an explicitly authorized local session reviews/submits locally and publishes sanitized
+evidence. The host must be online; owner presence is not required during an authorized local session.
+This supplies no remote access or authority from arbitrary issue text. No listener, SSH setup or autonomous poller exists.
 If offline, mark expensive requests blocked and continue independent lightweight work.
 Do not launch expensive full-scale sandbox or staging-host research to bypass migration gates.
 #16/M1–M5 retain their existing open scientific acceptance criteria.
+Only live #27 proof bound to the actual reviewed merge and final receipt authorizes LOCAL_ACTIVE;
+this dated STAGING handoff is not activation evidence.
 
 Exact pre-migration documents and a digest manifest are preserved under `memory/handoffs/pre-local-migration-*`.
 The following earlier handoff is retained for provenance; its temporary-path execution recipe is **inactive**.

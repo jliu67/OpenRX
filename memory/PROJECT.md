@@ -20,7 +20,10 @@ GitHub as the authority for agent coordination, source/PRs, scientific evidence,
 Migration [#27](https://github.com/jliu67/OpenRX/issues/27) is **STAGING; NOT YET ACTIVE**.
 [Policy](../docs/LOCAL_EXECUTION.md), [runbook](../docs/LOCAL_MIGRATION.md) and
 [acceptance receipt](../docs/validation/local-migration-20261009/ACCEPTANCE.md) describe actual availability.
-Remote agents have no host access; requests/results use an owner-mediated GitHub/local workflow, currently untested end to end.
+Remote agents must not assume host access. Requests/results use the owner-mediated GitHub/local
+workflow, operated by the owner or an explicitly authorized local session; the owner need not be present.
+The current migration session is authorized locally, without provisioning a remote execution interface.
+Actual end-to-end result retrieval remains untested.
 No permanent roles or coordinator, network listener, SSH deployment or autonomous job poller is introduced.
 
 Preserve every prior scientific artifact/configuration/build/result/checkpoint/log and all milestone history.

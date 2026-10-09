@@ -1,0 +1,62 @@
+{
+  "controller": {
+    "bytes": 21944,
+    "mode": "0o664",
+    "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/prove_gem5_stop_v1.py",
+    "sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817"
+  },
+  "decision": {
+    "actual_simulator_stop_demonstrated": false,
+    "migration_complete": false,
+    "scientific_acceptance": false,
+    "static_fixed_owner_stop_lifecycle_request_eligible_after_required_preflight_and_first_capture": true
+  },
+  "exact_owner_request": {
+    "bytes": 4144,
+    "mode": "0o664",
+    "path": "${OPENRX_LOCAL_ROOT}/requests/spec-issue-27-gem5-stop-migration-attempt-01.json",
+    "sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14"
+  },
+  "export_index": {
+    "bytes": 1552,
+    "mode": "0o664",
+    "path": "${OPENRX_LOCAL_ROOT}/checkouts/migration/docs/validation/local-migration-20261009/stop-proof-controller-v1/export-index.json",
+    "sha256": "8bc696a022bbd91637b7f03e41c5240e278d2f642f8cf817af3d604b1ed2fa01"
+  },
+  "exports_verified": [
+    {
+      "exact_prefix_only_verified": true,
+      "name": "prove_gem5_stop_v1.py"
+    },
+    {
+      "exact_prefix_only_verified": true,
+      "name": "spec-issue-27-gem5-stop-migration-attempt-01.json"
+    }
+  ],
+  "limitations": [
+    "No controller or simulation launched during this review.",
+    "First capture existence/integrity is prerequisite; its scientific correctness requires separate independent replay.",
+    "A host/controller failure may leave a preserved same-key execution running or finished; reentry does not duplicate it and may truthfully lack new marker-timing proof.",
+    "Immediate stop may precede guest boot or terminal creation; controller separately rechecks all immutable input/source bindings.",
+    "If a stopped guest could not emit a complete wrapper report, lifecycle acceptance fails and preserves evidence.",
+    "No graceful gem5 statistics/checkpoint finalization or verified scientific resume."
+  ],
+  "migration_state": "STAGING",
+  "request_key": "issue-27-gem5-stop-migration-attempt-01",
+  "reviewed_at": "2026-10-09T17:26:48.122664+00:00",
+  "reviewer": "scientific_inventory independent subagent; shared owner GitHub account",
+  "runner_sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882",
+  "schema": "openrx.independent.stop-controller-review.v1",
+  "source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "static_controls_reviewed": [
+    "Mandatory exact64hex owner request SHA; request schema/key/scope/source/release/controller/wrapper self bindings, readonly clean frozen source",
+    "LOCAL_VALIDATING only with evidence-bound preflight, successful source-bound build/config/binary/library/resource pins; first capture receipt verified without inferring scientific pass",
+    "Complete exact9-input set, one frozen source binding and exact allowed environment; original durable request/runner/input bindings checked before launch observation and after interruption",
+    "Exclusive request dedup and controller lock; reentry adopts existing execution and never resubmits/restarts; prior stop marker timing cannot be accepted",
+    "Actual pinned gem5 executable inode/path observed within owned named service cgroup with live pidfd before exclusive fsynced stop marker",
+    "Polling interval imposes no wall deadline; process exit checked with the retained pidfd; manager completion plus empty service cgroup required before recovery/verification",
+    "Exact wrapper interruption report status fail/interrupted true/source stop-file/marker observed/childReturncode -SIGKILL; exact runtime-only command/tick/ELF/config/resource/readfile bindings and complete receipt integrity",
+    "Accepted lifecycle receipt never claims guest boot, runtime scientific pass, graceful stats/checkpoint finalization, resume, Codex-daemon termination, host reboot, migration activation or GitHub merge"
+  ],
+  "wrapper_sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e"
+}

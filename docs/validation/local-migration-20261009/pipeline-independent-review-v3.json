@@ -1,0 +1,129 @@
+{
+  "actual_bindings": {
+    "driver": {
+      "bytes": 13936,
+      "mode": "0o664",
+      "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/validate_when_ready_v3.py",
+      "sha256": "ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910"
+    },
+    "model": {
+      "bytes": 4615,
+      "mode": "0o444",
+      "path": "${OPENRX_LOCAL_ROOT}/checkouts/execution-b4b5ffc/simulator/gem5/fs.py",
+      "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5"
+    },
+    "owner_request": {
+      "bytes": 2973,
+      "mode": "0o444",
+      "path": "${OPENRX_LOCAL_ROOT}/requests/spec-issue-27-local-runtime-b4b5ffc-attempt-01.json",
+      "sha256": "d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972"
+    },
+    "package_manifest": {
+      "bytes": 14277,
+      "mode": "0o664",
+      "path": "${OPENRX_LOCAL_ROOT}/toolchains/ubuntu22-20261009/pinned-packages.json",
+      "sha256": "c3948ff082235733e12ec2264a5c050936e4fef8547446c9389cf98036b86676"
+    },
+    "resources_manifest": {
+      "bytes": 2336,
+      "mode": "0o444",
+      "path": "${OPENRX_LOCAL_ROOT}/checkouts/execution-b4b5ffc/simulator/gem5/resources.json",
+      "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb"
+    },
+    "runner_release": {
+      "bytes": 38227,
+      "mode": "0o555",
+      "path": "${OPENRX_LOCAL_ROOT}/releases/runner-v1-988cf13f/local_execution.py",
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    "source_archive": {
+      "bytes": 16452285,
+      "mode": "0o664",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/gem5-source-c8222cc.tar.gz",
+      "sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3"
+    },
+    "source_receipt": {
+      "bytes": 1068,
+      "mode": "0o664",
+      "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/execution-source-b4b5ffc.json",
+      "sha256": "ef2f427f5980f682f464a3c28d8f1d85f8260c2b62e60a7acf3a45ae23bec8d7"
+    },
+    "wrapper": {
+      "bytes": 14953,
+      "mode": "0o444",
+      "path": "${OPENRX_LOCAL_ROOT}/checkouts/execution-b4b5ffc/simulator/gem5/run.py",
+      "sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e"
+    }
+  },
+  "core_toolchain": {
+    "full_offline_or_hermetic_closure_claimed": false,
+    "installed_core_versions_reverified": 41,
+    "selected_archives_bytes_sha256_reverified": 41
+  },
+  "decision": {
+    "bounded_owner_runtime_validation_pipeline_eligible_after_successful_build_preflight": true,
+    "cutover_or_scientific_acceptance": false,
+    "new_build_boot_runtime_correctness_verified": false
+  },
+  "exact_commands": [
+    "git -C checkouts/execution-b4b5ffc rev-parse HEAD",
+    "git -C checkouts/execution-b4b5ffc status --porcelain --untracked-files=all",
+    "git -C checkouts/execution-b4b5ffc ls-tree -rz HEAD plus actual blob andSHA256 byte comparisons",
+    "dpkg-query -W -f=${Version} for every pinned package; SHA256/byte comparison for each selected archive",
+    "systemctl --user show openrx-migration-validation-pipeline-v2-20261009.service -p ActiveState -p SubState -p MainPID"
+  ],
+  "frozen_execution_checkout": {
+    "all_tracked_sha256_bytes_match_reviewed_checkout": true,
+    "git_blob_identities_match_head": true,
+    "git_status": "",
+    "path": "${OPENRX_LOCAL_ROOT}/checkouts/execution-b4b5ffc",
+    "source_file_list_sha256": "c46c3559e49a74ee229f677558dd13bb2ebfde4c426aa8ab97c25ac40ee57a60",
+    "symlinks": 0,
+    "tracked_files_verified": 890,
+    "writable_paths": 0
+  },
+  "limitations": [
+    "This is a static exact-binding review; no simulator or pipeline launched by this reviewer.",
+    "Pipeline cannot automatically resume from an interrupted preflight/profile creation; exclusive artifacts and request claims fail closed and require additive manual reconciliation.",
+    "Python standard library and host ELF interpreter remain declared host dependencies; no complete offline/hermetic rebuild claim.",
+    "Long finalizer integration used a controlled delay on tiny output; final terminal manager properties and real large-output throughput were not captured.",
+    "Host reboot and entire active Codex daemon shutdown were not exercised."
+  ],
+  "local_execution_policy_active": false,
+  "migration_state": "STAGING",
+  "prior_evidence": {
+    "corrected_combined_review": {
+      "bytes": 6099,
+      "mode": "0o664",
+      "path": "${OPENRX_LOCAL_ROOT}/checkouts/migration/docs/validation/local-migration-20261009/final-runner-wrapper-independent-review.json",
+      "sha256": "b9d0dfad52aa22d345f858dea1d4a872491c5dcc96af3b0fa5a86ff97eeb5895"
+    },
+    "independent_tests": "287 complete repository tests including28 runner controls,40 targeted gem5 tests on unchanged988/5c source",
+    "original_frozen_wrapper_preserved": {
+      "bytes": 15114,
+      "mode": "0o444",
+      "path": "${OPENRX_LOCAL_ROOT}/checkouts/execution-6f54052/simulator/gem5/run.py",
+      "sha256": "90edcae3facc3e6348dd5902ed85627919afb0616c9187b75f995695466caaf5"
+    },
+    "pipeline_v2_inactive_verified": true,
+    "preflight_absent": true
+  },
+  "remaining_gates": [
+    "Complete source-bound build/loader/pinned runtime closure",
+    "Actual expected guest boot and independent strict9 runtime replay",
+    "Actual gem5 safe-stop/report and retained-output review",
+    "Current GitHub/documentation consistency, final-head review/merge and final acceptance receipt"
+  ],
+  "reviewed_at": "2026-10-09T17:24:02.140917+00:00",
+  "reviewer": "scientific_inventory independent subagent, shared owner GitHub account; not independent human approval",
+  "schema": "openrx.independent.pipeline-bindings-review.v3",
+  "source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "static_guards_reviewed": [
+    "Exact approved source/runner/spec plus upstream archive/resource manifest/wrapper/model identities; clean readonly unlinked source;41 current core package versions at initial check, pre-state and pre-submit",
+    "Build03 must be terminal success with successful source-bound result, loader and build-info; actual binary bytes/SHA and both actual/canonical configs match; unmodified bundle validators",
+    "Guest inputs and selected dependency archives must match exact identities and be flushed before state; exclusive runtime library copies with verified real loader resolution and pinned build-info",
+    "LOCAL_VALIDATING only after durable objective preflight plus authoritative state ledger; declared messages say NOT ACTIVE",
+    "Fixed runtime-only validation request through immutable runner: one resource slot,6G RAM/1G swap/200percent CPU/256tasks, exact recovered ELF and pinned guest/model/source, maxTicks10^13, no wall cap, no hash/full-dataset workload",
+    "After completion only recover/verify and candidate capture; independent actual guest/input/model review required; no activation, scientific milestone completion, merge or research launch"
+  ]
+}

@@ -96,6 +96,13 @@ and framing text.
 
 ## Acquire and reuse the simulator
 
+**Historical hosted recipes — DEFERRED.** The migration branch guards the expensive manual
+`gem5-build.yml` / `gem5-fs.yml` jobs with literal skips, preserving their commands and criteria.
+The workflow description below records the previous hosted path; it does not authorize dispatch.
+Mainline guards require reviewed merge, skipped jobs are never passes and no self-hosted Actions runner
+is configured. New expensive requests use the designated local runner only after verified cutover;
+scoped migration validation still requires its own prerequisite evidence.
+
 Pull requests now run fast offline controls only. The actual Linux guest job in
 [`gem5-fs.yml`](../../.github/workflows/gem5-fs.yml) is manually invoked with a
 successful **same-repository** simulator-build run ID and a separately reviewed
@@ -207,8 +214,9 @@ These tests verify the runner, **not a mocked Linux boot**. Actual local build,
 boot and nine runtime controls are separately retained in the
 [execution record](../../docs/validation/m3-fs/actual-runtime-20261008/README.md)
 and independent review above. The new hosted manual builder/cache/artifact
-reuse path has not run end to end. The ongoing light-mode attempt must complete
-its unchanged 39-control matrix before that stage can pass; task #16 remains open.
+reuse path has not run end to end. The light-mode attempt described in these historical records did not
+complete its unchanged 39-control matrix; task #16 remains open. The cited 2026-10-08 build/boot/runtime
+records are historical evidence, not a new migration-host pass or an active simulation.
 
 ## Primary sources
 

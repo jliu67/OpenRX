@@ -1,10 +1,13 @@
 # Loss-intolerant local infrastructure migration
 
 Migration task: [#27](https://github.com/jliu67/OpenRX/issues/27).
-Current state: **STAGING — NOT YET ACTIVE**; [published staging evidence](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6084197043).
+Snapshot state: **STAGING — NOT YET ACTIVE**, 2026-10-09 UTC; [published staging evidence](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6084197043).
 The [initial hub announcement](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6084177837)
 records the critical migration and inactive policy. The [acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md)
 contains actual gate outcomes and blockers; the [execution policy](LOCAL_EXECUTION.md) defines agents' interface.
+Dated snapshots are historical status records. Expensive execution becomes effective only after #27
+publishes verified `LOCAL_ACTIVE` evidence bound to the actual reviewed merge commit and final acceptance
+receipt; otherwise defer full-scale work. Use that live proof and local status for current availability.
 
 ## State transitions and evidence
 
@@ -102,7 +105,7 @@ local validation release; [final review](validation/local-migration-20261009/fin
 records exact source bindings. The generic runner's reviewed
 f6ea signal fix (25 focused controls) and tiny [systemd-notify component fixtures](validation/local-migration-20261009/systemd-notify-component/)
 are separate earlier evidence. Final accepted source passes 287 complete repository tests, including 28 runner
-controls, plus 40 targeted wrapper controls. A55.1219-second controlled finalizer delay with six actual
+controls, plus 40 targeted wrapper controls. A 55.1219-second controlled finalizer delay with six actual
 notifications and receipt integrity proves extension beyond 45 seconds. The original false test harness
 result and [audit addendum](validation/local-migration-20261009/finalizer-extension-integration/audit-addendum.json)
 are preserved with [the export index](validation/local-migration-20261009/finalizer-extension-integration/export-index.json); terminal manager properties were not captured, and no actual
@@ -110,14 +113,42 @@ large-artifact throughput or guest correctness is inferred.
 The worker stop budget remains 45 seconds; only its private `Type=simple` / `NotifyAccess=exec` finalizer
 may extend its deadline while flushing/checksumming large outputs.
 
-Preserve original/frozen source and old request keys01/02 (never submitted). A new immutable execution
-checkout from the forthcoming reviewed source commit and new request/pipeline revision03 must bind both
-accepted corrected source digests and receive separate source/request/pipeline binding review. Build03 continues under its recorded limit; no guest
-has run at this staging snapshot and no expensive research is authorized before verified cutover.
+Preserve original/frozen source and old request keys 01/02 (never submitted). The replacement readonly
+execution checkout is now pinned to `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`; runner 988/wrapper 5c,
+request revision 03 and pipeline v3 have [independently verified exact bindings](validation/local-migration-20261009/pipeline-independent-review-v3.json).
+[Runtime request](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085838632) key
+`issue-27-local-runtime-b4b5ffc-attempt-01` has SHA-256
+`d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972`.
+Driver `ace55beda…` is now running as `openrx-migration-validation-pipeline-v3-20261009.service`,
+waiting for build 03 and mandatory build/loader/toolchain/input/state preflight. No guest has run at this snapshot.
+No expensive research is authorized before verified cutover.
+The branch also guards hosted full gem5 build/full-system and full-dataset/native steady steps with literal
+skips while retaining commands/criteria. They are deferred to reviewed local requests, not counted as passes.
+The guards are not effective on main until reviewed merge; no self-hosted Actions execution channel exists.
+
+A separate [fixed stop-proof controller](validation/local-migration-20261009/stop-controller-independent-review.json)
+is reviewed but **unlaunched** until the first integrity-verified capture and its other preflight gates exist.
+Controller SHA-256 is `1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817`;
+[Published request](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085930183)
+key is `issue-27-gem5-stop-migration-attempt-01`, specification SHA-256
+`76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14`.
+It observes the exact gem5 executable in its owned cgroup through a live pidfd, creates a fresh fsynced
+stop marker, and requires report/receipt/empty-cgroup evidence. This is not yet demonstrated simulator stop.
+If the controller is interrupted, reentry may observe its existing same-key execution but cannot duplicate
+or restart it; missing original stop-marker timing cannot be accepted as a new proof. Scientific checkpoint
+resume and graceful gem5 statistics/checkpoint finalization remain unavailable.
 
 ## Stop, failure and recovery procedures
 
-Use `status EXECUTION_ID` and retained logs to establish what is actually running.
+Select the immutable release from the host installation receipt:
+
+```bash
+export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
+export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py"
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status EXECUTION_ID
+```
+
+Use that installed runner's `status EXECUTION_ID` and retained logs to establish what is actually running.
 Use `stop EXECUTION_ID`; then confirm service/child termination and retained status/receipt.
 For gem5, require its own stop handling/report where available and record missing child/report evidence explicitly.
 Do not infer graceful termination from a vanished PID, shell control-C or Codex disconnection.

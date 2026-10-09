@@ -259,3 +259,36 @@ corrected audit are preserved. Terminal manager properties were not captured; ac
 throughput/physical I/O-failure recovery and guest correctness are not asserted. Final immutable codecommit/
 execution checkout/request03/pipeline3 bindings still need review before guest submission. Migration stays
 STAGING/inactive; old execution acceptance withdrawals and every prior snapshot remain preserved.
+
+
+## Reviewed immutable source and waiting pipelinev3 — 2026-10-09 UTC
+
+Readonly sourceb4b5ffc5c5ee3f59e0e862a6979d265fd410d726/runner988/wrapper5c and runtime request03
+are independently binding-reviewed, including clean byte-exact checkout,41 current package versions/archive
+identities and all input pins. Owner runtime key issue-27-local-runtime-b4b5ffc-attempt-01 specification
+SHA d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972 is published on #27;
+exact-head PR28 review5473259439 is recorded. Fixed driverace55beda… runs in user-systemd pipelinev3,
+waiting for active build03 and successful actual binary/loader/source/input/local-validation prerequisites.
+No guest, scientific pass or policy activation is asserted from reviewed source or a waiting service.
+
+The separate fixed stop controller1d65cc6e…/spec76218e47… is independently reviewed but unlaunched
+until first verified capture and exact preflight/source/input/cgroup ownership gates exist. Old keys01/02
+were never submitted; stoppedpipelinev2, withdrawn916 overall acceptance and earlier snapshots remain
+preserved. Current docs add conditional activation authority: only verified merge-bound LOCAL_ACTIVE and
+final acceptance on #27 make expensive execution effective; dated staged/pre-cutover snapshots never do.
+Migration stays STAGING/inactive; actual guest/stop/reviewed merge/final acceptance remain pending.
+
+
+Hosted execution audit found retained expensive full gem5 build/full-system and foundation full-dataset/
+native steady commands. The migration branch is adding literal skip guards, preserving every command
+and scientific criterion while deferring expensive controls to reviewed local requests. Skipped controls
+are explicitly unexecuted, never counted as passed. Lightweight Python/vendor/upstream and small verify/
+one-cache native/QEMU correctness stay available. Main is not changed by a branch-only guard before
+reviewed merge; no self-hosted GitHub Actions runner or new remote execution channel is provisioned.
+
+
+Owner CLI documentation now selects the immutable installed runner988 release from the installation
+receipt via OPENRX_RUNNER; mutable scripts/local_execution.py remains source reference only.
+The fixed stop request is published/readback-verified on #27 at6085930183 but still unlaunched pending
+first-capture and exact ownership/preflight gates. Public source/driver exports are sanitized derivatives;
+actual local execution binds untouched host bytes. No simulator or stop outcome is inferred from publication.

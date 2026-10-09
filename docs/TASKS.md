@@ -6,7 +6,7 @@ Updated 2026-10-09 UTC after PR #25 integration and independently reviewed parti
 
 | Issue | State | Gates / execution availability |
 |---|---|---|
-| [#27](https://github.com/jliu67/OpenRX/issues/27) | **STAGING — NOT YET ACTIVE** | [Acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md): original state preservation, pinned assets/build, guest/regression/lifecycle/stop/recovery/integrity and reviewed-merge gates in progress. Original Library gem5 package currently inaccessible; separate pinned build 03 is running after preserved build 02 OOM. Guest submission is held: pipeline v2 stopped before preflight and runner 916 overall acceptance withdrawn; corrected runner 988/wrapper5c are independently accepted (287 full/40 targeted controls), while fresh codecommit/request/source/pipeline bindings and guest validation remain pending. |
+| [#27](https://github.com/jliu67/OpenRX/issues/27) | **STAGING — NOT YET ACTIVE** | [Acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md): original state preservation, pinned assets/build, guest/regression/lifecycle/stop/recovery/integrity and reviewed-merge gates in progress. Original Library gem5 package currently inaccessible; separate pinned build 03 is running after preserved build 02 OOM. Pipelinev2 stopped/runner 916 acceptance withdrawn; corrected runner 988/wrapper 5c (287 full/40 targeted controls), readonly b4b5ffc and request/pipeline v3 bindings are now reviewed. Pipelinev3 is waiting for build 03/preflight; actual guest/stop/cutover gates pending. |
 
 Read [local execution policy](LOCAL_EXECUTION.md) and [migration runbook](LOCAL_MIGRATION.md).
 After verified `LOCAL_ACTIVE`, resource-intensive work runs on the owner's Ubuntu host.
@@ -15,6 +15,8 @@ and result publication. Resource/request locks prevent local duplicates and conf
 expensive requests; continue lightweight work. No permanent coordinator, assigned roles or autonomous poller is introduced.
 Do not run expensive full-scale experiments before cutover or substitute a sandbox run.
 Infrastructure acceptance does not complete #16 or any open scientific milestone.
+Branch-only hosted expensive-job guards preserve commands and defer controls to local requests; skips
+are not passes. Mainline enforcement awaits reviewed merge; no self-hosted Actions runner exists.
 
 ## Phase 1 / M1
 
