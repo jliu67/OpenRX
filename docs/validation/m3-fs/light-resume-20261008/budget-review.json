@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-10-08T23:51:33.812129+00:00",
+  "evidence_class": "static-simulation-budget-bound",
+  "status": "independently-accepted",
+  "reviewer": "matrix_review",
+  "execution_commit": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+  "guest_elf": {
+    "path": "/tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe",
+    "bytes": 376824,
+    "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657"
+  },
+  "actual_config": {
+    "path": "/tmp/openrx-gem5-light-20261008-attempt2/m5out/config.ini",
+    "bytes": 41298,
+    "sha256": "7d5e9caf43ede0a65bf48be3b718ccac2e2fe7c7ed9df1990724b40b4ea0ddd9"
+  },
+  "pinned_gem5_source_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "atomic_source": {
+    "path": "/tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/src/cpu/simple/atomic.cc",
+    "bytes": 24164,
+    "sha256": "dd224e8f3edbfba2b99019abb7286fa58dbcd3b08c30f86bfa6381e1f0a06a0b"
+  },
+  "sources": {
+    "simulator/probe/main.cpp": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/simulator/probe/main.cpp",
+      "bytes": 15098,
+      "sha256": "855762bdcfc687c53c8ebe7f4c419415773edaf7a156d2667b3eff5cd990281d"
+    },
+    "simulator/gem5/fs.py": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/simulator/gem5/fs.py",
+      "bytes": 4615,
+      "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5"
+    },
+    "vendor/randomx/src/argon2_ref.c": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/vendor/randomx/src/argon2_ref.c",
+      "bytes": 6667,
+      "sha256": "5c2f9e59e7b7f7b252a219f46dcae28f67c7e35f03a7e489eae7ed82ddffd21e"
+    },
+    "vendor/randomx/src/argon2_core.c": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/vendor/randomx/src/argon2_core.c",
+      "bytes": 11806,
+      "sha256": "0a61aa1a747f53ac9d108c9ad5110681bf802643f347158f414df5fac8b17fab"
+    },
+    "vendor/randomx/src/configuration.h": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/vendor/randomx/src/configuration.h",
+      "bytes": 4691,
+      "sha256": "2eea9777204fd25fcd95225474dbec299e56bf56bd5915d4cf0e223ccc7be833"
+    },
+    "vendor/randomx/src/dataset.cpp": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/vendor/randomx/src/dataset.cpp",
+      "bytes": 7277,
+      "sha256": "a4ca8710e549002e9d27327b0b3313e89b1d99674bf914b2c47859ce2d753da6"
+    },
+    "vendor/randomx/src/dataset.hpp": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/vendor/randomx/src/dataset.hpp",
+      "bytes": 3886,
+      "sha256": "61fd9475e91aabaf97af62825f27792aad5b5aa0b53f9a791a26ed3b2f53a215"
+    },
+    "vendor/randomx/src/randomx.cpp": {
+      "path": "/workspace/scratch/6e40efb9c8fd/OpenRX/vendor/randomx/src/randomx.cpp",
+      "bytes": 14688,
+      "sha256": "c52f48fd1f2c22762e60de2ab6b097f8df55304303efc042d1b7ced6b3192816"
+    }
+  },
+  "fill_block_symbol": {
+    "virtual_address": "0x32972",
+    "bytes": 3084,
+    "static_instructions": 952
+  },
+  "loops": [
+    {
+      "begin": "0x32a2e",
+      "last_branch": "0x32f9e",
+      "instructions_per_iteration": 418,
+      "iterations": 8,
+      "pointer_step_bytes": 128,
+      "pointer_range_bytes": 1024,
+      "internal_branches_or_jumps": 0,
+      "atomic_instructions": 0,
+      "counter_register_other_writes": 0,
+      "bound_register_writes": 0
+    },
+    {
+      "begin": "0x32fa8",
+      "last_branch": "0x33514",
+      "instructions_per_iteration": 418,
+      "iterations": 8,
+      "pointer_step_bytes": 16,
+      "pointer_range_bytes": 128,
+      "internal_branches_or_jumps": 0,
+      "atomic_instructions": 0,
+      "counter_register_other_writes": 0,
+      "bound_register_writes": 0
+    }
+  ],
+  "argon": {
+    "blocks": 262144,
+    "passes": 3,
+    "lanes": 1,
+    "already_initialized_blocks": 2,
+    "filled_blocks_per_cache": 786430,
+    "fresh_caches": 2,
+    "cache_flags": [
+      0,
+      8
+    ],
+    "implementation": "randomx_argon2_fill_segment_ref"
+  },
+  "cpu": {
+    "type": "BaseAtomicSimpleCPU",
+    "width": 1,
+    "clock_ticks": 1000,
+    "simulate_data_stalls": false,
+    "simulate_inst_stalls": false,
+    "fast_forward_or_cpu_switching": false
+  },
+  "minimum_guest_instructions_in_round_loops": 10519287680,
+  "minimum_ticks_in_round_loops": 10519287679000,
+  "configured_ticks_per_simulate_call": 10000000000000,
+  "round_loops_exceed_budget_by_ticks": 519287679000,
+  "conclusion": "The unchanged complete light matrix cannot finish within the configured per-call tick allowance. Both cache initializations occur after hypercall 2, with no intervening exit event in the workload.",
+  "excluded_work": [
+    "boot",
+    "runtime controls",
+    "cache allocation and copies",
+    "superscalar generation",
+    "hash calculations",
+    "kernel scheduling",
+    "other probe instructions"
+  ],
+  "functional_attempt_status": "Stopped partial attempt; 9 runtime and 31 semantics accepted, zero hash values, no final runner report. Complete light gate not accepted.",
+  "recommended_next_explicit_max_ticks": 100000000000000,
+  "recommendation_guarantees_completion": false,
+  "timing_calibrated": false,
+  "power_measured": false,
+  "performance_estimate": false,
+  "signals_sent_by_reviewer": false,
+  "entry_tick_allowance_removed_ticks": 1000,
+  "entry_boundary_convention": "First counted instruction may execute at simulate-call entry tick; elapsed lower bound is (N - 1) * clock_ticks.",
+  "accepted_utc": "2026-10-08T23:56:27.463174+00:00",
+  "independent_confirmations": [
+    {
+      "reviewer": "state_review",
+      "scope": "Exact ELF full function/loops, counter and bound register invariants, reference Argon backend, fresh-cache driver, mandatory fills, no intervening exits, CPU configuration/scheduler",
+      "result": "accepted"
+    },
+    {
+      "reviewer": "runner_review",
+      "scope": "Exact loop instruction classes, no atomic or locked batching, Atomic width/clock scheduling, conservative N-1 endpoint",
+      "result": "accepted"
+    },
+    {
+      "reviewer": "root",
+      "scope": "Decoder replay and actual CPU configuration/scheduler inspection",
+      "result": "accepted",
+      "count_replay_log": "root-budget-replay.log"
+    }
+  ],
+  "recommended_next_explicit_max_ticks_executed": false
+}

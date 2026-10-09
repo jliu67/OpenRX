@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "capture_utc": "2026-10-08T23:55:27.859921+00:00",
+  "source_directory": "/tmp/openrx-gem5-light-20261008-attempt2",
+  "runner_report_present": false,
+  "files": [
+    {
+      "original_path": "guest.sh",
+      "saved_path": "raw/guest.sh",
+      "bytes": 522171,
+      "sha256": "09f195dd10de4e90bdd8edc17c8ea6bf8a18a66f74c3cf9abcd213af01c8db5d",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "09f195dd10de4e90bdd8edc17c8ea6bf8a18a66f74c3cf9abcd213af01c8db5d"
+    },
+    {
+      "original_path": "m5out/board.platform.terminal",
+      "saved_path": "raw/m5out/board.platform.terminal",
+      "bytes": 23713,
+      "sha256": "9092252d20ff4767d92cff0b89980b9df034afd5070f927cb46a8d835ac1ce84",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "9092252d20ff4767d92cff0b89980b9df034afd5070f927cb46a8d835ac1ce84"
+    },
+    {
+      "original_path": "m5out/citations.bib",
+      "saved_path": "raw/m5out/citations.bib",
+      "bytes": 5095,
+      "sha256": "457fb6f1b6d14393c87a9c71c4ab85e3dd9c5f2a84c728fe6eb628ccb58258db",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "457fb6f1b6d14393c87a9c71c4ab85e3dd9c5f2a84c728fe6eb628ccb58258db"
+    },
+    {
+      "original_path": "m5out/config.ini",
+      "saved_path": "raw/m5out/config.ini",
+      "bytes": 41298,
+      "sha256": "7d5e9caf43ede0a65bf48be3b718ccac2e2fe7c7ed9df1990724b40b4ea0ddd9",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "7d5e9caf43ede0a65bf48be3b718ccac2e2fe7c7ed9df1990724b40b4ea0ddd9"
+    },
+    {
+      "original_path": "m5out/config.json",
+      "saved_path": "raw/m5out/config.json",
+      "bytes": 104575,
+      "sha256": "d8b7bc5aa363f7c055bce9abca38fda2c2ed720c8b100b49ff388cbbf42c82f7",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "d8b7bc5aa363f7c055bce9abca38fda2c2ed720c8b100b49ff388cbbf42c82f7"
+    },
+    {
+      "original_path": "m5out/device.dtb",
+      "saved_path": "raw/m5out/device.dtb.base64",
+      "bytes": 2206,
+      "sha256": "b87f9fcf8b1e3f58f0cf671c6d70a344eeaf642d9988a012fd5897baadc68260",
+      "encoding": "base64",
+      "saved_sha256": "b5042c4414d0a543ce6b29b5a2fb9ef4b6ed499cffa8391167af081bcf18dd56"
+    },
+    {
+      "original_path": "m5out/device.dts",
+      "saved_path": "raw/m5out/device.dts",
+      "bytes": 3709,
+      "sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051"
+    },
+    {
+      "original_path": "m5out/simulation.json",
+      "saved_path": "raw/m5out/simulation.json",
+      "bytes": 745,
+      "sha256": "7a054c0b4dedbdb738d008e7b3689263d55babfe0245828991e14a4ab5c44a97",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "7a054c0b4dedbdb738d008e7b3689263d55babfe0245828991e14a4ab5c44a97"
+    },
+    {
+      "original_path": "m5out/stats.txt",
+      "saved_path": "raw/m5out/stats.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "stderr.log",
+      "saved_path": "raw/stderr.log",
+      "bytes": 1882,
+      "sha256": "4aa347ee0a0295f304cb2f26a988edb97d11dd51a35ddb3b092349f4de3a965d",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "4aa347ee0a0295f304cb2f26a988edb97d11dd51a35ddb3b092349f4de3a965d"
+    },
+    {
+      "original_path": "stdout.log",
+      "saved_path": "raw/stdout.log",
+      "bytes": 729,
+      "sha256": "6ea0aaece1e89bd1276eea2a6ac1d029db71aa9e0a13b1c97ef55bf24e85fc8b",
+      "encoding": "original UTF-8 bytes",
+      "saved_sha256": "6ea0aaece1e89bd1276eea2a6ac1d029db71aa9e0a13b1c97ef55bf24e85fc8b"
+    }
+  ]
+}

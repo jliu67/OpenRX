@@ -1,0 +1,42 @@
+{
+  "evidence_class": "host shell configuration control; no guest execution",
+  "bash_syntax": "pass",
+  "cases": [
+    {
+      "light_hashes": "false",
+      "actual_argv": [
+        "simulator/gem5/run.py",
+        "--gem5",
+        "build/gem5-simulator/gem5.opt",
+        "--resources",
+        "build/gem5-resources",
+        "--runtime-binary",
+        "build/gem5-validation/openrx-runtime-probe",
+        "--output-dir",
+        "build/gem5-validation/attempt",
+        "--max-ticks",
+        "10000000000000"
+      ],
+      "status": "pass"
+    },
+    {
+      "light_hashes": "true",
+      "actual_argv": [
+        "simulator/gem5/run.py",
+        "--gem5",
+        "build/gem5-simulator/gem5.opt",
+        "--resources",
+        "build/gem5-resources",
+        "--runtime-binary",
+        "build/gem5-validation/openrx-runtime-probe",
+        "--output-dir",
+        "build/gem5-validation/attempt",
+        "--max-ticks",
+        "100000000000000",
+        "--hash-binary",
+        "build/probe-gem5/openrx-riscv-probe"
+      ],
+      "status": "pass"
+    }
+  ]
+}

@@ -1,0 +1,965 @@
+{
+  "schema_version": 1,
+  "reviewed_at_utc": "2026-10-08T23:19:41.495680+00:00",
+  "reviewer": "state_review agent (independent of patch author)",
+  "scope": "Hosted foundation, scalar RISC-V/QEMU and gem5 offline controls for PR 25 head; read-only artifact replay without workload binary execution.",
+  "outcome": "pass",
+  "repository": "jliu67/OpenRX",
+  "repository_id": 1409576804,
+  "head_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+  "head_tree": "9dc721651244beff3475be7b6df2fbde9098f6ce",
+  "base_sha": "50ba83166a9df0fca243af57a7c889ec752a59fc",
+  "merge": {
+    "sha": "1528112ccca6b256ff5cb5dbf4fe5ad6a527de99",
+    "tree": "9dc721651244beff3475be7b6df2fbde9098f6ce",
+    "parents": [
+      "50ba83166a9df0fca243af57a7c889ec752a59fc",
+      "9d108c4041e0fa440a676f8a3ee1a2db1d736192"
+    ]
+  },
+  "runs": [
+    {
+      "id": 37857787784,
+      "name": "gem5 full-system Linux functional gate",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "path": ".github/workflows/gem5-fs.yml",
+      "run_attempt": 1,
+      "created_at": "2026-10-08T23:09:02Z",
+      "updated_at": "2026-10-08T23:09:17Z",
+      "url": "https://github.com/jliu67/OpenRX/actions/runs/37857787784",
+      "checkout_sha": "1528112ccca6b256ff5cb5dbf4fe5ad6a527de99",
+      "jobs": [
+        {
+          "id": 113586047536,
+          "name": "offline-controls",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jliu67/OpenRX/actions/runs/37857787784/job/113586047536",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Verify source and offline evidence controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            }
+          ]
+        },
+        {
+          "id": 113586120254,
+          "name": "atomic-linux-runtime",
+          "status": "completed",
+          "conclusion": "skipped",
+          "url": "https://github.com/jliu67/OpenRX/actions/runs/37857787784/job/113586120254",
+          "steps": null
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "id": 37857787730,
+      "name": "RISC-V functional preflight",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "path": ".github/workflows/riscv-preflight.yml",
+      "run_attempt": 1,
+      "created_at": "2026-10-08T23:09:02Z",
+      "updated_at": "2026-10-08T23:10:17Z",
+      "url": "https://github.com/jliu67/OpenRX/actions/runs/37857787730",
+      "checkout_sha": "1528112ccca6b256ff5cb5dbf4fe5ad6a527de99",
+      "jobs": [
+        {
+          "id": 113586047060,
+          "name": "scalar-correctness",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jliu67/OpenRX/actions/runs/37857787730/job/113586047060",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Verify unchanged pinned source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install compiler and functional emulator",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Record environment and build native probe",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Native exact semantic and v1/v2 controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Native Linux signal, protection and code-overwrite controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Build scalar RISC-V probe",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "QEMU RV64GC exact semantic and v1/v2 controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "QEMU Linux signal, protection and explicit cache-flush controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Preserve logs, binary and configuration even on failure",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 22
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 11584598469,
+          "name": "riscv-functional-preflight",
+          "size_in_bytes": 462343,
+          "url": "https://api.github.com/repos/jliu67/OpenRX/actions/artifacts/11584598469",
+          "expired": false,
+          "created_at": "2026-10-08T23:10:14Z",
+          "expires_at": "2027-01-06T23:09:02Z",
+          "updated_at": "2026-10-08T23:10:14Z",
+          "digest": "sha256:de061f9c2bf8f146a5ce87dec9f19247e1f5de252aa78f9df98d8ef94a4fe8db"
+        }
+      ]
+    },
+    {
+      "id": 37857787697,
+      "name": "Foundation and Phase 1 checks",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "path": ".github/workflows/ci.yml",
+      "run_attempt": 1,
+      "created_at": "2026-10-08T23:09:02Z",
+      "updated_at": "2026-10-08T23:12:41Z",
+      "url": "https://github.com/jliu67/OpenRX/actions/runs/37857787697",
+      "checkout_sha": "1528112ccca6b256ff5cb5dbf4fe5ad6a527de99",
+      "jobs": [
+        {
+          "id": 113586047235,
+          "name": "correctness",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jliu67/OpenRX/actions/runs/37857787697/job/113586047235",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Verify source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Phase 1 tooling regression tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Reproduce static workload profile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Build pinned source and steady adapter",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Upstream correctness tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Both algorithm smoke runs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Full-dataset reference controls (not a performance baseline)",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Same-process native controls (not a performance baseline)",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Preserve validation logs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 22
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 11584129552,
+          "name": "correctness-logs",
+          "size_in_bytes": 69510,
+          "url": "https://api.github.com/repos/jliu67/OpenRX/actions/artifacts/11584129552",
+          "expired": false,
+          "created_at": "2026-10-08T23:12:38Z",
+          "expires_at": "2027-01-06T23:09:02Z",
+          "updated_at": "2026-10-08T23:12:38Z",
+          "digest": "sha256:5e732dd1e3c599d37c01c9e74be48441b22c2b5838fc643eef3c73d38185ff7c"
+        }
+      ]
+    },
+    {
+      "id": 37857783793,
+      "name": "RISC-V functional preflight",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "path": ".github/workflows/riscv-preflight.yml",
+      "run_attempt": 1,
+      "created_at": "2026-10-08T23:09:00Z",
+      "updated_at": "2026-10-08T23:10:20Z",
+      "url": "https://github.com/jliu67/OpenRX/actions/runs/37857783793",
+      "checkout_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "jobs": [
+        {
+          "id": 113586034103,
+          "name": "scalar-correctness",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jliu67/OpenRX/actions/runs/37857783793/job/113586034103",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Verify unchanged pinned source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Install compiler and functional emulator",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Record environment and build native probe",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Native exact semantic and v1/v2 controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Native Linux signal, protection and code-overwrite controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Build scalar RISC-V probe",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "QEMU RV64GC exact semantic and v1/v2 controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "QEMU Linux signal, protection and explicit cache-flush controls",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Preserve logs, binary and configuration even on failure",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 22
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 11584553495,
+          "name": "riscv-functional-preflight",
+          "size_in_bytes": 462339,
+          "url": "https://api.github.com/repos/jliu67/OpenRX/actions/artifacts/11584553495",
+          "expired": false,
+          "created_at": "2026-10-08T23:10:17Z",
+          "expires_at": "2027-01-06T23:09:00Z",
+          "updated_at": "2026-10-08T23:10:17Z",
+          "digest": "sha256:4fb9d6958799a90f52bc37910a7abf5add53038cc232a8f9ac5963d5da20020e"
+        }
+      ]
+    },
+    {
+      "id": 37857783755,
+      "name": "Foundation and Phase 1 checks",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "path": ".github/workflows/ci.yml",
+      "run_attempt": 1,
+      "created_at": "2026-10-08T23:09:00Z",
+      "updated_at": "2026-10-08T23:12:44Z",
+      "url": "https://github.com/jliu67/OpenRX/actions/runs/37857783755",
+      "checkout_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "jobs": [
+        {
+          "id": 113586033827,
+          "name": "correctness",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jliu67/OpenRX/actions/runs/37857783755/job/113586033827",
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 1
+            },
+            {
+              "name": "Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 2
+            },
+            {
+              "name": "Verify source",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 3
+            },
+            {
+              "name": "Phase 1 tooling regression tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 4
+            },
+            {
+              "name": "Reproduce static workload profile",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 5
+            },
+            {
+              "name": "Build pinned source and steady adapter",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 6
+            },
+            {
+              "name": "Upstream correctness tests",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 7
+            },
+            {
+              "name": "Both algorithm smoke runs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 8
+            },
+            {
+              "name": "Full-dataset reference controls (not a performance baseline)",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 9
+            },
+            {
+              "name": "Same-process native controls (not a performance baseline)",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 10
+            },
+            {
+              "name": "Preserve validation logs",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 11
+            },
+            {
+              "name": "Post Run actions/checkout@v4",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 22
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success",
+              "number": 23
+            }
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 11584548717,
+          "name": "correctness-logs",
+          "size_in_bytes": 69500,
+          "url": "https://api.github.com/repos/jliu67/OpenRX/actions/artifacts/11584548717",
+          "expired": false,
+          "created_at": "2026-10-08T23:12:41Z",
+          "expires_at": "2027-01-06T23:09:00Z",
+          "updated_at": "2026-10-08T23:12:41Z",
+          "digest": "sha256:97914efc12c8d692be5971a19a3aa392744a0c84303ae320b7a7bacd58ee32f3"
+        }
+      ]
+    }
+  ],
+  "raw_logs": [
+    {
+      "name": "offline-pr",
+      "job_id": 113586047536,
+      "run_id": 37857787784,
+      "path": "offline-pr-job-113586047536.log",
+      "bytes": 18375,
+      "sha256": "aefab11174d5cba8e7d21d6972dcc0aac5d792055aeba466a133c93754d48988",
+      "exact_decoded_connector_log_preserved": true
+    },
+    {
+      "name": "riscv-pr",
+      "job_id": 113586047060,
+      "run_id": 37857787730,
+      "path": "riscv-pr-job-113586047060.log",
+      "bytes": 56801,
+      "sha256": "dbf8cd1ae3f9282259560b6edea26f97dfd11d5d4bd5c4575232ec987e5051f0",
+      "exact_decoded_connector_log_preserved": true
+    },
+    {
+      "name": "riscv-push",
+      "job_id": 113586034103,
+      "run_id": 37857783793,
+      "path": "riscv-push-job-113586034103.log",
+      "bytes": 55902,
+      "sha256": "6c67aaecd52b0d71ae58714b3c3fa5ad31ddb3a4b2e122534cb16a61379c8dab",
+      "exact_decoded_connector_log_preserved": true
+    },
+    {
+      "name": "foundation-pr",
+      "job_id": 113586047235,
+      "run_id": 37857787697,
+      "path": "foundation-pr-job-113586047235.log",
+      "bytes": 72470,
+      "sha256": "ae36b9b861d4917aa6956d757199a0117e0c7a46778942ed9346ac2f34cf77c1",
+      "exact_decoded_connector_log_preserved": true
+    },
+    {
+      "name": "foundation-push",
+      "job_id": 113586033827,
+      "run_id": 37857783755,
+      "path": "foundation-push-job-113586033827.log",
+      "bytes": 71571,
+      "sha256": "d6e8ae8961eac91bd7fa488f44ef8d5cf3462e81f5b235d4a0f4605c9d6916f4",
+      "exact_decoded_connector_log_preserved": true
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "simulator/gem5/run.py",
+      "git_blob_sha": "987ee06d05e7501348589a7c12acb973be29f8b1",
+      "sha256": "e0bd968231f5d4d6a3f99d45fa630013ed9894d9b4b4f7e74917095cf4fb7a17",
+      "bytes": 12692,
+      "head_and_merge_content_identical": true,
+      "url": "https://github.com/jliu67/OpenRX/blob/9d108c4041e0fa440a676f8a3ee1a2db1d736192/simulator/gem5/run.py"
+    },
+    {
+      "path": "tests/test_gem5_fs.py",
+      "git_blob_sha": "f7dabbfafca165ed5aa537df70a4d6e83cf00e7b",
+      "sha256": "97b9a9a26e832d6a4d624482b191f323b2a20b837bd0e87e68e08f78f05cca4f",
+      "bytes": 20502,
+      "head_and_merge_content_identical": true,
+      "url": "https://github.com/jliu67/OpenRX/blob/9d108c4041e0fa440a676f8a3ee1a2db1d736192/tests/test_gem5_fs.py"
+    }
+  ],
+  "artifact_replay": [
+    {
+      "artifact_id": 11584129552,
+      "sha256": "5e732dd1e3c599d37c01c9e74be48441b22c2b5838fc643eef3c73d38185ff7c",
+      "bytes": 69510,
+      "status": "pass",
+      "zip_crc_verified": true,
+      "member_count": 36,
+      "python_tests_passed": 253,
+      "upstream_tests_passed": 107,
+      "native_tests_passed": 6,
+      "static_profile_verified": true,
+      "checkout_sha": [
+        "1528112ccca6b256ff5cb5dbf4fe5ad6a527de99"
+      ],
+      "benchmark_replays": [
+        {
+          "mode": "verify",
+          "nonces": 2,
+          "raw_streams_replayed": 2,
+          "known_reference_required": false
+        },
+        {
+          "mode": "mine",
+          "nonces": 1000,
+          "raw_streams_replayed": 2,
+          "known_reference_required": true
+        }
+      ],
+      "steady_replays": [
+        {
+          "threads": 1,
+          "aes": "hardware",
+          "status": "ok",
+          "controls_passed": 2,
+          "rejected_measurements": 0,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        },
+        {
+          "threads": 1,
+          "aes": "software",
+          "status": "ok",
+          "controls_passed": 2,
+          "rejected_measurements": 0,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        },
+        {
+          "threads": 3,
+          "aes": "software",
+          "status": "ok",
+          "controls_passed": 2,
+          "rejected_measurements": 0,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        },
+        {
+          "threads": 2,
+          "aes": "hardware",
+          "status": "rejected-duration",
+          "controls_passed": 2,
+          "rejected_measurements": 4,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        }
+      ],
+      "controls_passed": 8,
+      "intervals_replayed": 36,
+      "duration_rejections_verified": 4,
+      "cli_rejections_verified": 16,
+      "differential_cases_verified": 2,
+      "api_digest_matches_download": true,
+      "safe_unique_relative_zip_members": true
+    },
+    {
+      "artifact_id": 11584548717,
+      "sha256": "97914efc12c8d692be5971a19a3aa392744a0c84303ae320b7a7bacd58ee32f3",
+      "bytes": 69500,
+      "status": "pass",
+      "zip_crc_verified": true,
+      "member_count": 36,
+      "python_tests_passed": 253,
+      "upstream_tests_passed": 107,
+      "native_tests_passed": 6,
+      "static_profile_verified": true,
+      "checkout_sha": [
+        "9d108c4041e0fa440a676f8a3ee1a2db1d736192"
+      ],
+      "benchmark_replays": [
+        {
+          "mode": "verify",
+          "nonces": 2,
+          "raw_streams_replayed": 2,
+          "known_reference_required": false
+        },
+        {
+          "mode": "mine",
+          "nonces": 1000,
+          "raw_streams_replayed": 2,
+          "known_reference_required": true
+        }
+      ],
+      "steady_replays": [
+        {
+          "threads": 1,
+          "aes": "hardware",
+          "status": "ok",
+          "controls_passed": 2,
+          "rejected_measurements": 0,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        },
+        {
+          "threads": 1,
+          "aes": "software",
+          "status": "ok",
+          "controls_passed": 2,
+          "rejected_measurements": 0,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        },
+        {
+          "threads": 3,
+          "aes": "software",
+          "status": "ok",
+          "controls_passed": 2,
+          "rejected_measurements": 0,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        },
+        {
+          "threads": 2,
+          "aes": "hardware",
+          "status": "rejected-duration",
+          "controls_passed": 2,
+          "rejected_measurements": 4,
+          "raw_sha256_verified": true,
+          "source_sha256_verified": true
+        }
+      ],
+      "controls_passed": 8,
+      "intervals_replayed": 36,
+      "duration_rejections_verified": 4,
+      "cli_rejections_verified": 16,
+      "differential_cases_verified": 2,
+      "api_digest_matches_download": true,
+      "safe_unique_relative_zip_members": true
+    },
+    {
+      "artifact_id": 11584553495,
+      "sha256": "4fb9d6958799a90f52bc37910a7abf5add53038cc232a8f9ac5963d5da20020e",
+      "bytes": 462339,
+      "status": "pass",
+      "zip_crc_verified": true,
+      "member_count": 26,
+      "checkout_sha": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+      "streams": [
+        {
+          "environment": "native",
+          "validated": {
+            "required_checks_passed": 39,
+            "optional_skips": 1,
+            "software_hash_cases": 8,
+            "compiled_architecture": "x86_64"
+          },
+          "raw_sha256": "8624baa187789ed979f59af1882b0b69cc820fc317e640570f696c731ab8f9f0",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": null
+        },
+        {
+          "environment": "qemu",
+          "validated": {
+            "required_checks_passed": 39,
+            "optional_skips": 1,
+            "software_hash_cases": 8,
+            "compiled_architecture": "riscv64"
+          },
+          "raw_sha256": "d224866efbeefc877d3500a27f8e93eb746795a77ae8f1c854a06c41849d2d9b",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": "0e310b9c39a24685cc10d907e6db7056b8bff3e4bb43ddf23e524acd593367fc"
+        },
+        {
+          "environment": "runtime-native",
+          "validated": {
+            "checks_passed": 9,
+            "architecture": "x86_64",
+            "flush_path": "compiler-builtin",
+            "timing_calibrated": false
+          },
+          "raw_sha256": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": null
+        },
+        {
+          "environment": "runtime-qemu",
+          "validated": {
+            "checks_passed": 9,
+            "architecture": "riscv64",
+            "flush_path": "linux-riscv-flush-icache",
+            "timing_calibrated": false
+          },
+          "raw_sha256": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac"
+        }
+      ],
+      "scalar_main_fp_flags_verified": true,
+      "api_digest_matches_download": true,
+      "safe_unique_relative_zip_members": true
+    },
+    {
+      "artifact_id": 11584598469,
+      "sha256": "de061f9c2bf8f146a5ce87dec9f19247e1f5de252aa78f9df98d8ef94a4fe8db",
+      "bytes": 462343,
+      "status": "pass",
+      "zip_crc_verified": true,
+      "member_count": 26,
+      "checkout_sha": "1528112ccca6b256ff5cb5dbf4fe5ad6a527de99",
+      "streams": [
+        {
+          "environment": "native",
+          "validated": {
+            "required_checks_passed": 39,
+            "optional_skips": 1,
+            "software_hash_cases": 8,
+            "compiled_architecture": "x86_64"
+          },
+          "raw_sha256": "8624baa187789ed979f59af1882b0b69cc820fc317e640570f696c731ab8f9f0",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": null
+        },
+        {
+          "environment": "qemu",
+          "validated": {
+            "required_checks_passed": 39,
+            "optional_skips": 1,
+            "software_hash_cases": 8,
+            "compiled_architecture": "riscv64"
+          },
+          "raw_sha256": "d224866efbeefc877d3500a27f8e93eb746795a77ae8f1c854a06c41849d2d9b",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": "0e310b9c39a24685cc10d907e6db7056b8bff3e4bb43ddf23e524acd593367fc"
+        },
+        {
+          "environment": "runtime-native",
+          "validated": {
+            "checks_passed": 9,
+            "architecture": "x86_64",
+            "flush_path": "compiler-builtin",
+            "timing_calibrated": false
+          },
+          "raw_sha256": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": null
+        },
+        {
+          "environment": "runtime-qemu",
+          "validated": {
+            "checks_passed": 9,
+            "architecture": "riscv64",
+            "flush_path": "linux-riscv-flush-icache",
+            "timing_calibrated": false
+          },
+          "raw_sha256": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7",
+          "stderr_empty": true,
+          "riscv_elf_sha256_verified": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac"
+        }
+      ],
+      "scalar_main_fp_flags_verified": true,
+      "api_digest_matches_download": true,
+      "safe_unique_relative_zip_members": true
+    }
+  ],
+  "hosted_test_results": {
+    "foundation_pull_request": {
+      "python": 253,
+      "upstream": 107,
+      "native_steady": 6,
+      "vendor_files": 171,
+      "python_seconds": 7.317,
+      "native_steady_seconds": 140.585
+    },
+    "foundation_push": {
+      "python": 253,
+      "upstream": 107,
+      "native_steady": 6,
+      "vendor_files": 171,
+      "python_seconds": 7.342,
+      "native_steady_seconds": 144.174
+    },
+    "riscv_each_event": {
+      "native_required_hash_semantic_checks": 39,
+      "qemu_required_hash_semantic_checks": 39,
+      "software_hash_cases_each": 8,
+      "optional_hardware_aes_skips_each_hash_probe": 1,
+      "native_runtime_checks": 9,
+      "qemu_runtime_checks": 9,
+      "qemu_cpu": "rv64,v=false",
+      "qemu_sysroot": "/usr/riscv64-linux-gnu",
+      "native_flush_path": "compiler-builtin",
+      "qemu_flush_path": "linux-riscv-flush-icache",
+      "timing_calibrated": false
+    },
+    "gem5_offline": {
+      "tests": 34,
+      "seconds": 4.664,
+      "vendor_files": 171,
+      "actual_host_process_signals_exercised": true,
+      "namespace_correct_cleanup_assertions": true
+    }
+  },
+  "expected_rejections_and_skips": {
+    "steady_duration_rejections": "Four intentional measurement rejections per foundation artifact; reproduced rejected-duration status.",
+    "invalid_steady_cli_options": "Sixteen intentional CLI rejections per foundation artifact.",
+    "hardware_aes": "One optional hardware-AES skip in each native and QEMU hash probe; all required checks passed.",
+    "gem5_guest": {
+      "run_id": 37857787784,
+      "job_id": 113586120254,
+      "name": "atomic-linux-runtime",
+      "conclusion": "skipped",
+      "reason": "PR event; workflow condition requires workflow_dispatch",
+      "workflow_path": ".github/workflows/gem5-fs.yml"
+    }
+  },
+  "limits": [
+    "No hosted gem5 build or guest execution occurred in these runs; the offline job exercises wrapper and evidence controls with synthetic simulators and real host processes.",
+    "The separately monitored local gem5 light-mode guest run is outside this review and has no acceptance result established here.",
+    "Native and QEMU checks are functional evidence, not calibrated RISC-V hardware timing, BOOM validation, power, hashes/J, or full-dataset gem5 acceptance.",
+    "The newly hosted RISC-V hash ELF digest 0e310b9c39a24685cc10d907e6db7056b8bff3e4bb43ddf23e524acd593367fc differs from the retained 61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657 guest input; each run must retain its own ELF digest binding.",
+    "Native ELF binaries are absent from the uploaded RISC-V artifact; native output and reported bindings were replayed, but native ELF bytes were not independently rehashed.",
+    "Artifacts expire on 2027-01-06; exact raw hosted logs and replay summaries are preserved in this directory."
+  ],
+  "replay_method": {
+    "workload_binaries_executed_locally": false,
+    "simulator_build_or_run_duplicated": false,
+    "validators": [
+      "tests/native_riscv_probe.py:validate_output",
+      "tests/native_runtime_probe.py:validate_output",
+      "scripts/steady_benchmark.py:validate",
+      "scripts/benchmark.py:parse_output,summarize"
+    ],
+    "checks": [
+      "Artifact download size and SHA256 equal GitHub artifact API and upload records.",
+      "ZIP CRC plus unique, safe relative members.",
+      "Exact raw output validators equal recorded validation objects; return codes, stderr and raw SHA256 bindings checked.",
+      "Uploaded RISC-V ELF64/little-endian/machine 243 and SHA256 bindings checked.",
+      "Pinned static profile, v1/v2 full-dataset 1000-nonce references, steady source/output digests, summaries and upstream differential streams checked."
+    ]
+  }
+}

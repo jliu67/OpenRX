@@ -113,10 +113,14 @@ jobs:
       - name: Run Linux boot and guest controls (no project wall-time limit)
         run: |
           extra=()
+          tick_guard=10000000000000
           if [ "$LIGHT_HASHES" = 'true' ]; then
+            # Exact retained-ELF cache loops alone exceed the runtime-only guard.
+            # A larger finite allowance is proposed, not a completion guarantee.
+            tick_guard=100000000000000
             extra=(--hash-binary build/probe-gem5/openrx-riscv-probe)
           fi
-          python3 simulator/gem5/run.py --gem5 build/gem5-simulator/gem5.opt --resources build/gem5-resources --runtime-binary build/gem5-validation/openrx-runtime-probe --output-dir build/gem5-validation/attempt --max-ticks 10000000000000 "${extra[@]}"
+          python3 simulator/gem5/run.py --gem5 build/gem5-simulator/gem5.opt --resources build/gem5-resources --runtime-binary build/gem5-validation/openrx-runtime-probe --output-dir build/gem5-validation/attempt --max-ticks "$tick_guard" "${extra[@]}"
       - name: Preserve preparation, actual execution and failures
         if: always()
         uses: actions/upload-artifact@v4

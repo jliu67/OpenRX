@@ -72,7 +72,7 @@ def extract_probe(raw, name):
     return body, errors[0]
 
 
-def run_process(command, *, stdout, stderr, timeout):
+def run_process(command, *, stdout, stderr, timeout, stop_file=None):
     """Wait for our new session, stopping its whole group on early exit.
 
     Signals during Popen are recorded until the child object is available, so
@@ -81,6 +81,7 @@ def run_process(command, *, stdout, stderr, timeout):
     """
     process = None
     interrupted_signal = None
+    stop_requested = False
     handlers = {}
     result = {"returncode": None}
 
@@ -88,6 +89,10 @@ def run_process(command, *, stdout, stderr, timeout):
         nonlocal interrupted_signal
         if interrupted_signal is None:
             interrupted_signal = signum
+            # This is observed request context, not a unique OS-signal sender:
+            # a coincident host SIGINT cannot be distinguished from our SIGINT.
+            result["interruption_source"] = (
+                "stop-file" if stop_requested and signum == signal.SIGINT else "host-signal")
         result.update(returncode=None, interrupted=True,
                       interruption_signal=signal.Signals(interrupted_signal).name)
         # Never raise into arbitrary launch/wait/cleanup bytecode. Killing an
@@ -102,6 +107,8 @@ def run_process(command, *, stdout, stderr, timeout):
                 result["signal_cleanup_error"] = str(exc)
 
     try:
+        if stop_file is not None and os.path.lexists(stop_file):
+            raise ValueError("Stop file already exists at launch: " + str(stop_file))
         for signum in (signal.SIGINT, signal.SIGTERM):
             handlers[signum] = signal.signal(signum, interrupt)
         completed = False
@@ -112,7 +119,33 @@ def run_process(command, *, stdout, stderr, timeout):
                     os.killpg(process.pid, signal.SIGKILL)
                 except ProcessLookupError:
                     pass
-            result["returncode"] = process.wait(timeout=timeout or None)
+            if stop_file is None:
+                result["returncode"] = process.wait(timeout=timeout or None)
+            else:
+                deadline = time.monotonic() + timeout if timeout else None
+                while True:
+                    result["returncode"] = process.poll()
+                    if result["returncode"] is not None:
+                        break
+                    if interrupted_signal is None and os.path.lexists(stop_file):
+                        result["stop_file_observed"] = True
+                        stop_requested = True
+                        signal.raise_signal(signal.SIGINT)
+                        result["returncode"] = process.wait()
+                        break
+                    wait_seconds = 0.2
+                    if deadline is not None:
+                        remaining = deadline - time.monotonic()
+                        if remaining <= 0:
+                            raise subprocess.TimeoutExpired(command, timeout)
+                        wait_seconds = min(wait_seconds, remaining)
+                    try:
+                        result["returncode"] = process.wait(timeout=wait_seconds)
+                        break
+                    except subprocess.TimeoutExpired:
+                        # A polling interval is not a wall timeout. The one
+                        # original deadline is checked again on the next pass.
+                        pass
             completed = True
         except subprocess.TimeoutExpired:
             result["timed_out"] = True
@@ -145,10 +178,14 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--timeout", type=int, default=0,
                         help="Optional positive wall-clock limit in seconds; 0 (default) disables the limit")
+    parser.add_argument("--stop-file", type=Path,
+                        help="Optional nonexistent path; creating it requests interruption and a retained failure report")
     parser.add_argument("--max-ticks", type=int, default=10**13)
     args = parser.parse_args()
     if args.timeout < 0 or args.max_ticks <= 0:
         parser.error("timeout must be nonnegative and max-ticks must be positive")
+    if args.stop_file is not None:
+        args.stop_file = args.stop_file.absolute()
     args.output_dir = args.output_dir.resolve()
     args.output_dir.mkdir(parents=True, exist_ok=False)
     report = {"schema_version": 1, "evidence_class": "full-system-functional",
@@ -159,8 +196,12 @@ def main():
               "gem5_source_commit_expected": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
               "source_build_provenance_required_separately": True,
               "max_ticks_per_simulate_call": args.max_ticks}
+    if args.stop_file is not None:
+        report["stop_file"] = str(args.stop_file)
     started = time.monotonic()
     try:
+        if args.stop_file is not None and os.path.lexists(args.stop_file):
+            raise ValueError("Stop file already exists at launch: " + str(args.stop_file))
         args.gem5 = args.gem5.resolve(strict=True)
         args.resources = args.resources.resolve(strict=True)
         binaries = {"runtime": args.runtime_binary.resolve(strict=True)}
@@ -185,7 +226,8 @@ def main():
                    "--max-ticks", str(args.max_ticks)]
         report["command"] = command
         with (args.output_dir / "stdout.log").open("wb") as stdout, (args.output_dir / "stderr.log").open("wb") as stderr:
-            report.update(run_process(command, stdout=stdout, stderr=stderr, timeout=args.timeout))
+            report.update(run_process(command, stdout=stdout, stderr=stderr, timeout=args.timeout,
+                                      stop_file=args.stop_file))
         simulation_path = outdir / "simulation.json"
         if simulation_path.exists():
             report["simulation"] = json.loads(simulation_path.read_text())

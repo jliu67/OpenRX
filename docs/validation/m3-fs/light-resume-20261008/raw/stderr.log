@@ -1,0 +1,19 @@
+Could not find platform dependent libraries <exec_prefix>
+warn: Max ticks has already been set prior to setting it through the run call. In these cases the max ticks set through the `run` function is used
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (2048 Mbytes)
+board.platform.terminal: Listening for connections on port 3456
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+board.remote_gdb: Listening for connections on port 7000
+src/arch/riscv/linux/fs_workload.cc:162: info: Loaded bootloader '/tmp/openrx-fs-resource-audit/opensbi' at 0x80000000
+src/arch/riscv/linux/fs_workload.cc:179: info: Loaded kernel '/tmp/openrx-fs-resource-audit/vmlinux' at 0x80200000
+src/arch/riscv/linux/fs_workload.cc:222: info: Loaded DTB '/tmp/openrx-gem5-light-20261008-attempt2/m5out/device.dtb' at 0x87e00000
+src/arch/riscv/isa.cc:707: warn: Ignoring write to miscreg HPMCOUNTER03.
+src/arch/riscv/isa.cc:707: warn: Ignoring write to miscreg HPMCOUNTER03.
+src/dev/riscv/vio_mmio.cc:216: warn: Ignoring queue resize hint. Requested size: 16
+src/arch/riscv/isa.cc:1052: warn: 446405957000: context 0: 10000 consecutive SC failures.
+src/arch/riscv/isa.cc:1052: warn: 692963049000: context 0: 20000 consecutive SC failures.
+src/arch/riscv/isa.cc:1052: warn: 1043303536000: context 0: 30000 consecutive SC failures.
+src/arch/riscv/isa.cc:1052: warn: 1598086527000: context 0: 40000 consecutive SC failures.
+src/arch/riscv/isa.cc:1052: warn: 2153010130000: context 0: 50000 consecutive SC failures.

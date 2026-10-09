@@ -130,3 +130,22 @@ hashes per joule or silicon advantage is established.
 ## Final streaming revision CI
 
 All checks at `4f4cf17880ccfa2e904eb9d2dc23892b828bce12` passed: 245 Python, 107 upstream, six native steady and 26 gem5 offline controls; 39 RandomX and nine runtime controls in each native/QEMU environment. The [final CI ledger](streaming-ci-20261008/ci-review.json) binds all five successful push/PR runs, full decoded logs and final functional source digests. The guest CI job remains explicitly skipped. [Independent streaming acceptance](STREAMING-REVIEW-20261008.md) covers executed host Bash interruption/failure controls; actual gem5 runs retain the old runner snapshot.
+
+## Extended unchanged attempt and reviewed execution budget
+
+[The extended run record](light-resume-20261008/README.md) preserves the
+PR #25 runner execution, exact raw serial/configuration, launch snapshots and
+post-session input audit. All nine runtime controls and 31 integer/FP records
+passed independent replay; no hash values or complete matrix were emitted.
+A manual tool-session stop followed proof that the `10^13` tick guard cannot
+cover both mandatory cache initializations. No actual wall/tick timeout event
+was observed, and no final runner report was generated; these limitations
+remain explicit. No matching runner or simulator process remains.
+
+[The accepted static budget review](light-resume-20261008/BUDGET-REVIEW.md)
+counts the exact ELF loops and actual Atomic configuration. The next unchanged
+light attempt should declare `--max-ticks 100000000000000` and a fresh optional
+`--stop-file PATH`, while retaining monitoring and all strict acceptance
+requirements. The larger guard is not a completion or performance guarantee.
+[PR #25 hosted CI replay](cancellation-20261008/ci-review.md) is separate
+native/QEMU/host evidence; the new stop-file controls are also host tests.

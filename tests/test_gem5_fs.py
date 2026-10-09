@@ -347,11 +347,57 @@ time.sleep(60)
         self.assertNotIn("timed_out", report)
 
     def test_opt_in_timeout_cleans_group_and_retains_completed_runtime(self):
-        process = self.start_runner("--timeout", "2")
+        stop_file = self.root / "unused-stop-request"
+        process = self.start_runner("--timeout", "2", "--stop-file", str(stop_file))
         self.wait_ready(process)
         report = self.assert_partial_failure(process)
         self.assertTrue(report["timed_out"])
         self.assertNotIn("interrupted", report)
+        self.assertNotIn("stop_file_observed", report)
+        self.assertFalse(stop_file.exists())
+
+    def test_stop_file_requests_cleanup_and_retains_completed_runtime(self):
+        stop_file = self.root / "stop-request"
+        process = self.start_runner("--stop-file", str(stop_file))
+        self.wait_ready(process)
+        stop_file.write_text("stop requested by test\n")
+        report = self.assert_partial_failure(process)
+        self.assertTrue(report["interrupted"])
+        self.assertEqual(report["interruption_signal"], "SIGINT")
+        self.assertEqual(report["interruption_source"], "stop-file")
+        self.assertEqual(report["stop_file"], str(stop_file))
+        self.assertTrue(report["stop_file_observed"])
+        self.assertIsNone(report["timeout_seconds"])
+        self.assertNotIn("timed_out", report)
+        self.assertEqual(stop_file.read_text(), "stop requested by test\n")
+
+    def test_stale_stop_file_or_dangling_symlink_rejected_without_launch(self):
+        for kind in ("file", "dangling-symlink"):
+            with self.subTest(kind=kind):
+                stop_file = self.root / ("stale-" + kind)
+                if kind == "file":
+                    stop_file.write_text("stale request\n")
+                else:
+                    stop_file.symlink_to(self.root / "missing-target")
+                self.output = self.root / ("attempt-" + kind)
+                self.command[self.command.index("--output-dir") + 1] = str(self.output)
+                process = self.start_runner("--stop-file", str(stop_file))
+                stdout, stderr = process.communicate(timeout=5)
+                self.assertEqual(process.returncode, 1, stderr.decode())
+                report = json.loads(stdout)
+                self.assertEqual(report, json.loads((self.output / "report.json").read_text()))
+                self.assertEqual(report["status"], "fail")
+                self.assertEqual(report["stop_file"], str(stop_file))
+                self.assertIn("already exists at launch", report["error"])
+                self.assertFalse(self.pids.exists())
+                self.assertNotIn("command", report)
+                self.assertNotIn("interrupted", report)
+                self.assertNotIn("timed_out", report)
+                self.assertTrue(os.path.lexists(stop_file))
+                if kind == "file":
+                    self.assertEqual(stop_file.read_text(), "stale request\n")
+                else:
+                    self.assertEqual(stop_file.readlink(), self.root / "missing-target")
 
     def test_successful_runtime_keeps_default_unlimited_and_strict_completion(self):
         (self.root / "complete").touch()
@@ -366,6 +412,46 @@ time.sleep(60)
         self.assertIsNone(report["timeout_seconds"])
         self.assertNotIn("interrupted", report)
         self.assertNotIn("timed_out", report)
+
+    def test_successful_runtime_with_stop_watch_leaves_marker_absent(self):
+        (self.root / "complete").touch()
+        stop_file = self.root / "unused-stop-request"
+        index = self.command.index("--hash-binary")
+        del self.command[index:index + 2]
+        process = self.start_runner("--stop-file", str(stop_file))
+        stdout, stderr = process.communicate(timeout=5)
+        self.assertEqual(process.returncode, 0, stderr.decode())
+        report = json.loads(stdout)
+        self.assertEqual(report["status"], "pass")
+        self.assertEqual(report["returncode"], 0)
+        self.assertEqual(report["stop_file"], str(stop_file))
+        self.assertIsNone(report["timeout_seconds"])
+        self.assertNotIn("stop_file_observed", report)
+        self.assertNotIn("interrupted", report)
+        self.assertNotIn("timed_out", report)
+        self.assertFalse(stop_file.exists())
+
+    def test_late_marker_does_not_relabel_already_completed_child(self):
+        (self.root / "complete").touch()
+        self.output.mkdir()
+        stop_file = self.root / "late-stop-request"
+        original_popen = subprocess.Popen
+        child = None
+
+        def completed_launch(*args, **kwargs):
+            nonlocal child
+            child = original_popen(*args, **kwargs)
+            self.assertEqual(child.wait(timeout=5), 0)
+            stop_file.write_text("request after child exit\n")
+            return child
+
+        with mock.patch.object(run.subprocess, "Popen", side_effect=completed_launch):
+            result = run.run_process([str(self.fake), "--outdir=" + str(self.output)],
+                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                                     timeout=0, stop_file=stop_file)
+        self.assertEqual(result, {"returncode": 0})
+        self.assert_reaped(child.pid)
+        self.assertEqual(stop_file.read_text(), "request after child exit\n")
 
     def test_signal_during_launch_is_cleaned_and_handlers_restored(self):
         original_handlers = {n: signal.getsignal(n) for n in (signal.SIGINT, signal.SIGTERM)}

@@ -55,3 +55,18 @@ helper's unchanged no-cutoff behavior. These logs are not final acceptance.
 
 This repair and its tests are separate from the actual guest evidence. No hash,
 full-dataset, calibrated timing, measured power or RTL result follows from them.
+
+## Hosted checks and integration
+
+[The independent CI review](ci-review.md) binds five passing source-head jobs,
+exact decoded logs, four digest-verified artifacts and strict replay of all
+native/QEMU streams. [The machine-readable ledger](ci-review.json) preserves
+run/job/artifact identities, retention and reviewed file hashes. The actual
+gem5 guest job was skipped by its manual guard.
+
+PR #25 merged at `abe066f7c1b17cb3225b55cc45848a153a20ea7a`; its whole tree
+`9dc721651244beff3475be7b6df2fbde9098f6ce` equals tested source head
+`9d108c4041e0fa440a676f8a3ee1a2db1d736192`. The separate actual attempt uses
+that runner and the original retained simulator/payloads; see
+[execution preflight](../light-resume-20261008/preflight.json). Its completion
+must be assessed from its own raw report and independent review.

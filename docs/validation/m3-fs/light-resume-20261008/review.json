@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "reviewed_utc": "2026-10-08T23:59:05.331876+00:00",
+  "reviewer": "matrix_review",
+  "evidence_class": "independently-replayed-partial-full-system-functional",
+  "status": "partial-accepted-complete-light-gate-not-accepted",
+  "execution_commit": "9d108c4041e0fa440a676f8a3ee1a2db1d736192",
+  "executing_runner_sha256": "e0bd968231f5d4d6a3f99d45fa630013ed9894d9b4b4f7e74917095cf4fb7a17",
+  "raw_manifest_entries_independently_verified": 11,
+  "raw_serial": {
+    "bytes": 23713,
+    "sha256": "9092252d20ff4767d92cff0b89980b9df034afd5070f927cb46a8d835ac1ce84"
+  },
+  "runtime": {
+    "accepted": true,
+    "checks_passed": 9,
+    "architecture": "riscv64",
+    "flush_path": "linux-riscv-flush-icache",
+    "complete_frames": true,
+    "guest_exit_status": 0,
+    "framed_stderr_empty": true,
+    "jsonl_sha256": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7"
+  },
+  "light": {
+    "complete_gate_accepted": false,
+    "required_controls_expected": 39,
+    "semantic_controls_passed": 31,
+    "integer_controls_passed": 7,
+    "fp_controls_passed": 24,
+    "software_hash_values_present": 0,
+    "software_hash_cases_expected": 8,
+    "partial_records": 33,
+    "hash_end_frame_present": false,
+    "hash_stderr_frames_present": false,
+    "summary_present": false,
+    "guest_completion_marker_present": false,
+    "last_record": {
+      "type": "stage",
+      "name": "cache-init",
+      "status": "begin",
+      "engine": "interpreter",
+      "cache_flags": 0
+    },
+    "strict_full_validator_accepted": false,
+    "strict_full_validator_error": "Missing initial config or final summary",
+    "partial_jsonl_sha256": "59f8ff146d0e7e0c9871aa4dc8d98ab6ca183bd1682567f69654bcc9b3eb73a1"
+  },
+  "simulation": {
+    "events": [
+      {
+        "event": "kernel-booted",
+        "hypercall": 1,
+        "tick": 379381390000
+      },
+      {
+        "event": "after-boot-started",
+        "hypercall": 2,
+        "tick": 674367239000
+      }
+    ],
+    "complete_hypercall_sequence": false,
+    "retained_checkpoint_execution_stage": "running",
+    "last_tick_is_final_live_tick": false,
+    "configured_max_ticks_per_simulate_call": 10000000000000
+  },
+  "termination": {
+    "request_method": "single control-C request to tracked execution session via write_stdin",
+    "requested_utc": "2026-10-08T23:54:06.788178+00:00",
+    "tool_session_exit_code": 1,
+    "tool_session_output": "^C",
+    "final_runner_report_present": false,
+    "actual_runner_signal_receipt": "unavailable",
+    "actual_simulator_child_returncode": "unavailable",
+    "runner_performed_reaping_established": false,
+    "wall_timeout_observed": false,
+    "tick_guard_exit_observed": false,
+    "hash_mismatch_observed": false,
+    "independent_exact_output_argument_process_match_utc": "2026-10-08T23:58:20.150056+00:00",
+    "independent_exact_output_argument_process_matches": []
+  },
+  "input_binding": {
+    "source_snapshots_verified": 8,
+    "sources_unchanged_in_post_audit": 8,
+    "post_audit_observed_utc": "2026-10-08T23:55:54.225894+00:00",
+    "post_audit_is_final_runner_report": false,
+    "post_audit_sha256": "92d0a8b69b2849d1618db02f6aef73b74573a63cc1ab8530b15a820a97ce8a35",
+    "resource_digests_match_pinned_manifest": 3,
+    "saved_guest_payloads_independently_decoded_and_matched": 2,
+    "subsequent_live_runner_changes_excluded_from_execution_claim": true
+  },
+  "budget": {
+    "status": "independently-accepted",
+    "minimum_round_loop_instructions": 10519287680,
+    "conservative_minimum_round_loop_ticks": 10519287679000,
+    "configured_tick_guard_insufficient": true,
+    "independent_confirmations": [
+      "state_review",
+      "runner_review",
+      "root replay"
+    ],
+    "proposed_next_explicit_max_ticks": 100000000000000,
+    "proposed_next_guard_executed": false,
+    "proposed_next_guard_guarantees_completion": false,
+    "initial_default_guard_recommendation_superseded_by_exact_elf_proof": true
+  },
+  "full_dataset": false,
+  "timing_calibrated": false,
+  "power_measured": false,
+  "performance_claim": false,
+  "rtl_readiness_claim": false
+}

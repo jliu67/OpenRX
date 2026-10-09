@@ -1,0 +1,22 @@
+Working directory: /workspace/scratch/6e40efb9c8fd/OpenRX
+LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu
+
+exec env LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu python3 simulator/gem5/run.py \
+  --gem5 /tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt \
+  --resources /tmp/openrx-fs-resource-audit \
+  --runtime-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe \
+  --hash-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe \
+  --output-dir /tmp/openrx-gem5-light-20261008-attempt2 \
+  --max-ticks 10000000000000
+
+No --timeout argument: default 0 disables wall cutoff. The simulated tick
+allowance is unchanged from the prior attempt. Launch in a monitored PTY so
+explicit cancellation signals reach the runner's foreground process group.
+Input binding, strict runtime/hash validation and evidence retention are in
+the executing run.py snapshot; the process is not an unattended background job.
+
+Post-session correction: the tracked tool/session control-C stopped execution
+with exit 1 but generated no final runner report. The assumption above that
+this tool path would deliver a gracefully handled runner signal was not
+established. See cancellation.json and REVIEW.md; do not infer a runner
+signal receipt or direct-child wait outcome from that tool response.
