@@ -1,0 +1,85 @@
+{
+  "AST_valid": true,
+  "accepted_for_owner_controlled_launch": true,
+  "actions": "Read-only complete source/spec/diffs/preparation controls and preserved historical raw byte predicates plus accepted science receipt verification. No module execute/import, jobs, submit, signals, recovery, service, state, GitHub or commits.",
+  "actual_running_stop_accepted": false,
+  "actual_v3_delta_verified_exactly": "Only separate key/work namespace, schema version, and LF-only markers changed to exact observed raw CRLF; all other controller code is byte-identical to fully reviewed v2.",
+  "at": "2026-10-09T20:23:05.363462+00:00",
+  "author_pure_controls": {
+    "bytes": 2935,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v3-preparation-controls.json",
+    "sha256": "a42e0841aebd5104bd760fb7869aa5475733b3ef799d5e389f243282fd5c9354"
+  },
+  "controller": {
+    "bytes": 27134,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v3.py",
+    "sha256": "6743268de7074a27e2fcf16e2c8f8cea2ae2af6fd5dc495c2e4b762867171c39"
+  },
+  "controller_launched": false,
+  "independent_pure_marker_checks": {
+    "LF_normalized_rejected": true,
+    "empty_serial_rejected": true,
+    "known_original_raw_CRLF": true,
+    "wrong_HART_count_rejected": true,
+    "wrong_firmware_rejected": true
+  },
+  "migration_complete": false,
+  "original_UART_bytes_changed": false,
+  "original_retained_raw_serial": {
+    "bytes": 18286,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/board.platform.terminal",
+    "sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b"
+  },
+  "owner_external_scientific_gate": {
+    "accepted_review": {
+      "bytes": 33067,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+      "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+    },
+    "actual_accepted": true,
+    "limitation": "The generic controller checks first-capture receipt and integrity, not this independent scientific review file. Root owner must enforce the separately named exact12db accepted science gate before launch; current raw file was independently read/verified in this review."
+  },
+  "preserved_unlaunched_v2_controller": {
+    "bytes": 27128,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v2.py",
+    "sha256": "cbf10fd095bdfee352c711d575949d848c3c262883c41fee430ccfb90ec46612"
+  },
+  "preserved_v2_hold_review": {
+    "bytes": 3399,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v2-static-independent-review-20261009T201925850499Z.json",
+    "sha256": "bdd6f47a3a84e89d25b88b5835e78dbe24c0d1427dad0a31916f18400553799a"
+  },
+  "remaining_runtime_requirements": [
+    "Actual new controller/runner unit must observe pinned live G plus exact firmware stage and retain marker timing/snapshot.",
+    "Independent actual stop review and source/input/output/receipt verification must accept the real outcome; this static receipt supplies no runtime pass."
+  ],
+  "request": {
+    "bytes": 5829,
+    "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-gem5-stop-migration-attempt-03.json",
+    "sha256": "d425c756d2ac184a56d61de80a8ade0dafd226da29657e4567a2cb0a1e261010"
+  },
+  "reviewed_guards": [
+    "Exact externally supplied owner request SHA pins controller/spec/sourceb4/runner988/wrapper5c and current preflight/build/G/guest/library provenance before submission.",
+    "Manifest must bind complete nine-input set, exactly one immutable frozen source and exact default env plus pinned LD_LIBRARY_PATH; runner rechecks inputs/source/request/runner before and after execution.",
+    "Fixed key adoption and nonblocking controller lock prevent duplicate submissions/controller conflicts; no scientific checkpoint resume.",
+    "Known successful manager queries/states only; explicit actual service cgroup name, pinned G path/device/inode and same live pidfd before serial observation.",
+    "Serial read uses O_NOFOLLOW|O_NONBLOCK, fstat regular check and maximum256KiB+1 read; exactOpenSBI1.3.1+oneHART rawCRLF predicate; no stored serial normalization.",
+    "Same pinned pidfd must remain live after snapshot and before exclusive fsynced stop marker; evidence/snapshot/marker files use O_EXCL and parent fsync.",
+    "After stop require original pidfd exit and retained actual service cgroup no population/PIDs, then recover/verify immutable output inventory and external receipt binding.",
+    "Require statusfail/interruptedTrue/stop-file source/stop observed/runtimeFalse; actual exact-int child returncode, report/stdout equal and wrapper PROCESS_FAILED return1, without assuming SIGKILL or treating child exit0 as scientific success.",
+    "Retained pre-stop snapshot digest/size remains unchanged and final raw serial begins with its exactbytes; reportG/config/resource/readfile/ELF/scope controls remain fixed.",
+    "Expected interruption never passes nine-case science/completeboot/timing/power/statistics/checkpointresume/hostreboot/Codextermination/cutover gates."
+  ],
+  "schema": "openrx.gem5-stop-controller.static-independent-review.v3",
+  "v3_v1_diff": {
+    "bytes": 10561,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v3-v1.diff",
+    "sha256": "95ff32c52296a065f25f90cba9fb241e78be540388cac22fdc064148d5460bd7"
+  },
+  "v3_v2_diff": {
+    "bytes": 1676,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v3-v2.diff",
+    "sha256": "5400acdc272d4de5479625b1d958dfdc0e3db00883da435487c6a027ed98ba5d"
+  },
+  "whole_source_and_spec_reviewed": true
+}

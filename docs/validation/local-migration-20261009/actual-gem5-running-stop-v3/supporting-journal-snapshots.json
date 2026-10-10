@@ -1,0 +1,33 @@
+{
+  "additional_peer": {
+    "bytes": 7577,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-actual-running-stop03-review-20261010T054559271329Z.json",
+    "sha256": "161b8661dcd0b4794b941bd20c1a59eedf46ab9210a005de5d6622995adf21e6"
+  },
+  "at": "2026-10-10T05:48:53.905016+00:00",
+  "review": {
+    "bytes": 22375,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/independent-running-stop-review.json",
+    "sha256": "2976b682e856a429f9022ad89c6c9a7538775881f82c0da01976e1fd99936348"
+  },
+  "schema": "openrx.running-stop.supporting-journal-snapshots.v1",
+  "scope": "Exact immutable snapshots at public export; historical988 configured CPU quota is not live kernel enforcement. No activation.",
+  "snapshots": [
+    {
+      "observed_from": "$OPENRX_LOCAL_ROOT/state/events.jsonl",
+      "snapshot": {
+        "bytes": 1607,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/state-events-at-export.jsonl",
+        "sha256": "78a09a72999e5f801475738546d05c79a7ee9cbf269dd54e6431973d545ceb16"
+      }
+    },
+    {
+      "observed_from": "$OPENRX_LOCAL_ROOT/state/execution-receipts.jsonl",
+      "snapshot": {
+        "bytes": 1267,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/execution-receipts-at-export.jsonl",
+        "sha256": "d33c239ce16b062df65f7b67651141575e5ebeaf0f1ac31871c034a0a931e10b"
+      }
+    }
+  ]
+}

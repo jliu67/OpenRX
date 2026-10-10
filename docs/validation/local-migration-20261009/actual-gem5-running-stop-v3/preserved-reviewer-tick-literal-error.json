@@ -1,0 +1,21 @@
+{
+  "accepted_running_firmware_stop": false,
+  "actions": "Read-only hashes, pinned runner verify/check_bindings/events, isolated AST pure model helper, manager show and proc/cgroup reads. No simulator, signal, service mutation, submit, recover, state, GitHub or commits.",
+  "activation_authorized": false,
+  "checks": [],
+  "errors": [
+    "ValueError: actual tick frequency absent"
+  ],
+  "finished_at": "2026-10-10T05:43:04.479560+00:00",
+  "limitations": [
+    "Reviewer authored controller6743268 and is independent of root operator launch. Separate scientific_inventory static03bda review accepted source; additional independent actual outcome review is still required for technical gate map.",
+    "Reviewer did not hold the original live simulator pidfd; verifies immutable source-bound external controller witness and current terminal identity/cgroup.",
+    "OpenSBI firmware execution before stop is proven; this stop does not complete guest Linux boot or nine runtime controls. Separate first runtime12db supplies scientific acceptance.",
+    "No graceful statistics/checkpoint finalization, scientific resume, physical reboot or whole Codex daemon shutdown is demonstrated.",
+    "Historical runner988 resource limits6GiB/200% are actual proven scope; owner new6CPU/safe-memory policy requires a separately reviewed new release, not relabeling these units."
+  ],
+  "migration_complete": false,
+  "schema": "openrx.independent-gem5-running-firmware-stop-review.v1",
+  "scientific_acceptance": "unverified; interrupted running firmware is lifecycle evidence only",
+  "started_at": "2026-10-10T05:42:35.718266+00:00"
+}

@@ -1,0 +1,77 @@
+{
+  "accepted": true,
+  "actual_simulator_observed": {
+    "cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T200904Z-854b672fc611.service",
+    "commandline": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt --outdir=$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/m5out $OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/fs.py --resources $OPENRX_LOCAL_ROOT/artifacts/guest-resources-ranged-20261009 --readfile $OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/guest.sh --max-ticks 10000000000000 ",
+    "exe": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+    "exe_device": 2051,
+    "exe_inode": 22574966,
+    "pid": 86797,
+    "pidfd_opened_while_live": true,
+    "proc_stat": "86797 (gem5.opt) R 86631 86797 86797 0 -1 4194304 7068 0 0 0 14 2 0 0 30 10 1 0 40217056 138956800 17194 18446744073709551615 94746969960448 94747004979853 140730618754816 0 0 0 0 16781440 268439074 0 0 0 17 1 0 0 0 0 0 94747018247120 94747019743546 94747240235008 140730618760458 140730618760956 140730618760956 140730618761089 0\n",
+    "utc": "2026-10-09T20:09:55.882064+00:00"
+  },
+  "execution_id": "20261009T200904Z-854b672fc611",
+  "final_cgroup": {
+    "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T200904Z-854b672fc611.service",
+    "pids": [],
+    "populated": false,
+    "present": false
+  },
+  "final_unit": {
+    "ActiveState": "failed",
+    "ControlGroup": "",
+    "ExecMainCode": "1",
+    "ExecMainStatus": "1",
+    "LoadState": "loaded",
+    "Result": "exit-code",
+    "SubState": "failed",
+    "query_returncode": 0
+  },
+  "finished_utc": "2026-10-09T20:10:17.180230+00:00",
+  "limitations": [
+    "No graceful gem5 stats/checkpoint finalization is claimed",
+    "No complete guest boot or runtime acceptance is inferred from this stop test",
+    "No host reboot or full Codex daemon termination is tested"
+  ],
+  "manifest": {
+    "bytes": 158666,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/manifest.json",
+    "sha256": "63a459e43dc8998ea85fa30f7560cc4be29f6a22b689aab9e767f6c62d06ddbd"
+  },
+  "marker_created_after_live_observation": true,
+  "migration_complete": false,
+  "missing_proof": [],
+  "observed_process_pidfd_exit": true,
+  "output_integrity": {
+    "execution_id": "20261009T200904Z-854b672fc611",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_FAILED"
+  },
+  "receipt": {
+    "bytes": 3062,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/receipt.json",
+    "sha256": "3b62ed67bd135c6f5755a8601cf970ff7fa4cd76854ca274bf4718be4e60665d"
+  },
+  "report_controls": {
+    "boot_observed": false,
+    "child_returncode": -9,
+    "error": "Simulator interrupted by SIGINT; Missing, ambiguous or oversized guest serial log",
+    "interrupted": true,
+    "interruption_source": "stop-file",
+    "runtime_validated": false,
+    "status": "fail",
+    "stop_file_observed": true
+  },
+  "resume_verified": false,
+  "schema": "openrx.gem5.stop-proof.v1",
+  "scientific_acceptance": "unverified; expected interruption is not a scientific pass",
+  "stored_inputs_sources_runner_and_request_unchanged": true,
+  "wrapper_postcheck_limit": "Wrapper terminal check may have preceded its posthash checks; controller independently rechecked all bound inputs/sources",
+  "wrapper_report": {
+    "bytes": 4730,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/report.json",
+    "sha256": "6ce20c9275b678c94e92c4705019de68f1c7e3e38f2bbf43890ea85925a3fef9"
+  }
+}

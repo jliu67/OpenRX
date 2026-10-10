@@ -1,0 +1,22 @@
+{
+  "controller": {
+    "bytes": 21944,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v1.py",
+    "sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817"
+  },
+  "execution_id": "20261009T200904Z-854b672fc611",
+  "observed_live_simulator": {
+    "cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T200904Z-854b672fc611.service",
+    "commandline": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt --outdir=$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/m5out $OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/fs.py --resources $OPENRX_LOCAL_ROOT/artifacts/guest-resources-ranged-20261009 --readfile $OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/guest.sh --max-ticks 10000000000000 ",
+    "exe": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+    "exe_device": 2051,
+    "exe_inode": 22574966,
+    "pid": 86797,
+    "pidfd_opened_while_live": true,
+    "proc_stat": "86797 (gem5.opt) R 86631 86797 86797 0 -1 4194304 7068 0 0 0 14 2 0 0 30 10 1 0 40217056 138956800 17194 18446744073709551615 94746969960448 94747004979853 140730618754816 0 0 0 0 16781440 268439074 0 0 0 17 1 0 0 0 0 0 94747018247120 94747019743546 94747240235008 140730618760458 140730618760956 140730618760956 140730618761089 0\n",
+    "utc": "2026-10-09T20:09:55.882064+00:00"
+  },
+  "reason": "Declared migration stop lifecycle proof",
+  "request_sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14",
+  "schema": "openrx.owner.stop-request.v1"
+}

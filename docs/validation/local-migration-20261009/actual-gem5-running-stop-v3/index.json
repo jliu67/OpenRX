@@ -1,0 +1,559 @@
+{
+  "execution_id": "20261009T202537Z-a1ca7df2cf1c",
+  "files": [
+    {
+      "ordered_prefix_substitution_counts": [
+        55,
+        0
+      ],
+      "original_bytes": 22375,
+      "original_sha256": "2976b682e856a429f9022ad89c6c9a7538775881f82c0da01976e1fd99936348",
+      "public_bytes": 21825,
+      "public_path": "independent-running-stop-review.json",
+      "public_sha256": "1ae77e516039cc1d334a1a75c0a8a37b29b75787ef381f0ce4c5a6daa0894a8f",
+      "source": "migrations/20261009/independent-gem5-running-stop-review-v2/independent-running-stop-review.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        18,
+        0
+      ],
+      "original_bytes": 7577,
+      "original_sha256": "161b8661dcd0b4794b941bd20c1a59eedf46ab9210a005de5d6622995adf21e6",
+      "public_bytes": 7397,
+      "public_path": "additional-peer-review.json",
+      "public_sha256": "511a74bb42b001d3ab2e50ac50be5f26eada19dc08f1ca11e71b2d6612fd7cb7",
+      "source": "migrations/20261009/independent-actual-running-stop03-review-20261010T054559271329Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1629,
+      "original_sha256": "2a4b393cea9074816b5682d9b399f9b2603d8423fb6822cb1c5d5b84e3e9776e",
+      "public_bytes": 1629,
+      "public_path": "preserved-reviewer-tick-literal-error.json",
+      "public_sha256": "2a4b393cea9074816b5682d9b399f9b2603d8423fb6822cb1c5d5b84e3e9776e",
+      "source": "migrations/20261009/independent-gem5-running-stop-review-v1/independent-running-stop-review.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        6,
+        0
+      ],
+      "original_bytes": 1535,
+      "original_sha256": "ecbb46178561d460bbbaf4cc0975143426a1942fb0ce3f74894c1e1e46212904",
+      "public_bytes": 1475,
+      "public_path": "supporting-journal-snapshots.json",
+      "public_sha256": "9186c7b0e1a9924b71a2344befd765a3934204b3c25105beffcd11bb42418853",
+      "source": "migrations/20261009/independent-gem5-running-stop-review-v2/supporting-journal-snapshots.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 1607,
+      "original_sha256": "78a09a72999e5f801475738546d05c79a7ee9cbf269dd54e6431973d545ceb16",
+      "public_bytes": 1577,
+      "public_path": "state-events-at-export.jsonl",
+      "public_sha256": "2e061b777b3020447e6e0e2fbc37feec414b8d03eb9ff18305dcf3c9546a2e74",
+      "source": "migrations/20261009/independent-gem5-running-stop-review-v2/state-events-at-export.jsonl"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 1267,
+      "original_sha256": "d33c239ce16b062df65f7b67651141575e5ebeaf0f1ac31871c034a0a931e10b",
+      "public_bytes": 1237,
+      "public_path": "execution-receipts-at-export.jsonl",
+      "public_sha256": "cddb19c5553d86ac67775ff77946b0541ec625c51f39c100304c19128b4033a3",
+      "source": "migrations/20261009/independent-gem5-running-stop-review-v2/execution-receipts-at-export.jsonl"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 27134,
+      "original_sha256": "6743268de7074a27e2fcf16e2c8f8cea2ae2af6fd5dc495c2e4b762867171c39",
+      "public_bytes": 27124,
+      "public_path": "controller-audit-derivative.py",
+      "public_sha256": "0723b793e14c972265a26629600e82a3da84e3ed142f6dda0efa3d0852c766e7",
+      "source": "migrations/20261009/prove_gem5_stop_v3.py"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 5829,
+      "original_sha256": "d425c756d2ac184a56d61de80a8ade0dafd226da29657e4567a2cb0a1e261010",
+      "public_bytes": 5829,
+      "public_path": "owner-request03.json",
+      "public_sha256": "d425c756d2ac184a56d61de80a8ade0dafd226da29657e4567a2cb0a1e261010",
+      "source": "requests/spec-issue-27-gem5-stop-migration-attempt-03.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 4287,
+      "original_sha256": "fe515d473c2f47a0f86a7fded03357b3fa6044e199018fb096de3967037cffd2",
+      "public_bytes": 4237,
+      "public_path": "controller-launch.json",
+      "public_sha256": "cce6d53b1fe72d85a654b6baecb94308a74beb0447f81faa0364b249d796e9b4",
+      "source": "migrations/20261009/gem5-running-stop-controller-v3-launch-20261009T202455Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        11,
+        0
+      ],
+      "original_bytes": 4919,
+      "original_sha256": "1eb045171be88e3012e635a11ab0aa21fe46d7507b8ba003d00daae10b019491",
+      "public_bytes": 4809,
+      "public_path": "controller-stdout.log",
+      "public_sha256": "29aac27f73017d6301e1df812ccf339ffcd633d2ad1931831c69c082c245a4bc",
+      "source": "migrations/20261009/gem5-running-stop-controller-service-03.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        9,
+        0
+      ],
+      "original_bytes": 5736,
+      "original_sha256": "03bda96993a9ca569e9eeb0ae4e562dcf2786696740ff222297f3b3c16d631a6",
+      "public_bytes": 5646,
+      "public_path": "controller-static-independent-review.json",
+      "public_sha256": "c6e3a82c6f1d923bcf38f2aec2054824f8f6fcf576f6bb3de027f8eca95e0117",
+      "source": "migrations/20261009/gem5-stop-controller-v3-static-independent-review-20261009T202305364192Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 2935,
+      "original_sha256": "a42e0841aebd5104bd760fb7869aa5475733b3ef799d5e389f243282fd5c9354",
+      "public_bytes": 2885,
+      "public_path": "controls-v3.json",
+      "public_sha256": "9ab7ff4f7bc6c0a7c686b991778c935fbbb16211688119e125e2fb22d0fe4d52",
+      "source": "migrations/20261009/gem5-stop-controller-v3-preparation-controls.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1676,
+      "original_sha256": "5400acdc272d4de5479625b1d958dfdc0e3db00883da435487c6a027ed98ba5d",
+      "public_bytes": 1676,
+      "public_path": "diff-v3-v2.diff",
+      "public_sha256": "5400acdc272d4de5479625b1d958dfdc0e3db00883da435487c6a027ed98ba5d",
+      "source": "migrations/20261009/gem5-stop-controller-v3-v2.diff"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 10561,
+      "original_sha256": "95ff32c52296a065f25f90cba9fb241e78be540388cac22fdc064148d5460bd7",
+      "public_bytes": 10561,
+      "public_path": "diff-v3-v1.diff",
+      "public_sha256": "95ff32c52296a065f25f90cba9fb241e78be540388cac22fdc064148d5460bd7",
+      "source": "migrations/20261009/gem5-stop-controller-v3-v1.diff"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 27128,
+      "original_sha256": "cbf10fd095bdfee352c711d575949d848c3c262883c41fee430ccfb90ec46612",
+      "public_bytes": 27118,
+      "public_path": "preserved-unlaunched-v2/controller-audit-derivative.py",
+      "public_sha256": "3dd9eeb84f9b579d1419e20a178f19e7a06252a2e37b60f80150d36a001afdef",
+      "source": "migrations/20261009/prove_gem5_stop_v2.py"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 5614,
+      "original_sha256": "bcbf912013d386745efe951120b9432dd35e5c334a432f6fdcde94fb70db010a",
+      "public_bytes": 5614,
+      "public_path": "preserved-unlaunched-v2/owner-request02.json",
+      "public_sha256": "bcbf912013d386745efe951120b9432dd35e5c334a432f6fdcde94fb70db010a",
+      "source": "requests/spec-issue-27-gem5-stop-migration-attempt-02.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 2111,
+      "original_sha256": "4bd15c008b90021e81b9c1b25a7f2c8017fef3fc095516b793d4b4736ed188ba",
+      "public_bytes": 2081,
+      "public_path": "preserved-unlaunched-v2/preparation.json",
+      "public_sha256": "d315bcbdf6857240162b2de853e3ead6252d9e3f1b42acb6ae6082b4bc904072",
+      "source": "migrations/20261009/gem5-stop-controller-v2-preparation.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        4,
+        0
+      ],
+      "original_bytes": 3399,
+      "original_sha256": "bdd6f47a3a84e89d25b88b5835e78dbe24c0d1427dad0a31916f18400553799a",
+      "public_bytes": 3359,
+      "public_path": "preserved-unlaunched-v2/static-hold-review.json",
+      "public_sha256": "3e1a0623322182c75da0f82d188207ed6c0e13320661751089ae72649d0720cd",
+      "source": "migrations/20261009/gem5-stop-controller-v2-static-independent-review-20261009T201925850499Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 196,
+      "original_sha256": "29f2b1169c0492c845da929f729a2c5fe0762cf99b05cc0c41460822a8d344fa",
+      "public_bytes": 186,
+      "public_path": "controller/created-stop-marker.json",
+      "public_sha256": "f1c132115b3ec9f4c12a027c79fe69504d642ceb00c308d83dd472e4b348e9c6",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/created-stop-marker.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        21,
+        0
+      ],
+      "original_bytes": 2966,
+      "original_sha256": "07d0f04923b9ddef09b15080319565d7274c64359650ca27aebde41ddca96770",
+      "public_bytes": 2756,
+      "public_path": "controller/fixed-submission-command.json",
+      "public_sha256": "794de3fe38452152cbdc5f53c960550c64da69157e858dd02a5580d046957cbf",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/fixed-submission-command.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        6,
+        0
+      ],
+      "original_bytes": 1271,
+      "original_sha256": "a5a3ceed5bf157e5ae9e9bdc580d553d1c8654d6b1df7d9da582d19aabd23338",
+      "public_bytes": 1211,
+      "public_path": "controller/observed-live-pinned-gem5.json",
+      "public_sha256": "5c061969783cb34f2285d8c32f0408f73b35fcf02a939b78866804c408403db1",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-live-pinned-gem5.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 868,
+      "original_sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86",
+      "public_bytes": 868,
+      "public_path": "controller/observed-running-guest-serial.txt",
+      "public_sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-serial.txt"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        2,
+        0
+      ],
+      "original_bytes": 719,
+      "original_sha256": "deb0929b308a14da18c1903442b4820a1e2cfea7860f2b06496b154652adf9b7",
+      "public_bytes": 699,
+      "public_path": "controller/observed-running-guest-stage.json",
+      "public_sha256": "82feadac2e0a67c0b95471b7671438de30d85bd98319cbbcbc18b0e0b92a8309",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-stage.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        11,
+        0
+      ],
+      "original_bytes": 4919,
+      "original_sha256": "1eb045171be88e3012e635a11ab0aa21fe46d7507b8ba003d00daae10b019491",
+      "public_bytes": 4809,
+      "public_path": "controller/stop-proof-receipt.json",
+      "public_sha256": "29aac27f73017d6301e1df812ccf339ffcd633d2ad1931831c69c082c245a4bc",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/stop-proof-receipt.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 131,
+      "original_sha256": "ca02ed654d2fb89b7776d87e8e99f816bded8c812133df2431778f815bccef64",
+      "public_bytes": 131,
+      "public_path": "controller/submitted-new-request.json",
+      "public_sha256": "ca02ed654d2fb89b7776d87e8e99f816bded8c812133df2431778f815bccef64",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/submitted-new-request.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 1462,
+      "original_sha256": "c670f49f6a0fe73ba744cd8071bf9724a2b3b7136654651cf1fcc5b112beea49",
+      "public_bytes": 1452,
+      "public_path": "execution/events.jsonl",
+      "public_sha256": "943a216a996433578d8c2ec8581d433e5c04a96bc6f8bc8c0e5c725a4f7cbbd6",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/events.jsonl"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        22,
+        0
+      ],
+      "original_bytes": 158666,
+      "original_sha256": "eba5e15e9de07a14b7ae634ebfa07904c5673528066986ca31cebc5e46693918",
+      "public_bytes": 158446,
+      "public_path": "execution/manifest.json",
+      "public_sha256": "0017cac56633f3716999552b9954e0749a4ac4b5040746aaf4d8cca0f62ea974",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/manifest.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 19142,
+      "original_sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44",
+      "public_bytes": 19142,
+      "public_path": "execution/payload/guest.sh",
+      "public_sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/guest.sh"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1863,
+      "original_sha256": "f629600fb06e63b453425c70cc8471e04921bf236319d5f49b72e651b63d2f02",
+      "public_bytes": 1863,
+      "public_path": "execution/payload/m5out/board.platform.terminal",
+      "public_sha256": "f629600fb06e63b453425c70cc8471e04921bf236319d5f49b72e651b63d2f02",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/board.platform.terminal"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 5095,
+      "original_sha256": "457fb6f1b6d14393c87a9c71c4ab85e3dd9c5f2a84c728fe6eb628ccb58258db",
+      "public_bytes": 5095,
+      "public_path": "execution/payload/m5out/citations.bib",
+      "public_sha256": "457fb6f1b6d14393c87a9c71c4ab85e3dd9c5f2a84c728fe6eb628ccb58258db",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/citations.bib"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 41495,
+      "original_sha256": "410d87d130a40451ed89d7e1af78ccadb613feff0dcf05444141d863ee833f0c",
+      "public_bytes": 41445,
+      "public_path": "execution/payload/m5out/config.ini",
+      "public_sha256": "3ccd2962096d05cd3b322ad5e57833314831c0f2c0431ed7236bdeb1a671e943",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/config.ini"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 104772,
+      "original_sha256": "de70a0ef82e84b3e9c4b465beda219bf22a4f79a5480f56e81b943f527f6706c",
+      "public_bytes": 104722,
+      "public_path": "execution/payload/m5out/config.json",
+      "public_sha256": "2ece3013bd21318749b5aad05093817b00b550e9c8d8f58e93b2ab4eccd77ea8",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/config.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 3709,
+      "original_sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051",
+      "public_bytes": 3709,
+      "public_path": "execution/payload/m5out/device.dts",
+      "public_sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/device.dts"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 455,
+      "original_sha256": "6e5cea4a716382e474d8a703893e797d279bb0f39939eb76cf69736ff5be611d",
+      "public_bytes": 455,
+      "public_path": "execution/payload/m5out/simulation.json",
+      "public_sha256": "6e5cea4a716382e474d8a703893e797d279bb0f39939eb76cf69736ff5be611d",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/simulation.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_path": "execution/payload/m5out/stats.txt",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/stats.txt"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        7,
+        0
+      ],
+      "original_bytes": 5330,
+      "original_sha256": "dbd5886cab6edd93e89156e68ddacca54fcaf8b0edd8f138182b74ffe5d87e1c",
+      "public_bytes": 5260,
+      "public_path": "execution/payload/report.json",
+      "public_sha256": "15f6fa600f7598f88cbec23bb0ce0df0637009a81284ad969e3986e70dd7f496",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/report.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 1458,
+      "original_sha256": "9629b46c7113c064cff9ff5336cd36b8ff0fd127d9f33f167818586901cf9e13",
+      "public_bytes": 1428,
+      "public_path": "execution/payload/stderr.log",
+      "public_sha256": "4dfc09b8d83be285b20fb534ecdd57f8db76dc0f1b06397f31133ac8931e96ae",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/stderr.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 142,
+      "original_sha256": "6081715d676baa81c8d53a1025c2d763db1c0841a1c5461c3e3a6b1c762352cc",
+      "public_bytes": 142,
+      "public_path": "execution/process-result.json",
+      "public_sha256": "6081715d676baa81c8d53a1025c2d763db1c0841a1c5461c3e3a6b1c762352cc",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/process-result.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        21,
+        0
+      ],
+      "original_bytes": 4456,
+      "original_sha256": "aed2db8a4d78edfec6f9a314bc716b11644a76575c64adee0ff6918bb31ddba8",
+      "public_bytes": 4246,
+      "public_path": "execution/receipt.json",
+      "public_sha256": "26b2a5347401267b55b08226ba6129141f319f4933522a075ceb41ba2c4614c5",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/receipt.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_path": "execution/stderr.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/stderr.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        7,
+        0
+      ],
+      "original_bytes": 4758,
+      "original_sha256": "5ea3f9a79d71f30a3d9a07dd6189726e44294340ea5a2373bcc552197e3c31ba",
+      "public_bytes": 4688,
+      "public_path": "execution/stdout.log",
+      "public_sha256": "27d406994f90739cbd18d5392286bb87c82086ca093a10cbd45fb7bbd22ec899",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/stdout.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        9,
+        0
+      ],
+      "original_bytes": 2565,
+      "original_sha256": "d174fdde2eed2b3a0f73fdbdc3c8cfc23d38150e00424b7825d97b05649faac4",
+      "public_bytes": 2475,
+      "public_path": "execution/stop.request",
+      "public_sha256": "5b9316237d8eadb81802cda9d41776a2335d3c341019e477360ac7ddbd940e6b",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/stop.request"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        4,
+        0
+      ],
+      "original_bytes": 863,
+      "original_sha256": "8a1c9668bdf706ab2439510e07175b8d4fa6ac6eaf70d16b8e399a391dfc5e95",
+      "public_bytes": 823,
+      "public_path": "execution/submission-command.json",
+      "public_sha256": "bebbbaaf145a229bbaab25503c0eb3de023e66d6c8d15349afe0ba0b35c42b3c",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/submission-command.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 41,
+      "original_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_bytes": 41,
+      "public_path": "execution/submission-result.json",
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/submission-result.json"
+    }
+  ],
+  "historical_resource_scope": "Manager configured6GiB/200% only; this run did not capture kernel CPU enforcement. New owner600%/safe-memory profile and kernel probe remain separate cutover prerequisites.",
+  "local_active": false,
+  "method": "Exact ordered designated-root/original-checkout byte-prefix substitutions only; no newline normalization, JSON reserialization, scientific edits or hostname replacement. Complete physical-host-name token absent. Exported controllers are audit derivatives, not deployed scripts.",
+  "migration_complete": false,
+  "omitted_private_receipt_bound_artifacts": [
+    {
+      "bytes": 2206,
+      "reason": "Binary generated artifact remains private and receipt-bound.",
+      "sha256": "b87f9fcf8b1e3f58f0cf671c6d70a344eeaf642d9988a012fd5897baadc68260",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/device.dtb"
+    },
+    {
+      "bytes": 949,
+      "reason": "Contains physical host-name token; preserved raw, bound in receipt/review, omitted from exact-prefix-only public export.",
+      "sha256": "6255edca5e8dcdbd3d1807274bc0ec5e8991044d12f1d4ee8fa6f698c585be6c",
+      "source": "executions/20261009T202537Z-a1ca7df2cf1c/payload/stdout.log"
+    }
+  ],
+  "preservation": "Prior initialization-only test01, unlaunched LF-only draft02 and reviewer literal failure remain unchanged; no false science/activation.",
+  "runner_snapshot": "Retained local runner988 snapshot is bound by manifest/receipt; not duplicated in public package.",
+  "running_firmware_stop_independently_accepted": true,
+  "schema": "openrx.running-firmware-stop.public-export.v3",
+  "scientific_acceptance": "unverified; interrupted test is lifecycle evidence",
+  "scope": "Actual pinned simulator executing expected OpenSBI1.3.1/oneHART before exclusive stop marker; interruption/failed scientific report preserved. Separate original guest9 scientific acceptance remains independent.",
+  "state": "LOCAL_VALIDATING",
+  "utc": "2026-10-10T05:48:55.674288+00:00"
+}

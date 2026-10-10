@@ -1,0 +1,355 @@
+{
+  "files": [
+    {
+      "ordered_prefix_substitution_counts": [
+        28,
+        0
+      ],
+      "original_bytes": 14352,
+      "original_sha256": "42f5bcf52493be9146d7b288d36d24452986cc594ec2ff27e3e2b852ad56d90e",
+      "public_bytes": 14072,
+      "public_path": "independent-initialization-stop-review.json",
+      "public_sha256": "842014f1a3a0e43b89539770f9041b4de8fe297519b9a4fd7b41f1dc3a307393",
+      "source": "migrations/20261009/independent-gem5-initialization-stop-review-v2/independent-initialization-stop-review.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1387,
+      "original_sha256": "8010148c37126df8b05f46b55a00cb6098cfea041c6c822045da0c07960fd231",
+      "public_bytes": 1387,
+      "public_path": "reviewer-field-error-preserved.json",
+      "public_sha256": "8010148c37126df8b05f46b55a00cb6098cfea041c6c822045da0c07960fd231",
+      "source": "migrations/20261009/independent-gem5-stop-review-v1/independent-gem5-stop-review.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        4,
+        0
+      ],
+      "original_bytes": 1181,
+      "original_sha256": "d52c01090f0318a17a9eee9cbff039783e2da776124dd622a52aadd0482facd5",
+      "public_bytes": 1141,
+      "public_path": "supporting-journal-snapshots.json",
+      "public_sha256": "e086c799f7b7fa11712412c99d9493900e544e3185bf9da1d0a189b50d7037fc",
+      "source": "migrations/20261009/independent-gem5-initialization-stop-review-v2/supporting-journal-snapshots.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        3,
+        0
+      ],
+      "original_bytes": 1607,
+      "original_sha256": "78a09a72999e5f801475738546d05c79a7ee9cbf269dd54e6431973d545ceb16",
+      "public_bytes": 1577,
+      "public_path": "state-events-at-export.jsonl",
+      "public_sha256": "2e061b777b3020447e6e0e2fbc37feec414b8d03eb9ff18305dcf3c9546a2e74",
+      "source": "migrations/20261009/independent-gem5-initialization-stop-review-v2/state-events-at-export.jsonl"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        2,
+        0
+      ],
+      "original_bytes": 824,
+      "original_sha256": "70020302f648d5e92d436809768654c55161c143b81cf7620ad1b73e3946b08b",
+      "public_bytes": 804,
+      "public_path": "execution-receipts-at-export.jsonl",
+      "public_sha256": "bc60f2267900498f29a16dd53d8d74ab4fa87d7afb87501385916109695a9d57",
+      "source": "migrations/20261009/independent-gem5-initialization-stop-review-v2/execution-receipts-at-export.jsonl"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 21944,
+      "original_sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817",
+      "public_bytes": 21934,
+      "public_path": "controller-audit-derivative.py",
+      "public_sha256": "7df7367ef0b6b76603bbf9ff760d62d845122e3e7b2dd26524a817d9d0393e26",
+      "source": "migrations/20261009/prove_gem5_stop_v1.py"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 4144,
+      "original_sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14",
+      "public_bytes": 4144,
+      "public_path": "owner-request.json",
+      "public_sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14",
+      "source": "requests/spec-issue-27-gem5-stop-migration-attempt-01.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 2308,
+      "original_sha256": "76c71e536918e9ffad965a6442d6f32903a9bdbabba149183ee5c6e463b102a0",
+      "public_bytes": 2258,
+      "public_path": "controller-launch.json",
+      "public_sha256": "aacdd2fb39b2fc0efd0fc5eec36300d8665d1d0e387cf4d25a3a9a46b37198c0",
+      "source": "migrations/20261009/gem5-stop-controller-launch-20261009T200823Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        9,
+        0
+      ],
+      "original_bytes": 3838,
+      "original_sha256": "d01d54a713c3250c5ffec5d3d5f343005f6d689f7658de44b61e6c51fe1ca178",
+      "public_bytes": 3748,
+      "public_path": "controller-stdout.log",
+      "public_sha256": "8ec74c5d4ae31592a043a5dccac2c4557c7fd364643dbeaee9a37f1caa43fde7",
+      "source": "migrations/20261009/gem5-stop-controller-service-01.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 196,
+      "original_sha256": "ead10887d65f1aaacad83e889c20579090eb89091b40116c2cb862832b1a90df",
+      "public_bytes": 186,
+      "public_path": "controller/created-stop-marker.json",
+      "public_sha256": "a4131931145896ca39758b792f2627911e14fb800894eacd7a0985712d85dd8c",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/created-stop-marker.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        21,
+        0
+      ],
+      "original_bytes": 2966,
+      "original_sha256": "17493695c6a047dbef71b080be666f9f3f9834bc06b5fd33f5bd28ff4d410c1e",
+      "public_bytes": 2756,
+      "public_path": "controller/fixed-submission-command.json",
+      "public_sha256": "e92bf5cbce66b408757ba8d779378e9152f0799c2a103fb59498f0fbf06c635c",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/fixed-submission-command.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        6,
+        0
+      ],
+      "original_bytes": 1263,
+      "original_sha256": "1bb2d0bd1592995022ea8fe696072c1ee56f6e424bb7a9d1ff17c30d8f9c17d2",
+      "public_bytes": 1203,
+      "public_path": "controller/observed-live-pinned-gem5.json",
+      "public_sha256": "69ecea6c1343d3d508d543ef9fba372bb59c0caf3c609fb372ff55f8bde9d93c",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/observed-live-pinned-gem5.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        9,
+        0
+      ],
+      "original_bytes": 3838,
+      "original_sha256": "d01d54a713c3250c5ffec5d3d5f343005f6d689f7658de44b61e6c51fe1ca178",
+      "public_bytes": 3748,
+      "public_path": "controller/stop-proof-receipt.json",
+      "public_sha256": "8ec74c5d4ae31592a043a5dccac2c4557c7fd364643dbeaee9a37f1caa43fde7",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/stop-proof-receipt.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 131,
+      "original_sha256": "629c1b998acfd38df1d385566957880bf77d86a0ce1c0097876d813230cadb51",
+      "public_bytes": 131,
+      "public_path": "controller/submitted-new-request.json",
+      "public_sha256": "629c1b998acfd38df1d385566957880bf77d86a0ce1c0097876d813230cadb51",
+      "source": "migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/submitted-new-request.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 1462,
+      "original_sha256": "7e4e7623d2ca63993555878b521dc223aed59143dea78551b4d250c0c606c842",
+      "public_bytes": 1452,
+      "public_path": "execution/events.jsonl",
+      "public_sha256": "ff75dcafa67a9f9e19e7113bab93c10f7777b103a404376224f9edfccfa84a20",
+      "source": "executions/20261009T200904Z-854b672fc611/events.jsonl"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        22,
+        0
+      ],
+      "original_bytes": 158666,
+      "original_sha256": "63a459e43dc8998ea85fa30f7560cc4be29f6a22b689aab9e767f6c62d06ddbd",
+      "public_bytes": 158446,
+      "public_path": "execution/manifest.json",
+      "public_sha256": "10a09ceb70309569a10b83123b610a277164bca289e37cf4c7828add88586d63",
+      "source": "executions/20261009T200904Z-854b672fc611/manifest.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 19142,
+      "original_sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44",
+      "public_bytes": 19142,
+      "public_path": "execution/payload/guest.sh",
+      "public_sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44",
+      "source": "executions/20261009T200904Z-854b672fc611/payload/guest.sh"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_path": "execution/payload/m5out/stats.txt",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "executions/20261009T200904Z-854b672fc611/payload/m5out/stats.txt"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        7,
+        0
+      ],
+      "original_bytes": 4730,
+      "original_sha256": "6ce20c9275b678c94e92c4705019de68f1c7e3e38f2bbf43890ea85925a3fef9",
+      "public_bytes": 4660,
+      "public_path": "execution/payload/report.json",
+      "public_sha256": "1d966dce35e60b23617e26de6be692b520fa524ad4f1f8ba0ca7c40eb6c9eabe",
+      "source": "executions/20261009T200904Z-854b672fc611/payload/report.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_path": "execution/payload/stderr.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "executions/20261009T200904Z-854b672fc611/payload/stderr.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_path": "execution/payload/stdout.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "executions/20261009T200904Z-854b672fc611/payload/stdout.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 142,
+      "original_sha256": "ec34ea4179665d42471355d36e4a3c340877059ead30d16d7ed9a8954af3282a",
+      "public_bytes": 142,
+      "public_path": "execution/process-result.json",
+      "public_sha256": "ec34ea4179665d42471355d36e4a3c340877059ead30d16d7ed9a8954af3282a",
+      "source": "executions/20261009T200904Z-854b672fc611/process-result.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        14,
+        0
+      ],
+      "original_bytes": 3062,
+      "original_sha256": "3b62ed67bd135c6f5755a8601cf970ff7fa4cd76854ca274bf4718be4e60665d",
+      "public_bytes": 2922,
+      "public_path": "execution/receipt.json",
+      "public_sha256": "601b86bc555dd7d90201d4b10cb87db125bcc78be736dd4ae4215d84a70511eb",
+      "source": "executions/20261009T200904Z-854b672fc611/receipt.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 0,
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "public_path": "execution/stderr.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source": "executions/20261009T200904Z-854b672fc611/stderr.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        7,
+        0
+      ],
+      "original_bytes": 4230,
+      "original_sha256": "9ab1869abdb280eaa9f074132eac52c1475856cc4f2f447ec51c0fdd0708ce2c",
+      "public_bytes": 4160,
+      "public_path": "execution/stdout.log",
+      "public_sha256": "09c007c417dc9d3d6f3fd40d11a7525006c320292db96908ef1f2e17417b5b10",
+      "source": "executions/20261009T200904Z-854b672fc611/stdout.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        7,
+        0
+      ],
+      "original_bytes": 1764,
+      "original_sha256": "b7ffb70e80496075e3f47ecb451b13580bf18023fec6d283af2bf0c3c7911e88",
+      "public_bytes": 1694,
+      "public_path": "execution/stop.request",
+      "public_sha256": "59b4db9d5eca0891efbede241b7abaa88cdc9f1f5f3e8c8d941351d659fc95df",
+      "source": "executions/20261009T200904Z-854b672fc611/stop.request"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        4,
+        0
+      ],
+      "original_bytes": 863,
+      "original_sha256": "3ebfb83370b9aeb2968040574965f8792847a11b80078af172e926c92ac4a8e1",
+      "public_bytes": 823,
+      "public_path": "execution/submission-command.json",
+      "public_sha256": "1fb1c8fc1a38daf0dc10880afbf7fb92fefc31392e51d1aa185f55bfe3726f31",
+      "source": "executions/20261009T200904Z-854b672fc611/submission-command.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 41,
+      "original_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_bytes": 41,
+      "public_path": "execution/submission-result.json",
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "source": "executions/20261009T200904Z-854b672fc611/submission-result.json"
+    }
+  ],
+  "initialization_stop_independently_accepted": true,
+  "local_active": false,
+  "method": "Exact ordered byte-prefix substitutions only: designated local root first, original checkout second. No reserialization, newline normalization, scientific data edit or hostname replacement. Complete physical-hostname token absent after allowed substitution. Exported controller is an audit derivative, not the deployed executable.",
+  "migration_complete": false,
+  "omissions": [
+    "Runner snapshot is bound by manifest/receipt SHA988 and retained locally; use installed release/current source, not exported controller audit derivative.",
+    "No serial or nonempty stats existed in this initialization stop; no guest simulation-stage claim."
+  ],
+  "reviewer_error_preservation": "Initial peer review used wrong first-runtime JSON acceptance field and stopped safely; failed review remains raw/public and corrected review42f5 binds it.",
+  "running_guest_stop_accepted": false,
+  "schema": "openrx.initialization-stop.public-export.v1",
+  "scientific_acceptance": "unverified; interruption is lifecycle evidence",
+  "scope": "Pinned simulator initialization termination only: no serial/expected guest stage, empty stats, boot/runtime false. Running-guest stop remains pending a stronger new request.",
+  "state": "LOCAL_VALIDATING",
+  "utc": "2026-10-09T20:21:23.014333+00:00"
+}

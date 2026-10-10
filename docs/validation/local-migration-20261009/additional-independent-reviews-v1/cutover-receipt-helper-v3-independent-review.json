@@ -1,0 +1,191 @@
+{
+  "accepted": true,
+  "all_controls_match": true,
+  "anchored_exclusive_control": {
+    "bytes": 211,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/receipt-helper-v3-exclusive-control-20261010T054815668259Z.json",
+    "sha256": "aa515a6fb730896ac9443cb34a0b42cd48b53698de9e097ea827b616f8cfcdf6"
+  },
+  "controls": [
+    {
+      "actual_accept": true,
+      "correct": true,
+      "error": null,
+      "expected_accept": true,
+      "name": "owned-immutable-regular"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Evidence alias or unprotected approved receipt",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "readonly-rejects-writable"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "[Errno 40] Too many levels of symbolic links: 'symlink'",
+        "type": "OSError"
+      },
+      "expected_accept": false,
+      "name": "final-symlink"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "[Errno 20] Not a directory: 'ancestor-symlink'",
+        "type": "NotADirectoryError"
+      },
+      "expected_accept": false,
+      "name": "ancestor-symlink-read"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "[Errno 20] Not a directory: 'ancestor-symlink'",
+        "type": "NotADirectoryError"
+      },
+      "expected_accept": false,
+      "name": "ancestor-symlink-directory-before-create"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Evidence must be a locally owned regular file",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "FIFO-no-blocking"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Evidence alias or unprotected approved receipt",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "hardlink-alias"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Untrusted directory owner or writers",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "world-writable-directory-read"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Untrusted directory owner or writers",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "world-writable-directory-before-create"
+    },
+    {
+      "actual_accept": true,
+      "correct": true,
+      "error": null,
+      "expected_accept": true,
+      "name": "real-current-only-group-writable-775"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Evidence outside approved retained root",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "outside-approved-root"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Evidence outside approved retained root",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "lexical-parent-traversal"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Receipt requires a simple new filename",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "freeze-rejects-parent-escape-before-write"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "Receipt requires a simple new filename",
+        "type": "ValueError"
+      },
+      "expected_accept": false,
+      "name": "freeze-rejects-dot"
+    },
+    {
+      "actual_accept": true,
+      "correct": true,
+      "error": null,
+      "expected_accept": true,
+      "name": "actual-anchored-exclusive-fsynced-readonly-write"
+    },
+    {
+      "actual_accept": false,
+      "correct": true,
+      "error": {
+        "message": "[Errno 17] File exists: 'receipt-helper-v3-exclusive-control-20261010T054815668259Z.json'",
+        "type": "FileExistsError"
+      },
+      "expected_accept": false,
+      "name": "duplicate-freeze-preserves-existing-bytes"
+    }
+  ],
+  "helper": {
+    "bytes": 6335,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/cutover_receipt_io_v3.py",
+    "sha256": "4e28a7205acbc480c8fb55eef2c8051492c4bdd90b91994d58b2aab3b80a8a13"
+  },
+  "limitations": [
+    "No publish/gh/GitHub calls; remote readback has static review only.",
+    "Actual passwd primary and grp explicit membership used; no fake groups/monkeypatched policy or existing permissions altered.",
+    "Callers must pass readonly=True for approved C/final evidence.",
+    "Same owner/root remain trusted local actors; helper is not protection from a malicious owner/root.",
+    "public() replaces only known prefixes; callers must select bounded public-safe data and must not expose personal names/credentials from full private inspect details."
+  ],
+  "migration_complete": false,
+  "migration_state": "LOCAL_VALIDATING",
+  "preserved_fixture_directory": "$OPENRX_LOCAL_ROOT/migrations/20261009/receipt-helper-v3-independent-controls-20261010T054815668259Z",
+  "schema": "openrx.cutover-receipt-helper.independent-review.v3",
+  "scope": "Local-only explicit additive receipt I/O, not transition or scientific verification",
+  "static_checks": {
+    "ancestor_owned_trusted_group_nofollow_before_creation": true,
+    "approved_readonly_enforced_only_when_requested": true,
+    "exact_two_prefix_byte_replacements_CRLF_preserved": true,
+    "exclusive_directory_fd_creation": true,
+    "file_and_retained_parent_fd_fsynced": true,
+    "fixed_POST_then_exact_GET_body_and_id_inspected_only": true,
+    "readback_matches_exact_bytes_and_inode": true,
+    "regular_nofollow_nonblock_read_and_stable_identity": true
+  },
+  "unchanged_duplicate_bytes": true,
+  "utc": "2026-10-10T05:48:15.943011+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "accepted_actual_stop": false,
+  "actions": "Read-only hashes, exact-pinned runner verify/check_bindings/events functions, systemctl show and proc/cgroup file reads. No simulations, signals, service mutations, submissions, recovery/finalization, state transitions, GitHub or commits.",
+  "activation_authorized": false,
+  "bindings": [],
+  "checks": [],
+  "errors": [
+    "ValueError: first runtime acceptance field absent: ['independent_review_accepted']"
+  ],
+  "finished_at": "2026-10-09T20:12:27.439659+00:00",
+  "limitations": [
+    "Reviewer did not directly hold the live gem5 pidfd; verified the immutable source-bound controller external witness and its identity/exit observations.",
+    "Stop occurred before expected guest boot/runtime validation; empty stats and absent serial are preserved, not accepted scientific results.",
+    "No graceful gem5 stats/checkpoint finalization, simulation resume, physical reboot or whole Codex daemon shutdown is demonstrated.",
+    "The controller unit was already garbage-collected at independent terminal inspection; its default not-found Result is not treated as proof of its exit status."
+  ],
+  "migration_complete": false,
+  "schema": "openrx.independent-actual-gem5-stop-review.v1",
+  "scientific_acceptance": "unverified; expected interruption is lifecycle evidence only",
+  "started_at": "2026-10-09T20:12:27.438624+00:00"
+}

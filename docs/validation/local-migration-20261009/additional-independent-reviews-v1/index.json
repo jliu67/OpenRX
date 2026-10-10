@@ -1,0 +1,82 @@
+{
+  "actual_state": "LOCAL_VALIDATING",
+  "files": [
+    {
+      "CR_bytes_preserved": true,
+      "NUL_bytes_preserved": true,
+      "file": "actual-running-stop03-independent-review.json",
+      "original": {
+        "bytes": 7577,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-actual-running-stop03-review-20261010T054559271329Z.json",
+        "sha256": "161b8661dcd0b4794b941bd20c1a59eedf46ab9210a005de5d6622995adf21e6"
+      },
+      "public": {
+        "bytes": 7397,
+        "sha256": "511a74bb42b001d3ab2e50ac50be5f26eada19dc08f1ca11e71b2d6612fd7cb7"
+      },
+      "replacement_counts": [
+        18,
+        0
+      ]
+    },
+    {
+      "CR_bytes_preserved": true,
+      "NUL_bytes_preserved": true,
+      "file": "independent-running-stop03-review.py",
+      "original": {
+        "bytes": 13136,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent_running_stop03_review_v1.py",
+        "sha256": "8cb5ae061f4977fcf3f77fe4bd9b45df60803309d8337affbf6a35b0b8608191"
+      },
+      "public": {
+        "bytes": 13126,
+        "sha256": "145830e07ff7d0d13d2a9125ddafd70034c2f4d9752b9aba023a6f3794449620"
+      },
+      "replacement_counts": [
+        1,
+        0
+      ]
+    },
+    {
+      "CR_bytes_preserved": true,
+      "NUL_bytes_preserved": true,
+      "file": "cutover-receipt-helper-v3-independent-review.json",
+      "original": {
+        "bytes": 6059,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/receipt-helper-v3-independent-controls-20261010T054815668259Z/independent-review.json",
+        "sha256": "f22ce8a8b878b999c2f43d432348f9efa510591a248a28619f367fb8eed08527"
+      },
+      "public": {
+        "bytes": 6029,
+        "sha256": "030d6a119e8b48a2fa79f9947f1e6da52c9437e9f6d2bd0f589070304056c9b1"
+      },
+      "replacement_counts": [
+        3,
+        0
+      ]
+    },
+    {
+      "CR_bytes_preserved": true,
+      "NUL_bytes_preserved": true,
+      "file": "conditional-final-docs-v4-independent-review.json",
+      "original": {
+        "bytes": 6042,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/conditional-final-docs-policy-v4-independent-review-20261010T055022408576Z.json",
+        "sha256": "60253af309818c0f85c8da5980ed3326c1abd2acbed5f7b5286608128fc34067"
+      },
+      "public": {
+        "bytes": 6032,
+        "sha256": "57d66c6e12ebb769ae1fb059f8771daa9bf959120f6b5d3642df4adcfdb3d028"
+      },
+      "replacement_counts": [
+        1,
+        0
+      ]
+    }
+  ],
+  "migration_complete": false,
+  "schema": "openrx.review.public-preparation-index.v1",
+  "scope": "Prepared bounded portable derivatives of separate independent reviews only; publication and repository inclusion are separate owner operations",
+  "transform": "Exact byte replacement in order: designated root to $OPENRX_LOCAL_ROOT; original checkout to $OPENRX_ORIGINAL_CHECKOUT. No JSON reformat/newline normalization or other redaction.",
+  "utc": "2026-10-10T05:51:01.396897+00:00"
+}

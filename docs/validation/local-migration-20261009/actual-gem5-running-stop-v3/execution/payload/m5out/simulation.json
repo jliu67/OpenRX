@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "evidence_class": "full-system-functional",
+  "cpu": "AtomicSimpleCPU",
+  "cores": 1,
+  "rvv": false,
+  "guest_ram": "4GiB",
+  "cache_hierarchy": "PrivateL1PrivateL2WalkCacheHierarchy",
+  "l1d_size": "16KiB",
+  "l1i_size": "16KiB",
+  "l2_size": "256KiB",
+  "timing_calibrated": false,
+  "power_measured": false,
+  "events": [],
+  "execution_stage": "running",
+  "max_ticks_per_simulate_call": 10000000000000,
+  "last_tick": 0
+}

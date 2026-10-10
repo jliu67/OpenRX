@@ -1,0 +1,143 @@
+{
+  "accepted_for_application": false,
+  "accepted_for_preparation_only": true,
+  "actual_state": "LOCAL_VALIDATING",
+  "candidate_bindings": [
+    {
+      "bytes": 13210,
+      "path": "candidate/AGENTS.md",
+      "sha256": "25ba9fda2541e7c91e99e0d37cebe50a65d38632b14334c01d87ac8c50ad73b1"
+    },
+    {
+      "bytes": 14972,
+      "path": "candidate/README.md",
+      "sha256": "6393cc10d48c8967213ef3407ef232158c477bf234676d3e9de9fa00358688f1"
+    },
+    {
+      "bytes": 24021,
+      "path": "candidate/docs/LOCAL_EXECUTION.md",
+      "sha256": "69561ad37bcdafb25ffb93b08f4dfde096d7c1d9931370243b571c4f8f097273"
+    },
+    {
+      "bytes": 24406,
+      "path": "candidate/docs/LOCAL_MIGRATION.md",
+      "sha256": "6654ebaa4f3c52e144b210956edcda3805a7ea97b50726c51f207ad4cdf98b31"
+    },
+    {
+      "bytes": 6702,
+      "path": "candidate/docs/ROADMAP.md",
+      "sha256": "9d1f2a5b1996e8e1eddee33c8a244defb508dd3566874e7b19b080cc04d49be2"
+    },
+    {
+      "bytes": 14199,
+      "path": "candidate/docs/TASKS.md",
+      "sha256": "e3486943d7340c0a7324af1a91b1ab3baf054c708153d3997bb98994f8b1910f"
+    },
+    {
+      "bytes": 9120,
+      "path": "candidate/docs/validation/local-migration-20261009/ACCEPTANCE.md",
+      "sha256": "118cd5b9d4b0b32e99bcd31fd2903868efe7f7c5325964edd4509384b1867228"
+    },
+    {
+      "bytes": 17559,
+      "path": "candidate/memory/STATE.md",
+      "sha256": "ca70df6f223d2db0d43dc9d5c2ce032ac76fb30518d2ff95ff64afb773889cca"
+    },
+    {
+      "bytes": 14078,
+      "path": "candidate/memory/HANDOFF.md",
+      "sha256": "662121311422c77a05234325fa17ffa14b5dc9b612e2ce4f0cc7dd0f3fe4a934"
+    },
+    {
+      "bytes": 56543,
+      "path": "candidate/memory/SESSION_LOG.md",
+      "sha256": "b9d25d48f538b1b6c34da4ca4a516b7aa7ea86122ceb50308838e263b284ca65"
+    },
+    {
+      "bytes": 7657,
+      "path": "candidate/memory/PROJECT.md",
+      "sha256": "b0b02ea1c189c2c9ef51d7835eca9b355fd78118cc9759038c0b90c67aacaa41"
+    },
+    {
+      "bytes": 22502,
+      "path": "candidate/simulator/gem5/README.md",
+      "sha256": "b79f8a01bf8477b87f44abeb360b26f5473a5d5b0c03c512592e82917596eb51"
+    },
+    {
+      "bytes": 16348,
+      "path": "candidate/docs/COMMUNICATION.md",
+      "sha256": "6578b6b56af0941353515c4415af9503a7638fc10579b8e47b623ae8c7c9f3cb"
+    },
+    {
+      "bytes": 10841,
+      "path": "candidate/simulator/README.md",
+      "sha256": "4257e8b2f227f1b23687793ee1290bde7c5558653994ab78edf8b41be6a0cb92"
+    },
+    {
+      "bytes": 8867,
+      "path": "candidate/docs/validation/m3-fs/REUSE.md",
+      "sha256": "2db39a86ac4b49106245b5ebef2fadc158ca90e33a5304fa0d5397af3dd2014b"
+    },
+    {
+      "bytes": 5969,
+      "path": "candidate/experiments/README.md",
+      "sha256": "e8f9f66cc4c3332476320565ee3ff6c02b1dbfe4b0f85e70ca3b8d47375496f0"
+    }
+  ],
+  "checks": {
+    "D_head_M_D_merged_and_C_R_and_Z_RZ_dependencies_acyclic_by_source_review": true,
+    "SESSION_LOG_original_prefix_byte_exact": true,
+    "STATE_HANDOFF_scientific_history_suffixes_byte_exact": true,
+    "all_existing_relative_links_resolve_candidate_or_current_repo": true,
+    "all_manifest_file_sizes_hashes": true,
+    "fifteen_required_fields_unfilled_exactly": true,
+    "milestones_full_RandomX_timing_power_resume_reboot_stay_open": true,
+    "no_optimistic_activation_or_migration_completion": true,
+    "old_CPU200_manager_only_new_kernel_profile_pending": true,
+    "remote_execution_unavailable_owner_mediated_only": true,
+    "runtime9_vs_initialization_stop_vs_stronger_stop_distinct": true,
+    "sixteen_candidate_documents": true,
+    "standalone_resource_policy_byte_exact": true,
+    "three_owner_directive_additions_byte_exact": true
+  },
+  "findings": [],
+  "limitations": [
+    "Preparation review approves no filled facts, cutover state, merge, release or final certificate.",
+    "Manifest broad_stop_gate_accepted:false is the dated preparation observation and must be rendered from now-accepted fresh stop03 facts in a new candidate.",
+    "New owner policy and operational release do not modify original scientific criteria or retroactively change historical resource enforcement."
+  ],
+  "manifest": {
+    "bytes": 7055,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/final-docs-policy-preparation-v4-20261010T054527Z/manifest.json",
+    "sha256": "9837c4276802d006046bcce12467f858f8940a90429894ba27ea6d46359e533a"
+  },
+  "migration_complete": false,
+  "pending_before_application": [
+    "Actual accepted new immutable operational resource release and kernel budget evidence; reconcile its exact CLI/profile/source.",
+    "Actual technical gate map and truthful CUTOVER_PENDING transition/publication.",
+    "Fill stronger-stop03/runtime/publication/archive/UTC facts from retained independent accepted evidence.",
+    "Render new version only; preserve then-current histories and independently review exact rendered head.",
+    "Actual reviewed merge and distinct merged-document audit; later C/E/release/hub/final synchronization."
+  ],
+  "relative_link_count": 195,
+  "review_scope": "Read-only independent review of exact policy-adapted unfilled conditional16-document candidate and original v2 plus acyclic addendum. No repo edits or state mutation.",
+  "schema": "openrx.conditional-final-docs.independent-review.v4",
+  "unfilled_fields": [
+    "__OPENRX_CPU_DELEGATION_EVIDENCE__",
+    "__OPENRX_DOCUMENT_SNAPSHOT_UTC__",
+    "__OPENRX_FINAL_DOCUMENT_AUDIT_OUTCOME__",
+    "__OPENRX_OPERATIONAL_RUNNER_RELEASE__",
+    "__OPENRX_OPERATIONAL_RUNNER_SHA256__",
+    "__OPENRX_PRE_CUTOVER_ARCHIVE_REFERENCE__",
+    "__OPENRX_RESOURCE_PROFILE_OUTCOME_AND_EVIDENCE__",
+    "__OPENRX_RUNTIME_PUBLICATION_URL__",
+    "__OPENRX_STOP_EXECUTION_ID__",
+    "__OPENRX_STOP_GATE_OUTCOME_AND_SCOPE__",
+    "__OPENRX_STOP_OUTPUT_INTEGRITY_OUTCOME__",
+    "__OPENRX_STOP_PUBLIC_EVIDENCE_LOCATION__",
+    "__OPENRX_TECHNICAL_STATE__",
+    "__OPENRX_TECHNICAL_TRANSITION_PUBLICATION_URL__",
+    "__OPENRX_TECHNICAL_TRANSITION_UTC__"
+  ],
+  "utc": "2026-10-10T05:50:22.408604+00:00"
+}
