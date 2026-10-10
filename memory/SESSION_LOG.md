@@ -397,3 +397,31 @@ Operational release: `runner-v1-657b23f1`, SHA-256
 retains the expensive-work hold until the explicit merge-bound release.
 
 Resource-policy adaptation: reviewed PR29 additions remain byte-exact; no source/service/state change is made by this documentation preparation.
+
+
+
+## 2026-10-10T08:56:25.052452+00:00 — actual LOCAL_ACTIVE / released designated local policy
+
+The actual transition E at `2026-10-10T08:51:50.953900+00:00`, eligibility C, reviewed merge M and merged
+document audit are externally published: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817`, `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095847617`,
+`f90ac65964bc0138711e4b6d45bcb7e26dff3cc9` / `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095847617`, `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095847617`.
+The explicit release L and effective hub/bot H are verified: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817`,
+`https://github.com/jliu67/OpenRX/issues/5#issuecomment-6095882106`, `https://github.com/jliu67/OpenRX/issues/5#issuecomment-6095883184`. STATE/HANDOFF now record
+the actual dated LOCAL_ACTIVE state; their prior CP snapshots are exclusively archived byte-exact at
+`memory/handoffs/pre-postcutover-20261010-f90ac65-manifest.json`. No historical science/session entry is rewritten.
+
+Operational release/profile: `runner-v1-657b23f1`, SHA-256
+`657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b`; actual resource/kernel proof
+`https://github.com/jliu67/OpenRX/blob/20c2e7b873d291689b86a9e28cdb06a527467032/docs/validation/local-migration-20261009/resource-kernel-20261010/index.json`. Owner policy additions remain byte-identical, old988
+CPU200 manager-only evidence remains historical, and one resource lock/no direct remote access/no resume
+continue. Accepted guest9 and separately scoped safe stop evidence stay exact-source/output-bound;
+`https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094390003`, `20261009T202537Z-a1ca7df2cf1c`,
+`independently accepted firmware-seen gem5 lifecycle stop; child-9/wrapper1, preserved partial outputs; no scientific pass or graceful checkpoint/statistics flush`. Scientific #16/M1–M5 remain open.
+
+This entry precedes its own reviewed postcutover documentation integration, which must be evidenced
+externally on #27. At this entry's dated publication, final W/Z migration completion has not yet been published. Consult
+live #27 for the later final receipt after this actual merge/readback and independent synchronization review;
+this pre-Z statement records its dated history rather than an enduring blocker. No self-review, self-hash, future-merge assertion or expensive
+scientific execution is performed by this documentation update.
+
+The resource evidence must bind actual per-payload kernel/ancestor limit checks and fail-closed admission, not merely manager properties or configured controller availability.

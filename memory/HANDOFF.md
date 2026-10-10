@@ -1,3 +1,73 @@
+# Handoff — actual designated local execution
+
+**Actual execution state: LOCAL_ACTIVE since 2026-10-10T08:51:50.953900+00:00.**
+Dated update: 2026-10-10T08:56:25.052452+00:00.
+This dated header records independently accepted activation, explicit release and verified hub delivery.
+Eligibility acceptance C: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095847617`; actual transition E:
+`https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817`; actual reviewed migration merge M: `f90ac65964bc0138711e4b6d45bcb7e26dff3cc9` /
+`https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095847617`; merged-document audit: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095847617`.
+The designated local execution policy is effective under the independently verified explicit #27 release
+L: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817`. Its effective-policy hub announcement/bot receipt H:
+`https://github.com/jliu67/OpenRX/issues/5#issuecomment-6095882106` / `https://github.com/jliu67/OpenRX/issues/5#issuecomment-6095883184` are verified.
+Check [#27](https://github.com/jliu67/OpenRX/issues/27) and local status before each new request; later
+BLOCKED/ROLLBACK_REQUIRED evidence or an offline host holds new admission.
+
+This dated update records actual activation/release. Its own separately reviewed documentation PR merge
+and readback are published externally on #27; they are never self-referential hashes embedded here.
+At this dated update, final synchronized migration acceptance W/Z has not yet been published. The live
+#27 record supplies the later final receipt once this actual documentation integration and all required
+readbacks are independently accepted. This dated pre-Z status remains historical after final publication;
+LOCAL_ACTIVE, a released policy, a router label and this header alone do not prove migration completion.
+
+The [owner resource policy](../docs/LOCAL_RESOURCE_POLICY.md) remains unchanged. The immutable
+operational runner release is `runner-v1-657b23f1`, SHA-256
+`657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b`; exact resource/profile/kernel proof:
+`https://github.com/jliu67/OpenRX/blob/20c2e7b873d291689b86a9e28cdb06a527467032/docs/validation/local-migration-20261009/resource-kernel-20261010/index.json`. The owner-local-max-v1 profile permits six CPU cores
+(CPU600%) and uses at most min(14 GiB, fresh MemAvailable minus 1 GiB), with approved lower explicit memory
+when justified, swap2GiB/Tasks256 and one payload slot. Admission records current host metrics and rechecks
+headroom before launch. It must check the actual payload kernel CPU/memory/swap/task limits and effective
+ancestor ceilings, failing closed on missing controllers, mismatched constraints, tighter inherited limits
+or lost fresh headroom. The profile publication must independently prove those admission semantics;
+manager properties alone are insufficient. Raising CPU quota does not parallelize single-threaded gem5. Historical988 CPU200
+was a manager property and was not kernel-enforced; its dated receipts remain unchanged.
+
+Remote execution/direct retrieval remains unavailable. The owner or an explicitly authorized local
+session reviews a pinned GitHub request, submits locally and publishes hash-indexed sanitized evidence.
+No new SSH/listener/poller/self-hosted Actions channel is provided. Hold requests if offline; use temporary
+sandboxes for cheap independent work. Permanent request-key bindings and the global payload/descendant
+lock prevent duplicate or conflicting expensive execution. Preserve original data and all prior attempts.
+
+The accepted expected Ubuntu24.04/Linux6.8.12 guest and nine unchanged runtime controls remain bound to
+execution `20261009T193937Z-576aa858c033` and raw/public indexed review identities. Operational stop proof:
+`https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094390003`, execution `20261009T202537Z-a1ca7df2cf1c`,
+scope `independently accepted firmware-seen gem5 lifecycle stop; child-9/wrapper1, preserved partial outputs; no scientific pass or graceful checkpoint/statistics flush`. Intentional interruption proves lifecycle/retention, without
+a scientific pass, completed matrix or checkpoint/statistics-flush guarantee. Original Library binary
+remains unavailable; the verified c822 pinned rebuild is a distinct artifact with its own provenance.
+M0 history is preserved; #16 and M1–M5 remain open. No complete gem5 RandomX matrix/full dataset,
+intended timing-core/SMP/BOOM, calibrated timing, physical power/efficiency or RTL acceptance is implied.
+Whole Codex daemon termination/host reboot/power-loss tests and full hermetic dependency closure remain
+unperformed. No scientific checkpoint resume exists; failed/torn records are preserved for additive
+manual independent reconciliation, and recover never reruns scientific work.
+
+Read current task claims and leases before work; no permanent role or central coordinator is established.
+For local inspection, select the installed immutable release bound above:
+
+```bash
+export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
+export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-657b23f1/local_execution.py"
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" verify 20261009T193937Z-576aa858c033
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" verify 20261009T202537Z-a1ca7df2cf1c
+```
+
+Inspect manifests, retained raw logs, source/input hashes and strict independent review before consuming
+results. stop preserves evidence; scientific retries use a new reviewed request key/execution ID. Do not
+clear request mappings, truncate journals or treat sanitized public chains as host original bytes.
+
+The previous dated pre-cutover HANDOFF follows as historical context. Preserve its byte-exact original
+in a new exclusive public archive first. Its retained recipe is inactive unless the current reviewed
+request, resource profile and explicit release authorize it.
+
 # Handoff — dated pre-cutover technical snapshot
 
 **Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
