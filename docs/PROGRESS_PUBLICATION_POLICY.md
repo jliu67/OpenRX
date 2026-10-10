@@ -16,6 +16,6 @@ The designated standing editable authoring worktree is the cleanup target, not t
 
 ## Cancelled synchronization and runtime behavior
 
-The owner cancelled the ten-minute Git sync setup. Its timer and service are disabled/inactive; no scheduled pushes or unattended working-tree updates are authorized. Retain its bounded implementation/review/status evidence as historical records, without re-enabling it. Any later sync request needs fresh explicit authorization.
+The owner cancelled the ten-minute Git sync setup. Its timer is disabled; both the timer and service are inactive; no scheduled pushes or unattended working-tree updates are authorized. Retain its bounded implementation/review/status evidence as historical records, without re-enabling it. Any later sync request needs fresh explicit authorization.
 
 The accepted local migration remains LOCAL_ACTIVE under its existing explicit release. This publication policy does not change the scientific acceptance criteria, one-payload resource gate, pinned runtime/source bindings, stop/recovery behavior or remote-execution availability. No scientific run is authorized by publishing progress. Full-scale research and #16/M1–M5 remain separate gates; do not treat retained source copies, a task claim, or this policy as scientific acceptance.
