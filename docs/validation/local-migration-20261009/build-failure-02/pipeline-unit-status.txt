@@ -1,0 +1,8 @@
+Result=exit-code
+ExecMainCode=1
+ExecMainStatus=1
+ControlGroup=
+MemoryMax=1073741824
+LoadState=loaded
+ActiveState=failed
+SubState=failed

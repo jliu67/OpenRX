@@ -1,0 +1,58 @@
+{
+  "actual_properties_beyond45seconds": {
+    "at": "2026-10-09T17:09:30.989521+00:00",
+    "elapsed": 45.63969195797108,
+    "properties": {
+      "ActiveState": "deactivating",
+      "CPUQuotaPerSecUSec": "100ms",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T170845Z-09a14b95264a.service",
+      "ControlPID": "63645",
+      "ExecStopPost": "{ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/delayed-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root 20261009T170845Z-09a14b95264a ; ignore_errors=no ; start_time=[Fri 2026-10-09 11:08:45 MDT] ; stop_time=[n/a] ; pid=63645 ; code=(null) ; status=0/0 }",
+      "MainPID": "0",
+      "MemoryMax": "67108864",
+      "MemorySwapMax": "0",
+      "NotifyAccess": "exec",
+      "Result": "success",
+      "SubState": "stop-post",
+      "TasksMax": "16",
+      "TimeoutStopUSec": "45s"
+    },
+    "query_returncode": 0,
+    "stderr": ""
+  },
+  "at": "2026-10-09T17:12:52.694026+00:00",
+  "controlled_delay_seconds": 55.12187797395745,
+  "explanation": "The successful transient unit was absent by the last properties query; that query returned manager defaults. The original harness required its final property values to equal the in-flight service configuration, so it reported false. Apply only observed in-flight properties to the service. No final terminal Result/ExecStopPost stop_time is claimed.",
+  "extended_finalization_behavior_accepted": true,
+  "limits": [
+    "No real100GiB artifact or expensive hashing/fsync workload;55-second injected delay on tiny regular outputs exercises the timeout mechanism.",
+    "No guest simulation, production execution root, host reboot or whole Codex shutdown.",
+    "Final properties queried after unit collection do not report the departed service configuration or a captured terminal manager result."
+  ],
+  "output_integrity_reverified": {
+    "execution_id": "20261009T170845Z-09a14b95264a",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "private_finalizer_return": {
+    "event": "private-finalizer-returned",
+    "monotonic": 391356.229638372,
+    "pid": 63645,
+    "returncode": 0,
+    "utc": "2026-10-09T17:09:41.374800+00:00"
+  },
+  "raw_harness_accepted": false,
+  "raw_harness_receipt": {
+    "bytes": 68909,
+    "sha256": "c302061e78c7e39531f85526d464b6f79d1c32707490bab1f302862e53659a5d"
+  },
+  "raw_harness_result_preserved": true,
+  "real_notifications": 6,
+  "schema": "openrx.independent.finalizer-integration-audit.v1",
+  "snapshot": {
+    "bytes": 38227,
+    "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py",
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  }
+}

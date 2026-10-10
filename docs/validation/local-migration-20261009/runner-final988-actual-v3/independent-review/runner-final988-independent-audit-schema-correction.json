@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-09T18:23:33.465177+00:00",
+  "original_reviewer_failure_record_sha256": "9ebee1a331542b33f3ad2a0a07f58ca0e4618e95d8c362f77aa452743829935b",
+  "correction": "Snapshot contains latest_event, not events or event_history. The original failure record correctly preserved KeyError and no accepted receipt, but its presumed event_history replacement was incorrect. Use latest_event QUEUED with previous_sha256 null and match its SHA to first verified retained event-chain entry.",
+  "actual_source_keys": [
+    "execution_id",
+    "latest_event",
+    "logs",
+    "receipt",
+    "unit"
+  ],
+  "scientific_or_fixture_outcome_changed": false,
+  "all_original_evidence_preserved": true
+}

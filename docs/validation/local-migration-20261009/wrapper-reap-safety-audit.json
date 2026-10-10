@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/usr/bin/true"
+  ],
+  "injection": "Signal delivered immediately after actual Popen._try_wait returned a reaped PID and before Popen._handle_exitstatus stores returncode; killpg intercepted to avoid signaling any host group.",
+  "observation": {
+    "actual_child_reaped": true,
+    "group_signals_after_reap": [
+      {
+        "child_already_reaped": true,
+        "pid": 61760,
+        "signal": 9
+      }
+    ],
+    "injected_signal_count": 1,
+    "reaped_pid": 61760,
+    "returncode_before_signal": null
+  },
+  "observed_at": "2026-10-09T17:02:41.301713+00:00",
+  "risk_confirmed": true,
+  "schema": "openrx.independent.wrapper-reap-safety-audit.v1",
+  "scope": "Actual tiny child with controlled signal timing; no gem5, scientific simulation, or actual killpg issued.",
+  "source": {
+    "bytes": 15114,
+    "path": "${OPENRX_LOCAL_ROOT}/checkouts/execution-6f54052/simulator/gem5/run.py",
+    "sha256": "90edcae3facc3e6348dd5902ed85627919afb0616c9187b75f995695466caaf5"
+  },
+  "wrapper_result": {
+    "child_returncode": 0,
+    "interrupted": true,
+    "interruption_signal": "SIGINT",
+    "interruption_source": "host-signal",
+    "returncode": null
+  }
+}

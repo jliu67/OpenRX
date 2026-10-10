@@ -1,0 +1,88 @@
+{
+  "schema": "openrx.resource-live-proof.v1",
+  "utc": "2026-10-10T08:39:28.443987+00:00",
+  "execution_id": "20261010T083746Z-6bc7037f04ef",
+  "release": {
+    "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-657b23f1/local_execution.py",
+    "bytes": 47618,
+    "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b"
+  },
+  "deployment": {
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/completion-20261010/deployment.json",
+    "bytes": 357,
+    "sha256": "3be2270822ecc0ac0faf88f343f2ccae29f0579aebd8e25544cd179f87cd6458"
+  },
+  "manifest": {
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/manifest.json",
+    "bytes": 3085,
+    "sha256": "010e67f3a12a3b63c34c247c543f8916f8a8e40b8161629db34478b2b72f7462"
+  },
+  "receipt": {
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/receipt.json",
+    "bytes": 2527,
+    "sha256": "e808dfc219bae2c40470862898efeca46a2b4a810b2e0a29b990ce77ea8061b7"
+  },
+  "prelaunch_kernel": {
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/prelaunch-kernel-check.json",
+    "bytes": 2318,
+    "sha256": "8819695c944837b27e34a77ccfcd1a93a8e4b6768fe6660ad8da2f79ad46325a"
+  },
+  "payload_witness": {
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/output/kernel-witness.json",
+    "bytes": 14765,
+    "sha256": "531e736aca94e9c957eeb807d99bb932bf617bf11bdb6794da1b1d6a0bf38364"
+  },
+  "resources": {
+    "CPUQuota": "600%",
+    "MemoryMax": "5637144576",
+    "MemorySwapMax": "2G",
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "TasksMax": 256,
+    "global_slots": 1
+  },
+  "resource_profile": {
+    "admission": {
+      "allowed_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "at": "2026-10-10T08:37:46.893063+00:00",
+      "logical_cpus": 6,
+      "memory_bytes": {
+        "MemAvailable": 6733533184,
+        "MemTotal": 16725934080,
+        "SwapFree": 8026304512,
+        "SwapTotal": 8589930496
+      }
+    },
+    "allocation_slack_bytes": 22646784,
+    "default_rounding_bytes": 268435456,
+    "kernel_memory_max_bytes": 5637144576,
+    "kernel_page_bytes": 4096,
+    "kernel_rounding": "Linux page_counter limits truncate byte requests to whole pages; default 256MiB blocks are page aligned",
+    "memory_cap_bytes": 15032385536,
+    "memory_margin_bytes": 1073741824,
+    "name": "owner-local-max-v1",
+    "rationale": "All six CPUs available; RAM uses measured safe headroom, rounded down in 256MiB blocks for executor fluctuations. Exact known-workload requests must fit the same ceiling. One resource slot remains.",
+    "requested_memory_bytes": null,
+    "safe_ceiling_bytes": 5659791360,
+    "selected_memory_bytes": 5637144576,
+    "swap_is_reservation": false
+  },
+  "terminal_returncode": 0,
+  "integrity_verified": true,
+  "max_payload_rss_kib": 21832,
+  "kernel_cgroup_peak_bytes": 17674240,
+  "no_running_openrx_units_observed": true,
+  "scientific_work_executed": false,
+  "migration_complete": false,
+  "limitations": [
+    "Local-account-owned readonly release; not kernel-enforced immutable against its owner.",
+    "Tiny proof verifies configured enforcement, not six-core saturation or large-memory performance."
+  ]
+}

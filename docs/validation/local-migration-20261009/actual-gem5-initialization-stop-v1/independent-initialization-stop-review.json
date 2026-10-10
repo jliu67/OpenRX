@@ -1,0 +1,328 @@
+{
+  "accepted_initialization_stop": true,
+  "accepted_running_guest_stop": false,
+  "actions": "Read-only hashes, pinned runner verify/check_bindings/events, manager show and proc/cgroup reads. No simulator, signals, services mutation, submit, recover, state, GitHub or commits.",
+  "activation_authorized": false,
+  "bindings": [
+    {
+      "bytes": 38227,
+      "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    {
+      "bytes": 21944,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v1.py",
+      "sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817"
+    },
+    {
+      "bytes": 4144,
+      "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-gem5-stop-migration-attempt-01.json",
+      "sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14"
+    },
+    {
+      "bytes": 33067,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+      "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+    },
+    {
+      "bytes": 1512,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+      "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+    },
+    {
+      "bytes": 461,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runtime-capture-summary.json",
+      "sha256": "2ebd35a036250ede87e54c507c89762471a1913705073aa7b0a797407192dbf4"
+    },
+    {
+      "bytes": 2308,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-launch-20261009T200823Z.json",
+      "sha256": "76c71e536918e9ffad965a6442d6f32903a9bdbabba149183ee5c6e463b102a0"
+    },
+    {
+      "bytes": 3838,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-service-01.log",
+      "sha256": "d01d54a713c3250c5ffec5d3d5f343005f6d689f7658de44b61e6c51fe1ca178"
+    },
+    {
+      "bytes": 196,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/created-stop-marker.json",
+      "sha256": "ead10887d65f1aaacad83e889c20579090eb89091b40116c2cb862832b1a90df"
+    },
+    {
+      "bytes": 2966,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/fixed-submission-command.json",
+      "sha256": "17493695c6a047dbef71b080be666f9f3f9834bc06b5fd33f5bd28ff4d410c1e"
+    },
+    {
+      "bytes": 1263,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/observed-live-pinned-gem5.json",
+      "sha256": "1bb2d0bd1592995022ea8fe696072c1ee56f6e424bb7a9d1ff17c30d8f9c17d2"
+    },
+    {
+      "bytes": 3838,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/stop-proof-receipt.json",
+      "sha256": "d01d54a713c3250c5ffec5d3d5f343005f6d689f7658de44b61e6c51fe1ca178"
+    },
+    {
+      "bytes": 131,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-01/attempts/20261009T200823Z-90b19d2a0ba3/submitted-new-request.json",
+      "sha256": "629c1b998acfd38df1d385566957880bf77d86a0ce1c0097876d813230cadb51"
+    },
+    {
+      "bytes": 3062,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/receipt.json",
+      "sha256": "3b62ed67bd135c6f5755a8601cf970ff7fa4cd76854ca274bf4718be4e60665d"
+    },
+    {
+      "bytes": 158666,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/manifest.json",
+      "sha256": "63a459e43dc8998ea85fa30f7560cc4be29f6a22b689aab9e767f6c62d06ddbd"
+    },
+    {
+      "bytes": 1462,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/events.jsonl",
+      "sha256": "7e4e7623d2ca63993555878b521dc223aed59143dea78551b4d250c0c606c842"
+    },
+    {
+      "bytes": 4730,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/report.json",
+      "sha256": "6ce20c9275b678c94e92c4705019de68f1c7e3e38f2bbf43890ea85925a3fef9"
+    },
+    {
+      "bytes": 1764,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/stop.request",
+      "sha256": "b7ffb70e80496075e3f47ecb451b13580bf18023fec6d283af2bf0c3c7911e88"
+    }
+  ],
+  "checks": [
+    {
+      "check": "fixed source/release/controller/spec/preflight/first scientific review",
+      "passed": true
+    },
+    {
+      "check": "entire exact argv/environment/9 inputs/source/resources",
+      "passed": true
+    },
+    {
+      "check": "actual pinned executable inode/pidfd/service-cgroup/session/wrapper parent witness",
+      "passed": true
+    },
+    {
+      "check": "exclusive marker after live observation and before finalization",
+      "passed": true
+    },
+    {
+      "check": "exact stop-file/interruption/-9 false scientific result and stdout equality",
+      "passed": true
+    },
+    {
+      "check": "guest/ELF/readfile/config bindings",
+      "passed": true
+    },
+    {
+      "check": "fresh independent all stored input/source/snapshot/request rehash",
+      "passed": true
+    },
+    {
+      "check": "all finalized file set/output digests/hash-chain/external receipt binding",
+      "passed": true
+    },
+    {
+      "check": "actual retained manager failure and resource limits",
+      "passed": true
+    },
+    {
+      "check": "empty old service cgroup/original process identity gone",
+      "passed": true
+    },
+    {
+      "check": "no serial/empty stats classification and terminal controller",
+      "passed": true
+    }
+  ],
+  "controller_unit": {
+    "ActiveState": "inactive",
+    "CPUQuotaPerSecUSec": "infinity",
+    "ControlGroup": "",
+    "ExecMainCode": "0",
+    "ExecMainStatus": "0",
+    "KillMode": "control-group",
+    "LoadState": "not-found",
+    "MainPID": "0",
+    "MemoryMax": "infinity",
+    "MemorySwapMax": "infinity",
+    "Nice": "0",
+    "NoNewPrivileges": "no",
+    "NotifyAccess": "none",
+    "Result": "success",
+    "SubState": "dead",
+    "TasksMax": "19039",
+    "TimeoutStopUSec": "1min 30s",
+    "argv": [
+      "systemctl",
+      "--user",
+      "show",
+      "openrx-gem5-stop-controller-v1-20261009-attempt01.service",
+      "--property=LoadState,ActiveState,SubState,Result,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,TimeoutStopUSec,NotifyAccess,MainPID"
+    ],
+    "query_returncode": 0
+  },
+  "errors": [],
+  "execution_id": "20261009T200904Z-854b672fc611",
+  "external_receipt_event": {
+    "at": "2026-10-09T20:09:56.623815+00:00",
+    "execution_id": "20261009T200904Z-854b672fc611",
+    "previous_sha256": "a4e0127af7632ad3b9faf4de982cd56142ca910edb1f9e0f7bb935a4230501ba",
+    "receipt": {
+      "bytes": 3062,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/receipt.json",
+      "sha256": "3b62ed67bd135c6f5755a8601cf970ff7fa4cd76854ca274bf4718be4e60665d"
+    },
+    "sha256": "4c3e8cf25ceea82da90d32aa3047ac5c35269df304a7b21e8851d2c56c3f6a0f"
+  },
+  "finished_at": "2026-10-09T20:18:01.895221+00:00",
+  "limitations": [
+    "Live G was observed during early initialization; no serial/guest boot or runtime execution exists in this stop attempt. Stronger expected-OpenSBI-plus-live-pidfd gate is pending a fresh distinct request.",
+    "Reviewer verifies source-bound external controller pidfd evidence; reviewer did not directly hold the original live process pidfd.",
+    "No graceful statistics/checkpoint finalization, simulation resume, physical reboot or whole Codex daemon shutdown is demonstrated.",
+    "Controller unit was garbage-collected before review; default not-found Result is not independent proof of its exit status."
+  ],
+  "local_events": [
+    {
+      "at": "2026-10-09T20:09:04.976004+00:00",
+      "manifest": {
+        "bytes": 158666,
+        "path": "$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/manifest.json",
+        "sha256": "63a459e43dc8998ea85fa30f7560cc4be29f6a22b689aab9e767f6c62d06ddbd"
+      },
+      "previous_sha256": null,
+      "sha256": "89975b82dcfb443287b6c23e715ad24b5c55f847db3a84616d8388e29e3dd8ca",
+      "status": "QUEUED"
+    },
+    {
+      "at": "2026-10-09T20:09:25.925295+00:00",
+      "migration_state": "LOCAL_VALIDATING",
+      "pid": 86562,
+      "previous_sha256": "89975b82dcfb443287b6c23e715ad24b5c55f847db3a84616d8388e29e3dd8ca",
+      "sha256": "03c2f4ab780e008c4f1afe55ef6a65a4f96a4d4dd829fd3bae257a45f85df20a",
+      "status": "RUNNING"
+    },
+    {
+      "at": "2026-10-09T20:09:25.959251+00:00",
+      "pid": 86631,
+      "previous_sha256": "03c2f4ab780e008c4f1afe55ef6a65a4f96a4d4dd829fd3bae257a45f85df20a",
+      "sha256": "49f229c9fbeacb55d892df74fb97a7d92f1d4e70b8c30e51f28063c967aebc95",
+      "status": "CHILD_STARTED"
+    },
+    {
+      "at": "2026-10-09T20:09:56.313912+00:00",
+      "previous_sha256": "49f229c9fbeacb55d892df74fb97a7d92f1d4e70b8c30e51f28063c967aebc95",
+      "returncode": 1,
+      "sha256": "c7c65ed4865539d0cc34173f2a5d6164930fd56c18762e220baa5e87c066895c",
+      "signals": [],
+      "status": "PROCESS_FAILED"
+    },
+    {
+      "at": "2026-10-09T20:09:56.548393+00:00",
+      "previous_sha256": "c7c65ed4865539d0cc34173f2a5d6164930fd56c18762e220baa5e87c066895c",
+      "process_status": "PROCESS_FAILED",
+      "sha256": "565d4cdf294513091606f97c49f3d8bcb26878898b93d5b590c0b920991b8e75",
+      "status": "FINALIZED",
+      "systemd": {
+        "EXIT_CODE": "exited",
+        "EXIT_STATUS": "1",
+        "SERVICE_RESULT": "exit-code"
+      }
+    }
+  ],
+  "marker_mtime_utc": "2026-10-09T20:09:56.111180+00:00",
+  "migration_complete": false,
+  "output_artifact_count": 14,
+  "output_integrity": {
+    "execution_id": "20261009T200904Z-854b672fc611",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_FAILED"
+  },
+  "pidfd_external_witness": {
+    "cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T200904Z-854b672fc611.service",
+    "commandline": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt --outdir=$OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/m5out $OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/fs.py --resources $OPENRX_LOCAL_ROOT/artifacts/guest-resources-ranged-20261009 --readfile $OPENRX_LOCAL_ROOT/executions/20261009T200904Z-854b672fc611/payload/guest.sh --max-ticks 10000000000000 ",
+    "exe": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+    "exe_device": 2051,
+    "exe_inode": 22574966,
+    "pid": 86797,
+    "pidfd_opened_while_live": true,
+    "proc_stat": "86797 (gem5.opt) R 86631 86797 86797 0 -1 4194304 7068 0 0 0 14 2 0 0 30 10 1 0 40217056 138956800 17194 18446744073709551615 94746969960448 94747004979853 140730618754816 0 0 0 0 16781440 268439074 0 0 0 17 1 0 0 0 0 0 94747018247120 94747019743546 94747240235008 140730618760458 140730618760956 140730618760956 140730618761089 0\n",
+    "utc": "2026-10-09T20:09:55.882064+00:00"
+  },
+  "report_controls": {
+    "boot_observed": false,
+    "child_returncode": -9,
+    "error": "Simulator interrupted by SIGINT; Missing, ambiguous or oversized guest serial log",
+    "interrupted": true,
+    "interruption_source": "stop-file",
+    "runtime_validated": false,
+    "status": "fail",
+    "stop_file_observed": true
+  },
+  "request_key": "issue-27-gem5-stop-migration-attempt-01",
+  "retained_cgroup": {
+    "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T200904Z-854b672fc611.service",
+    "pids": [],
+    "populated": false,
+    "present": false
+  },
+  "reviewer_field_error_correction": {
+    "cause": "Reviewer guessed an acceptance field; exact first-runtime schema uses independent_review_accepted. Earlier failed review is preserved and is not a simulation failure.",
+    "preserved_failed_review": {
+      "bytes": 1387,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-stop-review-v1/independent-gem5-stop-review.json",
+      "sha256": "8010148c37126df8b05f46b55a00cb6098cfea041c6c822045da0c07960fd231"
+    }
+  },
+  "schema": "openrx.independent-gem5-initialization-stop-review.v2",
+  "scientific_acceptance": "unverified; expected interruption is lifecycle evidence only",
+  "started_at": "2026-10-09T20:17:41.404066+00:00",
+  "state_event_observed": {
+    "at": "2026-10-09T19:38:51.340903+00:00",
+    "evidence": {
+      "bytes": 1512,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+      "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+    },
+    "from_state": "STAGING",
+    "previous_sha256": "3c366572944796705ab3de4a6a8a1b4a7bd4789392bddafad939f599f7c145e0",
+    "reason": "Completed pinned-source rebuild and guest/dependency/loader inputs verified; strict runtime smoke only",
+    "remote_execution": "unavailable",
+    "sha256": "14860897b1ecb94bc1156b6d1d5c161c10463d5f58cffff1532573203835137d",
+    "state": "LOCAL_VALIDATING"
+  },
+  "unit": {
+    "ActiveState": "failed",
+    "CPUQuotaPerSecUSec": "2s",
+    "ControlGroup": "",
+    "ExecMainCode": "1",
+    "ExecMainStatus": "1",
+    "KillMode": "mixed",
+    "LoadState": "loaded",
+    "MainPID": "0",
+    "MemoryMax": "6442450944",
+    "MemorySwapMax": "1073741824",
+    "Nice": "10",
+    "NoNewPrivileges": "yes",
+    "NotifyAccess": "exec",
+    "Result": "exit-code",
+    "SubState": "failed",
+    "TasksMax": "256",
+    "TimeoutStopUSec": "45s",
+    "argv": [
+      "systemctl",
+      "--user",
+      "show",
+      "openrx-20261009T200904Z-854b672fc611.service",
+      "--property=LoadState,ActiveState,SubState,Result,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,TimeoutStopUSec,NotifyAccess,MainPID"
+    ],
+    "query_returncode": 0
+  }
+}

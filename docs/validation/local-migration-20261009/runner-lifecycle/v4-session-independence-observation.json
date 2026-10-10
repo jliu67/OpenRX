@@ -1,0 +1,22 @@
+{
+  "execution_id": "20261009T155826Z-b6825968635c",
+  "launcher_absent": true,
+  "launcher_pid": 48726,
+  "launcher_returncode": 0,
+  "limitation": "Launching tool process/session ended; this does not demonstrate host reboot or forcibly terminate active ChatGPT/Codex daemon",
+  "service_main_pid": 48730,
+  "service_parent_command": "/lib/systemd/systemd --user ",
+  "service_parent_pid": 825,
+  "stdout_after": "heartbeat 0\nheartbeat 1\nheartbeat 2\nheartbeat 3\n",
+  "stdout_before": "heartbeat 0\n",
+  "unit": {
+    "ActiveState": "active",
+    "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T155826Z-b6825968635c.service",
+    "ExecMainCode": "0",
+    "ExecMainStatus": "0",
+    "LoadState": "loaded",
+    "Result": "success",
+    "SubState": "running",
+    "query_returncode": 0
+  }
+}

@@ -1,0 +1,823 @@
+{
+  "activation_authorized": false,
+  "at": "2026-10-09T20:04:52.217948+00:00",
+  "checker": {
+    "bytes": 42975,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent_runtime_review_v1.py",
+    "sha256": "97430d48d73eb1014ce1c1acd5e1de14aa2815da285ad5d84771329aa8bbd62e"
+  },
+  "checks_completed": [
+    {
+      "at": "2026-10-09T20:03:30.646419+00:00",
+      "check": "fixed_reviewed_bindings",
+      "evidence": [
+        {
+          "bytes": 38227,
+          "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+          "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+        },
+        {
+          "bytes": 2973,
+          "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-local-runtime-b4b5ffc-attempt-01.json",
+          "sha256": "d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972"
+        },
+        {
+          "bytes": 13936,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/validate_when_ready_v3.py",
+          "sha256": "ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910"
+        },
+        {
+          "bytes": 14277,
+          "path": "$OPENRX_LOCAL_ROOT/toolchains/ubuntu22-20261009/pinned-packages.json",
+          "sha256": "c3948ff082235733e12ec2264a5c050936e4fef8547446c9389cf98036b86676"
+        },
+        {
+          "bytes": 14953,
+          "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/run.py",
+          "sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e"
+        },
+        {
+          "bytes": 4615,
+          "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/fs.py",
+          "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5"
+        },
+        {
+          "bytes": 2336,
+          "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/resources.json",
+          "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb"
+        },
+        {
+          "bytes": 5511,
+          "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/tests/native_runtime_probe.py",
+          "sha256": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617"
+        },
+        {
+          "bytes": 16452285,
+          "path": "$OPENRX_LOCAL_ROOT/artifacts/gem5-source-c8222cc.tar.gz",
+          "sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3"
+        },
+        {
+          "bytes": 2029908,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/source-inventory.json",
+          "sha256": "ef04d97b22ac53e673bddee0458c3f00c5d08b846c996c3f80b2135f95c0cadf"
+        },
+        {
+          "bytes": 130823,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/original-tracked-sha256.json",
+          "sha256": "a7d58ca2b8de7828011cc4213309f8059c68177036b57ea0c318fee4177c6fef"
+        },
+        {
+          "bytes": 13760,
+          "path": "$OPENRX_LOCAL_ROOT/artifacts/guest-20261008/openrx-runtime-probe",
+          "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:03:37.117700+00:00",
+      "check": "original_and_actual_rebuild_sources_preserved",
+      "evidence": {
+        "execution_git_files": 890,
+        "execution_source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+        "only_changed_wrapper_function": "run_process",
+        "original_files": 694,
+        "scientific_files_equal_original": [
+          "simulator/gem5/fs.py",
+          "simulator/gem5/resources.json",
+          "simulator/gem5/prepare.py",
+          "simulator/gem5/bundle.py",
+          "tests/native_runtime_probe.py",
+          "tests/native_riscv_probe.py",
+          "simulator/runtime-probe/main.c",
+          "simulator/probe/main.cpp"
+        ],
+        "upstream_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+        "upstream_files": 10933
+      },
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:03:40.685344+00:00",
+      "check": "completed_distinct_simulator_rebuild",
+      "evidence": {
+        "binary": {
+          "bytes": 1036720416,
+          "path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+          "sha256": "e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902"
+        },
+        "build_command": {
+          "argv": [
+            "scons",
+            "build/RISCV/gem5.opt",
+            "-j1",
+            "--limit-ld-memory-usage",
+            "--without-tcmalloc"
+          ],
+          "budget": {
+            "CPUQuota": "100%",
+            "MemoryMax": "8G",
+            "MemorySwapMax": "2G"
+          },
+          "config_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+          "project_commit": "6f54052a2be04b6967f65d6645e9a531270721d7",
+          "recovery": "separate full copy of preserved attempt02 partial build; incremental SCons recompilation; no scientific checkpoint resume; no wall timeout",
+          "source_archive_sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3",
+          "source_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+          "source_path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+          "start_utc": "2026-10-09T16:34:27.422600+00:00"
+        },
+        "build_result": {
+          "bytes": 400,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/build-attempt-03/build-result.json",
+          "sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f"
+        },
+        "generated_config_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+        "only_optional_host_dependency_additions": [
+          "HAVE_PNG=y",
+          "HAVE_HDF5=y",
+          "HAVE_PROTOBUF=y"
+        ],
+        "original_binary_restored": false,
+        "original_generated_config_sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5",
+        "scientific_model_criteria_changed": false
+      },
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:03:42.946725+00:00",
+      "check": "core_toolchain_and_actual_pinned_loader_verified",
+      "evidence": {
+        "actual_build_info": {
+          "bytes": 1640,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/actual-pinned-build-info.log",
+          "sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312"
+        },
+        "actual_loader": {
+          "ld-linux-x86-64.so.2": {
+            "interpreter": true,
+            "path": "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2"
+          },
+          "libaec.so.0": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libaec.so.0"
+          },
+          "libbrotlicommon.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libbrotlicommon.so.1"
+          },
+          "libbrotlidec.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libbrotlidec.so.1"
+          },
+          "libc.so.6": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libc.so.6"
+          },
+          "libcom_err.so.2": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libcom_err.so.2"
+          },
+          "libcrypto.so.3": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libcrypto.so.3"
+          },
+          "libcurl.so.4": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libcurl.so.4"
+          },
+          "libexpat.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libexpat.so.1"
+          },
+          "libffi.so.8": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libffi.so.8"
+          },
+          "libgcc_s.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libgcc_s.so.1"
+          },
+          "libgmp.so.10": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libgmp.so.10"
+          },
+          "libgnutls.so.30": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libgnutls.so.30"
+          },
+          "libgssapi_krb5.so.2": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libgssapi_krb5.so.2"
+          },
+          "libhdf5_serial.so.103": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libhdf5_serial.so.103"
+          },
+          "libhdf5_serial_cpp.so.103": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libhdf5_serial_cpp.so.103"
+          },
+          "libhogweed.so.6": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libhogweed.so.6"
+          },
+          "libidn2.so.0": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libidn2.so.0"
+          },
+          "libk5crypto.so.3": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libk5crypto.so.3"
+          },
+          "libkeyutils.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libkeyutils.so.1"
+          },
+          "libkrb5.so.3": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libkrb5.so.3"
+          },
+          "libkrb5support.so.0": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libkrb5support.so.0"
+          },
+          "liblber-2.5.so.0": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/liblber-2.5.so.0"
+          },
+          "libldap-2.5.so.0": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libldap-2.5.so.0"
+          },
+          "libm.so.6": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libm.so.6"
+          },
+          "libnettle.so.8": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libnettle.so.8"
+          },
+          "libnghttp2.so.14": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libnghttp2.so.14"
+          },
+          "libp11-kit.so.0": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libp11-kit.so.0"
+          },
+          "libpng16.so.16": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libpng16.so.16"
+          },
+          "libprotobuf.so.23": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libprotobuf.so.23"
+          },
+          "libpsl.so.5": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libpsl.so.5"
+          },
+          "libpython3.10.so.1.0": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libpython3.10.so.1.0"
+          },
+          "libresolv.so.2": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libresolv.so.2"
+          },
+          "librtmp.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/librtmp.so.1"
+          },
+          "libsasl2.so.2": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libsasl2.so.2"
+          },
+          "libssh.so.4": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libssh.so.4"
+          },
+          "libssl.so.3": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libssl.so.3"
+          },
+          "libstdc++.so.6": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libstdc++.so.6"
+          },
+          "libsz.so.2": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libsz.so.2"
+          },
+          "libtasn1.so.6": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libtasn1.so.6"
+          },
+          "libunistring.so.2": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libunistring.so.2"
+          },
+          "libz.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libz.so.1"
+          },
+          "libzstd.so.1": {
+            "interpreter": false,
+            "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/lib/libzstd.so.1"
+          }
+        },
+        "archived_debs_verified": 41,
+        "core_packages": [
+          {
+            "package": "build-essential",
+            "version": "12.9ubuntu3"
+          },
+          {
+            "package": "gcc",
+            "version": "4:11.2.0-1ubuntu1"
+          },
+          {
+            "package": "gcc-11",
+            "version": "11.4.0-1ubuntu1~22.04.3"
+          },
+          {
+            "package": "g++",
+            "version": "4:11.2.0-1ubuntu1"
+          },
+          {
+            "package": "g++-11",
+            "version": "11.4.0-1ubuntu1~22.04.3"
+          },
+          {
+            "package": "cpp",
+            "version": "4:11.2.0-1ubuntu1"
+          },
+          {
+            "package": "cpp-11",
+            "version": "11.4.0-1ubuntu1~22.04.3"
+          },
+          {
+            "package": "binutils",
+            "version": "2.38-4ubuntu2.12"
+          },
+          {
+            "package": "binutils-common",
+            "version": "2.38-4ubuntu2.12"
+          },
+          {
+            "package": "binutils-x86-64-linux-gnu",
+            "version": "2.38-4ubuntu2.12"
+          },
+          {
+            "package": "libc6",
+            "version": "2.35-0ubuntu3.15"
+          },
+          {
+            "package": "libc6-dev",
+            "version": "2.35-0ubuntu3.15"
+          },
+          {
+            "package": "libc-dev-bin",
+            "version": "2.35-0ubuntu3.15"
+          },
+          {
+            "package": "libgcc-11-dev",
+            "version": "11.4.0-1ubuntu1~22.04.3"
+          },
+          {
+            "package": "libgcc-s1",
+            "version": "12.3.0-1ubuntu1~22.04.3"
+          },
+          {
+            "package": "libstdc++6",
+            "version": "12.3.0-1ubuntu1~22.04.3"
+          },
+          {
+            "package": "libstdc++-11-dev",
+            "version": "11.4.0-1ubuntu1~22.04.3"
+          },
+          {
+            "package": "linux-libc-dev",
+            "version": "5.15.0-198.208"
+          },
+          {
+            "package": "python3",
+            "version": "3.10.6-1~22.04.1"
+          },
+          {
+            "package": "python3.10",
+            "version": "3.10.12-1~22.04.18"
+          },
+          {
+            "package": "python3-minimal",
+            "version": "3.10.6-1~22.04.1"
+          },
+          {
+            "package": "python3.10-minimal",
+            "version": "3.10.12-1~22.04.18"
+          },
+          {
+            "package": "libpython3.10",
+            "version": "3.10.12-1~22.04.18"
+          },
+          {
+            "package": "libpython3.10-dev",
+            "version": "3.10.12-1~22.04.18"
+          },
+          {
+            "package": "libpython3.10-minimal",
+            "version": "3.10.12-1~22.04.18"
+          },
+          {
+            "package": "libpython3.10-stdlib",
+            "version": "3.10.12-1~22.04.18"
+          },
+          {
+            "package": "python3-dev",
+            "version": "3.10.6-1~22.04.1"
+          },
+          {
+            "package": "python3.10-dev",
+            "version": "3.10.12-1~22.04.18"
+          },
+          {
+            "package": "libpython3-dev",
+            "version": "3.10.6-1~22.04.1"
+          },
+          {
+            "package": "scons",
+            "version": "4.0.1+dfsg-2"
+          },
+          {
+            "package": "m4",
+            "version": "1.4.18-5ubuntu2"
+          },
+          {
+            "package": "pkg-config",
+            "version": "0.29.2-1ubuntu3"
+          },
+          {
+            "package": "zlib1g",
+            "version": "1:1.2.11.dfsg-2ubuntu9.2"
+          },
+          {
+            "package": "zlib1g-dev",
+            "version": "1:1.2.11.dfsg-2ubuntu9.2"
+          },
+          {
+            "package": "libprotobuf-dev",
+            "version": "3.12.4-1ubuntu7.22.04.6"
+          },
+          {
+            "package": "libprotobuf23",
+            "version": "3.12.4-1ubuntu7.22.04.6"
+          },
+          {
+            "package": "protobuf-compiler",
+            "version": "3.12.4-1ubuntu7.22.04.6"
+          },
+          {
+            "package": "libprotoc23",
+            "version": "3.12.4-1ubuntu7.22.04.6"
+          },
+          {
+            "package": "libboost-all-dev",
+            "version": "1.74.0.3ubuntu7"
+          },
+          {
+            "package": "libhdf5-dev",
+            "version": "1.10.7+repack-4ubuntu2"
+          },
+          {
+            "package": "libpng-dev",
+            "version": "1.6.37-3ubuntu0.7"
+          }
+        ],
+        "limitation": "Host ELF interpreter and current core pins verified; no offline/hermetic host closure claimed",
+        "profile": {
+          "bytes": 35108,
+          "path": "$OPENRX_LOCAL_ROOT/toolchains/gem5-runtime-e4129f163773/runtime-libraries.json",
+          "sha256": "fda84e150259de5f5f3208700dd0d5eb3a9e967150285bf29a0b9c6dc1bb7a40"
+        }
+      },
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:04:07.632158+00:00",
+      "check": "expected_guest_assets_verified",
+      "evidence": {
+        "recovered_exact_original_elf": true,
+        "resources": [
+          {
+            "bytes": 1292496,
+            "catalog_license": "",
+            "filename": "opensbi",
+            "gzip": false,
+            "id": "riscv-bootloader-opensbi-1.3.1",
+            "observed": {
+              "bytes": 1292496,
+              "md5": "44b3fe636c9d38567b04ef54ea362f0d",
+              "sha256": "510f5b9cbc6d2c8c97dacc395b29d47e897c1abe91e4df5a7d8893c0fad8ae0a"
+            },
+            "resource_version": "1.0.0",
+            "role": "bootloader",
+            "sha256": "510f5b9cbc6d2c8c97dacc395b29d47e897c1abe91e4df5a7d8893c0fad8ae0a",
+            "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-opensbi",
+            "upstream_md5": "44b3fe636c9d38567b04ef54ea362f0d",
+            "url": "https://dist.gem5.org/dist/develop/kernels/riscv/static/riscv-bootloader-opensbi-1.3.1-20231129"
+          },
+          {
+            "bytes": 19749472,
+            "catalog_license": "",
+            "filename": "vmlinux",
+            "gzip": false,
+            "id": "riscv-linux-6.8.12-kernel",
+            "observed": {
+              "bytes": 19749472,
+              "md5": "c29f3fce21f128870ebf769f8caef720",
+              "sha256": "57e9a7ab9553fb6c58078913b12687455bc46c072539266b14cbb0142b7bffdd"
+            },
+            "resource_version": "1.0.0",
+            "role": "kernel",
+            "sha256": "57e9a7ab9553fb6c58078913b12687455bc46c072539266b14cbb0142b7bffdd",
+            "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-fs",
+            "upstream_md5": "c29f3fce21f128870ebf769f8caef720",
+            "url": "https://dist.gem5.org/dist/develop/kernels/riscv/static/riscv-vmlinux-6.8.12"
+          },
+          {
+            "bytes": 5242880000,
+            "catalog_license": "",
+            "compressed_bytes": 1517651202,
+            "compressed_sha256": "217f9a700742f136255bb715066f3665c523187350583bbd1c7b95b5a7322d27",
+            "filename": "ubuntu.img",
+            "gzip": true,
+            "id": "riscv-ubuntu-24.04-img",
+            "observed": {
+              "bytes": 5242880000,
+              "md5": "1c1191dfe51857076aee800def85bc76",
+              "sha256": "ddf1ebb56454ef37e88d6de8aefdef7180fc9a2328a3bf8cff02f7a043e7127b"
+            },
+            "resource_version": "2.0.0",
+            "role": "disk_image",
+            "root_partition": "1",
+            "sha256": "ddf1ebb56454ef37e88d6de8aefdef7180fc9a2328a3bf8cff02f7a043e7127b",
+            "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-fs/riscv-ubuntu-22.04-24.04",
+            "upstream_md5": "1c1191dfe51857076aee800def85bc76",
+            "url": "https://dist.gem5.org/dist/develop/images/riscv/ubuntu-24-04/riscv-ubuntu-24.04-20250515.gz"
+          }
+        ],
+        "runtime_elf": {
+          "bytes": 13760,
+          "path": "$OPENRX_LOCAL_ROOT/artifacts/guest-20261008/openrx-runtime-probe",
+          "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac"
+        }
+      },
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:04:07.667260+00:00",
+      "check": "evidence_backed_local_validating_transition",
+      "evidence": {
+        "authoritative_transition": {
+          "at": "2026-10-09T19:38:51.340903+00:00",
+          "evidence": {
+            "bytes": 1512,
+            "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+            "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+          },
+          "from_state": "STAGING",
+          "previous_sha256": "3c366572944796705ab3de4a6a8a1b4a7bd4789392bddafad939f599f7c145e0",
+          "reason": "Completed pinned-source rebuild and guest/dependency/loader inputs verified; strict runtime smoke only",
+          "remote_execution": "unavailable",
+          "sha256": "14860897b1ecb94bc1156b6d1d5c161c10463d5f58cffff1532573203835137d",
+          "state": "LOCAL_VALIDATING"
+        },
+        "observed_state": "LOCAL_VALIDATING",
+        "preflight": {
+          "bytes": 1512,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+          "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+        }
+      },
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:04:28.180035+00:00",
+      "check": "actual_execution_admission_and_retained_integrity",
+      "evidence": {
+        "all_inputs_and_source_bound_before_launch_rechecked_now": true,
+        "cgroup_observation": {
+          "exists": false,
+          "limitation": "No absent/transient unit defaults used as terminal Result evidence",
+          "retained_control_group": ""
+        },
+        "execution_id": "20261009T193937Z-576aa858c033",
+        "integrity_verification": {
+          "execution_id": "20261009T193937Z-576aa858c033",
+          "integrity_verified": true,
+          "scientific_acceptance": "unverified",
+          "status": "PROCESS_EXITED"
+        },
+        "lifecycle_statuses": [
+          "QUEUED",
+          "RUNNING",
+          "CHILD_STARTED",
+          "PROCESS_EXITED",
+          "FINALIZED"
+        ],
+        "manifest": {
+          "bytes": 158317,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/manifest.json",
+          "sha256": "80a2394eefbec478f10607dcd8c8b0463c2c08cd2200421b1b573c3010ef402c"
+        },
+        "process": {
+          "finished_at": "2026-10-09T20:02:53.407223+00:00",
+          "returncode": 0,
+          "scientific_acceptance": "unverified",
+          "signals": [],
+          "status": "PROCESS_EXITED"
+        },
+        "receipt": {
+          "bytes": 4662,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/receipt.json",
+          "sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856"
+        },
+        "resource_limits": {
+          "CPUQuota": "200%",
+          "MemoryMax": "6G",
+          "MemorySwapMax": "1G",
+          "Nice": 10,
+          "NoNewPrivileges": true,
+          "TasksMax": 256,
+          "global_slots": 1
+        },
+        "unit_limitation": "If transient unit is not found, manager defaults are not terminal service evidence",
+        "unit_observation": {
+          "ActiveState": "inactive",
+          "ControlGroup": "",
+          "ExecMainCode": "0",
+          "ExecMainStatus": "0",
+          "LoadState": "not-found",
+          "Result": "success",
+          "SubState": "dead",
+          "query_returncode": 0
+        }
+      },
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:04:28.223438+00:00",
+      "check": "actual_guest_boot_and_strict_nine_case_runtime",
+      "evidence": {
+        "actual_model": {
+          "base_image_read_only": true,
+          "cache_sizes_bytes": {
+            "l1d-cache-0": 16384,
+            "l1i-cache-0": 16384,
+            "l2-cache-0": 262144
+          },
+          "clock_period_ticks": 1000,
+          "cores": 1,
+          "cow": true,
+          "cpu": "gem5::AtomicSimpleCPU",
+          "ram_bytes": 4294967296,
+          "rvv": false
+        },
+        "framed_runtime_stderr_empty": true,
+        "guest_complete": true,
+        "guest_distribution": "Ubuntu24.04LTS",
+        "guest_linux": "6.8.12",
+        "hypercall_events": [
+          {
+            "event": "kernel-booted",
+            "hypercall": 1,
+            "tick": 379381390000
+          },
+          {
+            "event": "after-boot-started",
+            "hypercall": 2,
+            "tick": 674367239000
+          },
+          {
+            "event": "after-boot-finished",
+            "hypercall": 3,
+            "tick": 750242284000
+          }
+        ],
+        "outer_stderr_policy": "Retained and inspectable; empty only required for framed runtime probe stderr",
+        "readfile": {
+          "bytes": 19142,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/guest.sh",
+          "sha256": "678b3e6cb49dd48d3c854b48586ae734290daa3f8e42bf5ed11a72936e789d44"
+        },
+        "retained_raw_logs_and_model": [
+          {
+            "bytes": 18286,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/board.platform.terminal",
+            "sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b"
+          },
+          {
+            "bytes": 960,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/runtime.jsonl",
+            "sha256": "7dd1fdcbaa7b283a326924f15f430397c536ff02d36a853303d6dd7e65cbdeb7"
+          },
+          {
+            "bytes": 0,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/runtime-stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 949,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/stdout.log",
+            "sha256": "4ba318f3b230c4239a54361b2654851960f9dc789fce85b902b552171ddf90c6"
+          },
+          {
+            "bytes": 1722,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/stderr.log",
+            "sha256": "5fcc971d60fd763d6ba0e6970bec8a46abcd5fea98458c2b1b6969a64adb2b4c"
+          },
+          {
+            "bytes": 4961,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/stdout.log",
+            "sha256": "5a2bb48964ba9664f4dcb5ec376daf2261482105aa4c33b7fa15c04f29837c1a"
+          },
+          {
+            "bytes": 0,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/stderr.log",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "bytes": 104772,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/config.json",
+            "sha256": "cf64cddd2fa8a8cffe5bbf94f609dde1febbf9cc0b548a3db26c861953299d7e"
+          },
+          {
+            "bytes": 41495,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/config.ini",
+            "sha256": "73a754aae105d6067ff9ac2370f2d14e52786f0b8c162f78e22e1db508f43cbd"
+          },
+          {
+            "bytes": 2206,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/device.dtb",
+            "sha256": "b87f9fcf8b1e3f58f0cf671c6d70a344eeaf642d9988a012fd5897baadc68260"
+          },
+          {
+            "bytes": 3709,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/device.dts",
+            "sha256": "57ecd27c8ebaceb9f2b0d246bc3252316040d200d11dc395b2f13097e291a051"
+          },
+          {
+            "bytes": 235876,
+            "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/stats.txt",
+            "sha256": "d4941df29cf9f967dcc74f7db62473fdab4174bcbf09572eaa02b6bfce611db8"
+          }
+        ],
+        "scientific_report": {
+          "bytes": 5689,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/report.json",
+          "sha256": "315552c987a0b58ad20b5a57061f159bd3f78ebbd05e3225408ec1ef3b61489c"
+        },
+        "scientific_scope": "functional runtime-only; no RandomX gem5 matrix/timing/power/resume acceptance",
+        "strict_validator_result": {
+          "architecture": "riscv64",
+          "checks_passed": 9,
+          "flush_path": "linux-riscv-flush-icache",
+          "timing_calibrated": false
+        }
+      },
+      "passed": true
+    },
+    {
+      "at": "2026-10-09T20:04:52.177346+00:00",
+      "check": "inputs_and_output_receipt_reverified_after_independent_replay",
+      "evidence": {
+        "execution_id": "20261009T193937Z-576aa858c033",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      "passed": true
+    }
+  ],
+  "error": null,
+  "execution_id": "20261009T193937Z-576aa858c033",
+  "independent_review_accepted": true,
+  "limitations": [
+    "Runtime-only nine-case acceptance; complete gem5 RandomX matrix remains open",
+    "No calibrated timing/power or scientific checkpoint resume acceptance",
+    "No whole Codex-session shutdown or physical host reboot demonstration",
+    "Host interpreter/core pins verified; no hermetic offline dependency closure claimed",
+    "Original unavailable simulator has not been recovered; new rebuilt identity retained"
+  ],
+  "migration_complete": false,
+  "remaining_gates": [
+    "actual gem5 safe-stop evidence and independent review",
+    "GitHub docs/handoffs consistency",
+    "reviewed PR merge",
+    "final cutover receipt"
+  ],
+  "schema": "openrx.local-migration.independent-runtime-review.v1",
+  "scientific_milestones_closed": [],
+  "scope": "distinct local gem5 rebuild and runtime-only nine-case functional smoke"
+}

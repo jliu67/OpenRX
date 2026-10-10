@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-09T18:18:30.566595+00:00",
+  "unit": "openrx-runner-final988-lifecycle-v3-20261009.service",
+  "argv": [
+    "systemd-run",
+    "--user",
+    "--unit=openrx-runner-final988-lifecycle-v3-20261009.service",
+    "--service-type=exec",
+    "--property=MemoryMax=1G",
+    "--property=MemorySwapMax=256M",
+    "--property=CPUQuota=20%",
+    "--property=TasksMax=64",
+    "--property=Nice=10",
+    "--property=NoNewPrivileges=yes",
+    "--property=UMask=0077",
+    "--property=Restart=no",
+    "--property=KillMode=control-group",
+    "--property=TimeoutStopSec=45s",
+    "--property=WorkingDirectory=$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009",
+    "--property=StandardOutput=append:$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3-service.log",
+    "--property=StandardError=append:$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3-service.log",
+    "/usr/bin/python3",
+    "-B",
+    "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3.py",
+    "--execute",
+    "--expected-self-sha256",
+    "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72",
+    "--expected-plan-sha256",
+    "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "Running as unit: openrx-runner-final988-lifecycle-v3-20261009.service\n",
+  "show": {
+    "returncode": 0,
+    "stdout": "MainPID=75055\nResult=success\nExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 -B $OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3.py --execute --expected-self-sha256 632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72 --expected-plan-sha256 af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837 ; ignore_errors=no ; start_time=[Fri 2026-10-09 12:18:30 MDT] ; stop_time=[n/a] ; pid=75055 ; code=(null) ; status=0/0 }\nCPUQuotaPerSecUSec=200ms\nMemoryMax=1073741824\nActiveState=active\nSubState=running\n",
+    "stderr": ""
+  },
+  "approved_inputs": {
+    "replay-v3.py": "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72",
+    "plan-v3.json": "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837",
+    "toy_payload.py": "3e04fade4ef3f9a436be96b6295cba1d66ca8b55993e1d7803fa8081818328e6"
+  },
+  "scope": "Finite isolated host-only lifecycle fixtures. Actual results pending, scientific acceptance unverified, migration remains STAGING."
+}

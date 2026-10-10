@@ -1,0 +1,65 @@
+{
+  "schema": "openrx.gem5.running-stop-controller-preparation.v3",
+  "at": "2026-10-09T20:19:34.739039+00:00",
+  "status": "FROZEN candidate pending root and independent static review; UNLAUNCHED",
+  "bindings": [
+    {
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v3.py",
+      "bytes": 27134,
+      "sha256": "6743268de7074a27e2fcf16e2c8f8cea2ae2af6fd5dc495c2e4b762867171c39"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-gem5-stop-migration-attempt-03.json",
+      "bytes": 5829,
+      "sha256": "d425c756d2ac184a56d61de80a8ade0dafd226da29657e4567a2cb0a1e261010"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v3-v2.diff",
+      "bytes": 1676,
+      "sha256": "5400acdc272d4de5479625b1d958dfdc0e3db00883da435487c6a027ed98ba5d"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v3-v1.diff",
+      "bytes": 10561,
+      "sha256": "95ff32c52296a065f25f90cba9fb241e78be540388cac22fdc064148d5460bd7"
+    }
+  ],
+  "original_retained_uart": {
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/board.platform.terminal",
+    "bytes": 18286,
+    "sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b"
+  },
+  "controls": [
+    {
+      "name": "retained original raw CRLF UART is rejected by preserved v2 and accepted by isolated v3 stage helper",
+      "passed": true
+    },
+    {
+      "name": "LF-normalized transcript rejected",
+      "passed": true
+    },
+    {
+      "name": "wrong firmware banner rejected",
+      "passed": true
+    },
+    {
+      "name": "wrong HART count rejected",
+      "passed": true
+    },
+    {
+      "name": "absent serial payload rejected",
+      "passed": true
+    }
+  ],
+  "control_scope": "Only isolated AST-selected read-only stage helper uses historical serial and this reviewer own live pidfd; negative byte inputs injected into read, no file rewrite or normalization of stored UART. This is input/protocol compatibility evidence, not a live guest or stop proof.",
+  "preserved_unlaunched_v2_controller_sha256": "cbf10fd095bdfee352c711d575949d848c3c262883c41fee430ccfb90ec46612",
+  "preserved_unlaunched_v2_request_sha256": "bcbf912013d386745efe951120b9432dd35e5c334a432f6fdcde94fb70db010a",
+  "fixed_source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "fixed_runner_sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882",
+  "fixed_wrapper_sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e",
+  "source_scientific_oracles_changed": false,
+  "actual_running_stop_accepted": false,
+  "controller_launched": false,
+  "migration_complete": false,
+  "actions": "New exclusive fsynced host-only draft/controller/spec/diffs/control receipt. No services/workloads/signals/GitHub/state/commits or existing-file edits."
+}

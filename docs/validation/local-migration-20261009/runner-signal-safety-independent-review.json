@@ -1,0 +1,70 @@
+{
+  "comparison_base_runner_sha256": "916b6b0d33956c847350dc54124132020968aa5a6ff11576911141fa27460977",
+  "decision": {
+    "final_runner_release_approved": false,
+    "narrow_signal_fix_accepted": true,
+    "remaining_independent_question": "Verify that ExecStopPost can extend its current systemd stop deadline during large-output hashing/fsync before a final release is bound."
+  },
+  "findings": [
+    {
+      "finding": "Previously unconditional killpg after wait could target an unrelated process group after numerical PID reuse. Signal handler poll could also reap reentrantly.",
+      "status": "Resolved in this narrow source revision; prior 916 overall future execution acceptance withdrawn."
+    },
+    {
+      "finding": "Signal handler now only appends signal values. Main loop exclusively polls/reaps and forwards the first pending signal only after its poll returned None; 25-second escalation uses the same ownership condition.",
+      "status": "Reviewed"
+    },
+    {
+      "finding": "No post-reap killpg remains. Finally signals only when its sole-owner poll says the leader is not reaped, and production descendant cleanup remains pidfd-based with verified named-cgroup membership under the global resource lock.",
+      "status": "Reviewed"
+    },
+    {
+      "finding": "Actual tiny-child regression forbids any killpg after child completion; a real reap plus injected SIGINT verifies no handler poll reentry or stale group signal.",
+      "status": "Independently passed"
+    }
+  ],
+  "independent_test_result": {
+    "elapsed_seconds": 15.085551090945955,
+    "focused_tests": 25,
+    "host_receipt": {
+      "bytes": 1451,
+      "relative": "migrations/20261009/independent-focused-v4/receipt.json",
+      "sha256": "133e5b7ae6725919d6f1b1a43cb6334270368361f247570eb967625fba9b8c88"
+    },
+    "public_log": {
+      "bytes": 2699,
+      "relative": "independent-focused-signal-safety.log",
+      "sha256": "afee2286eaebf8c924bc498f6e82e231f9bb4a6aa9bca0f2b8918c3a0ff43563",
+      "transformation": "Exact byte copy, no redaction required"
+    },
+    "returncode": 0,
+    "stable_before_after_hashes": true,
+    "stderr": {
+      "bytes": 2699,
+      "sha256": "afee2286eaebf8c924bc498f6e82e231f9bb4a6aa9bca0f2b8918c3a0ff43563"
+    },
+    "stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "limitations": [
+    "Focused 25-test suite only for this revision; prior full 279 tests were a different source revision.",
+    "Physical host reboot and whole active Codex daemon termination were not performed.",
+    "No gem5 guest was launched by this reviewer."
+  ],
+  "local_execution_active": false,
+  "migration_state": "STAGING",
+  "review_scope": "Narrow signal-safety changes relative to the preserved 916b6b0d durability revision. No scientific model, guest acceptance, or full migration acceptance.",
+  "reviewed_at": "2026-10-09T17:00:06.189529+00:00",
+  "reviewer": "Independent scientific_inventory subagent; shared GitHub account, not an independent human approval",
+  "runner": {
+    "bytes": 35471,
+    "sha256": "f6ea278e7dddc74bca2326914a25f83ffdf0ff8561eba09f87e1aedd4e6c5572"
+  },
+  "schema": "openrx.independent.signal-safety-review.v1",
+  "tests": {
+    "bytes": 22664,
+    "sha256": "feec890a4db67e35328d69f143e912a7c5bebe5a90f4053f96c7aa3be94c6b7c"
+  }
+}

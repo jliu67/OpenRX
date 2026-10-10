@@ -1,0 +1,68 @@
+2026-10-09T11:08:45-0600 server systemd[825]: Started /usr/bin/python3.10 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py --root ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root _worker 20261009T170845Z-09a14b95264a.
+2026-10-09T11:09:41-0600 server python3[63645]: {
+2026-10-09T11:09:41-0600 server python3[63645]:   "artifacts": [
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 1521,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/events.jsonl",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "300d3ce944b184315acaa51ee814e394fddccc720182d49f44fbce0a80cdc9c4"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 2207,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/manifest.json",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "f65d423e31de116bbe34d48ceca1602006141ea9f502bce1f4bcdd87da6c6002"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 27,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/payload/scientific.txt",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "8b7e898a497cf0bf3d776d87ccb5a87597f30e8a1b2df5f26e16482ad60a4be1"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 142,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/process-result.json",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "f77059d00fd400a3db87131cf259b97de1d66f494361dafa163997274070b68f"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 38227,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 0,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/stderr.log",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 22,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/stdout.log",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "2c38d01219c64d22c23bb282a8750fe5bd3099830972239d685ce2c53ed0f546"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 1078,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/submission-command.json",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "7a3e1378371af53d46afdd8845911adcdb278703a590048195eb6e560f8b256d"
+2026-10-09T11:09:41-0600 server python3[63645]:     },
+2026-10-09T11:09:41-0600 server python3[63645]:     {
+2026-10-09T11:09:41-0600 server python3[63645]:       "bytes": 41,
+2026-10-09T11:09:41-0600 server python3[63645]:       "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-finalizer-integration-v1/fixture-root/executions/20261009T170845Z-09a14b95264a/submission-result.json",
+2026-10-09T11:09:41-0600 server python3[63645]:       "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+2026-10-09T11:09:41-0600 server python3[63645]:     }
+2026-10-09T11:09:41-0600 server python3[63645]:   ],
+2026-10-09T11:09:41-0600 server python3[63645]:   "at": "2026-10-09T17:09:41.308914+00:00",
+2026-10-09T11:09:41-0600 server python3[63645]:   "execution_id": "20261009T170845Z-09a14b95264a",
+2026-10-09T11:09:41-0600 server python3[63645]:   "process": {
+2026-10-09T11:09:41-0600 server python3[63645]:     "finished_at": "2026-10-09T17:08:45.835854+00:00",
+2026-10-09T11:09:41-0600 server python3[63645]:     "returncode": 0,
+2026-10-09T11:09:41-0600 server python3[63645]:     "scientific_acceptance": "unverified",
+2026-10-09T11:09:41-0600 server python3[63645]:     "signals": [],
+2026-10-09T11:09:41-0600 server python3[63645]:     "status": "PROCESS_EXITED"
+2026-10-09T11:09:41-0600 server python3[63645]:   },
+2026-10-09T11:09:41-0600 server python3[63645]:   "resume_allowed": false,
+2026-10-09T11:09:41-0600 server python3[63645]:   "schema": "openrx.local.receipt.v1",
+2026-10-09T11:09:41-0600 server python3[63645]:   "scientific_acceptance": "unverified",
+2026-10-09T11:09:41-0600 server python3[63645]:   "status": "PROCESS_EXITED",
+2026-10-09T11:09:41-0600 server python3[63645]:   "systemd": {
+2026-10-09T11:09:41-0600 server python3[63645]:     "EXIT_CODE": "exited",
+2026-10-09T11:09:41-0600 server python3[63645]:     "EXIT_STATUS": "0",
+2026-10-09T11:09:41-0600 server python3[63645]:     "SERVICE_RESULT": "success"
+2026-10-09T11:09:41-0600 server python3[63645]:   }
+2026-10-09T11:09:41-0600 server python3[63645]: }

@@ -4,6 +4,9 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## Start here
 
+**⚡ OWNER RESOURCE POLICY:** All Codex agents must maximize safe utilization of the owner's local Ubuntu machine (6 CPU cores, 16 GiB RAM) for authorized OpenRX jobs. Do not default to old sandbox caps. See the prominent mandatory guidance in [AGENTS.md](AGENTS.md#-owner-directive--maximize-local-compute-utilization-all-agents) and the [execution resource policy](docs/LOCAL_RESOURCE_POLICY.md). Scientific and migration gates remain in force.
+
+
 **OpenRX agents have no coordinator or assigned roles.** Browse the [shared ready-task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready), choose a feasible scoped issue and claim it there. The Markdown board summarizes milestones, not live ownership. [Agent instructions](AGENTS.md) and [protocol](docs/COMMUNICATION.md) explain dependencies and handoffs.
 
 - [Project board](docs/TASKS.md): status, blockers and next tasks
@@ -14,6 +17,75 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 - [Power importer protocol](benchmarks/power/README.md): strict input schema, clock mapping, conditional error bounds and synthetic safeguards
 - [Project memory](memory/PROJECT.md), [current state](memory/STATE.md), and [agent instructions](AGENTS.md)
 - [Roadmap](docs/ROADMAP.md), [RandomX baseline](docs/RANDOMX.md), [hardware evidence](docs/HARDWARE.md), and [experiments](experiments/README.md)
+
+## Persistent local execution infrastructure
+
+**Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
+At this snapshot the migration policy is not released. This dated record does not activate execution.
+Expensive OpenRX work uses the designated Ubuntu host only after [#27](https://github.com/jliu67/OpenRX/issues/27)
+publishes independently verified eligibility acceptance, matching `LOCAL_ACTIVE` and an **explicit release**
+bound to the actual reviewed merge and merged-document audit. Local active state alone is insufficient.
+Until that release is verified, defer full-scale work. Check the latest hash-linked state/release proof and
+local runner status; a later BLOCKED/ROLLBACK_REQUIRED record or offline host holds new requests.
+The effective-policy hub notice follows release; overall completion follows verified hub delivery and
+final synchronized acceptance. No merge, release or completion is claimed by this pre-cutover snapshot.
+
+The distinct pinned build 03 completed at 19:37:51Z with unchanged source/configuration and verified loader.
+Runtime-only execution `20261009T193937Z-576aa858c033` completed; independent review accepted the expected
+Ubuntu 24.04 / Linux 6.8.12 boot and all nine unchanged runtime controls at 20:04:52Z. The guest status was
+zero, framed probe stderr was empty, and the completion marker and ordered hypercalls 1/2/3 were present.
+Source, inputs, model and output integrity were independently verified. The model uses one 1-GHz
+AtomicSimpleCPU, RVV disabled, 4 GiB RAM, 16-KiB L1I/L1D and 256-KiB L2, with a read-only base disk and
+copy-on-write wrapper. This establishes functional controls, without a timing or performance inference.
+Initial stop execution `20261009T200904Z-854b672fc611` proved initialization termination only, with empty
+serial/no generated config. It is preserved and does not satisfy the broader operational stop gate.
+Broader stop outcome at this snapshot: INDEPENDENTLY ACCEPTED FIRMWARE-SEEN GEM5 LIFECYCLE STOP (868-byte OpenSBI observed before marker; child -9 / wrapper 1; no Linux/runtime/scientific pass or graceful checkpoint/statistics-flush claim).
+Reviewed broader stop execution: 20261009T202537Z-a1ca7df2cf1c; evidence: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094390003`.
+Runtime task publication: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6088623385`; technical transition publication:
+`https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095767946`. These publications were verified by exact GitHub readback.
+
+[Actual expected-guest/runtime evidence](docs/validation/local-migration-20261009/actual-runtime-v1/index.json) and [independent runtime review](docs/validation/local-migration-20261009/actual-runtime-v1/independent-review/independent-runtime-review.json) retain exact raw/public digests and independent oracle acceptance.
+[Policy/interface](docs/LOCAL_EXECUTION.md), [runbook](docs/LOCAL_MIGRATION.md) and
+[dated technical receipt](docs/validation/local-migration-20261009/ACCEPTANCE.md) explain actual gates.
+Remote execution/direct retrieval remain unavailable. The owner or an explicitly authorized local
+session reviews a pinned GitHub task request, submits locally with the immutable runner and publishes
+sanitized manifests/results. The owner need not be physically present. No remote execution service,
+autonomous issue poller or self-hosted Actions runner is supplied. Issue prose alone grants no execution
+authority. Permanent
+request-key binding/global payload-and-descendant resource locking prevent duplicates/conflicts; GitHub
+claims allocate source work, not CPU. If host offline, hold expensive requests and continue cheap work.
+Hosted full gem5/full-dataset/native steady controls stay DEFERRED to reviewed local requests; skips are
+unexecuted, never passed. Mainline guard effectiveness is conditional on the actual reviewed merge.
+Sandboxes continue code/review, docs, static analysis, lightweight tests and small reproductions.
+The [owner resource directive](docs/LOCAL_RESOURCE_POLICY.md) authorizes aggressive use of all six CPU cores and 16 GiB RAM
+with swap where useful, retaining only measured necessary OS/agent headroom. Per-job allocations must
+reflect current host load, memory availability and workload parallelism; 14 GiB is a candidate, not a
+universal safe limit. Keep one payload slot and all migration/scientific gates. The old runner988 validation records retain their actual memory and manager-reported 200% CPUQuota.
+A later CPU-delegation audit found that historical quota was not kernel-enforced; old property receipts
+are preserved and do not prove CPU enforcement. The new CPU delegation configuration is additive.
+CPU-delegation evidence: `independently reviewed CPU delegation f12aec1f/67de0d92 and actual runner kernel witness, docs/validation/local-migration-20261009/resource-kernel-20261010/index.json`. The approved owner-local-max-v1 candidate
+uses CPU600%, memory no greater than min(14 GiB, fresh MemAvailable minus 1 GiB), optional lower positive
+explicit budget, 2-GiB swap, Tasks256 and the same one-slot/45-second stop semantics. Admission must bind
+current host metrics and recheck available headroom before launching. Exact new-release/kernel-budget
+verification is recorded by the operational profile evidence; it is independently accepted for the exact installed release and tiny live proof below.
+
+The operational implementation must check each payload's actual kernel CPU, memory, swap and task
+limits, including effective ancestor ceilings, under admission/resource safeguards before launch. It must
+fail closed on unavailable controllers, mismatched constraints, tighter inherited ceilings or lost fresh
+memory headroom. Manager properties and controller availability alone do not establish enforcement.
+The exact installed operational release enforces these per-payload kernel checks; the independent
+resource proof below accepts the observed normal profile. Each future payload is checked again.
+
+Operational resource-profile outcome/evidence: `INDEPENDENTLY ACCEPTED exact runner657 and normal-profile tiny execution20261010T083746Z-6bc7037f04ef: actual CPU600000/100000, RAM5637144576 bytes (5.25GiB selected from measured headroom), swap2147483648, tasks256, six-CPU affinity, no tighter visible ancestors; rc0 and receipt integrity verified. Independent review951622749d40a9bf467e48ee3f6581cc52393569b8db60c87e63d57bee8ee00b; resource-kernel-20261010/index.json`.
+Operational release: `runner-v1-657b23f1`, SHA-256
+`657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b`. The verified profile and immutable release are reconciled. This dated preactivation snapshot
+retains the expensive-work hold until the explicit merge-bound release.
+
+This infrastructure acceptance leaves #16's complete unchanged gem5 RandomX matrix/full dataset/
+intended-core/SMP/BOOM and M1-M5 open. No calibrated timing, physical power, RTL, checkpoint resume,
+whole-Codex-daemon termination, host reboot or complete offline/hermetic dependency closure is claimed.
+Original Library binary remains unavailable; rebuilt binary retains its distinct identity. Preserve
+failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.
 
 ## RISC-V feasibility progress
 
@@ -30,7 +102,10 @@ affect unchanged RandomX startup/JIT. [Task #16](https://github.com/jliu67/OpenR
 tracks full-system Linux feasibility. [Explicit Linux runtime controls](docs/validation/m3-fs/RUNTIME-CI.md) now pass natively and under scalar QEMU: actual SIGILL recovery, RW/RX page permissions and generated-code overwrite/flush/reexecution. M3 remains open for selected-core boot
 and full-dataset correctness; no calibrated timing or efficiency is established.
 
-[PR #18](https://github.com/jliu67/OpenRandomX/pull/18) now includes a successfully built pinned simulator and **actual Linux boot with all nine standalone runtime controls passing**, independently replayed. The unchanged light-mode RandomX matrix is a separate open gate under #16. [Executed results](docs/validation/m3-fs/README.md) retain original timeout/OOM failures, supported link recovery and raw guest evidence. [Reuse the saved simulator](docs/validation/m3-fs/REUSE.md); ordinary PR checks no longer rebuild it. This one-core Atomic result does not establish selected RTL behavior or timing.
+[PR #18](https://github.com/jliu67/OpenRandomX/pull/18) now includes a successfully built pinned simulator and **actual Linux boot with all nine standalone runtime controls passing**, independently replayed. The unchanged light-mode RandomX matrix is a separate open gate under #16. [Executed results](docs/validation/m3-fs/README.md) retain original timeout/OOM failures, supported link recovery and raw guest evidence. [Saved simulator provenance](docs/validation/m3-fs/REUSE.md) remains intact; ordinary PR checks no longer rebuild it.
+The original Library binary is currently unavailable to the migration's callable tools, so a separately
+recorded pinned local rebuild completed with a new binary identity. Its expected local guest and nine unchanged runtime controls are independently accepted; successful historical saving is not a verified original transfer.
+The historical one-core Atomic result does not establish selected RTL behavior or timing.
 
 [PR #19](https://github.com/jliu67/OpenRandomX/pull/19) records the dated Monero source audit: current released mainnet consensus targets RandomX v1, inferred from source rather than a live tip. The beta's October 5 v2 fork is a separate stressnet/testnet schedule. Keep v2-first research and exact v1 controls; [audit](docs/validation/monero-activation/REVIEW-20261008.md) retains remaining activation questions.
 
@@ -56,13 +131,19 @@ bash scripts/build.sh
 bash scripts/test.sh
 # Functional smoke only:
 python3 scripts/benchmark.py --mode verify --versions v1 v2 --nonces 2 --repeats 1
-# Full-dataset known-reference controls, >2 GiB RAM:
-python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --nonces 1000 --repeats 1
-# Optional same-process adapter and bounded native controls:
-bash scripts/build_steady.sh
-python3 tests/native_steady.py
 # Offline power-schema tests; synthetic inputs, NOT measured power:
 python3 -m unittest discover -s tests -p test_power_import.py -v
+```
+
+Full-dataset known-reference controls and `native_steady.py` allocate the full dataset (over 2 GiB).
+Run them only through the designated immutable local runner **after verified cutover**, with a reviewed
+owner-local request and fresh persistent execution ID. Retain these scientific commands in that request:
+
+```bash
+python3 scripts/benchmark.py --mode mine --versions v1 v2 --threads 1 --nonces 1000 --repeats 1
+# Optional same-process adapter and full-dataset native controls:
+bash scripts/build_steady.sh
+python3 tests/native_steady.py
 ```
 
 RandomX v2.0.1 is included in `vendor/randomx/` at upstream commit `aaafe71322df6602c21a5c72937ac284724ae561`; no submodule download is required. Original BSD-3-Clause licenses/notices are retained. See [third-party notices](THIRD_PARTY_NOTICES.md).

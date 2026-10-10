@@ -1,0 +1,365 @@
+{
+  "at": "2026-10-09T17:13:34.408715+00:00",
+  "execution_limit": "Public command/source paths may contain literal ${OPENRX_LOCAL_ROOT}; derivatives are evidence, not copy/paste executable commands.",
+  "files": [
+    {
+      "host": {
+        "bytes": 2983,
+        "sha256": "8a5e0bde17f59ef0a5764fecb71fba1a573b07dfea43e4476166726ce3b07465"
+      },
+      "public": {
+        "bytes": 2959,
+        "sha256": "602e2e8afb12852fa07a16533f8a508795ae800509cc949715a24d9755b253b3"
+      },
+      "relative": "audit-addendum.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 1502,
+        "sha256": "441bef61caac3275193b49bece16dee42ef437f6a854ee61e3b158b57fc2c181"
+      },
+      "public": {
+        "bytes": 1502,
+        "sha256": "441bef61caac3275193b49bece16dee42ef437f6a854ee61e3b158b57fc2c181"
+      },
+      "relative": "delayed-finalizer.py",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 1600,
+        "sha256": "77061649834e587d3eab5019d595cf7009073d1fc3bd49d3f34202f3a9f76d7e"
+      },
+      "public": {
+        "bytes": 1592,
+        "sha256": "b9700b7885d09c8e2ec689c05fd9d42234fbcd4438a2242fedcbb17ccab4dc46"
+      },
+      "relative": "finalizer-witness.jsonl",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 1521,
+        "sha256": "300d3ce944b184315acaa51ee814e394fddccc720182d49f44fbce0a80cdc9c4"
+      },
+      "public": {
+        "bytes": 1513,
+        "sha256": "509ce212109a35a4cf47fa785b06651f9b476a90be7e4705a34f59c13778278d"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/events.jsonl",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/events.lock",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/finalize.lock",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 2207,
+        "sha256": "f65d423e31de116bbe34d48ceca1602006141ea9f502bce1f4bcdd87da6c6002"
+      },
+      "public": {
+        "bytes": 2151,
+        "sha256": "a748fa76cf4b2988fca9bffd1d65c2417b5887874d6253bfac52119326ba8cb9"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/manifest.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 27,
+        "sha256": "8b7e898a497cf0bf3d776d87ccb5a87597f30e8a1b2df5f26e16482ad60a4be1"
+      },
+      "public": {
+        "bytes": 27,
+        "sha256": "8b7e898a497cf0bf3d776d87ccb5a87597f30e8a1b2df5f26e16482ad60a4be1"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/payload/scientific.txt",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 142,
+        "sha256": "f77059d00fd400a3db87131cf259b97de1d66f494361dafa163997274070b68f"
+      },
+      "public": {
+        "bytes": 142,
+        "sha256": "f77059d00fd400a3db87131cf259b97de1d66f494361dafa163997274070b68f"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/process-result.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 2754,
+        "sha256": "491f862f82b26c0e8c74341c522e9d7640e59698f3c899e7085701ae73dd89b8"
+      },
+      "public": {
+        "bytes": 2682,
+        "sha256": "b7c49a780979823de4d333b50d88e156ecad3fad93cca3e2839fcb85917e9e00"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/receipt.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 38227,
+        "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+      },
+      "public": {
+        "bytes": 38227,
+        "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/runner.py",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/stderr.log",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 22,
+        "sha256": "2c38d01219c64d22c23bb282a8750fe5bd3099830972239d685ce2c53ed0f546"
+      },
+      "public": {
+        "bytes": 22,
+        "sha256": "2c38d01219c64d22c23bb282a8750fe5bd3099830972239d685ce2c53ed0f546"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/stdout.log",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 1078,
+        "sha256": "7a3e1378371af53d46afdd8845911adcdb278703a590048195eb6e560f8b256d"
+      },
+      "public": {
+        "bytes": 1046,
+        "sha256": "7d047ae3af5edeeb832450df1a68f4cf1b12eab0138851dd159938a12462e742"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/submission-command.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 41,
+        "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+      },
+      "public": {
+        "bytes": 41,
+        "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+      },
+      "relative": "fixture-root/executions/20261009T170845Z-09a14b95264a/submission-result.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/locks/admission.lock",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/locks/execution.lock",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/locks/state.lock",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 367,
+        "sha256": "423699ae23484e943670ac2c2151e59da288427d1c341c7ac93a6b8b46a880d3"
+      },
+      "public": {
+        "bytes": 359,
+        "sha256": "fccc542f0b99329e7762bcc99ef6b18bbb9ff23f44d8bc077c497feb025d98c2"
+      },
+      "relative": "fixture-root/requests/7ac20c82431bb208024b63cad8d3f0da853693191523effe35a23bde6fd14a80.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 480,
+        "sha256": "00045b4f3db4a95c2790a8cfdecc0ada701bb516f0d291e70678b322a45625a1"
+      },
+      "public": {
+        "bytes": 472,
+        "sha256": "84d1b1f3f94b1ad70bc90d7ec0f4ca18e404f1f00ad1505459509f3a29bbb82c"
+      },
+      "relative": "fixture-root/state/events.jsonl",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/state/events.lock",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 451,
+        "sha256": "abf3bd05e07cb24a9b4851723625ac3052a7c58871e3df788b1f288efc4ac4a4"
+      },
+      "public": {
+        "bytes": 443,
+        "sha256": "326738a791e5ce6ec89b0fffac1095ac9678a7dd6a1f90c5e0b3c467b5cc3c38"
+      },
+      "relative": "fixture-root/state/execution-receipts.jsonl",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "public": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "relative": "fixture-root/state/execution-receipts.lock",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 38227,
+        "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+      },
+      "public": {
+        "bytes": 38227,
+        "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+      },
+      "relative": "local_execution.py",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 169,
+        "sha256": "93522c58a830c7326383358925108ed05e744111c99ebdadcd45595f04038ab2"
+      },
+      "public": {
+        "bytes": 169,
+        "sha256": "93522c58a830c7326383358925108ed05e744111c99ebdadcd45595f04038ab2"
+      },
+      "relative": "payload.py",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 68909,
+        "sha256": "c302061e78c7e39531f85526d464b6f79d1c32707490bab1f302862e53659a5d"
+      },
+      "public": {
+        "bytes": 67893,
+        "sha256": "6682a433f398fbbab9e788109c99a826bb42f4126b60419dc70b1557b165e49b"
+      },
+      "relative": "receipt.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 5776,
+        "sha256": "314cecfd23f55bbf0ef21bedeab8d4aa703edd372354960538e326e0729ad599"
+      },
+      "public": {
+        "bytes": 5776,
+        "sha256": "314cecfd23f55bbf0ef21bedeab8d4aa703edd372354960538e326e0729ad599"
+      },
+      "relative": "run-integration.py",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 2663,
+        "sha256": "d9525a1155b0047251a51993fb9da93b4bf59e9861c26b4450a1bef7f6eb5da3"
+      },
+      "public": {
+        "bytes": 2599,
+        "sha256": "12caf6482bd23d6254392d3aa51e17ddaa6882e633f19670369d3f1635bcb1cc"
+      },
+      "relative": "service-commands.json",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "host": {
+        "bytes": 6739,
+        "sha256": "f111fd3dedccb2140b392c750c427aaffa3cffc9a44d2a89bb57dcbdb9b1eb5d"
+      },
+      "public": {
+        "bytes": 6651,
+        "sha256": "9fc476ecb4261331b48719cf3365c79c38f5a0ff8e09f47f6ae55716ccb0fae0"
+      },
+      "relative": "unit-journal.log",
+      "transformation": "Exact bytes with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    }
+  ],
+  "host_relative_directory": "migrations/20261009/independent-finalizer-integration-v1",
+  "integrity_limit": "Public root-prefix derivatives retain embedded hashes of host originals. Their changed path bytes cannot independently replay host artifact/event digests. Use indexed raw identities plus retained host copies.",
+  "not_claimed": [
+    "Actual100GiB or other large scientific output hashing/fsync",
+    "Captured final terminal Result/ExecStopPost stop_time after transient-unit collection",
+    "Physical host reboot or whole active Codex shutdown",
+    "Scientific correctness or infrastructure activation"
+  ],
+  "preservation": "Original false harness acceptance remains false. Separate audit-addendum.json records narrowly accepted extended-finalization behavior and explains transient-unit property loss.",
+  "schema": "openrx.finalizer-integration-evidence-export.v1",
+  "scope": "Actual988 runner private finalizer, six real notifications,55-second controlled delay on tiny retained outputs; no guest simulations."
+}

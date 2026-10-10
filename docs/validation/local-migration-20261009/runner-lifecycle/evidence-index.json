@@ -1,0 +1,95 @@
+{
+  "schema": "openrx.local.lifecycle.export.v1",
+  "runner_sha256": "24717a7f2e0fd6c508add25ba5b5f7b000525b14d9917b9e5226f00b5b64a1e4",
+  "redaction": "only local root replaced; exact original retained on host; public digest fields refer to original bytes when labeled local_raw/local_manifest/local_receipt",
+  "full_codex_session_termination_performed": false,
+  "full_host_reboot_performed": false,
+  "demonstrated": "launching process exited/absent while real systemd service logs advanced; service parent is persistent systemd --user; actual signal/OOM recovery and cgroup cleanup",
+  "records": [
+    {
+      "name": "integration-results-v4.json",
+      "local_raw_sha256": "cd752e6eaa052e0ecacbacd0f48457fa9691b6c5c29b408d3b798875e3bf8c38",
+      "sanitized_sha256": "5e2bc09a538748c739bdd87ff4f3fc98362189a8d64100645b37b1552321501b"
+    },
+    {
+      "name": "v4-service-properties.json",
+      "local_raw_sha256": "939f28ca3cb6bf722ccf92a50683c561ee271389f7917129686e5407757e04f4",
+      "sanitized_sha256": "5d4e0eaab1b89da47c3636795a616f953b2a7233fcb59fca74c6cbda1f831964"
+    },
+    {
+      "name": "v4-duplicate-fresh-process.json",
+      "local_raw_sha256": "b3d27d21f92fa4751e6a31637e5261f243e59c87af03b0b684a833a38412515c",
+      "sanitized_sha256": "9fd90cc59fe685897f09880b3a5085aaddb0a05fd5ffde2e4d4c52465b606c4f"
+    },
+    {
+      "name": "v4-session-independence-observation.json",
+      "local_raw_sha256": "d956b9939784069d77f875475eb50848e0bbad6f6aa4b5679173aa5f60e59154",
+      "sanitized_sha256": "69e356a250a0357850b9a983b4c9a1c0d64db808e352ae6747a1434a530d30c8"
+    },
+    {
+      "name": "v4-live-concurrency-before.json",
+      "local_raw_sha256": "ffde45e396cd32f6c02b6745715b4e2fe812ef801b434bacb5eba982395e56a1",
+      "sanitized_sha256": "09fc00d11c0a002d0885bffcb404b815bc1e4477ca2b644e670d5eb25dd68b3a"
+    },
+    {
+      "name": "v4-independence-concurrency-results.json",
+      "local_raw_sha256": "a350219f311abba44007e46648722282266c9d9137b8bca2ac0b0304f3c256a2",
+      "sanitized_sha256": "deb24b545d5b50fda5b79df65320c483545f8d0c595ee3304bf797f236612567"
+    },
+    {
+      "name": "v4-final-all-receipts-verified.json",
+      "local_raw_sha256": "976f019e3b619dd61bb7ab34162a43c9edaa71a37eadc39b7813b49045a9f1bc",
+      "sanitized_sha256": "251054f045ef77d961df4a8d7636ab4e6084666bfbebf8bf40aae95b68af37cf"
+    },
+    {
+      "execution_id": "20261009T155721Z-847ac3bd6533",
+      "local_manifest_sha256": "b04b1e6c6ae1a50857bde8bd9480076dc6e915e257443d2a1c0783c0f54a29c0",
+      "local_receipt_sha256": "563b89484f9865ad29f12a9024b9675e3ff253fe7773d419ce63de89a5c5d81b"
+    },
+    {
+      "execution_id": "20261009T155723Z-5e596a80828f",
+      "local_manifest_sha256": "deb80a67e1a11243d2b80609ec26e88426a3ccdabffdfc4bbe3833c6038518d8",
+      "local_receipt_sha256": "c3899e5d0212f802ba4173be8bbfe434bbb9765f5a9a7e4bb21f2a5cbc85ef14"
+    },
+    {
+      "execution_id": "20261009T155725Z-b9fb39066e20",
+      "local_manifest_sha256": "6e1b83e57f4ff9e5c39ff146135f46327d6b8fe6ab58f549ec2b976573709648",
+      "local_receipt_sha256": "9def616a1cb1bc84d075b35e429e9f1faa87a4a50ceba84132099545feda17c1"
+    },
+    {
+      "execution_id": "20261009T155727Z-1d49e1c355f8",
+      "local_manifest_sha256": "1671572b9b106be9350d20462faf070cdb125733d38a37ab25b1348b2528d989",
+      "local_receipt_sha256": "4f780f9e0dac9c397de09d970adccb4d88070deff27375b33b32573209957dec"
+    },
+    {
+      "execution_id": "20261009T155729Z-3f7aab016d7f",
+      "local_manifest_sha256": "d6abe3516bb93ff43ff89fd1d7c9f5c60ab24b77d2ddf9e74c68c50508e0d738",
+      "local_receipt_sha256": "87651422dade6bd7c55de6e67bc1279d9415da2535071b6f4183f6baee8c568f"
+    },
+    {
+      "execution_id": "20261009T155731Z-89780016a68a",
+      "local_manifest_sha256": "2be8876a3fdc12dd5c9d2fc70060124d04b7b8e6f321c706544c45ae0b1413bc",
+      "local_receipt_sha256": "d8af20a61826c4b3478c27e605d4ca450b520dd66b7b26e60fe7c52e98b5a39b"
+    },
+    {
+      "execution_id": "20261009T155733Z-e1a148850cc8",
+      "local_manifest_sha256": "342284ac65b4eead2b3243ad65d3eb21dc1b7629ade2f0ba50dc130b1d05df0b",
+      "local_receipt_sha256": "f2d1e354b30ed1bac5a5e7e6ffb624d9e2106b176a94394458544c236d993ee8"
+    },
+    {
+      "execution_id": "20261009T155826Z-b6825968635c",
+      "local_manifest_sha256": "3b039b1eb80fd44e85b5ca3b6ff96ca3026fe75cc9bd9c5cf64abdfae6b6ccb4",
+      "local_receipt_sha256": "946c191c990c7709cda13cbc5f0bdc7de6c451d4291c054d3d455e3fd5eae916"
+    },
+    {
+      "execution_id": "20261009T155827Z-6a496d3dd20a",
+      "local_manifest_sha256": "8b49ffc47e4b374fc8e93ae27a87c18d1d7afdd85824b1fa31377c95aca4042d",
+      "local_receipt_sha256": "4cd09a3a245aaf9aa99f0d57c0d9f11814003f141128df2409255089aac3a7b4"
+    },
+    {
+      "execution_id": "20261009T155828Z-3af40ce3d580",
+      "local_manifest_sha256": "1c6d1d8f09631e9ab3ea8e4a42511f6e21eb8d498da563a5256f1e6798289250",
+      "local_receipt_sha256": "992fc52b5bff1542570a0ef8631711b5977539aca37bca5031edb82608223efd"
+    }
+  ]
+}

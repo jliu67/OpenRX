@@ -1,0 +1,26 @@
+{
+  "authority_gates_pending": 4,
+  "cutover_pending_transition_ready": false,
+  "files": [
+    {
+      "ordered_prefix_substitution_counts": [
+        60,
+        0
+      ],
+      "original_bytes": 22459,
+      "original_sha256": "df6eb6f296bfc2220ce5d8269e9cb3997c5c57c6217664dd7f1a57a912b667b6",
+      "public_bytes": 21859,
+      "public_path": "technical-gate-map.json",
+      "public_sha256": "14ef6ec8fec4e3aea31683490a3b2328a9a33125cc898d064eb5d990dc4bbe26",
+      "source": "migrations/20261009/technical-gate-map-v1.json"
+    }
+  ],
+  "historical_technical_gates_true": 9,
+  "local_active": false,
+  "method": "Exactly designated-root then original-checkout prefix replacements; no reserialization/newline/scientific edits/hostname replacement. Raw map is verifier evidence; public copy is reviewed derivative.",
+  "migration_complete": false,
+  "new_resource_profile_pending": true,
+  "preparation_correction": "Initial unpublished index contained absolute private paths; entire preparation preserved verbatim privately before recreating this portable index. Scientific data and raw map unchanged; no GitHub publication occurred.",
+  "schema": "openrx.technical-gate-map.public-export.v1",
+  "state": "LOCAL_VALIDATING"
+}

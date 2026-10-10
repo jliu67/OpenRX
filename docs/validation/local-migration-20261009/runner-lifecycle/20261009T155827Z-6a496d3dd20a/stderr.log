@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/concurrency-first-v4.py", line 3, in <module>
+    time.sleep(30)
+KeyboardInterrupt

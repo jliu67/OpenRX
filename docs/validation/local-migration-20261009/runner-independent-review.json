@@ -1,0 +1,211 @@
+{
+  "schema": "openrx.local.runner-independent-review.v1",
+  "reviewer": "scientific_inventory",
+  "date_utc": "2026-10-09T16:09:29.575804+00:00",
+  "disposition": "accept final owner-operated local runner and host fixture lifecycle evidence; migration remains STAGING until simulator/guest/reviewed-merge/consistency gates pass",
+  "final_runner": {
+    "path": "${OPENRX_LOCAL_ROOT}/checkouts/migration/scripts/local_execution.py",
+    "bytes": 34289,
+    "sha256": "cd90f1d067a74390d5006ea811bcf17a02925635a4f6907711b93554b7390d0f"
+  },
+  "final_tests": {
+    "path": "${OPENRX_LOCAL_ROOT}/checkouts/migration/tests/test_local_execution.py",
+    "bytes": 18842,
+    "sha256": "eb941db9ff9c1e37ff86c4a3a3c27702091f400a93e838c5f55e9b1ff687bff2"
+  },
+  "independent_test_runs": [
+    {
+      "scope": "complete repository suite on prior lifecycle snapshot",
+      "tests_passed": 277,
+      "returncode": 0,
+      "runner_sha256": "24717a7f2e0fd6c508add25ba5b5f7b000525b14d9917b9e5226f00b5b64a1e4",
+      "receipt": {
+        "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-tests-v1/receipt.json",
+        "bytes": 2604,
+        "sha256": "29bf3fe05158cad2f1c8d036aee30e32ffd6a12287da0f95a82a5cc5f6a84bf3"
+      },
+      "public_log": "independent-all-tests-v1.log",
+      "public_log_sha256": "81f13fc91ba02fda7e52c1386083a19dfd6ae94a923b54ede995235090306d3f"
+    },
+    {
+      "scope": "all local-runner tests after final narrow output-inventory fix",
+      "tests_passed": 22,
+      "returncode": 0,
+      "runner_sha256": "cd90f1d067a74390d5006ea811bcf17a02925635a4f6907711b93554b7390d0f",
+      "receipt": {
+        "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-focused-v2/receipt.json",
+        "bytes": 1539,
+        "sha256": "3f8e84aa8d84496857d26a81ca190f7127619905eb2807279e7f5bdc96eb079a"
+      },
+      "public_log": "independent-focused-final.log",
+      "public_log_sha256": "b4e40c424cdbcf064da75092a7ac9cb8331af334b265f3b4d885472ed0391071"
+    }
+  ],
+  "v4_actual_systemd_evidence": {
+    "tested_runner_sha256": "24717a7f2e0fd6c508add25ba5b5f7b000525b14d9917b9e5226f00b5b64a1e4",
+    "receipts_independently_verified": [
+      {
+        "execution_id": "20261009T155721Z-847ac3bd6533",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      {
+        "execution_id": "20261009T155723Z-5e596a80828f",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      {
+        "execution_id": "20261009T155725Z-b9fb39066e20",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      },
+      {
+        "execution_id": "20261009T155727Z-1d49e1c355f8",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_FAILED"
+      },
+      {
+        "execution_id": "20261009T155729Z-3f7aab016d7f",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      {
+        "execution_id": "20261009T155731Z-89780016a68a",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED_UNREAPED"
+      },
+      {
+        "execution_id": "20261009T155733Z-e1a148850cc8",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      {
+        "execution_id": "20261009T155826Z-b6825968635c",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      {
+        "execution_id": "20261009T155827Z-6a496d3dd20a",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "INTERRUPTED"
+      },
+      {
+        "execution_id": "20261009T155828Z-3af40ce3d580",
+        "integrity_verified": true,
+        "scientific_acceptance": "unverified",
+        "status": "PROCESS_EXITED"
+      }
+    ],
+    "controls": [
+      "three instant successes include durable submission metadata",
+      "child exit7 recorded failure",
+      "SIGINT safe stop includes detached same-cgroup descendant cleanup",
+      "hard worker SIGKILL recorded INTERRUPTED_UNREAPED and inspected/recovered",
+      "synthetic48MiB cgroup OOM records actual oom-kill while production remains6GiB",
+      "fresh-process duplicate request denied without new execution",
+      "launcher exited and was absent while service heartbeat logs advanced under systemd --user parent",
+      "second service remained queued without child/output until first finalized/drained"
+    ],
+    "applied_resource_properties": {
+      "MemoryMax": 6442450944,
+      "MemorySwapMax": 1073741824,
+      "CPUQuotaPerSecUSec": "2s",
+      "TasksMax": 256,
+      "Nice": 10,
+      "NoNewPrivileges": "yes",
+      "KillMode": "mixed",
+      "KillSignal": 2,
+      "TimeoutStopUSec": "45s"
+    },
+    "public_exported_files_compared_to_retained_originals": 86,
+    "public_export_content_matches_documented_path_redaction": true
+  },
+  "final_fix_review": {
+    "changes_from_v4": "Only finalized_files inventory rejects symlinks/nonregular artifacts and finalize preflights before recording FINALIZED; process/admission/cgroup/resource behavior unchanged",
+    "final_source_actual_regular_payload_receipt": {
+      "execution_id": "20261009T160753Z-532b186cac9c",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    },
+    "final_source_receipt": {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/runner-root-v6/executions/20261009T160753Z-532b186cac9c/receipt.json",
+      "bytes": 2831,
+      "sha256": "f8295f1a7f71cbf40db001abf2ee4fdbfb5964c426e0487ebd719debc414bb0f"
+    },
+    "unsupported_artifacts_preserved_and_no_false_receipt": [
+      {
+        "kind": "directory symlink",
+        "execution_id": "20261009T160639Z-bda007bd5c76",
+        "snapshot_runner_sha256": "845fdbaa796c00d1e891d5951269e6d09d312c2ec20b9ffc10831353655cc2da",
+        "final_source_inventory_rejection_independently_confirmed": true
+      },
+      {
+        "kind": "FIFO",
+        "execution_id": "20261009T160754Z-2c312d912927",
+        "snapshot_runner_sha256": "cd90f1d067a74390d5006ea811bcf17a02925635a4f6907711b93554b7390d0f",
+        "final_source_inventory_rejection_independently_confirmed": true
+      }
+    ]
+  },
+  "source_evidence": [
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/integration-results-v4.json",
+      "bytes": 3950,
+      "sha256": "cd752e6eaa052e0ecacbacd0f48457fa9691b6c5c29b408d3b798875e3bf8c38"
+    },
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/v4-service-properties.json",
+      "bytes": 386,
+      "sha256": "939f28ca3cb6bf722ccf92a50683c561ee271389f7917129686e5407757e04f4"
+    },
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/v4-independence-concurrency-results.json",
+      "bytes": 879,
+      "sha256": "a350219f311abba44007e46648722282266c9d9137b8bca2ac0b0304f3c256a2"
+    },
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/v4-session-independence-observation.json",
+      "bytes": 738,
+      "sha256": "d956b9939784069d77f875475eb50848e0bbad6f6aa4b5679173aa5f60e59154"
+    },
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/v4-live-concurrency-before.json",
+      "bytes": 1950,
+      "sha256": "ffde45e396cd32f6c02b6745715b4e2fe812ef801b434bacb5eba982395e56a1"
+    },
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/v4-duplicate-fresh-process.json",
+      "bytes": 728,
+      "sha256": "b3d27d21f92fa4751e6a31637e5261f243e59c87af03b0b684a833a38412515c"
+    },
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/v5-output-integrity-results.json",
+      "bytes": 1638,
+      "sha256": "ece9b44c2eb8f91657d03a01ebaef66c55c15f8675aa0025f9e55395a096dd9d"
+    },
+    {
+      "path": "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/v6-final-inventory-integrity-results.json",
+      "bytes": 1525,
+      "sha256": "6f9811e449069493e558dff928ad9018c4bed75c4d18bf23b5f2642c6d7aaa12"
+    }
+  ],
+  "publication": "Public lifecycle paths are sanitized derivatives. Embedded artifact/receipt/event-chain hashes identify original host bytes. Integrity was independently verified on untouched retained host originals and the external receipt journal; sanitized copies cannot run standalone chain/receipt verification.",
+  "limitations": [
+    "Full active ChatGPT/Codex daemon termination and host reboot were not performed; actual independent launcher ended and systemd manager ownership/continued logs were verified",
+    "Remote execution/result retrieval remain unavailable; owner-mediated local CLI only",
+    "Input/source identities are rechecked before launch; owner must retain immutable execution inputs and source captures",
+    "No gem5 simulation or RandomX scientific workload was launched by runner fixture tests",
+    "Process completion and output integrity retain scientific_acceptance=unverified; no scientific criteria or milestones changed",
+    "Scientific checkpoint/resume unavailable"
+  ]
+}

@@ -1,0 +1,1989 @@
+{
+  "schema": "openrx.local-migration.evidence-export.v1",
+  "at": "2026-10-09T18:27:40.874015+00:00",
+  "transformation": "Exactly two ordered literal byte-prefix substitutions, designated execution root first then original checkout; zero other edits, no JSON/whitespace/NUL/line normalization",
+  "public_prefixes": [
+    "$OPENRX_LOCAL_ROOT",
+    "$OPENRX_ORIGINAL_CHECKOUT"
+  ],
+  "exports": [
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/describe-result.json",
+      "host_source_bytes": 4123,
+      "host_source_sha256": "dcf928b38246b4c01248930f7891aa574bf46752a9b63fadf6bef53d9ca84950",
+      "public_path": "describe-result.json",
+      "public_bytes": 4053,
+      "public_sha256": "2525b706c75df9382ba4239a354416af15a2200287d00c8479eeca1f054cd5a6",
+      "ordered_replacement_counts": {
+        "designated_root": 7,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/describe-v2-result.json",
+      "host_source_bytes": 5558,
+      "host_source_sha256": "65f3c3c32402d55527db96dd796e4b2f57753dbadaa2b0e0f8f85df248498129",
+      "public_path": "describe-v2-result.json",
+      "public_bytes": 5448,
+      "public_sha256": "56e9a9163bad5dd3f8117bc1b5d13f99cccc6653a6b4824cb4d7670fb038c33e",
+      "ordered_replacement_counts": {
+        "designated_root": 11,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/describe-v3-result.json",
+      "host_source_bytes": 7615,
+      "host_source_sha256": "e3c95098dbe6d51369548ed4f867ae154d217ad8443b7815da079fc6c8ebe58f",
+      "public_path": "describe-v3-result.json",
+      "public_bytes": 7465,
+      "public_sha256": "52bd5cd7e4a1451e6ef9fd7c928326911cf7b83d7777f3b3b94efd0fa399526c",
+      "ordered_replacement_counts": {
+        "designated_root": 15,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/duplicate-fresh-process.json",
+      "host_source_bytes": 926,
+      "host_source_sha256": "d009383baff8040abe4c551483357b4a5a65f59f71b7c178df6223f732e0556e",
+      "public_path": "duplicate-fresh-process.json",
+      "public_bytes": 876,
+      "public_sha256": "6137becb1c35e031fb2682991beddc8105d8a0f82c68cd5ad44a541ab151766a",
+      "ordered_replacement_counts": {
+        "designated_root": 5,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-exit-seven-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "bcd79de1ba3e183e36afd8820df7967a015b39559c4b22fffc76ef78021f4be2",
+      "public_path": "final988-exit-seven-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "d3b998e309ee88e95805c8bf51597dde19a505a5971ab6b9db6686416c3b816e",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-independent-launcher-actual-properties.json",
+      "host_source_bytes": 1583,
+      "host_source_sha256": "561f6fd01a3e6f3cfeae1c4afc4ef6f08f45a95a962463198851e07cd03e2163",
+      "public_path": "final988-independent-launcher-actual-properties.json",
+      "public_bytes": 1583,
+      "public_sha256": "561f6fd01a3e6f3cfeae1c4afc4ef6f08f45a95a962463198851e07cd03e2163",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-independent-launcher-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "adf1350e268ae7004a1fd3ef10a0f6530f01d5114873bf0afb84c4aa44637cab",
+      "public_path": "final988-independent-launcher-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "3c72209be617452c4a6b28f9380db4e88b684971d4a1ad19c90e9d393e5fdc46",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-instant-0-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "bc79839e5fb3f63eb86dd3309b4f74efb797a68f1e51f5adceeeb8242f523fc0",
+      "public_path": "final988-instant-0-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "a1adfdb6357c8a74700586cb86109a8f6522ff2df5d9c2bc31a78d6537864d32",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-instant-1-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "3c2c5bec13f51041e1e28031ccef0b9ef916b868ad4b1b943ad3eab52e2b0d18",
+      "public_path": "final988-instant-1-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "a8fd61d52aab34e088f57de855b0c30eab36b369b6a3518f391ad61e41245327",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-instant-2-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "3772d86197cea07a285ae1b7be92af78e7e0c75fe94709ec93117c883e475d9e",
+      "public_path": "final988-instant-2-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "61e3777941f3f948c19c71aa9da08b511482925b492a7fb005073afed1ece5f3",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-oom-actual-properties.json",
+      "host_source_bytes": 1583,
+      "host_source_sha256": "62dd303bcbd8b1d3d051abb1dd1c1b54a2fb855a77572644ffce17701f6f4080",
+      "public_path": "final988-oom-actual-properties.json",
+      "public_bytes": 1583,
+      "public_sha256": "62dd303bcbd8b1d3d051abb1dd1c1b54a2fb855a77572644ffce17701f6f4080",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-oom-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "fd233027147d64ae23716c36421e29756ceea485365c62e5de20bed6acab33e0",
+      "public_path": "final988-oom-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "4aed8ceb42a997cf90bff20b2e8971289b3ef48b85865acf21386114ce2f249e",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-serialize-first-actual-properties.json",
+      "host_source_bytes": 1583,
+      "host_source_sha256": "d5d21d73d151b484511051b2acc1c96eeea7247aa2e2920ca5e00ef3a866c35a",
+      "public_path": "final988-serialize-first-actual-properties.json",
+      "public_bytes": 1583,
+      "public_sha256": "d5d21d73d151b484511051b2acc1c96eeea7247aa2e2920ca5e00ef3a866c35a",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-serialize-first-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "fd87c4b1c8e0a387cf67ad15a4b10600de850cb55f2e897904b05b6f9da4c9b3",
+      "public_path": "final988-serialize-first-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "1cf1a06031d2daa531b25ff16ddb20873deca6b3cadab9a24bbfe77c5bf2a470",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-serialize-second-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "b2db8268b19990189fe8fb5c182988c2057c7594d7ab0a6646b72a121f8d2ea9",
+      "public_path": "final988-serialize-second-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "7ae3f51526e8f2c08dc1d4040cea4d44302390b0cd7df32e4578cfe81e319fcf",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-stop-detached-actual-properties.json",
+      "host_source_bytes": 1583,
+      "host_source_sha256": "a0752194ef0413598be76b56a5ee4f5deb948f18abf3717995fce505fb4449d0",
+      "public_path": "final988-stop-detached-actual-properties.json",
+      "public_bytes": 1583,
+      "public_sha256": "a0752194ef0413598be76b56a5ee4f5deb948f18abf3717995fce505fb4449d0",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-stop-detached-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "6e149b9be4ae8f149df7afde4e9fe40ecbe2cbf50e816c847b480a1fa4c723fc",
+      "public_path": "final988-stop-detached-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "524296788e0cb9e5e2d09e9abb436a0fd325b90e50b4a661da62609c19c2448e",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-worker-killed-actual-properties.json",
+      "host_source_bytes": 1583,
+      "host_source_sha256": "7aa63c03a613404620c8b78ed7ac53bd87c034077374bc13fa70869aec49fe01",
+      "public_path": "final988-worker-killed-actual-properties.json",
+      "public_bytes": 1583,
+      "public_sha256": "7aa63c03a613404620c8b78ed7ac53bd87c034077374bc13fa70869aec49fe01",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/final988-worker-killed-service-command.json",
+      "host_source_bytes": 2880,
+      "host_source_sha256": "d65bcb4af7d134c159d61797f0c7bfa4213226541520f53c360c1daa56e5a15f",
+      "public_path": "final988-worker-killed-service-command.json",
+      "public_bytes": 2800,
+      "public_sha256": "cdae0bb1e3f948af0c63207b4f11131e7dc7f661c0f264672c6e2f9c246a06f5",
+      "ordered_replacement_counts": {
+        "designated_root": 8,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/events.jsonl",
+      "host_source_bytes": 1739,
+      "host_source_sha256": "204ccaa049a1e6eee584cae1204059ff61dd23d1c574097711f9213a9216bf1c",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/events.jsonl",
+      "public_bytes": 1729,
+      "public_sha256": "a079b0f6ea61ea16828f6c9f131b5f6ead68f568be9be095b8ea278c5586ca23",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/manifest.json",
+      "host_source_bytes": 2686,
+      "host_source_sha256": "e763ffa6dc16de6c841d16a9cc5eaadb93969373d5dc72c02d969a5f41aeba0e",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/manifest.json",
+      "public_bytes": 2586,
+      "public_sha256": "0502a0525ab1dfd3eebe309a64be626c98dbf87e70fed7b8ce23a7845d53a61d",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/payload/detached-child-output/ready.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "d4a1893c8c940aee18bbab5e535569dada0c5203e18a507e6aa1460031da8a7e",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/payload/detached-child-output/ready.json",
+      "public_bytes": 41,
+      "public_sha256": "d4a1893c8c940aee18bbab5e535569dada0c5203e18a507e6aa1460031da8a7e",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/payload/detached-child.json",
+      "host_source_bytes": 42,
+      "host_source_sha256": "4e6fecda7ea74bddbcf6ec9f257893cc62678bab6945874ad7ce0d339a4cd65f",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/payload/detached-child.json",
+      "public_bytes": 42,
+      "public_sha256": "4e6fecda7ea74bddbcf6ec9f257893cc62678bab6945874ad7ce0d339a4cd65f",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/payload/ready.json",
+      "host_source_bytes": 35,
+      "host_source_sha256": "87cf0cdc7b51b8f85f68e81135b8b3be366fff34b929ef574893018e6c6c43bf",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/payload/ready.json",
+      "public_bytes": 35,
+      "public_sha256": "87cf0cdc7b51b8f85f68e81135b8b3be366fff34b929ef574893018e6c6c43bf",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/process-result.json",
+      "host_source_bytes": 141,
+      "host_source_sha256": "25405cc50b504c8f0ccd9b057b171e3dba3563ef7abe9c2b8af777c0b011725c",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/process-result.json",
+      "public_bytes": 141,
+      "public_sha256": "25405cc50b504c8f0ccd9b057b171e3dba3563ef7abe9c2b8af777c0b011725c",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/receipt.json",
+      "host_source_bytes": 3176,
+      "host_source_sha256": "99b0068b84a4629958d7a0d0549a50fcb5b4895213b8361b71a7efe320b49a16",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/receipt.json",
+      "public_bytes": 3066,
+      "public_sha256": "132215540777b5d40d1e662e1b8271bd8130c28cea09b7d7e594ece246450598",
+      "ordered_replacement_counts": {
+        "designated_root": 11,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/stderr.log",
+      "host_source_bytes": 195,
+      "host_source_sha256": "a0e22f060ac57935e53cc75aa90a862beadab34ffc06cf7298f659255c610866",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/stderr.log",
+      "public_bytes": 185,
+      "public_sha256": "d195a6cc5075af5b541b63c3d14924f53a05959f2072ff224380d2a3142ff0b8",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/stdout.log",
+      "host_source_bytes": 75,
+      "host_source_sha256": "92ab90485011f764710a02ce920c35365d4b6ed75df15bd25138a34f6cad5b4f",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/stdout.log",
+      "public_bytes": 75,
+      "public_sha256": "92ab90485011f764710a02ce920c35365d4b6ed75df15bd25138a34f6cad5b4f",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "94719cc9e10a65a77e488570e25c1fc7650d6c8a42cd3973f4821544025b90e0",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "0e8dfce80fc7aca55d5a7d7d580932406afe3402466e7f8770f0e60af0f6990e",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181830Z-36d71158df4c/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/events.jsonl",
+      "host_source_bytes": 1510,
+      "host_source_sha256": "801d50dd7593f8fa8b63c2ab9fae65db126de42c91ba1d80b935f626d9811699",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/events.jsonl",
+      "public_bytes": 1500,
+      "public_sha256": "a1fd4caa5552140799af3de56a8966ea673c0841ac2973159827fb4990fc0fbd",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/manifest.json",
+      "host_source_bytes": 2680,
+      "host_source_sha256": "e92433c640c7daeae121ca042c453bd1f6daa8bddfbcb5d1ca9c949f5c7f20e3",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/manifest.json",
+      "public_bytes": 2580,
+      "public_sha256": "ae452b30a205bca0c81fd54e2f0a983526ac72fabccd1bf7a588a065b20266a5",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/payload/nested-result.json",
+      "host_source_bytes": 59,
+      "host_source_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/payload/nested-result.json",
+      "public_bytes": 59,
+      "public_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/process-result.json",
+      "host_source_bytes": 142,
+      "host_source_sha256": "1059cd44b635d55e50590c9f015da2a1b6ef7409bd85183fffbb0b085eb1bc56",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/process-result.json",
+      "public_bytes": 142,
+      "public_sha256": "1059cd44b635d55e50590c9f015da2a1b6ef7409bd85183fffbb0b085eb1bc56",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/receipt.json",
+      "host_source_bytes": 2659,
+      "host_source_sha256": "b8878066e662999c293443839f0ffae751ce827ab1c49c6cfbb3091773f172da",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/receipt.json",
+      "public_bytes": 2569,
+      "public_sha256": "db41216f299500a4bc14e75d1bc58e167178f51b026c1a064fcd956adc2b8348",
+      "ordered_replacement_counts": {
+        "designated_root": 9,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/stderr.log",
+      "host_source_bytes": 0,
+      "host_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/stderr.log",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/stdout.log",
+      "host_source_bytes": 23,
+      "host_source_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/stdout.log",
+      "public_bytes": 23,
+      "public_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "d9d70e1f1b6a7c6de95b04292d700e6034f2e15e57cec5e816d06be0cba6f13d",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "6d98708d84b5307ebe0fdacf69554162d1379eaad4555246566da3191c14b258",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181831Z-a2db3f07985b/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/events.jsonl",
+      "host_source_bytes": 1510,
+      "host_source_sha256": "d5e36200cb55b6399eb6560d6d50709453cc4fa71c95e03c2297baaad03dff65",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/events.jsonl",
+      "public_bytes": 1500,
+      "public_sha256": "4483f20476032abeec98bb35b7115da31d1232463fde5b94c8b93afffa3a3d14",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/manifest.json",
+      "host_source_bytes": 2680,
+      "host_source_sha256": "b8b9dcd35b28628c4dc6334ad545c7dac39dd6bd9e8dea8a67b37c7132339fc5",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/manifest.json",
+      "public_bytes": 2580,
+      "public_sha256": "ed69ce6722d8881964bb308745364363d2954a45cc01920d2c7d931c6cccba8f",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/payload/nested-result.json",
+      "host_source_bytes": 59,
+      "host_source_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/payload/nested-result.json",
+      "public_bytes": 59,
+      "public_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/process-result.json",
+      "host_source_bytes": 142,
+      "host_source_sha256": "5704899c452ac98af5f7d27dc9d42c0bd26564c2703291ad3137cb7a53341f21",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/process-result.json",
+      "public_bytes": 142,
+      "public_sha256": "5704899c452ac98af5f7d27dc9d42c0bd26564c2703291ad3137cb7a53341f21",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/receipt.json",
+      "host_source_bytes": 2659,
+      "host_source_sha256": "ff2c9666f5c9935ba4b9a2057a1594c31d56328be326892375e7d744c8457307",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/receipt.json",
+      "public_bytes": 2569,
+      "public_sha256": "53ad77e89070958934265bc1e928e548d8d5019441ce970521969e1d5ae43099",
+      "ordered_replacement_counts": {
+        "designated_root": 9,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/stderr.log",
+      "host_source_bytes": 0,
+      "host_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/stderr.log",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/stdout.log",
+      "host_source_bytes": 23,
+      "host_source_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/stdout.log",
+      "public_bytes": 23,
+      "public_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "d59549373adf47f72ec5505b00efa876971cb4066bcdb0233fe08cd3e426098f",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "f834e01fc8cfd43faa67864ed6412ebe9811d63a8717b3ee0c01b557b048cc5c",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181832Z-25d801e2dc11/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/events.jsonl",
+      "host_source_bytes": 1510,
+      "host_source_sha256": "a5713d08feec5b5fc600b9f4712a6189a2bcb00234e1b824d540daac1abcdf9b",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/events.jsonl",
+      "public_bytes": 1500,
+      "public_sha256": "9034a68b7bc8d8903b2674744fe1adeec059d15df1c9b8526bf6ac4c450dbb9f",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/manifest.json",
+      "host_source_bytes": 2680,
+      "host_source_sha256": "b345d93af659708090d57e912f41d4ba7612e4f8befe2c9315448eb82a1a145a",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/manifest.json",
+      "public_bytes": 2580,
+      "public_sha256": "177a3aa4b01979ebde99081dee344502ef9cde3ef9f1972456f8fdb67c21010d",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/payload/nested-result.json",
+      "host_source_bytes": 59,
+      "host_source_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/payload/nested-result.json",
+      "public_bytes": 59,
+      "public_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/process-result.json",
+      "host_source_bytes": 142,
+      "host_source_sha256": "632332e7afeb66d6339d1d679b6d30a851e9d21913c1ebb1187c1e3d15607bc8",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/process-result.json",
+      "public_bytes": 142,
+      "public_sha256": "632332e7afeb66d6339d1d679b6d30a851e9d21913c1ebb1187c1e3d15607bc8",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/receipt.json",
+      "host_source_bytes": 2659,
+      "host_source_sha256": "41faf5597a5f600fd33f7d11c45b6d571669ae489d121ef0d1c8d616b83662e9",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/receipt.json",
+      "public_bytes": 2569,
+      "public_sha256": "6d9144075a25fd9fbba30139a9913f0243265451d844a8371e6fc25659c4ddde",
+      "ordered_replacement_counts": {
+        "designated_root": 9,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/stderr.log",
+      "host_source_bytes": 0,
+      "host_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/stderr.log",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/stdout.log",
+      "host_source_bytes": 23,
+      "host_source_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/stdout.log",
+      "public_bytes": 23,
+      "public_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "4ea3e0acce5d7e43ca8cbf3718b43c49c407e29729fff0ecb135ae5337f1995e",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "e5eb1fe782d9f1774d22c4f43c582f8500044e054971eb9d49bbdbb9abf61b6c",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181833Z-55843e05d93a/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/events.jsonl",
+      "host_source_bytes": 1512,
+      "host_source_sha256": "e586d69c3cfa8be3ee244a8b816347bd787196fcb419323cb190a64ed66dda72",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/events.jsonl",
+      "public_bytes": 1502,
+      "public_sha256": "d6f50b45fa6bc5ebd6cc67b66025e1ee55620b90fc530ea88d9113569ca35a41",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/manifest.json",
+      "host_source_bytes": 2687,
+      "host_source_sha256": "f8610229e599866fdf09e5c5c95ff72ad5787f7d25b64e22f73dbdba1d90c980",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/manifest.json",
+      "public_bytes": 2587,
+      "public_sha256": "87bf293bb8c7faac2b201b1b4837ab44302a8b821aec33a40a5d818eb31eef51",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/payload/retained-failure.json",
+      "host_source_bytes": 30,
+      "host_source_sha256": "a2f7fe47f3abf4e9b166e47b37ca61c179009f79eb4833853febfceabcea5635",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/payload/retained-failure.json",
+      "public_bytes": 30,
+      "public_sha256": "a2f7fe47f3abf4e9b166e47b37ca61c179009f79eb4833853febfceabcea5635",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/process-result.json",
+      "host_source_bytes": 142,
+      "host_source_sha256": "447c7d089ae1cdca35d93da8781f2ad5bc8a46cec0dd4ce80ad93b570b3ec1f4",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/process-result.json",
+      "public_bytes": 142,
+      "public_sha256": "447c7d089ae1cdca35d93da8781f2ad5bc8a46cec0dd4ce80ad93b570b3ec1f4",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/receipt.json",
+      "host_source_bytes": 2664,
+      "host_source_sha256": "d7f079672af3cb57f9c8e36f39f2eab08b068a8323e71183a48fbecf5721e893",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/receipt.json",
+      "public_bytes": 2574,
+      "public_sha256": "cc9015b2737c57804d614526605d00f4ae2790cd4f4adaa853c67d9915f19d4e",
+      "ordered_replacement_counts": {
+        "designated_root": 9,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/stderr.log",
+      "host_source_bytes": 0,
+      "host_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/stderr.log",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/stdout.log",
+      "host_source_bytes": 37,
+      "host_source_sha256": "3eb1aff8d266e5c8ed1cb4d8018d1108423455cc83d433f393a66fc5aa54674b",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/stdout.log",
+      "public_bytes": 37,
+      "public_sha256": "3eb1aff8d266e5c8ed1cb4d8018d1108423455cc83d433f393a66fc5aa54674b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "d476aa197b5c5e8e56ef27ba294c169d68c7b4c1ea9a21977dfc763bcc08b5a7",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "b41211d62df39ef5d5761350d0bb80862ba5881691ddffe07d0c92ad93b39b2d",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181834Z-e588186bf436/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/events.jsonl",
+      "host_source_bytes": 1261,
+      "host_source_sha256": "be32ae36c39ddf12a365f59787cb4e1eb3b71589b0c2d218f6cc850401106402",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/events.jsonl",
+      "public_bytes": 1251,
+      "public_sha256": "dad42154a9e73d33933b20f27341dacaf51f0f1fa1a0a0973f35b55f9f692068",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/manifest.json",
+      "host_source_bytes": 2686,
+      "host_source_sha256": "e640620c599890493f491d58ea1ccac093543ef7b51fc4f48efb1f9883fbd867",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/manifest.json",
+      "public_bytes": 2586,
+      "public_sha256": "13f4d4b87037c0dfebc030644130dc3f121f4e2183182c3bfe294843b90605bf",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/payload/detached-child-output/ready.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "735fbabc81e18818e51394d96037b15d195d34a908c1f8433b7bbb040109ea6f",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/payload/detached-child-output/ready.json",
+      "public_bytes": 41,
+      "public_sha256": "735fbabc81e18818e51394d96037b15d195d34a908c1f8433b7bbb040109ea6f",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/payload/detached-child.json",
+      "host_source_bytes": 42,
+      "host_source_sha256": "ce3b8a89ec670672414c8274ed570019e7462aeb9625533e53a79652cea531c0",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/payload/detached-child.json",
+      "public_bytes": 42,
+      "public_sha256": "ce3b8a89ec670672414c8274ed570019e7462aeb9625533e53a79652cea531c0",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/payload/ready.json",
+      "host_source_bytes": 35,
+      "host_source_sha256": "152e28ae22b80f57979de15135549040c3ff02e66984789c6cb5834cf5c26722",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/payload/ready.json",
+      "public_bytes": 35,
+      "public_sha256": "152e28ae22b80f57979de15135549040c3ff02e66984789c6cb5834cf5c26722",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/receipt.json",
+      "host_source_bytes": 2797,
+      "host_source_sha256": "ad71890d4b46324ead31faae73a894763f155b62819ab6a43b39745ad8a64408",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/receipt.json",
+      "public_bytes": 2697,
+      "public_sha256": "8fe41c0d7d04e7ac6d531b0ce29a23fbcf915c71ce6f3587a809e43e8f6ebb45",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/stderr.log",
+      "host_source_bytes": 0,
+      "host_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/stderr.log",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/stdout.log",
+      "host_source_bytes": 48,
+      "host_source_sha256": "50d1222ec98e2b9dbdde9c2341b56eb360ab1bd703743a784ff1f4aa2ceddcbf",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/stdout.log",
+      "public_bytes": 48,
+      "public_sha256": "50d1222ec98e2b9dbdde9c2341b56eb360ab1bd703743a784ff1f4aa2ceddcbf",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "b56491f6256ad985df8362879bf1102e77ea6fda8b0bfb3c0e55f8701584e09a",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "bed02c692db4ce5b14e5abe1e7cbaf464487fd0c82461dd43831b1ca9374747b",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/events.jsonl",
+      "host_source_bytes": 1509,
+      "host_source_sha256": "1f353469f6dc6093cb60f02af6fbfe4f5940acb94a628b80fed8c30241f37ff4",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/events.jsonl",
+      "public_bytes": 1499,
+      "public_sha256": "0b80d9cf4d31f7a3fc395d81c62ef9a1efffa37353c233ef6a532dc83a437a8f",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/manifest.json",
+      "host_source_bytes": 2666,
+      "host_source_sha256": "847a4151ff8f92e046d2464594259029573ac8944e0f723350d2746ed2c576c3",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/manifest.json",
+      "public_bytes": 2566,
+      "public_sha256": "7ab24af4b535583375edd708f15706e28d4bd4cc003158a4b1cd8679938f28c6",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/payload/allocate.request",
+      "host_source_bytes": 56,
+      "host_source_sha256": "fb8ac45bdca0d61f422aa4b32e608691347d6a58ea39188fec7794332a4571d6",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/payload/allocate.request",
+      "public_bytes": 56,
+      "public_sha256": "fb8ac45bdca0d61f422aa4b32e608691347d6a58ea39188fec7794332a4571d6",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/payload/ready.json",
+      "host_source_bytes": 30,
+      "host_source_sha256": "af1cfee950fd07223f9c75d477a483d2e715f7f4b5e311017bb3b385056417a5",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/payload/ready.json",
+      "public_bytes": 30,
+      "public_sha256": "af1cfee950fd07223f9c75d477a483d2e715f7f4b5e311017bb3b385056417a5",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/process-result.json",
+      "host_source_bytes": 141,
+      "host_source_sha256": "0d3d472b0bc0c7407b0557a4205ea0a6fcc22b5cc18f5ce068279270159df0bc",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/process-result.json",
+      "public_bytes": 141,
+      "public_sha256": "0d3d472b0bc0c7407b0557a4205ea0a6fcc22b5cc18f5ce068279270159df0bc",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/receipt.json",
+      "host_source_bytes": 2902,
+      "host_source_sha256": "c98cbdb603cf92b367bdf05b3e1e0df2798a0ae44fdb012661d599da5c17dc51",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/receipt.json",
+      "public_bytes": 2802,
+      "public_sha256": "770863387d4df6c033e2467facd1a91795fcaa3369251017499879f1baffbc67",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/stderr.log",
+      "host_source_bytes": 0,
+      "host_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/stderr.log",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/stdout.log",
+      "host_source_bytes": 60,
+      "host_source_sha256": "5a33a4eb3d66c785cddd6ee44bf252117b5e572fbb6d5f50e6d036c9a1e8c41c",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/stdout.log",
+      "public_bytes": 60,
+      "public_sha256": "5a33a4eb3d66c785cddd6ee44bf252117b5e572fbb6d5f50e6d036c9a1e8c41c",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "483f9e352e96f0258bcf22b4bf89acf7efe48dfe677ac8eff61190322f4026a2",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "87c96e006b65e8c2e62e8f69b7efd64c754c6e9ee50e15a59f0fb269bc99ca4f",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181836Z-d6236011c4ef/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/events.jsonl",
+      "host_source_bytes": 1739,
+      "host_source_sha256": "0d84b046e21b2c62d80011d881095de6af59a0ace28288f1b1d2fc68b18a13bc",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/events.jsonl",
+      "public_bytes": 1729,
+      "public_sha256": "1abb0f5876ca5a26d9fc4987ebf259af94724a39f85a8b3be81794ceb80ff91f",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/manifest.json",
+      "host_source_bytes": 2699,
+      "host_source_sha256": "695d16af611623bdcc8ae19110f3871340c0059965027e047d9672f81a5a2436",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/manifest.json",
+      "public_bytes": 2599,
+      "public_sha256": "9f38898677f4a53db966994d549b569983eef9eba48b703161333a16b10dee10",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/payload/ready.json",
+      "host_source_bytes": 38,
+      "host_source_sha256": "1c91e853ece22e0633a0c9680a5b95c132679f61c5356dc8a4eabe650d13054f",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/payload/ready.json",
+      "public_bytes": 38,
+      "public_sha256": "1c91e853ece22e0633a0c9680a5b95c132679f61c5356dc8a4eabe650d13054f",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/process-result.json",
+      "host_source_bytes": 141,
+      "host_source_sha256": "f80fa53685d55556eb86084356c95b7eb8881c112166a4917902d713fd6d4ef6",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/process-result.json",
+      "public_bytes": 141,
+      "public_sha256": "f80fa53685d55556eb86084356c95b7eb8881c112166a4917902d713fd6d4ef6",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/receipt.json",
+      "host_source_bytes": 2653,
+      "host_source_sha256": "26bb63deaa5c7d05f8b811171b281b321c34d506d3e2942ed75d6cbc0f3d5358",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/receipt.json",
+      "public_bytes": 2563,
+      "public_sha256": "defd9aeef58d4ebc10788d4ff9a3f04bc6b93f8913d914f7be693e306a54fc3a",
+      "ordered_replacement_counts": {
+        "designated_root": 9,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/stderr.log",
+      "host_source_bytes": 195,
+      "host_source_sha256": "a0e22f060ac57935e53cc75aa90a862beadab34ffc06cf7298f659255c610866",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/stderr.log",
+      "public_bytes": 185,
+      "public_sha256": "d195a6cc5075af5b541b63c3d14924f53a05959f2072ff224380d2a3142ff0b8",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/stdout.log",
+      "host_source_bytes": 48,
+      "host_source_sha256": "c968a112410fb5d2e4bf1db8bfb95bada75057a0277b4cf265d67d2b78ad36a9",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/stdout.log",
+      "public_bytes": 48,
+      "public_sha256": "c968a112410fb5d2e4bf1db8bfb95bada75057a0277b4cf265d67d2b78ad36a9",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "fe45efe84d524ead9d0696530307283235e6c032247de293d8e30accc26f24cd",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "616ab7055c3355e7505e5cefb7d7d1176f3e9ec24a6df30092590d16b2c15334",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181838Z-74e4322ad038/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/events.jsonl",
+      "host_source_bytes": 1739,
+      "host_source_sha256": "31a57e48d35e83923a94e865f99c8e6167d263ebe95956b82282bf915be3392c",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/events.jsonl",
+      "public_bytes": 1729,
+      "public_sha256": "1317143154b008c8e1c185bf30b405d0f54e4c259bbab00d3cf5cdaddd80ad7a",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/manifest.json",
+      "host_source_bytes": 2688,
+      "host_source_sha256": "f3562a1a3d9a0edb74a4a1f0ade3cfc3a475facc1ab1304dfa587b0006e696eb",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/manifest.json",
+      "public_bytes": 2588,
+      "public_sha256": "1f2e46c348bfe546088d8006b16f9e3e328fdf95614103a36b385c0641358ad4",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/payload/detached-child-output/ready.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "8e3a0830978740ded6e095653ad2e3c572367b6efb9f3929baa2fdf422ba5424",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/payload/detached-child-output/ready.json",
+      "public_bytes": 41,
+      "public_sha256": "8e3a0830978740ded6e095653ad2e3c572367b6efb9f3929baa2fdf422ba5424",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/payload/detached-child.json",
+      "host_source_bytes": 42,
+      "host_source_sha256": "88c799eff3e1970ab4223b385030b9cd09e408125f4b111fd4845de0abc8b230",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/payload/detached-child.json",
+      "public_bytes": 42,
+      "public_sha256": "88c799eff3e1970ab4223b385030b9cd09e408125f4b111fd4845de0abc8b230",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/payload/ready.json",
+      "host_source_bytes": 35,
+      "host_source_sha256": "76fe7cc42d2bf5ef60285aa7dd36bdccdf2df07e22eb4ee163e272a51de98905",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/payload/ready.json",
+      "public_bytes": 35,
+      "public_sha256": "76fe7cc42d2bf5ef60285aa7dd36bdccdf2df07e22eb4ee163e272a51de98905",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/process-result.json",
+      "host_source_bytes": 141,
+      "host_source_sha256": "314f5d06470752720ca51a1ecdc208db467b6964e08666edf24ff9767dd4d24d",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/process-result.json",
+      "public_bytes": 141,
+      "public_sha256": "314f5d06470752720ca51a1ecdc208db467b6964e08666edf24ff9767dd4d24d",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/receipt.json",
+      "host_source_bytes": 3177,
+      "host_source_sha256": "e1c01be2a0b009ef8404a4d816b5999d5f7cee41c638ba95e200651309db55fb",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/receipt.json",
+      "public_bytes": 3067,
+      "public_sha256": "a753b7401197f46c145609e8c9156a7bba2b288680bd2a539c646df880158d32",
+      "ordered_replacement_counts": {
+        "designated_root": 11,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/stderr.log",
+      "host_source_bytes": 195,
+      "host_source_sha256": "a0e22f060ac57935e53cc75aa90a862beadab34ffc06cf7298f659255c610866",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/stderr.log",
+      "public_bytes": 185,
+      "public_sha256": "d195a6cc5075af5b541b63c3d14924f53a05959f2072ff224380d2a3142ff0b8",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/stdout.log",
+      "host_source_bytes": 123,
+      "host_source_sha256": "9989a94b3ff7816cd853b779a5c7d326ef7f24f1e2ce0fec672be93385b9bcaa",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/stdout.log",
+      "public_bytes": 123,
+      "public_sha256": "9989a94b3ff7816cd853b779a5c7d326ef7f24f1e2ce0fec672be93385b9bcaa",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "46fc6ed9798d8ae3795cd2b23c3f072ea4e746abeae6138d2d9b651095291bda",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "92f7ea1cf019ca6a00d6d001b3743ea7f61f0bc5148aec8a45d2e99e5a89efb4",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181840Z-231e7b66fa4d/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/events.jsonl",
+      "host_source_bytes": 1510,
+      "host_source_sha256": "3c7b8bdda3d91c0716f802f5a8126397123983dd6c3d2918eed21446362a7748",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/events.jsonl",
+      "public_bytes": 1500,
+      "public_sha256": "6d773c01a57f9bfdabb579d7029b0e5f9953a883f58af02a83f35a7baad54f54",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/manifest.json",
+      "host_source_bytes": 2687,
+      "host_source_sha256": "3e57420f650532be98b8d3959b9634cd02a265649c83492d6196192cdfd42a8c",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/manifest.json",
+      "public_bytes": 2587,
+      "public_sha256": "f60a6eb28fc2152238d35dd345c09bda30a2c6626e4617d3a4f2ae6b822a5b54",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/payload/nested-result.json",
+      "host_source_bytes": 59,
+      "host_source_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/payload/nested-result.json",
+      "public_bytes": 59,
+      "public_sha256": "d9d5f01a2e34a02261ec10a28b36afc5af6d27da0149a8454a6a3792d2d9a842",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/process-result.json",
+      "host_source_bytes": 142,
+      "host_source_sha256": "12cb9dd2f477cc1b2109ebc3fa8e5de1fa038fb488f3bdf22e681eafa8f8737a",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/process-result.json",
+      "public_bytes": 142,
+      "public_sha256": "12cb9dd2f477cc1b2109ebc3fa8e5de1fa038fb488f3bdf22e681eafa8f8737a",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/receipt.json",
+      "host_source_bytes": 2659,
+      "host_source_sha256": "b4a530d105ec0db117b4f0f946a8ad76c0e9c056c6f3787552436bbfdc44bdfe",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/receipt.json",
+      "public_bytes": 2569,
+      "public_sha256": "4794af6d72148e381e716e5b447f4544eea52ee9e3a38e70882db1f02c6d84f5",
+      "ordered_replacement_counts": {
+        "designated_root": 9,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/stderr.log",
+      "host_source_bytes": 0,
+      "host_source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/stderr.log",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/stdout.log",
+      "host_source_bytes": 23,
+      "host_source_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/stdout.log",
+      "public_bytes": 23,
+      "public_sha256": "6aa168840ac97526e8890f83db919e9b84db44be19be6b047c008a14a1959cac",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/submission-command.json",
+      "host_source_bytes": 1097,
+      "host_source_sha256": "b5a2476a6f7a5f5500d20af38fd0dba9f479858205514e092c56f9b9865a01b9",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/submission-command.json",
+      "public_bytes": 1057,
+      "public_sha256": "4f8ce22a228eca1dd30f2c46a1faa9d82e9cd3c080744410452efad1669d40e1",
+      "ordered_replacement_counts": {
+        "designated_root": 4,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/submission-result.json",
+      "host_source_bytes": 41,
+      "host_source_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "public_path": "fixture-root/executions/20261009T181840Z-90ae0a243b21/submission-result.json",
+      "public_bytes": 41,
+      "public_sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/2ae886e78a35675948b6f62444a336b50791bdce8fd68000f96fe1038ff4ff91.json",
+      "host_source_bytes": 338,
+      "host_source_sha256": "0c400f4feef7de535c8d0029e162c52831b6b64d5a863c36b5348db06060168b",
+      "public_path": "fixture-root/requests/2ae886e78a35675948b6f62444a336b50791bdce8fd68000f96fe1038ff4ff91.json",
+      "public_bytes": 328,
+      "public_sha256": "7e06374e1500b879b4476b86a12a9001582a7c82a4772b9b566a88f61b8b0a15",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/3576436b493e65ac27ac58f00ebde533798da5ee05e024af54e1ef8e5db3db2c.json",
+      "host_source_bytes": 342,
+      "host_source_sha256": "d062553138c8b7d191902c29174b4b5dec7ac89cd21d08d6bb57955cfb9f0357",
+      "public_path": "fixture-root/requests/3576436b493e65ac27ac58f00ebde533798da5ee05e024af54e1ef8e5db3db2c.json",
+      "public_bytes": 332,
+      "public_sha256": "b30971a68c5b35a510b843e5ed063e18528f11422b7d5364cd83e6439bc39319",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/4e6985afe5a5e1e3528f6379677dad21145125258e8f5d6fe421fdab2205c255.json",
+      "host_source_bytes": 339,
+      "host_source_sha256": "89311b622305eacc277d50472bacee950d39b39a4b74142c947171ed15dbe042",
+      "public_path": "fixture-root/requests/4e6985afe5a5e1e3528f6379677dad21145125258e8f5d6fe421fdab2205c255.json",
+      "public_bytes": 329,
+      "public_sha256": "c2ab3e9141ff77f3e04ef11471ae46c879212f2f907c57ebab01efe8015b4000",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/5ef66b3d2cb4f5f6e8c2b87c143c7584209bd5c56121d11513b6b35def143fb9.json",
+      "host_source_bytes": 349,
+      "host_source_sha256": "976769c504f2e817e41d1b4af991aca1253efdb7de9454acd6be9284a341f2e1",
+      "public_path": "fixture-root/requests/5ef66b3d2cb4f5f6e8c2b87c143c7584209bd5c56121d11513b6b35def143fb9.json",
+      "public_bytes": 339,
+      "public_sha256": "8a719ed58378f0403c5fb10726db0a0b6bec7fdc5adbe63f4f0fa9be9e52fbbc",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/930f55221122ef1c43fae773e8d5c40f672dc2bd85a5e0b81f313f7af16f4815.json",
+      "host_source_bytes": 344,
+      "host_source_sha256": "fbeb11756346b1b45bea86b364eea55cad55640ae8f1b19c6993945abb98b629",
+      "public_path": "fixture-root/requests/930f55221122ef1c43fae773e8d5c40f672dc2bd85a5e0b81f313f7af16f4815.json",
+      "public_bytes": 334,
+      "public_sha256": "74cc4b1c9905606fea199bbd43805b4ca923664a6807176ee5f5ecbbeec274ce",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/9f8537adfd2182b73ba39fcc3f10facfde58fdbfa708c82f43f1eb9a69bb565f.json",
+      "host_source_bytes": 338,
+      "host_source_sha256": "c4e2a0935510bd8a2281a9c9e12d55ecf12ecf4a1e381be8b3984502f4a686e6",
+      "public_path": "fixture-root/requests/9f8537adfd2182b73ba39fcc3f10facfde58fdbfa708c82f43f1eb9a69bb565f.json",
+      "public_bytes": 328,
+      "public_sha256": "2e4a59b3ed25f4d26f7d046f41fdb8b6f7d6a4688e1a011f4120db3402036d55",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/a84d1a1166995c797be15bc95831f160d9119cdffa61647452cd375cd826ddee.json",
+      "host_source_bytes": 332,
+      "host_source_sha256": "ed5b6381e832832ca2786f6e114c079e81260d1fbdf086b93e0c62eb724f1905",
+      "public_path": "fixture-root/requests/a84d1a1166995c797be15bc95831f160d9119cdffa61647452cd375cd826ddee.json",
+      "public_bytes": 322,
+      "public_sha256": "d227c635004ed3a0d723cc5ce8fda2212766b94f9da5986628d69432ab90c742",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/b47ef099f5abf0e939c6b70368757a35c4f17846348d89e1bfc6b8876b5bb345.json",
+      "host_source_bytes": 342,
+      "host_source_sha256": "a04d3aa12128ba8bb688dbd9caea3e577e0000860a137d4f9495d2624c367df4",
+      "public_path": "fixture-root/requests/b47ef099f5abf0e939c6b70368757a35c4f17846348d89e1bfc6b8876b5bb345.json",
+      "public_bytes": 332,
+      "public_sha256": "67856ded89ee560756de93b01faf288e1ecd42eee9a2b7a81fc5c02ee228a595",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/dc13b2151c3d557f39bb7c69237e782db2368c6cf8d13f11ba418d97c717b1bd.json",
+      "host_source_bytes": 338,
+      "host_source_sha256": "5c6d374856db23e83cbbff979b95ffee55fad142a88a27ec54bef00eabecc4ba",
+      "public_path": "fixture-root/requests/dc13b2151c3d557f39bb7c69237e782db2368c6cf8d13f11ba418d97c717b1bd.json",
+      "public_bytes": 328,
+      "public_sha256": "82c2a5360cf42df12947e2d1fd1e3fdb2d06e59920930b90593521f085ba52e7",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/requests/dcd6648e04e7025946b185bd7c1b3decb8ec1d5554c3b4ec8c152e559ff440ed.json",
+      "host_source_bytes": 345,
+      "host_source_sha256": "5f445727eb6f684898c3337b67f3d02088a3b48f9e77c0d9573ee2c134577b65",
+      "public_path": "fixture-root/requests/dcd6648e04e7025946b185bd7c1b3decb8ec1d5554c3b4ec8c152e559ff440ed.json",
+      "public_bytes": 335,
+      "public_sha256": "2de2b705be1c885018c65813ec71ae86fe16c9f653cfee3d998f2a6842fc35f9",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/state/events.jsonl",
+      "host_source_bytes": 451,
+      "host_source_sha256": "87cea17a0d3da01bddf4e162cdeb0c13f38f98baa49bb9160e1dbf6e1f44abf9",
+      "public_path": "fixture-root/state/events.jsonl",
+      "public_bytes": 441,
+      "public_sha256": "a08dc2fcb51a1427f9ba045b052a80e6ac8609ed5e0da0a98f3cc27c528e8222",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/state/execution-receipts.jsonl",
+      "host_source_bytes": 4958,
+      "host_source_sha256": "db702c2804c214b9b9b89463ba79c7fa9d643e889f8efb2f7265895056d3c4fc",
+      "public_path": "fixture-root/state/execution-receipts.jsonl",
+      "public_bytes": 4858,
+      "public_sha256": "2569eca99a0306066d74c2fc20a022bcfb8e100165aee0d1ff6ab96bccfcb9be",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/independent-launcher-result.json",
+      "host_source_bytes": 166,
+      "host_source_sha256": "d8fa0d7921dfaf581d86ea7f68b9049dbeb4600eb0c33a454ec87f4a95ae2a98",
+      "public_path": "independent-launcher-result.json",
+      "public_bytes": 166,
+      "public_sha256": "d8fa0d7921dfaf581d86ea7f68b9049dbeb4600eb0c33a454ec87f4a95ae2a98",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/plan-v2.json",
+      "host_source_bytes": 4692,
+      "host_source_sha256": "a8b32843a7a8484f5e4b097a7ad131da4841f835cfb1c9f9374082c661ae62c5",
+      "public_path": "plan-v2.json",
+      "public_bytes": 4592,
+      "public_sha256": "ac9e154993bbe887a780f873811df3d15d54c83967d21d295c9e15f279e903b7",
+      "ordered_replacement_counts": {
+        "designated_root": 10,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/plan-v3.json",
+      "host_source_bytes": 6633,
+      "host_source_sha256": "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837",
+      "public_path": "plan-v3.json",
+      "public_bytes": 6493,
+      "public_sha256": "4490e5e79c0132c94aa09c77cd4bf945f6f18d0686465a158e93eaea4482bde3",
+      "ordered_replacement_counts": {
+        "designated_root": 14,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/plan.json",
+      "host_source_bytes": 3368,
+      "host_source_sha256": "c462bf221740b61dbce763003d510c1103b5fe9eefd049f6ffbd1dbb87fc44c4",
+      "public_path": "plan.json",
+      "public_bytes": 3308,
+      "public_sha256": "9f6990e3597d387812e0fcbf505d075892c778e919f12f536e1e814719596e35",
+      "ordered_replacement_counts": {
+        "designated_root": 6,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/preparation-receipt.json",
+      "host_source_bytes": 1932,
+      "host_source_sha256": "5e1f76255f51763b8b5561506c2f02f07e379a346e1c7814bc5e518efd237c22",
+      "public_path": "preparation-receipt.json",
+      "public_bytes": 1872,
+      "public_sha256": "56a41203d87a9584aa28d4e905e4ed48be6bfa09b49416023dda2cbdd5adf94e",
+      "ordered_replacement_counts": {
+        "designated_root": 6,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/preparation-v2-receipt.json",
+      "host_source_bytes": 2149,
+      "host_source_sha256": "0a15313c4b6d75efd8cb07d00a141774d84dad2281d7d384fcfac63453bfc47f",
+      "public_path": "preparation-v2-receipt.json",
+      "public_bytes": 2079,
+      "public_sha256": "0b1ac5baa3e8e9442707903944394a21084466f086e005e52d83e797fc1fae92",
+      "ordered_replacement_counts": {
+        "designated_root": 7,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/preparation-v3-receipt.json",
+      "host_source_bytes": 2131,
+      "host_source_sha256": "f37f8191ea3f05a06b98f7524613fbe1deb285f288dff1ada7a01f22f3afe6da",
+      "public_path": "preparation-v3-receipt.json",
+      "public_bytes": 2061,
+      "public_sha256": "7b51a241d1ca0ae3a63741ac4093c02f821d066d45bcfa77b8609e8e9d013e11",
+      "ordered_replacement_counts": {
+        "designated_root": 7,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/replay-receipt.json",
+      "host_source_bytes": 37246,
+      "host_source_sha256": "930729e0936583cb33237d549b98e39c3027ce07883504e81b00fcaab1ace229",
+      "public_path": "replay-receipt.json",
+      "public_bytes": 37116,
+      "public_sha256": "1348c4c3546546ed52592134e8e43d0970cb57dc2c67b7d95951420e3915183e",
+      "ordered_replacement_counts": {
+        "designated_root": 13,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/replay-v2.py",
+      "host_source_bytes": 26373,
+      "host_source_sha256": "bea72913ff5feba18f5c1462665c9283247fa1c3920421942b76f151bd1140d9",
+      "public_path": "replay-v2.py",
+      "public_bytes": 26363,
+      "public_sha256": "96f44a1f49f772338e528301350438acd9ff790ad75e29273c485326c59c2e33",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/replay-v3-launch.json",
+      "host_source_bytes": 2527,
+      "host_source_sha256": "57368d5a28d5fcee4b1009821de47018afcd11a871d1995f42e4eb138b5a1a34",
+      "public_path": "replay-v3-launch.json",
+      "public_bytes": 2477,
+      "public_sha256": "052f4bf3d5033e76c69e2f560da2806995c6f446fdc7a05e58ae0f9206957578",
+      "ordered_replacement_counts": {
+        "designated_root": 5,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/replay-v3-service.log",
+      "host_source_bytes": 307,
+      "host_source_sha256": "f7d1d85a7ab61d19d155c0d9060c7ec2c8bf39408241c0810cde7ecfb6d49b56",
+      "public_path": "replay-v3-service.log",
+      "public_bytes": 297,
+      "public_sha256": "07cd9498c8ae7199a8c3d4a1ad630815d84230f6d1bc27795dfe72148df54110",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/replay-v3.py",
+      "host_source_bytes": 29508,
+      "host_source_sha256": "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72",
+      "public_path": "replay-v3.py",
+      "public_bytes": 29498,
+      "public_sha256": "1ea42882c2e7a27691530fee9449018886706d9c2188d9071befb34548c1f55f",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/replay.py",
+      "host_source_bytes": 24996,
+      "host_source_sha256": "91cea0ae21a8c55a268508a5461da8e71a806529610a9f408674ac00ddf6ae71",
+      "public_path": "replay.py",
+      "public_bytes": 24986,
+      "public_sha256": "9b9780b97170f04ec13cca099b22e0be31f493ba450c5fbcf22d8fca9a6b69b2",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/serialization-live-before.json",
+      "host_source_bytes": 4607,
+      "host_source_sha256": "cf49a891beffee1569b88546ff23c201f97d3ed61014b8eed141c4fa238461f2",
+      "public_path": "serialization-live-before.json",
+      "public_bytes": 4557,
+      "public_sha256": "05f6d9adf76d8862aa50b0599ccae17e32aa238788ea81fb0ccd74470fa61ece",
+      "ordered_replacement_counts": {
+        "designated_root": 5,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/session-independence-observation.json",
+      "host_source_bytes": 784,
+      "host_source_sha256": "4005987f778704915b1965de1b337fac8e7b4b9a4df97c95ac1d75bbedd4ca0b",
+      "public_path": "session-independence-observation.json",
+      "public_bytes": 784,
+      "public_sha256": "4005987f778704915b1965de1b337fac8e7b4b9a4df97c95ac1d75bbedd4ca0b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/toy_payload.py",
+      "host_source_bytes": 2300,
+      "host_source_sha256": "3e04fade4ef3f9a436be96b6295cba1d66ca8b55993e1d7803fa8081818328e6",
+      "public_path": "toy_payload.py",
+      "public_bytes": 2300,
+      "public_sha256": "3e04fade4ef3f9a436be96b6295cba1d66ca8b55993e1d7803fa8081818328e6",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/v2-changes.diff",
+      "host_source_bytes": 6614,
+      "host_source_sha256": "6fbdc12ca7a269c62cc35b5fcc32aad052619c02b76311e6c39fa84b696ffe67",
+      "public_path": "v2-changes.diff",
+      "public_bytes": 6604,
+      "public_sha256": "691d049c8575f1dc3ebcf1e903c777aa01c951945172245c7d76274a7569f3f2",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/v3-changes.diff",
+      "host_source_bytes": 8080,
+      "host_source_sha256": "a6ff8f8190162beb00d2f24a129954b83fabd40faa5829c9098f96aca625bd10",
+      "public_path": "v3-changes.diff",
+      "public_bytes": 8070,
+      "public_sha256": "a9a25e798d3d32cc7da6f413c1b6094bb8fbc90d1df2d52342022aa54b52da7d",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/worker-hard-kill-command.json",
+      "host_source_bytes": 212,
+      "host_source_sha256": "6982e38c82d631a5162050d6d0d2535bf918c4cadf140356477e15c1fe29bf59",
+      "public_path": "worker-hard-kill-command.json",
+      "public_bytes": 212,
+      "public_sha256": "6982e38c82d631a5162050d6d0d2535bf918c4cadf140356477e15c1fe29bf59",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/runner-final988-replay-static-independent-review.json",
+      "host_source_bytes": 5863,
+      "host_source_sha256": "f42f9426d997dd4578ed9d96ea9e1ee02bb9eb9d47fa1ecae876917ec2d1bdc8",
+      "public_path": "independent-review/runner-final988-replay-static-independent-review.json",
+      "public_bytes": 5863,
+      "public_sha256": "f42f9426d997dd4578ed9d96ea9e1ee02bb9eb9d47fa1ecae876917ec2d1bdc8",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/runner-final988-replay-actual-independent-review.json",
+      "host_source_bytes": 25457,
+      "host_source_sha256": "978aec368841bcf7a52f638ea23ccbb3209646c5e20908b9d09ff0b92765e879",
+      "public_path": "independent-review/runner-final988-replay-actual-independent-review.json",
+      "public_bytes": 25037,
+      "public_sha256": "fcb2d305ab676b4e2092228728e0375593b49871663a75dea1dde7db935e0e6d",
+      "ordered_replacement_counts": {
+        "designated_root": 42,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/runner_final988_actual_independent_review_v1.py",
+      "host_source_bytes": 17039,
+      "host_source_sha256": "926e0c5727498ad25e3b807e4f1bd79be2c43cfc663d3c4f4fc3e3eb6a40d671",
+      "public_path": "independent-review/runner_final988_actual_independent_review_v1.py",
+      "public_bytes": 17029,
+      "public_sha256": "961e4d4537229b87b545cb66627c614dfe8b80b377b9eb1b87e4a5b73d1fba10",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/runner-final988-independent-audit-schema-mismatch.json",
+      "host_source_bytes": 642,
+      "host_source_sha256": "9ebee1a331542b33f3ad2a0a07f58ca0e4618e95d8c362f77aa452743829935b",
+      "public_path": "independent-review/runner-final988-independent-audit-schema-mismatch.json",
+      "public_bytes": 642,
+      "public_sha256": "9ebee1a331542b33f3ad2a0a07f58ca0e4618e95d8c362f77aa452743829935b",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/runner-final988-independent-audit-schema-correction.json",
+      "host_source_bytes": 696,
+      "host_source_sha256": "d5464909249115ad629cafc1af79ea78178636515b08e1ac8a3285eef7041bce",
+      "public_path": "independent-review/runner-final988-independent-audit-schema-correction.json",
+      "public_bytes": 696,
+      "public_sha256": "d5464909249115ad629cafc1af79ea78178636515b08e1ac8a3285eef7041bce",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/finalized-ordering-current-documentation-audit-v1.json",
+      "host_source_bytes": 5870,
+      "host_source_sha256": "939435402437926ab31ba6cda3fa078651a608162e6874c85e32eb3937131191",
+      "public_path": "independent-review/finalized-ordering-current-documentation-audit-v1.json",
+      "public_bytes": 5870,
+      "public_sha256": "939435402437926ab31ba6cda3fa078651a608162e6874c85e32eb3937131191",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    }
+  ],
+  "omitted_duplicate_or_runtime_internal_files": [
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/finalize.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/runner.py",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/locks/admission.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/locks/execution.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/locks/state.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/state/events.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    },
+    {
+      "host_source_relative": "validation/runner-lifecycle-final988-20261009/fixture-root/state/execution-receipts.lock",
+      "reason": "Duplicate immutable988 execution snapshot or runtime lock metadata; raw snapshot SHA remains in bound manifest/receipt."
+    }
+  ],
+  "total_original_bytes": 368794,
+  "total_public_bytes": 363694,
+  "all_originals_preserved_and_reread_unchanged": true,
+  "scope": "Actual final988 host-only lifecycle10 controls independently verified; production migration remainsSTAGING, no guest/scientific acceptance/cutover",
+  "actual_replay_original_sha256": "930729e0936583cb33237d549b98e39c3027ce07883504e81b00fcaab1ace229",
+  "independent_actual_review_original_sha256": "978aec368841bcf7a52f638ea23ccbb3209646c5e20908b9d09ff0b92765e879",
+  "production_source_sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882",
+  "host_resources_scope": "Tiny overrides64MiB/48MiB,CPU10%,swap0,tasks16; unmodified production manifest6G/1G/200%/256 separately identified. Five live actual property samples, all10 submission commands retained.",
+  "empirical_ordering_scope": "firstFINALIZED before secondCHILD observed here, not a formal runner invariant; global flock and prior workload/descendant drain are the actual admission guarantee",
+  "reviewer_error_scope": "Preserved schema-error/correction records describe reviewer event-field assumptions; source mismatch record presumed replacement was also corrected. No lifecycle/scientific failure or rerun resulted.",
+  "migration_complete": false,
+  "activation_authorized": false
+}

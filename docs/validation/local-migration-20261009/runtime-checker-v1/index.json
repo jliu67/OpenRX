@@ -1,0 +1,82 @@
+{
+  "schema": "openrx.local-migration.evidence-export.v1",
+  "at": "2026-10-09T17:57:28.615434+00:00",
+  "transformation": "Exactly TWO ordered literal byte prefix substitutions, designated local root first, original checkout second; no other edits",
+  "ordered_prefix_substitutions": [
+    {
+      "host_prefix_class": "designated execution root",
+      "public_prefix": "$OPENRX_LOCAL_ROOT"
+    },
+    {
+      "host_prefix_class": "preserved original checkout",
+      "public_prefix": "$OPENRX_ORIGINAL_CHECKOUT"
+    }
+  ],
+  "exports": [
+    {
+      "host_source_relative": "migrations/20261009/independent_runtime_review_v1.py",
+      "host_source_bytes": 42975,
+      "host_source_sha256": "97430d48d73eb1014ce1c1acd5e1de14aa2815da285ad5d84771329aa8bbd62e",
+      "public_path": "independent_runtime_review_v1.py",
+      "public_bytes": 42971,
+      "public_sha256": "6a0f29d5af1b8b5f136f9d383d8216090af059ac6a60a11507dc067710d03d53",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 1
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/independent_runtime_review_draft_4df85ea0.py",
+      "host_source_bytes": 40828,
+      "host_source_sha256": "4df85ea04b06e447f7b39c8383aed9fa97330f096bf2680c3324ffc49d56785e",
+      "public_path": "independent_runtime_review_draft_4df85ea0.py",
+      "public_bytes": 40824,
+      "public_sha256": "d846d28134704432c822ba5f4b14123ae552599260b9aef1a80c89576c715e8a",
+      "ordered_replacement_counts": {
+        "designated_root": 1,
+        "original_checkout_after_root_replacement": 1
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/independent-runtime-review-v1-changes.diff",
+      "host_source_bytes": 7143,
+      "host_source_sha256": "4df428010d22b6ef48af2be92d3898bab81e6d7b6d20ac429ce1cbf2b5d9a9eb",
+      "public_path": "independent-runtime-review-v1-changes.diff",
+      "public_bytes": 7143,
+      "public_sha256": "4df428010d22b6ef48af2be92d3898bab81e6d7b6d20ac429ce1cbf2b5d9a9eb",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/independent-runtime-reviewer-candidate-controls.json",
+      "host_source_bytes": 1179,
+      "host_source_sha256": "dcb5177261d55f808c0d8675aa886a8d669d0f2b57ae016de90b4def03894788",
+      "public_path": "independent-runtime-reviewer-candidate-controls.json",
+      "public_bytes": 1179,
+      "public_sha256": "dcb5177261d55f808c0d8675aa886a8d669d0f2b57ae016de90b4def03894788",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    },
+    {
+      "host_source_relative": "migrations/20261009/runtime-checker-static-independent-review.json",
+      "host_source_bytes": 5519,
+      "host_source_sha256": "f12439e1e9f0b5e6bf468268ab9f389d519e58d3b9686286d10f64df310aa76c",
+      "public_path": "runtime-checker-static-independent-review.json",
+      "public_bytes": 5519,
+      "public_sha256": "f12439e1e9f0b5e6bf468268ab9f389d519e58d3b9686286d10f64df310aa76c",
+      "ordered_replacement_counts": {
+        "designated_root": 0,
+        "original_checkout_after_root_replacement": 0
+      }
+    }
+  ],
+  "execution_copy": "Immutable host script remains actual SHA97430d48; public source is a path-redacted review derivative, not a new execution release",
+  "superseded_draft": "4df initial candidate retained only for review history; final974 imports and safety guards supersede it",
+  "acceptance_scope": "Static reviewer/source/parser controls only; actual existing unit is waiting, no local guest acceptance inferred",
+  "local_activation_claimed": false,
+  "migration_complete": false
+}

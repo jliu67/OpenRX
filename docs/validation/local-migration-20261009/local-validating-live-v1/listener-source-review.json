@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-09T19:09:10.747153+00:00",
+  "source_bindings": [
+    {
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/scripts/local_execution.py",
+      "bytes": 38227,
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/run.py",
+      "bytes": 14953,
+      "sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/src/python/m5/main.py",
+      "bytes": 20814,
+      "sha256": "e28647e40a4f8185f17f55d0d3db8f3bcf892ffaa5f866157883bc4a069c3ea0"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/src/python/m5/util/__init__.py",
+      "bytes": 7339,
+      "sha256": "770a4ae03f529c50a01c5880c22b6021bfa6a327429333a50a2ae0051d456627"
+    }
+  ],
+  "static_read_only_review_accepted": true,
+  "runtime_network_observation_passed": false,
+  "facts": [
+    "Exact988 worker Popen explicitly stdin=subprocess.DEVNULL; wrapper G inherits that descriptor.",
+    "Pinned gem5 --listener-mode defaults auto; auto disables all listeners when isInteractive() false.",
+    "Pinned isInteractive() checks sys.__stdin__.isatty().",
+    "Wrapper actual argv has no --listener-mode on or --allow-remote-connections override.",
+    "Default remote connections are loopback-only even before auto listener disabling."
+  ],
+  "scope": "Source-grounded noninteractive execution listener behavior only. No runtime/guest/security gate acceptance is inferred; inspect actual live G stdin and console notice when guest starts. No remote job submission/retrieval listener or SSH access configured."
+}

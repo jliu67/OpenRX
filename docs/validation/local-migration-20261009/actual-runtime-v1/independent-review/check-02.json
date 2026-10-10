@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-09T20:03:37.117700+00:00",
+  "check": "original_and_actual_rebuild_sources_preserved",
+  "evidence": {
+    "execution_git_files": 890,
+    "execution_source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+    "only_changed_wrapper_function": "run_process",
+    "original_files": 694,
+    "scientific_files_equal_original": [
+      "simulator/gem5/fs.py",
+      "simulator/gem5/resources.json",
+      "simulator/gem5/prepare.py",
+      "simulator/gem5/bundle.py",
+      "tests/native_runtime_probe.py",
+      "tests/native_riscv_probe.py",
+      "simulator/runtime-probe/main.c",
+      "simulator/probe/main.cpp"
+    ],
+    "upstream_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+    "upstream_files": 10933
+  },
+  "passed": true
+}

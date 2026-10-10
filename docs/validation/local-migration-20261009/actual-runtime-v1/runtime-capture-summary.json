@@ -1,0 +1,10 @@
+{
+  "execution_id": "20261009T193937Z-576aa858c033",
+  "request_key": "issue-27-local-runtime-b4b5ffc-attempt-01",
+  "runtime_status": "pass",
+  "runtime_validated": true,
+  "report_sha256": "315552c987a0b58ad20b5a57061f159bd3f78ebbd05e3225408ec1ef3b61489c",
+  "receipt_sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856",
+  "scientific_acceptance": "candidate capture only; independent replay required",
+  "migration_complete": false
+}

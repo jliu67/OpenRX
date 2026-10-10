@@ -1,0 +1,27 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+    "--root",
+    "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root",
+    "submit",
+    "--request-key",
+    "final988-exit-seven",
+    "--kind",
+    "validation",
+    "--validation-scope",
+    "lifecycle",
+    "--cwd",
+    "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009",
+    "--input",
+    "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/toy_payload.py",
+    "--",
+    "/usr/bin/python3",
+    "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/toy_payload.py",
+    "exit-seven",
+    "{execution_dir}/payload"
+  ],
+  "returncode": 1,
+  "stderr": "local execution: Request key already claimed by 20261009T181834Z-e588186bf436; inspect/recover it, never duplicate\n",
+  "stdout": ""
+}

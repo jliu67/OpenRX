@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "evidence_class": "native-functional",
+  "full_dataset": false,
+  "timing_calibrated": false,
+  "power_measured": false,
+  "command": [
+    "${OPENRX_LOCAL_ROOT}/builds/probe-native-20261009/openrx-riscv-probe"
+  ],
+  "timeout_seconds": 600,
+  "host": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+  "binary_sha256": "34dd13177a483b06518ac3e2f03f5852aa1fa98c70dfee9e3f1ef418a80f1b5a",
+  "binary": "${OPENRX_LOCAL_ROOT}/builds/probe-native-20261009/openrx-riscv-probe",
+  "returncode": 0,
+  "validated": {
+    "required_checks_passed": 39,
+    "optional_skips": 1,
+    "software_hash_cases": 8,
+    "compiled_architecture": "x86_64"
+  },
+  "status": "pass"
+}

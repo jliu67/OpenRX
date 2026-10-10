@@ -1,0 +1,212 @@
+{
+  "exported_at": "2026-10-09T17:00:59.569084+00:00",
+  "files": [
+    {
+      "file": "all-command.json",
+      "host": {
+        "bytes": 786,
+        "sha256": "0e5159b0d6df09d53e358513d5212c372d474bc580616903bd989dabd26c386e"
+      },
+      "public": {
+        "bytes": 770,
+        "sha256": "0a4e1570e59f3f63de2d7fcc3aeec00f7ed0946e948515c22143cb5b7e786bc9"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "all-finalizer.jsonl",
+      "host": {
+        "bytes": 1271,
+        "sha256": "e6b0f1fb6c220f5933d691f93b026e6e77d2849ec56542371acb5e66854d2a6f"
+      },
+      "public": {
+        "bytes": 1271,
+        "sha256": "e6b0f1fb6c220f5933d691f93b026e6e77d2849ec56542371acb5e66854d2a6f"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "all-journal.log",
+      "host": {
+        "bytes": 69,
+        "sha256": "f54459068679a9ca00140f2dc3decaa1d4ee7769ab5bf9b7c72f16deab0b200f"
+      },
+      "public": {
+        "bytes": 69,
+        "sha256": "f54459068679a9ca00140f2dc3decaa1d4ee7769ab5bf9b7c72f16deab0b200f"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "all-result.json",
+      "host": {
+        "bytes": 35811,
+        "sha256": "c77cf43902d0406d9457dcba29fd5e9ff43f8424081bc28a3db66f328b6d7f28"
+      },
+      "public": {
+        "bytes": 35267,
+        "sha256": "358ddc6de44d79c90a72f3eadd2d8926d38f3498cbae293d8d82b9fd8cd88e20"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "exec-command.json",
+      "host": {
+        "bytes": 789,
+        "sha256": "ca4cb9c0319f0e5fa157b1e4bd42af237b375c131d03105801249dbb35590be4"
+      },
+      "public": {
+        "bytes": 773,
+        "sha256": "4dc05a363d423c6b18deabc48779f0396c229e59b8d87499b86d612ad9885547"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "exec-finalizer.jsonl",
+      "host": {
+        "bytes": 1278,
+        "sha256": "27c2ce3f92fa12f41caf38edb52809c3c5e04b0910da226cf7a6a68e792d4eba"
+      },
+      "public": {
+        "bytes": 1278,
+        "sha256": "27c2ce3f92fa12f41caf38edb52809c3c5e04b0910da226cf7a6a68e792d4eba"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "exec-journal.log",
+      "host": {
+        "bytes": 69,
+        "sha256": "6cdefc90e20d10bd267a5b86104fd0b64e7bba291424208b77ab5967fa81787e"
+      },
+      "public": {
+        "bytes": 69,
+        "sha256": "6cdefc90e20d10bd267a5b86104fd0b64e7bba291424208b77ab5967fa81787e"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "exec-result.json",
+      "host": {
+        "bytes": 35960,
+        "sha256": "047c256ef6ab9a8baa90831379a9c39dc1bd7e16921207e24b2f035e7e219542"
+      },
+      "public": {
+        "bytes": 35416,
+        "sha256": "a726a41c58506abbe1c08e9010dde13a39d0b6cec0c62183fd752ff53a6c8830"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "none-command.json",
+      "host": {
+        "bytes": 789,
+        "sha256": "e96c320b7db103a035622f5fcdb62d35985cbc4b14f52d07b5db04fdef9fb15f"
+      },
+      "public": {
+        "bytes": 773,
+        "sha256": "23920719a69330d4f070c627f0b3ea6bb7cf58a645e9c43c117da0a7fd49927a"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "none-finalizer.jsonl",
+      "host": {
+        "bytes": 226,
+        "sha256": "90000d3435867300b6bf36a8ee8ec5dd303d096e5cbe11bb060db88364a45f8e"
+      },
+      "public": {
+        "bytes": 226,
+        "sha256": "90000d3435867300b6bf36a8ee8ec5dd303d096e5cbe11bb060db88364a45f8e"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "none-journal.log",
+      "host": {
+        "bytes": 478,
+        "sha256": "7f0e2bce70661a0286aebc50810cc792d6706a898b89cd65717b00b9ccf89471"
+      },
+      "public": {
+        "bytes": 478,
+        "sha256": "7f0e2bce70661a0286aebc50810cc792d6706a898b89cd65717b00b9ccf89471"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "none-result.json",
+      "host": {
+        "bytes": 14095,
+        "sha256": "24d14776f8df96cdc95437ed09521e79df9dad4b5021f7713af8d4a5334b4444"
+      },
+      "public": {
+        "bytes": 13871,
+        "sha256": "8bbdc308c384e16b93d53d3e4fc29f448ea3470380840e2dad565ccc58e03902"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "notify-finalizer.py",
+      "host": {
+        "bytes": 939,
+        "sha256": "6fd603463cc10b07dcacf683598570eea651f05f23c2b8bf344849af9f69f903"
+      },
+      "public": {
+        "bytes": 939,
+        "sha256": "6fd603463cc10b07dcacf683598570eea651f05f23c2b8bf344849af9f69f903"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "receipt.json",
+      "host": {
+        "bytes": 93777,
+        "sha256": "9a867312b3fbbb1cff97b93665c2461d6b8b660a47aabb0fca8958869f35c1c0"
+      },
+      "public": {
+        "bytes": 92465,
+        "sha256": "5dfac64b4b6254d74a51643d9f33142ecd723a0638a4b10b6c98c80f1ad265a9"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    },
+    {
+      "file": "run-component.py",
+      "host": {
+        "bytes": 3845,
+        "sha256": "60cd3f8c306f36557b1af9fed73678a9bc858a5706309ce3cdacf3a1c4827d4c"
+      },
+      "public": {
+        "bytes": 3845,
+        "sha256": "60cd3f8c306f36557b1af9fed73678a9bc858a5706309ce3cdacf3a1c4827d4c"
+      },
+      "transformation": "Exact byte copy with only /home/server/openrx-local/v1 replaced by ${OPENRX_LOCAL_ROOT}"
+    }
+  ],
+  "host_relative_directory": "migrations/20261009/independent-notify-component-v1",
+  "limitations": [
+    "Component experiment verifies systemd mechanism, not production runner heartbeat integration.",
+    "No large dataset, guest, Codex-daemon shutdown, host reboot or power failure was exercised.",
+    "Exported command JSON uses a literal path placeholder; it is a provenance derivative, not a directly executable host command."
+  ],
+  "primary_sources": [
+    "https://raw.githubusercontent.com/systemd/systemd/v249/src/core/service.c",
+    "https://raw.githubusercontent.com/systemd/systemd/v249/man/systemd.service.xml"
+  ],
+  "recommendation": "Use NotifyAccess=exec and heartbeat only during private finalization, retaining bounded worker stop",
+  "results": {
+    "NotifyAccess_all": {
+      "Result": "success",
+      "finished_elapsed_seconds": 8.396322322019842
+    },
+    "NotifyAccess_exec": {
+      "Result": "success",
+      "finished_elapsed_seconds": 8.302911936014425
+    },
+    "no_notification_control": {
+      "Result": "timeout",
+      "finished_event": false
+    }
+  },
+  "schema": "openrx.systemd-notify-component-export.v1",
+  "scope": "Tiny isolated Type=simple user-systemd components; stop-post notification extension verified. No scientific simulation."
+}

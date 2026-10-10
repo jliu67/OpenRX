@@ -1,0 +1,420 @@
+{
+  "actions": "Immutable evidence map only; no jobs, signals, service changes, state transition, GitHub or commits.",
+  "activation_authorized": false,
+  "actual_state": "LOCAL_VALIDATING",
+  "at": "2026-10-10T05:49:54.228904+00:00",
+  "cutover_pending_transition_ready": false,
+  "eligible_for_LOCAL_ACTIVE": false,
+  "evidence_roles": {
+    "actual_host10_controls": {
+      "bytes": 25457,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runner-final988-replay-actual-independent-review.json",
+      "sha256": "978aec368841bcf7a52f638ea23ccbb3209646c5e20908b9d09ff0b92765e879"
+    },
+    "additional_running_stop_peer": {
+      "bytes": 7577,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-actual-running-stop03-review-20261010T054559271329Z.json",
+      "sha256": "161b8661dcd0b4794b941bd20c1a59eedf46ab9210a005de5d6622995adf21e6"
+    },
+    "completed_build_preflight": {
+      "bytes": 59803,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-build-preflight-postbuild-review-20261009T195019798138Z.json",
+      "sha256": "8e7452af42467a1c85a8dffeaf278cb063c9abc00d5d446890b654c54e60d768"
+    },
+    "finalizer_extension": {
+      "bytes": 2983,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-finalizer-integration-v1/audit-addendum.json",
+      "sha256": "8a5e0bde17f59ef0a5764fecb71fba1a573b07dfea43e4476166726ce3b07465"
+    },
+    "first_guest_receipt": {
+      "bytes": 4662,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/receipt.json",
+      "sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856"
+    },
+    "first_guest_report": {
+      "bytes": 5689,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/report.json",
+      "sha256": "315552c987a0b58ad20b5a57061f159bd3f78ebbd05e3225408ec1ef3b61489c"
+    },
+    "guest_assets": {
+      "bytes": 2308,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/resources-independent-review.json",
+      "sha256": "4a81ec1a1b1f591af2f7d813f0b341f315e3aacdf25e8a8254ade3b459026828"
+    },
+    "initial_stop_public_index": {
+      "bytes": 14765,
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/migration/docs/validation/local-migration-20261009/actual-gem5-initialization-stop-v1/index.json",
+      "sha256": "ca4ea4a43ecb1694c78c7e08706d1ba03367f9002ac954856903a56e5291c720"
+    },
+    "initialization_only_stop": {
+      "bytes": 14352,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-initialization-stop-review-v2/independent-initialization-stop-review.json",
+      "sha256": "42f5bcf52493be9146d7b288d36d24452986cc594ec2ff27e3e2b852ad56d90e"
+    },
+    "owner_cpu_delegation_configuration": {
+      "bytes": 2597,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/cpu-delegation-postchange-20261010T054346Z.json",
+      "sha256": "f12aec1fd36be90dbcb15f19a0c9f6d697192967fa571012c00e89efd7e56327"
+    },
+    "preflight": {
+      "bytes": 1512,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/local-validation-preflight.json",
+      "sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626"
+    },
+    "preservation_native": {
+      "bytes": 3935,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/native-independent-review.json",
+      "sha256": "ea3e6d6ffef1270b4b5a84582bce5ebc46948e4d19b038b080b7957716815d3c"
+    },
+    "receipt_journal_snapshot": {
+      "bytes": 1267,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/execution-receipts-at-export.jsonl",
+      "sha256": "d33c239ce16b062df65f7b67651141575e5ebeaf0f1ac31871c034a0a931e10b"
+    },
+    "runner_wrapper_full287_target40": {
+      "bytes": 6099,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/final-runner-wrapper-independent-review.json",
+      "sha256": "b9d0dfad52aa22d345f858dea1d4a872491c5dcc96af3b0fa5a86ff97eeb5895"
+    },
+    "running_firmware_stop": {
+      "bytes": 22375,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/independent-running-stop-review.json",
+      "sha256": "2976b682e856a429f9022ad89c6c9a7538775881f82c0da01976e1fd99936348"
+    },
+    "running_guest_serial_snapshot": {
+      "bytes": 868,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-serial.txt",
+      "sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86"
+    },
+    "running_stop_marker": {
+      "bytes": 2565,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/stop.request",
+      "sha256": "d174fdde2eed2b3a0f73fdbdc3c8cfc23d38150e00424b7825d97b05649faac4"
+    },
+    "running_stop_public_index": {
+      "bytes": 23251,
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/migration/docs/validation/local-migration-20261009/actual-gem5-running-stop-v3/index.json",
+      "sha256": "254858d76ab9f597ffadc930474f8ef1c1303733599de80a1bf58632301985a8"
+    },
+    "running_stop_receipt": {
+      "bytes": 4456,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/receipt.json",
+      "sha256": "aed2db8a4d78edfec6f9a314bc716b11644a76575c64adee0ff6918bb31ddba8"
+    },
+    "running_stop_report": {
+      "bytes": 5330,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/payload/report.json",
+      "sha256": "dbd5886cab6edd93e89156e68ddacca54fcaf8b0edd8f138182b74ffe5d87e1c"
+    },
+    "scientific_guest9": {
+      "bytes": 33067,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+      "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+    },
+    "selected_toolchain41": {
+      "bytes": 14876,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/toolchain-independent-review.json",
+      "sha256": "4ce3ef608ec0261e898d6a62a7254d618b147553b1801df6ef925b92519d61e2"
+    },
+    "state_snapshot": {
+      "bytes": 1607,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/state-events-at-export.jsonl",
+      "sha256": "78a09a72999e5f801475738546d05c79a7ee9cbf269dd54e6431973d545ceb16"
+    }
+  },
+  "gates": {
+    "correctness_smoke_passed": {
+      "evidence": [
+        {
+          "bytes": 3935,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/native-independent-review.json",
+          "sha256": "ea3e6d6ffef1270b4b5a84582bce5ebc46948e4d19b038b080b7957716815d3c"
+        },
+        {
+          "bytes": 6099,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/final-runner-wrapper-independent-review.json",
+          "sha256": "b9d0dfad52aa22d345f858dea1d4a872491c5dcc96af3b0fa5a86ff97eeb5895"
+        },
+        {
+          "bytes": 33067,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+          "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "dependencies_verified": {
+      "evidence": [
+        {
+          "bytes": 14876,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/toolchain-independent-review.json",
+          "sha256": "4ce3ef608ec0261e898d6a62a7254d618b147553b1801df6ef925b92519d61e2"
+        },
+        {
+          "bytes": 59803,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-build-preflight-postbuild-review-20261009T195019798138Z.json",
+          "sha256": "8e7452af42467a1c85a8dffeaf278cb063c9abc00d5d446890b654c54e60d768"
+        },
+        {
+          "bytes": 33067,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+          "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "essential_artifacts_verified": {
+      "evidence": [
+        {
+          "bytes": 2308,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/resources-independent-review.json",
+          "sha256": "4a81ec1a1b1f591af2f7d813f0b341f315e3aacdf25e8a8254ade3b459026828"
+        },
+        {
+          "bytes": 59803,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-build-preflight-postbuild-review-20261009T195019798138Z.json",
+          "sha256": "8e7452af42467a1c85a8dffeaf278cb063c9abc00d5d446890b654c54e60d768"
+        },
+        {
+          "bytes": 33067,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+          "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "expected_guest_booted": {
+      "evidence": [
+        {
+          "bytes": 33067,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+          "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+        },
+        {
+          "bytes": 4662,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/receipt.json",
+          "sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856"
+        },
+        {
+          "bytes": 5689,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/report.json",
+          "sha256": "315552c987a0b58ad20b5a57061f159bd3f78ebbd05e3225408ec1ef3b61489c"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "final_receipt_complete": {
+      "evidence": [],
+      "passed": false,
+      "remaining": "Preactivation completeness/eligibility certificate/activation/release/hub synchronization and final receipt remain pending."
+    },
+    "github_architecture_consistent": {
+      "evidence": [],
+      "passed": false,
+      "remaining": "Final authoritative docs/release and actual merged-document audit remain pending."
+    },
+    "handoffs_consistent": {
+      "evidence": [],
+      "passed": false,
+      "remaining": "Final resource-policy/technical gate/merge-bound handoff reconciliation remains pending."
+    },
+    "original_state_preserved": {
+      "evidence": [
+        {
+          "bytes": 3935,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/native-independent-review.json",
+          "sha256": "ea3e6d6ffef1270b4b5a84582bce5ebc46948e4d19b038b080b7957716815d3c"
+        },
+        {
+          "bytes": 59803,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-build-preflight-postbuild-review-20261009T195019798138Z.json",
+          "sha256": "8e7452af42467a1c85a8dffeaf278cb063c9abc00d5d446890b654c54e60d768"
+        },
+        {
+          "bytes": 33067,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+          "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "output_integrity_verified": {
+      "evidence": [
+        {
+          "bytes": 25457,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runner-final988-replay-actual-independent-review.json",
+          "sha256": "978aec368841bcf7a52f638ea23ccbb3209646c5e20908b9d09ff0b92765e879"
+        },
+        {
+          "bytes": 2983,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-finalizer-integration-v1/audit-addendum.json",
+          "sha256": "8a5e0bde17f59ef0a5764fecb71fba1a573b07dfea43e4476166726ce3b07465"
+        },
+        {
+          "bytes": 33067,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+          "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+        },
+        {
+          "bytes": 22375,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/independent-running-stop-review.json",
+          "sha256": "2976b682e856a429f9022ad89c6c9a7538775881f82c0da01976e1fd99936348"
+        },
+        {
+          "bytes": 7577,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-actual-running-stop03-review-20261010T054559271329Z.json",
+          "sha256": "161b8661dcd0b4794b941bd20c1a59eedf46ab9210a005de5d6622995adf21e6"
+        },
+        {
+          "bytes": 4662,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/receipt.json",
+          "sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856"
+        },
+        {
+          "bytes": 4456,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/receipt.json",
+          "sha256": "aed2db8a4d78edfec6f9a314bc716b11644a76575c64adee0ff6918bb31ddba8"
+        },
+        {
+          "bytes": 1267,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/execution-receipts-at-export.jsonl",
+          "sha256": "d33c239ce16b062df65f7b67651141575e5ebeaf0f1ac31871c034a0a931e10b"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "reviewed_pr_merged": {
+      "evidence": [],
+      "passed": false,
+      "remaining": "Final migration PR28 is not yet reviewed/merged at its final exact head."
+    },
+    "session_independence_verified": {
+      "evidence": [
+        {
+          "bytes": 25457,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runner-final988-replay-actual-independent-review.json",
+          "sha256": "978aec368841bcf7a52f638ea23ccbb3209646c5e20908b9d09ff0b92765e879"
+        },
+        {
+          "bytes": 6099,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/final-runner-wrapper-independent-review.json",
+          "sha256": "b9d0dfad52aa22d345f858dea1d4a872491c5dcc96af3b0fa5a86ff97eeb5895"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "status_logs_inspectable": {
+      "evidence": [
+        {
+          "bytes": 25457,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runner-final988-replay-actual-independent-review.json",
+          "sha256": "978aec368841bcf7a52f638ea23ccbb3209646c5e20908b9d09ff0b92765e879"
+        },
+        {
+          "bytes": 33067,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+          "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+        },
+        {
+          "bytes": 22375,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/independent-running-stop-review.json",
+          "sha256": "2976b682e856a429f9022ad89c6c9a7538775881f82c0da01976e1fd99936348"
+        },
+        {
+          "bytes": 7577,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-actual-running-stop03-review-20261010T054559271329Z.json",
+          "sha256": "161b8661dcd0b4794b941bd20c1a59eedf46ab9210a005de5d6622995adf21e6"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    },
+    "stop_failure_recovery_demonstrated": {
+      "evidence": [
+        {
+          "bytes": 25457,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runner-final988-replay-actual-independent-review.json",
+          "sha256": "978aec368841bcf7a52f638ea23ccbb3209646c5e20908b9d09ff0b92765e879"
+        },
+        {
+          "bytes": 2983,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-finalizer-integration-v1/audit-addendum.json",
+          "sha256": "8a5e0bde17f59ef0a5764fecb71fba1a573b07dfea43e4476166726ce3b07465"
+        },
+        {
+          "bytes": 14352,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-initialization-stop-review-v2/independent-initialization-stop-review.json",
+          "sha256": "42f5bcf52493be9146d7b288d36d24452986cc594ec2ff27e3e2b852ad56d90e"
+        },
+        {
+          "bytes": 22375,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-running-stop-review-v2/independent-running-stop-review.json",
+          "sha256": "2976b682e856a429f9022ad89c6c9a7538775881f82c0da01976e1fd99936348"
+        },
+        {
+          "bytes": 7577,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-actual-running-stop03-review-20261010T054559271329Z.json",
+          "sha256": "161b8661dcd0b4794b941bd20c1a59eedf46ab9210a005de5d6622995adf21e6"
+        },
+        {
+          "bytes": 2565,
+          "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/stop.request",
+          "sha256": "d174fdde2eed2b3a0f73fdbdc3c8cfc23d38150e00424b7825d97b05649faac4"
+        },
+        {
+          "bytes": 868,
+          "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-serial.txt",
+          "sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86"
+        }
+      ],
+      "passed": true,
+      "scope": "Historical immutable runner988 and unchanged scientific sourceb4; configured manager properties are not historical live kernel CPU enforcement."
+    }
+  },
+  "historical_runner_sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882",
+  "inspection": {
+    "commands": [
+      "python3 \"$OPENRX_RUNNER\" --root \"$OPENRX_LOCAL_ROOT\" status",
+      "python3 \"$OPENRX_RUNNER\" --root \"$OPENRX_LOCAL_ROOT\" verify 20261009T193937Z-576aa858c033",
+      "python3 \"$OPENRX_RUNNER\" --root \"$OPENRX_LOCAL_ROOT\" verify 20261009T202537Z-a1ca7df2cf1c"
+    ],
+    "historical_runner": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+    "resume": "No simulation resume. Inspect preserved failure; any reviewed new request needs a fresh request key/ID."
+  },
+  "limitations": [
+    "Saved original Library simulator unavailable; distinct pinned reproducible rebuild accepted with different binary identity.",
+    "Missing historical cached pyc explicitly disclosed; tracked scientific state preserved.",
+    "Selected41 package pins/runtime closure verified; complete offline/hermetic closure not claimed.",
+    "Launcher-session independence and lingering/systemd architecture demonstrated; entire Codex daemon shutdown and physical host reboot not performed.",
+    "Global lock covers payload and descendant drain. Prior FINALIZED ordering is empirical, not a formal admission barrier; dependent consumers must await verified prior receipt.",
+    "Historical988 manager6GiB/200% configuration observations do not establish live kernel CPU quota enforcement. New delegation/configuration and new resource-profile proof remain separate prerequisites.",
+    "Actual strong stop proves expected firmware simulation, truthful interruption and preserved outputs; it does not pass scientific guest controls or demonstrate graceful stats/checkpoint finalization/resume.",
+    "Full unchanged light/full-dataset/scalarRTL/calibrated timing/physical energy/competitive efficiency gates remain open under#16/M1-M5.",
+    "No large-output-throughput claim, permanent roles/coordinator, direct remote execution/retrieval, autonomous issue poller or network listener."
+  ],
+  "migration_complete": false,
+  "new_owner_resource_policy": {
+    "cpu_delegation_configuration_only": {
+      "bytes": 2597,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/cpu-delegation-postchange-20261010T054346Z.json",
+      "sha256": "f12aec1fd36be90dbcb15f19a0c9f6d697192967fa571012c00e89efd7e56327"
+    },
+    "directive": "https://github.com/jliu67/OpenRX/issues/5#issuecomment-6094244760",
+    "required_before_cutover": "Separately reviewed immutable new runner resource profile: all6CPU600%, safely dynamic memory with1GiB OS margin/256MiB allocation granularity, truthful bound snapshots and actual live cpu.max/memory.max/memory.swap.max/pids.max/ancestor proof. No new guest/build repeat needed for resource-only changes.",
+    "resource_profile_and_kernel_probe_verified": false,
+    "reviewed_policy_pr": "https://github.com/jliu67/OpenRX/pull/29"
+  },
+  "schema": "openrx.local-migration.technical-gate-map.v1",
+  "scientific_source_commit": "b4b5ffc5c5ee3f59e0e862a6979d265fd410d726",
+  "scientific_wrapper_sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e",
+  "scope": "Nine historical technical migration gates verified for immutable988/sourceb4, with four authority/final-receipt gates pending and new owner resource profile pending. This is technical evidence only, not eligibility certificate C or activation.",
+  "state_transition_performed": false,
+  "technical_gates_verified_for_historical_988": true
+}

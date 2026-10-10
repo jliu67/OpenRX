@@ -1,0 +1,27 @@
+test_active_transition_requires_all_gates_and_hashed_evidence (tests.test_local_execution.RunnerTests) ... ok
+test_changed_input_is_rejected_without_child_launch (tests.test_local_execution.RunnerTests) ... ok
+test_crash_between_receipt_and_journal_recovers_without_overwrite (tests.test_local_execution.RunnerTests) ... ok
+test_dedup_survives_reinitialization_and_uses_unique_directories (tests.test_local_execution.RunnerTests) ... ok
+test_directory_inputs_with_unbound_symlinks_are_rejected (tests.test_local_execution.RunnerTests) ... ok
+test_existing_file_cannot_be_replaced (tests.test_local_execution.RunnerTests) ... ok
+test_exit_zero_does_not_claim_science_and_output_digest_detects_tampering (tests.test_local_execution.RunnerTests) ... ok
+test_global_lock_serializes_jobs_and_queued_stop_never_launches_child (tests.test_local_execution.RunnerTests) ... ok
+test_init_never_overwrites_and_evidence_event_chain_detects_corruption (tests.test_local_execution.RunnerTests) ... ok
+test_manifest_and_runner_snapshot_tamper_deny_child_launch (tests.test_local_execution.RunnerTests) ... ok
+test_nested_payload_output_is_expanded_and_integrity_bound (tests.test_local_execution.RunnerTests) ... ok
+test_new_output_and_receipt_tampering_are_detected (tests.test_local_execution.RunnerTests) ... ok
+test_nonregular_output_fails_without_reading_or_discarding_it (tests.test_local_execution.RunnerTests) ... ok
+test_oom_manager_result_never_becomes_process_success (tests.test_local_execution.RunnerTests) ... ok
+test_output_symlinks_fail_finalization_and_late_links_fail_verification (tests.test_local_execution.RunnerTests) ... ok
+test_recovery_requires_inactive_empty_cgroup_and_never_reexecutes (tests.test_local_execution.RunnerTests) ... ok
+test_secret_environment_is_rejected_before_persistence (tests.test_local_execution.RunnerTests) ... ok
+test_signal_stop_reaps_child_preserves_partial_logs_and_forbids_resume (tests.test_local_execution.RunnerTests) ... ok
+test_simulation_denied_without_evidence_backed_cutover (tests.test_local_execution.RunnerTests) ... ok
+test_submission_failure_keeps_request_claim_and_finalized_evidence (tests.test_local_execution.RunnerTests) ... ok
+test_systemd_limits_cgroup_cleanup_and_no_session_coupling (tests.test_local_execution.RunnerTests) ... ok
+test_validation_needs_explicit_allowed_scope (tests.test_local_execution.RunnerTests) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 10.942s
+
+OK

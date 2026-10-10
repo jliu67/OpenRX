@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-09T20:21:22.124118+00:00",
+  "review_sha256": "42f5bcf52493be9146d7b288d36d24452986cc594ec2ff27e3e2b852ad56d90e",
+  "schema": "openrx.initialization-stop.supporting-journal-snapshots.v1",
+  "scope": "Exact retained snapshots observed after initialization-only stop peer review. Not a running-guest proof or activation. Later append-only journal evolution does not alter these snapshots.",
+  "snapshots": [
+    {
+      "observed_from": "$OPENRX_LOCAL_ROOT/state/events.jsonl",
+      "snapshot": {
+        "bytes": 1607,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-initialization-stop-review-v2/state-events-at-export.jsonl",
+        "sha256": "78a09a72999e5f801475738546d05c79a7ee9cbf269dd54e6431973d545ceb16"
+      }
+    },
+    {
+      "observed_from": "$OPENRX_LOCAL_ROOT/state/execution-receipts.jsonl",
+      "snapshot": {
+        "bytes": 824,
+        "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-gem5-initialization-stop-review-v2/execution-receipts-at-export.jsonl",
+        "sha256": "70020302f648d5e92d436809768654c55161c143b81cf7620ad1b73e3946b08b"
+      }
+    }
+  ]
+}

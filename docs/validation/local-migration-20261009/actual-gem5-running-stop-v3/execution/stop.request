@@ -1,0 +1,37 @@
+{
+  "controller": {
+    "bytes": 27134,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v3.py",
+    "sha256": "6743268de7074a27e2fcf16e2c8f8cea2ae2af6fd5dc495c2e4b762867171c39"
+  },
+  "execution_id": "20261009T202537Z-a1ca7df2cf1c",
+  "observed_live_simulator": {
+    "cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T202537Z-a1ca7df2cf1c.service",
+    "commandline": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt --outdir=$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out $OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/fs.py --resources $OPENRX_LOCAL_ROOT/artifacts/guest-resources-ranged-20261009 --readfile $OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/payload/guest.sh --max-ticks 10000000000000 ",
+    "exe": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+    "exe_device": 2051,
+    "exe_inode": 22574966,
+    "pid": 87741,
+    "pidfd_opened_while_live": true,
+    "proc_stat": "87741 (gem5.opt) R 87593 87741 87741 0 -1 4194304 37301 0 0 0 998 6 0 0 30 10 1 0 40316266 4524625920 43924 18446744073709551615 108756195889152 108756230908557 140735496654512 0 0 0 0 16781440 268570146 0 0 0 17 0 0 0 0 0 0 108756244175824 108756245672250 108756333424640 140735496662282 140735496662780 140735496662780 140735496662913 0\n",
+    "utc": "2026-10-09T20:26:37.869043+00:00"
+  },
+  "observed_running_guest": {
+    "bytes": 868,
+    "required_banner": "OpenSBI v1.3.1",
+    "required_harts": 1,
+    "same_pinned_process_pidfd_still_live": true,
+    "sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86",
+    "snapshot": {
+      "bytes": 868,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-serial.txt",
+      "sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86"
+    },
+    "stage": "expected-open-sbi-firmware-executing",
+    "terminal_path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/board.platform.terminal",
+    "utc": "2026-10-09T20:26:37.869224+00:00"
+  },
+  "reason": "Declared migration running-firmware stop lifecycle proof",
+  "request_sha256": "d425c756d2ac184a56d61de80a8ade0dafd226da29657e4567a2cb0a1e261010",
+  "schema": "openrx.owner.stop-request.v1"
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "openrx-migration-scientific-audit-v1",
+  "recorded_utc": "2026-10-09T15:44:39.671682+00:00",
+  "source_repository_commit": "3a7ff8fd3529dfc7e0fd46d28ee90b267b8df2f2",
+  "original_evidence_checks": [
+    {
+      "manifest": "docs/validation/m3-fs/actual-runtime-20261008/artifact-manifest.json",
+      "manifest_sha256": "6827a90606179588b605f8b6929571e3f81aae05c165eae404557718ca6094f6",
+      "verified_files": 24,
+      "missing_files": [],
+      "mismatched_files": []
+    },
+    {
+      "manifest": "docs/validation/m3-fs/actual-light-20261008/artifact-manifest.json",
+      "manifest_sha256": "fb95f5c0cbfad9fecb3c3cdd1f8d239e90df0f1031b6566968b69a74edb386b5",
+      "verified_files": 26,
+      "missing_files": [
+        "execution-source/tests/__pycache__/native_riscv_probe.cpython-312.pyc"
+      ],
+      "mismatched_files": []
+    },
+    {
+      "manifest": "docs/validation/m3-fs/light-resume-20261008/raw-manifest.json",
+      "manifest_sha256": "020c1a7e7322f1b44b88c5e003850456b5656727754dc7a1406937b10839b6af",
+      "verified_files": 11,
+      "missing_files": [],
+      "mismatched_files": []
+    }
+  ],
+  "strict_runtime_replays": [
+    {
+      "source": "actual-runtime-20261008",
+      "serial_sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b",
+      "runtime_replay": {
+        "checks_passed": 9,
+        "architecture": "riscv64",
+        "flush_path": "linux-riscv-flush-icache",
+        "timing_calibrated": false
+      },
+      "empty_framed_stderr": true
+    },
+    {
+      "source": "actual-light-20261008",
+      "serial_sha256": "85266d1d25617c6fea1f3df8326e795549cbf8c116b89c480c8d6751dbcbbae8",
+      "runtime_replay": {
+        "checks_passed": 9,
+        "architecture": "riscv64",
+        "flush_path": "linux-riscv-flush-icache",
+        "timing_calibrated": false
+      },
+      "empty_framed_stderr": true
+    },
+    {
+      "source": "light-resume-20261008",
+      "serial_sha256": "9092252d20ff4767d92cff0b89980b9df034afd5070f927cb46a8d835ac1ce84",
+      "runtime_replay": {
+        "checks_passed": 9,
+        "architecture": "riscv64",
+        "flush_path": "linux-riscv-flush-icache",
+        "timing_calibrated": false
+      },
+      "empty_framed_stderr": true
+    }
+  ],
+  "partial_hash_acceptance": {
+    "rejected": true,
+    "reason": "Missing initial config or final summary"
+  },
+  "guest_recovery_manifest": "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/recovery-manifest.json",
+  "unavailable_essential_artifacts": [
+    {
+      "artifact": "original gem5.opt 957300488 bytes sha256 3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6",
+      "status": "not found in audited local paths; Library archive parts listed but no callable arbitrary large Library archive read available",
+      "rebuild": "pinned upstream source c8222cc67a399bfc01e8658dd14b30d5bfd634f9 canonical build_opts/RISCV with independently recorded local compiler/dependencies; retain new digest distinct from old digest"
+    }
+  ],
+  "canonical_build_config": {
+    "file": "docs/validation/m3-fs/build-20261008/canonical-config",
+    "sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5",
+    "compiler_compatibility": "pinned upstream SConstruct officially supports GCC11..14.2, embedded Python >=3.6; GCC11/Python3.10 compatible in source policy, actual build/runtime still required",
+    "source": "https://raw.githubusercontent.com/gem5/gem5/c8222cc67a399bfc01e8658dd14b30d5bfd634f9/SConstruct"
+  },
+  "minimum_actual_migration_smoke": [
+    "Current unmodified run.py runtime-only strict pass, simulator child0, nine exact controls, empty framed stderr, complete guest marker, hypercalls1/2/3, immutable before/after simulator/resource/config/payload hashes",
+    "Expected Linux6.8.12 and Ubuntu24.04 guest, one Atomic CPU RVVoff 4GiB RAM L1I/L1D16KiB L2 256KiB confirmed from actual logs/config",
+    "Appropriate original offline tests/vendor integrity and native/QEMU semantic/hash regression controls with new receipts; retained historic success is not a new-host pass"
+  ],
+  "scientific_gates_remaining": [
+    "#16 complete unchanged gem5 light v2/v1 interpreter/JIT matrix remains open; no accepted complete hashes",
+    "Full dataset/intended timing cores/SMP/BOOM Linux remain separate open gates",
+    "M1 measured baseline/power and M4/M5 calibrated model/optimization remain incomplete"
+  ],
+  "simulation_resume": "No checkpoint restore implemented in current fs.py/run.py; restart uses new fresh output directory. Incremental build reuse is separate from simulation resume.",
+  "no_simulation_or_build_launched_by_auditor": true
+}

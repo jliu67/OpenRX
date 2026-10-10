@@ -1,0 +1,54 @@
+{
+  "checks": [
+    "AST+compile without payload/runner imports or execution",
+    "binding-only --describe successful",
+    "new isolated fixture root absent",
+    "preserved v1/v2 unchanged"
+  ],
+  "describe_result": {
+    "bytes": 7615,
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/describe-v3-result.json",
+    "sha256": "e3c95098dbe6d51369548ed4f867ae154d217ad8443b7815da079fc6c8ebe58f"
+  },
+  "execution_started": false,
+  "plan": {
+    "bytes": 6633,
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/plan-v3.json",
+    "sha256": "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837"
+  },
+  "prepared_only": true,
+  "proposed_execute_argv_after_review": [
+    "/usr/bin/python3",
+    "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3.py",
+    "--execute",
+    "--expected-self-sha256",
+    "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72",
+    "--expected-plan-sha256",
+    "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837"
+  ],
+  "runner": {
+    "bytes": 38227,
+    "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  },
+  "schema": "openrx.final988.lifecycle.preparation.v3",
+  "scientific_acceptance": "unverified",
+  "services_created": false,
+  "sources": [
+    {
+      "bytes": 29508,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3.py",
+      "sha256": "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72"
+    },
+    {
+      "bytes": 2300,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/toy_payload.py",
+      "sha256": "3e04fade4ef3f9a436be96b6295cba1d66ca8b55993e1d7803fa8081818328e6"
+    }
+  ],
+  "v3_diff": {
+    "bytes": 8080,
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/v3-changes.diff",
+    "sha256": "a6ff8f8190162beb00d2f24a129954b83fabd40faa5829c9098f96aca625bd10"
+  }
+}

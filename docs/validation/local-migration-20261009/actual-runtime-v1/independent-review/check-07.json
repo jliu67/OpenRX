@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-09T20:04:28.180035+00:00",
+  "check": "actual_execution_admission_and_retained_integrity",
+  "evidence": {
+    "all_inputs_and_source_bound_before_launch_rechecked_now": true,
+    "cgroup_observation": {
+      "exists": false,
+      "limitation": "No absent/transient unit defaults used as terminal Result evidence",
+      "retained_control_group": ""
+    },
+    "execution_id": "20261009T193937Z-576aa858c033",
+    "integrity_verification": {
+      "execution_id": "20261009T193937Z-576aa858c033",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    },
+    "lifecycle_statuses": [
+      "QUEUED",
+      "RUNNING",
+      "CHILD_STARTED",
+      "PROCESS_EXITED",
+      "FINALIZED"
+    ],
+    "manifest": {
+      "bytes": 158317,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/manifest.json",
+      "sha256": "80a2394eefbec478f10607dcd8c8b0463c2c08cd2200421b1b573c3010ef402c"
+    },
+    "process": {
+      "finished_at": "2026-10-09T20:02:53.407223+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "receipt": {
+      "bytes": 4662,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/receipt.json",
+      "sha256": "873eded57a1f28b1dc36479005d734c10d7f09a9e404fbd70bcf1b52223f7856"
+    },
+    "resource_limits": {
+      "CPUQuota": "200%",
+      "MemoryMax": "6G",
+      "MemorySwapMax": "1G",
+      "Nice": 10,
+      "NoNewPrivileges": true,
+      "TasksMax": 256,
+      "global_slots": 1
+    },
+    "unit_limitation": "If transient unit is not found, manager defaults are not terminal service evidence",
+    "unit_observation": {
+      "ActiveState": "inactive",
+      "ControlGroup": "",
+      "ExecMainCode": "0",
+      "ExecMainStatus": "0",
+      "LoadState": "not-found",
+      "Result": "success",
+      "SubState": "dead",
+      "query_returncode": 0
+    }
+  },
+  "passed": true
+}

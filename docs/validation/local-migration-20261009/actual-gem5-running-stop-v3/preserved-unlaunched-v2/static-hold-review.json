@@ -1,0 +1,52 @@
+{
+  "accepted_for_launch": false,
+  "actions": "Static read-only source/spec/diff and preserved raw-byte predicates only; no controller import/execute, simulator, submit, recovery, signals, service, state, GitHub or commit operation.",
+  "ast_valid": true,
+  "at": "2026-10-09T20:19:25.850137+00:00",
+  "blocking_findings": [
+    {
+      "finding": "Preserved actual firmware serial has CRLF; both v2 LF-only predicates reject its banner and one-HART line. Waiting while the simulator is healthy cannot supply a match; terminal completion would yield missing proof. No pass is fabricated.",
+      "location": "running_guest_stage LF-only byte literals",
+      "required_resolution": "Preserve unlaunched v2/request/diff; new versioned key/controller with exact known raw CRLF markers and pure historical-byte positive/negative controls before review."
+    }
+  ],
+  "controller": {
+    "bytes": 27128,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v2.py",
+    "sha256": "cbf10fd095bdfee352c711d575949d848c3c262883c41fee430ccfb90ec46612"
+  },
+  "diff": {
+    "bytes": 10540,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v2-v1.diff",
+    "sha256": "295281008c63511ddb957d73f472283cb115bcae5ab13cc4711dc7fe78d7074d"
+  },
+  "execution_launched": false,
+  "external_gate_limitation": "Controller prerequisites checks first-capture receipt/integrity. Independently accepted scientific review12db is a separate owner prelaunch gate, named in fixed request and actually already accepted; the v2 controller does not read/check that independent review file.",
+  "other_reviewed_facts": [
+    "Nine-input exact source/env/runner/request bindings and global resource admission remain inherited from reviewed v1.",
+    "Firmware snapshot uses O_NOFOLLOW|O_NONBLOCK and fstat regular check, reads at most256KiB+1, then retains exclusive/fsynced bytes and metadata.",
+    "Pinned gem5 inode/path/cgroup and same process pidfd must be live at serial observation and immediately before exclusive/fsynced stop marker.",
+    "Poststop acceptance requires observed pidfd exit, exact prior service cgroup drained, retained snapshot unchanged and final serial preserves its prefix, actual integer child returncode, wrapper report/stdout consistency and PROCESS_FAILED wrapper return1.",
+    "No fixed SIGKILL status, guest correctness, complete boot, checkpoint/resume, statistics, host reboot, or cutover is inferred from expected interruption.",
+    "All prior source/request/controller/experiment assets are preserved; no old scientific criteria/model/resource/ELF bytes are changed."
+  ],
+  "pure_byte_control_results": {
+    "known_crlf_banner": true,
+    "known_crlf_hart": true,
+    "raw_bytes_normalized": false,
+    "v2_lf_banner": false,
+    "v2_lf_hart": false
+  },
+  "raw_control_source": {
+    "bytes": 18286,
+    "path": "$OPENRX_LOCAL_ROOT/executions/20261009T193937Z-576aa858c033/payload/m5out/board.platform.terminal",
+    "sha256": "92a28e6b6700fae6638ab771c687a3a988c0464fe8cfa002d930d11fdb1dc37b"
+  },
+  "request": {
+    "bytes": 5614,
+    "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-gem5-stop-migration-attempt-02.json",
+    "sha256": "bcbf912013d386745efe951120b9432dd35e5c334a432f6fdcde94fb70db010a"
+  },
+  "reviewed_source_entirely": true,
+  "schema": "openrx.gem5-stop-controller.static-review.v2"
+}

@@ -1,0 +1,52 @@
+{
+  "schema": "openrx.local.resource-independent-review.v1",
+  "reviewer": "scientific_inventory",
+  "started_utc": "2026-10-09T16:11:09.050391+00:00",
+  "finished_utc": "2026-10-09T16:11:49.192381+00:00",
+  "resource_manifest_sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb",
+  "artifacts_independently_rehashed": [
+    {
+      "role": "bootloader",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/guest-resources-ranged-20261009/opensbi",
+      "bytes": 1292496,
+      "sha256": "510f5b9cbc6d2c8c97dacc395b29d47e897c1abe91e4df5a7d8893c0fad8ae0a",
+      "pinned_identity_matches": true
+    },
+    {
+      "role": "kernel",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/guest-resources-ranged-20261009/vmlinux",
+      "bytes": 19749472,
+      "sha256": "57e9a7ab9553fb6c58078913b12687455bc46c072539266b14cbb0142b7bffdd",
+      "pinned_identity_matches": true
+    },
+    {
+      "role": "disk_image",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/guest-resources-ranged-20261009/ubuntu.img",
+      "bytes": 5242880000,
+      "sha256": "ddf1ebb56454ef37e88d6de8aefdef7180fc9a2328a3bf8cff02f7a043e7127b",
+      "pinned_identity_matches": true
+    },
+    {
+      "role": "openrx-runtime-probe",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-runtime-probe",
+      "bytes": 13760,
+      "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac",
+      "pinned_identity_matches": true
+    },
+    {
+      "role": "openrx-riscv-probe",
+      "path": "${OPENRX_LOCAL_ROOT}/artifacts/guest-20261008/openrx-riscv-probe",
+      "bytes": 376824,
+      "sha256": "61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657",
+      "pinned_identity_matches": true
+    }
+  ],
+  "disposition": "essential guest inputs verified against unchanged original pins; rebuilt simulator and new local boot/runtime remain pending",
+  "guest_boot_executed": false,
+  "original_gem5_binary_available": false,
+  "notes": [
+    "Full decompressed guest disk bytes re-read and SHA-256 recomputed; recovery archive chunk hashes separately retained in acquisition evidence",
+    "Guest ELFs are exact recovered original payloads; no new cross compilation or guest test claimed",
+    "Original saved simulator unavailable; distinct pinned-source rebuild is ongoing"
+  ]
+}

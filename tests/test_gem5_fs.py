@@ -52,7 +52,6 @@ class SerialTests(unittest.TestCase):
         defaults = [kw.value.value for kw in argument_calls[0].keywords
                     if kw.arg == "default" and isinstance(kw.value, ast.Constant)]
         self.assertEqual(defaults, [0])
-        self.assertIn('process.wait(timeout=timeout or None)', source)
 
     def stream(self, status=0, stderr=""):
         return ("boot messages\nOPENRX_RUNTIME_BEGIN\n{\"type\":\"config\"}\n"
@@ -472,6 +471,90 @@ time.sleep(60)
         self.assertEqual(child.returncode, -signal.SIGKILL)
         self.assert_reaped(child.pid)
         self.assertEqual({n: signal.getsignal(n) for n in original_handlers}, original_handlers)
+
+    def test_signal_after_actual_waitpid_reap_cannot_signal_reused_group(self):
+        original_popen = subprocess.Popen
+        observation = {"reaped": False, "signal_injected": False}
+
+        def launch(*args, **kwargs):
+            child = original_popen(*args, **kwargs)
+            original_try_wait = child._try_wait
+            original_poll = child.poll
+            first_poll = True
+
+            def poll():
+                nonlocal first_poll
+                if first_poll:
+                    # Leave the real child unreaped so wait() must exercise
+                    # the precise waitpid/returncode assignment boundary.
+                    first_poll = False
+                    return None
+                return original_poll()
+
+            def try_wait(flags):
+                result = original_try_wait(flags)
+                if result[0] == child.pid and not observation["signal_injected"]:
+                    observation.update(reaped=True, signal_injected=True)
+                    self.assertIsNone(child.returncode)
+                    signal.raise_signal(signal.SIGINT)
+                return result
+
+            child._try_wait = try_wait
+            child.poll = poll
+            return child
+
+        for stop_file in (None, self.root / "absent-stop-marker"):
+            with self.subTest(stop_file=stop_file):
+                observation.update(reaped=False, signal_injected=False)
+                with mock.patch.object(run.subprocess, "Popen", side_effect=launch), mock.patch.object(
+                        run.os, "killpg", side_effect=AssertionError("Already-reaped process group must never be signaled")):
+                    result = run.run_process(["/usr/bin/true"], stdout=subprocess.DEVNULL,
+                                             stderr=subprocess.DEVNULL, timeout=0, stop_file=stop_file)
+                self.assertTrue(observation["reaped"])
+                self.assertTrue(result["interrupted"])
+                self.assertEqual(result["interruption_source"], "host-signal")
+                self.assertIsNone(result["returncode"])
+                self.assertEqual(result["child_returncode"], 0)
+
+    def test_signal_after_completed_poll_cannot_reset_process_ownership_guard(self):
+        source, first_line = inspect.getsourcelines(run.run_process)
+        target = first_line + next(i for i, line in enumerate(source)
+                                   if line.strip() == "if observed_returncode is not None:")
+        original_popen = subprocess.Popen
+
+        for stop_file in (None, self.root / "absent-poll-stop-marker"):
+            with self.subTest(stop_file=stop_file):
+                child = None
+                injected = False
+
+                def launch(*args, **kwargs):
+                    nonlocal child
+                    child = original_popen(*args, **kwargs)
+                    self.assertEqual(child.wait(timeout=5), 0)
+                    return child
+
+                def trace(frame, event, _arg):
+                    nonlocal injected
+                    if (not injected and frame.f_code is run.run_process.__code__
+                            and event == "line" and frame.f_lineno == target):
+                        self.assertEqual(child.returncode, 0)
+                        injected = True
+                        signal.raise_signal(signal.SIGINT)
+                    return trace
+
+                previous_trace = sys.gettrace()
+                try:
+                    sys.settrace(trace)
+                    with mock.patch.object(run.subprocess, "Popen", side_effect=launch), mock.patch.object(
+                            run.os, "killpg", side_effect=AssertionError("Completed poll cannot authorize a group signal")):
+                        result = run.run_process(["/usr/bin/true"], stdout=subprocess.DEVNULL,
+                                                 stderr=subprocess.DEVNULL, timeout=0, stop_file=stop_file)
+                finally:
+                    sys.settrace(previous_trace)
+                self.assertTrue(injected)
+                self.assertTrue(result["interrupted"])
+                self.assertIsNone(result["returncode"])
+                self.assertEqual(result["child_returncode"], 0)
 
     def signal_at_transition(self, statement, signum):
         # A real signal at the specified bytecode boundary reproduces exception

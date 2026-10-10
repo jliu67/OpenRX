@@ -1,0 +1,123 @@
+--- preserved-replay-v1-91cea0ae.py
++++ replay-v2.py
+@@ -18,7 +18,7 @@
+ ROOT = BASE / 'fixture-root'
+ SELF = Path(__file__).resolve()
+ PAYLOAD = BASE / 'toy_payload.py'
+-PLAN = BASE / 'plan.json'
++PLAN = BASE / 'plan-v2.json'
+ RELEASE = Path('$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py')
+ RUNNER_SHA = '988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882'
+ PROPS = ('LoadState', 'ActiveState', 'SubState', 'Result', 'MainPID', 'ControlPID',
+@@ -119,22 +119,44 @@
+     return runner.events(directory / 'events.jsonl')
+ 
+ 
++def manager_wait_state(sample):
++    require(sample['returncode'] == 0, 'Manager query failed; preserve and inspect without inferring state')
++    props = sample['properties']
++    require(props.get('LoadState') in {'loaded', 'not-found'}, 'Unknown unit load state')
++    require(props.get('ActiveState') in {'active', 'activating', 'deactivating', 'reloading', 'inactive', 'failed'},
++            'Unknown unit active state')
++    return props
++
++
++def wait_evidence(runner, eid, predicate, description):
++    directory = runner.execution_dir(ROOT, eid)
++    manifest = readjson(directory / 'manifest.json')
++    while True:
++        if predicate(directory):
++            return directory
++        props = manager_wait_state(properties(manifest['unit']))
++        # Recheck after the query: the child may have produced evidence and
++        # exited between the first predicate and the observed manager state.
++        if predicate(directory):
++            return directory
++        require(not (directory / 'receipt.json').exists(),
++                f'Finalized fixture missing {description}: {eid}')
++        require(props['ActiveState'] not in {'inactive', 'failed'},
++                f'Terminal fixture missing {description}, including any finalizer failure: {eid}')
++        time.sleep(0.1)
++
++
+ def wait_started(runner, eid):
+-    directory = runner.execution_dir(ROOT, eid)
+-    while True:
+-        records = history(runner, directory)
+-        if any(item.get('status') == 'CHILD_STARTED' for item in records):
+-            return directory
+-        require(not (directory / 'receipt.json').exists(), f'Payload never admitted: {eid}')
+-        time.sleep(0.1)
++    return wait_evidence(runner, eid,
++                         lambda directory: any(item.get('status') == 'CHILD_STARTED'
++                                               for item in history(runner, directory)),
++                         'CHILD_STARTED evidence')
+ 
+ 
+ def wait_payload(runner, eid, relative):
+-    directory = wait_started(runner, eid)
+-    while not (directory / 'payload' / relative).exists():
+-        require(not (directory / 'receipt.json').exists(), f'Payload evidence missing: {eid}/{relative}')
+-        time.sleep(0.1)
+-    return directory
++    wait_started(runner, eid)
++    return wait_evidence(runner, eid, lambda directory: (directory / 'payload' / relative).exists(),
++                         'payload/' + relative)
+ 
+ 
+ def observed_resources(runner, eid, memory=64):
+@@ -168,8 +190,7 @@
+     manifest = readjson(directory / 'manifest.json')
+     while True:
+         sample = properties(manifest['unit'])
+-        props = sample['properties']
+-        require(sample['returncode'] == 0, 'Manager query failed; cannot infer safe finalization')
++        props = manager_wait_state(sample)
+         terminal = props.get('LoadState') in {'loaded', 'not-found'} and props.get('ActiveState') in {'inactive', 'failed'}
+         if terminal:
+             require((directory / 'receipt.json').exists(), f'Terminal fixture missing final receipt: {eid}')
+@@ -223,8 +244,11 @@
+         fd, live = observe_pid(child, actual['ControlGroup'])
+         try:
+             wait_payload(runner, eid, 'detached-child-output/ready.json')
++            wait_evidence(runner, eid,
++                          lambda directory: (directory / 'stdout.log').exists()
++                          and 'heartbeat' in (directory / 'stdout.log').read_text(),
++                          'inspectable partial heartbeat logs before stop')
+             before = (directory / 'stdout.log').read_text()
+-            require('heartbeat' in before, 'Missing inspectable partial logs before stop')
+             stop_result = runner.stop(ROOT, eid)
+             result = finalized(runner, eid, actual['ControlGroup'])
+             require(result['integrity']['status'] == 'INTERRUPTED', 'Safe-stop control did not record interruption')
+@@ -311,11 +335,11 @@
+             require('systemd' in parent_command and '--user' in parent_command, 'Worker not parented by user systemd')
+             require(not Path(f'/proc/{launcher_pid}').exists(), 'Launching process still present')
+             before = (directory / 'stdout.log').read_text()
+-            after = before
+-            while after == before:
+-                require(not (directory / 'receipt.json').exists(), 'Job ended before independent progress was observed')
+-                time.sleep(0.1)
+-                after = (directory / 'stdout.log').read_text()
++            wait_evidence(runner, eid,
++                          lambda directory: (directory / 'stdout.log').exists()
++                          and (directory / 'stdout.log').read_text() != before,
++                          'log progress after launching process/session exited')
++            after = (directory / 'stdout.log').read_text()
+             observation = {'launcher_pid': launcher_pid, 'launcher_absent': True,
+                            'main_live': live, 'parent_pid': parent, 'parent_command': parent_command,
+                            'stdout_before': before, 'stdout_after': after}
+@@ -342,11 +366,12 @@
+             second_unit = readjson(second_directory / 'manifest.json')['unit']
+             while True:
+                 sample = properties(second_unit)
+-                props = sample['properties']
+-                require(sample['returncode'] == 0, 'Second unit not inspectable')
++                props = manager_wait_state(sample)
+                 if props.get('ActiveState') == 'active' and int(props.get('MainPID', '0')) > 0:
+                     break
+                 require(not (second_directory / 'receipt.json').exists(), 'Second unit ended before queue observation')
++                require(props['ActiveState'] not in {'inactive', 'failed'},
++                        'Second unit terminated before queued worker observation')
+                 time.sleep(0.1)
+             records = history(runner, second_directory)
+             require(not any(item.get('status') in {'RUNNING', 'CHILD_STARTED'} for item in records),

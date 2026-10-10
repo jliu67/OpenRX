@@ -1,0 +1,160 @@
+{
+  "accepted": true,
+  "actual_model": {
+    "base_image_read_only": true,
+    "cache_sizes_bytes": {
+      "l1d-cache-0": 16384,
+      "l1i-cache-0": 16384,
+      "l2-cache-0": 262144
+    },
+    "clock_period_ticks": 1000,
+    "cores": 1,
+    "cow": true,
+    "cpu": "gem5::AtomicSimpleCPU",
+    "ram_bytes": 4294967296,
+    "rvv": false
+  },
+  "checks": {
+    "complete_21_artifact_pathset_hashes_event_chain_external_receipt_binding": true,
+    "historical_exit_failure_and_current_named_cgroup_drained": true,
+    "raw_868_byte_expected_firmware_same_live_pidfd_executable_and_premarker_witness": true,
+    "retained_final_serial_preserves_exact_snapshot_prefix": true,
+    "truthful_child_minus9_wrapper1_failure_no_scientific_pass_no_resume": true,
+    "unchanged_actual_scalar_RV64_atomic_1core_1GHz_4GiB_caches_COW_model": true,
+    "unchanged_exact_request_runner_executable_nine_inputs_and_890_source_files": true
+  },
+  "current_cgroup": {
+    "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T202537Z-a1ca7df2cf1c.service",
+    "populated": false,
+    "present": false
+  },
+  "current_manager": {
+    "ActiveState": "failed",
+    "ControlGroup": "",
+    "ExecMainCode": "1",
+    "ExecMainStatus": "1",
+    "LoadState": "loaded",
+    "Result": "exit-code",
+    "SubState": "failed",
+    "query_returncode": 0
+  },
+  "current_output_verification": {
+    "execution_id": "20261009T202537Z-a1ca7df2cf1c",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_FAILED"
+  },
+  "execution_bindings": [
+    {
+      "bytes": 158666,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/manifest.json",
+      "sha256": "eba5e15e9de07a14b7ae634ebfa07904c5673528066986ca31cebc5e46693918"
+    },
+    {
+      "bytes": 4456,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/receipt.json",
+      "sha256": "aed2db8a4d78edfec6f9a314bc716b11644a76575c64adee0ff6918bb31ddba8"
+    },
+    {
+      "bytes": 2565,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/stop.request",
+      "sha256": "d174fdde2eed2b3a0f73fdbdc3c8cfc23d38150e00424b7825d97b05649faac4"
+    },
+    {
+      "bytes": 5330,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/payload/report.json",
+      "sha256": "dbd5886cab6edd93e89156e68ddacca54fcaf8b0edd8f138182b74ffe5d87e1c"
+    }
+  ],
+  "execution_id": "20261009T202537Z-a1ca7df2cf1c",
+  "fixed_bindings": [
+    {
+      "bytes": 38227,
+      "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    {
+      "bytes": 42975,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent_runtime_review_v1.py",
+      "sha256": "97430d48d73eb1014ce1c1acd5e1de14aa2815da285ad5d84771329aa8bbd62e"
+    },
+    {
+      "bytes": 5829,
+      "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-gem5-stop-migration-attempt-03.json",
+      "sha256": "d425c756d2ac184a56d61de80a8ade0dafd226da29657e4567a2cb0a1e261010"
+    },
+    {
+      "bytes": 27134,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v3.py",
+      "sha256": "6743268de7074a27e2fcf16e2c8f8cea2ae2af6fd5dc495c2e4b762867171c39"
+    },
+    {
+      "bytes": 33067,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent-runtime-review-v1/independent-runtime-review.json",
+      "sha256": "12db13426bddda29b7857f423e52fca0b87842c3225d81b2ec2cb3f793170bae"
+    }
+  ],
+  "launch": {
+    "bytes": 4287,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-running-stop-controller-v3-launch-20261009T202455Z.json",
+    "sha256": "fe515d473c2f47a0f86a7fded03357b3fa6044e199018fb096de3967037cffd2"
+  },
+  "limitations": [
+    "Historical live PID/pidfd/cgroup observation is source-bound retained evidence, not a newly replayed live process.",
+    "This stop proves expected OpenSBI firmware execution followed by controlled termination; no complete Linux boot or nine-control scientific pass is inferred.",
+    "Actual child status is -9; wrapper logical SIGINT cancellation label is not a claim of graceful child signal exit.",
+    "No graceful gem5 statistics/checkpoint finalization, verified checkpoint resume, host reboot or whole Codex shutdown is demonstrated.",
+    "Historical 6G/1G/CPU200 manifest and manager properties do not prove historical kernel CPU quota enforcement; new owner resource policy is a separate review."
+  ],
+  "local_activation_accepted": false,
+  "migration_complete": false,
+  "migration_state_observed": "LOCAL_VALIDATING",
+  "retained_evidence": [
+    {
+      "bytes": 196,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/created-stop-marker.json",
+      "sha256": "29f2b1169c0492c845da929f729a2c5fe0762cf99b05cc0c41460822a8d344fa"
+    },
+    {
+      "bytes": 2966,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/fixed-submission-command.json",
+      "sha256": "07d0f04923b9ddef09b15080319565d7274c64359650ca27aebde41ddca96770"
+    },
+    {
+      "bytes": 1271,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-live-pinned-gem5.json",
+      "sha256": "a5a3ceed5bf157e5ae9e9bdc580d553d1c8654d6b1df7d9da582d19aabd23338"
+    },
+    {
+      "bytes": 868,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-serial.txt",
+      "sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86"
+    },
+    {
+      "bytes": 719,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-stage.json",
+      "sha256": "deb0929b308a14da18c1903442b4820a1e2cfea7860f2b06496b154652adf9b7"
+    },
+    {
+      "bytes": 4919,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/stop-proof-receipt.json",
+      "sha256": "1eb045171be88e3012e635a11ab0aa21fe46d7507b8ba003d00daae10b019491"
+    },
+    {
+      "bytes": 131,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/submitted-new-request.json",
+      "sha256": "ca02ed654d2fb89b7776d87e8e99f816bded8c812133df2431778f815bccef64"
+    }
+  ],
+  "review_script": {
+    "bytes": 13136,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/independent_running_stop03_review_v1.py",
+    "sha256": "8cb5ae061f4977fcf3f77fe4bd9b45df60803309d8337affbf6a35b0b8608191"
+  },
+  "review_utc": "2026-10-10T05:45:59.271329+00:00",
+  "reviewer": "Independent scientific_inventory subagent; separate from controller author; shared workspace/account",
+  "schema": "openrx.independent.actual-running-stop03.review.v1",
+  "scientific_acceptance": "unverified for interrupted stop03",
+  "scope": "Fresh read-only assessment of retained actual firmware-running controlled stop; no execution replay",
+  "technical_gate_outcome": "Expected running-firmware stop, inspected failed process/logs and immutable-input/output integrity accepted; original complete-guest science acceptance remains separate."
+}

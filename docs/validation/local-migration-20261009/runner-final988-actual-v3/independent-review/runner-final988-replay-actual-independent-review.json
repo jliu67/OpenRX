@@ -1,0 +1,623 @@
+{
+  "schema": "openrx.final988.actual-host-lifecycle-independent-review.v1",
+  "at": "2026-10-09T18:25:35.564953+00:00",
+  "reviewer": "scientific_inventory independent subagent; shared owner account, not independent human approval",
+  "independent_actual_review_accepted": true,
+  "checker": {
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runner_final988_actual_independent_review_v1.py",
+    "bytes": 17039,
+    "sha256": "926e0c5727498ad25e3b807e4f1bd79be2c43cfc663d3c4f4fc3e3eb6a40d671"
+  },
+  "source": {
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3.py",
+    "bytes": 29508,
+    "sha256": "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72"
+  },
+  "plan": {
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/plan-v3.json",
+    "bytes": 6633,
+    "sha256": "af7c0fcc7329cf2755c8c340f9ea578dde5ec5bcbe5ad71751e939402537d837"
+  },
+  "toy": {
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/toy_payload.py",
+    "bytes": 2300,
+    "sha256": "3e04fade4ef3f9a436be96b6295cba1d66ca8b55993e1d7803fa8081818328e6"
+  },
+  "runner": {
+    "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+    "bytes": 38227,
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  },
+  "actual_replay_receipt": {
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-receipt.json",
+    "bytes": 37246,
+    "sha256": "930729e0936583cb33237d549b98e39c3027ce07883504e81b00fcaab1ace229"
+  },
+  "executions_verified": 10,
+  "cases": [
+    {
+      "execution_id": "20261009T181830Z-36d71158df4c",
+      "request_key": "final988-stop-detached",
+      "process_status": "INTERRUPTED",
+      "child_returncode": -2,
+      "manager_result": "exit-code",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/manifest.json",
+        "bytes": 2686,
+        "sha256": "e763ffa6dc16de6c841d16a9cc5eaadb93969373d5dc72c02d969a5f41aeba0e"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/receipt.json",
+        "bytes": 3176,
+        "sha256": "99b0068b84a4629958d7a0d0549a50fcb5b4895213b8361b71a7efe320b49a16"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181830Z-36d71158df4c/submission-command.json",
+        "bytes": 1097,
+        "sha256": "94719cc9e10a65a77e488570e25c1fc7650d6c8a42cd3973f4821544025b90e0"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "exit-code",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "130",
+        "ControlGroup": "",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "STOP_REQUESTED",
+        "INTERRUPTED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181831Z-a2db3f07985b",
+      "request_key": "final988-instant-0",
+      "process_status": "PROCESS_EXITED",
+      "child_returncode": 0,
+      "manager_result": "success",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/manifest.json",
+        "bytes": 2680,
+        "sha256": "e92433c640c7daeae121ca042c453bd1f6daa8bddfbcb5d1ca9c949f5c7f20e3"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/receipt.json",
+        "bytes": 2659,
+        "sha256": "b8878066e662999c293443839f0ffae751ce827ab1c49c6cfbb3091773f172da"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181831Z-a2db3f07985b/submission-command.json",
+        "bytes": 1097,
+        "sha256": "d9d70e1f1b6a7c6de95b04292d700e6034f2e15e57cec5e816d06be0cba6f13d"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "success",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "ControlGroup": "",
+        "LoadState": "not-found",
+        "ActiveState": "inactive",
+        "SubState": "dead"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "PROCESS_EXITED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181832Z-25d801e2dc11",
+      "request_key": "final988-instant-1",
+      "process_status": "PROCESS_EXITED",
+      "child_returncode": 0,
+      "manager_result": "success",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/manifest.json",
+        "bytes": 2680,
+        "sha256": "b8b9dcd35b28628c4dc6334ad545c7dac39dd6bd9e8dea8a67b37c7132339fc5"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/receipt.json",
+        "bytes": 2659,
+        "sha256": "ff2c9666f5c9935ba4b9a2057a1594c31d56328be326892375e7d744c8457307"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181832Z-25d801e2dc11/submission-command.json",
+        "bytes": 1097,
+        "sha256": "d59549373adf47f72ec5505b00efa876971cb4066bcdb0233fe08cd3e426098f"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "success",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "ControlGroup": "",
+        "LoadState": "not-found",
+        "ActiveState": "inactive",
+        "SubState": "dead"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "PROCESS_EXITED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181833Z-55843e05d93a",
+      "request_key": "final988-instant-2",
+      "process_status": "PROCESS_EXITED",
+      "child_returncode": 0,
+      "manager_result": "success",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/manifest.json",
+        "bytes": 2680,
+        "sha256": "b345d93af659708090d57e912f41d4ba7612e4f8befe2c9315448eb82a1a145a"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/receipt.json",
+        "bytes": 2659,
+        "sha256": "41faf5597a5f600fd33f7d11c45b6d571669ae489d121ef0d1c8d616b83662e9"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181833Z-55843e05d93a/submission-command.json",
+        "bytes": 1097,
+        "sha256": "4ea3e0acce5d7e43ca8cbf3718b43c49c407e29729fff0ecb135ae5337f1995e"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "success",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "ControlGroup": "",
+        "LoadState": "not-found",
+        "ActiveState": "inactive",
+        "SubState": "dead"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "PROCESS_EXITED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181834Z-e588186bf436",
+      "request_key": "final988-exit-seven",
+      "process_status": "PROCESS_FAILED",
+      "child_returncode": 7,
+      "manager_result": "exit-code",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/manifest.json",
+        "bytes": 2687,
+        "sha256": "f8610229e599866fdf09e5c5c95ff72ad5787f7d25b64e22f73dbdba1d90c980"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/receipt.json",
+        "bytes": 2664,
+        "sha256": "d7f079672af3cb57f9c8e36f39f2eab08b068a8323e71183a48fbecf5721e893"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181834Z-e588186bf436/submission-command.json",
+        "bytes": 1097,
+        "sha256": "d476aa197b5c5e8e56ef27ba294c169d68c7b4c1ea9a21977dfc763bcc08b5a7"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "exit-code",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "1",
+        "ControlGroup": "",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "PROCESS_FAILED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181835Z-d18f6a4f5a9b",
+      "request_key": "final988-worker-killed",
+      "process_status": "INTERRUPTED_UNREAPED",
+      "child_returncode": null,
+      "manager_result": "signal",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/manifest.json",
+        "bytes": 2686,
+        "sha256": "e640620c599890493f491d58ea1ccac093543ef7b51fc4f48efb1f9883fbd867"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/receipt.json",
+        "bytes": 2797,
+        "sha256": "ad71890d4b46324ead31faae73a894763f155b62819ab6a43b39745ad8a64408"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181835Z-d18f6a4f5a9b/submission-command.json",
+        "bytes": 1097,
+        "sha256": "b56491f6256ad985df8362879bf1102e77ea6fda8b0bfb3c0e55f8701584e09a"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "signal",
+        "ExecMainCode": "2",
+        "ExecMainStatus": "9",
+        "ControlGroup": "",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181836Z-d6236011c4ef",
+      "request_key": "final988-oom",
+      "process_status": "INTERRUPTED",
+      "child_returncode": -9,
+      "manager_result": "oom-kill",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/manifest.json",
+        "bytes": 2666,
+        "sha256": "847a4151ff8f92e046d2464594259029573ac8944e0f723350d2746ed2c576c3"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/receipt.json",
+        "bytes": 2902,
+        "sha256": "c98cbdb603cf92b367bdf05b3e1e0df2798a0ae44fdb012661d599da5c17dc51"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181836Z-d6236011c4ef/submission-command.json",
+        "bytes": 1097,
+        "sha256": "483f9e352e96f0258bcf22b4bf89acf7efe48dfe677ac8eff61190322f4026a2"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "oom-kill",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "130",
+        "ControlGroup": "",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "INTERRUPTED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181838Z-74e4322ad038",
+      "request_key": "final988-independent-launcher",
+      "process_status": "INTERRUPTED",
+      "child_returncode": -2,
+      "manager_result": "exit-code",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/manifest.json",
+        "bytes": 2699,
+        "sha256": "695d16af611623bdcc8ae19110f3871340c0059965027e047d9672f81a5a2436"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/receipt.json",
+        "bytes": 2653,
+        "sha256": "26bb63deaa5c7d05f8b811171b281b321c34d506d3e2942ed75d6cbc0f3d5358"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181838Z-74e4322ad038/submission-command.json",
+        "bytes": 1097,
+        "sha256": "fe45efe84d524ead9d0696530307283235e6c032247de293d8e30accc26f24cd"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "exit-code",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "130",
+        "ControlGroup": "",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "STOP_REQUESTED",
+        "INTERRUPTED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181840Z-231e7b66fa4d",
+      "request_key": "final988-serialize-first",
+      "process_status": "INTERRUPTED",
+      "child_returncode": -2,
+      "manager_result": "exit-code",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/manifest.json",
+        "bytes": 2688,
+        "sha256": "f3562a1a3d9a0edb74a4a1f0ade3cfc3a475facc1ab1304dfa587b0006e696eb"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/receipt.json",
+        "bytes": 3177,
+        "sha256": "e1c01be2a0b009ef8404a4d816b5999d5f7cee41c638ba95e200651309db55fb"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/submission-command.json",
+        "bytes": 1097,
+        "sha256": "46fc6ed9798d8ae3795cd2b23c3f072ea4e746abeae6138d2d9b651095291bda"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "exit-code",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "130",
+        "ControlGroup": "",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "STOP_REQUESTED",
+        "INTERRUPTED",
+        "FINALIZED"
+      ]
+    },
+    {
+      "execution_id": "20261009T181840Z-90ae0a243b21",
+      "request_key": "final988-serialize-second",
+      "process_status": "PROCESS_EXITED",
+      "child_returncode": 0,
+      "manager_result": "success",
+      "manifest": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/manifest.json",
+        "bytes": 2687,
+        "sha256": "3e57420f650532be98b8d3959b9634cd02a265649c83492d6196192cdfd42a8c"
+      },
+      "receipt": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/receipt.json",
+        "bytes": 2659,
+        "sha256": "b4a530d105ec0db117b4f0f946a8ad76c0e9c056c6f3787552436bbfdc44bdfe"
+      },
+      "actual_submission": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/submission-command.json",
+        "bytes": 1097,
+        "sha256": "b5a2476a6f7a5f5500d20af38fd0dba9f479858205514e092c56f9b9865a01b9"
+      },
+      "receipt_integrity_verified": true,
+      "input_and_source_bindings_reverified": true,
+      "current_unit": {
+        "query_returncode": 0,
+        "Result": "success",
+        "ExecMainCode": "0",
+        "ExecMainStatus": "0",
+        "ControlGroup": "",
+        "LoadState": "not-found",
+        "ActiveState": "inactive",
+        "SubState": "dead"
+      },
+      "current_owned_cgroup_empty": true,
+      "status_sequence": [
+        "QUEUED",
+        "RUNNING",
+        "CHILD_STARTED",
+        "PROCESS_EXITED",
+        "FINALIZED"
+      ]
+    }
+  ],
+  "live_actual_resources_sampled_units": 5,
+  "resource_samples": [
+    {
+      "request_key": "final988-stop-detached",
+      "sample": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/final988-stop-detached-actual-properties.json",
+        "bytes": 1583,
+        "sha256": "a0752194ef0413598be76b56a5ee4f5deb948f18abf3717995fce505fb4449d0"
+      },
+      "actual_resources": {
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "CPUQuotaPerSecUSec": "100ms",
+        "TasksMax": "16",
+        "Nice": "10",
+        "NoNewPrivileges": "yes",
+        "KillMode": "mixed",
+        "KillSignal": "2",
+        "TimeoutStopUSec": "45s",
+        "SendSIGKILL": "yes",
+        "Restart": "no",
+        "NotifyAccess": "exec",
+        "UMask": "0077"
+      }
+    },
+    {
+      "request_key": "final988-worker-killed",
+      "sample": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/final988-worker-killed-actual-properties.json",
+        "bytes": 1583,
+        "sha256": "7aa63c03a613404620c8b78ed7ac53bd87c034077374bc13fa70869aec49fe01"
+      },
+      "actual_resources": {
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "CPUQuotaPerSecUSec": "100ms",
+        "TasksMax": "16",
+        "Nice": "10",
+        "NoNewPrivileges": "yes",
+        "KillMode": "mixed",
+        "KillSignal": "2",
+        "TimeoutStopUSec": "45s",
+        "SendSIGKILL": "yes",
+        "Restart": "no",
+        "NotifyAccess": "exec",
+        "UMask": "0077"
+      }
+    },
+    {
+      "request_key": "final988-oom",
+      "sample": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/final988-oom-actual-properties.json",
+        "bytes": 1583,
+        "sha256": "62dd303bcbd8b1d3d051abb1dd1c1b54a2fb855a77572644ffce17701f6f4080"
+      },
+      "actual_resources": {
+        "MemoryMax": "50331648",
+        "MemorySwapMax": "0",
+        "CPUQuotaPerSecUSec": "100ms",
+        "TasksMax": "16",
+        "Nice": "10",
+        "NoNewPrivileges": "yes",
+        "KillMode": "mixed",
+        "KillSignal": "2",
+        "TimeoutStopUSec": "45s",
+        "SendSIGKILL": "yes",
+        "Restart": "no",
+        "NotifyAccess": "exec",
+        "UMask": "0077"
+      }
+    },
+    {
+      "request_key": "final988-independent-launcher",
+      "sample": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/final988-independent-launcher-actual-properties.json",
+        "bytes": 1583,
+        "sha256": "561f6fd01a3e6f3cfeae1c4afc4ef6f08f45a95a962463198851e07cd03e2163"
+      },
+      "actual_resources": {
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "CPUQuotaPerSecUSec": "100ms",
+        "TasksMax": "16",
+        "Nice": "10",
+        "NoNewPrivileges": "yes",
+        "KillMode": "mixed",
+        "KillSignal": "2",
+        "TimeoutStopUSec": "45s",
+        "SendSIGKILL": "yes",
+        "Restart": "no",
+        "NotifyAccess": "exec",
+        "UMask": "0077"
+      }
+    },
+    {
+      "request_key": "final988-serialize-first",
+      "sample": {
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/final988-serialize-first-actual-properties.json",
+        "bytes": 1583,
+        "sha256": "d5d21d73d151b484511051b2acc1c96eeea7247aa2e2920ca5e00ef3a866c35a"
+      },
+      "actual_resources": {
+        "MemoryMax": "67108864",
+        "MemorySwapMax": "0",
+        "CPUQuotaPerSecUSec": "100ms",
+        "TasksMax": "16",
+        "Nice": "10",
+        "NoNewPrivileges": "yes",
+        "KillMode": "mixed",
+        "KillSignal": "2",
+        "TimeoutStopUSec": "45s",
+        "SendSIGKILL": "yes",
+        "Restart": "no",
+        "NotifyAccess": "exec",
+        "UMask": "0077"
+      }
+    }
+  ],
+  "resource_scope": "All10 recorded exact tiny submission overrides;5 live controls have actual manager samples. Production6G/1G/200%/256 baseline unchanged, not measured by tiny fixtures.",
+  "launcher_independence_witness": {
+    "launcher_absent": true,
+    "launcher_pid": 75179,
+    "main_live": {
+      "membership": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181838Z-74e4322ad038.service\n",
+      "pid": 75183,
+      "pidfd_live": true,
+      "stat": "75183 (python3.10) S 825 75183 75183 0 -1 4194304 3164 0 0 0 6 1 0 0 30 10 1 0 39549384 31735808 4697 18446744073709551615 103117715734528 103117718574605 140733027038864 0 0 0 0 16781312 16386 1 0 0 17 3 0 0 0 0 0 103117720946736 103117721230808 103118481645568 140733027043671 140733027043963 140733027043963 140733027045348 0\n"
+    },
+    "parent_command": "/lib/systemd/systemd --user ",
+    "parent_pid": 825,
+    "stdout_after": "independent heartbeat 0\nindependent heartbeat 1\n",
+    "stdout_before": "independent heartbeat 0\n"
+  },
+  "duplicate_rejected_fresh_process": true,
+  "named_main_worker_sigkill_preserved_unreaped_failure": true,
+  "deliberate_48MiB_cgroup_oom_manager_result": "oom-kill",
+  "partial_logs_retained": true,
+  "serialization_witness": {
+    "first_finalized_at": "2026-10-09T18:18:41.548494+00:00",
+    "second_child_started_at": "2026-10-09T18:18:41.858195+00:00",
+    "observed_second_after_first_finalized": true,
+    "scope": "Empirical in this replay only; prior FINALIZED is not a formal admission guarantee due worker-exit/private-finalizer startup gap. Formal guarantee is single flock payload plus drained prior workload/descendants."
+  },
+  "fixture_state": "INVENTORY",
+  "production_migration_state_observed": "STAGING",
+  "scientific_acceptance": "unverified",
+  "activation_authorized": false,
+  "migration_complete": false,
+  "reviewer_schema_correction": {
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/runner-final988-independent-audit-schema-correction.json",
+    "bytes": 696,
+    "sha256": "d5464909249115ad629cafc1af79ea78178636515b08e1ac8a3285eef7041bce"
+  },
+  "limitations": [
+    "Host-only toys, no simulator/scientific workload acceptance",
+    "Whole Codex daemon shutdown/host reboot not performed; exited launcher/session with manager-owned progress explicitly scoped",
+    "Successful transient unit GC defaults never treated as actual resource or terminal Result evidence",
+    "Intentional stop/rc7/hard-kill/OOM remain interruption/failure outcomes; control pass means truthful expected failure behavior",
+    "Long-finalizer55s evidence remains separate; no100GB/large-output throughput demonstration",
+    "Harness failure cleanup statically reviewed; successful replay did not force controller failure cleanup"
+  ],
+  "review_actions": "Read-only hashing, exact988 verify/check_bindings/events/command construction and manager/cgroup reads. No recover,stop,submit,rerun,state,GitHub or simulation."
+}

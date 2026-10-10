@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-09T20:04:52.177346+00:00",
+  "check": "inputs_and_output_receipt_reverified_after_independent_replay",
+  "evidence": {
+    "execution_id": "20261009T193937Z-576aa858c033",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "passed": true
+}

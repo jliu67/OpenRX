@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-09T20:03:30.646419+00:00",
+  "check": "fixed_reviewed_bindings",
+  "evidence": [
+    {
+      "bytes": 38227,
+      "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+      "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+    },
+    {
+      "bytes": 2973,
+      "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-local-runtime-b4b5ffc-attempt-01.json",
+      "sha256": "d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972"
+    },
+    {
+      "bytes": 13936,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/validate_when_ready_v3.py",
+      "sha256": "ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910"
+    },
+    {
+      "bytes": 14277,
+      "path": "$OPENRX_LOCAL_ROOT/toolchains/ubuntu22-20261009/pinned-packages.json",
+      "sha256": "c3948ff082235733e12ec2264a5c050936e4fef8547446c9389cf98036b86676"
+    },
+    {
+      "bytes": 14953,
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/run.py",
+      "sha256": "5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e"
+    },
+    {
+      "bytes": 4615,
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/fs.py",
+      "sha256": "5608189a6f2a41a45e86f117f10af8408ab87ea1aab600294a336ab31375e7c5"
+    },
+    {
+      "bytes": 2336,
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/simulator/gem5/resources.json",
+      "sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb"
+    },
+    {
+      "bytes": 5511,
+      "path": "$OPENRX_LOCAL_ROOT/checkouts/execution-b4b5ffc/tests/native_runtime_probe.py",
+      "sha256": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617"
+    },
+    {
+      "bytes": 16452285,
+      "path": "$OPENRX_LOCAL_ROOT/artifacts/gem5-source-c8222cc.tar.gz",
+      "sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3"
+    },
+    {
+      "bytes": 2029908,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/source-inventory.json",
+      "sha256": "ef04d97b22ac53e673bddee0458c3f00c5d08b846c996c3f80b2135f95c0cadf"
+    },
+    {
+      "bytes": 130823,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/original-tracked-sha256.json",
+      "sha256": "a7d58ca2b8de7828011cc4213309f8059c68177036b57ea0c318fee4177c6fef"
+    },
+    {
+      "bytes": 13760,
+      "path": "$OPENRX_LOCAL_ROOT/artifacts/guest-20261008/openrx-runtime-probe",
+      "sha256": "8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac"
+    }
+  ],
+  "passed": true
+}

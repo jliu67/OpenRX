@@ -1,0 +1,356 @@
+{
+  "scope": "tiny 1MiB resource proof; no scientific workload",
+  "records": [
+    {
+      "sample": 0,
+      "pid": 115738,
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "groups": [
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261010T083746Z-6bc7037f04ef.service",
+          "files": {
+            "cpu.max": "600000 100000",
+            "memory.max": "5637144576",
+            "memory.high": "max",
+            "memory.swap.max": "2147483648",
+            "pids.max": "256",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "",
+            "memory.current": "17608704",
+            "memory.peak": "17608704",
+            "cpu.stat": "usage_usec 149811\nuser_usec 120848\nsystem_usec 28963\ncore_sched.force_idle_usec 0\nnr_periods 5\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "2"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "8531206144",
+            "memory.peak": "11102871552",
+            "cpu.stat": "usage_usec 2307027108731\nuser_usec 2301507016244\nsystem_usec 5520092487\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "719"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "12193366016",
+            "memory.peak": "13385330688",
+            "cpu.stat": "usage_usec 2328948323311\nuser_usec 2321189249316\nsystem_usec 7759073995\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1100"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "41887",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "12246499328",
+            "memory.peak": "13446475776",
+            "cpu.stat": "usage_usec 2329586401664\nuser_usec 2321601879247\nsystem_usec 7984522416\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1124"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": "0-5",
+            "cgroup.controllers": "cpuset cpu io memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "12265992192",
+            "memory.peak": "13470842880",
+            "cpu.stat": "usage_usec 2329593681794\nuser_usec 2321606982574\nsystem_usec 7986699220\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1124"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup",
+          "files": {
+            "cpu.max": null,
+            "memory.max": null,
+            "memory.high": null,
+            "memory.swap.max": null,
+            "pids.max": null,
+            "cpuset.cpus.effective": "0-5",
+            "cgroup.controllers": "cpuset cpu io memory hugetlb pids rdma misc",
+            "cgroup.subtree_control": "cpuset cpu io memory pids",
+            "memory.current": null,
+            "memory.peak": null,
+            "cpu.stat": "usage_usec 2331849513000\nuser_usec 2322926942000\nsystem_usec 8922571000\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": null
+          }
+        }
+      ],
+      "maxrss_kib": 21832
+    },
+    {
+      "sample": 1,
+      "pid": 115738,
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "groups": [
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261010T083746Z-6bc7037f04ef.service",
+          "files": {
+            "cpu.max": "600000 100000",
+            "memory.max": "5637144576",
+            "memory.high": "max",
+            "memory.swap.max": "2147483648",
+            "pids.max": "256",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "",
+            "memory.current": "17661952",
+            "memory.peak": "17661952",
+            "cpu.stat": "usage_usec 154354\nuser_usec 125287\nsystem_usec 29066\ncore_sched.force_idle_usec 0\nnr_periods 9\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "2"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "8532197376",
+            "memory.peak": "11102871552",
+            "cpu.stat": "usage_usec 2307027634905\nuser_usec 2301507464436\nsystem_usec 5520170469\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "719"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "12160618496",
+            "memory.peak": "13385330688",
+            "cpu.stat": "usage_usec 2328950758248\nuser_usec 2321191424432\nsystem_usec 7759333815\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1102"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "41887",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "12213755904",
+            "memory.peak": "13446475776",
+            "cpu.stat": "usage_usec 2329588940505\nuser_usec 2321604111262\nsystem_usec 7984829243\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1126"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": "0-5",
+            "cgroup.controllers": "cpuset cpu io memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "12233248768",
+            "memory.peak": "13470842880",
+            "cpu.stat": "usage_usec 2329596220636\nuser_usec 2321609214589\nsystem_usec 7987006046\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1126"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup",
+          "files": {
+            "cpu.max": null,
+            "memory.max": null,
+            "memory.high": null,
+            "memory.swap.max": null,
+            "pids.max": null,
+            "cpuset.cpus.effective": "0-5",
+            "cgroup.controllers": "cpuset cpu io memory hugetlb pids rdma misc",
+            "cgroup.subtree_control": "cpuset cpu io memory pids",
+            "memory.current": null,
+            "memory.peak": null,
+            "cpu.stat": "usage_usec 2331852092000\nuser_usec 2322929199000\nsystem_usec 8922893000\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": null
+          }
+        }
+      ],
+      "maxrss_kib": 21832
+    },
+    {
+      "sample": 2,
+      "pid": 115738,
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "groups": [
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261010T083746Z-6bc7037f04ef.service",
+          "files": {
+            "cpu.max": "600000 100000",
+            "memory.max": "5637144576",
+            "memory.high": "max",
+            "memory.swap.max": "2147483648",
+            "pids.max": "256",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "",
+            "memory.current": "17674240",
+            "memory.peak": "17674240",
+            "cpu.stat": "usage_usec 159435\nuser_usec 129985\nsystem_usec 29449\ncore_sched.force_idle_usec 0\nnr_periods 12\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "2"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "8497049600",
+            "memory.peak": "11102871552",
+            "cpu.stat": "usage_usec 2307028394975\nuser_usec 2301508128455\nsystem_usec 5520266519\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "719"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "11571118080",
+            "memory.peak": "13385330688",
+            "cpu.stat": "usage_usec 2328953848910\nuser_usec 2321194242112\nsystem_usec 7759606797\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1084"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "41887",
+            "cpuset.cpus.effective": null,
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "11624259584",
+            "memory.peak": "13446475776",
+            "cpu.stat": "usage_usec 2329592117578\nuser_usec 2321606988292\nsystem_usec 7985129285\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1108"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup/user.slice",
+          "files": {
+            "cpu.max": "max 100000",
+            "memory.max": "max",
+            "memory.high": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max",
+            "cpuset.cpus.effective": "0-5",
+            "cgroup.controllers": "cpuset cpu io memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "memory.current": "11643748352",
+            "memory.peak": "13470842880",
+            "cpu.stat": "usage_usec 2329599399155\nuser_usec 2321612093068\nsystem_usec 7987306087\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": "1108"
+          }
+        },
+        {
+          "path": "/sys/fs/cgroup",
+          "files": {
+            "cpu.max": null,
+            "memory.max": null,
+            "memory.high": null,
+            "memory.swap.max": null,
+            "pids.max": null,
+            "cpuset.cpus.effective": "0-5",
+            "cgroup.controllers": "cpuset cpu io memory hugetlb pids rdma misc",
+            "cgroup.subtree_control": "cpuset cpu io memory pids",
+            "memory.current": null,
+            "memory.peak": null,
+            "cpu.stat": "usage_usec 2331855245000\nuser_usec 2322932038000\nsystem_usec 8923207000\ncore_sched.force_idle_usec 0\nnr_periods 0\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "pids.current": null
+          }
+        }
+      ],
+      "maxrss_kib": 21832
+    }
+  ]
+}

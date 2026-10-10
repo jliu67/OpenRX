@@ -1,0 +1,83 @@
+{
+  "schema": "openrx.local.native-independent-review.v1",
+  "reviewer": "scientific_inventory",
+  "date_utc": "2026-10-09T15:59:37.719052+00:00",
+  "source_base_commit": "3a7ff8fd3529dfc7e0fd46d28ee90b267b8df2f2",
+  "disposition": "accept executed native baseline/regression controls only; local rebuilt gem5 boot/runtime remains pending",
+  "original_scientific_preservation": {
+    "tracked_files_independently_rehashed": 694,
+    "mismatches": [],
+    "inventory_sha256": "a7d58ca2b8de7828011cc4213309f8059c68177036b57ea0c318fee4177c6fef"
+  },
+  "gem5_source_consistency": {
+    "archived_files_independently_rehashed": 10933,
+    "mismatches": [],
+    "source_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+    "source_inventory_sha256": "ef04d97b22ac53e673bddee0458c3f00c5d08b846c996c3f80b2135f95c0cadf",
+    "source_archive_sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3"
+  },
+  "native": [
+    {
+      "artifact": "native-hash-smoke",
+      "binary_sha256": "34dd13177a483b06518ac3e2f03f5852aa1fa98c70dfee9e3f1ef418a80f1b5a",
+      "original_host_stream_sha256": "4b57e9d5931356bd55139792044f86dd21ec90a9a5ad929bc8d00885b9bb0495",
+      "public_stream_sha256": "9e2757db49edba2e074984efd8a6e1c0ac123b53a6b675795d45cefdaa7d9de3",
+      "strict_host_and_public_replay": {
+        "required_checks_passed": 39,
+        "optional_skips": 1,
+        "software_hash_cases": 8,
+        "compiled_architecture": "x86_64"
+      },
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "public_report_and_stream_exact_path_redaction_only": true
+    },
+    {
+      "artifact": "native-runtime-smoke",
+      "binary_sha256": "8a83fa984040e3caa2e2cc08dbf3431a2f540a0fbf3ba3c65da2676b11c330d1",
+      "original_host_stream_sha256": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116",
+      "public_stream_sha256": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116",
+      "strict_host_and_public_replay": {
+        "checks_passed": 9,
+        "architecture": "x86_64",
+        "flush_path": "compiler-builtin",
+        "timing_calibrated": false
+      },
+      "returncode": 0,
+      "stderr_bytes": 0,
+      "public_report_and_stream_exact_path_redaction_only": true
+    }
+  ],
+  "upstream": {
+    "controls": 107,
+    "passed": 106,
+    "skipped": [
+      {
+        "id": 102,
+        "name": "Cache initialization: AVX2",
+        "reason": "Observed host CPU lacks AVX2; unchanged upstream capability/configuration guard skips this optional control"
+      }
+    ],
+    "ids_complete_and_ordered": true,
+    "failures": 0
+  },
+  "baseline_python_tests": {
+    "passed": 257,
+    "scope": "Original suite before new local runner tests; native-smoke.log records complete unittest summary"
+  },
+  "vendor_integrity_files": 171,
+  "evidence_sha256": {
+    "native-smoke/native-smoke.log": "f50f7ff6a0e83c097614347d8f92633be2ca97a19c926e275904f145b7e11806",
+    "native-regression-summary.json": "bde1afa26557bd1fc8c6a44daed73748c66e5972d867b4f7f17f7741e80fcd85",
+    "tests/native_riscv_probe.py": "024137e6b4c928f9ae771ccd9029ec35acadd9643bee6b8f89cb10375113e236",
+    "tests/native_runtime_probe.py": "99f178b3f8ad84cf0b7542b108338a498a3d23d33a5738839eff96916c284617",
+    "vendor/randomx/src/tests/tests.cpp": "3b04c9a36945750749932b267720ee3826a79c4b49179e4f85248d1d0a343962"
+  },
+  "publication": "Public native log/reports/hash configuration paths are sanitized by one exact prefix replacement; scientific result records are unchanged. Original host logs remain intact with separate digests.",
+  "limitations": [
+    "New host QEMU repeat not performed; historical QEMU evidence preserved",
+    "New local gem5 rebuilt binary/guest runtime validation pending",
+    "No complete gem5 RandomX light/full-dataset/intended-core acceptance, calibrated timing, measured power or RTL result",
+    "No scientific acceptance criteria changed or scientific milestone closed"
+  ]
+}

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "${OPENRX_LOCAL_ROOT}/validation/runner-lifecycle-20261009/independent-heartbeat-v4.py", line 5, in <module>
+    time.sleep(.2)
+KeyboardInterrupt

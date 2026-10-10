@@ -1,0 +1,44 @@
+{
+  "schema": "openrx.local-validating-docs-review.public-index.v1",
+  "utc": "2026-10-09T20:03:25.213596+00:00",
+  "state": "LOCAL_VALIDATING",
+  "local_active": false,
+  "migration_complete": false,
+  "method": "Exactly two ordered literal path-prefix substitutions; no other normalization",
+  "ordered_substitutions": [
+    {
+      "from": "designated local root absolute prefix",
+      "to": "$OPENRX_LOCAL_ROOT"
+    },
+    {
+      "from": "original checkout absolute prefix",
+      "to": "$OPENRX_ORIGINAL_CHECKOUT"
+    }
+  ],
+  "files": [
+    {
+      "source": "migrations/20261009/local-validating-docs-final-check-20261009T195806Z.json",
+      "public_path": "local-validating-docs-final-check-20261009T195806Z.json",
+      "raw_bytes": 7580,
+      "raw_sha256": "78347b1a5d21358df3edea2849f1a5284a46069c386be95f196742f825721c19",
+      "public_bytes": 7580,
+      "public_sha256": "78347b1a5d21358df3edea2849f1a5284a46069c386be95f196742f825721c19",
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ]
+    },
+    {
+      "source": "migrations/20261009/local-validating-docs-independent-review-v1.json",
+      "public_path": "local-validating-docs-independent-review-v1.json",
+      "raw_bytes": 16839,
+      "raw_sha256": "ee43a1f3a5310eba6fc1bf6861d99f495456a44e7a8e054ae98248bd592ba321",
+      "public_bytes": 16829,
+      "public_sha256": "0a628b02f8717a95199859d51d55d338c691cf1600f9aec6e218ddb25250e802",
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ]
+    }
+  ]
+}

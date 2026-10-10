@@ -1,0 +1,55 @@
+{
+  "schema": "openrx.local.runner-durability-independent-review.v1",
+  "reviewer": "scientific_inventory",
+  "date_utc": "2026-10-09T16:41:30.097362+00:00",
+  "disposition": "ACCEPT narrow durability revision; host reboot/power-cut tests not performed; migration remains STAGING",
+  "final_runner": {
+    "path": "${OPENRX_LOCAL_ROOT}/releases/runner-v1-916b6b0d/local_execution.py",
+    "bytes": 35725,
+    "sha256": "916b6b0d33956c847350dc54124132020968aa5a6ff11576911141fa27460977"
+  },
+  "tests": {
+    "path": "${OPENRX_LOCAL_ROOT}/checkouts/migration/tests/test_local_execution.py",
+    "bytes": 20420,
+    "sha256": "aacf5aedd1eaf2b7ad46ad93cf54df4b51960ba98089f5b4e92d35060d1d2063"
+  },
+  "independent_focused_tests": {
+    "passed": 23,
+    "returncode": 0,
+    "seconds": 13.357,
+    "source_hashes_unchanged": true,
+    "host_receipt": {
+      "path": "${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-focused-v3/receipt.json",
+      "bytes": 1539,
+      "sha256": "df8d835b8c968d8c878db6173dced4e11392a2a0977f0ca293aaa88297696b15"
+    },
+    "public_log": "independent-focused-durability.log",
+    "public_log_sha256": "9713aa8ef233b6999a13c857e8623b8daa63e2c2d3f2702fdb00b752ec88ce7b",
+    "stdout_bytes": 0,
+    "stderr_bytes": 2606
+  },
+  "changes_independently_reviewed": [
+    "sync new execution ID parent directory before writing durable request claim",
+    "sync init directory and ancestor namespace entries",
+    "fsync retained regular output files with O_NOFOLLOW/O_NONBLOCK and fstat type check",
+    "sync all nested output directory entries deepest first before FINALIZED and receipt",
+    "retain existing event/receipt/journal fsync order",
+    "flush verified orphan-receipt artifacts and the existing receipt before restoring missing journal binding"
+  ],
+  "fault_control": "Synthetic fsync failure on nested scientific-result inode leaves output bytes intact, no FINALIZED event and no receipt; a subsequent successful finalization verifies retained data",
+  "prior_evidence": "Initial cd90 and v4 lifecycle snapshots remain unchanged; this is an additional durability review, not a replacement or claim those snapshots tested the new code",
+  "session_independence_gate": {
+    "architectural_independence_accepted": true,
+    "evidence": "Actual launcher exited/absent while real service logs advanced; service parent and cgroup belong to lingering systemd --user; persisted manifest/runner/finalizer removes active AI-session dependency",
+    "full_chatgpt_codex_daemon_termination_performed": false,
+    "host_reboot_performed": false,
+    "scope": "Accept the demonstrated architectural session-independence property; do not report physical daemon termination or host reboot as executed tests"
+  },
+  "primary_durability_reference": "https://man7.org/linux/man-pages/man2/fsync.2.html",
+  "limitations": [
+    "No physical power-loss/host-reboot experiment",
+    "No new scientific model, workload, acceptance criteria or checkpoint semantics",
+    "Earlier full279 suite applies to cd90 snapshot; new focused23 suite applies to916b6b0d; no final full280 suite claim",
+    "No simulation or service launched by this reviewer"
+  ]
+}

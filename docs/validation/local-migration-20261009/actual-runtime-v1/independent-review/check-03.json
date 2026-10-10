@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-09T20:03:40.685344+00:00",
+  "check": "completed_distinct_simulator_rebuild",
+  "evidence": {
+    "binary": {
+      "bytes": 1036720416,
+      "path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt",
+      "sha256": "e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902"
+    },
+    "build_command": {
+      "argv": [
+        "scons",
+        "build/RISCV/gem5.opt",
+        "-j1",
+        "--limit-ld-memory-usage",
+        "--without-tcmalloc"
+      ],
+      "budget": {
+        "CPUQuota": "100%",
+        "MemoryMax": "8G",
+        "MemorySwapMax": "2G"
+      },
+      "config_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+      "project_commit": "6f54052a2be04b6967f65d6645e9a531270721d7",
+      "recovery": "separate full copy of preserved attempt02 partial build; incremental SCons recompilation; no scientific checkpoint resume; no wall timeout",
+      "source_archive_sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3",
+      "source_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+      "source_path": "$OPENRX_LOCAL_ROOT/builds/gem5-rebuild-03/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+      "start_utc": "2026-10-09T16:34:27.422600+00:00"
+    },
+    "build_result": {
+      "bytes": 400,
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/build-attempt-03/build-result.json",
+      "sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f"
+    },
+    "generated_config_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+    "only_optional_host_dependency_additions": [
+      "HAVE_PNG=y",
+      "HAVE_HDF5=y",
+      "HAVE_PROTOBUF=y"
+    ],
+    "original_binary_restored": false,
+    "original_generated_config_sha256": "e8b427ddf7a991883020766f90f8f2a08bed769f831d43d448c8f68845ab39b5",
+    "scientific_model_criteria_changed": false
+  },
+  "passed": true
+}

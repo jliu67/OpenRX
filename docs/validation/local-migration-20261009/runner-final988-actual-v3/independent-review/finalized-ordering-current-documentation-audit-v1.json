@@ -1,0 +1,113 @@
+{
+  "actual_lifecycle_results_claimed": false,
+  "at": "2026-10-09T18:20:19.646204+00:00",
+  "audited_sources": [
+    {
+      "bytes": 7394,
+      "path": "AGENTS.md",
+      "sha256": "1fe2d5e518b225f52c47a3a74c2c9aecb3a9d0fd2a7bd6928e7d48d82c479201"
+    },
+    {
+      "bytes": 9745,
+      "path": "README.md",
+      "sha256": "dffb78749dc4ede2fbdf046332e5ad40603190cf38a94cb0bcf15ae22a2193f9"
+    },
+    {
+      "bytes": 19150,
+      "path": "docs/LOCAL_EXECUTION.md",
+      "sha256": "5d0b321d90d4687c72ac790cfe9a3b299353bc3d872654c52877cb4e49f643d0"
+    },
+    {
+      "bytes": 16035,
+      "path": "docs/LOCAL_MIGRATION.md",
+      "sha256": "323b37f51f9cfc73cbb7774cf4d191130f2487d9b984477cc644f2a85bf56e07"
+    },
+    {
+      "bytes": 2613,
+      "path": "docs/ROADMAP.md",
+      "sha256": "8f4e3ed3e4affc0e41ddede8639d70aa9b89c72450cc2fe665f2368b3799762b"
+    },
+    {
+      "bytes": 11489,
+      "path": "docs/TASKS.md",
+      "sha256": "d9ffc0cf241b63f9d45f90dde6844049988bbfab71dc82069a38e7b04c2a81bc"
+    },
+    {
+      "bytes": 16671,
+      "path": "memory/STATE.md",
+      "sha256": "49238e20d0ef379af89f7c7a015ddbc089df9701424f6b3033872ea86362f940"
+    },
+    {
+      "bytes": 13131,
+      "path": "memory/HANDOFF.md",
+      "sha256": "7dedfb754a8507f0f02c9829e6e397782e4ef701854453da6cc85db4cc442cc6"
+    },
+    {
+      "bytes": 3547,
+      "path": "memory/PROJECT.md",
+      "sha256": "4a8093c8ee4e1b199016b1234f76915f81cd86adbffc0d4b5ac6a0cf88fa3197"
+    },
+    {
+      "bytes": 48698,
+      "path": "memory/SESSION_LOG.md",
+      "sha256": "a562be1fac147a00f6f112d10c8f86a5c45fb9d18899e46f2b3fbf02ca0be8ba"
+    },
+    {
+      "bytes": 9245,
+      "path": "docs/validation/local-migration-20261009/ACCEPTANCE.md",
+      "sha256": "dcd200c1a49e9c97270d5762eabbaf34a89e493a082b50b491ee4042906b66c3"
+    },
+    {
+      "bytes": 9387,
+      "path": "docs/validation/local-migration-20261009/runner-independent-review.json",
+      "sha256": "9e447db499c80c9c6ec812327a26aa79850985e91efe8cc0148b8fe69cc5ea94"
+    },
+    {
+      "bytes": 3175,
+      "path": "docs/validation/local-migration-20261009/runner-durability-independent-review.json",
+      "sha256": "e3f4ac489b76ddf8a0b77a9957d5a0d611b75fbf6725f29a28b9cc769a95960e"
+    },
+    {
+      "bytes": 6099,
+      "path": "docs/validation/local-migration-20261009/final-runner-wrapper-independent-review.json",
+      "sha256": "b9d0dfad52aa22d345f858dea1d4a872491c5dcc96af3b0fa5a86ff97eeb5895"
+    },
+    {
+      "bytes": 5863,
+      "path": "docs/validation/local-migration-20261009/runner-final988-replay-static-independent-review.json",
+      "sha256": "f42f9426d997dd4578ed9d96ea9e1ee02bb9eb9d47fa1ecae876917ec2d1bdc8"
+    },
+    {
+      "bytes": 1006,
+      "path": "docs/validation/local-migration-20261009/runner-lifecycle/v4-independence-concurrency-results.json",
+      "sha256": "deb24b545d5b50fda5b79df65320c483545f8d0c595ee3304bf797f236612567"
+    }
+  ],
+  "current_review_limit": "Exact runner988 drains payload descendants under lock. A transient empty-cgroup interval after worker exit and before ExecStopPost spawn means FINALIZED-before-next-payload ordering is not guaranteed; v3 retains it as a strict empirical fixture assertion.",
+  "historical_evidence_preserved": {
+    "line": 116,
+    "observed_first_finalized_at": "2026-10-09T15:58:29.401693+00:00",
+    "observed_second_child_started_at": "2026-10-09T15:58:29.629401+00:00",
+    "review_file": "docs/validation/local-migration-20261009/runner-independent-review.json",
+    "runner_sha256": "24717a7f2e0fd6c508add25ba5b5f7b000525b14d9917b9e5226f00b5b64a1e4",
+    "scope": "Supported empirical24717 observation, not a formal admission guarantee; unchanged original/public evidence."
+  },
+  "precision_change": {
+    "description": "Resource flock covers payload/descendant drain; finalization may overlap next admission; dependent consumers wait for verified prior receipt.",
+    "diff": "diff --git a/docs/LOCAL_EXECUTION.md b/docs/LOCAL_EXECUTION.md\nindex df1b48a..1de0d1f 100644\n--- a/docs/LOCAL_EXECUTION.md\n+++ b/docs/LOCAL_EXECUTION.md\n@@ -184,8 +184,12 @@ Use paths without whitespace, quotes, backslashes or percent signs for the execu\n because the durable systemd finalizer rejects unsupported path syntax.\n \n The runner uses a user systemd transient service under a lingering user manager,\n-so execution does not depend on a Codex session or open terminal. One resource flock serializes every workload class;\n-parallel resource-intensive execution is not supported. Admission and request bindings prevent duplicate submission.\n+so execution does not depend on a Codex session or open terminal. The global resource flock covers\n+payload execution and descendant drain for every workload class; parallel resource-intensive payload\n+execution is not supported. Admission and request bindings prevent duplicate submission.\n+Finalization is recorded separately and may overlap the next payload's admission. Dependent result\n+consumers must wait for the prior execution's receipt and successfully run `verify EXECUTION_ID`\n+before using its outputs.\n The demonstrated service budget is 6 GiB `MemoryMax`, 1 GiB `MemorySwapMax`, 200% `CPUQuota`,\n 256 `TasksMax`, `Nice=10` and `NoNewPrivileges=yes`, with cgroup/process-group cleanup.\n [Actual properties](validation/local-migration-20261009/runner-lifecycle/v4-service-properties.json)\n",
+    "diff_check_returncode": 0,
+    "file": "docs/LOCAL_EXECUTION.md",
+    "lines": [
+      187,
+      188,
+      189,
+      190,
+      191,
+      192
+    ]
+  },
+  "runner_code_request_scientific_oracles_changed": false,
+  "schema": "openrx.finalized-ordering.current-documentation-audit.v1",
+  "scope": "Static current-authority/public-review precision audit, not actual runner or scientific acceptance",
+  "unsupported_formal_finalized_barrier_claims_found": false
+}

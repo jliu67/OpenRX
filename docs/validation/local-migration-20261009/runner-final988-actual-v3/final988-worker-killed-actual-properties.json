@@ -1,0 +1,36 @@
+{
+  "argv": [
+    "systemctl",
+    "--user",
+    "show",
+    "openrx-20261009T181835Z-d18f6a4f5a9b.service",
+    "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+  ],
+  "properties": {
+    "ActiveState": "active",
+    "CPUQuotaPerSecUSec": "100ms",
+    "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181835Z-d18f6a4f5a9b.service",
+    "ControlPID": "0",
+    "ExecMainCode": "0",
+    "ExecMainStatus": "0",
+    "KillMode": "mixed",
+    "KillSignal": "2",
+    "LoadState": "loaded",
+    "MainPID": "75137",
+    "MemoryMax": "67108864",
+    "MemorySwapMax": "0",
+    "Nice": "10",
+    "NoNewPrivileges": "yes",
+    "NotifyAccess": "exec",
+    "Restart": "no",
+    "Result": "success",
+    "SendSIGKILL": "yes",
+    "SubState": "running",
+    "TasksMax": "16",
+    "TimeoutStopUSec": "45s",
+    "UMask": "0077"
+  },
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=75137\nControlPID=0\nResult=success\nExecMainCode=0\nExecMainStatus=0\nControlGroup=/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181835Z-d18f6a4f5a9b.service\nCPUQuotaPerSecUSec=100ms\nMemoryMax=67108864\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=active\nSubState=running\n"
+}

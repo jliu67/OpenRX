@@ -1,0 +1,102 @@
+--- independent_runtime_review_draft_4df85ea0.py
++++ independent_runtime_review_v1.py
+@@ -126,6 +126,8 @@
+ 
+ 
+ def command(argv, cwd=None, env=None):
++    if argv[0] == 'git':
++        argv = ['git', '--no-optional-locks', '--no-replace-objects', *argv[1:]]
+     result = subprocess.run(argv, cwd=cwd, env=env, capture_output=True, text=True)
+     require(result.returncode == 0, 'Read-only command failed: ' + repr(argv) + ': ' + result.stderr)
+     return result.stdout
+@@ -224,10 +226,6 @@
+                 and self.spec['runner_sha256'] == RUNNER_SHA and self.spec['wall_timeout_seconds'] is None,
+                 'Owner request semantics differ')
+         self.passed('fixed_reviewed_bindings', observations)
+-        sys.path.insert(0, str(S))
+-        from simulator.gem5 import run, prepare, bundle
+-        self.wrapper, self.prepare, self.bundle = run, prepare, bundle
+-        self.runner = import_file('openrx_independent_runner', RUNNER)
+ 
+     def check_sources(self):
+         require(command(['git', 'rev-parse', 'HEAD'], ORIGINAL).strip() == ORIGINAL_COMMIT,
+@@ -247,16 +245,21 @@
+                     'Actual rebuild source changed: ' + item['path'])
+         require(command(['git', 'rev-parse', 'HEAD'], S).strip() == SOURCE_COMMIT, 'Execution source HEAD drift')
+         require(not command(['git', 'status', '--porcelain', '--untracked-files=all'], S).strip(), 'Execution source is dirty')
+-        tracked = command(['git', 'ls-files', '-s'], S).splitlines()
++        tracked = command(['git', 'ls-tree', '-r', SOURCE_COMMIT], S).splitlines()
+         require(len(tracked) == 890, 'Reviewed execution source file count changed')
++        tracked_paths = set()
+         for line in tracked:
+             prefix, relative = line.split('\t', 1)
+-            mode, blob, stage = prefix.split()
+-            require(mode in {'100644', '100755'} and stage == '0', 'Unexpected tracked source object')
++            mode, kind, blob = prefix.split()
++            require(mode in {'100644', '100755'} and kind == 'blob', 'Unexpected tracked source object')
++            tracked_paths.add(relative)
+             path = S / relative
+             raw = path.read_bytes()
+             require(hashlib.sha1(b'blob ' + str(len(raw)).encode() + b'\0' + raw).hexdigest() == blob,
+                     'Execution file differs from Git object: ' + relative)
++        actual_paths = {str(p.relative_to(S)) for p in S.rglob('*')
++                        if '.git' not in p.relative_to(S).parts and p.is_file()}
++        require(actual_paths == tracked_paths, 'Execution source contains missing/extra files, including ignored bytecode')
+         require(all(not p.is_symlink() and not (p.stat().st_mode & 0o222) for p in [S, *S.rglob('*')]),
+                 'Frozen execution checkout has writable entries or symlinks')
+         scientific_paths = ['simulator/gem5/fs.py', 'simulator/gem5/resources.json', 'simulator/gem5/prepare.py',
+@@ -276,6 +279,12 @@
+             'original_files': 694, 'upstream_files': 10933, 'execution_git_files': 890,
+             'execution_source_commit': SOURCE_COMMIT, 'upstream_commit': UPSTREAM_COMMIT,
+             'scientific_files_equal_original': scientific_paths, 'only_changed_wrapper_function': 'run_process'})
++        # Import helpers only after every Git-bound source byte and read-only
++        # entry has been checked; never import the executable fs.py model.
++        sys.path.insert(0, str(S))
++        from simulator.gem5 import run, prepare, bundle
++        self.wrapper, self.prepare, self.bundle = run, prepare, bundle
++        self.runner = import_file('openrx_independent_runner', RUNNER)
+ 
+     def check_build(self):
+         self.build = readjson(B / 'build-result.json')
+@@ -353,7 +362,8 @@
+             require(actual['path'] == str(Path(target).resolve()), 'Actual loader path is not approved profile: ' + name)
+             require(retained[name]['path'] == actual['path'] and retained[name]['interpreter'] is actual['interpreter'],
+                     'Recorded loader path differs: ' + name)
+-        info = command([str(G), '--build-info'], env=self.env)
++        info = command([str(G), '--outdir=' + str(self.out / 'build-info-m5out'), '--build-info'],
++                       cwd=self.out, env=self.env)
+         newfile(self.out / 'actual-pinned-build-info.log', info.encode())
+         self.bundle.check_build_info(info)
+         self.bundle.check_build_info((self.profile_dir / 'pinned-build-info.log').read_text())
+@@ -453,11 +463,30 @@
+         require(statuses.index('RUNNING') < statuses.index('CHILD_STARTED') < statuses.index('PROCESS_EXITED') < statuses.index('FINALIZED'),
+                 'Execution lifecycle event order inconsistent')
+         current_unit = self.runner.unit_status(m['unit'])
+-        require(current_unit.get('ActiveState') not in {'active', 'activating', 'deactivating'}, 'Execution service remains live')
++        require(current_unit.get('query_returncode') == 0
++                and current_unit.get('LoadState') in {'loaded', 'not-found'}
++                and current_unit.get('ActiveState') in {'inactive', 'failed'},
++                'Execution service is live, unknown, or its manager query failed')
++        if current_unit['LoadState'] == 'loaded':
++            require(current_unit.get('Result') == 'success' and current_unit.get('ExecMainStatus') == '0',
++                    'Retained actual service result is unsuccessful')
++        relative = current_unit.get('ControlGroup')
++        cgroup_observation = {'retained_control_group': relative, 'exists': False,
++                              'limitation': 'No absent/transient unit defaults used as terminal Result evidence'}
++        if relative:
++            require(relative.startswith('/') and Path(relative).name == m['unit'] and '..' not in Path(relative).parts,
++                    'Manager returned a different or unsafe cgroup namespace')
++            group = Path('/sys/fs/cgroup') / relative.lstrip('/')
++            if group.exists():
++                pids = sorted({int(pid) for path in group.rglob('cgroup.procs') for pid in path.read_text().split()})
++                state = dict(line.split() for line in (group / 'cgroup.events').read_text().splitlines())
++                require(not pids and state.get('populated') == '0', 'Execution cgroup still contains descendants')
++                cgroup_observation.update({'exists': True, 'pids': pids, 'events': state})
+         self.passed('actual_execution_admission_and_retained_integrity', {
+             'execution_id': self.execution_id, 'manifest': digest(self.directory / 'manifest.json'),
+             'receipt': digest(self.directory / 'receipt.json'), 'process': self.process,
+             'lifecycle_statuses': statuses, 'unit_observation': current_unit,
++            'cgroup_observation': cgroup_observation,
+             'unit_limitation': 'If transient unit is not found, manager defaults are not terminal service evidence',
+             'integrity_verification': self.integrity, 'resource_limits': expected_resources,
+             'all_inputs_and_source_bound_before_launch_rechecked_now': True})

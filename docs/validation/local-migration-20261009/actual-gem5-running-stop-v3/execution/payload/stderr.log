@@ -1,0 +1,12 @@
+warn: Max ticks has already been set prior to setting it through the run call. In these cases the max ticks set through the `run` function is used
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (2048 Mbytes)
+src/dev/serial/terminal.cc:174: warn: Sockets disabled, not accepting terminal connections
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/remote_gdb.cc:418: warn: Sockets disabled, not accepting gdb connections
+src/arch/riscv/linux/fs_workload.cc:162: info: Loaded bootloader '$OPENRX_LOCAL_ROOT/artifacts/guest-resources-ranged-20261009/opensbi' at 0x80000000
+src/arch/riscv/linux/fs_workload.cc:179: info: Loaded kernel '$OPENRX_LOCAL_ROOT/artifacts/guest-resources-ranged-20261009/vmlinux' at 0x80200000
+src/arch/riscv/linux/fs_workload.cc:222: info: Loaded DTB '$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/device.dtb' at 0x87e00000
+src/arch/riscv/isa.cc:707: warn: Ignoring write to miscreg HPMCOUNTER03.
+src/arch/riscv/isa.cc:707: warn: Ignoring write to miscreg HPMCOUNTER03.

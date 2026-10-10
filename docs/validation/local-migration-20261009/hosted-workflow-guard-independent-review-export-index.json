@@ -1,0 +1,13 @@
+{
+  "schema": "openrx.local-migration.evidence-export.v1",
+  "recorded_utc": "2026-10-09T17:41:09.933639+00:00",
+  "transformation": "Only exact local-root prefix replacement; original retained unchanged",
+  "host_source_relative": "migrations/20261009/hosted-workflow-guard-independent-review.json",
+  "host_source_sha256": "01f34f544b037b42f3bd8223e8fed78786610318aad42591474cf3cf3944bb77",
+  "host_source_bytes": 9538,
+  "public_path": "hosted-workflow-guard-independent-review.json",
+  "public_sha256": "01f34f544b037b42f3bd8223e8fed78786610318aad42591474cf3cf3944bb77",
+  "public_bytes": 9538,
+  "exact_prefix_replacements": 0,
+  "accepted_scope": "static workflow admission review; no execution or activation"
+}

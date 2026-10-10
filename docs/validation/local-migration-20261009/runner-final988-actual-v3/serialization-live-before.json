@@ -1,0 +1,99 @@
+{
+  "first": {
+    "execution_id": "20261009T181840Z-231e7b66fa4d",
+    "latest_event": {
+      "at": "2026-10-09T18:18:40.510324+00:00",
+      "pid": 75200,
+      "previous_sha256": "247f43d9571bc1d26baaa201261afca86033dc3b5e9f78246b455b5d75aed771",
+      "sha256": "36411f942029617f99ca9aee245e8c08062218f8c589439706162c497c0bb618",
+      "status": "CHILD_STARTED"
+    },
+    "logs": [
+      "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/stdout.log",
+      "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-231e7b66fa4d/stderr.log"
+    ],
+    "receipt": null,
+    "unit": {
+      "ActiveState": "active",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-231e7b66fa4d.service",
+      "ExecMainCode": "0",
+      "ExecMainStatus": "0",
+      "LoadState": "loaded",
+      "Result": "success",
+      "SubState": "running",
+      "query_returncode": 0
+    }
+  },
+  "first_live_descendant": {
+    "membership": "0::/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-231e7b66fa4d.service\n",
+    "pid": 75202,
+    "pidfd_live": true,
+    "stat": "75202 (python3.10) S 75200 75202 75202 0 -1 4194304 1434 0 0 0 2 0 0 0 30 10 1 0 39549541 22577152 2848 18446744073709551615 109625901793280 109625904633357 140727744233600 0 0 0 0 16797698 0 1 0 0 17 5 0 0 0 0 0 109625907005488 109625907289560 109625984565248 140727744237209 140727744237493 140727744237493 140727744237540 0\n"
+  },
+  "second": {
+    "execution_id": "20261009T181840Z-90ae0a243b21",
+    "latest_event": {
+      "at": "2026-10-09T18:18:40.962492+00:00",
+      "manifest": {
+        "bytes": 2687,
+        "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/manifest.json",
+        "sha256": "3e57420f650532be98b8d3959b9634cd02a265649c83492d6196192cdfd42a8c"
+      },
+      "previous_sha256": null,
+      "sha256": "01960e98725df909e337390cc98447a59dc095de9dd4021c63d79125e7c3f803",
+      "status": "QUEUED"
+    },
+    "logs": [
+      "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/stdout.log",
+      "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root/executions/20261009T181840Z-90ae0a243b21/stderr.log"
+    ],
+    "receipt": null,
+    "unit": {
+      "ActiveState": "active",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-90ae0a243b21.service",
+      "ExecMainCode": "0",
+      "ExecMainStatus": "0",
+      "LoadState": "loaded",
+      "Result": "success",
+      "SubState": "running",
+      "query_returncode": 0
+    }
+  },
+  "second_actual_properties": {
+    "argv": [
+      "systemctl",
+      "--user",
+      "show",
+      "openrx-20261009T181840Z-90ae0a243b21.service",
+      "--property=LoadState,ActiveState,SubState,Result,MainPID,ControlPID,ExecMainCode,ExecMainStatus,ControlGroup,MemoryMax,MemorySwapMax,CPUQuotaPerSecUSec,TasksMax,Nice,NoNewPrivileges,KillMode,KillSignal,TimeoutStopUSec,SendSIGKILL,Restart,NotifyAccess,UMask"
+    ],
+    "properties": {
+      "ActiveState": "active",
+      "CPUQuotaPerSecUSec": "100ms",
+      "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-90ae0a243b21.service",
+      "ControlPID": "0",
+      "ExecMainCode": "0",
+      "ExecMainStatus": "0",
+      "KillMode": "mixed",
+      "KillSignal": "2",
+      "LoadState": "loaded",
+      "MainPID": "75207",
+      "MemoryMax": "67108864",
+      "MemorySwapMax": "0",
+      "Nice": "10",
+      "NoNewPrivileges": "yes",
+      "NotifyAccess": "exec",
+      "Restart": "no",
+      "Result": "success",
+      "SendSIGKILL": "yes",
+      "SubState": "running",
+      "TasksMax": "16",
+      "TimeoutStopUSec": "45s",
+      "UMask": "0077"
+    },
+    "returncode": 0,
+    "stderr": "",
+    "stdout": "Restart=no\nNotifyAccess=exec\nTimeoutStopUSec=45s\nMainPID=75207\nControlPID=0\nResult=success\nExecMainCode=0\nExecMainStatus=0\nControlGroup=/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261009T181840Z-90ae0a243b21.service\nCPUQuotaPerSecUSec=100ms\nMemoryMax=67108864\nMemorySwapMax=0\nTasksMax=16\nUMask=0077\nNice=10\nNoNewPrivileges=yes\nKillMode=mixed\nKillSignal=2\nSendSIGKILL=yes\nLoadState=loaded\nActiveState=active\nSubState=running\n"
+  },
+  "second_payload_not_launched": true
+}

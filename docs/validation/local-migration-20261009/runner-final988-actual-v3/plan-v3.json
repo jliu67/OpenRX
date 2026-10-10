@@ -1,0 +1,132 @@
+{
+  "actual_fixture_resources": {
+    "CPUQuota": "10%",
+    "KillMode": "mixed",
+    "KillSignal": "SIGINT",
+    "MemoryMax": "64M (OOM control48M)",
+    "MemorySwapMax": 0,
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "NotifyAccess": "exec",
+    "Restart": "no",
+    "TasksMax": 16,
+    "TimeoutStopSec": "45s",
+    "unit_runtime_timeout": "none"
+  },
+  "cases": [
+    "safe-stop-detached-descendant",
+    "instant-exit-0",
+    "instant-exit-1",
+    "instant-exit-2",
+    "intentional-returncode7",
+    "worker-SIGKILL-inspect-recover",
+    "deliberate48MiB-cgroup-OOM",
+    "exited-launcher-independent-service-progress",
+    "serialized-first-stopped/drained",
+    "serialized-second-admitted-after-first-finalized",
+    "fresh-process-persisted-duplicate-rejection (no new unit)"
+  ],
+  "files": [
+    {
+      "bytes": 29508,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v3.py",
+      "sha256": "632c9ca0072e9c06e25d4c90d3910b4ea3bc5584859e09354484ed9bf0a60d72"
+    },
+    {
+      "bytes": 2300,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/toy_payload.py",
+      "sha256": "3e04fade4ef3f9a436be96b6295cba1d66ca8b55993e1d7803fa8081818328e6"
+    }
+  ],
+  "fixture_root": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/fixture-root",
+  "limitations": [
+    "Only finite host-only toy Python processes; no gem5, RandomX, dataset initialization or scientific validation.",
+    "Actual fixture resource overrides are deliberately tiny; manifest retains unmodified production baseline and must not be mistaken for observed fixture limits.",
+    "Session independence means the launching subprocess/session exited while systemd-owned service/log progress continued; no active Codex daemon termination or physical reboot is performed.",
+    "Prior independently accepted final988 >45s finalizer-delay fixture remains separate evidence; this replay keeps its ExecStopPost private CLI unchanged and exercises normal finalization.",
+    "Fixture initializes only its new isolated INVENTORY root, never the production root or migration state; expensive-work admission and scientific acceptance remain unverified.",
+    "Whole replay is single-use. Existing partial root/evidence prevents repetition; preserve every outcome and inspect/recover individual execution IDs without clearing request claims.",
+    "Runner serializes payloads and drains workload descendants. A transient empty-cgroup gap between worker exit and private finalizer startup means prior FINALIZED ordering is observed in this replay, not a formal admission guarantee. The strict observation is retained; a mismatch is recorded as a failed fixture, not silently accepted."
+  ],
+  "prepared_only": true,
+  "preserved_initial_candidate": {
+    "plan": {
+      "bytes": 3368,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/plan.json",
+      "sha256": "c462bf221740b61dbce763003d510c1103b5fe9eefd049f6ffbd1dbb87fc44c4"
+    },
+    "preparation_receipt": {
+      "bytes": 1932,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/preparation-receipt.json",
+      "sha256": "5e1f76255f51763b8b5561506c2f02f07e379a346e1c7814bc5e518efd237c22"
+    },
+    "replay": {
+      "bytes": 24996,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay.py",
+      "sha256": "91cea0ae21a8c55a268508a5461da8e71a806529610a9f408674ac00ddf6ae71"
+    }
+  },
+  "preserved_second_candidate": {
+    "plan": {
+      "bytes": 4692,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/plan-v2.json",
+      "sha256": "a8b32843a7a8484f5e4b097a7ad131da4841f835cfb1c9f9374082c661ae62c5"
+    },
+    "preparation_receipt": {
+      "bytes": 2149,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/preparation-v2-receipt.json",
+      "sha256": "0a15313c4b6d75efd8cb07d00a141774d84dad2281d7d384fcfac63453bfc47f"
+    },
+    "replay": {
+      "bytes": 26373,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/replay-v2.py",
+      "sha256": "bea72913ff5feba18f5c1462665c9283247fa1c3920421942b76f151bd1140d9"
+    }
+  },
+  "prior_harness_provenance": [
+    {
+      "bytes": 5958,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-20261009/integration-v4.py",
+      "sha256": "e93bd436cf84d6fb43fc934d4bdcc592007832a59d6c7f5d10792af134108dad"
+    },
+    {
+      "bytes": 4630,
+      "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-20261009/independence-concurrency-v4.py",
+      "sha256": "130ecd4b9e817c49b1b5b7d66b6539e2019b0fa31456903ca4d2371d6f080609"
+    }
+  ],
+  "production_resource_baseline": {
+    "CPUQuota": "200%",
+    "MemoryMax": "6G",
+    "MemorySwapMax": "1G",
+    "TasksMax": 256,
+    "global_slots": 1
+  },
+  "runner": {
+    "bytes": 38227,
+    "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  },
+  "schema": "openrx.final988.host-lifecycle-replay-plan.v1",
+  "v2_changes": {
+    "bytes": 6614,
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/v2-changes.diff",
+    "sha256": "6fbdc12ca7a269c62cc35b5fcc32aad052619c02b76311e6c39fa84b696ffe67"
+  },
+  "v2_scope": [
+    "Wait for actual heartbeat logs rather than assuming ready.json means first print happened.",
+    "Check manager returncode/known states and fail closed on terminal state missing requested evidence; healthy wait remains unbounded.",
+    "Recheck evidence after manager query to avoid read/query observation race."
+  ],
+  "v3_changes": {
+    "bytes": 8080,
+    "path": "$OPENRX_LOCAL_ROOT/validation/runner-lifecycle-final988-20261009/v3-changes.diff",
+    "sha256": "a6ff8f8190162beb00d2f24a129954b83fabd40faa5829c9098f96aca625bd10"
+  },
+  "v3_scope": [
+    "Failure cleanup enumerates every new isolated execution, validates exact ID/unit/fixed-request/root/release binding, and records partial/malformed entries.",
+    "Cleanup stops exact derived units through systemd and records it externally; it does not append potentially late execution events or clear claims.",
+    "Accepted receipt requires unchanged externally approved plan binding before execution and at final publication.",
+    "Strict first-FINALIZED before second-CHILD_STARTED remains required empirical observation; it is not claimed as a formal guarantee of the runner."
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "status": "pass",
+  "source_manifest_sha256": "67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb",
+  "resources": [
+    {
+      "role": "bootloader",
+      "id": "riscv-bootloader-opensbi-1.3.1",
+      "resource_version": "1.0.0",
+      "url": "https://dist.gem5.org/dist/develop/kernels/riscv/static/riscv-bootloader-opensbi-1.3.1-20231129",
+      "filename": "opensbi",
+      "gzip": false,
+      "bytes": 1292496,
+      "upstream_md5": "44b3fe636c9d38567b04ef54ea362f0d",
+      "sha256": "510f5b9cbc6d2c8c97dacc395b29d47e897c1abe91e4df5a7d8893c0fad8ae0a",
+      "catalog_license": "",
+      "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-opensbi"
+    },
+    {
+      "role": "kernel",
+      "id": "riscv-linux-6.8.12-kernel",
+      "resource_version": "1.0.0",
+      "url": "https://dist.gem5.org/dist/develop/kernels/riscv/static/riscv-vmlinux-6.8.12",
+      "filename": "vmlinux",
+      "gzip": false,
+      "bytes": 19749472,
+      "upstream_md5": "c29f3fce21f128870ebf769f8caef720",
+      "sha256": "57e9a7ab9553fb6c58078913b12687455bc46c072539266b14cbb0142b7bffdd",
+      "catalog_license": "",
+      "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-fs"
+    },
+    {
+      "role": "disk_image",
+      "id": "riscv-ubuntu-24.04-img",
+      "resource_version": "2.0.0",
+      "url": "https://dist.gem5.org/dist/develop/images/riscv/ubuntu-24-04/riscv-ubuntu-24.04-20250515.gz",
+      "filename": "ubuntu.img",
+      "gzip": true,
+      "root_partition": "1",
+      "compressed_bytes": 1517651202,
+      "compressed_sha256": "217f9a700742f136255bb715066f3665c523187350583bbd1c7b95b5a7322d27",
+      "bytes": 5242880000,
+      "upstream_md5": "1c1191dfe51857076aee800def85bc76",
+      "sha256": "ddf1ebb56454ef37e88d6de8aefdef7180fc9a2328a3bf8cff02f7a043e7127b",
+      "catalog_license": "",
+      "source_url": "https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-fs/riscv-ubuntu-22.04-24.04"
+    }
+  ],
+  "chunks": [
+    {
+      "file": "disk.chunk-0000000000",
+      "bytes": 33554432,
+      "sha256": "417cd8908c37368f5d71a0c325e818c1de6e16f2d3a9b55c4705c0dd1804d54f"
+    },
+    {
+      "file": "disk.chunk-0033554432",
+      "bytes": 33554432,
+      "sha256": "a19896e0dc753545d0d9b50a0814300b43b8a0fc672cb021b931d909104da361"
+    },
+    {
+      "file": "disk.chunk-0067108864",
+      "bytes": 33554432,
+      "sha256": "29fec2e70fb2b8058603075c59b1f3970cf2dae029802e01733a4d9d7bcdbee9"
+    },
+    {
+      "file": "disk.chunk-0100663296",
+      "bytes": 33554432,
+      "sha256": "734c2e4804946cffc6a7454916549fb94a2b801e5868aa1f52a3f8e6f6b0510a"
+    },
+    {
+      "file": "disk.chunk-0134217728",
+      "bytes": 33554432,
+      "sha256": "f2af096e798ba78740598367b565d9dd9e76ddff4f63338aad70ca30ae856520"
+    },
+    {
+      "file": "disk.chunk-0167772160",
+      "bytes": 33554432,
+      "sha256": "f4ac677b143f96f008ad9c07277d3b97266693f40025459d5d2e0a0d03daff62"
+    },
+    {
+      "file": "disk.chunk-0201326592",
+      "bytes": 33554432,
+      "sha256": "57d28868932dfce86c6ce58ec22d3049bc574115cd5cc26bfcfe2851241ccfb7"
+    },
+    {
+      "file": "disk.chunk-0234881024",
+      "bytes": 33554432,
+      "sha256": "443f2ec8beddf0aa79b74f36cbba5129c5bd8578d69933a9790c8e72d393c9f8"
+    },
+    {
+      "file": "disk.chunk-0268435456",
+      "bytes": 33554432,
+      "sha256": "033761a20ddad64d58d4a33f931e94d7372c822bd39761c9e814ffdc9a9e7390"
+    },
+    {
+      "file": "disk.chunk-0301989888",
+      "bytes": 33554432,
+      "sha256": "ba45ea6b0965ccfbfce285393682163fa5e4ee9e12dc96aeb7365eb71a19969c"
+    },
+    {
+      "file": "disk.chunk-0335544320",
+      "bytes": 33554432,
+      "sha256": "64bd56ae3293ba9c7ea9032dfed24ad00290ccd35e4c4cc5f19ba4fe9f0ddfcd"
+    },
+    {
+      "file": "disk.chunk-0369098752",
+      "bytes": 33554432,
+      "sha256": "f15de2be3faab45fbc844d87b41ed5f87dda09d8ccc1958c59d98cc090993988"
+    },
+    {
+      "file": "disk.chunk-0402653184",
+      "bytes": 33554432,
+      "sha256": "4e4e93885fac31473d0378554dca1e18b30a0c06bf8c54f401582568f51954e4"
+    },
+    {
+      "file": "disk.chunk-0436207616",
+      "bytes": 33554432,
+      "sha256": "dd1f05c8fdfc8b2b999326f7536036739112251eac17ffa586aba864f7143e61"
+    },
+    {
+      "file": "disk.chunk-0469762048",
+      "bytes": 33554432,
+      "sha256": "969d994242ef59aaf48a9eb4283e188495d8126b264aa035d792c1b9e6f6312f"
+    },
+    {
+      "file": "disk.chunk-0503316480",
+      "bytes": 33554432,
+      "sha256": "21462e76f6299a9340393f7275a8014d72f5b226a214cfb0396ecb94bbb67397"
+    },
+    {
+      "file": "disk.chunk-0536870912",
+      "bytes": 33554432,
+      "sha256": "6572f32792d0badc350cc1a816f240fcb4ab054976edf005542fd5c3010f64ea"
+    },
+    {
+      "file": "disk.chunk-0570425344",
+      "bytes": 33554432,
+      "sha256": "bb027f5c4e04e6292b730df207ec71238dd4dd1abe23de1db9eccb04e79547d0"
+    },
+    {
+      "file": "disk.chunk-0603979776",
+      "bytes": 33554432,
+      "sha256": "6573ca24e18f2210f962af1b2e3aecf903f65f45e4d18f22a5fa3df044d93e18"
+    },
+    {
+      "file": "disk.chunk-0637534208",
+      "bytes": 33554432,
+      "sha256": "6d0634c2025750a5f151d661596d8dbbc523ba30151ed0d14c04f697a3bcb7b2"
+    },
+    {
+      "file": "disk.chunk-0671088640",
+      "bytes": 33554432,
+      "sha256": "1f47d8d0f335693790ed679a28fc33d451714ec6b36c950ad2cecd2b80aa7b47"
+    },
+    {
+      "file": "disk.chunk-0704643072",
+      "bytes": 33554432,
+      "sha256": "73911268285faf41f8b119be8e28e8f20a2c5d234bae9549201effa9de3a51fa"
+    },
+    {
+      "file": "disk.chunk-0738197504",
+      "bytes": 33554432,
+      "sha256": "bb5f94a3cfa0770b51b03c164ba2b60253c463ce16ab04e5c09a5eed627b9303"
+    },
+    {
+      "file": "disk.chunk-0771751936",
+      "bytes": 33554432,
+      "sha256": "4e23b6100b2fec3376316e2b6447b0138e14b865280e0592398943b65bcd3093"
+    },
+    {
+      "file": "disk.chunk-0805306368",
+      "bytes": 33554432,
+      "sha256": "7742ee03ba523bfa3c3dea4978bf86b83b5884a8ad33064206d2d3e6546ff426"
+    },
+    {
+      "file": "disk.chunk-0838860800",
+      "bytes": 33554432,
+      "sha256": "eb18d5f225c163de84342a8022bad2739b1783f01b5192379bbf6f60361c4c87"
+    },
+    {
+      "file": "disk.chunk-0872415232",
+      "bytes": 33554432,
+      "sha256": "743ab39c46f4228f4a3fde47260f77feb7b0a1696cbe96f1568840f0d94adeef"
+    },
+    {
+      "file": "disk.chunk-0905969664",
+      "bytes": 33554432,
+      "sha256": "002cb109bd40d1d3d1ac01338fe771922628011d0414a9929243feb4a18632a3"
+    },
+    {
+      "file": "disk.chunk-0939524096",
+      "bytes": 33554432,
+      "sha256": "88ce9bb604f643a74a9a3c2ffe06e745b5931904eeda2272b7c045577c5d6a81"
+    },
+    {
+      "file": "disk.chunk-0973078528",
+      "bytes": 33554432,
+      "sha256": "6223d39da02d77953cb30cc2fd22ca4c27c05250eb2b096e94f6e0049a8a967c"
+    },
+    {
+      "file": "disk.chunk-1006632960",
+      "bytes": 33554432,
+      "sha256": "6b1f6b4b6c1d797ee035dc807f80a95aec2c5d3ff98104e11b0a6a766932b6d7"
+    },
+    {
+      "file": "disk.chunk-1040187392",
+      "bytes": 33554432,
+      "sha256": "45c1cef4fa63aa3bc7299db4cb2a009bf572033df2005245e7142a89d1f541c2"
+    },
+    {
+      "file": "disk.chunk-1073741824",
+      "bytes": 33554432,
+      "sha256": "e1097dfe153b4424ea22eda08276742c159aa57fab7e0b6eb8d0750788681209"
+    },
+    {
+      "file": "disk.chunk-1107296256",
+      "bytes": 33554432,
+      "sha256": "62bf79f6ca751ec05a52b955afe8369091f3e59a54c7526e06636c386a09b1f2"
+    },
+    {
+      "file": "disk.chunk-1140850688",
+      "bytes": 33554432,
+      "sha256": "14d3f7526849a466c07f2cb2c1b05fb453d793154000aba30f08e07ac16da3c1"
+    },
+    {
+      "file": "disk.chunk-1174405120",
+      "bytes": 33554432,
+      "sha256": "3198b4802c1793d74453cca6fcebc8c0585626e86de14521688fc27b84c3a99d"
+    },
+    {
+      "file": "disk.chunk-1207959552",
+      "bytes": 33554432,
+      "sha256": "80408ef189fe44264a1dd51a26141932d506c6b760402625ac52e11b392dbaa1"
+    },
+    {
+      "file": "disk.chunk-1241513984",
+      "bytes": 33554432,
+      "sha256": "e14a0babd682ec2c29c50ba7612774df8ff4fcdd133f182681a2cd13f7b9a68e"
+    },
+    {
+      "file": "disk.chunk-1275068416",
+      "bytes": 33554432,
+      "sha256": "205e62380458149497305a0295ca61b3158750606042c5eaf95cdeed1f244b95"
+    },
+    {
+      "file": "disk.chunk-1308622848",
+      "bytes": 33554432,
+      "sha256": "51a474d3171d23cc4cc80229c9fe8f0360ffec0e08f30904d2f2515956f14a39"
+    },
+    {
+      "file": "disk.chunk-1342177280",
+      "bytes": 33554432,
+      "sha256": "15fbe4b5318bddd9a9678d297c89382ff0b38ea9d86f817be72d9c17ef2c4ed4"
+    },
+    {
+      "file": "disk.chunk-1375731712",
+      "bytes": 33554432,
+      "sha256": "4f312d09eb20c2a4bd6fe2603444f9102eb29bd3a1390df088030a1635cee289"
+    },
+    {
+      "file": "disk.chunk-1409286144",
+      "bytes": 33554432,
+      "sha256": "b15119309795b77c96105d6b079952992f01864861e8883b036b8a50be1cf7cd"
+    },
+    {
+      "file": "disk.chunk-1442840576",
+      "bytes": 33554432,
+      "sha256": "f39cbb5bb3aed24d730be34b7ea56fee4071fa2a0423f5d752cc52539d8a14a7"
+    },
+    {
+      "file": "disk.chunk-1476395008",
+      "bytes": 33554432,
+      "sha256": "ad1c347358a596c102d3a1228a59f782338d33d664f846a36b95b32687892175"
+    },
+    {
+      "file": "disk.chunk-1509949440",
+      "bytes": 7701762,
+      "sha256": "a97b4a14e4ad357960a3c1b3116f2013a7a8813565fe1dffa82ec964e79a686b"
+    }
+  ],
+  "original_truncated_download_preserved": true,
+  "guest_boot_executed": false
+}

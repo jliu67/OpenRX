@@ -1,0 +1,154 @@
+# Handoff — critical local infrastructure migration (inactive)
+
+## Latest urgent handoff — 2026-10-10T06:10Z
+
+**LOCAL_VALIDATING / NOT ACTIVE; migration incomplete at the owner's time limit.** [Independently accepted resource source and full test evidence](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094515657) records candidate657b23f1/tests3528d954, 38 focused and297 regression passes. Candidate remains undeployed; runner988 and all prior scientific artifacts, logs and failures remain preserved. Existing rebuild, strict guest9 and actual stronger stop03 are independently accepted; do not repeat expensive tests.
+
+Resume first from the latest `$OPENRX_LOCAL_ROOT/migrations/20261009/resume-record-*`, current Git/PR28 head, issue27 and hub5. Install the exact reviewed candidate in a NEW immutable release, prove live CPU600/memory/swap/tasks/ancestor constraints with a tiny payload and obtain independent acceptance. Then complete technical-map/actual CUTOVER_PENDING, conditional16docs, final-head CI/review and normal merge, merged-authority/eligibility checks, actual LOCAL_ACTIVE/explicit release and synchronized final receipt. The resource test receipt is `migrations/20261009/resource-profile-final-v2-controls-20261010T060553Z/receipt.json`, rawSHAdb7895e5; static reviewf7ff4cbb and independent test addendumb130126a are retained beside it. The prepared16doc cutover patch has NOT been applied.
+
+Inspect without starting work: `python3 "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py" --root "$OPENRX_LOCAL_ROOT" status`; inspect the accepted guest execution20261009T193937Z-576aa858c033 and stopped execution20261009T202537Z-a1ca7df2cf1c. No expensive research or remote execution is released; no checkpoint resume; #16/M1–M5 remain open. Dated prior handoff below remains historical.
+
+2026-10-09 UTC. Migration task [#27](https://github.com/jliu67/OpenRX/issues/27) is **LOCAL_VALIDATING; NOT YET ACTIVE**.
+Actual preflight supported the transition at19:38:51Z; no scientific or cutover pass follows from that state.
+Read live task receipts, [local policy](../docs/LOCAL_EXECUTION.md), [migration/recovery runbook](../docs/LOCAL_MIGRATION.md),
+[acceptance receipt](../docs/validation/local-migration-20261009/ACCEPTANCE.md), hub #5 and actual remote HEAD.
+A dedicated migration branch and fresh persistent host paths preserve the original checkout.
+No current claim/assigned role is implied by this document.
+
+The native Ubuntu 22.04 host and user systemd/lingering have been identified; deployment/gate evidence is being gathered.
+The original saved gem5 Library binary is unavailable through callable tools, so a new pinned local simulator
+build attempt 02 failed at its 6-GiB cgroup limit; the failed tree/logs and pipeline's missing-result failure
+are preserved in [failure evidence](../docs/validation/local-migration-20261009/build-failure-02/README.md).
+A copied partial-build attempt03 completed at19:37:51.079045Z with one worker and recorded
+8-GiB RAM/2-GiB swap/100% CPU budget:rc0/source_changed[]/configf839a59b…/build-info0/loader0.
+New binary1,036,720,416bytes/SHAe4129f16… is a distinct rebuild, not recovered original bytes.
+Preflight raw SHAd2043b27… bound source/runner/request03/41 package pins/resources/runtime/profile
+and actual LOCAL_VALIDATING. Exact historical guest ELFs are recovered/digest-verified.
+The [15-file actual build/preflight export index](../docs/validation/local-migration-20261009/local-validating-live-v1/index.json)
+and [independent postbuild integrity review](../docs/validation/local-migration-20261009/local-validating-live-v1/independent-build-preflight-postbuild-review.json)
+bind the newly rehashed binary/source/packages/resources/43 runtime libraries and actual state/request,
+without guest acceptance. Bounded live manager/socket/console observations preserve explicit limitations.
+Pinned firmware/kernel/compressed/expanded disk are verified. Host native smoke passes original 257 Python tests,
+171 vendor files, 106 upstream controls plus one explicit unsupported-AVX2 skip,
+39 exact semantic/hash controls (optional AES skip) and nine runtime controls. No local gem5 pass is claimed. Historical runtime/partial-light evidence below is preserved and remains historical.
+
+**Current validation binding:** the readonly execution checkout is
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726` and immutable runner release988cf13f.
+[Exact-head review](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473259439) and
+[pipelinev3 binding review](../docs/validation/local-migration-20261009/pipeline-independent-review-v3.json)
+verify the corrected wrapper5c275/source/toolchain/owner specification.
+[Runtime request03](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085838632) key
+`issue-27-local-runtime-b4b5ffc-attempt-01` / SHA
+`d11d6f4e5043e3d51a73a0ecf52fc8aa95eb459c6546e46d4136f78013da7972` is published.
+Driver ace55beda… under `openrx-migration-validation-pipeline-v3-20261009.service` submitted runtime-only
+execution `20261009T193937Z-576aa858c033` after the verified build/loader/input/state prerequisites.
+The last bounded observations find it running, with guest correctness/actual stop/final outputs unverified.
+Expensive research remains held.
+
+Accepted corrected source passes287 full tests (including28 runner controls) and40 targeted wrapper controls.
+A55.1219-second finalizer delay/six notifications/receipt integrity prove extension beyond45 seconds;
+original false harness and corrected audit are retained, without terminal manager or large-output claims.
+The exact final988 release also has [independent acceptance of ten actual host-only controls](../docs/validation/local-migration-20261009/runner-final988-actual-v3/independent-review/runner-final988-replay-actual-independent-review.json)
+with [retained export bindings](../docs/validation/local-migration-20261009/runner-final988-actual-v3/index.json):
+receipt/source verification, exited-launcher log progress, duplicate rejection, serialized payload/descendant
+drain and truthful stop/exit-7/hard-kill/OOM failures. Five live samples measure tiny64-MiB/48-MiB OOM,
+CPU10%, swap0, tasks16 limits, not the production baseline. Prior FINALIZED ordering is empirical only.
+Whole Codex daemon termination/host reboot were not performed. Actual guest/gem5 stop/final outputs/
+merge/release remain pending; this host-only acceptance does not release expensive research.
+
+[Stop controller](../docs/validation/local-migration-20261009/stop-controller-independent-review.json)
+SHA `1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817` and fixed specification
+`76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14` are reviewed but unlaunched;
+first capture integrity plus exact source/input/cgroup/report gates are still prerequisites.
+[Stop request publication](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085930183) is verified;
+a published request is not executed stop evidence.
+
+Earlier pipelinev2 stopped before preflight and old request keys01/02 were never submitted.
+Runner916 overall future execution acceptance remains withdrawn; its fsync-only23-test proof is retained.
+[Safety record](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085377771),
+[review correction](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473038322), intercepted
+wrapper timing audit, initial source/frozen6f and every earlier fixture are preserved.
+The [major failure hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6085149398) remains verified.
+
+Next: inspect the recorded running runtime-only execution and preserve all output. Independently replay
+complete expected-guest/runtime evidence when it exists, then launch the separately reviewed stop controller
+only after its verified capture/prerequisite gates.
+Verify actual gem5 report/termination/empty-cgroup/output integrity; retain every failed or partial outcome.
+Branch workflow guards defer expensive hosted gem5/full-dataset/native steady controls to reviewed local
+requests. Their commands/criteria remain; skipped work is never passed. Mainline guards await reviewed
+merge, with no self-hosted Actions runner configured.
+
+Then obtain separate review, reconcile authoritative documentation, merge the migration PR and verify
+acceptance/LOCAL_ACTIVE. Hold expensive submissions until #27 verifies explicit release bound to actual
+reviewed merge/merged-document audit; publish effective-policy hub notice after release, verify bot and
+complete final synchronized acceptance. See the receipt for unfinished gates.
+Use the installed immutable runner for local inspection:
+
+```bash
+export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
+export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py"
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" status 20261009T193937Z-576aa858c033
+```
+
+Host-only progress/commands are under `$OPENRX_LOCAL_ROOT/migrations/20261009/`; per-attempt records under `executions/ID/`.
+No scientific checkpoint resume is verified.
+Malformed/torn manifests/receipts or broken ledgers fail closed; preserve bytes and an additive forensic
+copy/incident record, hold execution as `BLOCKED` for manual independent reconciliation and never overwrite or automatically rerun.
+
+Remote execution/retrieval is unavailable: visiting agents submit a complete GitHub task specification;
+the owner or an explicitly authorized local session reviews/submits locally and publishes sanitized
+evidence. The host must be online; owner presence is not required during an authorized local session.
+This supplies no remote access or authority from arbitrary issue text. No listener, SSH setup or autonomous poller exists.
+If offline, mark expensive requests blocked and continue independent lightweight work.
+Do not launch expensive full-scale sandbox or staging-host research to bypass migration gates.
+#16/M1–M5 retain their existing open scientific acceptance criteria.
+Only independently verified matching acceptance/LOCAL_ACTIVE and explicit #27 release bound to actual
+reviewed merge/merged-document audit release expensive work; this dated LOCAL_VALIDATING handoff is not release evidence.
+
+Exact pre-migration documents and a digest manifest are preserved under `memory/handoffs/pre-local-migration-*`.
+The immediately preceding37f STATE/HANDOFF are byte-exact in the
+[pre-LOCAL_VALIDATING snapshot manifest](handoffs/pre-local-validating-20261009-37f7564-manifest.json).
+The following earlier handoff is retained for provenance; its temporary-path execution recipe is **inactive**.
+
+## Previous handoff — reviewed cancellation; partial guest and tick-budget proof
+
+2026-10-09 UTC; session `codex/20261008-light-resume`. User authorized continued engineering after extensive repository, agent-message, board and handoff ingestion. Read live [#16](https://github.com/jliu67/OpenRX/issues/16) comments/receipts and current main before claiming work. The repository is now **jliu67/OpenRX**, same repository ID 1409576804. Historical OpenRandomX URLs redirect; use OpenRX for API calls. This document is not a live ownership registry.
+
+## Accepted implementation and actual outcome
+
+[PR #25](https://github.com/jliu67/OpenRX/pull/25) merged at `abe066f7c1b17cb3225b55cc45848a153a20ea7a`. Its tree equals tested source head `9d108c4041e0fa440a676f8a3ee1a2db1d736192`. Independent review repaired two cancellation races before publication; 253 Python tests, including 34 gem5 host controls, and 171 vendor files passed. Five source-head hosted checks passed; separate artifact replay retained 107 upstream / six native steady checks and exact 39 semantic/hash plus nine runtime controls per native/QEMU environment. The hosted gem5 guest job was skipped. [Lifecycle acceptance](../docs/validation/m3-fs/cancellation-20261008/REVIEW.md), [CI replay](../docs/validation/m3-fs/cancellation-20261008/ci-review.md).
+
+The fresh real guest independently passed all nine runtime controls and all 31 integer/FP controls, with **zero completed hash values**. Interpreter cache initialization began; no cache pass, complete hash stream or final hypercall was observed. Exact ELF/configuration review proves both mandatory cache round loops alone require at least **10,519,287,679,000 ticks**, exceeding the current `10^13` per-call allowance. A manual tool-session stop followed that proof at 2026-10-08T23:54Z. It returned exit 1 with no final runner report; actual handler receipt/child return code/reaping are unavailable. No matching wrapper or simulator remains. No observed wall/tick timeout or hash mismatch occurred. [Actual partial acceptance and raw/input bindings](../docs/validation/m3-fs/light-resume-20261008/README.md), [budget proof](../docs/validation/m3-fs/light-resume-20261008/BUDGET-REVIEW.md).
+
+The new optional stop-file control and manual workflow light guard have separate host/source acceptance. Final root validation passes 257 Python tests (38 gem5 controls) and all 171 vendor files; [review and logs](../docs/validation/m3-fs/stop-file-20261008/README.md). They were not executed by that saved real guest. Default no-wall policy, strict validators, workload, resources and model remain unchanged.
+
+## Historical pre-migration execution recipe — inactive
+
+Reuse the original simulator; do not repeat a source build. [REUSE.md](../docs/validation/m3-fs/REUSE.md) gives the two saved parts, exact digests, reconstruction and runtime environment. The original simulator SHA256 is `3f8728c9b72374ace0b3372f1ea5bab23bafbdcc15652fe466c4a00b2ddbc0a6`; runtime ELF is `8fa3f0de97cf3df9aaecebe9deb92c3dfd8c8e7bcd18fe87e090b746e57b28ac`; retained hash ELF is `61cf489ab2277477a1b5464035c21fa43c6b5e59153fe37313dbbd4ae6b4e657`. Newly built hosted hash ELF `0e310b9c...` is separate evidence, not this payload.
+
+This pre-migration recipe records the formerly intended sandbox execution inputs. Do not execute it during
+migration or use it to bypass the designated host. After cutover, request a fresh durable local attempt with
+verified input identities through the local execution interface. Historical command:
+
+```bash
+LD_LIBRARY_PATH=/tmp/openrx-gem5-source/native-libs:/tmp/openrx-gem5-source/apt-root/usr/lib/x86_64-linux-gnu \
+python3 simulator/gem5/run.py \
+  --gem5 /tmp/openrx-gem5-source/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9/build/RISCV/gem5.opt \
+  --resources /tmp/openrx-fs-resource-audit \
+  --runtime-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-runtime-probe \
+  --hash-binary /tmp/openrx-runtime-ci/probe-riscv/openrx-riscv-probe \
+  --output-dir /tmp/openrx-gem5-light-next-attempt3 \
+  --max-ticks 100000000000000 \
+  --stop-file /tmp/openrx-stop-next-light-attempt3
+```
+
+Monitor continuously and preserve raw output. The larger finite guard is proposed, not guaranteed sufficient. From another tool session, create the stop file to request the runner's own SIGINT cleanup/report path; never reuse an existing stop marker. Tool/session control-C did not yield a final report in the recorded attempt, so do not infer that outcome. Positive `--timeout SECONDS` remains opt-in. If inputs disappear, restore the saved package and prepare pinned resources before launching; missing inputs are not guest failures.
+
+Acceptance requires exit zero, complete runtime/hash frames with zero statuses and empty stderr, all nine runtime and 39 required semantic/hash controls (eight v2/v1 interpreter/JIT hashes), consistent summary/optional AES skip, guest completion, ordered hypercalls 1/2/3 and unchanged input identities. Do not shrink RandomX constants or infer hashes from partial arithmetic controls.
+
+## Remaining project gates
+
+M0 is complete; M1–M5 remain open. #13 importer software and #4 dated source audit are completed; #20 inspection, #22 queued announcements and #24 compact-handoff policy are completed. #8/#10/#11 require controlled host/counter/meter access. #2 lacks primary X5 board/chip/firmware binding; documented stock SG2042 properties do not identify an X5 derivative. Future Monero activation/live-tip corroboration remains open. Full dataset, intended cores/SMP and selected BOOM Linux boot are separate from Atomic functional controls. M4/M5 still require measured baseline and calibrated model; no RTL, timing or physical efficiency result is established.
+
+All 171 vendor files are now materialized and verified locally; the former four-PDF snapshot omission is resolved. Prior STATE/HANDOFF snapshots are archived under `memory/handoffs/pre-light-resume-*-20261008.md`; original timeout/build/OOM records and SESSION_LOG history remain unchanged. PR #26 integrated at `77a1641fb85f386bce4a5b51e00dedbe257376f6`, with the tested head/tree unchanged. [Final release](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6071620898) is accepted: ready, claim null, no warnings. The required [hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6071623180) was verified. [Integration/CI receipts](../docs/validation/m3-fs/stop-file-20261008/integration.json) preserve exact source/run/job identities.

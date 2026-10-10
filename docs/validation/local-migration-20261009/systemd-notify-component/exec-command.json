@@ -1,0 +1,23 @@
+{
+  "command": [
+    "systemd-run",
+    "--user",
+    "--quiet",
+    "--no-block",
+    "--unit",
+    "openrx-notify-component-exec-b810fe666b.service",
+    "--property=Type=simple",
+    "--property=NotifyAccess=exec",
+    "--property=TimeoutStopSec=3s",
+    "--property=KillMode=mixed",
+    "--property=MemoryMax=64M",
+    "--property=CPUQuota=10%",
+    "--property=TasksMax=16",
+    "--property=Restart=no",
+    "--property=NoNewPrivileges=yes",
+    "--property=UMask=0077",
+    "--property=ExecStopPost=/usr/bin/python3 ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1/notify-finalizer.py ${OPENRX_LOCAL_ROOT}/migrations/20261009/independent-notify-component-v1 exec",
+    "/usr/bin/true"
+  ],
+  "started_at": "2026-10-09T16:59:34.236546+00:00"
+}

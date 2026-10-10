@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "scons",
+    "build/RISCV/gem5.opt",
+    "-j2",
+    "--limit-ld-memory-usage",
+    "--without-tcmalloc"
+  ],
+  "source_archive_sha256": "0f4102a3ece810342b0a0124d44f9cb6a5b0aba08b436998b5e5069ab35bdba3",
+  "source_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "config_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+  "project_commit": "3a7ff8fd3529dfc7e0fd46d28ee90b267b8df2f2",
+  "start_utc": "2026-10-09T15:46:46.863399+00:00",
+  "source_path": "${OPENRX_LOCAL_ROOT}/builds/gem5-rebuild-02/gem5-c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "resume": "no; fresh build; no wall timeout"
+}

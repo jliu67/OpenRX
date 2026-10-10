@@ -74,3 +74,11 @@ Reconciliation: the concurrent hub-policy entry reused D029, already assigned to
 |---|---|---|---|
 | D034 | Declare `10^14` ticks explicitly for the next unchanged light matrix; retain the runtime-only default and all strict completion checks | Exact retained-ELF loops and actual width/clock prove a conservative 10,519,287,679,000-tick minimum for two mandatory cache round loops alone, exceeding `10^13`; the proposed margin is not a sufficient-budget proof | Executed complete matrix or a changed ELF/model provides new evidence |
 | D035 | Offer an optional fresh stop marker observed inside the runner's main wait loop | Tool-session control-C ended the actual attempt without a final runner report; a shared-filesystem request can reach the runner's own signal/cleanup/report path across PID namespaces | A verified tool/process interface provides equivalent lifecycle control; source/host review must remain separate from actual gem5 acceptance |
+
+## Critical local infrastructure migration — 2026-10-09 UTC
+
+| ID | Decision | Reason | Revisit when |
+|---|---|---|---|
+| D036 | Designate the owner's Ubuntu computer for persistent expensive execution only after evidence-backed migration cutover | User requires loss-intolerant preservation, reproducibility, durable operation and verified scientific/lifecycle gates; temporary sandboxes remain for lightweight work | Required gates and reviewed merged PR pass; publish activation from objective evidence |
+| D037 | Keep GitHub authoritative and use owner-mediated task submission/result publication; remote execution is unavailable | No secure remote access/listener/poller has been implemented or tested; avoid implying visiting agents can access the host or creating permanent roles | A separately documented secure submission/retrieval mechanism is implemented and demonstrated |
+| D038 | Preserve original saved simulator identity and independently verify a separate pinned rebuild when original Library parts are inaccessible | A historic artifact save is not a current transfer; scientific provenance must distinguish an unavailable original from a new toolchain build | Exact original archive is retrieved and fully verified, or the separate rebuild passes local gates |

@@ -1,0 +1,29 @@
+{
+  "schema": "openrx.gem5.running-stop-controller-preparation.v2",
+  "at": "2026-10-09T20:15:43.871622+00:00",
+  "status": "DRAFT; requires root/static-peer review before any launch",
+  "bindings": [
+    {
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/prove_gem5_stop_v2.py",
+      "bytes": 27128,
+      "sha256": "cbf10fd095bdfee352c711d575949d848c3c262883c41fee430ccfb90ec46612"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/requests/spec-issue-27-gem5-stop-migration-attempt-02.json",
+      "bytes": 5614,
+      "sha256": "bcbf912013d386745efe951120b9432dd35e5c334a432f6fdcde94fb70db010a"
+    },
+    {
+      "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-controller-v2-v1.diff",
+      "bytes": 10540,
+      "sha256": "295281008c63511ddb957d73f472283cb115bcae5ab13cc4711dc7fe78d7074d"
+    }
+  ],
+  "preserved_v1_controller_sha256": "1d65cc6e275f09ee4da3049f6a5a4ec62a364945314121216c269a22a003c817",
+  "preserved_v1_spec_sha256": "76218e477bd84c36cb5991c06685af16718a589ab8a0c45eaaec25b643607f14",
+  "scientific_source_or_oracle_edits": false,
+  "controller_launched": false,
+  "services_state_github_commits_changed": false,
+  "migration_complete": false,
+  "expected_controls_declared_before_launch": "Lifecycle evidence only: actual expected OpenSBI v1.3.1 serial banner and Platform HART Count1 are captured in a bounded regular serial-file snapshot while the same pinned gem5 executable has a live pidfd in the owned service cgroup, before exclusive fsynced stop marker. Afterward require observed pidfd exit/empty service cgroup and report status fail/interrupted true/interruption_source stop-file/stop_file_observed true/runtime_validated false with actual integer child_returncode; retained wrapper stdout equals report and wrapper process failure is consistent. No fixed child exit signal/code is assumed during active simulation. Retain serial prefix and all partial output; verify exact source/input/request/runner bindings and output receipt. This interruption is not a scientific pass or checkpoint/resume/statistics/performance acceptance."
+}

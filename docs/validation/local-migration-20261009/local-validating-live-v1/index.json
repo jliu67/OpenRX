@@ -1,0 +1,211 @@
+{
+  "files": [
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 400,
+      "original_sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f",
+      "public_bytes": 400,
+      "public_path": "build-result.json",
+      "public_sha256": "8eef5987f056d1090d85ece94ee120da5ac35c8828a92b406d119c98730a9c3f",
+      "source": "migrations/20261009/build-attempt-03/build-result.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1156,
+      "original_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+      "public_bytes": 1156,
+      "public_path": "canonical-config",
+      "public_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+      "source": "migrations/20261009/build-attempt-03/canonical-config"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1640,
+      "original_sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312",
+      "public_bytes": 1640,
+      "public_path": "build-info.log",
+      "public_sha256": "9802579ddf9416b9ee276cd1e17e3c9edf24247d4c75363b540e08ad5c6ef312",
+      "source": "migrations/20261009/build-attempt-03/build-info.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 3348,
+      "original_sha256": "4b4781aeb1b54afaae90aa3149325aac7e37e440f1ebc596f5f3952dce2d96da",
+      "public_bytes": 3348,
+      "public_path": "loader.log",
+      "public_sha256": "4b4781aeb1b54afaae90aa3149325aac7e37e440f1ebc596f5f3952dce2d96da",
+      "source": "migrations/20261009/build-attempt-03/loader.log"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1512,
+      "original_sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626",
+      "public_bytes": 1512,
+      "public_path": "preflight.json",
+      "public_sha256": "d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626",
+      "source": "migrations/20261009/local-validation-preflight.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 54,
+      "original_sha256": "0b116e6f6485be1ea7226e1a51a4c01126f0933d34d038859f7dfb4e47ddc64b",
+      "public_bytes": 54,
+      "public_path": "runtime-execution-id.json",
+      "public_sha256": "0b116e6f6485be1ea7226e1a51a4c01126f0933d34d038859f7dfb4e47ddc64b",
+      "source": "migrations/20261009/runtime-execution-id.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        15,
+        0
+      ],
+      "original_bytes": 1905,
+      "original_sha256": "f48f8e4bf52081d880e75b5674a5484a81e6677515c3f5f981d09de5a4756fd9",
+      "public_bytes": 1755,
+      "public_path": "runtime-submission-argv.json",
+      "public_sha256": "1e9e007177ef1d59574529bba0ce1849b0d7727e133f620bddaa12b3393afd42",
+      "source": "migrations/20261009/runtime-submission-argv.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 16304,
+      "original_sha256": "0ffde8f6d5e1ce8d30914ceb636b0f8e722b73c1d1b9732174dfb98071f35fa6",
+      "public_bytes": 16294,
+      "public_path": "observe_runtime_production_v1.py",
+      "public_sha256": "8a3436b59655089ffb6751c255016021e66b6b9d07cc66ca42dc4d4f3ca18010",
+      "source": "migrations/20261009/observe_runtime_production_v1.py"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        9,
+        0
+      ],
+      "original_bytes": 5067,
+      "original_sha256": "625e316aa9eb5a732d3d265f28597acfa95ab6740891547ff109f97e624a078e",
+      "public_bytes": 4977,
+      "public_path": "production-observation-194045.json",
+      "public_sha256": "16df60de81835a2aca9d9569c7f542234bc82b020003dfa21ddb8008e2ed66b6",
+      "source": "migrations/20261009/runtime-live-production-observation-20261009T194045375434Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        5,
+        0
+      ],
+      "original_bytes": 3485,
+      "original_sha256": "3f43340fcf085a11c2bfccf8094377ad36b67f36e069e0a42033e57b8b996b88",
+      "public_bytes": 3435,
+      "public_path": "listener-confirmation-194217.json",
+      "public_sha256": "b10dc69c9bb1afc4a332c4e107d1256ab872c195a03e63132fb912deaa7067b1",
+      "source": "migrations/20261009/runtime-live-production-observation-20261009T194217041172Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        4,
+        0
+      ],
+      "original_bytes": 1855,
+      "original_sha256": "f77839b315d12d8e41fa82d5b8dbeddfac94328e91b36fc21044e2aa84ad70ab",
+      "public_bytes": 1815,
+      "public_path": "listener-source-review.json",
+      "public_sha256": "85e1317a5586220289ef77d37329d3b1cef8224ecc914a6cd32a488fa2264cf8",
+      "source": "migrations/20261009/noninteractive-listener-source-review-20261009T190910Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        0,
+        0
+      ],
+      "original_bytes": 1269,
+      "original_sha256": "8daddfd844886e3adc23a5ad30c8d35a7ced221dbbdcacfcc72fef8e115a283b",
+      "public_bytes": 1269,
+      "public_path": "build03-resource-adjustment-guard-audit.json",
+      "public_sha256": "8daddfd844886e3adc23a5ad30c8d35a7ced221dbbdcacfcc72fef8e115a283b",
+      "source": "migrations/20261009/build03-resource-adjustment-guard-audit-20261009T194415Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        1,
+        0
+      ],
+      "original_bytes": 699,
+      "original_sha256": "ac08d5e22ca9b4df6e86c9c576c474eeeca75ef918838faa671400c990e1ba25",
+      "public_bytes": 689,
+      "public_path": "new-gem5-binary-mode-protection.json",
+      "public_sha256": "07d71590c41aa5dbc1316b52222abfca246bad73149064b00b8df1699ce6c540",
+      "source": "migrations/20261009/new-gem5-binary-mode-protection-20261009T194442Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        118,
+        2
+      ],
+      "original_bytes": 59803,
+      "original_sha256": "8e7452af42467a1c85a8dffeaf278cb063c9abc00d5d446890b654c54e60d768",
+      "public_bytes": 58635,
+      "public_path": "independent-build-preflight-postbuild-review.json",
+      "public_sha256": "4989e8cd5af804d3755fd0e6f1836f35e70d69d71c5d47df86f061709910d531",
+      "source": "migrations/20261009/independent-build-preflight-postbuild-review-20261009T195019798138Z.json"
+    },
+    {
+      "ordered_prefix_substitution_counts": [
+        127,
+        0
+      ],
+      "original_bytes": 35108,
+      "original_sha256": "fda84e150259de5f5f3208700dd0d5eb3a9e967150285bf29a0b9c6dc1bb7a40",
+      "public_bytes": 33838,
+      "public_path": "runtime-library-profile.json",
+      "public_sha256": "0fa270882a689dc116a62fbc48a849974b98dc08ae684fa9d8a9ead2528a84e5",
+      "source": "toolchains/gem5-runtime-e4129f163773/runtime-libraries.json"
+    }
+  ],
+  "guest_correctness_accepted": false,
+  "local_active": false,
+  "method": "Exact two ordered byte-prefix substitutions only: designated local root first, original checkout second. No JSON reserialization, line-ending change, hostname substitution, scientific row change, or other source edit. Physical-hostname token check passed on every transformed metadata source. Public executable source is an audit derivative, not the deployed observer.",
+  "observation_limits": [
+    "Actual manager Result while a service is active is not a completion result.",
+    "Owned socket observations are instantaneous; no perpetual network guarantee.",
+    "First console notice was absent; preserved second observation subsequently confirms the actual listener-disable notice.",
+    "Same UID is not explicitly credential-checked; full gem5-to-worker ancestry was not captured; the worker MainPID was not pinned throughout the parent read.",
+    "Supplementary writer command is described but not separately source-bound.",
+    "Neither observer receipt establishes guest correctness, full Codex termination survival, host reboot recovery, or migration completion.",
+    "Build03 failed resource-adjustment guard performed no budget mutation; terminal transient-unit defaults are not actual build budget evidence."
+  ],
+  "ordered_substitutions": [
+    {
+      "from": "designated local root absolute prefix",
+      "to": "$OPENRX_LOCAL_ROOT"
+    },
+    {
+      "from": "original checkout absolute prefix",
+      "to": "$OPENRX_ORIGINAL_CHECKOUT"
+    }
+  ],
+  "privacy_check_note": "Two earlier preparation checks used an overbroad raw substring match that also matched the local root path and the source identifier observer. Both stopped before directory creation or publication. The final check tests a complete hostname token after the authorized prefix substitutions; no additional text changes were performed.",
+  "schema": "openrx.local.validating.live.export.v1",
+  "scope": "Completed build and independently rechecked preflight integrity plus two instantaneous live manager/process/security observations. No scientific guest outcome or migration cutover acceptance.",
+  "state": "LOCAL_VALIDATING",
+  "utc": "2026-10-09T19:51:13.484773+00:00"
+}

@@ -1,0 +1,166 @@
+--- preserved/initialization/prove_gem5_stop_v1.py
++++ new/prove_gem5_stop_v3.py
+@@ -31,9 +31,9 @@
+ ELF = R / 'artifacts/guest-20261008/openrx-runtime-probe'
+ PREFLIGHT = E / 'local-validation-preflight.json'
+ FIRST_CAPTURE = E / 'runtime-capture-summary.json'
+-KEY = 'issue-27-gem5-stop-migration-attempt-01'
++KEY = 'issue-27-gem5-stop-migration-attempt-03'
+ SPEC = R / ('requests/spec-' + KEY + '.json')
+-WORK = E / 'gem5-stop-proof-attempt-01'
++WORK = E / 'gem5-stop-proof-attempt-03'
+ SOURCE_COMMIT = None
+ CONFIG_SHA = 'f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c'
+ RESOURCES_SHA = '67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb'
+@@ -139,6 +139,49 @@
+             if fd is not None:
+                 os.close(fd)
+     return None, None
++
++
++def newbytes(path, value):
++    fd = os.open(path, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
++    with os.fdopen(fd, 'wb') as out:
++        out.write(value)
++        out.flush()
++        os.fsync(out.fileno())
++    syncdir(path.parent)
++
++
++def running_guest_stage(directory, pidfd):
++    """Require actual expected firmware serial while the same pinned process lives."""
++    output = directory / 'payload/m5out'
++    if not output.exists():
++        return None, None
++    require(not output.is_symlink(), 'Simulator output directory is linked')
++    terminals = list(output.glob('*terminal*'))
++    require(len(terminals) <= 1, 'Ambiguous firmware serial logs')
++    if not terminals:
++        return None, None
++    path = terminals[0]
++    require(path.name == 'board.platform.terminal' and not path.is_symlink(),
++            'Unexpected firmware serial path')
++    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
++    try:
++        require(stat.S_ISREG(os.fstat(fd).st_mode), 'Firmware serial is not regular')
++        serial = os.read(fd, 256 * 1024 + 1)
++    finally:
++        os.close(fd)
++    require(len(serial) <= 256 * 1024, 'Firmware serial exceeds declared bounded inspection')
++    if not serial.startswith(b'\r\nOpenSBI v1.3.1\r\n') or b'Platform HART Count       : 1\r\n' not in serial:
++        return None, None
++    poller = select.poll()
++    poller.register(pidfd, select.POLLIN)
++    if poller.poll(0):
++        return None, None
++    return serial, {'stage': 'expected-open-sbi-firmware-executing',
++                    'terminal_path': str(path), 'bytes': len(serial),
++                    'sha256': hashlib.sha256(serial).hexdigest(),
++                    'required_banner': 'OpenSBI v1.3.1', 'required_harts': 1,
++                    'same_pinned_process_pidfd_still_live': True,
++                    'utc': datetime.datetime.now(datetime.timezone.utc).isoformat()}
+ 
+ 
+ def prerequisites(request_sha):
+@@ -209,11 +252,11 @@
+ 
+ 
+ def execute(request_sha, attempt):
+-    evidence = {'schema': 'openrx.gem5.stop-proof.v1', 'accepted': False, 'missing_proof': [],
++    evidence = {'schema': 'openrx.gem5.running-stop-proof.v3', 'accepted': False, 'missing_proof': [],
+                 'scientific_acceptance': 'unverified; expected interruption is not a scientific pass',
+                 'migration_complete': False, 'resume_verified': False,
+                 'limitations': ['No graceful gem5 stats/checkpoint finalization is claimed',
+-                                'No complete guest boot or runtime acceptance is inferred from this stop test',
++                                'Expected firmware serial proves a running guest stage; no complete guest boot or runtime acceptance is inferred from this stop test',
+                                 'No host reboot or full Codex daemon termination is tested']}
+     pidfd = None
+     try:
+@@ -257,19 +300,38 @@
+         initial_cgroup = None
+         while True:
+             unit = runner.unit_status(manifest['unit'])
+-            require(unit.get('query_returncode') == 0, 'Cannot inspect manager safely')
++            require(unit.get('query_returncode') == 0 and unit.get('LoadState') in {'loaded', 'not-found'} and
++                    unit.get('ActiveState') in {'active', 'activating', 'deactivating', 'inactive', 'failed'},
++                    'Cannot inspect known manager state safely')
+             relative = unit.get('ControlGroup')
+             if relative:
+                 require(relative.endswith('/' + manifest['unit']), 'Manager cgroup is not this execution service')
+                 initial_cgroup = relative
+                 pidfd, observation = observe_gem5(relative)
+                 if observation:
++                    serial, stage = running_guest_stage(directory, pidfd)
++                    if stage is None:
++                        os.close(pidfd)
++                        pidfd = None
++                        if unit.get('ActiveState') in {'inactive', 'failed'}:
++                            evidence['missing_proof'].append('Service finished before expected firmware serial and live-process evidence')
++                            break
++                        time.sleep(0.2)
++                        continue
++                    newbytes(attempt / 'observed-running-guest-serial.txt', serial)
++                    stage['snapshot'] = binding(attempt / 'observed-running-guest-serial.txt')
++                    newjson(attempt / 'observed-running-guest-stage.json', stage)
+                     newjson(attempt / 'observed-live-pinned-gem5.json', observation)
+                     evidence['actual_simulator_observed'] = observation
++                    evidence['actual_guest_stage_observed'] = stage
++                    poller = select.poll()
++                    poller.register(pidfd, select.POLLIN)
++                    require(not poller.poll(0), 'Pinned process exited before stop marker creation')
+                     if not marker.exists():
+                         newjson(marker, {'schema': 'openrx.owner.stop-request.v1', 'execution_id': execution_id,
+-                              'observed_live_simulator': observation, 'controller': binding(Path(__file__).resolve()),
+-                              'request_sha256': request_sha, 'reason': 'Declared migration stop lifecycle proof'})
++                              'observed_live_simulator': observation, 'observed_running_guest': stage,
++                              'controller': binding(Path(__file__).resolve()),
++                              'request_sha256': request_sha, 'reason': 'Declared migration running-firmware stop lifecycle proof'})
+                         evidence['marker_created_after_live_observation'] = True
+                         newjson(attempt / 'created-stop-marker.json', binding(marker))
+                     else:
+@@ -277,12 +339,14 @@
+                         evidence['missing_proof'].append('Marker already existed on this controller attempt; creation timing cannot be inferred')
+                     break
+             if unit.get('ActiveState') in {'inactive', 'failed'}:
+-                evidence['missing_proof'].append('Service finished before this attempt observed a live pinned simulator')
++                evidence['missing_proof'].append('Service finished before this attempt observed expected firmware serial and a live pinned simulator')
+                 break
+             time.sleep(0.2)
+         while True:
+             final_unit = runner.unit_status(manifest['unit'])
+-            require(final_unit.get('query_returncode') == 0, 'Cannot inspect manager completion safely')
++            require(final_unit.get('query_returncode') == 0 and final_unit.get('LoadState') in {'loaded', 'not-found'} and
++                    final_unit.get('ActiveState') in {'active', 'activating', 'deactivating', 'inactive', 'failed'},
++                    'Cannot inspect known manager completion state safely')
+             if final_unit.get('ActiveState') in {'inactive', 'failed'}:
+                 break
+             time.sleep(0.2)  # polling interval, never an experiment wall timeout
+@@ -310,7 +374,27 @@
+                   'stop_file_observed', 'child_returncode', 'runtime_validated', 'boot_observed', 'error')}
+         require(report.get('status') == 'fail' and report.get('interrupted') is True and
+                 report.get('interruption_source') == 'stop-file' and report.get('stop_file_observed') is True and
+-                report.get('child_returncode') == -signal.SIGKILL, 'Exact declared stop-file interruption controls missing')
++                report.get('runtime_validated') is False and type(report.get('child_returncode')) is int,
++                'Exact declared running-stage stop-file interruption controls missing')
++        require(readjson(directory / 'stdout.log') == report,
++                'Retained wrapper stdout and interruption report disagree')
++        process_result = readjson(directory / 'process-result.json')
++        require(process_result.get('returncode') == 1 and process_result.get('status') == 'PROCESS_FAILED' and
++                process_result.get('scientific_acceptance') == 'unverified',
++                'Wrapper failure process evidence contradicts the stop report')
++        evidence['child_exit_evidence'] = {'observed_child_returncode': report['child_returncode'],
++                'wrapper_stdout_equals_report': True, 'wrapper_process_returncode': process_result['returncode'],
++                'limitation': 'Pinned wrapper records its actual reaped child status; no fixed SIGKILL outcome is imposed'}
++        stage = evidence.get('actual_guest_stage_observed', {})
++        require(stage.get('same_pinned_process_pidfd_still_live') is True and
++                stage.get('stage') == 'expected-open-sbi-firmware-executing', 'Expected firmware stage missing')
++        snapshot = Path(stage['snapshot']['path'])
++        require(binding(snapshot) == stage['snapshot'] and snapshot.stat().st_size == stage['bytes'] and
++                sha(snapshot) == stage['sha256'], 'Retained pre-stop firmware snapshot changed')
++        terminal = Path(stage['terminal_path'])
++        require(not terminal.is_symlink() and terminal.is_file() and
++                terminal.read_bytes().startswith(snapshot.read_bytes()),
++                'Final serial log does not preserve the observed pre-stop firmware prefix')
+         require(report.get('stop_file') == str(marker) and report.get('gem5_binary_sha256') == preflight['build']['binary_sha256'] and
+                 report.get('config_sha256') == sha(S / 'simulator/gem5/fs.py') and
+                 report.get('resource_manifest_sha256') == RESOURCES_SHA, 'Wrapper simulator/config/resource bindings mismatch')

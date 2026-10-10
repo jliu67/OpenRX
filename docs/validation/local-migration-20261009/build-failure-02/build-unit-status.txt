@@ -1,0 +1,8 @@
+Result=oom-kill
+ExecMainCode=2
+ExecMainStatus=15
+ControlGroup=
+MemoryMax=6442450944
+LoadState=loaded
+ActiveState=failed
+SubState=failed

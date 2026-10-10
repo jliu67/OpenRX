@@ -1,0 +1,512 @@
+Vendor integrity OK (171 files)
+test_authorization_denies_other_authors_and_bot (test_agent_announce.AnnouncementTests) ... ok
+test_length_and_missing_source (test_agent_announce.AnnouncementTests) ... ok
+test_no_actions_without_authorized_message (test_agent_announce.AnnouncementTests) ... ok
+test_only_created_first_line_command (test_agent_announce.AnnouncementTests) ... ok
+test_parses_valid (test_agent_announce.AnnouncementTests) ... ok
+test_posts_once_and_idempotent_on_replay (test_agent_announce.AnnouncementTests) ... ok
+test_spoofed_human_marker_does_not_block (test_agent_announce.AnnouncementTests) ... ok
+test_wrong_hub_and_pull_request_ignored (test_agent_announce.AnnouncementTests) ... ok
+test_block_and_reopen_with_no_manager (test_agent_router.DecentralizedTests) ... ok
+test_closed_not_planned_not_satisfied (test_agent_router.DecentralizedTests) ... ok
+test_dependencies_block_until_closed_completed (test_agent_router.DecentralizedTests) ... ok
+test_dependency_block_visible_in_live_reconcile (test_agent_router.DecentralizedTests) ... ok
+test_existing_issue_join_preserves_body (test_agent_router.DecentralizedTests) ... ok
+test_invalid_dependencies_fail_closed (test_agent_router.DecentralizedTests) ... ok
+test_legacy_role_label_cleanup_preserves_human_labels (test_agent_router.DecentralizedTests) ... ok
+test_new_message_cannot_be_claimed (test_agent_router.DecentralizedTests) ... ok
+test_non_writer_claim_does_not_enroll (test_agent_router.DecentralizedTests) ... ok
+test_old_workflow_state_cannot_claim_without_comment (test_agent_router.DecentralizedTests) ... ok
+test_task_and_message_are_distinct_and_no_roles (test_agent_router.DecentralizedTests) ... ok
+test_template_comment_allowed_in_dependencies (test_agent_router.DecentralizedTests) ... ok
+test_closed_issue_recovery_without_original_event (test_agent_router.IntegrationTests) ... ok
+test_explicit_closed_issue_reconciled (test_agent_router.IntegrationTests) ... ok
+test_idempotent_run_performs_no_duplicate_writes (test_agent_router.IntegrationTests) ... ok
+test_input_not_shell_or_api_path (test_agent_router.IntegrationTests) ... ok
+test_invalid_repository_and_missing_token (test_agent_router.IntegrationTests) ... ok
+test_label_sync_and_receipt (test_agent_router.IntegrationTests) ... ok
+test_owner_and_writer_permissions (test_agent_router.IntegrationTests) ... ok
+test_pagination_limit_is_not_partial_success (test_agent_router.IntegrationTests) ... ok
+test_pagination_reads_all_pages (test_agent_router.IntegrationTests) ... ok
+test_permission_lookup_fails_closed (test_agent_router.IntegrationTests) ... ok
+test_pull_requests_skipped (test_agent_router.IntegrationTests) ... ok
+test_spoofed_bot_marker_not_overwritten (test_agent_router.IntegrationTests) ... ok
+test_status_change_updates_one_receipt (test_agent_router.IntegrationTests) ... ok
+test_unrelated_issue_not_modified (test_agent_router.IntegrationTests) ... ok
+test_writer_whitespace_command_identity (test_agent_router.IntegrationTests) ... ok
+test_audit_bounded (test_agent_router.ProtocolTests) ... ok
+test_cannot_claim_while_waiting_for_review (test_agent_router.ProtocolTests) ... ok
+test_cannot_reopen_active_claim (test_agent_router.ProtocolTests) ... ok
+test_claim_and_conflict_same_account (test_agent_router.ProtocolTests) ... ok
+test_claim_conflict_other_account (test_agent_router.ProtocolTests) ... ok
+test_closed_issue_releases_claim (test_agent_router.ProtocolTests) ... ok
+test_crlf_metadata (test_agent_router.ProtocolTests) ... ok
+test_done_requires_review (test_agent_router.ProtocolTests) ... ok
+test_edited_commands_ignored (test_agent_router.ProtocolTests) ... ok
+test_expired_claim_can_be_replaced (test_agent_router.ProtocolTests) ... ok
+test_expired_heartbeat_does_not_resurrect (test_agent_router.ProtocolTests) ... ok
+test_expiry_at_boundary (test_agent_router.ProtocolTests) ... ok
+test_future_command_rejected (test_agent_router.ProtocolTests) ... ok
+test_heartbeat_extends_lease (test_agent_router.ProtocolTests) ... ok
+test_initial_routing (test_agent_router.ProtocolTests) ... ok
+test_invalid_commands (test_agent_router.ProtocolTests) ... ok
+test_labels_are_allowlisted (test_agent_router.ProtocolTests) ... ok
+test_legacy_issue_claim_is_authoritative_without_role (test_agent_router.ProtocolTests) ... ok
+test_no_coordinator_regardless_of_to_metadata (test_agent_router.ProtocolTests) ... ok
+test_non_protocol_text_not_executed (test_agent_router.ProtocolTests) ... ok
+test_other_actor_cannot_release (test_agent_router.ProtocolTests) ... ok
+test_release_block_review_relinquish_claim (test_agent_router.ProtocolTests) ... ok
+test_replay_is_identical (test_agent_router.ProtocolTests) ... ok
+test_review_done_reopen (test_agent_router.ProtocolTests) ... ok
+test_route_enrolls_existing_issue (test_agent_router.ProtocolTests) ... ok
+test_sorted_history (test_agent_router.ProtocolTests) ... ok
+test_timezone_required (test_agent_router.ProtocolTests) ... ok
+test_unauthorized_controls_rejected (test_agent_router.ProtocolTests) ... ok
+test_untrusted_issue_requires_writer_optin (test_agent_router.ProtocolTests) ... ok
+test_wrong_session_cannot_release (test_agent_router.ProtocolTests) ... ok
+test_bad_requests_rejected_before_api_path_or_shell_use (test_gem5_bundle.BundleTests) ... ok
+test_binary_missing_provenance_missing_and_extra_members_rejected (test_gem5_bundle.BundleTests) ... ok
+test_checkpoint_namespace_changes_after_config_or_toolchain_drift (test_gem5_bundle.BundleTests) ... ok
+test_cli_preserves_failed_validation_report (test_gem5_bundle.BundleTests) ... ok
+test_duplicate_manifest_json_field_rejected (test_gem5_bundle.BundleTests) ... ok
+test_github_workflow_path_accepts_documented_ref_suffix (test_gem5_bundle.BundleTests) ... ok
+test_missing_provenance_and_self_consistent_wrong_source (test_gem5_bundle.BundleTests) ... ok
+test_other_repo_wrong_workflow_pr_run_and_failed_build_are_rejected (test_gem5_bundle.BundleTests) ... ok
+test_real_prefixless_kconfig_is_supported (test_gem5_bundle.BundleTests) ... ok
+test_rehashed_build_options_version_and_runtime_feature_lies_rejected (test_gem5_bundle.BundleTests) ... ok
+test_rehashed_substituted_binary_rejected_by_external_anchor (test_gem5_bundle.BundleTests) ... ok
+test_rehashed_wrong_isa_systemc_or_kvm_config_rejected (test_gem5_bundle.BundleTests) ... ok
+test_symlink_member_rejected (test_gem5_bundle.BundleTests) ... ok
+test_unauthenticated_metadata_shape_rejected (test_gem5_bundle.BundleTests) ... ok
+test_unbound_toolchain_cache_namespace_rejected (test_gem5_bundle.BundleTests) ... ok
+test_valid_offline_fixture_is_consistent (test_gem5_bundle.BundleTests) ... ok
+test_failed_producer_keeps_exact_exit_status_despite_successful_tee (test_gem5_fs.GuestStreamingTests) ... ok
+test_flushed_record_reaches_serial_and_capture_before_child_exit (test_gem5_fs.GuestStreamingTests) ... ok
+test_real_capture_write_failure_cannot_complete_or_close_frame (test_gem5_fs.GuestStreamingTests) ... ok
+test_changed_resource_rejected_even_with_matching_md5_field (test_gem5_fs.ResourceTests) ... ok
+test_resource_pins_have_exact_identity (test_gem5_fs.ResourceTests) ... ok
+test_late_marker_does_not_relabel_already_completed_child (test_gem5_fs.RunnerCancellationTests) ... ok
+test_opt_in_timeout_cleans_group_and_retains_completed_runtime (test_gem5_fs.RunnerCancellationTests) ... ok
+test_sigint_cleans_group_and_retains_completed_runtime (test_gem5_fs.RunnerCancellationTests) ... ok
+test_signal_at_cleanup_entry_cannot_skip_group_termination (test_gem5_fs.RunnerCancellationTests) ... ok
+test_signal_during_launch_is_cleaned_and_handlers_restored (test_gem5_fs.RunnerCancellationTests) ... ok
+test_signal_during_timeout_handler_cannot_escape_cleanup (test_gem5_fs.RunnerCancellationTests) ... ok
+test_sigterm_cleans_group_and_retains_completed_runtime (test_gem5_fs.RunnerCancellationTests) ... ok
+test_stale_stop_file_or_dangling_symlink_rejected_without_launch (test_gem5_fs.RunnerCancellationTests) ... ok
+test_stop_file_requests_cleanup_and_retains_completed_runtime (test_gem5_fs.RunnerCancellationTests) ... ok
+test_successful_runtime_keeps_default_unlimited_and_strict_completion (test_gem5_fs.RunnerCancellationTests) ... ok
+test_successful_runtime_with_stop_watch_leaves_marker_absent (test_gem5_fs.RunnerCancellationTests) ... ok
+test_clean_framing_preserves_only_probe_stream (test_gem5_fs.SerialTests) ... ok
+test_guest_stderr_rejected (test_gem5_fs.SerialTests) ... ok
+test_script_exit_failure_cannot_pass_as_boot_success (test_gem5_fs.SerialTests) ... ok
+test_simulator_wall_timeout_default_disabled (test_gem5_fs.SerialTests) ... ok
+test_truncated_or_duplicate_stream_rejected (test_gem5_fs.SerialTests) ... ok
+test_wrong_elf_rejected (test_gem5_fs.SerialTests) ... ok
+test_affinity_bounds (test_phase1.ArgumentTests) ... ok
+test_affinity_checks_process_cpu_set (test_phase1.ArgumentTests) ... ok
+test_affinity_needs_enough_cpus (test_phase1.ArgumentTests) ... ok
+test_bounded_upstream_integer_options (test_phase1.ArgumentTests) ... ok
+test_defaults (test_phase1.ArgumentTests) ... ok
+test_duplicate_versions (test_phase1.ArgumentTests) ... ok
+test_invalid_min_duration (test_phase1.ArgumentTests) ... ok
+test_negative_seed (test_phase1.ArgumentTests) ... ok
+test_negative_warmups (test_phase1.ArgumentTests) ... ok
+test_nonce_count_must_cover_threads (test_phase1.ArgumentTests) ... ok
+test_single_thread_upstream_affinity_ignored (test_phase1.ArgumentTests) ... ok
+test_verify_requires_one_thread (test_phase1.ArgumentTests) ... ok
+test_zero_threads (test_phase1.ArgumentTests) ... ok
+test_both_known_references (test_phase1.OutputTests) ... ok
+test_both_printed_hashes_wrong (test_phase1.OutputTests) ... ok
+test_duplicate_calculated (test_phase1.OutputTests) ... ok
+test_duplicate_performance (test_phase1.OutputTests) ... ok
+test_duplicate_reference (test_phase1.OutputTests) ... ok
+test_light_mode_interval (test_phase1.OutputTests) ... ok
+test_missing_calculated (test_phase1.OutputTests) ... ok
+test_missing_known_reference (test_phase1.OutputTests) ... ok
+test_missing_performance (test_phase1.OutputTests) ... ok
+test_nonreference_smoke_allowed_but_not_verified (test_phase1.OutputTests) ... ok
+test_printed_reference_mismatch (test_phase1.OutputTests) ... ok
+test_reject_invalid_rates (test_phase1.OutputTests) ... ok
+test_reject_overflowing_interval (test_phase1.OutputTests) ... ok
+test_reported_upstream_errors (test_phase1.OutputTests) ... ok
+test_scientific_notation (test_phase1.OutputTests) ... ok
+test_wrong_units (test_phase1.OutputTests) ... ok
+test_committed_snapshot (test_phase1.ProfileTests) ... ok
+test_duplicate_macro (test_phase1.ProfileTests) ... ok
+test_exact_source_blob (test_phase1.ProfileTests) ... ok
+test_expected_static_work (test_phase1.ProfileTests) ... ok
+test_expression_not_silently_evaluated (test_phase1.ProfileTests) ... ok
+test_invalid_frequency_total (test_phase1.ProfileTests) ... ok
+test_invalid_scratchpad_size (test_phase1.ProfileTests) ... ok
+test_missing_macro (test_phase1.ProfileTests) ... ok
+test_unknown_opcode_rejected (test_phase1.ProfileTests) ... ok
+test_nonzero_exit_retained (test_phase1.RunnerIntegrationTests) ... ok
+test_timeout_retained (test_phase1.RunnerIntegrationTests) ... ok
+test_too_short_measurement_rejected (test_phase1.RunnerIntegrationTests) ... ok
+test_warmups_separated_and_versions_alternate (test_phase1.RunnerIntegrationTests) ... ok
+test_additivity (test_power_import.ArithmeticTests) ... ok
+test_constant_clipped_boundaries (test_power_import.ArithmeticTests) ... ok
+test_error_interval (test_power_import.ArithmeticTests) ... ok
+test_linear_irregular_sampling (test_power_import.ArithmeticTests) ... ok
+test_nanosecond_precision_at_large_epoch (test_power_import.ArithmeticTests) ... ok
+test_no_extrapolation (test_power_import.ArithmeticTests) ... ok
+test_affine_origin_invariance (test_power_import.ImportTests) ... ok
+test_bad_shape_is_cli_failure (test_power_import.ImportTests) ... ok
+test_cli_preserves_extreme_decimal_failure (test_power_import.ImportTests) ... ok
+test_cli_preserves_extreme_rate_failure (test_power_import.ImportTests) ... ok
+test_cli_preserves_failure (test_power_import.ImportTests) ... ok
+test_cli_preserves_malformed_run_versions (test_power_import.ImportTests) ... ok
+test_cli_round_trip_and_no_overwrite (test_power_import.ImportTests) ... ok
+test_corrupt_digest_before_power_join (test_power_import.ImportTests) ... ok
+test_declared_measured_branch_is_not_certification (test_power_import.ImportTests) ... ok
+test_failed_benchmark (test_power_import.ImportTests) ... ok
+test_incomplete_stream_even_after_rehash (test_power_import.ImportTests) ... ok
+test_missing_coverage (test_power_import.ImportTests) ... ok
+test_missing_power_key (test_power_import.ImportTests) ... ok
+test_power_gap (test_power_import.ImportTests) ... ok
+test_rate_correction_sign (test_power_import.ImportTests) ... ok
+test_reject_boolean_power (test_power_import.ImportTests) ... ok
+test_reject_boundary (test_power_import.ImportTests) ... ok
+test_reject_clock_drift (test_power_import.ImportTests) ... ok
+test_reject_clock_error (test_power_import.ImportTests) ... ok
+test_reject_clock_evidence (test_power_import.ImportTests) ... ok
+test_reject_clock_method (test_power_import.ImportTests) ... ok
+test_reject_clock_range (test_power_import.ImportTests) ... ok
+test_reject_clock_rate (test_power_import.ImportTests) ... ok
+test_reject_clock_target (test_power_import.ImportTests) ... ok
+test_reject_device_range (test_power_import.ImportTests) ... ok
+test_reject_duplicate_time (test_power_import.ImportTests) ... ok
+test_reject_empty_boundary (test_power_import.ImportTests) ... ok
+test_reject_evidence (test_power_import.ImportTests) ... ok
+test_reject_excess_error (test_power_import.ImportTests) ... ok
+test_reject_float_time (test_power_import.ImportTests) ... ok
+test_reject_fraction_limit (test_power_import.ImportTests) ... ok
+test_reject_missing_power (test_power_import.ImportTests) ... ok
+test_reject_model (test_power_import.ImportTests) ... ok
+test_reject_negative_interpolation (test_power_import.ImportTests) ... ok
+test_reject_negative_power (test_power_import.ImportTests) ... ok
+test_reject_negative_time (test_power_import.ImportTests) ... ok
+test_reject_over_range_power (test_power_import.ImportTests) ... ok
+test_reject_quality (test_power_import.ImportTests) ... ok
+test_reject_response_time (test_power_import.ImportTests) ... ok
+test_reject_reverse_time (test_power_import.ImportTests) ... ok
+test_reject_sample_semantics (test_power_import.ImportTests) ... ok
+test_reject_schema (test_power_import.ImportTests) ... ok
+test_reject_string_power (test_power_import.ImportTests) ... ok
+test_reject_uncertainty_rationale (test_power_import.ImportTests) ... ok
+test_reject_units (test_power_import.ImportTests) ... ok
+test_reject_wrong_binding (test_power_import.ImportTests) ... ok
+test_reject_wrong_run_binding (test_power_import.ImportTests) ... ok
+test_reject_zero_boundary_error (test_power_import.ImportTests) ... ok
+test_reject_zero_gap (test_power_import.ImportTests) ... ok
+test_strict_json_duplicate_nonfinite_and_underflow (test_power_import.ImportTests) ... ok
+test_synthetic_benchmark_cannot_be_relabelled (test_power_import.ImportTests) ... ok
+test_synthetic_cannot_fill_measured_fields (test_power_import.ImportTests) ... ok
+test_synthetic_requires_opt_in (test_power_import.ImportTests) ... ok
+test_tampered_run_summary (test_power_import.ImportTests) ... ok
+test_validator_revision_mismatch (test_power_import.ImportTests) ... ok
+test_wall_step_between_trials (test_power_import.ImportTests) ... ok
+test_weighted_totals_not_mean_ratios (test_power_import.ImportTests) ... ok
+test_zero_energy_rejected (test_power_import.ImportTests) ... ok
+test_actual_native_capture (test_riscv_probe.EvidenceTests) ... ok
+test_boolean_counter (test_riscv_probe.EvidenceTests) ... ok
+test_duplicate_check (test_riscv_probe.EvidenceTests) ... ok
+test_malformed_check_name (test_riscv_probe.EvidenceTests) ... ok
+test_mislabeled_full_dataset_flags (test_riscv_probe.EvidenceTests) ... ok
+test_missing_cache_initialization (test_riscv_probe.EvidenceTests) ... ok
+test_missing_summary (test_riscv_probe.EvidenceTests) ... ok
+test_native_is_not_riscv_evidence (test_riscv_probe.EvidenceTests) ... ok
+test_non_object_record (test_riscv_probe.EvidenceTests) ... ok
+test_pinned_configuration_identity (test_riscv_probe.EvidenceTests) ... ok
+test_self_consistent_wrong_hash (test_riscv_probe.EvidenceTests) ... ok
+test_self_consistent_wrong_semantic_value (test_riscv_probe.EvidenceTests) ... ok
+test_semantic_check_replacement (test_riscv_probe.EvidenceTests) ... ok
+test_skipped_required_check (test_riscv_probe.EvidenceTests) ... ok
+test_truncated_hash_matrix (test_riscv_probe.EvidenceTests) ... ok
+test_unknown_optional_skip (test_riscv_probe.EvidenceTests) ... ok
+test_wrong_required_passed_total (test_riscv_probe.EvidenceTests) ... ok
+test_actual_native_capture (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_boolean_counter_and_extra_record (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_duplicate_json_field (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_fabricated_flush_path (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_ignored_flush_failure (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_missing_or_duplicate_control (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_native_capture_not_riscv (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_self_consistent_wrong_return (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_wrong_protection_signal (test_runtime_probe.RuntimeEvidenceTests) ... ok
+test_duration_failure_keeps_structured_result (test_steady_records.ProcessTests) ... ok
+test_malformed_output_is_retained (test_steady_records.ProcessTests) ... ok
+test_nonzero_exit_is_not_success (test_steady_records.ProcessTests) ... ok
+test_success_and_evidence (test_steady_records.ProcessTests) ... ok
+test_timeout_is_retained (test_steady_records.ProcessTests) ... ok
+test_clock_brackets_and_elapsed (test_steady_records.RecordTests) ... ok
+test_clock_jump_is_reported_not_called_calibrated (test_steady_records.RecordTests) ... ok
+test_completion_and_quality_must_agree (test_steady_records.RecordTests) ... ok
+test_configuration_binding (test_steady_records.RecordTests) ... ok
+test_duration_rejection_is_preserved (test_steady_records.RecordTests) ... ok
+test_known_controls_independent_of_claimed_match (test_steady_records.RecordTests) ... ok
+test_odd_order_flag (test_steady_records.RecordTests) ... ok
+test_reference_applies_to_all_1000_nonce_phases (test_steady_records.RecordTests) ... ok
+test_repeated_inputs_must_be_deterministic (test_steady_records.RecordTests) ... ok
+test_reversed_version_order (test_steady_records.RecordTests) ... ok
+test_strict_json (test_steady_records.RecordTests) ... ok
+test_truncation_extra_records_and_duplicates (test_steady_records.RecordTests) ... ok
+test_unknown_reference_cannot_be_invented (test_steady_records.RecordTests) ... ok
+test_unsupported_configuration (test_steady_records.RecordTests) ... ok
+test_valid_summary_excludes_controls_and_warmups (test_steady_records.RecordTests) ... ok
+test_wrong_order_version_count_and_boolean_count (test_steady_records.RecordTests) ... ok
+test_zero_warmup_and_single_version (test_steady_records.RecordTests) ... ok
+
+----------------------------------------------------------------------
+Ran 257 tests in 8.980s
+
+OK
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test _maes_cxx
+-- Performing Test _maes_cxx - Success
+-- Setting CXX flag -maes
+-- Performing Test _maes_c
+-- Performing Test _maes_c - Success
+-- Setting C flag -maes
+-- Performing Test HAVE_SSSE3
+-- Performing Test HAVE_SSSE3 - Success
+-- Performing Test HAVE_AVX2
+-- Performing Test HAVE_AVX2 - Success
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Performing Test HAVE_CXX_ATOMICS
+-- Performing Test HAVE_CXX_ATOMICS - Success
+-- Performing Test HAVE_POSIX_MEMALIGN
+-- Performing Test HAVE_POSIX_MEMALIGN - Success
+-- Configuring done
+-- Generating done
+-- Build files have been written to: ${OPENRX_LOCAL_ROOT}/builds/randomx-native-20261009
+[  2%] Building CXX object CMakeFiles/randomx.dir/src/aes_hash.cpp.o
+[  5%] Building C object CMakeFiles/randomx.dir/src/argon2_ref.c.o
+[  8%] Building C object CMakeFiles/randomx.dir/src/argon2_ssse3.c.o
+[ 11%] Building C object CMakeFiles/randomx.dir/src/argon2_avx2.c.o
+[ 14%] Building CXX object CMakeFiles/randomx.dir/src/bytecode_machine.cpp.o
+[ 17%] Building CXX object CMakeFiles/randomx.dir/src/cpu.cpp.o
+[ 20%] Building CXX object CMakeFiles/randomx.dir/src/dataset.cpp.o
+[ 23%] Building CXX object CMakeFiles/randomx.dir/src/soft_aes.cpp.o
+[ 26%] Building C object CMakeFiles/randomx.dir/src/virtual_memory.c.o
+[ 29%] Building CXX object CMakeFiles/randomx.dir/src/vm_interpreted.cpp.o
+[ 32%] Building CXX object CMakeFiles/randomx.dir/src/allocator.cpp.o
+[ 35%] Building CXX object CMakeFiles/randomx.dir/src/assembly_generator_x86.cpp.o
+[ 38%] Building CXX object CMakeFiles/randomx.dir/src/instruction.cpp.o
+[ 41%] Building CXX object CMakeFiles/randomx.dir/src/randomx.cpp.o
+[ 44%] Building CXX object CMakeFiles/randomx.dir/src/superscalar.cpp.o
+[ 47%] Building CXX object CMakeFiles/randomx.dir/src/vm_compiled.cpp.o
+[ 50%] Building CXX object CMakeFiles/randomx.dir/src/vm_interpreted_light.cpp.o
+[ 52%] Building C object CMakeFiles/randomx.dir/src/argon2_core.c.o
+[ 55%] Building CXX object CMakeFiles/randomx.dir/src/blake2_generator.cpp.o
+[ 58%] Building CXX object CMakeFiles/randomx.dir/src/instructions_portable.cpp.o
+[ 61%] Building C object CMakeFiles/randomx.dir/src/reciprocal.c.o
+[ 64%] Building CXX object CMakeFiles/randomx.dir/src/virtual_machine.cpp.o
+[ 67%] Building CXX object CMakeFiles/randomx.dir/src/vm_compiled_light.cpp.o
+[ 70%] Building C object CMakeFiles/randomx.dir/src/blake2/blake2b.c.o
+[ 73%] Building CXX object CMakeFiles/randomx.dir/src/jit_compiler_x86.cpp.o
+[ 76%] Building C object CMakeFiles/randomx.dir/src/jit_compiler_x86_static.S.o
+[ 79%] Linking CXX static library librandomx.a
+[ 79%] Built target randomx
+[ 82%] Building CXX object CMakeFiles/randomx-tests.dir/src/tests/tests.cpp.o
+[ 85%] Linking CXX executable randomx-tests
+[ 85%] Built target randomx-tests
+[ 88%] Building CXX object CMakeFiles/randomx-codegen.dir/src/tests/code-generator.cpp.o
+[ 91%] Linking CXX executable randomx-codegen
+[ 91%] Built target randomx-codegen
+[ 94%] Building CXX object CMakeFiles/randomx-benchmark.dir/src/tests/benchmark.cpp.o
+[ 97%] Building CXX object CMakeFiles/randomx-benchmark.dir/src/tests/affinity.cpp.o
+[100%] Linking CXX executable randomx-benchmark
+[100%] Built target randomx-benchmark
+[ 1] Cache initialization                         ... PASSED
+[ 2] SuperscalarHash generator                    ... PASSED
+[ 3] randomx_reciprocal                           ... PASSED
+[ 4] randomx_reciprocal_fast                      ... PASSED
+[ 5] Dataset initialization (interpreter)         ... PASSED
+[ 6] Dataset initialization (compiler)            ... PASSED
+[ 7] AesGenerator1R                               ... PASSED
+[ 8] IADD_RS (decode)                             ... PASSED
+[ 9] IADD_RS (execute)                            ... PASSED
+[10] IADD_RS with immediate (decode)              ... PASSED
+[11] IADD_RS with immediate (decode)              ... PASSED
+[12] IADD_M (decode)                              ... PASSED
+[13] ISUB_R (decode)                              ... PASSED
+[14] ISUB_R (execute)                             ... PASSED
+[15] ISUB_R with immediate (decode)               ... PASSED
+[16] ISUB_R with immediate (decode)               ... PASSED
+[17] ISUB_M (decode)                              ... PASSED
+[18] IMUL_R (decode)                              ... PASSED
+[19] IMUL_R (execute)                             ... PASSED
+[20] IMUL_R with immediate (decode)               ... PASSED
+[21] IMUL_R with immediate (execute)              ... PASSED
+[22] IMUL_M (decode)                              ... PASSED
+[23] IMULH_R (decode)                             ... PASSED
+[24] IMULH_R (execute)                            ... PASSED
+[25] IMULH_R squared (decode)                     ... PASSED
+[26] IMULH_M (decode)                             ... PASSED
+[27] ISMULH_R (decode)                            ... PASSED
+[28] ISMULH_R (execute)                           ... PASSED
+[29] ISMULH_R squared (decode)                    ... PASSED
+[30] ISMULH_M (decode)                            ... PASSED
+[31] IMUL_RCP (decode)                            ... PASSED
+[32] IMUL_RCP zero imm32 (decode)                 ... PASSED
+[33] INEG_R (decode)                              ... PASSED
+[34] INEG_R (execute)                             ... PASSED
+[35] IXOR_R (decode)                              ... PASSED
+[36] IXOR_R (execute)                             ... PASSED
+[37] IXOR_R with immediate (decode)               ... PASSED
+[38] IXOR_R with immediate (execute)              ... PASSED
+[39] IXOR_M (decode)                              ... PASSED
+[40] IROR_R (decode)                              ... PASSED
+[41] IROR_R (execute)                             ... PASSED
+[42] IROL_R (decode)                              ... PASSED
+[43] IROL_R (execute)                             ... PASSED
+[44] ISWAP_R (decode)                             ... PASSED
+[45] ISWAP_R (execute)                            ... PASSED
+[46] FSWAP_R (decode)                             ... PASSED
+[47] FSWAP_R (execute)                            ... PASSED
+[48] FADD_R (decode)                              ... PASSED
+[49] FADD_R RoundToNearest (execute)              ... PASSED
+[50] FADD_R RoundDown (execute)                   ... PASSED
+[51] FADD_R RoundUp (execute)                     ... PASSED
+[52] FADD_R RoundToZero (execute)                 ... PASSED
+[53] FADD_M (decode)                              ... PASSED
+[54] FADD_M (execute)                             ... PASSED
+[55] FSUB_R (decode)                              ... PASSED
+[56] FSUB_M (decode)                              ... PASSED
+[57] FSCAL_R (decode)                             ... PASSED
+[58] FSCAL_R (execute)                            ... PASSED
+[59] FMUL_R (decode)                              ... PASSED
+[60] FMUL_R RoundToNearest (execute)              ... PASSED
+[61] FMUL_R RoundDown/RoundToZero (execute)       ... PASSED
+[62] FMUL_R RoundUp (execute)                     ... PASSED
+[63] FDIV_M (decode)                              ... PASSED
+[64] FDIV_M RoundToNearest (execute)              ... PASSED
+[65] FDIV_M RoundDown/RoundToZero (execute)       ... PASSED
+[66] FDIV_M RoundUp (execute)                     ... PASSED
+[67] FSQRT_R (decode)                             ... PASSED
+[68] FSQRT_R RoundToNearest (execute)             ... PASSED
+[69] FSQRT_R RoundDown/RoundToZero (execute)      ... PASSED
+[70] FSQRT_R RoundUp (execute)                    ... PASSED
+[71] CBRANCH (decode) 100                         ... PASSED
+[72] CBRANCH (decode) 200                         ... PASSED
+[73] CBRANCH not taken (execute)                  ... PASSED
+[74] CBRANCH taken (execute)                      ... PASSED
+[75] CFROUND (decode)                             ... PASSED
+[76] ISTORE L1 (decode)                           ... PASSED
+[77] ISTORE L2 (decode)                           ... PASSED
+[78] ISTORE L3 (decode)                           ... PASSED
+[79] Hash test 1a (interpreter)                   ... PASSED
+[80] Hash test 1b (interpreter)                   ... PASSED
+[81] Hash test 1c (interpreter)                   ... PASSED
+[82] Hash test 1d (interpreter)                   ... PASSED
+[83] Hash test 1e (interpreter)                   ... PASSED
+[84] Hash test 1f (ISUB_R edge case, interpreter) ... PASSED
+[85] Hash test 1a (interpreter v2)                ... PASSED
+[86] Hash test 1b (interpreter v2)                ... PASSED
+[87] Hash test 1c (interpreter v2)                ... PASSED
+[88] Hash test 1d (interpreter v2)                ... PASSED
+[89] Hash test 1e (interpreter v2)                ... PASSED
+[90] Hash test 2a (compiler)                      ... PASSED
+[91] Hash test 2b (compiler)                      ... PASSED
+[92] Hash test 2c (compiler)                      ... PASSED
+[93] Hash test 2d (compiler)                      ... PASSED
+[94] Hash test 2e (compiler)                      ... PASSED
+[95] Hash test 2f (ISUB_R edge case, compiler)    ... PASSED
+[96] Hash test 2a (compiler v2)                   ... PASSED
+[97] Hash test 2b (compiler v2)                   ... PASSED
+[98] Hash test 2c (compiler v2)                   ... PASSED
+[99] Hash test 2d (compiler v2)                   ... PASSED
+[100] Hash test 2e (compiler v2)                   ... PASSED
+[101] Cache initialization: SSSE3                  ... PASSED
+[102] Cache initialization: AVX2                   ... SKIPPED
+[103] Hash batch test                              ... PASSED
+[104] Preserve rounding mode                       ... PASSED
+[105] Commitment test                              ... PASSED
+[106] Hash test (interpreter switch v1 <-> v2)     ... PASSED
+[107] Hash test (compiler switch v1 <-> v2)        ... PASSED
+
+All tests PASSED
+1 tests were SKIPPED due to incompatible configuration (see above)
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Performing Test _maes_cxx
+-- Performing Test _maes_cxx - Success
+-- Setting CXX flag -maes
+-- Performing Test _maes_c
+-- Performing Test _maes_c - Success
+-- Setting C flag -maes
+-- Performing Test HAVE_SSSE3
+-- Performing Test HAVE_SSSE3 - Success
+-- Performing Test HAVE_AVX2
+-- Performing Test HAVE_AVX2 - Success
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Performing Test HAVE_CXX_ATOMICS
+-- Performing Test HAVE_CXX_ATOMICS - Success
+-- Performing Test HAVE_POSIX_MEMALIGN
+-- Performing Test HAVE_POSIX_MEMALIGN - Success
+-- Configuring done
+-- Generating done
+-- Build files have been written to: ${OPENRX_LOCAL_ROOT}/builds/probe-native-20261009
+[  3%] Building CXX object randomx/CMakeFiles/randomx.dir/src/aes_hash.cpp.o
+[  6%] Building C object randomx/CMakeFiles/randomx.dir/src/argon2_ref.c.o
+[ 10%] Building C object randomx/CMakeFiles/randomx.dir/src/argon2_ssse3.c.o
+[ 13%] Building C object randomx/CMakeFiles/randomx.dir/src/argon2_avx2.c.o
+[ 17%] Building CXX object randomx/CMakeFiles/randomx.dir/src/bytecode_machine.cpp.o
+[ 20%] Building CXX object randomx/CMakeFiles/randomx.dir/src/cpu.cpp.o
+[ 24%] Building CXX object randomx/CMakeFiles/randomx.dir/src/dataset.cpp.o
+[ 27%] Building CXX object randomx/CMakeFiles/randomx.dir/src/soft_aes.cpp.o
+[ 31%] Building C object randomx/CMakeFiles/randomx.dir/src/virtual_memory.c.o
+[ 34%] Building CXX object randomx/CMakeFiles/randomx.dir/src/vm_interpreted.cpp.o
+[ 37%] Building CXX object randomx/CMakeFiles/randomx.dir/src/allocator.cpp.o
+[ 41%] Building CXX object randomx/CMakeFiles/randomx.dir/src/assembly_generator_x86.cpp.o
+[ 44%] Building CXX object randomx/CMakeFiles/randomx.dir/src/instruction.cpp.o
+[ 48%] Building CXX object randomx/CMakeFiles/randomx.dir/src/randomx.cpp.o
+[ 51%] Building CXX object randomx/CMakeFiles/randomx.dir/src/superscalar.cpp.o
+[ 55%] Building CXX object randomx/CMakeFiles/randomx.dir/src/vm_compiled.cpp.o
+[ 58%] Building CXX object randomx/CMakeFiles/randomx.dir/src/vm_interpreted_light.cpp.o
+[ 62%] Building C object randomx/CMakeFiles/randomx.dir/src/argon2_core.c.o
+[ 65%] Building CXX object randomx/CMakeFiles/randomx.dir/src/blake2_generator.cpp.o
+[ 68%] Building CXX object randomx/CMakeFiles/randomx.dir/src/instructions_portable.cpp.o
+[ 72%] Building C object randomx/CMakeFiles/randomx.dir/src/reciprocal.c.o
+[ 75%] Building CXX object randomx/CMakeFiles/randomx.dir/src/virtual_machine.cpp.o
+[ 79%] Building CXX object randomx/CMakeFiles/randomx.dir/src/vm_compiled_light.cpp.o
+[ 82%] Building C object randomx/CMakeFiles/randomx.dir/src/blake2/blake2b.c.o
+[ 86%] Building CXX object randomx/CMakeFiles/randomx.dir/src/jit_compiler_x86.cpp.o
+[ 89%] Building C object randomx/CMakeFiles/randomx.dir/src/jit_compiler_x86_static.S.o
+[ 93%] Linking CXX static library librandomx.a
+[ 93%] Built target randomx
+[ 96%] Building CXX object CMakeFiles/openrx-riscv-probe.dir/main.cpp.o
+[100%] Linking CXX executable openrx-riscv-probe
+[100%] Built target openrx-riscv-probe
+{"binary": "${OPENRX_LOCAL_ROOT}/builds/probe-native-20261009/openrx-riscv-probe", "binary_sha256": "34dd13177a483b06518ac3e2f03f5852aa1fa98c70dfee9e3f1ef418a80f1b5a", "command": ["${OPENRX_LOCAL_ROOT}/builds/probe-native-20261009/openrx-riscv-probe"], "evidence_class": "native-functional", "full_dataset": false, "host": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35", "power_measured": false, "returncode": 0, "schema_version": 1, "status": "pass", "timeout_seconds": 600, "timing_calibrated": false, "validated": {"compiled_architecture": "x86_64", "optional_skips": 1, "required_checks_passed": 39, "software_hash_cases": 8}}
+{"binary_sha256": "8a83fa984040e3caa2e2cc08dbf3431a2f540a0fbf3ba3c65da2676b11c330d1", "command": ["${OPENRX_LOCAL_ROOT}/builds/probe-native-20261009/openrx-runtime-probe"], "evidence_class": "native-functional", "host": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35", "power_measured": false, "raw_sha256": {"runtime.jsonl": "b355a4956c9ac20ff503748685fff716f30627c61d32c0a0b6831d03fa246116", "stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}, "returncode": 0, "schema_version": 1, "status": "pass", "timeout_seconds": 60, "timing_calibrated": false, "validated": {"architecture": "x86_64", "checks_passed": 9, "flush_path": "compiler-builtin", "timing_calibrated": false}}

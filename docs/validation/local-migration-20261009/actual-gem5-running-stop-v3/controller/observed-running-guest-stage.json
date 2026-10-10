@@ -1,0 +1,15 @@
+{
+  "bytes": 868,
+  "required_banner": "OpenSBI v1.3.1",
+  "required_harts": 1,
+  "same_pinned_process_pidfd_still_live": true,
+  "sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86",
+  "snapshot": {
+    "bytes": 868,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/gem5-stop-proof-attempt-03/attempts/20261009T202455Z-bafaf3718c37/observed-running-guest-serial.txt",
+    "sha256": "ea9d1a993695589fc843823ea79584cf18f0504c3f57b3aa89f4962fe673fb86"
+  },
+  "stage": "expected-open-sbi-firmware-executing",
+  "terminal_path": "$OPENRX_LOCAL_ROOT/executions/20261009T202537Z-a1ca7df2cf1c/payload/m5out/board.platform.terminal",
+  "utc": "2026-10-09T20:26:37.869224+00:00"
+}

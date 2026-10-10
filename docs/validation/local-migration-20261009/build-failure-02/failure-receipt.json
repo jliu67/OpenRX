@@ -1,0 +1,70 @@
+{
+  "schema": "openrx.local.build-failure.v1",
+  "observed_utc": "2026-10-09T16:34:28.091235+00:00",
+  "migration_state": "STAGING",
+  "local_execution_policy_active": false,
+  "attempt": "02",
+  "units": {
+    "build": {
+      "unit": "openrx-migration-build02-20261009.service",
+      "properties": {
+        "Result": "oom-kill",
+        "ExecMainCode": "2",
+        "ExecMainStatus": "15",
+        "ControlGroup": "",
+        "MemoryMax": "6442450944",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      }
+    },
+    "pipeline": {
+      "unit": "openrx-migration-validation-pipeline-20261009.service",
+      "properties": {
+        "Result": "exit-code",
+        "ExecMainCode": "1",
+        "ExecMainStatus": "1",
+        "ControlGroup": "",
+        "MemoryMax": "1073741824",
+        "LoadState": "loaded",
+        "ActiveState": "failed",
+        "SubState": "failed"
+      }
+    }
+  },
+  "build_result_file_present": false,
+  "source_and_partial_build_preserved": true,
+  "known_result": "Host cgroup OOM at6GiB interrupted unchanged pinned-source build; no completed binary/loader or guest acceptance.",
+  "pipeline_result": "Waiting pipeline failed because exclusive build-result.json was absent; simulator and migration state were not advanced.",
+  "retry": "Separate copied partial-build attempt03 with one worker and a deliberately recorded larger memory budget; do not alter/remove failed attempt02.",
+  "scientific_simulation_started": false,
+  "source_commit": "c8222cc67a399bfc01e8658dd14b30d5bfd634f9",
+  "config_sha256": "f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c",
+  "exports": [
+    {
+      "original": "${OPENRX_LOCAL_ROOT}/migrations/20261009/gem5-build02.log",
+      "original_bytes": 152371,
+      "original_sha256": "cc97bd3647a4e7cf6073defa17f9ee2c89648b4d1f4589f315b74038d2eab4ed",
+      "public": "build.log",
+      "public_bytes": 152275,
+      "public_sha256": "4a63a142592d004f1c1ca18ef1f83874d0575d6bbd9df9d512cc22e558b1a910"
+    },
+    {
+      "original": "${OPENRX_LOCAL_ROOT}/migrations/20261009/validation-pipeline.log",
+      "original_bytes": 683,
+      "original_sha256": "fef731f7fdb9d8803764979f1d39a4285d700cb29ae4995823fb3de51bd39ff1",
+      "public": "pipeline.log",
+      "public_bytes": 667,
+      "public_sha256": "8386c953faa48b616c650113421986aa76f190a018924e0abedbb6b3f8b26f7d"
+    },
+    {
+      "original": "${OPENRX_LOCAL_ROOT}/migrations/20261009/build-attempt-02/build-command.json",
+      "original_bytes": 654,
+      "original_sha256": "ee3134c0de574f7e591301d2e4fe254c3fc892205650a7b5120a77b8a5591e28",
+      "public": "build-command.json",
+      "public_bytes": 646,
+      "public_sha256": "a480c4354de9b3de7d8c1a2ea7a2af769c9d1a6d1e4eae103e08095446b2faf9"
+    }
+  ],
+  "publication": "Exact portable-path redaction only; original logs/build tree retained. Raw and public digests differ and remain distinct."
+}

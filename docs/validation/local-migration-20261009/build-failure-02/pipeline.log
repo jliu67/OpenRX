@@ -1,0 +1,9 @@
+WAITING for persistent pinned simulator build; no wall cutoff
+Traceback (most recent call last):
+  File "${OPENRX_LOCAL_ROOT}/migrations/20261009/validate_when_ready.py", line 25, in <module>
+    build=json.loads((E/'build-attempt-02/build-result.json').read_text())
+  File "/usr/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '${OPENRX_LOCAL_ROOT}/migrations/20261009/build-attempt-02/build-result.json'

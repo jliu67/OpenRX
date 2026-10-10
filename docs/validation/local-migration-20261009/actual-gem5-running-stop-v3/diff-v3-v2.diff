@@ -1,0 +1,32 @@
+--- preserved/unlaunched/prove_gem5_stop_v2.py
++++ new/prove_gem5_stop_v3.py
+@@ -31,9 +31,9 @@
+ ELF = R / 'artifacts/guest-20261008/openrx-runtime-probe'
+ PREFLIGHT = E / 'local-validation-preflight.json'
+ FIRST_CAPTURE = E / 'runtime-capture-summary.json'
+-KEY = 'issue-27-gem5-stop-migration-attempt-02'
++KEY = 'issue-27-gem5-stop-migration-attempt-03'
+ SPEC = R / ('requests/spec-' + KEY + '.json')
+-WORK = E / 'gem5-stop-proof-attempt-02'
++WORK = E / 'gem5-stop-proof-attempt-03'
+ SOURCE_COMMIT = None
+ CONFIG_SHA = 'f839a59b33a593a63c3f5bef53bfac468df0619fcc46c3583c76b08b2d08564c'
+ RESOURCES_SHA = '67c3838d04b617b3a4f34a874f84cc2c5517eca51c9049456bc6df19312404bb'
+@@ -170,7 +170,7 @@
+     finally:
+         os.close(fd)
+     require(len(serial) <= 256 * 1024, 'Firmware serial exceeds declared bounded inspection')
+-    if not serial.startswith(b'\nOpenSBI v1.3.1\n') or b'Platform HART Count       : 1\n' not in serial:
++    if not serial.startswith(b'\r\nOpenSBI v1.3.1\r\n') or b'Platform HART Count       : 1\r\n' not in serial:
+         return None, None
+     poller = select.poll()
+     poller.register(pidfd, select.POLLIN)
+@@ -252,7 +252,7 @@
+ 
+ 
+ def execute(request_sha, attempt):
+-    evidence = {'schema': 'openrx.gem5.running-stop-proof.v2', 'accepted': False, 'missing_proof': [],
++    evidence = {'schema': 'openrx.gem5.running-stop-proof.v3', 'accepted': False, 'missing_proof': [],
+                 'scientific_acceptance': 'unverified; expected interruption is not a scientific pass',
+                 'migration_complete': False, 'resume_verified': False,
+                 'limitations': ['No graceful gem5 stats/checkpoint finalization is claimed',
