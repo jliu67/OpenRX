@@ -1,5 +1,7 @@
 # Local execution policy and interface
 
+Progress publication remains GitHub-only under [the publication/source-retention policy](PROGRESS_PUBLICATION_POLICY.md). Local execution retains pinned source snapshots, immutable runners, builds and scientific evidence; these are reproducibility inputs, not an editable progress mirror. No automatic Git synchronization or standing authoring checkout is required or enabled by this execution contract.
+
 **Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
 At this snapshot the migration policy is not released. This dated record does not activate execution.
 Expensive OpenRX work uses the designated Ubuntu host only after [#27](https://github.com/jliu67/OpenRX/issues/27)
