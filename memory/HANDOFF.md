@@ -13,7 +13,7 @@ Check [#27](https://github.com/jliu67/OpenRX/issues/27) and local status before 
 BLOCKED/ROLLBACK_REQUIRED evidence or an offline host holds new admission.
 
 This dated update records actual activation/release. Its own separately reviewed documentation PR merge
-and readback are published externally on #27; they are never self-referential hashes embedded here.
+and readback will be published externally on #27 after actual reviewed integration; they are never self-referential hashes embedded here.
 At this dated update, final synchronized migration acceptance W/Z has not yet been published. The live
 #27 record supplies the later final receipt once this actual documentation integration and all required
 readbacks are independently accepted. This dated pre-Z status remains historical after final publication;
