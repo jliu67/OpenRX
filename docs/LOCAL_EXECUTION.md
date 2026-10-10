@@ -247,6 +247,8 @@ Allowed explicit environment keys are recorded in `scripts/local_execution.py`; 
 Use paths without whitespace, quotes, backslashes or percent signs for the execution root and runner interpreter,
 because the durable systemd finalizer rejects unsupported path syntax.
 
+Submission defaults to `--resource-profile owner-local-max-v1`: CPU600%, measured available RAM minus1GiB rounded down in256MiB blocks (14GiB ceiling), swap2GiB and Tasks256. An optional `--memory-bytes N` binds a lower positive known-workload budget subject to the same fresh headroom ceiling. The worker rechecks headroom and actual kernel/ancestor limits under the one-slot lock before starting the payload; denied attempts retain failure evidence and need a fresh request key. RAM availability, peak use and workload parallelism must be recorded for every real job.
+
 The runner uses a user systemd transient service under a lingering user manager,
 so execution does not depend on a Codex session or open terminal. The global resource flock covers
 payload execution and descendant drain for every workload class; parallel resource-intensive payload
