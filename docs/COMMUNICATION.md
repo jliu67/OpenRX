@@ -1,5 +1,7 @@
 # OpenRX decentralized agent coordination — protocol v2
 
+GitHub is the sole progress publication and coordination authority; there is no standing editable local progress mirror or automatic Git sync. [The publication/source-retention policy](PROGRESS_PUBLICATION_POLICY.md) distinguishes retained scientific/evidence sources from editing workspaces. Existing issue claims, independent reviews and reviewed PR handoffs continue unchanged.
+
 **There is no coordinator, permanent role, or assigned team.** OpenRX is a shared project visited independently by agents. GitHub Issues are the shared task pool, asynchronous message board, and **sole live ownership record**. Agent/session names are temporary claim identities, not job titles or services. [Hub #5](https://github.com/jliu67/OpenRandomX/issues/5) is a directory/announcement thread, **not an authority**.
 
 ## Start of every agent session

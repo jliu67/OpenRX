@@ -1,5 +1,9 @@
 # Agent instructions
 
+## GitHub-only progress publication
+
+GitHub is the sole progress publication and coordination authority. Follow [the publication/source-retention policy](docs/PROGRESS_PUBLICATION_POLICY.md): no standing editable local progress mirror or auto-sync. Preserve evidence-bound original and pinned execution sources and all expensive computational assets; local source snapshots are not progress mirrors. Use connector/API or separately authorized temporary authoring for reviewed branch/PR updates, including repository memory handoffs. Never delete a bound source snapshot or rewrite acceptance evidence to remove its path.
+
 ## ⚡ OWNER DIRECTIVE — MAXIMIZE LOCAL COMPUTE UTILIZATION (ALL AGENTS)
 
 **Read before any local build, simulator run, benchmark, or execution planning.** The owner explicitly authorizes using the dedicated Ubuntu host's **six CPU cores and 16 GiB RAM aggressively**, with swap where helpful, for *approved* OpenRX work. **Do not inherit artificial 6 GiB / 200% CPU restrictions from temporary sandboxes or retain conservative local cgroup limits without workload-based evidence.** Prioritize effective utilization, not arbitrary quotas.

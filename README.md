@@ -1,5 +1,7 @@
 # OpenRX
 
+Progress is published and coordinated on GitHub. There is no standing editable local progress mirror or automatic Git sync; necessary reproducibility sources and computational assets remain local. See [the publication/source-retention policy](docs/PROGRESS_PUBLICATION_POLICY.md).
+
 Research a programmable RISC-V processor optimized for RandomX v2, with v1 compatibility. The long-term ambition is to exceed the Antminer X5 and investigate the advertised X9 efficiency target. No competitive silicon, hardware power result, or SG2042 simulation exists yet.
 
 ## Start here
