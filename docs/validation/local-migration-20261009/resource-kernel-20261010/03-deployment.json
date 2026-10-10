@@ -1,0 +1,10 @@
+{
+  "utc": "2026-10-10T08:37:43.064839+00:00",
+  "release": "$OPENRX_LOCAL_ROOT/releases/runner-v1-657b23f1/local_execution.py",
+  "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "bytes": 47618,
+  "mode": "0o500",
+  "previous_preserved": "runner-v1-988cf13f",
+  "state": "LOCAL_VALIDATING",
+  "activation": false
+}

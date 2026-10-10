@@ -350,3 +350,50 @@ or full-scale authorization was created.
 ## 2026-10-10T06:10Z — urgent owner-requested migration handoff
 
 Recovered existing migration rather than repeating the build/guest. Complete guest9 and stronger running-firmware stop03 independently accepted; all artifacts/history preserved. Resource-only candidate657b23f1/tests3528d954 independently statically reviewed; 38 focused and297 full cheap tests passed/source stable. Corrected cached CPU-controller availability by controlled user-manager reexecution preservingPID825/all44 running service PIDs. New resource candidate remains uninstalled and final live kernel-limit proof is pending. Migration stays LOCAL_VALIDATING/NOTACTIVE, PR28 draft/unmerged, task27 open; no full-scale science or execution-policy release. Owner requested fast wrap at time limit. Exact receipts/next gates: https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094515657 . Complete originals of STATE/HANDOFF/SESSION_LOG preserved under the new host urgent-memory-before namespace; dated previous log prefix unchanged. Resume from newest migrations/20261009/resume-record-*.
+
+
+## Verified technical pre-cutover snapshot — 2026-10-10T08:41:07.234399+00:00
+
+Actual technical stateCUTOVER_PENDING since2026-10-10T08:40:10.191934+00:00; transition
+proof `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095767946`. New-host expected Ubuntu24.04/Linux6.8.12
+and all9 unchanged runtime controls accepted20:04:52Z for193937 execution with zero guest status/empty
+framed stderr/completion and hypercalls1/2/3. Exact source/input/model/output and external receipt witness
+rechecked; runtime index157ca184… retains39 small exports/744273rawbytes, strict scientific rows/serial
+byte-identical and one declared anchored stdout-hostname field redaction. No RandomX matrix/timing/power
+claim. Initial200904 stop remains initialization-only; broader stopINDEPENDENTLY ACCEPTED FIRMWARE-SEEN GEM5 LIFECYCLE STOP (868-byte OpenSBI observed before marker; child -9 / wrapper 1; no Linux/runtime/scientific pass or graceful checkpoint/statistics-flush claim)
+for execution20261009T202537Z-a1ca7df2cf1c, integrityINDEPENDENTLY VERIFIED: all21 artifacts,890 source entries and9 pinned inputs; partial interrupted outputs preserved, real
+evidence `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094390003`. No checkpoint or graceful flush inferred.
+
+Conditional16-doc snapshot remains unreleased at this UTC: actual reviewed merge/D_merged/F/Q/C/R/E/V,
+explicit #27 L/release, effective-policy hub/bot and W/Z/externalR_Z/final publication/protocol completion
+remain future work. Current science/M1-M5 and all previous assets/failures/safety withdrawals/history are
+preserved, preceding688 exact archives `memory/handoffs/pre-cutover-20261010-d40f912-manifest.json and immutable d40f912 history`. Dated docs never
+authorize expensive work; only verified matching eligibility/LOCAL_ACTIVE and explicit actual merge-bound
+release do. No remote access/autonomous poller/self-hosted runner or scientific milestone closure added.
+
+The [owner resource directive](../docs/LOCAL_RESOURCE_POLICY.md) authorizes aggressive use of all six CPU cores and 16 GiB RAM
+with swap where useful, retaining only measured necessary OS/agent headroom. Per-job allocations must
+reflect current host load, memory availability and workload parallelism; 14 GiB is a candidate, not a
+universal safe limit. Keep one payload slot and all migration/scientific gates.
+The old runner988 validation records retain their actual memory and manager-reported 200% CPUQuota.
+A later CPU-delegation audit found that historical quota was not kernel-enforced; old property receipts
+are preserved and do not prove CPU enforcement. The new CPU delegation configuration is additive.
+CPU-delegation evidence: `independently reviewed CPU delegation f12aec1f/67de0d92 and actual runner kernel witness, docs/validation/local-migration-20261009/resource-kernel-20261010/index.json`. The approved owner-local-max-v1 candidate
+uses CPU600%, memory no greater than min(14 GiB, fresh MemAvailable minus 1 GiB), optional lower positive
+explicit budget, 2-GiB swap, Tasks256 and the same one-slot/45-second stop semantics. Admission must bind
+current host metrics and recheck available headroom before launching. Exact new-release/kernel-budget
+verification is recorded by the operational profile evidence; it is independently accepted for the exact installed release and tiny live proof below.
+
+The operational implementation must check each payload's actual kernel CPU, memory, swap and task
+limits, including effective ancestor ceilings, under admission/resource safeguards before launch. It must
+fail closed on unavailable controllers, mismatched constraints, tighter inherited ceilings or lost fresh
+memory headroom. Manager properties and controller availability alone do not establish enforcement.
+The exact installed operational release enforces these per-payload kernel checks; the independent
+resource proof below accepts the observed normal profile. Each future payload is checked again.
+
+Operational resource-profile outcome/evidence: `INDEPENDENTLY ACCEPTED exact runner657 and normal-profile tiny execution20261010T083746Z-6bc7037f04ef: actual CPU600000/100000, RAM5637144576 bytes (5.25GiB selected from measured headroom), swap2147483648, tasks256, six-CPU affinity, no tighter visible ancestors; rc0 and receipt integrity verified. Independent review951622749d40a9bf467e48ee3f6581cc52393569b8db60c87e63d57bee8ee00b; resource-kernel-20261010/index.json`.
+Operational release: `runner-v1-657b23f1`, SHA-256
+`657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b`. The verified profile and immutable release are reconciled. This dated preactivation snapshot
+retains the expensive-work hold until the explicit merge-bound release.
+
+Resource-policy adaptation: reviewed PR29 additions remain byte-exact; no source/service/state change is made by this documentation preparation.

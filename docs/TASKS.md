@@ -2,22 +2,61 @@
 
 Updated 2026-10-09 UTC after PR #25 integration and independently reviewed partial guest evidence/execution-budget proof. **GitHub task issues and their first-line command comments are the authoritative task claim/status record; this Markdown file is only an evidence-backed milestone summary.** Agents choose work autonomously; there are no assigned roles or coordinator. Read [protocol v2](COMMUNICATION.md).
 
-## Critical infrastructure migration
+## Execution infrastructure
 
-| Issue | State | Gates / execution availability |
+**Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
+At this snapshot the migration policy is not released. This dated record does not activate execution.
+Expensive OpenRX work uses the designated Ubuntu host only after [#27](https://github.com/jliu67/OpenRX/issues/27)
+publishes independently verified eligibility acceptance, matching `LOCAL_ACTIVE` and an **explicit release**
+bound to the actual reviewed merge and merged-document audit. Local active state alone is insufficient.
+Until that release is verified, defer full-scale work. Check the latest hash-linked state/release proof and
+local runner status; a later BLOCKED/ROLLBACK_REQUIRED record or offline host holds new requests.
+The effective-policy hub notice follows release; overall completion follows verified hub delivery and
+final synchronized acceptance. No merge, release or completion is claimed by this pre-cutover snapshot.
+
+| Issue | Dated technical state | Gate evidence |
 |---|---|---|
-| [#27](https://github.com/jliu67/OpenRX/issues/27) | **LOCAL_VALIDATING — NOT YET ACTIVE** | [Acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md): original state/pinned assets preserved; distinct build 03 completed 19:37:51Z, build-info/loader succeeded and preflight bound LOCAL_VALIDATING at 19:38:51Z. Runtime-only execution `20261009T193937Z-576aa858c033` has started; guest correctness/actual stop/output-finalization/cutover remain pending. Original Library binary unavailable and build02 OOM preserved. Pipelinev2 stopped/runner916 withdrawn; corrected988/wrapper5c, readonly b4b5ffc and request/pipelinev3 retain exact reviewed bindings. |
+| [#27](https://github.com/jliu67/OpenRX/issues/27) | CUTOVER_PENDING at 2026-10-10T08:41:07.234399+00:00 | [Technical receipt](validation/local-migration-20261009/ACCEPTANCE.md); expected guest/runtime9 accepted, broader stop: INDEPENDENTLY ACCEPTED FIRMWARE-SEEN GEM5 LIFECYCLE STOP (868-byte OpenSBI observed before marker; child -9 / wrapper 1; no Linux/runtime/scientific pass or graceful checkpoint/statistics-flush claim). Actual reviewed merge/LOCAL_ACTIVE/explicit release/final synchronization are pending at this snapshot. |
 
-Read [local execution policy](LOCAL_EXECUTION.md) and [migration runbook](LOCAL_MIGRATION.md).
-Resource-intensive work uses the owner's Ubuntu host only after #27 publishes independently verified
-acceptance/matching `LOCAL_ACTIVE` and explicit release bound to actual reviewed merge/merged-document audit.
-Remote execution/retrieval is unavailable; agents submit GitHub specifications for owner-mediated local execution
-and result publication. Resource/request locks prevent local duplicates and conflicts. An offline host blocks
-expensive requests; continue lightweight work. No permanent coordinator, assigned roles or autonomous poller is introduced.
-Do not run expensive full-scale experiments before cutover or substitute a sandbox run.
-Infrastructure acceptance does not complete #16 or any open scientific milestone.
-Branch-only hosted expensive-job guards preserve commands and defer controls to local requests; skips
-are not passes. Mainline enforcement awaits reviewed merge; no self-hosted Actions runner exists.
+Remote execution/direct retrieval remain unavailable. The owner or an explicitly authorized local
+session reviews a pinned GitHub task request, submits locally with the immutable runner and publishes
+sanitized manifests/results. The owner need not be physically present. No remote execution service,
+autonomous issue poller or self-hosted Actions runner is supplied. Issue prose alone grants no execution
+authority. Permanent
+request-key binding/global payload-and-descendant resource locking prevent duplicates/conflicts; GitHub
+claims allocate source work, not CPU. If host offline, hold expensive requests and continue cheap work.
+Hosted full gem5/full-dataset/native steady controls stay DEFERRED to reviewed local requests; skips are
+unexecuted, never passed. Mainline guard effectiveness is conditional on the actual reviewed merge.
+
+The [owner resource directive](LOCAL_RESOURCE_POLICY.md) authorizes aggressive use of all six CPU cores and 16 GiB RAM
+with swap where useful, retaining only measured necessary OS/agent headroom. Per-job allocations must
+reflect current host load, memory availability and workload parallelism; 14 GiB is a candidate, not a
+universal safe limit. Keep one payload slot and all migration/scientific gates. The old runner988 validation records retain their actual memory and manager-reported 200% CPUQuota.
+A later CPU-delegation audit found that historical quota was not kernel-enforced; old property receipts
+are preserved and do not prove CPU enforcement. The new CPU delegation configuration is additive.
+CPU-delegation evidence: `independently reviewed CPU delegation f12aec1f/67de0d92 and actual runner kernel witness, docs/validation/local-migration-20261009/resource-kernel-20261010/index.json`. The approved owner-local-max-v1 candidate
+uses CPU600%, memory no greater than min(14 GiB, fresh MemAvailable minus 1 GiB), optional lower positive
+explicit budget, 2-GiB swap, Tasks256 and the same one-slot/45-second stop semantics. Admission must bind
+current host metrics and recheck available headroom before launching. Exact new-release/kernel-budget
+verification is recorded by the operational profile evidence; it is independently accepted for the exact installed release and tiny live proof below.
+
+The operational implementation must check each payload's actual kernel CPU, memory, swap and task
+limits, including effective ancestor ceilings, under admission/resource safeguards before launch. It must
+fail closed on unavailable controllers, mismatched constraints, tighter inherited ceilings or lost fresh
+memory headroom. Manager properties and controller availability alone do not establish enforcement.
+The exact installed operational release enforces these per-payload kernel checks; the independent
+resource proof below accepts the observed normal profile. Each future payload is checked again.
+
+Operational resource-profile outcome/evidence: `INDEPENDENTLY ACCEPTED exact runner657 and normal-profile tiny execution20261010T083746Z-6bc7037f04ef: actual CPU600000/100000, RAM5637144576 bytes (5.25GiB selected from measured headroom), swap2147483648, tasks256, six-CPU affinity, no tighter visible ancestors; rc0 and receipt integrity verified. Independent review951622749d40a9bf467e48ee3f6581cc52393569b8db60c87e63d57bee8ee00b; resource-kernel-20261010/index.json`.
+Operational release: `runner-v1-657b23f1`, SHA-256
+`657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b`. The verified profile and immutable release are reconciled. This dated preactivation snapshot
+retains the expensive-work hold until the explicit merge-bound release.
+
+This infrastructure acceptance leaves #16's complete unchanged gem5 RandomX matrix/full dataset/
+intended-core/SMP/BOOM and M1-M5 open. No calibrated timing, physical power, RTL, checkpoint resume,
+whole-Codex-daemon termination, host reboot or complete offline/hermetic dependency closure is claimed.
+Original Library binary remains unavailable; rebuilt binary retains its distinct identity. Preserve
+failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.
 
 ## Phase 1 / M1
 

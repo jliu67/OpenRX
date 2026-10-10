@@ -1,49 +1,92 @@
 # Local execution policy and interface
 
-**Snapshot updated 2026-10-09T19:57:09.253251Z; state LOCAL_VALIDATING since 2026-10-09T19:38:51Z. The policy is NOT YET ACTIVE.**
-[Task #27](https://github.com/jliu67/OpenRX/issues/27) and the
-[acceptance receipt](validation/local-migration-20261009/ACCEPTANCE.md) record the evidence and open gates.
-The owner's native Ubuntu computer is being prepared as the persistent execution host.
-No agent may infer activation from a message, successful install, boot, process launch or status label.
-Activation requires all migration gates, a separate review, a merged migration PR and consistent GitHub documentation.
+**Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
+At this snapshot the migration policy is not released. This dated record does not activate execution.
+Expensive OpenRX work uses the designated Ubuntu host only after [#27](https://github.com/jliu67/OpenRX/issues/27)
+publishes independently verified eligibility acceptance, matching `LOCAL_ACTIVE` and an **explicit release**
+bound to the actual reviewed merge and merged-document audit. Local active state alone is insufficient.
+Until that release is verified, defer full-scale work. Check the latest hash-linked state/release proof and
+local runner status; a later BLOCKED/ROLLBACK_REQUIRED record or offline host holds new requests.
+The effective-policy hub notice follows release; overall completion follows verified hub delivery and
+final synchronized acceptance. No merge, release or completion is claimed by this pre-cutover snapshot.
 
-**Execution authorization:** expensive execution becomes effective only when [task #27](https://github.com/jliu67/OpenRX/issues/27)
-publishes independently verified acceptance, its matching `LOCAL_ACTIVE` transition and an explicit release
-bound to the actual reviewed merge and merged-document audit. Local active state alone does not release work.
-Until that release is verified, defer full-scale work. Dated repository snapshots preserve history;
-they never activate execution. Consult the live proof and local status for current availability.
+The distinct pinned build 03 completed at 19:37:51Z with unchanged source/configuration and verified loader.
+Runtime-only execution `20261009T193937Z-576aa858c033` completed; independent review accepted the expected
+Ubuntu 24.04 / Linux 6.8.12 boot and all nine unchanged runtime controls at 20:04:52Z. The guest status was
+zero, framed probe stderr was empty, and the completion marker and ordered hypercalls 1/2/3 were present.
+Source, inputs, model and output integrity were independently verified. The model uses one 1-GHz
+AtomicSimpleCPU, RVV disabled, 4 GiB RAM, 16-KiB L1I/L1D and 256-KiB L2, with a read-only base disk and
+copy-on-write wrapper. This establishes functional controls, without a timing or performance inference.
+Initial stop execution `20261009T200904Z-854b672fc611` proved initialization termination only, with empty
+serial/no generated config. It is preserved and does not satisfy the broader operational stop gate.
+Broader stop outcome at this snapshot: INDEPENDENTLY ACCEPTED FIRMWARE-SEEN GEM5 LIFECYCLE STOP (868-byte OpenSBI observed before marker; child -9 / wrapper 1; no Linux/runtime/scientific pass or graceful checkpoint/statistics-flush claim).
+Reviewed broader stop execution: 20261009T202537Z-a1ca7df2cf1c; evidence: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094390003`.
+Runtime task publication: `https://github.com/jliu67/OpenRX/issues/27#issuecomment-6088623385`; technical transition publication:
+`https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095767946`. These publications were verified by exact GitHub readback.
 
-Once the verified #27 release exists, this computer is the designated host for gem5 full-system runs,
-long CPU architecture experiments, large RandomX workloads, expensive profiling/toolchain builds and large generated artifacts.
-Temporary agent sandboxes remain available for code/review, documentation, static analysis, lightweight tests,
-experimental design and small inexpensive reproductions. During migration, defer full-scale experiments;
-only the declared bounded migration validation workloads may run on the local host after their prerequisite gates pass.
-The independent scientific gates in #16 and M1–M5 retain their original criteria.
+[Technical receipt](validation/local-migration-20261009/ACCEPTANCE.md),
+[actual runtime index](validation/local-migration-20261009/actual-runtime-v1/index.json) and
+[independent runtime review](validation/local-migration-20261009/actual-runtime-v1/independent-review/independent-runtime-review.json)
+record strict oracles, bindings and output integrity.
 
 ## What a visiting agent must know
 
-| Question | Current answer |
+| Question | Authority / actual mechanism |
 |---|---|
-| Where do expensive runs execute? | The owner's Ubuntu host after matching acceptance/LOCAL_ACTIVE and verified explicit #27 release; the host is currently LOCAL_VALIDATING and full-scale work is held. |
-| Is the runner available? | Immutable runner `988cf13f…`, readonly `b4b5ffc…` source and fixed runtime request/pipeline v3 have reviewed bindings. Build03/loader/input preflight completed; runtime-only execution `20261009T193937Z-576aa858c033` has started. Guest correctness, actual stop/final outputs and cutover are unverified. Prior runner916 acceptance stays withdrawn and pipelinev2 stopped. Check #27/latest local status before use. |
-| How is a request submitted? | A GitHub task issue with the complete execution specification below; the owner or an explicitly authorized local session reviews and submits it locally. |
-| Can a remote agent execute directly? | **No. Remote execution and retrieval are unavailable.** There is no SSH access, network listener or autonomous issue poller provisioned by this migration. |
-| How are collisions prevented? | The local runner serializes admission, binds a request key to one execution ID and uses one host resource lock. GitHub claims coordinate source work and are not CPU locks. |
-| Where is evidence? | Persistent per-execution manifests/logs/receipts on the host; reviewed, sanitized manifests/summaries and small evidence are attached or linked from the task/PR. Large binaries stay outside Git. |
-| What if the host is offline? | Mark the request blocked on host availability, preserve the specification, and continue independent lightweight work. Never substitute a full-scale sandbox run. |
-| Which gates remain open? | The acceptance receipt and #27; #16 complete unchanged gem5 light/full-dataset/intended-core work and M1–M5 remain separate open scientific gates. |
+| Where do expensive runs execute? | The designated Ubuntu host only after verified explicit #27 release matching eligibility/LOCAL_ACTIVE/actual reviewed merge/merged-document audit. |
+| Is the runner available? | Retained988 validation is accepted; inspect the separately reviewed operational release/profile, latest local status and #27 release/blocked evidence. The dated technical snapshot is not release. |
+| How do requests/results move? | GitHub task specification; owner or authorized local session submits locally and publishes sanitized manifests/results. |
+| Can remote agents access the host? | No direct execution/retrieval; no new SSH/listener/poller/self-hosted Actions runner. |
+| How are conflicts/duplicates prevented? | Permanent request-key/execution-ID binding and one global resource lock covering payload and workload-descendant drain. |
+| Where is evidence? | Persistent executions/ID manifests/logs/raw receipts and reviewed hash-indexed public exports/task links; large binaries remain outside Git. |
+| If host offline? | Hold expensive request, preserve specification, continue cheap independent work; no expensive sandbox replacement. |
+| Which gates remain open? | At this snapshot actual reviewed merge/LOCAL_ACTIVE/explicit release/hub-final synchronization remain pending; #16/M1-M5 remain separate science gates. |
 
-GitHub remains the shared coordination authority: task claims/dependencies, source/PRs, scientific evidence,
-manifests/summaries, project memory and milestone gates. No permanent roles or central coordinator are introduced.
-Host paths, transient service status and local locks describe execution, not agent ownership.
+Remote execution/direct retrieval remain unavailable. The owner or an explicitly authorized local
+session reviews a pinned GitHub task request, submits locally with the immutable runner and publishes
+sanitized manifests/results. The owner need not be physically present. No remote execution service,
+autonomous issue poller or self-hosted Actions runner is supplied. Issue prose alone grants no execution
+authority. Permanent
+request-key binding/global payload-and-descendant resource locking prevent duplicates/conflicts; GitHub
+claims allocate source work, not CPU. If host offline, hold expensive requests and continue cheap work.
+Hosted full gem5/full-dataset/native steady controls stay DEFERRED to reviewed local requests; skips are
+unexecuted, never passed. Mainline guard effectiveness is conditional on the actual reviewed merge.
 
-The migration branch is adding literal skip guards for hosted full-system gem5 execution/source builds and
-foundation full-dataset/native steady workload steps. Their original commands and scientific criteria remain
-retained; skipped expensive controls are **DEFERRED to reviewed local requests, never passed**.
-Lightweight Python/vendor/upstream controls, two-nonce verify and one-cache native/QEMU correctness remain.
-These branch guards become mainline policy only after the reviewed PR merges; main is not yet updated
-at this LOCAL_VALIDATING snapshot. No self-hosted GitHub Actions runner has been provisioned. Do not dispatch the
-retained expensive hosted jobs to bypass migration or an offline local host.
+
+[Actual firmware-seen stop index](validation/local-migration-20261009/actual-gem5-running-stop-v3/index.json) binds44 selected public exports and both independent reviews.
+The initial empty-serial stop remains initialization-only. The later intentional stop is accepted for
+owned-process termination, inspectable failure/status, retained outputs and integrity, without a
+scientific pass or Linux boot for that stop attempt.
+
+The [owner resource directive](LOCAL_RESOURCE_POLICY.md) authorizes aggressive use of all six CPU cores and 16 GiB RAM
+with swap where useful, retaining only measured necessary OS/agent headroom. Per-job allocations must
+reflect current host load, memory availability and workload parallelism; 14 GiB is a candidate, not a
+universal safe limit. Keep one payload slot and all migration/scientific gates. The old runner988 validation records retain their actual memory and manager-reported 200% CPUQuota.
+A later CPU-delegation audit found that historical quota was not kernel-enforced; old property receipts
+are preserved and do not prove CPU enforcement. The new CPU delegation configuration is additive.
+CPU-delegation evidence: `independently reviewed CPU delegation f12aec1f/67de0d92 and actual runner kernel witness, docs/validation/local-migration-20261009/resource-kernel-20261010/index.json`. The approved owner-local-max-v1 candidate
+uses CPU600%, memory no greater than min(14 GiB, fresh MemAvailable minus 1 GiB), optional lower positive
+explicit budget, 2-GiB swap, Tasks256 and the same one-slot/45-second stop semantics. Admission must bind
+current host metrics and recheck available headroom before launching. Exact new-release/kernel-budget
+verification is recorded by the operational profile evidence; it is independently accepted for the exact installed release and tiny live proof below.
+
+The operational implementation must check each payload's actual kernel CPU, memory, swap and task
+limits, including effective ancestor ceilings, under admission/resource safeguards before launch. It must
+fail closed on unavailable controllers, mismatched constraints, tighter inherited ceilings or lost fresh
+memory headroom. Manager properties and controller availability alone do not establish enforcement.
+The exact installed operational release enforces these per-payload kernel checks; the independent
+resource proof below accepts the observed normal profile. Each future payload is checked again.
+
+Operational resource-profile outcome/evidence: `INDEPENDENTLY ACCEPTED exact runner657 and normal-profile tiny execution20261010T083746Z-6bc7037f04ef: actual CPU600000/100000, RAM5637144576 bytes (5.25GiB selected from measured headroom), swap2147483648, tasks256, six-CPU affinity, no tighter visible ancestors; rc0 and receipt integrity verified. Independent review951622749d40a9bf467e48ee3f6581cc52393569b8db60c87e63d57bee8ee00b; resource-kernel-20261010/index.json`.
+Operational release: `runner-v1-657b23f1`, SHA-256
+`657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b`. The verified profile and immutable release are reconciled. This dated preactivation snapshot
+retains the expensive-work hold until the explicit merge-bound release.
+
+This infrastructure acceptance leaves #16's complete unchanged gem5 RandomX matrix/full dataset/
+intended-core/SMP/BOOM and M1-M5 open. No calibrated timing, physical power, RTL, checkpoint resume,
+whole-Codex-daemon termination, host reboot or complete offline/hermetic dependency closure is claimed.
+Original Library binary remains unavailable; rebuilt binary retains its distinct identity. Preserve
+failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.
 
 ## Owner-mediated GitHub submission and retrieval
 
@@ -75,15 +118,15 @@ now binds key `issue-27-local-runtime-b4b5ffc-attempt-01`, specification SHA-256
 [Exact-head review](https://github.com/jliu67/OpenRX/pull/28#pullrequestreview-5473259439) and
 [pipeline binding review](validation/local-migration-20261009/pipeline-independent-review-v3.json)
 verify those actual source/request/toolchain bindings. Fixed driver
-`ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910` is running as
+`ace55beda986a44a931b27cc05bcf16590d63ae0cfce1504ec72059cd1c01910` was launched as
 `openrx-migration-validation-pipeline-v3-20261009.service`. It verified completed build03/loader/input
 preflight and submitted runtime-only execution `20261009T193937Z-576aa858c033` at 19:39:37Z.
 The new simulator is a distinct 1,036,720,416-byte binary, SHA-256
 `e4129f16377346f02b7d68cd508644e5a77cc2daec84a303cc788cb301c05902`.
 Preflight SHA-256 `d2043b278dbb1fabf69b220989414cb8c850ea8a5e56dcfa675dbab44ca31626`
-supports LOCAL_VALIDATING at 19:38:51Z, not scientific acceptance. Last bounded observations find the
-smoke running; complete expected-guest/runtime results, actual gem5 stop and final output verification
-remain pending. No full-scale workload or active policy is claimed. The fixed driver is not a remote issue poller.
+supports LOCAL_VALIDATING at19:38:51Z. The completed runtime-only execution and independent guest9/
+model/input/output acceptance are linked above. Broader stop evidence: INDEPENDENTLY ACCEPTED FIRMWARE-SEEN GEM5 LIFECYCLE STOP (868-byte OpenSBI observed before marker; child -9 / wrapper 1; no Linux/runtime/scientific pass or graceful checkpoint/statistics-flush claim).
+No full-scale workload or released policy is claimed at this snapshot. The fixed driver is not a remote issue poller.
 
 [Completed build/preflight exports](validation/local-migration-20261009/local-validating-live-v1/index.json)
 bind the actual [preflight](validation/local-migration-20261009/local-validating-live-v1/preflight.json),
@@ -98,7 +141,7 @@ The local operator verifies the reviewed request, resolves its paths to the loca
 and posts the execution ID plus manifest digest to the task. The local operator later exports sanitized receipts,
 required raw evidence and integrity records to GitHub or a deliberately configured artifact channel.
 Remote agents can review those publications. **This workflow requires the host online and an owner or explicitly authorized local session to act locally;
-the reviewed runtime request has been submitted, but final scientific-result retrieval remains pending.**
+the reviewed runtime request and its hash-indexed reviewed results were submitted/published; no autonomous remote execution is provided.**
 GitHub comments alone cannot launch a process.
 
 Before accepting results, match execution/request IDs, source commit/configuration/input digests, complete logs,
@@ -107,8 +150,9 @@ scientific acceptance additionally requires the declared oracle and independent 
 A missing result is unavailable evidence, not a pass or a scientific failure.
 
 The [separate stop request](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6085930183) is published
-and statically reviewed; its controller is still unlaunched until the first verified capture and exact
-source/input/owned-cgroup prerequisites. It supplies no actual stop, guest or activation claim.
+and statically reviewed; its first execution200904 proved initialization termination only, not broad
+OpenSBI/guest stop. Subsequent accepted stop evidence and scope: INDEPENDENTLY ACCEPTED FIRMWARE-SEEN GEM5 LIFECYCLE STOP (868-byte OpenSBI observed before marker; child -9 / wrapper 1; no Linux/runtime/scientific pass or graceful checkpoint/statistics-flush claim);
+`https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094390003`. Checkpoint resume and policy activation are never inferred.
 
 ## Versioned persistent layout
 
@@ -116,7 +160,7 @@ The installation receipt on the host maps the portable variable below to the act
 
 ```bash
 export OPENRX_LOCAL_ROOT=/path/to/openrx-local/v1
-export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py"
+export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-657b23f1/local_execution.py"
 ```
 
 | Relative path | Purpose |
@@ -141,7 +185,7 @@ A rebuild from pinned source is a new artifact with a new digest, never recovery
 
 The source implementation is `scripts/local_execution.py`. Owner operations use the immutable installed
 release in `$OPENRX_RUNNER`, selected from the installation receipt, rather than a mutable checkout.
-The interface below matches the reviewed runner988 release.
+The interface below applies to installed runner657; its added resource profile and memory options are described below. Historical runner988 evidence remains separately bound to its original executions.
 Host fixture records and narrow source reviews are preserved. The corrected source/request/pipeline
 bindings are now reviewed; actual build/loader/input preflight passed and the runtime-only request has
 been submitted. Further submissions still require their own verified prerequisites and reviewed scope.
@@ -163,7 +207,7 @@ polls only in the owning main loop; exact scientific oracles, model and guest/re
 The original checkout and frozen6f54052 snapshot remain untouched. The reviewed readonly `checkouts/execution-b4b5ffc` now supplies the corrected wrapper and clean,
 byte-verified source for local validation. The old frozen executable wrapper remains retained.
 The earlier v4/full 277, cd90/full 279/22-focused/v6, and916/23-focused evidence retain their exact snapshots;
-they remain separate historical snapshots. The now accepted final combination is exactly runner
+they remain separate historical snapshots. The independently accepted 2026-10-09 validation combination is exactly runner
 `988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882` and wrapper
 `5c275bf3da88417970b2219614a39d136fc046d7c6c692fcf4025debb867060e`.
 No guest or migration acceptance is inferred from those host tests.
@@ -210,11 +254,11 @@ execution is not supported. Admission and request bindings prevent duplicate sub
 Finalization is recorded separately and may overlap the next payload's admission. Dependent result
 consumers must wait for the prior execution's receipt and successfully run `verify EXECUTION_ID`
 before using its outputs.
-The demonstrated service budget is 6 GiB `MemoryMax`, 1 GiB `MemorySwapMax`, 200% `CPUQuota`,
+The historical runner988 validation service properties reported 6 GiB `MemoryMax`, 1 GiB `MemorySwapMax`, 200% `CPUQuota`,
 256 `TasksMax`, `Nice=10` and `NoNewPrivileges=yes`, with cgroup/process-group cleanup.
 [Actual properties](validation/local-migration-20261009/runner-lifecycle/v4-service-properties.json)
-record the host-applied settings; record them in each manifest.
-The dedicated root and services are restricted to the local account; no listener or credentials are committed.
+record those historical manager properties; the later delegation audit found CPUQuota was not kernel-enforced. Record fresh, separately reviewed operational allocations and actual kernel controls in each new manifest; do not reuse conservative caps without workload evidence.
+Kernel CPU enforcement must be checked separately from manager properties. The dedicated root and services are restricted to the local account; no listener or credentials are committed.
 
 `stop` preserves existing evidence and asks systemd to send SIGINT to the runner,
 whose main loop forwards it only while its sole ownership check establishes the child remains unreaped. The declared cleanup windows then permit SIGKILL

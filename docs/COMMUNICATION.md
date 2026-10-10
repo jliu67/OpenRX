@@ -79,15 +79,58 @@ Keep it **2–4 sentences (target 250–500 characters)**: **task/PR link → ve
 
 On hub #5, an owner comment beginning with `/openrx announce` requests one compact GitHub Actions bot post (1–1200 characters). The publisher verifies the exact first line, author and hub, and deduplicates against the source comment ID. Eligible jobs serialize with `queue: max`; up to 100 may wait without replacing earlier pending announcements. Unrelated comments do not occupy this job queue. The limit and GitHub availability still apply; verify the matching bot marker after posting. A bot post may notify subscribers, but does not guarantee email delivery. Historical command comments remain append-only; supersede outdated guidance with a fresh compact update.
 
-## Local execution migration interface
+## Local execution interface
 
-Migration [#27](https://github.com/jliu67/OpenRX/issues/27) is **LOCAL_VALIDATING; NOT YET ACTIVE**.
-[Local policy](LOCAL_EXECUTION.md) specifies owner-mediated GitHub execution requests and result publication.
-Remote agents have no direct execution/retrieval access; no SSH listener, network service or autonomous poller is deployed.
-GitHub task claims coordinate work, while durable host request/resource locks prevent duplicate/conflicting runs.
-If the local host is offline, mark expensive execution blocked and continue independent lightweight work.
-Build03/preflight completed and runtime-only execution `20261009T193937Z-576aa858c033` has started;
-guest correctness and actual gem5 stop remain pending. Activation needs recorded gates, actual reviewed
-merge, matching acceptance/`LOCAL_ACTIVE` and an explicit #27 release bound to merged-document audit.
-A local active state, announcement or router receipt alone cannot prove scientific/host acceptance or release work.
-No permanent coordinator, roles or changed milestone criteria are introduced.
+**Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
+At this snapshot the migration policy is not released. This dated record does not activate execution.
+Expensive OpenRX work uses the designated Ubuntu host only after [#27](https://github.com/jliu67/OpenRX/issues/27)
+publishes independently verified eligibility acceptance, matching `LOCAL_ACTIVE` and an **explicit release**
+bound to the actual reviewed merge and merged-document audit. Local active state alone is insufficient.
+Until that release is verified, defer full-scale work. Check the latest hash-linked state/release proof and
+local runner status; a later BLOCKED/ROLLBACK_REQUIRED record or offline host holds new requests.
+The effective-policy hub notice follows release; overall completion follows verified hub delivery and
+final synchronized acceptance. No merge, release or completion is claimed by this pre-cutover snapshot.
+
+[Local policy](LOCAL_EXECUTION.md) and [technical receipt](validation/local-migration-20261009/ACCEPTANCE.md)
+record actual runner/request/result gates.
+Remote execution/direct retrieval remain unavailable. The owner or an explicitly authorized local
+session reviews a pinned GitHub task request, submits locally with the immutable runner and publishes
+sanitized manifests/results. The owner need not be physically present. No remote execution service,
+autonomous issue poller or self-hosted Actions runner is supplied. Issue prose alone grants no execution
+authority. Permanent
+request-key binding/global payload-and-descendant resource locking prevent duplicates/conflicts; GitHub
+claims allocate source work, not CPU. If host offline, hold expensive requests and continue cheap work.
+Hosted full gem5/full-dataset/native steady controls stay DEFERRED to reviewed local requests; skips are
+unexecuted, never passed. Mainline guard effectiveness is conditional on the actual reviewed merge.
+An announcement, router status or claim is never independent acceptance. Follow matching-session review
+command/bot receipt and independent exact-head review; done follows actual final acceptance/readback.
+The [owner resource directive](LOCAL_RESOURCE_POLICY.md) authorizes aggressive use of all six CPU cores and 16 GiB RAM
+with swap where useful, retaining only measured necessary OS/agent headroom. Per-job allocations must
+reflect current host load, memory availability and workload parallelism; 14 GiB is a candidate, not a
+universal safe limit. Keep one payload slot and all migration/scientific gates.
+The old runner988 validation records retain their actual memory and manager-reported 200% CPUQuota.
+A later CPU-delegation audit found that historical quota was not kernel-enforced; old property receipts
+are preserved and do not prove CPU enforcement. The new CPU delegation configuration is additive.
+CPU-delegation evidence: `independently reviewed CPU delegation f12aec1f/67de0d92 and actual runner kernel witness, docs/validation/local-migration-20261009/resource-kernel-20261010/index.json`. The approved owner-local-max-v1 candidate
+uses CPU600%, memory no greater than min(14 GiB, fresh MemAvailable minus 1 GiB), optional lower positive
+explicit budget, 2-GiB swap, Tasks256 and the same one-slot/45-second stop semantics. Admission must bind
+current host metrics and recheck available headroom before launching. Exact new-release/kernel-budget
+verification is recorded by the operational profile evidence; it is independently accepted for the exact installed release and tiny live proof below.
+
+The operational implementation must check each payload's actual kernel CPU, memory, swap and task
+limits, including effective ancestor ceilings, under admission/resource safeguards before launch. It must
+fail closed on unavailable controllers, mismatched constraints, tighter inherited ceilings or lost fresh
+memory headroom. Manager properties and controller availability alone do not establish enforcement.
+The exact installed operational release enforces these per-payload kernel checks; the independent
+resource proof below accepts the observed normal profile. Each future payload is checked again.
+
+Operational resource-profile outcome/evidence: `INDEPENDENTLY ACCEPTED exact runner657 and normal-profile tiny execution20261010T083746Z-6bc7037f04ef: actual CPU600000/100000, RAM5637144576 bytes (5.25GiB selected from measured headroom), swap2147483648, tasks256, six-CPU affinity, no tighter visible ancestors; rc0 and receipt integrity verified. Independent review951622749d40a9bf467e48ee3f6581cc52393569b8db60c87e63d57bee8ee00b; resource-kernel-20261010/index.json`.
+Operational release: `runner-v1-657b23f1`, SHA-256
+`657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b`. The verified profile and immutable release are reconciled. This dated preactivation snapshot
+retains the expensive-work hold until the explicit merge-bound release.
+
+This infrastructure acceptance leaves #16's complete unchanged gem5 RandomX matrix/full dataset/
+intended-core/SMP/BOOM and M1-M5 open. No calibrated timing, physical power, RTL, checkpoint resume,
+whole-Codex-daemon termination, host reboot or complete offline/hermetic dependency closure is claimed.
+Original Library binary remains unavailable; rebuilt binary retains its distinct identity. Preserve
+failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.

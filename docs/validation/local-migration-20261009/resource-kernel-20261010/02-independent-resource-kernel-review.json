@@ -1,0 +1,109 @@
+{
+  "accepted": true,
+  "checks": {
+    "affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "all_receipt_artifacts_independently_rehashed": true,
+    "bound_inputs_executable_rehashed": true,
+    "cpu_quota": "600000 100000",
+    "fresh_one_GiB_margin": true,
+    "memory_bytes": 5637144576,
+    "no_openrx_running": true,
+    "production_late_guard_before_child": true,
+    "swap_bytes": 2147483648,
+    "tasks_max": 256,
+    "three_actual_payload_samples": true,
+    "unit_inactive_collected": true,
+    "visible_ancestors_no_tighter": true
+  },
+  "deployment": {
+    "bytes": 357,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/completion-20261010/deployment.json",
+    "sha256": "3be2270822ecc0ac0faf88f343f2ccae29f0579aebd8e25544cd179f87cd6458"
+  },
+  "evidence": [
+    {
+      "bytes": 3085,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/manifest.json",
+      "sha256": "010e67f3a12a3b63c34c247c543f8916f8a8e40b8161629db34478b2b72f7462"
+    },
+    {
+      "bytes": 2527,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/receipt.json",
+      "sha256": "e808dfc219bae2c40470862898efeca46a2b4a810b2e0a29b990ce77ea8061b7"
+    },
+    {
+      "bytes": 1460,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/events.jsonl",
+      "sha256": "bdc63c287c6f54fcda1666fda74d32feb3471b85a7f2bc520a1be9f18d4cc803"
+    },
+    {
+      "bytes": 415,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/prelaunch-resource-check.json",
+      "sha256": "65a07d843b1e8f2184cd9f032965a4eacbe6a8070e81c835a78ed4fc8a9ccc54"
+    },
+    {
+      "bytes": 2318,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/prelaunch-kernel-check.json",
+      "sha256": "8819695c944837b27e34a77ccfcd1a93a8e4b6768fe6660ad8da2f79ad46325a"
+    },
+    {
+      "bytes": 142,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/process-result.json",
+      "sha256": "6af482b9d496aba659c1d444a803d68b4dc1f996f2c95d63edb75610ab0618e5"
+    },
+    {
+      "bytes": 14765,
+      "path": "$OPENRX_LOCAL_ROOT/executions/20261010T083746Z-6bc7037f04ef/output/kernel-witness.json",
+      "sha256": "531e736aca94e9c957eeb807d99bb932bf617bf11bdb6794da1b1d6a0bf38364"
+    }
+  ],
+  "execution_id": "20261010T083746Z-6bc7037f04ef",
+  "historical_bindings_rehashed": 60,
+  "historical_runner": {
+    "bytes": 38227,
+    "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py",
+    "sha256": "988cf13f4c9c954388fb7e9d44fda632910fde41ab78392294280f176c674882"
+  },
+  "historical_technical_map": {
+    "bytes": 22459,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/technical-gate-map-v1.json",
+    "sha256": "df6eb6f296bfc2220ce5d8269e9cb3997c5c57c6217664dd7f1a57a912b667b6"
+  },
+  "journal": {
+    "bytes": 1143,
+    "path": "$OPENRX_LOCAL_ROOT/migrations/20261009/state-events.jsonl",
+    "sha256": "5d9b511a279a87ebbcd46c2a3186c637d6c2565f78cc590afcbf4d33c2ba16d1"
+  },
+  "limitations": [
+    "Tiny proof establishes applied kernel limits, not saturation throughput, reserved resources or large-workload peak safety.",
+    "Swap allowance is not reservation; available RAM selected 5.25GiB from actual headroom, not unconditional14GiB.",
+    "Historical guest/build/stop not rerun; prior evidence identities preserved.",
+    "No scientific acceptance, checkpoint resume, physical reboot or full Codex-daemon shutdown claimed.",
+    "No source/service/security/GitHub mutation by reviewer; only new exclusive review receipt."
+  ],
+  "local_active": false,
+  "migration_complete": false,
+  "migration_state": "LOCAL_VALIDATING",
+  "release_protection": {
+    "gid": 1000,
+    "mode": "0o500",
+    "scope": "Owner-operated readonly deployment; owner can chmod. No UID0/kernel-enforced immutability claim.",
+    "uid": 1000
+  },
+  "reviewer": "independent_review subagent",
+  "schema": "openrx.local.resource-kernel-independent-review.v1",
+  "source": {
+    "bytes": 47618,
+    "path": "$OPENRX_LOCAL_ROOT/releases/runner-v1-657b23f1/local_execution.py",
+    "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b"
+  },
+  "technical_readiness": "Nine historical technical gates remain scoped to runner988/scientific sourceb4; added resource-only installed657 live proof closes resource prerequisite for CUTOVER_PENDING. Four documentation/merge/final gates remain pending.",
+  "utc": "2026-10-10T08:39:40.050260+00:00"
+}
