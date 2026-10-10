@@ -425,3 +425,10 @@ this pre-Z statement records its dated history rather than an enduring blocker. 
 scientific execution is performed by this documentation update.
 
 The resource evidence must bind actual per-payload kernel/ancestor limit checks and fail-closed admission, not merely manager properties or configured controller availability.
+
+
+## 2026-10-10 — current-status reconciliation, task #33
+
+GitHub-only audit at main `f97b16bb9ff7ce9d8db50f5f97cd6f4d2258a437` verified completed [migration #27](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454) and [cleanup/publication #31](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057). This docs-only work adds current closeout pointers ahead of preserved dated snapshots and corrects stale task/layout summaries. Prior SESSION_LOG bytes and scientific evidence are unchanged. No local checkout, host inspection or scientific execution was performed; no current host-health claim is made.
+
+[Task #33](https://github.com/jliu67/OpenRX/issues/33) records the scoped claim, draft PR, subsequent independent exact-head review, CI and targeted issue/hub handoff. These publication checks must be read there once available, not inferred from this entry. No merge or scientific acceptance is asserted. #8/#10/#11 remain blocked by their distinct measurement/configuration/access prerequisites; #16/M1–M5 remain open. Relation to EXP-002 is discoverability of unchanged existing runtime/hash evidence only; no new experimental result or consequential policy decision is introduced.

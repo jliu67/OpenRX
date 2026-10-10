@@ -1,5 +1,11 @@
 # Local execution policy and interface
 
+## Current status — 2026-10-10
+
+[Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.
+
+These are verified GitHub closeout records, not a fresh host-health check. Every new execution still needs its reviewed request, current host/resource checks and existing admission gates. #16's complete unchanged RandomX matrix, full dataset and intended-core/SMP/BOOM gates remain open, as do M1–M5. Controlled measurement configuration/authorization, meter and PMU access are separate prerequisites. Dated CUTOVER_PENDING and pre-final records below are preserved history, not current migration blockers.
+
 Progress publication remains GitHub-only under [the publication/source-retention policy](PROGRESS_PUBLICATION_POLICY.md). Local execution retains pinned source snapshots, immutable runners, builds and scientific evidence; these are reproducibility inputs, not an editable progress mirror. No automatic Git synchronization or standing authoring checkout is required or enabled by this execution contract.
 
 **Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
@@ -36,13 +42,13 @@ record strict oracles, bindings and output integrity.
 | Question | Authority / actual mechanism |
 |---|---|
 | Where do expensive runs execute? | The designated Ubuntu host only after verified explicit #27 release matching eligibility/LOCAL_ACTIVE/actual reviewed merge/merged-document audit. |
-| Is the runner available? | Retained988 validation is accepted; inspect the separately reviewed operational release/profile, latest local status and #27 release/blocked evidence. The dated technical snapshot is not release. |
+| Is the runner available? | Final #27 acceptance binds operational `runner-v1-657b23f1`; retained988 validation remains historical. Verify current local status, exact release/profile/input bindings and later blocked evidence before each request. This GitHub summary is not a live availability check. |
 | How do requests/results move? | GitHub task specification; owner or authorized local session submits locally and publishes sanitized manifests/results. |
 | Can remote agents access the host? | No direct execution/retrieval; no new SSH/listener/poller/self-hosted Actions runner. |
 | How are conflicts/duplicates prevented? | Permanent request-key/execution-ID binding and one global resource lock covering payload and workload-descendant drain. |
 | Where is evidence? | Persistent executions/ID manifests/logs/raw receipts and reviewed hash-indexed public exports/task links; large binaries remain outside Git. |
 | If host offline? | Hold expensive request, preserve specification, continue cheap independent work; no expensive sandbox replacement. |
-| Which gates remain open? | At this snapshot actual reviewed merge/LOCAL_ACTIVE/explicit release/hub-final synchronization remain pending; #16/M1-M5 remain separate science gates. |
+| Which gates remain open? | Migration merge/release/final synchronization completed in #27; #16/M1–M5 scientific gates and per-request host/resource/authorization checks remain. The preceding CUTOVER_PENDING snapshot is historical. |
 
 Remote execution/direct retrieval remain unavailable. The owner or an explicitly authorized local
 session reviews a pinned GitHub task request, submits locally with the immutable runner and publishes
@@ -167,7 +173,7 @@ export OPENRX_RUNNER="$OPENRX_LOCAL_ROOT/releases/runner-v1-657b23f1/local_execu
 
 | Relative path | Purpose |
 |---|---|
-| `checkouts/` | Separate dedicated migration checkout and pinned execution source trees; original checkout preserved |
+| `checkouts/` | Retained pinned execution source trees; evidence-bound original checkout/shared Git metadata preserved. The editable `checkouts/migration` worktree was recoverably retired under #31; no standing editing checkout remains. |
 | `releases/runner-v1-DIGEST/` | Immutable runner releases; every execution also captures its own runner bytes |
 | `sources/`, `builds/`, `toolchains/` | Immutable source captures, persistent incremental simulator builds and pinned dependency records |
 | `artifacts/` | Checksummed firmware, kernel, disk, runtime/hash ELFs and restored/rebuilt artifacts |

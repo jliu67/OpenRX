@@ -1,5 +1,11 @@
 # Agent instructions
 
+## Current status — 2026-10-10
+
+[Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.
+
+These are verified GitHub closeout records, not a fresh host-health check. Every new execution still needs its reviewed request, current host/resource checks and existing admission gates. #16's complete unchanged RandomX matrix, full dataset and intended-core/SMP/BOOM gates remain open, as do M1–M5. Controlled measurement configuration/authorization, meter and PMU access are separate prerequisites. Dated CUTOVER_PENDING and pre-final records below are preserved history, not current migration blockers.
+
 ## GitHub-only progress publication
 
 GitHub is the sole progress publication and coordination authority. Follow [the publication/source-retention policy](docs/PROGRESS_PUBLICATION_POLICY.md): no standing editable local progress mirror or auto-sync. Preserve evidence-bound original and pinned execution sources and all expensive computational assets; local source snapshots are not progress mirrors. Use connector/API or separately authorized temporary authoring for reviewed branch/PR updates, including repository memory handoffs. Never delete a bound source snapshot or rewrite acceptance evidence to remove its path.
