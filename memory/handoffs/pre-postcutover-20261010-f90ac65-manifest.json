@@ -1,0 +1,20 @@
+{
+  "source_commit": "f90ac65964bc0138711e4b6d45bcb7e26dff3cc9",
+  "files": [
+    {
+      "path": "memory/handoffs/pre-postcutover-20261010-f90ac65-STATE.md",
+      "bytes": 19480,
+      "sha256": "fb9eb7b3bf3e6068127549b4b06b02102596403f959fd8844ead16ddf5b68a65"
+    },
+    {
+      "path": "memory/handoffs/pre-postcutover-20261010-f90ac65-HANDOFF.md",
+      "bytes": 15980,
+      "sha256": "33a5e69ab0db8ac42358f8198ba0fb869dadcc86992d673cdabbc1a1ccba953f"
+    },
+    {
+      "path": "memory/handoffs/pre-postcutover-20261010-f90ac65-SESSION_LOG.md",
+      "bytes": 59120,
+      "sha256": "964f71dd0c0b6854248714982d2094ba7a1e9f1146f51c8e2067b473ed6abb4a"
+    }
+  ]
+}
