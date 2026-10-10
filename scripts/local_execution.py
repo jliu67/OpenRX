@@ -44,6 +44,11 @@ ENV_ALLOW = {"PATH", "LANG", "LC_ALL", "LD_LIBRARY_PATH", "PYTHONPATH", "CC", "C
 DEFAULT_ENV = {"PATH": "/usr/local/bin:/usr/bin:/bin", "LANG": "C.UTF-8"}
 VALIDATION_SCOPES = ("lifecycle", "unit", "vendor-integrity", "guest-runtime-smoke", "regression-smoke")
 ID_RE = re.compile(r"^\d{8}T\d{6}Z-[0-9a-f]{12}$")
+RESOURCE_PROFILE = "owner-local-max-v1"
+GIB = 1024 ** 3
+MEMORY_MARGIN_BYTES = GIB
+MEMORY_CAP_BYTES = 14 * GIB
+MEMORY_GRANULARITY_BYTES = 256 * 1024 ** 2
 
 
 def now():
@@ -52,6 +57,155 @@ def now():
 
 def encode(value):
     return (json.dumps(value, sort_keys=True, separators=(",", ":")) + "\n").encode()
+
+
+def host_resources(meminfo_path=Path("/proc/meminfo")):
+    """Record available RAM; swap is a maximum allowance, never a reservation."""
+    values = {}
+    required = {"MemTotal", "MemAvailable", "SwapTotal", "SwapFree"}
+    for line in Path(meminfo_path).read_text().splitlines():
+        match = re.fullmatch(r"(\w+):\s+(\d+) kB", line)
+        if match and match[1] in required:
+            values[match[1]] = int(match[2]) * 1024
+    if set(values) != required or not 0 <= values["MemAvailable"] <= values["MemTotal"] or not 0 <= values["SwapFree"] <= values["SwapTotal"]:
+        raise ValueError("Cannot establish actual available host RAM/swap")
+    return {"at": now(), "memory_bytes": values, "logical_cpus": os.cpu_count(),
+            "allowed_cpus": sorted(os.sched_getaffinity(0))}
+
+
+def select_resources(profile, memory_bytes=None):
+    if profile != RESOURCE_PROFILE:
+        raise ValueError("Unsupported local resource profile")
+    observed = host_resources()
+    ceiling = min(MEMORY_CAP_BYTES, observed["memory_bytes"]["MemAvailable"] - MEMORY_MARGIN_BYTES)
+    if memory_bytes is not None:
+        if type(memory_bytes) is not int or memory_bytes <= 0 or memory_bytes > ceiling:
+            raise ValueError("Requested memory must be positive and fit available RAM plus OS headroom")
+        selected = memory_bytes
+    else:
+        selected = ceiling // MEMORY_GRANULARITY_BYTES * MEMORY_GRANULARITY_BYTES
+    if selected <= 0:
+        raise ValueError("Insufficient available RAM after necessary OS headroom")
+    resources = {"MemoryMax": str(selected), "MemorySwapMax": "2G", "CPUQuota": "600%",
+                 "TasksMax": 256, "Nice": 10, "NoNewPrivileges": True, "global_slots": 1}
+    metadata = {"name": profile, "admission": observed, "memory_margin_bytes": MEMORY_MARGIN_BYTES,
+                "memory_cap_bytes": MEMORY_CAP_BYTES, "default_rounding_bytes": MEMORY_GRANULARITY_BYTES,
+                "safe_ceiling_bytes": ceiling, "requested_memory_bytes": memory_bytes,
+                "selected_memory_bytes": selected, "allocation_slack_bytes": ceiling - selected,
+                "kernel_page_bytes": os.sysconf("SC_PAGE_SIZE"),
+                "kernel_memory_max_bytes": selected // os.sysconf("SC_PAGE_SIZE") * os.sysconf("SC_PAGE_SIZE"),
+                "kernel_rounding": "Linux page_counter limits truncate byte requests to whole pages; default 256MiB blocks are page aligned",
+                "swap_is_reservation": False,
+                "rationale": "All six CPUs available; RAM uses measured safe headroom, rounded down in 256MiB blocks for executor fluctuations. Exact known-workload requests must fit the same ceiling. One resource slot remains."}
+    return resources, metadata
+
+
+def check_resource_headroom(directory, manifest):
+    profile = manifest["resource_profile"]
+    resources = manifest["resources"]
+    if profile["name"] != RESOURCE_PROFILE or resources["MemoryMax"] != str(profile["selected_memory_bytes"]):
+        raise ValueError("Bound resource profile is inconsistent")
+    observed = host_resources()
+    required = profile["selected_memory_bytes"] + profile["memory_margin_bytes"]
+    available = observed["memory_bytes"]["MemAvailable"]
+    safe = available >= required
+    json_new(directory / "prelaunch-resource-check.json", {
+        "profile": profile["name"], "observed": observed, "required_available_bytes": required,
+        "available_bytes": available, "safe": safe,
+        "scope": "Fresh headroom check under the global execution lock; bound limits are not changed"})
+    if not safe:
+        raise ValueError(f"Available RAM fell below bound budget plus OS headroom: {available} < {required}; no child launched")
+
+
+def kernel_resources(unit, cgroup_root=Path("/sys/fs/cgroup")):
+    """Read this service and every visible ancestor; never use manager properties."""
+    group = own_cgroup(unit)
+    if group is None:
+        # Direct nonproduction worker tests have no named unit. The production
+        # private CLI rejects that condition before entering worker().
+        return None
+    relative = group[0]
+    if not relative.startswith("/") or ".." in Path(relative).parts:
+        raise ValueError("Unsafe named service cgroup path")
+    base = Path(cgroup_root).resolve()
+    directory = base / relative.lstrip("/")
+    records = []
+    names = ("cpu.max", "memory.max", "memory.high", "memory.swap.max", "pids.max",
+             "cgroup.controllers", "cgroup.subtree_control", "cpuset.cpus.effective")
+    while True:
+        files = {}
+        for name in names:
+            try:
+                files[name] = (directory / name).read_text().strip()
+            except FileNotFoundError:
+                files[name] = None
+        records.append({"path": str(directory), "is_root": directory == base, "files": files})
+        if directory == base:
+            break
+        directory = directory.parent
+    return {"at": now(), "service_cgroup": relative, "groups": records,
+            "worker_allowed_cpus": sorted(os.sched_getaffinity(0))}
+
+
+def kernel_resource_errors(observed, profile):
+    errors = []
+    if not observed["groups"]:
+        return ["No named service kernel cgroup was observed"]
+    memory = profile["kernel_memory_max_bytes"]
+    if memory <= 0:
+        errors.append("Requested memory is smaller than one kernel page")
+    if len(observed["worker_allowed_cpus"]) < 6:
+        errors.append("Worker affinity exposes fewer than six CPUs")
+    for index, group in enumerate(observed["groups"]):
+        values = group["files"]
+        path = group["path"]
+        cpu = values["cpu.max"]
+        if cpu is not None:
+            match = re.fullmatch(r"(max|[1-9]\d*) ([1-9]\d*)", cpu)
+            if match is None or (index == 0 and (match[1] == "max" or int(match[1]) != 6 * int(match[2]))) or (match[1] != "max" and int(match[1]) < 6 * int(match[2])):
+                errors.append(f"Missing, invalid or tighter CPU quota: {path}")
+        elif not group["is_root"]:
+            errors.append(f"Missing CPU controller limit: {path}")
+        for name, expected in (("memory.max", memory), ("memory.high", memory),
+                               ("memory.swap.max", 2 * GIB), ("pids.max", 256)):
+            value = values[name]
+            if value is None:
+                if not group["is_root"]:
+                    errors.append(f"Missing {name} controller limit: {path}")
+                continue
+            if not re.fullmatch(r"max|\d+", value):
+                errors.append(f"Invalid {name}: {path}")
+                continue
+            exact = index == 0 and name != "memory.high"
+            if (exact and value != str(expected)) or (value != "max" and int(value) < expected):
+                errors.append(f"Missing, invalid or tighter {name}: {path}")
+        cpus = values["cpuset.cpus.effective"]
+        if cpus is not None:
+            allowed = set()
+            for item in cpus.split(","):
+                match = re.fullmatch(r"(\d+)(?:-(\d+))?", item)
+                if match is None or int(match[1]) > int(match[2] or match[1]) or int(match[2] or match[1]) > 65535:
+                    errors.append(f"Invalid effective CPU set: {path}")
+                    break
+                allowed.update(range(int(match[1]), int(match[2] or match[1]) + 1))
+            if len(allowed & set(observed["worker_allowed_cpus"])) < 6:
+                errors.append(f"Effective CPU availability is below six: {path}")
+    return errors
+
+
+def check_kernel_resource_limits(directory, manifest, require_service=False):
+    try:
+        observed = kernel_resources(manifest["unit"])
+        errors = (["Current named production service cgroup is missing"] if require_service else []) if observed is None else kernel_resource_errors(observed, manifest["resource_profile"])
+    except (ValueError, OSError, KeyError, TypeError) as exc:
+        observed, errors = None, [str(exc)]
+    json_new(directory / "prelaunch-kernel-check.json", {
+        "observed": observed, "errors": errors, "safe": not errors,
+        "production_enforced": observed is not None and not errors,
+        "production_required": require_service,
+        "scope": "Exact named service limits and visible ancestor constraints before payload; direct nonproduction worker tests have no service cgroup"})
+    if errors:
+        raise ValueError("Kernel resource admission denied; no child launched: " + "; ".join(errors))
 
 
 def digest(path):
@@ -314,9 +468,12 @@ def systemd_command(root, directory, manifest):
     # systemd property strings use their own escaping, not shell syntax.
     if any(char in finalizer for char in ('"', "'", "\\", "%", "\n")) or any(" " in str(p) for p in (root, directory, python)):
         raise ValueError("systemd runner paths require no whitespace, quotes, percent or backslash")
+    resources = manifest["resources"]
+    if not re.fullmatch(r"[1-9]\d*", resources["MemoryMax"]) or resources["CPUQuota"] != "600%" or resources["MemorySwapMax"] != "2G":
+        raise ValueError("Unsupported or invalid bound resource limits")
     return ["systemd-run", "--user", "--quiet", "--no-block", "--unit", manifest["unit"],
-            "--property=MemoryMax=6G", "--property=CPUQuota=200%", "--property=TasksMax=256",
-            "--property=MemorySwapMax=1G", "--property=Nice=10", "--property=NoNewPrivileges=yes",
+            "--property=MemoryMax=" + resources["MemoryMax"], "--property=CPUQuota=" + resources["CPUQuota"], "--property=TasksMax=256",
+            "--property=MemorySwapMax=" + resources["MemorySwapMax"], "--property=Nice=10", "--property=NoNewPrivileges=yes",
             "--property=KillMode=mixed", "--property=KillSignal=SIGINT",
             "--property=TimeoutStopSec=45s", "--property=SendSIGKILL=yes",
             "--property=UMask=0077", "--property=Restart=no",
@@ -325,7 +482,8 @@ def systemd_command(root, directory, manifest):
             python, runner, "--root", str(root), "_worker", manifest["execution_id"]]
 
 
-def submit(root, request_key, kind, cwd, argv, inputs, sources=(), env_items=(), validation_scope=None):
+def submit(root, request_key, kind, cwd, argv, inputs, sources=(), env_items=(), validation_scope=None,
+           resource_profile=RESOURCE_PROFILE, memory_bytes=None):
     root = Path(root).absolute()
     if not request_key or len(request_key) > 256 or "\n" in request_key:
         raise ValueError("Request key must be a nonempty single line of at most 256 characters")
@@ -363,6 +521,7 @@ def submit(root, request_key, kind, cwd, argv, inputs, sources=(), env_items=(),
         if request_path.exists():
             old = read_json(request_path)
             raise ValueError(f"Request key already claimed by {old['execution_id']}; inspect/recover it, never duplicate")
+        resources, profile = select_resources(resource_profile, memory_bytes)
         execution_id = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%SZ-") + uuid.uuid4().hex[:12]
         directory = root / "executions" / execution_id
         directory.mkdir(mode=0o700)
@@ -377,8 +536,7 @@ def submit(root, request_key, kind, cwd, argv, inputs, sources=(), env_items=(),
             "argv_template": argv_template,
             "inputs": bindings, "sources": source_bindings, "executable": digest(executable),
             "runner": digest(Path(__file__).resolve()), "scientific_acceptance": "unverified",
-            "resources": {"MemoryMax": "6G", "MemorySwapMax": "1G", "CPUQuota": "200%",
-                          "TasksMax": 256, "Nice": 10, "NoNewPrivileges": True, "global_slots": 1},
+            "resources": resources, "resource_profile": profile,
             "resource_lock": str(root / "locks" / "execution.lock"),
             "finalizer_timeout": "Private ExecStopPost extends its own timeout while durable flush/hash work continues; worker stop grace remains 45s",
             "output_rule": "All scientific output must be under {execution_dir}; use this literal argv placeholder",
@@ -484,7 +642,7 @@ def wait_previous_cgroups(root, manifest, interrupted):
         time.sleep(0.1)
 
 
-def worker(root, execution_id):
+def worker(root, execution_id, require_service=False):
     directory = execution_dir(root, execution_id)
     manifest = read_json(directory / "manifest.json")
     process = None
@@ -517,6 +675,8 @@ def worker(root, execution_id):
                 raise ValueError(f"Execution admission revoked: {state}")
             if interrupted:
                 raise InterruptedError("Stopped before launch")
+            check_resource_headroom(directory, manifest)
+            check_kernel_resource_limits(directory, manifest, require_service)
             append_event(directory / "events.jsonl", {"status": "RUNNING", "pid": os.getpid(), "migration_state": state})
             stdout = os.open(directory / "stdout.log", os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
             stderr = os.open(directory / "stderr.log", os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
@@ -731,6 +891,8 @@ def main(argv=None):
     item.add_argument("--input", type=Path, action="append", required=True)
     item.add_argument("--source", type=Path, action="append", default=[])
     item.add_argument("--env", action="append", default=[])
+    item.add_argument("--resource-profile", choices=(RESOURCE_PROFILE,), default=RESOURCE_PROFILE)
+    item.add_argument("--memory-bytes", type=int, help="Exact known-workload RAM budget; must fit measured available RAM and OS headroom")
     item.add_argument("argv", nargs=argparse.REMAINDER)
     item = commands.add_parser("status")
     item.add_argument("execution_id", nargs="?")
@@ -745,12 +907,13 @@ def main(argv=None):
         elif args.command == "submit":
             argv = args.argv[1:] if args.argv[:1] == ["--"] else args.argv
             result = {"execution_id": submit(args.root, args.request_key, args.kind, args.cwd,
-                      argv, args.input, args.source, args.env, args.validation_scope)}
+                      argv, args.input, args.source, args.env, args.validation_scope,
+                      args.resource_profile, args.memory_bytes)}
         elif args.command == "_worker":
             manifest = read_json(execution_dir(args.root, args.execution_id) / "manifest.json")
             if own_cgroup(manifest["unit"]) is None:
                 raise ValueError("Private worker entrypoint requires its own named systemd cgroup")
-            return worker(args.root, args.execution_id)
+            return worker(args.root, args.execution_id, require_service=True)
         elif args.command == "_finalize":
             try:
                 with finalizer_timeout_extension() as health_check:

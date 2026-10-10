@@ -1,5 +1,7 @@
 """Host-only controls for durable execution; never launch gem5 or RandomX."""
 import hashlib
+import fcntl
+import copy
 import json
 import os
 from pathlib import Path
@@ -28,19 +30,31 @@ class RunnerTests(unittest.TestCase):
         self.manager = mock.patch.object(runner, "manager_ready")
         self.manager.start()
         self.addCleanup(self.manager.stop)
+        self.resource_observation = {
+            "at": "2026-10-10T00:00:00+00:00", "logical_cpus": 6, "allowed_cpus": list(range(6)),
+            "memory_bytes": {"MemTotal": 16 * runner.GIB,
+                             "MemAvailable": 9 * runner.GIB + 128 * 1024 ** 2,
+                             "SwapTotal": 4 * runner.GIB, "SwapFree": 4 * runner.GIB}}
+        self.original_host_resources = runner.host_resources
+        resources = mock.patch.object(runner, "host_resources", return_value=self.resource_observation)
+        resources.start()
+        self.addCleanup(resources.stop)
 
-    def submit(self, key="test-request", kind="validation"):
+    def submit(self, key="test-request", kind="validation", **resource_options):
         result = subprocess.CompletedProcess([], 0, "", "")
         with mock.patch.object(runner.subprocess, "run", return_value=result):
             return runner.submit(self.root, key, kind, self.base,
                                  [sys.executable, str(self.payload)], [self.payload],
-                                 validation_scope="lifecycle" if kind == "validation" else None)
+                                 validation_scope="lifecycle" if kind == "validation" else None,
+                                 **resource_options)
 
     def directory(self, execution_id):
         return runner.execution_dir(self.root, execution_id)
 
     def launch_worker(self, execution_id):
-        code = "from scripts.local_execution import worker; import sys; sys.exit(worker(sys.argv[1],sys.argv[2]))"
+        code = ("from scripts import local_execution as runner; import sys; "
+                f"runner.host_resources = lambda: {self.resource_observation!r}; "
+                "sys.exit(runner.worker(sys.argv[1],sys.argv[2]))")
         process = subprocess.Popen([sys.executable, "-c", code, str(self.root), execution_id],
                                    stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         self.addCleanup(self.cleanup_process, process)
@@ -122,10 +136,10 @@ class RunnerTests(unittest.TestCase):
     def test_systemd_limits_cgroup_cleanup_and_no_session_coupling(self):
         execution_id = self.submit()
         command = runner.read_json(self.directory(execution_id) / "submission-command.json")["argv"]
-        self.assertIn("--property=MemoryMax=6G", command)
-        self.assertIn("--property=CPUQuota=200%", command)
+        self.assertIn("--property=MemoryMax=8589934592", command)
+        self.assertIn("--property=CPUQuota=600%", command)
         self.assertIn("--property=TasksMax=256", command)
-        self.assertIn("--property=MemorySwapMax=1G", command)
+        self.assertIn("--property=MemorySwapMax=2G", command)
         self.assertIn("--property=Nice=10", command)
         self.assertIn("--property=NoNewPrivileges=yes", command)
         self.assertIn("--property=KillMode=mixed", command)
@@ -134,6 +148,208 @@ class RunnerTests(unittest.TestCase):
         self.assertTrue(any(item.startswith("--property=ExecStopPost=") for item in command))
         self.assertNotIn("--scope", command)
         self.assertNotIn("--pipe", command)
+
+    def test_actual_meminfo_parser_records_bytes_and_rejects_missing_or_invalid_headroom(self):
+        path = self.base / "synthetic-meminfo"
+        valid = "MemTotal: 16777216 kB\nMemAvailable: 9568256 kB\nSwapTotal: 4194304 kB\nSwapFree: 3145728 kB\n"
+        path.write_text(valid)
+        observed = self.original_host_resources(path)
+        self.assertEqual(observed["memory_bytes"]["MemTotal"], 17179869184)
+        self.assertEqual(observed["memory_bytes"]["MemAvailable"], 9797894144)
+        self.assertEqual(observed["memory_bytes"]["SwapFree"], 3221225472)
+        self.assertEqual(observed["allowed_cpus"], sorted(os.sched_getaffinity(0)))
+        for invalid in (valid.replace("MemAvailable: 9568256 kB\n", ""),
+                        valid.replace("9568256 kB", "9568256 bytes"),
+                        valid.replace("9568256", "16777217"),
+                        valid.replace("3145728", "4194305")):
+            path.write_text(invalid)
+            with self.assertRaisesRegex(ValueError, "available host RAM/swap"):
+                self.original_host_resources(path)
+
+    def test_dynamic_memory_uses_measured_headroom_above_prior_cap_and_bound_manifest(self):
+        def admitted_under_lock():
+            with (self.root / "locks" / "admission.lock").open("a+") as handle:
+                with self.assertRaises(BlockingIOError):
+                    fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            return self.resource_observation
+        with mock.patch.object(runner, "host_resources", side_effect=admitted_under_lock):
+            execution_id = self.submit("dynamic-resources")
+        manifest = runner.read_json(self.directory(execution_id) / "manifest.json")
+        profile = manifest["resource_profile"]
+        self.assertEqual(manifest["resources"]["MemoryMax"], "8589934592")
+        self.assertEqual(profile["safe_ceiling_bytes"], 8724152320)
+        self.assertEqual(profile["allocation_slack_bytes"], 134217728)
+        self.assertEqual(profile["memory_margin_bytes"], 1073741824)
+        self.assertEqual(profile["default_rounding_bytes"], 268435456)
+        self.assertEqual(profile["admission"], self.resource_observation)
+        self.assertEqual(manifest["resources"]["CPUQuota"], "600%")
+        self.assertEqual(manifest["resources"]["global_slots"], 1)
+        self.assertEqual(runner.worker(self.root, execution_id), 0)
+        check = runner.read_json(self.directory(execution_id) / "prelaunch-resource-check.json")
+        self.assertTrue(check["safe"])
+        self.assertEqual(check["required_available_bytes"], 9663676416)
+        receipt = runner.finalize(self.root, execution_id, {"SERVICE_RESULT": "success"})
+        self.assertIn(runner.digest(self.directory(execution_id) / "prelaunch-resource-check.json"), receipt["artifacts"])
+        self.assertEqual(receipt["scientific_acceptance"], "unverified")
+        self.assertTrue(runner.verify(self.root, execution_id)["integrity_verified"])
+
+    @staticmethod
+    def kernel_observation(memory="8589934592"):
+        unlimited = {"cpu.max": "max 100000", "memory.max": "max", "memory.high": "max",
+                     "memory.swap.max": "max", "pids.max": "max",
+                     "cgroup.controllers": "cpu memory pids", "cgroup.subtree_control": "cpu memory pids",
+                     "cpuset.cpus.effective": None}
+        own = {**unlimited, "cpu.max": "600000 100000", "memory.max": memory,
+               "memory.swap.max": "2147483648", "pids.max": "256"}
+        return {"at": "2026-10-10T00:00:00+00:00", "service_cgroup": "/user/toy.service",
+                "worker_allowed_cpus": list(range(6)), "groups": [
+                    {"path": "/sys/fs/cgroup/user/toy.service", "is_root": False, "files": own},
+                    {"path": "/sys/fs/cgroup/user", "is_root": False, "files": unlimited},
+                    {"path": "/sys/fs/cgroup", "is_root": True, "files": {
+                        **unlimited, "cpu.max": None, "memory.max": None, "memory.high": None,
+                        "memory.swap.max": None, "pids.max": None, "cpuset.cpus.effective": "0-5"}}]}
+
+    def test_kernel_reader_captures_actual_file_constraints_for_every_visible_ancestor(self):
+        base = self.base / "synthetic-cgroup"
+        unit = "toy.service"
+        service = base / "user" / unit
+        service.mkdir(parents=True)
+        (service / "cpu.max").write_text("600000 100000\n")
+        (service.parent / "cpu.max").write_text("max 100000\n")
+        (base / "cpuset.cpus.effective").write_text("0-5\n")
+        with mock.patch.object(runner, "own_cgroup", return_value=("/user/" + unit, service)):
+            observed = runner.kernel_resources(unit, base)
+        self.assertEqual([row["path"] for row in observed["groups"]], [str(service), str(service.parent), str(base)])
+        self.assertEqual(observed["groups"][0]["files"]["cpu.max"], "600000 100000")
+        self.assertEqual(observed["groups"][1]["files"]["cpu.max"], "max 100000")
+        self.assertIsNone(observed["groups"][0]["files"]["memory.max"])
+        self.assertEqual(observed["groups"][-1]["files"]["cpuset.cpus.effective"], "0-5")
+
+    def test_missing_or_tighter_kernel_and_ancestor_constraints_deny_payload_with_retained_evidence(self):
+        mutations = [(0, "cpu.max", None), (0, "cpu.max", "max 100000"),
+                     (0, "memory.max", "max"), (0, "memory.swap.max", "1073741824"),
+                     (0, "pids.max", "128"), (1, "cpu.max", "200000 100000"),
+                     (1, "memory.max", "8589934591"), (1, "memory.high", "8589934591"),
+                     (1, "memory.swap.max", "0"), (1, "pids.max", "255"),
+                     (1, "cpuset.cpus.effective", "0-4"), (1, "cpuset.cpus.effective", ""),
+                     (1, "cpu.max", "invalid")]
+        for number, (index, name, value) in enumerate(mutations):
+            execution_id = self.submit("denied-kernel-" + str(number))
+            observed = self.kernel_observation()
+            observed["groups"][index]["files"][name] = value
+            with mock.patch.object(runner, "kernel_resources", return_value=observed):
+                self.assertEqual(runner.worker(self.root, execution_id), 1, (index, name, value))
+            directory = self.directory(execution_id)
+            self.assertFalse((directory / "stdout.log").exists())
+            self.assertFalse(any(item.get("status") == "CHILD_STARTED" for item in runner.events(directory / "events.jsonl")))
+            proof = runner.read_json(directory / "prelaunch-kernel-check.json")
+            self.assertFalse(proof["safe"])
+            self.assertFalse(proof["production_enforced"])
+            self.assertTrue(proof["errors"])
+            receipt = runner.finalize(self.root, execution_id, {"SERVICE_RESULT": "exit-code"})
+            self.assertEqual(receipt["scientific_acceptance"], "unverified")
+            self.assertTrue(runner.verify(self.root, execution_id)["integrity_verified"])
+
+    def test_kernel_accepts_full_profile_and_exact_requests_only_with_page_rounding_and_six_cpus(self):
+        execution_id = self.submit("valid-kernel", memory_bytes=3221225489)
+        manifest = runner.read_json(self.directory(execution_id) / "manifest.json")
+        self.assertEqual(manifest["resource_profile"]["kernel_memory_max_bytes"], 3221225472)
+        observed = self.kernel_observation("3221225472")
+        with mock.patch.object(runner, "kernel_resources", return_value=observed):
+            self.assertEqual(runner.worker(self.root, execution_id), 0)
+        proof = runner.read_json(self.directory(execution_id) / "prelaunch-kernel-check.json")
+        self.assertTrue(proof["production_enforced"])
+        self.assertEqual(proof["errors"], [])
+        profile = manifest["resource_profile"]
+        fewer_cpus = copy.deepcopy(observed)
+        fewer_cpus["worker_allowed_cpus"] = list(range(5))
+        self.assertTrue(runner.kernel_resource_errors(fewer_cpus, profile))
+        no_groups = copy.deepcopy(observed)
+        no_groups["groups"] = []
+        self.assertTrue(runner.kernel_resource_errors(no_groups, profile))
+        wrong_rounding = copy.deepcopy(observed)
+        wrong_rounding["groups"][0]["files"]["memory.max"] = "3221225489"
+        self.assertTrue(runner.kernel_resource_errors(wrong_rounding, profile))
+
+    def test_kernel_read_failure_records_truthful_proof_without_starting_payload(self):
+        execution_id = self.submit("kernel-read-failed")
+        with mock.patch.object(runner, "kernel_resources", side_effect=OSError("synthetic missing controller mount")):
+            self.assertEqual(runner.worker(self.root, execution_id), 1)
+        directory = self.directory(execution_id)
+        self.assertFalse((directory / "stdout.log").exists())
+        proof = runner.read_json(directory / "prelaunch-kernel-check.json")
+        self.assertFalse(proof["production_enforced"])
+        self.assertEqual(proof["errors"], ["synthetic missing controller mount"])
+
+    def test_private_cli_rechecks_named_service_before_child_and_cannot_use_fixture_bypass(self):
+        execution_id = self.submit("late-named-service-loss")
+        manifest = runner.read_json(self.directory(execution_id) / "manifest.json")
+        original_group = ("/synthetic/" + manifest["unit"], self.base / "synthetic" / manifest["unit"])
+        with mock.patch.object(runner, "own_cgroup", return_value=original_group), mock.patch.object(
+                runner, "kernel_resources", return_value=None):
+            self.assertEqual(runner.main(["--root", str(self.root), "_worker", execution_id]), 1)
+        directory = self.directory(execution_id)
+        self.assertFalse((directory / "stdout.log").exists())
+        proof = runner.read_json(directory / "prelaunch-kernel-check.json")
+        self.assertFalse(proof["safe"])
+        self.assertTrue(proof["production_required"])
+        self.assertFalse(proof["production_enforced"])
+        self.assertEqual(proof["errors"], ["Current named production service cgroup is missing"])
+
+    def test_known_memory_request_is_exact_and_unsafe_or_unknown_profiles_never_claim_id(self):
+        for kwargs in ({"memory_bytes": 8724152321}, {"memory_bytes": 0},
+                       {"memory_bytes": -1}, {"memory_bytes": True},
+                       {"resource_profile": "unreviewed"}):
+            with self.assertRaises(ValueError):
+                self.submit("invalid-budget", **kwargs)
+            self.assertEqual(list((self.root / "executions").iterdir()), [])
+            self.assertEqual(list((self.root / "requests").iterdir()), [])
+        execution_id = self.submit("known-budget", memory_bytes=3221225489)
+        manifest = runner.read_json(self.directory(execution_id) / "manifest.json")
+        self.assertEqual(manifest["resources"]["MemoryMax"], "3221225489")
+        self.assertEqual(manifest["resource_profile"]["requested_memory_bytes"], 3221225489)
+        self.assertEqual(manifest["resource_profile"]["selected_memory_bytes"], 3221225489)
+
+    def test_high_available_ram_keeps_minimal_os_headroom_and_documented_host_ceiling(self):
+        observation = {**self.resource_observation, "memory_bytes": {
+            "MemTotal": 32 * runner.GIB, "MemAvailable": 24 * runner.GIB,
+            "SwapTotal": 4 * runner.GIB, "SwapFree": 4 * runner.GIB}}
+        with mock.patch.object(runner, "host_resources", return_value=observation):
+            resources, profile = runner.select_resources(runner.RESOURCE_PROFILE)
+            self.assertEqual(resources["MemoryMax"], "15032385536")
+            self.assertEqual(profile["safe_ceiling_bytes"], 15032385536)
+        observation["memory_bytes"]["MemAvailable"] = runner.GIB + 100
+        with mock.patch.object(runner, "host_resources", return_value=observation):
+            with self.assertRaisesRegex(ValueError, "Insufficient available RAM"):
+                self.submit("no-safe-ram")
+        self.assertEqual(list((self.root / "executions").iterdir()), [])
+
+    def test_headroom_decline_is_checked_under_global_lock_and_preserves_failed_receipt(self):
+        execution_id = self.submit("headroom-declined")
+        observation = {**self.resource_observation, "memory_bytes": {
+            **self.resource_observation["memory_bytes"], "MemAvailable": 9663676415}}
+        lock_observed = []
+        def fresh_under_lock():
+            with (self.root / "locks" / "execution.lock").open("a+") as handle:
+                with self.assertRaises(BlockingIOError):
+                    fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            lock_observed.append(True)
+            return observation
+        with mock.patch.object(runner, "host_resources", side_effect=fresh_under_lock):
+            self.assertEqual(runner.worker(self.root, execution_id), 1)
+        self.assertEqual(lock_observed, [True])
+        directory = self.directory(execution_id)
+        self.assertFalse((directory / "stdout.log").exists())
+        self.assertFalse(any(item.get("status") == "CHILD_STARTED" for item in runner.events(directory / "events.jsonl")))
+        check = runner.read_json(directory / "prelaunch-resource-check.json")
+        self.assertFalse(check["safe"])
+        result = runner.read_json(directory / "process-result.json")
+        self.assertEqual(result["status"], "ADMISSION_FAILED")
+        self.assertIn("no child launched", result["error"])
+        receipt = runner.finalize(self.root, execution_id, {"SERVICE_RESULT": "exit-code"})
+        self.assertEqual(receipt["scientific_acceptance"], "unverified")
+        self.assertFalse(receipt["resume_allowed"])
+        self.assertTrue(runner.verify(self.root, execution_id)["integrity_verified"])
 
     def test_changed_input_is_rejected_without_child_launch(self):
         execution_id = self.submit()

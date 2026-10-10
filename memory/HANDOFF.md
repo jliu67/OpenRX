@@ -1,5 +1,13 @@
 # Handoff — critical local infrastructure migration (inactive)
 
+## Latest urgent handoff — 2026-10-10T06:10Z
+
+**LOCAL_VALIDATING / NOT ACTIVE; migration incomplete at the owner's time limit.** [Independently accepted resource source and full test evidence](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094515657) records candidate657b23f1/tests3528d954, 38 focused and297 regression passes. Candidate remains undeployed; runner988 and all prior scientific artifacts, logs and failures remain preserved. Existing rebuild, strict guest9 and actual stronger stop03 are independently accepted; do not repeat expensive tests.
+
+Resume first from the latest `$OPENRX_LOCAL_ROOT/migrations/20261009/resume-record-*`, current Git/PR28 head, issue27 and hub5. Install the exact reviewed candidate in a NEW immutable release, prove live CPU600/memory/swap/tasks/ancestor constraints with a tiny payload and obtain independent acceptance. Then complete technical-map/actual CUTOVER_PENDING, conditional16docs, final-head CI/review and normal merge, merged-authority/eligibility checks, actual LOCAL_ACTIVE/explicit release and synchronized final receipt. The resource test receipt is `migrations/20261009/resource-profile-final-v2-controls-20261010T060553Z/receipt.json`, rawSHAdb7895e5; static reviewf7ff4cbb and independent test addendumb130126a are retained beside it. The prepared16doc cutover patch has NOT been applied.
+
+Inspect without starting work: `python3 "$OPENRX_LOCAL_ROOT/releases/runner-v1-988cf13f/local_execution.py" --root "$OPENRX_LOCAL_ROOT" status`; inspect the accepted guest execution20261009T193937Z-576aa858c033 and stopped execution20261009T202537Z-a1ca7df2cf1c. No expensive research or remote execution is released; no checkpoint resume; #16/M1–M5 remain open. Dated prior handoff below remains historical.
+
 2026-10-09 UTC. Migration task [#27](https://github.com/jliu67/OpenRX/issues/27) is **LOCAL_VALIDATING; NOT YET ACTIVE**.
 Actual preflight supported the transition at19:38:51Z; no scientific or cutover pass follows from that state.
 Read live task receipts, [local policy](../docs/LOCAL_EXECUTION.md), [migration/recovery runbook](../docs/LOCAL_MIGRATION.md),

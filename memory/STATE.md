@@ -1,5 +1,13 @@
 # Current state
 
+## Urgent resume handoff — 2026-10-10T06:10Z
+
+**LOCAL_VALIDATING / NOT ACTIVE. Migration incomplete.** The owner requested a quick time-limit handoff. The completed distinct gem5 rebuild, expected Linux boot, all nine runtime controls and stronger running-firmware stop03 have independent acceptance; reuse their retained evidence. [Latest exact review/test evidence and next gates](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094515657).
+
+Resource candidate `657b23f1` and tests `3528d954` passed independent static review, 38 focused controls and 297 regressions with unchanged source. It offers six CPUs, measured RAM with 1 GiB headroom and a 14 GiB ceiling, one resource slot, and fail-closed pre-payload kernel/ancestor checks. It is **not installed**; immutable runner988 remains preserved. CPU delegation and controlled manager reexecution preserved PID825 and all44 running service PIDs, but the final runner's live kernel-limit proof is still missing.
+
+Next: new immutable resource release, tiny live budget proof and independent acceptance, combined technical map/CUTOVER_PENDING, final16docs and exact-head review/CI, normal reviewed PR28 integration, merged-document/eligibility checks, actual activation and explicit release, synchronized final acceptance. PR28 stays draft/unmerged; #27 stays open. No full-scale science, remote access or checkpoint resume. #16/M1–M5 remain open. Latest host resume records are under `$OPENRX_LOCAL_ROOT/migrations/20261009/`; originals and dated records below remain preserved.
+
 Updated 2026-10-09 UTC during LOCAL_VALIDATING; prior PR #25/26 integration and partial scientific evidence remain preserved. **M0 is complete; M1–M5 acceptance remains open.**
 Historical pinned gem5 Linux runtime evidence passes nine controls; the new local runtime-only guest has started without accepted correctness. There is still no controlled hardware power/efficiency result or processor RTL.
 

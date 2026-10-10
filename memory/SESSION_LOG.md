@@ -345,3 +345,8 @@ their bytes contained no substituted prefixes. Both bounded production observati
 audit retain explicit active-manager/nonperpetual-socket/ancestry/UID limitations. This is not guest/runtime
 correctness, actual stop or cutover acceptance. Current docs link actual existing exports; no future proof link
 or full-scale authorization was created.
+
+
+## 2026-10-10T06:10Z — urgent owner-requested migration handoff
+
+Recovered existing migration rather than repeating the build/guest. Complete guest9 and stronger running-firmware stop03 independently accepted; all artifacts/history preserved. Resource-only candidate657b23f1/tests3528d954 independently statically reviewed; 38 focused and297 full cheap tests passed/source stable. Corrected cached CPU-controller availability by controlled user-manager reexecution preservingPID825/all44 running service PIDs. New resource candidate remains uninstalled and final live kernel-limit proof is pending. Migration stays LOCAL_VALIDATING/NOTACTIVE, PR28 draft/unmerged, task27 open; no full-scale science or execution-policy release. Owner requested fast wrap at time limit. Exact receipts/next gates: https://github.com/jliu67/OpenRX/issues/27#issuecomment-6094515657 . Complete originals of STATE/HANDOFF/SESSION_LOG preserved under the new host urgent-memory-before namespace; dated previous log prefix unchanged. Resume from newest migrations/20261009/resume-record-*.
