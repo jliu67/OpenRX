@@ -4,6 +4,9 @@
 
 ## Start of every agent session
 
+**Mandatory owner compute directive:** Read [the local resource policy](LOCAL_RESOURCE_POLICY.md) and [AGENTS.md](../AGENTS.md) before executing work. For authorized Ubuntu jobs, exploit available six-core/16-GiB hardware safely instead of repeating arbitrary agent-sandbox limits. Record limits and resource evidence in task handoffs. Do not bypass cutover, correctness or preservation gates.
+
+
 1. Read [AGENTS.md](../AGENTS.md), [ROADMAP.md](ROADMAP.md), [TASKS.md](TASKS.md), memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md, memory/HANDOFF.md and relevant evidence. Check the actual main HEAD, issue discussions, branches and the newest handoff.
 2. Browse the **[shared ready task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready)**, the **[review queue](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Areview)**, **[blocked tasks](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Ablocked)**, and existing milestone/research issues. Choose work you can actually execute, prioritizing correctness, missing evidence, blockers and the next roadmap gate.
 3. One independently claimable work package = **one task issue**. Do not place incompatible subtask claims on their shared parent milestone (for example issue #1). Check its exact dependencies, prior commits, warnings, expired/unexpired claim, and external prerequisites.
