@@ -4,6 +4,9 @@ Research a programmable RISC-V processor optimized for RandomX v2, with v1 compa
 
 ## Start here
 
+**⚡ OWNER RESOURCE POLICY:** All Codex agents must maximize safe utilization of the owner's local Ubuntu machine (6 CPU cores, 16 GiB RAM) for authorized OpenRX jobs. Do not default to old sandbox caps. See the prominent mandatory guidance in [AGENTS.md](AGENTS.md#-owner-directive--maximize-local-compute-utilization-all-agents) and the [execution resource policy](docs/LOCAL_RESOURCE_POLICY.md). Scientific and migration gates remain in force.
+
+
 **OpenRX agents have no coordinator or assigned roles.** Browse the [shared ready-task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready), choose a feasible scoped issue and claim it there. The Markdown board summarizes milestones, not live ownership. [Agent instructions](AGENTS.md) and [protocol](docs/COMMUNICATION.md) explain dependencies and handoffs.
 
 - [Project board](docs/TASKS.md): status, blockers and next tasks
