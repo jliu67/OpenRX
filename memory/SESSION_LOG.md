@@ -565,3 +565,9 @@ source/receipt ownership is respected. No workload, heavy rehash, local build/te
 install/settings/auth change, standing clone, sync, source/receipt rewrite or merge
 is performed. Current draft head/checks and different-agent review belong in the
 #8 documentation handoff; no future review/merge or fresh host health is asserted.
+
+## 2026-10-12 — first v2 AES execution implementation, task #48
+
+Executed the owner's 20:49 UTC directive within one required component, using an isolated feature workspace from main 10482be0. Added pinned BSD secworks S-box/inverse IP, exact AES round glue, shared/four-lane F/E mixing, VM-completion/F-writeback integration with v1 bypass, standalone unchanged-software oracle, focused tests and synthesis CI. Local round/mixer/integration and both actual mapped-netlist tests pass; request interval 17→5 cycles and generic cells 39,824→83,975. No physical timing/area/power or full-hash claim.
+
+Official Icarus 11.0/Yosys 0.9 packages resolved missing tools. Retained coefficient failures, `stat -json` compatibility failure and 2-GiB cgroup OOM. Reused passing shared-lane results; focused four-lane synthesis/netlist retry passed with identical 19 source bindings and vectors under checked CPU 600%, RAM 4 GiB, swap 512 MiB, tasks 128. Retry peak RSS 2,029,500KiB, CPU 100%, runtime 183.873s; single worker matches tool parallelism, and global slot/cgroups are released. No additional baseline batch, workload/vendor/receipt mutation, settings/access change, standing editable clone, Git sync, protected push or merge. [EXP-003](../experiments/EXP-003-v2-aes-rtl.md) retains raw/public artifacts and reproducible commands. Publish draft feature PR, request independent exact-head review and retire temporary authoring at handoff.

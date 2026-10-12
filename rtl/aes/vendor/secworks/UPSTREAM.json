@@ -1,0 +1,19 @@
+{
+  "repository": "https://github.com/secworks/aes",
+  "commit": "80dc4718e1dcbbdb4b0dd1bdb393d8f7b98981dc",
+  "license": "BSD-2-Clause",
+  "files": {
+    "LICENSE": {
+      "path": "LICENSE",
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+    },
+    "aes_sbox.v": {
+      "path": "src/rtl/aes_sbox.v",
+      "sha256": "60e7939de3a539176a8514c2e4a477f603173e6ae40512517ed6dfaaa7483fd9"
+    },
+    "aes_inv_sbox.v": {
+      "path": "src/rtl/aes_inv_sbox.v",
+      "sha256": "2e64290bf10830008b6cb58427af39e2c6ae9dff5f4cfc282d3afba0cb8dbc35"
+    }
+  }
+}

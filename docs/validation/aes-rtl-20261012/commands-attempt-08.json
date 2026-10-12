@@ -1,0 +1,39 @@
+[
+  {
+    "label": "synth-4",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/aes/randomx_v2_aes_mix.v rtl/aes/randomx_exec_aes_commit.v; chparam -set LANES 4 randomx_exec_aes_commit; synth -top randomx_exec_aes_commit -flatten; check -assert; tee -o /tmp/openrx-v2-aes-results-08/stat-4.txt stat; write_verilog -noattr /tmp/openrx-v2-aes-results-08/netlist-4.v; write_json /tmp/openrx-v2-aes-results-08/netlist-4.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-netlist-4",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-DAES_NETLIST",
+      "-s",
+      "tb_commit",
+      "-Ptb_commit.LANES=4",
+      "-o",
+      "/tmp/openrx-v2-aes-results-08/netlist-4.vvp",
+      "/tmp/openrx-v2-aes-results-08/netlist-4.v",
+      "rtl/aes/tests/tb_commit.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "netlist-4",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-v2-aes-results-08/netlist-4.vvp",
+      "+vectors=/tmp/openrx-v2-aes-results-08/mixes.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  }
+]

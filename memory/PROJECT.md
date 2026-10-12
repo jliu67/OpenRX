@@ -1,5 +1,12 @@
 # Project memory
 
+Latest owner execution instruction (2026-10-12 20:49 UTC): implement one working
+RandomX v2 execution component with licensed IP, oracle tests, real synthesis and
+a useful integration interface. [#48](https://github.com/jliu67/OpenRX/issues/48)
+implements the required F/E AES stage; its selection does not assert that AES is
+the bottleneck. Earlier source-only language below is retained context, with this
+bounded implementation exception. Full baseline, core/model and PPA gates remain.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.

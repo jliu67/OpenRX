@@ -1,5 +1,15 @@
 # OpenRX project board
 
+## First required v2 hardware component — 2026-10-12
+
+The later direct owner instruction authorizes the bounded execution component in
+[#48](https://github.com/jliu67/OpenRX/issues/48), superseding the earlier source-only
+priority for this implementation. F/E mixer RTL, v1/v2 writeback integration,
+oracle tests and generic synthesis are delivered for new independent review;
+[EXP-003](../experiments/EXP-003-v2-aes-rtl.md) links actual cycles, resources and
+retained failures. This does not accept a full baseline, processor/model or PPA,
+and does not restart #8's incomplete deadline batch. Live claims remain on #48.
+
 ## Current native pilot terminal — 2026-10-12
 
 [#8's scoped exploratory pilot is independently accepted](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969), not its

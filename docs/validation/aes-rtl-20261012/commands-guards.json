@@ -1,0 +1,37 @@
+[
+  {
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_v2_aes_mix",
+      "-Prandomx_v2_aes_mix.LANES=2",
+      "-o",
+      "/tmp/openrx-v2-aes-results-09/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v"
+    ],
+    "expected": "nonzero unsupported LANES"
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/test_aes_rtl.py",
+      "--output",
+      "/tmp/openrx-v2-aes-rtl-k4089cyg"
+    ],
+    "expected": "exit 2 before writing/building"
+  },
+  {
+    "argv": [
+      "python3",
+      "scripts/test_aes_rtl.py",
+      "--output",
+      "/tmp/openrx-v2-aes-results-08"
+    ],
+    "expected": "exit 2 before writing/building"
+  }
+]

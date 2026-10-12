@@ -1,0 +1,21 @@
+{
+  "rtl/aes/randomx_aes_round.v": "f0832f4740a1a1eba546937dcb7e83ca2b9b31890b7bb7d87b1e7e85fb6d5d63",
+  "rtl/aes/randomx_exec_aes_commit.v": "8d3ddac0c1329920af0b4f802bc46fe9cb5c0d2ba7da08342146dbd7c531d51c",
+  "rtl/aes/randomx_v2_aes_mix.v": "09f886b8c808ebd8bc28839f8d7076283e74528e0f1a314bdce1f8f94b94e417",
+  "rtl/aes/tests/oracle.cpp": "3131a88a9631d6809b8bbd47fae58ee1ec150c0292c9f9c7213df126bcb3f3a9",
+  "rtl/aes/tests/tb_commit.v": "2e99ccdd7a97e912bada70c21fc6bedb1db342d5e228fc61a6dfe417c68d21fd",
+  "rtl/aes/tests/tb_mix.v": "2c194b6f8d50d0ef8e070ab909d4efb68501d83a773e836ffafe1a48e07528f0",
+  "rtl/aes/tests/tb_round.v": "79d0785aa74e94ba761fd4305c8dd95392f4e4cbd6a9ee387e10603a40a0a23d",
+  "rtl/aes/vendor/secworks/LICENSE": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+  "rtl/aes/vendor/secworks/UPSTREAM.json": "32c8cc826a71c46429a1ae954f2c052e8786dca995d80427a7502ec3c85f07da",
+  "rtl/aes/vendor/secworks/aes_inv_sbox.v": "2e64290bf10830008b6cb58427af39e2c6ae9dff5f4cfc282d3afba0cb8dbc35",
+  "rtl/aes/vendor/secworks/aes_sbox.v": "60e7939de3a539176a8514c2e4a477f603173e6ae40512517ed6dfaaa7483fd9",
+  "scripts/test_aes_rtl.py": "b2fb1adc55b728bf6125baed9cda2173a8fd98db40fe2f1c338cabdc6f6bb253",
+  "vendor/randomx/src/blake2/endian.h": "72ec4133549838be4e0574d344fc9b57627c97060c57f9f73ddd0f4d96a2a2de",
+  "vendor/randomx/src/common.hpp": "5071ca5b609e34615b73a14b3648a7fd128d475884fde0248d97042adc8b7562",
+  "vendor/randomx/src/intrin_portable.h": "07588f5d3e01d1ad9ad375b05a232f5c43c9f6a3c264c2960e7306cdbf73c80f",
+  "vendor/randomx/src/soft_aes.cpp": "16abbc5769ca3784d36fa69f2123c4034607f614ed25446355b49ad805a6fb22",
+  "vendor/randomx/src/soft_aes.h": "d84f9bcfc74bc0aff7a142eee1b3efde71ef42d2ce7b212bae3adcc09b2d2128",
+  "vendor/randomx.lock.json": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd",
+  "vendor/randomx.sha256.json": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+}

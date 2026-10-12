@@ -1,5 +1,19 @@
 # Current state — actual local execution activation
 
+## First v2 execution component — 2026-10-12
+
+Owner-directed [#48](https://github.com/jliu67/OpenRX/issues/48) implements the
+required F/E AES mixer with pinned secworks S-box IP and a VM-completion/F-writeback
+interface, including v1 bypass. Round, both mixer/integration and mapped-netlist
+checks pass. [EXP-003](../experiments/EXP-003-v2-aes-rtl.md) records 17 versus 5
+no-stall request cycles and 39,824 versus 83,975 generic cells. Physical timing,
+area, power and whole-hash improvement remain unmeasured. New implementation
+review is pending; this is a bounded owner-authorized phase exception, with all
+broader baseline/core/model gates preserved. [Evidence](../docs/validation/aes-rtl-20261012/README.md)
+retains the initial coefficient/tool failures and the failed 2-GiB synthesis;
+focused four-lane retry passed under checked 4-GiB/600%-CPU limits. No further
+native baseline batch was run. Existing scientific assets remain unchanged.
+
 ## Accepted scoped native pilot — 2026-10-12
 
 [Owner-published independent terminal acceptance](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969) records execution

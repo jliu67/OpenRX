@@ -1,5 +1,11 @@
 # Roadmap and acceptance gates
 
+The owner’s later direct instruction (2026-10-12 20:49 UTC) authorizes the bounded
+first hardware execution component in [#48](https://github.com/jliu67/OpenRX/issues/48).
+Implement and test that component now; the sequence below remains the broader
+acceptance map. This exception does not establish a full baseline, selected core,
+calibrated timing or competitive PPA, and adds no new roadmap deliverable.
+
 ## Current priority path — 2026-10-12
 
 The objective is an X9-class ASIC adapted to exact RandomX v2, with v1 regression

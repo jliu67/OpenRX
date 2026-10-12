@@ -1,5 +1,19 @@
 # Agent instructions
 
+## Immediate implementation directive — owner, 2026-10-12 20:49 UTC
+
+The owner explicitly directed execution of the first working RandomX v2 hardware
+component using existing licensed IP, reference correctness tests, actual synthesis
+and an execution integration interface. [Task #48](https://github.com/jliu67/OpenRX/issues/48)
+implements the required F/E AES register mixer. This bounded work supersedes the
+earlier source-only/no-RTL gate for this component; routine implementation and
+official tool packages are authorized. Reuse completed #41 and accepted #8/#16
+evidence. No further baseline batches, research surveys or documentation-only
+cycles belong to this assignment. Independent review of the new implementation
+remains required; broader baseline, selected-core, calibrated timing, physical
+power and full-system acceptance gates remain open. Preserve all pinned assets,
+one-payload coordination and temporary-authoring retirement.
+
 ## Current engineering priority — owner direction, 2026-10-12
 
 Work toward an X9-class ASIC adapted to exact RandomX v2, using licensed open IP
@@ -9,7 +23,8 @@ Keep reverse engineering bounded to evidence that changes a design decision;
 X9 internals remain unknown and BOOMV3 is only a provisional baseline. Defer
 unrelated broad surveys and X5 reconstruction. Preserve #16's current correctness
 work and every baseline, profiling, selected-core and calibrated-model gate;
-this priority change does not authorize RTL work or new execution. [Task #39](https://github.com/jliu67/OpenRX/issues/39)
+that earlier priority change did not authorize RTL work or new execution; the
+new bounded implementation directive above controls task #48. [Task #39](https://github.com/jliu67/OpenRX/issues/39)
 tracks the separately reviewed documentation/coordination proposal.
 
 ## Current status — 2026-10-10
@@ -47,7 +62,7 @@ Read README.md, memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md and memo
 9. Before ending: update memory/STATE.md, append memory/SESSION_LOG.md, add consequential decisions, and connect results to an experiment. Git commits preserve this memory across sessions.
 10. Leave clear next commands, blockers and acceptance criteria. Do not invent completed work or evidence.
 
-Do not optimize processor RTL before establishing a validated workload baseline and agreeing a simulation model. This is a project phase gate, not a request to repeatedly ask permission for routine setup.
+The broader processor-optimization gate still requires a validated workload baseline and agreed simulation model. The owner-authorized first-component exception above permits #48 implementation/test/synthesis; it does not accept processor optimization or calibrated PPA.
 
 ## Critical local execution infrastructure — task #27
 
