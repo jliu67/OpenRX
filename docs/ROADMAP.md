@@ -1,5 +1,39 @@
 # Roadmap and acceptance gates
 
+## Current priority path — 2026-10-12
+
+The objective is an X9-class ASIC adapted to exact RandomX v2, with v1 regression
+coverage and reuse-first engineering. The sequence below narrows work; it does
+not change any acceptance criterion in the retained milestone table.
+
+1. Bound the X9 comparison envelope to traceable primary claims and explicit
+   unknowns. Separate whole-machine advertised targets from measured v2 and
+   chip-level results. X9 silicon, core topology and v2 measurements are not
+   established; do not wait for unavailable proprietary RTL or infer it from an ISA.
+2. Reuse pinned RandomX, accepted tools and preserved builds. Keep #16's existing
+   unchanged correctness request/oracle intact; complete light/full-dataset and
+   intended-core/SMP gates before claiming that model executes the workload.
+3. Complete the controlled #8 baseline, #10 physical power and #11 profiling under
+   their existing access, configuration and scientific gates. Measure v2 main-loop
+   AES demand versus scalar software AES alongside cache/memory/FP costs; do not
+   prescribe a bottleneck from static weights or short functional rates.
+4. Under #3, assess one provisional open-IP baseline (BOOMV3) and suitable reusable
+   components against exact ISA/JIT, FP/rounding, AES, memory and licensing needs.
+   Document the concrete gap and reuse decision; broaden a survey only if evidence
+   disqualifies the candidate. BOOMV3 is not verified X9 silicon or a final ASIC choice.
+5. Complete #14/M4 correctness and timing calibration with declared uncertainty.
+   Only after the existing #1/#3/#14 gates are verified may #12/M5 propose one
+   constrained v2 architectural change and evaluate correctness and PPA tradeoffs.
+6. Advance the resulting ASIC design/verification and later prototype through the
+   retained gates. Declare measurement/model boundaries; functional or FPGA results
+   cannot prove X9-class ASIC efficiency or competitive PPA.
+
+**Deferred, still unresolved:** broad processor surveys and #2's X5/SG2042
+reconstruction, unless a bounded question directly changes the X9-class v2 design.
+Preserve their records and unknowns. Deferral neither completes M2 nor waives
+baseline, selected-core, calibrated-model or RTL/prototype acceptance.
+[Scope alignment #39](https://github.com/jliu67/OpenRX/issues/39) records review/publication state.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.

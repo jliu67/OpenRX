@@ -1,5 +1,21 @@
 # OpenRX project board
 
+## Current mission and priority overlay — 2026-10-12
+
+Target an X9-class ASIC adapted to RandomX v2 through bounded evidence and reuse
+of existing verified tools/licensed IP. [Ordered roadmap](ROADMAP.md#current-priority-path--2026-10-12)
+and [alignment #39](https://github.com/jliu67/OpenRX/issues/39) govern current focus;
+task comments still govern claims and verified completion.
+
+- Keep #16's unchanged correctness work, #8 controlled baseline, #10 measured power
+  and #11 evidence-led AES/cache/FP profiling as necessary inputs; their gates stay open.
+- Focus #3 on reuse fit of the provisional BOOMV3 baseline and needed components;
+  #14 calibration remains required before #12 architectural/ASIC optimization.
+- Defer #2's X5/SG2042 reconstruction and unrelated broad surveys. Its scientific
+  questions and historical records remain open; a priority overlay is not acceptance.
+- X9 proprietary internals/topology and measured v2 efficiency remain unknown.
+  Whole-machine advertised targets do not establish chip-level or v2 performance.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.
@@ -87,7 +103,7 @@ Parent milestone [#1](https://github.com/jliu67/OpenRandomX/issues/1) is a discu
 | Issue | Work item | Status |
 |---|---|---|
 | [#1](https://github.com/jliu67/OpenRandomX/issues/1) | Measured native baseline | Partial; tasks above |
-| [#2](https://github.com/jliu67/OpenRandomX/issues/2) | X5 / SG2042 evidence | Open; primary board/chip evidence needed |
+| [#2](https://github.com/jliu67/OpenRandomX/issues/2) | X5 / SG2042 evidence | Priority DEFERRED under X9/v2 scope; remains open and unresolved, with primary board/chip evidence still required |
 | [#3](https://github.com/jliu67/OpenRandomX/issues/3) | Core/simulator selection | [PR #15](https://github.com/jliu67/OpenRandomX/pull/15) MERGED after review/CI: source-backed provisional BOOM/gem5 selections; actual scalar QEMU 39-check preflight. OPEN for selected-core/runtime boot and full dataset; preserve M1/M4/M5 gates |
 | [#4](https://github.com/jliu67/OpenRandomX/issues/4) | Monero activation | DONE for dated source research; PR #19 merged, #4 closed. Released consensus uses v1; beta v2 stressnet is separate; no live tip or mainnet v2 date. [Audit](validation/monero-activation/REVIEW-20261008.md) |
 | [#16](https://github.com/jliu67/OpenRandomX/issues/16) | gem5 full-system Linux correctness | OPEN; PR #18 actual Linux boot + nine runtime controls accepted. PR #25 cancellation repair merged and independently reviewed (253 Python / 34 host gem5 controls). The extended unchanged guest independently passed 9 runtime + 31 semantic controls, with zero hash values; it was manually stopped after proof that its tick guard cannot finish both cache initializations. No final runner report; saved raw evidence remains accepted only as partial. The next recipe uses an explicit larger guard and separately tested stop-file control, and migration #27 is now complete under its [final acceptance](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454). Any next attempt requires reviewed current source/runner/input bindings, a new local request and fresh admission/resource checks; this summary does not authorize execution. Full dataset/intended cores are separate gates. [Results](validation/m3-fs/README.md), [reuse the built binary](validation/m3-fs/REUSE.md); no calibrated timing |

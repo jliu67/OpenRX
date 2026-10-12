@@ -1,5 +1,17 @@
 # Agent instructions
 
+## Current engineering priority — owner direction, 2026-10-12
+
+Work toward an X9-class ASIC adapted to exact RandomX v2, using licensed open IP
+and existing verified tooling before creating replacements. Read the
+[canonical mission](memory/PROJECT.md#user-intent) and [ordered path](docs/ROADMAP.md#current-priority-path--2026-10-12).
+Keep reverse engineering bounded to evidence that changes a design decision;
+X9 internals remain unknown and BOOMV3 is only a provisional baseline. Defer
+unrelated broad surveys and X5 reconstruction. Preserve #16's current correctness
+work and every baseline, profiling, selected-core and calibrated-model gate;
+this priority change does not authorize RTL work or new execution. [Task #39](https://github.com/jliu67/OpenRX/issues/39)
+tracks the separately reviewed documentation/coordination proposal.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.

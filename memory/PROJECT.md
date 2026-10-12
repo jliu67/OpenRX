@@ -7,7 +7,25 @@
 These are verified GitHub closeout records, not a fresh host-health check. Every new execution still needs its reviewed request, current host/resource checks and existing admission gates. #16's complete unchanged RandomX matrix, full dataset and intended-core/SMP/BOOM gates remain open, as do M1–M5. Controlled measurement configuration/authorization, meter and PMU access are separate prerequisites. Dated CUTOVER_PENDING and pre-final records below are preserved history, not current migration blockers.
 
 ## User intent
-Build an organized research project toward a programmable RISC-V mining processor that improves on the Antminer X5 and explores the X9's advertised performance ambition. Use AI assistance for research, implementation, testing and experiment tracking. Persistent Markdown memory and the actual RandomX v2 code are requested.
+Owner direction on 2026-10-12 narrows OpenRX to designing an ASIC that targets
+Antminer X9-class capability and efficiency while executing RandomX v2 exactly,
+with v1 regression coverage. Favor reuse over recreating proven components.
+Reverse engineering is a bounded evidence-gathering route where primary material
+exists; recreating needed behavior with licensed open IP is the other route.
+Neither route assumes proprietary X9 RTL, chip identity or core topology is known.
+
+Reuse the pinned workload, accepted correctness/benchmark/profiling/power-import
+infrastructure and preserved simulator builds. BOOMV3 remains a provisional
+open-IP baseline requiring exact selected-core verification, not an X9 proxy.
+Study v2 main-loop AES acceleration against the existing scalar software-AES path
+as a profiling/model question; no AES block or new hardware selection is accepted.
+Do not promise competitive power/performance/area from functional controls.
+
+Keep research tied to the next concrete reuse or design decision. Broad processor
+surveys and X5/SG2042 reconstruction are deferred priorities, not completed science.
+The [ordered roadmap](../docs/ROADMAP.md#current-priority-path--2026-10-12) retains all
+scientific acceptance gates; [task #39](https://github.com/jliu67/OpenRX/issues/39)
+tracks this documentation and coordination proposal.
 
 The user has named the project OpenRX and designated this repository as the canonical project board, persistent memory and communication surface for collaborating agents. Keep progress, tested results, blockers, consequential decisions and explicit handoffs in version-controlled files and linked GitHub issues, not only in chat. The remote was renamed to jliu67/OpenRX on 2026-10-08; repository ID 1409576804 and its history are unchanged. Historical OpenRandomX links may redirect, but connector API calls must use the current name.
 
@@ -91,7 +109,17 @@ Original Library binary remains unavailable; rebuilt binary retains its distinct
 failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.
 
 ## Scope now
-Pinned upstream source, correctness checks, benchmark tooling, evidence tracking, simulator shortlist, and a first experiment. Phase 1 source analysis and tooling are recorded in docs/PHASE1.md; current completion/remaining work is authoritative in memory/STATE.md and docs/TASKS.md. No RTL or made-up X5 model.
+X9-class RandomX v2 ASIC requirements, bounded primary-evidence collection and
+reuse-fit assessment, unchanged correctness work, controlled native baseline,
+evidence-led profiling and validated-model preparation. Follow the existing #16,
+#8/#10/#11, #3 and #14 gates before #12 RTL optimization. Phase 1 tooling and
+accepted native staging are reused, not reimplemented. Current completion and
+remaining work stay authoritative in memory/STATE.md and docs/TASKS.md.
+
+## Earlier mission — retained history
+Build an organized research project toward a programmable RISC-V mining processor that improves on the Antminer X5 and explores the X9's advertised performance ambition. Use AI assistance for research, implementation, testing and experiment tracking. Persistent Markdown memory and the actual RandomX v2 code are requested.
+
+Earlier README wording: Research a programmable RISC-V processor optimized for RandomX v2, with v1 compatibility. The long-term ambition is to exceed the Antminer X5 and investigate the advertised X9 efficiency target. No competitive silicon, hardware power result, or SG2042 simulation exists yet.
 
 ## Prior conversation claims requiring validation
 X5 uses SG2042; X9 achieves 1 MH/s at 2472 W; public X9 shipments were cancelled; Monero has not activated v2. These are leads, not verified project facts. Recheck current primary sources before relying on them.
