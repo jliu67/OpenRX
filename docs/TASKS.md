@@ -1,5 +1,18 @@
 # OpenRX project board
 
+## Accepted light gate and live-task readback — 2026-10-12
+
+[Terminal #16 acceptance](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891): 39 required light controls (31 arithmetic
++ eight software hashes), nine runtime controls pass; optional hardware AES is
+skipped. [Evidence](validation/m3-fs/accepted-light-matrix-20261012.md) keeps
+execution `20261012T032030Z-65cbb4c0cf9e` bound to scientific source `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`.
+At the released monitoring-claim readback, #16 is **open/router-ready, unclaimed**;
+this does not authorize a successor or satisfy full-dataset/intended-core/SMP gates.
+M1–M5, controlled #8/#10/#11 and selected-core/calibration gates remain unchanged.
+#41's bounded source-only planning deliverable is completed after reviewed PR #44.
+Current queue rows below reflect these two closeouts; older dated snapshots and
+exact prior rows remain as history. Live issue comments still govern claims.
+
 ## Current mission and priority overlay — 2026-10-12
 
 Target an X9-class ASIC adapted to RandomX v2 through bounded evidence and reuse
@@ -105,10 +118,20 @@ Parent milestone [#1](https://github.com/jliu67/OpenRandomX/issues/1) is a discu
 |---|---|---|
 | [#1](https://github.com/jliu67/OpenRandomX/issues/1) | Measured native baseline | Partial; tasks above |
 | [#2](https://github.com/jliu67/OpenRandomX/issues/2) | X5 / SG2042 evidence | Owner-priority BLOCKED via [supported router command](https://github.com/jliu67/OpenRX/issues/2#issuecomment-6118574647); remains open, deferred and unresolved, with primary board/chip evidence still required |
-| [#41](https://github.com/jliu67/OpenRX/issues/41) | Bounded X9/v2 target-envelope and reusable-IP/AES gap decision | Source-only READY at publication; verify live receipt/claim. No workload, hardware selection or scientific completion |
+| [#41](https://github.com/jliu67/OpenRX/issues/41) | Bounded X9/v2 target-envelope and reusable-IP/AES gap decision | COMPLETED for source-only planning after [reviewed PR #44](https://github.com/jliu67/OpenRX/issues/41#issuecomment-6121699142); reuse the [decision](research/X9-V2-REUSE-DECISION.md). No measured v2, selected hardware or scientific gate completion |
 | [#3](https://github.com/jliu67/OpenRandomX/issues/3) | Core/simulator selection | [PR #15](https://github.com/jliu67/OpenRandomX/pull/15) MERGED after review/CI: source-backed provisional BOOM/gem5 selections; actual scalar QEMU 39-check preflight. OPEN for selected-core/runtime boot and full dataset; preserve M1/M4/M5 gates |
 | [#4](https://github.com/jliu67/OpenRandomX/issues/4) | Monero activation | DONE for dated source research; PR #19 merged, #4 closed. Released consensus uses v1; beta v2 stressnet is separate; no live tip or mainnet v2 date. [Audit](validation/monero-activation/REVIEW-20261008.md) |
+| [#16](https://github.com/jliu67/OpenRX/issues/16) | gem5 full-system Linux correctness | OPEN; [bounded light matrix accepted](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891): 39 required controls (31 arithmetic + eight software hashes) and nine runtime controls; optional hardware AES skipped. Executed source `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`, receipt/input integrity and drain/slot release verified. Full dataset, intended-core/SMP, calibrated timing/power and broader M1–M5 remain open. [Evidence](validation/m3-fs/accepted-light-matrix-20261012.md); original attempts retained below. Every successor needs its reviewed request and fresh admission |
+
+### Retained research-queue rows — before this terminal reconciliation
+
+Exact rows from main `d284e927f13a331e3079232681760847aa30e32f`; these describe
+their earlier publication and attempts, not the current queue state:
+
+```text
+| [#41](https://github.com/jliu67/OpenRX/issues/41) | Bounded X9/v2 target-envelope and reusable-IP/AES gap decision | Source-only READY at publication; verify live receipt/claim. No workload, hardware selection or scientific completion |
 | [#16](https://github.com/jliu67/OpenRandomX/issues/16) | gem5 full-system Linux correctness | OPEN; PR #18 actual Linux boot + nine runtime controls accepted. PR #25 cancellation repair merged and independently reviewed (253 Python / 34 host gem5 controls). The extended unchanged guest independently passed 9 runtime + 31 semantic controls, with zero hash values; it was manually stopped after proof that its tick guard cannot finish both cache initializations. No final runner report; saved raw evidence remains accepted only as partial. The next recipe uses an explicit larger guard and separately tested stop-file control, and migration #27 is now complete under its [final acceptance](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454). Any next attempt requires reviewed current source/runner/input bindings, a new local request and fresh admission/resource checks; this summary does not authorize execution. Full dataset/intended cores are separate gates. [Results](validation/m3-fs/README.md), [reuse the built binary](validation/m3-fs/REUSE.md); no calibrated timing |
+```
 
 ## Communication infrastructure
 

@@ -1,5 +1,22 @@
 # M3 — RISC-V core and simulator feasibility
 
+## Accepted bounded light controls — 2026-10-12
+
+The [independent #16 terminal acceptance](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891) establishes all
+39 required light-mode controls (31 arithmetic + eight v2/v1 interpreter/JIT
+software hashes) plus nine Linux runtime controls; optional hardware AES is
+skipped. Execution `20261012T032030Z-65cbb4c0cf9e` stays source-bound to
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`. [Evidence](../docs/validation/m3-fs/accepted-light-matrix-20261012.md)
+records zero guest/wrapper statuses, complete frames, reviewed input/receipt
+integrity and actual drain/slot release. #16's monitoring claim is released;
+the broader task remains open for full-dataset/intended-core/SMP work.
+
+This is functional light correctness in the declared scalar gem5 configuration,
+not BOOM/selected-core acceptance, calibrated timing/power, RTL or M1–M5.
+The 2026-10-08/10 source/runtime/partial-attempt sections below retain their
+original dated evidence; their incomplete light-matrix status is superseded
+by this accepted execution. No rebuild or successor run is authorized here.
+
 **Dated technical snapshot: CUTOVER_PENDING, updated 2026-10-10T08:41:07.234399+00:00; actual technical transition 2026-10-10T08:40:10.191934+00:00.**
 At this snapshot the migration policy is not released. This dated record does not activate execution.
 Expensive OpenRX work uses the designated Ubuntu host only after [#27](https://github.com/jliu67/OpenRX/issues/27)

@@ -1,5 +1,23 @@
 # OpenRX
 
+## Accepted #16 light matrix — 2026-10-12
+
+The [independently accepted terminal result](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891) completes the bounded
+gem5 Linux light-mode matrix: **39 required controls** (31 arithmetic + eight
+v2/v1 interpreter/JIT software hashes) and **nine Linux runtime controls** pass;
+one optional hardware-AES case is explicitly skipped. Execution
+`20261012T032030Z-65cbb4c0cf9e` retains scientific source
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`, not this documentation head.
+[Selected evidence](docs/validation/m3-fs/accepted-light-matrix-20261012.md)
+records the completed frames/statuses, reviewed integrity and lifecycle release.
+
+#16 remains open for separately gated full-dataset/intended-core/SMP work.
+Timing, measured power, BOOM/selected-core, RTL and M1–M5 acceptance remain open.
+The earlier incomplete light-matrix/attempt status below is dated history;
+original sources, builds, failures and receipts remain preserved.
+[Completed source-only #41](https://github.com/jliu67/OpenRX/issues/41#issuecomment-6121699142)
+supplies the bounded X9/v2 reuse decision, not a new execution or hardware result.
+
 ## Mission — owner direction, 2026-10-12
 
 Design an ASIC targeting Antminer X9-class capability and efficiency, adapted to

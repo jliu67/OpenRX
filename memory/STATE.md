@@ -1,5 +1,27 @@
 # Current state — actual local execution activation
 
+## Accepted bounded light-matrix state — 2026-10-12
+
+[Independent terminal acceptance](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891) records execution
+`20261012T032030Z-65cbb4c0cf9e`, scientific source
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`: all 39 required controls
+(31 arithmetic + eight software hashes) and nine Linux runtime controls pass.
+The optional hardware-AES case is skipped. Both guest statuses and wrapper/gem5
+return are zero; complete frames, empty guest stderr, completion and ordered
+hypercalls 1/2/3 were verified. Independent review checked 23 input/source
+bindings and 26 receipt artifacts; the actual execution/cgroup drained and
+heavy slot was released. [Selected evidence](../docs/validation/m3-fs/accepted-light-matrix-20261012.md)
+links immutable private-report/receipt identities without publishing host detail.
+
+At the terminal release readback, #16 remains open/router-ready with no claim;
+full-dataset/intended-core/SMP, BOOM, timing, measured power, RTL and M1–M5 remain
+open. No successor was launched by that closeout. Native work is only separate
+tiny-supervisor-fixture preparation/validation; no native benchmark pilot is
+reported or authorized here. Completed #41 supplies source-only planning.
+Earlier partial/light/migration states below remain dated history; retain every
+original source/build/input/receipt identity and use fresh reviewed admission
+for any future execution. This is a dated accepted record, not fresh host health.
+
 ## Current project direction — X9-class RandomX v2 ASIC, 2026-10-12
 
 The owner narrowed the goal to an X9-class ASIC adapted to exact RandomX v2,

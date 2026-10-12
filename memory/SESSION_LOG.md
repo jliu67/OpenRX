@@ -515,3 +515,26 @@ is still unavailable: CLI lacks Projects scope, connector exposes no Projects
 operations, and this task has no browser session; no actual board URL/ID was found.
 No account-level board denial, board absence or update is inferred. No credentials,
 settings, router/code, workload, active #16 request or scientific gate was changed.
+
+
+## 2026-10-12 — accepted #16 light-matrix current-status reconciliation
+
+Documentation session `codex/light-matrix-docs-20261012`, task #45, base main
+`d284e927f13a331e3079232681760847aa30e32f`. Verified the [public terminal acceptance](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891),
+matching released/null-claim #16 receipt and hub bot, and small retained independent
+review/acceptance/runner-receipt byte identities without replay or a heavy rehash.
+All 39 required controls (31 arithmetic + eight software hashes), nine runtime
+controls and terminal completion/integrity/drain gates are independently accepted;
+the optional hardware-AES case is skipped. Execution `20261012T032030Z-65cbb4c0cf9e`
+retains scientific source `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`.
+
+This docs-only proposal updates current discovery/board/state/handoff/evidence
+pointers and appends this log; original partial/timeout/migration sections and
+exact preceding board rows remain as dated history. #16 is not closed: full dataset,
+intended-core/SMP, BOOM, timing, power, RTL and M1–M5 remain open. Diagnostic native
+work is only tiny-supervisor-fixture preparation/validation, not a launched
+benchmark pilot. No protected original, source/input/build/data/receipt, code,
+scientific criterion, host setting or resource policy was changed. No workload,
+installation, credential/access change, standing clone, sync or merge occurred.
+Task #45 records the draft head, exact checks and independent review handoff;
+no future review/merge or new host-health claim is asserted by this entry.
