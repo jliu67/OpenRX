@@ -1,5 +1,25 @@
 # Handoff — actual designated local execution
 
+## Iteration-tail SRAM integration — 2026-10-12
+
+[Task #50](https://github.com/jliu67/OpenRX/issues/50) extends immutable reviewed
+PR49 head 9a3271d5 with ordered R/F scratchpad stores and final-F/cursor retirement.
+The pinned interpreter iteration and BytecodeMachine provide a controlled
+software differential, using a deterministic dataset-line fixture. Four RTL
+configurations and both actual overlap netlists pass 128 iterations, 1,024 stores,
+32 aliases, partial-reset/backpressure checks and all 2 MiB final memory bytes.
+[EXP-004](../experiments/EXP-004-iteration-tail.md) records shared 25→21 and four-lane
+13→9 cycle intervals by overlapping R stores with AES, and delivered generic
+counts 46,510/90,661 with 2,605/2,603 flops. Physical SRAM/core/fabric/timing are not
+accepted interfaces; this is tail integration, not full-core/hash proof.
+
+New-work independent review remains required. PR49's code, branch and all 19
+reviewed-core input bindings are unchanged; no main merge is performed. One
+worker ran under checked six-CPU/4 GiB/512 MiB-swap/128-task limits, peak RSS 2,252,132KiB,
+with slot/cgroup released. Original sources/data and full new outputs are retained;
+temporary authoring is retired at handoff. Next: review this new boundary, then
+connect a concrete selected-core/register-file and ordered-memory interface.
+
 ## Working v2 AES-stage handoff — 2026-10-12
 
 [#48](https://github.com/jliu67/OpenRX/issues/48) supplies tested synthesizable

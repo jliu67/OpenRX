@@ -1,0 +1,130 @@
+[
+  {
+    "label": "compile-mapped-1-stalls-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DITERATION_NETLIST",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=1",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-Ptb_iteration.STALL_V2=0",
+      "-o",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-1-stalls-0.vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/netlist-1.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  },
+  {
+    "label": "mapped-1-stalls-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-1-stalls-0.vvp",
+      "+initial=/tmp/openrx-v2-stalls-mapped-01/initial.hex",
+      "+final=/tmp/openrx-v2-stalls-mapped-01/final.hex",
+      "+trace=/tmp/openrx-v2-stalls-mapped-01/iterations.hex"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  },
+  {
+    "label": "compile-mapped-1-stalls-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DITERATION_NETLIST",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=1",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-Ptb_iteration.STALL_V2=1",
+      "-o",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-1-stalls-1.vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/netlist-1.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  },
+  {
+    "label": "mapped-1-stalls-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-1-stalls-1.vvp",
+      "+initial=/tmp/openrx-v2-stalls-mapped-01/initial.hex",
+      "+final=/tmp/openrx-v2-stalls-mapped-01/final.hex",
+      "+trace=/tmp/openrx-v2-stalls-mapped-01/iterations.hex"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  },
+  {
+    "label": "compile-mapped-4-stalls-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DITERATION_NETLIST",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=4",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-Ptb_iteration.STALL_V2=0",
+      "-o",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-4-stalls-0.vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/netlist-4.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  },
+  {
+    "label": "mapped-4-stalls-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-4-stalls-0.vvp",
+      "+initial=/tmp/openrx-v2-stalls-mapped-01/initial.hex",
+      "+final=/tmp/openrx-v2-stalls-mapped-01/final.hex",
+      "+trace=/tmp/openrx-v2-stalls-mapped-01/iterations.hex"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  },
+  {
+    "label": "compile-mapped-4-stalls-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DITERATION_NETLIST",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=4",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-Ptb_iteration.STALL_V2=1",
+      "-o",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-4-stalls-1.vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/netlist-4.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  },
+  {
+    "label": "mapped-4-stalls-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-v2-stalls-mapped-01/mapped-4-stalls-1.vvp",
+      "+initial=/tmp/openrx-v2-stalls-mapped-01/initial.hex",
+      "+final=/tmp/openrx-v2-stalls-mapped-01/final.hex",
+      "+trace=/tmp/openrx-v2-stalls-mapped-01/iterations.hex"
+    ],
+    "cwd": "/tmp/openrx-tail-v2-stalls-onks71zj",
+    "timeout_seconds": 120
+  }
+]

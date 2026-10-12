@@ -1,0 +1,51 @@
+{
+  "reviewed_baseline": "623d2498a3b0aeadd0b0de45ce0ae9dcdb937f89",
+  "method": "Reuse exact public mapped netlists because all six synthesizable RTL source files are unchanged; hosted CI independently synthesizes updated feature head.",
+  "RTL_bindings": {
+    "rtl/aes/vendor/secworks/aes_sbox.v": "60e7939de3a539176a8514c2e4a477f603173e6ae40512517ed6dfaaa7483fd9",
+    "rtl/aes/vendor/secworks/aes_inv_sbox.v": "2e64290bf10830008b6cb58427af39e2c6ae9dff5f4cfc282d3afba0cb8dbc35",
+    "rtl/aes/randomx_aes_round.v": "f0832f4740a1a1eba546937dcb7e83ca2b9b31890b7bb7d87b1e7e85fb6d5d63",
+    "rtl/aes/randomx_v2_aes_mix.v": "09f886b8c808ebd8bc28839f8d7076283e74528e0f1a314bdce1f8f94b94e417",
+    "rtl/aes/randomx_exec_aes_commit.v": "91b2412c0ef33295898301546912b0893a9c771ff7525aa91377c96ffc8c37bc",
+    "rtl/iteration/randomx_iteration_store.v": "dd805cad8d379cf1818d834b692aa7d86cd7c2eccf3eecf560ec35c4b7409968"
+  },
+  "fixtures": {
+    "initial.hex": "2552395c00607dc25da08dd75d5f2692a67d4b63f69c1ca08bd97f96662a8a78",
+    "final.hex": "57971dc17b332edf6e9121cd3bc906fa79a8239b8639a7ab46874cecdcf19fee",
+    "iterations.hex": "64b598e98f4e46d601939f55d91f8738cf6a8630dc8d476c646133c8409b030e"
+  },
+  "results": {
+    "mapped-1-stalls-0": {
+      "PASS": true,
+      "matches_RTL_log": true,
+      "netlist_raw_sha256": "586ad454fbcd7596d7f3b66b6358ae944a1fb4af63d183f26d0e01cd92b7d705",
+      "testbench_sha256": "124620bb230d0faf6820b433bcc24d37932a2c11966c9d7b15b07ed55eb38f85",
+      "new_v2_stall_mode": false,
+      "log": "PASS tail lanes=1 overlap=1 iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 interval_cycles=21 v2_elapsed_cycles=1344"
+    },
+    "mapped-1-stalls-1": {
+      "PASS": true,
+      "matches_RTL_log": true,
+      "netlist_raw_sha256": "586ad454fbcd7596d7f3b66b6358ae944a1fb4af63d183f26d0e01cd92b7d705",
+      "testbench_sha256": "124620bb230d0faf6820b433bcc24d37932a2c11966c9d7b15b07ed55eb38f85",
+      "new_v2_stall_mode": true,
+      "log": "PASS v2_backpressure lanes=1 overlap=1 iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 R_stall_cycles=512 F_stall_cycles=512 retirement_stall_cycles=192 v2_elapsed_cycles=2048"
+    },
+    "mapped-4-stalls-0": {
+      "PASS": true,
+      "matches_RTL_log": true,
+      "netlist_raw_sha256": "5aebb242a14c6fa17550b23600c866642658e72905f0c968a9d3c1bfe2ef1980",
+      "testbench_sha256": "124620bb230d0faf6820b433bcc24d37932a2c11966c9d7b15b07ed55eb38f85",
+      "new_v2_stall_mode": false,
+      "log": "PASS tail lanes=4 overlap=1 iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 interval_cycles=9 v2_elapsed_cycles=576"
+    },
+    "mapped-4-stalls-1": {
+      "PASS": true,
+      "matches_RTL_log": true,
+      "netlist_raw_sha256": "5aebb242a14c6fa17550b23600c866642658e72905f0c968a9d3c1bfe2ef1980",
+      "testbench_sha256": "124620bb230d0faf6820b433bcc24d37932a2c11966c9d7b15b07ed55eb38f85",
+      "new_v2_stall_mode": true,
+      "log": "PASS v2_backpressure lanes=4 overlap=1 iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 R_stall_cycles=512 F_stall_cycles=512 retirement_stall_cycles=192 v2_elapsed_cycles=1792"
+    }
+  }
+}

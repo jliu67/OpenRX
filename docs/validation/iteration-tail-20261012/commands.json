@@ -1,0 +1,259 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-I/tmp/openrx-tail-results-03",
+      "-Ivendor/randomx/src",
+      "rtl/iteration/tests/oracle.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/bytecode_machine.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "-o",
+      "/tmp/openrx-tail-results-03/oracle"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "oracle",
+    "argv": [
+      "/tmp/openrx-tail-results-03/oracle",
+      "/tmp/openrx-tail-results-03"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-1-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=1",
+      "-Ptb_iteration.OVERLAP_R=0",
+      "-o",
+      "/tmp/openrx-tail-results-03/1-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "rtl-1-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-tail-results-03/1-0.vvp",
+      "+initial=/tmp/openrx-tail-results-03/initial.hex",
+      "+final=/tmp/openrx-tail-results-03/final.hex",
+      "+trace=/tmp/openrx-tail-results-03/iterations.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-1-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=1",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-o",
+      "/tmp/openrx-tail-results-03/1-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "rtl-1-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-tail-results-03/1-1.vvp",
+      "+initial=/tmp/openrx-tail-results-03/initial.hex",
+      "+final=/tmp/openrx-tail-results-03/final.hex",
+      "+trace=/tmp/openrx-tail-results-03/iterations.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "synth-1",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/aes/randomx_v2_aes_mix.v rtl/aes/randomx_exec_aes_commit.v rtl/iteration/randomx_iteration_store.v; chparam -set LANES 1 -set OVERLAP_R 1 randomx_iteration_store; synth -top randomx_iteration_store -flatten; check -assert; tee -o /tmp/openrx-tail-results-03/stat-1.txt stat; write_verilog -noattr /tmp/openrx-tail-results-03/netlist-1.v; write_json /tmp/openrx-tail-results-03/netlist-1.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-netlist-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-DITERATION_NETLIST",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=1",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-o",
+      "/tmp/openrx-tail-results-03/netlist-1.vvp",
+      "/tmp/openrx-tail-results-03/netlist-1.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "netlist-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-tail-results-03/netlist-1.vvp",
+      "+initial=/tmp/openrx-tail-results-03/initial.hex",
+      "+final=/tmp/openrx-tail-results-03/final.hex",
+      "+trace=/tmp/openrx-tail-results-03/iterations.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-4-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=4",
+      "-Ptb_iteration.OVERLAP_R=0",
+      "-o",
+      "/tmp/openrx-tail-results-03/4-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "rtl-4-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-tail-results-03/4-0.vvp",
+      "+initial=/tmp/openrx-tail-results-03/initial.hex",
+      "+final=/tmp/openrx-tail-results-03/final.hex",
+      "+trace=/tmp/openrx-tail-results-03/iterations.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-4-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=4",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-o",
+      "/tmp/openrx-tail-results-03/4-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "rtl-4-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-tail-results-03/4-1.vvp",
+      "+initial=/tmp/openrx-tail-results-03/initial.hex",
+      "+final=/tmp/openrx-tail-results-03/final.hex",
+      "+trace=/tmp/openrx-tail-results-03/iterations.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "synth-4",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/aes/randomx_v2_aes_mix.v rtl/aes/randomx_exec_aes_commit.v rtl/iteration/randomx_iteration_store.v; chparam -set LANES 4 -set OVERLAP_R 1 randomx_iteration_store; synth -top randomx_iteration_store -flatten; check -assert; tee -o /tmp/openrx-tail-results-03/stat-4.txt stat; write_verilog -noattr /tmp/openrx-tail-results-03/netlist-4.v; write_json /tmp/openrx-tail-results-03/netlist-4.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "compile-netlist-4",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-DITERATION_NETLIST",
+      "-s",
+      "tb_iteration",
+      "-Ptb_iteration.LANES=4",
+      "-Ptb_iteration.OVERLAP_R=1",
+      "-o",
+      "/tmp/openrx-tail-results-03/netlist-4.vvp",
+      "/tmp/openrx-tail-results-03/netlist-4.v",
+      "rtl/iteration/tests/tb_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  },
+  {
+    "label": "netlist-4",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-tail-results-03/netlist-4.vvp",
+      "+initial=/tmp/openrx-tail-results-03/initial.hex",
+      "+final=/tmp/openrx-tail-results-03/final.hex",
+      "+trace=/tmp/openrx-tail-results-03/iterations.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 300
+  }
+]

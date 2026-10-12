@@ -1,0 +1,5 @@
+rtl/iteration/randomx_iteration_store.v:60: error: Unknown module type: randomx_iteration_store_requires_OVERLAP_R_0_or_1
+1 error(s) during elaboration.
+*** These modules were missing:
+        randomx_iteration_store_requires_OVERLAP_R_0_or_1 referenced 1 times.
+***

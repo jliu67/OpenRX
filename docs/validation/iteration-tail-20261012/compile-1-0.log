@@ -1,0 +1,9 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module aes_inv_sbox declared here: rtl/aes/vendor/secworks/aes_inv_sbox.v:40
+       :   -- module aes_sbox declared here: rtl/aes/vendor/secworks/aes_sbox.v:42
+       :   -- module randomx_aes_round declared here: rtl/aes/randomx_aes_round.v:4
+       :   -- module randomx_exec_aes_commit declared here: rtl/aes/randomx_exec_aes_commit.v:4
+       :   -- module randomx_iteration_store declared here: rtl/iteration/randomx_iteration_store.v:4
+       :   -- module randomx_v2_aes_mix declared here: rtl/aes/randomx_v2_aes_mix.v:4
