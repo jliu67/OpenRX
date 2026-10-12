@@ -1,5 +1,25 @@
 # EXP-001: controlled v1/v2 native baseline
 
+## Current preparation outcome — 2026-10-12
+
+[Task #35 / draft PR #36](https://github.com/jliu67/OpenRX/pull/36) now provides
+independently accepted isolated compilation and supported full-dataset native
+correctness for pinned source `4a4e30bb`. [Evidence](../docs/validation/native-staging-20261012/README.md)
+records six unchanged native cases, eight reference controls, two differential
+matches, 16 invalid-CLI checks and retained intentional duration failures.
+Upstream coverage is 106 supported passes plus one source-defined conditional
+skip; complete configuration coverage is unresolved. Historical preparation
+and failure records are retained below and in the task.
+
+This completes the recorded supported functional preparation, **not this
+experiment or M1**. Controlled host/settings, fixed compared counts, the formal
+thread/AES matrix, even repeats of at least four, sufficient duration, real
+synchronized power and profiling remain required. Diagnostic harness rates
+cannot substitute for those measurements. A proposed pilot is a separate root
+decision/request, not an executed or accepted result. The scientific acceptance
+criteria and vendor bytes are unchanged; no pilot or other workload is run by
+this documentation update.
+
 Status: source characterization, tooling/native correctness preflight and P1-05 same-process instrumentation complete; P1-06S power importer independently accepted as software, merged in PR #17 and #13 closed; controlled target-host experiment and power measurements pending. **Not a completed M1 experiment.**
 
 Hypothesis: the v2/v1 throughput ratio depends on available execution and memory resources; measure instead of assuming SG2042 behavior.
@@ -42,6 +62,19 @@ The importer revalidates the benchmark and exact input binding, then applies exp
 Remaining blockers: controlled benchmark host (#8), dynamic profiler/counter access (#11), and real synchronized power-meter samples/physical validation (#10). Importer software acceptance (#13) is complete. Use the specific open child issue for scoped claims; [#1](https://github.com/jliu67/OpenRandomX/issues/1) remains the parent milestone and discussion gate. Read [docs/TASKS.md](../docs/TASKS.md) and the current issue comments.
 
 Follow-up: select a simulator that can reproduce exact workload behavior, then vary memory latency/cache/AES capacity independently in a calibrated model. Do not bypass the roadmap's baseline/model gates.
+
+## Native staging preparation — 2026-10-12
+
+[Task #35](https://github.com/jliu67/OpenRX/issues/35) adds fresh external native
+builds, explicit executable/build/output locations and focused source/artifact
+binding tests. [Software validation](../docs/validation/native-staging-20261012/README.md)
+records 16 passing staging fixtures and 313 exercised lightweight tests with one
+sandbox socket denial followed by a passing targeted rerun. Implementation awaits
+independent review. No native compilation, full-dataset controls, pilot, measured
+matrix, synchronized power or profiling was performed. This preparation preserves
+the exact workload, even balanced repeats (at least four formally), known-hash
+controls and all experiment acceptance. The [local-runner commands](../benchmarks/steady/README.md#isolated-local-staging-and-controls)
+require separate reviewed requests and the shared compute slot; #8/M1 stay open.
 
 
 ## Independent importer acceptance — 2026-10-08

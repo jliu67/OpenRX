@@ -1,5 +1,37 @@
 # Current state — actual local execution activation
 
+## Accepted native staging and supported correctness — 2026-10-12
+
+[Task #35 / draft PR #36](https://github.com/jliu67/OpenRX/pull/36) now has
+independent source, actual isolated-build and supported-native-correctness
+acceptance for execution source `4a4e30bb`. [Current evidence](../docs/validation/native-staging-20261012/README.md)
+records the finalized build/correctness receipts, unchanged source/binary
+bindings, six native tests, eight reference controls, two differential matches,
+16 invalid-CLI checks and retained duration rejections. Upstream supported
+coverage is 106 passes plus one conditional skip; unexecuted configuration
+coverage is open. Detailed host witnesses remain private.
+
+Earlier failed telemetry and denied headroom attempts are preserved. Successful
+executions verified finalization and descendant drain; no native payload remains.
+This documentation-only head needs fresh independent diff review. #8/EXP-001/M1
+still require controlled throughput/power work; no diagnostic rate is a baseline.
+No simulation, scientific criterion/vendor change, merge or synchronization is
+performed here. The dated preparation/state sections below remain historical.
+
+## Native staging preparation — 2026-10-12
+
+[Task #35](https://github.com/jliu67/OpenRX/issues/35) prepares external fresh
+native builds and explicit steady/control input/output paths on base `3ee72cc`.
+Implementation and [lightweight evidence](../docs/validation/native-staging-20261012/README.md)
+await independent review in a draft feature PR. 313 tests were exercised: 312
+passed in the sandbox; its one denied Unix-socket fixture passed a permitted
+targeted rerun. Final 16 staging tests and all 171 vendor files pass.
+No native compilation/full-dataset controls or measured baseline were executed;
+shared compute-slot approval and reviewed local requests remain required.
+Retained sources/assets, immutable runner, sync and #16 scientific scope are
+unchanged. #8/EXP-001 and M1 remain open; exact next commands are in the adapter
+README and task handoff. Prior dated state text below is retained verbatim.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.

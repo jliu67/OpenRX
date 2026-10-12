@@ -1,5 +1,17 @@
 # Same-process adapter (P1-05)
 
+## Current isolated-path validation — 2026-10-12
+
+[Task #35 / draft PR #36](https://github.com/jliu67/OpenRX/pull/36) now has
+independently accepted isolated compilation and supported native correctness
+for exact executed source `4a4e30bb`. [Selected evidence](../../docs/validation/native-staging-20261012/README.md)
+records six native tests/four adapter configurations, eight exact references,
+two differential matches and retained duration/CLI failures. Upstream coverage
+is 106 supported passes plus one conditional skip; unexecuted configuration
+coverage remains open. This validates the explicit staging flow, not a controlled
+throughput/power baseline. Keep execution source/artifact identity distinct from
+later documentation heads, and preserve raw private records.
+
 Opt-in Linux/C++17 harness linked against the **unmodified pinned RandomX library**.
 The older `scripts/benchmark.py` remains the upstream-harness baseline. This adapter
 is measurement infrastructure, not an optimized RandomX implementation or a miner.
@@ -66,6 +78,93 @@ unsupported hardware fails rather than silently claiming coverage. They test
 uneven nonce partition, repeated known hashes, invalid arguments and differential
 17-nonce checks against the unmodified upstream benchmark. These are short CI
 **correctness controls**, not the controlled hardware matrix of P1-04.
+
+## Isolated local staging and controls
+
+For retained read-only sources, pass `--build-root` to `build_steady.sh`. This
+selects `scripts/stage_native.py`, which verifies the vendor manifest before
+compilation, builds the unchanged library and adapter in a **fresh external**
+directory, explicitly links that library and retains tool versions, complete
+step logs, CMake caches, commands and artifact/source SHA-256 in `build.json`.
+Existing destinations, including failed attempts and retired CMake caches, are
+rejected and preserved. The no-argument build remains the legacy developer path.
+
+The steady wrapper accepts `--binary`, `--build-root` and `--output-dir`.
+`--build-root` requires a successful staging receipt and verifies its compiled
+source and artifact bindings before launching. The selected caches and receipt
+are copied into the trial evidence. `--binary` alone supports an independently
+verified executable; its provenance still needs the operator's reviewed input
+binding. These location options never reach the native scientific command or
+change the strict JSONL validator. Explicit output destinations must be fresh,
+external to the source and disjoint from build/input paths. Missing or altered
+inputs retain a failed `run.json`; failed/too-short/incomplete trials retain raw
+output. No explicit path option certifies a controlled host experiment.
+
+`tests/native_steady.py` accepts the same build/binary/output locations plus
+`--upstream-binary`. With a staged build, both executables must match its receipt.
+An explicit output directory contains every control trial, CLI-error record and
+upstream differential log; no control evidence is written into the retained
+source or build. Its six native tests and original scientific options are
+unchanged. Upstream tests can run directly as the staged `randomx/randomx-tests`
+binary, with stdout/stderr retained by the local runner.
+
+Only after independent source/request review, verified LOCAL_ACTIVE release,
+fresh host/resource checks and the shared compute slot, submit through the
+[immutable local runner](../../docs/LOCAL_EXECUTION.md). Example specification
+(portable placeholders; use actual reviewed identities and fresh request keys):
+
+```bash
+# OPENRX_SOURCE is a verified pinned read-only source snapshot containing this PR.
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" submit \
+  --request-key issue-35-native-build-SOURCE-attempt-01 --kind build \
+  --cwd "$OPENRX_SOURCE" --source "$OPENRX_SOURCE" \
+  --env "CXX=$OPENRX_CXX" \
+  --input /usr/bin/cmake --input "$OPENRX_CXX" \
+  --input /usr/bin/env --input /usr/bin/timeout --input "$OPENRX_PYTHON" \
+  -- /usr/bin/env PYTHONDONTWRITEBYTECODE=1 \
+  /usr/bin/timeout --verbose --signal=KILL 600s \
+  "$OPENRX_PYTHON" -B "$OPENRX_SOURCE/scripts/stage_native.py" \
+  --build-root '{execution_dir}/native-build' --jobs 6 --arch native
+
+# Wait for the build receipt, run the runner's verify BUILD_ID, and independently
+# review build.json/logs before assigning OPENRX_BUILD to that native-build path.
+python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" submit \
+  --request-key issue-35-native-controls-SOURCE-attempt-01 \
+  --kind validation --validation-scope regression-smoke \
+  --cwd "$OPENRX_SOURCE" --source "$OPENRX_SOURCE" --input "$OPENRX_BUILD" \
+  --input /usr/bin/env --input /usr/bin/timeout --input "$OPENRX_PYTHON" \
+  -- /usr/bin/env PYTHONDONTWRITEBYTECODE=1 \
+  /usr/bin/timeout --verbose --signal=KILL 2400s \
+  "$OPENRX_PYTHON" -B "$OPENRX_SOURCE/tests/native_steady.py" \
+  --build-root "$OPENRX_BUILD" --output-dir '{execution_dir}/controls'
+```
+
+`OPENRX_PYTHON` and `OPENRX_CXX` denote the verified regular executable paths,
+resolved from installation aliases. The reviewed request must additionally bind the actual interpreter, compiler,
+toolchain/dependencies, environment and scientific oracle. Use six compile
+workers as an initial candidate; retain measured worker utilization and peak
+memory and revise only from evidence. Controls initialize the full dataset
+(over 2 GiB), so they remain a separate serialized local request. The unchanged
+`owner-local-max-v1` profile and fresh kernel/headroom checks choose the allowed
+budget; this adapter neither changes limits nor allocates the slot. Preserve the
+build execution/receipt and complete source snapshot when later trials consume it.
+The builder and immutable runner do not supply a wall cap automatically: the
+reviewed launch must enforce it. The explicit environment plus Python `-B`
+prevents source-tree bytecode writes without changing runner environment policy.
+The outer runner drains all cgroup descendants before releasing its slot;
+deadline kills may leave a missing report, which is retained as failure.
+Bind and retain an independently reviewed resource collector when actual cgroup
+peak/CPU records are required. Upstream assertions can be a separate bounded
+serial first step; record exact supported passes and conditional skips rather
+than converting unavailable coverage into success. The accepted actual operator
+packets remain separately source/input/receipt-bound, not implied by this example.
+
+Formal trials use the steady wrapper with `--build-root "$OPENRX_BUILD"` and
+`--output-dir '{execution_dir}/trial'` in a separate approved local request. Keep
+the same nonces/seeds, alternate v1/v2 order with an even repeat count of at least
+four, compare the unchanged thread/AES matrix and retain duration failures.
+Controlled settings, pilot duration, affinity and all EXP-001 acceptance remain
+required. Compilation or the six correctness controls cannot complete #8/M1.
 
 ## Prepare a real-host trial
 

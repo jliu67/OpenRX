@@ -1,0 +1,6 @@
+test_finalizer_timeout_protocol_handles_path_and_abstract_socket_and_joins_thread (test_local_execution.RunnerTests) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.121s
+
+OK
