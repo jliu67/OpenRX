@@ -1,5 +1,29 @@
 # Handoff — actual designated local execution
 
+## Current accepted light-matrix handoff — 2026-10-12
+
+Read [#16's independent terminal result](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891) and
+[selected evidence](../docs/validation/m3-fs/accepted-light-matrix-20261012.md)
+before continuing. Execution `20261012T032030Z-65cbb4c0cf9e` completed all
+39 required light controls (31 arithmetic + eight software hashes) and nine
+runtime controls; optional hardware AES was skipped. Scientific source stays
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`; do not relabel the accepted build,
+request, raw serial or receipts with a newer documentation head. Input/receipt
+integrity, final statuses, descendant/cgroup drain and slot release are verified.
+
+The monitoring claim was released; #16 is open/router-ready at that readback,
+with no successor launched by its closeout. Full dataset, intended-core/SMP,
+BOOM/selected-core, timing, measured power, RTL and M1–M5 remain separate gates.
+Next native work is limited to tiny-supervisor-fixture preparation/validation
+on the diagnostic thread; a native benchmark pilot has not been launched or
+accepted here. Every later payload still needs its own reviewed source/runner/
+input/request identity, fresh host/kernel checks and serialized slot admission.
+
+Reuse the [completed #41 planning decision](../docs/research/X9-V2-REUSE-DECISION.md)
+and preserved builds; no core/AES hardware selection or v2/PPA result follows.
+The preceding mission/attempt statements below are retained dated snapshots;
+this current light-gate handoff supersedes their incomplete-matrix wording only.
+
 ## Current mission handoff — X9-class v2 ASIC, 2026-10-12
 
 Follow the owner's narrowed [mission](PROJECT.md#user-intent) and [bounded path](../docs/ROADMAP.md#current-priority-path--2026-10-12):

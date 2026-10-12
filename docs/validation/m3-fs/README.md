@@ -1,5 +1,21 @@
 # Linux runtime controls and gem5 progress — 2026-10-08
 
+## Current accepted light matrix — 2026-10-12
+
+[Execution `20261012T032030Z-65cbb4c0cf9e` was independently accepted](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891)
+with 39 required controls (31 arithmetic + eight software hashes) and nine
+runtime controls passing; optional hardware AES is explicitly skipped.
+[Selected terminal evidence](accepted-light-matrix-20261012.md) retains scientific
+source `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`, accepted review/receipt digests,
+complete final frames/statuses and verified input/receipt/lifecycle integrity.
+
+#16 remains open for full dataset and intended-core/SMP gates; timing, power,
+BOOM/selected-core, RTL and M1–M5 remain open. The older 2026-10-08 stage table,
+timeout/stop attempts, commands and original binary/source records below are
+retained historical evidence, not this new execution's source/build identity.
+Reuse each accepted artifact under its own reviewed binding; this index change
+neither rebuilds nor repins it and does not authorize a successor.
+
 **Actual gem5 Linux boot and all nine standalone runtime controls passed and
 were independently accepted. Task #16 remains open for the complete unchanged
 light-mode v2/v1 hash matrix, whose separate 1,200-second attempt timed out.**
