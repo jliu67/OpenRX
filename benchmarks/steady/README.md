@@ -2,7 +2,7 @@
 
 ## Current isolated-path validation — 2026-10-12
 
-[Task #35 / draft PR #36](https://github.com/jliu67/OpenRX/pull/36) now has
+[Completed task #35 / merged PR #36](https://github.com/jliu67/OpenRX/pull/36) has
 independently accepted isolated compilation and supported native correctness
 for exact executed source `4a4e30bb`. [Selected evidence](../../docs/validation/native-staging-20261012/README.md)
 records six native tests/four adapter configurations, eight exact references,
@@ -11,6 +11,9 @@ is 106 supported passes plus one conditional skip; unexecuted configuration
 coverage remains open. This validates the explicit staging flow, not a controlled
 throughput/power baseline. Keep execution source/artifact identity distinct from
 later documentation heads, and preserve raw private records.
+[Verified merge 77cc171a and final review/postmerge CI closeout](https://github.com/jliu67/OpenRX/issues/35#issuecomment-6117228235)
+complete the implementation task; the measurement and unexecuted coverage gates
+above remain open.
 
 Opt-in Linux/C++17 harness linked against the **unmodified pinned RandomX library**.
 The older `scripts/benchmark.py` remains the upstream-harness baseline. This adapter
