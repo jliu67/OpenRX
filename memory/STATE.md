@@ -1,17 +1,35 @@
 # Current state — actual local execution activation
 
+## Current objective — manager-led build-first delivery, 2026-10-12
+
+Deliver working RandomX v2 execution hardware using licensed reusable IP, with
+reference correctness tests, reproducible synthesis, a useful execution integration
+interface and measured component improvement. The active owner-designated manager
+assigns bounded scopes, redirects agents, coordinates the shared compute slot and
+keeps delivery moving. Research is timeboxed to a concrete implementation blocker;
+reuse completed decisions/evidence and avoid repeated surveys, status cycles and
+separate documentation approval chains. Keep overhead minimal while retaining
+source/tool/command provenance, failures and independent review of new work.
+
+[Current implementation #48](https://github.com/jliu67/OpenRX/issues/48) /
+[draft PR #49](https://github.com/jliu67/OpenRX/pull/49) delivers the required F/E AES
+stage. Genuine full-workload, selected-core, calibrated timing and physical-power
+acceptance requirements remain; earlier milestones are not declared passed by
+this build-first instruction. Issue claims remain the source ownership record,
+and compute remains serialized. Historical results and pinned assets are retained.
+
 ## First v2 execution component — 2026-10-12
 
 Owner-directed [#48](https://github.com/jliu67/OpenRX/issues/48) implements the
 required F/E AES mixer with pinned secworks S-box IP and a VM-completion/F-writeback
-interface, including v1 bypass. Round, both mixer/integration and mapped-netlist
+interface, including v1 XOR path. Round, both mixer/integration and mapped-netlist
 checks pass. [EXP-003](../experiments/EXP-003-v2-aes-rtl.md) records 17 versus 5
-no-stall request cycles and 39,824 versus 83,975 generic cells. Physical timing,
+no-stall request cycles and 40,848 versus 84,999 generic cells. Physical timing,
 area, power and whole-hash improvement remain unmeasured. New implementation
 review is pending; this is a bounded owner-authorized phase exception, with all
-broader baseline/core/model gates preserved. [Evidence](../docs/validation/aes-rtl-20261012/README.md)
+broader baseline/core/model gates preserved. [Evidence](../docs/validation/aes-rtl-corrected-20261012/README.md)
 retains the initial coefficient/tool failures and the failed 2-GiB synthesis;
-focused four-lane retry passed under checked 4-GiB/600%-CPU limits. No further
+the full corrected attempt10 passed under checked 4-GiB/600%-CPU limits. No further
 native baseline batch was run. Existing scientific assets remain unchanged.
 
 ## Accepted scoped native pilot — 2026-10-12

@@ -103,7 +103,8 @@ def main():
             f'-Ptb_commit.LANES={lanes}','-o',str(out / f'commit-{lanes}.vvp'),
             *source_args,'rtl/aes/tests/tb_commit.v'])
         run(f'commit-{lanes}', ['vvp',str(out / f'commit-{lanes}.vvp'),
-                              '+vectors='+str(out / 'mixes.hex')])
+                              '+vectors='+str(out / 'mixes.hex'),
+                              '+v1vectors='+str(out / 'v1.hex')])
         commit_log = (out / f'commit-{lanes}.log').read_text()
         config['integration_tests'] = commit_log.strip().splitlines()
         if f'phase=0 v2=256 v1=0 cycles={256*(16//lanes+1)}' not in commit_log or 'phase=1 v2=128 v1=128' not in commit_log:
@@ -131,7 +132,8 @@ def main():
                 f'-Ptb_commit.LANES={lanes}','-o',str(out / f'netlist-{lanes}.vvp'),
                 str(out / f'netlist-{lanes}.v'),'rtl/aes/tests/tb_commit.v'])
             run(f'netlist-{lanes}', ['vvp',str(out / f'netlist-{lanes}.vvp'),
-                                   '+vectors='+str(out / 'mixes.hex')])
+                                   '+vectors='+str(out / 'mixes.hex'),
+                                   '+v1vectors='+str(out / 'v1.hex')])
             if (out / f'netlist-{lanes}.log').read_text() != commit_log:
                 raise RuntimeError('synthesized netlist differs from RTL results/cycles')
     # Reject unsupported configuration during elaboration.

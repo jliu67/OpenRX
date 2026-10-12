@@ -1,0 +1,19 @@
+{
+  "workers": 1,
+  "reason": "single-tool phases, all six CPUs available",
+  "kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "4294967296",
+    "memory.swap.max": "536870912",
+    "pids.max": "128"
+  },
+  "terminal": "success exit0, service runtime346.892seconds",
+  "raw_resource_digest": "1543e47f0989df10a03253dd4b0fe64ca59c245d098217a236962e92851decb2",
+  "raw_terminal_digest": "9e8bea641c8ed97dada4601499a35b7e212cd61aba3e13a602bef0260b831afb",
+  "cgroup_absent": true,
+  "global_slot_acquired_for_packaging": true,
+  "peak_RSS_KiB": 2032356,
+  "CPU_percent": 99,
+  "user_seconds": 343.78,
+  "system_seconds": 3.02
+}

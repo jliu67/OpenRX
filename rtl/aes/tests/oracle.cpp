@@ -30,14 +30,16 @@ static rx_vec_i128 load(const Block& b) {
         unsigned32ToSigned2sCompl(load32(b.data()+4)),
         unsigned32ToSigned2sCompl(load32(b.data())));
 }
-static Block round(const Block& b, const Block& k, bool dec) {
-    const auto y = dec ? soft_aesdec(load(b),load(k)) : soft_aesenc(load(b),load(k));
+static Block store(rx_vec_i128 y) {
     Block out;
     store32(out.data(), uint32_t(rx_vec_i128_x(y)));
     store32(out.data()+4, uint32_t(rx_vec_i128_y(y)));
     store32(out.data()+8, uint32_t(rx_vec_i128_z(y)));
     store32(out.data()+12, uint32_t(rx_vec_i128_w(y)));
     return out;
+}
+static Block round(const Block& b, const Block& k, bool dec) {
+    return store(dec ? soft_aesdec(load(b),load(k)) : soft_aesenc(load(b),load(k)));
 }
 static void hex(std::ostream& s, const Block& b) {
     for (auto i=b.rbegin();i!=b.rend();++i)
@@ -50,7 +52,8 @@ int main(int argc, char** argv) {
     if (argc!=2) { std::cerr << "usage: oracle OUTPUT_DIRECTORY\n"; return 2; }
     std::ofstream rounds(std::string(argv[1])+"/rounds.hex");
     std::ofstream mixes(std::string(argv[1])+"/mixes.hex");
-    if (!rounds || !mixes) throw std::runtime_error("cannot open vector outputs");
+    std::ofstream v1(std::string(argv[1])+"/v1.hex");
+    if (!rounds || !mixes || !v1) throw std::runtime_error("cannot open vector outputs");
     // Every byte value at every position, both directions, plus random blocks.
     for (unsigned i=0;i<512;++i) {
         Block b=random_block(),k=random_block();
@@ -83,8 +86,13 @@ int main(int argc, char** argv) {
         for(unsigned key=0;key<4;++key) for(unsigned lane=0;lane<4;++lane)
             out[lane]=round(out[lane],e[key],lane%2==1);
         hex(mixes,f);mixes << ' ';hex(mixes,e);mixes << ' ';hex(mixes,out);mixes << '\n';
+        // vm_interpreted.cpp v1 post-VM boundary: F[i] ^= E[i].
+        Registers v1_out;
+        for(unsigned lane=0;lane<4;++lane)
+            v1_out[lane]=store(rx_xor_vec_i128(load(f[lane]),load(e[lane])));
+        hex(v1,v1_out);v1 << '\n';
     }
-    rounds.close(); mixes.close();
-    if (!rounds || !mixes) throw std::runtime_error("vector output write failed");
-    std::cout << "oracle: rounds=1024 mixes=256 seed=0x4f70656e52587632\n";
+    rounds.close(); mixes.close(); v1.close();
+    if (!rounds || !mixes || !v1) throw std::runtime_error("vector output write failed");
+    std::cout << "oracle: rounds=1024 mixes=256 v1=256 seed=0x4f70656e52587632\n";
 }

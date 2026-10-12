@@ -1,0 +1,2 @@
+usage: test_aes_rtl.py [-h] --output OUTPUT [--synthesize]
+test_aes_rtl.py: error: output must be a fresh directory; preserve earlier attempts

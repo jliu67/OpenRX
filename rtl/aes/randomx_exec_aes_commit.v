@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: BSD-3-Clause
-// VM completion to F-register writeback boundary. v1 bypasses the v2-only stage.
+// VM completion to F-register writeback: v2 AES mixing, v1 raw F XOR E.
 `default_nettype none
 module randomx_exec_aes_commit #(
     parameter integer LANES=1
@@ -33,7 +33,7 @@ module randomx_exec_aes_commit #(
         if(rst) begin state_q<=IDLE;bypass_q<=512'b0;end
         else if(vm_valid && vm_ready) begin
             state_q<=vm_v2 ? V2 : V1;
-            if(!vm_v2) bypass_q<=vm_f;
+            if(!vm_v2) bypass_q<=vm_f ^ vm_e;
         end else if(wb_valid && wb_ready) state_q<=IDLE;
     end
 endmodule

@@ -6,6 +6,7 @@ module tb_commit #(parameter integer LANES=1);
     reg [511:0] vm_f=0,vm_e=0;
     wire vm_ready,wb_valid;wire [511:0] wb_f;
     reg [511:0] f[0:255],e[0:255],expected[0:255];
+    reg [511:0] expected_v1[0:255];
     reg [511:0] held;
     reg [4095:0] vector_path;
     integer fd,rc,count,accepted,received,ticks,phase,v1_count,v2_count;
@@ -26,6 +27,13 @@ module tb_commit #(parameter integer LANES=1);
         for(count=0;count<256;count=count+1) begin
             rc=$fscanf(fd,"%h %h %h\n",f[count],e[count],expected[count]);
             if(rc!=3) $fatal(1,"bad vector");
+        end
+        $fclose(fd);
+        if(!$value$plusargs("v1vectors=%s",vector_path)) $fatal(1,"missing v1 vectors");
+        fd=$fopen(vector_path,"r");if(!fd) $fatal(1,"cannot open v1 vectors");
+        for(count=0;count<256;count=count+1) begin
+            rc=$fscanf(fd,"%h\n",expected_v1[count]);
+            if(rc!=1) $fatal(1,"bad v1 vector");
         end
         $fclose(fd);
         // First run all v2 without stalls: compare integrated cycle intervals.
@@ -50,7 +58,7 @@ module tb_commit #(parameter integer LANES=1);
                     if(phase==0 || received%4<2) begin
                         if(wb_f!==expected[received]) $fatal(1,"v2 commit mismatch");v2_count=v2_count+1;
                     end else begin
-                        if(wb_f!==f[received]) $fatal(1,"v1 bypass mismatch");v1_count=v1_count+1;
+                        if(wb_f!==expected_v1[received]) $fatal(1,"v1 XOR mismatch");v1_count=v1_count+1;
                     end
                     received=received+1;
                 end

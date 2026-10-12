@@ -1,5 +1,23 @@
 # OpenRX
 
+## Current objective — manager-led build-first delivery, 2026-10-12
+
+Deliver working RandomX v2 execution hardware using licensed reusable IP, with
+reference correctness tests, reproducible synthesis, a useful execution integration
+interface and measured component improvement. The active owner-designated manager
+assigns bounded scopes, redirects agents, coordinates the shared compute slot and
+keeps delivery moving. Research is timeboxed to a concrete implementation blocker;
+reuse completed decisions/evidence and avoid repeated surveys, status cycles and
+separate documentation approval chains. Keep overhead minimal while retaining
+source/tool/command provenance, failures and independent review of new work.
+
+[Current implementation #48](https://github.com/jliu67/OpenRX/issues/48) /
+[draft PR #49](https://github.com/jliu67/OpenRX/pull/49) delivers the required F/E AES
+stage. Genuine full-workload, selected-core, calibrated timing and physical-power
+acceptance requirements remain; earlier milestones are not declared passed by
+this build-first instruction. Issue claims remain the source ownership record,
+and compute remains serialized. Historical results and pinned assets are retained.
+
 ## Accepted exploratory native pilot — 2026-10-12
 
 [Independent terminal review](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969) accepts native execution

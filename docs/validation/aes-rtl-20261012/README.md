@@ -1,5 +1,10 @@
 # AES execution-stage test and synthesis evidence
 
+**Superseded interface expectation:** independent review found that the v1 test
+expected identity at a boundary requiring F XOR E. These original exports are
+retained unchanged and do not accept v1 compatibility. The corrected component
+and evidence are in [the later record](../aes-rtl-corrected-20261012/README.md).
+
 [Task #48](https://github.com/jliu67/OpenRX/issues/48) delivers the required v2
 F/E mixer and its VM-completion/writeback adapter. The component's
 [interface and reproduction command](../../../rtl/aes/README.md) and

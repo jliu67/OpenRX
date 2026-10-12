@@ -3,15 +3,14 @@
 ## Working v2 AES-stage handoff — 2026-10-12
 
 [#48](https://github.com/jliu67/OpenRX/issues/48) supplies tested synthesizable
-`rtl/aes` code, licensed pinned IP, a VM-completion/writeback interface, v1 bypass,
+`rtl/aes` code, licensed pinned IP, a VM-completion/writeback interface, v1 XOR path,
 standalone software oracle and `scripts/test_aes_rtl.py`. All declared round,
 mixer, integration, mapped-netlist and output/parameter guard checks passed.
-[EXP-003](../experiments/EXP-003-v2-aes-rtl.md) and [raw exports](../docs/validation/aes-rtl-20261012/README.md)
-show a 17→5 cycle request interval and 39,824→83,975 generic cells. Clock timing,
-physical area/power and full-hash benefit are unavailable. Shared-lane results
-are retained from attempt07; its four-lane cgroup OOM is preserved and attempt08
-completed only that phase with identical source/vectors under a checked 4-GiB
-budget. Both job cgroups are absent and the global slot is free.
+[EXP-003](../experiments/EXP-003-v2-aes-rtl.md) and [raw exports](../docs/validation/aes-rtl-corrected-20261012/README.md)
+show a 17→5 cycle request interval and 40,848→84,999 generic cells. Clock timing,
+physical area/power and full-hash benefit are unavailable. Initial source/results remain retained; review identified and corrected the
+v1 F XOR E boundary. Complete attempt10 passed both corrected configurations
+and mapped netlists under a checked 4-GiB budget. Both job cgroups are absent and the global slot is free.
 
 Next action: independent review of this new exact feature head. Reproduce with
 `python3 scripts/test_aes_rtl.py --output /tmp/openrx-aes-fresh-attempt --synthesize`

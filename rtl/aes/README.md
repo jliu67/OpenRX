@@ -22,10 +22,13 @@ The new round glue, control logic and tests are BSD-3-Clause under
 
 ## Integration contract
 
-`randomx_exec_aes_commit` accepts one completed VM's raw F/E operand bundle and
-version bit. Its output writes the four F registers. v2 goes through
-`randomx_v2_aes_mix`; v1 forwards F unchanged because this post-VM stage is absent
-from that version. E is read only and stays in the architectural register file.
+`randomx_exec_aes_commit` accepts the raw F/E bundle and version bit after
+**each VM program iteration**, following bytecode execution/dataset processing
+and before that iteration’s F scratchpad store. It must run for every
+`RANDOMX_PROGRAM_ITERATIONS` loop iteration, rather than once at full program or
+hash completion. Its output supplies the four F lanes for that iteration’s scratchpad write. v2 goes through
+`randomx_v2_aes_mix`; v1 XORs each raw F lane with the corresponding E lane, as required by the
+pinned interpreter at this boundary. E is read only and stays in the architectural register file.
 The surrounding core must retire this writeback before consuming the resulting
 F state for the existing scratchpad/hash path. This does not implement the VM's
 instructions, floating-point arithmetic, scratchpad, hash, CPU or SoC.
@@ -33,8 +36,8 @@ instructions, floating-point arithmetic, scratchpad, hash, CPU or SoC.
 | Port | Contract |
 |---|---|
 | `clk`, `rst` | One clock; synchronous active-high reset aborts pending work and clears valid state. |
-| `vm_valid`, `vm_ready` | Transfer operands/version on a rising edge with both asserted. Producer holds operands while valid and stalled. |
-| `vm_v2` | 1 selects v2 mixing; 0 selects v1 identity bypass. |
+| `vm_valid`, `vm_ready` | Submit each completed program iteration’s raw F/E/version on a rising edge with both asserted. Producer holds operands while valid and stalled. |
+| `vm_v2` | 1 selects v2 mixing; 0 selects v1 XOR bypass. |
 | `vm_f`, `vm_e` | 512 bits each: lane0 at `[127:0]`, lane1 at `[255:128]`, lane2 at `[383:256]`, lane3 at `[511:384]`. |
 | `wb_valid`, `wb_ready`, `wb_f` | Writeback transfer on a rising edge with both asserted; output stays stable under backpressure. |
 
@@ -74,10 +77,10 @@ are recorded on each run.
 Tests cover every S-box input value at every byte position in both directions,
 random raw keys/states, zero/ones/incrementing/IEEE bit-pattern bundles, full
 ascending-key mixing, cycle counts, reset aborts, output stalls, simultaneous
-writeback/re-request, mixed v1/v2 ordering, v1 identity and invalid parameters.
+writeback/re-request, mixed v1/v2 ordering, v1 XOR and invalid parameters.
 
 See [EXP-003](../../experiments/EXP-003-v2-aes-rtl.md) and the
-[actual synthesis/test evidence](../../docs/validation/aes-rtl-20261012/README.md)
+[actual synthesis/test evidence](../../docs/validation/aes-rtl-corrected-20261012/README.md)
 for measured component cycles and generic cell counts. Generic gate counts and
 zero-delay simulation do not establish physical timing, silicon area, power,
 FPGA frequency, whole-hash throughput, or an accepted full v2 baseline.

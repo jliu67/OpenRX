@@ -1,5 +1,23 @@
 # OpenRX decentralized agent coordination — protocol v2
 
+## Current objective — manager-led build-first delivery, 2026-10-12
+
+Deliver working RandomX v2 execution hardware using licensed reusable IP, with
+reference correctness tests, reproducible synthesis, a useful execution integration
+interface and measured component improvement. The active owner-designated manager
+assigns bounded scopes, redirects agents, coordinates the shared compute slot and
+keeps delivery moving. Research is timeboxed to a concrete implementation blocker;
+reuse completed decisions/evidence and avoid repeated surveys, status cycles and
+separate documentation approval chains. Keep overhead minimal while retaining
+source/tool/command provenance, failures and independent review of new work.
+
+[Current implementation #48](https://github.com/jliu67/OpenRX/issues/48) /
+[draft PR #49](https://github.com/jliu67/OpenRX/pull/49) delivers the required F/E AES
+stage. Genuine full-workload, selected-core, calibrated timing and physical-power
+acceptance requirements remain; earlier milestones are not declared passed by
+this build-first instruction. Issue claims remain the source ownership record,
+and compute remains serialized. Historical results and pinned assets are retained.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.
@@ -8,7 +26,7 @@ These are verified GitHub closeout records, not a fresh host-health check. Every
 
 GitHub is the sole progress publication and coordination authority; there is no standing editable local progress mirror or automatic Git sync. [The publication/source-retention policy](PROGRESS_PUBLICATION_POLICY.md) distinguishes retained scientific/evidence sources from editing workspaces. Existing issue claims, independent reviews and reviewed PR handoffs continue unchanged.
 
-**There is no coordinator, permanent role, or assigned team.** OpenRX is a shared project visited independently by agents. GitHub Issues are the shared task pool, asynchronous message board, and **sole live ownership record**. Agent/session names are temporary claim identities, not job titles or services. [Hub #5](https://github.com/jliu67/OpenRandomX/issues/5) is a directory/announcement thread, **not an authority**.
+**The owner now directs manager-led build-first work.** The active designated manager assigns bounded scopes and coordinates delivery; periodic visitors retain the same issue-claim records. No permanent autonomous worker service is introduced. GitHub Issues are the shared task pool, asynchronous message board, and **sole live ownership record**. Agent/session names are temporary claim identities, not job titles or services. [Hub #5](https://github.com/jliu67/OpenRandomX/issues/5) is a directory/announcement thread, **not an authority**.
 
 ## Start of every agent session
 
@@ -16,7 +34,7 @@ GitHub is the sole progress publication and coordination authority; there is no 
 
 
 1. Read [AGENTS.md](../AGENTS.md), [ROADMAP.md](ROADMAP.md), [TASKS.md](TASKS.md), memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md, memory/HANDOFF.md and relevant evidence. Check the actual main HEAD, issue discussions, branches and the newest handoff.
-2. Apply the [current X9/v2 priority overlay](ROADMAP.md#current-priority-path--2026-10-12), then browse the **[shared ready task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready)**, the **[review queue](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Areview)**, **[blocked tasks](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Ablocked)**, and existing milestone/research issues. Choose only eligible work within that narrowed path, prioritizing correctness, needed evidence and existing gates. The ready queue is a router state, not a priority ranking: #2 is owner-priority-blocked and unresolved; [#41](https://github.com/jliu67/OpenRX/issues/41) is bounded source-only X9/v2 target/reuse/AES work. Do not resume deferred X5/M2 merely because its historical milestone is next numerically, or treat #3's historic review label as completed selected-core science.
+2. Apply the [current X9/v2 priority overlay](ROADMAP.md#current-priority-path--2026-10-12), then browse the **[shared ready task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready)**, the **[review queue](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Areview)**, **[blocked tasks](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Ablocked)**, and existing milestone/research issues. Follow the active manager’s bounded implementation assignment, prioritizing correctness, reproducible synthesis and measured integration. The ready queue is a router state, not a priority ranking: #2 is owner-priority-blocked and unresolved; [#41](https://github.com/jliu67/OpenRX/issues/41) is bounded source-only X9/v2 target/reuse/AES work. Do not resume deferred X5/M2 merely because its historical milestone is next numerically, or treat #3's historic review label as completed selected-core science.
 3. One independently claimable work package = **one task issue**. Do not place incompatible subtask claims on their shared parent milestone (for example issue #1). Check its exact dependencies, prior commits, warnings, expired/unexpired claim, and external prerequisites.
 4. To take the task, post a new comment whose first line is "/openrx claim agent/unique-session". Under it record base SHA, scoped files, acceptance and any overlap. Wait for the matching bot receipt with valid expiry; claims are **advisory 4-hour leases**, never locks or proof an agent is currently running. Use separate branches/PRs and checked expected-head updates.
 5. Execute and test; document real evidence, skipped tests and errors. Post a matching "/openrx release agent/session", "/openrx blocked agent/session", or "/openrx review agent/session" when handing off. Any capable later agent can review or resume; **no manager signoff or role assignment** is needed.
