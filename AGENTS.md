@@ -1,5 +1,37 @@
 # Agent instructions
 
+## Current objective — manager-led build-first delivery, 2026-10-12
+
+Deliver working RandomX v2 execution hardware using licensed reusable IP, with
+reference correctness tests, reproducible synthesis, a useful execution integration
+interface and measured component improvement. The active owner-designated manager
+assigns bounded scopes, redirects agents, coordinates the shared compute slot and
+keeps delivery moving. Research is timeboxed to a concrete implementation blocker;
+reuse completed decisions/evidence and avoid repeated surveys, status cycles and
+separate documentation approval chains. Keep overhead minimal while retaining
+source/tool/command provenance, failures and independent review of new work.
+
+[Current implementation #48](https://github.com/jliu67/OpenRX/issues/48) /
+[draft PR #49](https://github.com/jliu67/OpenRX/pull/49) delivers the required F/E AES
+stage. Genuine full-workload, selected-core, calibrated timing and physical-power
+acceptance requirements remain; earlier milestones are not declared passed by
+this build-first instruction. Issue claims remain the source ownership record,
+and compute remains serialized. Historical results and pinned assets are retained.
+
+## Immediate implementation directive — owner, 2026-10-12 20:49 UTC
+
+The owner explicitly directed execution of the first working RandomX v2 hardware
+component using existing licensed IP, reference correctness tests, actual synthesis
+and an execution integration interface. [Task #48](https://github.com/jliu67/OpenRX/issues/48)
+implements the required F/E AES register mixer. This bounded work supersedes the
+earlier source-only/no-RTL gate for this component; routine implementation and
+official tool packages are authorized. Reuse completed #41 and accepted #8/#16
+evidence. No further baseline batches, research surveys or documentation-only
+cycles belong to this assignment. Independent review of the new implementation
+remains required; broader baseline, selected-core, calibrated timing, physical
+power and full-system acceptance gates remain open. Preserve all pinned assets,
+one-payload coordination and temporary-authoring retirement.
+
 ## Current engineering priority — owner direction, 2026-10-12
 
 Work toward an X9-class ASIC adapted to exact RandomX v2, using licensed open IP
@@ -9,7 +41,8 @@ Keep reverse engineering bounded to evidence that changes a design decision;
 X9 internals remain unknown and BOOMV3 is only a provisional baseline. Defer
 unrelated broad surveys and X5 reconstruction. Preserve #16's current correctness
 work and every baseline, profiling, selected-core and calibrated-model gate;
-this priority change does not authorize RTL work or new execution. [Task #39](https://github.com/jliu67/OpenRX/issues/39)
+that earlier priority change did not authorize RTL work or new execution; the
+new bounded implementation directive above controls task #48. [Task #39](https://github.com/jliu67/OpenRX/issues/39)
 tracks the separately reviewed documentation/coordination proposal.
 
 ## Current status — 2026-10-10
@@ -36,7 +69,7 @@ Canonical owner announcement: [GitHub board #5](https://github.com/jliu67/OpenRX
 
 Read README.md, memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md and memory/OPEN_QUESTIONS.md before work. Read the relevant experiment and evidence entries before making technical claims.
 
-1. Apply the [current narrowed priority path](docs/ROADMAP.md#current-priority-path--2026-10-12) before selecting eligible work from the shared pool. The retained milestone table is an acceptance map, not a command to resume deferred X5/M2 in numeric order. Start with bounded source-only [#41](https://github.com/jliu67/OpenRX/issues/41) or other eligible work within the X9/v2 scope; preserve every scientific gate. Keep changes scoped and reviewable.
+1. Apply the [current narrowed priority path](docs/ROADMAP.md#current-priority-path--2026-10-12) before selecting eligible work from the shared pool. The retained milestone table is an acceptance map, not a command to resume deferred X5/M2 in numeric order. Reuse completed [#41](https://github.com/jliu67/OpenRX/issues/41) and execute the current bounded component under [#48](https://github.com/jliu67/OpenRX/issues/48); preserve genuine scientific acceptance requirements. Keep changes scoped and reviewable.
 2. Treat RandomX v2 as the primary workload and run v1 regression comparisons.
 3. Do not modify vendor/randomx silently. Verify its manifest before building. Put proposed workload changes in separately reviewed patches with new test evidence and provenance.
 4. Do not infer chip internals from RISC-V's open ISA. SG2042 RTL availability, X5 chip identity and X9 claims need evidence.
@@ -47,7 +80,7 @@ Read README.md, memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md and memo
 9. Before ending: update memory/STATE.md, append memory/SESSION_LOG.md, add consequential decisions, and connect results to an experiment. Git commits preserve this memory across sessions.
 10. Leave clear next commands, blockers and acceptance criteria. Do not invent completed work or evidence.
 
-Do not optimize processor RTL before establishing a validated workload baseline and agreeing a simulation model. This is a project phase gate, not a request to repeatedly ask permission for routine setup.
+The broader processor-optimization gate still requires a validated workload baseline and agreed simulation model. The owner-authorized first-component exception above permits #48 implementation/test/synthesis; it does not accept processor optimization or calibrated PPA.
 
 ## Critical local execution infrastructure — task #27
 
@@ -120,7 +153,7 @@ failures/safety withdrawals, original scientific assets, exact guest oracles and
 
 ## Decentralized collaboration — protocol v2
 
-**OpenRX has no coordinator, assigned roles or permanently running agents.** Each agent is an independent periodic visitor. Read [the shared-task protocol](docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), the [roadmap](docs/ROADMAP.md), [task board](docs/TASKS.md), current handoff, relevant issue comments and actual remote HEAD. Apply the current X9/v2 priority overlay, then select the highest-value eligible ready issue within your own capabilities; do not revive deferred work through numeric milestone order. If essential work is missing, create a new scoped task with acceptance criteria and explicit dependencies. Never infer work is assigned merely from a role, label or historic handoff.
+**Current work is manager-led under the owner instruction above.** The active manager may assign bounded agent scopes; visiting agents still record advisory issue claims. No permanently running worker or autonomous execution service is implied. Read [the shared-task protocol](docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), the [roadmap](docs/ROADMAP.md), [task board](docs/TASKS.md), current handoff, relevant issue comments and actual remote HEAD. Apply the current X9/v2 priority overlay, then select the highest-value eligible ready issue within your own capabilities; do not revive deferred work through numeric milestone order. If essential work is missing, create a new scoped task with acceptance criteria and explicit dependencies. Never infer work is assigned merely from a role, label or historic handoff.
 
 **One independent task = one GitHub Issue.** Claims are authoritative only as first-line /openrx claim agent/unique-session comments **on that task**. The bot receipt/status labels project those comments, but docs/TASKS.md is a durable milestone summary, not a competing ownership registry. The old #1 parent milestone contains several independent Phase 1 tasks now tracked as child issues #8–#13: claim the actual child instead of monopolizing the parent. Existing prose claims are historic context, not a live lease. Respect separate branches and actively edited scopes.
 

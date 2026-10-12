@@ -1,0 +1,5 @@
+rtl/aes/randomx_v2_aes_mix.v:49: error: Unknown module type: randomx_v2_aes_mix_requires_LANES_1_or_4
+1 error(s) during elaboration.
+*** These modules were missing:
+        randomx_v2_aes_mix_requires_LANES_1_or_4 referenced 1 times.
+***

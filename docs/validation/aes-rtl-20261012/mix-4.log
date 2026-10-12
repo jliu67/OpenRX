@@ -1,0 +1,1 @@
+PASS lanes=4 mixes=256 directed=32 reset_aborts=2 stalls=32 availability_cycles=4 interval_cycles=5 stream_cycles=1280

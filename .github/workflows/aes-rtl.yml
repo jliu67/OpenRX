@@ -1,0 +1,50 @@
+name: RandomX AES RTL
+on:
+  push:
+    paths:
+      - 'rtl/aes/**'
+      - 'scripts/test_aes_rtl.py'
+      - 'scripts/verify_vendor.py'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx*.json'
+      - '.github/workflows/aes-rtl.yml'
+  pull_request:
+    paths:
+      - 'rtl/aes/**'
+      - 'scripts/test_aes_rtl.py'
+      - 'scripts/verify_vendor.py'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx*.json'
+      - '.github/workflows/aes-rtl.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  oracle-and-synthesis:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install official simulator and synthesis packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Reference tests, execution integration and synthesized netlist checks
+        run: |
+          python3 scripts/test_aes_rtl.py \
+            --output "$RUNNER_TEMP/aes-rtl-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
+      - name: Include licenses with redistributed generated artifacts
+        if: always()
+        run: |
+          out="$RUNNER_TEMP/aes-rtl-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          mkdir -p "$out"
+          cp rtl/aes/LICENSE "$out/LICENSE-OpenRX"
+          cp rtl/aes/vendor/secworks/LICENSE "$out/LICENSE-secworks"
+          cp vendor/randomx/LICENSE "$out/LICENSE-RandomX"
+      - name: Preserve full logs, inputs, netlists and resource statistics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aes-rtl-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/aes-rtl-${{ github.run_id }}-${{ github.run_attempt }}/

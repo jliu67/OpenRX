@@ -1,0 +1,28 @@
+
+9. Printing statistics.
+
+=== randomx_exec_aes_commit ===
+
+   Number of wires:              39327
+   Number of wire bits:          59288
+   Number of public wires:        2073
+   Number of public wire bits:   21523
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              39824
+     $_ANDNOT_                    2416
+     $_AND_                         15
+     $_AOI3_                      1848
+     $_DFF_P_                     1545
+     $_MUX_                       4615
+     $_NAND_                        68
+     $_NOR_                       3864
+     $_NOT_                       1555
+     $_OAI3_                        53
+     $_OAI4_                         4
+     $_ORNOT_                      169
+     $_OR_                       21830
+     $_XNOR_                       430
+     $_XOR_                       1412
+

@@ -1,5 +1,25 @@
 # Handoff — actual designated local execution
 
+## Working v2 AES-stage handoff — 2026-10-12
+
+[#48](https://github.com/jliu67/OpenRX/issues/48) supplies tested synthesizable
+`rtl/aes` code, licensed pinned IP, a VM-completion/writeback interface, v1 XOR path,
+standalone software oracle and `scripts/test_aes_rtl.py`. All declared round,
+mixer, integration, mapped-netlist and output/parameter guard checks passed.
+[EXP-003](../experiments/EXP-003-v2-aes-rtl.md) and [raw exports](../docs/validation/aes-rtl-corrected-20261012/README.md)
+show a 17→5 cycle request interval and 40,848→84,999 generic cells. Clock timing,
+physical area/power and full-hash benefit are unavailable. Initial source/results remain retained; review identified and corrected the
+v1 F XOR E boundary. Complete attempt10 passed both corrected configurations
+and mapped netlists under a checked 4-GiB budget. Both job cgroups are absent and the global slot is free.
+
+Next action: independent review of this new exact feature head. Reproduce with
+`python3 scripts/test_aes_rtl.py --output /tmp/openrx-aes-fresh-attempt --synthesize`
+using adequate RAM and the existing shared-host slot/admission policy. The draft
+PR is not merged; #8/#16 and selected-core/calibrated-PPA gates remain open. Do not
+restart the rejected native batch or another source survey for this handoff.
+Temporary authoring is archived and retired into a read-only execution snapshot
+at handoff; originals, builds, data, receipts and cancelled sync remain retained.
+
 ## Current accepted pilot handoff — 2026-10-12
 
 Read [the independent exploratory acceptance](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969) and
@@ -57,7 +77,7 @@ Reverse engineering supplies only traceable facts; X9 internals/topology, measur
 v2 efficiency and competitive PPA are unestablished. Defer unrelated broad surveys
 and X5 reconstruction while retaining open questions and historical evidence.
 
-For eligible source-only work, inspect [#41](https://github.com/jliu67/OpenRX/issues/41) and its current receipt/claim. #2 is owner-priority-blocked via the existing router and stays unresolved. The ready pool is Issues plus router labels/bot JSON, not a separate local task file. Use the narrowed overlay before numeric milestone order; reuse completed #13 importer software.
+Earlier source-only eligibility pointed to [#41](https://github.com/jliu67/OpenRX/issues/41); that work is completed and the current build-first manager assignment above supersedes this prior routing instruction. #2 is owner-priority-blocked via the existing router and stays unresolved. The ready pool is Issues plus router labels/bot JSON, not a separate local task file. Use the narrowed overlay before numeric milestone order; reuse completed #13 importer software.
 
 Keep #16's existing correctness request and oracle unchanged. Controlled #8,
 physical #10, profiling #11, selected-core #3 and calibrated #14 gates still precede

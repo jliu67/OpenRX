@@ -1,0 +1,5 @@
+Running as unit: openrx-aes-synth-20261012-07.service
+Finished with result: oom-kill
+Main processes terminated with: code=killed/status=TERM
+Service runtime: 4min 36.989s
+CPU time consumed: 4min 33.164s

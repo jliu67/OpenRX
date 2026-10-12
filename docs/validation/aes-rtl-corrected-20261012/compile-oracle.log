@@ -1,0 +1,32 @@
+In file included from vendor/randomx/src/soft_aes.h:32,
+                 from rtl/aes/tests/oracle.cpp:3:
+vendor/randomx/src/intrin_portable.h: In function ‘rx_vec_i128 rx_aesenc_vec_i128(rx_vec_i128, rx_vec_i128)’:
+vendor/randomx/src/intrin_portable.h:781:57: warning: unused parameter ‘v’ [-Wunused-parameter]
+  781 | FORCE_INLINE rx_vec_i128 rx_aesenc_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                             ~~~~~~~~~~~~^
+vendor/randomx/src/intrin_portable.h:781:72: warning: unused parameter ‘rkey’ [-Wunused-parameter]
+  781 | FORCE_INLINE rx_vec_i128 rx_aesenc_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                                            ~~~~~~~~~~~~^~~~
+vendor/randomx/src/intrin_portable.h: In function ‘rx_vec_i128 rx_aesdec_vec_i128(rx_vec_i128, rx_vec_i128)’:
+vendor/randomx/src/intrin_portable.h:785:57: warning: unused parameter ‘v’ [-Wunused-parameter]
+  785 | FORCE_INLINE rx_vec_i128 rx_aesdec_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                             ~~~~~~~~~~~~^
+vendor/randomx/src/intrin_portable.h:785:72: warning: unused parameter ‘rkey’ [-Wunused-parameter]
+  785 | FORCE_INLINE rx_vec_i128 rx_aesdec_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                                            ~~~~~~~~~~~~^~~~
+In file included from vendor/randomx/src/soft_aes.h:32,
+                 from vendor/randomx/src/soft_aes.cpp:29:
+vendor/randomx/src/intrin_portable.h: In function ‘rx_vec_i128 rx_aesenc_vec_i128(rx_vec_i128, rx_vec_i128)’:
+vendor/randomx/src/intrin_portable.h:781:57: warning: unused parameter ‘v’ [-Wunused-parameter]
+  781 | FORCE_INLINE rx_vec_i128 rx_aesenc_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                             ~~~~~~~~~~~~^
+vendor/randomx/src/intrin_portable.h:781:72: warning: unused parameter ‘rkey’ [-Wunused-parameter]
+  781 | FORCE_INLINE rx_vec_i128 rx_aesenc_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                                            ~~~~~~~~~~~~^~~~
+vendor/randomx/src/intrin_portable.h: In function ‘rx_vec_i128 rx_aesdec_vec_i128(rx_vec_i128, rx_vec_i128)’:
+vendor/randomx/src/intrin_portable.h:785:57: warning: unused parameter ‘v’ [-Wunused-parameter]
+  785 | FORCE_INLINE rx_vec_i128 rx_aesdec_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                             ~~~~~~~~~~~~^
+vendor/randomx/src/intrin_portable.h:785:72: warning: unused parameter ‘rkey’ [-Wunused-parameter]
+  785 | FORCE_INLINE rx_vec_i128 rx_aesdec_vec_i128(rx_vec_i128 v, rx_vec_i128 rkey) {
+      |                                                            ~~~~~~~~~~~~^~~~

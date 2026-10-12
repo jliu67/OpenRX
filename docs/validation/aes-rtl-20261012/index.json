@@ -1,0 +1,297 @@
+{
+  "source_base": "10482be038cffc95f09a14e309f40fd33e3f8619",
+  "executed_code_identity": "inputs.json SHA256 binding, unchanged across attempts07/08",
+  "exports": {
+    "inputs.json": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "inputs.json",
+      "raw_sha256": "e804cbfabff253f4a39b8b83e3cc44de57c4493a9c8d7411a1cb6e40487a9bf2",
+      "public_sha256": "e804cbfabff253f4a39b8b83e3cc44de57c4493a9c8d7411a1cb6e40487a9bf2",
+      "encoding": "original-bytes"
+    },
+    "tools.json": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "tools.json",
+      "raw_sha256": "e59193bc50325c4d85447eb6d9022fb541e29c3a351a8e852e98b7969623d54d",
+      "public_sha256": "e59193bc50325c4d85447eb6d9022fb541e29c3a351a8e852e98b7969623d54d",
+      "encoding": "original-bytes"
+    },
+    "rounds.hex": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "rounds.hex",
+      "raw_sha256": "7ca01153fae0e1fa9fc0c9d8b558bdceeee4eaf0da410eb0e46bc7bdb84722de",
+      "public_sha256": "7ca01153fae0e1fa9fc0c9d8b558bdceeee4eaf0da410eb0e46bc7bdb84722de",
+      "encoding": "original-bytes"
+    },
+    "mixes.hex": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "mixes.hex",
+      "raw_sha256": "b46b3f61ba844dfa2039f91b9e9e72b8c4891a614d2c52e8092d6f02d8eb5b65",
+      "public_sha256": "b46b3f61ba844dfa2039f91b9e9e72b8c4891a614d2c52e8092d6f02d8eb5b65",
+      "encoding": "original-bytes"
+    },
+    "oracle.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "oracle.log",
+      "raw_sha256": "1d264b53861d8232ed82c7f2416bbd8c9e1ab5f619286603d3d460456843e699",
+      "public_sha256": "1d264b53861d8232ed82c7f2416bbd8c9e1ab5f619286603d3d460456843e699",
+      "encoding": "original-bytes"
+    },
+    "vendor-randomx.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "vendor-randomx.log",
+      "raw_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "public_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "encoding": "original-bytes"
+    },
+    "compile-oracle.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "compile-oracle.log",
+      "raw_sha256": "bb47888a60e4675c7daac3771ec34dfa062cee7b58a177a88bde5bf528d933bd",
+      "public_sha256": "bb47888a60e4675c7daac3771ec34dfa062cee7b58a177a88bde5bf528d933bd",
+      "encoding": "original-bytes"
+    },
+    "round.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "round.log",
+      "raw_sha256": "c153797507a969b0795b6447f19c2e54a2ffeef2dad58c1d573a1481f8c13cce",
+      "public_sha256": "c153797507a969b0795b6447f19c2e54a2ffeef2dad58c1d573a1481f8c13cce",
+      "encoding": "original-bytes"
+    },
+    "mix-1.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "mix-1.log",
+      "raw_sha256": "cddb1404f14840890f07d85274f8e8e8143c0b7c232c138bfb19e93f83977d6c",
+      "public_sha256": "cddb1404f14840890f07d85274f8e8e8143c0b7c232c138bfb19e93f83977d6c",
+      "encoding": "original-bytes"
+    },
+    "mix-4.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "mix-4.log",
+      "raw_sha256": "f7f6d3cdcb899460dbd0de195c6b75a6fa30edeb66bdd050f276dc6898eea8bb",
+      "public_sha256": "f7f6d3cdcb899460dbd0de195c6b75a6fa30edeb66bdd050f276dc6898eea8bb",
+      "encoding": "original-bytes"
+    },
+    "commit-1.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "commit-1.log",
+      "raw_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "public_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "encoding": "original-bytes"
+    },
+    "commit-4.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "commit-4.log",
+      "raw_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "public_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "encoding": "original-bytes"
+    },
+    "netlist-1.log": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "netlist-1.log",
+      "raw_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "public_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "encoding": "original-bytes"
+    },
+    "stat-1.txt": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "stat-1.txt",
+      "raw_sha256": "57aee046c96f3beedf0c7f00a428eab08aaae9e54ca20b7293d21abe1fbc34d9",
+      "public_sha256": "57aee046c96f3beedf0c7f00a428eab08aaae9e54ca20b7293d21abe1fbc34d9",
+      "encoding": "original-bytes"
+    },
+    "netlist-4.log": {
+      "source_attempt": "openrx-v2-aes-results-08",
+      "raw_name": "netlist-4.log",
+      "raw_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "public_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "encoding": "original-bytes"
+    },
+    "stat-4.txt": {
+      "source_attempt": "openrx-v2-aes-results-08",
+      "raw_name": "stat-4.txt",
+      "raw_sha256": "67d5520348f229f5b2d3990d17c9a716de5d13a054c0f202e6e018e6511d460c",
+      "public_sha256": "67d5520348f229f5b2d3990d17c9a716de5d13a054c0f202e6e018e6511d460c",
+      "encoding": "original-bytes"
+    },
+    "commands-attempt-07.json": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "commands.json",
+      "raw_sha256": "74fbe8b5d4f68c8441dd66a540014f5ab125a6dd404561e5baccedcbe577022e",
+      "public_sha256": "74fbe8b5d4f68c8441dd66a540014f5ab125a6dd404561e5baccedcbe577022e",
+      "encoding": "original-bytes"
+    },
+    "commands-attempt-08.json": {
+      "source_attempt": "openrx-v2-aes-results-08",
+      "raw_name": "commands.json",
+      "raw_sha256": "9afd09a634ac0a1f57148257abc2b71ebd03815135f534cf380d310ab09b302d",
+      "public_sha256": "9afd09a634ac0a1f57148257abc2b71ebd03815135f534cf380d310ab09b302d",
+      "encoding": "original-bytes"
+    },
+    "commands-guards.json": {
+      "source_attempt": "openrx-v2-aes-results-09",
+      "raw_name": "commands.json",
+      "raw_sha256": "26b6c7e983f1ad837de59ea92e4f06963fc6ea6248169cc8b4fe3f7bf0d7d865",
+      "public_sha256": "26b6c7e983f1ad837de59ea92e4f06963fc6ea6248169cc8b4fe3f7bf0d7d865",
+      "encoding": "original-bytes"
+    },
+    "invalid-parameter.log": {
+      "source_attempt": "openrx-v2-aes-results-09",
+      "raw_name": "invalid-parameter.log",
+      "raw_sha256": "fdf023257ee2903ee1da4ff6e4836c710600af42be9b21bba6c5d49122038aa5",
+      "public_sha256": "fdf023257ee2903ee1da4ff6e4836c710600af42be9b21bba6c5d49122038aa5",
+      "encoding": "original-bytes"
+    },
+    "source-output-guard.log": {
+      "source_attempt": "openrx-v2-aes-results-09",
+      "raw_name": "source-output-guard.log",
+      "raw_sha256": "5b7beddd9ea1658f7b760264c7e8260ae2f79dcf124489e2b432bc143dd45ef0",
+      "public_sha256": "5b7beddd9ea1658f7b760264c7e8260ae2f79dcf124489e2b432bc143dd45ef0",
+      "encoding": "original-bytes"
+    },
+    "existing-output-guard.log": {
+      "source_attempt": "openrx-v2-aes-results-09",
+      "raw_name": "existing-output-guard.log",
+      "raw_sha256": "9b3abd093a4aa94e932823d0fab01d4e299f51892473cf6b53254ecdb56ca642",
+      "public_sha256": "9b3abd093a4aa94e932823d0fab01d4e299f51892473cf6b53254ecdb56ca642",
+      "encoding": "original-bytes"
+    },
+    "synth-1.log.gz": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "synth-1.log",
+      "raw_sha256": "a10b208c9dd3e79c5cce815d84b53af2cc6cc48cfe7a2be7d91ea536b26c57b4",
+      "public_sha256": "4a9c916a38dcbd1dc7c19bafa8d4d0e9e459766bd59042daba33d799ac7e48a3",
+      "encoding": "gzip"
+    },
+    "netlist-1.v.gz": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "netlist-1.v",
+      "raw_sha256": "96d03051b835235712f3317007bc45ba19b3a977e8f482fa29f8f2b645edaeaf",
+      "public_sha256": "d8f4ced9bc596b6ff9c63f220312da9d8bd2049691d314ac946456e223018f83",
+      "encoding": "gzip"
+    },
+    "netlist-1.json.gz": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "netlist-1.json",
+      "raw_sha256": "693db82b9e7cfecb88f2f9d59819a1055621edee73bf6a0d839ee974f086620c",
+      "public_sha256": "70a1770f58dcbaa9e2cc3367eb25e27799cc0e97cf6cf878a1b3906cf7b69fce",
+      "encoding": "gzip"
+    },
+    "synth-4.log.gz": {
+      "source_attempt": "openrx-v2-aes-results-08",
+      "raw_name": "synth-4.log",
+      "raw_sha256": "7c1819e68b74097f8f6493d27ef21017ad6575295cd1c706ff32c47918874f6c",
+      "public_sha256": "86d3052b86fad9a7acf9f1bdfbca834d39df6cc4d15c3baef4a1755c1188795e",
+      "encoding": "gzip"
+    },
+    "netlist-4.v.gz": {
+      "source_attempt": "openrx-v2-aes-results-08",
+      "raw_name": "netlist-4.v",
+      "raw_sha256": "caab1a4617a4acf4f24709b21f2c0b568a8c290aeaeac6a8b13f577b8e28d43f",
+      "public_sha256": "0105e00b22681a79c2e489ba5bd705053b1a63947289ae9a3fd4f46a8fcbcdaa",
+      "encoding": "gzip"
+    },
+    "netlist-4.json.gz": {
+      "source_attempt": "openrx-v2-aes-results-08",
+      "raw_name": "netlist-4.json",
+      "raw_sha256": "f9e2e69e4786c7e116b7b07603ed19d8cc7840d8dfef8c39f1255bb941ef443d",
+      "public_sha256": "bbe01348f14702bc95ce1756cae92d4459b35a583e2a5973599d5d0fb868b205",
+      "encoding": "gzip"
+    },
+    "failures/attempt-01-round.log": {
+      "source_attempt": "openrx-v2-aes-results-01",
+      "raw_name": "round.log",
+      "raw_sha256": "1b4f12a18239648e1d0c7c523e2af0be8b05f510d003911105a370355f22f020",
+      "public_sha256": "1b4f12a18239648e1d0c7c523e2af0be8b05f510d003911105a370355f22f020",
+      "encoding": "original-bytes"
+    },
+    "failures/attempt-02-round.log": {
+      "source_attempt": "openrx-v2-aes-results-02",
+      "raw_name": "round.log",
+      "raw_sha256": "6a5048c4137a5a19a2384449ea7e3b76dcded9982c4acfe9d003e1434a431462",
+      "public_sha256": "6a5048c4137a5a19a2384449ea7e3b76dcded9982c4acfe9d003e1434a431462",
+      "encoding": "original-bytes"
+    },
+    "failures/attempt-06-synth-1.log.gz": {
+      "source_attempt": "openrx-v2-aes-results-06",
+      "raw_name": "synth-1.log",
+      "raw_sha256": "31645c6c9b973b96cdb582e1275cb876bc5dc35439849b64debc022a70b9fa17",
+      "public_sha256": "9a3818177f5844a0cc369e61c5986bad49e03adc47a5de510a488f0be9f5ec03",
+      "encoding": "gzip"
+    },
+    "failures/attempt-07-synth-4.log.gz": {
+      "source_attempt": "openrx-v2-aes-results-07",
+      "raw_name": "synth-4.log",
+      "raw_sha256": "42342cac459ddda323950ce04f2e1c85693d22be9068e9389d9fa59bb78b9bbf",
+      "public_sha256": "911bf1f84ad72a2d887ec5a36397f8650e9c34a5c94fc2b0816091ecb906a073",
+      "encoding": "gzip"
+    },
+    "failures/attempt-07-service-terminal.log": {
+      "source_attempt": "v2-aes-implementation-evidence",
+      "raw_name": "synthesis-attempt-07.log",
+      "raw_sha256": "703b893202e145103bf11df8cd87bfd24d8468aba67ac67c0dd60f0727160f1a",
+      "public_sha256": "703b893202e145103bf11df8cd87bfd24d8468aba67ac67c0dd60f0727160f1a",
+      "encoding": "original-bytes"
+    },
+    "failures/attempt-01-02-test_aes_rtl.py": {
+      "source_attempt": "failed-source-captures",
+      "raw_name": "attempt-01-02-test_aes_rtl.py",
+      "raw_sha256": "8b07c54029511f9de81bbe41c4b8543bfb5efeb8c9ceabe791ce82b20458fcab",
+      "public_sha256": "8b07c54029511f9de81bbe41c4b8543bfb5efeb8c9ceabe791ce82b20458fcab",
+      "encoding": "original-bytes"
+    },
+    "failures/attempt-01-randomx_aes_round.v": {
+      "source_attempt": "failed-source-captures",
+      "raw_name": "attempt-01-randomx_aes_round.v",
+      "raw_sha256": "1a88d034ed19e4d00ad113f6f1883b087013c6edc460b117eb9327f57c7fe77b",
+      "public_sha256": "1a88d034ed19e4d00ad113f6f1883b087013c6edc460b117eb9327f57c7fe77b",
+      "encoding": "original-bytes"
+    },
+    "failures/attempt-02-randomx_aes_round.v": {
+      "source_attempt": "failed-source-captures",
+      "raw_name": "attempt-02-randomx_aes_round.v",
+      "raw_sha256": "3152f213524bcc0733e7a24becabed20c2f0b425d0a9b9a7cf46791a44b746b3",
+      "public_sha256": "3152f213524bcc0733e7a24becabed20c2f0b425d0a9b9a7cf46791a44b746b3",
+      "encoding": "original-bytes"
+    },
+    "failures/attempt-06-tb_commit.v": {
+      "source_attempt": "failed-source-captures",
+      "raw_name": "attempt-06-tb_commit.v",
+      "raw_sha256": "9f67581ac7fa33d76addb5464f8d0bbe80fb9c5b41cef416b378a9593aa0db46",
+      "public_sha256": "9f67581ac7fa33d76addb5464f8d0bbe80fb9c5b41cef416b378a9593aa0db46",
+      "encoding": "original-bytes"
+    },
+    "failures/attempt-06-test_aes_rtl.py": {
+      "source_attempt": "failed-source-captures",
+      "raw_name": "attempt-06-test_aes_rtl.py",
+      "raw_sha256": "176bf56b24b2236eae7f0ed5606f5ee31011e74bc0d21a4520f6039ebd9fe457",
+      "public_sha256": "176bf56b24b2236eae7f0ed5606f5ee31011e74bc0d21a4520f6039ebd9fe457",
+      "encoding": "original-bytes"
+    },
+    "LICENSE-OpenRX": {
+      "source_attempt": "aes",
+      "raw_name": "LICENSE",
+      "raw_sha256": "f238879baf3549d264e2213e4dfdd998289666ce9da8a140e8b000e45f3af472",
+      "public_sha256": "f238879baf3549d264e2213e4dfdd998289666ce9da8a140e8b000e45f3af472",
+      "encoding": "original-bytes"
+    },
+    "LICENSE-secworks": {
+      "source_attempt": "secworks",
+      "raw_name": "LICENSE",
+      "raw_sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "public_sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "encoding": "original-bytes"
+    },
+    "LICENSE-RandomX": {
+      "source_attempt": "randomx",
+      "raw_name": "LICENSE",
+      "raw_sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "public_sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "encoding": "original-bytes"
+    }
+  },
+  "summary_sha256": "3d788e58dc258303ae3554bf0afcc68a909aadbfe00501558d6878199045d45f",
+  "resources_sha256": "7005c1e43e4bceaf37e156cdbb0403c67a460a92d58a10b84be3bec7c935e4fb",
+  "raw_retention": "Complete per-attempt logs, binaries, vectors and snapshots retained locally; selected raw exports above are unchanged or losslessly compressed. Hosted workflow retains freshly reproduced full outputs with licenses.",
+  "review": "pending independent exact-head review"
+}

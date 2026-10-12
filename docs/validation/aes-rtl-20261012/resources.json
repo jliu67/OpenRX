@@ -1,0 +1,35 @@
+{
+  "single_payload_slot": "existing global execution.lock, nonblocking acquisition",
+  "workers": 1,
+  "reason": "each compiler/simulator/Yosys phase runs as one process sequence; all six CPUs available",
+  "prior_to_retry_MemAvailable_GiB_approx": 6.5,
+  "attempt_07": {
+    "kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "result": "OOM kill at four-lane ABC mapping; completed shared-lane artifacts retained",
+    "terminal_log_sha256": "703b893202e145103bf11df8cd87bfd24d8468aba67ac67c0dd60f0727160f1a"
+  },
+  "attempt_08": {
+    "kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "4294967296",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "result": "success, exit0, 183.873 seconds service runtime",
+    "resources_raw_sha256": "6266bde68040a68f0477a8580719bc2c4f82351becf5215e147cca7838205712",
+    "peak_RSS_KiB": 2029500,
+    "user_seconds": 182.21,
+    "system_seconds": 1.85,
+    "CPU_percent": 100
+  },
+  "closure": {
+    "attempt_07_cgroup_absent": true,
+    "attempt_08_cgroup_absent": true,
+    "slot_acquired_for_this_packaging": true
+  }
+}

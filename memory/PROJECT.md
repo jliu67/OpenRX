@@ -1,5 +1,30 @@
 # Project memory
 
+## Current objective — manager-led build-first delivery, 2026-10-12
+
+Deliver working RandomX v2 execution hardware using licensed reusable IP, with
+reference correctness tests, reproducible synthesis, a useful execution integration
+interface and measured component improvement. The active owner-designated manager
+assigns bounded scopes, redirects agents, coordinates the shared compute slot and
+keeps delivery moving. Research is timeboxed to a concrete implementation blocker;
+reuse completed decisions/evidence and avoid repeated surveys, status cycles and
+separate documentation approval chains. Keep overhead minimal while retaining
+source/tool/command provenance, failures and independent review of new work.
+
+[Current implementation #48](https://github.com/jliu67/OpenRX/issues/48) /
+[draft PR #49](https://github.com/jliu67/OpenRX/pull/49) delivers the required F/E AES
+stage. Genuine full-workload, selected-core, calibrated timing and physical-power
+acceptance requirements remain; earlier milestones are not declared passed by
+this build-first instruction. Issue claims remain the source ownership record,
+and compute remains serialized. Historical results and pinned assets are retained.
+
+Latest owner execution instruction (2026-10-12 20:49 UTC): implement one working
+RandomX v2 execution component with licensed IP, oracle tests, real synthesis and
+a useful integration interface. [#48](https://github.com/jliu67/OpenRX/issues/48)
+implements the required F/E AES stage; its selection does not assert that AES is
+the bottleneck. Earlier source-only language below is retained context, with this
+bounded implementation exception. Full baseline, core/model and PPA gates remain.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.

@@ -1,0 +1,191 @@
+{
+  "source_parent": "603b01e759f7570e5197100ce10197c55a56b291",
+  "executed_code_identity": "19 exact input digests, inputs.json",
+  "input_manifest_sha256": "5fad06a98bf0baadaa4d594745f434e5890a604ab4b262b4cf1f563516682541",
+  "scope": "per-VM-program-iteration AES mixing(v2), F XOR E(v1); generic cells and simulation cycles only",
+  "exports": {
+    "inputs.json": {
+      "raw_name": "inputs.json",
+      "raw_sha256": "5fad06a98bf0baadaa4d594745f434e5890a604ab4b262b4cf1f563516682541",
+      "public_sha256": "5fad06a98bf0baadaa4d594745f434e5890a604ab4b262b4cf1f563516682541",
+      "encoding": "original-bytes"
+    },
+    "tools.json": {
+      "raw_name": "tools.json",
+      "raw_sha256": "e59193bc50325c4d85447eb6d9022fb541e29c3a351a8e852e98b7969623d54d",
+      "public_sha256": "e59193bc50325c4d85447eb6d9022fb541e29c3a351a8e852e98b7969623d54d",
+      "encoding": "original-bytes"
+    },
+    "commands.json": {
+      "raw_name": "commands.json",
+      "raw_sha256": "d56a2575867c1fca71e37d086ab2fa3194506e13432d534be6d4a9c49eae1485",
+      "public_sha256": "d56a2575867c1fca71e37d086ab2fa3194506e13432d534be6d4a9c49eae1485",
+      "encoding": "original-bytes"
+    },
+    "summary.json": {
+      "raw_name": "summary.json",
+      "raw_sha256": "8990013a05ecdf4b74cf81f29b1dd51e5be99d19c6d510cab168f7f000e83c22",
+      "public_sha256": "8990013a05ecdf4b74cf81f29b1dd51e5be99d19c6d510cab168f7f000e83c22",
+      "encoding": "original-bytes"
+    },
+    "artifacts.sha256.json": {
+      "raw_name": "artifacts.sha256.json",
+      "raw_sha256": "ae7ae262ffd5b26336ac889295f74b79f9035e8534934cee23727e4f435b75ba",
+      "public_sha256": "ae7ae262ffd5b26336ac889295f74b79f9035e8534934cee23727e4f435b75ba",
+      "encoding": "original-bytes"
+    },
+    "rounds.hex": {
+      "raw_name": "rounds.hex",
+      "raw_sha256": "7ca01153fae0e1fa9fc0c9d8b558bdceeee4eaf0da410eb0e46bc7bdb84722de",
+      "public_sha256": "7ca01153fae0e1fa9fc0c9d8b558bdceeee4eaf0da410eb0e46bc7bdb84722de",
+      "encoding": "original-bytes"
+    },
+    "mixes.hex": {
+      "raw_name": "mixes.hex",
+      "raw_sha256": "b46b3f61ba844dfa2039f91b9e9e72b8c4891a614d2c52e8092d6f02d8eb5b65",
+      "public_sha256": "b46b3f61ba844dfa2039f91b9e9e72b8c4891a614d2c52e8092d6f02d8eb5b65",
+      "encoding": "original-bytes"
+    },
+    "v1.hex": {
+      "raw_name": "v1.hex",
+      "raw_sha256": "3ac4a409af2db5aac24de7dd2f46fb3d9f4d1071db16fb789438f6afe10c5491",
+      "public_sha256": "3ac4a409af2db5aac24de7dd2f46fb3d9f4d1071db16fb789438f6afe10c5491",
+      "encoding": "original-bytes"
+    },
+    "oracle.log": {
+      "raw_name": "oracle.log",
+      "raw_sha256": "4cd10c9daa7477163d4480707b3554dc19eaf8b5fd1cded05d79c0c0627661bc",
+      "public_sha256": "4cd10c9daa7477163d4480707b3554dc19eaf8b5fd1cded05d79c0c0627661bc",
+      "encoding": "original-bytes"
+    },
+    "vendor-randomx.log": {
+      "raw_name": "vendor-randomx.log",
+      "raw_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "public_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "encoding": "original-bytes"
+    },
+    "round.log": {
+      "raw_name": "round.log",
+      "raw_sha256": "c153797507a969b0795b6447f19c2e54a2ffeef2dad58c1d573a1481f8c13cce",
+      "public_sha256": "c153797507a969b0795b6447f19c2e54a2ffeef2dad58c1d573a1481f8c13cce",
+      "encoding": "original-bytes"
+    },
+    "mix-1.log": {
+      "raw_name": "mix-1.log",
+      "raw_sha256": "cddb1404f14840890f07d85274f8e8e8143c0b7c232c138bfb19e93f83977d6c",
+      "public_sha256": "cddb1404f14840890f07d85274f8e8e8143c0b7c232c138bfb19e93f83977d6c",
+      "encoding": "original-bytes"
+    },
+    "mix-4.log": {
+      "raw_name": "mix-4.log",
+      "raw_sha256": "f7f6d3cdcb899460dbd0de195c6b75a6fa30edeb66bdd050f276dc6898eea8bb",
+      "public_sha256": "f7f6d3cdcb899460dbd0de195c6b75a6fa30edeb66bdd050f276dc6898eea8bb",
+      "encoding": "original-bytes"
+    },
+    "commit-1.log": {
+      "raw_name": "commit-1.log",
+      "raw_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "public_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "encoding": "original-bytes"
+    },
+    "commit-4.log": {
+      "raw_name": "commit-4.log",
+      "raw_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "public_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "encoding": "original-bytes"
+    },
+    "netlist-1.log": {
+      "raw_name": "netlist-1.log",
+      "raw_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "public_sha256": "1b7b7b85cab3c288d1db71d5eab82f76ec67cf15b3718a007f4ead94d41af095",
+      "encoding": "original-bytes"
+    },
+    "netlist-4.log": {
+      "raw_name": "netlist-4.log",
+      "raw_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "public_sha256": "51719f3c895e098657d068a0fded5ace2675423b95b852c3c2c09fd2cd59cbbb",
+      "encoding": "original-bytes"
+    },
+    "stat-1.txt": {
+      "raw_name": "stat-1.txt",
+      "raw_sha256": "7348ed4432d72746a83a87bcd93151c68d504726c1ca10fb9afaa417d97d1ce6",
+      "public_sha256": "7348ed4432d72746a83a87bcd93151c68d504726c1ca10fb9afaa417d97d1ce6",
+      "encoding": "original-bytes"
+    },
+    "stat-4.txt": {
+      "raw_name": "stat-4.txt",
+      "raw_sha256": "4b2218e863ed3591644ec0fabe526292c50cd0c51c61f308d1337ecefd495632",
+      "public_sha256": "4b2218e863ed3591644ec0fabe526292c50cd0c51c61f308d1337ecefd495632",
+      "encoding": "original-bytes"
+    },
+    "invalid-parameter.log": {
+      "raw_name": "invalid-parameter.log",
+      "raw_sha256": "fdf023257ee2903ee1da4ff6e4836c710600af42be9b21bba6c5d49122038aa5",
+      "public_sha256": "fdf023257ee2903ee1da4ff6e4836c710600af42be9b21bba6c5d49122038aa5",
+      "encoding": "original-bytes"
+    },
+    "compile-oracle.log": {
+      "raw_name": "compile-oracle.log",
+      "raw_sha256": "bb47888a60e4675c7daac3771ec34dfa062cee7b58a177a88bde5bf528d933bd",
+      "public_sha256": "bb47888a60e4675c7daac3771ec34dfa062cee7b58a177a88bde5bf528d933bd",
+      "encoding": "original-bytes"
+    },
+    "synth-1.log.gz": {
+      "raw_name": "synth-1.log",
+      "raw_sha256": "7d07f085fb1b7f7736077b35f572c74d32dd06457f1f9369c5a16100acef0018",
+      "public_sha256": "cb066736d7d2338e49f95b0834364f5909931ebe7a22b5b8dd5297a1a8d31ee6",
+      "encoding": "gzip"
+    },
+    "netlist-1.v.gz": {
+      "raw_name": "netlist-1.v",
+      "raw_sha256": "b7631f04ae2d9ffc5c5f10c9932924ecb0c1e028d049a2602a9bc1098ce4d3a8",
+      "public_sha256": "089cff388ac66bde8b3b406072446651c84d68e02f1e87017ad5e1b11a546232",
+      "encoding": "gzip"
+    },
+    "netlist-1.json.gz": {
+      "raw_name": "netlist-1.json",
+      "raw_sha256": "5fd6180dc611dd4e8090563fafe768c4e4d8c6e2b7b25e812c0870425a952371",
+      "public_sha256": "dc008d5625c43b25df08017b256667d357ed2f42a8dbef169beeb9b7839c9757",
+      "encoding": "gzip"
+    },
+    "synth-4.log.gz": {
+      "raw_name": "synth-4.log",
+      "raw_sha256": "9f52fdacb2b3fbb3ffee5bd02d212f789ea4761cdb2c53d4b73858651fd46544",
+      "public_sha256": "a914c1b340c7546c849997d02eb3980f59e9df0a048040666ed92489681b7f11",
+      "encoding": "gzip"
+    },
+    "netlist-4.v.gz": {
+      "raw_name": "netlist-4.v",
+      "raw_sha256": "6f9d38c598aea99e6fd52bf537520c21032ac08b513534a6347f399ae2219eb6",
+      "public_sha256": "f87229b7e1b41db85f98ac2f34ddfd0df98b539cbd0d6493144e1c55220ae1d0",
+      "encoding": "gzip"
+    },
+    "netlist-4.json.gz": {
+      "raw_name": "netlist-4.json",
+      "raw_sha256": "9a00cfb7fb3a85214d0008c5269721a6545d004b08ec941fc1b5892ea3eaacf6",
+      "public_sha256": "2fd8cb547d9886cc99b65ab31de71134be4f1ca33919238ae100727fc2b9db3c",
+      "encoding": "gzip"
+    },
+    "LICENSE-OpenRX": {
+      "raw_name": "LICENSE",
+      "raw_sha256": "f238879baf3549d264e2213e4dfdd998289666ce9da8a140e8b000e45f3af472",
+      "public_sha256": "f238879baf3549d264e2213e4dfdd998289666ce9da8a140e8b000e45f3af472",
+      "encoding": "original-bytes"
+    },
+    "LICENSE-secworks": {
+      "raw_name": "LICENSE",
+      "raw_sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "public_sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "encoding": "original-bytes"
+    },
+    "LICENSE-RandomX": {
+      "raw_name": "LICENSE",
+      "raw_sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "public_sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "encoding": "original-bytes"
+    }
+  },
+  "resources_sha256": "eca79051981f07212bb65bf8e1731e72000f3cc3f9cd591bfc79718a3a8d13ec",
+  "supersedes": "../aes-rtl-20261012: initial v1 identity expectation rejected; original source/data retained",
+  "result": "full single-attempt harness succeeded in attempt10; independent final-head review pending"
+}
