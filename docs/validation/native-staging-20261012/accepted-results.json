@@ -1,0 +1,89 @@
+{
+  "build": {
+    "aggregate_cgroup_peak_bytes": 592883712,
+    "artifacts": {
+      "randomx/librandomx.a": {
+        "bytes": 786034,
+        "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+      },
+      "randomx/randomx-benchmark": {
+        "bytes": 247000,
+        "sha256": "fd2ba8c1f834ba996cfafd5d903b1a1b628361235bb17e11804530e0b39d7ffd"
+      },
+      "randomx/randomx-tests": {
+        "bytes": 282304,
+        "sha256": "1cccb5aaf68e4777446db70666fd4ca1e146f5d5220d174233eec1369de7109d"
+      },
+      "steady/openrx-steady": {
+        "bytes": 255608,
+        "sha256": "a1ebd867a845640e5d080be77806942dde0f6f51e45db7a9a93c5e6e047817cf"
+      }
+    },
+    "cgroup_cpu_delta_usec": 24589837,
+    "configured_compile_workers": 6,
+    "elapsed_s": 9.958572780014947,
+    "execution_id": "20261012T013303Z-848c58102f71",
+    "exit_status": 0,
+    "independent_review": {
+      "logs_verified": 7,
+      "outcome": "PASS compilation/artifact integrity",
+      "retained_artifacts_verified": 169,
+      "root_relay_turn": "01a12dc5-0cc5-7573-9b61-755072648670",
+      "staged_artifacts_verified": 6
+    },
+    "manifest_sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d",
+    "receipt_sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc",
+    "source_and_input_bindings_unchanged": true
+  },
+  "correctness": {
+    "adapter_configurations": 4,
+    "aggregate_cgroup_peak_bytes": 2503630848,
+    "cgroup_cpu_delta_usec": 215015218,
+    "differential_matches": 2,
+    "exact_reference_controls": 8,
+    "execution_id": "20261012T024840Z-8c34147db074",
+    "exit_status": 0,
+    "independent_review": {
+      "outcome": "PASS supported native correctness only",
+      "retained_artifacts_verified": 44,
+      "root_relay_turn": "01a12e0c-11bb-76c8-b67f-7543cf311d47"
+    },
+    "intentional_duration_rejected_intervals": 4,
+    "invalid_cli_cases_passed": 16,
+    "manifest_sha256": "f691dcfa3678c670a126db52f8c5676ba0bf0899d5aaf8933a3bf4104f2cde87",
+    "native_elapsed_s": 116.23357623594347,
+    "native_suite_tests_passed": 6,
+    "no_cgroup_throttling": true,
+    "no_oom": true,
+    "receipt_sha256": "213c01594b8c6347e68fa31622ce5e5b86fca99e3dd36c8ca5d21fcc66cc5526",
+    "source_build_input_bindings_unchanged": true,
+    "source_defined_conditional_skips": 1,
+    "unexecuted_configuration_coverage": "unresolved; no107pass/all-configuration claim",
+    "upstream_elapsed_s": 12.875702772988006,
+    "upstream_supported_passes": 106
+  },
+  "date": "2026-10-12",
+  "draft_pr": "https://github.com/jliu67/OpenRX/pull/36",
+  "hashes_per_joule": null,
+  "lifecycle": {
+    "both_final_receipts_verify_against_external_journal": true,
+    "failed_and_denied_attempts_preserved": true,
+    "native_compute_slots_released": true,
+    "payload_and_descendants_drained": true
+  },
+  "power_watts": null,
+  "publication_policy": "Selected non-identifying summary only. Exact conditional test/capability and raw host inventories stay private. Original receipt hashes identify retained host bytes, not this derivative. No self hash.",
+  "raw_diagnostic_rates_are_controlled_throughput": false,
+  "remaining_gates": [
+    "Controlled #8/EXP-001 thread/AES throughput matrix and host/settings/duration validation",
+    "Real synchronized wall-power/efficiency",
+    "Profiling permissions/evidence",
+    "Unexecuted conditional configuration coverage",
+    "Fresh independent documentation-diff review; no merge"
+  ],
+  "schema": "openrx.native-staging-accepted-public-summary.v1",
+  "scientific_parameters_or_vendor_changed": false,
+  "scope": "Independently accepted isolated build and supported native functional correctness only; no controlled throughput/power/all-configuration acceptance.",
+  "source_commit": "4a4e30bbbda47cce7713c280d87f1506f7c6f954",
+  "task": "https://github.com/jliu67/OpenRX/issues/35"
+}

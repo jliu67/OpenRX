@@ -1,5 +1,17 @@
 # Same-process adapter (P1-05)
 
+## Current isolated-path validation — 2026-10-12
+
+[Task #35 / draft PR #36](https://github.com/jliu67/OpenRX/pull/36) now has
+independently accepted isolated compilation and supported native correctness
+for exact executed source `4a4e30bb`. [Selected evidence](../../docs/validation/native-staging-20261012/README.md)
+records six native tests/four adapter configurations, eight exact references,
+two differential matches and retained duration/CLI failures. Upstream coverage
+is 106 supported passes plus one conditional skip; unexecuted configuration
+coverage remains open. This validates the explicit staging flow, not a controlled
+throughput/power baseline. Keep execution source/artifact identity distinct from
+later documentation heads, and preserve raw private records.
+
 Opt-in Linux/C++17 harness linked against the **unmodified pinned RandomX library**.
 The older `scripts/benchmark.py` remains the upstream-harness baseline. This adapter
 is measurement infrastructure, not an optimized RandomX implementation or a miner.
@@ -106,8 +118,12 @@ fresh host/resource checks and the shared compute slot, submit through the
 python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" submit \
   --request-key issue-35-native-build-SOURCE-attempt-01 --kind build \
   --cwd "$OPENRX_SOURCE" --source "$OPENRX_SOURCE" \
-  --input /usr/bin/cmake --input /usr/bin/x86_64-linux-gnu-g++ \
-  -- python3 "$OPENRX_SOURCE/scripts/stage_native.py" \
+  --env "CXX=$OPENRX_CXX" \
+  --input /usr/bin/cmake --input "$OPENRX_CXX" \
+  --input /usr/bin/env --input /usr/bin/timeout --input "$OPENRX_PYTHON" \
+  -- /usr/bin/env PYTHONDONTWRITEBYTECODE=1 \
+  /usr/bin/timeout --verbose --signal=KILL 600s \
+  "$OPENRX_PYTHON" -B "$OPENRX_SOURCE/scripts/stage_native.py" \
   --build-root '{execution_dir}/native-build' --jobs 6 --arch native
 
 # Wait for the build receipt, run the runner's verify BUILD_ID, and independently
@@ -116,11 +132,15 @@ python3 "$OPENRX_RUNNER" --root "$OPENRX_LOCAL_ROOT" submit \
   --request-key issue-35-native-controls-SOURCE-attempt-01 \
   --kind validation --validation-scope regression-smoke \
   --cwd "$OPENRX_SOURCE" --source "$OPENRX_SOURCE" --input "$OPENRX_BUILD" \
-  -- python3 "$OPENRX_SOURCE/tests/native_steady.py" \
+  --input /usr/bin/env --input /usr/bin/timeout --input "$OPENRX_PYTHON" \
+  -- /usr/bin/env PYTHONDONTWRITEBYTECODE=1 \
+  /usr/bin/timeout --verbose --signal=KILL 2400s \
+  "$OPENRX_PYTHON" -B "$OPENRX_SOURCE/tests/native_steady.py" \
   --build-root "$OPENRX_BUILD" --output-dir '{execution_dir}/controls'
 ```
 
-The reviewed request must additionally bind the actual interpreter, compiler,
+`OPENRX_PYTHON` and `OPENRX_CXX` denote the verified regular executable paths,
+resolved from installation aliases. The reviewed request must additionally bind the actual interpreter, compiler,
 toolchain/dependencies, environment and scientific oracle. Use six compile
 workers as an initial candidate; retain measured worker utilization and peak
 memory and revise only from evidence. Controls initialize the full dataset
@@ -128,6 +148,16 @@ memory and revise only from evidence. Controls initialize the full dataset
 `owner-local-max-v1` profile and fresh kernel/headroom checks choose the allowed
 budget; this adapter neither changes limits nor allocates the slot. Preserve the
 build execution/receipt and complete source snapshot when later trials consume it.
+The builder and immutable runner do not supply a wall cap automatically: the
+reviewed launch must enforce it. The explicit environment plus Python `-B`
+prevents source-tree bytecode writes without changing runner environment policy.
+The outer runner drains all cgroup descendants before releasing its slot;
+deadline kills may leave a missing report, which is retained as failure.
+Bind and retain an independently reviewed resource collector when actual cgroup
+peak/CPU records are required. Upstream assertions can be a separate bounded
+serial first step; record exact supported passes and conditional skips rather
+than converting unavailable coverage into success. The accepted actual operator
+packets remain separately source/input/receipt-bound, not implied by this example.
 
 Formal trials use the steady wrapper with `--build-root "$OPENRX_BUILD"` and
 `--output-dir '{execution_dir}/trial'` in a separate approved local request. Keep

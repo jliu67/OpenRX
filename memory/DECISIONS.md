@@ -88,3 +88,11 @@ Reconciliation: the concurrent hub-policy entry reused D029, already assigned to
 | ID | Decision | Reason | Revisit when |
 |---|---|---|---|
 | D039 | Use fresh external native build/output roots and verify successful build artifact/source bindings before staged launches | Retained sources are read-only inputs; retired CMake caches and source-relative results cannot satisfy the local runner output contract | Independent review or actual staged native evidence requires a different interface; scientific criteria remain unchanged |
+
+Execution follow-up for D039 (2026-10-12): different agents accepted the actual
+external build and supported native correctness. The fresh reviewed-range
+allocation preserved the OS reserve and fail-closed kernel/headroom checks after
+an earlier no-child denial. Exact conditional skips stay distinct from passes;
+unexecuted configuration coverage and controlled throughput/power remain open.
+This records the existing decision's result, not a change to scientific criteria
+or resource policy. Detailed host witnesses remain private.

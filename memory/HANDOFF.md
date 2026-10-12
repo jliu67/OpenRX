@@ -1,5 +1,32 @@
 # Handoff — actual designated local execution
 
+## Current native handoff — accepted supported correctness, 2026-10-12
+
+Execution source `4a4e30bbbda47cce7713c280d87f1506f7c6f954` remains pinned.
+[Draft PR #36](https://github.com/jliu67/OpenRX/pull/36) implements the unchanged
+scientific harness's external staging/input/output flow. Different agents
+accepted its source, build `20261012T013303Z-848c58102f71` and supported correctness
+`20261012T024840Z-8c34147db074`. [Selected public evidence](../docs/validation/native-staging-20261012/accepted-results.json)
+keeps raw receipt identities separate from a non-identifying summary; complete
+private records, exact conditional witness and external journals remain retained.
+
+Supported result: 106 upstream passes and one source-defined conditional skip;
+six unchanged native tests/four configurations, eight exact controls, two
+17-nonce differential matches, 16 invalid-CLI rejections and four deliberate
+duration rejections. Unexecuted configuration/all-ISA coverage remains open.
+Both successful receipts verify, original inputs are unchanged, descendants
+drained and native slots released. Preserve the earlier pre-compile failure and
+no-child admission denial, their permanent keys and all prior evidence.
+
+Next: independent review of this documentation-only PR delta and current CI.
+Keep code/vendor/test hashes identical to executed source, and never relabel
+old execution artifacts with the new documentation head. No merge is authorized.
+Any future controlled pilot needs its own pinned request, declared host/settings,
+duration/affinity/oracle, fresh admission and uncontended root-granted slot.
+#8/EXP-001/M1 throughput/power remain open; short functional rates are diagnostic.
+No new workload or identifying host inventory is published here. Read live task
+coordination for other payloads; the historical handoffs below are preserved.
+
 ## Native staging software handoff — 2026-10-12
 
 Session `codex/native-staging-20261012`, [#35](https://github.com/jliu67/OpenRX/issues/35),

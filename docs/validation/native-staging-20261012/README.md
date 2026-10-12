@@ -1,5 +1,58 @@
 # Native staging software validation — 2026-10-12
 
+## Current accepted outcome — 2026-10-12
+
+The isolated build and **supported native correctness** are independently
+accepted for the exact executed source `4a4e30bbbda47cce7713c280d87f1506f7c6f954`.
+The documentation reconciliation does not relabel that execution source as a
+later documentation commit. [Task #35](https://github.com/jliu67/OpenRX/issues/35)
+is the live publication/review authority; selected non-identifying results and
+original receipt identities are in [accepted-results.json](accepted-results.json).
+Raw host records and detailed capability witnesses remain privately retained.
+
+Build `20261012T013303Z-848c58102f71` completed with exit zero in 9.96 seconds.
+Source and artifact bindings, seven logs, all 169 receipt artifacts and actual
+compile/link provenance were independently checked. The new steady executable
+is 255,608 bytes, SHA-256
+`a1ebd867a845640e5d080be77806942dde0f6f51e45db7a9a93c5e6e047817cf`.
+It is a new reproducible artifact; the no-argument developer build remains distinct.
+
+Correctness `20261012T024840Z-8c34147db074` completed with exit zero. Independent
+review checked all 44 receipt artifacts, staged/source/binary/journal bindings,
+106 supported upstream passes plus one exact source-defined conditional skip,
+the unchanged six native tests/four configurations, eight known-reference
+controls, two 17-nonce differential matches and 16 invalid-CLI rejections.
+All four intentional too-short measurement intervals are retained as rejections.
+The exact conditional test identity and capability evidence stay private;
+unexecuted configuration/all-ISA coverage remains explicitly unresolved.
+Do not report 107 upstream passes or complete configuration coverage on this run.
+
+The build used six compile workers; the native suite retained its original
+hashing/init worker counts. Actual resource and ancestor admission passed.
+Observed aggregate cgroup peaks were 592,883,712 bytes for the build and
+2,503,630,848 bytes for correctness, with no OOM or cgroup throttling. These are
+execution-resource observations, not performance/efficiency results. Both final
+receipts verify against the external journal; descendants drained and the slot
+was released. Source/vendor bytes, immutable runner and scientific criteria are
+unchanged.
+
+History is preserved: the first build attempt failed before compilation on an
+optional telemetry read; the first submitted correctness attempt was denied by
+fresh headroom before child launch. A separately reviewed collector correction
+and a fresh reviewed-range allocation produced the successful executions.
+No failed key/receipt was reused, no reserve or admission gate was weakened,
+and no earlier record was overwritten.
+
+**#8/EXP-001/M1 remain open.** This proves supported functional correctness, not
+the controlled thread/AES throughput matrix, calibrated timing, synchronized
+wall power, profiling or complete all-configuration coverage. Short raw harness
+rates are diagnostic; do not mix harnesses or promote them into a baseline.
+No throughput pilot, simulation, protected-branch push or merge is performed by
+this documentation update. A fresh independent documentation-diff review remains
+required for its new PR head.
+
+## Historical preparation snapshot — preserved
+
 Task [#35](https://github.com/jliu67/OpenRX/issues/35), base main
 `3ee72cc4840b35b7a4e655276f100ab699c8f4cb`. Owner approved adapter/tests and
 draft PR publication. **Implementation awaiting independent review; no native
