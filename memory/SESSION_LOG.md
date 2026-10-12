@@ -463,3 +463,55 @@ Task #35 / draft PR #36 retains executed source `4a4e30bbbda47cce7713c280d87f150
 Observed supported correctness is106upstream passes plus one original conditional skip, six unchanged native cases/four configurations, eight exact references, two17-nonce differential matches,16invalid-CLI checks and four intended duration rejections. Unexecuted configuration coverage remains open. No diagnostic rate is promoted into controlled throughput/power; #8/EXP-001/M1 remain open. Both final receipts verified; descendants drained and native slots released. Earlier optional-telemetry pre-compile failure, no-child admission denial, held packets and permanent request mappings remain preserved; no reserve/admission bypass or scientific/vendor change.
 
 This session reconciles only branch documentation/PR description with actual accepted outcomes and explicit deadline/bytecode examples. Runtime scripts/tests/vendor and all execution-bound inputs remain byte-identical. Temporary authoring only; source/output retention and disabled sync remain intact. Identifying host inventory and exact conditional capability witnesses stay private following automatic-publication review. No workload, source build, performance pilot, simulator run, protected/force push, merge, settings/access/credential/install change or additional model task is performed. Current PR head/checks and a fresh independent documentation-diff review must be published externally on #35 after verified readback. Root currently coordinates any separate payload; this documentation claim allocates no CPU.
+
+## 2026-10-12 — owner-directed X9-class RandomX v2 ASIC scope alignment
+
+Task #39, session `codex/x9-refocus-20261012`, base main `eaa8f1cabc97855c6377d5e2b82ea85f28619ec6`.
+The owner asked to narrow the goal and align the mission, current agent information,
+repository board, goal issues and message board non-destructively. Temporary /tmp
+API authoring updates only current mission/priority sections and appends memory;
+prior historical/evidence records and executed source `4a4e30bb` stay unchanged.
+
+The proposal targets an X9-class ASIC adapted to exact v2, retaining v1 regressions.
+Reuse pinned RandomX, accepted tools, preserved builds and suitable licensed open
+IP; BOOMV3 is a provisional baseline, not X9 silicon. Bounded evidence/profiling
+must address v2 main-loop AES versus scalar software AES and memory/FP costs before
+any design decision. Broad surveys and X5 reconstruction are deferred without
+closing science. Every correctness, controlled-baseline, physical-power,
+selected-core and calibrated-model gate remains intact; no competitive PPA claim.
+
+The Bitmain announcement URL returns a JS shell in direct retrieval; its indexed
+announcement is not a silicon/topology or measured-v2 report. This proposal adds
+no numerical performance target. Distinct GitHub Projects lookup lacks read access;
+its existence/status was not verified or updated. Repository docs/TASKS and relevant
+issue/hub intent annotations are within the available coordination surface.
+
+No code, source build, scientific workload, active #16 request, settings, access,
+credentials or installation was changed. The draft head, exact checks, targeted
+issue readbacks and bot hub receipt must be verified on [#39](https://github.com/jliu67/OpenRX/issues/39)
+after publication; independent review is required before a later merge. No merge,
+scientific acceptance or completed external board update is asserted here.
+
+### 2026-10-12 — audited shared-pool/task-selection correction before PR40 merge
+
+The original nine-file draft remained unmerged while independent audit found that
+#2 was still the sole router-ready task despite its prose deferral. The supported
+[/openrx block](https://github.com/jliu67/OpenRX/issues/2#issuecomment-6118574647) was
+accepted with null claim/unchanged dependencies; #2 remains open and unresolved.
+[Source-only #41](https://github.com/jliu67/OpenRX/issues/41) was enrolled ready for
+one bounded X9/v2 target-envelope and reusable-IP/AES gap decision, not execution
+or final hardware selection. Task #39 was reopened/reclaimed for the correction.
+
+The consolidated document revision fixes live numeric-milestone/ready-pool routing
+in AGENTS, README and COMMUNICATION; current TASKS/hub promotions; X5-first hardware/
+question priority; and the stale PHASE1-STEADY importer-next-work wording. Substantive
+historical hardware questions, milestone acceptance and prior log bytes remain.
+The shared pool is Issues plus router-generated labels/bot JSON, with no separate
+active JSON/YAML taskpool found. A generic About description is left unchanged.
+
+Previous review at head871 is retained and does not accept this new head. PR40
+remains draft pending fresh exact-head review and checks. Distinct Projects access
+is still unavailable: CLI lacks Projects scope, connector exposes no Projects
+operations, and this task has no browser session; no actual board URL/ID was found.
+No account-level board denial, board absence or update is inferred. No credentials,
+settings, router/code, workload, active #16 request or scientific gate was changed.

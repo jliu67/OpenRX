@@ -1,5 +1,17 @@
 # Agent instructions
 
+## Current engineering priority — owner direction, 2026-10-12
+
+Work toward an X9-class ASIC adapted to exact RandomX v2, using licensed open IP
+and existing verified tooling before creating replacements. Read the
+[canonical mission](memory/PROJECT.md#user-intent) and [ordered path](docs/ROADMAP.md#current-priority-path--2026-10-12).
+Keep reverse engineering bounded to evidence that changes a design decision;
+X9 internals remain unknown and BOOMV3 is only a provisional baseline. Defer
+unrelated broad surveys and X5 reconstruction. Preserve #16's current correctness
+work and every baseline, profiling, selected-core and calibrated-model gate;
+this priority change does not authorize RTL work or new execution. [Task #39](https://github.com/jliu67/OpenRX/issues/39)
+tracks the separately reviewed documentation/coordination proposal.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.
@@ -24,7 +36,7 @@ Canonical owner announcement: [GitHub board #5](https://github.com/jliu67/OpenRX
 
 Read README.md, memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md and memory/OPEN_QUESTIONS.md before work. Read the relevant experiment and evidence entries before making technical claims.
 
-1. Work toward the next incomplete milestone in docs/ROADMAP.md. Keep changes scoped and reviewable.
+1. Apply the [current narrowed priority path](docs/ROADMAP.md#current-priority-path--2026-10-12) before selecting eligible work from the shared pool. The retained milestone table is an acceptance map, not a command to resume deferred X5/M2 in numeric order. Start with bounded source-only [#41](https://github.com/jliu67/OpenRX/issues/41) or other eligible work within the X9/v2 scope; preserve every scientific gate. Keep changes scoped and reviewable.
 2. Treat RandomX v2 as the primary workload and run v1 regression comparisons.
 3. Do not modify vendor/randomx silently. Verify its manifest before building. Put proposed workload changes in separately reviewed patches with new test evidence and provenance.
 4. Do not infer chip internals from RISC-V's open ISA. SG2042 RTL availability, X5 chip identity and X9 claims need evidence.
@@ -108,7 +120,7 @@ failures/safety withdrawals, original scientific assets, exact guest oracles and
 
 ## Decentralized collaboration — protocol v2
 
-**OpenRX has no coordinator, assigned roles or permanently running agents.** Each agent is an independent periodic visitor. Read [the shared-task protocol](docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), the [roadmap](docs/ROADMAP.md), [task board](docs/TASKS.md), current handoff, relevant issue comments and actual remote HEAD. Select the highest-value feasible ready issue within your own capabilities. If essential work is missing, create a new scoped task with acceptance criteria and explicit dependencies. Never infer work is assigned merely from a role, label or historic handoff.
+**OpenRX has no coordinator, assigned roles or permanently running agents.** Each agent is an independent periodic visitor. Read [the shared-task protocol](docs/COMMUNICATION.md), [hub #5](https://github.com/jliu67/OpenRandomX/issues/5), the [roadmap](docs/ROADMAP.md), [task board](docs/TASKS.md), current handoff, relevant issue comments and actual remote HEAD. Apply the current X9/v2 priority overlay, then select the highest-value eligible ready issue within your own capabilities; do not revive deferred work through numeric milestone order. If essential work is missing, create a new scoped task with acceptance criteria and explicit dependencies. Never infer work is assigned merely from a role, label or historic handoff.
 
 **One independent task = one GitHub Issue.** Claims are authoritative only as first-line /openrx claim agent/unique-session comments **on that task**. The bot receipt/status labels project those comments, but docs/TASKS.md is a durable milestone summary, not a competing ownership registry. The old #1 parent milestone contains several independent Phase 1 tasks now tracked as child issues #8–#13: claim the actual child instead of monopolizing the parent. Existing prose claims are historic context, not a live lease. Respect separate branches and actively edited scopes.
 

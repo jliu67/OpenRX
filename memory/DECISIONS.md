@@ -96,3 +96,20 @@ an earlier no-child denial. Exact conditional skips stay distinct from passes;
 unexecuted configuration coverage and controlled throughput/power remain open.
 This records the existing decision's result, not a change to scientific criteria
 or resource policy. Detailed host witnesses remain private.
+
+## Owner scope refocus — 2026-10-12
+
+| ID | Decision | Reason | Revisit when |
+|---|---|---|---|
+| D040 | Target an X9-class ASIC adapted to exact RandomX v2, with bounded reverse-engineering evidence and reuse-first open-IP engineering; defer unrelated surveys/X5 reconstruction | Owner explicitly narrowed the project to avoid open-ended research and recreating proven components | Traceable evidence changes the target or disqualifies the provisional reuse candidate; scientific gates remain unchanged |
+
+This direction does not establish X9 internals, v2 measurements or competitive PPA,
+select a final ASIC implementation, or waive #16/#8/#10/#11/#3/#14/#12 acceptance.
+[Task #39](https://github.com/jliu67/OpenRX/issues/39) tracks the separately reviewed
+canonical-text and non-destructive coordination proposal. Prior decision bytes are retained.
+
+Routing follow-up for D040 (2026-10-12): apply owner-priority eligibility through
+existing task protocol, not prose-only deferral or manual label deletion. #2 stays
+open and blocked, while bounded source-only #41 supplies eligible X9/v2 target/reuse/
+AES work. Current task selectors use the narrowed overlay before numeric milestones.
+No router code, dependencies, acceptance gate or scientific completion changes.

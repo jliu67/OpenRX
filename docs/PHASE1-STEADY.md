@@ -6,4 +6,4 @@ The original [Phase 1 report](PHASE1.md) describes the initial `scripts/benchmar
 
 [Validation evidence](validation/p1-05/README.md) includes 64 tooling tests, 107 upstream tests, six new native tests and independently downloaded/revalidated raw results. No controlled throughput or energy baseline is claimed. The declared envelope includes scheduling/bookkeeping and excludes initialization/logging; clocks alone do not measure or synchronize a power meter.
 
-Next work is authoritative in [the board](TASKS.md) and [handoff](../memory/HANDOFF.md): P1-06S power-data import software is ready, while controlled host measurements, real wall-power readings and dynamic profiles remain outstanding. **Phase 1/M1 is still open.**
+Next work is authoritative in [the board](TASKS.md) and [handoff](../memory/HANDOFF.md): P1-06S power-data import software is completed and independently accepted in [#13 / merged PR #17](https://github.com/jliu67/OpenRX/issues/13); reuse it. Current next work is controlled #8 measurements, real #10 wall-power readings and #11 dynamic profiles under their existing prerequisites. Do not reimplement the importer. **Phase 1/M1 is still open.**

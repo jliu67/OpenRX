@@ -1,5 +1,19 @@
 # OpenRX
 
+## Mission — owner direction, 2026-10-12
+
+Design an ASIC targeting Antminer X9-class capability and efficiency, adapted to
+exact RandomX v2 execution, with v1 regression coverage. Use evidence-led reverse
+engineering where primary information is available, or recreate the needed
+capabilities with suitable licensed open IP. Matching X9 is the engineering
+objective; no competitive silicon or power/performance/area result is established.
+
+Prioritize reuse of pinned RandomX, accepted tooling and preserved builds.
+BOOMV3 is a provisional open-IP baseline, not identified X9 silicon. Keep inquiry
+bounded to decisions needed for this design; defer broad hardware surveys and
+X5/SG2042 reconstruction. [Current priorities and unchanged gates](docs/ROADMAP.md)
+and [scope alignment task #39](https://github.com/jliu67/OpenRX/issues/39) guide agents.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.
@@ -8,14 +22,14 @@ These are verified GitHub closeout records, not a fresh host-health check. Every
 
 Progress is published and coordinated on GitHub. There is no standing editable local progress mirror or automatic Git sync; necessary reproducibility sources and computational assets remain local. See [the publication/source-retention policy](docs/PROGRESS_PUBLICATION_POLICY.md).
 
-Research a programmable RISC-V processor optimized for RandomX v2, with v1 compatibility. The long-term ambition is to exceed the Antminer X5 and investigate the advertised X9 efficiency target. No competitive silicon, hardware power result, or SG2042 simulation exists yet.
+The mission above supersedes the earlier broad X5/RISC-V research scope; its wording and evidence remain in [project memory](memory/PROJECT.md#earlier-mission--retained-history).
 
 ## Start here
 
 **⚡ OWNER RESOURCE POLICY:** All Codex agents must maximize safe utilization of the owner's local Ubuntu machine (6 CPU cores, 16 GiB RAM) for authorized OpenRX jobs. Do not default to old sandbox caps. See the prominent mandatory guidance in [AGENTS.md](AGENTS.md#-owner-directive--maximize-local-compute-utilization-all-agents) and the [execution resource policy](docs/LOCAL_RESOURCE_POLICY.md). Scientific and migration gates remain in force.
 
 
-**OpenRX agents have no coordinator or assigned roles.** Browse the [shared ready-task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready), choose a feasible scoped issue and claim it there. The Markdown board summarizes milestones, not live ownership. [Agent instructions](AGENTS.md) and [protocol](docs/COMMUNICATION.md) explain dependencies and handoffs.
+**OpenRX agents have no coordinator or assigned roles.** Apply the [current X9/v2 priority path](docs/ROADMAP.md#current-priority-path--2026-10-12) before browsing the [shared ready-task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready). [#41](https://github.com/jliu67/OpenRX/issues/41) supplies bounded source-only target/reuse/AES work; #2 X5 reconstruction is priority-blocked, not completed. Choose an eligible scoped issue and claim it there; a retained historical milestone or stale ready label cannot override the current priority/acceptance gates. The Markdown board summarizes milestones, not live ownership. [Agent instructions](AGENTS.md) and [protocol](docs/COMMUNICATION.md) explain dependencies and handoffs.
 
 - [Project board](docs/TASKS.md): status, blockers and next tasks
 - [Current handoff](memory/HANDOFF.md): reconciled engineering and communication progress

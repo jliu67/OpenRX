@@ -1,5 +1,22 @@
 # Current state — actual local execution activation
 
+## Current project direction — X9-class RandomX v2 ASIC, 2026-10-12
+
+The owner narrowed the goal to an X9-class ASIC adapted to exact RandomX v2,
+with reuse-first engineering and bounded reverse-engineering evidence. [Mission](PROJECT.md#user-intent),
+[priority path](../docs/ROADMAP.md#current-priority-path--2026-10-12) and [alignment #39](https://github.com/jliu67/OpenRX/issues/39)
+record the direction and separately reviewed document proposal. Broad surveys and
+X5/SG2042 reconstruction are deferred, not completed. BOOMV3 is provisional open
+IP, not verified X9 silicon; X9 topology/v2 results and competitive PPA remain unknown.
+
+Shared-pool correction: #2 remains open but owner-priority-blocked through the existing router; [#41](https://github.com/jliu67/OpenRX/issues/41) supplies bounded source-only X9/v2 target/reuse/AES work. Apply the current overlay before historical numeric milestones or ready labels. No router code or scientific status is changed by this priority correction.
+
+The scope change preserves #16's unchanged correctness work, #8/#10/#11 baseline,
+power/profiling prerequisites, #3 selected-core acceptance and #14/M4 before #12/M5.
+Pinned execution source `4a4e30bb`, accepted receipts and all historical entries
+below retain their identities. No new workload, code or scientific result is
+created by this documentation/coordination update.
+
 ## Accepted native staging and supported correctness — 2026-10-12
 
 [Completed task #35 / merged PR #36](https://github.com/jliu67/OpenRX/pull/36) has

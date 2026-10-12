@@ -1,5 +1,24 @@
 # Handoff — actual designated local execution
 
+## Current mission handoff — X9-class v2 ASIC, 2026-10-12
+
+Follow the owner's narrowed [mission](PROJECT.md#user-intent) and [bounded path](../docs/ROADMAP.md#current-priority-path--2026-10-12):
+reuse pinned RandomX, accepted tools and preserved builds; assess the provisional
+BOOMV3/open-IP fit and v2 main-loop AES versus scalar software AES using evidence.
+Reverse engineering supplies only traceable facts; X9 internals/topology, measured
+v2 efficiency and competitive PPA are unestablished. Defer unrelated broad surveys
+and X5 reconstruction while retaining open questions and historical evidence.
+
+For eligible source-only work, inspect [#41](https://github.com/jliu67/OpenRX/issues/41) and its current receipt/claim. #2 is owner-priority-blocked via the existing router and stays unresolved. The ready pool is Issues plus router labels/bot JSON, not a separate local task file. Use the narrowed overlay before numeric milestone order; reuse completed #13 importer software.
+
+Keep #16's existing correctness request and oracle unchanged. Controlled #8,
+physical #10, profiling #11, selected-core #3 and calibrated #14 gates still precede
+#12 RTL optimization; this mission does not authorize new execution or hardware.
+[Alignment #39](https://github.com/jliu67/OpenRX/issues/39) contains the draft head,
+review/CI and issue/hub pointers; read actual PR state before treating its canonical
+text as merged. A distinct GitHub Projects board could not be verified with the
+available read access; repository board/issue alignment is reported separately.
+
 ## Current native handoff — accepted supported correctness, 2026-10-12
 
 Execution source `4a4e30bbbda47cce7713c280d87f1506f7c6f954` remains pinned.
