@@ -1,5 +1,29 @@
 # Handoff — actual designated local execution
 
+## Current accepted pilot handoff — 2026-10-12
+
+Read [the independent exploratory acceptance](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969) and
+[pilot evidence](../docs/validation/native-pilot-20261012/README.md). Execution
+`20261012T185152Z-97e747b1f6c4` finished/drained with scoped input/output/receipt/
+review integrity verified; native source stays `4a4e30bbbda47cce7713c280d87f1506f7c6f954`. The pilot completed
+two balanced v2/v1 repeats at one six-worker hardware-AES/full-dataset/JIT setting.
+#8 remains open/review after the owner released its scoped claim; formal #8/M1
+acceptance is incomplete. Prior fixture-only and running/pending handoffs are history.
+
+Next preparation is one separately reviewed formal balanced thread/AES baseline
+request, using existing accepted tools/builds, complete coverage and at least
+four balanced formal repeats under declared controlled settings. Carry forward
+the pilot's v2 repeat spread and calibration/thermal limits; no next payload or
+settings change is authorized by this document. Every subsequent execution still
+needs its own request/source/runner/input binding, fresh host/kernel admission
+and a serialized slot. The terminal slot release is not a current health check.
+
+Keep #16's accepted 39-required + nine-runtime light matrix at scientific source
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726` distinct: optional hardware AES skipped,
+broader gem5 full-dataset/intended-core/SMP still open. Native full-dataset pilot
+results do not satisfy the gem5/intended-core gate, and leave M1–M5,
+physical power/PMU, selected-core/calibration or RTL/ASIC requirements.
+
 ## Current accepted light-matrix handoff — 2026-10-12
 
 Read [#16's independent terminal result](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891) and

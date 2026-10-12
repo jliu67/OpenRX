@@ -538,3 +538,30 @@ scientific criterion, host setting or resource policy was changed. No workload,
 installation, credential/access change, standing clone, sync or merge occurred.
 Task #45 records the draft head, exact checks and independent review handoff;
 no future review/merge or new host-health claim is asserted by this entry.
+
+
+## 2026-10-12 — actual native pilot terminal/status reconciliation
+
+Base main `54da42cca7f79f330e0c8b5403d3fe8e589a8a4b`. The owner requested current
+issue/hub status corrections without router/claim changes, then one minimal
+reviewed repository reconciliation after the actual pilot terminal. A new
+[owner terminal record](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969) arrived before running-status publication,
+so no transient running-pilot PR was created. #8's source `4a4e30bbbda47cce7713c280d87f1506f7c6f954` execution
+`20261012T185152Z-97e747b1f6c4` is independently accepted only as a two-repeat,
+one-setting exploratory pilot; formal #8/EXP-001 and M1 remain open.
+
+Additive current prefixes on #8/#16/hub #5 retain complete earlier bodies and
+unchanged states/labels/claims. This one docs-only proposal updates the P1-04 row
+(its exact prior row retained as history), current discovery/state/handoff and
+a selected evidence note, preserving every prior log byte. #16's accepted 39+9
+light result/source b4b5ffc and optional AES skip remain distinct from its broader
+full-dataset/intended-core/SMP gates. M1–M5, power/PMU, selected-core/calibration
+and RTL requirements are unchanged. The long pilot aggregate has no independent
+trusted oracle; controls and repeat determinism are its declared evidence.
+
+The explicit owner instruction preserves router/claim state, so no new lease or
+transition was posted for this isolated documentation branch; pilot-owner review/
+source/receipt ownership is respected. No workload, heavy rehash, local build/test,
+install/settings/auth change, standing clone, sync, source/receipt rewrite or merge
+is performed. Current draft head/checks and different-agent review belong in the
+#8 documentation handoff; no future review/merge or fresh host health is asserted.
