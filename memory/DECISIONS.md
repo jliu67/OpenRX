@@ -82,3 +82,9 @@ Reconciliation: the concurrent hub-policy entry reused D029, already assigned to
 | D036 | Designate the owner's Ubuntu computer for persistent expensive execution only after evidence-backed migration cutover | User requires loss-intolerant preservation, reproducibility, durable operation and verified scientific/lifecycle gates; temporary sandboxes remain for lightweight work | Required gates and reviewed merged PR pass; publish activation from objective evidence |
 | D037 | Keep GitHub authoritative and use owner-mediated task submission/result publication; remote execution is unavailable | No secure remote access/listener/poller has been implemented or tested; avoid implying visiting agents can access the host or creating permanent roles | A separately documented secure submission/retrieval mechanism is implemented and demonstrated |
 | D038 | Preserve original saved simulator identity and independently verify a separate pinned rebuild when original Library parts are inaccessible | A historic artifact save is not a current transfer; scientific provenance must distinguish an unavailable original from a new toolchain build | Exact original archive is retrieved and fully verified, or the separate rebuild passes local gates |
+
+## Native staging preparation — 2026-10-12
+
+| ID | Decision | Reason | Revisit when |
+|---|---|---|---|
+| D039 | Use fresh external native build/output roots and verify successful build artifact/source bindings before staged launches | Retained sources are read-only inputs; retired CMake caches and source-relative results cannot satisfy the local runner output contract | Independent review or actual staged native evidence requires a different interface; scientific criteria remain unchanged |

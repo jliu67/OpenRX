@@ -154,7 +154,35 @@ def resources():
     return result
 
 
-def main():
+def external_output(path):
+    """Explicit local outputs must not mutate or contain the retained source."""
+    destination, source = Path(path).resolve(), ROOT.resolve()
+    check(destination != source and source not in destination.parents and destination not in source.parents,
+          'explicit output must be outside and disjoint from the source tree')
+    return destination
+
+
+def validate_build(build, binary):
+    """A staged launch must consume the exact successful build and sources."""
+    receipt = json.loads((build / 'build.json').read_text(), object_pairs_hook=strict_object,
+                         parse_constant=reject_constant)
+    check(isinstance(receipt, dict), 'invalid native staging receipt')
+    check(receipt.get('schema') == 'openrx.native-stage.v1' and receipt.get('status') == 'built',
+          'native staging build is incomplete or failed')
+    check(isinstance(receipt.get('source_sha256'), dict) and isinstance(receipt.get('artifacts'), dict),
+          'missing native staging bindings')
+    check(binary == (build / 'steady/openrx-steady').resolve(), 'binary differs from staged build')
+    for relative in ('vendor/randomx.lock.json', 'vendor/randomx.sha256.json',
+                     'benchmarks/steady/main.cpp', 'benchmarks/steady/CMakeLists.txt'):
+        check(receipt['source_sha256'].get(relative) == hashlib.sha256((ROOT / relative).read_bytes()).hexdigest(),
+              'staged source mismatch: ' + relative)
+    for relative in ('randomx/librandomx.a', 'randomx/randomx-benchmark', 'randomx/randomx-tests',
+                     'steady/openrx-steady', 'randomx/CMakeCache.txt', 'steady/CMakeCache.txt'):
+        check(receipt['artifacts'].get(relative) == hashlib.sha256((build / relative).read_bytes()).hexdigest(),
+              'staged artifact mismatch: ' + relative)
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--versions', choices=['v1', 'v2', 'v1,v2', 'v2,v1'], default='v1,v2')
     parser.add_argument('--aes', choices=['hardware', 'software'], default='hardware')
@@ -163,18 +191,31 @@ def main():
         parser.add_argument('--' + name, type=int, default=default)
     parser.add_argument('--min-seconds', type=float, default=1)
     parser.add_argument('--timeout', type=int, default=900, help='Whole native process deadline in seconds')
-    args = parser.parse_args()
+    parser.add_argument('--binary', type=Path, help='Explicit verified openrx-steady executable')
+    parser.add_argument('--build-root', type=Path, help='Native build root containing randomx/ and steady/')
+    parser.add_argument('--output-dir', type=Path, help='Fresh external output; local runner: {execution_dir}/trial')
+    args = parser.parse_args(argv)
     if args.timeout < 1 or not math.isfinite(args.min_seconds) or args.min_seconds < 0:
         parser.error('timeout must be positive and minimum duration finite and nonnegative')
-    binary = ROOT / 'build/steady/openrx-steady'
-    output = ROOT / 'benchmarks/results' / (dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ') + '-steady')
-    output.mkdir(parents=True)
-    config = vars(args).copy(); config.pop('timeout')
+    build = (args.build_root or ROOT / 'build').resolve()
+    binary = (args.binary or build / 'steady/openrx-steady').resolve()
+    try:
+        output = external_output(args.output_dir) if args.output_dir else ROOT / 'benchmarks/results' / (
+            dt.datetime.now(dt.timezone.utc).strftime('%Y%m%dT%H%M%S.%fZ') + '-steady')
+        check(output != build and output not in build.parents and build not in output.parents,
+              'output and build roots must be disjoint')
+        check(output != binary and output not in binary.parents, 'output must not contain the binary')
+        output.mkdir(parents=True, exist_ok=False)
+    except (OSError, ValueError) as exc:
+        parser.error(str(exc))
+    config = {name: getattr(args, name) for name in ('versions', 'aes', 'threads', 'init_threads',
+              'nonces', 'warmup_nonces', 'repeats', 'min_seconds')}
     command = [str(binary)]
     for key, value in config.items():
         command += ['--' + key.replace('_', '-'), str(value)]
     report = {'schema_version': 1, 'purpose': 'native adapter trial, not calibrated hardware efficiency',
               'command': command, 'configuration': config, 'timeout_s': args.timeout,
+              'source_root': str(ROOT), 'build_root': str(build), 'binary': str(binary),
               'platform': platform.platform(), 'python': sys.version,
               'git_revision': capture(['git', '-C', str(ROOT), 'rev-parse', 'HEAD']),
               'git_status': capture(['git', '-C', str(ROOT), 'status', '--porcelain']),
@@ -187,13 +228,18 @@ def main():
         file = ROOT / path
         if file.is_file():
             report['source_sha256'][path] = hashlib.sha256(file.read_bytes()).hexdigest()
-    for name in ('randomx', 'steady'):
-        cache = ROOT / 'build' / name / 'CMakeCache.txt'
-        if cache.is_file():
-            shutil.copyfile(cache, output / (name + '-CMakeCache.txt'))
     try:
+        for name in ('randomx', 'steady'):
+            cache = build / name / 'CMakeCache.txt'
+            if cache.is_file():
+                shutil.copyfile(cache, output / (name + '-CMakeCache.txt'))
+        if (build / 'build.json').is_file():
+            shutil.copyfile(build / 'build.json', output / 'build.json')
+            report['build_receipt_sha256'] = hashlib.sha256((output / 'build.json').read_bytes()).hexdigest()
         report['vendor_integrity'] = capture([sys.executable, str(ROOT / 'scripts/verify_vendor.py')])
         check(report['vendor_integrity'].get('returncode') == 0, 'vendor integrity failed')
+        if args.build_root is not None:
+            validate_build(build, binary)
         check(binary.is_file(), 'build first: bash scripts/build_steady.sh')
         report['binary_sha256'] = hashlib.sha256(binary.read_bytes()).hexdigest()
         with (output / 'adapter.jsonl').open('w') as out, (output / 'adapter.stderr').open('w') as err:
@@ -202,10 +248,13 @@ def main():
                     report['returncode'] = p.wait(timeout=args.timeout)
                 except BaseException:
                     # Kill the process group and reap it on timeout or interruption.
-                    try:
-                        os.killpg(p.pid, signal.SIGKILL)
-                    except ProcessLookupError:
-                        pass
+                    # wait() can reap the child during KeyboardInterrupt handling.
+                    # Never signal its numerical group after that ownership ends.
+                    if p.returncode is None:
+                        try:
+                            os.killpg(p.pid, signal.SIGKILL)
+                        except ProcessLookupError:
+                            pass
                     report['returncode'] = p.wait()
                     raise
         expected = dict(config); expected['versions'] = config['versions'].split(',')

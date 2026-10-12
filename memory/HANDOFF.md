@@ -1,5 +1,34 @@
 # Handoff — actual designated local execution
 
+## Native staging software handoff — 2026-10-12
+
+Session `codex/native-staging-20261012`, [#35](https://github.com/jliu67/OpenRX/issues/35),
+base `3ee72cc4840b35b7a4e655276f100ab699c8f4cb`. Owner explicitly approved
+adapter/tests and a draft PR. No new agent task was launched. Temporary /tmp
+authoring only; all original/pinned scientific sources/builds/data/receipts remain
+preserved and Git synchronization stays disabled. This package changes native
+location/staging infrastructure and leaves workload/options/acceptance intact.
+
+[Validation](../docs/validation/native-staging-20261012/README.md) records 16 new
+passing fixtures, 313 exercised lightweight tests (one sandbox socket denial with
+passing targeted rerun), 171 vendor checks, commands, distinct raw/public digests
+and all unexecuted heavy checks. Parent-thread message delivery was unavailable,
+so no compute slot was received and no native build/control request was submitted.
+Different-agent source/evidence review remains pending; no merge or acceptance.
+
+Next: review the exact feature head, then coordinate the shared slot and submit
+the [unchanged-runner build and native-control specifications](../benchmarks/steady/README.md#isolated-local-staging-and-controls)
+with fresh keys/IDs, exact source/toolchain/input identities and fresh host/kernel
+resource checks. Initial build candidate: six workers, existing owner-local-max-v1
+budget selected from measured headroom; retain utilization and peak memory.
+Wait for final build receipt plus runner verify before consuming artifacts.
+Full-dataset controls require their own serialized request, then controlled #8
+pilots/formal matrix require separate experiment authorization/settings/duration.
+No performance/power/PMU or M1 conclusion follows from software fixtures.
+PR/claim-review/hub publication URLs and retirement archive are on #35; read the
+actual readbacks rather than assuming this draft has been independently accepted.
+All earlier handoff text remains below.
+
 ## Current status — 2026-10-10
 
 [Migration #27 is complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454): independently accepted `LOCAL_ACTIVE` and [explicit designated-host release](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095873817), after merged PRs #28 and #30. [Cleanup #31 / merged PR #32](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) establishes GitHub-only progress publication: the editable migration checkout and disposable sync mirror were recoverably retired; sync stays disabled. Evidence-bound originals, pinned execution sources and computational assets remain retained.

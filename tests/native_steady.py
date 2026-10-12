@@ -3,6 +3,7 @@
 Not discovered by the pre-build tooling suite. No pool connection or power claim.
 """
 import importlib.util
+import argparse
 import json
 from pathlib import Path
 import re
@@ -12,6 +13,10 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 BINARY = ROOT / 'build/steady/openrx-steady'
+UPSTREAM_BINARY = ROOT / 'build/randomx/randomx-benchmark'
+EVIDENCE = ROOT / 'build/validation'
+TRIAL_OUTPUT = None
+STAGED_BUILD = False
 spec = importlib.util.spec_from_file_location('steady', ROOT / 'scripts/steady_benchmark.py')
 steady = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(steady)
@@ -42,13 +47,18 @@ class NativeTests(unittest.TestCase):
             self.assertEqual(p.returncode, 1, args)
             self.assertEqual(p.stdout, '', args)
             self.assertIn('ERROR:', p.stderr, args)
-        (ROOT / 'build/validation/steady-cli-errors.json').write_text(json.dumps(evidence, indent=2) + '\n')
+        (EVIDENCE / 'steady-cli-errors.json').write_text(json.dumps(evidence, indent=2) + '\n')
 
     def trial(self, threads, aes, nonces=17, minimum=0, warmup=6):
         command = [sys.executable, str(ROOT / 'scripts/steady_benchmark.py'),
                    '--threads', str(threads), '--aes', aes, '--nonces', str(nonces),
                    '--warmup-nonces', str(warmup), '--repeats', '2', '--min-seconds', str(minimum),
                    '--timeout', '420']
+        command += ['--binary', str(BINARY)]
+        if STAGED_BUILD:
+            command += ['--build-root', str(BUILD_ROOT)]
+        if TRIAL_OUTPUT is not None:
+            command += ['--output-dir', str(TRIAL_OUTPUT / f'trial-{threads}-{aes}-{nonces}')]
         p = subprocess.run(command, capture_output=True, text=True, timeout=450)
         self.assertTrue(p.stdout.strip(), p.stderr)
         output = Path(p.stdout.strip().splitlines()[-1])
@@ -81,14 +91,14 @@ class NativeTests(unittest.TestCase):
         records = self.trial(3, 'software')
         # Non-reference count: compare against the UNMODIFIED upstream harness too.
         for version in ('v1', 'v2'):
-            command = [str(ROOT / 'build/randomx/randomx-benchmark'), '--mine', '--jit',
+            command = [str(UPSTREAM_BINARY), '--mine', '--jit',
                        '--threads', '3', '--init', '2', '--nonces', '17', '--seed', '0', '--softAes']
             if version == 'v2':
                 command.append('--v2')
             p = subprocess.run(command, capture_output=True, text=True, timeout=180)
             evidence = {'command': command, 'returncode': p.returncode,
                         'stdout': p.stdout, 'stderr': p.stderr}
-            (ROOT / ('build/validation/steady-differential-' + version + '.json')).write_text(
+            (EVIDENCE / ('steady-differential-' + version + '.json')).write_text(
                 json.dumps(evidence, indent=2) + '\n')
             self.assertEqual(p.returncode, 0, evidence)
             match = re.search(r'Calculated result:\s*([0-9a-f]{64})', p.stdout)
@@ -99,6 +109,45 @@ class NativeTests(unittest.TestCase):
             print('Differential 17-nonce / 3-worker / software-AES ' + version + ': MATCH', flush=True)
 
 
+BUILD_ROOT = ROOT / 'build'
+
+
+def configure(argv=None):
+    global BINARY, UPSTREAM_BINARY, BUILD_ROOT, EVIDENCE, TRIAL_OUTPUT, STAGED_BUILD
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--build-root', type=Path)
+    parser.add_argument('--binary', type=Path)
+    parser.add_argument('--upstream-binary', type=Path)
+    parser.add_argument('--output-dir', type=Path, help='Fresh external directory for all control evidence')
+    args, remaining = parser.parse_known_args(argv)
+    STAGED_BUILD = args.build_root is not None
+    BUILD_ROOT = (args.build_root or ROOT / 'build').resolve()
+    BINARY = (args.binary or BUILD_ROOT / 'steady/openrx-steady').resolve()
+    UPSTREAM_BINARY = (args.upstream_binary or BUILD_ROOT / 'randomx/randomx-benchmark').resolve()
+    if args.output_dir:
+        try:
+            EVIDENCE = steady.external_output(args.output_dir)
+            steady.check(EVIDENCE != BUILD_ROOT and EVIDENCE not in BUILD_ROOT.parents
+                         and BUILD_ROOT not in EVIDENCE.parents, 'output and build roots must be disjoint')
+            steady.check(all(EVIDENCE != p and EVIDENCE not in p.parents for p in (BINARY, UPSTREAM_BINARY)),
+                         'output must not contain control binaries')
+            EVIDENCE.mkdir(parents=True, exist_ok=False)
+        except (OSError, ValueError) as exc:
+            parser.error(str(exc))
+        TRIAL_OUTPUT = EVIDENCE
+    else:
+        EVIDENCE = ROOT / 'build/validation'
+        EVIDENCE.mkdir(parents=True, exist_ok=True)
+        TRIAL_OUTPUT = None
+    if STAGED_BUILD:
+        try:
+            steady.validate_build(BUILD_ROOT, BINARY)
+            steady.check(UPSTREAM_BINARY == (BUILD_ROOT / 'randomx/randomx-benchmark').resolve(),
+                         'upstream binary differs from staged build')
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            parser.error(str(exc))
+    return remaining
+
+
 if __name__ == '__main__':
-    (ROOT / 'build/validation').mkdir(parents=True, exist_ok=True)
-    unittest.main(verbosity=2)
+    unittest.main(argv=[sys.argv[0], *configure()], verbosity=2)

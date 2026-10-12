@@ -43,6 +43,19 @@ Remaining blockers: controlled benchmark host (#8), dynamic profiler/counter acc
 
 Follow-up: select a simulator that can reproduce exact workload behavior, then vary memory latency/cache/AES capacity independently in a calibrated model. Do not bypass the roadmap's baseline/model gates.
 
+## Native staging preparation — 2026-10-12
+
+[Task #35](https://github.com/jliu67/OpenRX/issues/35) adds fresh external native
+builds, explicit executable/build/output locations and focused source/artifact
+binding tests. [Software validation](../docs/validation/native-staging-20261012/README.md)
+records 16 passing staging fixtures and 313 exercised lightweight tests with one
+sandbox socket denial followed by a passing targeted rerun. Implementation awaits
+independent review. No native compilation, full-dataset controls, pilot, measured
+matrix, synchronized power or profiling was performed. This preparation preserves
+the exact workload, even balanced repeats (at least four formally), known-hash
+controls and all experiment acceptance. The [local-runner commands](../benchmarks/steady/README.md#isolated-local-staging-and-controls)
+require separate reviewed requests and the shared compute slot; #8/M1 stay open.
+
 
 ## Independent importer acceptance — 2026-10-08
 

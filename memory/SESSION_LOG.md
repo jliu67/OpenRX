@@ -432,3 +432,26 @@ The resource evidence must bind actual per-payload kernel/ancestor limit checks 
 GitHub-only audit at main `f97b16bb9ff7ce9d8db50f5f97cd6f4d2258a437` verified completed [migration #27](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454) and [cleanup/publication #31](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057). This docs-only work adds current closeout pointers ahead of preserved dated snapshots and corrects stale task/layout summaries. Prior SESSION_LOG bytes and scientific evidence are unchanged. No local checkout, host inspection or scientific execution was performed; no current host-health claim is made.
 
 [Task #33](https://github.com/jliu67/OpenRX/issues/33) records the scoped claim, draft PR, subsequent independent exact-head review, CI and targeted issue/hub handoff. These publication checks must be read there once available, not inferred from this entry. No merge or scientific acceptance is asserted. #8/#10/#11 remain blocked by their distinct measurement/configuration/access prerequisites; #16/M1–M5 remain open. Relation to EXP-002 is discoverability of unchanged existing runtime/hash evidence only; no new experimental result or consequential policy decision is introduced.
+
+## 2026-10-12 — native staging preparation, task #35
+
+Session `codex/native-staging-20261012`, base main `3ee72cc4840b35b7a4e655276f100ab699c8f4cb`.
+Owner approved implementing the native staging adapter/tests and publishing a draft PR at 00:21:41 UTC.
+Read repository AGENTS, current memory, hub/issue #8, protocol, publication/local/resource policies and EXP-001.
+Created scoped preparatory [#35](https://github.com/jliu67/OpenRX/issues/35), with an accepted advisory claim
+until 04:24:10 UTC. Temporary /tmp authoring from a pinned source archive only; six omitted vendor manifest
+entries were copied from preserved originals after exact digest checks. No retained source or asset was changed.
+
+Added fresh external native build staging with complete logs/tool versions/caches and artifact bindings;
+explicit steady/control binary/build/output locations preserve the scientific validator and options.
+A focused guard prevents post-reap numerical-group signaling on native-wrapper interruption.
+[Evidence](../docs/validation/native-staging-20261012/README.md): 313 lightweight tests exercised, 312 passing
+under the sandbox and one existing Unix-socket permission error; its authorized targeted rerun passed.
+Final 16 staging fixtures, 171 vendor files, Bash syntax and CLI help checks pass. Heavy native compilation,
+upstream/full-dataset controls, controlled measurements and power/PMU work were unexecuted. Parent messaging
+returned `thread not found`, so no shared compute-slot approval was received or heavy request submitted.
+
+Different-agent review remains pending for the draft PR. No acceptance, merge, protected-branch push, Git sync,
+settings/install/access/credential changes or new agent task occurred. STATE/HANDOFF, EXP-001 and board connect
+software preparation to the unchanged open #8/M1 gates. Actual PR/review-state/bot-announcement readbacks and
+recoverable retirement archive are recorded on #35 after publication, never inferred from this log entry.

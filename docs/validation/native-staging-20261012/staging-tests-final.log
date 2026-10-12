@@ -1,0 +1,21 @@
+test_changed_source_does_not_launch (test_native_staging.StagingTests) ... ok
+test_existing_build_is_preserved_and_never_reconfigured (test_native_staging.StagingTests) ... ok
+test_fresh_build_retains_logs_artifact_binding_and_source_isolation (test_native_staging.StagingTests) ... ok
+test_invalid_bound_artifact_does_not_launch (test_native_staging.StagingTests) ... ok
+test_malformed_receipt_is_retained_failure (test_native_staging.StagingTests) ... ok
+test_missing_build_artifacts_fail_instead_of_reporting_success (test_native_staging.StagingTests) ... ok
+test_missing_explicit_binary_is_retained_failure (test_native_staging.StagingTests) ... ok
+test_missing_receipt_is_retained_failure (test_native_staging.StagingTests) ... ok
+test_native_controls_reject_unbound_upstream_binary (test_native_staging.StagingTests) ... ok
+test_native_controls_route_trials_and_differential_evidence_externally (test_native_staging.StagingTests) ... ok
+test_output_overlap_and_existing_evidence_are_preserved (test_native_staging.StagingTests) ... ok
+test_reaped_child_is_never_signalled_on_interruption (test_native_staging.StagingTests) ... ok
+test_source_and_symlink_destinations_rejected_before_tool_launch (test_native_staging.StagingTests) ... ok
+test_staged_duration_rejection_keeps_raw_and_summary (test_native_staging.StagingTests) ... ok
+test_staged_launch_consumes_bound_binary_and_copies_caches (test_native_staging.StagingTests) ... ok
+test_vendor_failure_retains_failure_and_prevents_cmake (test_native_staging.StagingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.259s
+
+OK
