@@ -2,7 +2,7 @@
 
 ## Current preparation outcome — 2026-10-12
 
-[Task #35 / draft PR #36](https://github.com/jliu67/OpenRX/pull/36) now provides
+[Completed task #35 / merged PR #36](https://github.com/jliu67/OpenRX/pull/36) provides
 independently accepted isolated compilation and supported full-dataset native
 correctness for pinned source `4a4e30bb`. [Evidence](../docs/validation/native-staging-20261012/README.md)
 records six unchanged native cases, eight reference controls, two differential
@@ -10,6 +10,8 @@ matches, 16 invalid-CLI checks and retained intentional duration failures.
 Upstream coverage is 106 supported passes plus one source-defined conditional
 skip; complete configuration coverage is unresolved. Historical preparation
 and failure records are retained below and in the task.
+[Verified merge 77cc171a, final review and postmerge CI](https://github.com/jliu67/OpenRX/issues/35#issuecomment-6117228235)
+close the implementation task, while executed source remains `4a4e30bb`.
 
 This completes the recorded supported functional preparation, **not this
 experiment or M1**. Controlled host/settings, fixed compared counts, the formal

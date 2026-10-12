@@ -3,7 +3,7 @@
 ## Current native handoff — accepted supported correctness, 2026-10-12
 
 Execution source `4a4e30bbbda47cce7713c280d87f1506f7c6f954` remains pinned.
-[Draft PR #36](https://github.com/jliu67/OpenRX/pull/36) implements the unchanged
+[Merged PR #36](https://github.com/jliu67/OpenRX/pull/36) implements the unchanged
 scientific harness's external staging/input/output flow. Different agents
 accepted its source, build `20261012T013303Z-848c58102f71` and supported correctness
 `20261012T024840Z-8c34147db074`. [Selected public evidence](../docs/validation/native-staging-20261012/accepted-results.json)
@@ -18,9 +18,10 @@ Both successful receipts verify, original inputs are unchanged, descendants
 drained and native slots released. Preserve the earlier pre-compile failure and
 no-child admission denial, their permanent keys and all prior evidence.
 
-Next: independent review of this documentation-only PR delta and current CI.
+[PR #36 merged at 77cc171a](https://github.com/jliu67/OpenRX/commit/77cc171a935780788ceceb15f75d5c0e3a556650);
+[task #35 completed after final review and postmerge CI](https://github.com/jliu67/OpenRX/issues/35#issuecomment-6117228235).
 Keep code/vendor/test hashes identical to executed source, and never relabel
-old execution artifacts with the new documentation head. No merge is authorized.
+old execution artifacts with the merged documentation head.
 Any future controlled pilot needs its own pinned request, declared host/settings,
 duration/affinity/oracle, fresh admission and uncontended root-granted slot.
 #8/EXP-001/M1 throughput/power remain open; short functional rates are diagnostic.

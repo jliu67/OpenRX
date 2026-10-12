@@ -2,7 +2,7 @@
 
 ## Accepted native staging and supported correctness — 2026-10-12
 
-[Task #35 / draft PR #36](https://github.com/jliu67/OpenRX/pull/36) now has
+[Completed task #35 / merged PR #36](https://github.com/jliu67/OpenRX/pull/36) has
 independent source, actual isolated-build and supported-native-correctness
 acceptance for execution source `4a4e30bb`. [Current evidence](../docs/validation/native-staging-20261012/README.md)
 records the finalized build/correctness receipts, unchanged source/binary
@@ -13,10 +13,14 @@ coverage is open. Detailed host witnesses remain private.
 
 Earlier failed telemetry and denied headroom attempts are preserved. Successful
 executions verified finalization and descendant drain; no native payload remains.
-This documentation-only head needs fresh independent diff review. #8/EXP-001/M1
+[PR #36 merged at 77cc171a](https://github.com/jliu67/OpenRX/commit/77cc171a935780788ceceb15f75d5c0e3a556650)
+after [final review and postmerge CI closeout](https://github.com/jliu67/OpenRX/issues/35#issuecomment-6117228235);
+[task #35 is completed](https://github.com/jliu67/OpenRX/issues/35).
+#8/EXP-001/M1
 still require controlled throughput/power work; no diagnostic rate is a baseline.
-No simulation, scientific criterion/vendor change, merge or synchronization is
-performed here. The dated preparation/state sections below remain historical.
+Scientific criteria, vendor bytes and disabled synchronization are unchanged.
+The dated preparation/state sections below remain historical and do not override
+this verified implementation closeout.
 
 ## Native staging preparation — 2026-10-12
 

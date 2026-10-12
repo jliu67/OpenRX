@@ -47,9 +47,13 @@ and no earlier record was overwritten.
 the controlled thread/AES throughput matrix, calibrated timing, synchronized
 wall power, profiling or complete all-configuration coverage. Short raw harness
 rates are diagnostic; do not mix harnesses or promote them into a baseline.
-No throughput pilot, simulation, protected-branch push or merge is performed by
-this documentation update. A fresh independent documentation-diff review remains
-required for its new PR head.
+[PR #36 merged normally at 77cc171a](https://github.com/jliu67/OpenRX/commit/77cc171a935780788ceceb15f75d5c0e3a556650)
+after [exact-head review](https://github.com/jliu67/OpenRX/pull/36#pullrequestreview-5486270130)
+and successful [postmerge foundation](https://github.com/jliu67/OpenRX/actions/runs/38199767807)
+and [scalar checks](https://github.com/jliu67/OpenRX/actions/runs/38199767808).
+[Task #35 is completed](https://github.com/jliu67/OpenRX/issues/35#issuecomment-6117228235);
+the merged tree matches the reviewed head. This closes implementation only,
+without a throughput pilot, simulation or research-milestone completion.
 
 ## Historical preparation snapshot — preserved
 
