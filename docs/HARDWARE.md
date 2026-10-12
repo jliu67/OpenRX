@@ -1,5 +1,18 @@
 # Hardware evidence and targets
 
+## Current priority — X9-class RandomX v2 ASIC, 2026-10-12
+
+Use [bounded source-only #41](https://github.com/jliu67/OpenRX/issues/41) to establish
+only the traceable X9 comparison envelope and reusable-IP/AES gaps needed for the
+[next design decision](ROADMAP.md#current-priority-path--2026-10-12). X9 silicon,
+core topology, proprietary internals and measured v2 behavior remain unverified.
+BOOMV3 is provisional open IP, not identified X9 silicon. Keep advertised machine
+targets distinct from chip/core PPA and actual v2 measurements.
+
+X5/SG2042 reconstruction under #2 is owner-priority-blocked and deferred. The
+substantive evidence/leads below remain retained history and unknowns; they do
+not direct agents to resume a broad survey or waive baseline/model/RTL gates.
+
 ## X5 baseline
 Prior discussion identifies Sophgo SG2042 / T-Head C920 as a candidate based on a public teardown discussion. This setup has not independently inspected board images or firmware. Do not call the exact silicon, processor count, cache topology or mining software verified.
 

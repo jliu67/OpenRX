@@ -32,7 +32,7 @@ not change any acceptance criterion in the retained milestone table.
 reconstruction, unless a bounded question directly changes the X9-class v2 design.
 Preserve their records and unknowns. Deferral neither completes M2 nor waives
 baseline, selected-core, calibrated-model or RTL/prototype acceptance.
-[Scope alignment #39](https://github.com/jliu67/OpenRX/issues/39) records review/publication state.
+[Source-only #41](https://github.com/jliu67/OpenRX/issues/41) bounds the target-envelope and reusable-IP/AES decision in steps 1 and 4; it does not authorize or duplicate #16/#8 execution. Select eligible tasks using this overlay before numeric milestone order or the shared ready query. #2 is held via the supported owner-priority block, without scientific completion. [Scope alignment #39](https://github.com/jliu67/OpenRX/issues/39) records review/publication state.
 
 ## Current status — 2026-10-10
 

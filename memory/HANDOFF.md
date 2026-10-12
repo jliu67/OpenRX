@@ -9,6 +9,8 @@ Reverse engineering supplies only traceable facts; X9 internals/topology, measur
 v2 efficiency and competitive PPA are unestablished. Defer unrelated broad surveys
 and X5 reconstruction while retaining open questions and historical evidence.
 
+For eligible source-only work, inspect [#41](https://github.com/jliu67/OpenRX/issues/41) and its current receipt/claim. #2 is owner-priority-blocked via the existing router and stays unresolved. The ready pool is Issues plus router labels/bot JSON, not a separate local task file. Use the narrowed overlay before numeric milestone order; reuse completed #13 importer software.
+
 Keep #16's existing correctness request and oracle unchanged. Controlled #8,
 physical #10, profiling #11, selected-core #3 and calibrated #14 gates still precede
 #12 RTL optimization; this mission does not authorize new execution or hardware.

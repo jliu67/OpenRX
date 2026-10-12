@@ -1,5 +1,20 @@
 # Open questions
 
+## Current bounded questions — X9/v2 priority, 2026-10-12
+
+[Source-only #41](https://github.com/jliu67/OpenRX/issues/41) owns a bounded evidence/
+reuse decision, not a workload or broad survey:
+
+- Which primary X9 machine claims can be traced, and which silicon/topology/v2 facts remain unknown?
+- What exact v2 main-loop AES behavior versus scalar software AES, FP/rounding, JIT and memory interfaces must reusable IP support?
+- What source/license gap prevents the provisional BOOMV3/open-IP baseline from supplying one required capability, and what evidence resolves the next decision?
+
+Follow the [narrowed roadmap](../docs/ROADMAP.md#current-priority-path--2026-10-12).
+Keep #16/#8/#10/#11/#3/#14/#12 gates intact. The X5-first questions below are retained,
+deferred under #2's owner-priority block; their presence is not a ready-work instruction.
+
+## Retained questions — unresolved history and later gates
+
 - Which board/chip markings establish the X5 processor identity? Does it use a stock SG2042 or a customized derivative?
 - What are the actual firmware/JIT, ISA extensions, frequency and per-chip power?
 - Is any X9 independently available, and what is the original Bitmain specification source?

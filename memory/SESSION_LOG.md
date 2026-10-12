@@ -491,3 +491,27 @@ credentials or installation was changed. The draft head, exact checks, targeted
 issue readbacks and bot hub receipt must be verified on [#39](https://github.com/jliu67/OpenRX/issues/39)
 after publication; independent review is required before a later merge. No merge,
 scientific acceptance or completed external board update is asserted here.
+
+### 2026-10-12 — audited shared-pool/task-selection correction before PR40 merge
+
+The original nine-file draft remained unmerged while independent audit found that
+#2 was still the sole router-ready task despite its prose deferral. The supported
+[/openrx block](https://github.com/jliu67/OpenRX/issues/2#issuecomment-6118574647) was
+accepted with null claim/unchanged dependencies; #2 remains open and unresolved.
+[Source-only #41](https://github.com/jliu67/OpenRX/issues/41) was enrolled ready for
+one bounded X9/v2 target-envelope and reusable-IP/AES gap decision, not execution
+or final hardware selection. Task #39 was reopened/reclaimed for the correction.
+
+The consolidated document revision fixes live numeric-milestone/ready-pool routing
+in AGENTS, README and COMMUNICATION; current TASKS/hub promotions; X5-first hardware/
+question priority; and the stale PHASE1-STEADY importer-next-work wording. Substantive
+historical hardware questions, milestone acceptance and prior log bytes remain.
+The shared pool is Issues plus router-generated labels/bot JSON, with no separate
+active JSON/YAML taskpool found. A generic About description is left unchanged.
+
+Previous review at head871 is retained and does not accept this new head. PR40
+remains draft pending fresh exact-head review and checks. Distinct Projects access
+is still unavailable: CLI lacks Projects scope, connector exposes no Projects
+operations, and this task has no browser session; no actual board URL/ID was found.
+No account-level board denial, board absence or update is inferred. No credentials,
+settings, router/code, workload, active #16 request or scientific gate was changed.

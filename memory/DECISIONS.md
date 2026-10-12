@@ -107,3 +107,9 @@ This direction does not establish X9 internals, v2 measurements or competitive P
 select a final ASIC implementation, or waive #16/#8/#10/#11/#3/#14/#12 acceptance.
 [Task #39](https://github.com/jliu67/OpenRX/issues/39) tracks the separately reviewed
 canonical-text and non-destructive coordination proposal. Prior decision bytes are retained.
+
+Routing follow-up for D040 (2026-10-12): apply owner-priority eligibility through
+existing task protocol, not prose-only deferral or manual label deletion. #2 stays
+open and blocked, while bounded source-only #41 supplies eligible X9/v2 target/reuse/
+AES work. Current task selectors use the narrowed overlay before numeric milestones.
+No router code, dependencies, acceptance gate or scientific completion changes.

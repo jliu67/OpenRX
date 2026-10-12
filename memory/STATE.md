@@ -9,6 +9,8 @@ record the direction and separately reviewed document proposal. Broad surveys an
 X5/SG2042 reconstruction are deferred, not completed. BOOMV3 is provisional open
 IP, not verified X9 silicon; X9 topology/v2 results and competitive PPA remain unknown.
 
+Shared-pool correction: #2 remains open but owner-priority-blocked through the existing router; [#41](https://github.com/jliu67/OpenRX/issues/41) supplies bounded source-only X9/v2 target/reuse/AES work. Apply the current overlay before historical numeric milestones or ready labels. No router code or scientific status is changed by this priority correction.
+
 The scope change preserves #16's unchanged correctness work, #8/#10/#11 baseline,
 power/profiling prerequisites, #3 selected-core acceptance and #14/M4 before #12/M5.
 Pinned execution source `4a4e30bb`, accepted receipts and all historical entries
