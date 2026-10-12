@@ -1,0 +1,34 @@
+name: RandomX iteration scratchpad tail
+on:
+  pull_request:
+    paths:
+      - 'rtl/iteration/**'
+      - 'rtl/aes/**'
+      - 'scripts/test_iteration_tail.py'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx*.json'
+      - '.github/workflows/iteration-tail.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  differential-tail:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install official HDL packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Pinned iteration differential, memory and mapped-netlist checks
+        run: |
+          python3 scripts/test_iteration_tail.py \
+            --output "$RUNNER_TEMP/iteration-tail-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
+      - name: Retain complete licensed outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration-tail-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/iteration-tail-${{ github.run_id }}-${{ github.run_attempt }}/

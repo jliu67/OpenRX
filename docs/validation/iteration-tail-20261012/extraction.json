@@ -1,0 +1,15 @@
+{
+  "RandomX_commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+  "source_sha256": "84687918372ba8b15dd3cca13821f2eb316a31881c502e1dd1483f2aeba8d2dc",
+  "policy": "verbatim iteration, dataset-read body and destructor; controlled bytecode program/dataset fixture only",
+  "generated_sha256": {
+    "pinned_iteration.inc": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+    "pinned_dataset_read.inc": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+    "pinned_destructor.inc": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9"
+  },
+  "verbatim_body_sha256": {
+    "pinned_iteration.inc": "4cfd2a5da53f9df79a1939abaa7fb185bccf4464bb6a01de26c7b13769710659",
+    "pinned_dataset_read.inc": "1010efdd51eb0c6ce62728d19f91eb1e2381f1de48de6f604c7bbae840baa466",
+    "pinned_destructor.inc": "68b2dcb4b406fc94789f776fcafd949d5f1bc574c611c7f28a1096464d50ed8d"
+  }
+}

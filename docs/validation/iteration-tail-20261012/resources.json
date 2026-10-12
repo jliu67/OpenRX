@@ -1,0 +1,19 @@
+{
+  "kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "4294967296",
+    "memory.swap.max": "536870912",
+    "pids.max": "128"
+  },
+  "workers": 1,
+  "rationale": "single-worker tool phases and measured RAM; all six CPUs available",
+  "service_runtime_seconds": 295.067,
+  "result": "success exit0",
+  "raw_resource_sha256": "41ac1f399e5541eeabdd98773b7fa4067a5dce1d339b5ed2bd44d18cce638e8d",
+  "raw_terminal_sha256": "58c305cfd1cf291f853fe539cb69d972e6dd236bdbe3ff40075b450833072b63",
+  "job_cgroup_absent": true,
+  "peak_RSS_KiB": 2252132,
+  "CPU_percent": 99,
+  "user_seconds": 290.77,
+  "system_seconds": 3.8
+}

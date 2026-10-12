@@ -1,0 +1,103 @@
+{
+  "source_base": "9a3271d515b8bf4c3f25ec43571b495fe3cb8f5c",
+  "scope": "hardware post-dataset iteration tail and ordered SRAM stores; reference uses actual pinned bytecode/iteration body with dataset fixture; no full core/hash/timing proof",
+  "seed": "0x697465722d746169",
+  "configurations": {
+    "1-0": {
+      "lanes": 1,
+      "overlap_R_writes": 0,
+      "interval_cycles": 25,
+      "v2_64_elapsed_cycles": 1600,
+      "trace_iterations": 128,
+      "SRAM_writes": 1024,
+      "full_memory_bytes_compared": 2097152,
+      "alias_cases": 32,
+      "partial_reset_cases": 2
+    },
+    "1-1": {
+      "lanes": 1,
+      "overlap_R_writes": 1,
+      "interval_cycles": 21,
+      "v2_64_elapsed_cycles": 1344,
+      "trace_iterations": 128,
+      "SRAM_writes": 1024,
+      "full_memory_bytes_compared": 2097152,
+      "alias_cases": 32,
+      "partial_reset_cases": 2,
+      "generic_synthesis": {
+        "num_cells": 46510,
+        "num_cells_by_type": {
+          "$_ANDNOT_": 3479,
+          "$_AND_": 14,
+          "$_AOI3_": 1851,
+          "$_AOI4_": 1,
+          "$_DFF_P_": 2605,
+          "$_MUX_": 8118,
+          "$_NAND_": 73,
+          "$_NOR_": 3868,
+          "$_NOT_": 2073,
+          "$_OAI3_": 57,
+          "$_OAI4_": 5,
+          "$_ORNOT_": 174,
+          "$_OR_": 21837,
+          "$_XNOR_": 942,
+          "$_XOR_": 1413
+        },
+        "flop_cells": 2605
+      }
+    },
+    "4-0": {
+      "lanes": 4,
+      "overlap_R_writes": 0,
+      "interval_cycles": 13,
+      "v2_64_elapsed_cycles": 832,
+      "trace_iterations": 128,
+      "SRAM_writes": 1024,
+      "full_memory_bytes_compared": 2097152,
+      "alias_cases": 32,
+      "partial_reset_cases": 2
+    },
+    "4-1": {
+      "lanes": 4,
+      "overlap_R_writes": 1,
+      "interval_cycles": 9,
+      "v2_64_elapsed_cycles": 576,
+      "trace_iterations": 128,
+      "SRAM_writes": 1024,
+      "full_memory_bytes_compared": 2097152,
+      "alias_cases": 32,
+      "partial_reset_cases": 2,
+      "generic_synthesis": {
+        "num_cells": 90661,
+        "num_cells_by_type": {
+          "$_ANDNOT_": 5333,
+          "$_AND_": 16,
+          "$_AOI3_": 11677,
+          "$_AOI4_": 2,
+          "$_DFF_P_": 2603,
+          "$_MUX_": 6960,
+          "$_NAND_": 295,
+          "$_NOR_": 10483,
+          "$_NOT_": 1783,
+          "$_OAI3_": 398,
+          "$_OAI4_": 4,
+          "$_ORNOT_": 645,
+          "$_OR_": 45773,
+          "$_XNOR_": 1508,
+          "$_XOR_": 3181
+        },
+        "flop_cells": 2603
+      }
+    }
+  },
+  "comparison": {
+    "shared_overlap_interval": 21,
+    "shared_serial_interval": 25,
+    "four_overlap_interval": 9,
+    "four_serial_interval": 13,
+    "shared_overlap_speedup_per_clock": 1.1904761904761905,
+    "four_overlap_speedup_per_clock": 1.4444444444444444,
+    "four_vs_shared_overlap_per_clock": 2.3333333333333335
+  },
+  "invalid_overlap_rejected": true
+}
