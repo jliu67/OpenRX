@@ -1,5 +1,25 @@
 # Current state — actual local execution activation
 
+## Accepted scoped native pilot — 2026-10-12
+
+[Owner-published independent terminal acceptance](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969) records execution
+`20261012T185152Z-97e747b1f6c4`, exited zero at 18:55:54Z after one admitted
+exploratory workload. Source `4a4e30bbbda47cce7713c280d87f1506f7c6f954` and reused native binary/input identities
+remain unchanged. All 12 records, known controls/warmups, order/counts/duration,
+repeat determinism, original-input/receipt/journal integrity and actual drain/
+slot release passed scoped review. The immutable receipt remains scientifically
+unverified; the separate independent review grants exploratory acceptance only.
+[Selected evidence](../docs/validation/native-pilot-20261012/README.md) records that boundary.
+
+At the terminal handoff, #8 is open/review with its scoped claim released; the
+formal balanced thread/AES baseline and M1 are incomplete. The earlier fixture-
+only/no-pilot stage below is historical. No new job or fresh host-idle state is
+asserted here. #16's accepted 39+9 light gate at scientific source
+`b4b5ffc5c5ee3f59e0e862a6979d265fd410d726` remains separate, optional AES skipped;
+its broader full-dataset/intended-core/SMP and selected-core/timing/power/RTL/
+M1–M5 gates remain open. No thermal-equilibrium, isolation, constant-frequency,
+external clock/power alignment, PMU, energy/efficiency or competitive PPA claim.
+
 ## Accepted bounded light-matrix state — 2026-10-12
 
 [Independent terminal acceptance](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891) records execution

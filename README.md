@@ -1,5 +1,21 @@
 # OpenRX
 
+## Accepted exploratory native pilot — 2026-10-12
+
+[Independent terminal review](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969) accepts native execution
+`20261012T185152Z-97e747b1f6c4` (18:51:54Z–18:55:54Z): two balanced v2/v1 repeats
+at one six-worker hardware-AES/full-dataset/JIT setting, with reviewed controls,
+output, original-input/receipt integrity and actual drain/slot release. Reused
+native source stays `4a4e30bbbda47cce7713c280d87f1506f7c6f954`. [Selected pilot evidence](docs/validation/native-pilot-20261012/README.md)
+records all four intervals and limits. This supersedes the earlier fixture-only/
+no-native-pilot stage; it does not complete the formal #8/EXP-001 baseline or M1.
+
+#16's accepted 39-required + nine-runtime light matrix remains distinct at
+scientific source `b4b5ffc5c5ee3f59e0e862a6979d265fd410d726`, with optional hardware
+AES skipped. Broader gem5 full-dataset/intended-core/SMP, selected-core,
+calibration/power, RTL and M1–M5 gates remain open. No new workload, claim,
+settings change, thermal equilibrium or competitive PPA is authorized or inferred.
+
 ## Accepted #16 light matrix — 2026-10-12
 
 The [independently accepted terminal result](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891) completes the bounded

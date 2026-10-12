@@ -1,5 +1,21 @@
 # OpenRX project board
 
+## Current native pilot terminal — 2026-10-12
+
+[#8's scoped exploratory pilot is independently accepted](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969), not its
+formal balanced thread/AES baseline. Execution `20261012T185152Z-97e747b1f6c4`
+retains native source `4a4e30bbbda47cce7713c280d87f1506f7c6f954`; two balanced v2/v1 repeats at one setting
+passed scoped controls/output/integrity/drain review. The owner released the
+pilot claim into review/unclaimed; the broader issue is open. [Evidence](validation/native-pilot-20261012/README.md)
+keeps all intervals, repeat spread and unverified limits. Host access was resolved
+for the reviewed pilot; the P1-04 row now distinguishes that result from the
+remaining formal configuration/coverage/repetition gates.
+
+#16's separately accepted light matrix (39 required + nine runtime, optional AES
+skipped) does not satisfy its broader gem5 full-dataset/intended-core/SMP gates.
+M1–M5, #10 power, #11 profiling and #14 calibration before #12 RTL remain open.
+Earlier blocked/no-run and fixture-only statements below are dated history.
+
 ## Accepted light gate and live-task readback — 2026-10-12
 
 [Terminal #16 acceptance](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891): 39 required light controls (31 arithmetic
@@ -101,12 +117,21 @@ failures/safety withdrawals, original scientific assets, exact guest oracles and
 | P1-01 | Pinned workload anatomy and static profile | DONE | [Report](PHASE1.md), [profile](../benchmarks/profiles/pinned-v2.0.1.json) |
 | P1-02 | Upstream runner hardening | DONE | Commit `360a925`; original 42 tooling tests retained |
 | P1-03 | Native correctness controls | DONE for CI; target-host repeat READY | 171 vendor files, 107 upstream tests, both full-dataset references |
-| P1-04 | Controlled-host v1/v2 thread/AES matrix | [#8](https://github.com/jliu67/OpenRandomX/issues/8) BLOCKED: controlled baseline configuration/authorization and current host verification; designated infrastructure accepted in #27 | Fixed settings, controls, balanced order, sufficient duration, all raw repeats |
+| P1-04 | Controlled-host v1/v2 thread/AES matrix | [#8](https://github.com/jliu67/OpenRX/issues/8) OPEN; [scoped exploratory pilot accepted](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6130740969), claim handed off for review. Formal balanced thread/AES coverage, at least four balanced repeats, sufficient duration and reviewed controlled settings remain pending; M1 incomplete | [Pilot evidence](validation/native-pilot-20261012/README.md): two repeats/one setting, exact controls and all raw intervals; no thermal-equilibrium, power/efficiency or formal-baseline claim |
 | P1-04S | Isolated native build/launch staging | DONE — [PR #36 merged at 77cc171a and task #35 completed after final review/postmerge CI](https://github.com/jliu67/OpenRX/issues/35#issuecomment-6117228235) | [Evidence](validation/native-staging-20261012/README.md): 16 staging fixtures, retained local 313-test/socket-rerun history, accepted build and six native controls; 106 supported upstream passes plus one conditional skip. Unexecuted configuration coverage and #8/M1 throughput/power remain open |
 | P1-05 | Same-process warmup and hashing interval markers | DONE — merged on main at `960b8b5`; see historical [#9](https://github.com/jliu67/OpenRandomX/issues/9) | `59b469c`; [adapter](../benchmarks/steady/README.md); [64 tooling / 107 upstream / 6 native tests](validation/p1-05/README.md) |
 | P1-06S | Power-sample importer and validator | DONE for software; [#13](https://github.com/jliu67/OpenRandomX/issues/13) closed as completed; [PR #17](https://github.com/jliu67/OpenRandomX/pull/17) merged at `973cd0d` | Original `2b28d6f`, repairs `288cebb`; [independent review](validation/p1-06s/PATCH-REVIEW-20261008.md), 64 importer tests and numerical/error-report audit; [CI](validation/m3-fs/RUNTIME-CI.md) |
 | P1-06 | Time-aligned wall-power measurement | [#10](https://github.com/jliu67/OpenRandomX/issues/10) BLOCKED: #8 and calibrated synchronized meter access; #9/#13 completed | Real synchronized readings, physical boundary, uncertainty and completed hashes/measured joules |
 | P1-07 | Dynamic bottleneck attribution | [#11](https://github.com/jliu67/OpenRandomX/issues/11) BLOCKED: #8 and verified PMU/profiler access/permissions | Dynamic instruction/cache/stall evidence, event limitations and overhead |
+
+### Retained P1-04 row — before the exploratory pilot terminal
+
+Exact row from main `54da42cca7f79f330e0c8b5403d3fe8e589a8a4b`; its blocked status
+is a prior assessment, superseded for the reviewed scoped pilot only:
+
+```text
+| P1-04 | Controlled-host v1/v2 thread/AES matrix | [#8](https://github.com/jliu67/OpenRandomX/issues/8) BLOCKED: controlled baseline configuration/authorization and current host verification; designated infrastructure accepted in #27 | Fixed settings, controls, balanced order, sufficient duration, all raw repeats |
+```
 
 **M1 remains OPEN.** P1-05 and P1-06S are instrumentation/analysis software, not completed performance/efficiency experiments. P1-05 CI configurations are correctness controls; three workers on two exposed logical CPUs are not scaling evidence. The old upstream runner and new static-stride batch adapter have different overhead, so do not mix their rates. P1-06S can calculate energy from declared valid inputs but cannot certify physical calibration. All power joins actually exercised this session used synthetic traces; no measured hashes/J exists. Review its strict whole-system AC point-power scope before adapting a real meter export.
 
