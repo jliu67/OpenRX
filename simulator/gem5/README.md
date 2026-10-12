@@ -120,6 +120,18 @@ boot workload's prose says Linux 6.6.33 although its exact dependency is the
 the kernel actually running. Catalog size fields for the firmware/kernel are
 also approximate; the manifest contains measured bytes.
 
+### OpenSBI source navigation erratum
+
+The bootloader `source_url` in [`resources.json`](resources.json) records
+`src/riscv-opensbi` at gem5-resources commit
+`672d04917020934d452b2e767e97875c34693dee`; that path does not exist. The correct
+[OpenSBI recipe directory](https://github.com/gem5/gem5-resources/tree/672d04917020934d452b2e767e97875c34693dee/src/riscv-fs/riscv-opensbi)
+is `src/riscv-fs/riscv-opensbi` at the same commit. The original manifest pointer
+and historical references are retained with their existing evidence bindings.
+This navigation correction is not a current run blocker. The recipe alone does
+not establish reproducible binary provenance for the downloaded firmware;
+its observed-byte pins and prior acceptance evidence remain unchanged.
+
 ## Configuration and guest transfer
 
 `fs.py` is checked against the pinned gem5 APIs: one RISC-V AtomicSimpleCPU,
