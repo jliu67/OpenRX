@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 `timescale 1ns/1ps
-module tb_iteration #(parameter integer LANES=1, OVERLAP_R=1);
+module tb_iteration #(parameter integer LANES=1, OVERLAP_R=1, STALL_V2=0);
     localparam integer N=16/LANES;
     localparam integer INTERVAL=OVERLAP_R ? (N+5>9 ? N+5 : 9) : N+9;
     reg clk=0;always #5 clk=~clk;
@@ -17,6 +17,7 @@ module tb_iteration #(parameter integer LANES=1, OVERLAP_R=1);
     reg [127:0] held_data;reg [20:0] held_addr;reg [511:0] held_done;
     reg wr_stalled,done_stalled;
     integer fd,rc,i,j,ver,accepted,received,beats,cycle,last_accept,first_accept,v2_elapsed,transfers,aliases;
+    integer v2_write_wait,v2_done_wait,v2_r_stalls,v2_f_stalls,v2_done_stalls;
 `ifdef ITERATION_NETLIST
     randomx_iteration_store dut (
 `else
@@ -68,6 +69,7 @@ module tb_iteration #(parameter integer LANES=1, OVERLAP_R=1);
         @(negedge clk);rst=0;
         accepted=0;received=0;beats=0;cycle=0;last_accept=-1;first_accept=-1;v2_elapsed=-1;
         transfers=0;wr_stalled=0;done_stalled=0;
+        v2_write_wait=0;v2_done_wait=0;v2_r_stalls=0;v2_f_stalls=0;v2_done_stalls=0;
         while(received<128) begin
             @(negedge clk);
             req_valid=accepted<128;
@@ -75,11 +77,23 @@ module tb_iteration #(parameter integer LANES=1, OVERLAP_R=1);
                 req_v2=version[accepted];req_r=r[accepted];req_f=f[accepted];req_e=e[accepted];
                 req_f_line=fline[accepted];req_r_line=rline[accepted];
             end
-            wr_ready=received<64 || cycle%11>=3;
-            done_ready=received<64 || cycle%13>=4;
+            // Separate directed coverage from the original no-stall comparison.
+            // Hold every v2 R/F beat for two valid cycles and retirement for three.
+            wr_ready=received<64 ? (!STALL_V2 || v2_write_wait>=2) : cycle%11>=3;
+            done_ready=received<64 ? (!STALL_V2 || v2_done_wait>=3) : cycle%13>=4;
             @(posedge clk);cycle=cycle+1;
             if(wr_stalled && (!wr_valid || wr_data!==held_data || wr_addr!==held_addr || wr_strb!==16'hffff)) $fatal(1,"stalled store changed");
             if(done_stalled && (!done_valid || done_f!==held_done)) $fatal(1,"stalled retirement changed");
+            if(STALL_V2 && received<64) begin
+                if(wr_valid && !wr_ready) begin
+                    v2_write_wait=v2_write_wait+1;
+                    if(beats<4)v2_r_stalls=v2_r_stalls+1;
+                    else v2_f_stalls=v2_f_stalls+1;
+                end
+                if(done_valid && !done_ready) begin
+                    v2_done_wait=v2_done_wait+1;v2_done_stalls=v2_done_stalls+1;
+                end
+            end
             if(wr_valid && wr_ready) begin
                 if(beats>=8 || received>=accepted || wr_strb!==16'hffff) $fatal(1,"extra/unrequested store");
                 if(beats<4) begin
@@ -88,6 +102,7 @@ module tb_iteration #(parameter integer LANES=1, OVERLAP_R=1);
                     if(wr_addr!=={fline[received],beats[1:0],4'b0} || wr_data!==gold_f[received][128*(beats-4)+:128]) $fatal(1,"F store order/data");
                 end
                 ram[wr_addr>>4]=wr_data;beats=beats+1;transfers=transfers+1;
+                v2_write_wait=0;
             end
             wr_stalled=wr_valid && !wr_ready;held_data=wr_data;held_addr=wr_addr;
             done_stalled=done_valid && !done_ready;held_done=done_f;
@@ -98,21 +113,27 @@ module tb_iteration #(parameter integer LANES=1, OVERLAP_R=1);
                     if(ram[(fline[received]<<2)+j]!==gold_f_mem[received][128*j+:128]) $fatal(1,"F region mismatch");
                 end
                 received=received+1;beats=0;
+                v2_done_wait=0;
                 if(received==64)v2_elapsed=cycle-first_accept;
             end
             if(req_valid && req_ready) begin
-                if(accepted<64 && last_accept>=0 && cycle-last_accept!=INTERVAL) $fatal(1,"tail interval mismatch");
+                if(!STALL_V2 && accepted<64 && last_accept>=0 && cycle-last_accept!=INTERVAL) $fatal(1,"tail interval mismatch");
                 if(first_accept<0)first_accept=cycle;
                 last_accept=cycle;accepted=accepted+1;
             end
             #1;
         end
-        if(transfers!=1024 || v2_elapsed!=64*INTERVAL || aliases!=32) $fatal(1,"tail accounting/cycles");
+        if(transfers!=1024 || aliases!=32) $fatal(1,"tail accounting");
+        if(!STALL_V2 && v2_elapsed!=64*INTERVAL) $fatal(1,"tail benchmark cycles");
+        if(STALL_V2 && (v2_r_stalls!=512 || v2_f_stalls!=512 || v2_done_stalls!=192)) $fatal(1,"missing directed v2 backpressure coverage");
         for(i=0;i<131071+1;i=i+1)if(ram[i]!==gold_ram[i]) $fatal(1,"full scratchpad mismatch word %0d",i);
         @(negedge clk);req_valid=0;done_ready=1;
         @(posedge clk);#1;if(done_valid || wr_valid) $fatal(1,"duplicate completion");
         abort_after(3);abort_after(5);
-        $display("PASS tail lanes=%0d overlap=%0d iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 interval_cycles=%0d v2_elapsed_cycles=%0d",LANES,OVERLAP_R,INTERVAL,v2_elapsed);
+        if(STALL_V2)
+            $display("PASS v2_backpressure lanes=%0d overlap=%0d iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 R_stall_cycles=%0d F_stall_cycles=%0d retirement_stall_cycles=%0d v2_elapsed_cycles=%0d",LANES,OVERLAP_R,v2_r_stalls,v2_f_stalls,v2_done_stalls,v2_elapsed);
+        else
+            $display("PASS tail lanes=%0d overlap=%0d iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 interval_cycles=%0d v2_elapsed_cycles=%0d",LANES,OVERLAP_R,INTERVAL,v2_elapsed);
         $finish;
     end
 endmodule

@@ -1,0 +1,159 @@
+{
+  "reviewed_baseline": "623d2498a3b0aeadd0b0de45ce0ae9dcdb937f89",
+  "baseline_independent_review": "https://github.com/jliu67/OpenRX/pull/51#pullrequestreview-5496629211",
+  "scope": "only deterministic v2 write/retirement stalls; no RTL changes",
+  "exports": {
+    "rtl-1-0.log": {
+      "raw_sha256": "3b7e4e310e2446e23eb8e781224f92765dbc1f5473392e327a1e38ead4c2ab3e",
+      "public_sha256": "3b7e4e310e2446e23eb8e781224f92765dbc1f5473392e327a1e38ead4c2ab3e",
+      "size_bytes": 161
+    },
+    "rtl-1-1.log": {
+      "raw_sha256": "39ad916ba0f2af49536f1b56f62c15409acde7e5cc338626c25639aa9627fb58",
+      "public_sha256": "39ad916ba0f2af49536f1b56f62c15409acde7e5cc338626c25639aa9627fb58",
+      "size_bytes": 161
+    },
+    "rtl-4-0.log": {
+      "raw_sha256": "8a4045b567c71341c6581721423eb0d61ec6a1e903ad76a104fe0bd2c0ced80d",
+      "public_sha256": "8a4045b567c71341c6581721423eb0d61ec6a1e903ad76a104fe0bd2c0ced80d",
+      "size_bytes": 160
+    },
+    "rtl-4-1.log": {
+      "raw_sha256": "22e80f443545a787a08efddacd19fa2249d4dcd2b1ef5c20f780eab565c7fcd8",
+      "public_sha256": "22e80f443545a787a08efddacd19fa2249d4dcd2b1ef5c20f780eab565c7fcd8",
+      "size_bytes": 159
+    },
+    "rtl-v2-stalls-1-0.log": {
+      "raw_sha256": "cb6519a14a820c4bdb82c1f2e287b60aa2b8e185d8dcf50dc21d376405570861",
+      "public_sha256": "cb6519a14a820c4bdb82c1f2e287b60aa2b8e185d8dcf50dc21d376405570861",
+      "size_bytes": 219
+    },
+    "rtl-v2-stalls-1-1.log": {
+      "raw_sha256": "bbc1f42dfecfaa25c506ddf36c43ddf66f43a00924cc59060923329fd79a14d1",
+      "public_sha256": "bbc1f42dfecfaa25c506ddf36c43ddf66f43a00924cc59060923329fd79a14d1",
+      "size_bytes": 219
+    },
+    "rtl-v2-stalls-4-0.log": {
+      "raw_sha256": "067bc4615f799a55fec57ba05f2900ea9af17cb432a5985c71296e1df032a88f",
+      "public_sha256": "067bc4615f799a55fec57ba05f2900ea9af17cb432a5985c71296e1df032a88f",
+      "size_bytes": 219
+    },
+    "rtl-v2-stalls-4-1.log": {
+      "raw_sha256": "b028cb1aa433292311569cb5399e9499b8ba7242c6b439ef3c813cbf2fd3a933",
+      "public_sha256": "b028cb1aa433292311569cb5399e9499b8ba7242c6b439ef3c813cbf2fd3a933",
+      "size_bytes": 219
+    },
+    "mapped-1-stalls-0.log": {
+      "raw_sha256": "39ad916ba0f2af49536f1b56f62c15409acde7e5cc338626c25639aa9627fb58",
+      "public_sha256": "39ad916ba0f2af49536f1b56f62c15409acde7e5cc338626c25639aa9627fb58",
+      "size_bytes": 161
+    },
+    "mapped-1-stalls-1.log": {
+      "raw_sha256": "bbc1f42dfecfaa25c506ddf36c43ddf66f43a00924cc59060923329fd79a14d1",
+      "public_sha256": "bbc1f42dfecfaa25c506ddf36c43ddf66f43a00924cc59060923329fd79a14d1",
+      "size_bytes": 219
+    },
+    "mapped-4-stalls-0.log": {
+      "raw_sha256": "22e80f443545a787a08efddacd19fa2249d4dcd2b1ef5c20f780eab565c7fcd8",
+      "public_sha256": "22e80f443545a787a08efddacd19fa2249d4dcd2b1ef5c20f780eab565c7fcd8",
+      "size_bytes": 159
+    },
+    "mapped-4-stalls-1.log": {
+      "raw_sha256": "b028cb1aa433292311569cb5399e9499b8ba7242c6b439ef3c813cbf2fd3a933",
+      "public_sha256": "b028cb1aa433292311569cb5399e9499b8ba7242c6b439ef3c813cbf2fd3a933",
+      "size_bytes": 219
+    },
+    "inputs.json": {
+      "raw_sha256": "5a66a6f04817d2da0846652be39c0424024d987260dce9307465b5e39ac6b6fa",
+      "public_sha256": "5a66a6f04817d2da0846652be39c0424024d987260dce9307465b5e39ac6b6fa",
+      "size_bytes": 1824
+    },
+    "tools.json": {
+      "raw_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "public_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "size_bytes": 4449
+    },
+    "oracle.log": {
+      "raw_sha256": "53aaa0cd0095c9facecabbcacdc300a957822081623c71ec89f84c4906e7ce22",
+      "public_sha256": "53aaa0cd0095c9facecabbcacdc300a957822081623c71ec89f84c4906e7ce22",
+      "size_bytes": 101
+    },
+    "vendor.log": {
+      "raw_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "public_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "size_bytes": 32
+    },
+    "extraction.json": {
+      "raw_sha256": "77641cad916ee2cdb9ebab4bc64df582018bf8784debfbadc474e31af97dbf3d",
+      "public_sha256": "77641cad916ee2cdb9ebab4bc64df582018bf8784debfbadc474e31af97dbf3d",
+      "size_bytes": 916
+    },
+    "LICENSE-OpenRX": {
+      "raw_sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108",
+      "public_sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108",
+      "size_bytes": 1803
+    },
+    "LICENSE-secworks": {
+      "raw_sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "public_sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "size_bytes": 1303
+    },
+    "LICENSE-RandomX": {
+      "raw_sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "public_sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "size_bytes": 1561
+    },
+    "rtl-summary.json": {
+      "raw_sha256": "b97e94d42ee999ac31c2f07027a7d941f4757293d90edfcb19f63067c401a477",
+      "public_sha256": "b97e94d42ee999ac31c2f07027a7d941f4757293d90edfcb19f63067c401a477",
+      "size_bytes": 3098
+    },
+    "mapped-summary.json": {
+      "raw_sha256": "3acda1a0586e4e9d0c7aef754bd9ccc3fdc8fb296f644ed2458a9d06158aaef4",
+      "public_sha256": "3acda1a0586e4e9d0c7aef754bd9ccc3fdc8fb296f644ed2458a9d06158aaef4",
+      "size_bytes": 3272
+    },
+    "rtl-commands.json": {
+      "raw_sha256": "1202f876c6d6a2548e1f9f6239c4415bd0e7bc01197803c4d77c9134f43742b5",
+      "public_sha256": "1202f876c6d6a2548e1f9f6239c4415bd0e7bc01197803c4d77c9134f43742b5",
+      "size_bytes": 9014
+    },
+    "mapped-commands.json": {
+      "raw_sha256": "c80d53f949355f466552529c4a4b32d65e269eda01ea4b3d291a656fd5a29ed8",
+      "public_sha256": "c80d53f949355f466552529c4a4b32d65e269eda01ea4b3d291a656fd5a29ed8",
+      "size_bytes": 3739
+    },
+    "rtl-artifacts.sha256.json": {
+      "raw_sha256": "459d153945f3342b5151f5ae577029fcf691a0aa12a4614033e9976ab9913a08",
+      "public_sha256": "459d153945f3342b5151f5ae577029fcf691a0aa12a4614033e9976ab9913a08",
+      "size_bytes": 3868
+    },
+    "mapped-artifacts.sha256.json": {
+      "raw_sha256": "c038072fb3d51ba5bcb47138a883bffdafb9569e97b5101ab9e4f2fba550660b",
+      "public_sha256": "c038072fb3d51ba5bcb47138a883bffdafb9569e97b5101ab9e4f2fba550660b",
+      "size_bytes": 2041
+    },
+    "resources.json": {
+      "raw_sha256": "b0870b16048e53182e4be5a66a6b06bb086e296580d33a037c414eadd64eb228",
+      "public_sha256": "b0870b16048e53182e4be5a66a6b06bb086e296580d33a037c414eadd64eb228",
+      "size_bytes": 1095
+    },
+    "mapped-resource-time.txt": {
+      "raw_sha256": "672baf8e92fe73061fd9e19380a2fe7114549d85c0c9a71380c67c4ad4edbb45",
+      "public_sha256": "672baf8e92fe73061fd9e19380a2fe7114549d85c0c9a71380c67c4ad4edbb45",
+      "size_bytes": 805
+    },
+    "no-stall-baseline-log-identity.json": {
+      "raw_sha256": "6ffb0ad91e7868714c40c761a12cc7c2525d1f9b9dba9aacdf73ce51ca557c31",
+      "public_sha256": "6ffb0ad91e7868714c40c761a12cc7c2525d1f9b9dba9aacdf73ce51ca557c31",
+      "size_bytes": 472
+    }
+  },
+  "fixture_and_netlist_originals": "../iteration-tail-20261012/index.json; exact raw digests verified in mapped-summary.json",
+  "raw_retention": [
+    "/tmp/openrx-v2-stalls-unit-01",
+    "/tmp/openrx-v2-stalls-mapped-01"
+  ],
+  "new_delta_review": "pending",
+  "local_method": "four RTL lane/schedule configurations in benchmark+stall modes; both exact reviewed mapped netlists in both modes; full hosted synthesis flow on final updated PR head"
+}

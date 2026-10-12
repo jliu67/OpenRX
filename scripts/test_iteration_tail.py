@@ -84,6 +84,24 @@ def main():
     summary={'source_base':'9a3271d515b8bf4c3f25ec43571b495fe3cb8f5c',
              'scope':'hardware post-dataset iteration tail and ordered SRAM stores; reference uses actual pinned bytecode/iteration body with dataset fixture; no full core/hash/timing proof',
              'seed':'0x697465722d746169','configurations':{}}
+    def v2_backpressure(lanes,overlap,label,netlist=None):
+        flags=['-DITERATION_NETLIST'] if netlist else []
+        sources=[str(netlist)] if netlist else RTL
+        run('compile-'+label,['iverilog','-g2012','-Wall',*flags,'-s','tb_iteration',
+            f'-Ptb_iteration.LANES={lanes}',f'-Ptb_iteration.OVERLAP_R={overlap}',
+            '-Ptb_iteration.STALL_V2=1','-o',str(out/(label+'.vvp')),
+            *sources,'rtl/iteration/tests/tb_iteration.v'])
+        run(label,['vvp',str(out/(label+'.vvp')),
+            '+initial='+str(out/'initial.hex'),'+final='+str(out/'final.hex'),
+            '+trace='+str(out/'iterations.hex')])
+        log=(out/(label+'.log')).read_text()
+        m=re.search(r'PASS v2_backpressure lanes=(\d+) overlap=(\d+) iterations=128 v2=64 v1=64 writes=1024 aliases=32 full_memory_bytes=2097152 reset_aborts=2 R_stall_cycles=512 F_stall_cycles=512 retirement_stall_cycles=192 v2_elapsed_cycles=(\d+)',log)
+        if not m or (int(m.group(1)),int(m.group(2)))!=(lanes,overlap):
+            raise RuntimeError('missing directed v2 backpressure acceptance')
+        return log,{'v2_iterations_with_stalls':64,'R_write_stall_cycles':512,
+            'F_write_stall_cycles':512,'retirement_stall_cycles':192,
+            'v2_elapsed_cycles':int(m.group(3)),
+            'scope':'directed stall coverage; excluded from no-stall performance comparison'}
     for lanes,overlap in [(1,0),(1,1),(4,0),(4,1)]:
         tag=f'{lanes}-{overlap}'
         run('compile-'+tag,['iverilog','-g2012','-Wall','-s','tb_iteration',
@@ -99,6 +117,7 @@ def main():
              'v2_64_elapsed_cycles':int(m.group(4)),'trace_iterations':128,'SRAM_writes':1024,
              'full_memory_bytes_compared':2097152,'alias_cases':32,'partial_reset_cases':2}
         summary['configurations'][tag]=cfg
+        stalled_log,cfg['v2_backpressure']=v2_backpressure(lanes,overlap,'rtl-v2-stalls-'+tag)
         # Synthesize delivered overlap configurations; reference scheduling remains RTL comparison.
         if a.synthesize and overlap:
             cmd=(f'read_verilog {" ".join(RTL)}; chparam -set LANES {lanes} -set OVERLAP_R 1 randomx_iteration_store; '
@@ -115,6 +134,9 @@ def main():
                 str(out/f'netlist-{lanes}.v'),'rtl/iteration/tests/tb_iteration.v'])
             run('netlist-'+str(lanes),['vvp',str(out/f'netlist-{lanes}.vvp'),*args])
             if (out/f'netlist-{lanes}.log').read_text()!=log:raise RuntimeError('mapped tail differs')
+            mapped_log,_=v2_backpressure(lanes,overlap,'netlist-v2-stalls-'+str(lanes),out/f'netlist-{lanes}.v')
+            if mapped_log!=stalled_log:raise RuntimeError('mapped v2 backpressure differs')
+            cfg['v2_backpressure']['mapped_log_matches']=True
     summary['comparison']={'shared_overlap_interval':21,'shared_serial_interval':25,
         'four_overlap_interval':9,'four_serial_interval':13,'shared_overlap_speedup_per_clock':25/21,
         'four_overlap_speedup_per_clock':13/9,'four_vs_shared_overlap_per_clock':21/9}
