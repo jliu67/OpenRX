@@ -1,0 +1,4 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module randomx_iteration_engine declared here: /tmp/openrx-engine-validation-01/netlist-A.v:3

@@ -1,0 +1,20 @@
+{
+  "failures": [
+    {
+      "stage": "first reset-abort testbench bringup",
+      "evidence": "development-reset-bringup.log",
+      "outcome": "abort prefix did not complete",
+      "cause": "testbench helper missed the first read handshake by waiting for a later negative edge",
+      "correction": "observe the first positive edge before driving the response; hold ready low during descriptor setup",
+      "corrected_development_evidence": "development-reset-bringup-02.log",
+      "final_coverage": "all eight RTL and four mapped final modes include three reset-abort positions"
+    },
+    {
+      "stage": "initial one-off vector generator",
+      "outcome": "Python syntax typo else16 before artifact creation",
+      "correction": "corrected decimal/hex column split; integrated reproducible generator subsequently passed"
+    }
+  ],
+  "retention": "all development output directories and compiled test binaries retained unchanged in verified private archives",
+  "final_validation_failure": null
+}

@@ -1,5 +1,35 @@
 # Handoff — actual designated local execution
 
+## Iteration memory engine — 2026-10-13
+
+[Task #52](https://github.com/jliu67/OpenRX/issues/52) implements entry loads,
+exact signed conversion, tagged execution/memory traffic and dataset feedback,
+reusing the independently accepted PR49/51 code now merged at main 5a688512.
+[EXP-005](../experiments/EXP-005-iteration-engine.md) and [interface](../rtl/engine/README.md)
+record eight passing RTL modes and four passing actual mapped modes. Each mode
+checks 32 native differential iterations (16 v2/16 v1), 2,880 bytecode reads,
+720 bytecode stores, 256 tail writes, eight aliases, 16 chained contexts, all
+2 MiB memory, stale/stalled traffic and three reset aborts. The separate signed
+conversion differential passes 4,096 vectors across four rounding modes.
+
+LANES=4 entry clocks are A/B/C=1,056/544/480 across 32 fixtures: parallel conversion
+saves 16 per iteration; equal-line coalescing saves four reads/eight clocks per
+alias under the stated minimum-latency private-memory contract. Generic A/C
+counts are 126,810/130,589 cells and
+7,733/6,704 flops. Arithmetic kernel, instruction fetch,
+physical SRAM/cache and dataset remain external; these are controller/replay
+cycles, not calibrated PPA or hash throughput.
+
+One kernel-verified six-CPU/4 GiB/512 MiB-swap/128-task payload used one worker,
+peak RSS 2,630,284 KiB; source/vendor/core/tail inputs and all
+original assets remain retained. New source/attempts are archived and temporary
+authoring retired read-only at handoff. The first reset testbench sampling failure
+is retained with its correction. Next: one independent review of this new draft
+feature. Reproduce with `python3 scripts/test_iteration_engine.py --output
+/tmp/openrx-engine-fresh --synthesize`, using the global slot and fresh admission.
+No code merge is authorized. Earlier dated component/status entries below retain
+their original bytes; live task/PR records supply subsequent review and CI status.
+
 ## Iteration-tail SRAM integration — 2026-10-12
 
 [Task #50](https://github.com/jliu67/OpenRX/issues/50) extends immutable reviewed

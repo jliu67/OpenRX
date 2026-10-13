@@ -1,0 +1,5 @@
+rtl/engine/randomx_iteration_engine.v:90: error: Unknown module type: iteration_engine_requires_boolean_parameters
+1 error(s) during elaboration.
+*** These modules were missing:
+        iteration_engine_requires_boolean_parameters referenced 1 times.
+***

@@ -1,0 +1,2 @@
+FATAL: rtl/engine/tests/tb_engine.v:245: abort prefix did not complete
+       Time: 74736000 Scope: tb_engine.reach_execution_packet
