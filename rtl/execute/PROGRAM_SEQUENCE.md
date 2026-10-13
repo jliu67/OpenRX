@@ -91,7 +91,7 @@ python3 scripts/test_program_sequence.py --output /tmp/openrx-sequence-full-new 
 Run these separately under the single admitted resource slot. The default profile
 executes eight native-generated programs × four iterations, in v1 and v2, with
 ideal and stalled/stale transports. It compares full R/F/E/A and round/control
-state after every iteration, exact executed-PC/next-PC routes and instruction
+state after every iteration, executed-PC/next-PC route signatures and instruction
 counts, each bytecode memory event, dataset/prefetch addresses, tail stores and
 all 2 MiB of scratchpad at every program boundary. It exercises native held
 program cancellation, version restart, late metadata/ROM/SRAM/dataset replies,
@@ -110,9 +110,10 @@ actual default 8×2048 complete top. Default mapped control runs the full contra
 bench. The short mapped control drives complete v1/v2 native program transitions
 and held-program resets. Whole-top mapped gates run a bounded first native v2
 iteration with full state/memory assertions and connected cancellation tests.
-They do not run the full 16,384-iteration workload. Generic cells/flops and modeled
-execution clocks exclude external memories/provider logic and establish no
-calibrated physical area, clock frequency, power or full-hash throughput.
+They do not run the full 16,384-iteration workload. Generic cells/flops exclude external memories/provider logic. Modeled
+execution clocks use the stated ready/valid responder delays and omit software
+preparation/finalization time; they establish no calibrated physical area,
+clock frequency, power or full-hash throughput.
 
 ## Results at initial draft publication
 

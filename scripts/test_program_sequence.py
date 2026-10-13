@@ -208,7 +208,7 @@ def main():
         else:
             fixtures = {}
             for version in (1, 0):
-                directory = fixture('v' + str(version) + '-short', 4, version)
+                directory = fixture('v2-short' if version else 'v1-short', 4, version)
                 fixtures[version] = directory
                 for stall in (0, 1):
                     label = f'rtl-{version}-{stall}'

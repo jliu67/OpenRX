@@ -191,3 +191,21 @@ separately declared balanced mapped corner corpus retain exact native flags/bits
 [Task #58](https://github.com/jliu67/OpenRX/issues/58) / [EXP-008](../experiments/EXP-008-native-floating-execute.md)
 require new independent review; generic cells/clocks do not accept physical PPA or
 full hashes. Revisit on specific integration/technology evidence.
+
+## D047 — native configuration and program-loop control, 2026-10-13
+
+Initialize A/MX/MA/read selectors/dataset offset/E masks from native program
+entropy, clear R per program and retain native round mode across default 2,048
+iterations and eight programs. Reuse the independently accepted iteration and
+arithmetic RTL without changes. External pinned AES/BLAKE2b consumes actual DUT
+register output to generate each next program; golden data only enters assertions.
+Keep scratchpad fill/program generation/interprogram hashing/final hash outside
+the hardware boundary and the addressed dataset fixture explicit. Reserve a
+non-overlapping PROGRAMS×ITERATIONS generation-tag span until all cancelled or
+completed transport is quiescent; reset cancels work without memory rollback.
+Validate full native-v2 RTL counts, v1 short transitions, default control counts
+and bounded actual mapping. Do not treat the control backend stub as arithmetic
+proof or short mapped gates as a full16k-iteration gate run. [Task #62](https://github.com/jliu67/OpenRX/issues/62)
+and [EXP-010](../experiments/EXP-010-native-program-sequence.md) retain independent
+review. Revisit on concrete hardware initialization/finalization/dataset integration
+or technology timing/power evidence; full hash/physical PPA remain unaccepted.

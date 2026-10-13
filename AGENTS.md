@@ -15,7 +15,7 @@ dataset/physical PPA remain open. All accepted parent/main heads and original
 sources/evidence remain preserved. New independent review is required; no merge
 is authorized. [Design](rtl/execute/PROGRAM_SEQUENCE.md) / [EXP-010](experiments/EXP-010-native-program-sequence.md).
 
-Current compiler compatibility: [Icarus 12 compile view](rtl/execute/DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. All 12 local RTL records/native fixtures match; corrected hosted checks and independent review remain required.
+Accepted parent compiler compatibility: [Icarus 12 compile view](rtl/execute/DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. PR61 at `7f299c74f81332257eefd775086b355969ad85f3` has all corrected hosted checks passing and [independent acceptance](https://github.com/jliu67/OpenRX/pull/61#pullrequestreview-5503154172). New program-sequence work still requires its own independent review.
 
 ## Native division and square root — task #60, 2026-10-13
 
