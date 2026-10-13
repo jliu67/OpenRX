@@ -55,7 +55,7 @@ module randomx_iteration_engine #(
     reg [3:0] phase_q,convert_q;
     reg [1:0] beat_q;
     reg [15:0] tag_q;
-    reg v2_q,ex_read_busy;
+    reg v2_q,ex_read_busy,ex_read_grant_q;
     reg [1:0] round_q;
     reg [511:0] input_r_q,a_q,line0_q,line1_q,f_convert_q,e_convert_q;
     reg [511:0] result_r_q,result_f_q,result_e_q;
@@ -98,8 +98,10 @@ module randomx_iteration_engine #(
     wire stale_sp=sp_rsp_tag!=tag_q,stale_ex=ex_ret_tag!=tag_q,stale_ds=ds_rsp_tag!=tag_q;
     wire ex_current=ex_mem_tag==tag_q;
     wire active_ex=!rst && phase_q==EX_WAIT;
-    wire current_write=active_ex && ex_current && ex_wr_valid && !ex_read_busy;
-    wire current_read=active_ex && ex_current && ex_rd_valid && !ex_read_busy && !ex_wr_valid;
+    // A fresh write wins arbitration, but cannot preempt a read already held.
+    wire current_write=active_ex && ex_current && ex_wr_valid && !ex_read_busy && !ex_read_grant_q;
+    wire current_read=active_ex && ex_current && ex_rd_valid && !ex_read_busy &&
+        (ex_read_grant_q || !ex_wr_valid);
     assign sp_rd_valid=!rst && (phase_q==R0_REQ || phase_q==R1_REQ || current_read);
     assign sp_rd_addr=phase_q==R0_REQ ? {line0_addr_q,beat_q,4'b0} :
         phase_q==R1_REQ ? {line1_addr_q,beat_q,4'b0} : ex_rd_addr;
@@ -125,7 +127,7 @@ module randomx_iteration_engine #(
     assign ex_req_a=a_q;
     assign ex_req_emask0=emask0_q;assign ex_req_emask1=emask1_q;
     assign ex_req_program_addr=program_q;
-    assign ex_ret_ready=!rst && (stale_ex || (phase_q==EX_WAIT && !ex_read_busy &&
+    assign ex_ret_ready=!rst && (stale_ex || (phase_q==EX_WAIT && !ex_read_busy && !ex_read_grant_q &&
         !(ex_current && (ex_rd_valid || ex_wr_valid))));
     assign ds_req_valid=!rst && phase_q==DS_REQ;
     assign ds_req_tag=tag_q;assign ds_req_addr=ds_addr_q;
@@ -150,7 +152,7 @@ module randomx_iteration_engine #(
 
     always @(posedge clk)begin
         if(rst)begin
-            phase_q<=IDLE;beat_q<=0;convert_q<=0;tag_q<=0;v2_q<=0;round_q<=0;ex_read_busy<=0;
+            phase_q<=IDLE;beat_q<=0;convert_q<=0;tag_q<=0;v2_q<=0;round_q<=0;ex_read_busy<=0;ex_read_grant_q<=0;
             input_r_q<=0;a_q<=0;line0_q<=0;line1_q<=0;f_convert_q<=0;e_convert_q<=0;
             result_r_q<=0;result_f_q<=0;result_e_q<=0;
             line0_addr_q<=0;line1_addr_q<=0;read2_q<=0;read3_q<=0;
@@ -159,7 +161,7 @@ module randomx_iteration_engine #(
             phase_q<=R0_REQ;beat_q<=0;convert_q<=0;tag_q<=req_tag;v2_q<=req_v2;round_q<=req_round_mode;
             input_r_q<=req_r;a_q<=req_a;line0_addr_q<=initial0[20:6];line1_addr_q<=initial1[20:6];
             read2_q<=req_read2;read3_q<=req_read3;emask0_q<=req_emask0;emask1_q<=req_emask1;
-            offset_q<=req_dataset_offset;program_q<=req_program_addr;mx_q<=req_mx;ma_q<=req_ma;ex_read_busy<=0;
+            offset_q<=req_dataset_offset;program_q<=req_program_addr;mx_q<=req_mx;ma_q<=req_ma;ex_read_busy<=0;ex_read_grant_q<=0;
         end else begin
             case(phase_q)
                 R0_REQ:if(sp_rd_valid && sp_rd_ready)phase_q<=R0_RSP;
@@ -189,7 +191,10 @@ module randomx_iteration_engine #(
                 end
                 EX_REQ:if(ex_req_valid && ex_req_ready)phase_q<=EX_WAIT;
                 EX_WAIT:begin
-                    if(current_read && sp_rd_ready)ex_read_busy<=1;
+                    if(current_read)begin
+                        ex_read_grant_q<=!sp_rd_ready;
+                        if(sp_rd_ready)ex_read_busy<=1;
+                    end
                     if(ex_rsp_valid && ex_rsp_ready)ex_read_busy<=0;
                     if(ex_ret_valid && ex_ret_ready && !stale_ex)begin
                         result_r_q<=ex_ret_r;result_f_q<=ex_ret_f;result_e_q<=ex_ret_e;

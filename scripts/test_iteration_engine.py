@@ -199,12 +199,29 @@ def main():
                 raise RuntimeError('ideal control-cycle accounting differs')
             return log, stats
 
+        def arbitration(lanes, serial, coalesce, label, netlist=None):
+            flags = ['-DENGINE_NETLIST'] if netlist else []
+            sources = [str(netlist)] if netlist else RTL
+            run('compile-' + label, ['iverilog', '-g2012', '-Wall', *flags,
+                '-s', 'tb_arbitration', f'-Ptb_arbitration.LANES={lanes}',
+                f'-Ptb_arbitration.SERIAL_CONVERT={serial}', f'-Ptb_arbitration.COALESCE_LINES={coalesce}',
+                '-o', str(out / (label + '.vvp')), *sources, 'rtl/engine/tests/tb_arbitration.v'])
+            run(label, ['vvp', str(out / (label + '.vvp'))])
+            log = (out / (label + '.log')).read_text()
+            expected = (f'PASS arbitration lanes={lanes} serial={serial} coalesce={coalesce} '
+                'cases=3 v1=1 v2=2 reads=5 writes=3 read_stall_cycles=12 write_stall_cycles=8 '
+                'response_stall_cycles=6 stale_drops=6 reset_held_grant=1 committed_bytes_preserved=1')
+            if log.splitlines()[0] != expected:
+                raise RuntimeError('missing overlapping arbitration acceptance: ' + label)
+            return log, {name: int(value) for name, value in re.findall(r'(\w+)=(\d+)', log)}
+
         for name, lanes, serial, coalesce in [('A', 4, 1, 0), ('B', 4, 0, 0),
                                               ('C', 4, 0, 1), ('C-lanes1', 1, 0, 1)]:
             cfg = {'lanes': lanes, 'serial_convert': serial, 'coalesce_lines': coalesce, 'rtl': {}}
             summary['configurations'][name] = cfg
             for stall in (0, 1):
                 _, cfg['rtl'][str(stall)] = differential(lanes, serial, coalesce, stall, f'rtl-{name}-{stall}')
+            _, cfg['arbitration_rtl'] = arbitration(lanes, serial, coalesce, f'arbitration-rtl-{name}')
         for parameter, value in [('SERIAL_CONVERT', 2), ('COALESCE_LINES', 2)]:
             argv = ['iverilog', '-g2012', '-s', 'randomx_iteration_engine',
                     f'-Prandomx_iteration_engine.{parameter}={value}', '-o', str(out / ('invalid-' + parameter + '.vvp')), *RTL]
@@ -238,6 +255,10 @@ def main():
                         f'mapped-{name}-{stall}', netlist)
                     if log != (out / f'rtl-{name}-{stall}.log').read_text():
                         raise RuntimeError('mapped response/cycles differ from RTL: ' + name)
+                log, cfg['arbitration_mapped'] = arbitration(4, serial, coalesce,
+                    f'arbitration-mapped-{name}', netlist)
+                if log != (out / f'arbitration-rtl-{name}.log').read_text():
+                    raise RuntimeError('mapped arbitration differs from RTL: ' + name)
         a = summary['configurations']['A']['rtl']['0']
         b = summary['configurations']['B']['rtl']['0']
         c = summary['configurations']['C']['rtl']['0']

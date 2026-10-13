@@ -1,0 +1,9 @@
+{
+  "elapsed_seconds": 463.9701569080353,
+  "returncode": 0,
+  "argv": [
+    "yosys",
+    "-p",
+    "read_verilog rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/aes/randomx_v2_aes_mix.v rtl/aes/randomx_exec_aes_commit.v rtl/iteration/randomx_iteration_store.v rtl/engine/randomx_i32_to_f64.v rtl/engine/randomx_iteration_engine.v; chparam -set LANES 4 -set SERIAL_CONVERT 0 -set COALESCE_LINES 1 randomx_iteration_engine; synth -top randomx_iteration_engine -flatten; check -assert; tee -o /tmp/openrx-read-grant-mapped-01/stat-C.txt stat; write_verilog -noattr /tmp/openrx-read-grant-mapped-01/netlist-C.v; write_json /tmp/openrx-read-grant-mapped-01/netlist-C.json"
+  ]
+}

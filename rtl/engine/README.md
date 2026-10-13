@@ -51,8 +51,11 @@ memory. Commands are 16-byte aligned and data is 128 bits. There is one ordered
 outstanding read for the active generation. The adapter must also account for
 any cancelled read still draining after reset. There is at least one clock
 between command acceptance and the response; zero-cycle responses are unsupported. During execution, the kernel
-uses this same port. A write wins over a newly presented read; no write is issued
-while a read is outstanding. The kernel must keep its memory requests stable
+uses this same port. If both requests are fresh, a write wins arbitration. A read already presented
+under backpressure retains its grant until acceptance, even if a write arrives
+later; the kernel must keep that read valid/address/tag stable. The pending write
+waits until the accepted read response is consumed. Reset clears the retained
+grant and outstanding-read state. The kernel must keep its memory requests stable
 under backpressure and wait for read responses. A 16-bit write strobe selects
 individual bytes. `sp_wr_ready` means the bytes have committed in order, rather
 than admission into a reorderable queue. Execution return is blocked until all
@@ -123,3 +126,12 @@ existing tail. They exclude physical memories, the arithmetic kernel, clock
 tree and technology mapping. Controller/replay cycles and generic cells do not
 establish chip frequency, power, calibrated PPA, dataset-cache performance or
 full-hash throughput. Independent review of this new integration remains required.
+
+The directed arbitration regression separately overlaps independent read/write
+requests. It checks a stalled read followed by a write, a stalled write followed
+by a fresh read, stalled read responses, stale-generation traffic, reset of an
+unaccepted grant, and byte-strobe persistence. It fails on the original bd193092
+controller, which could retract a presented read. The corrected four RTL
+configurations and delivered A/C netlists run this same regression in the driver.
+Original source, rejected review and prior serialized-replay results stay retained;
+the correction evidence records regenerated cells and unchanged replay cycles.

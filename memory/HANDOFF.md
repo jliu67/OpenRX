@@ -1,5 +1,50 @@
 # Handoff — actual designated local execution
 
+## Read-grant correction after independent review — 2026-10-13
+
+[PR53 review](https://github.com/jliu67/OpenRX/pull/53#pullrequestreview-5497704738)
+blocked original bd193092: an arriving write could retract a scratchpad read
+already held under backpressure. The same author reproduced the exact failure
+on unchanged original RTL, preserved its source/test/input hashes/fatal log,
+and added one retained read-grant bit. Fresh competing requests still give
+writes priority; an already presented read retains valid/address/tag until
+acceptance and blocks writes until the response is consumed. Reset/new descriptor
+clears the grant; architectural return cannot bypass a pending grant.
+
+The new directed regression runs v1/v2, overlapping requests in both orders,
+12 read-stall clocks, eight write-stall clocks, six response-stall clocks,
+six stale-generation drops and reset of a held grant. It verifies five reads,
+three ordered byte-strobe writes and committed-byte persistence. It fails the
+rejected RTL and passes all four RTL configurations plus both actual A/C netlists.
+The eight native RTL and four native mapped modes remain byte-identical to the
+original serialized replay; every native/vendor/AES/store-tail input is unchanged.
+Entry totals A/B/C=1056/544/480 and native replay cycles are unchanged.
+
+Corrected generic A/C counts are 126,820/130,599 cells and
+7,734/6,705 flops. Compared with the rejected source,
+deltas are +10/+10
+cells and +1/+1 flops.
+The original failing overlap sequence has no valid cycle result to compare.
+[Focused evidence](../docs/validation/iteration-engine-read-grant-20261013/README.md)
+binds raw failures, corrected source, commands/versions, actual netlists and
+resource receipts, retaining every earlier source/result/archive/review.
+
+The initial 4 GiB candidate did not fit fresh headroom. Standalone A synthesis
+used kernel-verified CPU600%, RAM3 GiB, swap512 MiB and Tasks128, after a fresh
+1 GiB host reserve check; measured memory pressure/swap increased wall time
+without an OOM or CPU-quota throttle. Freshly regained headroom admitted C at
+4 GiB. Mapped-only checks used 1 GiB based on measured compile/simulation RSS.
+All six CPUs remained available, one worker, global slot serialized. Detailed
+resource witnesses stay private; sanitized measured limits/peaks/elapsed/swap
+are public. Source and attempts are verified/archived and retired read-only at
+publication. Prior sources/receipts are preserved; no extra tasks/agents,
+install/access/settings change, repeated baseline, force push or merge.
+
+Next: all final-head hosted checks, then the same reviewer's focused delta review.
+This author handoff does not establish acceptance or authorize merge. Arithmetic
+kernel, physical memories, calibrated PPA and full-hash requirements remain
+external. Earlier evidence below records its original source and is retained.
+
 ## Hosted log compatibility follow-up — 2026-10-13
 
 Initial draft head a04b9163 has the complete passing local RTL/mapped result

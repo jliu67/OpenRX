@@ -1,0 +1,628 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.06407510803546757
+  },
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-Ivendor/randomx/src",
+      "rtl/engine/tests/oracle.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/bytecode_machine.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/oracle"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 4.121875205077231
+  },
+  {
+    "label": "oracle",
+    "argv": [
+      "/tmp/openrx-read-grant-rtl-01/oracle",
+      "/tmp/openrx-read-grant-rtl-01"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.31449186394456774
+  },
+  {
+    "label": "compile-i32",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "tb_i32",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/i32.vvp",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/tests/tb_i32.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.007751183002255857
+  },
+  {
+    "label": "native-i32",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/i32.vvp",
+      "+vectors=/tmp/openrx-read-grant-rtl-01/i32-vectors.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16419372404925525
+  },
+  {
+    "label": "compile-rtl-A-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=1",
+      "-Ptb_engine.COALESCE_LINES=0",
+      "-Ptb_engine.STALL=0",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-A-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16426014807075262
+  },
+  {
+    "label": "rtl-A-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-A-0.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.7180127609753981
+  },
+  {
+    "label": "compile-rtl-A-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=1",
+      "-Ptb_engine.COALESCE_LINES=0",
+      "-Ptb_engine.STALL=1",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-A-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16472028801217675
+  },
+  {
+    "label": "rtl-A-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-A-1.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 2.4193431650055572
+  },
+  {
+    "label": "compile-arbitration-rtl-A",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_arbitration",
+      "-Ptb_arbitration.LANES=4",
+      "-Ptb_arbitration.SERIAL_CONVERT=1",
+      "-Ptb_arbitration.COALESCE_LINES=0",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-A.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_arbitration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.11435335502028465
+  },
+  {
+    "label": "arbitration-rtl-A",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-A.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16430283000227064
+  },
+  {
+    "label": "compile-rtl-B-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=0",
+      "-Ptb_engine.COALESCE_LINES=0",
+      "-Ptb_engine.STALL=0",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-B-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.164384110015817
+  },
+  {
+    "label": "rtl-B-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-B-0.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.7178935270057991
+  },
+  {
+    "label": "compile-rtl-B-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=0",
+      "-Ptb_engine.COALESCE_LINES=0",
+      "-Ptb_engine.STALL=1",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-B-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16531780501827598
+  },
+  {
+    "label": "rtl-B-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-B-1.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 2.4185745280701667
+  },
+  {
+    "label": "compile-arbitration-rtl-B",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_arbitration",
+      "-Ptb_arbitration.LANES=4",
+      "-Ptb_arbitration.SERIAL_CONVERT=0",
+      "-Ptb_arbitration.COALESCE_LINES=0",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-B.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_arbitration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16424632898997515
+  },
+  {
+    "label": "arbitration-rtl-B",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-B.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16421892901416868
+  },
+  {
+    "label": "compile-rtl-C-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=0",
+      "-Ptb_engine.COALESCE_LINES=1",
+      "-Ptb_engine.STALL=0",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.164259399054572
+  },
+  {
+    "label": "rtl-C-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-0.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.7170481509529054
+  },
+  {
+    "label": "compile-rtl-C-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=0",
+      "-Ptb_engine.COALESCE_LINES=1",
+      "-Ptb_engine.STALL=1",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16430421092081815
+  },
+  {
+    "label": "rtl-C-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-1.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 2.4194348190212622
+  },
+  {
+    "label": "compile-arbitration-rtl-C",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_arbitration",
+      "-Ptb_arbitration.LANES=4",
+      "-Ptb_arbitration.SERIAL_CONVERT=0",
+      "-Ptb_arbitration.COALESCE_LINES=1",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-C.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_arbitration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.1651136240689084
+  },
+  {
+    "label": "arbitration-rtl-C",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-C.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16424717905465513
+  },
+  {
+    "label": "compile-rtl-C-lanes1-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=1",
+      "-Ptb_engine.SERIAL_CONVERT=0",
+      "-Ptb_engine.COALESCE_LINES=1",
+      "-Ptb_engine.STALL=0",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-lanes1-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.06482776999473572
+  },
+  {
+    "label": "rtl-C-lanes1-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-lanes1-0.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.7676279100123793
+  },
+  {
+    "label": "compile-rtl-C-lanes1-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=1",
+      "-Ptb_engine.SERIAL_CONVERT=0",
+      "-Ptb_engine.COALESCE_LINES=1",
+      "-Ptb_engine.STALL=1",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-lanes1-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.06403548608068377
+  },
+  {
+    "label": "rtl-C-lanes1-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/rtl-C-lanes1-1.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 2.4685205470304936
+  },
+  {
+    "label": "compile-arbitration-rtl-C-lanes1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_arbitration",
+      "-Ptb_arbitration.LANES=1",
+      "-Ptb_arbitration.SERIAL_CONVERT=0",
+      "-Ptb_arbitration.COALESCE_LINES=1",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-C-lanes1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/engine/tests/tb_arbitration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.06512925098650157
+  },
+  {
+    "label": "arbitration-rtl-C-lanes1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-rtl-01/arbitration-rtl-C-lanes1.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.0640222979709506
+  },
+  {
+    "label": "invalid-SERIAL_CONVERT",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_iteration_engine",
+      "-Prandomx_iteration_engine.SERIAL_CONVERT=2",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/invalid-SERIAL_CONVERT.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v"
+    ],
+    "returncode": 1,
+    "expected_failure": true,
+    "cwd": "repository-root"
+  },
+  {
+    "label": "invalid-COALESCE_LINES",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_iteration_engine",
+      "-Prandomx_iteration_engine.COALESCE_LINES=2",
+      "-o",
+      "/tmp/openrx-read-grant-rtl-01/invalid-COALESCE_LINES.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v"
+    ],
+    "returncode": 1,
+    "expected_failure": true,
+    "cwd": "repository-root"
+  }
+]

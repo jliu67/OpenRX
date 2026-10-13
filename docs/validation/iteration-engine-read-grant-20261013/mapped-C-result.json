@@ -1,0 +1,101 @@
+{
+  "configuration": "C",
+  "serial": 0,
+  "coalesce": 1,
+  "native": {
+    "0": {
+      "matches_corrected_RTL": true,
+      "statistics": {
+        "lanes": 4,
+        "serial": 0,
+        "coalesce": 1,
+        "stall": 0,
+        "iterations": 32,
+        "v2": 16,
+        "v1": 16,
+        "chained": 16,
+        "aliases": 8,
+        "entry_reads": 224,
+        "bytecode_reads": 2880,
+        "bytecode_stores": 720,
+        "tail_writes": 256,
+        "full_memory_bytes": 2097152,
+        "reset_aborts": 3,
+        "committed_abort_writes": 1,
+        "front_total_cycles": 480,
+        "elapsed_cycles": 7377,
+        "stale_sp": 0,
+        "stale_ds": 0,
+        "stale_ex": 0,
+        "premature_blocks": 0
+      }
+    },
+    "1": {
+      "matches_corrected_RTL": true,
+      "statistics": {
+        "lanes": 4,
+        "serial": 0,
+        "coalesce": 1,
+        "stall": 1,
+        "iterations": 32,
+        "v2": 16,
+        "v1": 16,
+        "chained": 16,
+        "aliases": 8,
+        "entry_reads": 224,
+        "bytecode_reads": 2880,
+        "bytecode_stores": 720,
+        "tail_writes": 256,
+        "full_memory_bytes": 2097152,
+        "reset_aborts": 3,
+        "committed_abort_writes": 1,
+        "front_total_cycles": 1664,
+        "elapsed_cycles": 30929,
+        "stale_sp": 3104,
+        "stale_ds": 32,
+        "stale_ex": 1665,
+        "premature_blocks": 288
+      }
+    }
+  },
+  "arbitration": {
+    "matches_corrected_RTL": true,
+    "statistics": {
+      "lanes": 4,
+      "serial": 0,
+      "coalesce": 1,
+      "cases": 3,
+      "v1": 1,
+      "v2": 2,
+      "reads": 5,
+      "writes": 3,
+      "read_stall_cycles": 12,
+      "write_stall_cycles": 8,
+      "response_stall_cycles": 6,
+      "stale_drops": 6,
+      "reset_held_grant": 1,
+      "committed_bytes_preserved": 1
+    }
+  },
+  "generic_synthesis": {
+    "num_cells": 130599,
+    "num_cells_by_type": {
+      "$_NOT_": 6538,
+      "$_ANDNOT_": 11336,
+      "$_AOI3_": 12010,
+      "$_AND_": 160,
+      "$_NAND_": 1506,
+      "$_OR_": 49025,
+      "$_NOR_": 10262,
+      "$_OAI3_": 2312,
+      "$_ORNOT_": 1064,
+      "$_XOR_": 4414,
+      "$_OAI4_": 1034,
+      "$_XNOR_": 2234,
+      "$_AOI4_": 6,
+      "$_MUX_": 21993,
+      "$_DFF_P_": 6705
+    },
+    "flop_cells": 6705
+  }
+}

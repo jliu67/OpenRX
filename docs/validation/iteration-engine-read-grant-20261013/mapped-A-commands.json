@@ -1,0 +1,99 @@
+[
+  {
+    "label": "compile-mapped-A-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DENGINE_NETLIST",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=1",
+      "-Ptb_engine.COALESCE_LINES=0",
+      "-Ptb_engine.STALL=0",
+      "-o",
+      "/tmp/openrx-read-grant-mapped-01/mapped-A-0.vvp",
+      "/tmp/openrx-read-grant-mapped-01/netlist-A.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "temporary-source-root",
+    "elapsed_seconds": 52.886515855789185
+  },
+  {
+    "label": "mapped-A-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-mapped-01/mapped-A-0.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "temporary-source-root",
+    "elapsed_seconds": 42.855207681655884
+  },
+  {
+    "label": "compile-mapped-A-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DENGINE_NETLIST",
+      "-I/tmp/openrx-read-grant-rtl-01",
+      "-s",
+      "tb_engine",
+      "-Ptb_engine.LANES=4",
+      "-Ptb_engine.SERIAL_CONVERT=1",
+      "-Ptb_engine.COALESCE_LINES=0",
+      "-Ptb_engine.STALL=1",
+      "-o",
+      "/tmp/openrx-read-grant-mapped-01/mapped-A-1.vvp",
+      "/tmp/openrx-read-grant-mapped-01/netlist-A.v",
+      "rtl/engine/tests/tb_engine.v"
+    ],
+    "cwd": "temporary-source-root",
+    "elapsed_seconds": 50.670520305633545
+  },
+  {
+    "label": "mapped-A-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-mapped-01/mapped-A-1.vvp",
+      "+initial=/tmp/openrx-read-grant-rtl-01/initial.hex",
+      "+final=/tmp/openrx-read-grant-rtl-01/final.hex",
+      "+events=/tmp/openrx-read-grant-rtl-01/events.mem"
+    ],
+    "cwd": "temporary-source-root",
+    "elapsed_seconds": 131.54344177246094
+  },
+  {
+    "label": "compile-arbitration-mapped-A",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DENGINE_NETLIST",
+      "-s",
+      "tb_arbitration",
+      "-Ptb_arbitration.LANES=4",
+      "-Ptb_arbitration.SERIAL_CONVERT=1",
+      "-Ptb_arbitration.COALESCE_LINES=0",
+      "-o",
+      "/tmp/openrx-read-grant-mapped-01/arbitration-mapped-A.vvp",
+      "/tmp/openrx-read-grant-mapped-01/netlist-A.v",
+      "rtl/engine/tests/tb_arbitration.v"
+    ],
+    "cwd": "temporary-source-root",
+    "elapsed_seconds": 54.16433882713318
+  },
+  {
+    "label": "arbitration-mapped-A",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-read-grant-mapped-01/arbitration-mapped-A.vvp"
+    ],
+    "cwd": "temporary-source-root",
+    "elapsed_seconds": 3.7718052864074707
+  }
+]

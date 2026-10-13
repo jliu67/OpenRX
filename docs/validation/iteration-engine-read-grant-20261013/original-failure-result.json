@@ -1,0 +1,5 @@
+{
+  "rejected_head": "bd193092bfc07e0874505dc7f8ad79f1ee9609a8",
+  "exit_code": 1,
+  "expected_failure": "stalled execution read was preempted by arriving write"
+}

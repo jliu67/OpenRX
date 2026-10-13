@@ -138,3 +138,10 @@ The native bytecode memory differential and actual mapped netlists verify this
 integration without claiming a full core, hash or physical PPA. Revisit on concrete
 kernel/memory integration evidence. [Task #52](https://github.com/jliu67/OpenRX/issues/52)
 and [EXP-005](../experiments/EXP-005-iteration-engine.md) require independent new-work review.
+
+D043 correction follow-up (2026-10-13): fresh write priority cannot preempt an
+already presented read. Retain its grant until acceptance, then block writes
+until the response is consumed; reset clears the grant. Independent review
+exposed this protocol defect, which the directed original-failure/RTL/mapped
+regression now covers. Component clocks remain controller/replay model results;
+physical PPA/full hash remain open.

@@ -1,0 +1,212 @@
+{
+  "rejected_parent": "bd193092bfc07e0874505dc7f8ad79f1ee9609a8",
+  "review": "https://github.com/jliu67/OpenRX/pull/53#pullrequestreview-5497704738",
+  "original_regression_exit": 1,
+  "corrected_RTL_arbitration_configurations": 4,
+  "corrected_mapped_arbitration_configurations": 2,
+  "native_RTL_modes": 8,
+  "native_mapped_modes": 4,
+  "native_logs_identical_to_original": true,
+  "configurations": {
+    "A": {
+      "generic_synthesis": {
+        "num_cells": 126820,
+        "num_cells_by_type": {
+          "$_ANDNOT_": 11278,
+          "$_AND_": 133,
+          "$_NAND_": 922,
+          "$_NOT_": 7099,
+          "$_AOI3_": 11492,
+          "$_OR_": 46699,
+          "$_NOR_": 10140,
+          "$_ORNOT_": 682,
+          "$_OAI3_": 925,
+          "$_AOI4_": 3,
+          "$_OAI4_": 529,
+          "$_XNOR_": 2177,
+          "$_XOR_": 3909,
+          "$_MUX_": 23098,
+          "$_DFF_P_": 7734
+        },
+        "flop_cells": 7734
+      },
+      "cell_delta_vs_rejected": 10,
+      "flop_delta_vs_rejected": 1,
+      "mapped_native": {
+        "0": {
+          "matches_corrected_RTL": true,
+          "statistics": {
+            "lanes": 4,
+            "serial": 1,
+            "coalesce": 0,
+            "stall": 0,
+            "iterations": 32,
+            "v2": 16,
+            "v1": 16,
+            "chained": 16,
+            "aliases": 8,
+            "entry_reads": 256,
+            "bytecode_reads": 2880,
+            "bytecode_stores": 720,
+            "tail_writes": 256,
+            "full_memory_bytes": 2097152,
+            "reset_aborts": 3,
+            "committed_abort_writes": 1,
+            "front_total_cycles": 1056,
+            "elapsed_cycles": 7953,
+            "stale_sp": 0,
+            "stale_ds": 0,
+            "stale_ex": 0,
+            "premature_blocks": 0
+          }
+        },
+        "1": {
+          "matches_corrected_RTL": true,
+          "statistics": {
+            "lanes": 4,
+            "serial": 1,
+            "coalesce": 0,
+            "stall": 1,
+            "iterations": 32,
+            "v2": 16,
+            "v1": 16,
+            "chained": 16,
+            "aliases": 8,
+            "entry_reads": 256,
+            "bytecode_reads": 2880,
+            "bytecode_stores": 720,
+            "tail_writes": 256,
+            "full_memory_bytes": 2097152,
+            "reset_aborts": 3,
+            "committed_abort_writes": 1,
+            "front_total_cycles": 2400,
+            "elapsed_cycles": 31665,
+            "stale_sp": 3136,
+            "stale_ds": 32,
+            "stale_ex": 2401,
+            "premature_blocks": 288
+          }
+        }
+      },
+      "mapped_arbitration": {
+        "matches_corrected_RTL": true,
+        "statistics": {
+          "lanes": 4,
+          "serial": 1,
+          "coalesce": 0,
+          "cases": 3,
+          "v1": 1,
+          "v2": 2,
+          "reads": 5,
+          "writes": 3,
+          "read_stall_cycles": 12,
+          "write_stall_cycles": 8,
+          "response_stall_cycles": 6,
+          "stale_drops": 6,
+          "reset_held_grant": 1,
+          "committed_bytes_preserved": 1
+        }
+      }
+    },
+    "C": {
+      "generic_synthesis": {
+        "num_cells": 130599,
+        "num_cells_by_type": {
+          "$_NOT_": 6538,
+          "$_ANDNOT_": 11336,
+          "$_AOI3_": 12010,
+          "$_AND_": 160,
+          "$_NAND_": 1506,
+          "$_OR_": 49025,
+          "$_NOR_": 10262,
+          "$_OAI3_": 2312,
+          "$_ORNOT_": 1064,
+          "$_XOR_": 4414,
+          "$_OAI4_": 1034,
+          "$_XNOR_": 2234,
+          "$_AOI4_": 6,
+          "$_MUX_": 21993,
+          "$_DFF_P_": 6705
+        },
+        "flop_cells": 6705
+      },
+      "cell_delta_vs_rejected": 10,
+      "flop_delta_vs_rejected": 1,
+      "mapped_native": {
+        "0": {
+          "matches_corrected_RTL": true,
+          "statistics": {
+            "lanes": 4,
+            "serial": 0,
+            "coalesce": 1,
+            "stall": 0,
+            "iterations": 32,
+            "v2": 16,
+            "v1": 16,
+            "chained": 16,
+            "aliases": 8,
+            "entry_reads": 224,
+            "bytecode_reads": 2880,
+            "bytecode_stores": 720,
+            "tail_writes": 256,
+            "full_memory_bytes": 2097152,
+            "reset_aborts": 3,
+            "committed_abort_writes": 1,
+            "front_total_cycles": 480,
+            "elapsed_cycles": 7377,
+            "stale_sp": 0,
+            "stale_ds": 0,
+            "stale_ex": 0,
+            "premature_blocks": 0
+          }
+        },
+        "1": {
+          "matches_corrected_RTL": true,
+          "statistics": {
+            "lanes": 4,
+            "serial": 0,
+            "coalesce": 1,
+            "stall": 1,
+            "iterations": 32,
+            "v2": 16,
+            "v1": 16,
+            "chained": 16,
+            "aliases": 8,
+            "entry_reads": 224,
+            "bytecode_reads": 2880,
+            "bytecode_stores": 720,
+            "tail_writes": 256,
+            "full_memory_bytes": 2097152,
+            "reset_aborts": 3,
+            "committed_abort_writes": 1,
+            "front_total_cycles": 1664,
+            "elapsed_cycles": 30929,
+            "stale_sp": 3104,
+            "stale_ds": 32,
+            "stale_ex": 1665,
+            "premature_blocks": 288
+          }
+        }
+      },
+      "mapped_arbitration": {
+        "matches_corrected_RTL": true,
+        "statistics": {
+          "lanes": 4,
+          "serial": 0,
+          "coalesce": 1,
+          "cases": 3,
+          "v1": 1,
+          "v2": 2,
+          "reads": 5,
+          "writes": 3,
+          "read_stall_cycles": 12,
+          "write_stall_cycles": 8,
+          "response_stall_cycles": 6,
+          "stale_drops": 6,
+          "reset_held_grant": 1,
+          "committed_bytes_preserved": 1
+        }
+      }
+    }
+  }
+}
