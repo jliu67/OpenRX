@@ -14,9 +14,10 @@
     "addRecFN.v": "15fb5387ab0deff63670ed144189e9f263c61ffc909d06697974c49d11ba5dc3",
     "mulRecFN.v": "5a6a263dcde9f38f0fabef87ceb41e1bdff63c46d151c7c65e404467354bee43",
     "8086-SSE/HardFloat_specialize.v": "5978254ad3781165833345616e4c1c3447cac4a1d8fb73689c2def15f71f52e3",
-    "8086-SSE/HardFloat_specialize.vi": "a6a6a3b7b86f7cc2e32e147dc9f6943422a611fd6da362f37e18950002a571c4"
+    "8086-SSE/HardFloat_specialize.vi": "a6a6a3b7b86f7cc2e32e147dc9f6943422a611fd6da362f37e18950002a571c4",
+    "divSqrtRecFN_small.v": "f76feb5557faa8bcb2868e51bf2ce7d1297be46dd67ae51d509b1ae91066a522"
   },
   "vendor_bytes_unmodified": true,
   "license": "BSD-3-Clause",
-  "operations_selected": "binary64 add/sub/multiply; no division/sqrt vendored"
+  "operations_selected": "binary64 add/sub/multiply and iterative division/square-root"
 }

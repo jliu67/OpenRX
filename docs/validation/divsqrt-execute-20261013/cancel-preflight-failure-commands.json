@@ -1,0 +1,53 @@
+[
+  {
+    "label": "compile-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-Irtl/execute/vendor/hardfloat/",
+      "-Irtl/execute/vendor/hardfloat/8086-SSE",
+      "-s",
+      "tb_divsqrt_cancel",
+      "-Ptb_divsqrt_cancel.DIVSQRT_LANES=1",
+      "-o",
+      "/tmp/openrx-divsqrt-cancel-preflight-01/cancel-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "rtl/execute/vendor/hardfloat/addRecFN.v",
+      "rtl/execute/vendor/hardfloat/mulRecFN.v",
+      "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "rtl/execute/randomx_fp64.v",
+      "rtl/execute/randomx_fp128.v",
+      "rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v",
+      "rtl/execute/randomx_divsqrt64.v",
+      "rtl/execute/randomx_divsqrt128.v",
+      "rtl/execute/tests/tb_divsqrt_cancel.v"
+    ],
+    "returncode": 0
+  },
+  {
+    "label": "cancel-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-divsqrt-cancel-preflight-01/cancel-1.vvp"
+    ],
+    "returncode": 1
+  }
+]

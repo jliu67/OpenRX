@@ -1,0 +1,73 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 2400,
+    "returncode": 0,
+    "elapsed_seconds": 0.06406489899381995
+  },
+  {
+    "label": "compile-divsqrt-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-Ivendor/randomx/src",
+      "rtl/execute/tests/divsqrt_oracle.cpp",
+      "-o",
+      "/tmp/openrx-divsqrt-connected-rtl-01/divsqrt-oracle"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 2400,
+    "returncode": 0,
+    "elapsed_seconds": 1.015903488965705
+  },
+  {
+    "label": "divsqrt-oracle",
+    "argv": [
+      "/tmp/openrx-divsqrt-connected-rtl-01/divsqrt-oracle",
+      "/tmp/openrx-divsqrt-connected-rtl-01/divsqrt64-full.hex",
+      "/tmp/openrx-divsqrt-connected-rtl-01/divsqrt128-full.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 2400,
+    "returncode": 0,
+    "elapsed_seconds": 0.032001826097257435
+  },
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-I/tmp/openrx-divsqrt-connected-rtl-01",
+      "-Ivendor/randomx/src",
+      "rtl/execute/tests/divsqrt_iteration_oracle.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/bytecode_machine.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "-o",
+      "/tmp/openrx-divsqrt-connected-rtl-01/oracle"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 2400,
+    "returncode": 0,
+    "elapsed_seconds": 3.872048778925091
+  },
+  {
+    "label": "oracle",
+    "argv": [
+      "/tmp/openrx-divsqrt-connected-rtl-01/oracle",
+      "/tmp/openrx-divsqrt-connected-rtl-01"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 2400,
+    "returncode": 0,
+    "elapsed_seconds": 0.3145128559553996
+  }
+]

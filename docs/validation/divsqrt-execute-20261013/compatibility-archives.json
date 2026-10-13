@@ -1,0 +1,12 @@
+{
+  "openrx-divsqrt-compatibility-01": {
+    "sha256": "91820446c5107caf6d97af4b3e2b02aae507b3d9fe5710fc38c4fd60818ddcb8",
+    "manifest_sha256": "c3b1776286f93c89d4f442233b184a07dc47cffeddada07c2690db7239285ca3",
+    "preserved_files": 13
+  },
+  "openrx-divsqrt-compatibility-02": {
+    "sha256": "ffbb887d093fefd32191a5e5729940ab39cc5ec79bfa6b8a6af33867bef30cdd",
+    "manifest_sha256": "019fc096fea929d6ac290fae34627a83493d47f38bc83fd5a101cb145895e5f0",
+    "preserved_files": 19
+  }
+}

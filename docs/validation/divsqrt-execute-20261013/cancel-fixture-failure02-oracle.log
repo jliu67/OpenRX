@@ -1,0 +1,1 @@
+PASS native divsqrt-branch iterations=8 aliases=4 actual_bytecode_reads=418 stores=82 instruction_steps=2856 branches=99 taken=30 multiplies=178 rcp_nops=12 fp_steps=606 divide_steps=152 sqrt_steps=146 cf_steps=557 full_memory_bytes=2097152

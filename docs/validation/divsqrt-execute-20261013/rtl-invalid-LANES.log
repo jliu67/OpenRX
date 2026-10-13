@@ -1,0 +1,5 @@
+rtl/execute/randomx_divsqrt128.v:43: error: Unknown module type: divsqrt_vector_requires_LANES_1_or_2
+1 error(s) during elaboration.
+*** These modules were missing:
+        divsqrt_vector_requires_LANES_1_or_2 referenced 1 times.
+***

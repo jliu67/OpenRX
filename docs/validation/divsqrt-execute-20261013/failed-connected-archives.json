@@ -1,0 +1,29 @@
+{
+  "openrx-divsqrt-connected-rtl-01": {
+    "sha256": "fde8994ffbab383e3d8c37ce3d4199efda7d39be51a8e7f2c886812e4f1b44d2",
+    "manifest_sha256": "ee43cf08e2b4073677e1c1bfa77700842a7b628bf60b614788bb7e61b21b4f22",
+    "preserved_files": 39,
+    "all_archive_bytes_verified": true
+  },
+  "openrx-divsqrt-connected-rtl-02": {
+    "sha256": "c72dbe981a9cffd7f1a8131ba124e7a4b827a4bf3d772c30086488c68c60f7dd",
+    "manifest_sha256": "642628090911830b98c309e8c342c0e3fb5426fe2ca462c7568a618609f319ed",
+    "preserved_files": 63,
+    "all_archive_bytes_verified": true
+  },
+  "openrx-divsqrt-connected-rtl-03": {
+    "sha256": "86627878c41f5d8f331d5ad53cfd179050078aefb28d113bfb69e9d64b8202e8",
+    "preserved_files": 63,
+    "all_archive_bytes_verified": true
+  },
+  "openrx-divsqrt-cancel-diagnostic-01": {
+    "sha256": "c73e84d88e0d06539ff4cd97d83df5c9f61166e2a373be077b67bf58a34895c7",
+    "preserved_files": 5,
+    "all_archive_bytes_verified": true
+  },
+  "openrx-divsqrt-cancel-preflight-01": {
+    "sha256": "fb43a2fd0e69b4c2bd217bd87038fe82d003549120cc6be6848cc5bfb953cc29",
+    "preserved_files": 5,
+    "all_archive_bytes_verified": true
+  }
+}

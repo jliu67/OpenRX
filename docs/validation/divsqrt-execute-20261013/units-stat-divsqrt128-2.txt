@@ -1,0 +1,30 @@
+
+15. Printing statistics.
+
+=== randomx_divsqrt128 ===
+
+   Number of wires:              12880
+   Number of wire bits:          28188
+   Number of public wires:         504
+   Number of public wire bits:   15812
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              12942
+     $_ANDNOT_                    1759
+     $_AND_                        103
+     $_AOI3_                       418
+     $_AOI4_                       144
+     $_DFF_PN0_                     12
+     $_DFF_P_                      546
+     $_MUX_                       3414
+     $_NAND_                       660
+     $_NOR_                        539
+     $_NOT_                        841
+     $_OAI3_                       636
+     $_OAI4_                       126
+     $_ORNOT_                      530
+     $_OR_                        2704
+     $_XNOR_                       134
+     $_XOR_                        376
+

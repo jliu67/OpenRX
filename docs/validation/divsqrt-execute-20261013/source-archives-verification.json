@@ -1,0 +1,44 @@
+{
+  "compatibility-source-attempt01.tar.gz": {
+    "files": 2126,
+    "archive_sha256": "a6012c58c61e59e20c844f7bbd19c35d2b3da385d1e1e35ed2697e0ba05f2f4b",
+    "all_bytes_and_nonwrite_modes_verified": true,
+    "source_retired_readonly": true
+  },
+  "connected-source-attempt01.tar.gz": {
+    "files": 2131,
+    "archive_sha256": "e4e31502f855a615f8cca331e5c18e837ddb037344672839c907a121e60f1feb",
+    "all_bytes_and_nonwrite_modes_verified": true,
+    "source_retired_readonly": true
+  },
+  "connected-source-attempt02.tar.gz": {
+    "files": 2131,
+    "archive_sha256": "1554f2a92ef3de01361c146d1ce509afedf7bbc9b4caee0cba503cbcd2eb6696",
+    "all_bytes_and_nonwrite_modes_verified": true,
+    "source_retired_readonly": true
+  },
+  "connected-source-attempt03.tar.gz": {
+    "files": 2131,
+    "archive_sha256": "f1fac63634c272cb7edb9e9609561fd413a58adbb2f5dffa4d419b5f5d4064f0",
+    "all_bytes_and_nonwrite_modes_verified": true,
+    "source_retired_readonly": true
+  },
+  "connected-source-attempt04.tar.gz": {
+    "files": 2131,
+    "archive_sha256": "c56934e21fe0c63da3eb7a8c0d35b282ec73e50faf85e03e15ca455409bd81f5",
+    "all_bytes_and_nonwrite_modes_verified": true,
+    "source_retired_readonly": true
+  },
+  "connected-source-attempt05.tar.gz": {
+    "files": 2131,
+    "archive_sha256": "78233030a55cf010105ad45c46f6605e5da8ade55e8ae28825370a672ccd7c1a",
+    "all_bytes_and_nonwrite_modes_verified": true,
+    "source_retired_readonly": true
+  },
+  "compatibility-source-attempt02.tar.gz": {
+    "files": 2126,
+    "archive_sha256": "d44e1ed71c04f414a4e7c65b7dfe1338835ec3a4906321932cdfb2c9a8492a8e",
+    "all_bytes_and_nonwrite_modes_verified": true,
+    "source_retired_readonly": true
+  }
+}

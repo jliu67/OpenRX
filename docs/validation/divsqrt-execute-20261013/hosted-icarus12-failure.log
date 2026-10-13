@@ -1,0 +1,291 @@
+﻿2026-10-13T10:42:06.0364527Z Current runner version: '2.337.0'
+2026-10-13T10:42:06.0383652Z ##[group]Runner Image Provisioner
+2026-10-13T10:42:06.0384290Z Hosted Compute Agent
+2026-10-13T10:42:06.0384655Z Version: 20261002.596
+2026-10-13T10:42:06.0385073Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-13T10:42:06.0385564Z Build Date: 2026-10-02T22:28:27Z
+2026-10-13T10:42:06.0385981Z Worker ID: {7c7db970-9134-4222-b951-def6ea177044}
+2026-10-13T10:42:06.0386444Z Region: centralus
+2026-10-13T10:42:06.0386812Z Cloud: Azure
+2026-10-13T10:42:06.0387203Z ##[endgroup]
+2026-10-13T10:42:06.0388043Z ##[group]Operating System
+2026-10-13T10:42:06.0388419Z Ubuntu
+2026-10-13T10:42:06.0388785Z 24.04.5
+2026-10-13T10:42:06.0389242Z LTS
+2026-10-13T10:42:06.0389559Z ##[endgroup]
+2026-10-13T10:42:06.0389978Z ##[group]Runner Image
+2026-10-13T10:42:06.0390365Z Image: ubuntu-24.04
+2026-10-13T10:42:06.0390746Z Version: 20261004.327.1
+2026-10-13T10:42:06.0391569Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-13T10:42:06.0392556Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-13T10:42:06.0393142Z ##[endgroup]
+2026-10-13T10:42:06.0393873Z ##[group]GITHUB_TOKEN Permissions
+2026-10-13T10:42:06.0395082Z Contents: read
+2026-10-13T10:42:06.0395471Z Metadata: read
+2026-10-13T10:42:06.0395892Z ##[endgroup]
+2026-10-13T10:42:06.0397298Z Secret source: Actions
+2026-10-13T10:42:06.0397910Z Cache mode: write
+2026-10-13T10:42:06.0398351Z Prepare workflow directory
+2026-10-13T10:42:06.0620321Z Prepare all required actions
+2026-10-13T10:42:06.0654244Z Getting action download info
+2026-10-13T10:42:06.2853491Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-13T10:42:06.5390065Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-13T10:42:07.1264689Z Complete job name: integer-differential
+2026-10-13T10:42:07.1870200Z ##[group]Run actions/checkout@v4
+2026-10-13T10:42:07.1870736Z with:
+2026-10-13T10:42:07.1871021Z   repository: jliu67/OpenRX
+2026-10-13T10:42:07.1873306Z   token: ***
+2026-10-13T10:42:07.1873600Z   ssh-strict: true
+2026-10-13T10:42:07.1873879Z   ssh-user: git
+2026-10-13T10:42:07.1874163Z   persist-credentials: true
+2026-10-13T10:42:07.1874472Z   clean: true
+2026-10-13T10:42:07.1874760Z   sparse-checkout-cone-mode: true
+2026-10-13T10:42:07.1875091Z   fetch-depth: 1
+2026-10-13T10:42:07.1875367Z   fetch-tags: false
+2026-10-13T10:42:07.1875658Z   show-progress: true
+2026-10-13T10:42:07.1875938Z   lfs: false
+2026-10-13T10:42:07.1876211Z   submodules: false
+2026-10-13T10:42:07.1876503Z   set-safe-directory: true
+2026-10-13T10:42:07.1876818Z   allow-unsafe-pr-checkout: false
+2026-10-13T10:42:07.1877213Z ##[endgroup]
+2026-10-13T10:42:07.2609866Z Syncing repository: jliu67/OpenRX
+2026-10-13T10:42:07.2611775Z ##[group]Getting Git version info
+2026-10-13T10:42:07.2612672Z Working directory is '/home/runner/work/OpenRX/OpenRX'
+2026-10-13T10:42:07.2613647Z [command]/usr/bin/git version
+2026-10-13T10:42:07.2673153Z git version 2.55.0
+2026-10-13T10:42:07.2688645Z ##[endgroup]
+2026-10-13T10:42:07.2700055Z Temporarily overriding HOME='/home/runner/work/_temp/aab88da2-29a1-470f-b8dd-930ee895ba33' before making global git config changes
+2026-10-13T10:42:07.2701509Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-13T10:42:07.2704238Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRX/OpenRX
+2026-10-13T10:42:07.3685952Z Deleting the contents of '/home/runner/work/OpenRX/OpenRX'
+2026-10-13T10:42:07.3692420Z ##[group]Initializing the repository
+2026-10-13T10:42:07.3693004Z [command]/usr/bin/git init /home/runner/work/OpenRX/OpenRX
+2026-10-13T10:42:07.3889813Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-13T10:42:07.3890668Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-13T10:42:07.3891476Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-13T10:42:07.3891938Z hint: call:
+2026-10-13T10:42:07.3892190Z hint:
+2026-10-13T10:42:07.3892539Z hint: 	git config --global init.defaultBranch <name>
+2026-10-13T10:42:07.3892924Z hint:
+2026-10-13T10:42:07.3893269Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-13T10:42:07.3893815Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-13T10:42:07.3894246Z hint:
+2026-10-13T10:42:07.3894496Z hint: 	git branch -m <name>
+2026-10-13T10:42:07.3894785Z hint:
+2026-10-13T10:42:07.3895157Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-13T10:42:07.3898719Z Initialized empty Git repository in /home/runner/work/OpenRX/OpenRX/.git/
+2026-10-13T10:42:07.3908014Z [command]/usr/bin/git remote add origin https://github.com/jliu67/OpenRX
+2026-10-13T10:42:07.4085351Z ##[endgroup]
+2026-10-13T10:42:07.4085874Z ##[group]Disabling automatic garbage collection
+2026-10-13T10:42:07.4089947Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-13T10:42:07.4280064Z ##[endgroup]
+2026-10-13T10:42:07.4280533Z ##[group]Setting up auth
+2026-10-13T10:42:07.4287595Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-13T10:42:07.4325851Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-13T10:42:07.4655660Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-13T10:42:07.4686457Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-13T10:42:07.4870631Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-13T10:42:07.4903251Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-13T10:42:07.5084122Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-13T10:42:07.5382227Z ##[endgroup]
+2026-10-13T10:42:07.5383156Z ##[group]Fetching the repository
+2026-10-13T10:42:07.5391217Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +48985cd672d83930f63d97e8f044d96e2ee54e72:refs/remotes/pull/61/merge
+2026-10-13T10:42:13.4424619Z From https://github.com/jliu67/OpenRX
+2026-10-13T10:42:13.4425205Z  * [new ref]         48985cd672d83930f63d97e8f044d96e2ee54e72 -> pull/61/merge
+2026-10-13T10:42:13.4427491Z ##[endgroup]
+2026-10-13T10:42:13.4427905Z ##[group]Determining the checkout info
+2026-10-13T10:42:13.4429435Z ##[endgroup]
+2026-10-13T10:42:13.4434040Z [command]/usr/bin/git sparse-checkout disable
+2026-10-13T10:42:13.4484224Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-13T10:42:13.4510491Z ##[group]Checking out the ref
+2026-10-13T10:42:13.4512707Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/61/merge
+2026-10-13T10:42:13.7844895Z Note: switching to 'refs/remotes/pull/61/merge'.
+2026-10-13T10:42:13.7845216Z 
+2026-10-13T10:42:13.7845344Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-13T10:42:13.7845663Z changes and commit them, and you can discard any commits you make in this
+2026-10-13T10:42:13.7845946Z state without impacting any branches by switching back to a branch.
+2026-10-13T10:42:13.7846134Z 
+2026-10-13T10:42:13.7846282Z If you want to create a new branch to retain commits you create, you may
+2026-10-13T10:42:13.7846565Z do so (now or later) by using -c with the switch command. Example:
+2026-10-13T10:42:13.7846709Z 
+2026-10-13T10:42:13.7846783Z   git switch -c <new-branch-name>
+2026-10-13T10:42:13.7846960Z 
+2026-10-13T10:42:13.7847036Z Or undo this operation with:
+2026-10-13T10:42:13.7847437Z 
+2026-10-13T10:42:13.7847494Z   git switch -
+2026-10-13T10:42:13.7847623Z 
+2026-10-13T10:42:13.7847775Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-13T10:42:13.7847952Z 
+2026-10-13T10:42:13.7848142Z HEAD is now at 48985cd Merge 94a3e46c46e168bda023284bc9e4a9d726c53f4c into ce788d11285c901b52fd3cf0b450489d13b3f2f5
+2026-10-13T10:42:13.7867631Z ##[endgroup]
+2026-10-13T10:42:13.7908389Z [command]/usr/bin/git log -1 --format=%H
+2026-10-13T10:42:13.7930975Z 48985cd672d83930f63d97e8f044d96e2ee54e72
+2026-10-13T10:42:13.8140714Z ##[group]Run sudo apt-get update
+2026-10-13T10:42:13.8140952Z [36;1msudo apt-get update[0m
+2026-10-13T10:42:13.8141191Z [36;1msudo apt-get install --no-install-recommends -y iverilog yosys[0m
+2026-10-13T10:42:13.8519173Z shell: /usr/bin/bash -e {0}
+2026-10-13T10:42:13.8519397Z ##[endgroup]
+2026-10-13T10:42:13.9151254Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-13T10:42:13.9512702Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-13T10:42:13.9531026Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-13T10:42:13.9557856Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-13T10:42:13.9600068Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-13T10:42:13.9609118Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-13T10:42:14.0646162Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [513 kB]
+2026-10-13T10:42:14.0777700Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-13T10:42:14.0810202Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-13T10:42:14.0840383Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [571 kB]
+2026-10-13T10:42:14.0961044Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1397 kB]
+2026-10-13T10:42:14.1016876Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+2026-10-13T10:42:14.1039247Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-13T10:42:14.1099710Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-13T10:42:14.1121740Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+2026-10-13T10:42:14.1199680Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+2026-10-13T10:42:14.1202293Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [50.7 kB]
+2026-10-13T10:42:14.1212523Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.0 kB]
+2026-10-13T10:42:14.1398314Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [748 B]
+2026-10-13T10:42:14.1784268Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1137 kB]
+2026-10-13T10:42:14.2283753Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [230 kB]
+2026-10-13T10:42:14.2301334Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+2026-10-13T10:42:14.2353018Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-13T10:42:14.2370234Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1701 kB]
+2026-10-13T10:42:14.2439656Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [390 kB]
+2026-10-13T10:42:14.2459153Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [45.4 kB]
+2026-10-13T10:42:14.2468229Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.1 kB]
+2026-10-13T10:42:19.5476768Z Fetched 12.5 MB in 1s (12.4 MB/s)
+2026-10-13T10:42:20.1986522Z Reading package lists...
+2026-10-13T10:42:20.2239086Z Reading package lists...
+2026-10-13T10:42:20.4219956Z Building dependency tree...
+2026-10-13T10:42:20.4225511Z Reading state information...
+2026-10-13T10:42:20.5621391Z The following additional packages will be installed:
+2026-10-13T10:42:20.5621854Z   yosys-abc
+2026-10-13T10:42:20.5627137Z Suggested packages:
+2026-10-13T10:42:20.5627329Z   gtkwave
+2026-10-13T10:42:20.5627487Z Recommended packages:
+2026-10-13T10:42:20.5627657Z   xdot
+2026-10-13T10:42:20.5789533Z The following NEW packages will be installed:
+2026-10-13T10:42:20.5792066Z   iverilog yosys yosys-abc
+2026-10-13T10:42:20.5926486Z 0 upgraded, 3 newly installed, 0 to remove and 29 not upgraded.
+2026-10-13T10:42:20.5926847Z Need to get 11.2 MB of archives.
+2026-10-13T10:42:20.5927148Z After this operation, 34.5 MB of additional disk space will be used.
+2026-10-13T10:42:20.5927519Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-13T10:42:20.6491724Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 iverilog amd64 12.0-2build2 [2126 kB]
+2026-10-13T10:42:20.6975804Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 yosys-abc amd64 0.33-5build2 [5829 kB]
+2026-10-13T10:42:20.7707377Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 yosys amd64 0.33-5build2 [3222 kB]
+2026-10-13T10:42:20.9867581Z Fetched 11.2 MB in 0s (51.4 MB/s)
+2026-10-13T10:42:21.0031259Z Selecting previously unselected package iverilog.
+2026-10-13T10:42:21.0278692Z (Reading database ... 
+2026-10-13T10:42:21.0279149Z (Reading database ... 5%
+2026-10-13T10:42:21.0279318Z (Reading database ... 10%
+2026-10-13T10:42:21.0279466Z (Reading database ... 15%
+2026-10-13T10:42:21.0279707Z (Reading database ... 20%
+2026-10-13T10:42:21.0279835Z (Reading database ... 25%
+2026-10-13T10:42:21.0279967Z (Reading database ... 30%
+2026-10-13T10:42:21.0280113Z (Reading database ... 35%
+2026-10-13T10:42:21.0280254Z (Reading database ... 40%
+2026-10-13T10:42:21.0280382Z (Reading database ... 45%
+2026-10-13T10:42:21.0280511Z (Reading database ... 50%
+2026-10-13T10:42:21.0327090Z (Reading database ... 55%
+2026-10-13T10:42:21.1530433Z (Reading database ... 60%
+2026-10-13T10:42:21.3584350Z (Reading database ... 65%
+2026-10-13T10:42:21.5621236Z (Reading database ... 70%
+2026-10-13T10:42:21.7061546Z (Reading database ... 75%
+2026-10-13T10:42:21.9035454Z (Reading database ... 80%
+2026-10-13T10:42:22.1079411Z (Reading database ... 85%
+2026-10-13T10:42:22.3151053Z (Reading database ... 90%
+2026-10-13T10:42:22.4664091Z (Reading database ... 95%
+2026-10-13T10:42:22.4664312Z (Reading database ... 100%
+2026-10-13T10:42:22.4664508Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-13T10:42:22.4701308Z Preparing to unpack .../iverilog_12.0-2build2_amd64.deb ...
+2026-10-13T10:42:22.4829191Z Unpacking iverilog (12.0-2build2) ...
+2026-10-13T10:42:22.5395469Z Selecting previously unselected package yosys-abc.
+2026-10-13T10:42:22.5491935Z Preparing to unpack .../yosys-abc_0.33-5build2_amd64.deb ...
+2026-10-13T10:42:22.5499977Z Unpacking yosys-abc (0.33-5build2) ...
+2026-10-13T10:42:22.6831536Z Selecting previously unselected package yosys.
+2026-10-13T10:42:22.6930714Z Preparing to unpack .../yosys_0.33-5build2_amd64.deb ...
+2026-10-13T10:42:22.6939120Z Unpacking yosys (0.33-5build2) ...
+2026-10-13T10:42:22.8108574Z Setting up yosys-abc (0.33-5build2) ...
+2026-10-13T10:42:22.8128065Z Setting up iverilog (12.0-2build2) ...
+2026-10-13T10:42:22.8145617Z Setting up yosys (0.33-5build2) ...
+2026-10-13T10:42:23.0040796Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-13T10:42:23.0060649Z Not building database; man-db/auto-update is not 'true'.
+2026-10-13T10:42:23.4691351Z 
+2026-10-13T10:42:23.4691947Z Running kernel seems to be up-to-date.
+2026-10-13T10:42:23.4692146Z 
+2026-10-13T10:42:23.4692217Z No services need to be restarted.
+2026-10-13T10:42:23.4692340Z 
+2026-10-13T10:42:23.4692417Z No containers need to be restarted.
+2026-10-13T10:42:23.4692897Z 
+2026-10-13T10:42:23.4693004Z No user sessions are running outdated binaries.
+2026-10-13T10:42:23.4693152Z 
+2026-10-13T10:42:23.4693287Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-13T10:42:24.3908303Z ##[group]Run python3 scripts/test_divsqrt_execute.py \
+2026-10-13T10:42:24.3908561Z [36;1mpython3 scripts/test_divsqrt_execute.py \[0m
+2026-10-13T10:42:24.3909046Z [36;1m  --output "$RUNNER_TEMP/integer-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \[0m
+2026-10-13T10:42:24.3909329Z [36;1m  --synthesize[0m
+2026-10-13T10:42:24.3961310Z shell: /usr/bin/bash -e {0}
+2026-10-13T10:42:24.3961461Z ##[endgroup]
+2026-10-13T10:42:24.4392145Z START vendor
+2026-10-13T10:42:24.5036464Z PASS vendor
+2026-10-13T10:42:24.5873942Z START compile-divsqrt-oracle
+2026-10-13T10:42:27.4081777Z PASS compile-divsqrt-oracle
+2026-10-13T10:42:27.4082097Z START divsqrt-oracle
+2026-10-13T10:42:27.4242688Z PASS divsqrt-oracle
+2026-10-13T10:42:27.4386788Z START compile-oracle
+2026-10-13T10:42:29.5575509Z PASS compile-oracle
+2026-10-13T10:42:29.5575769Z START oracle
+2026-10-13T10:42:29.7220735Z PASS oracle
+2026-10-13T10:42:29.7381081Z START compile-scalar
+2026-10-13T10:42:29.8235994Z Traceback (most recent call last):
+2026-10-13T10:42:29.8236567Z   File "/home/runner/work/OpenRX/OpenRX/scripts/test_divsqrt_execute.py", line 125, in <module>
+2026-10-13T10:42:29.8237033Z     if __name__=='__main__':main()
+2026-10-13T10:42:29.8237272Z                             ^^^^^^
+2026-10-13T10:42:29.8237658Z   File "/home/runner/work/OpenRX/OpenRX/scripts/test_divsqrt_execute.py", line 103, in main
+2026-10-13T10:42:29.8239084Z     run('compile-scalar',['iverilog','-g2012','-Wall',*includes,'-s','tb_divsqrt64','-o',str(out/'scalar.vvp'),*DS,'rtl/execute/tests/tb_divsqrt64.v']);run('scalar',['vvp',str(out/'scalar.vvp'),'+vectors='+str(out/'divsqrt64-full.hex')]);check('scalar','PASS divsqrt64 native_vectors=13312 ');summary['scalar']=stats(out/'scalar.log')
+2026-10-13T10:42:29.8240318Z     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-13T10:42:29.8240814Z   File "/home/runner/work/OpenRX/OpenRX/scripts/test_divsqrt_execute.py", line 50, in run
+2026-10-13T10:42:29.8241476Z     with (out/(label+'.log')).open('w') as f:subprocess.run(argv,cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,check=True,timeout=timeout)
+2026-10-13T10:42:29.8242056Z                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-13T10:42:29.8242436Z   File "/usr/lib/python3.12/subprocess.py", line 571, in run
+2026-10-13T10:42:29.8242758Z     raise CalledProcessError(retcode, process.args,
+2026-10-13T10:42:29.8245477Z subprocess.CalledProcessError: Command '['iverilog', '-g2012', '-Wall', '-Irtl/execute', '-Irtl/execute/vendor/hardfloat/', '-Irtl/execute/vendor/hardfloat/8086-SSE', '-s', 'tb_divsqrt64', '-o', '/home/runner/work/_temp/integer-execute-38385152027-1/scalar.vvp', 'rtl/execute/vendor/hardfloat/HardFloat_primitives.v', 'rtl/execute/vendor/hardfloat/HardFloat_rawFN.v', 'rtl/execute/vendor/hardfloat/isSigNaNRecFN.v', 'rtl/execute/vendor/hardfloat/fNToRecFN.v', 'rtl/execute/vendor/hardfloat/recFNToFN.v', 'rtl/execute/vendor/hardfloat/addRecFN.v', 'rtl/execute/vendor/hardfloat/mulRecFN.v', 'rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v', 'rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v', 'rtl/execute/randomx_divsqrt64.v', 'rtl/execute/randomx_divsqrt128.v', 'rtl/execute/tests/tb_divsqrt64.v']' returned non-zero exit status 1.
+2026-10-13T10:42:29.8373097Z ##[error]Process completed with exit code 1.
+2026-10-13T10:42:29.8443016Z ##[group]Run actions/upload-artifact@v4
+2026-10-13T10:42:29.8443186Z with:
+2026-10-13T10:42:29.8443311Z   name: integer-execute-38385152027-1
+2026-10-13T10:42:29.8443513Z   path: /home/runner/work/_temp/integer-execute-38385152027-1/
+2026-10-13T10:42:29.8443710Z   if-no-files-found: warn
+2026-10-13T10:42:29.8443984Z   compression-level: 6
+2026-10-13T10:42:29.8444112Z   overwrite: false
+2026-10-13T10:42:29.8444233Z   include-hidden-files: false
+2026-10-13T10:42:29.8444380Z ##[endgroup]
+2026-10-13T10:42:29.9552348Z (node:2596) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-13T10:42:29.9552746Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-13T10:42:29.9633352Z With the provided path, there will be 46 files uploaded
+2026-10-13T10:42:29.9636689Z Artifact name is valid!
+2026-10-13T10:42:29.9637179Z Root directory input is valid!
+2026-10-13T10:42:30.2477611Z Beginning upload of artifact content to blob storage
+2026-10-13T10:42:30.3611146Z (node:2596) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-13T10:42:30.7003891Z Uploaded bytes 614382
+2026-10-13T10:42:30.7449566Z Finished uploading artifact content to blob storage!
+2026-10-13T10:42:30.7450144Z SHA256 digest of uploaded artifact zip is 3452b24528d9d2daa82394ba76c39a838ddd3dc9ce07a853c6803edba7496eb2
+2026-10-13T10:42:30.7451024Z Finalizing artifact upload
+2026-10-13T10:42:30.9565766Z Artifact integer-execute-38385152027-1.zip successfully finalized. Artifact ID 11805421249
+2026-10-13T10:42:30.9566505Z Artifact integer-execute-38385152027-1 has been successfully uploaded! Final size is 614382 bytes. Artifact ID is 11805421249
+2026-10-13T10:42:30.9571528Z Artifact download URL: https://github.com/jliu67/OpenRX/actions/runs/38385152027/artifacts/11805421249
+2026-10-13T10:42:30.9883634Z Post job cleanup.
+2026-10-13T10:42:31.0461953Z [command]/usr/bin/git version
+2026-10-13T10:42:31.0495294Z git version 2.55.0
+2026-10-13T10:42:31.0519838Z Temporarily overriding HOME='/home/runner/work/_temp/efbe9e91-fbc6-48b7-89a6-4af2ae2e22e8' before making global git config changes
+2026-10-13T10:42:31.0520646Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-13T10:42:31.0523158Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRX/OpenRX
+2026-10-13T10:42:31.0588731Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-13T10:42:31.0620371Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-13T10:42:31.0862918Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-13T10:42:31.0896980Z http.https://github.com/.extraheader
+2026-10-13T10:42:31.0913264Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-13T10:42:31.1077932Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-13T10:42:31.1277876Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-13T10:42:31.1310371Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-13T10:42:31.1627772Z Cleaning up orphan processes
+2026-10-13T10:42:31.1856259Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,1 @@
+PASS divsqrt_cancel lanes=2 reset_pending_load=1 reset_held_store=1 reset_held_fetch=1 reset_running_division=2 reset_running_sqrt=1 late_fetch_drop=1 late_memory_drop=1 committed_prefix_preserved=1
