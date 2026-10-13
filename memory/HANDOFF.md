@@ -1,5 +1,39 @@
 # Handoff — actual designated local execution
 
+## Native integer execution handoff — 2026-10-13
+
+[Task54](https://github.com/jliu67/OpenRX/issues/54) / [EXP-006](../experiments/EXP-006-native-integer-execute.md)
+delivers actual hardware execution of eleven integer families, not software-result
+replay. Eight RTL and eleven mapped modes pass against unchanged native execution,
+including all98 supported/all158 unsupported raw values, per-instruction and full2MiB
+checks, stalls/stale traffic/error/reset, all rounding-mode transport and held returns.
+Fast/shared clocks are9,524/9,760 ideal and26,712/26,948 stalled, saving236 clocks
+(one per IADD_RS). Actual generic kernel cells/flops are25,885/1,727 versus
+25,925/1,792; complete default top154,145/7,921. These are fixture/port cycles and
+generic cells, not full hashes or calibrated PPA. [Complete evidence](../docs/validation/integer-execute-20261013/README.md)
+retains source/tool/input/command/log/netlist/license/failure/resource bindings.
+
+Sources/attempts are archived and temporary authoring retired read-only at handoff;
+all previous assets and bound inputs remain unchanged. Full validation used checked
+six-CPU/5GiB/512MiB-swap/128-task limits, one worker; peak cgroup5,080,702,976 bytes,
+no OOM/swap/quota throttle. Focused checks used measured1GiB. Next: all final-head
+hosted checks and one independent new-work review of this draft. No next merge is
+authorized. Multiply/high-multiply/reciprocal, branch, FP/CFROUND, physical memories,
+selected-core/calibrated-PPA and complete RandomX hash gates remain open.
+
+## Current component sequence — 2026-10-13
+
+[PR49](https://github.com/jliu67/OpenRX/pull/49), [PR51](https://github.com/jliu67/OpenRX/pull/51)
+and [PR53](https://github.com/jliu67/OpenRX/pull/53) are independently accepted and
+merged; current parent main is `a6450ceccd32848c438c7dcae6acb98695d2a0e8`.
+[Task54](https://github.com/jliu67/OpenRX/issues/54) adds actual native integer
+execution under the owner-authorized manager-led continuation; its new-work review
+remains pending and no further merge is authorized. Earlier component pointers,
+review-pending summaries and governance statements below retain their dated
+publication context. Issue claims remain the ownership record, the manager assigns
+bounded current scopes, and compute is serialized. Full-core/hash, selected-core,
+calibrated timing and physical-power gates remain open.
+
 ## Read-grant correction after independent review — 2026-10-13
 
 [PR53 review](https://github.com/jliu67/OpenRX/pull/53#pullrequestreview-5497704738)

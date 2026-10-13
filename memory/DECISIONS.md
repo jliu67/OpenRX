@@ -145,3 +145,17 @@ until the response is consumed; reset clears the grant. Independent review
 exposed this protocol defect, which the directed original-failure/RTL/mapped
 regression now covers. Component clocks remain controller/replay model results;
 physical PPA/full hash remain open.
+
+## D044 — bounded native integer execution, 2026-10-13
+
+Execute eleven native integer families directly behind the accepted iteration
+interface, reusing its conversion/AES/store components and unchanged licensed
+native compile/execute semantics for assertions. There is no accepted compatible
+native integer core asset in the current repository; a larger RISC-V/FPU/core
+integration is deferred. Unsupported multiply/FP/branch/CFROUND raw values trap
+explicitly, including native reciprocal cases that could become NOPs. Compare a
+one-clock two-add IADD_RS with a shared two-clock addition schedule, and verify
+actual mapped kernels and one fully mapped connected top. Generic cells and
+fixture cycles do not establish full hashes or physical PPA. Revisit when extending
+the exact opcode set or integrating concrete memory/core/FP IP. [Task54](https://github.com/jliu67/OpenRX/issues/54)
+and [EXP-006](../experiments/EXP-006-native-integer-execute.md) bind new-work review.

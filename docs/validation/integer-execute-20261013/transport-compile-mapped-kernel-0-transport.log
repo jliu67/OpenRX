@@ -1,0 +1,4 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module randomx_integer_execute declared here: /tmp/openrx-integer-transport-final-01/netlist-kernel-0.v:3

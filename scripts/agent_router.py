@@ -200,7 +200,8 @@ def render(state: dict) -> str:
             f"**Kind:** {state['kind']} · **Status:** {state['status']}\n\n"
             f"**Dependencies:** {deps} · **Unmet:** {blocked}\n\n"
             "Claims on this task expire after four hours; read original comments and UTC expiry. "
-            "No coordinator, assigned roles, or autonomous model execution exists.\n\n"
+            "The owner-designated manager may assign bounded scopes; task claims remain advisory. "
+            "No autonomous model execution is provided.\n\n"
             + ticks*3 + "json\n" + json.dumps(state, indent=2, sort_keys=True)
             + "\n" + ticks*3 + "\n\n"
             "Latest 20 commands shown; history remains in issue comments. "

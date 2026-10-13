@@ -1,5 +1,10 @@
 # EXP-004: actual iteration-tail stores and AES overlap
 
+Current closeout (2026-10-13): [PR51](https://github.com/jliu67/OpenRX/pull/51)
+is independently accepted and merged at `5a688512041eb3c156ead207eb57ed83e375a5d2`. The review-pending and original
+source/count records below are retained historical author stages. Full-core/hash
+and physical/calibrated-PPA gates remain open; task54 is separate new work.
+
 Status: local differential RTL and synthesized-netlist checks passed;
 new-work independent review pending on [task #50](https://github.com/jliu67/OpenRX/issues/50).
 

@@ -1,0 +1,6 @@
+{
+  "openrx-integer-validation-20261013-01.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\nSubState=dead\n",
+  "openrx-integer-transport-20261013-01.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\nSubState=dead\n",
+  "openrx-integer-final-rtl-20261013-01.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\nSubState=dead\n",
+  "global_lock_acquirable": true
+}

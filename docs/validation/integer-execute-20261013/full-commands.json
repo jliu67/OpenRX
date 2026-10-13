@@ -1,0 +1,754 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.06411861907690763
+  },
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-Ivendor/randomx/src",
+      "rtl/execute/tests/oracle.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/bytecode_machine.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/oracle"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 3.8218242808943614
+  },
+  {
+    "label": "oracle",
+    "argv": [
+      "/tmp/openrx-integer-validation-20261013-01/oracle",
+      "/tmp/openrx-integer-validation-20261013-01"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.2644765740260482
+  },
+  {
+    "label": "compile-rtl-0-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=0",
+      "-Ptb_integer_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-0-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16441978001967072
+  },
+  {
+    "label": "rtl-0-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-0-0.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.0157571659656242
+  },
+  {
+    "label": "compile-rtl-0-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=0",
+      "-Ptb_integer_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-0-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16438350907992572
+  },
+  {
+    "label": "rtl-0-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-0-1.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.366169285029173
+  },
+  {
+    "label": "compile-rtl-0-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_errors",
+      "-Ptb_integer_errors.SERIAL_IADD=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-0-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.11414820898789912
+  },
+  {
+    "label": "rtl-0-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-0-errors.vvp",
+      "+unsupported=/tmp/openrx-integer-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.21431613701861352
+  },
+  {
+    "label": "compile-rtl-1-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=1",
+      "-Ptb_integer_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-1-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16429197904653847
+  },
+  {
+    "label": "rtl-1-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-1-0.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.0157923779916018
+  },
+  {
+    "label": "compile-rtl-1-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=1",
+      "-Ptb_integer_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-1-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.16437890799716115
+  },
+  {
+    "label": "rtl-1-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-1-1.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.3662216550437734
+  },
+  {
+    "label": "compile-rtl-1-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_errors",
+      "-Ptb_integer_errors.SERIAL_IADD=1",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-1-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.11420929001178592
+  },
+  {
+    "label": "rtl-1-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/rtl-1-errors.vvp",
+      "+unsupported=/tmp/openrx-integer-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.21449425199534744
+  },
+  {
+    "label": "invalid-parameter",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Irtl/execute",
+      "-s",
+      "randomx_integer_execute",
+      "-Prandomx_integer_execute.SERIAL_IADD=2",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/invalid.vvp",
+      "rtl/execute/randomx_integer_execute.v"
+    ],
+    "returncode": 1,
+    "expected_failure": true
+  },
+  {
+    "label": "synth-kernel-0",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/execute rtl/execute/randomx_integer_execute.v; chparam -set SERIAL_IADD 0 randomx_integer_execute; synth -top randomx_integer_execute -flatten; check -assert; tee -o /tmp/openrx-integer-validation-20261013-01/stat-kernel-0.txt stat; write_verilog -noattr /tmp/openrx-integer-validation-20261013-01/netlist-kernel-0.v; write_json /tmp/openrx-integer-validation-20261013-01/netlist-kernel-0.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 201.93801011005417
+  },
+  {
+    "label": "compile-mapped-kernel-0-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=0",
+      "-Ptb_integer_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-0-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-kernel-0.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 2.068211338017136
+  },
+  {
+    "label": "mapped-kernel-0-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-0-0.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 38.14533216599375
+  },
+  {
+    "label": "compile-mapped-kernel-0-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=0",
+      "-Ptb_integer_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-0-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-kernel-0.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 2.0180483689764515
+  },
+  {
+    "label": "mapped-kernel-0-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-0-1.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 49.77007594099268
+  },
+  {
+    "label": "compile-mapped-kernel-0-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_errors",
+      "-Ptb_integer_errors.SERIAL_IADD=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-0-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-kernel-0.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 2.0680913309333846
+  },
+  {
+    "label": "mapped-kernel-0-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-0-errors.vvp",
+      "+unsupported=/tmp/openrx-integer-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 4.923966483911499
+  },
+  {
+    "label": "synth-kernel-1",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/execute rtl/execute/randomx_integer_execute.v; chparam -set SERIAL_IADD 1 randomx_integer_execute; synth -top randomx_integer_execute -flatten; check -assert; tee -o /tmp/openrx-integer-validation-20261013-01/stat-kernel-1.txt stat; write_verilog -noattr /tmp/openrx-integer-validation-20261013-01/netlist-kernel-1.v; write_json /tmp/openrx-integer-validation-20261013-01/netlist-kernel-1.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 189.76251529098954
+  },
+  {
+    "label": "compile-mapped-kernel-1-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=1",
+      "-Ptb_integer_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-1-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-kernel-1.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.9178618469741195
+  },
+  {
+    "label": "mapped-kernel-1-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-1-0.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 33.38755212398246
+  },
+  {
+    "label": "compile-mapped-kernel-1-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=1",
+      "-Ptb_integer_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-1-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-kernel-1.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.9178591090021655
+  },
+  {
+    "label": "mapped-kernel-1-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-1-1.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 46.811247320030816
+  },
+  {
+    "label": "compile-mapped-kernel-1-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_errors",
+      "-Ptb_integer_errors.SERIAL_IADD=1",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-1-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-kernel-1.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_integer_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.9179534140275791
+  },
+  {
+    "label": "mapped-kernel-1-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-kernel-1-errors.vvp",
+      "+unsupported=/tmp/openrx-integer-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 4.622888376004994
+  },
+  {
+    "label": "synth-integrated-0",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/execute rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/aes/randomx_v2_aes_mix.v rtl/aes/randomx_exec_aes_commit.v rtl/iteration/randomx_iteration_store.v rtl/engine/randomx_i32_to_f64.v rtl/engine/randomx_iteration_engine.v rtl/execute/randomx_integer_execute.v rtl/execute/randomx_integer_iteration.v; chparam -set SERIAL_IADD 0 randomx_integer_iteration; synth -top randomx_integer_iteration -flatten; check -assert; tee -o /tmp/openrx-integer-validation-20261013-01/stat-integrated-0.txt stat; write_verilog -noattr /tmp/openrx-integer-validation-20261013-01/netlist-integrated-0.v; write_json /tmp/openrx-integer-validation-20261013-01/netlist-integrated-0.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 737.1099026260199
+  },
+  {
+    "label": "compile-mapped-integrated-0-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_ITERATION_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=0",
+      "-Ptb_integer_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-integrated-0-0.vvp",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-integrated-0.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 73.61479079897981
+  },
+  {
+    "label": "mapped-integrated-0-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-integrated-0-0.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 66.87587445706595
+  },
+  {
+    "label": "compile-mapped-integrated-0-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_ITERATION_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-integer-validation-20261013-01",
+      "-s",
+      "tb_integer_iteration",
+      "-Ptb_integer_iteration.SERIAL_IADD=0",
+      "-Ptb_integer_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-integrated-0-1.vvp",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-integrated-0.v",
+      "rtl/execute/tests/tb_integer_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 73.83430734591093
+  },
+  {
+    "label": "mapped-integrated-0-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-integrated-0-1.vvp",
+      "+initial=/tmp/openrx-integer-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-integer-validation-20261013-01/final.hex",
+      "+events=/tmp/openrx-integer-validation-20261013-01/events.mem",
+      "+programs=/tmp/openrx-integer-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-integer-validation-20261013-01/steps.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 120.0387724559987
+  },
+  {
+    "label": "compile-mapped-integrated-0-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_ITERATION_NETLIST",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_errors",
+      "-Ptb_integer_errors.SERIAL_IADD=0",
+      "-o",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-integrated-0-errors.vvp",
+      "/tmp/openrx-integer-validation-20261013-01/netlist-integrated-0.v",
+      "rtl/execute/tests/tb_integer_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 74.17852964997292
+  },
+  {
+    "label": "mapped-integrated-0-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-validation-20261013-01/mapped-integrated-0-errors.vvp",
+      "+unsupported=/tmp/openrx-integer-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 19.00736373406835
+  }
+]

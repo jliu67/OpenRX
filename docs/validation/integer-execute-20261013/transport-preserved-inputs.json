@@ -1,0 +1,14 @@
+{
+  "docs/validation/aes-rtl-corrected-20261012/inputs.json": {
+    "bindings_verified": 19,
+    "sha256": "5fad06a98bf0baadaa4d594745f434e5890a604ab4b262b4cf1f563516682541"
+  },
+  "docs/validation/iteration-tail-v2-stalls-20261012/inputs.json": {
+    "bindings_verified": 17,
+    "sha256": "5a66a6f04817d2da0846652be39c0424024d987260dce9307465b5e39ac6b6fa"
+  },
+  "docs/validation/iteration-engine-read-grant-20261013/rtl-inputs.json": {
+    "bindings_verified": 22,
+    "sha256": "37b87b5ccf353e99d8a57fdc56b10d60151b64c2e72893e8c4dac2ef1166c8a6"
+  }
+}

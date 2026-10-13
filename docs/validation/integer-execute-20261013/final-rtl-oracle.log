@@ -1,0 +1,1 @@
+PASS native integer iterations=8 aliases=4 actual_bytecode_reads=700 stores=228 full_memory_bytes=2097152

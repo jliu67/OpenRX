@@ -1,0 +1,139 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.06410276098176837
+  },
+  {
+    "label": "compile-rtl-0-transport",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_transport",
+      "-Ptb_integer_transport.SERIAL_IADD=0",
+      "-o",
+      "/tmp/openrx-integer-transport-final-01/rtl-0-transport.vvp",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/tests/tb_integer_transport.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.03191495209466666
+  },
+  {
+    "label": "rtl-0-transport",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-transport-final-01/rtl-0-transport.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.1140617539640516
+  },
+  {
+    "label": "compile-rtl-1-transport",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_transport",
+      "-Ptb_integer_transport.SERIAL_IADD=1",
+      "-o",
+      "/tmp/openrx-integer-transport-final-01/rtl-1-transport.vvp",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/tests/tb_integer_transport.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.015945976017974317
+  },
+  {
+    "label": "rtl-1-transport",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-transport-final-01/rtl-1-transport.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 0.11402678303420544
+  },
+  {
+    "label": "compile-mapped-kernel-0-transport",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_transport",
+      "-Ptb_integer_transport.SERIAL_IADD=0",
+      "-o",
+      "/tmp/openrx-integer-transport-final-01/mapped-kernel-0-transport.vvp",
+      "/tmp/openrx-integer-transport-final-01/netlist-kernel-0.v",
+      "rtl/execute/tests/tb_integer_transport.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.9679203470004722
+  },
+  {
+    "label": "mapped-kernel-0-transport",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-transport-final-01/mapped-kernel-0-transport.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 9.03014395700302
+  },
+  {
+    "label": "compile-mapped-kernel-1-transport",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_EXECUTE_NETLIST",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_transport",
+      "-Ptb_integer_transport.SERIAL_IADD=1",
+      "-o",
+      "/tmp/openrx-integer-transport-final-01/mapped-kernel-1-transport.vvp",
+      "/tmp/openrx-integer-transport-final-01/netlist-kernel-1.v",
+      "rtl/execute/tests/tb_integer_transport.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 1.8181514659663662
+  },
+  {
+    "label": "mapped-kernel-1-transport",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-integer-transport-final-01/mapped-kernel-1-transport.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1200,
+    "returncode": 0,
+    "elapsed_seconds": 9.581892649061047
+  }
+]
