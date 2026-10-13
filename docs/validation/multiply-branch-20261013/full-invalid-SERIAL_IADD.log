@@ -1,0 +1,5 @@
+rtl/execute/randomx_integer_execute.v:123: error: Unknown module type: integer_execute_requires_SERIAL_IADD_0_or_1
+1 error(s) during elaboration.
+*** These modules were missing:
+        integer_execute_requires_SERIAL_IADD_0_or_1 referenced 1 times.
+***

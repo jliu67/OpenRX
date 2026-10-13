@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Integer hardware execution connected to the accepted iteration controller.
 `default_nettype none
-module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,COALESCE_LINES=1,SERIAL_IADD=0)(
+module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,COALESCE_LINES=1,SERIAL_IADD=0,MUL_RADIX4=0)(
     input wire  clk,
     input wire  rst,
     input wire  req_valid,
@@ -75,7 +75,8 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
     output wire [15:0] commit_tag,
     output wire [8:0] commit_pc,
     output wire [7:0] commit_opcode,
-    output wire [511:0] commit_r
+    output wire [511:0] commit_r,
+    output wire [8:0] commit_next_pc,commit_branch_target
 );
     reg abort_q;
     wire internal_rst=rst|abort_q;
@@ -207,7 +208,7 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
 `ifdef INTEGER_EXECUTE_NETLIST
     randomx_integer_execute execute (
 `else
-    randomx_integer_execute #(.SERIAL_IADD(SERIAL_IADD)) execute(
+    randomx_integer_execute #(.SERIAL_IADD(SERIAL_IADD),.MUL_RADIX4(MUL_RADIX4)) execute(
 `endif
         .clk(clk),
         .rst(internal_rst),
@@ -260,7 +261,7 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
         .commit_tag(commit_tag),
         .commit_pc(commit_pc),
         .commit_opcode(commit_opcode),
-        .commit_r(commit_r)
+        .commit_r(commit_r),.commit_next_pc(commit_next_pc),.commit_branch_target(commit_branch_target)
     );
 endmodule
 `default_nettype wire

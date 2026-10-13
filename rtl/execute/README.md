@@ -1,5 +1,10 @@
 # Native integer execution
 
+Current stacked extension (task #56): [multiplication/reciprocal/branch hardware](MULTIPLY-BRANCH.md)
+supports all161native integer/branch raw values;95FP/CFROUND values remain errors.
+PR #55 is independently accepted but unmerged; this extension needs its own review.
+The original eleven-family interface/results below retain their reviewed context.
+
 `randomx_integer_execute` fetches and executes an exact bounded subset of native
 RandomX bytecode. `randomx_integer_iteration` connects it directly to the accepted
 [iteration memory engine](../engine/README.md), signed conversion, dataset feedback

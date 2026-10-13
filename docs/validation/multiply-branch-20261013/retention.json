@@ -1,0 +1,38 @@
+{
+  "full-validation": {
+    "files": 111,
+    "archive_sha256": "0d5cb0f886f115054ac8d336bcda763d134e28f7dad8f2941b8d005ebcebd996",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "mapped-completion": {
+    "files": 28,
+    "archive_sha256": "95f947adba32ac83f4aad871192eb0d495d0cfff9280409b4ec936f9313fb9e4",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "final-rtl": {
+    "files": 71,
+    "archive_sha256": "919575f3b2c10e4548376c07e7e4707201fbdc635ff3dc281966402488d78939",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "coverage-failure": {
+    "files": 37,
+    "archive_sha256": "bdb6a172f3a689f7e74fde2944997088809a5f76b967fb5d74c2dd6e1f466411",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "primitive-bringup": {
+    "files": 13,
+    "archive_sha256": "3162cc44e5a1fcda6775f0f91b199c236a9b393a658ee24fa56ba7df60d01d8a",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "native-bringup": {
+    "files": 45,
+    "archive_sha256": "6bcd56fc68edf54f60629223e59103afe054a99fe62438365b5903abb63156fc",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  }
+}

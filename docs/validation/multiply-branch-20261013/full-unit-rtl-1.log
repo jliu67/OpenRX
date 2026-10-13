@@ -1,0 +1,1 @@
+PASS arithmetic radix4=1 products=2304 reciprocal=609 nop_divisors=33 multiply_clocks=76032 reciprocal_clocks=37473 held_results=1 inactive_inputs_ignored=1 reset_cancel=2

@@ -159,3 +159,18 @@ actual mapped kernels and one fully mapped connected top. Generic cells and
 fixture cycles do not establish full hashes or physical PPA. Revisit when extending
 the exact opcode set or integrating concrete memory/core/FP IP. [Task54](https://github.com/jliu67/OpenRX/issues/54)
 and [EXP-006](../experiments/EXP-006-native-integer-execute.md) bind new-work review.
+
+## D045 — exact multiplication and lexical branch targets, 2026-10-13
+
+Extend the reviewed native executor with all remaining multiply/high-multiply/
+reciprocal families and CBRANCH, retaining unsupported FP/CFROUND. Reuse an unsigned
+128-bit product for low/unsigned-high/signed-high, with exact signed correction;
+compare direct and radix-4 iterative hardware. A 64-step restoring reciprocal computes
+the unchanged native integer quantity; zero/power-of-two native NOPs do not mark
+register usage. Immutable programs, backward-only targets and each branch marking
+all registers used allow a lexical first-visit tracker with one latest target
+cache; replayed execution never changes compile-time usage. Native compiled targets
+are assertions, not hardware inputs. [Task #56](https://github.com/jliu67/OpenRX/issues/56)
+and [EXP-007](../experiments/EXP-007-native-multiply-branch.md) carry separate new-work
+review. Revisit on exact opcode/interface evidence or technology timing/area; no
+complete VM/hash or physical PPA acceptance is inferred.

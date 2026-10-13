@@ -1,0 +1,4 @@
+{
+  "type": "BrokenPipeError",
+  "error": "[Errno 32] Broken pipe"
+}

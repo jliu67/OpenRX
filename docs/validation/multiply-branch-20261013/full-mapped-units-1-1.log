@@ -1,0 +1,1 @@
+PASS multiply_hardware radix4=1 stall=1 iterations=8 v2=4 v1=4 chains=4 aliases=4 fetched=2736 actual_RTL_retirements=2736 multiplies=580 branches=218 taken=90 reciprocal_nops=8 native_reads=562 native_stores=272 tail_writes=64 full_memory_bytes=2097152 elapsed_cycles=48062 fetch_to_last_commit_cycles=47406 stale_program=2736 stale_sp=610 stale_dataset=8
