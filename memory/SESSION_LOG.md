@@ -610,3 +610,16 @@ feature. Reproduce with `python3 scripts/test_iteration_engine.py --output
 No code merge is authorized. Earlier dated component/status entries below retain
 their original bytes; live task/PR records supply subsequent review and CI status.
 
+
+## 2026-10-13 — Icarus12 finish diagnostic correction
+
+Initial draft head a04b9163 has the complete passing local RTL/mapped result
+below. Its hosted converter test also passed, but Icarus12 appended a successful
+finish diagnostic that the harness's exact-whole-log check rejected. The focused
+[compatibility correction](../docs/validation/iteration-engine-ci-compat-20261013/README.md)
+requires the same exact PASS record plus successful exit. All eight corrected-driver
+RTL modes pass with identical logs; all six hosted native fixture files match.
+Every RTL/C++/vendor input and original mapped result remains unchanged. The full
+hosted flow must pass on the final draft tip before one independent new-work
+review accepts it; no merge is authorized. Earlier original evidence is preserved.
+

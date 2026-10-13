@@ -1,5 +1,17 @@
 # Handoff — actual designated local execution
 
+## Hosted log compatibility follow-up — 2026-10-13
+
+Initial draft head a04b9163 has the complete passing local RTL/mapped result
+below. Its hosted converter test also passed, but Icarus12 appended a successful
+finish diagnostic that the harness's exact-whole-log check rejected. The focused
+[compatibility correction](../docs/validation/iteration-engine-ci-compat-20261013/README.md)
+requires the same exact PASS record plus successful exit. All eight corrected-driver
+RTL modes pass with identical logs; all six hosted native fixture files match.
+Every RTL/C++/vendor input and original mapped result remains unchanged. The full
+hosted flow must pass on the final draft tip before one independent new-work
+review accepts it; no merge is authorized. Earlier original evidence is preserved.
+
 ## Iteration memory engine — 2026-10-13
 
 [Task #52](https://github.com/jliu67/OpenRX/issues/52) implements entry loads,

@@ -1,0 +1,20 @@
+{
+  "actual_condition": "(out / 'native-i32.log').read_text().splitlines()[0] != 'PASS native signed32-to-binary64 vectors=4096 rounding_modes=4'",
+  "tests": {
+    "local11": {
+      "rejected": false
+    },
+    "hosted12": {
+      "rejected": false
+    },
+    "wrong_vector_count": {
+      "rejected": true
+    },
+    "wrong_rounding_modes": {
+      "rejected": true
+    },
+    "missing_pass": {
+      "rejected": true
+    }
+  }
+}

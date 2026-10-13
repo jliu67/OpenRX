@@ -170,7 +170,7 @@ def main():
         run('compile-i32', ['iverilog', '-g2012', '-s', 'tb_i32', '-o', str(out / 'i32.vvp'),
                            'rtl/engine/randomx_i32_to_f64.v', 'rtl/engine/tests/tb_i32.v'])
         run('native-i32', ['vvp', str(out / 'i32.vvp'), '+vectors=' + str(out / 'i32-vectors.hex')])
-        if (out / 'native-i32.log').read_text().strip() != 'PASS native signed32-to-binary64 vectors=4096 rounding_modes=4':
+        if (out / 'native-i32.log').read_text().splitlines()[0] != 'PASS native signed32-to-binary64 vectors=4096 rounding_modes=4':
             raise RuntimeError('missing native conversion acceptance')
         summary = {'base': BASE, 'scope': 'iteration memory/control with external arithmetic kernel and physical SRAM/dataset',
                    'oracle': oracle, 'conversion_vectors': 4096, 'conversion_rounding_modes': 4,

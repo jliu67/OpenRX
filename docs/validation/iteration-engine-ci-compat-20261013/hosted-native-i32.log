@@ -1,0 +1,2 @@
+PASS native signed32-to-binary64 vectors=4096 rounding_modes=4
+rtl/engine/tests/tb_i32.v:19: $finish called at 4096 (1s)

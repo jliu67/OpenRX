@@ -1,0 +1,8 @@
+{
+  "initial.hex": true,
+  "final.hex": true,
+  "iterations.hex": true,
+  "accesses.hex": true,
+  "i32-vectors.hex": true,
+  "oracle-summary.json": true
+}
