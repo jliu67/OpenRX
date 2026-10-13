@@ -209,3 +209,8 @@ proof or short mapped gates as a full16k-iteration gate run. [Task #62](https://
 and [EXP-010](../experiments/EXP-010-native-program-sequence.md) retain independent
 review. Revisit on concrete hardware initialization/finalization/dataset integration
 or technology timing/power evidence; full hash/physical PPA remain unaccepted.
+
+
+## D048 — fixed native register-file BLAKE2b and buffered seeds, 2026-10-13
+
+Reuse the pinned BSD2 four-G/message schedule while declaring a minimal core continuation correction. Preserve all original files and the demonstrated two-block mismatch. Hash exact 256-byte little-endian R/F/E/A with independently parameterized 64/32-byte digests; final scratchpad AES remains external. Buffer state/tag/index/round controls, hash exactly PROGRAMS-1 results and bypass the last. Gate the next descriptor/final result while a seed is held; reset cancels without rolling back accepted stores. Preserve and count the original 1,024 G operand latches, using exact licensed installed cell models for gates. Validate balanced native vectors, actual hardware-derived connected programs, errors/held/reset/cancellation and new-stage mapping without repeating accepted whole-core/full 16K baselines. [Task #64](https://github.com/jliu67/OpenRX/issues/64) / [EXP-011](../experiments/EXP-011-native-regfile-blake2b.md) require new independent review; no physical PPA/full-hash acceptance follows.

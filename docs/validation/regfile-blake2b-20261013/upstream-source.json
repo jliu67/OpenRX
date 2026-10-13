@@ -1,0 +1,21 @@
+{
+  "repository": "cyrozap/blake2",
+  "commit": "36f00fd6351f82cb476fd82af8d615f28aaf677d",
+  "original_source": "/tmp/openrx-blake2-original-cbrgi69l",
+  "license": "BSD-2-Clause",
+  "files": {
+    ".gitignore": "2b0daf4fe918d253726ddb5d0fdabbc5efba697fb025701f2d0657540f2c7b6a",
+    ".travis.yml": "af3862f2c29355efbd009b85b9d2c1bd97872a7fe63211515fb554c94b3e101f",
+    "LICENSE": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d",
+    "README.md": "ff4dfe503df7d27916b4e66e1e8a124a7ba66fd34afea6fae2ca821856587f14",
+    "src/rtl/blake2.v": "b0e09d9adee4b3f85d060ed6ba16220d05b2b1ac80f8a2f4f6fc7aa8e36d746e",
+    "src/rtl/blake2_G.v": "558387e71def9ae0640cfacde202dba747171abd3242a5e00c04f34c8f46a1d8",
+    "src/rtl/blake2_core.v": "97c6a12cb2b68792e78da0b3a53a56da5eb3a570ce2465b0fe8a43ef3c55a274",
+    "src/rtl/blake2_m_select.v": "492b2e7f64ec494d2c4c6b499a3651ddb64d34b275b62bc91651e0b1712fcb63",
+    "src/tb/tb_blake2.v": "a2ead4f8a90b3f616ccb1436f5a01a72ccadf0bc1e58fa8a01d6993c0a37bd77",
+    "src/tb/tb_blake2_G.v": "2aa2366960f54cac3c86929bf4725d3469fe3ff16439c41b46629c80c533f6f1",
+    "src/tb/tb_blake2_core.v": "732800ae3f4d7f6b383e05d47d2086f5f551537764c4ba5d8099fd9b06c454ec",
+    "src/tb/tb_blake2_m_select.v": "c12aa04e8a2e6ff4e7e6b43c3a7dcab9c67973a1d9276071c724972cfc68b162",
+    "toolruns/Makefile": "ed5ef2a098ebdc53b4256a31c9f554dbf3988828d5ee1fa4240aae6e35e024f5"
+  }
+}

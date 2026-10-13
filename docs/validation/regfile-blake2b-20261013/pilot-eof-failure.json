@@ -1,0 +1,7 @@
+{
+  "source": "/tmp/openrx-regfile-blake2b-integrate-gyml7qri",
+  "output": "/tmp/openrx-regfile-hash-pilot-01",
+  "archive": "blake2b-stage-implementation-evidence/pilot-eof-failed01-complete.tar.gz",
+  "archive_sha256": "94761128ae2137b736b6f431d90d20d4ca94a8eec3a3c0ea738151a3655046d5",
+  "failure": "Icarus fscanf reports0 at trailing-whitespace EOF;524 native bit comparisons completed, no completedunitPASS; usefeof for terminalrow only; no golden/workload/hardware change"
+}

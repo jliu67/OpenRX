@@ -1,0 +1,7 @@
+{
+  "source": "rtl/execute/tests/tb_program_cancel.v",
+  "source_sha256": "0324c18edae791f528010ae017f6e1a570218919eb9c7729e058ba74609041b4",
+  "generated_sha256": "cd7d8c2d8d153e06d8d1e8e9cacaee6deedfbda453843972ab7648706c4bb30c",
+  "transform": "two DUT type names and one hierarchy observer path only; original cancellation/error scenarios unchanged",
+  "protected_source_unchanged": true
+}
