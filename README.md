@@ -1,5 +1,20 @@
 # OpenRX
 
+## Native program sequencing — task #62, 2026-10-13
+
+[Task #62](https://github.com/jliu67/OpenRX/issues/62) stacks on independently
+accepted, unmerged [PR #61](https://github.com/jliu67/OpenRX/pull/61#pullrequestreview-5503154172)
+at `7f299c74f81332257eefd775086b355969ad85f3`.
+Two new modules initialize native program configuration and sequence the accepted
+iteration executor through default eight programs × 2,048 iterations. Four short
+v1/v2 ideal/stalled native-generated pilots pass. The full native-v2 job and new
+control/reset/synthesis/mapped checks are pending; no pending test is a pass.
+External initialization/program generation/interprogram BLAKE2b/final hash and
+addressed fixture dataset are explicit boundaries. Full hardware hash/actual
+dataset/physical PPA remain open. All accepted parent/main heads and original
+sources/evidence remain preserved. New independent review is required; no merge
+is authorized. [Design](rtl/execute/PROGRAM_SEQUENCE.md) / [EXP-010](experiments/EXP-010-native-program-sequence.md).
+
 Current compiler compatibility: [Icarus 12 compile view](rtl/execute/DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. All 12 local RTL records/native fixtures match; corrected hosted checks and independent review remain required.
 
 ## Native division and square root — task #60, 2026-10-13

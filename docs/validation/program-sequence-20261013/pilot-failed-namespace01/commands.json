@@ -1,0 +1,36 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.06413468497339636
+  },
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-I/tmp/openrx-program-sequence-pilot-01",
+      "-Ivendor/randomx/src",
+      "-Irtl/execute/tests",
+      "rtl/execute/tests/program_sequence_oracle.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/bytecode_machine.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "vendor/randomx/src/aes_hash.cpp",
+      "vendor/randomx/src/blake2/blake2b.c",
+      "-o",
+      "/tmp/openrx-program-sequence-pilot-01/oracle"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "elapsed_seconds": 4.322879540035501
+  }
+]

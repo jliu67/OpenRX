@@ -1,0 +1,4 @@
+{
+  "type": "CalledProcessError",
+  "error": "Command '['vvp', '-M/tmp/openrx-program-sequence-pilot-02', '-mprogram_source', '/tmp/openrx-program-sequence-pilot-02/rtl-1-0.vvp', '+directory=/tmp/openrx-program-sequence-pilot-02/v2']' returned non-zero exit status 1."
+}

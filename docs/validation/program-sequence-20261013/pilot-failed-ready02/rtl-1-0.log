@@ -1,0 +1,2 @@
+FATAL: rtl/execute/tests/tb_program_sequence.v:256: batch not ready
+       Time: 10000 Scope: tb_program_sequence

@@ -1,0 +1,1728 @@
+{
+  "task": "https://github.com/jliu67/OpenRX/issues/62",
+  "accepted_parent": "7f299c74f81332257eefd775086b355969ad85f3",
+  "status": "pilot-complete; full-v2 and new-control/mapped validation pending",
+  "exported": [
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "artifacts.sha256.json",
+      "raw_sha256": "c045ab532878be71c973f46434da32ed276d151a072975ddd404242a6d6b3604",
+      "raw_bytes": 1402,
+      "public_path": "pilot-failed-namespace01/artifacts.sha256.json",
+      "public_sha256": "c045ab532878be71c973f46434da32ed276d151a072975ddd404242a6d6b3604",
+      "public_bytes": 1402,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "commands.json",
+      "raw_sha256": "00d728ff3e29411d133da8b49afd183b8b1ef546eb6f84a0884bd66a5a094f13",
+      "raw_bytes": 977,
+      "public_path": "pilot-failed-namespace01/commands.json",
+      "public_sha256": "00d728ff3e29411d133da8b49afd183b8b1ef546eb6f84a0884bd66a5a094f13",
+      "public_bytes": 977,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "compile-oracle.log",
+      "raw_sha256": "2b37f2f1c6c5a465fb68e7fd6463e418e4a3c7c3a5b296e757ee9dea986ed6a0",
+      "raw_bytes": 7709,
+      "public_path": "pilot-failed-namespace01/compile-oracle.log",
+      "public_sha256": "2b37f2f1c6c5a465fb68e7fd6463e418e4a3c7c3a5b296e757ee9dea986ed6a0",
+      "public_bytes": 7709,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "extraction.json",
+      "raw_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "raw_bytes": 1802,
+      "public_path": "pilot-failed-namespace01/extraction.json",
+      "public_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "public_bytes": 1802,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "failure.json",
+      "raw_sha256": "b8edace515a56a0c7750a90f29bf33124bf51baf3db95b0d20f576a3355c0f0f",
+      "raw_bytes": 549,
+      "public_path": "pilot-failed-namespace01/failure.json",
+      "public_sha256": "b8edace515a56a0c7750a90f29bf33124bf51baf3db95b0d20f576a3355c0f0f",
+      "public_bytes": 549,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "inputs.json",
+      "raw_sha256": "4c421dbefdf47ef34a97e704887916ee758291de19f9fab1a359d45c9bbed0f6",
+      "raw_bytes": 4775,
+      "public_path": "pilot-failed-namespace01/inputs.json",
+      "public_sha256": "4c421dbefdf47ef34a97e704887916ee758291de19f9fab1a359d45c9bbed0f6",
+      "public_bytes": 4775,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_bytecode_loop.inc",
+      "raw_sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "raw_bytes": 1680,
+      "public_path": "pilot-failed-namespace01/pinned_bytecode_loop.inc",
+      "public_sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "public_bytes": 1680,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_dataset_read.inc",
+      "raw_sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "raw_bytes": 1652,
+      "public_path": "pilot-failed-namespace01/pinned_dataset_read.inc",
+      "public_sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "public_bytes": 1652,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_destructor.inc",
+      "raw_sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "raw_bytes": 1552,
+      "public_path": "pilot-failed-namespace01/pinned_destructor.inc",
+      "public_sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "public_bytes": 1552,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_float_masks.inc",
+      "raw_sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "raw_bytes": 1918,
+      "public_path": "pilot-failed-namespace01/pinned_float_masks.inc",
+      "public_sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "public_bytes": 1918,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_iteration.inc",
+      "raw_sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "raw_bytes": 3571,
+      "public_path": "pilot-failed-namespace01/pinned_iteration.inc",
+      "public_sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "public_bytes": 3571,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_program_float_helpers.inc",
+      "raw_sha256": "8bb5210690d380d08d2e96386660cfa015c302c99fdad3446003359c2c5d8a26",
+      "raw_bytes": 2188,
+      "public_path": "pilot-failed-namespace01/pinned_program_float_helpers.inc",
+      "public_sha256": "8bb5210690d380d08d2e96386660cfa015c302c99fdad3446003359c2c5d8a26",
+      "public_bytes": 2188,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_program_initialize.inc",
+      "raw_sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "raw_bytes": 2849,
+      "public_path": "pilot-failed-namespace01/pinned_program_initialize.inc",
+      "public_sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "public_bytes": 2849,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "pinned_scratchpad_address.inc",
+      "raw_sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "raw_bytes": 1688,
+      "public_path": "pilot-failed-namespace01/pinned_scratchpad_address.inc",
+      "public_sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "public_bytes": 1688,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "tools.json",
+      "raw_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "raw_bytes": 4449,
+      "public_path": "pilot-failed-namespace01/tools.json",
+      "public_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "public_bytes": 4449,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-namespace01",
+      "raw_name": "vendor.log",
+      "raw_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "raw_bytes": 32,
+      "public_path": "pilot-failed-namespace01/vendor.log",
+      "public_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "public_bytes": 32,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "artifacts.sha256.json",
+      "raw_sha256": "06799ee12b0d504eda8806fc060a8f59d1247581d16029232abb178cf0462d46",
+      "raw_bytes": 4656,
+      "public_path": "pilot-failed-ready02/artifacts.sha256.json",
+      "public_sha256": "06799ee12b0d504eda8806fc060a8f59d1247581d16029232abb178cf0462d46",
+      "public_bytes": 4656,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "commands.json",
+      "raw_sha256": "766bc27bb6f86e8daf0ee26d063933438deb3560b181be8d3cd42d6b61cacf05",
+      "raw_bytes": 4290,
+      "public_path": "pilot-failed-ready02/commands.json",
+      "public_sha256": "766bc27bb6f86e8daf0ee26d063933438deb3560b181be8d3cd42d6b61cacf05",
+      "public_bytes": 4290,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "compile-oracle.log",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_bytes": 0,
+      "public_path": "pilot-failed-ready02/compile-oracle.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "compile-rtl-1-0.log",
+      "raw_sha256": "4b7dd6619b3e9db5caa407eb6d94ed7f18a8abbbe54ada4cfa73983f9d46d3a6",
+      "raw_bytes": 4374,
+      "public_path": "pilot-failed-ready02/compile-rtl-1-0.log",
+      "public_sha256": "4b7dd6619b3e9db5caa407eb6d94ed7f18a8abbbe54ada4cfa73983f9d46d3a6",
+      "public_bytes": 4374,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "compile-vpi.log",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_bytes": 0,
+      "public_path": "pilot-failed-ready02/compile-oracle.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "extraction.json",
+      "raw_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "raw_bytes": 1802,
+      "public_path": "pilot-failed-namespace01/extraction.json",
+      "public_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "public_bytes": 1802,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "failure.json",
+      "raw_sha256": "f85197e92029e8811c3849920c9f20e9e98f982a5435758b5303ec88a891213d",
+      "raw_bytes": 271,
+      "public_path": "pilot-failed-ready02/failure.json",
+      "public_sha256": "f85197e92029e8811c3849920c9f20e9e98f982a5435758b5303ec88a891213d",
+      "public_bytes": 271,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "inputs.json",
+      "raw_sha256": "4c421dbefdf47ef34a97e704887916ee758291de19f9fab1a359d45c9bbed0f6",
+      "raw_bytes": 4775,
+      "public_path": "pilot-failed-namespace01/inputs.json",
+      "public_sha256": "4c421dbefdf47ef34a97e704887916ee758291de19f9fab1a359d45c9bbed0f6",
+      "public_bytes": 4775,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "oracle-1.log",
+      "raw_sha256": "ef3799a66e7343eea1902419a349ae04c0599dadaaaf2b0f15c41be49034ac65",
+      "raw_bytes": 135,
+      "public_path": "pilot-failed-ready02/oracle-1.log",
+      "public_sha256": "ef3799a66e7343eea1902419a349ae04c0599dadaaaf2b0f15c41be49034ac65",
+      "public_bytes": 135,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_bytecode_loop.inc",
+      "raw_sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "raw_bytes": 1680,
+      "public_path": "pilot-failed-namespace01/pinned_bytecode_loop.inc",
+      "public_sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "public_bytes": 1680,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_dataset_read.inc",
+      "raw_sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "raw_bytes": 1652,
+      "public_path": "pilot-failed-namespace01/pinned_dataset_read.inc",
+      "public_sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "public_bytes": 1652,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_destructor.inc",
+      "raw_sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "raw_bytes": 1552,
+      "public_path": "pilot-failed-namespace01/pinned_destructor.inc",
+      "public_sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "public_bytes": 1552,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_float_masks.inc",
+      "raw_sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "raw_bytes": 1918,
+      "public_path": "pilot-failed-namespace01/pinned_float_masks.inc",
+      "public_sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "public_bytes": 1918,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_iteration.inc",
+      "raw_sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "raw_bytes": 3571,
+      "public_path": "pilot-failed-namespace01/pinned_iteration.inc",
+      "public_sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "public_bytes": 3571,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_program_float_helpers.inc",
+      "raw_sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2",
+      "raw_bytes": 2211,
+      "public_path": "pilot-failed-ready02/pinned_program_float_helpers.inc",
+      "public_sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2",
+      "public_bytes": 2211,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_program_initialize.inc",
+      "raw_sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "raw_bytes": 2849,
+      "public_path": "pilot-failed-namespace01/pinned_program_initialize.inc",
+      "public_sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "public_bytes": 2849,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "pinned_scratchpad_address.inc",
+      "raw_sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "raw_bytes": 1688,
+      "public_path": "pilot-failed-namespace01/pinned_scratchpad_address.inc",
+      "public_sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "public_bytes": 1688,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "rtl-1-0.log",
+      "raw_sha256": "a8b6aa22a899a9dfdd90eb8d90936643df36047d71dc5870b09940b60c0c7004",
+      "raw_bytes": 114,
+      "public_path": "pilot-failed-ready02/rtl-1-0.log",
+      "public_sha256": "a8b6aa22a899a9dfdd90eb8d90936643df36047d71dc5870b09940b60c0c7004",
+      "public_bytes": 114,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "tools.json",
+      "raw_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "raw_bytes": 4449,
+      "public_path": "pilot-failed-namespace01/tools.json",
+      "public_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "public_bytes": 4449,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/HardFloat-compile-view.json",
+      "raw_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "raw_bytes": 745,
+      "public_path": "pilot-failed-ready02/v2/HardFloat-compile-view.json",
+      "public_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "public_bytes": 745,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/HardFloat-divSqrt-compile-view.v",
+      "raw_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "raw_bytes": 15488,
+      "public_path": "pilot-failed-ready02/v2/HardFloat-divSqrt-compile-view.v",
+      "public_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "public_bytes": 15488,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/accesses.hex",
+      "raw_sha256": "e720e2146675e2d135ee61322eee586b3147471fc8cf5a51d894e72d20afbd9b",
+      "raw_bytes": 57737,
+      "public_path": "pilot-failed-ready02/v2/accesses.hex",
+      "public_sha256": "e720e2146675e2d135ee61322eee586b3147471fc8cf5a51d894e72d20afbd9b",
+      "public_bytes": 57737,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/actual-initial.hex",
+      "raw_sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/actual-initial.hex.gz",
+      "public_sha256": "7011f7b8264dc247718c2634986d448da3bb8a99771a4c4767ea8c0fdbf27a84",
+      "public_bytes": 2506102,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/events.mem",
+      "raw_sha256": "432947e0cefe9a07ee839a737b334612bda20c5a340e7fac907119c93fc8440c",
+      "raw_bytes": 59064,
+      "public_path": "pilot-failed-ready02/v2/events.mem",
+      "public_sha256": "432947e0cefe9a07ee839a737b334612bda20c5a340e7fac907119c93fc8440c",
+      "public_bytes": 59064,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-0.hex",
+      "raw_sha256": "88cda23b8b6f1f9ec2b30f8555815e267f681d9dd431d9e056ac30fe80cd4ca9",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-0.hex.gz",
+      "public_sha256": "f7207a827c36836e19b1a4255bf4224231b921d05744dd68a177b7014b677f16",
+      "public_bytes": 2506064,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-1.hex",
+      "raw_sha256": "121df7ab281d1c98e5fd703a777bae455a0150223a4d15b194f7768ded98b264",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-1.hex.gz",
+      "public_sha256": "4d3cabfc20ba6ef0e060340022e724c0fde3dbf7e4236fff0afad6082fd8e4c5",
+      "public_bytes": 2506081,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-2.hex",
+      "raw_sha256": "b59cf0ad6b7fbadbc5a968162fa8524b34ffeda07a937d0114dd22d4f604780b",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-2.hex.gz",
+      "public_sha256": "f4361b03078ab865f489f2cd15502cd93c8dc9fa69e52723a8ae1ba7befbc46e",
+      "public_bytes": 2506066,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-3.hex",
+      "raw_sha256": "8f8956490f7ff909e02e940d1eb59ad3a9f11df6e28d81f9b9739bd20e92345c",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-3.hex.gz",
+      "public_sha256": "70bbfddf2a12742d4e6bd76bbd04e65a3788db44a7d6ed0b08516351c3d4735e",
+      "public_bytes": 2506064,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-4.hex",
+      "raw_sha256": "8d653aaeeb6f964a3098629350d7ae191ba4f41327c336145c632e3f9c81a8ac",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-4.hex.gz",
+      "public_sha256": "ae5ca599e237515a8460140d516f10b0256e942936504d8244644cfb4f2e2860",
+      "public_bytes": 2506047,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-5.hex",
+      "raw_sha256": "d92413bd7a20ba5680a9bf19eb450143737c7dc5093783120f1271bfa329ec27",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-5.hex.gz",
+      "public_sha256": "59ee79502b42c6013423b7475db0103dd9cbfce231c7bcfac3fd408e741b8b7c",
+      "public_bytes": 2506034,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-6.hex",
+      "raw_sha256": "955c76f7a3714954b8eec329109c13f09f0dde6285c2bc692311a6b1c2313f6b",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-6.hex.gz",
+      "public_sha256": "e5f70817eca6c9544ecf064318a8976c308b7d46551df5b79bf28612a7b61804",
+      "public_bytes": 2506062,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/final-7.hex",
+      "raw_sha256": "d6f5d4c440d15ef774372f1cb9a4ae05e478ac506f3c694990598d8d845fe52f",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-7.hex.gz",
+      "public_sha256": "d4f06d29f178030ba1158e45dda3347b19763cb05e284c294651efa72d450d96",
+      "public_bytes": 2506093,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/initial.hex",
+      "raw_sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/actual-initial.hex.gz",
+      "public_sha256": "7011f7b8264dc247718c2634986d448da3bb8a99771a4c4767ea8c0fdbf27a84",
+      "public_bytes": 2506102,
+      "lossless": true
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/iterations.hex",
+      "raw_sha256": "91bfbfff55923c6c013a8cdff82af7f3206c7e3d823df9aca3053673fdc947c0",
+      "raw_bytes": 19296,
+      "public_path": "pilot-failed-ready02/v2/iterations.hex",
+      "public_sha256": "91bfbfff55923c6c013a8cdff82af7f3206c7e3d823df9aca3053673fdc947c0",
+      "public_bytes": 19296,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/iterations.mem",
+      "raw_sha256": "7b3fa80505803f9667fe247842e59c6b99b4e5e87f617380e66bd4c1b132f8f9",
+      "raw_bytes": 20288,
+      "public_path": "pilot-failed-ready02/v2/iterations.mem",
+      "public_sha256": "7b3fa80505803f9667fe247842e59c6b99b4e5e87f617380e66bd4c1b132f8f9",
+      "public_bytes": 20288,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/metadata.hex",
+      "raw_sha256": "fa8eefc70ec9e8b541471717d9cd7e13ea12c83a5569dcc559d67073e405b7ae",
+      "raw_bytes": 3642,
+      "public_path": "pilot-failed-ready02/v2/metadata.hex",
+      "public_sha256": "fa8eefc70ec9e8b541471717d9cd7e13ea12c83a5569dcc559d67073e405b7ae",
+      "public_bytes": 3642,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/metadata.mem",
+      "raw_sha256": "6bf00140d66999599330532175186ffd550171b580e2a4d2999ce5ba708dd714",
+      "raw_bytes": 3616,
+      "public_path": "pilot-failed-ready02/v2/metadata.mem",
+      "public_sha256": "6bf00140d66999599330532175186ffd550171b580e2a4d2999ce5ba708dd714",
+      "public_bytes": 3616,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/oracle-summary.json",
+      "raw_sha256": "7e50065e7c6a77beb7d44c96663035f96aa28a2cb247706bc836091b9c42dca9",
+      "raw_bytes": 379,
+      "public_path": "pilot-failed-ready02/v2/oracle-summary.json",
+      "public_sha256": "7e50065e7c6a77beb7d44c96663035f96aa28a2cb247706bc836091b9c42dca9",
+      "public_bytes": 379,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-0.mem",
+      "raw_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-0.mem",
+      "public_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-1.mem",
+      "raw_sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-1.mem",
+      "public_sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-2.mem",
+      "raw_sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-2.mem",
+      "public_sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-3.mem",
+      "raw_sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-3.mem",
+      "public_sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-4.mem",
+      "raw_sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-4.mem",
+      "public_sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-5.mem",
+      "raw_sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-5.mem",
+      "public_sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-6.mem",
+      "raw_sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-6.mem",
+      "public_sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-7.mem",
+      "raw_sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-7.mem",
+      "public_sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/program-registers.hex",
+      "raw_sha256": "8804210cd859626fca7cdc82d573c0012a81dff4db18a3b4d756d6139dd5e719",
+      "raw_bytes": 4136,
+      "public_path": "pilot-failed-ready02/v2/program-registers.hex",
+      "public_sha256": "8804210cd859626fca7cdc82d573c0012a81dff4db18a3b4d756d6139dd5e719",
+      "public_bytes": 4136,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "v2/sequence_sizes.vh",
+      "raw_sha256": "bdeb54dd8f5838a63cb706fa1f97f3a43c35a8cd7dc9848bdf6275e17fbdcd60",
+      "raw_bytes": 83,
+      "public_path": "pilot-failed-ready02/v2/sequence_sizes.vh",
+      "public_sha256": "bdeb54dd8f5838a63cb706fa1f97f3a43c35a8cd7dc9848bdf6275e17fbdcd60",
+      "public_bytes": 83,
+      "lossless": false
+    },
+    {
+      "phase": "pilot-failed-ready02",
+      "raw_name": "vendor.log",
+      "raw_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "raw_bytes": 32,
+      "public_path": "pilot-failed-namespace01/vendor.log",
+      "public_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "public_bytes": 32,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "artifacts.sha256.json",
+      "raw_sha256": "2eaf85868a60f00a5ab9ce2a80c7330e4728d038e2d564a423cb91c7542acfbb",
+      "raw_bytes": 9727,
+      "public_path": "pilot8x4/artifacts.sha256.json",
+      "public_sha256": "2eaf85868a60f00a5ab9ce2a80c7330e4728d038e2d564a423cb91c7542acfbb",
+      "public_bytes": 9727,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "commands.json",
+      "raw_sha256": "78604c4857b96017c2eddde0ef97e2c0e6c4bef2e877ce1b35720b94d8a637bb",
+      "raw_bytes": 11789,
+      "public_path": "pilot8x4/commands.json",
+      "public_sha256": "78604c4857b96017c2eddde0ef97e2c0e6c4bef2e877ce1b35720b94d8a637bb",
+      "public_bytes": 11789,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "compile-oracle.log",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_bytes": 0,
+      "public_path": "pilot-failed-ready02/compile-oracle.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "compile-rtl-0-0.log",
+      "raw_sha256": "68302ec71fb9f8fa469e07f64b30ad3cf72f0fbe384abc0462e958b9d23aa1f6",
+      "raw_bytes": 4374,
+      "public_path": "pilot8x4/compile-rtl-0-0.log",
+      "public_sha256": "68302ec71fb9f8fa469e07f64b30ad3cf72f0fbe384abc0462e958b9d23aa1f6",
+      "public_bytes": 4374,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "compile-rtl-0-1.log",
+      "raw_sha256": "68302ec71fb9f8fa469e07f64b30ad3cf72f0fbe384abc0462e958b9d23aa1f6",
+      "raw_bytes": 4374,
+      "public_path": "pilot8x4/compile-rtl-0-0.log",
+      "public_sha256": "68302ec71fb9f8fa469e07f64b30ad3cf72f0fbe384abc0462e958b9d23aa1f6",
+      "public_bytes": 4374,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "compile-rtl-1-0.log",
+      "raw_sha256": "c8570420e12125bf2180694d697045bfa37739213b527e2d7b7e7682764ca0ce",
+      "raw_bytes": 4374,
+      "public_path": "pilot8x4/compile-rtl-1-0.log",
+      "public_sha256": "c8570420e12125bf2180694d697045bfa37739213b527e2d7b7e7682764ca0ce",
+      "public_bytes": 4374,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "compile-rtl-1-1.log",
+      "raw_sha256": "c8570420e12125bf2180694d697045bfa37739213b527e2d7b7e7682764ca0ce",
+      "raw_bytes": 4374,
+      "public_path": "pilot8x4/compile-rtl-1-0.log",
+      "public_sha256": "c8570420e12125bf2180694d697045bfa37739213b527e2d7b7e7682764ca0ce",
+      "public_bytes": 4374,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "compile-vpi.log",
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_bytes": 0,
+      "public_path": "pilot-failed-ready02/compile-oracle.log",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "extraction.json",
+      "raw_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "raw_bytes": 1802,
+      "public_path": "pilot-failed-namespace01/extraction.json",
+      "public_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "public_bytes": 1802,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "inputs.json",
+      "raw_sha256": "7e7da066f00d5cfe21f0946b6db65743a06c6699a669f17a74866f17cec5d708",
+      "raw_bytes": 4775,
+      "public_path": "pilot8x4/inputs.json",
+      "public_sha256": "7e7da066f00d5cfe21f0946b6db65743a06c6699a669f17a74866f17cec5d708",
+      "public_bytes": 4775,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "oracle-0.log",
+      "raw_sha256": "a37a60750e623af069aaa7fdfdc310e743ddb735f6153127440dd65bf5805bd9",
+      "raw_bytes": 134,
+      "public_path": "pilot8x4/oracle-0.log",
+      "public_sha256": "a37a60750e623af069aaa7fdfdc310e743ddb735f6153127440dd65bf5805bd9",
+      "public_bytes": 134,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "oracle-1.log",
+      "raw_sha256": "ef3799a66e7343eea1902419a349ae04c0599dadaaaf2b0f15c41be49034ac65",
+      "raw_bytes": 135,
+      "public_path": "pilot-failed-ready02/oracle-1.log",
+      "public_sha256": "ef3799a66e7343eea1902419a349ae04c0599dadaaaf2b0f15c41be49034ac65",
+      "public_bytes": 135,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_bytecode_loop.inc",
+      "raw_sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "raw_bytes": 1680,
+      "public_path": "pilot-failed-namespace01/pinned_bytecode_loop.inc",
+      "public_sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "public_bytes": 1680,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_dataset_read.inc",
+      "raw_sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "raw_bytes": 1652,
+      "public_path": "pilot-failed-namespace01/pinned_dataset_read.inc",
+      "public_sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "public_bytes": 1652,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_destructor.inc",
+      "raw_sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "raw_bytes": 1552,
+      "public_path": "pilot-failed-namespace01/pinned_destructor.inc",
+      "public_sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "public_bytes": 1552,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_float_masks.inc",
+      "raw_sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "raw_bytes": 1918,
+      "public_path": "pilot-failed-namespace01/pinned_float_masks.inc",
+      "public_sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "public_bytes": 1918,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_iteration.inc",
+      "raw_sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "raw_bytes": 3571,
+      "public_path": "pilot-failed-namespace01/pinned_iteration.inc",
+      "public_sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "public_bytes": 3571,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_program_float_helpers.inc",
+      "raw_sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2",
+      "raw_bytes": 2211,
+      "public_path": "pilot-failed-ready02/pinned_program_float_helpers.inc",
+      "public_sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2",
+      "public_bytes": 2211,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_program_initialize.inc",
+      "raw_sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "raw_bytes": 2849,
+      "public_path": "pilot-failed-namespace01/pinned_program_initialize.inc",
+      "public_sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "public_bytes": 2849,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "pinned_scratchpad_address.inc",
+      "raw_sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "raw_bytes": 1688,
+      "public_path": "pilot-failed-namespace01/pinned_scratchpad_address.inc",
+      "public_sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "public_bytes": 1688,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "rtl-0-0.log",
+      "raw_sha256": "86d3163ad768a577553e773b97d2779174f4e06c409757c85b25568ee6e0d91d",
+      "raw_bytes": 323,
+      "public_path": "pilot8x4/rtl-0-0.log",
+      "public_sha256": "86d3163ad768a577553e773b97d2779174f4e06c409757c85b25568ee6e0d91d",
+      "public_bytes": 323,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "rtl-0-1.log",
+      "raw_sha256": "4d1223ab88bbef3a96905588a9f83dd0e7e03d55befa86b46a9640bc22f3cdfb",
+      "raw_bytes": 331,
+      "public_path": "pilot8x4/rtl-0-1.log",
+      "public_sha256": "4d1223ab88bbef3a96905588a9f83dd0e7e03d55befa86b46a9640bc22f3cdfb",
+      "public_bytes": 331,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "rtl-1-0.log",
+      "raw_sha256": "33e1a4033c9a70170129d709638066fc868fc20836747664494cdf8c7a4b5b6f",
+      "raw_bytes": 325,
+      "public_path": "pilot8x4/rtl-1-0.log",
+      "public_sha256": "33e1a4033c9a70170129d709638066fc868fc20836747664494cdf8c7a4b5b6f",
+      "public_bytes": 325,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "rtl-1-1.log",
+      "raw_sha256": "15455fe64170e9d892095d0ec02af15a605e66e5ff385d422203632f63b6217c",
+      "raw_bytes": 333,
+      "public_path": "pilot8x4/rtl-1-1.log",
+      "public_sha256": "15455fe64170e9d892095d0ec02af15a605e66e5ff385d422203632f63b6217c",
+      "public_bytes": 333,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "summary.json",
+      "raw_sha256": "83b61f57a5973da12e9031ffb97cc3499f8273e64e7f9cff6b5595503072d9ec",
+      "raw_bytes": 1379,
+      "public_path": "pilot8x4/summary.json",
+      "public_sha256": "83b61f57a5973da12e9031ffb97cc3499f8273e64e7f9cff6b5595503072d9ec",
+      "public_bytes": 1379,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "tools.json",
+      "raw_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "raw_bytes": 4449,
+      "public_path": "pilot-failed-namespace01/tools.json",
+      "public_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "public_bytes": 4449,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/HardFloat-compile-view.json",
+      "raw_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "raw_bytes": 745,
+      "public_path": "pilot-failed-ready02/v2/HardFloat-compile-view.json",
+      "public_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "public_bytes": 745,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/HardFloat-divSqrt-compile-view.v",
+      "raw_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "raw_bytes": 15488,
+      "public_path": "pilot-failed-ready02/v2/HardFloat-divSqrt-compile-view.v",
+      "public_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "public_bytes": 15488,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/accesses.hex",
+      "raw_sha256": "ad2a58b7f701bfdbcf9279178d1547bdcbb94a9d5c046b9fb3076903bff4a963",
+      "raw_bytes": 41910,
+      "public_path": "pilot8x4/v1/accesses.hex",
+      "public_sha256": "ad2a58b7f701bfdbcf9279178d1547bdcbb94a9d5c046b9fb3076903bff4a963",
+      "public_bytes": 41910,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-initial.hex",
+      "raw_sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/actual-initial.hex.gz",
+      "public_sha256": "7011f7b8264dc247718c2634986d448da3bb8a99771a4c4767ea8c0fdbf27a84",
+      "public_bytes": 2506102,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-0.mem",
+      "raw_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-0.mem",
+      "public_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-1.mem",
+      "raw_sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-1.mem",
+      "public_sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-2.mem",
+      "raw_sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-2.mem",
+      "public_sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-3.mem",
+      "raw_sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-3.mem",
+      "public_sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-4.mem",
+      "raw_sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-4.mem",
+      "public_sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-5.mem",
+      "raw_sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-5.mem",
+      "public_sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-6.mem",
+      "raw_sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-6.mem",
+      "public_sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/actual-program-7.mem",
+      "raw_sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-7.mem",
+      "public_sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/events.mem",
+      "raw_sha256": "6cbec69312dcc38f42f5e8e1cb8e3f873701969a68eed00509220b99443e58fa",
+      "raw_bytes": 42665,
+      "public_path": "pilot8x4/v1/events.mem",
+      "public_sha256": "6cbec69312dcc38f42f5e8e1cb8e3f873701969a68eed00509220b99443e58fa",
+      "public_bytes": 42665,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-0.hex",
+      "raw_sha256": "fa16a10bd9d6f68c6093330776bc7a065b7a276057e69153e9806a781059647d",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-0.hex.gz",
+      "public_sha256": "b8fa9a5e5abc625add88eaff8ab917ae698981a526223b23c65da0682876a26c",
+      "public_bytes": 2506084,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-1.hex",
+      "raw_sha256": "86b86f2d20b233e6311e7f4bd616e312aa725fc739e4c77ffe461ba16c691f9b",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-1.hex.gz",
+      "public_sha256": "b6cdc881dce74d3d84d607e908fcd569c1175f2912c18b7bb38648ea6568d694",
+      "public_bytes": 2506074,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-2.hex",
+      "raw_sha256": "9a0a3f467e695b4d65402a7ebdf998b00ee8158ed8356722dbc49863473ca5d4",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-2.hex.gz",
+      "public_sha256": "113580326b215644bff3475ff50097558e1016be5f98db4ad208438dc8171344",
+      "public_bytes": 2506065,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-3.hex",
+      "raw_sha256": "bedb1b2b59002dbc6a949854aba1907eca1ef72858fd7ca12c201c65a84ea69c",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-3.hex.gz",
+      "public_sha256": "e8a0a4ca371af657cb04c5c8e5cb23bf3f9d13ba71e2f293a7c55269ef6125cd",
+      "public_bytes": 2506063,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-4.hex",
+      "raw_sha256": "98d02305c29bf3b034f09342955e2b21c4c96aaae58703b6071a208721e09acc",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-4.hex.gz",
+      "public_sha256": "9d379702c3e85f1886e24d9e146a3c0f879f70d2242df34d64a698d1c544dda7",
+      "public_bytes": 2506035,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-5.hex",
+      "raw_sha256": "ca2af9f1d09313e9ba8b8a4b8c1480e8c6e77cf671d570b31db14c057ba0799d",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-5.hex.gz",
+      "public_sha256": "18ac5c1ceb23467950579e616bf3ae3e087843dc9508bada724b52ed65038a27",
+      "public_bytes": 2506042,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-6.hex",
+      "raw_sha256": "ffb18a0676638d6f30e6fee82dd70975c747381a4e2e805da8caba3ff09aaecb",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-6.hex.gz",
+      "public_sha256": "b1f384a902504b28e9d4e681bcd39c881e814a75c5fe56ec0f5bdbdc23462cff",
+      "public_bytes": 2506060,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/final-7.hex",
+      "raw_sha256": "528d86da4577d34cd59ff4b8dd4e1fdd00c48bb92da783d771d6390f30057b2c",
+      "raw_bytes": 4325376,
+      "public_path": "pilot8x4/v1/final-7.hex.gz",
+      "public_sha256": "0cf55addf04c28edee03a81cf208c30c9f6e3fe24975da3a9de4e13e0f720cb9",
+      "public_bytes": 2506056,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/initial.hex",
+      "raw_sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/actual-initial.hex.gz",
+      "public_sha256": "7011f7b8264dc247718c2634986d448da3bb8a99771a4c4767ea8c0fdbf27a84",
+      "public_bytes": 2506102,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/iterations.hex",
+      "raw_sha256": "df5c833580df430574224809b817bb6557cc49500ca70060b8a045638346de22",
+      "raw_bytes": 19284,
+      "public_path": "pilot8x4/v1/iterations.hex",
+      "public_sha256": "df5c833580df430574224809b817bb6557cc49500ca70060b8a045638346de22",
+      "public_bytes": 19284,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/iterations.mem",
+      "raw_sha256": "a0906f58aa6ecf94f58caf8b247c2d2780d80bfdbe10859e43d494e560f9bc19",
+      "raw_bytes": 20288,
+      "public_path": "pilot8x4/v1/iterations.mem",
+      "public_sha256": "a0906f58aa6ecf94f58caf8b247c2d2780d80bfdbe10859e43d494e560f9bc19",
+      "public_bytes": 20288,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/metadata.hex",
+      "raw_sha256": "8edde208de4a0920f42766c86710f35a540edfad2ef43b3e47d661014bfa557e",
+      "raw_bytes": 3645,
+      "public_path": "pilot8x4/v1/metadata.hex",
+      "public_sha256": "8edde208de4a0920f42766c86710f35a540edfad2ef43b3e47d661014bfa557e",
+      "public_bytes": 3645,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/metadata.mem",
+      "raw_sha256": "3c66c588af71a36e248b908b15331f44ac8b232e6e84eca8b641e97c7e5cf9d0",
+      "raw_bytes": 3616,
+      "public_path": "pilot8x4/v1/metadata.mem",
+      "public_sha256": "3c66c588af71a36e248b908b15331f44ac8b232e6e84eca8b641e97c7e5cf9d0",
+      "public_bytes": 3616,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/oracle-summary.json",
+      "raw_sha256": "ab08fd824f2281e6ab430a7c90fe378c4475ebe071d21bb16fafb5ef818576c0",
+      "raw_bytes": 377,
+      "public_path": "pilot8x4/v1/oracle-summary.json",
+      "public_sha256": "ab08fd824f2281e6ab430a7c90fe378c4475ebe071d21bb16fafb5ef818576c0",
+      "public_bytes": 377,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-0.mem",
+      "raw_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-0.mem",
+      "public_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-1.mem",
+      "raw_sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-1.mem",
+      "public_sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-2.mem",
+      "raw_sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-2.mem",
+      "public_sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-3.mem",
+      "raw_sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-3.mem",
+      "public_sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-4.mem",
+      "raw_sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-4.mem",
+      "public_sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-5.mem",
+      "raw_sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-5.mem",
+      "public_sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-6.mem",
+      "raw_sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-6.mem",
+      "public_sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-7.mem",
+      "raw_sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "raw_bytes": 6528,
+      "public_path": "pilot8x4/v1/actual-program-7.mem",
+      "public_sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/program-registers.hex",
+      "raw_sha256": "f491ca68094871a20fe6a9fe8639609e6cd7f1c7b9b9dfe4ace8669b87ef211d",
+      "raw_bytes": 4136,
+      "public_path": "pilot8x4/v1/program-registers.hex",
+      "public_sha256": "f491ca68094871a20fe6a9fe8639609e6cd7f1c7b9b9dfe4ace8669b87ef211d",
+      "public_bytes": 4136,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v1/sequence_sizes.vh",
+      "raw_sha256": "b981b1ef763cdc23ce7dbc9385bc603a8bec5a77900e62dffe863696ca491358",
+      "raw_bytes": 82,
+      "public_path": "pilot8x4/v1/sequence_sizes.vh",
+      "public_sha256": "b981b1ef763cdc23ce7dbc9385bc603a8bec5a77900e62dffe863696ca491358",
+      "public_bytes": 82,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/HardFloat-compile-view.json",
+      "raw_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "raw_bytes": 745,
+      "public_path": "pilot-failed-ready02/v2/HardFloat-compile-view.json",
+      "public_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "public_bytes": 745,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/HardFloat-divSqrt-compile-view.v",
+      "raw_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "raw_bytes": 15488,
+      "public_path": "pilot-failed-ready02/v2/HardFloat-divSqrt-compile-view.v",
+      "public_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "public_bytes": 15488,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/accesses.hex",
+      "raw_sha256": "e720e2146675e2d135ee61322eee586b3147471fc8cf5a51d894e72d20afbd9b",
+      "raw_bytes": 57737,
+      "public_path": "pilot-failed-ready02/v2/accesses.hex",
+      "public_sha256": "e720e2146675e2d135ee61322eee586b3147471fc8cf5a51d894e72d20afbd9b",
+      "public_bytes": 57737,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-initial.hex",
+      "raw_sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/actual-initial.hex.gz",
+      "public_sha256": "7011f7b8264dc247718c2634986d448da3bb8a99771a4c4767ea8c0fdbf27a84",
+      "public_bytes": 2506102,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-0.mem",
+      "raw_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-0.mem",
+      "public_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-1.mem",
+      "raw_sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-1.mem",
+      "public_sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-2.mem",
+      "raw_sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-2.mem",
+      "public_sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-3.mem",
+      "raw_sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-3.mem",
+      "public_sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-4.mem",
+      "raw_sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-4.mem",
+      "public_sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-5.mem",
+      "raw_sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-5.mem",
+      "public_sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-6.mem",
+      "raw_sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-6.mem",
+      "public_sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/actual-program-7.mem",
+      "raw_sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-7.mem",
+      "public_sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/events.mem",
+      "raw_sha256": "432947e0cefe9a07ee839a737b334612bda20c5a340e7fac907119c93fc8440c",
+      "raw_bytes": 59064,
+      "public_path": "pilot-failed-ready02/v2/events.mem",
+      "public_sha256": "432947e0cefe9a07ee839a737b334612bda20c5a340e7fac907119c93fc8440c",
+      "public_bytes": 59064,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-0.hex",
+      "raw_sha256": "88cda23b8b6f1f9ec2b30f8555815e267f681d9dd431d9e056ac30fe80cd4ca9",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-0.hex.gz",
+      "public_sha256": "f7207a827c36836e19b1a4255bf4224231b921d05744dd68a177b7014b677f16",
+      "public_bytes": 2506064,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-1.hex",
+      "raw_sha256": "121df7ab281d1c98e5fd703a777bae455a0150223a4d15b194f7768ded98b264",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-1.hex.gz",
+      "public_sha256": "4d3cabfc20ba6ef0e060340022e724c0fde3dbf7e4236fff0afad6082fd8e4c5",
+      "public_bytes": 2506081,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-2.hex",
+      "raw_sha256": "b59cf0ad6b7fbadbc5a968162fa8524b34ffeda07a937d0114dd22d4f604780b",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-2.hex.gz",
+      "public_sha256": "f4361b03078ab865f489f2cd15502cd93c8dc9fa69e52723a8ae1ba7befbc46e",
+      "public_bytes": 2506066,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-3.hex",
+      "raw_sha256": "8f8956490f7ff909e02e940d1eb59ad3a9f11df6e28d81f9b9739bd20e92345c",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-3.hex.gz",
+      "public_sha256": "70bbfddf2a12742d4e6bd76bbd04e65a3788db44a7d6ed0b08516351c3d4735e",
+      "public_bytes": 2506064,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-4.hex",
+      "raw_sha256": "8d653aaeeb6f964a3098629350d7ae191ba4f41327c336145c632e3f9c81a8ac",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-4.hex.gz",
+      "public_sha256": "ae5ca599e237515a8460140d516f10b0256e942936504d8244644cfb4f2e2860",
+      "public_bytes": 2506047,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-5.hex",
+      "raw_sha256": "d92413bd7a20ba5680a9bf19eb450143737c7dc5093783120f1271bfa329ec27",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-5.hex.gz",
+      "public_sha256": "59ee79502b42c6013423b7475db0103dd9cbfce231c7bcfac3fd408e741b8b7c",
+      "public_bytes": 2506034,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-6.hex",
+      "raw_sha256": "955c76f7a3714954b8eec329109c13f09f0dde6285c2bc692311a6b1c2313f6b",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-6.hex.gz",
+      "public_sha256": "e5f70817eca6c9544ecf064318a8976c308b7d46551df5b79bf28612a7b61804",
+      "public_bytes": 2506062,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/final-7.hex",
+      "raw_sha256": "d6f5d4c440d15ef774372f1cb9a4ae05e478ac506f3c694990598d8d845fe52f",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/final-7.hex.gz",
+      "public_sha256": "d4f06d29f178030ba1158e45dda3347b19763cb05e284c294651efa72d450d96",
+      "public_bytes": 2506093,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/initial.hex",
+      "raw_sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "raw_bytes": 4325376,
+      "public_path": "pilot-failed-ready02/v2/actual-initial.hex.gz",
+      "public_sha256": "7011f7b8264dc247718c2634986d448da3bb8a99771a4c4767ea8c0fdbf27a84",
+      "public_bytes": 2506102,
+      "lossless": true
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/iterations.hex",
+      "raw_sha256": "91bfbfff55923c6c013a8cdff82af7f3206c7e3d823df9aca3053673fdc947c0",
+      "raw_bytes": 19296,
+      "public_path": "pilot-failed-ready02/v2/iterations.hex",
+      "public_sha256": "91bfbfff55923c6c013a8cdff82af7f3206c7e3d823df9aca3053673fdc947c0",
+      "public_bytes": 19296,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/iterations.mem",
+      "raw_sha256": "7b3fa80505803f9667fe247842e59c6b99b4e5e87f617380e66bd4c1b132f8f9",
+      "raw_bytes": 20288,
+      "public_path": "pilot-failed-ready02/v2/iterations.mem",
+      "public_sha256": "7b3fa80505803f9667fe247842e59c6b99b4e5e87f617380e66bd4c1b132f8f9",
+      "public_bytes": 20288,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/metadata.hex",
+      "raw_sha256": "fa8eefc70ec9e8b541471717d9cd7e13ea12c83a5569dcc559d67073e405b7ae",
+      "raw_bytes": 3642,
+      "public_path": "pilot-failed-ready02/v2/metadata.hex",
+      "public_sha256": "fa8eefc70ec9e8b541471717d9cd7e13ea12c83a5569dcc559d67073e405b7ae",
+      "public_bytes": 3642,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/metadata.mem",
+      "raw_sha256": "6bf00140d66999599330532175186ffd550171b580e2a4d2999ce5ba708dd714",
+      "raw_bytes": 3616,
+      "public_path": "pilot-failed-ready02/v2/metadata.mem",
+      "public_sha256": "6bf00140d66999599330532175186ffd550171b580e2a4d2999ce5ba708dd714",
+      "public_bytes": 3616,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/oracle-summary.json",
+      "raw_sha256": "7e50065e7c6a77beb7d44c96663035f96aa28a2cb247706bc836091b9c42dca9",
+      "raw_bytes": 379,
+      "public_path": "pilot-failed-ready02/v2/oracle-summary.json",
+      "public_sha256": "7e50065e7c6a77beb7d44c96663035f96aa28a2cb247706bc836091b9c42dca9",
+      "public_bytes": 379,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-0.mem",
+      "raw_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-0.mem",
+      "public_sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-1.mem",
+      "raw_sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-1.mem",
+      "public_sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-2.mem",
+      "raw_sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-2.mem",
+      "public_sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-3.mem",
+      "raw_sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-3.mem",
+      "public_sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-4.mem",
+      "raw_sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-4.mem",
+      "public_sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-5.mem",
+      "raw_sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-5.mem",
+      "public_sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-6.mem",
+      "raw_sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-6.mem",
+      "public_sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-7.mem",
+      "raw_sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "raw_bytes": 6528,
+      "public_path": "pilot-failed-ready02/v2/program-7.mem",
+      "public_sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "public_bytes": 6528,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/program-registers.hex",
+      "raw_sha256": "8804210cd859626fca7cdc82d573c0012a81dff4db18a3b4d756d6139dd5e719",
+      "raw_bytes": 4136,
+      "public_path": "pilot-failed-ready02/v2/program-registers.hex",
+      "public_sha256": "8804210cd859626fca7cdc82d573c0012a81dff4db18a3b4d756d6139dd5e719",
+      "public_bytes": 4136,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "v2/sequence_sizes.vh",
+      "raw_sha256": "bdeb54dd8f5838a63cb706fa1f97f3a43c35a8cd7dc9848bdf6275e17fbdcd60",
+      "raw_bytes": 83,
+      "public_path": "pilot-failed-ready02/v2/sequence_sizes.vh",
+      "public_sha256": "bdeb54dd8f5838a63cb706fa1f97f3a43c35a8cd7dc9848bdf6275e17fbdcd60",
+      "public_bytes": 83,
+      "lossless": false
+    },
+    {
+      "phase": "pilot8x4",
+      "raw_name": "vendor.log",
+      "raw_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "raw_bytes": 32,
+      "public_path": "pilot-failed-namespace01/vendor.log",
+      "public_sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "public_bytes": 32,
+      "lossless": false
+    },
+    {
+      "phase": "retained",
+      "raw_name": "pilot-resource01.json",
+      "raw_sha256": "3209bb4bd805c4787bedf04c5930568506fb44bee9214e80ea72f677da33757a",
+      "raw_bytes": 2075,
+      "public_path": "retained/pilot-resource01.json",
+      "public_sha256": "3209bb4bd805c4787bedf04c5930568506fb44bee9214e80ea72f677da33757a",
+      "public_bytes": 2075,
+      "lossless": false
+    },
+    {
+      "phase": "retained",
+      "raw_name": "pilot-resource02.json",
+      "raw_sha256": "955f3dd5c491ee9dcdecbc413d1b70f3988a2b29fb1a6b572ed275825193e931",
+      "raw_bytes": 2075,
+      "public_path": "retained/pilot-resource02.json",
+      "public_sha256": "955f3dd5c491ee9dcdecbc413d1b70f3988a2b29fb1a6b572ed275825193e931",
+      "public_bytes": 2075,
+      "lossless": false
+    },
+    {
+      "phase": "retained",
+      "raw_name": "pilot-resource03.json",
+      "raw_sha256": "b02483d1312a28d83634b919c1485e59833266e4505263232bd1d4dc5bd981d6",
+      "raw_bytes": 2079,
+      "public_path": "retained/pilot-resource03.json",
+      "public_sha256": "b02483d1312a28d83634b919c1485e59833266e4505263232bd1d4dc5bd981d6",
+      "public_bytes": 2079,
+      "lossless": false
+    },
+    {
+      "phase": "retained",
+      "raw_name": "full-native-preparation-coverage.json",
+      "raw_sha256": "716eae030b2a4fb34352b7494f017e9a42d73ceab1ebcb3b865a93ee3cd4bc39",
+      "raw_bytes": 3967,
+      "public_path": "retained/full-native-preparation-coverage.json",
+      "public_sha256": "716eae030b2a4fb34352b7494f017e9a42d73ceab1ebcb3b865a93ee3cd4bc39",
+      "public_bytes": 3967,
+      "lossless": false
+    },
+    {
+      "phase": "retained",
+      "raw_name": "accepted-parent-review.json",
+      "raw_sha256": "7aa7d50de85287008de0e2e6af8b4b8f8aee4f20d475f0b0b7611cd3e7f966e5",
+      "raw_bytes": 4274,
+      "public_path": "retained/accepted-parent-review.json",
+      "public_sha256": "7aa7d50de85287008de0e2e6af8b4b8f8aee4f20d475f0b0b7611cd3e7f966e5",
+      "public_bytes": 4274,
+      "lossless": false
+    }
+  ],
+  "source_retention": {
+    "full_run_source": "/tmp/openrx-program-sequence-ready-8rwib5l7",
+    "full_source_archive": {
+      "root": "/tmp/openrx-program-sequence-ready-8rwib5l7",
+      "archive_sha256": "d622167005ef96bdb9ffcda4f66b30b416665c4ad85d6d4ba7ca53c41250537a",
+      "correction": "Allow combinational start_ready propagation after deasserting testbench reset; no RTL/native change"
+    },
+    "test_source": "/tmp/openrx-program-sequence-tests-tmr6br41",
+    "test_source_archive_sha256": "2215120ce3fb26975e1c1fd99a3b59aedb01372c4bd916e68354a4abc7f98fd0"
+  },
+  "boundary": "external native initialization/generation/interprogram hash/final hash; deterministic addressed dataset fixture"
+}

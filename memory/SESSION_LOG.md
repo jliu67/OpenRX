@@ -811,3 +811,7 @@ eleven original mapped results are reused; no mathematical change or repeat
 whole synthesis is involved. The first hosted failure's complete 46-file archive
 is retained and verified. Fresh hosted validation and independent review are
 required at the corrected PR head.
+
+## 2026-10-13 — Task62 native program-sequence initial draft
+
+Temporary staging extends accepted PR61 with native initialization/program-loop control, independent native oracle/provider and focused tests. Four measured short v1/v2 pilots pass; the full v2 run and new control/mapped checks remain pending. Original sources/failures preserved; independent review and no-merge gates remain. See [EXP-010](../experiments/EXP-010-native-program-sequence.md).
