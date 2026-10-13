@@ -1,0 +1,4 @@
+{
+  "type": "CalledProcessError",
+  "error": "Command '['vvp', '/tmp/openrx-divsqrt-compatibility-01/rtl-64-1.vvp', '+vectors=/tmp/openrx-divsqrt-compatibility-01/scalar.hex']' returned non-zero exit status 1."
+}

@@ -1,0 +1,26 @@
+{
+  "rtl-validation": {
+    "files": 82,
+    "archive_sha256": "73c533251fe9a4c28729e2bfff59113cdc8e3722a04f5196b4c66d9324dd6eff",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "mapped-units": {
+    "files": 36,
+    "archive_sha256": "065b6004455b2b308f3d29c688a351e27220f4fbf926954453ecbf3d30fb8c64",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "mapped-integration": {
+    "files": 17,
+    "archive_sha256": "9daabfdbfca9d18b603b2e0f8f9c97d45758f7bd7cb77ae96293861373d7f80a",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "cancel-preflight": {
+    "files": 8,
+    "archive_sha256": "2ca5e4967fc0c10cf4e1ce2a4f3b6ab1509135d7ac210b1b81ac39fb3119a793",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  }
+}

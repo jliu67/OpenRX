@@ -1,0 +1,6 @@
+DIAG fetch addr=0000000010000000 commits=0 writes=0
+DIAG fetch addr=0000000010000000 commits=0 writes=0
+DIAG fetch addr=0000000010000000 commits=0 writes=0
+DIAG store addr=1ffff0 data=6eddccbb2a9988770000000000000000
+FATAL: /home/server/Documents/Codex/2026-10-11/task-2/divsqrt-executor-implementation-evidence/tb_cancel_diagnostic01.v:286: division prefix store prefix=1 writes=0 tag=e301 expected=e301 addr=1ffff0 strb=ff00 data=6eddccbb2a9988770000000000000000
+       Time: 4245000 Scope: tb_divsqrt_cancel.reset_divsqrt

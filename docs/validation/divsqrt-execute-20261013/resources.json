@@ -1,0 +1,104 @@
+{
+  "units": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 9251672064,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 640303104,
+    "peak_swap_bytes": 0,
+    "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "cpu_stat": "usage_usec 439711455\nuser_usec 438259513\nsystem_usec 1451942\ncore_sched.force_idle_usec 0\nnr_periods 4397\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_witness_sha256": "deb94f4f3d744e3f204183417dbb6eb76d9d3620a88fe927acf6016430918337",
+    "timing_sha256": "a5cb8d4a9fd05ce865daf3c1b9646c94d7ef9d0d1e8d3379599e867013501cde",
+    "reason": "Task60 actual one/two-lane iterative vector synthesis, mapped native primitives and connected/cancellation checks",
+    "resource_reason_annotation_sha256": "d5712ada6dd351cdf8a23402eae9e60bb8662dc646addc9cb29bcf626124f9d6",
+    "drainage": {
+      "epoch": 1791887595.5701766,
+      "global_slot_available": true,
+      "payloads_and_descendants_drained": true,
+      "jobs": {
+        "units": {
+          "service_state": "inactive",
+          "cgroup_removed": true,
+          "kernel_final": {
+            "cpu.stat": "usage_usec 439711455\nuser_usec 438259513\nsystem_usec 1451942\ncore_sched.force_idle_usec 0\nnr_periods 4397\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "memory.peak": "640303104",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+            "memory.swap.peak": "0",
+            "pids.current": "2"
+          }
+        },
+        "integration": {
+          "service_state": "inactive",
+          "cgroup_removed": true,
+          "kernel_final": {
+            "cpu.stat": "usage_usec 2674551695\nuser_usec 2661885461\nsystem_usec 12666234\ncore_sched.force_idle_usec 0\nnr_periods 27498\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "memory.peak": "8053063680",
+            "memory.events": "low 0\nhigh 0\nmax 585\noom 0\noom_kill 0\noom_group_kill 0",
+            "memory.swap.peak": "593715200",
+            "pids.current": "2"
+          }
+        }
+      }
+    }
+  },
+  "integration": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "8053063680",
+      "memory.swap.max": "2147483648",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 9273499648,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 8053063680,
+    "peak_swap_bytes": 593715200,
+    "memory_events": "low 0\nhigh 0\nmax 585\noom 0\noom_kill 0\noom_group_kill 0",
+    "cpu_stat": "usage_usec 2674551695\nuser_usec 2661885461\nsystem_usec 12666234\ncore_sched.force_idle_usec 0\nnr_periods 27498\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_witness_sha256": "113dd546c4e35d7efed363ae67bf4a56c12380d69263115cfade161518b95ad7",
+    "timing_sha256": "bc14ae705a47b933e92782445a6d7b3bbff4dfb99e7f5f414d27ff6c09e6de55",
+    "reason": "Task60 complete default integration plus iterative division/square-root. PR59 whole top measured260110cells, RSS~4.9GB and cgroup6.5GiB+1.14GB swap. Fresh candidate min14GiB/MemAvailable-minus1GiB assessed before dispatch; reserve1GiB OS, one worker/all6 CPUs, serialization. Selected7.5GiB plus2GiB swap from fresh headroom;128MiB dispatch margin plus1GiB OS reserve; no physical PPA/full-hash claim.",
+    "resource_reason_annotation_sha256": null,
+    "drainage": {
+      "epoch": 1791887595.5701766,
+      "global_slot_available": true,
+      "payloads_and_descendants_drained": true,
+      "jobs": {
+        "units": {
+          "service_state": "inactive",
+          "cgroup_removed": true,
+          "kernel_final": {
+            "cpu.stat": "usage_usec 439711455\nuser_usec 438259513\nsystem_usec 1451942\ncore_sched.force_idle_usec 0\nnr_periods 4397\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "memory.peak": "640303104",
+            "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+            "memory.swap.peak": "0",
+            "pids.current": "2"
+          }
+        },
+        "integration": {
+          "service_state": "inactive",
+          "cgroup_removed": true,
+          "kernel_final": {
+            "cpu.stat": "usage_usec 2674551695\nuser_usec 2661885461\nsystem_usec 12666234\ncore_sched.force_idle_usec 0\nnr_periods 27498\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+            "memory.peak": "8053063680",
+            "memory.events": "low 0\nhigh 0\nmax 585\noom 0\noom_kill 0\noom_group_kill 0",
+            "memory.swap.peak": "593715200",
+            "pids.current": "2"
+          }
+        }
+      }
+    }
+  }
+}

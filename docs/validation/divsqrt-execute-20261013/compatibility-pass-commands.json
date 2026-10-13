@@ -1,0 +1,152 @@
+[
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-Ivendor/randomx/src",
+      "rtl/execute/tests/divsqrt_oracle.cpp",
+      "-o",
+      "/tmp/openrx-divsqrt-compatibility-02/oracle"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 1.0158795249881223
+  },
+  {
+    "label": "oracle",
+    "argv": [
+      "/tmp/openrx-divsqrt-compatibility-02/oracle",
+      "/tmp/openrx-divsqrt-compatibility-02/scalar.hex",
+      "/tmp/openrx-divsqrt-compatibility-02/vector.hex"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.03194636199623346
+  },
+  {
+    "label": "compile-rtl-64-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute/vendor/hardfloat/",
+      "-Irtl/execute/vendor/hardfloat/8086-SSE",
+      "-s",
+      "tb_divsqrt64",
+      "-o",
+      "/tmp/openrx-divsqrt-compatibility-02/rtl-64-1.vvp",
+      "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v",
+      "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "rtl/execute/randomx_divsqrt64.v",
+      "rtl/execute/randomx_divsqrt128.v",
+      "rtl/execute/tests/tb_divsqrt64.v"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.0318802350666374
+  },
+  {
+    "label": "rtl-64-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-divsqrt-compatibility-02/rtl-64-1.vvp",
+      "+vectors=/tmp/openrx-divsqrt-compatibility-02/scalar.hex"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 79.39078984397929
+  },
+  {
+    "label": "compile-rtl-128-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute/vendor/hardfloat/",
+      "-Irtl/execute/vendor/hardfloat/8086-SSE",
+      "-s",
+      "tb_divsqrt128",
+      "-Ptb_divsqrt128.LANES=1",
+      "-o",
+      "/tmp/openrx-divsqrt-compatibility-02/rtl-128-1.vvp",
+      "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v",
+      "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "rtl/execute/randomx_divsqrt64.v",
+      "rtl/execute/randomx_divsqrt128.v",
+      "rtl/execute/tests/tb_divsqrt128.v"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.0641344100004062
+  },
+  {
+    "label": "rtl-128-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-divsqrt-compatibility-02/rtl-128-1.vvp",
+      "+vectors=/tmp/openrx-divsqrt-compatibility-02/vector.hex"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 17.94224144006148
+  },
+  {
+    "label": "compile-rtl-128-2",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute/vendor/hardfloat/",
+      "-Irtl/execute/vendor/hardfloat/8086-SSE",
+      "-s",
+      "tb_divsqrt128",
+      "-Ptb_divsqrt128.LANES=2",
+      "-o",
+      "/tmp/openrx-divsqrt-compatibility-02/rtl-128-2.vvp",
+      "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v",
+      "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "rtl/execute/randomx_divsqrt64.v",
+      "rtl/execute/randomx_divsqrt128.v",
+      "rtl/execute/tests/tb_divsqrt128.v"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.06415508699137717
+  },
+  {
+    "label": "rtl-128-2",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-divsqrt-compatibility-02/rtl-128-2.vvp",
+      "+vectors=/tmp/openrx-divsqrt-compatibility-02/vector.hex"
+    ],
+    "cwd": "/tmp/openrx-divsqrt-special-source-mixrqtlt",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 188.3163611580385
+  }
+]

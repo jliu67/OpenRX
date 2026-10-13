@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Integer hardware execution connected to the accepted iteration controller.
 `default_nettype none
-module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,COALESCE_LINES=1,SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2)(
+module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,COALESCE_LINES=1,SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2,DIVSQRT_LANES=2)(
     input wire  clk,
     input wire  rst,
     input wire  req_valid,
@@ -209,7 +209,7 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
 `ifdef INTEGER_EXECUTE_NETLIST
     randomx_integer_execute execute (
 `else
-    randomx_integer_execute #(.SERIAL_IADD(SERIAL_IADD),.MUL_RADIX4(MUL_RADIX4),.FP_LANES(FP_LANES)) execute(
+    randomx_integer_execute #(.SERIAL_IADD(SERIAL_IADD),.MUL_RADIX4(MUL_RADIX4),.FP_LANES(FP_LANES),.DIVSQRT_LANES(DIVSQRT_LANES)) execute(
 `endif
         .clk(clk),
         .rst(internal_rst),

@@ -1,0 +1,10 @@
+{
+  "full_native_vectors": 13312,
+  "mapped_native_vectors": 2560,
+  "selected_operand_pairs": 160,
+  "each_pair_balanced": "2 operations \u00d74 rounding modes \u00d7IEEE/RandomX DAZ+FTZ",
+  "selection": "all24 edge patterns in both operand positions against \u00b11 and self; directed NaN/zero/underflow-round-to-normal/overflow/tie pairs and reversals; first32 seeded arbitrary-bit pairs",
+  "native_invalid_divzero_overflow_underflow_inexact_observed": true,
+  "full_raw_sha256": "4b848fe6242eb0aa91d6d5afcf0687984970831567cd23f59ee035ca123ed7a9",
+  "selected_raw_sha256": "4581fef4ad41dd0c7aec9cabe0ee6711adf9baa60f8f50982b4ea5402c937c8b"
+}

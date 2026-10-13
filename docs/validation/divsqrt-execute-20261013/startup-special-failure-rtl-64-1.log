@@ -1,0 +1,2 @@
+FATAL: rtl/execute/tests/tb_divsqrt64.v:22: FP mismatch row=0 op=0 rm=0 ftz=0 a=0000000000000000 b=0000000000000000 expected=fff8000000000000/00000010 got=fffxxxxxxxxxxxxx/10 nativecsr=00001f81
+       Time: 36000 Scope: tb_divsqrt64

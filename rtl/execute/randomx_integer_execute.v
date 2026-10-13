@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
-// Native RandomX subset with exact integer/branch/FP execution; division/sqrt trap.
+// Native RandomX instruction execution, including iterative division/square root.
 `default_nettype none
-module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2) (
+module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2,DIVSQRT_LANES=2) (
     input wire clk,rst,
     input wire req_valid,output wire req_ready,input wire [15:0] req_tag,
     input wire req_v2,input wire [1:0] req_round_mode,
@@ -26,18 +26,18 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
     output wire [511:0] commit_f,commit_e,output wire [1:0] commit_round_mode
 );
 `include "randomx_opcode_ceils.vh"
-    localparam [3:0] IDLE=0,FETCH_REQ=1,FETCH_RSP=2,EXEC=3,MEM_REQ=4,MEM_RSP=5,
-        STORE_REQ=6,IADD_SECOND=7,RETURN=8,ERROR=9,MUL_REQ=10,MUL_WAIT=11,RCP_REQ=12,RCP_WAIT=13,FP_REQ=14,FP_WAIT=15;
+    localparam [4:0] IDLE=0,FETCH_REQ=1,FETCH_RSP=2,EXEC=3,MEM_REQ=4,MEM_RSP=5,
+        STORE_REQ=6,IADD_SECOND=7,RETURN=8,ERROR=9,MUL_REQ=10,MUL_WAIT=11,RCP_REQ=12,RCP_WAIT=13,FP_REQ=14,FP_WAIT=15,DIV_REQ=16,DIV_WAIT=17;
     localparam [4:0] ADD_RS=0,ADD_M=1,SUB_R=2,SUB_M=3,NEG_R=4,XOR_R=5,XOR_M=6,
         ROR_R=7,ROL_R=8,SWAP_R=9,STORE=10,MUL_R=11,MUL_M=12,HIGH_R=13,HIGH_M=14,
         SIGNED_HIGH_R=15,SIGNED_HIGH_M=16,RCP=17,BRANCH=18,
-        FSWAP=19,FADD_R=20,FADD_M=21,FSUB_R=22,FSUB_M=23,FSCAL=24,FMUL=25,ROUND=26,BAD=31;
-    reg [3:0] state_q;
+        FSWAP=19,FADD_R=20,FADD_M=21,FSUB_R=22,FSUB_M=23,FSCAL=24,FMUL=25,ROUND=26,FDIV=27,FSQRT=28,BAD=31;
+    reg [4:0] state_q;
     reg [8:0] pc_q;
     reg [15:0] tag_q;
     reg v2_q;
     reg [1:0] round_q;
-    reg [63:0] program_q,instruction_q,tmp_q;
+    reg [63:0] program_q,instruction_q,tmp_q,emask0_q,emask1_q;
     reg [511:0] r_q,f_q,e_q,a_q;
     reg [20:0] address_q;
     reg commit_q;
@@ -77,14 +77,15 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
             else if(opcode<CEIL_FSUB_M)decode=FSUB_M;
             else if(opcode<CEIL_FSCAL_R)decode=FSCAL;
             else if(opcode<CEIL_FMUL_R)decode=FMUL;
-            else if(opcode<CEIL_FSQRT_R)decode=BAD;
+            else if(opcode<CEIL_FDIV_M)decode=FDIV;
+            else if(opcode<CEIL_FSQRT_R)decode=FSQRT;
             else if(opcode<CEIL_CBRANCH)decode=BRANCH;
             else if(opcode<CEIL_CFROUND)decode=ROUND;
             else decode=STORE;
         end
     endfunction
     wire [4:0] kind=decode(instruction_q[7:0]);
-    wire fp_memory=kind==FADD_M||kind==FSUB_M;
+    wire fp_memory=kind==FADD_M||kind==FSUB_M||kind==FDIV;
     wire [31:0] memory_mask=fp_memory ?
         (instruction_q[25:24]!=0 ? 32'h00003ff8 : 32'h0003fff8) : kind==STORE ?
         (instruction_q[31:28]>=14 ? 32'h001ffff8 :
@@ -128,6 +129,18 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
         .clk(clk),.rst(rst),.req_valid(!rst&&state_q==FP_REQ),.req_ready(fp_ready),.req_tag(tag_q),
         .req_op(fp_op_q),.req_round(round_q),.req_ftz_daz(1'b1),.req_a(fp_a_q),.req_b(fp_b_q),
         .rsp_valid(fp_valid),.rsp_ready(!rst&&state_q==FP_WAIT),.rsp_tag(fp_tag),.rsp_result(fp_result),.rsp_flags(fp_flags));
+    wire div_ready,div_valid;wire [15:0] div_tag;wire [127:0] div_result;wire [4:0] div_flags;
+`ifdef DIVSQRT128_NETLIST
+    randomx_divsqrt128 division_unit(
+`else
+    randomx_divsqrt128 #(.LANES(DIVSQRT_LANES)) division_unit(
+`endif
+        .clk(clk),.rst(rst),.req_valid(!rst&&state_q==DIV_REQ),.req_ready(div_ready),.req_tag(tag_q),
+        .req_sqrt(kind==FSQRT),.req_round(round_q),.req_ftz_daz(1'b1),.req_a(fp_a_q),.req_b(fp_b_q),
+        .rsp_valid(div_valid),.rsp_ready(!rst&&state_q==DIV_WAIT),.rsp_tag(div_tag),.rsp_result(div_result),.rsp_flags(div_flags));
+    // Native dynamicMantissaMask includes 52 fraction and four dynamic exponent bits.
+    wire [63:0] denominator_low=(packed_low&64'h00ffffffffffffff)|emask0_q;
+    wire [63:0] denominator_high=(packed_high&64'h00ffffffffffffff)|emask1_q;
     wire [5:0] cf_rotate=instruction_q[37:32];
     wire [63:0] cf_value=(rs>>cf_rotate)|(rs<<(64-cf_rotate));
     // Native compile-time usage is lexical, never updated by a replayed instruction.
@@ -190,7 +203,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
         if(rst)begin
             state_q<=IDLE;pc_q<=0;tag_q<=0;v2_q<=0;round_q<=0;program_q<=0;
             instruction_q<=0;tmp_q<=0;r_q<=0;f_q<=0;e_q<=0;a_q<=0;address_q<=0;
-            fp_a_q<=0;fp_b_q<=0;fp_op_q<=0;
+            fp_a_q<=0;fp_b_q<=0;fp_op_q<=0;emask0_q<=0;emask1_q<=0;
             commit_q<=0;commit_pc_q<=0;commit_opcode_q<=0;commit_next_q<=0;commit_target_q<=0;
             mul_a_q<=0;mul_b_q<=0;mul_high_q<=0;mul_signed_q<=0;
             compile_next_q<=0;branch_target_q<=0;branch_pc_q<=0;
@@ -209,7 +222,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
             case(state_q)
                 IDLE:if(req_valid)begin
                     tag_q<=req_tag;v2_q<=req_v2;round_q<=req_round_mode;program_q<=req_program_addr;
-                    r_q<=req_r;f_q<=req_f;e_q<=req_e;a_q<=req_a;pc_q<=0;state_q<=FETCH_REQ;
+                    r_q<=req_r;f_q<=req_f;e_q<=req_e;a_q<=req_a;emask0_q<=req_emask0;emask1_q<=req_emask1;pc_q<=0;state_q<=FETCH_REQ;
                     compile_next_q<=0;branch_target_q<=0;branch_pc_q<=0;
                     for(usage_index=0;usage_index<8;usage_index=usage_index+1)usage_next_q[usage_index]<=0;
                 end
@@ -229,7 +242,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
                         if(dst!=src)begin r_q[64*dst+:64]<=rs;r_q[64*src+:64]<=rd;end
                         retire_instruction();
                     end
-                    ADD_M,SUB_M,XOR_M,MUL_M,HIGH_M,SIGNED_HIGH_M,FADD_M,FSUB_M:begin address_q<=memory_address[20:0];state_q<=MEM_REQ;end
+                    ADD_M,SUB_M,XOR_M,MUL_M,HIGH_M,SIGNED_HIGH_M,FADD_M,FSUB_M,FDIV:begin address_q<=memory_address[20:0];state_q<=MEM_REQ;end
                     STORE:begin address_q<=memory_address[20:0];state_q<=STORE_REQ;end
                     MUL_R,HIGH_R,SIGNED_HIGH_R:begin
                         mul_a_q<=rd;mul_b_q<=kind==MUL_R?register_operand:rs;
@@ -245,6 +258,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
                         fp_a_q<=kind==FMUL?er:fr;fp_b_q<=ar;
                         fp_op_q<=kind==FMUL?2'd2:kind==FSUB_R?2'd1:2'd0;state_q<=FP_REQ;
                     end
+                    FSQRT:begin fp_a_q<=er;fp_b_q<=0;state_q<=DIV_REQ;end
                     ROUND:begin
                         if(!v2_q||cf_value[5:2]==0)round_q<=cf_value[1:0];
                         retire_instruction();
@@ -262,10 +276,14 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
                     else f_q[128*fdst+:128]<=fp_result;
                     retire_instruction();
                 end
+                DIV_REQ:if(div_ready)state_q<=DIV_WAIT;
+                DIV_WAIT:if(div_valid&&div_tag==tag_q)begin e_q[128*fdst+:128]<=div_result;retire_instruction();end
                 IADD_SECOND:begin r_q[64*dst+:64]<=add_result;retire_instruction();end
                 MEM_REQ:if(rd_ready)state_q<=MEM_RSP;
                 MEM_RSP:if(rsp_valid && !old_memory)begin
-                    if(fp_memory)begin
+                    if(kind==FDIV)begin
+                        fp_a_q<=er;fp_b_q<={denominator_high,denominator_low};state_q<=DIV_REQ;
+                    end else if(fp_memory)begin
                         fp_a_q<=fr;fp_b_q<={packed_high,packed_low};fp_op_q<=kind==FSUB_M?2'd1:2'd0;state_q<=FP_REQ;
                     end else if(kind==MUL_M || kind==HIGH_M || kind==SIGNED_HIGH_M)begin
                         mul_a_q<=rd;mul_b_q<=memory_value;mul_high_q<=kind!=MUL_M;
@@ -286,7 +304,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
                 end
                 RETURN:if(ret_ready)state_q<=IDLE;
                 ERROR:if(error_ready)state_q<=IDLE;
-                default:state_q<=IDLE;
+                default:state_q<=ERROR;
             endcase
         end
     end

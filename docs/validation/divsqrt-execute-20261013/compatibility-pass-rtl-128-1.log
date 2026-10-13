@@ -1,0 +1,2 @@
+LATENCY vector min=5 max=114 total=775880
+PASS divsqrt128 lanes=1 native_vectors=13312 operations=2 rounding_modes=4 DAZ_FTZ_models=2 total_response_latency=775880 held_inactive=1 reset_atomic=1

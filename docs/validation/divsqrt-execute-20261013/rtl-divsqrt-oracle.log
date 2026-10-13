@@ -1,0 +1,1 @@
+PASS native DIVSQRT vectors=13312 operations=2 rounding_modes=4 DAZ_FTZ_models=2 seed=64737172742d6e61

@@ -1,0 +1,30 @@
+
+29. Printing statistics.
+
+=== randomx_integer_iteration ===
+
+   Number of wires:             273549
+   Number of wire bits:         413088
+   Number of public wires:        9918
+   Number of public wire bits:  149457
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:             274346
+     $_ANDNOT_                   34102
+     $_AND_                       7007
+     $_AOI3_                     19046
+     $_AOI4_                      1515
+     $_DFF_PN0_                     12
+     $_DFF_P_                    10492
+     $_MUX_                      57571
+     $_NAND_                      3380
+     $_NOR_                      21671
+     $_NOT_                      17752
+     $_OAI3_                      5491
+     $_OAI4_                      5417
+     $_ORNOT_                     2560
+     $_OR_                       58242
+     $_XNOR_                     12500
+     $_XOR_                      17588
+

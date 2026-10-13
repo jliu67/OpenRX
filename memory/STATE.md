@@ -1,5 +1,30 @@
 # Current state — actual local execution activation
 
+## Native division and square root — task #60, 2026-10-13
+
+[Task #60](https://github.com/jliu67/OpenRX/issues/60) extends independently
+accepted, unmerged [PR #59](https://github.com/jliu67/OpenRX/pull/59#pullrequestreview-5501107360)
+at `ce788d11285c901b52fd3cf0b450489d13b3f2f5` on a separate stacked draft.
+All 29 native instruction families / 256 raw encodings now execute, including
+masked FDIV_M and FSQRT_R. Reviewed PR #55/#57/#59 and main remain unchanged.
+New code requires independent review; no merge is authorized. Complete VM/hash,
+selected core, physical memories and calibrated timing/power remain open.
+[Design](../rtl/execute/DIVSQRT.md) and [EXP-009](../experiments/EXP-009-native-divsqrt.md)
+bind reproducible tests and actual mapping. Earlier component summaries retain
+their dated source/evidence context; historical subset test drivers require their
+accepted frozen heads. Current reproduction uses `scripts/test_divsqrt_execute.py`.
+
+Twelve RTL and eleven applicable mapped modes pass: 13,312 balanced native
+primitive vectors per scalar/shared/parallel variant, 2,560 balanced mapped
+corner vectors, 2,856 native retirements including 152 divisions / 146 square
+roots, 418 loads / 82 stores / 64 tail writes, four chains/aliases and all 2 MiB.
+All rounding modes, DAZ/FTZ, IEEE exception bits, masks, held/reset/stale behavior
+match. Shared/parallel divide-sqrt units are 8,690/12,942
+generic cells and 779/558 flops. Controlled integration clocks
+are 45,671/28,443 ideal and 62,637/45,409 stalled; shared adds 17,228 clocks.
+Complete default mapping is 274,346 cells / 10,504 flops.
+Operand latency is variable; these fixtures and generic gates establish no physical PPA or full-hash throughput.
+
 ## Exact native floating execution handoff — task #58, 2026-10-13
 
 [Task #58](https://github.com/jliu67/OpenRX/issues/58) /

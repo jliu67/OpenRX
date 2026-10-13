@@ -1,0 +1,4 @@
+{
+  "type": "CalledProcessError",
+  "error": "Command '['vvp', '/tmp/openrx-divsqrt-connected-rtl-03/rtl-1-errors.vvp']' returned non-zero exit status 1."
+}
