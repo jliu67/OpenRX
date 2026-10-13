@@ -1,0 +1,21 @@
+{
+  "native": {
+    "programs": 8,
+    "iterations_per_program": 2048,
+    "total_iterations": 16384,
+    "v2": 1,
+    "instruction_steps": 6305764,
+    "bytecode_events": 1282660,
+    "branches": 563303,
+    "fp": 2239262,
+    "cfround": 26702,
+    "dataset": "deterministic addressed fixture, not full dataset",
+    "native_default_programs": 8,
+    "native_default_iterations": 2048,
+    "initialization_program_generation_interprogram_BLAKE2b_final_hash": "outside hardware component"
+  },
+  "full_RTL_PASS_record": "PASS program_sequence programs=8 iterations_per_program=2048 v2=1 stall=0 total_iterations=16384 actual_instructions=6305764 bytecode_events=1282660 tail_writes=131072 full_memory_bytes=2097152 elapsed_cycles=54705599 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=0 rom_stale=0 sp_stale=0 ds_stale=0",
+  "actual_program_inputs_derived_from_DUT": true,
+  "all2MiB_compared_at_each8program_boundaries": true,
+  "no_full_dataset_or_hardware_hash_claim": true
+}

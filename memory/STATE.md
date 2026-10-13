@@ -1,5 +1,25 @@
 # Current state — actual local execution activation
 
+## Native program sequencing — task #62, completed validation 2026-10-13
+
+[Draft PR #63](https://github.com/jliu67/OpenRX/pull/63) adds native entropy/config
+initialization and default eight-program ×2,048-iteration sequencing above original
+accepted PR61 `7f299c74f81332257eefd775086b355969ad85f3`. Full native-v2 RTL
+passes all 16,384 iterations/6,305,764 retirements/1,282,660 bytecode events/131,072
+tail stores; full state and all 2 MiB per program agree. Nine current RTL and nine
+mapped modes pass. Actual Yosys0.33 default whole mapping 249196 cells/12526 flops;
+control 4500/2383. Short v2 clocks 110934/185396, v1 70110/120864. [Evidence](../docs/validation/program-sequence-20261013/README.md)
+binds exact inputs/archives/resources and explicitly separates full native RTL,
+short mapped control, default contract stub and bounded whole-top gates.
+External initialization/generation/interprogram BLAKE2b/finalization and addressed
+fixture dataset remain boundaries; full actual dataset/hardware hash/full v1
+8×2048/physical PPA remain open. The owner-approved parent PR55/57/59/61 merges are complete on main
+`9bbda64098bc6dfc999a67e1fdf9333abe0959d3`, whose tree equals the original
+accepted base. PR63 now targets main without rebasing or regenerating the workload.
+Original accepted sources and evidence remain preserved. New independent review is required; PR63 has no merge authorization.
+[Design](../rtl/execute/PROGRAM_SEQUENCE.md) / [EXP-010](../experiments/EXP-010-native-program-sequence.md). Earlier initial/draft snapshots retain
+their dated context.
+
 ## Native program sequencing — task #62, 2026-10-13
 
 [Task #62](https://github.com/jliu67/OpenRX/issues/62) stacks on independently

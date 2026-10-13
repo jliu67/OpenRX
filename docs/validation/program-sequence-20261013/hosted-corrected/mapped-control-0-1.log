@@ -1,0 +1,2 @@
+PASS program_sequence programs=8 iterations_per_program=4 v2=0 stall=1 total_iterations=32 actual_instructions=8207 bytecode_events=1855 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=120864 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=8 rom_stale=8207 sp_stale=1586 ds_stale=32
+rtl/execute/tests/tb_program_sequence.v:430: $finish called at 1208660000 (1ps)

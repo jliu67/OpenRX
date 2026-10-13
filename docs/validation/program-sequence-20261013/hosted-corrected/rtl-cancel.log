@@ -1,0 +1,2 @@
+PASS program_cancel metadata_stale=1 reset_metadata_request=1 late_metadata_drop=1 malformed_metadata_held_error=1 reset_pending_load=1 reset_held_store=1 reset_held_fetch=1 reset_running_division=2 reset_running_sqrt=1 late_fetch_drop=1 late_memory_drop=1 committed_prefix_preserved=1
+rtl/execute/tests/tb_program_cancel.v:400: $finish called at 6240000 (1ps)

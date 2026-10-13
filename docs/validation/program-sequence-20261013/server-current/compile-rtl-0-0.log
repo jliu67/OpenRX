@@ -1,0 +1,45 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module addRecFN declared here: rtl/execute/vendor/hardfloat/addRecFN.v:204
+       :   -- module addRecFNToRaw declared here: rtl/execute/vendor/hardfloat/addRecFN.v:43
+       :   -- module aes_inv_sbox declared here: rtl/aes/vendor/secworks/aes_inv_sbox.v:40
+       :   -- module aes_sbox declared here: rtl/aes/vendor/secworks/aes_sbox.v:42
+       :   -- module compressBy2 declared here: rtl/execute/vendor/hardfloat/HardFloat_primitives.v:139
+       :   -- module compressBy4 declared here: rtl/execute/vendor/hardfloat/HardFloat_primitives.v:158
+       :   -- module countLeadingZeros declared here: rtl/execute/vendor/hardfloat/HardFloat_primitives.v:111
+       :   -- module divSqrtRecFNToRaw_small declared here: /tmp/openrx-program-sequence-tests-02/HardFloat-divSqrt-compile-view.v:46
+       :   -- module divSqrtRecFN_small declared here: /tmp/openrx-program-sequence-tests-02/HardFloat-divSqrt-compile-view.v:276
+       :   -- module fNToRecFN declared here: rtl/execute/vendor/hardfloat/fNToRecFN.v:40
+       :   -- module iNFromException declared here: rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v:43
+       :   -- module isSigNaNRecFN declared here: rtl/execute/vendor/hardfloat/isSigNaNRecFN.v:40
+       :   -- module lowMaskHiLo declared here: rtl/execute/vendor/hardfloat/HardFloat_primitives.v:57
+       :   -- module lowMaskLoHi declared here: rtl/execute/vendor/hardfloat/HardFloat_primitives.v:84
+       :   -- module mulRecFN declared here: rtl/execute/vendor/hardfloat/mulRecFN.v:194
+       :   -- module mulRecFNToFullRaw declared here: rtl/execute/vendor/hardfloat/mulRecFN.v:43
+       :   -- module mulRecFNToRaw declared here: rtl/execute/vendor/hardfloat/mulRecFN.v:118
+       :   -- module propagateFloatNaN_add declared here: rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v:58
+       :   -- module propagateFloatNaN_divSqrt declared here: rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v:139
+       :   -- module propagateFloatNaN_mul declared here: rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v:83
+       :   -- module propagateFloatNaN_mulAdd declared here: rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v:107
+       :   -- module randomx_aes_round declared here: rtl/aes/randomx_aes_round.v:4
+       :   -- module randomx_divsqrt128 declared here: rtl/execute/randomx_divsqrt128.v:4
+       :   -- module randomx_divsqrt64 declared here: rtl/execute/randomx_divsqrt64.v:6
+       :   -- module randomx_exec_aes_commit declared here: rtl/aes/randomx_exec_aes_commit.v:4
+       :   -- module randomx_fp128 declared here: rtl/execute/randomx_fp128.v:4
+       :   -- module randomx_fp64 declared here: rtl/execute/randomx_fp64.v:6
+       :   -- module randomx_i32_to_f64 declared here: rtl/engine/randomx_i32_to_f64.v:4
+       :   -- module randomx_integer_execute declared here: rtl/execute/randomx_integer_execute.v:4
+       :   -- module randomx_integer_iteration declared here: rtl/execute/randomx_integer_iteration.v:4
+       :   -- module randomx_iteration_engine declared here: rtl/engine/randomx_iteration_engine.v:4
+       :   -- module randomx_iteration_store declared here: rtl/iteration/randomx_iteration_store.v:4
+       :   -- module randomx_mul64 declared here: rtl/execute/randomx_mul64.v:4
+       :   -- module randomx_program_control declared here: rtl/execute/randomx_program_control.v:4
+       :   -- module randomx_program_sequence declared here: rtl/execute/randomx_program_sequence.v:4
+       :   -- module randomx_reciprocal32 declared here: rtl/execute/randomx_reciprocal32.v:4
+       :   -- module randomx_v2_aes_mix declared here: rtl/aes/randomx_v2_aes_mix.v:4
+       :   -- module recFNToFN declared here: rtl/execute/vendor/hardfloat/recFNToFN.v:40
+       :   -- module recFNToRawFN declared here: rtl/execute/vendor/hardfloat/HardFloat_rawFN.v:43
+       :   -- module reverse declared here: rtl/execute/vendor/hardfloat/HardFloat_primitives.v:40
+       :   -- module roundAnyRawFNToRecFN declared here: rtl/execute/vendor/hardfloat/HardFloat_rawFN.v:73
+       :   -- module roundRawFNToRecFN declared here: rtl/execute/vendor/hardfloat/HardFloat_rawFN.v:323
