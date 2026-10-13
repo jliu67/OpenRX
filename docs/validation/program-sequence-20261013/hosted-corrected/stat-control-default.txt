@@ -1,0 +1,27 @@
+
+4. Printing statistics.
+
+=== randomx_program_control ===
+
+   Number of wires:               2199
+   Number of wire bits:          15714
+   Number of public wires:         124
+   Number of public wire bits:   13399
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               4500
+     $_ANDNOT_                     102
+     $_AND_                       1575
+     $_DFF_P_                        8
+     $_MUX_                        132
+     $_NAND_                        19
+     $_NOR_                         22
+     $_NOT_                         32
+     $_ORNOT_                       11
+     $_OR_                         114
+     $_SDFFE_PP0P_                2374
+     $_SDFF_PP0_                     1
+     $_XNOR_                        19
+     $_XOR_                         91
+

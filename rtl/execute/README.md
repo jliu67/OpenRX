@@ -141,3 +141,5 @@ last instruction commit; it excludes the first request’s pre-acceptance wait.
 These fixture/port cycle counts and generic cell counts are not calibrated clock
 timing, physical area, power or complete-hash throughput. See
 [EXP-006](../../experiments/EXP-006-native-integer-execute.md) for measured results.
+
+[Native program initialization and sequencing](PROGRAM_SEQUENCE.md) adds program-loop control above accepted PR61; initial short pilots pass, full/mapped validation and independent review pending.

@@ -1,0 +1,81 @@
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc: In member function ‘void Fixture::prepare(uint8_t*, bool, uint8_t*)’:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:29:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   29 |         store64(&reg.a[0].lo, randomx::getSmallPositiveFloatBits(program.getEntropy(0)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:30:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   30 |         store64(&reg.a[0].hi, randomx::getSmallPositiveFloatBits(program.getEntropy(1)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:31:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   31 |         store64(&reg.a[1].lo, randomx::getSmallPositiveFloatBits(program.getEntropy(2)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:32:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   32 |         store64(&reg.a[1].hi, randomx::getSmallPositiveFloatBits(program.getEntropy(3)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:33:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   33 |         store64(&reg.a[2].lo, randomx::getSmallPositiveFloatBits(program.getEntropy(4)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:34:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   34 |         store64(&reg.a[2].hi, randomx::getSmallPositiveFloatBits(program.getEntropy(5)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:35:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   35 |         store64(&reg.a[3].lo, randomx::getSmallPositiveFloatBits(program.getEntropy(6)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:36:40: error: ‘getSmallPositiveFloatBits’ is not a member of ‘randomx’; did you mean ‘getSmallPositiveFloatBits’?
+   36 |         store64(&reg.a[3].hi, randomx::getSmallPositiveFloatBits(program.getEntropy(7)));
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:28:24: note: ‘getSmallPositiveFloatBits’ declared here
+   28 | static inline uint64_t getSmallPositiveFloatBits(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:48:44: error: ‘getFloatMask’ is not a member of ‘randomx’; did you mean ‘getFloatMask’?
+   48 |         store64(&config.eMask[0], randomx::getFloatMask(program.getEntropy(14)));
+      |                                            ^~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:42:24: note: ‘getFloatMask’ declared here
+   42 | static inline uint64_t getFloatMask(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:32:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_initialize.inc:49:44: error: ‘getFloatMask’ is not a member of ‘randomx’; did you mean ‘getFloatMask’?
+   49 |         store64(&config.eMask[1], randomx::getFloatMask(program.getEntropy(15)));
+      |                                            ^~~~~~~~~~~~
+In file included from rtl/execute/tests/program_sequence_oracle.cpp:13:
+/tmp/openrx-program-sequence-pilot-01/pinned_program_float_helpers.inc:42:24: note: ‘getFloatMask’ declared here
+   42 | static inline uint64_t getFloatMask(uint64_t entropy) {
+      |                        ^~~~~~~~~~~~

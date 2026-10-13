@@ -1,0 +1,40 @@
+{
+  "id": 5503154172,
+  "node_id": "PRR_kwDOVARvZM8AAAABSAN3_A",
+  "user": {
+    "login": "jliu67",
+    "id": 166252253,
+    "node_id": "U_kgDOCejO3Q",
+    "avatar_url": "https://avatars.githubusercontent.com/u/166252253?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jliu67",
+    "html_url": "https://github.com/jliu67",
+    "followers_url": "https://api.github.com/users/jliu67/followers",
+    "following_url": "https://api.github.com/users/jliu67/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jliu67/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jliu67/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jliu67/subscriptions",
+    "organizations_url": "https://api.github.com/users/jliu67/orgs",
+    "repos_url": "https://api.github.com/users/jliu67/repos",
+    "events_url": "https://api.github.com/users/jliu67/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jliu67/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "body": "Independent delta review of 7f299c74f81332257eefd775086b355969ad85f3: PASS. No concrete blocker found in the new division/sqrt implementation. Reused accepted PR55/57/59/controller/AES/tail evidence; stacked base remains ce788d11285c901b52fd3cf0b450489d13b3f2f5.\n\nFDIV_M operand/address handling, exact signed32 conversion and captured per-lane 0x00ffffffffffffff/exponent masks agree with unchanged native execution; FSQRT updates E[dst%4]. Rounding maps 0/2/3/1, DAZ/FTZ, signed zero, NaN payload/quieting, invalid/divzero and first-after-reset specials agree with the native SSE corpus. Normal work uses unchanged licensed HardFloat iterative arithmetic. Tagged pulse capture, held replies, unequal parallel completion, private shared-lane state and reset cancellation preserve atomic retirement. Both instructions leave integer lexical usage unchanged.\n\nGoldens invoke native SSE or unchanged BytecodeMachine/iteration code; masks/results/targets are assertions only. Hardware receives raw ROM and actual addressed SRAM contents. Verified 13,312 full primitive records per configuration, the declared 2,560-case mapped corpus, 2,856 R/F/E/mode/PC retirements, 152 native denominator traces, 146 square roots and all 2 MiB. All 256 raw encodings are covered; the error path remains for impossible states without a physical-fault-tolerance claim.\n\nThe Icarus12 correction is sound: checksum-pinned original source is transformed in a separately labeled compile view by removing exactly one redundant scalar wire declaration already present as an ANSI output. All other bytes/notices and all twelve upstream originals match the retained release archive. Verified that Yosys commands continue to use the original vendor file. Hardware/oracle/stimulus inputs are unchanged; only the harness changed and the helper was added. The original 46-file hosted failure archive (45 digests) and indexed local failed-output/source archives remain preserved.\n\nIndependently verified 53 final source bindings, 128 hosted artifact digests, 21 matching fixture/view files and 23 matching PASS/cycle records: twelve RTL and eleven mapped modes. Actual shared/parallel units are 8,690/779 and 12,942/558 cells/flops; default top 274,346/10,504. Latency is operand-dependent; the controlled ideal/stalled fixture saves 17,228 clocks with parallel units. Shared whole-top mapping is absent.\n\nAll six final-head checks pass, including run 38387440257. Complete VM/hash, selected-core, physical memory and calibrated PPA remain open. Read-only review; no reproduction workload, implementation/artifact edit, base change or merge.",
+  "state": "COMMENTED",
+  "html_url": "https://github.com/jliu67/OpenRX/pull/61#pullrequestreview-5503154172",
+  "pull_request_url": "https://api.github.com/repos/jliu67/OpenRX/pulls/61",
+  "author_association": "OWNER",
+  "_links": {
+    "html": {
+      "href": "https://github.com/jliu67/OpenRX/pull/61#pullrequestreview-5503154172"
+    },
+    "pull_request": {
+      "href": "https://api.github.com/repos/jliu67/OpenRX/pulls/61"
+    }
+  },
+  "submitted_at": "2026-10-13T11:59:49Z",
+  "commit_id": "7f299c74f81332257eefd775086b355969ad85f3"
+}

@@ -1,0 +1,6 @@
+{
+  "at_utc": "2026-10-13T13:36:15.668379+00:00",
+  "old_waiter": "openrx-program-sequence-tests-wait-01.service",
+  "test_resource_receipt_absent": true,
+  "reason": "correct Boolean fixture-directory label; preserve unexecuted first source, queue new frozen current source; active full job untouched"
+}

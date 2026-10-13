@@ -1,0 +1,62 @@
+{
+  "at_epoch": 1791894981.270845,
+  "actual_kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "536870912",
+    "pids.max": "128"
+  },
+  "ancestors": {
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-program-sequence-full-v2-01.service": {
+      "cpu.max": "600000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "41887"
+    },
+    "/sys/fs/cgroup/user.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup": {}
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "MemAvailable": 9614024704,
+  "SwapFree": 4943118336,
+  "workers": 1,
+  "reason": "Task62 program control/native-generated program sequence pilot and external native provider. One worker, actual CPU600%,2GiB RAM,512MiB swap,Tasks128 and fresh1GiB OS reserve; global slot serialized. No synthesis or full integration yet; lightweight compiler/simulator memory bounded by previous primitive evidence.",
+  "returncode": 0,
+  "kernel_final": {
+    "cpu.stat": "usage_usec 6029797938\nuser_usec 6028448901\nsystem_usec 1349036\ncore_sched.force_idle_usec 0\nnr_periods 60268\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "328687616",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "0",
+    "pids.current": "2"
+  }
+}

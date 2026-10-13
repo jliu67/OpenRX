@@ -1,0 +1,4 @@
+{
+  "type": "CalledProcessError",
+  "error": "Command '['g++', '-std=c++11', '-O2', '-I/tmp/openrx-program-sequence-pilot-01', '-Ivendor/randomx/src', '-Irtl/execute/tests', 'rtl/execute/tests/program_sequence_oracle.cpp', 'vendor/randomx/src/soft_aes.cpp', 'vendor/randomx/src/bytecode_machine.cpp', 'vendor/randomx/src/instructions_portable.cpp', 'vendor/randomx/src/reciprocal.c', 'vendor/randomx/src/aes_hash.cpp', 'vendor/randomx/src/blake2/blake2b.c', '-o', '/tmp/openrx-program-sequence-pilot-01/oracle']' returned non-zero exit status 1."
+}

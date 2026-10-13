@@ -1,0 +1,2 @@
+PASS program_control programs=8 iterations_per_program=2048 contract_commits=18432 native_entropy_records=8 resets=5 held_error_codes=2 stale_meta=24 stale_backend=18 cycles=37134 arithmetic_backend=contract_stub
+rtl/execute/tests/tb_program_control.v:356: $finish called at 371336000 (1ps)

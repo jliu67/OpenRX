@@ -1,4 +1,4 @@
-name: Native RandomX division, square root, floating and integer RTL
+name: Native RandomX program sequencing and execution RTL
 on:
   pull_request:
     paths:
@@ -10,6 +10,8 @@ on:
       - 'scripts/test_integer_multiply.py'
       - 'scripts/test_floating_execute.py'
       - 'scripts/floating_fixture.py'
+      - 'scripts/test_program_sequence.py'
+      - 'scripts/program_sequence_fixture.py'
       - 'scripts/test_divsqrt_execute.py'
       - 'scripts/divsqrt_fixture.py'
       - 'scripts/hardfloat_compile_view.py'
@@ -30,9 +32,9 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y iverilog yosys
-      - name: Execute actual divsqrt/FP/integer RTL and mapped netlists against native oracle
+      - name: Execute native-generated program sequences, control and actual mapped gates
         run: |
-          python3 scripts/test_divsqrt_execute.py \
+          python3 scripts/test_program_sequence.py \
             --output "$RUNNER_TEMP/integer-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
             --synthesize
       - name: Retain complete licensed outputs

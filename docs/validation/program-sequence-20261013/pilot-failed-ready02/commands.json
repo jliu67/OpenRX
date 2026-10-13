@@ -1,0 +1,137 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.06408763793297112
+  },
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-I/tmp/openrx-program-sequence-pilot-02",
+      "-Ivendor/randomx/src",
+      "-Irtl/execute/tests",
+      "rtl/execute/tests/program_sequence_oracle.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/bytecode_machine.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "vendor/randomx/src/aes_hash.cpp",
+      "vendor/randomx/src/blake2/blake2b.c",
+      "-o",
+      "/tmp/openrx-program-sequence-pilot-02/oracle"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 4.623203953029588
+  },
+  {
+    "label": "compile-vpi",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-fPIC",
+      "-shared",
+      "-I/usr/include/iverilog",
+      "-Ivendor/randomx/src",
+      "-Irtl/execute/tests",
+      "rtl/execute/tests/program_source_vpi.cpp",
+      "vendor/randomx/src/aes_hash.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/blake2/blake2b.c",
+      "-o",
+      "/tmp/openrx-program-sequence-pilot-02/program_source.vpi"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 2.268793720053509
+  },
+  {
+    "label": "oracle-1",
+    "argv": [
+      "/tmp/openrx-program-sequence-pilot-02/oracle",
+      "/tmp/openrx-program-sequence-pilot-02/v2",
+      "8",
+      "4",
+      "1"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.7650880810106173
+  },
+  {
+    "label": "compile-rtl-1-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-Irtl/execute/vendor/hardfloat/",
+      "-Irtl/execute/vendor/hardfloat/8086-SSE",
+      "-I/tmp/openrx-program-sequence-pilot-02/v2",
+      "-s",
+      "tb_program_sequence",
+      "-Ptb_program_sequence.V2=1",
+      "-Ptb_program_sequence.STALL=0",
+      "-o",
+      "/tmp/openrx-program-sequence-pilot-02/rtl-1-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "rtl/execute/vendor/hardfloat/addRecFN.v",
+      "rtl/execute/vendor/hardfloat/mulRecFN.v",
+      "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "rtl/execute/randomx_fp64.v",
+      "rtl/execute/randomx_fp128.v",
+      "/tmp/openrx-program-sequence-pilot-02/v2/HardFloat-divSqrt-compile-view.v",
+      "rtl/execute/randomx_divsqrt64.v",
+      "rtl/execute/randomx_divsqrt128.v",
+      "rtl/execute/randomx_program_control.v",
+      "rtl/execute/randomx_program_sequence.v",
+      "rtl/execute/tests/tb_program_sequence.v"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "returncode": 0,
+    "elapsed_seconds": 0.2645136679057032
+  },
+  {
+    "label": "rtl-1-0",
+    "argv": [
+      "vvp",
+      "-M/tmp/openrx-program-sequence-pilot-02",
+      "-mprogram_source",
+      "/tmp/openrx-program-sequence-pilot-02/rtl-1-0.vvp",
+      "+directory=/tmp/openrx-program-sequence-pilot-02/v2"
+    ],
+    "cwd": "/tmp/openrx-program-sequence-q2dprvpj",
+    "timeout_seconds": 600,
+    "elapsed_seconds": 0.8653263120213524
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "at_epoch": 1791901012.8317533,
+  "actual_kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "536870912",
+    "pids.max": "128"
+  },
+  "ancestors": {
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-program-sequence-tests-02.service": {
+      "cpu.max": "600000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "41887"
+    },
+    "/sys/fs/cgroup/user.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup": {}
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "MemAvailable": 9129385984,
+  "SwapFree": 4988207104,
+  "workers": 1,
+  "reason": "Task62 corrected immutable test staging with accurate v1/v2 directory labels, reproducible 8x4 native v1/v2 RTL, control8x2048 contract and reset/error cancellation. One serial worker, actual CPU600%,2GiB RAM,512MiB swap,Tasks128 and fresh1GiB OS reserve/global slot. Measured earlier same RTL/native pilot peak163MiB; no synthesis in this job.",
+  "returncode": 0,
+  "kernel_final": {
+    "cpu.stat": "usage_usec 78428773\nuser_usec 77134826\nsystem_usec 1293946\ncore_sched.force_idle_usec 0\nnr_periods 788\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "216862720",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "0",
+    "pids.current": "1"
+  }
+}
