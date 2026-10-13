@@ -1,0 +1,40 @@
+{
+  "id": 5497704738,
+  "node_id": "PRR_kwDOVARvZM8AAAABR7BRIg",
+  "user": {
+    "login": "jliu67",
+    "id": 166252253,
+    "node_id": "U_kgDOCejO3Q",
+    "avatar_url": "https://avatars.githubusercontent.com/u/166252253?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/jliu67",
+    "html_url": "https://github.com/jliu67",
+    "followers_url": "https://api.github.com/users/jliu67/followers",
+    "following_url": "https://api.github.com/users/jliu67/following{/other_user}",
+    "gists_url": "https://api.github.com/users/jliu67/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/jliu67/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/jliu67/subscriptions",
+    "organizations_url": "https://api.github.com/users/jliu67/orgs",
+    "repos_url": "https://api.github.com/users/jliu67/repos",
+    "events_url": "https://api.github.com/users/jliu67/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/jliu67/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "body": "Independent new-work review of bd193092bfc07e0874505dc7f8ad79f1ee9609a8: BLOCKED by one P2 handshake defect (inline finding at randomx_iteration_engine.v:102). Please retain the scratchpad read grant until acceptance and add the stalled-read / arriving-write regression before acceptance.\n\nReviewed only the new converter, iteration controller, native oracle, testbench and driver; reused the accepted AES/tail base. Signed32 conversion (including INT32_MIN), F/E masks, tag/reset handling, ordered byte strobes, alias/chain accounting and dataset feedback agree with the pinned native logic for the documented serialized replay. The native arithmetic remains software execution/replay; this is controller integration evidence.\n\nRead-only evidence checks matched the exact-head Git blobs and all 20 unchanged execution inputs; the sole changed driver hash matches the Icarus12 correction. Retained logs support 4,096 conversion vectors, eight RTL modes and A/C mapped ideal/stalled modes, 32 iterations (16 v2/16 v1), 2,880 reads, 720 stores, 256 tail writes and full 2 MiB comparison. Entry totals 1,056/544/480 follow the stated port model; generic A/C counts 126,810/130,589 exclude physical memory and arithmetic. They do not establish hardware arithmetic performance or full-hash throughput.\n\nAll five checks now pass on this exact head, including differential-engine run 38329486629. Existing CI does not exercise the overlapping kernel requests described in the finding. No new workload, build, test, synthesis or code edit was performed by this review; no merge.",
+  "state": "COMMENTED",
+  "html_url": "https://github.com/jliu67/OpenRX/pull/53#pullrequestreview-5497704738",
+  "pull_request_url": "https://api.github.com/repos/jliu67/OpenRX/pulls/53",
+  "author_association": "OWNER",
+  "_links": {
+    "html": {
+      "href": "https://github.com/jliu67/OpenRX/pull/53#pullrequestreview-5497704738"
+    },
+    "pull_request": {
+      "href": "https://api.github.com/repos/jliu67/OpenRX/pulls/53"
+    }
+  },
+  "submitted_at": "2026-10-13T01:11:38Z",
+  "commit_id": "bd193092bfc07e0874505dc7f8ad79f1ee9609a8"
+}

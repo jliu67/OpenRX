@@ -1,0 +1,35 @@
+name: RandomX iteration memory engine
+on:
+  pull_request:
+    paths:
+      - 'rtl/engine/**'
+      - 'rtl/iteration/**'
+      - 'rtl/aes/**'
+      - 'scripts/test_iteration_engine.py'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx*.json'
+      - '.github/workflows/iteration-engine.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  differential-engine:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install official HDL packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Native memory differential, conversion and mapped-netlist checks
+        run: |
+          python3 scripts/test_iteration_engine.py \
+            --output "$RUNNER_TEMP/iteration-engine-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
+      - name: Retain complete licensed outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration-engine-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/iteration-engine-${{ github.run_id }}-${{ github.run_attempt }}/

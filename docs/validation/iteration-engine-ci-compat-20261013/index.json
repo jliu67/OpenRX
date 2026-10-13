@@ -1,0 +1,156 @@
+{
+  "base_feature": "a04b91635c423938fa6176916374e1abccb21bf7",
+  "scope": "exact successful PASS-record recognition with Icarus12 finish diagnostic; successful vvp exit remains mandatory; no RTL, native workload or acceptance changes",
+  "changed_execution_inputs": {
+    "scripts/test_iteration_engine.py": {
+      "old": "715539cc266cfa2155a9938941698985f9cf2f0bbfa39cbdee4c154dcd9fb0f1",
+      "new": "ea6e29aaf14b4ee7bd3a7daa0afca6013cea6062a7671ba9d66a76e5cc03f3e5"
+    }
+  },
+  "all_other_original_execution_inputs_unchanged": 20,
+  "exports": {
+    "local-summary.json": {
+      "raw_sha256": "ef05054e7c0880502049b9fe96542730f56a1b8d3f2bc5501aec59203fe8f098",
+      "public_sha256": "ef05054e7c0880502049b9fe96542730f56a1b8d3f2bc5501aec59203fe8f098",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "local-inputs.json": {
+      "raw_sha256": "39346679a3aadca6300352dd8d79f7b519880bd3e9e674ed08b150f980b1f967",
+      "public_sha256": "39346679a3aadca6300352dd8d79f7b519880bd3e9e674ed08b150f980b1f967",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "local-commands.json": {
+      "raw_sha256": "7db9080851fe7a4b323593bb02bedb4aed68b1baa627c9d4789497eb90c45b13",
+      "public_sha256": "7db9080851fe7a4b323593bb02bedb4aed68b1baa627c9d4789497eb90c45b13",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "local-tools.json": {
+      "raw_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "public_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "local-extraction.json": {
+      "raw_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "public_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "local-artifacts.sha256.json": {
+      "raw_sha256": "3745747377662894e3f5bc0db279071ecf076151a9cc442ca15da92985f7a8ba",
+      "public_sha256": "3745747377662894e3f5bc0db279071ecf076151a9cc442ca15da92985f7a8ba",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "local-native-i32.log": {
+      "raw_sha256": "07658916d5c9dd00444aff2c505d73a953328c8858bf1e9c33522d17113856b2",
+      "public_sha256": "07658916d5c9dd00444aff2c505d73a953328c8858bf1e9c33522d17113856b2",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "local-oracle.log": {
+      "raw_sha256": "a5340ee6b1555307f584cb26bec8d05cd5948c254a36aba5f3779b507b46891d",
+      "public_sha256": "a5340ee6b1555307f584cb26bec8d05cd5948c254a36aba5f3779b507b46891d",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-A-0.log": {
+      "raw_sha256": "6627ad5494c04caa2100b60c67dfc6e0f4f0d00281cf5aff4811a28d948644ba",
+      "public_sha256": "6627ad5494c04caa2100b60c67dfc6e0f4f0d00281cf5aff4811a28d948644ba",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-A-1.log": {
+      "raw_sha256": "56e804fd774278ee21abab7c5f0d4da2628bdbf84032c5b241392f67788c61f4",
+      "public_sha256": "56e804fd774278ee21abab7c5f0d4da2628bdbf84032c5b241392f67788c61f4",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-B-0.log": {
+      "raw_sha256": "8157ce06cf610c54ab5f0981c0ae7bef1fd283e940d505a85b9238b96ac951d5",
+      "public_sha256": "8157ce06cf610c54ab5f0981c0ae7bef1fd283e940d505a85b9238b96ac951d5",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-B-1.log": {
+      "raw_sha256": "9caaf49576dfcf3fcc72075e7c5298df8bb16bdfb41a767a521a837c7a2cf797",
+      "public_sha256": "9caaf49576dfcf3fcc72075e7c5298df8bb16bdfb41a767a521a837c7a2cf797",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-C-0.log": {
+      "raw_sha256": "aef1577c428704414a8c04a30936df62521773801c256006099f54e6980343c1",
+      "public_sha256": "aef1577c428704414a8c04a30936df62521773801c256006099f54e6980343c1",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-C-1.log": {
+      "raw_sha256": "47d3e6aa4beeb7ca1003f12be981aae679ae0c10bb0c902e252b24e8690c88fa",
+      "public_sha256": "47d3e6aa4beeb7ca1003f12be981aae679ae0c10bb0c902e252b24e8690c88fa",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-C-lanes1-0.log": {
+      "raw_sha256": "6072160d4f018e11c4cf0034e3bbcdeeb7ec8eee6acdf5a7af29fe6de8d62e8f",
+      "public_sha256": "6072160d4f018e11c4cf0034e3bbcdeeb7ec8eee6acdf5a7af29fe6de8d62e8f",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "rtl-C-lanes1-1.log": {
+      "raw_sha256": "ec2e0b8dbf50f1519506219455e6581e5cf53ac2d5a6d21ad8367be0bc86d2e4",
+      "public_sha256": "ec2e0b8dbf50f1519506219455e6581e5cf53ac2d5a6d21ad8367be0bc86d2e4",
+      "origin": "corrected-driver RTL-only attempt",
+      "encoding": "original-bytes"
+    },
+    "ci-compat-recognition-tests.json": {
+      "raw_sha256": "0da1260d4b395a3d70104f6f88ed859411300bde606e6ae6d474bbf4127cc910",
+      "public_sha256": "0da1260d4b395a3d70104f6f88ed859411300bde606e6ae6d474bbf4127cc910",
+      "origin": "focused author compatibility checks",
+      "encoding": "original-bytes"
+    },
+    "hosted-native-fixture-identity.json": {
+      "raw_sha256": "b7fb9dacc5a73951c8e692e59750f54449e2528041f2debb9896ab5be26af160",
+      "public_sha256": "b7fb9dacc5a73951c8e692e59750f54449e2528041f2debb9896ab5be26af160",
+      "origin": "focused author compatibility checks",
+      "encoding": "original-bytes"
+    },
+    "ci-compat-rtl-log-identity.json": {
+      "raw_sha256": "c35e1b3649787ee4fe81e1887e53d5eae3e9b90e60e4bd0207d49343dfd37e9b",
+      "public_sha256": "c35e1b3649787ee4fe81e1887e53d5eae3e9b90e60e4bd0207d49343dfd37e9b",
+      "origin": "focused author compatibility checks",
+      "encoding": "original-bytes"
+    },
+    "hosted-native-i32.log": {
+      "raw_sha256": "1724f30bed585f29c73b8c2822b196d36f7ed72548ec0887f7a375ec40608485",
+      "public_sha256": "1724f30bed585f29c73b8c2822b196d36f7ed72548ec0887f7a375ec40608485",
+      "origin": "original failed hosted attempt38328901245",
+      "encoding": "original-bytes"
+    },
+    "hosted-failure.json": {
+      "raw_sha256": "68ee6d6800effde7ce7b38f2b2d0420f892ddbfb9f5022542d5aefa650c0e49f",
+      "public_sha256": "68ee6d6800effde7ce7b38f2b2d0420f892ddbfb9f5022542d5aefa650c0e49f",
+      "origin": "original failed hosted attempt38328901245",
+      "encoding": "original-bytes"
+    },
+    "hosted-engine-failure.log": {
+      "raw_sha256": "ba28110038f4b6ed46d0966f26432e972b99b14f3483722c47ed32e3c530287e",
+      "public_sha256": "ba28110038f4b6ed46d0966f26432e972b99b14f3483722c47ed32e3c530287e",
+      "origin": "complete original hosted job115073877922 log",
+      "encoding": "original-bytes"
+    }
+  },
+  "failed_run_url": "https://github.com/jliu67/OpenRX/actions/runs/38328901245",
+  "failed_artifact_url": "https://github.com/jliu67/OpenRX/actions/runs/38328901245/artifacts/11781798455",
+  "failed_artifact_zip_sha256": "e1e8a599e6b0559a7ab6c31671386f286c58b133e4b3bf23a42e78ffd574a5dd",
+  "all_six_hosted_native_fixture_outputs_match_original": true,
+  "original_synthesis_and_mapped_evidence": "../iteration-engine-20261013/index.json",
+  "local_corrected_driver_RTL_modes": 8,
+  "local_RTL_result_logs_identical_to_original": true,
+  "local_elapsed_seconds": 21.3,
+  "local_peak_RSS_KiB": 168092,
+  "new_local_synthesis": "not repeated; every RTL/C++ source unchanged, original mapped outputs retained; corrected hosted full flow runs on new feature tip",
+  "new_work_review": "one eventual independent review pending"
+}

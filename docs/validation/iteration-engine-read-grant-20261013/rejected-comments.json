@@ -1,0 +1,71 @@
+[
+  {
+    "url": "https://api.github.com/repos/jliu67/OpenRX/pulls/comments/4253765913",
+    "pull_request_review_id": 5497704738,
+    "id": 4253765913,
+    "node_id": "PRRC_kwDOVARvZM79i1EZ",
+    "diff_hunk": "@@ -0,0 +1,215 @@\n+// SPDX-License-Identifier: BSD-3-Clause\n+// Actual iteration memory/control around an external bytecode execution stage.\n+`default_nettype none\n+module randomx_iteration_engine #(\n+    parameter integer LANES=4, SERIAL_CONVERT=0, COALESCE_LINES=1\n+) (\n+    input wire clk,rst,\n+    input wire req_valid,output wire req_ready,\n+    input wire [15:0] req_tag,input wire req_v2,\n+    input wire [1:0] req_round_mode,\n+    input wire [511:0] req_r,req_a,\n+    input wire [31:0] req_spaddr0,req_spaddr1,req_mx,req_ma,\n+    input wire [2:0] req_read0,req_read1,req_read2,req_read3,\n+    input wire [63:0] req_emask0,req_emask1,req_dataset_offset,req_program_addr,\n+\n+    // One outstanding ordered128-bit scratchpad read; at least one cycle latency.\n+    output wire sp_rd_valid,input wire sp_rd_ready,\n+    output wire [20:0] sp_rd_addr,output wire [15:0] sp_rd_tag,\n+    input wire sp_rsp_valid,output wire sp_rsp_ready,\n+    input wire [127:0] sp_rsp_data,input wire [15:0] sp_rsp_tag,\n+    output wire sp_wr_valid,input wire sp_wr_ready,\n+    output wire [20:0] sp_wr_addr,output wire [127:0] sp_wr_data,\n+    output wire [15:0] sp_wr_strb,sp_wr_tag,\n+\n+    output wire ex_req_valid,input wire ex_req_ready,\n+    output wire [15:0] ex_req_tag,output wire ex_req_v2,\n+    output wire [1:0] ex_req_round_mode,\n+    output wire [511:0] ex_req_r,ex_req_f,ex_req_e,ex_req_a,\n+    output wire [63:0] ex_req_emask0,ex_req_emask1,ex_req_program_addr,\n+    input wire ex_ret_valid,output wire ex_ret_ready,\n+    input wire [15:0] ex_ret_tag,input wire [511:0] ex_ret_r,ex_ret_f,ex_ret_e,\n+    input wire [1:0] ex_ret_round_mode,\n+    // Execution-stage memory operations share the same ordered scratchpad port.\n+    input wire [15:0] ex_mem_tag,\n+    input wire ex_rd_valid,output wire ex_rd_ready,input wire [20:0] ex_rd_addr,\n+    output wire ex_rsp_valid,input wire ex_rsp_ready,output wire [127:0] ex_rsp_data,\n+    output wire [15:0] ex_rsp_tag,\n+    input wire ex_wr_valid,output wire ex_wr_ready,input wire [20:0] ex_wr_addr,\n+    input wire [127:0] ex_wr_data,input wire [15:0] ex_wr_strb,\n+\n+    // Dataset cache-line read; the prefetch is a nonblocking advisory hint.\n+    output wire ds_req_valid,input wire ds_req_ready,\n+    output wire [63:0] ds_req_addr,ds_prefetch_addr,\n+    output wire [15:0] ds_req_tag,output wire ds_prefetch_valid,\n+    input wire ds_rsp_valid,output wire ds_rsp_ready,\n+    input wire [15:0] ds_rsp_tag,input wire [511:0] ds_rsp_data,\n+\n+    output wire done_valid,input wire done_ready,output wire [15:0] done_tag,\n+    output wire [1:0] done_round_mode,\n+    output wire [511:0] done_r,done_f,done_e,\n+    output wire [31:0] done_mx,done_ma,done_spaddr0,done_spaddr1\n+);\n+    localparam [3:0] IDLE=0,R0_REQ=1,R0_RSP=2,R1_REQ=3,R1_RSP=4,\n+        CONVERT=5,EX_REQ=6,EX_WAIT=7,DS_REQ=8,DS_RSP=9,TAIL_REQ=10,TAIL_WAIT=11;\n+    reg [3:0] phase_q,convert_q;\n+    reg [1:0] beat_q;\n+    reg [15:0] tag_q;\n+    reg v2_q,ex_read_busy;\n+    reg [1:0] round_q;\n+    reg [511:0] input_r_q,a_q,line0_q,line1_q,f_convert_q,e_convert_q;\n+    reg [511:0] result_r_q,result_f_q,result_e_q;\n+    reg [14:0] line0_addr_q,line1_addr_q;\n+    reg [2:0] read2_q,read3_q;\n+    reg [63:0] emask0_q,emask1_q,offset_q,ds_addr_q,prefetch_q,program_q;\n+    reg [31:0] mx_q,ma_q;\n+    wire [63:0] address_mix=req_r[64*req_read0+:64]^req_r[64*req_read1+:64];\n+    wire [31:0] initial0=(req_spaddr0^address_mix[31:0])&32'h001fffc0;\n+    wire [31:0] initial1=(req_spaddr1^address_mix[63:32])&32'h001fffc0;\n+    wire [63:0] dataset_mix=ex_ret_r[64*read2_q+:64]^ex_ret_r[64*read3_q+:64];\n+    wire [31:0] changed_mp=(v2_q ? ma_q : mx_q)^dataset_mix[31:0];\n+    wire [63:0] fp_word[0:15];wire [511:0] parallel_f,parallel_e;\n+    wire [63:0] serial_word;\n+    generate\n+        if(SERIAL_CONVERT==0)begin: parallel_conversion\n+            genvar k;\n+            for(k=0;k<16;k=k+1)begin: word\n+                randomx_i32_to_f64 convert(.word_i(line1_q[32*k+:32]),.bits_o(fp_word[k]));\n+            end\n+            for(k=0;k<8;k=k+1)begin: lane\n+                assign parallel_f[64*k+:64]=fp_word[k];\n+                assign parallel_e[64*k+:64]=(fp_word[k+8]&64'h00ffffffffffffff)|\n+                    (k%2==0 ? emask0_q : emask1_q);\n+            end\n+            assign serial_word=0;\n+        end else begin: shared_conversion\n+            randomx_i32_to_f64 convert(.word_i(line1_q[32*convert_q+:32]),.bits_o(serial_word));\n+            assign parallel_f=0;assign parallel_e=0;\n+        end\n+        if((SERIAL_CONVERT!=0 && SERIAL_CONVERT!=1) || (COALESCE_LINES!=0 && COALESCE_LINES!=1))begin: invalid_config\n+            iteration_engine_requires_boolean_parameters invalid();\n+        end\n+    endgenerate\n+\n+    wire tail_req_ready,tail_done_valid,tail_wr_valid;\n+    wire [127:0] tail_wr_data;wire [20:0] tail_wr_addr;\n+    wire [15:0] tail_wr_strb;wire [511:0] tail_f;\n+    wire [31:0] tail_next0,tail_next1;\n+    wire stale_sp=sp_rsp_tag!=tag_q,stale_ex=ex_ret_tag!=tag_q,stale_ds=ds_rsp_tag!=tag_q;\n+    wire ex_current=ex_mem_tag==tag_q;\n+    wire active_ex=!rst && phase_q==EX_WAIT;\n+    wire current_write=active_ex && ex_current && ex_wr_valid && !ex_read_busy;\n+    wire current_read=active_ex && ex_current && ex_rd_valid && !ex_read_busy && !ex_wr_valid;",
+    "path": "rtl/engine/randomx_iteration_engine.v",
+    "commit_id": "bd193092bfc07e0874505dc7f8ad79f1ee9609a8",
+    "original_commit_id": "bd193092bfc07e0874505dc7f8ad79f1ee9609a8",
+    "user": {
+      "login": "jliu67",
+      "id": 166252253,
+      "node_id": "U_kgDOCejO3Q",
+      "avatar_url": "https://avatars.githubusercontent.com/u/166252253?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/jliu67",
+      "html_url": "https://github.com/jliu67",
+      "followers_url": "https://api.github.com/users/jliu67/followers",
+      "following_url": "https://api.github.com/users/jliu67/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jliu67/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jliu67/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jliu67/subscriptions",
+      "organizations_url": "https://api.github.com/users/jliu67/orgs",
+      "repos_url": "https://api.github.com/users/jliu67/repos",
+      "events_url": "https://api.github.com/users/jliu67/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jliu67/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "[P2] Keep an already presented scratchpad read valid when a write arrives\n\nIn EX_WAIT with the current tag and ex_read_busy=0, set ex_rd_valid=1, ex_wr_valid=0 and sp_rd_ready=0. Lines 102\u2013103 present sp_rd_valid=1 and ex_rd_ready=0. On the next cycle, keep the read valid/address/tag stable and assert ex_wr_valid on the independent write channel. current_read becomes 0 solely because of !ex_wr_valid, so sp_rd_valid drops before the read handshake. Both kernel channels can obey the documented hold-until-accepted rule, but the controller violates that same rule on its scratchpad channel.\n\nThe README grants write priority over a newly presented read; that must not preempt a read already held under backpressure. Latch/retain the read grant until acceptance, then keep writes blocked until its response drains. Add a directed case that stalls a presented read and subsequently presents a current-tag write while the read stays asserted; check stable scratchpad valid/address/tag and read-before-write completion. The existing event replay chooses either a read or a write at a time (tb_engine.v:333\u2013342), so its held-read assertion never encounters this case.",
+    "created_at": "2026-10-13T01:11:38Z",
+    "updated_at": "2026-10-13T01:11:38Z",
+    "html_url": "https://github.com/jliu67/OpenRX/pull/53#discussion_r4253765913",
+    "pull_request_url": "https://api.github.com/repos/jliu67/OpenRX/pulls/53",
+    "_links": {
+      "self": {
+        "href": "https://api.github.com/repos/jliu67/OpenRX/pulls/comments/4253765913"
+      },
+      "html": {
+        "href": "https://github.com/jliu67/OpenRX/pull/53#discussion_r4253765913"
+      },
+      "pull_request": {
+        "href": "https://api.github.com/repos/jliu67/OpenRX/pulls/53"
+      }
+    },
+    "reactions": {
+      "url": "https://api.github.com/repos/jliu67/OpenRX/pulls/comments/4253765913/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "start_line": null,
+    "original_start_line": null,
+    "start_side": null,
+    "line": 102,
+    "original_line": 102,
+    "side": "RIGHT",
+    "author_association": "OWNER",
+    "original_position": 102,
+    "position": 102,
+    "subject_type": "line"
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "A": {
+    "kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "3221225472",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "kernel_final": {
+      "cpu.stat": "usage_usec 425533504\nuser_usec 419346484\nsystem_usec 6187020\ncore_sched.force_idle_usec 0\nnr_periods 6074\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "memory.peak": "3221225472",
+      "memory.events": "low 0\nhigh 0\nmax 1229\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.swap.peak": "307384320",
+      "pids.current": "2"
+    },
+    "six_cpu_affinity_verified": true,
+    "no_tighter_visible_ancestors": true,
+    "fresh_headroom_and_1GiB_reserve_verified": true,
+    "workers": 1,
+    "reason": "Standalone sequential Yosys/mapped checks; previous Yosys RSS2.51GiB;3GiB candidate from fresh headroom without retaining a decoded other-configuration netlist; file cache reclaimable; all6 CPUs available",
+    "peak_RSS_KiB": 2636956,
+    "elapsed": "10:22.35",
+    "CPU_percent": 68
+  },
+  "mapped-A": {
+    "kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "1073741824",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "kernel_final": {
+      "cpu.stat": "usage_usec 337387996\nuser_usec 335179886\nsystem_usec 2208109\ncore_sched.force_idle_usec 0\nnr_periods 3386\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "memory.peak": "670994432",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.swap.peak": "0",
+      "pids.current": "2"
+    },
+    "six_cpu_affinity_verified": true,
+    "no_tighter_visible_ancestors": true,
+    "fresh_headroom_and_1GiB_reserve_verified": true,
+    "workers": 1,
+    "reason": "Mapped compile/simulation/stat checks only; previous ivl RSS about0.6GiB and vvp about0.17GiB;1GiB candidate with no Yosys or decoded netlist retained during simulation; all6 CPUs available",
+    "peak_RSS_KiB": 547468,
+    "elapsed": "5:38.42",
+    "CPU_percent": 99
+  },
+  "C": {
+    "kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "4294967296",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "kernel_final": {
+      "cpu.stat": "usage_usec 464054919\nuser_usec 461793261\nsystem_usec 2261658\ncore_sched.force_idle_usec 0\nnr_periods 4641\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "memory.peak": "3551981568",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.swap.peak": "0",
+      "pids.current": "2"
+    },
+    "six_cpu_affinity_verified": true,
+    "no_tighter_visible_ancestors": true,
+    "fresh_headroom_and_1GiB_reserve_verified": true,
+    "workers": 1,
+    "reason": "Standalone C synthesis after measured A RAM3GiB plus293MiB swap pressure;4GiB candidate when fresh headroom supports it, original full C peak3.77GiB; no other decoded netlist retained; all6 CPUs available",
+    "peak_RSS_KiB": 2630144,
+    "elapsed": "7:44.03",
+    "CPU_percent": 99
+  },
+  "mapped-C": {
+    "kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "1073741824",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "kernel_final": {
+      "cpu.stat": "usage_usec 326574975\nuser_usec 324245453\nsystem_usec 2329521\ncore_sched.force_idle_usec 0\nnr_periods 3262\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "memory.peak": "692707328",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.swap.peak": "0",
+      "pids.current": "2"
+    },
+    "six_cpu_affinity_verified": true,
+    "no_tighter_visible_ancestors": true,
+    "fresh_headroom_and_1GiB_reserve_verified": true,
+    "workers": 1,
+    "reason": "Mapped compile/simulation/stat checks only; previous ivl RSS about0.6GiB and vvp about0.17GiB;1GiB candidate with no Yosys or decoded netlist retained during simulation; all6 CPUs available",
+    "peak_RSS_KiB": 567172,
+    "elapsed": "5:26.16",
+    "CPU_percent": 100
+  }
+}

@@ -579,3 +579,93 @@ Final corrected attempt10: complete oracle/RTL/synthesis/netlist flow passed in 
 ## 2026-10-12 — ordered scratchpad iteration tail, task #50
 
 Created a separate temporary feature branch from immutable 9a3271d5. Added ordered 128-bit R-before-F stores, overlap scheduling, final-F/cursor completion and partial-reset semantics. A verbatim pinned iteration body plus real BytecodeMachine drives 128 controlled differential fixtures (64 v2/64 v1) with virtual dataset lines; source/vendor/core 19 identities stay exact. All four RTL variants compare 1,024 transfers, 32 alias cases and the full 2 MiB memory; both delivered mapped netlists pass. Intervals 25→21/shared and 13→9/four-lane; generic cells 46,510/90,661 and flops 2,605/2,603 exclude physical SRAM. Full successful attempt 03, generated source notices, traces/netlists and prior development outputs retained. One checked 4 GiB/600%-CPU payload, peak RSS 2,252,132KiB; slot/cgroup released. No PR49/main changes, installations, extra agents, full dataset/hash run, paid compute or security changes. Draft new feature handoff requires independent review; next integration requires concrete core/register-file and ordered memory, with timing/PPA still unmeasured.
+
+## 2026-10-13 — iteration memory/execute integration, task #52
+
+[Task #52](https://github.com/jliu67/OpenRX/issues/52) implements entry loads,
+exact signed conversion, tagged execution/memory traffic and dataset feedback,
+reusing the independently accepted PR49/51 code now merged at main 5a688512.
+[EXP-005](../experiments/EXP-005-iteration-engine.md) and [interface](../rtl/engine/README.md)
+record eight passing RTL modes and four passing actual mapped modes. Each mode
+checks 32 native differential iterations (16 v2/16 v1), 2,880 bytecode reads,
+720 bytecode stores, 256 tail writes, eight aliases, 16 chained contexts, all
+2 MiB memory, stale/stalled traffic and three reset aborts. The separate signed
+conversion differential passes 4,096 vectors across four rounding modes.
+
+LANES=4 entry clocks are A/B/C=1,056/544/480 across 32 fixtures: parallel conversion
+saves 16 per iteration; equal-line coalescing saves four reads/eight clocks per
+alias under the stated minimum-latency private-memory contract. Generic A/C
+counts are 126,810/130,589 cells and
+7,733/6,704 flops. Arithmetic kernel, instruction fetch,
+physical SRAM/cache and dataset remain external; these are controller/replay
+cycles, not calibrated PPA or hash throughput.
+
+One kernel-verified six-CPU/4 GiB/512 MiB-swap/128-task payload used one worker,
+peak RSS 2,630,284 KiB; source/vendor/core/tail inputs and all
+original assets remain retained. New source/attempts are archived and temporary
+authoring retired read-only at handoff. The first reset testbench sampling failure
+is retained with its correction. Next: one independent review of this new draft
+feature. Reproduce with `python3 scripts/test_iteration_engine.py --output
+/tmp/openrx-engine-fresh --synthesize`, using the global slot and fresh admission.
+No code merge is authorized. Earlier dated component/status entries below retain
+their original bytes; live task/PR records supply subsequent review and CI status.
+
+
+## 2026-10-13 — Icarus12 finish diagnostic correction
+
+Initial draft head a04b9163 has the complete passing local RTL/mapped result
+below. Its hosted converter test also passed, but Icarus12 appended a successful
+finish diagnostic that the harness's exact-whole-log check rejected. The focused
+[compatibility correction](../docs/validation/iteration-engine-ci-compat-20261013/README.md)
+requires the same exact PASS record plus successful exit. All eight corrected-driver
+RTL modes pass with identical logs; all six hosted native fixture files match.
+Every RTL/C++/vendor input and original mapped result remains unchanged. The full
+hosted flow must pass on the final draft tip before one independent new-work
+review accepts it; no merge is authorized. Earlier original evidence is preserved.
+
+
+## 2026-10-13 — P2 stalled read grant correction
+
+[PR53 review](https://github.com/jliu67/OpenRX/pull/53#pullrequestreview-5497704738)
+blocked original bd193092: an arriving write could retract a scratchpad read
+already held under backpressure. The same author reproduced the exact failure
+on unchanged original RTL, preserved its source/test/input hashes/fatal log,
+and added one retained read-grant bit. Fresh competing requests still give
+writes priority; an already presented read retains valid/address/tag until
+acceptance and blocks writes until the response is consumed. Reset/new descriptor
+clears the grant; architectural return cannot bypass a pending grant.
+
+The new directed regression runs v1/v2, overlapping requests in both orders,
+12 read-stall clocks, eight write-stall clocks, six response-stall clocks,
+six stale-generation drops and reset of a held grant. It verifies five reads,
+three ordered byte-strobe writes and committed-byte persistence. It fails the
+rejected RTL and passes all four RTL configurations plus both actual A/C netlists.
+The eight native RTL and four native mapped modes remain byte-identical to the
+original serialized replay; every native/vendor/AES/store-tail input is unchanged.
+Entry totals A/B/C=1056/544/480 and native replay cycles are unchanged.
+
+Corrected generic A/C counts are 126,820/130,599 cells and
+7,734/6,705 flops. Compared with the rejected source,
+deltas are +10/+10
+cells and +1/+1 flops.
+The original failing overlap sequence has no valid cycle result to compare.
+[Focused evidence](../docs/validation/iteration-engine-read-grant-20261013/README.md)
+binds raw failures, corrected source, commands/versions, actual netlists and
+resource receipts, retaining every earlier source/result/archive/review.
+
+The initial 4 GiB candidate did not fit fresh headroom. Standalone A synthesis
+used kernel-verified CPU600%, RAM3 GiB, swap512 MiB and Tasks128, after a fresh
+1 GiB host reserve check; measured memory pressure/swap increased wall time
+without an OOM or CPU-quota throttle. Freshly regained headroom admitted C at
+4 GiB. Mapped-only checks used 1 GiB based on measured compile/simulation RSS.
+All six CPUs remained available, one worker, global slot serialized. Detailed
+resource witnesses stay private; sanitized measured limits/peaks/elapsed/swap
+are public. Source and attempts are verified/archived and retired read-only at
+publication. Prior sources/receipts are preserved; no extra tasks/agents,
+install/access/settings change, repeated baseline, force push or merge.
+
+Next: all final-head hosted checks, then the same reviewer's focused delta review.
+This author handoff does not establish acceptance or authorize merge. Arithmetic
+kernel, physical memories, calibrated PPA and full-hash requirements remain
+external. Earlier evidence below records its original source and is retained.
+

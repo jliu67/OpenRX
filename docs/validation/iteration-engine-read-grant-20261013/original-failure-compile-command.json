@@ -1,0 +1,18 @@
+[
+  "iverilog",
+  "-g2012",
+  "-Wall",
+  "-s",
+  "tb_arbitration",
+  "-o",
+  "/tmp/openrx-read-grant-original-failure-01/original.vvp",
+  "rtl/aes/vendor/secworks/aes_sbox.v",
+  "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+  "rtl/aes/randomx_aes_round.v",
+  "rtl/aes/randomx_v2_aes_mix.v",
+  "rtl/aes/randomx_exec_aes_commit.v",
+  "rtl/iteration/randomx_iteration_store.v",
+  "rtl/engine/randomx_i32_to_f64.v",
+  "rtl/engine/randomx_iteration_engine.v",
+  "rtl/engine/tests/tb_arbitration.v"
+]

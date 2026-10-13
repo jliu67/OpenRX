@@ -1,0 +1,23 @@
+{
+  "recorded_cgroup_peak_bytes_after_both_syntheses": 4044541952,
+  "recorded_memory_events_after_both_syntheses": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+  "recorded_swap_peak_bytes_after_both_syntheses": 0,
+  "actual_kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "4294967296",
+    "memory.swap.max": "536870912",
+    "pids.max": "128"
+  },
+  "six_cpu_affinity_verified": true,
+  "no_tighter_visible_ancestor_limits": true,
+  "global_execution_lock_held_for_entire_payload": true,
+  "workers": 1,
+  "peak_rss_KiB": 2630284,
+  "observed_cpu_percent": 100,
+  "elapsed": "21:26.88",
+  "minimum_host_memory_reserve_bytes": 1073741824,
+  "fresh_headroom_verified_before_launch": true,
+  "reason": "Yosys and vvp single-threaded; sequential actual A/C synthesis; 4GiB cap from prior measured 2.25GiB peak plus new controller/converters, fresh 1GiB minimum host headroom; all6 CPUs available",
+  "payload_exit": 0,
+  "scope": "single-threaded HDL tools, not a native throughput/power measurement; detailed host witnesses remain private"
+}

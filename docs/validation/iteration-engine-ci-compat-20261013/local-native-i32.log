@@ -1,0 +1,1 @@
+PASS native signed32-to-binary64 vectors=4096 rounding_modes=4

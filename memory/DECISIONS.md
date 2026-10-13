@@ -125,3 +125,23 @@ No router code, dependencies, acceptance gate or scientific completion changes.
 ## D042 — ordered scratchpad integration, 2026-10-12
 
 Reuse PR49 unchanged and implement the actual post-dataset R/F store boundary with an explicit in-order 128-bit SRAM contract. Overlap independent captured R stores with AES compute, retaining R-before-F visibility for aliasing lines. Differential reference uses the verbatim pinned interpreter/bytecode and a declared dataset-line fixture, with full 2 MiB memory comparison. No accepted core/cache/fabric or SRAM macro exists, so do not infer full-core integration, hash speedup or physical PPA. [Task #50](https://github.com/jliu67/OpenRX/issues/50) / [EXP-004](../experiments/EXP-004-iteration-tail.md) carry new-work review and evidence.
+
+## D043 — per-iteration memory and execute boundary, 2026-10-13
+
+Own the actual scratchpad load/operand conversion and dataset/register-feedback
+path around a tagged external arithmetic kernel. Reuse the merged AES/store tail
+unchanged. Expose program/E-mask/rounding state and one ordered committed-memory
+port, with generation-tag cancellation and explicit partial-write persistence.
+Provide serial conversion and uncoalesced references to isolate control-cycle
+gains; coalesce equal entry lines only under private exclusive-memory ownership.
+The native bytecode memory differential and actual mapped netlists verify this
+integration without claiming a full core, hash or physical PPA. Revisit on concrete
+kernel/memory integration evidence. [Task #52](https://github.com/jliu67/OpenRX/issues/52)
+and [EXP-005](../experiments/EXP-005-iteration-engine.md) require independent new-work review.
+
+D043 correction follow-up (2026-10-13): fresh write priority cannot preempt an
+already presented read. Retain its grant until acceptance, then block writes
+until the response is consumed; reset clears the grant. Independent review
+exposed this protocol defect, which the directed original-failure/RTL/mapped
+regression now covers. Component clocks remain controller/replay model results;
+physical PPA/full hash remain open.

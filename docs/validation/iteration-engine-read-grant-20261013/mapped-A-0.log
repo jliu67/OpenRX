@@ -1,0 +1,1 @@
+PASS engine lanes=4 serial=1 coalesce=0 stall=0 iterations=32 v2=16 v1=16 chained=16 aliases=8 entry_reads=256 bytecode_reads=2880 bytecode_stores=720 tail_writes=256 full_memory_bytes=2097152 reset_aborts=3 committed_abort_writes=1 front_total_cycles=1056 elapsed_cycles=7953 stale_sp=0 stale_ds=0 stale_ex=0 premature_blocks=0
