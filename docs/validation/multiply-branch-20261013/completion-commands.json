@@ -1,0 +1,107 @@
+[
+  {
+    "label": "compile-mapped-integrated-0-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_ITERATION_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-mapped-completion-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-multiply-mapped-completion-20261013-01/mapped-integrated-0-0.vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-integrated-0.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "/tmp/openrx-mul-coverage-eyyb2ou_",
+    "returncode": 0,
+    "elapsed_seconds": 102.80522072198801
+  },
+  {
+    "label": "mapped-integrated-0-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-mapped-completion-20261013-01/mapped-integrated-0-0.vvp",
+      "+initial=/tmp/openrx-multiply-mapped-completion-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-mapped-completion-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-mapped-completion-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-mapped-completion-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-mapped-completion-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-mapped-completion-20261013-01/targets.mem"
+    ],
+    "cwd": "/tmp/openrx-mul-coverage-eyyb2ou_",
+    "returncode": 0,
+    "elapsed_seconds": 90.52862781693693
+  },
+  {
+    "label": "compile-mapped-integrated-0-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_ITERATION_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-mapped-completion-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-multiply-mapped-completion-20261013-01/mapped-integrated-0-1.vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-integrated-0.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "/tmp/openrx-mul-coverage-eyyb2ou_",
+    "returncode": 0,
+    "elapsed_seconds": 103.95603875897359
+  },
+  {
+    "label": "mapped-integrated-0-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-mapped-completion-20261013-01/mapped-integrated-0-1.vvp",
+      "+initial=/tmp/openrx-multiply-mapped-completion-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-mapped-completion-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-mapped-completion-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-mapped-completion-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-mapped-completion-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-mapped-completion-20261013-01/targets.mem"
+    ],
+    "cwd": "/tmp/openrx-mul-coverage-eyyb2ou_",
+    "returncode": 0,
+    "elapsed_seconds": 148.35558011103421
+  },
+  {
+    "label": "compile-mapped-integrated-0-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DINTEGER_ITERATION_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-mapped-completion-20261013-01",
+      "-s",
+      "tb_multiply_errors",
+      "-o",
+      "/tmp/openrx-multiply-mapped-completion-20261013-01/mapped-integrated-0-errors.vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-integrated-0.v",
+      "rtl/execute/tests/tb_multiply_errors.v"
+    ],
+    "cwd": "/tmp/openrx-mul-coverage-eyyb2ou_",
+    "returncode": 0,
+    "elapsed_seconds": 102.35616778803524
+  },
+  {
+    "label": "mapped-integrated-0-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-mapped-completion-20261013-01/mapped-integrated-0-errors.vvp",
+      "+unsupported=/tmp/openrx-multiply-mapped-completion-20261013-01/unsupported.mem"
+    ],
+    "cwd": "/tmp/openrx-mul-coverage-eyyb2ou_",
+    "returncode": 0,
+    "elapsed_seconds": 14.69660730205942
+  }
+]

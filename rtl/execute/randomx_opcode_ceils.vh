@@ -56,3 +56,5 @@ localparam integer CEIL_CBRANCH=239;
 localparam integer CEIL_CFROUND=240;
 localparam integer CEIL_ISTORE=256;
 localparam integer CEIL_NOP=256;
+localparam integer CONDITION_OFFSET=8;
+localparam [31:0] CONDITION_MASK=32'h000000ff;

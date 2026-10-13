@@ -1,0 +1,1 @@
+{"iterations":8,"v2":4,"v1":4,"chained_iterations":4,"aliases":4,"instruction_steps":2736,"branch_steps":218,"branch_taken":90,"multiply_steps":580,"rcp_nops":8,"bytecode_read64":562,"bytecode_store64":272,"seed":"0x656e67696e652d35"}

@@ -1,0 +1,1 @@
+PASS multiply_errors radix4=1 unsupported_raw_opcodes=95 held_errors=97 prefix_store=1 no_unsupported_commits=1 error_abort_restart=97 reset_held_fetch=1 reset_pending_load=1 reset_held_store=1 reset_multiply=1 reset_reciprocal=1 stale_program_reply_drop=1 stale_memory_reply_drop=2 committed_prefix_preserved=1

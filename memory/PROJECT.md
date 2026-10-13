@@ -1,13 +1,24 @@
 # Project memory
 
+## Current stacked extension — task #56, 2026-10-13
+
+[PR #55](https://github.com/jliu67/OpenRX/pull/55#pullrequestreview-5498804300) is
+independently accepted at `2b14e4f9` and remains draft/unmerged. [Task #56](https://github.com/jliu67/OpenRX/issues/56)
+adds the missing multiply/reciprocal families and exact conditional branches on a
+separate temporary feature branch. This new work requires independent review and
+has no merge authorization. Earlier pointers/review-pending statements retain
+their dated publication context; no full-hash, selected-core or calibrated-PPA
+acceptance follows. All pinned assets and serialized compute rules remain.
+
 ## Current component sequence — 2026-10-13
 
 [PR49](https://github.com/jliu67/OpenRX/pull/49), [PR51](https://github.com/jliu67/OpenRX/pull/51)
 and [PR53](https://github.com/jliu67/OpenRX/pull/53) are independently accepted and
 merged; current parent main is `a6450ceccd32848c438c7dcae6acb98695d2a0e8`.
 [Task54](https://github.com/jliu67/OpenRX/issues/54) adds actual native integer
-execution under the owner-authorized manager-led continuation; its new-work review
-remains pending and no further merge is authorized. Earlier component pointers,
+execution under the owner-authorized manager-led continuation. PR #55 was
+independently accepted at `2b14e4f9` and remains draft/unmerged; no further merge is authorized.
+Earlier component pointers,
 review-pending summaries and governance statements below retain their dated
 publication context. Issue claims remain the ownership record, the manager assigns
 bounded current scopes, and compute is serialized. Full-core/hash, selected-core,

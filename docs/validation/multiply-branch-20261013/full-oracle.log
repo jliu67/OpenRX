@@ -1,0 +1,1 @@
+PASS native multiply-branch iterations=8 aliases=4 actual_bytecode_reads=562 stores=272 instruction_steps=2736 branches=218 taken=90 multiplies=580 rcp_nops=8 full_memory_bytes=2097152

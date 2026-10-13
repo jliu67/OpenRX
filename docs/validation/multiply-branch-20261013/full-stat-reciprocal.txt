@@ -1,0 +1,27 @@
+
+4. Printing statistics.
+
+=== randomx_reciprocal32 ===
+
+   Number of wires:               1096
+   Number of wire bits:           1604
+   Number of public wires:          22
+   Number of public wire bits:     385
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1374
+     $_ANDNOT_                     330
+     $_AND_                         26
+     $_AOI3_                        58
+     $_DFF_P_                      153
+     $_MUX_                        214
+     $_NAND_                         8
+     $_NOR_                         50
+     $_NOT_                        105
+     $_OAI3_                        63
+     $_ORNOT_                       67
+     $_OR_                         227
+     $_XNOR_                        17
+     $_XOR_                         56
+

@@ -1,0 +1,5 @@
+rtl/execute/randomx_mul64.v:69: error: Unknown module type: multiplier_requires_RADIX4_0_or_1
+1 error(s) during elaboration.
+*** These modules were missing:
+        multiplier_requires_RADIX4_0_or_1 referenced 1 times.
+***

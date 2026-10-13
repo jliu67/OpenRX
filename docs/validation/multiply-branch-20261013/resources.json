@@ -1,0 +1,68 @@
+{
+  "full-interrupted": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "6442450944",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 7883431936,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 5853196288,
+    "kernel_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "peak_swap_bytes": 0,
+    "cpu_stat": "usage_usec 1143273420\nuser_usec 1137591359\nsystem_usec 5682061\ncore_sched.force_idle_usec 0\nnr_periods 11452\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 120,
+    "private_full_witness_sha256": "923dfc13f5aeeffe5d8e81b48f025c8a2428e39584c00af2f710487af9c0367c",
+    "timing_sha256": "739a57e74c41bdb06c5c461dd1ab2ee2d20a4dce89d7f4cf0884799c370a1282",
+    "reason": "Task56: actual mapped direct/radix4 multiplier and reciprocal units, connected native branch execution tests, one complete default top. Prior complete154k-cell job cgroup peak5.08GB; added arithmetic/branch hardware motivates6GiB candidate with fresh1GiB OS reserve. All6 CPUs available, one worker, global slot serialized. No physical PPA/native measurement claim.",
+    "drainage": {
+      "verified_utc": "2026-10-13T05:27:55.032059+00:00",
+      "units_inactive": {
+        "openrx-multiply-validation-20261013-01.service": "inactive",
+        "openrx-multiply-mapped-completion-20261013-01.service": "inactive"
+      },
+      "both_payload_cgroups_removed": true,
+      "shared_slot_free": true,
+      "full_driver_returncode": 120,
+      "mapped_completion_returncode": 0,
+      "no_duplicate_synthesis": true
+    }
+  },
+  "mapped-completion": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "1073741824",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 8441815040,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 1013276672,
+    "kernel_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "peak_swap_bytes": 0,
+    "cpu_stat": "usage_usec 570944544\nuser_usec 568523749\nsystem_usec 2420794\ncore_sched.force_idle_usec 0\nnr_periods 5696\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_full_witness_sha256": "71a320ce82dd8a03acf0272691ffd4337bdedde80ee4c91c43cb15c5b3ed98fa",
+    "timing_sha256": "55db480093725546be4afc09ebb658a9a2547233919ef619783c0eb4d7385f52",
+    "reason": "Task56 mapped-only completion after terminal BrokenPipe: reuse exact completed netlist; three tests only, no synthesis rerun. Prior full-top mapped-only checks passed1GiB; one compiler/simulator at a time. Fresh1GiB OS reserve, all six CPUs available, global slot serialized.",
+    "drainage": {
+      "verified_utc": "2026-10-13T05:27:55.032059+00:00",
+      "units_inactive": {
+        "openrx-multiply-validation-20261013-01.service": "inactive",
+        "openrx-multiply-mapped-completion-20261013-01.service": "inactive"
+      },
+      "both_payload_cgroups_removed": true,
+      "shared_slot_free": true,
+      "full_driver_returncode": 120,
+      "mapped_completion_returncode": 0,
+      "no_duplicate_synthesis": true
+    }
+  }
+}

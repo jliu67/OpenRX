@@ -1,0 +1,10 @@
+{
+  "type": "terminal-transport/BrokenPipeError at completed synthesis progress print",
+  "synthesis_returncode": 0,
+  "synthesis_elapsed_seconds": 865.1035102370661,
+  "original_driver_returncode": 120,
+  "retained_output": "/tmp/openrx-multiply-validation-20261013-01",
+  "artifacts_verified": true,
+  "source_inputs_verified": true,
+  "remaining_work": "three full-top mapped tests only; reuse actual unchanged netlist; durable console output"
+}

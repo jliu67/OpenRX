@@ -1,5 +1,40 @@
 # Handoff — actual designated local execution
 
+## Native multiply and branch handoff — task #56, 2026-10-13
+
+[Task #56](https://github.com/jliu67/OpenRX/issues/56) /
+[EXP-007](../experiments/EXP-007-native-multiply-branch.md) extends independently
+accepted, unmerged PR #55 at `2b14e4f9` on a separate stacked draft. All 19 integer/branch
+families (161 raw values) now execute actual native semantics; all 95 FP/CFROUND
+values still return explicit held errors. Nine RTL and eleven applicable mapped
+modes pass against unchanged native arithmetic/compilation/execution, including
+2,736 retirements, native targets/dynamic PC, complete 2 MiB, stores/chains, held
+traffic/stale tags/error/reset and unchanged raw-FE/all-rounding-mode transport.
+
+Direct/iterative clocks are 12,036/30,596 ideal and 29,502/48,062 stalled, exactly
+32 extra per each of 580 products. Actual unit cells/flops are 25,723/81 versus
+5,528/537; reciprocal 1,374/153. Complete default mapping is 189,296/8,396.
+Iterative full-top synthesis is absent; its mapped arithmetic units run with RTL
+controller/executor. Fixture clocks/generic cells do not establish physical PPA
+or full-hash performance. [Licensed evidence](../docs/validation/multiply-branch-20261013/README.md)
+binds exact source/commands/tools/fixtures/logs/netlists/failures/resources.
+
+One serialized worker used actual CPU 600%, RAM 6 GiB, swap 512 MiB, Tasks 128,
+six-CPU affinity and fresh 1 GiB OS reserve; measured full-run peak cgroup 5,853,196,288 bytes,
+peak swap 0 bytes, no OOM/limit hits/quota throttle. Payload/descendants
+drained; source and complete attempts are archived/verified and retired read-only
+at handoff, preserving execute bits. All prior pinned/bound assets remain. Strict
+coverage rejected the first fixture before DUT tests; explicit rotations repaired
+coverage without changing production RTL. A terminal disconnect stopped the first
+driver at a progress print after successful synthesis (rc120/BrokenPipe). The
+three remaining mapped tests reused the exact netlist in a fresh checked 1 GiB
+payload (rc0), peak 1,013,276,672 cgroup bytes and zero swap/OOM/limit hits/CPU
+throttles, with durable console output and no synthesis rerun. Both original
+failure and completion evidence are retained. Next: exact-head hosted checks and one
+independent review of this new extension. No merge is authorized; PR #55 remains
+draft/unmerged. FP, complete VM/hash, physical memories, selected core and calibrated
+timing/power gates remain open. Earlier summaries retain dated publication context.
+
 ## Native integer execution handoff — 2026-10-13
 
 [Task54](https://github.com/jliu67/OpenRX/issues/54) / [EXP-006](../experiments/EXP-006-native-integer-execute.md)

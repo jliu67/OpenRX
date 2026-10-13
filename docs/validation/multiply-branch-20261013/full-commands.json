@@ -1,0 +1,900 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.06418206600937992
+  },
+  {
+    "label": "compile-arithmetic-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-Ivendor/randomx/src",
+      "rtl/execute/tests/arithmetic_oracle.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/arithmetic-oracle"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.9679264839505777
+  },
+  {
+    "label": "arithmetic-oracle",
+    "argv": [
+      "/tmp/openrx-multiply-validation-20261013-01/arithmetic-oracle",
+      "/tmp/openrx-multiply-validation-20261013-01"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.003768400987610221
+  },
+  {
+    "label": "compile-oracle",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-Ivendor/randomx/src",
+      "rtl/execute/tests/multiply_oracle.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/bytecode_machine.cpp",
+      "vendor/randomx/src/instructions_portable.cpp",
+      "vendor/randomx/src/reciprocal.c",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/oracle"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 3.822028088965453
+  },
+  {
+    "label": "oracle",
+    "argv": [
+      "/tmp/openrx-multiply-validation-20261013-01/oracle",
+      "/tmp/openrx-multiply-validation-20261013-01"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.3145492949988693
+  },
+  {
+    "label": "compile-unit-rtl-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_arithmetic",
+      "-Ptb_arithmetic.RADIX4=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-rtl-0.vvp",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/tests/tb_arithmetic.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.016065782983787358
+  },
+  {
+    "label": "unit-rtl-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-rtl-0.vvp",
+      "+multiply=/tmp/openrx-multiply-validation-20261013-01/multiply.hex",
+      "+reciprocal=/tmp/openrx-multiply-validation-20261013-01/reciprocal.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.2645393550628796
+  },
+  {
+    "label": "compile-rtl-0-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=0",
+      "-Ptb_multiply_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-0-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.16437408898491412
+  },
+  {
+    "label": "rtl-0-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-0-0.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.1660814080387354
+  },
+  {
+    "label": "compile-rtl-0-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=0",
+      "-Ptb_multiply_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-0-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.16441106901038438
+  },
+  {
+    "label": "rtl-0-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-0-1.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.566856816993095
+  },
+  {
+    "label": "compile-rtl-0-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-s",
+      "tb_multiply_errors",
+      "-Ptb_multiply_errors.MUL_RADIX4=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-0-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.11427515896502882
+  },
+  {
+    "label": "rtl-0-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-0-errors.vvp",
+      "+unsupported=/tmp/openrx-multiply-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.16441571293398738
+  },
+  {
+    "label": "compile-unit-rtl-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-s",
+      "tb_arithmetic",
+      "-Ptb_arithmetic.RADIX4=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-rtl-1.vvp",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/tests/tb_arithmetic.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.01596120896283537
+  },
+  {
+    "label": "unit-rtl-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-rtl-1.vvp",
+      "+multiply=/tmp/openrx-multiply-validation-20261013-01/multiply.hex",
+      "+reciprocal=/tmp/openrx-multiply-validation-20261013-01/reciprocal.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.06548729701899
+  },
+  {
+    "label": "compile-rtl-1-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=1",
+      "-Ptb_multiply_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-1-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.16449313901830465
+  },
+  {
+    "label": "rtl-1-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-1-0.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.7669373929966241
+  },
+  {
+    "label": "compile-rtl-1-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=1",
+      "-Ptb_multiply_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-1-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.16433437203522772
+  },
+  {
+    "label": "rtl-1-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-1-1.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 2.1175394949968904
+  },
+  {
+    "label": "compile-rtl-1-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-s",
+      "tb_multiply_errors",
+      "-Ptb_multiply_errors.MUL_RADIX4=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-1-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.11432061297819018
+  },
+  {
+    "label": "rtl-1-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/rtl-1-errors.vvp",
+      "+unsupported=/tmp/openrx-multiply-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.21437488205265254
+  },
+  {
+    "label": "compile-transport",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute",
+      "-s",
+      "tb_integer_transport",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/transport.vvp",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/tests/tb_integer_transport.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.015870696981437504
+  },
+  {
+    "label": "transport",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/transport.vvp"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.11399738700129092
+  },
+  {
+    "label": "invalid-RADIX4",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Irtl/execute",
+      "-s",
+      "randomx_mul64",
+      "-Prandomx_mul64.RADIX4=2",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/invalid-RADIX4.vvp",
+      "rtl/execute/randomx_mul64.v"
+    ],
+    "returncode": 1,
+    "expected_failure": true
+  },
+  {
+    "label": "invalid-SERIAL_IADD",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Irtl/execute",
+      "-s",
+      "randomx_integer_execute",
+      "-Prandomx_integer_execute.SERIAL_IADD=2",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/invalid-SERIAL_IADD.vvp",
+      "rtl/execute/randomx_mul64.v",
+      "rtl/execute/randomx_reciprocal32.v",
+      "rtl/execute/randomx_integer_execute.v"
+    ],
+    "returncode": 1,
+    "expected_failure": true
+  },
+  {
+    "label": "synth-reciprocal",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/execute rtl/execute/randomx_reciprocal32.v; synth -top randomx_reciprocal32 -flatten; check -assert; tee -o /tmp/openrx-multiply-validation-20261013-01/stat-reciprocal.txt stat; write_verilog -noattr /tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v; write_json /tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.2158631089841947
+  },
+  {
+    "label": "synth-mul-0",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/execute rtl/execute/randomx_mul64.v; chparam -set RADIX4 0 randomx_mul64; synth -top randomx_mul64 -flatten; check -assert; tee -o /tmp/openrx-multiply-validation-20261013-01/stat-mul-0.txt stat; write_verilog -noattr /tmp/openrx-multiply-validation-20261013-01/netlist-mul-0.v; write_json /tmp/openrx-multiply-validation-20261013-01/netlist-mul-0.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 10.38568985206075
+  },
+  {
+    "label": "compile-unit-mapped-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-s",
+      "tb_arithmetic",
+      "-Ptb_arithmetic.RADIX4=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-mapped-0.vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-0.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/tests/tb_arithmetic.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.1163297429447994
+  },
+  {
+    "label": "unit-mapped-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-mapped-0.vvp",
+      "+multiply=/tmp/openrx-multiply-validation-20261013-01/multiply.hex",
+      "+reciprocal=/tmp/openrx-multiply-validation-20261013-01/reciprocal.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 65.00083584105596
+  },
+  {
+    "label": "compile-mapped-units-0-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=0",
+      "-Ptb_multiply_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-0-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-0.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.2667834179010242
+  },
+  {
+    "label": "mapped-units-0-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-0-0.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 8.582320692017674
+  },
+  {
+    "label": "compile-mapped-units-0-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=0",
+      "-Ptb_multiply_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-0-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-0.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.2666589379077777
+  },
+  {
+    "label": "mapped-units-0-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-0-1.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 10.035087225027382
+  },
+  {
+    "label": "compile-mapped-units-0-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-Irtl/execute",
+      "-s",
+      "tb_multiply_errors",
+      "-Ptb_multiply_errors.MUL_RADIX4=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-0-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-0.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 1.2165581000735983
+  },
+  {
+    "label": "mapped-units-0-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-0-errors.vvp",
+      "+unsupported=/tmp/openrx-multiply-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.8659455430461094
+  },
+  {
+    "label": "synth-mul-1",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/execute rtl/execute/randomx_mul64.v; chparam -set RADIX4 1 randomx_mul64; synth -top randomx_mul64 -flatten; check -assert; tee -o /tmp/openrx-multiply-validation-20261013-01/stat-mul-1.txt stat; write_verilog -noattr /tmp/openrx-multiply-validation-20261013-01/netlist-mul-1.v; write_json /tmp/openrx-multiply-validation-20261013-01/netlist-mul-1.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 2.5689234430901706
+  },
+  {
+    "label": "compile-unit-mapped-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-s",
+      "tb_arithmetic",
+      "-Ptb_arithmetic.RADIX4=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-mapped-1.vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-1.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/tests/tb_arithmetic.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.26475206203758717
+  },
+  {
+    "label": "unit-mapped-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/unit-mapped-1.vvp",
+      "+multiply=/tmp/openrx-multiply-validation-20261013-01/multiply.hex",
+      "+reciprocal=/tmp/openrx-multiply-validation-20261013-01/reciprocal.hex"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 95.97067062009592
+  },
+  {
+    "label": "compile-mapped-units-1-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=1",
+      "-Ptb_multiply_iteration.STALL=0",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-1-0.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-1.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.36477402795571834
+  },
+  {
+    "label": "mapped-units-1-0",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-1-0.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 27.910343528026715
+  },
+  {
+    "label": "compile-mapped-units-1-1",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-Irtl/execute",
+      "-I/tmp/openrx-multiply-validation-20261013-01",
+      "-s",
+      "tb_multiply_iteration",
+      "-Ptb_multiply_iteration.MUL_RADIX4=1",
+      "-Ptb_multiply_iteration.STALL=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-1-1.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-1.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_iteration.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.36470703093800694
+  },
+  {
+    "label": "mapped-units-1-1",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-1-1.vvp",
+      "+initial=/tmp/openrx-multiply-validation-20261013-01/initial.hex",
+      "+final=/tmp/openrx-multiply-validation-20261013-01/final.hex",
+      "+programs=/tmp/openrx-multiply-validation-20261013-01/programs.mem",
+      "+steps=/tmp/openrx-multiply-validation-20261013-01/steps.mem",
+      "+events=/tmp/openrx-multiply-validation-20261013-01/events.mem",
+      "+targets=/tmp/openrx-multiply-validation-20261013-01/targets.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 32.46671915799379
+  },
+  {
+    "label": "compile-mapped-units-1-errors",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-DMUL64_NETLIST",
+      "-Irtl/execute",
+      "-s",
+      "tb_multiply_errors",
+      "-Ptb_multiply_errors.MUL_RADIX4=1",
+      "-o",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-1-errors.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/aes/randomx_v2_aes_mix.v",
+      "rtl/aes/randomx_exec_aes_commit.v",
+      "rtl/iteration/randomx_iteration_store.v",
+      "rtl/engine/randomx_i32_to_f64.v",
+      "rtl/engine/randomx_iteration_engine.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-mul-1.v",
+      "/tmp/openrx-multiply-validation-20261013-01/netlist-reciprocal.v",
+      "rtl/execute/randomx_integer_execute.v",
+      "rtl/execute/randomx_integer_iteration.v",
+      "rtl/execute/tests/tb_multiply_errors.v"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.36483051406685263
+  },
+  {
+    "label": "mapped-units-1-errors",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-multiply-validation-20261013-01/mapped-units-1-errors.vvp",
+      "+unsupported=/tmp/openrx-multiply-validation-20261013-01/unsupported.mem"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 0.8656704309396446
+  },
+  {
+    "label": "synth-integrated-0",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/execute rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/aes/randomx_v2_aes_mix.v rtl/aes/randomx_exec_aes_commit.v rtl/iteration/randomx_iteration_store.v rtl/engine/randomx_i32_to_f64.v rtl/engine/randomx_iteration_engine.v rtl/execute/randomx_mul64.v rtl/execute/randomx_reciprocal32.v rtl/execute/randomx_integer_execute.v rtl/execute/randomx_integer_iteration.v; chparam -set MUL_RADIX4 0 randomx_integer_iteration; synth -top randomx_integer_iteration -flatten; check -assert; tee -o /tmp/openrx-multiply-validation-20261013-01/stat-integrated-0.txt stat; write_verilog -noattr /tmp/openrx-multiply-validation-20261013-01/netlist-integrated-0.v; write_json /tmp/openrx-multiply-validation-20261013-01/netlist-integrated-0.json"
+    ],
+    "cwd": "repository-root",
+    "timeout_seconds": 1500,
+    "returncode": 0,
+    "elapsed_seconds": 865.1035102370661
+  }
+]
