@@ -1,0 +1,28 @@
+{
+  "all12_RTL_PASS_records_identical": true,
+  "native_fixture_files_identical": 19,
+  "old_hardware_oracle_stimulus_bytes_unchanged": true,
+  "current_source_inputs": 53,
+  "archive_sha256": "14d69790186d07d2401f4379ccc16fc648686da8864eddf6a13e903cae2265ac",
+  "archive_files_verified": 84,
+  "original_Yosys_sources_and11_mapped_evidence_reused": true,
+  "generated_view": {
+    "upstream_file": "rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v",
+    "upstream_sha256": "f76feb5557faa8bcb2868e51bf2ce7d1297be46dd67ae51d509b1ae91066a522",
+    "view_file": "HardFloat-divSqrt-compile-view.v",
+    "view_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+    "transform": "replace one duplicate scalar wire sqrtOpOut declaration with an empty CRLF line; the ANSI output already declares the net",
+    "removed_declarations": 1,
+    "all_other_bytes_unchanged": true,
+    "original_vendor_file_unchanged": true,
+    "license": "original full BSD-3-Clause notices retained; separately labeled generated compile view",
+    "scope": "Icarus compile only; Yosys synthesis continues to use unchanged upstream source"
+  },
+  "kernel_final": {
+    "cpu.stat": "usage_usec 348484421\nuser_usec 347532417\nsystem_usec 952003\ncore_sched.force_idle_usec 0\nnr_periods 3499\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "188874752",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "0",
+    "pids.current": "1"
+  }
+}

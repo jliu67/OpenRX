@@ -1117,6 +1117,167 @@
     "retention.json": {
       "public_sha256": "26e9a0d1261de746ab3d6fc7992ac796dc537f578ef706c308cc5eb099c23006",
       "encoding": "verified-private-archive-summary"
+    },
+    "compat-rtl-inputs.json": {
+      "raw_sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7",
+      "public_sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7",
+      "raw_bytes": 5885,
+      "public_bytes": 5885,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-summary.json": {
+      "raw_sha256": "82f6d9bff213219dca6c02a3f2da92bf99f1e40dce661b9b34ece139cdc397ab",
+      "public_sha256": "82f6d9bff213219dca6c02a3f2da92bf99f1e40dce661b9b34ece139cdc397ab",
+      "raw_bytes": 12588,
+      "public_bytes": 12588,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-commands.json": {
+      "raw_sha256": "8ea72552d3e7e99871614f56cde9bef3b53c8255390012aa6876b630904dabe0",
+      "public_sha256": "8ea72552d3e7e99871614f56cde9bef3b53c8255390012aa6876b630904dabe0",
+      "raw_bytes": 24710,
+      "public_bytes": 24710,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-tools.json": {
+      "raw_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "public_sha256": "b68eda8f7be332c252499157257c266f486e585d9a4d360eab6a0dd3437ac45e",
+      "raw_bytes": 4449,
+      "public_bytes": 4449,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-artifacts.sha256.json": {
+      "raw_sha256": "e9b6cb42955f0e0a17120cf1bc9a3254cb79a96f4a481b24a66fd25ac7a34921",
+      "public_sha256": "e9b6cb42955f0e0a17120cf1bc9a3254cb79a96f4a481b24a66fd25ac7a34921",
+      "raw_bytes": 7517,
+      "public_bytes": 7517,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-preserved-inputs.json": {
+      "raw_sha256": "36a90fe20b43c514e33ff4d6d48de6346e9a19e25c7042993bf3a80dca33e5e6",
+      "public_sha256": "36a90fe20b43c514e33ff4d6d48de6346e9a19e25c7042993bf3a80dca33e5e6",
+      "raw_bytes": 857,
+      "public_bytes": 857,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-HardFloat-compile-view.json": {
+      "raw_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "public_sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "raw_bytes": 745,
+      "public_bytes": 745,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-HardFloat-divSqrt-compile-view.v": {
+      "raw_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "public_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "raw_bytes": 15488,
+      "public_bytes": 15488,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-compile-scalar.log": {
+      "raw_sha256": "b45c920ef7e66ecd54f3f46f3cdfdda8eb277feb89efb88a00b6f8af960a7e81",
+      "public_sha256": "b45c920ef7e66ecd54f3f46f3cdfdda8eb277feb89efb88a00b6f8af960a7e81",
+      "raw_bytes": 2896,
+      "public_bytes": 2896,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-scalar.log": {
+      "raw_sha256": "1d2dcfcf161d5f279af0efabc413e0ae532c13c273224919e2dbd00ae086bcfc",
+      "public_sha256": "1d2dcfcf161d5f279af0efabc413e0ae532c13c273224919e2dbd00ae086bcfc",
+      "raw_bytes": 140,
+      "public_bytes": 140,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-unit-full-1.log": {
+      "raw_sha256": "e55d5ce6bec67d936f23ff9f8d2bfebee3a57476e5fd5eca4d50ae49ec90b9d6",
+      "public_sha256": "e55d5ce6bec67d936f23ff9f8d2bfebee3a57476e5fd5eca4d50ae49ec90b9d6",
+      "raw_bytes": 222,
+      "public_bytes": 222,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-unit-full-2.log": {
+      "raw_sha256": "eaea50e379326d046bb48bb6fc630b44b609e03464b06341963bd0f486c2d3d8",
+      "public_sha256": "eaea50e379326d046bb48bb6fc630b44b609e03464b06341963bd0f486c2d3d8",
+      "raw_bytes": 221,
+      "public_bytes": 221,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-rtl-1-0.log": {
+      "raw_sha256": "6c7b37e38b9f9189a25bb61ce26ff077d3dcf87a24fc8494655d6466102752df",
+      "public_sha256": "6c7b37e38b9f9189a25bb61ce26ff077d3dcf87a24fc8494655d6466102752df",
+      "raw_bytes": 432,
+      "public_bytes": 432,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-rtl-1-1.log": {
+      "raw_sha256": "5d850dd0c9096afd0e0c81af325a3e3eb71897d81c6446cb7270d41191df26c1",
+      "public_sha256": "5d850dd0c9096afd0e0c81af325a3e3eb71897d81c6446cb7270d41191df26c1",
+      "raw_bytes": 437,
+      "public_bytes": 437,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-rtl-1-errors.log": {
+      "raw_sha256": "c19f9b0bab72758eaedc024f435b180e69ae4e86de7ced18781174a5f7037acd",
+      "public_sha256": "c19f9b0bab72758eaedc024f435b180e69ae4e86de7ced18781174a5f7037acd",
+      "raw_bytes": 199,
+      "public_bytes": 199,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-rtl-2-0.log": {
+      "raw_sha256": "fc8eccb17d66e54eefbf08f630aaac4d63acd6573e7b940eb2db079ad5c96b33",
+      "public_sha256": "fc8eccb17d66e54eefbf08f630aaac4d63acd6573e7b940eb2db079ad5c96b33",
+      "raw_bytes": 432,
+      "public_bytes": 432,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-rtl-2-1.log": {
+      "raw_sha256": "8a306b414b271e4de39062ba6a7c7a53652067c483f333795c2e96e81b91128a",
+      "public_sha256": "8a306b414b271e4de39062ba6a7c7a53652067c483f333795c2e96e81b91128a",
+      "raw_bytes": 437,
+      "public_bytes": 437,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-rtl-2-errors.log": {
+      "raw_sha256": "7eb890798aae6665a8daa6dd76233628aecbd54f4d643739c1faab096290fcbc",
+      "public_sha256": "7eb890798aae6665a8daa6dd76233628aecbd54f4d643739c1faab096290fcbc",
+      "raw_bytes": 199,
+      "public_bytes": 199,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-transport.log": {
+      "raw_sha256": "acd0b97269333964f71f8f0f5c4c5111e2296e5cd1377b5f8642f092b3c9c020",
+      "public_sha256": "acd0b97269333964f71f8f0f5c4c5111e2296e5cd1377b5f8642f092b3c9c020",
+      "raw_bytes": 200,
+      "public_bytes": 200,
+      "encoding": "original-bytes"
+    },
+    "compat-rtl-invalid-LANES.log": {
+      "raw_sha256": "6217f6cb7b0dee5e4514a5f0d9c00020693be802d324c90b86185a8760781cd9",
+      "public_sha256": "6217f6cb7b0dee5e4514a5f0d9c00020693be802d324c90b86185a8760781cd9",
+      "raw_bytes": 234,
+      "public_bytes": 234,
+      "encoding": "original-bytes"
+    },
+    "hosted-icarus12-failure.json": {
+      "raw_sha256": "3c7095e315e22d5c772f788f3c8861a1f06aa565c6600ac2415c4da83623f8dc",
+      "public_sha256": "3c7095e315e22d5c772f788f3c8861a1f06aa565c6600ac2415c4da83623f8dc",
+      "raw_bytes": 448,
+      "public_bytes": 448,
+      "encoding": "original-bytes"
+    },
+    "hosted-icarus12-failure.log": {
+      "raw_sha256": "cf7b0d99b4db4345e5dbb4f69c313b1af2e4e48fb8b4dd8b0c6e17c0691d3ec9",
+      "public_sha256": "cf7b0d99b4db4345e5dbb4f69c313b1af2e4e48fb8b4dd8b0c6e17c0691d3ec9",
+      "raw_bytes": 24321,
+      "public_bytes": 24321,
+      "encoding": "original-bytes"
+    },
+    "compatibility-verification.json": {
+      "raw_sha256": "6681b5b071a7702784890034e7df755e64b2cff5af0844b0152198c1229cf51f",
+      "public_sha256": "6681b5b071a7702784890034e7df755e64b2cff5af0844b0152198c1229cf51f",
+      "raw_bytes": 1526,
+      "public_bytes": 1526,
+      "encoding": "original-bytes"
     }
   },
   "scope": "exact native all256 raw/29 instruction families including masked iterative division/square root",
@@ -1125,5 +1286,6 @@
   "primitive_corpus": "13,312 full RTL vectors per scalar/shared/parallel configuration; explicit2,560 balanced mapped vectors with all operators/modes/IEEE+RandomX semantics and relevant corners, source/selection hashes retained",
   "retention": "Every source/output/binary/license/command/tool/log/failure retained, complete verified source/output archives; public gzip is lossless. Temporary authoring is retired read-only preserving execute bits.",
   "review": "new independent review pending; PR55/57/59 unchanged unmerged; no merge authorization",
-  "scientific_limits": "complete VM/hash, physical memory, selected core and calibrated timing/power remain open; expanded old integer-sharing combinations not repeated"
+  "scientific_limits": "complete VM/hash, physical memory, selected core and calibrated timing/power remain open; expanded old integer-sharing combinations not repeated",
+  "compatibility": "Original12 vendor sources and all hardware/native/stimulus bytes unchanged. Current53-entry harness generates a separately labeled Icarus compile view deleting exactly one redundant scalar wire declaration. Original52-input Yosys synthesis/11mapped evidence reused; all12local compatibility RTL PASS records and19native fixtures identical. Initial hosted failure46files fully retained and verified; fresh corrected hosted verification required."
 }

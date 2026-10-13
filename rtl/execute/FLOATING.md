@@ -1,5 +1,7 @@
 # Native floating-point execution subset
 
+Current compiler compatibility: [Icarus 12 compile view](DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. All 12 local RTL records/native fixtures match; corrected hosted checks and independent review remain required.
+
 ## Native division and square root — task #60, 2026-10-13
 
 [Task #60](https://github.com/jliu67/OpenRX/issues/60) extends independently

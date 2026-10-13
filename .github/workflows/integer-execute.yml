@@ -12,6 +12,7 @@ on:
       - 'scripts/floating_fixture.py'
       - 'scripts/test_divsqrt_execute.py'
       - 'scripts/divsqrt_fixture.py'
+      - 'scripts/hardfloat_compile_view.py'
       - 'scripts/test_iteration_engine.py'
       - 'vendor/randomx/**'
       - 'vendor/randomx*.json'

@@ -1,0 +1,2 @@
+PASS divsqrt64 native_vectors=13312 operations=2 rounding_modes=4 DAZ_FTZ_models=2 held_inactive=1
+LATENCY scalar min=1 max=56 total=369888

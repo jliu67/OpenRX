@@ -41,3 +41,19 @@ python3 scripts/test_divsqrt_execute.py --output /tmp/openrx-divsqrt-fresh --syn
 
 Use fresh output outside source. Historical subset tests/evidence retain their
 accepted-head context; the current hosted workflow runs this full-family driver.
+
+
+## Icarus 12 compatibility correction — 2026-10-13
+
+The initial PR #61 hosted run rejected the original HardFloat duplicate scalar
+`wire sqrtOpOut` declaration: its ANSI output port already declares that net.
+The current 53-entry harness generates a separately labeled, checksum-bound
+compile view replacing exactly this redundant declaration with an empty CRLF
+line. Every other byte and full license notice is preserved. All twelve upstream
+files remain unchanged; Yosys continues to synthesize the original source.
+Twelve local compatibility RTL PASS records and nineteen native fixture files
+match the original run exactly. The hardware/native/oracle/stimulus sources and
+eleven original mapped results are reused; no mathematical change or repeat
+whole synthesis is involved. The first hosted failure's complete 46-file archive
+is retained and verified. Fresh hosted validation and independent review are
+required at the corrected PR head.

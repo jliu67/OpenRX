@@ -6,6 +6,7 @@ from pathlib import Path
 sys.dont_write_bytecode=True
 from test_iteration_engine import extract,RTL as ENGINE_RTL
 from divsqrt_fixture import prepare
+from hardfloat_compile_view import prepare as prepare_hardfloat_view
 ROOT=Path(__file__).resolve().parents[1]
 V='rtl/execute/vendor/hardfloat/'
 HF=[V+n for n in ['HardFloat_primitives.v','HardFloat_rawFN.v','isSigNaNRecFN.v','fNToRecFN.v','recFNToFN.v','addRecFN.v','mulRecFN.v','8086-SSE/HardFloat_specialize.v']]
@@ -43,8 +44,9 @@ def main():
  tools=[('g++','--version'),('iverilog','-V'),('vvp','-V')]+([('yosys','-V')] if a.synthesize else [])
  for t,_ in tools:
   if not shutil.which(t):p.error('tool missing: '+t)
- out.mkdir();commands=[];includes=['-Irtl/execute','-I'+V,'-I'+V+'8086-SSE']
+ out.mkdir();commands=[];compat_source=None;includes=['-Irtl/execute','-I'+V,'-I'+V+'8086-SSE']
  def run(label,argv,timeout=2400):
+  if argv[0]=='iverilog' and compat_source is not None:argv=[str(compat_source) if x==V+'divSqrtRecFN_small.v' else x for x in argv]
   row={'label':label,'argv':argv,'cwd':'repository-root','timeout_seconds':timeout};commands.append(row);start=time.monotonic();print('START '+label,flush=True)
   try:
    with (out/(label+'.log')).open('w') as f:subprocess.run(argv,cwd=ROOT,stdout=f,stderr=subprocess.STDOUT,check=True,timeout=timeout)
@@ -91,8 +93,9 @@ def main():
   hf=json.loads((ROOT/V/'manifest.json').read_text())
   for name,digest in hf['files'].items():assert sha(ROOT/V/name)==digest,name
   preserved['HardFloat1-8086-SSE']={'checked':len(hf['files']),'manifest_sha256':sha(ROOT/V/'manifest.json')}
+  compat_source=prepare_hardfloat_view(ROOT/V/'divSqrtRecFN_small.v',out)
   (out/'preserved-inputs.json').write_text(json.dumps(preserved,indent=2)+'\n')
-  paths=set(RTL+LIBS+[V+n for n in hf['files']]+[V+'manifest.json','scripts/test_divsqrt_execute.py','scripts/divsqrt_fixture.py','scripts/test_iteration_engine.py','rtl/execute/randomx_opcode_ceils.vh','vendor/randomx.lock.json','vendor/randomx.sha256.json','vendor/randomx/src/configuration.h','vendor/randomx/src/common.hpp','vendor/randomx/src/intrin_portable.h','vendor/randomx/src/vm_interpreted.cpp','vendor/randomx/src/virtual_machine.cpp','vendor/randomx/src/bytecode_machine.hpp'])
+  paths=set(RTL+LIBS+[V+n for n in hf['files']]+[V+'manifest.json','scripts/test_divsqrt_execute.py','scripts/divsqrt_fixture.py','scripts/hardfloat_compile_view.py','scripts/test_iteration_engine.py','rtl/execute/randomx_opcode_ceils.vh','vendor/randomx.lock.json','vendor/randomx.sha256.json','vendor/randomx/src/configuration.h','vendor/randomx/src/common.hpp','vendor/randomx/src/intrin_portable.h','vendor/randomx/src/vm_interpreted.cpp','vendor/randomx/src/virtual_machine.cpp','vendor/randomx/src/bytecode_machine.hpp'])
   paths.update('rtl/execute/tests/'+n for n in ['divsqrt_oracle.cpp','divsqrt_iteration_oracle.cpp','tb_divsqrt64.v','tb_divsqrt128.v','tb_divsqrt_iteration.v','tb_divsqrt_cancel.v','tb_integer_transport.v'])
   (out/'inputs.json').write_text(json.dumps({n:sha(ROOT/n) for n in sorted(paths)},indent=2)+'\n');(out/'tools.json').write_text(json.dumps({t:subprocess.check_output([t,f],stderr=subprocess.STDOUT,text=True) for t,f in tools},indent=2)+'\n')
   for src,dst in [('rtl/execute/LICENSE','LICENSE-OpenRX'),('vendor/randomx/LICENSE','LICENSE-RandomX'),('rtl/aes/vendor/secworks/LICENSE','LICENSE-secworks'),(V+'LICENSE','LICENSE-HardFloat')]:shutil.copyfile(ROOT/src,out/dst)
@@ -106,7 +109,7 @@ def main():
    summary['unit_mapped_corpus_rtl'][str(lanes)]=units(lanes,f'unit-corpus-{lanes}','divsqrt128-mapped.hex')
    summary['rtl'][str(lanes)]=connected(lanes,f'rtl-{lanes}')
   run('compile-transport',['iverilog','-g2012','-Wall',*includes,'-s','tb_integer_transport','-o',str(out/'transport.vvp'),'rtl/engine/randomx_i32_to_f64.v',*INTEGER,CORE,*FP,*DS[len(HF):],'rtl/execute/tests/tb_integer_transport.v']);run('transport',['vvp',str(out/'transport.vvp')]);check('transport','PASS integer_transport serial_iadd=0 contexts=8');summary['transport']=stats(out/'transport.log')
-  cmd=['iverilog','-g2012',*includes,'-s','randomx_divsqrt128','-Prandomx_divsqrt128.LANES=3','-o',str(out/'invalid.vvp'),*DS];q=subprocess.run(cmd,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True);(out/'invalid-LANES.log').write_text(q.stdout);assert q.returncode and 'divsqrt_vector_requires_LANES_1_or_2' in q.stdout;summary['invalid_parameters_rejected']=True
+  cmd=['iverilog','-g2012',*includes,'-s','randomx_divsqrt128','-Prandomx_divsqrt128.LANES=3','-o',str(out/'invalid.vvp'),*DS];cmd=[str(compat_source) if x==V+'divSqrtRecFN_small.v' else x for x in cmd];q=subprocess.run(cmd,cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True);(out/'invalid-LANES.log').write_text(q.stdout);assert q.returncode and 'divsqrt_vector_requires_LANES_1_or_2' in q.stdout;summary['invalid_parameters_rejected']=True
   if a.synthesize:
    for lanes in (1,2):
     net,counts=synth(f'divsqrt128-{lanes}','randomx_divsqrt128',DS,('LANES',lanes));summary['mapping'][f'divsqrt128-{lanes}']=counts
