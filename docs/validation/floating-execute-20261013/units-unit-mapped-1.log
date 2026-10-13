@@ -1,0 +1,1 @@
+PASS fp128 lanes=1 native_vectors=3840 operations=3 rounding_modes=4 DAZ_FTZ_models=2 total_response_latency=19200 held_inactive=1 reset_atomic=1

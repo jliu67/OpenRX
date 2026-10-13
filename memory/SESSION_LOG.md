@@ -728,3 +728,43 @@ independent review of this new extension. No merge is authorized; PR #55 remains
 draft/unmerged. FP, complete VM/hash, physical memories, selected core and calibrated
 timing/power gates remain open. Earlier summaries retain dated publication context.
 
+
+
+## Exact native floating execution handoff — task #58, 2026-10-13
+
+[Task #58](https://github.com/jliu67/OpenRX/issues/58) /
+[EXP-008](../experiments/EXP-008-native-floating-execute.md) extends independently
+accepted, unmerged PR #57 at `d62c4495`, preserving both reviewed PR #55/#57 heads.
+Unmodified licensed HardFloat1/8086-SSE supplies exact binary64 add/subtract/multiply;
+FSWAP/FSCAL and native v1/v2 CFROUND/masks/DAZ+FTZ retain their exact semantics.
+All 246 supported raw values execute; ten division/sqrt values still return held
+errors. Complete VM/hash, selected core, physical memories and calibrated PPA remain open.
+
+Twelve RTL and eleven applicable mapped modes pass: 19,968 full native primitive
+vectors per variant, explicit balanced 3,840 mapped corner vectors, 2,928 actual
+R/F/E/mode retirements, targets/dynamic PC, 872 arithmetic FP/584 CFROUND operations,
+338 loads/104 stores/64 tail writes, four chains/aliases and all 2 MiB. All arithmetic
+modes/64 CFROUND rotations/v2 apply+skip, unsupported/errors/reset/stale traffic,
+atomic FP cancellation and unchanged raw-field/held-return transport are covered.
+
+Shared/parallel units are 26,522/49,363 generic cells and 571/156 flops, with five/one
+clock response latency. Integrated clocks 16,604/13,116 ideal, 33,574/30,086 stalled
+differ by 3,488, exactly four per arithmetic FP operation. Complete default mapping
+is 260,110/9,826. Shared whole-top and expanded old integer-sharing
+matrices are absent; these controlled clocks/generic mappings are not physical PPA.
+[Complete licensed evidence](../docs/validation/floating-execute-20261013/README.md)
+binds inputs/commands/tools/fixtures/netlists/failures/resources/verified archives.
+
+Original/pinned source/build/data/receipt assets remain retained. All 171 RandomX,
+eleven HardFloat and 19/17/22 accepted component bindings are unchanged. Two own
+wrapper-boundary failures and strict five-raw-value fixture correction are retained;
+no criterion was relaxed. Twelve RTL modes and both actual mapped units passed
+before complete top mapping reused their frozen code/fixtures. Source and complete
+attempts are archived/verified, retired read-only preserving execute bits at handoff.
+Unit/integration budgets were checked 2 GiB/6.5 GiB, CPU 600%, swap 512 MiB/2 GiB, Tasks 128,
+six CPUs/one worker/fresh 1 GiB reserve; peaks 1,114,402,816/6,979,321,856,
+integration swap 1,136,898,048, limit events 1202, no OOM/kills, CPU throttles 0.
+Both payloads/descendants drained. Next: exact-head hosted checks then one independent
+review of this new stacked draft. Neither reviewed parent nor new code is authorized
+to merge. Earlier summaries retain dated publication context.
+

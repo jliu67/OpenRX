@@ -1,0 +1,29 @@
+
+14. Printing statistics.
+
+=== randomx_fp128 ===
+
+   Number of wires:              25747
+   Number of wire bits:          33769
+   Number of public wires:         267
+   Number of public wire bits:    7820
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              26522
+     $_ANDNOT_                    5211
+     $_AND_                        844
+     $_AOI3_                       940
+     $_AOI4_                        70
+     $_DFF_P_                      571
+     $_MUX_                       3295
+     $_NAND_                       356
+     $_NOR_                       2595
+     $_NOT_                       1718
+     $_OAI3_                      1064
+     $_OAI4_                        45
+     $_ORNOT_                     1490
+     $_OR_                        2005
+     $_XNOR_                      2298
+     $_XOR_                       4020
+

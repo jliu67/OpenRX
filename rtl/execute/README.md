@@ -1,5 +1,9 @@
 # Native integer execution
 
+Current FP extension: [exact HardFloat-backed native subset](FLOATING.md), 246 raw
+values; division/sqrt remain errors. Reviewed PR #55/#57 heads remain unmerged.
+Earlier integer-only sections retain their parent publication context.
+
 Current stacked extension (task #56): [multiplication/reciprocal/branch hardware](MULTIPLY-BRANCH.md)
 supports all161native integer/branch raw values;95FP/CFROUND values remain errors.
 PR #55 is independently accepted but unmerged; this extension needs its own review.

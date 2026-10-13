@@ -1,0 +1,57 @@
+[
+  {
+    "label": "compile-native",
+    "argv": [
+      "g++",
+      "-std=c++11",
+      "-O2",
+      "-Ivendor/randomx/src",
+      "rtl/execute/tests/fp_oracle.cpp",
+      "-o",
+      "/tmp/openrx-fp-compat-cz9p5v6o/oracle"
+    ],
+    "returncode": 0
+  },
+  {
+    "label": "native",
+    "argv": [
+      "/tmp/openrx-fp-compat-cz9p5v6o/oracle",
+      "/tmp/openrx-fp-compat-cz9p5v6o/vectors.hex"
+    ],
+    "returncode": 0
+  },
+  {
+    "label": "compile-rtl",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/execute/vendor/hardfloat/",
+      "-Irtl/execute/vendor/hardfloat/8086-SSE",
+      "-s",
+      "tb_fp64",
+      "-o",
+      "/tmp/openrx-fp-compat-cz9p5v6o/fp.vvp",
+      "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "rtl/execute/vendor/hardfloat/addRecFN.v",
+      "rtl/execute/vendor/hardfloat/mulRecFN.v",
+      "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "rtl/execute/randomx_fp64.v",
+      "rtl/execute/tests/tb_fp64.v"
+    ],
+    "returncode": 0
+  },
+  {
+    "label": "rtl",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-fp-compat-cz9p5v6o/fp.vvp",
+      "+vectors=/tmp/openrx-fp-compat-cz9p5v6o/vectors.hex"
+    ],
+    "returncode": 1
+  }
+]

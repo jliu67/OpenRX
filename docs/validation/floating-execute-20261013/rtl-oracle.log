@@ -1,0 +1,1 @@
+PASS native floating-branch iterations=8 aliases=4 actual_bytecode_reads=338 stores=104 instruction_steps=2928 branches=102 taken=42 multiplies=202 rcp_nops=2 fp_steps=872 cf_steps=584 full_memory_bytes=2097152

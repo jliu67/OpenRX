@@ -1,0 +1,18 @@
+{
+  "aes-rtl-corrected-20261012/inputs.json": {
+    "checked": 19,
+    "sha256": "5fad06a98bf0baadaa4d594745f434e5890a604ab4b262b4cf1f563516682541"
+  },
+  "iteration-tail-v2-stalls-20261012/inputs.json": {
+    "checked": 17,
+    "sha256": "5a66a6f04817d2da0846652be39c0424024d987260dce9307465b5e39ac6b6fa"
+  },
+  "iteration-engine-read-grant-20261013/rtl-inputs.json": {
+    "checked": 22,
+    "sha256": "37b87b5ccf353e99d8a57fdc56b10d60151b64c2e72893e8c4dac2ef1166c8a6"
+  },
+  "HardFloat1-8086-SSE": {
+    "checked": 11,
+    "manifest_sha256": "f1bd231c13b774db740dfa2eff6579f80bb2c79c48ac15ec2fb4bca22d12f67b"
+  }
+}

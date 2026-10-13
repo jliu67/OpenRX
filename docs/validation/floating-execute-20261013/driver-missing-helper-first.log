@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/tmp/openrx-fp-coverage-7n9e6jy_/scripts/test_floating_execute.py", line 8, in <module>
+    from floating_fixture import prepare
+ModuleNotFoundError: No module named 'floating_fixture'

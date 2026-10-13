@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
-// Native RandomX integer subset. Unsupported operations terminate with an error.
+// Native RandomX subset with exact integer/branch/FP execution; division/sqrt trap.
 `default_nettype none
-module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
+module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2) (
     input wire clk,rst,
     input wire req_valid,output wire req_ready,input wire [15:0] req_tag,
     input wire req_v2,input wire [1:0] req_round_mode,
@@ -22,21 +22,23 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
     output wire [8:0] error_pc,output wire [7:0] error_opcode,
     output wire commit_valid,output wire [15:0] commit_tag,
     output wire [8:0] commit_pc,output wire [7:0] commit_opcode,output wire [511:0] commit_r,
-    output wire [8:0] commit_next_pc,commit_branch_target
+    output wire [8:0] commit_next_pc,commit_branch_target,
+    output wire [511:0] commit_f,commit_e,output wire [1:0] commit_round_mode
 );
 `include "randomx_opcode_ceils.vh"
     localparam [3:0] IDLE=0,FETCH_REQ=1,FETCH_RSP=2,EXEC=3,MEM_REQ=4,MEM_RSP=5,
-        STORE_REQ=6,IADD_SECOND=7,RETURN=8,ERROR=9,MUL_REQ=10,MUL_WAIT=11,RCP_REQ=12,RCP_WAIT=13;
+        STORE_REQ=6,IADD_SECOND=7,RETURN=8,ERROR=9,MUL_REQ=10,MUL_WAIT=11,RCP_REQ=12,RCP_WAIT=13,FP_REQ=14,FP_WAIT=15;
     localparam [4:0] ADD_RS=0,ADD_M=1,SUB_R=2,SUB_M=3,NEG_R=4,XOR_R=5,XOR_M=6,
         ROR_R=7,ROL_R=8,SWAP_R=9,STORE=10,MUL_R=11,MUL_M=12,HIGH_R=13,HIGH_M=14,
-        SIGNED_HIGH_R=15,SIGNED_HIGH_M=16,RCP=17,BRANCH=18,BAD=31;
+        SIGNED_HIGH_R=15,SIGNED_HIGH_M=16,RCP=17,BRANCH=18,
+        FSWAP=19,FADD_R=20,FADD_M=21,FSUB_R=22,FSUB_M=23,FSCAL=24,FMUL=25,ROUND=26,BAD=31;
     reg [3:0] state_q;
     reg [8:0] pc_q;
     reg [15:0] tag_q;
     reg v2_q;
     reg [1:0] round_q;
     reg [63:0] program_q,instruction_q,tmp_q;
-    reg [511:0] r_q,f_q,e_q;
+    reg [511:0] r_q,f_q,e_q,a_q;
     reg [20:0] address_q;
     reg commit_q;
     reg [8:0] commit_pc_q,commit_next_q,commit_target_q;
@@ -68,19 +70,28 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
             else if(opcode<CEIL_IROR_R)decode=ROR_R;
             else if(opcode<CEIL_IROL_R)decode=ROL_R;
             else if(opcode<CEIL_ISWAP_R)decode=SWAP_R;
+            else if(opcode<CEIL_FSWAP_R)decode=FSWAP;
+            else if(opcode<CEIL_FADD_R)decode=FADD_R;
+            else if(opcode<CEIL_FADD_M)decode=FADD_M;
+            else if(opcode<CEIL_FSUB_R)decode=FSUB_R;
+            else if(opcode<CEIL_FSUB_M)decode=FSUB_M;
+            else if(opcode<CEIL_FSCAL_R)decode=FSCAL;
+            else if(opcode<CEIL_FMUL_R)decode=FMUL;
             else if(opcode<CEIL_FSQRT_R)decode=BAD;
             else if(opcode<CEIL_CBRANCH)decode=BRANCH;
-            else if(opcode<CEIL_CFROUND)decode=BAD;
+            else if(opcode<CEIL_CFROUND)decode=ROUND;
             else decode=STORE;
         end
     endfunction
     wire [4:0] kind=decode(instruction_q[7:0]);
-    wire [31:0] memory_mask=kind==STORE ?
+    wire fp_memory=kind==FADD_M||kind==FSUB_M;
+    wire [31:0] memory_mask=fp_memory ?
+        (instruction_q[25:24]!=0 ? 32'h00003ff8 : 32'h0003fff8) : kind==STORE ?
         (instruction_q[31:28]>=14 ? 32'h001ffff8 :
             (instruction_q[25:24]!=0 ? 32'h00003ff8 : 32'h0003fff8)) :
         (dst==src ? 32'h001ffff8 :
             (instruction_q[25:24]!=0 ? 32'h00003ff8 : 32'h0003fff8));
-    wire [31:0] memory_base=kind==STORE ? rd[31:0] : (dst==src ? 32'b0 : rs[31:0]);
+    wire [31:0] memory_base=fp_memory ? rs[31:0] : kind==STORE ? rd[31:0] : (dst==src ? 32'b0 : rs[31:0]);
     // Address masks retain <=21 bits, so modulo32 addition equals native low64 bits.
     wire [31:0] memory_address=(memory_base+instruction_q[63:32])&memory_mask;
     wire [63:0] memory_value=address_q[3] ? rsp_data[127:64] : rsp_data[63:0];
@@ -102,6 +113,23 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
         .clk(clk),.rst(rst),.req_valid(!rst && state_q==RCP_REQ),.req_ready(rcp_req_ready),
         .req_tag(tag_q),.req_divisor(instruction_q[63:32]),.rsp_valid(rcp_rsp_valid),
         .rsp_ready(!rst && state_q==RCP_WAIT),.rsp_tag(rcp_rsp_tag),.rsp_result(rcp_result),.rsp_nop(rcp_rsp_nop));
+    reg [127:0] fp_a_q,fp_b_q;reg [1:0] fp_op_q;
+    wire fp_ready,fp_valid;wire [15:0] fp_tag;wire [127:0] fp_result;wire [4:0] fp_flags;
+    wire [1:0] fdst=instruction_q[9:8],fsrc=instruction_q[17:16];
+    wire [127:0] fr=f_q[128*fdst+:128],er=e_q[128*fdst+:128],ar=a_q[128*fsrc+:128];
+    wire [63:0] packed_low,packed_high;
+    randomx_i32_to_f64 fp_memory_low(memory_value[31:0],packed_low);
+    randomx_i32_to_f64 fp_memory_high(memory_value[63:32],packed_high);
+`ifdef FP128_NETLIST
+    randomx_fp128 floating_unit(
+`else
+    randomx_fp128 #(.LANES(FP_LANES)) floating_unit(
+`endif
+        .clk(clk),.rst(rst),.req_valid(!rst&&state_q==FP_REQ),.req_ready(fp_ready),.req_tag(tag_q),
+        .req_op(fp_op_q),.req_round(round_q),.req_ftz_daz(1'b1),.req_a(fp_a_q),.req_b(fp_b_q),
+        .rsp_valid(fp_valid),.rsp_ready(!rst&&state_q==FP_WAIT),.rsp_tag(fp_tag),.rsp_result(fp_result),.rsp_flags(fp_flags));
+    wire [5:0] cf_rotate=instruction_q[37:32];
+    wire [63:0] cf_value=(rs>>cf_rotate)|(rs<<(64-cf_rotate));
     // Native compile-time usage is lexical, never updated by a replayed instruction.
     // Each CBRANCH marks all registers used, so later branches cannot replay an older branch.
     reg [8:0] usage_next_q[0:7];
@@ -144,6 +172,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
     assign error_pc=pc_q;assign error_opcode=instruction_q[7:0];
     assign commit_valid=!rst && commit_q;assign commit_tag=tag_q;
     assign commit_next_pc=commit_next_q;assign commit_branch_target=commit_target_q;
+    assign commit_f=f_q;assign commit_e=e_q;assign commit_round_mode=round_q;
     assign commit_pc=commit_pc_q;assign commit_opcode=commit_opcode_q;assign commit_r=r_q;
     task retire_at;
         input [8:0] next_pc;
@@ -160,7 +189,8 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
     always @(posedge clk)begin
         if(rst)begin
             state_q<=IDLE;pc_q<=0;tag_q<=0;v2_q<=0;round_q<=0;program_q<=0;
-            instruction_q<=0;tmp_q<=0;r_q<=0;f_q<=0;e_q<=0;address_q<=0;
+            instruction_q<=0;tmp_q<=0;r_q<=0;f_q<=0;e_q<=0;a_q<=0;address_q<=0;
+            fp_a_q<=0;fp_b_q<=0;fp_op_q<=0;
             commit_q<=0;commit_pc_q<=0;commit_opcode_q<=0;commit_next_q<=0;commit_target_q<=0;
             mul_a_q<=0;mul_b_q<=0;mul_high_q<=0;mul_signed_q<=0;
             compile_next_q<=0;branch_target_q<=0;branch_pc_q<=0;
@@ -174,12 +204,12 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
                     for(usage_index=0;usage_index<8;usage_index=usage_index+1)usage_next_q[usage_index]<=pc_q+9'd1;
                 end else if(kind==SWAP_R)begin
                     if(dst!=src)begin usage_next_q[dst]<=pc_q+9'd1;usage_next_q[src]<=pc_q+9'd1;end
-                end else if(kind!=STORE && kind!=BAD && !(kind==RCP && rcp_nop))usage_next_q[dst]<=pc_q+9'd1;
+                end else if(kind<BRANCH && kind!=STORE && !(kind==RCP && rcp_nop))usage_next_q[dst]<=pc_q+9'd1;
             end
             case(state_q)
                 IDLE:if(req_valid)begin
                     tag_q<=req_tag;v2_q<=req_v2;round_q<=req_round_mode;program_q<=req_program_addr;
-                    r_q<=req_r;f_q<=req_f;e_q<=req_e;pc_q<=0;state_q<=FETCH_REQ;
+                    r_q<=req_r;f_q<=req_f;e_q<=req_e;a_q<=req_a;pc_q<=0;state_q<=FETCH_REQ;
                     compile_next_q<=0;branch_target_q<=0;branch_pc_q<=0;
                     for(usage_index=0;usage_index<8;usage_index=usage_index+1)usage_next_q[usage_index]<=0;
                 end
@@ -199,11 +229,25 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
                         if(dst!=src)begin r_q[64*dst+:64]<=rs;r_q[64*src+:64]<=rd;end
                         retire_instruction();
                     end
-                    ADD_M,SUB_M,XOR_M,MUL_M,HIGH_M,SIGNED_HIGH_M:begin address_q<=memory_address[20:0];state_q<=MEM_REQ;end
+                    ADD_M,SUB_M,XOR_M,MUL_M,HIGH_M,SIGNED_HIGH_M,FADD_M,FSUB_M:begin address_q<=memory_address[20:0];state_q<=MEM_REQ;end
                     STORE:begin address_q<=memory_address[20:0];state_q<=STORE_REQ;end
                     MUL_R,HIGH_R,SIGNED_HIGH_R:begin
                         mul_a_q<=rd;mul_b_q<=kind==MUL_R?register_operand:rs;
                         mul_high_q<=kind!=MUL_R;mul_signed_q<=kind==SIGNED_HIGH_R;state_q<=MUL_REQ;
+                    end
+                    FSWAP:begin
+                        if(dst<4)f_q[128*fdst+:128]<={fr[63:0],fr[127:64]};
+                        else e_q[128*fdst+:128]<={er[63:0],er[127:64]};
+                        retire_instruction();
+                    end
+                    FSCAL:begin f_q[128*fdst+:128]<=fr^{2{64'h80f0000000000000}};retire_instruction();end
+                    FADD_R,FSUB_R,FMUL:begin
+                        fp_a_q<=kind==FMUL?er:fr;fp_b_q<=ar;
+                        fp_op_q<=kind==FMUL?2'd2:kind==FSUB_R?2'd1:2'd0;state_q<=FP_REQ;
+                    end
+                    ROUND:begin
+                        if(!v2_q||cf_value[5:2]==0)round_q<=cf_value[1:0];
+                        retire_instruction();
                     end
                     RCP:if(rcp_nop)retire_instruction();else state_q<=RCP_REQ;
                     BRANCH:begin
@@ -212,10 +256,18 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0) (
                     end
                     default:state_q<=ERROR;
                 endcase
+                FP_REQ:if(fp_ready)state_q<=FP_WAIT;
+                FP_WAIT:if(fp_valid&&fp_tag==tag_q)begin
+                    if(kind==FMUL)e_q[128*fdst+:128]<=fp_result;
+                    else f_q[128*fdst+:128]<=fp_result;
+                    retire_instruction();
+                end
                 IADD_SECOND:begin r_q[64*dst+:64]<=add_result;retire_instruction();end
                 MEM_REQ:if(rd_ready)state_q<=MEM_RSP;
                 MEM_RSP:if(rsp_valid && !old_memory)begin
-                    if(kind==MUL_M || kind==HIGH_M || kind==SIGNED_HIGH_M)begin
+                    if(fp_memory)begin
+                        fp_a_q<=fr;fp_b_q<={packed_high,packed_low};fp_op_q<=kind==FSUB_M?2'd1:2'd0;state_q<=FP_REQ;
+                    end else if(kind==MUL_M || kind==HIGH_M || kind==SIGNED_HIGH_M)begin
                         mul_a_q<=rd;mul_b_q<=memory_value;mul_high_q<=kind!=MUL_M;
                         mul_signed_q<=kind==SIGNED_HIGH_M;state_q<=MUL_REQ;
                     end else begin

@@ -1,4 +1,4 @@
-name: Native RandomX integer and branch RTL
+name: Native RandomX floating and integer RTL
 on:
   pull_request:
     paths:
@@ -8,6 +8,8 @@ on:
       - 'rtl/aes/**'
       - 'scripts/test_integer_execute.py'
       - 'scripts/test_integer_multiply.py'
+      - 'scripts/test_floating_execute.py'
+      - 'scripts/floating_fixture.py'
       - 'scripts/test_iteration_engine.py'
       - 'vendor/randomx/**'
       - 'vendor/randomx*.json'
@@ -18,16 +20,16 @@ permissions:
 jobs:
   integer-differential:
     runs-on: ubuntu-24.04
-    timeout-minutes: 50
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - name: Install official HDL packages
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y iverilog yosys
-      - name: Execute actual integer RTL and mapped netlists against native oracle
+      - name: Execute actual FP/integer RTL and mapped netlists against native oracle
         run: |
-          python3 scripts/test_integer_multiply.py \
+          python3 scripts/test_floating_execute.py \
             --output "$RUNNER_TEMP/integer-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
             --synthesize
       - name: Retain complete licensed outputs

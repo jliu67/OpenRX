@@ -1,0 +1,70 @@
+{
+  "units": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 8311599104,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 1114402816,
+    "peak_swap_bytes": 0,
+    "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "cpu_stat": "usage_usec 678621038\nuser_usec 676270010\nsystem_usec 2351027\ncore_sched.force_idle_usec 0\nnr_periods 6780\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_witness_sha256": "c9f542e6999a21f17c7f94c74015b4d847ab29178d45dbb3588d62bef944eec0",
+    "timing_sha256": "2162fdf44b836371b473bb21555e797ce00dece25f9d286edd5f8abb330d6ed0",
+    "reason": "Task58 standalone HardFloat FP128 shared/parallel synthesis and native mapped primitive/connected/error validation. One worker, actual CPU600%,2GiB RAM,512MiB swap,Tasks128 and fresh1GiB OS reserve; global slot serialized. Prior25k-cell mapped compile <1GiB; FP dual unit estimate40k cells motivates2GiB. No whole integration build yet.",
+    "drainage": {
+      "verified_utc": "2026-10-13T08:08:24.467387+00:00",
+      "units_inactive": {
+        "openrx-floating-units-20261013-01.service": "inactive",
+        "openrx-floating-integration-20261013-01.service": "inactive"
+      },
+      "payload_cgroups_removed": true,
+      "shared_slot_free": true,
+      "returncodes": [
+        0,
+        0
+      ]
+    }
+  },
+  "integration": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "6979321856",
+      "memory.swap.max": "2147483648",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 8355688448,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 6979321856,
+    "peak_swap_bytes": 1136898048,
+    "memory_events": "low 0\nhigh 0\nmax 1202\noom 0\noom_kill 0\noom_group_kill 0",
+    "cpu_stat": "usage_usec 2295460409\nuser_usec 2284325087\nsystem_usec 11135321\ncore_sched.force_idle_usec 0\nnr_periods 23712\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_witness_sha256": "523ff5b4bf8b4060acd3cd7ecfd471e4f81fc03d0bbca21dc6359eee2f9c3fd6",
+    "timing_sha256": "a070f6fe42c1dfe7d1e82b596acc8296ac65f31f9760f26ad51c6a3f1e0a9e37",
+    "reason": "Task58 complete default FP integration synthesis and three actual mapped native/error tests. Original189k-cell top cgroup peak5.85GB/RSS4.3GB; new49k-cell dual FP unit plus register muxes motivates7.5GiB candidate, but fresh8.31GB MemAvailable fails9.13GB candidate+reserve. Use6.5GiB RAM+2GiB swap and1GiB OS reserve, six CPUs/one worker/global slot serialized; no physical PPA/hash throughput claim.",
+    "drainage": {
+      "verified_utc": "2026-10-13T08:08:24.467387+00:00",
+      "units_inactive": {
+        "openrx-floating-units-20261013-01.service": "inactive",
+        "openrx-floating-integration-20261013-01.service": "inactive"
+      },
+      "payload_cgroups_removed": true,
+      "shared_slot_free": true,
+      "returncodes": [
+        0,
+        0
+      ]
+    }
+  }
+}

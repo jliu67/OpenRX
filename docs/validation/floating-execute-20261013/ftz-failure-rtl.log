@@ -1,0 +1,2 @@
+FATAL: rtl/execute/tests/tb_fp64.v:19: FP mismatch row=3710 op=2 rm=0 ftz=1 a=0010000000000000 b=3fefffffffffffff expected=0000000000000000/00000003 got=0010000000000000/03 nativecsr=00009ff0
+       Time: 148426000 Scope: tb_fp64
