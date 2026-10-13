@@ -1,0 +1,16 @@
+{
+  "source": "/tmp/openrx-fp-ftz-xr2xqs1k",
+  "output": "/tmp/openrx-floating-native-ih2u5rzu",
+  "archive": "/home/server/Documents/Codex/2026-10-11/task-2/floating-executor-implementation-evidence/connected-source-before-raw-coverage-fix.tar.gz",
+  "archive_sha256": "2a0722e3eed6991cb5f30261811c39642237ecaeb5dae4e9926853c92bd5bbe9",
+  "files_verified": 1977,
+  "readonly": true,
+  "missing_raw_values": [
+    39,
+    80,
+    81,
+    82,
+    83
+  ],
+  "correction": "five explicit native words in v1 prefix; strict246-raw criterion retained; no production RTL behavior change"
+}

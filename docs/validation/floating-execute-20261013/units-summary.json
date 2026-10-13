@@ -1,0 +1,50 @@
+{
+  "mapping": {
+    "1": {
+      "num_cells": 26522,
+      "flop_cells": 571,
+      "num_cells_by_type": {
+        "$_NOT_": 1718,
+        "$_ORNOT_": 1490,
+        "$_OR_": 2005,
+        "$_OAI3_": 1064,
+        "$_NAND_": 356,
+        "$_OAI4_": 45,
+        "$_XOR_": 4020,
+        "$_ANDNOT_": 5211,
+        "$_MUX_": 3295,
+        "$_NOR_": 2595,
+        "$_AOI3_": 940,
+        "$_AOI4_": 70,
+        "$_AND_": 844,
+        "$_XNOR_": 2298,
+        "$_DFF_P_": 571
+      }
+    },
+    "2": {
+      "num_cells": 49363,
+      "flop_cells": 156,
+      "num_cells_by_type": {
+        "$_NOT_": 3862,
+        "$_AND_": 1756,
+        "$_OAI3_": 1937,
+        "$_NOR_": 5736,
+        "$_OR_": 4009,
+        "$_ORNOT_": 2678,
+        "$_ANDNOT_": 9367,
+        "$_AOI3_": 1988,
+        "$_NAND_": 643,
+        "$_AOI4_": 88,
+        "$_MUX_": 4402,
+        "$_OAI4_": 127,
+        "$_XNOR_": 4602,
+        "$_XOR_": 8012,
+        "$_DFF_P_": 156
+      }
+    }
+  },
+  "mapped": {
+    "1": "native primitive+connected ideal/stalled/error firstPASS+cycle records identical",
+    "2": "native primitive+connected ideal/stalled/error firstPASS+cycle records identical"
+  }
+}

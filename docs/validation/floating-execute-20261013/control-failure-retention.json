@@ -1,0 +1,9 @@
+{
+  "failed_source": "/tmp/openrx-floating-execute-l3uba6ii",
+  "failed_output": "/tmp/openrx-fp-compat-cz9p5v6o",
+  "archive": "/home/server/Documents/Codex/2026-10-11/task-2/floating-executor-implementation-evidence/compatibility-source-before-tininess-fix.tar.gz",
+  "archive_sha256": "c03eb236e957b14b86dc54ffb966e0ff82a871b1738453f9ed42eb15d92399f0",
+  "source_files_verified": 1974,
+  "failed_source_readonly": true,
+  "repair": "use supplied 8086-SSE flControl_default/tininessAfterRounding instead of literal0/before"
+}

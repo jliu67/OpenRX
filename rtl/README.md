@@ -17,3 +17,7 @@ No processor RTL implemented. Advance after M3/M4 gates; isolate core, cache and
 The [task #56extension](execute/MULTIPLY-BRANCH.md) supplies multiplication,
 reciprocal and conditional branches on reviewed/unmerged PR #55. FP/CFROUND and
 complete VM/hash/physical acceptance remain open; new-work review is pending.
+
+
+[Task #58 FP subset/CFROUND](execute/FLOATING.md) reuses licensed binary64 arithmetic;
+division/sqrt remain errors and full-hash/physical-PPA gates remain open.

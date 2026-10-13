@@ -174,3 +174,20 @@ are assertions, not hardware inputs. [Task #56](https://github.com/jliu67/OpenRX
 and [EXP-007](../experiments/EXP-007-native-multiply-branch.md) carry separate new-work
 review. Revisit on exact opcode/interface evidence or technology timing/area; no
 complete VM/hash or physical PPA acceptance is inferred.
+
+
+## D046 — reused binary64 IP with exact native controls, 2026-10-13
+
+Use unmodified Berkeley HardFloat1/8086-SSE for binary64 add/subtract/multiply,
+retaining original license/bytes/archive/manifest. The native RandomX reference
+uses DAZ/FTZ; adapt inputs to signed zero and flush on subnormal output or upstream
+underflow flag, including rounding to minimum normal. Keep supplied after-rounding
+control, first-operand NaN payload and native four-mode mapping. Do not invent or
+approximate arithmetic. Preserve signed32 memory conversion, F/E/A selection,
+FSCAL mask and v2-guarded/v1-unconditional CFROUND; FP never marks integer usage.
+Expose one shared versus two parallel lanes with atomic vector retirement/reset.
+Division/square-root trap until implemented. Full RTL primitive coverage and a
+separately declared balanced mapped corner corpus retain exact native flags/bits.
+[Task #58](https://github.com/jliu67/OpenRX/issues/58) / [EXP-008](../experiments/EXP-008-native-floating-execute.md)
+require new independent review; generic cells/clocks do not accept physical PPA or
+full hashes. Revisit on specific integration/technology evidence.

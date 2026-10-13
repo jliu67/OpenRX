@@ -1,0 +1,9 @@
+{
+  "failed_source": "/tmp/openrx-fp-rounding-x7i1ulqk",
+  "failed_output": "/tmp/openrx-fp-compat-after-q1eex4l4",
+  "archive": "/home/server/Documents/Codex/2026-10-11/task-2/floating-executor-implementation-evidence/compatibility-source-before-ftz-fix.tar.gz",
+  "archive_sha256": "ef73d0dddf90d10cc5032a494db664a5725a36e0c420a3ce7714b098ecd6b55c",
+  "source_files_verified": 1974,
+  "failed_source_readonly": true,
+  "repair": "FTZ flush when upstream underflow flag OR subnormal output, including rounded-minnormal result"
+}

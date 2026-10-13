@@ -1,0 +1,62 @@
+{
+  "rtl-validation": {
+    "files": 81,
+    "archive_sha256": "69fdfe1b92ba419d092ddcad6de37695cd2ba3d6e71ea8aacf0aa2cde08a7577",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "mapped-units": {
+    "files": 36,
+    "archive_sha256": "4c19906efd7fb100e47a45d0a161eb846823f6f27651bc247338e3a7aa8f57c4",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "mapped-integration": {
+    "files": 17,
+    "archive_sha256": "2e4b44e18bf232f6fefa5b309a8156a94922242ce34f395a110be526b39e3cff",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "scalar-compatibility-failed-control": {
+    "files": 8,
+    "archive_sha256": "cfb6518f65f5f074f6b423443cd30e73d6f948d35105ecaf6ccb9dfb836375f8",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "scalar-compatibility-failed-ftz": {
+    "files": 4,
+    "archive_sha256": "d3c84b5c75e684331c2effe071b490104ff52d872fa984c67d9ad5be7c0ca474",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "scalar-compatibility-final": {
+    "files": 4,
+    "archive_sha256": "6c008430f7c9b4b8fd4116929fb1462440288cd8b4a874ca8c65a1e00c3e6054",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "vector-bringup": {
+    "files": 12,
+    "archive_sha256": "b50ffd2696847303320ac5d400c6b1457a9f88370ab8d918ff06e1df67267734",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "native-before-coverage": {
+    "files": 20,
+    "archive_sha256": "353337c5856f24173a332166355b3a25fcc4631bf6b27eebed923c2e3aeb6bee",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "native-covered": {
+    "files": 27,
+    "archive_sha256": "d8832753df1fa8744b9f8413f165fe90a25486a8fdf7420828177400dcef7b5f",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  },
+  "connected-bringup": {
+    "files": 13,
+    "archive_sha256": "4cc8384329178674f48e4f232481ae22e60c61ad4612e7e3c435ff8e02029571",
+    "all_files_verified": true,
+    "original_file_modes_verified": true
+  }
+}

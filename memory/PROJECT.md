@@ -1,5 +1,19 @@
 # Project memory
 
+## Current floating execution extension — task #58, 2026-10-13
+
+[PR #55](https://github.com/jliu67/OpenRX/pull/55#pullrequestreview-5498804300)
+and [PR #57](https://github.com/jliu67/OpenRX/pull/57#pullrequestreview-5499497883)
+are independently accepted at `2b14e4f9` / `d62c4495` and remain draft/unmerged.
+[Task #58](https://github.com/jliu67/OpenRX/issues/58) adds exact native floating
+add/subtract/multiply, bit operations and CFROUND on a separate stacked temporary
+branch. Proven licensed HardFloat1/8086-SSE bytes supply arithmetic; native masks,
+rounding, DAZ/FTZ and held/reset behavior remain exact. Division/square root still
+trap. This new work requires independent review; no merge is authorized. Earlier
+summaries retain dated publication context. All pinned assets and serialized
+compute rules remain; full VM/hash, selected core and calibrated physical PPA
+remain open. [Design](../rtl/execute/FLOATING.md) records concrete interfaces and validation.
+
 ## Current stacked extension — task #56, 2026-10-13
 
 [PR #55](https://github.com/jliu67/OpenRX/pull/55#pullrequestreview-5498804300) is

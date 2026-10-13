@@ -1,5 +1,19 @@
 # OpenRX project board
 
+## Current floating execution extension — task #58, 2026-10-13
+
+[PR #55](https://github.com/jliu67/OpenRX/pull/55#pullrequestreview-5498804300)
+and [PR #57](https://github.com/jliu67/OpenRX/pull/57#pullrequestreview-5499497883)
+are independently accepted at `2b14e4f9` / `d62c4495` and remain draft/unmerged.
+[Task #58](https://github.com/jliu67/OpenRX/issues/58) adds exact native floating
+add/subtract/multiply, bit operations and CFROUND on a separate stacked temporary
+branch. Proven licensed HardFloat1/8086-SSE bytes supply arithmetic; native masks,
+rounding, DAZ/FTZ and held/reset behavior remain exact. Division/square root still
+trap. This new work requires independent review; no merge is authorized. Earlier
+summaries retain dated publication context. All pinned assets and serialized
+compute rules remain; full VM/hash, selected core and calibrated physical PPA
+remain open. [Design](../rtl/execute/FLOATING.md) records concrete interfaces and validation.
+
 ## Current stacked extension — task #56, 2026-10-13
 
 [PR #55](https://github.com/jliu67/OpenRX/pull/55#pullrequestreview-5498804300) is
@@ -30,7 +44,8 @@ calibrated timing and physical-power gates remain open.
 | [50](https://github.com/jliu67/OpenRX/issues/50) | Ordered iteration stores accepted/merged in PR51; completed |
 | [52](https://github.com/jliu67/OpenRX/issues/52) | Iteration memory engine/read-grant correction accepted/merged in PR53; completed |
 | [54](https://github.com/jliu67/OpenRX/issues/54) | Native integer execution; PR #55 independently accepted, draft/unmerged |
-| [56](https://github.com/jliu67/OpenRX/issues/56) | Multiply/reciprocal/branch extension on reviewed/unmerged PR #55; new-work review pending |
+| [56](https://github.com/jliu67/OpenRX/issues/56) | Native multiply/branch; PR #57 independently accepted, draft/unmerged |
+| [58](https://github.com/jliu67/OpenRX/issues/58) | Exact HardFloat-backed native FP subset/CFROUND; new-work review pending |
 
 ## Current objective — manager-led build-first delivery, 2026-10-12
 
