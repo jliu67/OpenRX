@@ -1,0 +1,14 @@
+{
+  "programs.hex": true,
+  "instruction-steps.hex": true,
+  "programs.mem": true,
+  "steps.mem": true,
+  "iterations.hex": true,
+  "accesses.hex": true,
+  "initial.hex": true,
+  "final.hex": true,
+  "events.mem": true,
+  "integer_vectors.vh": true,
+  "oracle-summary.json": true,
+  "extraction.json": true
+}

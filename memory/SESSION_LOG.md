@@ -669,3 +669,25 @@ This author handoff does not establish acceptance or authorize merge. Arithmetic
 kernel, physical memories, calibrated PPA and full-hash requirements remain
 external. Earlier evidence below records its original source and is retained.
 
+
+## Native integer execution — task54, 2026-10-13
+
+Implemented actual native fetch/decode and eleven integer families behind unchanged
+accepted controller/converter/AES/store tail. Unknown raw operations terminate with
+held tagged error, preserving committed-prefix semantics; no silent approximation.
+The reproducible driver compares2,560 actual hardware instruction retirements and
+all2MiB against unchanged native semantics, with v2 primary/v1 regression. Eight
+RTL and eleven actual mapped modes pass, including unsupported/error/reset and
+raw-field/all-rounding-mode/held-return coverage. Fast/shared clocks9,524/9,760 and
+26,712/26,948 differ by236, one per IADD_RS. Generic fast/shared kernels25,885/1,727
+and25,925/1,792; complete default top154,145/7,921. No full hash or physical PPA.
+
+All protected inputs/source/results/receipts retained. Initial transport fixture
+sampling failure preserved with source/fatal; RTL unchanged by its settle repair.
+One serialized5GiB/six-CPU payload completed29m20s, peak cgroup5,080,702,976 bytes,
+no OOM/swap/quota throttle. Focused transport and final RTL used measured1GiB.
+Sources/attempts archived, authoring retired read-only at handoff. Concise current
+summary corrections share this code PR; archived/vendor links are not rewritten.
+Next: final-head hosted checks then one independent new-work review; no merge
+approval. [Evidence](../docs/validation/integer-execute-20261013/README.md) binds the
+complete artifacts and license/source provenance. Earlier stages remain historical.

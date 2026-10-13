@@ -1,5 +1,10 @@
 # EXP-003: required v2 F/E AES execution stage
 
+Current closeout (2026-10-13): [PR49](https://github.com/jliu67/OpenRX/pull/49)
+is independently accepted and merged at `70562a6a4e0d164a8e627b485ea3ecd887b49111`. The review-pending and original
+source/count records below are retained historical author stages. Full-core/hash
+and physical/calibrated-PPA gates remain open; task54 is separate new work.
+
 Status: implementation, reference tests and generic synthesis complete;
 independent implementation review pending on [#48](https://github.com/jliu67/OpenRX/issues/48).
 

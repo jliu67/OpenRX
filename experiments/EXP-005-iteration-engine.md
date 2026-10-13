@@ -1,5 +1,10 @@
 # EXP-005 — iteration scratchpad and execute-memory integration
 
+Current closeout (2026-10-13): [PR53](https://github.com/jliu67/OpenRX/pull/53)
+is independently accepted and merged at `a6450ceccd32848c438c7dcae6acb98695d2a0e8`. The review-pending and original
+source/count records below are retained historical author stages. Full-core/hash
+and physical/calibrated-PPA gates remain open; task54 is separate new work.
+
 ## Read-grant correction after independent review — 2026-10-13
 
 [PR53 review](https://github.com/jliu67/OpenRX/pull/53#pullrequestreview-5497704738)

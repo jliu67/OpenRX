@@ -1,0 +1,1 @@
+PASS integer_hardware serial_iadd=1 stall=1 iterations=8 v2=4 v1=4 chains=4 aliases=4 fetched=2560 actual_RTL_retirements=2560 iadd_rs=236 native_reads=700 native_stores=228 tail_writes=64 full_memory_bytes=2097152 elapsed_cycles=26948 fetch_to_last_commit_cycles=26292 stale_program=2560 stale_sp=748 stale_dataset=8

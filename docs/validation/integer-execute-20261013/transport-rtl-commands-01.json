@@ -1,0 +1,19 @@
+[
+  [
+    "iverilog",
+    "-g2012",
+    "-Wall",
+    "-Irtl/execute",
+    "-s",
+    "tb_integer_transport",
+    "-Ptb_integer_transport.SERIAL_IADD=0",
+    "-o",
+    "<temporary-authoring>/transport-rtl-0-01.vvp",
+    "rtl/execute/randomx_integer_execute.v",
+    "<temporary-authoring>/tb_integer_transport.v"
+  ],
+  [
+    "vvp",
+    "<temporary-authoring>/transport-rtl-0-01.vvp"
+  ]
+]

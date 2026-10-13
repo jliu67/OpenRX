@@ -1,0 +1,7 @@
+{
+  "classification": "testbench sampled combinational req_ready in reset-release delta cycle",
+  "failed_source_sha256": "2ea134f3cd823e575411e59855e9bc1edec3a5d9c50e3f4bf737e927e0acfe52",
+  "log_sha256": "9df12d639b7b734f3fc9f140e5ed075ad5b50de8f329be648e509d87e24d69ea",
+  "DUT_inputs_changed": false,
+  "repair": "settle one simulation time unit after reset deassertion before checking ready"
+}

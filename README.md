@@ -1,5 +1,18 @@
 # OpenRX
 
+## Current component sequence — 2026-10-13
+
+[PR49](https://github.com/jliu67/OpenRX/pull/49), [PR51](https://github.com/jliu67/OpenRX/pull/51)
+and [PR53](https://github.com/jliu67/OpenRX/pull/53) are independently accepted and
+merged; current parent main is `a6450ceccd32848c438c7dcae6acb98695d2a0e8`.
+[Task54](https://github.com/jliu67/OpenRX/issues/54) adds actual native integer
+execution under the owner-authorized manager-led continuation; its new-work review
+remains pending and no further merge is authorized. Earlier component pointers,
+review-pending summaries and governance statements below retain their dated
+publication context. Issue claims remain the ownership record, the manager assigns
+bounded current scopes, and compute is serialized. Full-core/hash, selected-core,
+calibrated timing and physical-power gates remain open.
+
 ## Current objective — manager-led build-first delivery, 2026-10-12
 
 Deliver working RandomX v2 execution hardware using licensed reusable IP, with

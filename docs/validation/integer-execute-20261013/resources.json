@@ -1,0 +1,62 @@
+{
+  "full": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "5368709120",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 7528636416,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 5080702976,
+    "kernel_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "peak_swap_bytes": 0,
+    "cpu_stat": "usage_usec 1761457904\nuser_usec 1751890350\nsystem_usec 9567554\ncore_sched.force_idle_usec 0\nnr_periods 17605\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_full_witness_sha256": "f0c049fdd114827b03ffceea36fe9d3bf718087eb7f179b3b74040a577698a6c",
+    "timing_sha256": "7977b12f9477a42a5563fcc8e43de31b27fb58ff80f222e95fa2e9c13b148475"
+  },
+  "transport": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "1073741824",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 7889051648,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 163786752,
+    "kernel_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "peak_swap_bytes": 0,
+    "cpu_stat": "usage_usec 22879853\nuser_usec 22591905\nsystem_usec 287947\ncore_sched.force_idle_usec 0\nnr_periods 233\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_full_witness_sha256": "f993b5a2f6d61807adc3db6da7fa7adc22890c50df959cc14c3595df1d945c65",
+    "timing_sha256": "7007586afcec8020faa6e5e040e73b5b86ad5a8d9e4c92aabbe8b7493ebe03d5"
+  },
+  "final-rtl": {
+    "actual_kernel_limits": {
+      "cpu.max": "600000 100000",
+      "memory.max": "1073741824",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "cpu_affinity_count": 6,
+    "workers": 1,
+    "MemAvailable_at_admission": 7870341120,
+    "headroom_reserve_bytes": 1073741824,
+    "ancestor_constraints_verified": true,
+    "peak_cgroup_bytes": 190861312,
+    "kernel_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "peak_swap_bytes": 0,
+    "cpu_stat": "usage_usec 10285582\nuser_usec 9654933\nsystem_usec 630648\ncore_sched.force_idle_usec 0\nnr_periods 128\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "returncode": 0,
+    "private_full_witness_sha256": "06c8da5d03b1a9dc180e39bb5ff29510707e485cbc5eb1d6afcc06bbcec2b393",
+    "timing_sha256": "0aecf02a20a2341bbf1f252ff8718fad4dacfdc9d9b927386168dd59671bddb3"
+  }
+}
