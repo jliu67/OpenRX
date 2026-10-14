@@ -23,6 +23,7 @@ from test_iteration_engine import extract, function
 from test_divsqrt_execute import RTL, V, LIBS
 from hardfloat_compile_view import prepare as compile_view
 from program_sequence_fixture import prepare
+from prepared_parent_bindings import validate as validate_parent_bindings
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '7f299c74f81332257eefd775086b355969ad85f3'
@@ -159,8 +160,7 @@ def main():
         run('vendor', ['python3', 'scripts/verify_vendor.py'])
         parent_bindings = ROOT / 'docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json'
         accepted = json.loads(parent_bindings.read_text())
-        for path, digest in accepted.items():
-            assert sha(ROOT / path) == digest, path
+        preserved = validate_parent_bindings(ROOT)
         configuration = (ROOT / 'vendor/randomx/src/configuration.h').read_text()
         for name, expected in [('RANDOMX_PROGRAM_COUNT', 8), ('RANDOMX_PROGRAM_ITERATIONS', 2048),
                                ('RANDOMX_PROGRAM_SIZE_V1', 256), ('RANDOMX_PROGRAM_SIZE_V2', 384)]:
@@ -171,10 +171,9 @@ def main():
             TEST + 'tb_program_sequence.v', TEST + 'tb_program_control.v', TEST + 'tb_program_cancel.v',
             'vendor/randomx/src/program.hpp', 'vendor/randomx/src/blake2/blake2.h',
             'vendor/randomx/src/aes_hash.hpp', 'vendor/randomx/src/virtual_machine.hpp'])
+        inputs.update(preserved['input_bindings'])
         (out / 'inputs.json').write_text(json.dumps({p: sha(ROOT / p) for p in sorted(inputs)}, indent=2) + '\n')
-        (out / 'preserved-inputs.json').write_text(json.dumps({'accepted_parent': BASE,
-            'bindings': len(accepted), 'manifest_sha256': sha(parent_bindings),
-            'all_accepted_driver_IP_RTL_bytes_unchanged': True}, indent=2) + '\n')
+        (out / 'preserved-inputs.json').write_text(json.dumps(preserved, indent=2) + '\n')
         (out / 'tools.json').write_text(json.dumps({tool: subprocess.check_output([tool, flag],
             stderr=subprocess.STDOUT, text=True) for tool, flag in required}, indent=2) + '\n')
         for source, name in [('rtl/execute/LICENSE', 'LICENSE-OpenRX'), ('vendor/randomx/LICENSE', 'LICENSE-RandomX'),

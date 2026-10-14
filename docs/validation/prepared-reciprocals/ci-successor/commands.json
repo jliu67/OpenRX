@@ -1,0 +1,49 @@
+[
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "scripts/prepared_parent_bindings.py",
+      "--check-evidence",
+      "--output",
+      "/tmp/openrx-prepared-parent-binding-validation-01/source-binding-report.json"
+    ],
+    "cwd": "/tmp/openrx-prepared-bindings-check-qxh1yp2m",
+    "returncode": 0,
+    "wall_seconds": 0.09752631187438965
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_prepared_parent_bindings.py",
+      "-v"
+    ],
+    "cwd": "/tmp/openrx-prepared-bindings-check-qxh1yp2m",
+    "returncode": 0,
+    "wall_seconds": 0.639568567276001
+  },
+  {
+    "argv": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_reciprocal_cycle_model.py",
+      "-v"
+    ],
+    "cwd": "/tmp/openrx-prepared-bindings-check-qxh1yp2m",
+    "returncode": 0,
+    "wall_seconds": 0.06064748764038086
+  }
+]

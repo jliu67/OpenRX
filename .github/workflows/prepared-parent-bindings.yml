@@ -1,0 +1,42 @@
+name: Prepared parent source bindings and retained evidence only
+on:
+  pull_request:
+    paths:
+      - 'rtl/execute/**'
+      - 'rtl/engine/**'
+      - 'rtl/iteration/**'
+      - 'rtl/aes/**'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx*.json'
+      - 'scripts/prepared_parent_bindings.py'
+      - 'scripts/test_program_sequence.py'
+      - 'tests/test_prepared_parent_bindings.py'
+      - 'docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json'
+      - 'docs/validation/prepared-reciprocals/**'
+      - '.github/workflows/prepared-parent-bindings.yml'
+      - '.github/workflows/integer-execute.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepared-parent-source-evidence-only:
+    name: Prepared parent source and retained evidence only
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify declared sources and retained server records only
+        run: |
+          python3 -B scripts/prepared_parent_bindings.py --check-evidence \
+            --output "$RUNNER_TEMP/prepared-parent-source-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/report.json"
+      - name: Check source substitution rejection
+        run: python3 -B -m unittest discover -s tests -p test_prepared_parent_bindings.py -v
+      - name: State hosted validation scope
+        run: |
+          echo "Source and retained-evidence checks only. Hosted CI did not execute native workloads, HDL simulation or synthesis; those require authorized server admission." >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain source and retained-evidence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prepared-parent-source-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/prepared-parent-source-evidence-${{ github.run_id }}-${{ github.run_attempt }}/

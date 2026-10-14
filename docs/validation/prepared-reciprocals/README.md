@@ -179,4 +179,47 @@ Failed attempts: [01 syntax](failed-attempt-01/attempt01-failure.json),
 [03 reset sampling](failed-attempt-03/attempt03-failure.json),
 [04 rejected partial mapping](failed-attempt-04/attempt04-failure.json). Each folder
 retains complete outputs, source bindings, resource receipt and executed changed
-harness files. Independent exact-head review and current CI remain pending.
+harness files. Independent exact-head review remains required. The hosted source-binding failure and its bounded CI successor are recorded below.
+
+
+## Hosted source-binding correction
+
+Draft PR #70 originally published at `3ce88a6104ee79894da823cfff28280fc5b5cd75`.
+[Run 38502375710](https://github.com/jliu67/OpenRX/actions/runs/38502375710)
+stopped before native compilation at the inherited 53-path accepted compatibility
+manifest: the optional executor and iteration extensions intentionally have new
+bytes. The original accepted manifest remains unchanged. The complete failed job,
+original four-file artifact ZIP and its digest/inventory are preserved in
+[failed hosted evidence](failed-hosted-binding-01/artifacts.sha256.json).
+Foundation, RISC-V preflight and prepared model checks passed on that original head.
+
+The [explicit successor declaration](parent-source-bindings.json) binds exactly
+those two intended paths to both the old accepted digests and the unchanged
+[219 server input bindings](server/inputs.json). Every other accepted path retains
+its original digest. Default `PREPARED_RCP=0` and optional prepared mode are checked.
+No RTL, native oracle, golden, workload, server result or accepted manifest changes
+in this successor. All 219 executed source bindings remain byte-for-byte identical.
+New CI/helper/test changes are validated separately from the scientific payload.
+
+Candidate hosted checks validate source bindings, rejection tests and retained
+server evidence. Their successful status means those bounded checks pass.
+The inherited full native program-sequence/synthesis replay is **deferred and
+unexecuted** at this head; run it only inside a fresh authorized serialized server
+admission. Noncandidate workflow behavior remains unchanged. Source guards and
+retained result validation do not establish full-hash or independent acceptance.
+[Correction scope](ci-successor/scope.json) records the distinction. Independent
+review must cover the final exact head, including this CI correction.
+
+
+The bounded successor payload passes one source/evidence guard, all 12 parent
+rejection tests and the eight unchanged accounting tests with zero unexpected
+failures. [Check summary](ci-successor/summary.json), [command journal](ci-successor/commands.json),
+[full service log](ci-successor/complete-service.log), [actual kernel receipt](ci-successor/resource.json)
+and [complete check output](ci-successor/complete-output.tar.gz) retain results
+separately from the scientific server evidence. One serial worker used all six
+affinity CPUs/600% quota, 1 GiB RAM/128 MiB swap/Tasks64, fresh 1 GiB OS reserve,
+no tighter ancestors and the nonblocking global lock. Kernel peak was 21,762,048
+bytes, swap and limit/OOM/kill/throttle events zero; service wall time was 837 ms.
+The lower RAM budget reflects small metadata inputs and measured Python peak.
+The frozen complete check source/archive is [retained](ci-successor/source-retention.json);
+all six new CI input hashes match the published successor. Compute slot released.

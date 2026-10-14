@@ -1,0 +1,276 @@
+integer-differential	Set up job	﻿2026-10-14T02:41:52.0683409Z Current runner version: '2.337.0'
+integer-differential	Set up job	2026-10-14T02:41:52.0711689Z ##[group]Runner Image Provisioner
+integer-differential	Set up job	2026-10-14T02:41:52.0712729Z Hosted Compute Agent
+integer-differential	Set up job	2026-10-14T02:41:52.0713345Z Version: 20261002.596
+integer-differential	Set up job	2026-10-14T02:41:52.0714079Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+integer-differential	Set up job	2026-10-14T02:41:52.0714836Z Build Date: 2026-10-02T22:28:27Z
+integer-differential	Set up job	2026-10-14T02:41:52.0715554Z Worker ID: {dceeec72-d938-45e5-b3af-8af04cf2790c}
+integer-differential	Set up job	2026-10-14T02:41:52.0716361Z Region: westus
+integer-differential	Set up job	2026-10-14T02:41:52.0716910Z Cloud: Azure
+integer-differential	Set up job	2026-10-14T02:41:52.0717479Z ##[endgroup]
+integer-differential	Set up job	2026-10-14T02:41:52.0719005Z ##[group]Operating System
+integer-differential	Set up job	2026-10-14T02:41:52.0719701Z Ubuntu
+integer-differential	Set up job	2026-10-14T02:41:52.0720306Z 24.04.5
+integer-differential	Set up job	2026-10-14T02:41:52.0720832Z LTS
+integer-differential	Set up job	2026-10-14T02:41:52.0721752Z ##[endgroup]
+integer-differential	Set up job	2026-10-14T02:41:52.0722461Z ##[group]Runner Image
+integer-differential	Set up job	2026-10-14T02:41:52.0723106Z Image: ubuntu-24.04
+integer-differential	Set up job	2026-10-14T02:41:52.0723739Z Version: 20261004.327.1
+integer-differential	Set up job	2026-10-14T02:41:52.0724816Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+integer-differential	Set up job	2026-10-14T02:41:52.0726687Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+integer-differential	Set up job	2026-10-14T02:41:52.0727719Z ##[endgroup]
+integer-differential	Set up job	2026-10-14T02:41:52.0728857Z ##[group]GITHUB_TOKEN Permissions
+integer-differential	Set up job	2026-10-14T02:41:52.0730836Z Contents: read
+integer-differential	Set up job	2026-10-14T02:41:52.0732255Z Metadata: read
+integer-differential	Set up job	2026-10-14T02:41:52.0732934Z ##[endgroup]
+integer-differential	Set up job	2026-10-14T02:41:52.0735107Z Secret source: Actions
+integer-differential	Set up job	2026-10-14T02:41:52.0736208Z Cache mode: write
+integer-differential	Set up job	2026-10-14T02:41:52.0736900Z Prepare workflow directory
+integer-differential	Set up job	2026-10-14T02:41:52.1144296Z Prepare all required actions
+integer-differential	Set up job	2026-10-14T02:41:52.1194730Z Getting action download info
+integer-differential	Set up job	2026-10-14T02:41:52.4756075Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+integer-differential	Set up job	2026-10-14T02:41:52.5602574Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+integer-differential	Set up job	2026-10-14T02:41:52.7723879Z Complete job name: integer-differential
+integer-differential	Run actions/checkout@v4	﻿2026-10-14T02:41:52.8544139Z ##[group]Run actions/checkout@v4
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8545080Z with:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8545538Z   repository: jliu67/OpenRX
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8549544Z   token: ***
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8549990Z   ssh-strict: true
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8550439Z   ssh-user: git
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8550883Z   persist-credentials: true
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8551652Z   clean: true
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8552112Z   sparse-checkout-cone-mode: true
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8552637Z   fetch-depth: 1
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8553075Z   fetch-tags: false
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8553525Z   show-progress: true
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8553975Z   lfs: false
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8554394Z   submodules: false
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8554854Z   set-safe-directory: true
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8555360Z   allow-unsafe-pr-checkout: false
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.8556292Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9621917Z Syncing repository: jliu67/OpenRX
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9624989Z ##[group]Getting Git version info
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9626353Z Working directory is '/home/runner/work/OpenRX/OpenRX'
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9644287Z [command]/usr/bin/git version
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9769210Z git version 2.55.0
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9792141Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9807779Z Temporarily overriding HOME='/home/runner/work/_temp/aa921e04-a44e-45ac-b2b2-322451275f3b' before making global git config changes
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9810194Z Adding repository directory to the temporary git global config as a safe directory
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9813931Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRX/OpenRX
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9868811Z Deleting the contents of '/home/runner/work/OpenRX/OpenRX'
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9874389Z ##[group]Initializing the repository
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9878203Z [command]/usr/bin/git init /home/runner/work/OpenRX/OpenRX
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9991913Z hint: Using 'master' as the name for the initial branch. This default branch name
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9993781Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9995338Z hint: to use in all of your new repositories, which will suppress this warning,
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9996897Z hint: call:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9997597Z hint:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9998468Z hint: 	git config --global init.defaultBranch <name>
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:52.9999756Z hint:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0000677Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0002564Z hint: 'development'. The just-created branch can be renamed via this command:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0003830Z hint:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0004488Z hint: 	git branch -m <name>
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0005233Z hint:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0006220Z hint: Disable this message with "git config set advice.defaultBranchName false"
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0007830Z Initialized empty Git repository in /home/runner/work/OpenRX/OpenRX/.git/
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0011343Z [command]/usr/bin/git remote add origin https://github.com/jliu67/OpenRX
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0058199Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0059430Z ##[group]Disabling automatic garbage collection
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0065928Z [command]/usr/bin/git config --local gc.auto 0
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0097972Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0099148Z ##[group]Setting up auth
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0105791Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0145560Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0552172Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0595749Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0831613Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.0870329Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.1104637Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.1147957Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.1148920Z ##[group]Fetching the repository
+integer-differential	Run actions/checkout@v4	2026-10-14T02:41:53.1158588Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +081292bf1813572fd96fc7206f43277e05a3080d:refs/remotes/pull/70/merge
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3600870Z From https://github.com/jliu67/OpenRX
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3606786Z  * [new ref]         081292bf1813572fd96fc7206f43277e05a3080d -> pull/70/merge
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3611314Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3612223Z ##[group]Determining the checkout info
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3612815Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3616198Z [command]/usr/bin/git sparse-checkout disable
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3672716Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3715851Z ##[group]Checking out the ref
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:15.3720874Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/70/merge
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1462361Z Note: switching to 'refs/remotes/pull/70/merge'.
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1491934Z 
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1508285Z You are in 'detached HEAD' state. You can look around, make experimental
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1509210Z changes and commit them, and you can discard any commits you make in this
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1509790Z state without impacting any branches by switching back to a branch.
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1510125Z 
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1510393Z If you want to create a new branch to retain commits you create, you may
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1511291Z do so (now or later) by using -c with the switch command. Example:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1511909Z 
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1512219Z   git switch -c <new-branch-name>
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1512570Z 
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1512826Z Or undo this operation with:
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1513434Z 
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1513571Z   git switch -
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1513750Z 
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1514050Z Turn off this advice by setting config variable advice.detachedHead to false
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1514401Z 
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1514797Z HEAD is now at 081292b Merge 3ce88a6104ee79894da823cfff28280fc5b5cd75 into 8f3b9bc3d7f0182d66185abe95310f0bab00274b
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1516350Z ##[endgroup]
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1570036Z [command]/usr/bin/git log -1 --format=%H
+integer-differential	Run actions/checkout@v4	2026-10-14T02:42:16.1600772Z 081292bf1813572fd96fc7206f43277e05a3080d
+integer-differential	Install official HDL packages	﻿2026-10-14T02:42:16.1843478Z ##[group]Run sudo apt-get update
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.1843991Z [36;1msudo apt-get update[0m
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.1844430Z [36;1msudo apt-get install --no-install-recommends -y iverilog yosys[0m
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.2091497Z shell: /usr/bin/bash -e {0}
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.2092068Z ##[endgroup]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.3508983Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.4111709Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.4138524Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.4220141Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.4285853Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.4337006Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.5905112Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1397 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6134314Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [308 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6168824Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6270336Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6302726Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1805 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6410187Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [411 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6423902Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [50.7 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6431274Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.0 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.6565226Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-backports/multiverse amd64 Packages [748 B]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7117749Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1145 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7597252Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [230 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7614296Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1221 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7686141Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7695663Z Get:24 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [576 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7712166Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1713 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7781210Z Get:25 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7807623Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [392 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7808718Z Get:26 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.4 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7846565Z Get:27 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [518 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7923450Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [45.4 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:16.7924355Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.1 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:22.6745218Z Fetched 12.5 MB in 1s (9256 kB/s)
+integer-differential	Install official HDL packages	2026-10-14T02:42:23.6386268Z Reading package lists...
+integer-differential	Install official HDL packages	2026-10-14T02:42:23.6693852Z Reading package lists...
+integer-differential	Install official HDL packages	2026-10-14T02:42:23.9062145Z Building dependency tree...
+integer-differential	Install official HDL packages	2026-10-14T02:42:23.9070824Z Reading state information...
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1036803Z The following additional packages will be installed:
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1037965Z   yosys-abc
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1041449Z Suggested packages:
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1041926Z   gtkwave
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1042301Z Recommended packages:
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1042698Z   xdot
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1420642Z The following NEW packages will be installed:
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1429157Z   iverilog yosys yosys-abc
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1610294Z 0 upgraded, 3 newly installed, 0 to remove and 30 not upgraded.
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1610957Z Need to get 11.2 MB of archives.
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1611798Z After this operation, 34.5 MB of additional disk space will be used.
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.1612452Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.2549271Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 iverilog amd64 12.0-2build2 [2126 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.3377474Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 yosys-abc amd64 0.33-5build2 [5829 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.5046007Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 yosys amd64 0.33-5build2 [3222 kB]
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.8557977Z Fetched 11.2 MB in 0s (26.3 MB/s)
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.8981340Z Selecting previously unselected package iverilog.
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9248164Z (Reading database ... 
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9248704Z (Reading database ... 5%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9249032Z (Reading database ... 10%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9249842Z (Reading database ... 15%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9250491Z (Reading database ... 20%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9251881Z (Reading database ... 25%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9252848Z (Reading database ... 30%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9253610Z (Reading database ... 35%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9254158Z (Reading database ... 40%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9254641Z (Reading database ... 45%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9255003Z (Reading database ... 50%
+integer-differential	Install official HDL packages	2026-10-14T02:42:24.9371376Z (Reading database ... 55%
+integer-differential	Install official HDL packages	2026-10-14T02:42:25.0822852Z (Reading database ... 60%
+integer-differential	Install official HDL packages	2026-10-14T02:42:25.1723774Z (Reading database ... 65%
+integer-differential	Install official HDL packages	2026-10-14T02:42:25.2605345Z (Reading database ... 70%
+integer-differential	Install official HDL packages	2026-10-14T02:42:25.3423012Z (Reading database ... 75%
+integer-differential	Install official HDL packages	2026-10-14T02:42:25.4592720Z (Reading database ... 80%
+integer-differential	Install official HDL packages	2026-10-14T02:42:25.6766573Z (Reading database ... 85%
+integer-differential	Install official HDL packages	2026-10-14T02:42:25.8994560Z (Reading database ... 90%
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.0434263Z (Reading database ... 95%
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.0434804Z (Reading database ... 100%
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.0435348Z (Reading database ... 203191 files and directories currently installed.)
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.0479320Z Preparing to unpack .../iverilog_12.0-2build2_amd64.deb ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.0508830Z Unpacking iverilog (12.0-2build2) ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.1273722Z Selecting previously unselected package yosys-abc.
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.1406130Z Preparing to unpack .../yosys-abc_0.33-5build2_amd64.deb ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.1413523Z Unpacking yosys-abc (0.33-5build2) ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.2288335Z Selecting previously unselected package yosys.
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.2418448Z Preparing to unpack .../yosys_0.33-5build2_amd64.deb ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.2425650Z Unpacking yosys (0.33-5build2) ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.3555583Z Setting up yosys-abc (0.33-5build2) ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.3574600Z Setting up iverilog (12.0-2build2) ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.3589379Z Setting up yosys (0.33-5build2) ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.5038083Z Processing triggers for man-db (2.12.0-4build2) ...
+integer-differential	Install official HDL packages	2026-10-14T02:42:26.5058328Z Not building database; man-db/auto-update is not 'true'.
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8276159Z 
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8276732Z Running kernel seems to be up-to-date.
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8277139Z 
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8277319Z No services need to be restarted.
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8277629Z 
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8277812Z No containers need to be restarted.
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8278516Z 
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8278735Z No user sessions are running outdated binaries.
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8279108Z 
+integer-differential	Install official HDL packages	2026-10-14T02:42:27.8279426Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	﻿2026-10-14T02:42:28.8144593Z ##[group]Run python3 scripts/test_program_sequence.py \
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:28.8145059Z [36;1mpython3 scripts/test_program_sequence.py \[0m
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:28.8145581Z [36;1m  --output "$RUNNER_TEMP/integer-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \[0m
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:28.8146039Z [36;1m  --synthesize[0m
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:28.8211800Z shell: /usr/bin/bash -e {0}
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:28.8212076Z ##[endgroup]
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:28.8796715Z START vendor
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:28.9441875Z PASS vendor
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0093529Z Traceback (most recent call last):
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0094510Z   File "/home/runner/work/OpenRX/OpenRX/scripts/test_program_sequence.py", line 267, in <module>
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0095336Z     main()
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0102454Z   File "/home/runner/work/OpenRX/OpenRX/scripts/test_program_sequence.py", line 163, in main
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0103329Z     assert sha(ROOT / path) == digest, path
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0103815Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0105127Z AssertionError: rtl/execute/randomx_integer_execute.v
+integer-differential	Execute native-generated program sequences, control and actual mapped gates	2026-10-14T02:42:29.0259841Z ##[error]Process completed with exit code 1.
+integer-differential	Retain complete licensed outputs	﻿2026-10-14T02:42:29.0371835Z ##[group]Run actions/upload-artifact@v4
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0372186Z with:
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0372408Z   name: integer-execute-38502375710-1
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0372768Z   path: /home/runner/work/_temp/integer-execute-38502375710-1/
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0373134Z   if-no-files-found: warn
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0373373Z   compression-level: 6
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0373593Z   overwrite: false
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0373809Z   include-hidden-files: false
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.0374051Z ##[endgroup]
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.2087005Z (node:2774) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.2088375Z (Use `node --trace-deprecation ...` to show where the warning was created)
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.2160782Z With the provided path, there will be 4 files uploaded
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.2181754Z Artifact name is valid!
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.2182823Z Root directory input is valid!
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.6190655Z Beginning upload of artifact content to blob storage
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.6435520Z (node:2774) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:29.9224295Z Uploaded bytes 948
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:30.0005918Z Finished uploading artifact content to blob storage!
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:30.0006939Z SHA256 digest of uploaded artifact zip is 29a0fd1825b4c25f2ea7cb4d3204ccf806d001d3a74549a5f10e41b385d07080
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:30.0008537Z Finalizing artifact upload
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:30.2546899Z Artifact integer-execute-38502375710-1.zip successfully finalized. Artifact ID 11865688792
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:30.2548243Z Artifact integer-execute-38502375710-1 has been successfully uploaded! Final size is 948 bytes. Artifact ID is 11865688792
+integer-differential	Retain complete licensed outputs	2026-10-14T02:42:30.2554694Z Artifact download URL: https://github.com/jliu67/OpenRX/actions/runs/38502375710/artifacts/11865688792
+integer-differential	Post Run actions/checkout@v4	﻿2026-10-14T02:42:30.2769137Z Post job cleanup.
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.3655804Z [command]/usr/bin/git version
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.3702824Z git version 2.55.0
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.3747730Z Temporarily overriding HOME='/home/runner/work/_temp/763f42a9-e6c4-42f7-ac79-ef70b1ae407d' before making global git config changes
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.3748726Z Adding repository directory to the temporary git global config as a safe directory
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.3754273Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenRX/OpenRX
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.3795487Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.3832803Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.4092642Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.4119770Z http.https://github.com/.extraheader
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.4133488Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.4169056Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.4445926Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+integer-differential	Post Run actions/checkout@v4	2026-10-14T02:42:30.4487618Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+integer-differential	Complete job	﻿2026-10-14T02:42:30.4878355Z Cleaning up orphan processes
+integer-differential	Complete job	2026-10-14T02:42:30.5192150Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

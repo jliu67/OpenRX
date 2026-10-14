@@ -213,3 +213,14 @@ or technology timing/power evidence; full hash/physical PPA remain unaccepted.
 ## 2026-10-14 — Charge reciprocal preparation at immutable admission
 
 Use one fully loaded 384/256-word image, epoch/PC tags and private native constants; repeated iterations reuse only the completed owned image. Zero/power-of-two raw unsigned 32-bit immediates remain lexical NOPs; same-address or identical reload is charged again. Reset/whole cancel invalidates arrays logically, execution cancel retains the image without undoing committed stores; generations cannot be reused while late replies can arrive. Keep default runtime execution and reject the legacy prepared-netlist ABI. Compare common native/memory work through disjoint measured clocks and nested observers; full pipeline unknowns remain null. [Task69](https://github.com/jliu67/OpenRX/issues/69)/[EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) require independent review and complete-pipeline baseline before full-hash claims or widening.
+
+
+## 2026-10-14 — PR70 explicit parent binding and bounded hosted scope
+
+Keep the original accepted compatibility manifest unchanged. Permit exactly the
+two intentional executor successors only when old hashes match that manifest and
+new hashes match both live bytes and the unchanged219-input server record; retain
+default PREPARED_RCP=0 and reject other changes. Candidate hosted source/evidence
+checks remain separate from the deferred complete native program-sequence/synthesis
+server replay and independent acceptance. Preserve the initial hosted failure and
+all scientific inputs/results. [Evidence](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).

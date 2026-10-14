@@ -1,0 +1,64 @@
+{
+  "actual_kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "1073741824",
+    "memory.swap.max": "134217728",
+    "pids.max": "64"
+  },
+  "ancestors": {
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-prepared-parent-binding-validation-01.service": {
+      "cpu.max": "600000 100000",
+      "memory.max": "1073741824",
+      "memory.swap.max": "134217728",
+      "pids.max": "64"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "41887"
+    },
+    "/sys/fs/cgroup/user.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup": {}
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "MemAvailable": 9114877952,
+  "SwapFree": 4926963712,
+  "workers": 1,
+  "at_epoch": 1791946723.2077515,
+  "global_nonblocking_lock": true,
+  "reason": "Only bounded Python source/evidence guards and rejection tests. No build/simulator/native payload. Six CPUs available; sequential checks use one worker. 1 GiB RAM/128 MiB swap safely exceed small metadata input; fresh 1 GiB OS reserve.",
+  "kernel_final": {
+    "cpu.stat": "usage_usec 813098\nuser_usec 528414\nsystem_usec 284684\ncore_sched.force_idle_usec 0\nnr_periods 8\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "21762048",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "0",
+    "pids.current": "1"
+  },
+  "completed_commands": 3,
+  "returncode": 0
+}

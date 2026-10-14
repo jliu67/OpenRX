@@ -29,3 +29,9 @@ deferred under #2's owner-priority block; their presence is not a ready-work ins
 ## 2026-10-14 — Prepared reciprocal complete-pipeline baseline
 
 Which initial input hash/fill, program-generation, actual dataset and calibrated memory/fabric interfaces will connect the accepted executor plus prepared image and interprogram/final hashing into a comparable 8×2048 pipeline? [Task #69](https://github.com/jliu67/OpenRX/issues/69)/[EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) prove the directed native iteration candidate; full-pipeline clocks remain null. Resolve load-tag/epoch reservation and component integration through independent review before full-hash or architectural-widening acceptance.
+
+
+PR70 CI successor: complete inherited native program-sequence/synthesis replay on
+the new optional executor source remains unexecuted pending fresh authorized serial
+server admission. Source/evidence guard passes do not close this item. Final exact-head
+independent review remains required. [Scope](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).

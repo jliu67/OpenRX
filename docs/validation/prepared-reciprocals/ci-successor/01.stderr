@@ -1,0 +1,17 @@
+test_absent_declaration_preserves_strict_legacy_rejection (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_accepted_manifest_remains_immutable (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_changed_undeclared_accepted_source_is_rejected (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_declaration_must_state_the_default_mode (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_declared_sources_report_two_exceptions_honestly (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_extra_override_cannot_broaden_the_boundary (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_live_candidate_must_match_the_recorded_bytes (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_missing_or_changed_default_mode_is_rejected (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_recorded_manifest_cannot_be_rewritten_to_accept_new_bytes (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_retained_pass_log_is_evidence_not_editable_expected_output (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_stale_candidate_digest_cannot_replace_recorded_execution (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+test_stale_old_digest_cannot_redefine_the_accepted_parent (test_prepared_parent_bindings.ParentBindingsTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.558s
+
+OK

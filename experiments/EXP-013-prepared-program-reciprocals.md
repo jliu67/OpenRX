@@ -24,3 +24,14 @@ Actual generic default new-store/control and guard mapping is distinct from comp
 [Surrounding stage ledger](../docs/validation/prepared-reciprocals/surrounding-stages.json) binds exact draft PR65/68 evidence without changing their refs or acceptance. Complete pipeline costs remain null: initial input hash/fill, program AES generation, actual dataset/calibrated memory, connected 8×2048 prepared execution plus interprogram/final hash, intended-core timing and physical PPA are missing. EXP-001 controlled native throughput/energy criteria remain unchanged.
 
 Next: independent exact-head implementation/evidence review; integrate a complete comparable baseline before any full-hash claim. Then evaluate 1/2/4/8/16-context single-issue blocking/nonblocking, dependency-proven overlap and justified dual/wider issue as separately bounded work. This task implements none of those architectures and authorizes no own merge.
+
+
+The postpublication CI successor preserves all scientific input bytes and original
+acceptance manifests. Hosted run 38502375710 failed the inherited strict binding
+before native compilation; its complete record is retained. Exactly two executor
+successors now have an explicit old/new declaration and rejection guards. Candidate
+hosted checks are bounded source/evidence checks; inherited complete program-sequence
+native/synthesis replay remains deferred and unexecuted pending a fresh authorized
+serial server admission. See the [CI correction](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).
+
+Bounded CI successor checks pass 12 parent rejection tests and eight accounting tests with the source/evidence guard. Fresh metadata payload wall837ms/peak21762048bytes, no swap or limit/OOM/throttle events; all219 science inputs unchanged. These checks do not replay the inherited scientific suite.
