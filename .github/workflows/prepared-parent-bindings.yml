@@ -31,9 +31,9 @@ jobs:
             --output "$RUNNER_TEMP/prepared-parent-source-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/report.json"
       - name: Check source substitution rejection
         run: python3 -B -m unittest discover -s tests -p test_prepared_parent_bindings.py -v
-      - name: State hosted validation scope
+      - name: State this binding job's scope
         run: |
-          echo "Source and retained-evidence checks only. Hosted CI did not execute native workloads, HDL simulation or synthesis; those require authorized server admission." >> "$GITHUB_STEP_SUMMARY"
+          echo "This binding job checks source bytes, substitution rejection and retained server evidence only. The separate integer-differential integration gate executes native program sequencing, HDL simulation, actual generic synthesis and mapped integration via scripts/test_program_sequence.py --synthesize." >> "$GITHUB_STEP_SUMMARY"
       - name: Retain source and retained-evidence report
         if: always()
         uses: actions/upload-artifact@v4

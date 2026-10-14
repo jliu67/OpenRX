@@ -23,5 +23,5 @@
       "candidate_sha256": "1de7700181aa5dfebfbd7a3b6aa971ad72c2c52fffe2c46938143e43093ff661"
     }
   },
-  "reason": "Task69 adds optional immutable-image reciprocal metadata to these two interfaces. Both preserve PREPARED_RCP=0 as the default. The accepted compatibility manifest and native goldens retain their original bytes; the declared successor bytes are bound to the completed server run. Hosted checks verify sources and retained evidence only; inherited full native execution and synthesis remain subject to authorized server admission."
+  "reason": "Task69 adds optional immutable-image reciprocal metadata to these two interfaces. Both preserve PREPARED_RCP=0 as the default. The accepted compatibility manifest and native goldens retain their original bytes; the declared successor bytes are bound to the completed server run. The integer-differential integration gate executes native program sequencing, actual generic synthesis and mapped integration for candidate and legacy sources. The separate binding job checks source bytes, substitution rejection and retained server evidence."
 }

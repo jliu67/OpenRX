@@ -35,3 +35,17 @@ native/synthesis replay remains deferred and unexecuted pending a fresh authoriz
 serial server admission. See the [CI correction](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).
 
 Bounded CI successor checks pass 12 parent rejection tests and eight accounting tests with the source/evidence guard. Fresh metadata payload wall837ms/peak21762048bytes, no swap or limit/OOM/throttle events; all219 science inputs unchanged. These checks do not replay the inherited scientific suite.
+
+
+## 2026-10-14 — Restore PR70 actual program-sequence regression gate
+
+The historical head1345 source-only route skipped native/mapped integration.
+The corrected gate unconditionally runs the existing --synthesize regression;
+binding/rejection checks remain additional guards. Fresh serial server validation
+passes9RTL/9mapped/4invalid/3actualsynthesis, with exact mapped/RTL PASS equality.
+All219 original science inputs and accepted manifests/old-new binding digests stay
+unchanged. Existing8×4 native v1/v2 tests, default8×2048 control contract and bounded
+whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
+performance acceptance. Sources/complete outputs and superseded binding-only CI
+artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
+Independent exact-head review remains required; no merge. Compute slot released.

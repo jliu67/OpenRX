@@ -1,5 +1,41 @@
 # Immutable program reciprocal candidate — task #69
 
+## Restored integration gate — 2026-10-14
+
+The source-only CI route at historical head `1345db6d6abaf9d6a372b37325ec946eb870f56a`
+skipped inherited program-sequence integration. This successor removes that route.
+The existing `integer-differential` job now unconditionally installs official HDL
+tools and executes `scripts/test_program_sequence.py --synthesize`; binding and
+rejection checks remain additional guards. The companion job describes only its
+own source/evidence checks. The declaration changes reason prose only: all old/new
+digests, schema fields and 219 original science inputs retain their bytes.
+
+The fresh authorized server regression passes nine RTL modes, nine mapped modes,
+four rejected invalid parameter sets and three actual synthesis targets. All nine
+mapped PASS records equal their RTL counterparts. It uses the unchanged eight-program,
+four-iteration native v1/v2 profiles, plus resets/cancellation and default8×2048
+control contract. Actual default whole-top gates cover one native v2 iteration
+and cancellation. No full8×2048 native or gate rerun is claimed; `--full-v2` was
+not requested. Dataset fixtures and software generation/interprogram hashing
+remain boundaries, and full-pipeline performance remains unaccepted.
+
+[Terminal receipt](program-sequence-regression/terminal-pass01.json),
+[raw summary](program-sequence-regression/summary.json),
+[commands](program-sequence-regression/commands.json),
+[truthful parent bindings](program-sequence-regression/preserved-inputs.json),
+[effective kernel receipt](program-sequence-regression/resource01.json),
+[source retention](program-sequence-regression/regression-source01.json) and
+[complete output retention](program-sequence-regression/complete-output-retention.json) retain actual
+execution separately from the earlier prepared-cache suite. Every source/driver
+input and generated HardFloat view/native extraction is checked after execution;
+full output manifest/TAR inventories, bytes and original modes are verified.
+Three mappings contain only generic cells, with exact stat/JSON accounting.
+Resource peaks, swap and pressure counters are measured in the kernel receipt. The complete119,156,140-byte output archive exceeds [GitHub’s100MiB file limit](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github), so its complete verified bytes and readonly output tree remain on the authorized server, with full inventory/checksum receipt published. No archive is discarded or split. Actual kernel peak was7,516,192,768bytes RAM and1,597,886,464bytes swap; memory.max pressure events2117, OOM/kill and CPU throttling0. Wall runtime52min41.878s, one serial worker, all6CPUs available/600%,7GiB RAM/2GiB swap/Tasks128, fresh1GiB OS reserve and global nonblocking lock.
+The original source-only ZIPs/checks/workflow/declaration and all previous failed,
+skipped and successful sources/archives remain preserved. Independent exact-head
+review is required before acceptance; no merge is authorized.
+
+
 This candidate computes each active `IMUL_RCP` constant once when admitting an
 immutable program image, then uses the existing unsigned low64 multiplier at
 each retirement. The unchanged RandomX source pin is
@@ -201,10 +237,10 @@ No RTL, native oracle, golden, workload, server result or accepted manifest chan
 in this successor. All 219 executed source bindings remain byte-for-byte identical.
 New CI/helper/test changes are validated separately from the scientific payload.
 
-Candidate hosted checks validate source bindings, rejection tests and retained
+At historical head1345, candidate hosted checks validated source bindings, rejection tests and retained
 server evidence. Their successful status means those bounded checks pass.
 The inherited full native program-sequence/synthesis replay is **deferred and
-unexecuted** at this head; run it only inside a fresh authorized serialized server
+unexecuted** at that historical head, superseded by the actual regression above; reproduction still requires fresh authorized serialized server
 admission. Noncandidate workflow behavior remains unchanged. Source guards and
 retained result validation do not establish full-hash or independent acceptance.
 [Correction scope](ci-successor/scope.json) records the distinction. Independent

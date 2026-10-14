@@ -224,3 +224,17 @@ default PREPARED_RCP=0 and reject other changes. Candidate hosted source/evidenc
 checks remain separate from the deferred complete native program-sequence/synthesis
 server replay and independent acceptance. Preserve the initial hosted failure and
 all scientific inputs/results. [Evidence](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).
+
+
+## 2026-10-14 — Restore PR70 actual program-sequence regression gate
+
+The historical head1345 source-only route skipped native/mapped integration.
+The corrected gate unconditionally runs the existing --synthesize regression;
+binding/rejection checks remain additional guards. Fresh serial server validation
+passes9RTL/9mapped/4invalid/3actualsynthesis, with exact mapped/RTL PASS equality.
+All219 original science inputs and accepted manifests/old-new binding digests stay
+unchanged. Existing8×4 native v1/v2 tests, default8×2048 control contract and bounded
+whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
+performance acceptance. Sources/complete outputs and superseded binding-only CI
+artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
+Independent exact-head review remains required; no merge. Compute slot released.

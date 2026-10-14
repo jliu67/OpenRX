@@ -31,7 +31,18 @@ deferred under #2's owner-priority block; their presence is not a ready-work ins
 Which initial input hash/fill, program-generation, actual dataset and calibrated memory/fabric interfaces will connect the accepted executor plus prepared image and interprogram/final hashing into a comparable 8×2048 pipeline? [Task #69](https://github.com/jliu67/OpenRX/issues/69)/[EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) prove the directed native iteration candidate; full-pipeline clocks remain null. Resolve load-tag/epoch reservation and component integration through independent review before full-hash or architectural-widening acceptance.
 
 
-PR70 CI successor: complete inherited native program-sequence/synthesis replay on
-the new optional executor source remains unexecuted pending fresh authorized serial
-server admission. Source/evidence guard passes do not close this item. Final exact-head
-independent review remains required. [Scope](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).
+Historical head1345 left the inherited native program-sequence/synthesis replay unexecuted. This regression-gate question is resolved by the restored unconditional gate and the fresh9RTL/9mapped/3synthesis/4invalid server result below. Final exact-head independent review remains required. [Scope](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).
+
+
+## 2026-10-14 — Restore PR70 actual program-sequence regression gate
+
+The historical head1345 source-only route skipped native/mapped integration.
+The corrected gate unconditionally runs the existing --synthesize regression;
+binding/rejection checks remain additional guards. Fresh serial server validation
+passes9RTL/9mapped/4invalid/3actualsynthesis, with exact mapped/RTL PASS equality.
+All219 original science inputs and accepted manifests/old-new binding digests stay
+unchanged. Existing8×4 native v1/v2 tests, default8×2048 control contract and bounded
+whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
+performance acceptance. Sources/complete outputs and superseded binding-only CI
+artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
+Independent exact-head review remains required; no merge. Compute slot released.

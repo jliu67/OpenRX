@@ -830,3 +830,17 @@ Owner-approved bounded implementation and complete serial validation use tempora
 PR70 original head3ce88 passed foundation/preflight/model checks but hosted run38502375710 rejected an intentionally changed executor digest before native compilation. Preserve the full failed log/original four-file ZIP and every original acceptance manifest. Fresh advisory CI claim accepted after append-only reopen; bounded successor declares exactly two executor old/new bindings and tests rejections/default0/retained server evidence. All219 scientific input bytes remain unchanged; inherited full native program-sequence/synthesis replay is deferred, not passed, and needs fresh authorized serial server admission. Final exact-head independent review remains required; no merge or full-hash acceptance. [Evidence](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).
 
 Bounded successor payload passes12parent rejection tests/8accounting tests/source-evidence guard in837ms, peak21762048bytes, swap/limit/OOM/kill/throttle0. All219scientific and six new CI input bindings verified against separately frozen sources; complete failed hosted and successful check outputs archived. Slot released.
+
+
+## 2026-10-14 — Restore PR70 actual program-sequence regression gate
+
+The historical head1345 source-only route skipped native/mapped integration.
+The corrected gate unconditionally runs the existing --synthesize regression;
+binding/rejection checks remain additional guards. Fresh serial server validation
+passes9RTL/9mapped/4invalid/3actualsynthesis, with exact mapped/RTL PASS equality.
+All219 original science inputs and accepted manifests/old-new binding digests stay
+unchanged. Existing8×4 native v1/v2 tests, default8×2048 control contract and bounded
+whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
+performance acceptance. Sources/complete outputs and superseded binding-only CI
+artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
+Independent exact-head review remains required; no merge. Compute slot released.

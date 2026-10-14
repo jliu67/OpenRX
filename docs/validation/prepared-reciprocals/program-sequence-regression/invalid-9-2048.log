@@ -1,0 +1,5 @@
+rtl/execute/randomx_program_control.v:49: error: Unknown module type: program_control_requires_PROGRAMS_1_to_8_and_ITERATIONS_1_to_2048
+1 error(s) during elaboration.
+*** These modules were missing:
+        program_control_requires_PROGRAMS_1_to_8_and_ITERATIONS_1_to_2048 referenced 1 times.
+***

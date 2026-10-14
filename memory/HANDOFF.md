@@ -1,5 +1,21 @@
 # Handoff — actual designated local execution
 
+## 2026-10-14 — Restore PR70 actual program-sequence regression gate
+
+The historical head1345 source-only route skipped native/mapped integration.
+The corrected gate unconditionally runs the existing --synthesize regression;
+binding/rejection checks remain additional guards. Fresh serial server validation
+passes9RTL/9mapped/4invalid/3actualsynthesis, with exact mapped/RTL PASS equality.
+All219 original science inputs and accepted manifests/old-new binding digests stay
+unchanged. Existing8×4 native v1/v2 tests, default8×2048 control contract and bounded
+whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
+performance acceptance. Sources/complete outputs and superseded binding-only CI
+artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
+Independent exact-head review remains required; no merge. Compute slot released.
+
+Earlier sections retain their historical head-specific status.
+
+
 ## Reciprocal preparation candidate — task #69, 2026-10-14
 
 [Task #69](https://github.com/jliu67/OpenRX/issues/69) adds once-per-immutable-program reciprocal preparation above accepted main `8f3b9bc3d7f0182d66185abe95310f0bab00274b`. Final server validation passes eight accounting tests, 48 native iterations/12 admissions, 11 RTL/four mapped checks and three intentional invalid elaborations, with zero final unexpected failures; four failed attempts are preserved. Preparation+execution clocks on the directed corpus are ideal 370444→159376 and stalled 398580→187512, including every reload; no full-hash performance is accepted. Actual default generic cache mappings are 75979/24877 baseline cells/flops and 152277/49640 prepared, guard 390/0; no full prepared-backend/physical PPA claim. [EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) and [evidence](../docs/validation/prepared-reciprocals/README.md) bind exact source, native/clock/synthesis results and fresh kernel receipts. Main 8f, PR65 exact4f and PR68 exacta4 plus all originals remain preserved.

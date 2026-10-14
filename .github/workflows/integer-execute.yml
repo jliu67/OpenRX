@@ -31,40 +31,29 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
-      - name: Select declared candidate or legacy execution scope
-        id: scope
-        run: |
-          if test -f docs/validation/prepared-reciprocals/parent-source-bindings.json; then
-            echo "candidate=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "candidate=false" >> "$GITHUB_OUTPUT"
-          fi
-      - name: Candidate source bindings and retained server evidence only
-        if: steps.scope.outputs.candidate == 'true'
+      - name: Verify source bindings and retained server evidence
         run: |
           python3 -B scripts/prepared_parent_bindings.py --check-evidence \
             --output "$RUNNER_TEMP/prepared-parent-bindings-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/report.json"
           python3 -B -m unittest discover -s tests -p test_prepared_parent_bindings.py -v
-          echo "Hosted candidate check: source bindings, rejection tests and retained evidence only. Native execution and synthesis remain deferred to an authorized server run." >> "$GITHUB_STEP_SUMMARY"
       - name: Install official HDL packages
-        if: steps.scope.outputs.candidate == 'false'
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y iverilog yosys
       - name: Execute native-generated program sequences, control and actual mapped gates
-        if: steps.scope.outputs.candidate == 'false'
         run: |
           python3 scripts/test_program_sequence.py \
             --output "$RUNNER_TEMP/integer-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
             --synthesize
+          echo "This integration job executed native-generated program sequences, control checks, actual generic synthesis and mapped integration. Source-binding and retained-evidence checks are additional guards." >> "$GITHUB_STEP_SUMMARY"
       - name: Retain complete licensed outputs
-        if: always() && steps.scope.outputs.candidate == 'false'
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: integer-execute-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/integer-execute-${{ github.run_id }}-${{ github.run_attempt }}/
-      - name: Retain candidate source and retained-evidence report only
-        if: always() && steps.scope.outputs.candidate == 'true'
+      - name: Retain source and retained-evidence report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: prepared-parent-bindings-${{ github.run_id }}-${{ github.run_attempt }}

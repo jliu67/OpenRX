@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "accepted_parent": "7f299c74f81332257eefd775086b355969ad85f3",
+  "bindings": 53,
+  "manifest_path": "docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json",
+  "manifest_sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7",
+  "declaration_used": true,
+  "unchanged_accepted_bindings": 51,
+  "all_accepted_driver_IP_RTL_bytes_unchanged": false,
+  "all_other_accepted_paths_unchanged": true,
+  "declared_successors": [
+    {
+      "path": "rtl/execute/randomx_integer_execute.v",
+      "module": "randomx_integer_execute",
+      "accepted_sha256": "9b28b3cbb5ae39091cf602a1dbb84b6cfb491d50e96dbc754ef931c22a3a4a75",
+      "candidate_sha256": "7f605141b5696f9e39621f28ea3e4ab16723ce0b2c812ec7456f1e76090c0b09"
+    },
+    {
+      "path": "rtl/execute/randomx_integer_iteration.v",
+      "module": "randomx_integer_iteration",
+      "accepted_sha256": "ed3458c6e5afee6bb37a1ea3eb73dfa89985fefdc47426d8051178b17e3420df",
+      "candidate_sha256": "1de7700181aa5dfebfbd7a3b6aa971ad72c2c52fffe2c46938143e43093ff661"
+    }
+  ],
+  "default_PREPARED_RCP_0_verified": true,
+  "recorded_server_input_bindings": 219,
+  "all_recorded_server_inputs_bytes_unchanged": true,
+  "input_bindings": {
+    "docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7",
+    "scripts/prepared_parent_bindings.py": "d07306ec5994be555d7b046f50abbaaf981373034858cd9311d8fb31e6a70115",
+    "docs/validation/prepared-reciprocals/parent-source-bindings.json": "e04a640b1d3ca088315d94995615e5c31652c7cff27cc2609ac013f44debcc03",
+    "docs/validation/prepared-reciprocals/server/inputs.json": "e99a52558ba45e4a75635ac36e992a311ac07c0bd60ab075eeceb14489ad8227"
+  },
+  "scope": "Source bytes and declared default mode only; no new native execution, HDL simulation or synthesis.",
+  "retained_evidence": {
+    "retained_server_rtl_checks": 11,
+    "retained_server_mapped_checks": 4,
+    "retained_server_command_records": 41,
+    "retained_negative_elaboration_guards": 3,
+    "retained_artifacts_manifest_sha256": "81a37d88668addbb0a518f93c8bd8f462e46d3cb4c57236ddc88b269bc9dfa96",
+    "retained_evidence_only": true,
+    "fresh_native_simulation_or_synthesis": false
+  },
+  "status": "pass"
+}
