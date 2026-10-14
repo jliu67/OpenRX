@@ -1,0 +1,21 @@
+{
+  "attempt": 4,
+  "status": "failed-mapped-memory-clock",
+  "output": "/tmp/openrx-prepared-reciprocal-validation-04",
+  "source": "/tmp/openrx-prepared-reciprocals-guard-406m7ry0",
+  "failure": "Premature memory_collect prevents memory_dff clock inference in installedYosys0.9; memory_map explicitly says writeport0 has no clock; emitted partial mem cells fail first native word comparison",
+  "passed_before_failure": {
+    "model_guard_tests": 8,
+    "native_iterations": 48,
+    "native_admissions": 12,
+    "rtl_profiles": 11,
+    "paired_cycle_model": 1,
+    "intentional_invalid_parameter_or_abi_checks": 3,
+    "synthesis_commands_completed": 3
+  },
+  "unexpected_failures": 1,
+  "mapped_profiles_passed": 0,
+  "mapping_accepted": false,
+  "originals_and_failed_source_preserved": true,
+  "next": "memory_dff before collection; remove early collection, require generic-only mapped celltypes; full serial suite on fresh successor"
+}

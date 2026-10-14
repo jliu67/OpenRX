@@ -1,0 +1,59 @@
+{
+  "connected_complete_pipeline_measured": false,
+  "evidence_relation": "Separate draft component fixtures with different boundaries/providers; not integrated into this candidate.",
+  "draft_component_evidence": [
+    {
+      "stage": "Register-file BLAKE2b digest and interprogram seed boundary",
+      "status": "draft-component-only",
+      "pr": "https://github.com/jliu67/OpenRX/pull/65",
+      "head": "4f095fc147b5bc78de79746a0a172f38e34d6450",
+      "local_evidence": "/tmp/openrx-regfile-hash-validation-03/summary.json",
+      "summary_sha256": "27d8c086904a3ef6a23c499766e66d07720fc1fd3a01e7b8d6adae6b2f847ae4",
+      "measurements": {
+        "digest_response_clocks": 56,
+        "seed_boundary_response_clocks": 58,
+        "connected_8_program_4_iteration_fixture_added_clocks": 414
+      },
+      "limits": "Digest56 is contained in seed58;414 is measured incremental boundary cost for a different eight-program/four-iteration fixture. Do not add all three."
+    },
+    {
+      "stage": "Full2MiB post-execution scratchpad finalization",
+      "status": "draft-component-only",
+      "pr": "https://github.com/jliu67/OpenRX/pull/68",
+      "head": "a4bab722b745ef02c189fbc15be448ad189f19fb",
+      "local_evidence": "/tmp/openrx-scratchpad-finalization-validation-01/summary.json",
+      "summary_sha256": "5df336c1a1571fa0f2135590f496a6a32e655390dd358f938e0b9cf86096f403",
+      "measurements": {
+        "bytes": 2097152,
+        "reads": 131072,
+        "ideal_response_clocks": 393284,
+        "stalled_response_clocks": 1048649,
+        "balanced_profile_trials": 4
+      },
+      "limits": "Separate native final-program scratchpad and deterministic patterns; ideal/stalled simulation memory schedules, not calibrated physical memory or this iteration candidate."
+    }
+  ],
+  "missing_stages_or_calibration": [
+    {
+      "stage": "Initial input hash and scratchpad AES fill",
+      "clocks": null
+    },
+    {
+      "stage": "Per-program AES generation and descriptors",
+      "clocks": null
+    },
+    {
+      "stage": "Actual complete RandomX dataset and calibrated scratchpad/dataset memory",
+      "clocks": null
+    },
+    {
+      "stage": "Connected eight-program2048-iteration pipeline including interprogram and final hash",
+      "clocks": null
+    },
+    {
+      "stage": "Selected intended core frequency, timing and physical PPA",
+      "clocks": null
+    }
+  ],
+  "workload_pin": "aaafe71322df6602c21a5c72937ac284724ae561"
+}

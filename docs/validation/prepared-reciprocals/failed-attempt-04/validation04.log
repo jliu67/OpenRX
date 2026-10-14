@@ -1,0 +1,81 @@
+START vendor
+PASS vendor
+START model-guards
+PASS model-guards
+START compile-native-oracle
+PASS compile-native-oracle
+START native-oracle
+PASS native-oracle
+START invalid-cache
+EXPECTED FAILURE invalid-cache
+START invalid-executor
+EXPECTED FAILURE invalid-executor
+START invalid-legacy-netlist
+EXPECTED FAILURE invalid-legacy-netlist
+START compile-rtl-cache-0-0
+PASS compile-rtl-cache-0-0
+START rtl-cache-0-0
+PASS rtl-cache-0-0
+START compile-rtl-cache-0-1
+PASS compile-rtl-cache-0-1
+START rtl-cache-0-1
+PASS rtl-cache-0-1
+START compile-rtl-cache-1-0
+PASS compile-rtl-cache-1-0
+START rtl-cache-1-0
+PASS rtl-cache-1-0
+START compile-rtl-cache-1-1
+PASS compile-rtl-cache-1-1
+START rtl-cache-1-1
+PASS rtl-cache-1-1
+START compile-rtl-iteration-0-0
+PASS compile-rtl-iteration-0-0
+START rtl-iteration-0-0
+PASS rtl-iteration-0-0
+START compile-rtl-iteration-1-1
+PASS compile-rtl-iteration-1-1
+START rtl-iteration-1-1
+PASS rtl-iteration-1-1
+START compile-rtl-iteration-1-0
+PASS compile-rtl-iteration-1-0
+START rtl-iteration-1-0
+PASS rtl-iteration-1-0
+START compile-rtl-iteration-0-1
+PASS compile-rtl-iteration-0-1
+START rtl-iteration-0-1
+PASS rtl-iteration-0-1
+START compile-rtl-core-guard
+PASS compile-rtl-core-guard
+START rtl-core-guard
+PASS rtl-core-guard
+START compile-rtl-default-transport-0
+PASS compile-rtl-default-transport-0
+START rtl-default-transport-0
+PASS rtl-default-transport-0
+START compile-rtl-default-transport-1
+PASS compile-rtl-default-transport-1
+START rtl-default-transport-1
+PASS rtl-default-transport-1
+START cycle-model
+PASS cycle-model
+START synth-cache-0
+PASS synth-cache-0
+START synth-cache-1
+PASS synth-cache-1
+START synth-guard
+PASS synth-guard
+START compile-mapped-cache-0-0
+PASS compile-mapped-cache-0-0
+START mapped-cache-0-0
+Traceback (most recent call last):
+  File "/tmp/openrx-prepared-reciprocals-guard-406m7ry0/scripts/test_prepared_reciprocals.py", line 272, in <module>
+    main()
+  File "/tmp/openrx-prepared-reciprocals-guard-406m7ry0/scripts/test_prepared_reciprocals.py", line 247, in main
+    summary['mapped'][label] = cache_test(label, prepared, stall, nets[prepared], guard_net, model)
+  File "/tmp/openrx-prepared-reciprocals-guard-406m7ry0/scripts/test_prepared_reciprocals.py", line 120, in cache_test
+    run(label, ['vvp', str(executable), '+DIR=' + str(out)])
+  File "/tmp/openrx-prepared-reciprocals-guard-406m7ry0/scripts/test_prepared_reciprocals.py", line 93, in run
+    proc.check_returncode()
+  File "/usr/lib/python3.10/subprocess.py", line 457, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/usr/bin/time', '-v', '-o', '/tmp/openrx-prepared-reciprocal-validation-04/mapped-cache-0-0.time.txt', 'vvp', '/tmp/openrx-prepared-reciprocal-validation-04/mapped-cache-0-0.vvp', '+DIR=/tmp/openrx-prepared-reciprocal-validation-04']' returned non-zero exit status 1.

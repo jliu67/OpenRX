@@ -1,0 +1,5 @@
+rtl/execute/randomx_program_reciprocals.v:67: error: Unknown module type: program_reciprocals_requires_PREPARE_RCP_0_or_1
+1 error(s) during elaboration.
+*** These modules were missing:
+        program_reciprocals_requires_PREPARE_RCP_0_or_1 referenced 1 times.
+***

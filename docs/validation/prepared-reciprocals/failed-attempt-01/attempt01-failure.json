@@ -1,0 +1,19 @@
+{
+  "attempt": 1,
+  "output": "/tmp/openrx-prepared-reciprocal-validation-01",
+  "source": "/tmp/openrx-prepared-reciprocals-blrqic4m",
+  "status": "failed-testbench-syntax",
+  "failure": "SystemVerilog reserved matches used as integer counter at integration line448",
+  "passed_before_failure": {
+    "model_guard_tests": 8,
+    "native_iterations": 48,
+    "native_admissions": 12,
+    "cache_rtl_profiles": 4,
+    "intentional_invalid_parameter_or_abi_checks": 3
+  },
+  "unexpected_failures": 1,
+  "synthesis_executed": false,
+  "complete_pipeline_skipped": true,
+  "originals_and_failed_source_preserved": true,
+  "next": "fresh successor counter fix and generated HardFloat compile-view final SHA guard; complete suite"
+}

@@ -1,0 +1,1 @@
+PASS prepared_rcp_core_guard contexts=8 prefix_native_nops=8 rejected_current_packets=8 wrong_epoch=1 wrong_pc=1 wrong_unsigned_divisor=1 wrong_nop=1 wrong_kind=2 packet_error=1 forbidden_nop_value=1 stale_transport_packets=16 held_error_clocks=32 no_rejected_commit_memory_or_reciprocal=1 raw_RFE_round_preserved=1 elapsed_cycles=138

@@ -1,5 +1,12 @@
 # Current state — actual local execution activation
 
+## Reciprocal preparation candidate — task #69, 2026-10-14
+
+[Task #69](https://github.com/jliu67/OpenRX/issues/69) adds once-per-immutable-program reciprocal preparation above accepted main `8f3b9bc3d7f0182d66185abe95310f0bab00274b`. Final server validation passes eight accounting tests, 48 native iterations/12 admissions, 11 RTL/four mapped checks and three intentional invalid elaborations, with zero final unexpected failures; four failed attempts are preserved. Preparation+execution clocks on the directed corpus are ideal 370444→159376 and stalled 398580→187512, including every reload; no full-hash performance is accepted. Actual default generic cache mappings are 75979/24877 baseline cells/flops and 152277/49640 prepared, guard 390/0; no full prepared-backend/physical PPA claim. [EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) and [evidence](../docs/validation/prepared-reciprocals/README.md) bind exact source, native/clock/synthesis results and fresh kernel receipts. Main 8f, PR65 exact4f and PR68 exacta4 plus all originals remain preserved.
+
+Next action: independent exact-head feature review, then a complete comparable pipeline baseline with initial fill/generation, actual dataset/calibrated memory, 8×2048 execution and interprogram/final hash before performance acceptance. No own merge or architectural widening. Compute slot released; current claim and independent-review handoff receipts are indexed on task #69. Reproduce with `python3 scripts/test_prepared_reciprocals.py --output /tmp/openrx-prepared-reciprocal-validation-UNIQUE --synthesize` only inside a fresh authorized server admission. The following dated sections are retained historical snapshots.
+
+
 ## Native program sequencing — task #62, completed validation 2026-10-13
 
 [Draft PR #63](https://github.com/jliu67/OpenRX/pull/63) adds native entropy/config

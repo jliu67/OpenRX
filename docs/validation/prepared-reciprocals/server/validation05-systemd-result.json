@@ -1,0 +1,10 @@
+{
+  "unit": "openrx-prepared-reciprocal-validation-05.service",
+  "result": "success",
+  "exit_status": 0,
+  "service_runtime": "1h 26min 37.897s",
+  "service_runtime_seconds": 5197.897,
+  "manager_cpu_time": "1h 26min 43.770s",
+  "completed_readback_utc": "2026-10-14 02:39:02 UTC",
+  "stdout": "Finished with result: success\nMain processes terminated with: code=exited/status=0\nService runtime: 1h 26min 37.897s\nCPU time consumed: 1h 26min 43.770s\n"
+}

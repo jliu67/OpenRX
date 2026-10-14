@@ -25,3 +25,7 @@ deferred under #2's owner-priority block; their presence is not a ready-work ins
 - Will MediumBoomV3Config remain preferable after exact emitted memory/cache configuration, per-component license review, full workload runtime and calibrated evidence? Selection is provisional, not a performance ranking.
 - Is v2 limited by dataset latency, scratchpad capacity, AES throughput, or execution width for each configuration?
 - What realistic synthesis library/process and calibration hardware can support power estimates?
+
+## 2026-10-14 — Prepared reciprocal complete-pipeline baseline
+
+Which initial input hash/fill, program-generation, actual dataset and calibrated memory/fabric interfaces will connect the accepted executor plus prepared image and interprogram/final hashing into a comparable 8×2048 pipeline? [Task #69](https://github.com/jliu67/OpenRX/issues/69)/[EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) prove the directed native iteration candidate; full-pipeline clocks remain null. Resolve load-tag/epoch reservation and component integration through independent review before full-hash or architectural-widening acceptance.

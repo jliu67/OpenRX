@@ -1,0 +1,21 @@
+{
+  "attempt": 3,
+  "status": "failed-negative-bench-reset-sampling",
+  "output": "/tmp/openrx-prepared-reciprocal-validation-03",
+  "source": "/tmp/openrx-prepared-reciprocals-observer-b9hdc_o3",
+  "failure": "Core guard first req_ready check in same delta as reset deassertion at Time20000",
+  "passed_before_failure": {
+    "model_guard_tests": 8,
+    "native_iterations": 48,
+    "native_admissions": 12,
+    "cache_rtl_profiles": 4,
+    "native_integration_profiles": 4,
+    "native_retirements_each_profile": 15424,
+    "intentional_invalid_parameter_or_abi_checks": 3,
+    "core_guard_compilation": 1
+  },
+  "unexpected_failures": 1,
+  "synthesis_executed": false,
+  "originals_and_failed_source_preserved": true,
+  "next": "settle reset delta in fresh successor core guard bench; preserve all assertions and arithmetic"
+}

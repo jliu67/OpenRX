@@ -1,0 +1,13 @@
+test_charges_preparation_and_calibrates_actual_occupancy (test_reciprocal_cycle_model.CycleModelTests) ... ok
+test_component_measurement_cannot_certify_a_pipeline (test_reciprocal_cycle_model.CycleModelTests) ... ok
+test_missing_pipeline_stage_cost_remains_unknown (test_reciprocal_cycle_model.CycleModelTests) ... ok
+test_no_amortization_can_cost_more (test_reciprocal_cycle_model.CycleModelTests) ... ok
+test_rejects_nonclosing_outer_or_nested_ledger (test_reciprocal_cycle_model.CycleModelTests) ... ok
+test_rejects_runtime_recalculation_and_missing_admission_charge (test_reciprocal_cycle_model.CycleModelTests) ... ok
+test_rejects_unequal_workload_or_memory_profile (test_reciprocal_cycle_model.CycleModelTests) ... ok
+test_wait_observers_are_never_added_again (test_reciprocal_cycle_model.CycleModelTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK
