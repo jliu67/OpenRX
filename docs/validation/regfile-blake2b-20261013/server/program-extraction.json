@@ -1,0 +1,8 @@
+{
+  "policy": "original accepted helper extraction; verbatim pinned bodies with upstream notices",
+  "source_sha256": "e8f10003a874f44ed27974be7e81e425eced3ae6848596fe355363debc8bcccb",
+  "generated_sha256": {
+    "pinned_program_initialize.inc": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+    "pinned_program_float_helpers.inc": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2"
+  }
+}

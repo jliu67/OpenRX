@@ -1,0 +1,5 @@
+{
+  "observed_serial_command_seconds": 10588.537700533518,
+  "timeout_minutes": 270,
+  "policy": "1.5 times observed serial runtime, rounded to30minutes, at least180 and at most360; scientific workloads and per-command limits unchanged"
+}

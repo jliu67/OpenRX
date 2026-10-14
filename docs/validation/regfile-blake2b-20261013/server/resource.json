@@ -1,0 +1,62 @@
+{
+  "at_epoch": 1791909772.3426766,
+  "actual_kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "2147483648",
+    "memory.swap.max": "536870912",
+    "pids.max": "128"
+  },
+  "ancestors": {
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-regfile-hash-final-03.service": {
+      "cpu.max": "600000 100000",
+      "memory.max": "2147483648",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "41887"
+    },
+    "/sys/fs/cgroup/user.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup": {}
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "MemAvailable": 9053114368,
+  "SwapFree": 5001576448,
+  "workers": 1,
+  "reason": "Task64 final native register-file hashing validation: balanced524 native vectors per32/64 digest, held seed contracts, native connected cancellation/version restarts, four hardware-seeded8x4 chains and bounded new-stage mapping. Actual CPU600%,2GiB RAM,512MiB swap,Tasks128,six affinity,one worker,fresh1GiB reserve/global slot. Measured pilot peak167497728 bytes and prior bounded synth/compile peak610140160 bytes, one serial worker and only new hash32/hash64/seed mapping justify2GiB; no whole execution-core synthesis/full16K regeneration.",
+  "returncode": 0,
+  "kernel_final": {
+    "cpu.stat": "usage_usec 10604787892\nuser_usec 10591058535\nsystem_usec 13729357\ncore_sched.force_idle_usec 0\nnr_periods 105945\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "1044688896",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "0",
+    "pids.current": "1"
+  }
+}

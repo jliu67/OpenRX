@@ -1,0 +1,32 @@
+name: Native register-file BLAKE2b and hardware program seeds
+on:
+  pull_request:
+    paths:
+      - 'rtl/hash/**'
+      - 'scripts/test_regfile_blake2b.py'
+      - 'scripts/regfile_hash_fixture.py'
+      - '.github/workflows/regfile-blake2b.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-hash-differential:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 270
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install official HDL packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Check native digests, connected hardware seeds and new mapped stages
+        run: |
+          python3 scripts/test_regfile_blake2b.py \
+            --output "$RUNNER_TEMP/regfile-blake2b-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
+      - name: Retain complete licensed outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regfile-blake2b-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/regfile-blake2b-${{ github.run_id }}-${{ github.run_attempt }}/

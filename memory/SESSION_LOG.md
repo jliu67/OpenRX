@@ -819,3 +819,8 @@ Temporary staging extends accepted PR61 with native initialization/program-loop 
 ## 2026-10-13 — Task62 complete native program-loop validation
 
 Full native-v2 8×2048 RTL and nine current RTL/nine mapped modes pass; exact code, outputs, sources, failed fixtures and resource receipts retained. Parent merges are a separately authorized reviewer action; this workload stays pinned. [EXP-010](../experiments/EXP-010-native-program-sequence.md) and [evidence](../docs/validation/program-sequence-20261013/README.md) carry exact counts/tool scopes/limitations. New independent review of PR63 remains required; no merge authorization.
+
+
+## 2026-10-13 — task #64 native register-file hashing
+
+Implemented the fixed 256-byte digest and buffered seven-seed program chain above accepted 990f368, with all 69 accepted inputs/171 native files and five IP originals unchanged. Server 18 RTL / 17 mapped modes pass; actual mapping and complete archived outputs are bound in [evidence](../docs/validation/regfile-blake2b-20261013/README.md). Preserve all original negative/preparation/harness/frontend/cell-model failures. At initial publication, hosted checks/new independent review remain pending; subsequent results are recorded on task #64 and the draft PR. No merge. Temporary authoring will be archived/frozen after exact draft publication, retaining original sources/assets and disabled sync.

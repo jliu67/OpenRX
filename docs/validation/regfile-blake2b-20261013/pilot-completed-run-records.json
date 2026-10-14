@@ -1,0 +1,12 @@
+{
+  "completed_runs": {
+    "hash-64": "PASS regfile_hash digest_bytes=64 native_vectors=524 latency_min=56 latency_max=56 native_vector_compute_cycles=29344 resets=3 invalid_lengths=6 held_inactive=1 subsequent_hash_restart=1",
+    "hash-32": "PASS regfile_hash digest_bytes=32 native_vectors=524 latency_min=56 latency_max=56 native_vector_compute_cycles=29344 resets=3 invalid_lengths=6 held_inactive=1 subsequent_hash_restart=1",
+    "connected-1-0": "PASS program_hash_sequence hardware_seed_hashes=7 programs=8 iterations_per_program=4 v2=1 stall=0 total_iterations=32 actual_instructions=12331 bytecode_events=2568 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=111348 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=0 rom_stale=0 sp_stale=0 ds_stale=0",
+    "connected-1-1": "PASS program_hash_sequence hardware_seed_hashes=7 programs=8 iterations_per_program=4 v2=1 stall=1 total_iterations=32 actual_instructions=12331 bytecode_events=2568 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=185810 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=8 rom_stale=12331 sp_stale=2140 ds_stale=32",
+    "connected-0-0": "PASS program_hash_sequence hardware_seed_hashes=7 programs=8 iterations_per_program=4 v2=0 stall=0 total_iterations=32 actual_instructions=8207 bytecode_events=1855 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=70524 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=0 rom_stale=0 sp_stale=0 ds_stale=0",
+    "connected-0-1": "PASS program_hash_sequence hardware_seed_hashes=7 programs=8 iterations_per_program=4 v2=0 stall=1 total_iterations=32 actual_instructions=8207 bytecode_events=1855 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=121278 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=8 rom_stale=8207 sp_stale=1586 ds_stale=32"
+  },
+  "postprocessing_failure_preserved": "empty hash-oracle stdout included in summary glob; no new computation or test pass manufactured",
+  "test_returncodes_verified": true
+}
