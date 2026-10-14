@@ -1,0 +1,8 @@
+{
+  "base": "4f095fc147b5bc78de79746a0a172f38e34d6450",
+  "accepted_unchanged_inputs": 246,
+  "errors": [],
+  "new_python_syntax": "pass",
+  "heavy_checks": "not run; manager slot admission pending",
+  "light_staging_tests": "8 pass, staging-tests01.log"
+}

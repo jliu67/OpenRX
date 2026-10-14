@@ -1,0 +1,14 @@
+{
+  "name": "full-pattern",
+  "directory": "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-pattern",
+  "scratchpad_bytes": 2097152,
+  "aes_64byte_groups": 32768,
+  "memory_reads128": 131072,
+  "kind": "generated-full-prng",
+  "seed": "0x736372611236045e",
+  "input_scratchpad_sha256": "aef9265384bbdd0d6060073ef7c215ff127a985c3a73d56743c7c27ad4cb1159",
+  "input_register_sha256": "6e4025acdf05630bb79647e4021967ef8105f9d9487982fb19e94015e2de4c54",
+  "a_replacement_only": true,
+  "digest32_not_truncated64": true,
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file"
+}

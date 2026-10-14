@@ -214,3 +214,17 @@ or technology timing/power evidence; full hash/physical PPA remain unaccepted.
 ## D048 — fixed native register-file BLAKE2b and buffered seeds, 2026-10-13
 
 Reuse the pinned BSD2 four-G/message schedule while declaring a minimal core continuation correction. Preserve all original files and the demonstrated two-block mismatch. Hash exact 256-byte little-endian R/F/E/A with independently parameterized 64/32-byte digests; final scratchpad AES remains external. Buffer state/tag/index/round controls, hash exactly PROGRAMS-1 results and bypass the last. Gate the next descriptor/final result while a seed is held; reset cancels without rolling back accepted stores. Preserve and count the original 1,024 G operand latches, using exact licensed installed cell models for gates. Validate balanced native vectors, actual hardware-derived connected programs, errors/held/reset/cancellation and new-stage mapping without repeating accepted whole-core/full 16K baselines. [Task #64](https://github.com/jliu67/OpenRX/issues/64) / [EXP-011](../experiments/EXP-011-native-regfile-blake2b.md) require new independent review; no physical PPA/full-hash acceptance follows.
+
+## D049 — native scratchpad A reduction and final digest, 2026-10-13
+
+Reuse unchanged licensed AES round/S-box IP with one shared lane to scan actual
+private quiescent memory in ascending128-bit beats. Apply distinct per-lane raw
+keys, ENC0/2 and DEC1/3, then both pinned closing keys; replace all512 A bits only
+with a successful returned finalization result. Feed raw R/F/E plus replacementA
+to the validated/frozen draft independently parameterized 32-byte BLAKE2b path. Extend transport
+tags to generation16+beat17 so a full2MiB scan never aliases an earlier read; do
+not reuse a generation while late traffic is possible. Leave execution and all
+initialization/dataset/full-hash/PPA boundaries unchanged. Actual new-stage cells
+and fixture clocks, full2MiB RTL and bounded256B mapped tests remain distinct.
+[Task67](https://github.com/jliu67/OpenRX/issues/67) /
+[design](../rtl/hash/FINALIZATION.md) require new independent review.

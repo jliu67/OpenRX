@@ -1,0 +1,32 @@
+{
+  "executed_source": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+  "metadata_parent": "/tmp/openrx-scratchpad-finalization-ready-ixyi0x5k",
+  "publication_source": "/tmp/openrx-scratchpad-finalizer-publication-9p8xp17y",
+  "changed_executed_bindings": {
+    ".github/workflows/scratchpad-finalization.yml": {
+      "executed_sha256": "63ecbee5381a732108a01efd47a6b2c86f388c19f664194983ecae746075154a",
+      "published_sha256": "d8b310757628e451c6e6de505fe7fb946a0bae7f20238cc9a748ecfd96754bb4"
+    },
+    "scripts/test_scratchpad_finalization.py": {
+      "executed_sha256": "6a007503ea8fc77ca02fdf35ea855b3e5e298ab7007275c01942a8163d18cd61",
+      "published_sha256": "9c4818de930ee6b7145a847454905608b033c91a7d8de4b11a53ae36c9f361b4"
+    },
+    "tests/test_scratchpad_finalization_staging.py": {
+      "executed_sha256": "74b77cc0be0eaf48bac24c9a4776ab49e55c6f93e4b8efb551241eeaacabd2b8",
+      "published_sha256": "ab88dd3ebe9036e95d85d5140323d1b5c0403c58829ca583fbd9191073733b21"
+    }
+  },
+  "all_other_executed_bindings_byte_identical": true,
+  "scientific_run_compile_simulate_functions_and_synthesis_payload_ast_identical": true,
+  "correction_scope": [
+    "honest validated/frozen draft parent labels",
+    "AES64 versus digest32 metadata",
+    "full consumed accepted manifest source/post-run guard",
+    "version stdout/stderr/status",
+    "CI staging-test trigger, complete source/output archives retaining original modes, and eleven focused metadata/staging guards"
+  ],
+  "targeted_tests": 11,
+  "targeted_returncode": 0,
+  "full_suite_executed_source_not_relabelled": true,
+  "hosted_full_suite_required_on_published_head": true
+}

@@ -1,5 +1,14 @@
 # Native floating-point execution subset
 
+Current reproduction note (2026-10-13): the subset driver and recipes below belong
+to the frozen accepted historical source `ce788d11285c901b52fd3cf0b450489d13b3f2f5`. Current main's executor
+includes later division/square-root and program-control modules, so those old
+subset unsupported expectations are not a current-source reproduction recipe.
+Use `scripts/test_program_sequence.py` for current complete sequencing, or the
+[finalization driver](../hash/FINALIZATION.md#reproduction) for task67's new boundary.
+Preserve the original source-specific commands/results below.
+
+
 Current compiler compatibility: [Icarus 12 compile view](DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. All 12 local RTL records/native fixtures match; corrected hosted checks and independent review remain required.
 
 ## Native division and square root — task #60, 2026-10-13

@@ -1,6 +1,13 @@
 # Native integer execution
 
-Current compiler compatibility: [Icarus 12 compile view](DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. All 12 local RTL records/native fixtures match; corrected hosted checks and independent review remain required.
+Current accepted main includes all 29 native instruction families / 256 encodings,
+the [Icarus 12 compile view](DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13),
+and [full native-v2 program sequencing](PROGRAM_SEQUENCE.md). Original IP/hardware
+bytes and synthesis sources remain unchanged. The separate draft [register hash](../hash/README.md)
+and [scratchpad finalizer](../hash/FINALIZATION.md) retain their verification and
+independent-review boundaries. Earlier dated sections describe their original
+publication/review states; full dataset, initial/program AES, complete hardware
+hash and physical PPA remain open.
 
 ## Native division and square root — task #60, 2026-10-13
 
@@ -27,11 +34,11 @@ are 45,671/28,443 ideal and 62,637/45,409 stalled; shared adds 17,228 clocks.
 Complete default mapping is 274,346 cells / 10,504 flops.
 Operand latency is variable; these fixtures and generic gates establish no physical PPA or full-hash throughput.
 
-Current FP extension: [exact HardFloat-backed native subset](FLOATING.md), 246 raw
+Historical FP extension at PR59: [exact HardFloat-backed native subset](FLOATING.md), 246 raw
 values; division/sqrt remain errors. Reviewed PR #55/#57 heads remain unmerged.
 Earlier integer-only sections retain their parent publication context.
 
-Current stacked extension (task #56): [multiplication/reciprocal/branch hardware](MULTIPLY-BRANCH.md)
+Historical extension at PR57 (task #56): [multiplication/reciprocal/branch hardware](MULTIPLY-BRANCH.md)
 supports all161native integer/branch raw values;95FP/CFROUND values remain errors.
 PR #55 is independently accepted but unmerged; this extension needs its own review.
 The original eleven-family interface/results below retain their reviewed context.
@@ -142,4 +149,4 @@ These fixture/port cycle counts and generic cell counts are not calibrated clock
 timing, physical area, power or complete-hash throughput. See
 [EXP-006](../../experiments/EXP-006-native-integer-execute.md) for measured results.
 
-[Native program initialization and sequencing](PROGRAM_SEQUENCE.md) adds program-loop control above accepted PR61; initial short pilots pass, full/mapped validation and independent review pending.
+[Native program initialization and sequencing](PROGRAM_SEQUENCE.md) is accepted and merged through PR63 on main8f: full native-v2 RTL and nine RTL/nine mapped modes pass. Its preserved source/evidence and bounded mapped/default-control distinctions remain authoritative. The [new finalization feature](../hash/FINALIZATION.md) preserves this executor unchanged and has its own pending checks/review.

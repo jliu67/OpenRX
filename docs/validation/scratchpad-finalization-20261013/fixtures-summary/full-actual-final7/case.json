@@ -1,0 +1,14 @@
+{
+  "name": "full-actual-final7",
+  "directory": "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+  "scratchpad_bytes": 2097152,
+  "aes_64byte_groups": 32768,
+  "memory_reads128": 131072,
+  "kind": "accepted-full-native-v2-program7",
+  "seed": null,
+  "input_scratchpad_sha256": "3d246e1712b76da87f6914b0241a4189c0f72e768f9798a4d1ec58bbc87b5a7b",
+  "input_register_sha256": "4bd288682ffe0f5f2395ba9d3429149487f4af942bed2988337651edc6237c90",
+  "a_replacement_only": true,
+  "digest32_not_truncated64": true,
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file"
+}
