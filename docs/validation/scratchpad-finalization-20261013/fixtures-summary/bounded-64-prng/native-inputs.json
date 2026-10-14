@@ -1,0 +1,12 @@
+{
+  "scratchpad_bytes": 64,
+  "scratchpad_128bit_rows": 4,
+  "aes_64byte_groups": 1,
+  "register_file_bytes": 256,
+  "a_bank_offset_bytes": 192,
+  "r_f_e_preserved": true,
+  "native_digest_bytes": [32, 64],
+  "digest32_differs_from_truncated64": true,
+  "hex_layout": "byte0 is bits7:0; each row prints highest byte first",
+  "oracle": "unchanged pinned hashAes1Rx4<true> then native unkeyed blake2b"
+}

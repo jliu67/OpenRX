@@ -1,0 +1,170 @@
+[
+  {
+    "case": "bounded-64-zero",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-zero/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-zero/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-zero"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-64-walking",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-walking/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-walking/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-walking"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-64-prng",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-prng/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-prng/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-prng"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-128-zero",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-zero/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-zero/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-zero"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-128-walking",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-walking/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-walking/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-walking"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-128-prng",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-prng/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-prng/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-prng"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-256-zero",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-zero/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-zero/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-zero"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-256-walking",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-256-prng",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-prng/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-prng/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-prng"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-4096-zero",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-zero/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-zero/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-zero"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-4096-walking",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-walking/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-walking/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-walking"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-4096-prng",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-prng/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-prng/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-prng"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "full-actual-final7",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "full-pattern",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-pattern/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-pattern/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-pattern"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 120,
+    "returncode": 0
+  }
+]

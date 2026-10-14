@@ -1,0 +1,32 @@
+{
+  "executed_source": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+  "publication_source": "/tmp/openrx-scratchpad-finalizer-publication-9p8xp17y",
+  "local_suite": {
+    "rtl_modes": 41,
+    "mapped_modes": 19,
+    "full_balanced_trials": 4,
+    "source_bindings": 258,
+    "exact_executed_driver": "6a007503ea8fc77ca02fdf35ea855b3e5e298ab7007275c01942a8163d18cd61"
+  },
+  "publication_source_bindings": 259,
+  "declared_metadata_ci_corrections": {
+    ".github/workflows/scratchpad-finalization.yml": {
+      "executed_sha256": "63ecbee5381a732108a01efd47a6b2c86f388c19f664194983ecae746075154a",
+      "published_sha256": "d8b310757628e451c6e6de505fe7fb946a0bae7f20238cc9a748ecfd96754bb4"
+    },
+    "scripts/test_scratchpad_finalization.py": {
+      "executed_sha256": "6a007503ea8fc77ca02fdf35ea855b3e5e298ab7007275c01942a8163d18cd61",
+      "published_sha256": "9c4818de930ee6b7145a847454905608b033c91a7d8de4b11a53ae36c9f361b4"
+    },
+    "tests/test_scratchpad_finalization_staging.py": {
+      "executed_sha256": "74b77cc0be0eaf48bac24c9a4776ab49e55c6f93e4b8efb551241eeaacabd2b8",
+      "published_sha256": "ab88dd3ebe9036e95d85d5140323d1b5c0403c58829ca583fbd9191073733b21"
+    }
+  },
+  "all_scientific_sources_and_command_construction_unchanged": true,
+  "successor_focused_tests": 11,
+  "initial_publication_hosted_and_independent_review": "pending",
+  "subsequent_verification_records": "https://github.com/jliu67/OpenRX/issues/67",
+  "complete_source_and_output_retained_no_deletion": true,
+  "no_merge": true
+}

@@ -824,3 +824,29 @@ Full native-v2 8×2048 RTL and nine current RTL/nine mapped modes pass; exact co
 ## 2026-10-13 — task #64 native register-file hashing
 
 Implemented the fixed 256-byte digest and buffered seven-seed program chain above accepted 990f368, with all 69 accepted inputs/171 native files and five IP originals unchanged. Server 18 RTL / 17 mapped modes pass; actual mapping and complete archived outputs are bound in [evidence](../docs/validation/regfile-blake2b-20261013/README.md). Preserve all original negative/preparation/harness/frontend/cell-model failures. At initial publication, hosted checks/new independent review remain pending; subsequent results are recorded on task #64 and the draft PR. No merge. Temporary authoring will be archived/frozen after exact draft publication, retaining original sources/assets and disabled sync.
+
+## 2026-10-13 — task67 scratchpad finalization preparation
+
+Resumed actual engineering after the completed owner-requested repository sweep,
+which remains preserved separately. Claimed #67 above exact PR65 head4f095fc in
+a temporary per-task source, with no Git checkout/sync or retired source restore.
+Added native scratchpad scanner/finalizer, unchanged-IP/native oracle and fixtures,
+control bench/driver, and dependency-trigger/reproduction clarifications. Eight
+focused preparation checks pass; native/HDL/synthesis and independent review are
+pending at this snapshot. Shared compute requested: one worker, CPU600%,4GiB RAM,
+512MiB swap,Tasks128,six-CPU affinity, fresh1GiB reserve/global lock; execution needs
+actual admission and kernel/ancestor checks. No public PR65 review or merge occurred.
+
+## 2026-10-14 — task #67 local validation and publication preparation
+
+One manager-admitted serial service passed 41 RTL / 19 mapped modes, 14 native/Python
+cases, four balanced full 2 MiB trials, six native malformed-input guards and four
+invalid hardware elaborations. Actual kernel CPU600%, RAM4GiB, swap512MiB,
+Tasks128 and six-CPU affinity were checked with fresh reserve/global lock;
+measured cgroup peak 1,902,161,920 bytes. Complete source/output bytes and original
+modes were archived, verified and retained read-only with execute bits. Original
+duplicate-module elaboration failure remains preserved. Declared metadata/CI
+successor corrections pass 11 focused tests; scientific sources and commands stay
+exact. [Evidence](../docs/validation/scratchpad-finalization-20261013/README.md) separates local execution, successor checks,
+and pending hosted/independent verification. No main/parent change, PR65 public
+review publication or merge occurred.

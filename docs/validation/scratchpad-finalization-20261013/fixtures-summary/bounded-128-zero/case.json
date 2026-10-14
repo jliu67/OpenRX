@@ -1,0 +1,14 @@
+{
+  "name": "bounded-128-zero",
+  "directory": "/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-zero",
+  "scratchpad_bytes": 128,
+  "aes_64byte_groups": 2,
+  "memory_reads128": 8,
+  "kind": "zero",
+  "seed": "0x73637261746368b2",
+  "input_scratchpad_sha256": "38723a2e5e8a17aa7950dc008209944e898f69a7bd10a23c839d341e935fd5ca",
+  "input_register_sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+  "a_replacement_only": true,
+  "digest32_not_truncated64": true,
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file"
+}

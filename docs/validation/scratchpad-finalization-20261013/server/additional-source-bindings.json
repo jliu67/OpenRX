@@ -1,0 +1,7 @@
+{
+  "bindings": {
+    "docs/validation/program-sequence-20261013/full-v2-8x2048/artifacts.sha256.json": "d002d55d751718f79df5aee0e08d56e8c5cb91e6e76f18fdc8b20caf766c078f"
+  },
+  "checked_in_executed_source_and_metadata_successor": true,
+  "scope": "Additive post-run binding. Original inputs.json is unchanged. The executed fixture helper already checks this pinned manifest before/after generation."
+}

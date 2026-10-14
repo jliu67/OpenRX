@@ -1,0 +1,1403 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11693757597822696
+  },
+  {
+    "label": "staging-guards",
+    "argv": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_scratchpad_finalization_staging.py",
+      "-v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.36474121594801545
+  },
+  {
+    "label": "compile-native-oracle",
+    "argv": [
+      "g++",
+      "-O2",
+      "-std=c++17",
+      "-maes",
+      "-Ivendor/randomx/src",
+      "rtl/hash/tests/scratchpad_finalization_oracle.cpp",
+      "vendor/randomx/src/aes_hash.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/blake2/blake2b.c",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 2.2184565369971097
+  },
+  {
+    "label": "native-invalid-0",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/0/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/0/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.032185292919166386
+  },
+  {
+    "label": "native-invalid-1",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/1/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/1/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.003436950035393238
+  },
+  {
+    "label": "native-invalid-2",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/2/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/2/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/2"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.0035372719867154956
+  },
+  {
+    "label": "native-invalid-3",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/3/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/3/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/3"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.003605124889872968
+  },
+  {
+    "label": "native-invalid-4",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/4/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/4/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/4"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.003534542047418654
+  },
+  {
+    "label": "native-invalid-5",
+    "argv": [
+      "/tmp/openrx-scratchpad-finalization-validation-01/scratchpad-finalization-oracle",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/5/scratchpad.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/5/register-file.bin",
+      "/tmp/openrx-scratchpad-finalization-validation-01/native-invalid/5"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.003510326030664146
+  },
+  {
+    "label": "compile-rtl-64",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=64",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-64.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.06385277607478201
+  },
+  {
+    "label": "compile-rtl-128",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=128",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-128.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.06401779409497976
+  },
+  {
+    "label": "compile-rtl-256",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=256",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.06407308299094439
+  },
+  {
+    "label": "compile-rtl-4096",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=4096",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-4096.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.06407227902673185
+  },
+  {
+    "label": "compile-rtl-2097152",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=2097152",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.06397954095155
+  },
+  {
+    "label": "rtl-bounded-64-zero-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-64.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11403620394412428
+  },
+  {
+    "label": "rtl-bounded-64-zero-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-64.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11406179494224489
+  },
+  {
+    "label": "rtl-bounded-64-walking-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-64.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11413614090997726
+  },
+  {
+    "label": "rtl-bounded-64-walking-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-64.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11407959600910544
+  },
+  {
+    "label": "rtl-bounded-64-prng-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-64.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11395141296088696
+  },
+  {
+    "label": "rtl-bounded-64-prng-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-64.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-64-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11426603398285806
+  },
+  {
+    "label": "rtl-bounded-128-zero-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-128.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11410114110913128
+  },
+  {
+    "label": "rtl-bounded-128-zero-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-128.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11409685795661062
+  },
+  {
+    "label": "rtl-bounded-128-walking-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-128.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11405965697485954
+  },
+  {
+    "label": "rtl-bounded-128-walking-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-128.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11412213800940663
+  },
+  {
+    "label": "rtl-bounded-128-prng-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-128.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11400228308048099
+  },
+  {
+    "label": "rtl-bounded-128-prng-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-128.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-128-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11407520400825888
+  },
+  {
+    "label": "rtl-bounded-256-zero-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.1641106269089505
+  },
+  {
+    "label": "rtl-bounded-256-zero-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16419986204709858
+  },
+  {
+    "label": "rtl-bounded-256-walking-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16420407500118017
+  },
+  {
+    "label": "rtl-bounded-256-walking-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16407021402847022
+  },
+  {
+    "label": "rtl-bounded-256-prng-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16410324396565557
+  },
+  {
+    "label": "rtl-bounded-256-prng-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.1641505160368979
+  },
+  {
+    "label": "rtl-bounded-4096-zero-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-4096.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9153819669736549
+  },
+  {
+    "label": "rtl-bounded-4096-zero-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-4096.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9656798519426957
+  },
+  {
+    "label": "rtl-bounded-4096-walking-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-4096.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9154275989858434
+  },
+  {
+    "label": "rtl-bounded-4096-walking-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-4096.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9654734299983829
+  },
+  {
+    "label": "rtl-bounded-4096-prng-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-4096.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9152982570230961
+  },
+  {
+    "label": "rtl-bounded-4096-prng-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-4096.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-4096-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9654953019926324
+  },
+  {
+    "label": "rtl-control-held",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=held",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16424100007861853
+  },
+  {
+    "label": "rtl-control-invalid",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=invalid",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16443042003083974
+  },
+  {
+    "label": "rtl-control-error_first",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=error_first",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.1640916329342872
+  },
+  {
+    "label": "rtl-control-error_last",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=error_last",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.21425225702114403
+  },
+  {
+    "label": "rtl-control-reset_req",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_req",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.1642474440159276
+  },
+  {
+    "label": "rtl-control-reset_read",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_read",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16420427605044097
+  },
+  {
+    "label": "rtl-control-reset_aes",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_aes",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16411297407466918
+  },
+  {
+    "label": "rtl-control-reset_hash",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_hash",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.21423884795513004
+  },
+  {
+    "label": "rtl-control-reset_return",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_return",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.2643210410606116
+  },
+  {
+    "label": "rtl-full-0-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 426.00600472895894
+  },
+  {
+    "label": "rtl-full-1-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-pattern",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 432.6088940280024
+  },
+  {
+    "label": "rtl-full-2-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-pattern",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 423.5500474079745
+  },
+  {
+    "label": "rtl-full-3-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 428.5987507170066
+  },
+  {
+    "label": "rtl-default-invalid",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=invalid",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.7681647279532626
+  },
+  {
+    "label": "rtl-default-error_first",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=error_first",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.1658570329891518
+  },
+  {
+    "label": "rtl-default-reset_req",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=reset_req",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.1660518780117854
+  },
+  {
+    "label": "rtl-default-reset_read",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/rtl-2097152.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=reset_read",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.1660937640117481
+  },
+  {
+    "label": "invalid-parameter-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=0",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.01582399196922779
+  },
+  {
+    "label": "invalid-parameter-63",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=63",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.0157158620422706
+  },
+  {
+    "label": "invalid-parameter-65",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=65",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.015641615027561784
+  },
+  {
+    "label": "invalid-parameter-2097216",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=2097216",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.015647395979613066
+  },
+  {
+    "label": "synth-scanner-default",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/hash/vendor/blake2 rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/hash/randomx_scratchpad_aes_hash.v; chparam -set SCRATCHPAD_BYTES 2097152 randomx_scratchpad_aes_hash; synth -top randomx_scratchpad_aes_hash -flatten; check -assert; tee -o /tmp/openrx-scratchpad-finalization-validation-01/stat-scanner-default.txt stat; write_verilog -noattr /tmp/openrx-scratchpad-finalization-validation-01/netlist-scanner-default.v; write_json /tmp/openrx-scratchpad-finalization-validation-01/netlist-scanner-default.json"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 7200,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 126.72180026303977
+  },
+  {
+    "label": "synth-finalizer-default",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/hash/vendor/blake2 rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/hash/randomx_blake2b_chain_core.v rtl/hash/randomx_regfile_blake2b.v rtl/hash/randomx_scratchpad_aes_hash.v rtl/hash/randomx_scratchpad_finalizer.v; chparam -set SCRATCHPAD_BYTES 2097152 randomx_scratchpad_finalizer; synth -top randomx_scratchpad_finalizer -flatten; check -assert; tee -o /tmp/openrx-scratchpad-finalization-validation-01/stat-finalizer-default.txt stat; write_verilog -noattr /tmp/openrx-scratchpad-finalization-validation-01/netlist-finalizer-default.v; write_json /tmp/openrx-scratchpad-finalization-validation-01/netlist-finalizer-default.json"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 7200,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 184.39493437099736
+  },
+  {
+    "label": "synth-finalizer-bounded256",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/hash/vendor/blake2 rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/hash/randomx_blake2b_chain_core.v rtl/hash/randomx_regfile_blake2b.v rtl/hash/randomx_scratchpad_aes_hash.v rtl/hash/randomx_scratchpad_finalizer.v; chparam -set SCRATCHPAD_BYTES 256 randomx_scratchpad_finalizer; synth -top randomx_scratchpad_finalizer -flatten; check -assert; tee -o /tmp/openrx-scratchpad-finalization-validation-01/stat-finalizer-bounded256.txt stat; write_verilog -noattr /tmp/openrx-scratchpad-finalization-validation-01/netlist-finalizer-bounded256.v; write_json /tmp/openrx-scratchpad-finalization-validation-01/netlist-finalizer-bounded256.json"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 7200,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 186.50060132704675
+  },
+  {
+    "label": "compile-mapped-256",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-DSCRATCHPAD_FINALIZER_NETLIST",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=256",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/netlist-finalizer-bounded256.v",
+      "/tmp/openrx-scratchpad-finalization-validation-01/yosys-simcells.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 65.21930890704971
+  },
+  {
+    "label": "mapped-bounded-256-zero-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.176601778017357
+  },
+  {
+    "label": "mapped-bounded-256-zero-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.427374187042005
+  },
+  {
+    "label": "mapped-bounded-256-walking-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.176857011974789
+  },
+  {
+    "label": "mapped-bounded-256-walking-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.427232995978557
+  },
+  {
+    "label": "mapped-bounded-256-prng-ideal",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 7.028482156107202
+  },
+  {
+    "label": "mapped-bounded-256-prng-stalled",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 7.2787635260028765
+  },
+  {
+    "label": "mapped-control-held",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=held",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.277016481966712
+  },
+  {
+    "label": "mapped-control-invalid",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=invalid",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.727839466999285
+  },
+  {
+    "label": "mapped-control-error_first",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=error_first",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.327191018965095
+  },
+  {
+    "label": "mapped-control-error_last",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=error_last",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.577594561967999
+  },
+  {
+    "label": "mapped-control-reset_req",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_req",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.427167337038554
+  },
+  {
+    "label": "mapped-control-reset_read",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_read",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.928294045035727
+  },
+  {
+    "label": "mapped-control-reset_aes",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_aes",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.577948034973815
+  },
+  {
+    "label": "mapped-control-reset_hash",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_hash",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 7.780313363997266
+  },
+  {
+    "label": "mapped-control-reset_return",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-256.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/bounded-256-walking",
+      "+MODE=reset_return",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 10.085204759030603
+  },
+  {
+    "label": "compile-mapped-default",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-DSCRATCHPAD_FINALIZER_NETLIST",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=2097152",
+      "-o",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-default.vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/netlist-finalizer-default.v",
+      "/tmp/openrx-scratchpad-finalization-validation-01/yosys-simcells.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 66.27285465504974
+  },
+  {
+    "label": "mapped-default-invalid",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-default.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=invalid",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 5.224096131976694
+  },
+  {
+    "label": "mapped-default-error_first",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-default.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=error_first",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 4.272330076084472
+  },
+  {
+    "label": "mapped-default-reset_req",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-default.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=reset_req",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 4.522772236960009
+  },
+  {
+    "label": "mapped-default-reset_read",
+    "argv": [
+      "vvp",
+      "/tmp/openrx-scratchpad-finalization-validation-01/mapped-default.vvp",
+      "+DIR=/tmp/openrx-scratchpad-finalization-validation-01/fixtures/full-actual-final7",
+      "+MODE=reset_read",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 4.6229196699569
+  }
+]

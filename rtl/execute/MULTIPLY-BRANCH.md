@@ -1,5 +1,14 @@
 # Native multiplication, reciprocal and branch extension
 
+Current reproduction note (2026-10-13): the subset driver and recipes below belong
+to the frozen accepted historical source `d62c449574e1f5434aa6809040a02fabfb74dc09`. Current main's executor
+includes later division/square-root and program-control modules, so those old
+subset unsupported expectations are not a current-source reproduction recipe.
+Use `scripts/test_program_sequence.py` for current complete sequencing, or the
+[finalization driver](../hash/FINALIZATION.md#reproduction) for task67's new boundary.
+Preserve the original source-specific commands/results below.
+
+
 This extension stacks on independently accepted, unmerged PR #55 at
 `2b14e4f9a726c1f7e066576bbe8fc351c87d158c`. It preserves that head and adds the
 seven missing multiplication families plus CBRANCH. Nineteen integer/branch

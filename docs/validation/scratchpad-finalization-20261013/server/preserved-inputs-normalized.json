@@ -1,0 +1,14 @@
+{
+  "RandomX_original_files": 171,
+  "secworks_original_files": 3,
+  "BLAKE_original_files": 5,
+  "executed_parent_label_in_original_record": "4f095fc147b5bc78de79746a0a172f38e34d6450",
+  "validated_frozen_parent_source_bindings": 246,
+  "all_original_and_validated_frozen_parent_bytes_unchanged": true,
+  "validated_draft_parent": {
+    "pull_request": 65,
+    "head": "4f095fc147b5bc78de79746a0a172f38e34d6450",
+    "status": "validated/frozen draft; independent acceptance and merge are not established"
+  },
+  "interpretation": "Additive post-run metadata interpretation only. Raw summaries, commands, sources, outputs and original field labels remain preserved."
+}

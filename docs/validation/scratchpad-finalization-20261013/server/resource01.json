@@ -1,0 +1,62 @@
+{
+  "at_epoch": 1791934335.8117144,
+  "actual_kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "4294967296",
+    "memory.swap.max": "536870912",
+    "pids.max": "128"
+  },
+  "ancestors": {
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-scratchpad-finalization-validation-01.service": {
+      "cpu.max": "600000 100000",
+      "memory.max": "4294967296",
+      "memory.swap.max": "536870912",
+      "pids.max": "128"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "41887"
+    },
+    "/sys/fs/cgroup/user.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup": {}
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "MemAvailable": 9202327552,
+  "SwapFree": 4917526528,
+  "workers": 1,
+  "reason": "Task67 scratchpad finalization: one serial worker; actual default shared-AES/BLAKE stage mapping and bounded mapped validation, four balanced full2MiB RTL finalizations, no full program-chain rebuild. CPU600%, RAM4GiB, swap512MiB, Tasks128, six affinity, fresh1GiB reserve/global lock. Prior BLAKE mapping peak~1GiB plus reused sharedAES and combined stage justify4GiB candidate; measured peak/limits must be recorded.",
+  "returncode": 0,
+  "kernel_final": {
+    "cpu.stat": "usage_usec 2487582945\nuser_usec 2481100062\nsystem_usec 6482882\ncore_sched.force_idle_usec 0\nnr_periods 24884\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "1902161920",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "0",
+    "pids.current": "1"
+  }
+}

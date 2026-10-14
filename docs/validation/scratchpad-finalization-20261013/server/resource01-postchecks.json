@@ -1,0 +1,23 @@
+{
+  "terminal_returncode": 0,
+  "actual_kernel_limits_match": true,
+  "memory_events": {
+    "oom": 0,
+    "oom_kill": 0,
+    "max": 0
+  },
+  "peaks": {
+    "memory.peak": {
+      "bytes": 1902161920,
+      "ceiling_bytes": 4294967296,
+      "within_budget": true
+    },
+    "memory.swap.peak": {
+      "bytes": 0,
+      "ceiling_bytes": 536870912,
+      "within_budget": true
+    }
+  },
+  "unavailable_counters": [],
+  "scope": "Only counters actually exposed in the immutable resource01 receipt are verified."
+}

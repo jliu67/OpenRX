@@ -1,0 +1,18 @@
+[
+  {
+    "case": "full-actual-final7",
+    "scratchpad_hex_sha256": "e5061265e2cf3635e9cdf6c5b2093bb5ebf9373fce868a753a757b1a3775023c",
+    "binary_sha256": "3d246e1712b76da87f6914b0241a4189c0f72e768f9798a4d1ec58bbc87b5a7b",
+    "raw_bytes": 4325376,
+    "full_input_retained_in_complete_output_archive": true,
+    "public_original_or_generator": "docs/validation/program-sequence-20261013/full-v2-8x2048/final-7.hex.gz"
+  },
+  {
+    "case": "full-pattern",
+    "scratchpad_hex_sha256": "36cfdc311af965116f1b97c0ceec493523b935c5fdb01ee5138f1c000269bf5b",
+    "binary_sha256": "aef9265384bbdd0d6060073ef7c215ff127a985c3a73d56743c7c27ad4cb1159",
+    "raw_bytes": 4325376,
+    "full_input_retained_in_complete_output_archive": true,
+    "public_original_or_generator": "scripts/scratchpad_finalization_fixture.py; seed=0x736372611236045e"
+  }
+]

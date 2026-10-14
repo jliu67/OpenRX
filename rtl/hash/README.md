@@ -1,5 +1,11 @@
 # Native register-file BLAKE2b
 
+The [new scratchpad finalizer](FINALIZATION.md) scans actual memory, replaces A
+and uses this independently parameterized 32-byte digest. Its 41 RTL / 19 mapped
+modes pass locally; published-head verification and independent review remain
+required. Initial/program AES and complete hardware hash remain open.
+
+
 [Task #64](https://github.com/jliu67/OpenRX/issues/64) extends independently
 accepted [PR #63](https://github.com/jliu67/OpenRX/pull/63#pullrequestreview-5505712453)
 at `990f36830c5a9854bf8e2cf1fe7fd7d4ccf7f192`. All 69 accepted execution
@@ -68,10 +74,11 @@ errors retain their original codes and fields. Reset never rolls back stores
 already accepted by external scratchpad storage. Impossible-state handling is
 not a physical fault-detection claim.
 
-Initial input hashing, scratchpad AES fill, native program AES generation, final
-scratchpad AES reduction into A and the real RandomX dataset remain external.
-The 32-byte primitive accepts the caller's post-reduction register file; this
-stage does not deliver complete hardware finalization or full-hash throughput.
+Initial input hashing, scratchpad AES fill, native program AES generation and
+the real RandomX dataset remain external. The 32-byte register-file primitive
+accepts the caller's post-reduction state; the separate [scratchpad finalizer](FINALIZATION.md)
+implements actual A reduction and digest computation. Complete hardware hash
+integration and full-hash throughput remain open.
 
 ## Reproduction
 

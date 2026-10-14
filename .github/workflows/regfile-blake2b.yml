@@ -3,8 +3,23 @@ on:
   pull_request:
     paths:
       - 'rtl/hash/**'
+      - 'rtl/execute/**'
+      - 'rtl/aes/**'
+      - 'rtl/engine/**'
+      - 'rtl/iteration/**'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx.sha256.json'
+      - 'vendor/randomx.lock.json'
       - 'scripts/test_regfile_blake2b.py'
       - 'scripts/regfile_hash_fixture.py'
+      - 'scripts/test_divsqrt_execute.py'
+      - 'scripts/test_iteration_engine.py'
+      - 'scripts/program_sequence_fixture.py'
+      - 'scripts/hardfloat_compile_view.py'
+      - 'docs/validation/program-sequence-20261013/server-current/inputs.json'
+      - 'rtl/hash/tests/accepted-full-registers.*'
+      - 'scripts/divsqrt_fixture.py'
+      - 'scripts/test_program_sequence.py'
       - '.github/workflows/regfile-blake2b.yml'
   workflow_dispatch:
 permissions:
