@@ -1,0 +1,11 @@
+{
+  "observed_utc": "2026-10-13T18:18:00.947431+00:00",
+  "transport_disconnected_during_observer_wait": true,
+  "new_commands_reconnected": true,
+  "original_exec_session_unavailable": 56047,
+  "unit_status": "MainPID=333740\nExecMainStartTimestamp=Tue 2026-10-13 10:42:52 MDT\nActiveState=active\nSubState=running\nActiveEnterTimestamp=Tue 2026-10-13 10:42:52 MDT\n",
+  "payload_not_restarted": true,
+  "durable_console": "final-console03.log",
+  "durable_resource_receipt": "final-resource03.json",
+  "outer_wrapper_time_may_be_incomplete": true
+}

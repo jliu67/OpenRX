@@ -1,0 +1,170 @@
+[
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-zero/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-zero/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-zero"
+    ],
+    "case": "bounded-64-zero",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-walking/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-walking/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-walking"
+    ],
+    "case": "bounded-64-walking",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-prng/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-prng/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-prng"
+    ],
+    "case": "bounded-64-prng",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-zero/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-zero/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-zero"
+    ],
+    "case": "bounded-128-zero",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-walking/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-walking/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-walking"
+    ],
+    "case": "bounded-128-walking",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-prng/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-prng/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-prng"
+    ],
+    "case": "bounded-128-prng",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-zero/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-zero/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-zero"
+    ],
+    "case": "bounded-256-zero",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-walking/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-walking/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-walking"
+    ],
+    "case": "bounded-256-walking",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-prng/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-prng/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-256-prng"
+    ],
+    "case": "bounded-256-prng",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-zero/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-zero/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-zero"
+    ],
+    "case": "bounded-4096-zero",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-walking/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-walking/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-walking"
+    ],
+    "case": "bounded-4096-walking",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-prng/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-prng/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-prng"
+    ],
+    "case": "bounded-4096-prng",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/full-actual-final7/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/full-actual-final7/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/full-actual-final7"
+    ],
+    "case": "full-actual-final7",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  },
+  {
+    "argv": [
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/scratchpad-finalization-oracle",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/full-pattern/scratchpad.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/full-pattern/register-file.bin",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/full-pattern"
+    ],
+    "case": "full-pattern",
+    "cwd": "<FROZEN_SOURCE>",
+    "returncode": 0,
+    "timeout_seconds": 120
+  }
+]

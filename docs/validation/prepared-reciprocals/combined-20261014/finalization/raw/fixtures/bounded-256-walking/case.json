@@ -1,0 +1,14 @@
+{
+  "name": "bounded-256-walking",
+  "directory": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+  "scratchpad_bytes": 256,
+  "aes_64byte_groups": 4,
+  "memory_reads128": 16,
+  "kind": "walking",
+  "seed": "0x7362726174636932",
+  "input_scratchpad_sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+  "input_register_sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+  "a_replacement_only": true,
+  "digest32_not_truncated64": true,
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file"
+}

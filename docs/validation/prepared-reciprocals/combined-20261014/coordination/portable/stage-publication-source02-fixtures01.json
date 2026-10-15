@@ -1,0 +1,30 @@
+{
+  "AST_files": [
+    "stage_publication_source02.py",
+    "test_stage_publication_fixtures02.py"
+  ],
+  "coverage": [
+    "successful exact export/copy with added README only",
+    "failed/stale export identity and original/recovery IDs",
+    "terminal/comparison/exporter/source/parent/manifest SHA bindings",
+    "complete copied map mutation/addition/deletion and exact modes",
+    "original exported map mutation/addition/deletion",
+    "retained source/archive presence-size checks without archive rehashing",
+    "failed original archive cannot be relabeled success",
+    "public retention cross-record binding",
+    "full composite publisher ancestry and science-change rejection",
+    "contract/export gates before copy/archive writes"
+  ],
+  "files_sha256": {
+    "stage_publication_source02.py": "98384d1799ece7a1a6bff4cbe6cd6d74d47231253a29194ad167ff027ccb23cc",
+    "test_stage_publication_fixtures02.py": "34344fb1dc08fa8245c41b52925f4256c1123f2034f196257fb145df9c99e817"
+  },
+  "log": "reciprocal-combination-reconciliation-evidence/stage-publication-source02-fixtures01.log",
+  "log_sha256": "1f290d773299301018a1bae9387ced29fccf0aa63b684bf1c9250529f2eb9c38",
+  "original_copy": "stage_publication_source02.pre-fix-v1.py",
+  "original_sha256": "b52d19992710b1661b11d8eec6cb8671f271a5ccc21ad0d16b03c732d6322132",
+  "returncode": 0,
+  "scope": "Tiny external fake source/export/copy/ancestry fixtures only; stage main, real payload I/O, native/RTL work and GitHub are not invoked. R/S remain untouched.",
+  "status": "pass_synthetic_staging_checks",
+  "synthetic_tests": 27
+}

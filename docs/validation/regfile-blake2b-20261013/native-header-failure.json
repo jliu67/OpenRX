@@ -1,0 +1,7 @@
+{
+  "source": "/tmp/openrx-regfile-blake2b-rw9glv1x",
+  "output": "/tmp/openrx-blake2b-micro-01",
+  "archive": "blake2b-stage-implementation-evidence/micro-oracle-header-failed01-complete.tar.gz",
+  "archive_sha256": "13616619925df096fdc048d9bb09aac74a8a04160002db68a14a8832ce054a6c",
+  "failure": "local oracle included pinned header before size_t declaration; add cstddef to local client, vendor unchanged"
+}

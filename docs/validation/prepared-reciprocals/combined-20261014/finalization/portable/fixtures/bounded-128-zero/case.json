@@ -1,0 +1,14 @@
+{
+  "a_replacement_only": true,
+  "aes_64byte_groups": 2,
+  "digest32_not_truncated64": true,
+  "directory": "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-128-zero",
+  "input_register_sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+  "input_scratchpad_sha256": "38723a2e5e8a17aa7950dc008209944e898f69a7bd10a23c839d341e935fd5ca",
+  "kind": "zero",
+  "memory_reads128": 8,
+  "name": "bounded-128-zero",
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file",
+  "scratchpad_bytes": 128,
+  "seed": "0x73637261746368b2"
+}

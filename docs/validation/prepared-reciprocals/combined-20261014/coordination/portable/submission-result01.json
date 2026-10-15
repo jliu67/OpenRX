@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "python3",
+    "/home/server/openrx-local/v1/releases/runner-v1-657b23f1/local_execution.py",
+    "--root",
+    "/home/server/openrx-local/v1",
+    "submit",
+    "--request-key",
+    "issue69-combined-35c-5f-attempt01",
+    "--kind",
+    "simulation",
+    "--cwd",
+    "<FROZEN_SOURCE>",
+    "--input",
+    "<EXTERNAL_EVIDENCE>/run_combined_regressions01.py",
+    "--source",
+    "<FROZEN_SOURCE>",
+    "--memory-bytes",
+    "4294967296",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "<EXTERNAL_EVIDENCE>/run_combined_regressions01.py",
+    "<FROZEN_SOURCE>",
+    "{execution_dir}"
+  ],
+  "returncode": 0,
+  "stderr": "",
+  "stdout": "{\n  \"execution_id\": \"20261014T194137Z-8451bfb57fac\"\n}\n"
+}

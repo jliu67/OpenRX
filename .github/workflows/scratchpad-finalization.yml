@@ -1,0 +1,75 @@
+name: Native scratchpad AES finalization
+on:
+  pull_request:
+    paths:
+      - 'rtl/**'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx.sha256.json'
+      - 'vendor/randomx.lock.json'
+      - 'scripts/test_scratchpad_finalization.py'
+      - 'tests/test_scratchpad_finalization_staging.py'
+      - 'scripts/scratchpad_finalization_fixture.py'
+      - 'docs/validation/program-sequence-20261013/full-v2-8x2048/**'
+      - 'docs/validation/regfile-blake2b-20261013/server/inputs.json'
+      - 'docs/validation/program-sequence-20261013/server-current/inputs.json'
+      - 'scripts/divsqrt_fixture.py'
+      - 'scripts/hardfloat_compile_view.py'
+      - 'scripts/program_sequence_fixture.py'
+      - 'scripts/regfile_hash_fixture.py'
+      - 'scripts/test_divsqrt_execute.py'
+      - 'scripts/test_iteration_engine.py'
+      - 'scripts/test_program_sequence.py'
+      - 'scripts/test_regfile_blake2b.py'
+      - '.github/workflows/scratchpad-finalization.yml'
+      - 'scripts/combined_source_bindings.py'
+      - 'tests/test_combined_source_bindings.py'
+      - 'docs/validation/prepared-reciprocals/combined-source-bindings.json'
+      - 'scripts/prepared_parent_bindings.py'
+      - 'docs/validation/prepared-reciprocals/parent-source-bindings.json'
+      - 'docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json'
+      - 'docs/validation/prepared-reciprocals/server/inputs.json'
+      - 'docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json'
+      - '.github/workflows/integer-execute.yml'
+      - '.github/workflows/regfile-blake2b.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native-finalization-differential:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 270
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install official HDL packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Archive complete execution source with original modes
+        run: |
+          archive="$RUNNER_TEMP/scratchpad-finalization-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-source-complete.tar.gz"
+          tar --exclude='./.git' -C "$GITHUB_WORKSPACE" -czf "$archive" .
+          sha256sum "$archive" > "$archive.sha256"
+      - name: Check actual scratchpad reduction, digest and new stage gates
+        run: |
+          python3 scripts/test_scratchpad_finalization.py \
+            --output "$RUNNER_TEMP/scratchpad-finalization-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
+      - name: Archive complete licensed outputs with original modes
+        if: always()
+        run: |
+          name="scratchpad-finalization-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          if [ -d "$RUNNER_TEMP/$name" ]; then
+            archive="$RUNNER_TEMP/$name-output-complete.tar.gz"
+            tar -C "$RUNNER_TEMP" -czf "$archive" "$name"
+            sha256sum "$archive" > "$archive.sha256"
+          fi
+      - name: Retain complete licensed outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scratchpad-finalization-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/scratchpad-finalization-${{ github.run_id }}-${{ github.run_attempt }}-*-complete.tar.gz
+            ${{ runner.temp }}/scratchpad-finalization-${{ github.run_id }}-${{ github.run_attempt }}-*-complete.tar.gz.sha256

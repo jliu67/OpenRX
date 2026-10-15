@@ -1,0 +1,7 @@
+{
+  "log": "reciprocal-combination-reconciliation-evidence/terminal-publication-helper-tests01.log",
+  "log_sha256": "095ccdbcec1f0d85498aa892d83d285848c39aa1c815b2e2baed8a26fa024938",
+  "returncode": 0,
+  "scope": "Tiny external synthetic metadata/mode/body fixtures; no runner, scientific payload or GitHub call",
+  "test_source_sha256": "702b46ded7488d201b517b5a913e7d99f67baf6c9b35a0575ce71f8d5e1245a4"
+}

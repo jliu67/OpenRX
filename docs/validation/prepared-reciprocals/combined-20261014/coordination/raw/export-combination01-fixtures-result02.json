@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-10-14T20:49:26.598302+00:00",
+  "errors": 0,
+  "failures": 1,
+  "fixture_log": "/home/server/Documents/Codex/2026-10-11/task-2/reciprocal-combination-reconciliation-evidence/export-combination01-fixtures02.log",
+  "fixture_log_sha256": "2aa5ed1b64acdf1c8b8266c672b33212530a5f2de9d204d93d8abfe649b2150b",
+  "fixture_script_sha256": "4cf2abfa43669043352df5bb93004c7f98a8c5fecf17556c66ae63c256e44dd3",
+  "helper_path": "/home/server/Documents/Codex/2026-10-11/task-2/reciprocal-combination-reconciliation-evidence/export_combination01.py",
+  "helper_sha256": "1cf314f59f0c3332333584ef2109d1950b5db45c0a8b3f9cbbdf2cbfaad86683",
+  "scope": "Tiny temporary synthetic files/archives only; no real evidence/archive IO, scientific execution or independent review.",
+  "status": "failed_coauthor_helper_fixtures",
+  "tests": 19
+}

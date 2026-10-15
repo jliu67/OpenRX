@@ -1,0 +1,8 @@
+{
+  "root": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk",
+  "accepted_unchanged": 246,
+  "modified_or_added_files": 22,
+  "HDL_elaboration": "pass; checked identical RTL/bench bytes with corrected source list",
+  "native_syntax": "pass; identical pinned native/oracle bytes",
+  "heavy_payload": "not run; admission pending"
+}

@@ -1,0 +1,18 @@
+{
+  "passed": 11,
+  "scope": "tiny schema regression only; no science execution",
+  "tests": [
+    "accepted finalizer schema",
+    "reject status",
+    "reject rtl_modes",
+    "reject mapped_modes",
+    "reject synthesis_requested",
+    "reject source_unchanged_after_run",
+    "reject fixture_inputs_unchanged_after_run",
+    "reject invalid_parameter_cases",
+    "reject native_invalid_input_cases",
+    "reject mapping",
+    "reject full_profile_order"
+  ],
+  "wrapper_sha256": "d81a18d389496d97882fd0cab66eb6eb74c2b8c3dfbcb2bad442880b0f9ecd30"
+}

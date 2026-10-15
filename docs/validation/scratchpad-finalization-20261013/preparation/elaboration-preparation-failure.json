@@ -1,0 +1,10 @@
+{
+  "attempt01_source": "/tmp/openrx-scratchpad-finalizer-bai4qfzw",
+  "source_archive": "prepared-source01.tar.gz",
+  "check": "Icarus elaboration only, no simulation",
+  "returncode": 4,
+  "reason": "Driver supplied blake2_G/blake2_m_select explicitly although the preserved chain core includes them, causing duplicate declarations.",
+  "fix": "Remove duplicate explicit compiler inputs in a fresh per-attempt source. Original IP/RTL/native bytes unchanged.",
+  "native_syntax_check": "pass, no binary compiled or executed",
+  "corrected_source": "/tmp/openrx-scratchpad-finalizer-fixed-ak52i1dk"
+}

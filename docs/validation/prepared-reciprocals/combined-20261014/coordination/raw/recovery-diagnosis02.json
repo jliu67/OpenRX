@@ -1,0 +1,66 @@
+{
+  "schema": "openrx-combination-recovery-diagnosis-v1",
+  "original_execution": "20261014T194137Z-8451bfb57fac",
+  "original_execution_root": "/home/server/openrx-local/v1/executions/20261014T194137Z-8451bfb57fac",
+  "original_top_level_status": "PROCESS_FAILED",
+  "original_wrapper_returncode": 1,
+  "cause": "External wrapper assumes seed summary.status, but this accepted schema has no status key. KeyError after seed returncode0 prevented finalization launch.",
+  "usage_interruption_stopped_or_cancelled_payload": false,
+  "runner_integrity": {
+    "execution_id": "20261014T194137Z-8451bfb57fac",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_FAILED"
+  },
+  "source_postcheck_files": 3309,
+  "source_execute_masks_unchanged": true,
+  "scientific_provenance_input_count": 281,
+  "completed_commands": [
+    {
+      "label": "existing-and-focused-unit-tests",
+      "argv": [
+        "/usr/bin/python3.10",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "returncode": 0,
+      "wall_seconds": 46.81072810594924
+    },
+    {
+      "label": "regfile",
+      "argv": [
+        "/usr/bin/python3.10",
+        "-B",
+        "scripts/test_regfile_blake2b.py",
+        "--output",
+        "/home/server/openrx-local/v1/executions/20261014T194137Z-8451bfb57fac/combined-regfile",
+        "--synthesize"
+      ],
+      "returncode": 0,
+      "wall_seconds": 10538.08702027495
+    }
+  ],
+  "missing_scope": "finalization only",
+  "original_manifest_sha256": "728e8ca907f2522d09f9da66952b52dd87ce5e300a1be0cd77efa44176d0e469",
+  "original_receipt_sha256": "52e03b5aaf61d022951a660e58256b0797c6077c2c2b085a51226b86a979adbf",
+  "regfile_summary_sha256": "27d8c086904a3ef6a23c499766e66d07720fc1fd3a01e7b8d6adae6b2f847ae4",
+  "regfile_peak_kernel": {
+    "cpu.max": "600000 100000",
+    "memory.max": "4294967296",
+    "memory.swap.max": "2147483648",
+    "pids.max": "256",
+    "cpu.stat": "usage_usec 10561786987\nuser_usec 10542630406\nsystem_usec 19156580\ncore_sched.force_idle_usec 0\nnr_periods 105839\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "1097007104",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "0",
+    "pids.current": "2"
+  },
+  "preserved_failed_attempt": true,
+  "original_source_record_sha256": "71f4d10cd21c2718dc095256f4725ee21bc479fbaa904e41e2d6f7c8af220318",
+  "at_epoch": 1792093524.1945353
+}

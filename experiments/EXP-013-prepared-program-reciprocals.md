@@ -49,3 +49,35 @@ whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
 performance acceptance. Sources/complete outputs and superseded binding-only CI
 artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
 Independent exact-head review remains required; no merge. Compute slot released.
+
+
+## 2026-10-15 — PR70 combined-source recovery closeout
+
+[Task #69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70
+`35c2cae61092107acb2c684bbca308aca8fb280b` with merged main
+`5f28dd4363504ecf33a8f10451c53405773c564f`, preserving both parents and accepted
+PR65/68. Strict combined bindings retain every historical manifest, all 219
+original preparation inputs and 73 original sequence-regression inputs. Actual
+native/mapped CI gates remain unconditional.
+
+Verified server closeout covers 362 unit tests, seed18RTL/17mapped/3synthesis and
+finalizer41RTL/19mapped/3synthesis, with native bytes and mapped/RTL records exact.
+Original runner20261014T194137Z-8451bfb57fac remains PROCESS_FAILED: after unit/seed
+commands returned0, an external wrapper KeyError:status prevented finalization.
+Recovery20261015T194652Z-334cfc1d0428 ran only missing finalization from the same
+3309-file frozen source. Both full receipts, sources, outputs and failure survive;
+composite verification never relabels the original wrapper successful.
+
+[Combined evidence](../docs/validation/prepared-reciprocals/combined-20261014/README.md)
+binds commands, native/negative cases, complete archives, source/publication deltas
+and resource checks. Both payloads used actual600%CPU/4GiBRAM/2GiBswap/Tasks256;
+observed stage peaks1,097,007,104/1,921,708,032bytes, zero recorded swap/limit/OOM/
+throttle events. Inherited simulation commands are sequential; no wall-time
+throughput inference follows. Original prepared and sequence results are retained
+exact-input proof, not newly rerun suites. Full-v2/full prepared pipeline, actual
+dataset, calibrated timing and physical power remain unaccepted.
+
+Next: hosted verification and a new independent review of the final exact draft
+[PR #70](https://github.com/jliu67/OpenRX/pull/70) head, recorded on task #69. No own
+merge or new milestone is authorized. This interrupted integration closes here;
+recurring checks remain paused. Earlier dated sections retain their original context.

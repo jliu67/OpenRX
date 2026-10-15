@@ -1,0 +1,2036 @@
+{
+  "execution_id": "20261015T194652Z-334cfc1d0428",
+  "latest_event": {
+    "at": "2026-10-15T20:29:49.069699+00:00",
+    "previous_sha256": "1919bed65b29498f3ba4feba960c0fdcee7e23ebedca8e5a7c40637926fca404",
+    "process_status": "PROCESS_EXITED",
+    "sha256": "51076df83e9619b98be531191b949721ab53c10ac93d5a744a918611b999b540",
+    "status": "FINALIZED",
+    "systemd": {
+      "EXIT_CODE": "exited",
+      "EXIT_STATUS": "0",
+      "SERVICE_RESULT": "success"
+    }
+  },
+  "logs": [
+    "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/stdout.log",
+    "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/stderr.log"
+  ],
+  "receipt": {
+    "artifacts": [
+      {
+        "bytes": 351,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-commands.json",
+        "sha256": "a526ce9215e762a077f411e02a4fdbd9cb124aff5371f9fea84be8d277facfb3"
+      },
+      {
+        "bytes": 221,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-driver-postcheck.json",
+        "sha256": "c5211ded5df138982a70b4ff85304bdb58d4baeb5b0594e9f52d013358af94d2"
+      },
+      {
+        "bytes": 1305,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/LICENSE-BLAKE2-original",
+        "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+      },
+      {
+        "bytes": 1790,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/LICENSE-OpenRX-AES",
+        "sha256": "f238879baf3549d264e2213e4dfdd998289666ce9da8a140e8b000e45f3af472"
+      },
+      {
+        "bytes": 1561,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/LICENSE-RandomX",
+        "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+      },
+      {
+        "bytes": 31442,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/LICENSE-Yosys-simcells",
+        "sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51"
+      },
+      {
+        "bytes": 1303,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/LICENSE-secworks",
+        "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+      },
+      {
+        "bytes": 41161,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/artifacts.sha256.json",
+        "sha256": "b49b8cc40dc034e77a1874266de579f3f176b4ab770421c619ff718e4ec2cdf5"
+      },
+      {
+        "bytes": 52963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/commands.json",
+        "sha256": "1a20d6321c03802941784ea275c93c000012e360cd0019dda49e35d2651e3d13"
+      },
+      {
+        "bytes": 9152,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-mapped-256.log",
+        "sha256": "dbd1f953fa17b88639c6f2a76e222688f8379a5f4bb304a7c5a623d5b5116378"
+      },
+      {
+        "bytes": 1274,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-mapped-256.time.txt",
+        "sha256": "e83c70c34d2235e64a9ee3632410cb63186c8ba1796e6e8b9a0817a1766ac307"
+      },
+      {
+        "bytes": 9149,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-mapped-default.log",
+        "sha256": "81ce5a96334679f8c96da99c4f1459483b804bcf69be006b550aef7d483b1e0f"
+      },
+      {
+        "bytes": 1276,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-mapped-default.time.txt",
+        "sha256": "22e9fa4a5b1a264f2b9e1f716c9013c026b058d939260831bbdcb96f72ddc5a4"
+      },
+      {
+        "bytes": 0,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-native-oracle.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 1046,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-native-oracle.time.txt",
+        "sha256": "061317a7768adcccd58ec1252665ac4be5626283a88cf0fb3a99fd4d2173ab72"
+      },
+      {
+        "bytes": 1018,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-128.log",
+        "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d"
+      },
+      {
+        "bytes": 1251,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-128.time.txt",
+        "sha256": "42354d8334621e47f54ae98634665423f22309bdfe39438b6b2b4563305d591a"
+      },
+      {
+        "bytes": 1018,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-2097152.log",
+        "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d"
+      },
+      {
+        "bytes": 1259,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-2097152.time.txt",
+        "sha256": "18cc80bb80c8303129e68ed28055da240ceeedd08b8ae9739d4611f922433039"
+      },
+      {
+        "bytes": 1018,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-256.log",
+        "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d"
+      },
+      {
+        "bytes": 1251,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-256.time.txt",
+        "sha256": "a0bd3362811294aa109cfe7899e445cba0490a27d356768efbc469c44e39bf0c"
+      },
+      {
+        "bytes": 1018,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-4096.log",
+        "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d"
+      },
+      {
+        "bytes": 1253,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-4096.time.txt",
+        "sha256": "c326d3c5ca143fa00b283b5fa7963b616c1bb18923f6298f4f3f8c8a9824b702"
+      },
+      {
+        "bytes": 1018,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-64.log",
+        "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d"
+      },
+      {
+        "bytes": 1249,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/compile-rtl-64.time.txt",
+        "sha256": "aca2fe1f2c47fdb5b388f7c4fc18c3a47f83a7fc19a77752076af99d0624cdac"
+      },
+      {
+        "bytes": 12323,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/corpus.json",
+        "sha256": "f56390085e69c94ffb1146b9288e0e9dffb81e92f2b2c50e8aeeb46e40f9e79c"
+      },
+      {
+        "bytes": 1101,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/accepted-full-provenance.json",
+        "sha256": "bb308475f48d0e2deef997e619eb56e8d8864c7f443a7dd1d74c05c4ca517ce7"
+      },
+      {
+        "bytes": 18125,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/artifacts.sha256.json",
+        "sha256": "eec0c36f86eef0c612c8a2da1c6369d359f37a7532e10a49a5ad67d800039c39"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/aes-hash.hex",
+        "sha256": "e9a30f07e1dda9ff4ea8542ca8bbd28831ca5973aab43f8d3a00523f0a802bb8"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/artifacts.sha256.json",
+        "sha256": "b0fcc5588f61e4888ca542ade6b7f0aec8d93ba520fcbcaf910e6b8a14b979b3"
+      },
+      {
+        "bytes": 661,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/case.json",
+        "sha256": "f6809f5187e67fbe2d67925abce3578666e7a4aeef3e4f9d170c035f3ee5984c"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/digest32.hex",
+        "sha256": "43520269f5a5fb2a24e58af6d43acde21884dda90e200d6d1fa6010bfb8c7863"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/digest64.hex",
+        "sha256": "f477a76d9c100bb519c81cd2d349de7248b4512e4a6bc094c1e238544fc02d4f"
+      },
+      {
+        "bytes": 404,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/native-inputs.json",
+        "sha256": "7dea7ef12626c12c441110d08dad6da081701fa926e0418240f2bc41914158b4"
+      },
+      {
+        "bytes": 114,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/native-oracle.log",
+        "sha256": "c2aa66cf003825432d3a4972643f06f9d4187c5142449d1c87b1bdcb5a3c5fd4"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/register-file.bin",
+        "sha256": "8c76cd0cae51e0d9b9162266dffd7e82ecfb7f6b22b6eff73f60793de2be0018"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/rf-final.hex",
+        "sha256": "7d52af8d7a73d84539b91563e6865a43bea2572d620974b5b3b80d66d43159de"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/rf-in.hex",
+        "sha256": "2194ea8c8bc4088f67130bd7ed68aa8f705f1ff6d73896c97169fb7f123ce5fe"
+      },
+      {
+        "bytes": 128,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/scratchpad.bin",
+        "sha256": "44bbc8dda2ac61c2d859b51eec8ba66e25f12a9a1b421cc4361880c336275d99"
+      },
+      {
+        "bytes": 264,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/scratchpad.hex",
+        "sha256": "b9d53d8ce1b6fbf3502848e75a8c1fca4900a7233b2f11ac54f75bc6ceff0ec8"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/aes-hash.hex",
+        "sha256": "71ae93bc1f73245ad7b8cc3184eb6a5e7186f4244781c403ee8b5e3c30904a70"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/artifacts.sha256.json",
+        "sha256": "e32900c188156ba7515e369fbde0fdb8ea458adc0e0e0bf86a3e21777ce91da4"
+      },
+      {
+        "bytes": 670,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/case.json",
+        "sha256": "2084332beef1b9cd0d804ea2d95ed14da7dcdebfb99f16e9047860296584d5d4"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/digest32.hex",
+        "sha256": "528fe2d1eb525107b0235470bffeb31d907a17e0b99d3b862af3d63b9679e8ae"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/digest64.hex",
+        "sha256": "b60bb5ae74b4f88d5fffc88095a3ea448bacabadce47c1b4054645babe228c4a"
+      },
+      {
+        "bytes": 404,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/native-inputs.json",
+        "sha256": "7dea7ef12626c12c441110d08dad6da081701fa926e0418240f2bc41914158b4"
+      },
+      {
+        "bytes": 114,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/native-oracle.log",
+        "sha256": "c2aa66cf003825432d3a4972643f06f9d4187c5142449d1c87b1bdcb5a3c5fd4"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/register-file.bin",
+        "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/rf-final.hex",
+        "sha256": "0f0f9a732bac99904ab7442fc3acbc7a843d4af2cef70a23a9428e707f1b92d8"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/rf-in.hex",
+        "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7"
+      },
+      {
+        "bytes": 128,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/scratchpad.bin",
+        "sha256": "055828904759fb49cdb8d7af6d569bfdfcf235a277ec783e4eab63b2728b8dc8"
+      },
+      {
+        "bytes": 264,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/scratchpad.hex",
+        "sha256": "0432188dfdf81b5d632340e91277814c21fb0aad503bfcdb1de6c9a1c954522d"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/aes-hash.hex",
+        "sha256": "e2bd27013edff31076933e0f83a9cc8230bb4455e23f9891b445720cb9f2d0e6"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/artifacts.sha256.json",
+        "sha256": "0f8912b136ec446b24edaeaf1a2151678d91e9921d4199bd7d1f3ad888a7019e"
+      },
+      {
+        "bytes": 661,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/case.json",
+        "sha256": "72cf27703440bf3fcf52f6e0fb72d3beaf37842aed4accea340d65c7c430cc59"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/digest32.hex",
+        "sha256": "8d4df0edac9dbbc682fe7aa5a273df5734e18ace38a277da7cdcfce58ed8e7e9"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/digest64.hex",
+        "sha256": "d9e065343e74a88e6ecefa146b56f6734324939e35005826551317af82eb3762"
+      },
+      {
+        "bytes": 404,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/native-inputs.json",
+        "sha256": "7dea7ef12626c12c441110d08dad6da081701fa926e0418240f2bc41914158b4"
+      },
+      {
+        "bytes": 114,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/native-oracle.log",
+        "sha256": "c2aa66cf003825432d3a4972643f06f9d4187c5142449d1c87b1bdcb5a3c5fd4"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/rf-final.hex",
+        "sha256": "31dec8654861d6964c0774d82c9bb911a726025a19179e0f758fcae125cfb01e"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/rf-in.hex",
+        "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162"
+      },
+      {
+        "bytes": 128,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/scratchpad.bin",
+        "sha256": "38723a2e5e8a17aa7950dc008209944e898f69a7bd10a23c839d341e935fd5ca"
+      },
+      {
+        "bytes": 264,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/scratchpad.hex",
+        "sha256": "aba47d92818d0e5979b2b8a8e9317c189b09491c6b74876b470ff53d6a525eb0"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/aes-hash.hex",
+        "sha256": "931a2e4250d683501aa28c8a3aff8721f6537effd1992316c683760b109cee04"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/artifacts.sha256.json",
+        "sha256": "68fb601fda1a32350696d305b833dee5f6c17e2d9459aab107a3fa1e84aaf3d0"
+      },
+      {
+        "bytes": 662,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/case.json",
+        "sha256": "b1c30870861b2f55cac05a288e598b5d5a61280c99e3316cbd9b61bdf3cbf184"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/digest32.hex",
+        "sha256": "52d125cb14f0a3d396a4deaf1a2a3597b355b625b075ce37356a87929329076c"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/digest64.hex",
+        "sha256": "4d4da9b593f2017f33a181a38afe264417877e129a9050daf52c82fb329a3158"
+      },
+      {
+        "bytes": 405,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/native-inputs.json",
+        "sha256": "a4446a6dc7c42cac2c7b456022925d9cb54c668cae9a5ff3d3f95c4e4ba36ee0"
+      },
+      {
+        "bytes": 114,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/native-oracle.log",
+        "sha256": "166d99cda820ef5ee03a44dd71cee206a3d2f9ab6c0b0566638bd29786835ba6"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/register-file.bin",
+        "sha256": "cfda96c6a3d7e3e8fe328629d8d005dd832960382e65279ff617baee1eba55cc"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/rf-final.hex",
+        "sha256": "a9bf7be8440ba2f5acbd05575db0a60c6d1c7966fa9a25ace42f731bc5687835"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/rf-in.hex",
+        "sha256": "aa75fe5b4c058dc86d4af40f9602fca3e93bc88fa4bdb96056d64510a2636053"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/scratchpad.bin",
+        "sha256": "93414883e4b3ba640728cedacfc4d83ef3aeaff970829ea950b45e8b5e9cb519"
+      },
+      {
+        "bytes": 528,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/scratchpad.hex",
+        "sha256": "d750eb6ee957741abc73756e628ebfb24ea64a436f23c904f47b900343505e26"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/aes-hash.hex",
+        "sha256": "bfd3dac4f75eb42e9843991f1ff8c466e7119193f418035c9b36c908801043bd"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/artifacts.sha256.json",
+        "sha256": "3adc255d41aa42c43392f120543c15660fcb714e94aa9776bf46b4c7926cfa5b"
+      },
+      {
+        "bytes": 671,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/case.json",
+        "sha256": "dffe9b52e135e9232349069a992eee2c68dcf5203681af5809f0ceb467b873d5"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/digest32.hex",
+        "sha256": "b6c4c49b059b10f0d4ef9675d0e8adc6f8fa30ca464bc48c0a9022f40866ca1e"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/digest64.hex",
+        "sha256": "5b8e2a101b6bf1fe79266d5e4b7dc1f5c06923ca6c1a2c8ebdb9d7f0373aeb12"
+      },
+      {
+        "bytes": 405,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/native-inputs.json",
+        "sha256": "a4446a6dc7c42cac2c7b456022925d9cb54c668cae9a5ff3d3f95c4e4ba36ee0"
+      },
+      {
+        "bytes": 114,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/native-oracle.log",
+        "sha256": "166d99cda820ef5ee03a44dd71cee206a3d2f9ab6c0b0566638bd29786835ba6"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/register-file.bin",
+        "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/rf-final.hex",
+        "sha256": "eb124a0413e16efd2f77e55e7acdb81492305b65722587d447057bd4cb9b65a0"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/rf-in.hex",
+        "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/scratchpad.bin",
+        "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2"
+      },
+      {
+        "bytes": 528,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/scratchpad.hex",
+        "sha256": "5320c57eaf9ee011dbf7ccf0f3f9afcc9f6acdb155b08d3b4aec8686c29726db"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/aes-hash.hex",
+        "sha256": "72e95134b2f2c7efa565fa5597cfb3fb192427c02809296d6e84d8b3b6e9c6f0"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/artifacts.sha256.json",
+        "sha256": "19f59b52610e781bbaa8bb75e9a0a7230ef96122446c267403ff15d9e7c3d977"
+      },
+      {
+        "bytes": 662,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/case.json",
+        "sha256": "4dcd0477c6ec2c758d0586671df9f37507cdbbade7cd8a3e74572baac0f2f858"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/digest32.hex",
+        "sha256": "d129d7659f17a3a65e880d90dc05787161eafa08204ec407d667b7356882ede9"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/digest64.hex",
+        "sha256": "827f7b8c5a38af80483cf3cc9aa9256ad9edb486502b844be92d7c56ca3bf372"
+      },
+      {
+        "bytes": 405,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/native-inputs.json",
+        "sha256": "a4446a6dc7c42cac2c7b456022925d9cb54c668cae9a5ff3d3f95c4e4ba36ee0"
+      },
+      {
+        "bytes": 114,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/native-oracle.log",
+        "sha256": "166d99cda820ef5ee03a44dd71cee206a3d2f9ab6c0b0566638bd29786835ba6"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/rf-final.hex",
+        "sha256": "f5a48a1988625f3c4bed41434a7160591be4611914b36d3f8c74286aa5c78b14"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/rf-in.hex",
+        "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/scratchpad.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 528,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/scratchpad.hex",
+        "sha256": "2f5d66176fd2f0f1757f227bbddb0b44a55364165bfa012ecf098c0c25e85aa8"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/aes-hash.hex",
+        "sha256": "eb849481b5bdf4a2890bb744636ac47374ca1c44c5ff0e4012dcbca3ae5323fd"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/artifacts.sha256.json",
+        "sha256": "cdb04d73e6972732cb9632f8f301d1de97d9c77e31552a28d7a8e6ed88f64029"
+      },
+      {
+        "bytes": 667,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/case.json",
+        "sha256": "5e2f0a92938d1610b9a8018bf41b8a0d0f69049fd502a87e6231b959ea0119c5"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/digest32.hex",
+        "sha256": "8e615c5725ab425cb03f5646a17779b0d8c8686d0ed17dcd76684c48bb1b9eef"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/digest64.hex",
+        "sha256": "e27a547c80d4b43ba86499cc25ac1e889caf7b92ad5977f204790250a1422c85"
+      },
+      {
+        "bytes": 408,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/native-inputs.json",
+        "sha256": "bb245dc163f4cb4caef5f1aff26c4632f7689774ba56534b236982ef13292a13"
+      },
+      {
+        "bytes": 116,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/native-oracle.log",
+        "sha256": "c983ce8f0ef2e7f1b778fd435b46642ca7950e1035c887206891f6db195a5f3b"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/register-file.bin",
+        "sha256": "7f55abb7a70328281455cf34eb9c08a0c03c9dd0d300f5745ed1c54bca497fa3"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/rf-final.hex",
+        "sha256": "c277d2f28ea0d78b6c5d5165db197c45bea6b38f953c20f074201d4cbff21b2e"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/rf-in.hex",
+        "sha256": "c886b73da2913cc44312ef8ca2ea326bd7a931a726b67a6c3a87bb06724d7953"
+      },
+      {
+        "bytes": 4096,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/scratchpad.bin",
+        "sha256": "66b18c4b832149c13fae5163ca50c36db3cd8b8d8e8dc31a956ae89df3f31b10"
+      },
+      {
+        "bytes": 8448,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/scratchpad.hex",
+        "sha256": "73935c839cf81ba45d28b0b2554b0e9af2aead170f336fad29ff0f4d1c45388b"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/aes-hash.hex",
+        "sha256": "ca2b3d5481b3cbd2192c4178668b2c15b21f694fdb715365501817e1a048543b"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/artifacts.sha256.json",
+        "sha256": "122d26446ad6350772bdd83f3fa83e553b57129559e3d6d8f0ec83febaf2335e"
+      },
+      {
+        "bytes": 676,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/case.json",
+        "sha256": "20e53fbc2065e97d77f98766908fda1eda68a229bed3de4d32d6144aa895f03e"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/digest32.hex",
+        "sha256": "6bb27c25e44abc12f9beae947690a1433273d1877c91c030a70b2ab9339ac049"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/digest64.hex",
+        "sha256": "7d5051e3e0baab57d6594d6db28aff85a5d8480dacf313054c35d90f7587e309"
+      },
+      {
+        "bytes": 408,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/native-inputs.json",
+        "sha256": "bb245dc163f4cb4caef5f1aff26c4632f7689774ba56534b236982ef13292a13"
+      },
+      {
+        "bytes": 116,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/native-oracle.log",
+        "sha256": "c983ce8f0ef2e7f1b778fd435b46642ca7950e1035c887206891f6db195a5f3b"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/register-file.bin",
+        "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/rf-final.hex",
+        "sha256": "fb937807d52f64c7234a01f5931ae2f2e14d6f7308af931ebcd1ec5a81cccab3"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/rf-in.hex",
+        "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7"
+      },
+      {
+        "bytes": 4096,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/scratchpad.bin",
+        "sha256": "1c714b4c92d3aba3b9585b402f7f90ae7064e8bf090b0d9ae6c91c5095e55e5d"
+      },
+      {
+        "bytes": 8448,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/scratchpad.hex",
+        "sha256": "b4650275ae36ac620273e2662aef8bc7e0c1d2157d273a8ba5b210066cc6f4b9"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/aes-hash.hex",
+        "sha256": "054fab753426d2d835d2056f9947174d25596ab1f50890752315228d152d12f3"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/artifacts.sha256.json",
+        "sha256": "9d8b85926e45b5ef2a2a33787de5785a3b1f5aaefde7d8b6bda9fdaa018536e2"
+      },
+      {
+        "bytes": 667,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/case.json",
+        "sha256": "20ae5a83d04d4d6072d636447136fe7961c9741c54f483259c92e99169fae817"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/digest32.hex",
+        "sha256": "3ef5668bc11c49fe2649869ec4bff7aa6a3e28db3b6598b9a1a430cfeb773b62"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/digest64.hex",
+        "sha256": "f19e489dc7a4a60c6b01a1e85338f7b26de0d135a41b5e8b5a10469277f6b33b"
+      },
+      {
+        "bytes": 408,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/native-inputs.json",
+        "sha256": "bb245dc163f4cb4caef5f1aff26c4632f7689774ba56534b236982ef13292a13"
+      },
+      {
+        "bytes": 116,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/native-oracle.log",
+        "sha256": "c983ce8f0ef2e7f1b778fd435b46642ca7950e1035c887206891f6db195a5f3b"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/rf-final.hex",
+        "sha256": "0a441b664cbbd9d58adadf8f4ed94b0b587ab1ddeed674e18b6de853b5f291ee"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/rf-in.hex",
+        "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162"
+      },
+      {
+        "bytes": 4096,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/scratchpad.bin",
+        "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7"
+      },
+      {
+        "bytes": 8448,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/scratchpad.hex",
+        "sha256": "1dea72ca3b355389d1e0abc0a234565fc220a0b4a104eed5686fe57d375232b0"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/aes-hash.hex",
+        "sha256": "cbbba52e898cb56106a93e52c2eaac982ff82c6651974e37c512cd6d85fd9f8f"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/artifacts.sha256.json",
+        "sha256": "7795c600706953cfb6db8cbde0e0e12debb058d784bf6182fcb35e76ffa96833"
+      },
+      {
+        "bytes": 658,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/case.json",
+        "sha256": "ee7208a60c31f5af9a24dc8a06b2967de924455ee04af5ee906cec8a0cf9ab6c"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/digest32.hex",
+        "sha256": "65e02a9e7eb2a9c1609042704db62251ad06fdb2fb1bb5e587e855ac5bd2c68e"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/digest64.hex",
+        "sha256": "afdccc5007d02f211a6f20ecea110324d94cddd3e2b20e63f410541038601f81"
+      },
+      {
+        "bytes": 403,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/native-inputs.json",
+        "sha256": "875b1b836bea9cf6efc54acd84e81d54a13558d95ae7d3b38b5221de14103885"
+      },
+      {
+        "bytes": 113,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/native-oracle.log",
+        "sha256": "d24a426198e176ee28eacce8d489ca816eb6094e8d851da4f31de255cddb327f"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/register-file.bin",
+        "sha256": "ec09c33cbf50c256841d1f0dff89f2370338d507d8f96a4a37827244840e8d2f"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/rf-final.hex",
+        "sha256": "163851950b4cacde6f2db48e6709bfb28e55a02be0d264baca6bf1953dd2bca3"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/rf-in.hex",
+        "sha256": "9de9e697f5f9fc9858c251bb63f6ea3c39972c46cb6e593d41b5189ef72bdd69"
+      },
+      {
+        "bytes": 64,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/scratchpad.bin",
+        "sha256": "f6ffd95172096c0af345e0cbb4a1c1896e82713372e1c0c24d290604c1e028c2"
+      },
+      {
+        "bytes": 132,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/scratchpad.hex",
+        "sha256": "037f27a1b39efc040094c565d0f1f7c7a0eb7a4c84208d345bb66445dd076b8a"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/aes-hash.hex",
+        "sha256": "366b699522dbf5764485b80a5ed2b0f9f91b91c5e0a0657d56d60a6bbdc28cf0"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/artifacts.sha256.json",
+        "sha256": "ae6fa8b6f447edb06b718313e272f8b589006ac441d5a28c55fa2d3884add9a2"
+      },
+      {
+        "bytes": 667,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/case.json",
+        "sha256": "ab90a290eb741a2d13d214ae461eac69218a04bcc75874e0114ffe6d0ca41f3b"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/digest32.hex",
+        "sha256": "1ec2348e8f9106d09b99fce5122e4f63b271526ce12474ee3ca03d3cc6f60278"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/digest64.hex",
+        "sha256": "4ce6f10713c3150bd4b1724943348ab8343b290573bdf54328a125210af2a93f"
+      },
+      {
+        "bytes": 403,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/native-inputs.json",
+        "sha256": "875b1b836bea9cf6efc54acd84e81d54a13558d95ae7d3b38b5221de14103885"
+      },
+      {
+        "bytes": 113,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/native-oracle.log",
+        "sha256": "d24a426198e176ee28eacce8d489ca816eb6094e8d851da4f31de255cddb327f"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/register-file.bin",
+        "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/rf-final.hex",
+        "sha256": "24da00ffd6dd8ad628f83afeb7f1747e2cb343f69f24bef6a6a34ef3e08f765a"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/rf-in.hex",
+        "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7"
+      },
+      {
+        "bytes": 64,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/scratchpad.bin",
+        "sha256": "4e6b0b60b98bf1872c3f65a0e763a2ea4d3c097f54b32dde681333845d351116"
+      },
+      {
+        "bytes": 132,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/scratchpad.hex",
+        "sha256": "db082d262f689582edc4f29008580d7ec87404ae665379f7da498580c4d561f9"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/aes-hash.hex",
+        "sha256": "1ed267dc62e0763da574eb3b6bfe4eaf183d4b4acac0299812b11b84d65df194"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/artifacts.sha256.json",
+        "sha256": "189d55ee86fc3cbcbedf9d23acabc8b755ba3d15613e9198b4a24aba4b391004"
+      },
+      {
+        "bytes": 658,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/case.json",
+        "sha256": "ad2c32e26c07956c2fd3d3bace7cc954c93e74d0204e8cc9bb9c76a47335977a"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/digest32.hex",
+        "sha256": "55cdeee14dbbdae2a0b66962faabf52ca40324064ff67d1d0a6167d22e615945"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/digest64.hex",
+        "sha256": "e9d252d68e9f8cf9a3c138572bdc1ee10fc45664e7a03536299f3c4cf33a9475"
+      },
+      {
+        "bytes": 403,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/native-inputs.json",
+        "sha256": "875b1b836bea9cf6efc54acd84e81d54a13558d95ae7d3b38b5221de14103885"
+      },
+      {
+        "bytes": 113,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/native-oracle.log",
+        "sha256": "d24a426198e176ee28eacce8d489ca816eb6094e8d851da4f31de255cddb327f"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/rf-final.hex",
+        "sha256": "4a19c4a60a643ba1dbcc1a2c1642999f9f402d2c8cd4dc88c73b2f8f4566f4f5"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/rf-in.hex",
+        "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162"
+      },
+      {
+        "bytes": 64,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/scratchpad.bin",
+        "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b"
+      },
+      {
+        "bytes": 132,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/scratchpad.hex",
+        "sha256": "b6375e63cfe0d7600ebd406b6587424a96971688c39853152ebafe51a2e92c09"
+      },
+      {
+        "bytes": 12323,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/corpus.json",
+        "sha256": "f56390085e69c94ffb1146b9288e0e9dffb81e92f2b2c50e8aeeb46e40f9e79c"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/aes-hash.hex",
+        "sha256": "2fd896b8db3982abc1a6355e86cbce5f495350d5d5182c981d77588441e2d901"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/artifacts.sha256.json",
+        "sha256": "357ec59d052e2f5b38232b751249b8da093db9d6c5f3f2006537ebece879b2f3"
+      },
+      {
+        "bytes": 690,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/case.json",
+        "sha256": "3a3b09743650f1a87e372f3b1182b89d63c30dc5d02e2dc5ef273f0f7e26eb9c"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/digest32.hex",
+        "sha256": "632ecc7281beb26658fd508a3e1ab854ae756c39ab32711ebc341adae2127a1e"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/digest64.hex",
+        "sha256": "724efee949d666f0550141583358261b3b772c42450a6896b277631e69d9a13f"
+      },
+      {
+        "bytes": 417,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/native-inputs.json",
+        "sha256": "25c94e0c76eaf0a95dc371cb136c1f2252ccd4ee077c93c33a29ecbeeeb6329a"
+      },
+      {
+        "bytes": 122,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/native-oracle.log",
+        "sha256": "c45ba2f73dfac916aae733a8eb0564b756bb1337e3fbf5e8ea1feaf9794ab90b"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/register-file.bin",
+        "sha256": "4bd288682ffe0f5f2395ba9d3429149487f4af942bed2988337651edc6237c90"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/rf-final.hex",
+        "sha256": "4b3010fc173ffa622235da2c5fc5fc26840590c4e12964d4781531a54e60d462"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/rf-in.hex",
+        "sha256": "6986f467f8927477895fac086b5d6a76afd79c8c5ab4954ddf97fa453d637bd0"
+      },
+      {
+        "bytes": 2097152,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/scratchpad.bin",
+        "sha256": "3d246e1712b76da87f6914b0241a4189c0f72e768f9798a4d1ec58bbc87b5a7b"
+      },
+      {
+        "bytes": 4325376,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/scratchpad.hex",
+        "sha256": "e5061265e2cf3635e9cdf6c5b2093bb5ebf9373fce868a753a757b1a3775023c"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/aes-hash.hex",
+        "sha256": "9c37490697c9e80019cddda98b48c81e70f246c58096d5b828361d8464deab9b"
+      },
+      {
+        "bytes": 963,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/artifacts.sha256.json",
+        "sha256": "61eddf85a1349cca679473382d3e5bf2cbde39eba0d8704f4e00626ac0b0bae2"
+      },
+      {
+        "bytes": 681,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/case.json",
+        "sha256": "ce5314e63f93099a955f5983cda5d15c123b0a6718320129bb4cba2b24a78bb4"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/digest32.hex",
+        "sha256": "5f916940412c3557a74df017d3c8c83ecf7e5d835820b975fd370c8c55e88f85"
+      },
+      {
+        "bytes": 129,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/digest64.hex",
+        "sha256": "0231fa2bf6839c0bc8dc4d004363089f749054b3a10426043c61cd9cf490c7eb"
+      },
+      {
+        "bytes": 417,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/native-inputs.json",
+        "sha256": "25c94e0c76eaf0a95dc371cb136c1f2252ccd4ee077c93c33a29ecbeeeb6329a"
+      },
+      {
+        "bytes": 122,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/native-oracle.log",
+        "sha256": "c45ba2f73dfac916aae733a8eb0564b756bb1337e3fbf5e8ea1feaf9794ab90b"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/register-file.bin",
+        "sha256": "6e4025acdf05630bb79647e4021967ef8105f9d9487982fb19e94015e2de4c54"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/rf-final.hex",
+        "sha256": "7336e306a048627d03582ee7937c39bdf02bb65ce5dc673287ad2172fe573da7"
+      },
+      {
+        "bytes": 513,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/rf-in.hex",
+        "sha256": "508aa530ccf201636c1101828b44db811e670d5616492cb0bcae771ee2d7caf1"
+      },
+      {
+        "bytes": 2097152,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/scratchpad.bin",
+        "sha256": "aef9265384bbdd0d6060073ef7c215ff127a985c3a73d56743c7c27ad4cb1159"
+      },
+      {
+        "bytes": 4325376,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/scratchpad.hex",
+        "sha256": "36cfdc311af965116f1b97c0ceec493523b935c5fdb01ee5138f1c000269bf5b"
+      },
+      {
+        "bytes": 9927,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/native-commands.json",
+        "sha256": "fee701df06ba4248fdc875ec056988d607019dc94bc5451c2d8566be59d83923"
+      },
+      {
+        "bytes": 20051,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/source-bindings.json",
+        "sha256": "772d6664cdb18d9676a43ff2889449023ec2d81cf40f308b0c1c6916925d29f0"
+      },
+      {
+        "bytes": 32307,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/inputs.json",
+        "sha256": "d0f277cb9406fd46b2ddea3e369f40e15716f42a0eac68c46916f1583c54c1ce"
+      },
+      {
+        "bytes": 300,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-0.log",
+        "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3"
+      },
+      {
+        "bytes": 1096,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-0.time.txt",
+        "sha256": "e9fd252822df50eeeee3cf0ca932fbf75a8efc905f787ffa751da0dfac1e2025"
+      },
+      {
+        "bytes": 300,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-2097216.log",
+        "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3"
+      },
+      {
+        "bytes": 1102,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-2097216.time.txt",
+        "sha256": "bc833374306f9570715c6a07d76cd4d88cb266e408e29cad568db6fcaf23eef1"
+      },
+      {
+        "bytes": 300,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-63.log",
+        "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3"
+      },
+      {
+        "bytes": 1097,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-63.time.txt",
+        "sha256": "de0f01e78abd91143155caf312029594624556700e26fefc58dc68b4a55b5599"
+      },
+      {
+        "bytes": 300,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-65.log",
+        "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3"
+      },
+      {
+        "bytes": 1097,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid-parameter-65.time.txt",
+        "sha256": "ee0c9b99c22658e73b0aa778c0f545fca2f18cf46006b3e0a69d31fa56034b79"
+      },
+      {
+        "bytes": 31969050,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+        "sha256": "19a9fe3dbf13633859210249fda91f40cf328bbd0ba1101da53ca90aff2a4c59"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-prng-ideal.log",
+        "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc"
+      },
+      {
+        "bytes": 993,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-prng-ideal.time.txt",
+        "sha256": "35af803c58f9b443315f224b1cc3c1041336c6019ba7796f1a643a45a07653eb"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-prng-stalled.log",
+        "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1"
+      },
+      {
+        "bytes": 996,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-prng-stalled.time.txt",
+        "sha256": "1387a3fbf222b6e9619f7108424537e84d1b154cc9177c62308607ec5f943c46"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-walking-ideal.log",
+        "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc"
+      },
+      {
+        "bytes": 996,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-walking-ideal.time.txt",
+        "sha256": "b548f5e1a7b52bd6c31577e53337c153553b4a429f4b0def76788406c48de209"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-walking-stalled.log",
+        "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1"
+      },
+      {
+        "bytes": 998,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-walking-stalled.time.txt",
+        "sha256": "c509413e853d210efb8bfc4233b84f298d6d262bae1a19c6b5f5671e074be3e8"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-zero-ideal.log",
+        "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc"
+      },
+      {
+        "bytes": 998,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-zero-ideal.time.txt",
+        "sha256": "b27d8641b93adca7fba6fc40b4d2184522d8d11a449c256a4f49021ea693601c"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-zero-stalled.log",
+        "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1"
+      },
+      {
+        "bytes": 995,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-bounded-256-zero-stalled.time.txt",
+        "sha256": "e109e36b57f0da9e8e6ee626537e0dc966af0a6f12fd05f776fbb35ff108db99"
+      },
+      {
+        "bytes": 553,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-error_first.log",
+        "sha256": "569b665243ccac50852efb2e2da2ae61fa505afa0ded9799db9c5e09686457fe"
+      },
+      {
+        "bytes": 1002,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-error_first.time.txt",
+        "sha256": "c3564c57cd393792a3531f629afb040a3b1c42f5eaeb6bfd04e11dc654b003dd"
+      },
+      {
+        "bytes": 554,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-error_last.log",
+        "sha256": "f8ecd39cce2ac3c13e1e77abc4e19c790482a74e4a5a05e734c800740d286101"
+      },
+      {
+        "bytes": 1001,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-error_last.time.txt",
+        "sha256": "94a9045db3f226b36ef2d1b602f09013d68542f86870952e67ebb309595788cc"
+      },
+      {
+        "bytes": 546,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-held.log",
+        "sha256": "52fdece9ebd54a3f3db53b2c0acc2b06d71348fefe523f2dbe743ef1d7851270"
+      },
+      {
+        "bytes": 995,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-held.time.txt",
+        "sha256": "fbd0a8a885bd019303293cfecd2082f13f304c43ec7209359d86eadb3c1aa0a1"
+      },
+      {
+        "bytes": 549,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-invalid.log",
+        "sha256": "55d89c55f10600ebccade117a6b9701bfa0c54098fdb5479a6e204ff596d67bc"
+      },
+      {
+        "bytes": 998,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-invalid.time.txt",
+        "sha256": "40e856b08fbb9bab4120b6d0b01c3348183432a89300a7d57af2264fc7bc2bd0"
+      },
+      {
+        "bytes": 551,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_aes.log",
+        "sha256": "0cecde3aa491535e7f53d498517ab3a1940dfe765651e74c18dec03c59c87e48"
+      },
+      {
+        "bytes": 1000,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_aes.time.txt",
+        "sha256": "755bfa10349fd10bc2db4e729b03764e01c26afc9bd352343a60535d7f357a17"
+      },
+      {
+        "bytes": 556,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_hash.log",
+        "sha256": "b7f61a62cea07dc51fb346ee0d7b3b9af4a599ffbdc2913ccbab8f295d8f1def"
+      },
+      {
+        "bytes": 1001,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_hash.time.txt",
+        "sha256": "8e7aef109df006b182ffb5c63d1b35a581dd9167cdec469cb0af711f6b441316"
+      },
+      {
+        "bytes": 553,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_read.log",
+        "sha256": "7ed96c43a4155dd33471c719cf74118ad95700a1441f05a1cc6157f2a752903c"
+      },
+      {
+        "bytes": 1001,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_read.time.txt",
+        "sha256": "9f207873339f2fdd789c7344f1a7dcf7477b59f735d4fcd448f1de3bdbb2cedc"
+      },
+      {
+        "bytes": 551,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_req.log",
+        "sha256": "03e547eb1e77c13806cabd21fa45d77ce2a7629ca31b1ed323e2abbd64b24e4f"
+      },
+      {
+        "bytes": 1000,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_req.time.txt",
+        "sha256": "e2f18326d3a31a789259fd528a0a2cb74552d3eecf6f23ed1256cc26cf4080bf"
+      },
+      {
+        "bytes": 559,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_return.log",
+        "sha256": "29986eac5fa6a21ca26e2205fd8fb443a4d56043364428374ac0de93b435a76e"
+      },
+      {
+        "bytes": 1004,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-control-reset_return.time.txt",
+        "sha256": "672467e25115bd36f29c8839b00dc484bc04ba8cc43f9f59527f9f5e3b940b92"
+      },
+      {
+        "bytes": 551,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-error_first.log",
+        "sha256": "2d02b0e9c861183526c701eb60c5398f3e262d85d8a15133da85f72e36436b41"
+      },
+      {
+        "bytes": 1005,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-error_first.time.txt",
+        "sha256": "b222db04d18c3026188a3b6ce8ec1126bfb2677405ad99ccd131b4a0b6f140f9"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-invalid.log",
+        "sha256": "80618a35d9c653067ca4c372597cbb3526847e7a6f24655fccede1e3dfc7dd0f"
+      },
+      {
+        "bytes": 1002,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-invalid.time.txt",
+        "sha256": "f282a6887fa197a6980d216dae666434790d9ea6738ba3d42d33345eabbac889"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-reset_read.log",
+        "sha256": "af02f426e185043942ec5d7421dc050a02b4e713437806665a2e3316af12e77b"
+      },
+      {
+        "bytes": 1004,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-reset_read.time.txt",
+        "sha256": "0501337c4883a9710089c0026f1a10189a1ecd01bcd04955f549f8609c5b2462"
+      },
+      {
+        "bytes": 549,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-reset_req.log",
+        "sha256": "4718f24affd28d1ed13e6159406c38787fbd442b6b882edced036cb9475f95ce"
+      },
+      {
+        "bytes": 1003,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default-reset_req.time.txt",
+        "sha256": "e5f67c053087a8ad4ad1b4ac634d2a7eee8dbc69ef15969dd6817432eb5db55c"
+      },
+      {
+        "bytes": 31965299,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default.vvp",
+        "sha256": "a582309908fb1a4ecbfe833eb9854a41bf65ea65d1f1a5da18a6b96c0218ee58"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/0/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 0,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/0/scratchpad.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/1/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 16,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/1/scratchpad.bin",
+        "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/2/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 65,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/2/scratchpad.bin",
+        "sha256": "98ce42deef51d40269d542f5314bef2c7468d401ad5d85168bfab4c0108f75f7"
+      },
+      {
+        "bytes": 256,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/3/register-file.bin",
+        "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+      },
+      {
+        "bytes": 2097216,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/3/scratchpad.bin",
+        "sha256": "734eaa082fbf4bfd5114cb37fa168bde405bd467e8d8bca66a7e4a7cc59233e1"
+      },
+      {
+        "bytes": 255,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/4/register-file.bin",
+        "sha256": "80bd5cb5a9ca35dcdea1d59b5f1778f4114f6215af38004a02a99a1d37383648"
+      },
+      {
+        "bytes": 64,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/4/scratchpad.bin",
+        "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b"
+      },
+      {
+        "bytes": 257,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/5/register-file.bin",
+        "sha256": "6c934d0cdf9dba94b474d6d1929f16739bd9a8ed31d0c3bcaf82c283fb7a3568"
+      },
+      {
+        "bytes": 64,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/5/scratchpad.bin",
+        "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b"
+      },
+      {
+        "bytes": 83,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-0.log",
+        "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e"
+      },
+      {
+        "bytes": 1234,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-0.time.txt",
+        "sha256": "2771a20ba6d39d59b897961d499fe6727c0fd0b2b75325f318cfdfc73ba44dec"
+      },
+      {
+        "bytes": 83,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-1.log",
+        "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e"
+      },
+      {
+        "bytes": 1234,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-1.time.txt",
+        "sha256": "0201d3f8a96562df151e4c9aaa836d22108a1e9da91eddf3369f203b7a545b4b"
+      },
+      {
+        "bytes": 83,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-2.log",
+        "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e"
+      },
+      {
+        "bytes": 1234,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-2.time.txt",
+        "sha256": "942e48e5799cd0762ee67f972ab8412a8951f3376945cc2762f4c2f834ef09bf"
+      },
+      {
+        "bytes": 83,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-3.log",
+        "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e"
+      },
+      {
+        "bytes": 1234,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-3.time.txt",
+        "sha256": "519399df3a41fe8ee52d5c2245e3cb88349c8a900e1dc370082559257f0e8ac4"
+      },
+      {
+        "bytes": 44,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-4.log",
+        "sha256": "4c340d10dd4d97ce99a1a40ebc87028b87d0f47ec0b0742fbb765883f9d42886"
+      },
+      {
+        "bytes": 1234,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-4.time.txt",
+        "sha256": "dd4f9bbe00bcbae119e395e712033b73bbd4d0c002091fa93e52f93ff1eb83c7"
+      },
+      {
+        "bytes": 44,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-5.log",
+        "sha256": "4c340d10dd4d97ce99a1a40ebc87028b87d0f47ec0b0742fbb765883f9d42886"
+      },
+      {
+        "bytes": 1234,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid-5.time.txt",
+        "sha256": "152d7a52911776e4c557e5001855f208ff7adbb56c5850491bfbf44ceb714ddb"
+      },
+      {
+        "bytes": 62921351,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-bounded256.json",
+        "sha256": "a173cc3f889e8ce7ebc1c0f3cb5863c53550a83380113cece8825e9a822798c2"
+      },
+      {
+        "bytes": 7468279,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-bounded256.v",
+        "sha256": "8439e0c0bfeb67237195771411e737e2e5be13d77710eeced6139ea21a7e3590"
+      },
+      {
+        "bytes": 62914082,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-default.json",
+        "sha256": "747b321e77682f88d73dc982d6dbeeedd9464f5b1af5d8d803bdd77d906eca75"
+      },
+      {
+        "bytes": 7467450,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-default.v",
+        "sha256": "8f59b843d0dfb547d38e7c9563e6a0f175108533ffd6bed4338ac6c7d8c50fe6"
+      },
+      {
+        "bytes": 25278010,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-scanner-default.json",
+        "sha256": "b98f25c4aa8250a56e90c2c8475bceff7da9a8be88254adf3145fd6cf726db0b"
+      },
+      {
+        "bytes": 2607152,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-scanner-default.v",
+        "sha256": "6d65d5f593168e563c9a6dee4d3f69930bbe8f2469360ba6768a9adc2466fff1"
+      },
+      {
+        "bytes": 35134,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/pass-records.json",
+        "sha256": "00db686be2db3e3881f9c9166cc3b61d1dee816b3b3d7b5ddcaf615ef598a352"
+      },
+      {
+        "bytes": 46867,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/preserved-inputs.json",
+        "sha256": "eeae2d04c1618d9ecf5d800fbbf2e15b67f82e0a2aae3a7b5233f600142eda82"
+      },
+      {
+        "bytes": 676592,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+        "sha256": "080f74a9a8c2ac73d98dac3278661dd62dc91b217f8360ecf614680935af20d9"
+      },
+      {
+        "bytes": 676709,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+        "sha256": "7ac7468ad67e16d8b3c95b7b3c9ecc92d408f6c5776da7c2e2e9f3d13fb94d29"
+      },
+      {
+        "bytes": 676610,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+        "sha256": "3e50f3f157c1150e4107714e773fe38d24a683118268b88ce43571ba5823e4e5"
+      },
+      {
+        "bytes": 676634,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+        "sha256": "71e8b9866f228e6017f61bd0084476ef4727ff6816176467ea2aee987e4bf1d4"
+      },
+      {
+        "bytes": 676586,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+        "sha256": "c8ad357c17f05c85df8d57a17ce2383b47dc4f29e8a22248600ba21b05aa796f"
+      },
+      {
+        "bytes": 542,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-prng-ideal.log",
+        "sha256": "1bd0e44d02fe2ca67b152c6342e0ee631361b37352155c531aec386a9bb89001"
+      },
+      {
+        "bytes": 986,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-prng-ideal.time.txt",
+        "sha256": "693f125f5ac4f8bd7e8e9a231b3616f91942c9d753e89a6e3183370fcb026d53"
+      },
+      {
+        "bytes": 546,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-prng-stalled.log",
+        "sha256": "bfe572eee2e1aea23c33bdc7e6c3870e11d8332f103ceed39e7ffafbc8c8afe2"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-prng-stalled.time.txt",
+        "sha256": "f601aa1bd6d8be786e37e82780c737d5dd0d2eb43f61b9ff235a188e98399e4a"
+      },
+      {
+        "bytes": 542,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-walking-ideal.log",
+        "sha256": "1bd0e44d02fe2ca67b152c6342e0ee631361b37352155c531aec386a9bb89001"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-walking-ideal.time.txt",
+        "sha256": "c44ba9e8080bd91e4f08568239c2592d73a294175b235ed77517e78b66b830c3"
+      },
+      {
+        "bytes": 546,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-walking-stalled.log",
+        "sha256": "bfe572eee2e1aea23c33bdc7e6c3870e11d8332f103ceed39e7ffafbc8c8afe2"
+      },
+      {
+        "bytes": 992,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-walking-stalled.time.txt",
+        "sha256": "f86234aafd56380fd5d5c67969ee280d331ea1e308ea7292fddc0db5e671184f"
+      },
+      {
+        "bytes": 542,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-zero-ideal.log",
+        "sha256": "1bd0e44d02fe2ca67b152c6342e0ee631361b37352155c531aec386a9bb89001"
+      },
+      {
+        "bytes": 987,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-zero-ideal.time.txt",
+        "sha256": "2fac42baf09fa787c45e59fb1f366b3c1ea23fcaf35036bdff5dc5d13ab4fcc9"
+      },
+      {
+        "bytes": 546,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-zero-stalled.log",
+        "sha256": "bfe572eee2e1aea23c33bdc7e6c3870e11d8332f103ceed39e7ffafbc8c8afe2"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-128-zero-stalled.time.txt",
+        "sha256": "5bdda534da4187efd2d948a4ec1f9935d13af2202c7879a6c526a629aef9d33c"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-prng-ideal.log",
+        "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc"
+      },
+      {
+        "bytes": 987,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-prng-ideal.time.txt",
+        "sha256": "0638e41d1a5a9f6ed69cba0e8aad5503e297bf4c7027febc0b06e251f8206de7"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-prng-stalled.log",
+        "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-prng-stalled.time.txt",
+        "sha256": "a0f4f9c67ae0b1121325d3ce42f45294532966bbcdba50ae85c44775a4f0437c"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-walking-ideal.log",
+        "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-walking-ideal.time.txt",
+        "sha256": "4fd4473efaaeaa0339235047ecfd8bdaa4a8febe1cd72f44a9916f39e992a6ce"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-walking-stalled.log",
+        "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1"
+      },
+      {
+        "bytes": 991,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-walking-stalled.time.txt",
+        "sha256": "2a5bf83fe44cb06768a51b0e4f35b4412dd94ee6205f08d925e86ab6c0115013"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-zero-ideal.log",
+        "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc"
+      },
+      {
+        "bytes": 986,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-zero-ideal.time.txt",
+        "sha256": "229baa1116fa5599291b14267520e7ce3ebcd9d087ce8f60f9f1c577d7693661"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-zero-stalled.log",
+        "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-256-zero-stalled.time.txt",
+        "sha256": "7e25f3f23db9e57c8e556c5473f2e02fac64d6317dcb714a57d96a4a7806b93e"
+      },
+      {
+        "bytes": 552,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-prng-ideal.log",
+        "sha256": "ca52bd597dd3e526ee65e096d6677eabb86c7c8bee7c38f8c4fd85d06d2b45e0"
+      },
+      {
+        "bytes": 990,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-prng-ideal.time.txt",
+        "sha256": "905404dc5fc805102efa3d356c6e71153416b1be0a6296099a646504dfab13bd"
+      },
+      {
+        "bytes": 558,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-prng-stalled.log",
+        "sha256": "29752a920c7d609fc6246b38a9d3e584fdfa427eb8cf468f6e51683712a2909d"
+      },
+      {
+        "bytes": 990,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-prng-stalled.time.txt",
+        "sha256": "aaf360862984f462746cddc61f17c92757e448f6f482bd93c357f8761e4e39bd"
+      },
+      {
+        "bytes": 552,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-walking-ideal.log",
+        "sha256": "ca52bd597dd3e526ee65e096d6677eabb86c7c8bee7c38f8c4fd85d06d2b45e0"
+      },
+      {
+        "bytes": 992,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-walking-ideal.time.txt",
+        "sha256": "2087a005d7f81bbff311f787d45348bc4694766c9355f94424f80136be25fe63"
+      },
+      {
+        "bytes": 558,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-walking-stalled.log",
+        "sha256": "29752a920c7d609fc6246b38a9d3e584fdfa427eb8cf468f6e51683712a2909d"
+      },
+      {
+        "bytes": 993,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-walking-stalled.time.txt",
+        "sha256": "221ec11b653d2e0a4618ca637ddf7a55964db0386c948adaef46f060b12e6166"
+      },
+      {
+        "bytes": 552,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-zero-ideal.log",
+        "sha256": "ca52bd597dd3e526ee65e096d6677eabb86c7c8bee7c38f8c4fd85d06d2b45e0"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-zero-ideal.time.txt",
+        "sha256": "5b29f9ce367ca486c108c2deab18e16c3cb73017b268dd62993982809e25ad44"
+      },
+      {
+        "bytes": 558,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-zero-stalled.log",
+        "sha256": "29752a920c7d609fc6246b38a9d3e584fdfa427eb8cf468f6e51683712a2909d"
+      },
+      {
+        "bytes": 991,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-4096-zero-stalled.time.txt",
+        "sha256": "02f7827be1344406d20dc4319abf252ebc2838bf5ab615db7c8437f7992050e7"
+      },
+      {
+        "bytes": 540,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-prng-ideal.log",
+        "sha256": "8c7467c8ea96644afc09cdb91c4e52a5bb9292743c23f208b01b237763bb8b45"
+      },
+      {
+        "bytes": 984,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-prng-ideal.time.txt",
+        "sha256": "e376650db1893e6752252f4eae7afe8b8eed64bc107fb30f0ec2e059aa91f2f6"
+      },
+      {
+        "bytes": 544,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-prng-stalled.log",
+        "sha256": "ed839ed0158ceb7a897e1bf3ea41a65f10a390b8d7ec470534d5f4e645863976"
+      },
+      {
+        "bytes": 987,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-prng-stalled.time.txt",
+        "sha256": "d8746de67c98b9373c68fbc66e78f3f13e77ffa9d96f7b2f6f5b8b0ab365759e"
+      },
+      {
+        "bytes": 540,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-walking-ideal.log",
+        "sha256": "8c7467c8ea96644afc09cdb91c4e52a5bb9292743c23f208b01b237763bb8b45"
+      },
+      {
+        "bytes": 987,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-walking-ideal.time.txt",
+        "sha256": "ecc8d225702f99da48efabad936e8dcb801bf70be69da68eb59c0acf5631d42a"
+      },
+      {
+        "bytes": 544,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-walking-stalled.log",
+        "sha256": "ed839ed0158ceb7a897e1bf3ea41a65f10a390b8d7ec470534d5f4e645863976"
+      },
+      {
+        "bytes": 989,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-walking-stalled.time.txt",
+        "sha256": "2c642d16f7fa8ed1ca6c03376c35f7b760e362b219495ecde9c74c96231c1313"
+      },
+      {
+        "bytes": 540,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-zero-ideal.log",
+        "sha256": "8c7467c8ea96644afc09cdb91c4e52a5bb9292743c23f208b01b237763bb8b45"
+      },
+      {
+        "bytes": 984,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-zero-ideal.time.txt",
+        "sha256": "1545c101e98702e168f1b9d29d5db46e4b780b0cea4e23570d00622882acaa18"
+      },
+      {
+        "bytes": 544,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-zero-stalled.log",
+        "sha256": "ed839ed0158ceb7a897e1bf3ea41a65f10a390b8d7ec470534d5f4e645863976"
+      },
+      {
+        "bytes": 987,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-bounded-64-zero-stalled.time.txt",
+        "sha256": "67df399fe6668fbfc2be5e43f15e2a22bca625decb84b8d926f6f7fecfe706c0"
+      },
+      {
+        "bytes": 553,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-error_first.log",
+        "sha256": "569b665243ccac50852efb2e2da2ae61fa505afa0ded9799db9c5e09686457fe"
+      },
+      {
+        "bytes": 995,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-error_first.time.txt",
+        "sha256": "e2b5d77e9d144497809fabbe1ac755bf581f7ebd4c8cde72cfc391a98be161f5"
+      },
+      {
+        "bytes": 554,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-error_last.log",
+        "sha256": "f8ecd39cce2ac3c13e1e77abc4e19c790482a74e4a5a05e734c800740d286101"
+      },
+      {
+        "bytes": 995,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-error_last.time.txt",
+        "sha256": "78e1a5eaec58bb6b80788f1d14767382d245a228c9593c5312d39959a3e4d27f"
+      },
+      {
+        "bytes": 546,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-held.log",
+        "sha256": "52fdece9ebd54a3f3db53b2c0acc2b06d71348fefe523f2dbe743ef1d7851270"
+      },
+      {
+        "bytes": 988,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-held.time.txt",
+        "sha256": "f548963361e3a83e44644066f2ce095dfb6405d6d09e7819bba80ce4f96095eb"
+      },
+      {
+        "bytes": 549,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-invalid.log",
+        "sha256": "55d89c55f10600ebccade117a6b9701bfa0c54098fdb5479a6e204ff596d67bc"
+      },
+      {
+        "bytes": 992,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-invalid.time.txt",
+        "sha256": "41acdc78316913a5d9842bdb2bb45c094d7716acd8ef9beead723c59f9da62bf"
+      },
+      {
+        "bytes": 551,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_aes.log",
+        "sha256": "0cecde3aa491535e7f53d498517ab3a1940dfe765651e74c18dec03c59c87e48"
+      },
+      {
+        "bytes": 994,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_aes.time.txt",
+        "sha256": "2fa438a5be6d23953f680e84b35a8e73a3f84557ceaaf77b91835b5f696681af"
+      },
+      {
+        "bytes": 556,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_hash.log",
+        "sha256": "b7f61a62cea07dc51fb346ee0d7b3b9af4a599ffbdc2913ccbab8f295d8f1def"
+      },
+      {
+        "bytes": 995,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_hash.time.txt",
+        "sha256": "cd9170a72d7a700a4b950d47a624a96b52606a541269ac054ae46eb25e3e2905"
+      },
+      {
+        "bytes": 553,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_read.log",
+        "sha256": "7ed96c43a4155dd33471c719cf74118ad95700a1441f05a1cc6157f2a752903c"
+      },
+      {
+        "bytes": 994,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_read.time.txt",
+        "sha256": "bff92e49389a3bb0024a5d019524a34753cd5d4860df2d2d10774d65f60e4be8"
+      },
+      {
+        "bytes": 551,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_req.log",
+        "sha256": "03e547eb1e77c13806cabd21fa45d77ce2a7629ca31b1ed323e2abbd64b24e4f"
+      },
+      {
+        "bytes": 994,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_req.time.txt",
+        "sha256": "6f1eb5dd0608c714b7b9a995251dcc85942f7e4846a56a7c4a53c80e74cdf963"
+      },
+      {
+        "bytes": 559,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_return.log",
+        "sha256": "29986eac5fa6a21ca26e2205fd8fb443a4d56043364428374ac0de93b435a76e"
+      },
+      {
+        "bytes": 996,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-control-reset_return.time.txt",
+        "sha256": "6e40d8a7c092aa28f6f5a2b6df276248323f8597c638fbf4791a5079e76ad819"
+      },
+      {
+        "bytes": 551,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-error_first.log",
+        "sha256": "2d02b0e9c861183526c701eb60c5398f3e262d85d8a15133da85f72e36436b41"
+      },
+      {
+        "bytes": 1000,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-error_first.time.txt",
+        "sha256": "952ecc0b1fe15dc0060e4e160dec4910da6e8ca687f2e3aa0300ae82acce2348"
+      },
+      {
+        "bytes": 547,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-invalid.log",
+        "sha256": "80618a35d9c653067ca4c372597cbb3526847e7a6f24655fccede1e3dfc7dd0f"
+      },
+      {
+        "bytes": 996,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-invalid.time.txt",
+        "sha256": "ff26663cdc3b7a1d19acb452133757e0e50114c202dce164d44de20d42cd73f8"
+      },
+      {
+        "bytes": 550,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-reset_read.log",
+        "sha256": "af02f426e185043942ec5d7421dc050a02b4e713437806665a2e3316af12e77b"
+      },
+      {
+        "bytes": 999,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-reset_read.time.txt",
+        "sha256": "33c0496010f494d613b5c3b03447c6a05b3afc9028954d648789df3146e882fe"
+      },
+      {
+        "bytes": 549,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-reset_req.log",
+        "sha256": "4718f24affd28d1ed13e6159406c38787fbd442b6b882edced036cb9475f95ce"
+      },
+      {
+        "bytes": 998,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-default-reset_req.time.txt",
+        "sha256": "3f580569e9133e8027c5e1a34f205cfb92b2204cd34a160800b9688ece789659"
+      },
+      {
+        "bytes": 573,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-0-ideal.log",
+        "sha256": "81840c76b03305060ab395d535df72a0340a1dfb98f9bad9481b0b946f9d28bc"
+      },
+      {
+        "bytes": 1001,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-0-ideal.time.txt",
+        "sha256": "5b6ac0f0ffbce1f7f4b454fd7a90d82111333ad0e3eeac5aedc9c1192d296e1c"
+      },
+      {
+        "bytes": 582,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-1-stalled.log",
+        "sha256": "89b5583f078209395194f909d9cfc2c27da8ccaabb83ce2749390e7216d6cf32"
+      },
+      {
+        "bytes": 996,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-1-stalled.time.txt",
+        "sha256": "c8e5fe3bf7aec1f8641bf03a80620c947914ec996863f54494873c1d933ced2c"
+      },
+      {
+        "bytes": 573,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-2-ideal.log",
+        "sha256": "81840c76b03305060ab395d535df72a0340a1dfb98f9bad9481b0b946f9d28bc"
+      },
+      {
+        "bytes": 994,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-2-ideal.time.txt",
+        "sha256": "6d12110b337475dd9368652d5a677011c15d3b67c676bb855d98003ecd679398"
+      },
+      {
+        "bytes": 582,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-3-stalled.log",
+        "sha256": "89b5583f078209395194f909d9cfc2c27da8ccaabb83ce2749390e7216d6cf32"
+      },
+      {
+        "bytes": 1002,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-full-3-stalled.time.txt",
+        "sha256": "a6fd55a43135e786bcdbf9ddfc59e1f087d715fbb4c5924b3a1d419b78c5ea1e"
+      },
+      {
+        "bytes": 50432,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+        "sha256": "4fd9d56be1370102b79e356ef9cb1edc8596e248dc5b947705c6ffa0afbb9473"
+      },
+      {
+        "bytes": 1504,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/staging-guards.log",
+        "sha256": "58d31ef6b0caee3001d0c7a2f8e3c287b861f6c87c575171c6f006c1505fcdbf"
+      },
+      {
+        "bytes": 804,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/staging-guards.time.txt",
+        "sha256": "3bf89a1b351e013105243c38977f465a23ea08f609d5054ff35908830aea1516"
+      },
+      {
+        "bytes": 1080,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/stat-finalizer-bounded256.txt",
+        "sha256": "50793bc55f1b5f75c788cf88d9da41c3445e0f98d9555b409692b1dad7430f83"
+      },
+      {
+        "bytes": 1080,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/stat-finalizer-default.txt",
+        "sha256": "00455a5e68008030fe722368f918aa000351350ca18e2d4a9a513dbdbf6e5d89"
+      },
+      {
+        "bytes": 961,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/stat-scanner-default.txt",
+        "sha256": "bebe445384f04bf7bc303de1be3ea3d2acae76c4b960e20a222b07d9d2ed1a57"
+      },
+      {
+        "bytes": 90443,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/summary.json",
+        "sha256": "69d227b1def11d438da490d548adbb57a9c3ff2e37d2e28b7469b100d533dde8"
+      },
+      {
+        "bytes": 9755752,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/synth-finalizer-bounded256.log",
+        "sha256": "90ec4f2175f424af414b9317ec714b5c739246f354950592fe6733452addcd8c"
+      },
+      {
+        "bytes": 1582,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/synth-finalizer-bounded256.time.txt",
+        "sha256": "71d2490780d36bce386176cd507c8dd3a7901b6631490b1c52e4dc8c3be83fce"
+      },
+      {
+        "bytes": 9755423,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/synth-finalizer-default.log",
+        "sha256": "832276f053b01c1275c2b542223924fb72268f864a1c23fce74925638fcc229e"
+      },
+      {
+        "bytes": 1574,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/synth-finalizer-default.time.txt",
+        "sha256": "eac0d4104da065061cf6dc27c05f1d64cb1a90d563ceda5f22835ad516061f98"
+      },
+      {
+        "bytes": 7550281,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/synth-scanner-default.log",
+        "sha256": "73d53208d83dbe8e0ce53477550598bc56eb98fa9d668b5296a91564a37b32b8"
+      },
+      {
+        "bytes": 1451,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/synth-scanner-default.time.txt",
+        "sha256": "443372a3a656466d1722fa9e02df721819bc0849dce9306d2966911279bc55b6"
+      },
+      {
+        "bytes": 5526,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/tools.json",
+        "sha256": "63d5eb508a9b90bd07fbb240ebd181de959bc56dc0c2625b7f5bf210a27d152b"
+      },
+      {
+        "bytes": 32,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/vendor.log",
+        "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+      },
+      {
+        "bytes": 748,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/vendor.time.txt",
+        "sha256": "b0a67cc1a5b8d6a8ff1734a5b5d1e441170362540183708d9a385109ebc339e4"
+      },
+      {
+        "bytes": 291,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/yosys-cell-model.json",
+        "sha256": "8f206d8fd5da7c0e111e7b30d8fd043f2f63b8069e8794c7639c5b464aacd9af"
+      },
+      {
+        "bytes": 31442,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/yosys-simcells.v",
+        "sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51"
+      },
+      {
+        "bytes": 1200,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-resource-stages.json",
+        "sha256": "a3660217563c913462c4351e8d2df63a5faed97c0f791bf61e093b619cc3c325"
+      },
+      {
+        "bytes": 1458,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/events.jsonl",
+        "sha256": "322c3b2b4658ba5447430e1a8681dccfce949008d6c6f3554e9979714d91a105"
+      },
+      {
+        "bytes": 5136,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/finalization-console.log",
+        "sha256": "f70b37c36058fe0fd56ec112a79d607f6cdd8ff4fdeb53bf6ccc3db73d3d2004"
+      },
+      {
+        "bytes": 588791,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/manifest.json",
+        "sha256": "6177323e3524b6ead2967ac087469e249cab83a917232b83e93f1e5b0922b201"
+      },
+      {
+        "bytes": 2318,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/prelaunch-kernel-check.json",
+        "sha256": "96f566c2d56df503a1d288c41622390a67429b05019baf69249c99216aebc08f"
+      },
+      {
+        "bytes": 415,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/prelaunch-resource-check.json",
+        "sha256": "2d2f880589db7f1a704e1a4a23a367908ae512c58ab959d5b7937e7c9944c651"
+      },
+      {
+        "bytes": 142,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/process-result.json",
+        "sha256": "ca5d7a96c36c9feabb429b184bbb1b3f772f64e93ab1f7a87a106407d20255ba"
+      },
+      {
+        "bytes": 47618,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/runner.py",
+        "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b"
+      },
+      {
+        "bytes": 0,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "bytes": 185,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/stdout.log",
+        "sha256": "3d73ccb6a29378195c81bbed2bc2dae358c78f986c9ab41655cf9c4a9e292980"
+      },
+      {
+        "bytes": 871,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/submission-command.json",
+        "sha256": "1b8072df7d8b1457149bc35e40d24cacf9c5edc79df4e547cc613a0706cf29a1"
+      },
+      {
+        "bytes": 41,
+        "path": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/submission-result.json",
+        "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+      }
+    ],
+    "at": "2026-10-15T20:29:50.098969+00:00",
+    "execution_id": "20261015T194652Z-334cfc1d0428",
+    "process": {
+      "finished_at": "2026-10-15T20:29:48.458663+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "resume_allowed": false,
+    "schema": "openrx.local.receipt.v1",
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED",
+    "systemd": {
+      "EXIT_CODE": "exited",
+      "EXIT_STATUS": "0",
+      "SERVICE_RESULT": "success"
+    }
+  },
+  "unit": {
+    "ActiveState": "inactive",
+    "ControlGroup": "",
+    "ExecMainCode": "0",
+    "ExecMainStatus": "0",
+    "LoadState": "not-found",
+    "Result": "success",
+    "SubState": "dead",
+    "query_returncode": 0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "aes-hash.hex": "bfd3dac4f75eb42e9843991f1ff8c466e7119193f418035c9b36c908801043bd",
+  "case.json": "dffe9b52e135e9232349069a992eee2c68dcf5203681af5809f0ceb467b873d5",
+  "digest32.hex": "b6c4c49b059b10f0d4ef9675d0e8adc6f8fa30ca464bc48c0a9022f40866ca1e",
+  "digest64.hex": "5b8e2a101b6bf1fe79266d5e4b7dc1f5c06923ca6c1a2c8ebdb9d7f0373aeb12",
+  "native-inputs.json": "a4446a6dc7c42cac2c7b456022925d9cb54c668cae9a5ff3d3f95c4e4ba36ee0",
+  "native-oracle.log": "166d99cda820ef5ee03a44dd71cee206a3d2f9ab6c0b0566638bd29786835ba6",
+  "register-file.bin": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+  "rf-final.hex": "eb124a0413e16efd2f77e55e7acdb81492305b65722587d447057bd4cb9b65a0",
+  "rf-in.hex": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7",
+  "scratchpad.bin": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+  "scratchpad.hex": "5320c57eaf9ee011dbf7ccf0f3f9afcc9f6acdb155b08d3b4aec8686c29726db"
+}

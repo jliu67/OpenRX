@@ -1,0 +1,30 @@
+[
+  {
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "label": "existing-and-focused-unit-tests",
+    "returncode": 0,
+    "wall_seconds": 46.81072810594924
+  },
+  {
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "scripts/test_regfile_blake2b.py",
+      "--output",
+      "<ORIGINAL_FAILED_EXECUTION_ROOT>/combined-regfile",
+      "--synthesize"
+    ],
+    "label": "regfile",
+    "returncode": 0,
+    "wall_seconds": 10538.08702027495
+  }
+]

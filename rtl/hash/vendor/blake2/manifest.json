@@ -1,0 +1,14 @@
+{
+  "repository": "cyrozap/blake2",
+  "commit": "36f00fd6351f82cb476fd82af8d615f28aaf677d",
+  "license": "BSD-2-Clause",
+  "original_files": {
+    "LICENSE": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d",
+    "README.md": "ff4dfe503df7d27916b4e66e1e8a124a7ba66fd34afea6fae2ca821856587f14",
+    "blake2_core.v": "97c6a12cb2b68792e78da0b3a53a56da5eb3a570ce2465b0fe8a43ef3c55a274",
+    "blake2_G.v": "558387e71def9ae0640cfacde202dba747171abd3242a5e00c04f34c8f46a1d8",
+    "blake2_m_select.v": "492b2e7f64ec494d2c4c6b499a3651ddb64d34b275b62bc91651e0b1712fcb63"
+  },
+  "original_complete_source": "/tmp/openrx-blake2-original-cbrgi69l",
+  "scope": "Original single-block core/G/message schedule preserved. OpenRX separately declared derivative fixes next-block chaining for unkeyed native register-file32/64-byte digests."
+}

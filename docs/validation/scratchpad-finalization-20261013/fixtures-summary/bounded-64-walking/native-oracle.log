@@ -1,0 +1,1 @@
+PASS native-finalization scratchpad_bytes=64 groups=1 register_bytes=256 digest32=32 digest64=64 RFE_preserved=1

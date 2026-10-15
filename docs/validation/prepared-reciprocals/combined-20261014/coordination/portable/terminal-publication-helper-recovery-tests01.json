@@ -1,0 +1,42 @@
+{
+  "AST_files": [
+    "verify_terminal01.py",
+    "publish_combination01.py",
+    "test_terminal_publication_helpers01.py"
+  ],
+  "admission_metadata_checks": {
+    "frozen_file_count": 3309,
+    "mode": "metadata reads only; no source/output payload hashing or runner invocation",
+    "original_binding_count": 281,
+    "recovery_binding_count": 281
+  },
+  "composite_contract": {
+    "component_command_annotations": [
+      "attempt_role",
+      "execution_id"
+    ],
+    "original_returncode": 1,
+    "original_status": "PROCESS_FAILED",
+    "original_wrapper_succeeded": false,
+    "recovery_required_returncode": 0,
+    "recovery_required_status": "PROCESS_EXITED",
+    "resource_stages_by_attempt": [
+      "original-failed",
+      "finalizer-recovery"
+    ],
+    "schema": "openrx.composite-closeout.v1",
+    "terminal_success_and_integrity_verified": false
+  },
+  "files_sha256": {
+    "publish_combination01.py": "e4f3c8a4124501da6cc2686d4133934e7c1cb30605e864cf32cc2847181cae5f",
+    "test_terminal_publication_helpers01.py": "58e486793182a7f699ff2c459411afcc263c6222511295abb1220ea895f7c222",
+    "verify_terminal01.py": "7e60e7b8cbd7ccc3aecf6ff6a95ed1b150b36d5296fb32998eea4298a47637b0"
+  },
+  "log": "reciprocal-combination-reconciliation-evidence/terminal-publication-helper-recovery-tests01.log",
+  "log_sha256": "9371c2ac3a5342807660283f84d1df7e8949846266ce61ffe1c78f06363c31f6",
+  "originals_receipt": "terminal-publication-helper-pre-recovery01.json",
+  "returncode": 0,
+  "scope": "Coauthor external helper tests only. Neither helper main, immutable runner, native/scientific payload nor GitHub is invoked. Original source/output remains untouched.",
+  "status": "pass_synthetic_helper_checks",
+  "synthetic_tests": 40
+}

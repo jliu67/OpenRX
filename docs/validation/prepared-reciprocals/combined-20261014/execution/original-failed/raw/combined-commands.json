@@ -1,0 +1,30 @@
+[
+  {
+    "label": "existing-and-focused-unit-tests",
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "returncode": 0,
+    "wall_seconds": 46.81072810594924
+  },
+  {
+    "label": "regfile",
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "scripts/test_regfile_blake2b.py",
+      "--output",
+      "/home/server/openrx-local/v1/executions/20261014T194137Z-8451bfb57fac/combined-regfile",
+      "--synthesize"
+    ],
+    "returncode": 0,
+    "wall_seconds": 10538.08702027495
+  }
+]

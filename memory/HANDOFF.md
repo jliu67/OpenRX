@@ -1,5 +1,69 @@
 # Handoff — actual designated local execution
 
+## 2026-10-15 — PR70 combined-source recovery closeout
+
+[Task #69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70
+`35c2cae61092107acb2c684bbca308aca8fb280b` with merged main
+`5f28dd4363504ecf33a8f10451c53405773c564f`, preserving both parents and accepted
+PR65/68. Strict combined bindings retain every historical manifest, all 219
+original preparation inputs and 73 original sequence-regression inputs. Actual
+native/mapped CI gates remain unconditional.
+
+Verified server closeout covers 362 unit tests, seed18RTL/17mapped/3synthesis and
+finalizer41RTL/19mapped/3synthesis, with native bytes and mapped/RTL records exact.
+Original runner20261014T194137Z-8451bfb57fac remains PROCESS_FAILED: after unit/seed
+commands returned0, an external wrapper KeyError:status prevented finalization.
+Recovery20261015T194652Z-334cfc1d0428 ran only missing finalization from the same
+3309-file frozen source. Both full receipts, sources, outputs and failure survive;
+composite verification never relabels the original wrapper successful.
+
+[Combined evidence](../docs/validation/prepared-reciprocals/combined-20261014/README.md)
+binds commands, native/negative cases, complete archives, source/publication deltas
+and resource checks. Both payloads used actual600%CPU/4GiBRAM/2GiBswap/Tasks256;
+observed stage peaks1,097,007,104/1,921,708,032bytes, zero recorded swap/limit/OOM/
+throttle events. Inherited simulation commands are sequential; no wall-time
+throughput inference follows. Original prepared and sequence results are retained
+exact-input proof, not newly rerun suites. Full-v2/full prepared pipeline, actual
+dataset, calibrated timing and physical power remain unaccepted.
+
+Next: hosted verification and a new independent review of the final exact draft
+[PR #70](https://github.com/jliu67/OpenRX/pull/70) head, recorded on task #69. No own
+merge or new milestone is authorized. This interrupted integration closes here;
+recurring checks remain paused. Earlier dated sections retain their original context.
+
+Whole-machine target:1MH/s under approximately2500W, over400hashes/J and under
+2.5mJ/hash. Include logic, scratchpad/dataset memory, controllers/interconnect,
+clocking and conversion/cooling. Generic cells and fixture clocks establish no
+physical efficiency. Preparation adds3KiB constants and must charge every reload.
+
+## 2026-10-14 — PR70 combined-source reconciliation in progress
+
+Task [#69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70
+`35c2cae61092107acb2c684bbca308aca8fb280b` with accepted main
+`5f28dd4363504ecf33a8f10451c53405773c564f`. PR65 and PR68 are merged after
+independent exact-head reviews; their original sources/manifests/results and the
+original reciprocal candidate remain retained. The merge preserves both parents
+and all execution, hardware-seed, finalization and preparation RTL. Only necessary
+memory conflicts are resolved; changed source-binding context is declared separately.
+
+Combined actual execution, hardware register-file seed and scratchpad-finalization
+regressions are pending at this source snapshot. Original-base passing results are
+retained evidence, not proof of this new combination. Existing native/mapped CI
+gates stay unconditional; focused binding tests are additional checks. No full-v2
+rerun or complete-pipeline performance acceptance is inferred. New independent
+review of the final combined head is required; no own merge is authorized.
+
+The whole-machine goal is **1 MH/s under approximately 2,500 W**, over 400 hashes/J
+and under 2.5 mJ/hash. The electrical boundary must include eventual logic,
+scratchpad/dataset memory, controllers/interconnect, clocking and conversion/cooling
+overhead. Generic cells and modeled clocks do not establish watts or efficiency.
+Preparation's cycle benefit must be weighed against its additional 3 KiB constant
+storage, area/energy and every admission/reload cost. Full-pipeline correctness and
+comparable calibrated performance remain unaccepted.
+
+The following dated sections preserve both parents' original publication states;
+their pending/draft/main8f statements do not describe current accepted main.
+
 ## 2026-10-14 — Restore PR70 actual program-sequence regression gate
 
 The historical head1345 source-only route skipped native/mapped integration.
@@ -22,6 +86,36 @@ Earlier sections retain their historical head-specific status.
 
 Next action: independent exact-head feature review, then a complete comparable pipeline baseline with initial fill/generation, actual dataset/calibrated memory, 8×2048 execution and interprogram/final hash before performance acceptance. No own merge or architectural widening. Compute slot released; current claim and independent-review handoff receipts are indexed on task #69. Reproduce with `python3 scripts/test_prepared_reciprocals.py --output /tmp/openrx-prepared-reciprocal-validation-UNIQUE --synthesize` only inside a fresh authorized server admission. Draft [PR #70](https://github.com/jliu67/OpenRX/pull/70) preserves the original server result; its CI successor adds only explicit two-path binding guards and bounded hosted checks. All 219 executed inputs and accepted manifests are unchanged. Inherited complete native program-sequence/synthesis replay remains deferred and unexecuted pending fresh authorized serial admission; a hosted guard pass is not that replay. Independent review applies to the final exact head. Bounded successor validation passes 12 parent rejection tests, eight accounting tests and retained-evidence guards; fresh metadata payload peak 21762048 bytes, no swap/limit/OOM/throttle events. The following dated sections are retained historical snapshots.
 
+## Current finalization feature — task #67, 2026-10-13
+
+Task [#67](https://github.com/jliu67/OpenRX/issues/67) adds a shared-round scan of
+actual scratchpad bytes, complete native A replacement and independently
+parameterized BLAKE2b-256 over raw R/F/E/A. [Design](../rtl/hash/FINALIZATION.md) records the
+33-bit tagged read contract, quiescent-memory requirement and exact boundaries.
+Local validation passed: 14 native cases, four balanced full 2 MiB RTL
+trials, 41 RTL modes, 19 mapped modes, six malformed-native cases and four invalid
+hardware-parameter guards. Eleven focused staging/metadata checks pass on the
+publication successor. [Evidence](../docs/validation/scratchpad-finalization-20261013/README.md) separates the exact executed source
+from declared metadata/CI corrections; hosted verification of the published head
+and new independent review remain required. Preserve original sources, complete
+outputs/failures and execute bits. Heavy execution requires manager slot admission
+and actual resource verification.
+
+Current accepted main `8f3b9bc3d7f0182d66185abe95310f0bab00274b` contains merged
+PR49/51/53/55/57/59/61/63, including all 29 instruction families/256 encodings and
+accepted full native-v2 program sequencing. PR65 at
+`4f095fc147b5bc78de79746a0a172f38e34d6450` remains a separate draft with all five
+checks passing; its public review remains unpublished and no merge follows.
+This finalization feature stacks on that exact head without changing execution,
+rounding propagation, the `(v & 60)==0` gate or address recurrence. Initial fill,
+AES program generation, full actual dataset, complete hardware hash integration
+and physical/calibrated PPA remain open. Older dated draft/subset/status sections
+below describe their original sources and are superseded for current task status.
+
+
+## Native register-file hashing — task #64, 2026-10-13
+
+[Task #64](https://github.com/jliu67/OpenRX/issues/64) connects native hardware BLAKE2b seeds above independently accepted PR63 `990f36830c5a9854bf8e2cf1fe7fd7d4ccf7f192` ([review](https://github.com/jliu67/OpenRX/pull/63#pullrequestreview-5505712453)). All 18 RTL/17 mapped modes pass: balanced 524 native messages per 32/64-byte digest, held/reset/errors, four actual hardware-seed chains and eight native cancellation modes. Hash/bridge latency is 56/58 modeled clocks, last-program bypass zero; exactly seven seeds per eight programs adds 414 fixture clocks in each profile. Actual new-stage mapping includes 1,024 inherited latches, reported separately from flops; it excludes the preserved backend. [Design](../rtl/hash/README.md), [EXP-011](../experiments/EXP-011-native-regfile-blake2b.md) and [evidence](../docs/validation/regfile-blake2b-20261013/README.md) retain exact sources/outputs/resources/failures. At initial publication, new independent review and hosted verification are pending; subsequent results are recorded on task #64 and the draft PR. No merge is authorized. Full dataset, external AES stages, complete hardware finalization and physical PPA remain open. Earlier component sections retain their dated boundaries; 69 accepted inputs, 171 native files and five IP originals and all original assets remain unchanged.
 
 ## Native program sequencing — task #62, completed validation 2026-10-13
 

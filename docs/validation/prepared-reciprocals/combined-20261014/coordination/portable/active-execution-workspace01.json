@@ -1,0 +1,18 @@
+{
+  "claim": 6176527891,
+  "execution_id": "20261014T194137Z-8451bfb57fac",
+  "execution_root": "<ORIGINAL_FAILED_EXECUTION_ROOT>",
+  "expires_at": "2026-10-14T23:26:09Z",
+  "full_v2_rerun": false,
+  "immutable_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "independent_review_pending": true,
+  "parents": [
+    "35c2cae61092107acb2c684bbca308aca8fb280b",
+    "5f28dd4363504ecf33a8f10451c53405773c564f"
+  ],
+  "source": "<FROZEN_SOURCE>",
+  "source_archive": "<EXTERNAL_EVIDENCE>/combined-source01.tar.gz",
+  "source_archive_sha256": "1002c56e3e1bbcb6bb07a995d9a41114ed6a14eddb6b07565461bd7220d33911",
+  "source_tree": "29ac1af8dff303dddd8f84ce0a79fb369f333ec0",
+  "substantial_compute": "one serial immutable-runner job"
+}

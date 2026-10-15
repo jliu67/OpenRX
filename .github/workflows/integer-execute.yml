@@ -22,6 +22,20 @@ on:
       - 'vendor/randomx/**'
       - 'vendor/randomx*.json'
       - '.github/workflows/integer-execute.yml'
+      - 'scripts/combined_source_bindings.py'
+      - 'tests/test_combined_source_bindings.py'
+      - 'docs/validation/prepared-reciprocals/combined-source-bindings.json'
+      - 'docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json'
+      - 'docs/validation/program-sequence-20261013/server-current/inputs.json'
+      - 'docs/validation/prepared-reciprocals/server/inputs.json'
+      - 'docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json'
+      - 'docs/validation/regfile-blake2b-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json'
+      - 'scripts/test_regfile_blake2b.py'
+      - 'scripts/test_scratchpad_finalization.py'
+      - '.github/workflows/regfile-blake2b.yml'
+      - '.github/workflows/scratchpad-finalization.yml'
   workflow_dispatch:
 permissions:
   contents: read

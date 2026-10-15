@@ -1,0 +1,20 @@
+[
+  {
+    "original": "reciprocal-combination-reconciliation-evidence/verify_terminal01.py",
+    "preserved_copy": "reciprocal-combination-reconciliation-evidence/verify_terminal01.pre-recovery-v1.py",
+    "sha256": "b95359c0e4198f371603d058b23911b49f6d5747859d04b0b37c1a2acfea27b0",
+    "mode": "0o664"
+  },
+  {
+    "original": "reciprocal-combination-reconciliation-evidence/publish_combination01.py",
+    "preserved_copy": "reciprocal-combination-reconciliation-evidence/publish_combination01.pre-recovery-v1.py",
+    "sha256": "4f4f30c9af82d46f03130b170d2eb98dde30932ecc02a9593e02e70dd9fde458",
+    "mode": "0o664"
+  },
+  {
+    "original": "reciprocal-combination-reconciliation-evidence/test_terminal_publication_helpers01.py",
+    "preserved_copy": "reciprocal-combination-reconciliation-evidence/test_terminal_publication_helpers01.pre-recovery-v1.py",
+    "sha256": "38213522b59943df31cbb0ea13d3bd30171668995ed22110fa7ee1fbf9b93cbe",
+    "mode": "0o664"
+  }
+]

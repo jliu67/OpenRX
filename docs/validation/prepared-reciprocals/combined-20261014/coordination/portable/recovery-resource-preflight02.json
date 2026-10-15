@@ -1,0 +1,18 @@
+{
+  "at_epoch": 1792093591.6616626,
+  "budget_bytes": 4294967296,
+  "cpu_affinity_count": 6,
+  "diagnosis": "Original seed complete; only missing finalizer will run.",
+  "global_slot_probe_free": true,
+  "installed_cpu_quota": "600%",
+  "installed_swap_bytes": 2147483648,
+  "installed_tasks_max": 256,
+  "memory": {
+    "MemAvailable": 8373112832,
+    "MemTotal": 16725934080,
+    "SwapFree": 5013147648,
+    "SwapTotal": 8589930496
+  },
+  "rationale": "Finalizer prior measured peak1.902GB;4GiB permits margin with fresh1GiB OS reserve. Functional/native-oracle and HDL checks, no wall-time/throughput/power measurement.",
+  "single_worker": true
+}

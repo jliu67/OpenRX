@@ -844,3 +844,81 @@ whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
 performance acceptance. Sources/complete outputs and superseded binding-only CI
 artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
 Independent exact-head review remains required; no merge. Compute slot released.
+
+## 2026-10-13 — task #64 native register-file hashing
+
+Implemented the fixed 256-byte digest and buffered seven-seed program chain above accepted 990f368, with all 69 accepted inputs/171 native files and five IP originals unchanged. Server 18 RTL / 17 mapped modes pass; actual mapping and complete archived outputs are bound in [evidence](../docs/validation/regfile-blake2b-20261013/README.md). Preserve all original negative/preparation/harness/frontend/cell-model failures. At initial publication, hosted checks/new independent review remain pending; subsequent results are recorded on task #64 and the draft PR. No merge. Temporary authoring will be archived/frozen after exact draft publication, retaining original sources/assets and disabled sync.
+
+## 2026-10-13 — task67 scratchpad finalization preparation
+
+Resumed actual engineering after the completed owner-requested repository sweep,
+which remains preserved separately. Claimed #67 above exact PR65 head4f095fc in
+a temporary per-task source, with no Git checkout/sync or retired source restore.
+Added native scratchpad scanner/finalizer, unchanged-IP/native oracle and fixtures,
+control bench/driver, and dependency-trigger/reproduction clarifications. Eight
+focused preparation checks pass; native/HDL/synthesis and independent review are
+pending at this snapshot. Shared compute requested: one worker, CPU600%,4GiB RAM,
+512MiB swap,Tasks128,six-CPU affinity, fresh1GiB reserve/global lock; execution needs
+actual admission and kernel/ancestor checks. No public PR65 review or merge occurred.
+
+## 2026-10-14 — task #67 local validation and publication preparation
+
+One manager-admitted serial service passed 41 RTL / 19 mapped modes, 14 native/Python
+cases, four balanced full 2 MiB trials, six native malformed-input guards and four
+invalid hardware elaborations. Actual kernel CPU600%, RAM4GiB, swap512MiB,
+Tasks128 and six-CPU affinity were checked with fresh reserve/global lock;
+measured cgroup peak 1,902,161,920 bytes. Complete source/output bytes and original
+modes were archived, verified and retained read-only with execute bits. Original
+duplicate-module elaboration failure remains preserved. Declared metadata/CI
+successor corrections pass 11 focused tests; scientific sources and commands stay
+exact. [Evidence](../docs/validation/scratchpad-finalization-20261013/README.md) separates local execution, successor checks,
+and pending hosted/independent verification. No main/parent change, PR65 public
+review publication or merge occurred.
+
+## 2026-10-14 — Task69 combined PR70/65/68 reconciliation
+
+Owner resumed working engineering. Advisory claim6176527891 accepted through
+23:26:09UTC for exact PR70 head35c and main5f; temporary server feature worktree
+only, no standing mirror or Git sync. Merge --no-commit --no-ff retained both
+parents; four memory conflicts were resolved by retaining both original sections.
+Original conflict stages, tree identities, manifests and all earlier archives are
+preserved. No RTL/math/native/oracle change is intended. Strict additive combined
+bindings and affected actual execution/seed/finalization regressions are pending
+at this snapshot. No historical pass is relabeled combined; no skip is a pass.
+Actual runs require fresh kernel/ancestor/headroom and the existing nonblocking
+global lock. Publish only a nonforce successor on PR70 for independent review;
+no selfmerge or physical-efficiency acceptance. Unrelated sweep findings are parked.
+
+
+### 2026-10-15 — interrupted PR70 integration recovered
+
+## 2026-10-15 — PR70 combined-source recovery closeout
+
+[Task #69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70
+`35c2cae61092107acb2c684bbca308aca8fb280b` with merged main
+`5f28dd4363504ecf33a8f10451c53405773c564f`, preserving both parents and accepted
+PR65/68. Strict combined bindings retain every historical manifest, all 219
+original preparation inputs and 73 original sequence-regression inputs. Actual
+native/mapped CI gates remain unconditional.
+
+Verified server closeout covers 362 unit tests, seed18RTL/17mapped/3synthesis and
+finalizer41RTL/19mapped/3synthesis, with native bytes and mapped/RTL records exact.
+Original runner20261014T194137Z-8451bfb57fac remains PROCESS_FAILED: after unit/seed
+commands returned0, an external wrapper KeyError:status prevented finalization.
+Recovery20261015T194652Z-334cfc1d0428 ran only missing finalization from the same
+3309-file frozen source. Both full receipts, sources, outputs and failure survive;
+composite verification never relabels the original wrapper successful.
+
+[Combined evidence](../docs/validation/prepared-reciprocals/combined-20261014/README.md)
+binds commands, native/negative cases, complete archives, source/publication deltas
+and resource checks. Both payloads used actual600%CPU/4GiBRAM/2GiBswap/Tasks256;
+observed stage peaks1,097,007,104/1,921,708,032bytes, zero recorded swap/limit/OOM/
+throttle events. Inherited simulation commands are sequential; no wall-time
+throughput inference follows. Original prepared and sequence results are retained
+exact-input proof, not newly rerun suites. Full-v2/full prepared pipeline, actual
+dataset, calibrated timing and physical power remain unaccepted.
+
+Next: hosted verification and a new independent review of the final exact draft
+[PR #70](https://github.com/jliu67/OpenRX/pull/70) head, recorded on task #69. No own
+merge or new milestone is authorized. This interrupted integration closes here;
+recurring checks remain paused. Earlier dated sections retain their original context.

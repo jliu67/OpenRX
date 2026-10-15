@@ -1,0 +1,14 @@
+{
+  "a_replacement_only": true,
+  "aes_64byte_groups": 64,
+  "digest32_not_truncated64": true,
+  "directory": "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-4096-prng",
+  "input_register_sha256": "7f55abb7a70328281455cf34eb9c08a0c03c9dd0d300f5745ed1c54bca497fa3",
+  "input_scratchpad_sha256": "66b18c4b832149c13fae5163ca50c36db3cd8b8d8e8dc31a956ae89df3f31b10",
+  "kind": "prng",
+  "memory_reads128": 256,
+  "name": "bounded-4096-prng",
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file",
+  "scratchpad_bytes": 4096,
+  "seed": "0x7361726174637832"
+}

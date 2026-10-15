@@ -1,5 +1,36 @@
 # OpenRX
 
+## Current finalization feature — task #67, 2026-10-13
+
+Task [#67](https://github.com/jliu67/OpenRX/issues/67) adds a shared-round scan of
+actual scratchpad bytes, complete native A replacement and independently
+parameterized BLAKE2b-256 over raw R/F/E/A. [Design](rtl/hash/FINALIZATION.md) records the
+33-bit tagged read contract, quiescent-memory requirement and exact boundaries.
+Local validation passed: 14 native cases, four balanced full 2 MiB RTL
+trials, 41 RTL modes, 19 mapped modes, six malformed-native cases and four invalid
+hardware-parameter guards. Eleven focused staging/metadata checks pass on the
+publication successor. [Evidence](docs/validation/scratchpad-finalization-20261013/README.md) separates the exact executed source
+from declared metadata/CI corrections; hosted verification of the published head
+and new independent review remain required. Preserve original sources, complete
+outputs/failures and execute bits. Heavy execution requires manager slot admission
+and actual resource verification.
+
+Current accepted main `8f3b9bc3d7f0182d66185abe95310f0bab00274b` contains merged
+PR49/51/53/55/57/59/61/63, including all 29 instruction families/256 encodings and
+accepted full native-v2 program sequencing. PR65 at
+`4f095fc147b5bc78de79746a0a172f38e34d6450` remains a separate draft with all five
+checks passing; its public review remains unpublished and no merge follows.
+This finalization feature stacks on that exact head without changing execution,
+rounding propagation, the `(v & 60)==0` gate or address recurrence. Initial fill,
+AES program generation, full actual dataset, complete hardware hash integration
+and physical/calibrated PPA remain open. Older dated draft/subset/status sections
+below describe their original sources and are superseded for current task status.
+
+
+## Native register-file hashing — task #64, 2026-10-13
+
+[Task #64](https://github.com/jliu67/OpenRX/issues/64) connects native hardware BLAKE2b seeds above independently accepted PR63 `990f36830c5a9854bf8e2cf1fe7fd7d4ccf7f192` ([review](https://github.com/jliu67/OpenRX/pull/63#pullrequestreview-5505712453)). All 18 RTL/17 mapped modes pass: balanced 524 native messages per 32/64-byte digest, held/reset/errors, four actual hardware-seed chains and eight native cancellation modes. Hash/bridge latency is 56/58 modeled clocks, last-program bypass zero; exactly seven seeds per eight programs adds 414 fixture clocks in each profile. Actual new-stage mapping includes 1,024 inherited latches, reported separately from flops; it excludes the preserved backend. [Design](rtl/hash/README.md), [EXP-011](experiments/EXP-011-native-regfile-blake2b.md) and [evidence](docs/validation/regfile-blake2b-20261013/README.md) retain exact sources/outputs/resources/failures. At initial publication, new independent review and hosted verification are pending; subsequent results are recorded on task #64 and the draft PR. No merge is authorized. Full dataset, external AES stages, complete hardware finalization and physical PPA remain open. Earlier component sections retain their dated boundaries; 69 accepted inputs, 171 native files and five IP originals and all original assets remain unchanged.
+
 ## Native program sequencing — task #62, completed validation 2026-10-13
 
 [Draft PR #63](https://github.com/jliu67/OpenRX/pull/63) adds native entropy/config
@@ -336,7 +367,7 @@ Timestamped runs under `benchmarks/results/` retain raw logs and JSON metadata. 
 | benchmarks/ | Results, measurement protocols and opt-in steady adapter |
 | experiments/ | Experiment plans and outcomes |
 | simulator/ | Simulator selection/configuration plans |
-| rtl/ | Future verified processor work; no RTL yet |
+| rtl/ | Accepted AES, memory and native execution components; draft hash/finalization integration |
 | .github/ | CI, message router, task templates and review checklist |
 
 Repository memory and inboxes are not autonomous workers: an invoked agent must read, update and commit its handoff. No background model execution is implied.

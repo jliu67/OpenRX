@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "git",
+    "-c",
+    "user.name=Codex",
+    "-c",
+    "user.email=codex@localhost",
+    "merge",
+    "--no-commit",
+    "--no-ff",
+    "5f28dd4363504ecf33a8f10451c53405773c564f"
+  ],
+  "returncode": 1,
+  "stderr": "",
+  "stdout": "Auto-merging docs/TASKS.md\nAuto-merging memory/DECISIONS.md\nCONFLICT (content): Merge conflict in memory/DECISIONS.md\nAuto-merging memory/HANDOFF.md\nCONFLICT (content): Merge conflict in memory/HANDOFF.md\nAuto-merging memory/SESSION_LOG.md\nCONFLICT (content): Merge conflict in memory/SESSION_LOG.md\nAuto-merging memory/STATE.md\nCONFLICT (content): Merge conflict in memory/STATE.md\nAutomatic merge failed; fix conflicts and then commit the result.\n"
+}

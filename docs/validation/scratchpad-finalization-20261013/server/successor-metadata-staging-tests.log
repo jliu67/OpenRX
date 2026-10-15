@@ -1,0 +1,16 @@
+test_connected_workflow_triggers_cover_every_inherited_input (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_consumed_program_manifest_has_exact_binding (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_existing_output_rejected_before_source_or_native_access (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_mapping_metadata_distinguishes_aes_reduction_from_digest (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_native_source_integrity_checked_before_creating_output (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_native_sources_match_all_pinned_bindings (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_source_contained_or_missing_executable_rejected (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_source_contained_output_rejected_before_payload (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_tool_version_retains_both_streams_and_returncode (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_wrong_accepted_memory_rejected_without_replacing_inputs (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+test_wrong_accepted_registers_rejected_without_replacing_inputs (test_scratchpad_finalization_staging.FinalizationStagingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.260s
+
+OK

@@ -1,0 +1,15 @@
+[
+  {
+    "label": "finalization",
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "scripts/test_scratchpad_finalization.py",
+      "--output",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization",
+      "--synthesize"
+    ],
+    "returncode": 0,
+    "wall_seconds": 2573.404558083974
+  }
+]

@@ -1,0 +1,42 @@
+{
+  "status": "pass_synthetic_helper_checks",
+  "returncode": 0,
+  "synthetic_tests": 40,
+  "scope": "Coauthor external helper tests only. Neither helper main, immutable runner, native/scientific payload nor GitHub is invoked. Original source/output remains untouched.",
+  "AST_files": [
+    "verify_terminal01.py",
+    "publish_combination01.py",
+    "test_terminal_publication_helpers01.py"
+  ],
+  "admission_metadata_checks": {
+    "original_binding_count": 281,
+    "recovery_binding_count": 281,
+    "frozen_file_count": 3309,
+    "mode": "metadata reads only; no source/output payload hashing or runner invocation"
+  },
+  "files_sha256": {
+    "verify_terminal01.py": "7e60e7b8cbd7ccc3aecf6ff6a95ed1b150b36d5296fb32998eea4298a47637b0",
+    "publish_combination01.py": "e4f3c8a4124501da6cc2686d4133934e7c1cb30605e864cf32cc2847181cae5f",
+    "test_terminal_publication_helpers01.py": "58e486793182a7f699ff2c459411afcc263c6222511295abb1220ea895f7c222"
+  },
+  "log": "reciprocal-combination-reconciliation-evidence/terminal-publication-helper-recovery-tests01.log",
+  "log_sha256": "9371c2ac3a5342807660283f84d1df7e8949846266ce61ffe1c78f06363c31f6",
+  "originals_receipt": "terminal-publication-helper-pre-recovery01.json",
+  "composite_contract": {
+    "schema": "openrx.composite-closeout.v1",
+    "terminal_success_and_integrity_verified": false,
+    "original_wrapper_succeeded": false,
+    "original_status": "PROCESS_FAILED",
+    "original_returncode": 1,
+    "recovery_required_status": "PROCESS_EXITED",
+    "recovery_required_returncode": 0,
+    "component_command_annotations": [
+      "attempt_role",
+      "execution_id"
+    ],
+    "resource_stages_by_attempt": [
+      "original-failed",
+      "finalizer-recovery"
+    ]
+  }
+}

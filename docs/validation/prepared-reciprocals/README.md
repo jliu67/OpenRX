@@ -259,3 +259,11 @@ bytes, swap and limit/OOM/kill/throttle events zero; service wall time was 837 m
 The lower RAM budget reflects small metadata inputs and measured Python peak.
 The frozen complete check source/archive is [retained](ci-successor/source-retention.json);
 all six new CI input hashes match the published successor. Compute slot released.
+
+
+## Combined-source recovery — 2026-10-15
+
+The [two-attempt combined evidence](combined-20261014/README.md) preserves the
+original wrapper failure and verifies recovered unit/seed plus finalization-only
+completion from identical frozen source. New independent review applies to the
+final combined PR70 head. The historical records above remain unchanged.

@@ -1,0 +1,7 @@
+{
+  "digest32_differs_from_truncated64_all_vectors": true,
+  "hash32_sha256": "672eccf68673465ae5c519ecfc914f691b02529a466ef8cc36219468d3b9dccc",
+  "hash64_sha256": "da3bb34e35dce0ae44fdb8eb971021e81ac851ec22fd432bc30ac4e279b07907",
+  "native_pinned_C_vectors_per_digest": 524,
+  "secondary_oracle": "Python hashlib.blake2b independent API"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "bounded-4096-zero",
+  "directory": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero",
+  "scratchpad_bytes": 4096,
+  "aes_64byte_groups": 64,
+  "memory_reads128": 256,
+  "kind": "zero",
+  "seed": "0x7363726174637832",
+  "input_scratchpad_sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+  "input_register_sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+  "a_replacement_only": true,
+  "digest32_not_truncated64": true,
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file"
+}

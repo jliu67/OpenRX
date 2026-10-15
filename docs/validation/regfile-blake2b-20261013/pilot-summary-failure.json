@@ -1,0 +1,7 @@
+{
+  "output": "/tmp/openrx-regfile-hash-pilot-02",
+  "archive": "blake2b-stage-implementation-evidence/pilot-summary-failed02-complete.tar.gz",
+  "SHA256": "cd6c21323414f2207c6ef820fdb0f9f4e1e55d8dfbbb24c0d671eb87dd61ff21",
+  "six_completed_test_records_verified": true,
+  "overall_script_returned1_postprocessing": true
+}

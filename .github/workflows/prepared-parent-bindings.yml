@@ -15,6 +15,20 @@ on:
       - 'docs/validation/prepared-reciprocals/**'
       - '.github/workflows/prepared-parent-bindings.yml'
       - '.github/workflows/integer-execute.yml'
+      - 'scripts/combined_source_bindings.py'
+      - 'tests/test_combined_source_bindings.py'
+      - 'docs/validation/prepared-reciprocals/combined-source-bindings.json'
+      - 'docs/validation/prepared-reciprocals/parent-source-bindings.json'
+      - 'docs/validation/program-sequence-20261013/server-current/inputs.json'
+      - 'docs/validation/prepared-reciprocals/server/inputs.json'
+      - 'docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json'
+      - 'docs/validation/regfile-blake2b-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json'
+      - 'scripts/test_regfile_blake2b.py'
+      - 'scripts/test_scratchpad_finalization.py'
+      - '.github/workflows/regfile-blake2b.yml'
+      - '.github/workflows/scratchpad-finalization.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -31,9 +45,14 @@ jobs:
             --output "$RUNNER_TEMP/prepared-parent-source-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/report.json"
       - name: Check source substitution rejection
         run: python3 -B -m unittest discover -s tests -p test_prepared_parent_bindings.py -v
+      - name: Verify combined source bindings without executing workloads
+        run: |
+          python3 -B scripts/combined_source_bindings.py \
+            --output "$RUNNER_TEMP/prepared-parent-source-evidence-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/combined-report.json"
+          python3 -B -m unittest discover -s tests -p test_combined_source_bindings.py -v
       - name: State this binding job's scope
         run: |
-          echo "This binding job checks source bytes, substitution rejection and retained server evidence only. The separate integer-differential integration gate executes native program sequencing, HDL simulation, actual generic synthesis and mapped integration via scripts/test_program_sequence.py --synthesize." >> "$GITHUB_STEP_SUMMARY"
+          echo "This binding job checks prepared and combined source bytes, substitution rejection and retained server evidence only; it does not execute or accept the combined seed/finalizer context. The separate integer-differential integration gate executes native program sequencing, HDL simulation, actual generic synthesis and mapped integration via scripts/test_program_sequence.py --synthesize." >> "$GITHUB_STEP_SUMMARY"
       - name: Retain source and retained-evidence report
         if: always()
         uses: actions/upload-artifact@v4

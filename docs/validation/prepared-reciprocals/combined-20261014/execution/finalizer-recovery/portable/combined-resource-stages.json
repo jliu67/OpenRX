@@ -1,0 +1,32 @@
+[
+  {
+    "at_epoch": 1792093614.9782283,
+    "kernel": {
+      "cpu.max": "600000 100000",
+      "cpu.stat": "usage_usec 1659249\nuser_usec 1463337\nsystem_usec 195911\ncore_sched.force_idle_usec 0\nnr_periods 23\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.max": "4294967296",
+      "memory.peak": "33603584",
+      "memory.swap.max": "2147483648",
+      "memory.swap.peak": "0",
+      "pids.current": "2",
+      "pids.max": "256"
+    },
+    "phase": "payload-start"
+  },
+  {
+    "at_epoch": 1792096188.3844578,
+    "kernel": {
+      "cpu.max": "600000 100000",
+      "cpu.stat": "usage_usec 2574995948\nuser_usec 2564690510\nsystem_usec 10305438\ncore_sched.force_idle_usec 0\nnr_periods 25758\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+      "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+      "memory.max": "4294967296",
+      "memory.peak": "1921708032",
+      "memory.swap.max": "2147483648",
+      "memory.swap.peak": "0",
+      "pids.current": "2",
+      "pids.max": "256"
+    },
+    "phase": "finalization-complete"
+  }
+]

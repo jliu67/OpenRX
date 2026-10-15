@@ -1,0 +1,14 @@
+[
+  {
+    "manifest": "docs/validation/prepared-reciprocals/server/inputs.json",
+    "bindings": 219,
+    "live_mismatches": [],
+    "scope": "Exact existing input bytes only; original-base result is not combined integration acceptance."
+  },
+  {
+    "manifest": "docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json",
+    "bindings": 73,
+    "live_mismatches": [],
+    "scope": "Exact existing input bytes only; original-base result is not combined integration acceptance."
+  }
+]

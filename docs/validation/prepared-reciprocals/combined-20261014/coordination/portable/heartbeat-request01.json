@@ -1,0 +1,3 @@
+{
+  "body": "/openrx heartbeat codex/reciprocal-combination-20261014\n\nPR70 reconciliation source is frozen at staged tree29ac1af8dff303dddd8f84ce0a79fb369f333ec0. Existing serialized immutable-runner execution20261014T194137Z-8451bfb57fac remains active:362 unit tests passed;18 seed RTL modes and mapped-hash-64 passed; mapped-hash-32 currently runs. Fresh finalization validation remains pending. No old evidence is replaced and no merge is authorized.\n"
+}

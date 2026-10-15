@@ -1,0 +1,16 @@
+{
+  "all_model_bytes_and_original_notice_unchanged": true,
+  "bytes": 31442,
+  "candidate_paths": [
+    "/usr/share/yosys/simcells.v",
+    "/usr/bin/share/yosys/simcells.v"
+  ],
+  "copied_file": "yosys-simcells.v",
+  "copied_sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+  "installed_source_path": "/usr/share/yosys/simcells.v",
+  "installed_source_sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+  "license_file": "LICENSE-Yosys-simcells",
+  "license_sha256": "92a9456842d6384e548cb8944d1af1e18e7d24c7e31dbbd09ed1e97b0b04e515",
+  "resolved_yosys_binary": "/usr/bin/yosys",
+  "scope": "installed Yosys simulation cells in mapped Icarus invocations only; no hardware transformation"
+}
