@@ -1,0 +1,25 @@
+{
+  "available_bytes": 8829870080,
+  "observed": {
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "at": "2026-10-14T19:41:39.933492+00:00",
+    "logical_cpus": 6,
+    "memory_bytes": {
+      "MemAvailable": 8829870080,
+      "MemTotal": 16725934080,
+      "SwapFree": 4741304320,
+      "SwapTotal": 8589930496
+    }
+  },
+  "profile": "owner-local-max-v1",
+  "required_available_bytes": 5368709120,
+  "safe": true,
+  "scope": "Fresh headroom check under the global execution lock; bound limits are not changed"
+}

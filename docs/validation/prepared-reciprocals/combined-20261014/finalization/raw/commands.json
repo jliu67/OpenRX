@@ -1,0 +1,1403 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.09183169598691165
+  },
+  {
+    "label": "staging-guards",
+    "argv": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_scratchpad_finalization_staging.py",
+      "-v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.4161631279857829
+  },
+  {
+    "label": "compile-native-oracle",
+    "argv": [
+      "g++",
+      "-O2",
+      "-std=c++17",
+      "-maes",
+      "-Ivendor/randomx/src",
+      "rtl/hash/tests/scratchpad_finalization_oracle.cpp",
+      "vendor/randomx/src/aes_hash.cpp",
+      "vendor/randomx/src/soft_aes.cpp",
+      "vendor/randomx/src/blake2/blake2b.c",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 3.032167925965041
+  },
+  {
+    "label": "native-invalid-0",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/0/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/0/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.003673501079902053
+  },
+  {
+    "label": "native-invalid-1",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/1/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/1/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.0035722380271181464
+  },
+  {
+    "label": "native-invalid-2",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/2/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/2/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/2"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.003521710983477533
+  },
+  {
+    "label": "native-invalid-3",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/3/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/3/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/3"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.0035386449890211225
+  },
+  {
+    "label": "native-invalid-4",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/4/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/4/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/4"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.0034929269459098577
+  },
+  {
+    "label": "native-invalid-5",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/5/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/5/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/native-invalid/5"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.003483684966340661
+  },
+  {
+    "label": "compile-rtl-64",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=64",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11421946599148214
+  },
+  {
+    "label": "compile-rtl-128",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=128",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.06428560696076602
+  },
+  {
+    "label": "compile-rtl-256",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=256",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.064159897970967
+  },
+  {
+    "label": "compile-rtl-4096",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=4096",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.06410122290253639
+  },
+  {
+    "label": "compile-rtl-2097152",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=2097152",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_blake2b_chain_core.v",
+      "rtl/hash/randomx_regfile_blake2b.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "rtl/hash/randomx_scratchpad_finalizer.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.0641437559388578
+  },
+  {
+    "label": "rtl-bounded-64-zero-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11435761593747884
+  },
+  {
+    "label": "rtl-bounded-64-zero-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11450984398834407
+  },
+  {
+    "label": "rtl-bounded-64-walking-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11448745091911405
+  },
+  {
+    "label": "rtl-bounded-64-walking-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11436413892079145
+  },
+  {
+    "label": "rtl-bounded-64-prng-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11441160005051643
+  },
+  {
+    "label": "rtl-bounded-64-prng-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-64.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11454952892381698
+  },
+  {
+    "label": "rtl-bounded-128-zero-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11450761393643916
+  },
+  {
+    "label": "rtl-bounded-128-zero-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11447232589125633
+  },
+  {
+    "label": "rtl-bounded-128-walking-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11438408796675503
+  },
+  {
+    "label": "rtl-bounded-128-walking-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11444999894592911
+  },
+  {
+    "label": "rtl-bounded-128-prng-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11451476102229208
+  },
+  {
+    "label": "rtl-bounded-128-prng-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-128.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.11447719600982964
+  },
+  {
+    "label": "rtl-bounded-256-zero-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.164580438984558
+  },
+  {
+    "label": "rtl-bounded-256-zero-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16482181404717267
+  },
+  {
+    "label": "rtl-bounded-256-walking-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.1647969720652327
+  },
+  {
+    "label": "rtl-bounded-256-walking-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16478265507612377
+  },
+  {
+    "label": "rtl-bounded-256-prng-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.1647123679285869
+  },
+  {
+    "label": "rtl-bounded-256-prng-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16478626895695925
+  },
+  {
+    "label": "rtl-bounded-4096-zero-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9694157229969278
+  },
+  {
+    "label": "rtl-bounded-4096-zero-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9696460729464889
+  },
+  {
+    "label": "rtl-bounded-4096-walking-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9695338939782232
+  },
+  {
+    "label": "rtl-bounded-4096-walking-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9692401819629595
+  },
+  {
+    "label": "rtl-bounded-4096-prng-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9695363079663366
+  },
+  {
+    "label": "rtl-bounded-4096-prng-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-4096.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.9696081860456616
+  },
+  {
+    "label": "rtl-control-held",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=held",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16479393502231687
+  },
+  {
+    "label": "rtl-control-invalid",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=invalid",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16477362299337983
+  },
+  {
+    "label": "rtl-control-error_first",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=error_first",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16479022696148604
+  },
+  {
+    "label": "rtl-control-error_last",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=error_last",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.2148670059395954
+  },
+  {
+    "label": "rtl-control-reset_req",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_req",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16469204903114587
+  },
+  {
+    "label": "rtl-control-reset_read",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_read",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.1647499919636175
+  },
+  {
+    "label": "rtl-control-reset_aes",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_aes",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.16480506595689803
+  },
+  {
+    "label": "rtl-control-reset_hash",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_hash",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.265276154037565
+  },
+  {
+    "label": "rtl-control-reset_return",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_return",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 0.2653773070778698
+  },
+  {
+    "label": "rtl-full-0-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 438.0436000570189
+  },
+  {
+    "label": "rtl-full-1-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern",
+      "+MODE=stalled",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 442.86352720099967
+  },
+  {
+    "label": "rtl-full-2-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 439.8510638299631
+  },
+  {
+    "label": "rtl-full-3-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 442.82194853399415
+  },
+  {
+    "label": "rtl-default-invalid",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=invalid",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.7741241619223729
+  },
+  {
+    "label": "rtl-default-error_first",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=error_first",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.1706859109690413
+  },
+  {
+    "label": "rtl-default-reset_req",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=reset_req",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.1704824909102172
+  },
+  {
+    "label": "rtl-default-reset_read",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/rtl-2097152.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=reset_read",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 1.1710492060519755
+  },
+  {
+    "label": "invalid-parameter-0",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=0",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.01580810302402824
+  },
+  {
+    "label": "invalid-parameter-63",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=63",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.015673205954954028
+  },
+  {
+    "label": "invalid-parameter-65",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=65",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.015668638981878757
+  },
+  {
+    "label": "invalid-parameter-2097216",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-s",
+      "randomx_scratchpad_aes_hash",
+      "-Prandomx_scratchpad_aes_hash.SCRATCHPAD_BYTES=2097216",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/invalid.vvp",
+      "rtl/aes/vendor/secworks/aes_sbox.v",
+      "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "rtl/aes/randomx_aes_round.v",
+      "rtl/hash/randomx_scratchpad_aes_hash.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": true,
+    "returncode": 1,
+    "elapsed_seconds": 0.015708336024545133
+  },
+  {
+    "label": "synth-scanner-default",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/hash/vendor/blake2 rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/hash/randomx_scratchpad_aes_hash.v; chparam -set SCRATCHPAD_BYTES 2097152 randomx_scratchpad_aes_hash; synth -top randomx_scratchpad_aes_hash -flatten; check -assert; tee -o /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/stat-scanner-default.txt stat; write_verilog -noattr /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-scanner-default.v; write_json /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-scanner-default.json"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 7200,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 132.6832924010232
+  },
+  {
+    "label": "synth-finalizer-default",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/hash/vendor/blake2 rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/hash/randomx_blake2b_chain_core.v rtl/hash/randomx_regfile_blake2b.v rtl/hash/randomx_scratchpad_aes_hash.v rtl/hash/randomx_scratchpad_finalizer.v; chparam -set SCRATCHPAD_BYTES 2097152 randomx_scratchpad_finalizer; synth -top randomx_scratchpad_finalizer -flatten; check -assert; tee -o /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/stat-finalizer-default.txt stat; write_verilog -noattr /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-default.v; write_json /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-default.json"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 7200,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 190.82290761894546
+  },
+  {
+    "label": "synth-finalizer-bounded256",
+    "argv": [
+      "yosys",
+      "-p",
+      "read_verilog -Irtl/hash/vendor/blake2 rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/hash/randomx_blake2b_chain_core.v rtl/hash/randomx_regfile_blake2b.v rtl/hash/randomx_scratchpad_aes_hash.v rtl/hash/randomx_scratchpad_finalizer.v; chparam -set SCRATCHPAD_BYTES 256 randomx_scratchpad_finalizer; synth -top randomx_scratchpad_finalizer -flatten; check -assert; tee -o /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/stat-finalizer-bounded256.txt stat; write_verilog -noattr /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-bounded256.v; write_json /home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-bounded256.json"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 7200,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 190.78021816792898
+  },
+  {
+    "label": "compile-mapped-256",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-DSCRATCHPAD_FINALIZER_NETLIST",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=256",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-bounded256.v",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/yosys-simcells.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 70.99238621001132
+  },
+  {
+    "label": "mapped-bounded-256-zero-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero",
+      "+MODE=ideal",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.500331232906319
+  },
+  {
+    "label": "mapped-bounded-256-zero-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero",
+      "+MODE=stalled",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.651489150011912
+  },
+  {
+    "label": "mapped-bounded-256-walking-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=ideal",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.451554105035029
+  },
+  {
+    "label": "mapped-bounded-256-walking-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=stalled",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.703949491027743
+  },
+  {
+    "label": "mapped-bounded-256-prng-ideal",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng",
+      "+MODE=ideal",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 7.3571957079693675
+  },
+  {
+    "label": "mapped-bounded-256-prng-stalled",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng",
+      "+MODE=stalled",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 7.608386771986261
+  },
+  {
+    "label": "mapped-control-held",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=held",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.4517380699981
+  },
+  {
+    "label": "mapped-control-invalid",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=invalid",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.955659579951316
+  },
+  {
+    "label": "mapped-control-error_first",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=error_first",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.6022689919918776
+  },
+  {
+    "label": "mapped-control-error_last",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=error_last",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.8534385280217975
+  },
+  {
+    "label": "mapped-control-reset_req",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_req",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.754206188954413
+  },
+  {
+    "label": "mapped-control-reset_read",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_read",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 7.254884834983386
+  },
+  {
+    "label": "mapped-control-reset_aes",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_aes",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 6.9530399040086195
+  },
+  {
+    "label": "mapped-control-reset_hash",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_hash",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 8.060765033005737
+  },
+  {
+    "label": "mapped-control-reset_return",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-256.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking",
+      "+MODE=reset_return",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=0"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 10.526156003004871
+  },
+  {
+    "label": "compile-mapped-default",
+    "argv": [
+      "iverilog",
+      "-g2012",
+      "-Wall",
+      "-Irtl/hash/vendor/blake2",
+      "-DSCRATCHPAD_FINALIZER_NETLIST",
+      "-s",
+      "tb_scratchpad_finalization",
+      "-Ptb_scratchpad_finalization.SCRATCHPAD_BYTES=2097152",
+      "-o",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default.vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/netlist-finalizer-default.v",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/yosys-simcells.v",
+      "rtl/hash/tests/tb_scratchpad_finalization.v"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 69.73065607610624
+  },
+  {
+    "label": "mapped-default-invalid",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=invalid",
+      "+ROUND_MODE=0",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 5.395368169993162
+  },
+  {
+    "label": "mapped-default-error_first",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=error_first",
+      "+ROUND_MODE=1",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 4.3866373230703175
+  },
+  {
+    "label": "mapped-default-reset_req",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=reset_req",
+      "+ROUND_MODE=2",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 4.741300005931407
+  },
+  {
+    "label": "mapped-default-reset_read",
+    "argv": [
+      "vvp",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/mapped-default.vvp",
+      "+DIR=/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7",
+      "+MODE=reset_read",
+      "+ROUND_MODE=3",
+      "+RESTART_ONLY=1"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 3600,
+    "expected_failure": false,
+    "returncode": 0,
+    "elapsed_seconds": 4.842061923001893
+  }
+]

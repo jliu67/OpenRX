@@ -1,0 +1,11 @@
+{
+  "SHA256": "b7ec8f825f289807c8d70a809dcb9b5b1dce598fe219efa20d72f35f34898798",
+  "accepted_head": "990f36830c5a9854bf8e2cf1fe7fd7d4ccf7f192",
+  "provenance_json_sha256": "c2d3f4d5173375cc13f867ddc03319c1babe8b2d2f50c8174ff60574a4c7756a",
+  "purpose": "independent native hash vectors only, never supplied as connected DUT data",
+  "review": "https://github.com/jliu67/OpenRX/pull/63#pullrequestreview-5505712453",
+  "source": "accepted PR63 full native-v2 output program-registers.hex, all8 DUT program boundaries/full2MiB validated",
+  "source_path": "/tmp/openrx-program-sequence-full-v2-01/program-registers.hex",
+  "use": "assertion-only native unit corpus; generated short fixtures remain separate connected references",
+  "vector_records": 8
+}

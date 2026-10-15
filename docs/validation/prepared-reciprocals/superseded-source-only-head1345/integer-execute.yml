@@ -1,0 +1,71 @@
+name: Native RandomX program sequencing and execution RTL
+on:
+  pull_request:
+    paths:
+      - 'rtl/execute/**'
+      - 'rtl/engine/**'
+      - 'rtl/iteration/**'
+      - 'rtl/aes/**'
+      - 'scripts/test_integer_execute.py'
+      - 'scripts/test_integer_multiply.py'
+      - 'scripts/test_floating_execute.py'
+      - 'scripts/floating_fixture.py'
+      - 'scripts/test_program_sequence.py'
+      - 'scripts/prepared_parent_bindings.py'
+      - 'tests/test_prepared_parent_bindings.py'
+      - 'docs/validation/prepared-reciprocals/parent-source-bindings.json'
+      - 'scripts/program_sequence_fixture.py'
+      - 'scripts/test_divsqrt_execute.py'
+      - 'scripts/divsqrt_fixture.py'
+      - 'scripts/hardfloat_compile_view.py'
+      - 'scripts/test_iteration_engine.py'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx*.json'
+      - '.github/workflows/integer-execute.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  integer-differential:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select declared candidate or legacy execution scope
+        id: scope
+        run: |
+          if test -f docs/validation/prepared-reciprocals/parent-source-bindings.json; then
+            echo "candidate=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "candidate=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Candidate source bindings and retained server evidence only
+        if: steps.scope.outputs.candidate == 'true'
+        run: |
+          python3 -B scripts/prepared_parent_bindings.py --check-evidence \
+            --output "$RUNNER_TEMP/prepared-parent-bindings-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/report.json"
+          python3 -B -m unittest discover -s tests -p test_prepared_parent_bindings.py -v
+          echo "Hosted candidate check: source bindings, rejection tests and retained evidence only. Native execution and synthesis remain deferred to an authorized server run." >> "$GITHUB_STEP_SUMMARY"
+      - name: Install official HDL packages
+        if: steps.scope.outputs.candidate == 'false'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Execute native-generated program sequences, control and actual mapped gates
+        if: steps.scope.outputs.candidate == 'false'
+        run: |
+          python3 scripts/test_program_sequence.py \
+            --output "$RUNNER_TEMP/integer-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
+      - name: Retain complete licensed outputs
+        if: always() && steps.scope.outputs.candidate == 'false'
+        uses: actions/upload-artifact@v4
+        with:
+          name: integer-execute-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/integer-execute-${{ github.run_id }}-${{ github.run_attempt }}/
+      - name: Retain candidate source and retained-evidence report only
+        if: always() && steps.scope.outputs.candidate == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: prepared-parent-bindings-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/prepared-parent-bindings-${{ github.run_id }}-${{ github.run_attempt }}/

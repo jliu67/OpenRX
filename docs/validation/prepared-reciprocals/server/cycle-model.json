@@ -1,0 +1,431 @@
+{
+  "status": "calibrated-stage-candidate",
+  "pairs": [
+    {
+      "stall": 0,
+      "scope": "native iteration stage including every preparation",
+      "baseline_clocks": 370444,
+      "prepared_clocks": 159376,
+      "static_active_rcp": 1066,
+      "dynamic_active_rcp": 4264,
+      "measured_request_clocks_each": 1,
+      "measured_reply_wait_clocks_each": 65,
+      "measured_active_rcp_clocks_each": 66,
+      "preparation_added_clocks": 70356,
+      "kernel_saved_clocks": 281424,
+      "net_stage_saved_clocks": 211068,
+      "baseline_phases": {
+        "launch_clocks": 48,
+        "entry_clocks": 720,
+        "kernel_clocks": 361156,
+        "dataset_clocks": 96,
+        "tail_clocks": 432,
+        "return_clocks": 240
+      },
+      "prepared_phases": {
+        "launch_clocks": 48,
+        "entry_clocks": 720,
+        "kernel_clocks": 79732,
+        "dataset_clocks": 96,
+        "tail_clocks": 432,
+        "return_clocks": 240
+      },
+      "nested_wait_observers": {
+        "prep_request_stall": {
+          "baseline": 0,
+          "prepared": 0
+        },
+        "prep_reply_wait": {
+          "baseline": 3840,
+          "prepared": 3840
+        },
+        "sp_request_stall": {
+          "baseline": 0,
+          "prepared": 0
+        },
+        "sp_reply_wait": {
+          "baseline": 1872,
+          "prepared": 1872
+        },
+        "sp_store_stall": {
+          "baseline": 0,
+          "prepared": 0
+        },
+        "dataset_request_stall": {
+          "baseline": 0,
+          "prepared": 0
+        },
+        "dataset_reply_wait": {
+          "baseline": 48,
+          "prepared": 48
+        },
+        "return_hold_wait": {
+          "baseline": 192,
+          "prepared": 192
+        },
+        "fetch_request_stall": {
+          "baseline": 0,
+          "prepared": 0
+        },
+        "fetch_reply_wait": {
+          "baseline": 15424,
+          "prepared": 15424
+        },
+        "tail_aes_wait": {
+          "baseline": 96,
+          "prepared": 96
+        }
+      },
+      "control_and_outside_excluded_from_native_window": {
+        "baseline": {
+          "control_clocks": 5545,
+          "outside_clocks": 4,
+          "elapsed_cycles": 375993
+        },
+        "prepared": {
+          "control_clocks": 5545,
+          "outside_clocks": 4,
+          "elapsed_cycles": 164925
+        }
+      },
+      "full_hash_performance_accepted": false,
+      "per_admission": [
+        {
+          "admission": 0,
+          "v2": 1,
+          "preparation_added_clocks": 264,
+          "execution_saved_clocks": 1056,
+          "net_stage_saved_clocks": 792
+        },
+        {
+          "admission": 1,
+          "v2": 1,
+          "preparation_added_clocks": 264,
+          "execution_saved_clocks": 1056,
+          "net_stage_saved_clocks": 792
+        },
+        {
+          "admission": 2,
+          "v2": 1,
+          "preparation_added_clocks": 858,
+          "execution_saved_clocks": 3432,
+          "net_stage_saved_clocks": 2574
+        },
+        {
+          "admission": 3,
+          "v2": 1,
+          "preparation_added_clocks": 17160,
+          "execution_saved_clocks": 68640,
+          "net_stage_saved_clocks": 51480
+        },
+        {
+          "admission": 4,
+          "v2": 1,
+          "preparation_added_clocks": 17160,
+          "execution_saved_clocks": 68640,
+          "net_stage_saved_clocks": 51480
+        },
+        {
+          "admission": 5,
+          "v2": 1,
+          "preparation_added_clocks": 264,
+          "execution_saved_clocks": 1056,
+          "net_stage_saved_clocks": 792
+        },
+        {
+          "admission": 6,
+          "v2": 0,
+          "preparation_added_clocks": 0,
+          "execution_saved_clocks": 0,
+          "net_stage_saved_clocks": 0
+        },
+        {
+          "admission": 7,
+          "v2": 0,
+          "preparation_added_clocks": 0,
+          "execution_saved_clocks": 0,
+          "net_stage_saved_clocks": 0
+        },
+        {
+          "admission": 8,
+          "v2": 0,
+          "preparation_added_clocks": 594,
+          "execution_saved_clocks": 2376,
+          "net_stage_saved_clocks": 1782
+        },
+        {
+          "admission": 9,
+          "v2": 0,
+          "preparation_added_clocks": 16896,
+          "execution_saved_clocks": 67584,
+          "net_stage_saved_clocks": 50688
+        },
+        {
+          "admission": 10,
+          "v2": 0,
+          "preparation_added_clocks": 16896,
+          "execution_saved_clocks": 67584,
+          "net_stage_saved_clocks": 50688
+        },
+        {
+          "admission": 11,
+          "v2": 0,
+          "preparation_added_clocks": 0,
+          "execution_saved_clocks": 0,
+          "net_stage_saved_clocks": 0
+        }
+      ]
+    },
+    {
+      "stall": 1,
+      "scope": "native iteration stage including every preparation",
+      "baseline_clocks": 398580,
+      "prepared_clocks": 187512,
+      "static_active_rcp": 1066,
+      "dynamic_active_rcp": 4264,
+      "measured_request_clocks_each": 1,
+      "measured_reply_wait_clocks_each": 65,
+      "measured_active_rcp_clocks_each": 66,
+      "preparation_added_clocks": 70356,
+      "kernel_saved_clocks": 281424,
+      "net_stage_saved_clocks": 211068,
+      "baseline_phases": {
+        "launch_clocks": 48,
+        "entry_clocks": 2400,
+        "kernel_clocks": 369252,
+        "dataset_clocks": 336,
+        "tail_clocks": 1200,
+        "return_clocks": 240
+      },
+      "prepared_phases": {
+        "launch_clocks": 48,
+        "entry_clocks": 2400,
+        "kernel_clocks": 87828,
+        "dataset_clocks": 336,
+        "tail_clocks": 1200,
+        "return_clocks": 240
+      },
+      "nested_wait_observers": {
+        "prep_request_stall": {
+          "baseline": 7680,
+          "prepared": 7680
+        },
+        "prep_reply_wait": {
+          "baseline": 13512,
+          "prepared": 13512
+        },
+        "sp_request_stall": {
+          "baseline": 3744,
+          "prepared": 3744
+        },
+        "sp_reply_wait": {
+          "baseline": 7488,
+          "prepared": 7488
+        },
+        "sp_store_stall": {
+          "baseline": 1184,
+          "prepared": 1184
+        },
+        "dataset_request_stall": {
+          "baseline": 96,
+          "prepared": 96
+        },
+        "dataset_reply_wait": {
+          "baseline": 192,
+          "prepared": 192
+        },
+        "return_hold_wait": {
+          "baseline": 192,
+          "prepared": 192
+        },
+        "fetch_request_stall": {
+          "baseline": 0,
+          "prepared": 0
+        },
+        "fetch_reply_wait": {
+          "baseline": 15424,
+          "prepared": 15424
+        },
+        "tail_aes_wait": {
+          "baseline": 96,
+          "prepared": 96
+        }
+      },
+      "control_and_outside_excluded_from_native_window": {
+        "baseline": {
+          "control_clocks": 5545,
+          "outside_clocks": 4,
+          "elapsed_cycles": 404129
+        },
+        "prepared": {
+          "control_clocks": 5545,
+          "outside_clocks": 4,
+          "elapsed_cycles": 193061
+        }
+      },
+      "full_hash_performance_accepted": false,
+      "per_admission": [
+        {
+          "admission": 0,
+          "v2": 1,
+          "preparation_added_clocks": 264,
+          "execution_saved_clocks": 1056,
+          "net_stage_saved_clocks": 792
+        },
+        {
+          "admission": 1,
+          "v2": 1,
+          "preparation_added_clocks": 264,
+          "execution_saved_clocks": 1056,
+          "net_stage_saved_clocks": 792
+        },
+        {
+          "admission": 2,
+          "v2": 1,
+          "preparation_added_clocks": 858,
+          "execution_saved_clocks": 3432,
+          "net_stage_saved_clocks": 2574
+        },
+        {
+          "admission": 3,
+          "v2": 1,
+          "preparation_added_clocks": 17160,
+          "execution_saved_clocks": 68640,
+          "net_stage_saved_clocks": 51480
+        },
+        {
+          "admission": 4,
+          "v2": 1,
+          "preparation_added_clocks": 17160,
+          "execution_saved_clocks": 68640,
+          "net_stage_saved_clocks": 51480
+        },
+        {
+          "admission": 5,
+          "v2": 1,
+          "preparation_added_clocks": 264,
+          "execution_saved_clocks": 1056,
+          "net_stage_saved_clocks": 792
+        },
+        {
+          "admission": 6,
+          "v2": 0,
+          "preparation_added_clocks": 0,
+          "execution_saved_clocks": 0,
+          "net_stage_saved_clocks": 0
+        },
+        {
+          "admission": 7,
+          "v2": 0,
+          "preparation_added_clocks": 0,
+          "execution_saved_clocks": 0,
+          "net_stage_saved_clocks": 0
+        },
+        {
+          "admission": 8,
+          "v2": 0,
+          "preparation_added_clocks": 594,
+          "execution_saved_clocks": 2376,
+          "net_stage_saved_clocks": 1782
+        },
+        {
+          "admission": 9,
+          "v2": 0,
+          "preparation_added_clocks": 16896,
+          "execution_saved_clocks": 67584,
+          "net_stage_saved_clocks": 50688
+        },
+        {
+          "admission": 10,
+          "v2": 0,
+          "preparation_added_clocks": 16896,
+          "execution_saved_clocks": 67584,
+          "net_stage_saved_clocks": 50688
+        },
+        {
+          "admission": 11,
+          "v2": 0,
+          "preparation_added_clocks": 0,
+          "execution_saved_clocks": 0,
+          "net_stage_saved_clocks": 0
+        }
+      ]
+    }
+  ],
+  "surrounding_hash_stages": {
+    "connected_complete_pipeline_measured": false,
+    "evidence_relation": "Separate draft component fixtures with different boundaries/providers; not integrated into this candidate.",
+    "draft_component_evidence": [
+      {
+        "stage": "Register-file BLAKE2b digest and interprogram seed boundary",
+        "status": "draft-component-only",
+        "pr": "https://github.com/jliu67/OpenRX/pull/65",
+        "head": "4f095fc147b5bc78de79746a0a172f38e34d6450",
+        "local_evidence": "/tmp/openrx-regfile-hash-validation-03/summary.json",
+        "summary_sha256": "27d8c086904a3ef6a23c499766e66d07720fc1fd3a01e7b8d6adae6b2f847ae4",
+        "measurements": {
+          "digest_response_clocks": 56,
+          "seed_boundary_response_clocks": 58,
+          "connected_8_program_4_iteration_fixture_added_clocks": 414
+        },
+        "limits": "Digest56 is contained in seed58;414 is measured incremental boundary cost for a different eight-program/four-iteration fixture. Do not add all three."
+      },
+      {
+        "stage": "Full2MiB post-execution scratchpad finalization",
+        "status": "draft-component-only",
+        "pr": "https://github.com/jliu67/OpenRX/pull/68",
+        "head": "a4bab722b745ef02c189fbc15be448ad189f19fb",
+        "local_evidence": "/tmp/openrx-scratchpad-finalization-validation-01/summary.json",
+        "summary_sha256": "5df336c1a1571fa0f2135590f496a6a32e655390dd358f938e0b9cf86096f403",
+        "measurements": {
+          "bytes": 2097152,
+          "reads": 131072,
+          "ideal_response_clocks": 393284,
+          "stalled_response_clocks": 1048649,
+          "balanced_profile_trials": 4
+        },
+        "limits": "Separate native final-program scratchpad and deterministic patterns; ideal/stalled simulation memory schedules, not calibrated physical memory or this iteration candidate."
+      }
+    ],
+    "missing_stages_or_calibration": [
+      {
+        "stage": "Initial input hash and scratchpad AES fill",
+        "clocks": null
+      },
+      {
+        "stage": "Per-program AES generation and descriptors",
+        "clocks": null
+      },
+      {
+        "stage": "Actual complete RandomX dataset and calibrated scratchpad/dataset memory",
+        "clocks": null
+      },
+      {
+        "stage": "Connected eight-program2048-iteration pipeline including interprogram and final hash",
+        "clocks": null
+      },
+      {
+        "stage": "Selected intended core frequency, timing and physical PPA",
+        "clocks": null
+      }
+    ],
+    "workload_pin": "aaafe71322df6602c21a5c72937ac284724ae561",
+    "complete_pipeline_clocks": null,
+    "full_hash_speedup": null,
+    "physical_PPA_accepted": false,
+    "aggregation": "Component fixtures have different boundaries and memory providers; do not sum them into a measured hash."
+  },
+  "inputs_sha256": {
+    "/tmp/openrx-prepared-reciprocals-mapped-tsk7cwtj/docs/validation/prepared-reciprocals/surrounding-stages.json": "7cb600d78689c3c25c0887045a58b67d95e004c200be9543d7ee22d7479e2a0e",
+    "coverage.json": "19c3920fb1d669ab69dc0a28a27a9b74a6b8f980455a4dc2546c4725365a3596",
+    "rtl-iteration-0-0.log": "20da56a5451ffeb32fd96acd8763c02b712019e9bce0798ab69da7aa9d10e82b",
+    "integration-0-0.json": "54fc2cbcbc7e6dbb3a3174958d7e71be467e1b7fccd9b91c0beace7bf3099ec6",
+    "rtl-iteration-1-0.log": "f67d2698e0fdcc5d5ae88b5e06f7303855b6891123808c54bc3e8e26f42f85ab",
+    "integration-1-0.json": "56b423623d2cdc5e432686a1dd227863bae71019b8f82cd0fcb7da4cd6c5a06a",
+    "rtl-iteration-0-1.log": "021b085e7493ac73b876c4b6d4db5aef9677a3c99e3ded199ef31f33a0c8de69",
+    "integration-0-1.json": "a36a276189cd6b88d35436ad549b92240b18303424be0b173292436dfafa2719",
+    "rtl-iteration-1-1.log": "aa23d1a640aa47bb8d5e1c7233f253d4b31e6efbe77756e5bec377bdb193f972",
+    "integration-1-1.json": "3f3732336a3dddd771023ea721bf8bba99b111086dc1295b62853adf53bdcc6b"
+  },
+  "full_hash_performance_accepted": false
+}

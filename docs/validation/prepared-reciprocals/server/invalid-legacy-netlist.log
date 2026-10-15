@@ -1,0 +1,5 @@
+rtl/execute/randomx_integer_iteration.v:90: error: Unknown module type: integer_iteration_legacy_netlist_requires_PREPARED_RCP_0
+1 error(s) during elaboration.
+*** These modules were missing:
+        integer_iteration_legacy_netlist_requires_PREPARED_RCP_0 referenced 1 times.
+***

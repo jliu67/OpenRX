@@ -1,0 +1,23 @@
+	Command being timed: "g++ -std=c++11 -O2 -I/tmp/openrx-prepared-reciprocal-validation-05 -I/tmp/openrx-prepared-reciprocals-mapped-tsk7cwtj/vendor/randomx/src /tmp/openrx-prepared-reciprocals-mapped-tsk7cwtj/rtl/execute/tests/prepared_reciprocal_oracle.cpp /tmp/openrx-prepared-reciprocals-mapped-tsk7cwtj/vendor/randomx/src/soft_aes.cpp /tmp/openrx-prepared-reciprocals-mapped-tsk7cwtj/vendor/randomx/src/bytecode_machine.cpp /tmp/openrx-prepared-reciprocals-mapped-tsk7cwtj/vendor/randomx/src/instructions_portable.cpp /tmp/openrx-prepared-reciprocals-mapped-tsk7cwtj/vendor/randomx/src/reciprocal.c -o /tmp/openrx-prepared-reciprocal-validation-05/oracle"
+	User time (seconds): 3.69
+	System time (seconds): 0.31
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.05
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 176388
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 145110
+	Voluntary context switches: 41
+	Involuntary context switches: 19
+	Swaps: 0
+	File system inputs: 392
+	File system outputs: 760
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

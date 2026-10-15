@@ -210,6 +210,34 @@ and [EXP-010](../experiments/EXP-010-native-program-sequence.md) retain independ
 review. Revisit on concrete hardware initialization/finalization/dataset integration
 or technology timing/power evidence; full hash/physical PPA remain unaccepted.
 
+## 2026-10-14 — Charge reciprocal preparation at immutable admission
+
+Use one fully loaded 384/256-word image, epoch/PC tags and private native constants; repeated iterations reuse only the completed owned image. Zero/power-of-two raw unsigned 32-bit immediates remain lexical NOPs; same-address or identical reload is charged again. Reset/whole cancel invalidates arrays logically, execution cancel retains the image without undoing committed stores; generations cannot be reused while late replies can arrive. Keep default runtime execution and reject the legacy prepared-netlist ABI. Compare common native/memory work through disjoint measured clocks and nested observers; full pipeline unknowns remain null. [Task69](https://github.com/jliu67/OpenRX/issues/69)/[EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) require independent review and complete-pipeline baseline before full-hash claims or widening.
+
+
+## 2026-10-14 — PR70 explicit parent binding and bounded hosted scope
+
+Keep the original accepted compatibility manifest unchanged. Permit exactly the
+two intentional executor successors only when old hashes match that manifest and
+new hashes match both live bytes and the unchanged219-input server record; retain
+default PREPARED_RCP=0 and reject other changes. Candidate hosted source/evidence
+checks remain separate from the deferred complete native program-sequence/synthesis
+server replay and independent acceptance. Preserve the initial hosted failure and
+all scientific inputs/results. [Evidence](../docs/validation/prepared-reciprocals/README.md#hosted-source-binding-correction).
+
+
+## 2026-10-14 — Restore PR70 actual program-sequence regression gate
+
+The historical head1345 source-only route skipped native/mapped integration.
+The corrected gate unconditionally runs the existing --synthesize regression;
+binding/rejection checks remain additional guards. Fresh serial server validation
+passes9RTL/9mapped/4invalid/3actualsynthesis, with exact mapped/RTL PASS equality.
+All219 original science inputs and accepted manifests/old-new binding digests stay
+unchanged. Existing8×4 native v1/v2 tests, default8×2048 control contract and bounded
+whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
+performance acceptance. Sources/complete outputs and superseded binding-only CI
+artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
+Independent exact-head review remains required; no merge. Compute slot released.
 
 ## D048 — fixed native register-file BLAKE2b and buffered seeds, 2026-10-13
 
@@ -228,3 +256,30 @@ initialization/dataset/full-hash/PPA boundaries unchanged. Actual new-stage cell
 and fixture clocks, full2MiB RTL and bounded256B mapped tests remain distinct.
 [Task67](https://github.com/jliu67/OpenRX/issues/67) /
 [design](../rtl/hash/FINALIZATION.md) require new independent review.
+
+## D050 — preserve both accepted parents and declare combined source bindings, 2026-10-14
+
+Merge accepted main5f into reviewed reciprocal candidate35c without rebasing or
+rewriting either parent's evidence. Preserve original53/69/219/246/259 manifests
+and their exact source identities. Admit only narrowly named, exact digest-bound
+successors in an additive combined declaration, retaining default PREPARED_RCP=0,
+native mathematical criteria and unconditional actual integration gates. Changed
+context is not an all-original-inputs-unchanged claim. Run affected execution,
+hardware-seed and scratchpad-finalization regressions from one frozen combined
+source under fresh serialized resource admission, then request new independent
+exact-head review. Existing complete16K/native-v2 evidence is reused where its
+inputs remain unchanged; this bounded combination is not a full-hash/PPA result.
+
+
+## D051 — Recover verified components without relabeling a failed wrapper
+
+The original combined runner failed only after successful unit/seed commands,
+because external orchestration assumed a nonexistent seed-summary status field.
+Preserve its failed receipt/traceback and exact complete outputs. Reuse that
+bounded component proof only after immutable-runner integrity, complete source,
+logged native/mapped results and input bindings verify. Run only missing
+finalization under a fresh admitted request from identical frozen source.
+Composite closeout binds both runner attempts and retains original failure;
+neither source-only checks nor partial/skipped execution can satisfy a gate.
+Publication changes only declared metadata/evidence; new exact-head independent
+review remains required. No full prepared hash, physical PPA or own merge follows.

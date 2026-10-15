@@ -1,0 +1,12 @@
+{
+  "upstream_file": "rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v",
+  "upstream_sha256": "f76feb5557faa8bcb2868e51bf2ce7d1297be46dd67ae51d509b1ae91066a522",
+  "view_file": "HardFloat-divSqrt-compile-view.v",
+  "view_sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+  "transform": "replace one duplicate scalar wire sqrtOpOut declaration with an empty CRLF line; the ANSI output already declares the net",
+  "removed_declarations": 1,
+  "all_other_bytes_unchanged": true,
+  "original_vendor_file_unchanged": true,
+  "license": "original full BSD-3-Clause notices retained; separately labeled generated compile view",
+  "scope": "Icarus compile only; Yosys synthesis continues to use unchanged upstream source"
+}

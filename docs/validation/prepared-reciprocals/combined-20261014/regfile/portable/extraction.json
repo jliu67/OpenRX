@@ -1,0 +1,25 @@
+{
+  "RandomX_commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+  "generated_sha256": {
+    "pinned_bytecode_loop.inc": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+    "pinned_dataset_read.inc": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+    "pinned_destructor.inc": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+    "pinned_float_masks.inc": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+    "pinned_iteration.inc": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+    "pinned_scratchpad_address.inc": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492"
+  },
+  "policy": "verbatim functions/bodies with upstream notices; observer invokes unchanged instruction implementation",
+  "source_sha256": {
+    "vendor/randomx/src/bytecode_machine.hpp": "9683d842f9491488743435db4c183e64ff1a87f7a9f7f702cee0ff169820118f",
+    "vendor/randomx/src/virtual_machine.cpp": "e8f10003a874f44ed27974be7e81e425eced3ae6848596fe355363debc8bcccb",
+    "vendor/randomx/src/vm_interpreted.cpp": "84687918372ba8b15dd3cca13821f2eb316a31881c502e1dd1483f2aeba8d2dc"
+  },
+  "verbatim_body_sha256": {
+    "pinned_bytecode_loop.inc": "2c4b616316e5ccb59f934ab1430113a7f770dbb0d6bbf6f991f7e03565111458",
+    "pinned_dataset_read.inc": "1010efdd51eb0c6ce62728d19f91eb1e2381f1de48de6f604c7bbae840baa466",
+    "pinned_destructor.inc": "68b2dcb4b406fc94789f776fcafd949d5f1bc574c611c7f28a1096464d50ed8d",
+    "pinned_float_masks.inc": "ec9a4af1363a523275595a6f10d280f3cf611910c417ccea7dfcee680ffba2e8",
+    "pinned_iteration.inc": "4cfd2a5da53f9df79a1939abaa7fb185bccf4464bb6a01de26c7b13769710659",
+    "pinned_scratchpad_address.inc": "8b3617d0835568a23d84c294ce87664e37306e56d52993d537d9e9a628951d5e"
+  }
+}

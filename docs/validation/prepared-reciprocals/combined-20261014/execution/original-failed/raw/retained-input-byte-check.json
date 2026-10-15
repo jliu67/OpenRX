@@ -1,0 +1,14 @@
+[
+  {
+    "manifest": "docs/validation/prepared-reciprocals/server/inputs.json",
+    "input_count": 219,
+    "changed_live_paths": [],
+    "scope": "Retained exact executable input bytes. Existing original-base result is not new combined acceptance."
+  },
+  {
+    "manifest": "docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json",
+    "input_count": 73,
+    "changed_live_paths": [],
+    "scope": "Retained exact executable input bytes. Existing original-base result is not new combined acceptance."
+  }
+]

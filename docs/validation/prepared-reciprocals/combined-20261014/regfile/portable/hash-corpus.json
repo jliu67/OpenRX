@@ -1,0 +1,13 @@
+{
+  "accepted_full_native_program_register_files": 8,
+  "byte_layout": "R[64],F[64],E[64],A[64], little endian words; unkeyed256 bytes",
+  "digest_sizes": [
+    32,
+    64
+  ],
+  "each_byte_single_high_bit": 256,
+  "seed": "0x626c616b653262",
+  "seeded_arbitrary_bytes": 256,
+  "vectors_per_digest": 524,
+  "zero_ones_sequence_inverse": 4
+}

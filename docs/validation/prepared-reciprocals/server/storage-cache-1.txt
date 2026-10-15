@@ -1,0 +1,90 @@
+
+9. Printing statistics.
+
+=== randomx_program_reciprocals ===
+
+   Number of wires:                236
+   Number of wire bits:           4137
+   Number of public wires:          73
+   Number of public wire bits:    1232
+   Number of memories:               2
+   Number of memory bits:        49152
+   Number of processes:              0
+   Number of cells:                199
+     $add                            2
+     $and                            2
+     $dff                           18
+     $eq                             8
+     $ge                             2
+     $gt                             1
+     $le                             1
+     $logic_and                     21
+     $logic_not                     11
+     $logic_or                       8
+     $lt                             2
+     $memrd                          2
+     $memwr                          3
+     $mux                          105
+     $ne                             4
+     $or                             1
+     $pmux                           4
+     $reduce_or                      1
+     $sub                            2
+     randomx_reciprocal32            1
+
+=== randomx_reciprocal32 ===
+
+   Number of wires:                 99
+   Number of wire bits:           2036
+   Number of public wires:          25
+   Number of public wire bits:     420
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 88
+     $add                            1
+     $and                            1
+     $dff                            8
+     $eq                             1
+     $ge                             1
+     $logic_and                      5
+     $logic_not                      5
+     $logic_or                       2
+     $mux                           60
+     $shl                            1
+     $sub                            3
+
+=== design hierarchy ===
+
+   randomx_program_reciprocals       1
+     randomx_reciprocal32            1
+
+   Number of wires:                335
+   Number of wire bits:           6173
+   Number of public wires:          98
+   Number of public wire bits:    1652
+   Number of memories:               2
+   Number of memory bits:        49152
+   Number of processes:              0
+   Number of cells:                286
+     $add                            3
+     $and                            3
+     $dff                           26
+     $eq                             9
+     $ge                             3
+     $gt                             1
+     $le                             1
+     $logic_and                     26
+     $logic_not                     16
+     $logic_or                      10
+     $lt                             2
+     $memrd                          2
+     $memwr                          3
+     $mux                          165
+     $ne                             4
+     $or                             1
+     $pmux                           4
+     $reduce_or                      1
+     $shl                            1
+     $sub                            5
+

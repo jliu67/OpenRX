@@ -1,0 +1,3610 @@
+{
+  "directory_count": 22,
+  "file_bytes": 278721659,
+  "file_count": 383,
+  "members": {
+    "LICENSE-BLAKE2-original": {
+      "bytes": 1305,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093616164568427,
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d",
+      "uid": 1000
+    },
+    "LICENSE-OpenRX-AES": {
+      "bytes": 1790,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093616164568427,
+      "sha256": "f238879baf3549d264e2213e4dfdd998289666ce9da8a140e8b000e45f3af472",
+      "uid": 1000
+    },
+    "LICENSE-RandomX": {
+      "bytes": 1561,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093616164568427,
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "uid": 1000
+    },
+    "LICENSE-Yosys-simcells": {
+      "bytes": 31442,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399802620702,
+      "sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+      "uid": 1000
+    },
+    "LICENSE-secworks": {
+      "bytes": 1303,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093616164568427,
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "uid": 1000
+    },
+    "artifacts.sha256.json": {
+      "bytes": 41161,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096188354704590,
+      "sha256": "b49b8cc40dc034e77a1874266de579f3f176b4ab770421c619ff718e4ec2cdf5",
+      "uid": 1000
+    },
+    "commands.json": {
+      "bytes": 52963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096187237678216,
+      "sha256": "1a20d6321c03802941784ea275c93c000012e360cd0019dda49e35d2651e3d13",
+      "uid": 1000
+    },
+    "compile-mapped-256.log": {
+      "bytes": 9152,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095920316340111,
+      "sha256": "dbd1f953fa17b88639c6f2a76e222688f8379a5f4bb304a7c5a623d5b5116378",
+      "uid": 1000
+    },
+    "compile-mapped-256.time.txt": {
+      "bytes": 1274,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095990406012271,
+      "sha256": "e83c70c34d2235e64a9ee3632410cb63186c8ba1796e6e8b9a0817a1766ac307",
+      "uid": 1000
+    },
+    "compile-mapped-default.log": {
+      "bytes": 9149,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096098913589321,
+      "sha256": "81ce5a96334679f8c96da99c4f1459483b804bcf69be006b550aef7d483b1e0f",
+      "uid": 1000
+    },
+    "compile-mapped-default.time.txt": {
+      "bytes": 1276,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096167821219611,
+      "sha256": "22e9fa4a5b1a264f2b9e1f716c9013c026b058d939260831bbdcb96f72ddc5a4",
+      "uid": 1000
+    },
+    "compile-native-oracle.log": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093616164568427,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "compile-native-oracle.time.txt": {
+      "bytes": 1046,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619194632248,
+      "sha256": "061317a7768adcccd58ec1252665ac4be5626283a88cf0fb3a99fd4d2173ab72",
+      "uid": 1000
+    },
+    "compile-rtl-128.log": {
+      "bytes": 1018,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620648662881,
+      "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d",
+      "uid": 1000
+    },
+    "compile-rtl-128.time.txt": {
+      "bytes": 1251,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620686663681,
+      "sha256": "42354d8334621e47f54ae98634665423f22309bdfe39438b6b2b4563305d591a",
+      "uid": 1000
+    },
+    "compile-rtl-2097152.log": {
+      "bytes": 1018,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620842666968,
+      "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d",
+      "uid": 1000
+    },
+    "compile-rtl-2097152.time.txt": {
+      "bytes": 1259,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620881667790,
+      "sha256": "18cc80bb80c8303129e68ed28055da240ceeedd08b8ae9739d4611f922433039",
+      "uid": 1000
+    },
+    "compile-rtl-256.log": {
+      "bytes": 1018,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620712664229,
+      "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d",
+      "uid": 1000
+    },
+    "compile-rtl-256.time.txt": {
+      "bytes": 1251,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620750665030,
+      "sha256": "a0bd3362811294aa109cfe7899e445cba0490a27d356768efbc469c44e39bf0c",
+      "uid": 1000
+    },
+    "compile-rtl-4096.log": {
+      "bytes": 1018,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620777665599,
+      "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d",
+      "uid": 1000
+    },
+    "compile-rtl-4096.time.txt": {
+      "bytes": 1253,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620815666399,
+      "sha256": "c326d3c5ca143fa00b283b5fa7963b616c1bb18923f6298f4f3f8c8a9824b702",
+      "uid": 1000
+    },
+    "compile-rtl-64.log": {
+      "bytes": 1018,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620560661026,
+      "sha256": "9a06446c288c144216d6b1df4a70c3bef51413a5f74969be32bef301757ee40d",
+      "uid": 1000
+    },
+    "compile-rtl-64.time.txt": {
+      "bytes": 1249,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620598661827,
+      "sha256": "aca2fe1f2c47fdb5b388f7c4fc18c3a47f83a7fc19a77752076af99d0624cdac",
+      "uid": 1000
+    },
+    "corpus.json": {
+      "bytes": 12323,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620492659594,
+      "sha256": "f56390085e69c94ffb1146b9288e0e9dffb81e92f2b2c50e8aeeb46e40f9e79c",
+      "uid": 1000
+    },
+    "fixtures": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620491659573,
+      "uid": 1000
+    },
+    "fixtures/accepted-full-provenance.json": {
+      "bytes": 1101,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619492638526,
+      "sha256": "bb308475f48d0e2deef997e619eb56e8d8864c7f443a7dd1d74c05c4ca517ce7",
+      "uid": 1000
+    },
+    "fixtures/artifacts.sha256.json": {
+      "bytes": 18125,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620491659573,
+      "sha256": "eec0c36f86eef0c612c8a2da1c6369d359f37a7532e10a49a5ad67d800039c39",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619526639242,
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "e9a30f07e1dda9ff4ea8542ca8bbd28831ca5973aab43f8d3a00523f0a802bb8",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619526639242,
+      "sha256": "b0fcc5588f61e4888ca542ade6b7f0aec8d93ba520fcbcaf910e6b8a14b979b3",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/case.json": {
+      "bytes": 661,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619525639221,
+      "sha256": "f6809f5187e67fbe2d67925abce3578666e7a4aeef3e4f9d170c035f3ee5984c",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "43520269f5a5fb2a24e58af6d43acde21884dda90e200d6d1fa6010bfb8c7863",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "f477a76d9c100bb519c81cd2d349de7248b4512e4a6bc094c1e238544fc02d4f",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/native-inputs.json": {
+      "bytes": 404,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "7dea7ef12626c12c441110d08dad6da081701fa926e0418240f2bc41914158b4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/native-oracle.log": {
+      "bytes": 114,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "c2aa66cf003825432d3a4972643f06f9d4187c5142449d1c87b1bdcb5a3c5fd4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619520639116,
+      "sha256": "8c76cd0cae51e0d9b9162266dffd7e82ecfb7f6b22b6eff73f60793de2be0018",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "7d52af8d7a73d84539b91563e6865a43bea2572d620974b5b3b80d66d43159de",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "2194ea8c8bc4088f67130bd7ed68aa8f705f1ff6d73896c97169fb7f123ce5fe",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/scratchpad.bin": {
+      "bytes": 128,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619520639116,
+      "sha256": "44bbc8dda2ac61c2d859b51eec8ba66e25f12a9a1b421cc4361880c336275d99",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-prng/scratchpad.hex": {
+      "bytes": 264,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619522639158,
+      "sha256": "b9d53d8ce1b6fbf3502848e75a8c1fca4900a7233b2f11ac54f75bc6ceff0ec8",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619520639116,
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "71ae93bc1f73245ad7b8cc3184eb6a5e7186f4244781c403ee8b5e3c30904a70",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619520639116,
+      "sha256": "e32900c188156ba7515e369fbde0fdb8ea458adc0e0e0bf86a3e21777ce91da4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/case.json": {
+      "bytes": 670,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619519639094,
+      "sha256": "2084332beef1b9cd0d804ea2d95ed14da7dcdebfb99f16e9047860296584d5d4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "528fe2d1eb525107b0235470bffeb31d907a17e0b99d3b862af3d63b9679e8ae",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "b60bb5ae74b4f88d5fffc88095a3ea448bacabadce47c1b4054645babe228c4a",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/native-inputs.json": {
+      "bytes": 404,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "7dea7ef12626c12c441110d08dad6da081701fa926e0418240f2bc41914158b4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/native-oracle.log": {
+      "bytes": 114,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "c2aa66cf003825432d3a4972643f06f9d4187c5142449d1c87b1bdcb5a3c5fd4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619514638989,
+      "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "0f0f9a732bac99904ab7442fc3acbc7a843d4af2cef70a23a9428e707f1b92d8",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/scratchpad.bin": {
+      "bytes": 128,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619514638989,
+      "sha256": "055828904759fb49cdb8d7af6d569bfdfcf235a277ec783e4eab63b2728b8dc8",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-walking/scratchpad.hex": {
+      "bytes": 264,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619516639031,
+      "sha256": "0432188dfdf81b5d632340e91277814c21fb0aad503bfcdb1de6c9a1c954522d",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619514638989,
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619511638926,
+      "sha256": "e2bd27013edff31076933e0f83a9cc8230bb4455e23f9891b445720cb9f2d0e6",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619514638989,
+      "sha256": "0f8912b136ec446b24edaeaf1a2151678d91e9921d4199bd7d1f3ad888a7019e",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/case.json": {
+      "bytes": 661,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619513638968,
+      "sha256": "72cf27703440bf3fcf52f6e0fb72d3beaf37842aed4accea340d65c7c430cc59",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619511638926,
+      "sha256": "8d4df0edac9dbbc682fe7aa5a273df5734e18ace38a277da7cdcfce58ed8e7e9",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619511638926,
+      "sha256": "d9e065343e74a88e6ecefa146b56f6734324939e35005826551317af82eb3762",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/native-inputs.json": {
+      "bytes": 404,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619511638926,
+      "sha256": "7dea7ef12626c12c441110d08dad6da081701fa926e0418240f2bc41914158b4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/native-oracle.log": {
+      "bytes": 114,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619511638926,
+      "sha256": "c2aa66cf003825432d3a4972643f06f9d4187c5142449d1c87b1bdcb5a3c5fd4",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619509638884,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619511638926,
+      "sha256": "31dec8654861d6964c0774d82c9bb911a726025a19179e0f758fcae125cfb01e",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619511638926,
+      "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/scratchpad.bin": {
+      "bytes": 128,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619509638884,
+      "sha256": "38723a2e5e8a17aa7950dc008209944e898f69a7bd10a23c839d341e935fd5ca",
+      "uid": 1000
+    },
+    "fixtures/bounded-128-zero/scratchpad.hex": {
+      "bytes": 264,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619510638905,
+      "sha256": "aba47d92818d0e5979b2b8a8e9317c189b09491c6b74876b470ff53d6a525eb0",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619543639600,
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "931a2e4250d683501aa28c8a3aff8721f6537effd1992316c683760b109cee04",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619543639600,
+      "sha256": "68fb601fda1a32350696d305b833dee5f6c17e2d9459aab107a3fa1e84aaf3d0",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/case.json": {
+      "bytes": 662,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619542639579,
+      "sha256": "b1c30870861b2f55cac05a288e598b5d5a61280c99e3316cbd9b61bdf3cbf184",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "52d125cb14f0a3d396a4deaf1a2a3597b355b625b075ce37356a87929329076c",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "4d4da9b593f2017f33a181a38afe264417877e129a9050daf52c82fb329a3158",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/native-inputs.json": {
+      "bytes": 405,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "a4446a6dc7c42cac2c7b456022925d9cb54c668cae9a5ff3d3f95c4e4ba36ee0",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/native-oracle.log": {
+      "bytes": 114,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "166d99cda820ef5ee03a44dd71cee206a3d2f9ab6c0b0566638bd29786835ba6",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619537639474,
+      "sha256": "cfda96c6a3d7e3e8fe328629d8d005dd832960382e65279ff617baee1eba55cc",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "a9bf7be8440ba2f5acbd05575db0a60c6d1c7966fa9a25ace42f731bc5687835",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "aa75fe5b4c058dc86d4af40f9602fca3e93bc88fa4bdb96056d64510a2636053",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/scratchpad.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619537639474,
+      "sha256": "93414883e4b3ba640728cedacfc4d83ef3aeaff970829ea950b45e8b5e9cb519",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-prng/scratchpad.hex": {
+      "bytes": 528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619539639516,
+      "sha256": "d750eb6ee957741abc73756e628ebfb24ea64a436f23c904f47b900343505e26",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619537639474,
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "bfd3dac4f75eb42e9843991f1ff8c466e7119193f418035c9b36c908801043bd",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619537639474,
+      "sha256": "3adc255d41aa42c43392f120543c15660fcb714e94aa9776bf46b4c7926cfa5b",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/case.json": {
+      "bytes": 671,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619536639452,
+      "sha256": "dffe9b52e135e9232349069a992eee2c68dcf5203681af5809f0ceb467b873d5",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "b6c4c49b059b10f0d4ef9675d0e8adc6f8fa30ca464bc48c0a9022f40866ca1e",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "5b8e2a101b6bf1fe79266d5e4b7dc1f5c06923ca6c1a2c8ebdb9d7f0373aeb12",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/native-inputs.json": {
+      "bytes": 405,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "a4446a6dc7c42cac2c7b456022925d9cb54c668cae9a5ff3d3f95c4e4ba36ee0",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/native-oracle.log": {
+      "bytes": 114,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "166d99cda820ef5ee03a44dd71cee206a3d2f9ab6c0b0566638bd29786835ba6",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619531639347,
+      "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "eb124a0413e16efd2f77e55e7acdb81492305b65722587d447057bd4cb9b65a0",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/scratchpad.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619531639347,
+      "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-walking/scratchpad.hex": {
+      "bytes": 528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619533639389,
+      "sha256": "5320c57eaf9ee011dbf7ccf0f3f9afcc9f6acdb155b08d3b4aec8686c29726db",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619531639347,
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619527639263,
+      "sha256": "72e95134b2f2c7efa565fa5597cfb3fb192427c02809296d6e84d8b3b6e9c6f0",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619531639347,
+      "sha256": "19f59b52610e781bbaa8bb75e9a0a7230ef96122446c267403ff15d9e7c3d977",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/case.json": {
+      "bytes": 662,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619530639326,
+      "sha256": "4dcd0477c6ec2c758d0586671df9f37507cdbbade7cd8a3e74572baac0f2f858",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619527639263,
+      "sha256": "d129d7659f17a3a65e880d90dc05787161eafa08204ec407d667b7356882ede9",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619528639284,
+      "sha256": "827f7b8c5a38af80483cf3cc9aa9256ad9edb486502b844be92d7c56ca3bf372",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/native-inputs.json": {
+      "bytes": 405,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619528639284,
+      "sha256": "a4446a6dc7c42cac2c7b456022925d9cb54c668cae9a5ff3d3f95c4e4ba36ee0",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/native-oracle.log": {
+      "bytes": 114,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619528639284,
+      "sha256": "166d99cda820ef5ee03a44dd71cee206a3d2f9ab6c0b0566638bd29786835ba6",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619526639242,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619527639263,
+      "sha256": "f5a48a1988625f3c4bed41434a7160591be4611914b36d3f8c74286aa5c78b14",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619527639263,
+      "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/scratchpad.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619526639242,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "fixtures/bounded-256-zero/scratchpad.hex": {
+      "bytes": 528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619527639263,
+      "sha256": "2f5d66176fd2f0f1757f227bbddb0b44a55364165bfa012ecf098c0c25e85aa8",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619567640106,
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "eb849481b5bdf4a2890bb744636ac47374ca1c44c5ff0e4012dcbca3ae5323fd",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619567640106,
+      "sha256": "cdb04d73e6972732cb9632f8f301d1de97d9c77e31552a28d7a8e6ed88f64029",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/case.json": {
+      "bytes": 667,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619566640085,
+      "sha256": "5e2f0a92938d1610b9a8018bf41b8a0d0f69049fd502a87e6231b959ea0119c5",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "8e615c5725ab425cb03f5646a17779b0d8c8686d0ed17dcd76684c48bb1b9eef",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "e27a547c80d4b43ba86499cc25ac1e889caf7b92ad5977f204790250a1422c85",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/native-inputs.json": {
+      "bytes": 408,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "bb245dc163f4cb4caef5f1aff26c4632f7689774ba56534b236982ef13292a13",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/native-oracle.log": {
+      "bytes": 116,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "c983ce8f0ef2e7f1b778fd435b46642ca7950e1035c887206891f6db195a5f3b",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619561639979,
+      "sha256": "7f55abb7a70328281455cf34eb9c08a0c03c9dd0d300f5745ed1c54bca497fa3",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "c277d2f28ea0d78b6c5d5165db197c45bea6b38f953c20f074201d4cbff21b2e",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "c886b73da2913cc44312ef8ca2ea326bd7a931a726b67a6c3a87bb06724d7953",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/scratchpad.bin": {
+      "bytes": 4096,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619561639979,
+      "sha256": "66b18c4b832149c13fae5163ca50c36db3cd8b8d8e8dc31a956ae89df3f31b10",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-prng/scratchpad.hex": {
+      "bytes": 8448,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619563640021,
+      "sha256": "73935c839cf81ba45d28b0b2554b0e9af2aead170f336fad29ff0f4d1c45388b",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619561639979,
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "ca2b3d5481b3cbd2192c4178668b2c15b21f694fdb715365501817e1a048543b",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619561639979,
+      "sha256": "122d26446ad6350772bdd83f3fa83e553b57129559e3d6d8f0ec83febaf2335e",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/case.json": {
+      "bytes": 676,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619560639958,
+      "sha256": "20e53fbc2065e97d77f98766908fda1eda68a229bed3de4d32d6144aa895f03e",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "6bb27c25e44abc12f9beae947690a1433273d1877c91c030a70b2ab9339ac049",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "7d5051e3e0baab57d6594d6db28aff85a5d8480dacf313054c35d90f7587e309",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/native-inputs.json": {
+      "bytes": 408,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "bb245dc163f4cb4caef5f1aff26c4632f7689774ba56534b236982ef13292a13",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/native-oracle.log": {
+      "bytes": 116,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "c983ce8f0ef2e7f1b778fd435b46642ca7950e1035c887206891f6db195a5f3b",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619555639853,
+      "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "fb937807d52f64c7234a01f5931ae2f2e14d6f7308af931ebcd1ec5a81cccab3",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/scratchpad.bin": {
+      "bytes": 4096,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619555639853,
+      "sha256": "1c714b4c92d3aba3b9585b402f7f90ae7064e8bf090b0d9ae6c91c5095e55e5d",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-walking/scratchpad.hex": {
+      "bytes": 8448,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619557639895,
+      "sha256": "b4650275ae36ac620273e2662aef8bc7e0c1d2157d273a8ba5b210066cc6f4b9",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619554639832,
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "054fab753426d2d835d2056f9947174d25596ab1f50890752315228d152d12f3",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619554639832,
+      "sha256": "9d8b85926e45b5ef2a2a33787de5785a3b1f5aaefde7d8b6bda9fdaa018536e2",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/case.json": {
+      "bytes": 667,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619553639811,
+      "sha256": "20ae5a83d04d4d6072d636447136fe7961c9741c54f483259c92e99169fae817",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "3ef5668bc11c49fe2649869ec4bff7aa6a3e28db3b6598b9a1a430cfeb773b62",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "f19e489dc7a4a60c6b01a1e85338f7b26de0d135a41b5e8b5a10469277f6b33b",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/native-inputs.json": {
+      "bytes": 408,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "bb245dc163f4cb4caef5f1aff26c4632f7689774ba56534b236982ef13292a13",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/native-oracle.log": {
+      "bytes": 116,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "c983ce8f0ef2e7f1b778fd435b46642ca7950e1035c887206891f6db195a5f3b",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619543639600,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "0a441b664cbbd9d58adadf8f4ed94b0b587ab1ddeed674e18b6de853b5f291ee",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/scratchpad.bin": {
+      "bytes": 4096,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619543639600,
+      "sha256": "ad7facb2586fc6e966c004d7d1d16b024f5805ff7cb47c7a85dabd8b48892ca7",
+      "uid": 1000
+    },
+    "fixtures/bounded-4096-zero/scratchpad.hex": {
+      "bytes": 8448,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619545639642,
+      "sha256": "1dea72ca3b355389d1e0abc0a234565fc220a0b4a104eed5686fe57d375232b0",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619509638884,
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "cbbba52e898cb56106a93e52c2eaac982ff82c6651974e37c512cd6d85fd9f8f",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619509638884,
+      "sha256": "7795c600706953cfb6db8cbde0e0e12debb058d784bf6182fcb35e76ffa96833",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/case.json": {
+      "bytes": 658,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619508638863,
+      "sha256": "ee7208a60c31f5af9a24dc8a06b2967de924455ee04af5ee906cec8a0cf9ab6c",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "65e02a9e7eb2a9c1609042704db62251ad06fdb2fb1bb5e587e855ac5bd2c68e",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "afdccc5007d02f211a6f20ecea110324d94cddd3e2b20e63f410541038601f81",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/native-inputs.json": {
+      "bytes": 403,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "875b1b836bea9cf6efc54acd84e81d54a13558d95ae7d3b38b5221de14103885",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/native-oracle.log": {
+      "bytes": 113,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "d24a426198e176ee28eacce8d489ca816eb6094e8d851da4f31de255cddb327f",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619503638757,
+      "sha256": "ec09c33cbf50c256841d1f0dff89f2370338d507d8f96a4a37827244840e8d2f",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "163851950b4cacde6f2db48e6709bfb28e55a02be0d264baca6bf1953dd2bca3",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "9de9e697f5f9fc9858c251bb63f6ea3c39972c46cb6e593d41b5189ef72bdd69",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/scratchpad.bin": {
+      "bytes": 64,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619503638757,
+      "sha256": "f6ffd95172096c0af345e0cbb4a1c1896e82713372e1c0c24d290604c1e028c2",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-prng/scratchpad.hex": {
+      "bytes": 132,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619505638799,
+      "sha256": "037f27a1b39efc040094c565d0f1f7c7a0eb7a4c84208d345bb66445dd076b8a",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619503638757,
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619499638673,
+      "sha256": "366b699522dbf5764485b80a5ed2b0f9f91b91c5e0a0657d56d60a6bbdc28cf0",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619503638757,
+      "sha256": "ae6fa8b6f447edb06b718313e272f8b589006ac441d5a28c55fa2d3884add9a2",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/case.json": {
+      "bytes": 667,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619502638736,
+      "sha256": "ab90a290eb741a2d13d214ae461eac69218a04bcc75874e0114ffe6d0ca41f3b",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619499638673,
+      "sha256": "1ec2348e8f9106d09b99fce5122e4f63b271526ce12474ee3ca03d3cc6f60278",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619499638673,
+      "sha256": "4ce6f10713c3150bd4b1724943348ab8343b290573bdf54328a125210af2a93f",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/native-inputs.json": {
+      "bytes": 403,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619499638673,
+      "sha256": "875b1b836bea9cf6efc54acd84e81d54a13558d95ae7d3b38b5221de14103885",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/native-oracle.log": {
+      "bytes": 113,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619500638694,
+      "sha256": "d24a426198e176ee28eacce8d489ca816eb6094e8d851da4f31de255cddb327f",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619498638652,
+      "sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619499638673,
+      "sha256": "24da00ffd6dd8ad628f83afeb7f1747e2cb343f69f24bef6a6a34ef3e08f765a",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619499638673,
+      "sha256": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/scratchpad.bin": {
+      "bytes": 64,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619498638652,
+      "sha256": "4e6b0b60b98bf1872c3f65a0e763a2ea4d3c097f54b32dde681333845d351116",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-walking/scratchpad.hex": {
+      "bytes": 132,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619499638673,
+      "sha256": "db082d262f689582edc4f29008580d7ec87404ae665379f7da498580c4d561f9",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619498638652,
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "1ed267dc62e0763da574eb3b6bfe4eaf183d4b4acac0299812b11b84d65df194",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619498638652,
+      "sha256": "189d55ee86fc3cbcbedf9d23acabc8b755ba3d15613e9198b4a24aba4b391004",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/case.json": {
+      "bytes": 658,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619497638631,
+      "sha256": "ad2c32e26c07956c2fd3d3bace7cc954c93e74d0204e8cc9bb9c76a47335977a",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "55cdeee14dbbdae2a0b66962faabf52ca40324064ff67d1d0a6167d22e615945",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "e9d252d68e9f8cf9a3c138572bdc1ee10fc45664e7a03536299f3c4cf33a9475",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/native-inputs.json": {
+      "bytes": 403,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "875b1b836bea9cf6efc54acd84e81d54a13558d95ae7d3b38b5221de14103885",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/native-oracle.log": {
+      "bytes": 113,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "d24a426198e176ee28eacce8d489ca816eb6094e8d851da4f31de255cddb327f",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619492638526,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "4a19c4a60a643ba1dbcc1a2c1642999f9f402d2c8cd4dc88c73b2f8f4566f4f5",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "8b3aac1dec2721d2e7ee95d17fa9cbd19de87b6c6f807ba8f3d0235d030f0162",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/scratchpad.bin": {
+      "bytes": 64,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619492638526,
+      "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+      "uid": 1000
+    },
+    "fixtures/bounded-64-zero/scratchpad.hex": {
+      "bytes": 132,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619494638568,
+      "sha256": "b6375e63cfe0d7600ebd406b6587424a96971688c39853152ebafe51a2e92c09",
+      "uid": 1000
+    },
+    "fixtures/corpus.json": {
+      "bytes": 12323,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620434658372,
+      "sha256": "f56390085e69c94ffb1146b9288e0e9dffb81e92f2b2c50e8aeeb46e40f9e79c",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093619885646805,
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "2fd896b8db3982abc1a6355e86cbce5f495350d5d5182c981d77588441e2d901",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619885646805,
+      "sha256": "357ec59d052e2f5b38232b751249b8da093db9d6c5f3f2006537ebece879b2f3",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/case.json": {
+      "bytes": 690,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619863646342,
+      "sha256": "3a3b09743650f1a87e372f3b1182b89d63c30dc5d02e2dc5ef273f0f7e26eb9c",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "632ecc7281beb26658fd508a3e1ab854ae756c39ab32711ebc341adae2127a1e",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "724efee949d666f0550141583358261b3b772c42450a6896b277631e69d9a13f",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/native-inputs.json": {
+      "bytes": 417,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "25c94e0c76eaf0a95dc371cb136c1f2252ccd4ee077c93c33a29ecbeeeb6329a",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/native-oracle.log": {
+      "bytes": 122,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "c45ba2f73dfac916aae733a8eb0564b756bb1337e3fbf5e8ea1feaf9794ab90b",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619568640127,
+      "sha256": "4bd288682ffe0f5f2395ba9d3429149487f4af942bed2988337651edc6237c90",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "4b3010fc173ffa622235da2c5fc5fc26840590c4e12964d4781531a54e60d462",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "6986f467f8927477895fac086b5d6a76afd79c8c5ab4954ddf97fa453d637bd0",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/scratchpad.bin": {
+      "bytes": 2097152,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619567640106,
+      "sha256": "3d246e1712b76da87f6914b0241a4189c0f72e768f9798a4d1ec58bbc87b5a7b",
+      "uid": 1000
+    },
+    "fixtures/full-actual-final7/scratchpad.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619657642002,
+      "sha256": "e5061265e2cf3635e9cdf6c5b2093bb5ebf9373fce868a753a757b1a3775023c",
+      "uid": 1000
+    },
+    "fixtures/full-pattern": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620405657761,
+      "uid": 1000
+    },
+    "fixtures/full-pattern/aes-hash.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "9c37490697c9e80019cddda98b48c81e70f246c58096d5b828361d8464deab9b",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/artifacts.sha256.json": {
+      "bytes": 963,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620405657761,
+      "sha256": "61eddf85a1349cca679473382d3e5bf2cbde39eba0d8704f4e00626ac0b0bae2",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/case.json": {
+      "bytes": 681,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620383657297,
+      "sha256": "ce5314e63f93099a955f5983cda5d15c123b0a6718320129bb4cba2b24a78bb4",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/digest32.hex": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "5f916940412c3557a74df017d3c8c83ecf7e5d835820b975fd370c8c55e88f85",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/digest64.hex": {
+      "bytes": 129,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "0231fa2bf6839c0bc8dc4d004363089f749054b3a10426043c61cd9cf490c7eb",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/native-inputs.json": {
+      "bytes": 417,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "25c94e0c76eaf0a95dc371cb136c1f2252ccd4ee077c93c33a29ecbeeeb6329a",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/native-oracle.log": {
+      "bytes": 122,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "c45ba2f73dfac916aae733a8eb0564b756bb1337e3fbf5e8ea1feaf9794ab90b",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620085651018,
+      "sha256": "6e4025acdf05630bb79647e4021967ef8105f9d9487982fb19e94015e2de4c54",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/rf-final.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "7336e306a048627d03582ee7937c39bdf02bb65ce5dc673287ad2172fe573da7",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/rf-in.hex": {
+      "bytes": 513,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "508aa530ccf201636c1101828b44db811e670d5616492cb0bcae771ee2d7caf1",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/scratchpad.bin": {
+      "bytes": 2097152,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620084650998,
+      "sha256": "aef9265384bbdd0d6060073ef7c215ff127a985c3a73d56743c7c27ad4cb1159",
+      "uid": 1000
+    },
+    "fixtures/full-pattern/scratchpad.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620181653041,
+      "sha256": "36cfdc311af965116f1b97c0ceec493523b935c5fdb01ee5138f1c000269bf5b",
+      "uid": 1000
+    },
+    "fixtures/native-commands.json": {
+      "bytes": 9927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620204653526,
+      "sha256": "fee701df06ba4248fdc875ec056988d607019dc94bc5451c2d8566be59d83923",
+      "uid": 1000
+    },
+    "fixtures/source-bindings.json": {
+      "bytes": 20051,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093619491638505,
+      "sha256": "772d6664cdb18d9676a43ff2889449023ec2d81cf40f308b0c1c6916925d29f0",
+      "uid": 1000
+    },
+    "inputs.json": {
+      "bytes": 32307,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093615502554487,
+      "sha256": "d0f277cb9406fd46b2ddea3e369f40e15716f42a0eac68c46916f1583c54c1ce",
+      "uid": 1000
+    },
+    "invalid-parameter-0.log": {
+      "bytes": 300,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399728618838,
+      "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3",
+      "uid": 1000
+    },
+    "invalid-parameter-0.time.txt": {
+      "bytes": 1096,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399729618864,
+      "sha256": "e9fd252822df50eeeee3cf0ca932fbf75a8efc905f787ffa751da0dfac1e2025",
+      "uid": 1000
+    },
+    "invalid-parameter-2097216.log": {
+      "bytes": 300,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399778620097,
+      "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3",
+      "uid": 1000
+    },
+    "invalid-parameter-2097216.time.txt": {
+      "bytes": 1102,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399779620123,
+      "sha256": "bc833374306f9570715c6a07d76cd4d88cb266e408e29cad568db6fcaf23eef1",
+      "uid": 1000
+    },
+    "invalid-parameter-63.log": {
+      "bytes": 300,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399744619241,
+      "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3",
+      "uid": 1000
+    },
+    "invalid-parameter-63.time.txt": {
+      "bytes": 1097,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399745619267,
+      "sha256": "de0f01e78abd91143155caf312029594624556700e26fefc58dc68b4a55b5599",
+      "uid": 1000
+    },
+    "invalid-parameter-65.log": {
+      "bytes": 300,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399761619669,
+      "sha256": "e66f183aa7528e7a865ab8549154ab401b5e9abc40829893c14352d20ee2e6f3",
+      "uid": 1000
+    },
+    "invalid-parameter-65.time.txt": {
+      "bytes": 1097,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399762619695,
+      "sha256": "ee0c9b99c22658e73b0aa778c0f545fca2f18cf46006b3e0a69d31fa56034b79",
+      "uid": 1000
+    },
+    "mapped-256.vvp": {
+      "bytes": 31969050,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792095990379011628,
+      "sha256": "19a9fe3dbf13633859210249fda91f40cf328bbd0ba1101da53ca90aff2a4c59",
+      "uid": 1000
+    },
+    "mapped-bounded-256-prng-ideal.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096024082813508,
+      "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc",
+      "uid": 1000
+    },
+    "mapped-bounded-256-prng-ideal.time.txt": {
+      "bytes": 993,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096024091813722,
+      "sha256": "35af803c58f9b443315f224b1cc3c1041336c6019ba7796f1a643a45a07653eb",
+      "uid": 1000
+    },
+    "mapped-bounded-256-prng-stalled.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096031685994219,
+      "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1",
+      "uid": 1000
+    },
+    "mapped-bounded-256-prng-stalled.time.txt": {
+      "bytes": 996,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096031693994409,
+      "sha256": "1387a3fbf222b6e9619f7108424537e84d1b154cc9177c62308607ec5f943c46",
+      "uid": 1000
+    },
+    "mapped-bounded-256-walking-ideal.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096010015478983,
+      "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc",
+      "uid": 1000
+    },
+    "mapped-bounded-256-walking-ideal.time.txt": {
+      "bytes": 996,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096010023479173,
+      "sha256": "b548f5e1a7b52bd6c31577e53337c153553b4a429f4b0def76788406c48de209",
+      "uid": 1000
+    },
+    "mapped-bounded-256-walking-stalled.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096016692637796,
+      "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1",
+      "uid": 1000
+    },
+    "mapped-bounded-256-walking-stalled.time.txt": {
+      "bytes": 998,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096016700637987,
+      "sha256": "c509413e853d210efb8bfc4233b84f298d6d262bae1a19c6b5f5671e074be3e8",
+      "uid": 1000
+    },
+    "mapped-bounded-256-zero-ideal.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095996893166719,
+      "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc",
+      "uid": 1000
+    },
+    "mapped-bounded-256-zero-ideal.time.txt": {
+      "bytes": 998,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095996901166909,
+      "sha256": "b27d8641b93adca7fba6fc40b4d2184522d8d11a449c256a4f49021ea693601c",
+      "uid": 1000
+    },
+    "mapped-bounded-256-zero-stalled.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096003549325137,
+      "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1",
+      "uid": 1000
+    },
+    "mapped-bounded-256-zero-stalled.time.txt": {
+      "bytes": 995,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096003557325328,
+      "sha256": "e109e36b57f0da9e8e6ee626537e0dc966af0a6f12fd05f776fbb35ff108db99",
+      "uid": 1000
+    },
+    "mapped-control-error_first.log": {
+      "bytes": 553,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096051675469014,
+      "sha256": "569b665243ccac50852efb2e2da2ae61fa505afa0ded9799db9c5e09686457fe",
+      "uid": 1000
+    },
+    "mapped-control-error_first.time.txt": {
+      "bytes": 1002,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096051684469228,
+      "sha256": "c3564c57cd393792a3531f629afb040a3b1c42f5eaeb6bfd04e11dc654b003dd",
+      "uid": 1000
+    },
+    "mapped-control-error_last.log": {
+      "bytes": 554,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096058544632070,
+      "sha256": "f8ecd39cce2ac3c13e1e77abc4e19c790482a74e4a5a05e734c800740d286101",
+      "uid": 1000
+    },
+    "mapped-control-error_last.time.txt": {
+      "bytes": 1001,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096058552632260,
+      "sha256": "94a9045db3f226b36ef2d1b602f09013d68542f86870952e67ebb309595788cc",
+      "uid": 1000
+    },
+    "mapped-control-held.log": {
+      "bytes": 546,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096038149147782,
+      "sha256": "52fdece9ebd54a3f3db53b2c0acc2b06d71348fefe523f2dbe743ef1d7851270",
+      "uid": 1000
+    },
+    "mapped-control-held.time.txt": {
+      "bytes": 995,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096038157147972,
+      "sha256": "fbd0a8a885bd019303293cfecd2082f13f304c43ec7209359d86eadb3c1aa0a1",
+      "uid": 1000
+    },
+    "mapped-control-invalid.log": {
+      "bytes": 549,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096045074312271,
+      "sha256": "55d89c55f10600ebccade117a6b9701bfa0c54098fdb5479a6e204ff596d67bc",
+      "uid": 1000
+    },
+    "mapped-control-invalid.time.txt": {
+      "bytes": 998,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096045083312485,
+      "sha256": "40e856b08fbb9bab4120b6d0b01c3348183432a89300a7d57af2264fc7bc2bd0",
+      "uid": 1000
+    },
+    "mapped-control-reset_aes.log": {
+      "bytes": 551,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096079505129307,
+      "sha256": "0cecde3aa491535e7f53d498517ab3a1940dfe765651e74c18dec03c59c87e48",
+      "uid": 1000
+    },
+    "mapped-control-reset_aes.time.txt": {
+      "bytes": 1000,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096079514129521,
+      "sha256": "755bfa10349fd10bc2db4e729b03764e01c26afc9bd352343a60535d7f357a17",
+      "uid": 1000
+    },
+    "mapped-control-reset_hash.log": {
+      "bytes": 556,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096087580320749,
+      "sha256": "b7f61a62cea07dc51fb346ee0d7b3b9af4a599ffbdc2913ccbab8f295d8f1def",
+      "uid": 1000
+    },
+    "mapped-control-reset_hash.time.txt": {
+      "bytes": 1001,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096087588320939,
+      "sha256": "8e7aef109df006b182ffb5c63d1b35a581dd9167cdec469cb0af711f6b441316",
+      "uid": 1000
+    },
+    "mapped-control-reset_read.log": {
+      "bytes": 553,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096072528963866,
+      "sha256": "7ed96c43a4155dd33471c719cf74118ad95700a1441f05a1cc6157f2a752903c",
+      "uid": 1000
+    },
+    "mapped-control-reset_read.time.txt": {
+      "bytes": 1001,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096072536964056,
+      "sha256": "9f207873339f2fdd789c7344f1a7dcf7477b59f735d4fcd448f1de3bdbb2cedc",
+      "uid": 1000
+    },
+    "mapped-control-reset_req.log": {
+      "bytes": 551,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096065298792347,
+      "sha256": "03e547eb1e77c13806cabd21fa45d77ce2a7629ca31b1ed323e2abbd64b24e4f",
+      "uid": 1000
+    },
+    "mapped-control-reset_req.time.txt": {
+      "bytes": 1000,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096065307792561,
+      "sha256": "e2f18326d3a31a789259fd528a0a2cb74552d3eecf6f23ed1256cc26cf4080bf",
+      "uid": 1000
+    },
+    "mapped-control-reset_return.log": {
+      "bytes": 559,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096098105570177,
+      "sha256": "29986eac5fa6a21ca26e2205fd8fb443a4d56043364428374ac0de93b435a76e",
+      "uid": 1000
+    },
+    "mapped-control-reset_return.time.txt": {
+      "bytes": 1004,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096098114570390,
+      "sha256": "672467e25115bd36f29c8839b00dc484bc04ba8cc43f9f59527f9f5e3b940b92",
+      "uid": 1000
+    },
+    "mapped-default-error_first.log": {
+      "bytes": 551,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096177613450938,
+      "sha256": "2d02b0e9c861183526c701eb60c5398f3e262d85d8a15133da85f72e36436b41",
+      "uid": 1000
+    },
+    "mapped-default-error_first.time.txt": {
+      "bytes": 1005,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096177621451127,
+      "sha256": "b222db04d18c3026188a3b6ce8ec1126bfb2677405ad99ccd131b4a0b6f140f9",
+      "uid": 1000
+    },
+    "mapped-default-invalid.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096173226347310,
+      "sha256": "80618a35d9c653067ca4c372597cbb3526847e7a6f24655fccede1e3dfc7dd0f",
+      "uid": 1000
+    },
+    "mapped-default-invalid.time.txt": {
+      "bytes": 1002,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096173234347499,
+      "sha256": "f282a6887fa197a6980d216dae666434790d9ea6738ba3d42d33345eabbac889",
+      "uid": 1000
+    },
+    "mapped-default-reset_read.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096187183676941,
+      "sha256": "af02f426e185043942ec5d7421dc050a02b4e713437806665a2e3316af12e77b",
+      "uid": 1000
+    },
+    "mapped-default-reset_read.time.txt": {
+      "bytes": 1004,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096187191677130,
+      "sha256": "0501337c4883a9710089c0026f1a10189a1ecd01bcd04955f549f8609c5b2462",
+      "uid": 1000
+    },
+    "mapped-default-reset_req.log": {
+      "bytes": 549,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096182351562839,
+      "sha256": "4718f24affd28d1ed13e6159406c38787fbd442b6b882edced036cb9475f95ce",
+      "uid": 1000
+    },
+    "mapped-default-reset_req.time.txt": {
+      "bytes": 1003,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096182359563028,
+      "sha256": "e5f67c053087a8ad4ad1b4ac634d2a7eee8dbc69ef15969dd6817432eb5db55c",
+      "uid": 1000
+    },
+    "mapped-default.vvp": {
+      "bytes": 31965299,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792096167796219021,
+      "sha256": "a582309908fb1a4ecbfe833eb9854a41bf65ea65d1f1a5da18a6b96c0218ee58",
+      "uid": 1000
+    },
+    "native-invalid": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620515660078,
+      "uid": 1000
+    },
+    "native-invalid-0.log": {
+      "bytes": 83,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620495659657,
+      "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e",
+      "uid": 1000
+    },
+    "native-invalid-0.time.txt": {
+      "bytes": 1234,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620495659657,
+      "sha256": "2771a20ba6d39d59b897961d499fe6727c0fd0b2b75325f318cfdfc73ba44dec",
+      "uid": 1000
+    },
+    "native-invalid-1.log": {
+      "bytes": 83,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620499659741,
+      "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e",
+      "uid": 1000
+    },
+    "native-invalid-1.time.txt": {
+      "bytes": 1234,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620499659741,
+      "sha256": "0201d3f8a96562df151e4c9aaa836d22108a1e9da91eddf3369f203b7a545b4b",
+      "uid": 1000
+    },
+    "native-invalid-2.log": {
+      "bytes": 83,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620503659825,
+      "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e",
+      "uid": 1000
+    },
+    "native-invalid-2.time.txt": {
+      "bytes": 1234,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620503659825,
+      "sha256": "942e48e5799cd0762ee67f972ab8412a8951f3376945cc2762f4c2f834ef09bf",
+      "uid": 1000
+    },
+    "native-invalid-3.log": {
+      "bytes": 83,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620508659931,
+      "sha256": "dd9fd2358e852f08cacd9ea3bf0b1e75a18d0d2482eb5b39217552ed7297448e",
+      "uid": 1000
+    },
+    "native-invalid-3.time.txt": {
+      "bytes": 1234,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620509659952,
+      "sha256": "519399df3a41fe8ee52d5c2245e3cb88349c8a900e1dc370082559257f0e8ac4",
+      "uid": 1000
+    },
+    "native-invalid-4.log": {
+      "bytes": 44,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620513660036,
+      "sha256": "4c340d10dd4d97ce99a1a40ebc87028b87d0f47ec0b0742fbb765883f9d42886",
+      "uid": 1000
+    },
+    "native-invalid-4.time.txt": {
+      "bytes": 1234,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620513660036,
+      "sha256": "dd4f9bbe00bcbae119e395e712033b73bbd4d0c002091fa93e52f93ff1eb83c7",
+      "uid": 1000
+    },
+    "native-invalid-5.log": {
+      "bytes": 44,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620517660121,
+      "sha256": "4c340d10dd4d97ce99a1a40ebc87028b87d0f47ec0b0742fbb765883f9d42886",
+      "uid": 1000
+    },
+    "native-invalid-5.time.txt": {
+      "bytes": 1234,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620517660121,
+      "sha256": "152d7a52911776e4c557e5001855f208ff7adbb56c5850491bfbf44ceb714ddb",
+      "uid": 1000
+    },
+    "native-invalid/0": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620493659615,
+      "uid": 1000
+    },
+    "native-invalid/0/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620493659615,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "native-invalid/0/scratchpad.bin": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620493659615,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "native-invalid/1": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620497659699,
+      "uid": 1000
+    },
+    "native-invalid/1/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620497659699,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "native-invalid/1/scratchpad.bin": {
+      "bytes": 16,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620497659699,
+      "sha256": "374708fff7719dd5979ec875d56cd2286f6d3cf7ec317a3b25632aab28ec37bb",
+      "uid": 1000
+    },
+    "native-invalid/2": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620501659784,
+      "uid": 1000
+    },
+    "native-invalid/2/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620501659784,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "native-invalid/2/scratchpad.bin": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620501659784,
+      "sha256": "98ce42deef51d40269d542f5314bef2c7468d401ad5d85168bfab4c0108f75f7",
+      "uid": 1000
+    },
+    "native-invalid/3": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620506659889,
+      "uid": 1000
+    },
+    "native-invalid/3/register-file.bin": {
+      "bytes": 256,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620507659910,
+      "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1",
+      "uid": 1000
+    },
+    "native-invalid/3/scratchpad.bin": {
+      "bytes": 2097216,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620505659868,
+      "sha256": "734eaa082fbf4bfd5114cb37fa168bde405bd467e8d8bca66a7e4a7cc59233e1",
+      "uid": 1000
+    },
+    "native-invalid/4": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620511659994,
+      "uid": 1000
+    },
+    "native-invalid/4/register-file.bin": {
+      "bytes": 255,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620511659994,
+      "sha256": "80bd5cb5a9ca35dcdea1d59b5f1778f4114f6215af38004a02a99a1d37383648",
+      "uid": 1000
+    },
+    "native-invalid/4/scratchpad.bin": {
+      "bytes": 64,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620511659994,
+      "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+      "uid": 1000
+    },
+    "native-invalid/5": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792093620515660078,
+      "uid": 1000
+    },
+    "native-invalid/5/register-file.bin": {
+      "bytes": 257,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620515660078,
+      "sha256": "6c934d0cdf9dba94b474d6d1929f16739bd9a8ed31d0c3bcaf82c283fb7a3568",
+      "uid": 1000
+    },
+    "native-invalid/5/scratchpad.bin": {
+      "bytes": 64,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620515660078,
+      "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b",
+      "uid": 1000
+    },
+    "netlist-finalizer-bounded256.json": {
+      "bytes": 62921351,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095916739254593,
+      "sha256": "a173cc3f889e8ce7ebc1c0f3cb5863c53550a83380113cece8825e9a822798c2",
+      "uid": 1000
+    },
+    "netlist-finalizer-bounded256.v": {
+      "bytes": 7468279,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095914933211408,
+      "sha256": "8439e0c0bfeb67237195771411e737e2e5be13d77710eeced6139ea21a7e3590",
+      "uid": 1000
+    },
+    "netlist-finalizer-default.json": {
+      "bytes": 62914082,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095723711609181,
+      "sha256": "747b321e77682f88d73dc982d6dbeeedd9464f5b1af5d8d803bdd77d906eca75",
+      "uid": 1000
+    },
+    "netlist-finalizer-default.v": {
+      "bytes": 7467450,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095721889565006,
+      "sha256": "8f59b843d0dfb547d38e7c9563e6a0f175108533ffd6bed4338ac6c7d8c50fe6",
+      "uid": 1000
+    },
+    "netlist-scanner-default.json": {
+      "bytes": 25278010,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095532210923344,
+      "sha256": "b98f25c4aa8250a56e90c2c8475bceff7da9a8be88254adf3145fd6cf726db0b",
+      "uid": 1000
+    },
+    "netlist-scanner-default.v": {
+      "bytes": 2607152,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095531484905392,
+      "sha256": "6d65d5f593168e563c9a6dee4d3f69930bbe8f2469360ba6768a9adc2466fff1",
+      "uid": 1000
+    },
+    "pass-records.json": {
+      "bytes": 35134,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096187322680223,
+      "sha256": "00db686be2db3e3881f9c9166cc3b61d1dee816b3b3d7b5ddcaf615ef598a352",
+      "uid": 1000
+    },
+    "preserved-inputs.json": {
+      "bytes": 46867,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093615503554508,
+      "sha256": "eeae2d04c1618d9ecf5d800fbbf2e15b67f82e0a2aae3a7b5233f600142eda82",
+      "uid": 1000
+    },
+    "rtl-128.vvp": {
+      "bytes": 676592,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792093620685663660,
+      "sha256": "080f74a9a8c2ac73d98dac3278661dd62dc91b217f8360ecf614680935af20d9",
+      "uid": 1000
+    },
+    "rtl-2097152.vvp": {
+      "bytes": 676709,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792093620880667769,
+      "sha256": "7ac7468ad67e16d8b3c95b7b3c9ecc92d408f6c5776da7c2e2e9f3d13fb94d29",
+      "uid": 1000
+    },
+    "rtl-256.vvp": {
+      "bytes": 676610,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792093620749665009,
+      "sha256": "3e50f3f157c1150e4107714e773fe38d24a683118268b88ce43571ba5823e4e5",
+      "uid": 1000
+    },
+    "rtl-4096.vvp": {
+      "bytes": 676634,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792093620813666357,
+      "sha256": "71e8b9866f228e6017f61bd0084476ef4727ff6816176467ea2aee987e4bf1d4",
+      "uid": 1000
+    },
+    "rtl-64.vvp": {
+      "bytes": 676586,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792093620597661806,
+      "sha256": "c8ad357c17f05c85df8d57a17ce2383b47dc4f29e8a22248600ba21b05aa796f",
+      "uid": 1000
+    },
+    "rtl-bounded-128-prng-ideal.log": {
+      "bytes": 542,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622158694699,
+      "sha256": "1bd0e44d02fe2ca67b152c6342e0ee631361b37352155c531aec386a9bb89001",
+      "uid": 1000
+    },
+    "rtl-bounded-128-prng-ideal.time.txt": {
+      "bytes": 986,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622159694720,
+      "sha256": "693f125f5ac4f8bd7e8e9a231b3616f91942c9d753e89a6e3183370fcb026d53",
+      "uid": 1000
+    },
+    "rtl-bounded-128-prng-stalled.log": {
+      "bytes": 546,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622274697143,
+      "sha256": "bfe572eee2e1aea23c33bdc7e6c3870e11d8332f103ceed39e7ffafbc8c8afe2",
+      "uid": 1000
+    },
+    "rtl-bounded-128-prng-stalled.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622275697164,
+      "sha256": "f601aa1bd6d8be786e37e82780c737d5dd0d2eb43f61b9ff235a188e98399e4a",
+      "uid": 1000
+    },
+    "rtl-bounded-128-walking-ideal.log": {
+      "bytes": 542,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621921689704,
+      "sha256": "1bd0e44d02fe2ca67b152c6342e0ee631361b37352155c531aec386a9bb89001",
+      "uid": 1000
+    },
+    "rtl-bounded-128-walking-ideal.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621922689725,
+      "sha256": "c44ba9e8080bd91e4f08568239c2592d73a294175b235ed77517e78b66b830c3",
+      "uid": 1000
+    },
+    "rtl-bounded-128-walking-stalled.log": {
+      "bytes": 546,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622042692254,
+      "sha256": "bfe572eee2e1aea23c33bdc7e6c3870e11d8332f103ceed39e7ffafbc8c8afe2",
+      "uid": 1000
+    },
+    "rtl-bounded-128-walking-stalled.time.txt": {
+      "bytes": 992,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622042692254,
+      "sha256": "f86234aafd56380fd5d5c67969ee280d331ea1e308ea7292fddc0db5e671184f",
+      "uid": 1000
+    },
+    "rtl-bounded-128-zero-ideal.log": {
+      "bytes": 542,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621689684816,
+      "sha256": "1bd0e44d02fe2ca67b152c6342e0ee631361b37352155c531aec386a9bb89001",
+      "uid": 1000
+    },
+    "rtl-bounded-128-zero-ideal.time.txt": {
+      "bytes": 987,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621689684816,
+      "sha256": "2fac42baf09fa787c45e59fb1f366b3c1ea23fcaf35036bdff5dc5d13ab4fcc9",
+      "uid": 1000
+    },
+    "rtl-bounded-128-zero-stalled.log": {
+      "bytes": 546,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621806687281,
+      "sha256": "bfe572eee2e1aea23c33bdc7e6c3870e11d8332f103ceed39e7ffafbc8c8afe2",
+      "uid": 1000
+    },
+    "rtl-bounded-128-zero-stalled.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621806687281,
+      "sha256": "5bdda534da4187efd2d948a4ec1f9935d13af2202c7879a6c526a629aef9d33c",
+      "uid": 1000
+    },
+    "rtl-bounded-256-prng-ideal.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093623077714066,
+      "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc",
+      "uid": 1000
+    },
+    "rtl-bounded-256-prng-ideal.time.txt": {
+      "bytes": 987,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093623077714066,
+      "sha256": "0638e41d1a5a9f6ed69cba0e8aad5503e297bf4c7027febc0b06e251f8206de7",
+      "uid": 1000
+    },
+    "rtl-bounded-256-prng-stalled.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093623246717628,
+      "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1",
+      "uid": 1000
+    },
+    "rtl-bounded-256-prng-stalled.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093623247717649,
+      "sha256": "a0f4f9c67ae0b1121325d3ce42f45294532966bbcdba50ae85c44775a4f0437c",
+      "uid": 1000
+    },
+    "rtl-bounded-256-walking-ideal.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622743707027,
+      "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc",
+      "uid": 1000
+    },
+    "rtl-bounded-256-walking-ideal.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622744707048,
+      "sha256": "4fd4473efaaeaa0339235047ecfd8bdaa4a8febe1cd72f44a9916f39e992a6ce",
+      "uid": 1000
+    },
+    "rtl-bounded-256-walking-stalled.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622911710567,
+      "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1",
+      "uid": 1000
+    },
+    "rtl-bounded-256-walking-stalled.time.txt": {
+      "bytes": 991,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622911710567,
+      "sha256": "2a5bf83fe44cb06768a51b0e4f35b4412dd94ee6205f08d925e86ab6c0115013",
+      "uid": 1000
+    },
+    "rtl-bounded-256-zero-ideal.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622414700094,
+      "sha256": "a4250e18b744f7446547d263e828caf9b332384454085a567b923d6eb08737bc",
+      "uid": 1000
+    },
+    "rtl-bounded-256-zero-ideal.time.txt": {
+      "bytes": 986,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622414700094,
+      "sha256": "229baa1116fa5599291b14267520e7ce3ebcd9d087ce8f60f9f1c577d7693661",
+      "uid": 1000
+    },
+    "rtl-bounded-256-zero-stalled.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622579703571,
+      "sha256": "123d05d3bb66533f20c393bebe5e496b2ae021204448f3fc093f7d90e088e9a1",
+      "uid": 1000
+    },
+    "rtl-bounded-256-zero-stalled.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093622580703592,
+      "sha256": "7e25f3f23db9e57c8e556c5473f2e02fac64d6317dcb714a57d96a4a7806b93e",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-prng-ideal.log": {
+      "bytes": 552,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093628110820168,
+      "sha256": "ca52bd597dd3e526ee65e096d6677eabb86c7c8bee7c38f8c4fd85d06d2b45e0",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-prng-ideal.time.txt": {
+      "bytes": 990,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093628110820168,
+      "sha256": "905404dc5fc805102efa3d356c6e71153416b1be0a6296099a646504dfab13bd",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-prng-stalled.log": {
+      "bytes": 558,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629068840370,
+      "sha256": "29752a920c7d609fc6246b38a9d3e584fdfa427eb8cf468f6e51683712a2909d",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-prng-stalled.time.txt": {
+      "bytes": 990,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629068840370,
+      "sha256": "aaf360862984f462746cddc61f17c92757e448f6f482bd93c357f8761e4e39bd",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-walking-ideal.log": {
+      "bytes": 552,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093626148778799,
+      "sha256": "ca52bd597dd3e526ee65e096d6677eabb86c7c8bee7c38f8c4fd85d06d2b45e0",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-walking-ideal.time.txt": {
+      "bytes": 992,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093626149778821,
+      "sha256": "2087a005d7f81bbff311f787d45348bc4694766c9355f94424f80136be25fe63",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-walking-stalled.log": {
+      "bytes": 558,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093627137799651,
+      "sha256": "29752a920c7d609fc6246b38a9d3e584fdfa427eb8cf468f6e51683712a2909d",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-walking-stalled.time.txt": {
+      "bytes": 993,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093627138799672,
+      "sha256": "221ec11b653d2e0a4618ca637ddf7a55964db0386c948adaef46f060b12e6166",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-zero-ideal.log": {
+      "bytes": 552,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093624208737904,
+      "sha256": "ca52bd597dd3e526ee65e096d6677eabb86c7c8bee7c38f8c4fd85d06d2b45e0",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-zero-ideal.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093624209737925,
+      "sha256": "5b29f9ce367ca486c108c2deab18e16c3cb73017b268dd62993982809e25ad44",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-zero-stalled.log": {
+      "bytes": 558,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093625184758477,
+      "sha256": "29752a920c7d609fc6246b38a9d3e584fdfa427eb8cf468f6e51683712a2909d",
+      "uid": 1000
+    },
+    "rtl-bounded-4096-zero-stalled.time.txt": {
+      "bytes": 991,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093625184758477,
+      "sha256": "02f7827be1344406d20dc4319abf252ebc2838bf5ab615db7c8437f7992050e7",
+      "uid": 1000
+    },
+    "rtl-bounded-64-prng-ideal.log": {
+      "bytes": 540,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621447679716,
+      "sha256": "8c7467c8ea96644afc09cdb91c4e52a5bb9292743c23f208b01b237763bb8b45",
+      "uid": 1000
+    },
+    "rtl-bounded-64-prng-ideal.time.txt": {
+      "bytes": 984,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621448679737,
+      "sha256": "e376650db1893e6752252f4eae7afe8b8eed64bc107fb30f0ec2e059aa91f2f6",
+      "uid": 1000
+    },
+    "rtl-bounded-64-prng-stalled.log": {
+      "bytes": 544,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621563682160,
+      "sha256": "ed839ed0158ceb7a897e1bf3ea41a65f10a390b8d7ec470534d5f4e645863976",
+      "uid": 1000
+    },
+    "rtl-bounded-64-prng-stalled.time.txt": {
+      "bytes": 987,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621564682182,
+      "sha256": "d8746de67c98b9373c68fbc66e78f3f13e77ffa9d96f7b2f6f5b8b0ab365759e",
+      "uid": 1000
+    },
+    "rtl-bounded-64-walking-ideal.log": {
+      "bytes": 540,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621217674870,
+      "sha256": "8c7467c8ea96644afc09cdb91c4e52a5bb9292743c23f208b01b237763bb8b45",
+      "uid": 1000
+    },
+    "rtl-bounded-64-walking-ideal.time.txt": {
+      "bytes": 987,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621218674891,
+      "sha256": "ecc8d225702f99da48efabad936e8dcb801bf70be69da68eb59c0acf5631d42a",
+      "uid": 1000
+    },
+    "rtl-bounded-64-walking-stalled.log": {
+      "bytes": 544,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621333677314,
+      "sha256": "ed839ed0158ceb7a897e1bf3ea41a65f10a390b8d7ec470534d5f4e645863976",
+      "uid": 1000
+    },
+    "rtl-bounded-64-walking-stalled.time.txt": {
+      "bytes": 989,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621334677335,
+      "sha256": "2c642d16f7fa8ed1ca6c03376c35f7b760e362b219495ecde9c74c96231c1313",
+      "uid": 1000
+    },
+    "rtl-bounded-64-zero-ideal.log": {
+      "bytes": 540,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620986670002,
+      "sha256": "8c7467c8ea96644afc09cdb91c4e52a5bb9292743c23f208b01b237763bb8b45",
+      "uid": 1000
+    },
+    "rtl-bounded-64-zero-ideal.time.txt": {
+      "bytes": 984,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093620986670002,
+      "sha256": "1545c101e98702e168f1b9d29d5db46e4b780b0cea4e23570d00622882acaa18",
+      "uid": 1000
+    },
+    "rtl-bounded-64-zero-stalled.log": {
+      "bytes": 544,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621101672425,
+      "sha256": "ed839ed0158ceb7a897e1bf3ea41a65f10a390b8d7ec470534d5f4e645863976",
+      "uid": 1000
+    },
+    "rtl-bounded-64-zero-stalled.time.txt": {
+      "bytes": 987,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093621102672446,
+      "sha256": "67df399fe6668fbfc2be5e43f15e2a22bca625decb84b8d926f6f7fecfe706c0",
+      "uid": 1000
+    },
+    "rtl-control-error_first.log": {
+      "bytes": 553,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629563850810,
+      "sha256": "569b665243ccac50852efb2e2da2ae61fa505afa0ded9799db9c5e09686457fe",
+      "uid": 1000
+    },
+    "rtl-control-error_first.time.txt": {
+      "bytes": 995,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629564850831,
+      "sha256": "e2b5d77e9d144497809fabbe1ac755bf581f7ebd4c8cde72cfc391a98be161f5",
+      "uid": 1000
+    },
+    "rtl-control-error_last.log": {
+      "bytes": 554,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629787855534,
+      "sha256": "f8ecd39cce2ac3c13e1e77abc4e19c790482a74e4a5a05e734c800740d286101",
+      "uid": 1000
+    },
+    "rtl-control-error_last.time.txt": {
+      "bytes": 995,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629787855534,
+      "sha256": "78e1a5eaec58bb6b80788f1d14767382d245a228c9593c5312d39959a3e4d27f",
+      "uid": 1000
+    },
+    "rtl-control-held.log": {
+      "bytes": 546,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629234843871,
+      "sha256": "52fdece9ebd54a3f3db53b2c0acc2b06d71348fefe523f2dbe743ef1d7851270",
+      "uid": 1000
+    },
+    "rtl-control-held.time.txt": {
+      "bytes": 988,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629234843871,
+      "sha256": "f548963361e3a83e44644066f2ce095dfb6405d6d09e7819bba80ce4f96095eb",
+      "uid": 1000
+    },
+    "rtl-control-invalid.log": {
+      "bytes": 549,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629400847372,
+      "sha256": "55d89c55f10600ebccade117a6b9701bfa0c54098fdb5479a6e204ff596d67bc",
+      "uid": 1000
+    },
+    "rtl-control-invalid.time.txt": {
+      "bytes": 992,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629400847372,
+      "sha256": "41acdc78316913a5d9842bdb2bb45c094d7716acd8ef9beead723c59f9da62bf",
+      "uid": 1000
+    },
+    "rtl-control-reset_aes.log": {
+      "bytes": 551,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630294866227,
+      "sha256": "0cecde3aa491535e7f53d498517ab3a1940dfe765651e74c18dec03c59c87e48",
+      "uid": 1000
+    },
+    "rtl-control-reset_aes.time.txt": {
+      "bytes": 994,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630294866227,
+      "sha256": "2fa438a5be6d23953f680e84b35a8e73a3f84557ceaaf77b91835b5f696681af",
+      "uid": 1000
+    },
+    "rtl-control-reset_hash.log": {
+      "bytes": 556,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630524871079,
+      "sha256": "b7f61a62cea07dc51fb346ee0d7b3b9af4a599ffbdc2913ccbab8f295d8f1def",
+      "uid": 1000
+    },
+    "rtl-control-reset_hash.time.txt": {
+      "bytes": 995,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630525871100,
+      "sha256": "cd9170a72d7a700a4b950d47a624a96b52606a541269ac054ae46eb25e3e2905",
+      "uid": 1000
+    },
+    "rtl-control-reset_read.log": {
+      "bytes": 553,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630114862431,
+      "sha256": "7ed96c43a4155dd33471c719cf74118ad95700a1441f05a1cc6157f2a752903c",
+      "uid": 1000
+    },
+    "rtl-control-reset_read.time.txt": {
+      "bytes": 994,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630115862452,
+      "sha256": "bff92e49389a3bb0024a5d019524a34753cd5d4860df2d2d10774d65f60e4be8",
+      "uid": 1000
+    },
+    "rtl-control-reset_req.log": {
+      "bytes": 551,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629945858866,
+      "sha256": "03e547eb1e77c13806cabd21fa45d77ce2a7629ca31b1ed323e2abbd64b24e4f",
+      "uid": 1000
+    },
+    "rtl-control-reset_req.time.txt": {
+      "bytes": 994,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093629945858866,
+      "sha256": "6f1eb5dd0608c714b7b9a995251dcc85942f7e4846a56a7c4a53c80e74cdf963",
+      "uid": 1000
+    },
+    "rtl-control-reset_return.log": {
+      "bytes": 559,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630808877069,
+      "sha256": "29986eac5fa6a21ca26e2205fd8fb443a4d56043364428374ac0de93b435a76e",
+      "uid": 1000
+    },
+    "rtl-control-reset_return.time.txt": {
+      "bytes": 996,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093630809877090,
+      "sha256": "6e40d8a7c092aa28f6f5a2b6df276248323f8597c638fbf4791a5079e76ad819",
+      "uid": 1000
+    },
+    "rtl-default-error_first.log": {
+      "bytes": 551,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095397351558971,
+      "sha256": "2d02b0e9c861183526c701eb60c5398f3e262d85d8a15133da85f72e36436b41",
+      "uid": 1000
+    },
+    "rtl-default-error_first.time.txt": {
+      "bytes": 1000,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095397353559021,
+      "sha256": "952ecc0b1fe15dc0060e4e160dec4910da6e8ca687f2e3aa0300ae82acce2348",
+      "uid": 1000
+    },
+    "rtl-default-invalid.log": {
+      "bytes": 547,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095396170529218,
+      "sha256": "80618a35d9c653067ca4c372597cbb3526847e7a6f24655fccede1e3dfc7dd0f",
+      "uid": 1000
+    },
+    "rtl-default-invalid.time.txt": {
+      "bytes": 996,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095396172529269,
+      "sha256": "ff26663cdc3b7a1d19acb452133757e0e50114c202dce164d44de20d42cd73f8",
+      "uid": 1000
+    },
+    "rtl-default-reset_read.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399683617705,
+      "sha256": "af02f426e185043942ec5d7421dc050a02b4e713437806665a2e3316af12e77b",
+      "uid": 1000
+    },
+    "rtl-default-reset_read.time.txt": {
+      "bytes": 999,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399685617756,
+      "sha256": "33c0496010f494d613b5c3b03447c6a05b3afc9028954d648789df3146e882fe",
+      "uid": 1000
+    },
+    "rtl-default-reset_req.log": {
+      "bytes": 549,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095398536588819,
+      "sha256": "4718f24affd28d1ed13e6159406c38787fbd442b6b882edced036cb9475f95ce",
+      "uid": 1000
+    },
+    "rtl-default-reset_req.time.txt": {
+      "bytes": 998,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095398538588870,
+      "sha256": "3f580569e9133e8027c5e1a34f205cfb92b2204cd34a160800b9688ece789659",
+      "uid": 1000
+    },
+    "rtl-full-0-ideal.log": {
+      "bytes": 573,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792094068859285053,
+      "sha256": "81840c76b03305060ab395d535df72a0340a1dfb98f9bad9481b0b946f9d28bc",
+      "uid": 1000
+    },
+    "rtl-full-0-ideal.time.txt": {
+      "bytes": 1001,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792094068861285097,
+      "sha256": "5b6ac0f0ffbce1f7f4b454fd7a90d82111333ad0e3eeac5aedc9c1192d296e1c",
+      "uid": 1000
+    },
+    "rtl-full-1-stalled.log": {
+      "bytes": 582,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792094511748997908,
+      "sha256": "89b5583f078209395194f909d9cfc2c27da8ccaabb83ce2749390e7216d6cf32",
+      "uid": 1000
+    },
+    "rtl-full-1-stalled.time.txt": {
+      "bytes": 996,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792094511750997952,
+      "sha256": "c8e5fe3bf7aec1f8641bf03a80620c947914ec996863f54494873c1d933ced2c",
+      "uid": 1000
+    },
+    "rtl-full-2-ideal.log": {
+      "bytes": 573,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792094951554796295,
+      "sha256": "81840c76b03305060ab395d535df72a0340a1dfb98f9bad9481b0b946f9d28bc",
+      "uid": 1000
+    },
+    "rtl-full-2-ideal.time.txt": {
+      "bytes": 994,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792094951556796352,
+      "sha256": "6d12110b337475dd9368652d5a677011c15d3b67c676bb855d98003ecd679398",
+      "uid": 1000
+    },
+    "rtl-full-3-stalled.log": {
+      "bytes": 582,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095394389484339,
+      "sha256": "89b5583f078209395194f909d9cfc2c27da8ccaabb83ce2749390e7216d6cf32",
+      "uid": 1000
+    },
+    "rtl-full-3-stalled.time.txt": {
+      "bytes": 1002,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095394391484389,
+      "sha256": "a6fd55a43135e786bcdbf9ddfc59e1f087d715fbb4c5924b3a1d419b78c5ea1e",
+      "uid": 1000
+    },
+    "scratchpad-finalization-oracle": {
+      "bytes": 50432,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o700",
+      "mtime_ns": 1792093619192632206,
+      "sha256": "4fd9d56be1370102b79e356ef9cb1edc8596e248dc5b947705c6ffa0afbb9473",
+      "uid": 1000
+    },
+    "staging-guards.log": {
+      "bytes": 1504,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093615881562468,
+      "sha256": "58d31ef6b0caee3001d0c7a2f8e3c287b861f6c87c575171c6f006c1505fcdbf",
+      "uid": 1000
+    },
+    "staging-guards.time.txt": {
+      "bytes": 804,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093615893562720,
+      "sha256": "3bf89a1b351e013105243c38977f465a23ea08f609d5054ff35908830aea1516",
+      "uid": 1000
+    },
+    "stat-finalizer-bounded256.txt": {
+      "bytes": 1080,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095910961116415,
+      "sha256": "50793bc55f1b5f75c788cf88d9da41c3445e0f98d9555b409692b1dad7430f83",
+      "uid": 1000
+    },
+    "stat-finalizer-default.txt": {
+      "bytes": 1080,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095717978470158,
+      "sha256": "00455a5e68008030fe722368f918aa000351350ca18e2d4a9a513dbdbf6e5d89",
+      "uid": 1000
+    },
+    "stat-scanner-default.txt": {
+      "bytes": 961,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095530577882963,
+      "sha256": "bebe445384f04bf7bc303de1be3ea3d2acae76c4b960e20a222b07d9d2ed1a57",
+      "uid": 1000
+    },
+    "summary.json": {
+      "bytes": 90443,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792096187322680223,
+      "sha256": "69d227b1def11d438da490d548adbb57a9c3ff2e37d2e28b7469b100d533dde8",
+      "uid": 1000
+    },
+    "synth-finalizer-bounded256.log": {
+      "bytes": 9755752,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095916926259064,
+      "sha256": "90ec4f2175f424af414b9317ec714b5c739246f354950592fe6733452addcd8c",
+      "uid": 1000
+    },
+    "synth-finalizer-bounded256.time.txt": {
+      "bytes": 1582,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095917201265639,
+      "sha256": "71d2490780d36bce386176cd507c8dd3a7901b6631490b1c52e4dc8c3be83fce",
+      "uid": 1000
+    },
+    "synth-finalizer-default.log": {
+      "bytes": 9755423,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095723914614103,
+      "sha256": "832276f053b01c1275c2b542223924fb72268f864a1c23fce74925638fcc229e",
+      "uid": 1000
+    },
+    "synth-finalizer-default.time.txt": {
+      "bytes": 1574,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095724204621133,
+      "sha256": "eac0d4104da065061cf6dc27c05f1d64cb1a90d563ceda5f22835ad516061f98",
+      "uid": 1000
+    },
+    "synth-scanner-default.log": {
+      "bytes": 7550281,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095532287925248,
+      "sha256": "73d53208d83dbe8e0ce53477550598bc56eb98fa9d668b5296a91564a37b32b8",
+      "uid": 1000
+    },
+    "synth-scanner-default.time.txt": {
+      "bytes": 1451,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095532465929649,
+      "sha256": "443372a3a656466d1722fa9e02df721819bc0849dce9306d2966911279bc55b6",
+      "uid": 1000
+    },
+    "tools.json": {
+      "bytes": 5526,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093616164568427,
+      "sha256": "63d5eb508a9b90bd07fbb240ebd181de959bc56dc0c2625b7f5bf210a27d152b",
+      "uid": 1000
+    },
+    "vendor.log": {
+      "bytes": 32,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093615455553497,
+      "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "uid": 1000
+    },
+    "vendor.time.txt": {
+      "bytes": 748,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792093615460553602,
+      "sha256": "b0a67cc1a5b8d6a8ff1734a5b5d1e441170362540183708d9a385109ebc339e4",
+      "uid": 1000
+    },
+    "yosys-cell-model.json": {
+      "bytes": 291,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399802620702,
+      "sha256": "8f206d8fd5da7c0e111e7b30d8fd043f2f63b8069e8794c7639c5b464aacd9af",
+      "uid": 1000
+    },
+    "yosys-simcells.v": {
+      "bytes": 31442,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792095399801620677,
+      "sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+      "uid": 1000
+    }
+  },
+  "root": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization",
+  "root_mode": "0o700"
+}

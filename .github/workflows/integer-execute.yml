@@ -11,6 +11,9 @@ on:
       - 'scripts/test_floating_execute.py'
       - 'scripts/floating_fixture.py'
       - 'scripts/test_program_sequence.py'
+      - 'scripts/prepared_parent_bindings.py'
+      - 'tests/test_prepared_parent_bindings.py'
+      - 'docs/validation/prepared-reciprocals/parent-source-bindings.json'
       - 'scripts/program_sequence_fixture.py'
       - 'scripts/test_divsqrt_execute.py'
       - 'scripts/divsqrt_fixture.py'
@@ -19,6 +22,20 @@ on:
       - 'vendor/randomx/**'
       - 'vendor/randomx*.json'
       - '.github/workflows/integer-execute.yml'
+      - 'scripts/combined_source_bindings.py'
+      - 'tests/test_combined_source_bindings.py'
+      - 'docs/validation/prepared-reciprocals/combined-source-bindings.json'
+      - 'docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json'
+      - 'docs/validation/program-sequence-20261013/server-current/inputs.json'
+      - 'docs/validation/prepared-reciprocals/server/inputs.json'
+      - 'docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json'
+      - 'docs/validation/regfile-blake2b-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json'
+      - 'scripts/test_regfile_blake2b.py'
+      - 'scripts/test_scratchpad_finalization.py'
+      - '.github/workflows/regfile-blake2b.yml'
+      - '.github/workflows/scratchpad-finalization.yml'
   workflow_dispatch:
 permissions:
   contents: read
@@ -28,6 +45,11 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+      - name: Verify source bindings and retained server evidence
+        run: |
+          python3 -B scripts/prepared_parent_bindings.py --check-evidence \
+            --output "$RUNNER_TEMP/prepared-parent-bindings-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/report.json"
+          python3 -B -m unittest discover -s tests -p test_prepared_parent_bindings.py -v
       - name: Install official HDL packages
         run: |
           sudo apt-get update
@@ -37,9 +59,16 @@ jobs:
           python3 scripts/test_program_sequence.py \
             --output "$RUNNER_TEMP/integer-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
             --synthesize
+          echo "This integration job executed native-generated program sequences, control checks, actual generic synthesis and mapped integration. Source-binding and retained-evidence checks are additional guards." >> "$GITHUB_STEP_SUMMARY"
       - name: Retain complete licensed outputs
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: integer-execute-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/integer-execute-${{ github.run_id }}-${{ github.run_attempt }}/
+      - name: Retain source and retained-evidence report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prepared-parent-bindings-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/prepared-parent-bindings-${{ github.run_id }}-${{ github.run_attempt }}/

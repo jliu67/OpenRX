@@ -1,0 +1,16 @@
+{
+  "originals_preserved": [
+    {
+      "mode": "0o664",
+      "original": "reciprocal-combination-reconciliation-evidence/verify_terminal01.py",
+      "preserved_copy": "reciprocal-combination-reconciliation-evidence/verify_terminal01.pre-fixes-v1.py",
+      "sha256": "19e79092f798af83ef9e59c86dccf2059bdc998d9bb39f66fc01bf3fdd35c4b8"
+    },
+    {
+      "mode": "0o664",
+      "original": "reciprocal-combination-reconciliation-evidence/publish_combination01.py",
+      "preserved_copy": "reciprocal-combination-reconciliation-evidence/publish_combination01.pre-fixes-v1.py",
+      "sha256": "624ba29f6bb36cec93f9189d6169b724840d3fc29360fed5f6f6465146cb716b"
+    }
+  ]
+}

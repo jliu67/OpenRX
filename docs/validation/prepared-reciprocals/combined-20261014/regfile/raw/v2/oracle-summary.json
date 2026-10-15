@@ -1,0 +1,1 @@
+{"programs":8,"iterations_per_program":4,"total_iterations":32,"v2":1,"instruction_steps":12331,"bytecode_events":2568,"branches":1228,"fp":4308,"cfround":69,"dataset":"deterministic addressed fixture, not full dataset","native_default_programs":8,"native_default_iterations":2048,"initialization_program_generation_interprogram_BLAKE2b_final_hash":"outside hardware component"}

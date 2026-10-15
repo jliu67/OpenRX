@@ -21,6 +21,18 @@ on:
       - 'scripts/test_program_sequence.py'
       - 'scripts/test_regfile_blake2b.py'
       - '.github/workflows/scratchpad-finalization.yml'
+      - 'scripts/combined_source_bindings.py'
+      - 'tests/test_combined_source_bindings.py'
+      - 'docs/validation/prepared-reciprocals/combined-source-bindings.json'
+      - 'scripts/prepared_parent_bindings.py'
+      - 'docs/validation/prepared-reciprocals/parent-source-bindings.json'
+      - 'docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json'
+      - 'docs/validation/prepared-reciprocals/server/inputs.json'
+      - 'docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/inputs.json'
+      - 'docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json'
+      - '.github/workflows/integer-execute.yml'
+      - '.github/workflows/regfile-blake2b.yml'
   workflow_dispatch:
 permissions:
   contents: read

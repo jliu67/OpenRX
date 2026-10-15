@@ -1,0 +1,18 @@
+{
+  "AST_files": [
+    "verify_terminal01.py",
+    "publish_combination01.py",
+    "test_terminal_publication_helpers01.py"
+  ],
+  "files_sha256": {
+    "publish_combination01.py": "4f4f30c9af82d46f03130b170d2eb98dde30932ecc02a9593e02e70dd9fde458",
+    "test_terminal_publication_helpers01.py": "38213522b59943df31cbb0ea13d3bd30171668995ed22110fa7ee1fbf9b93cbe",
+    "verify_terminal01.py": "b95359c0e4198f371603d058b23911b49f6d5747859d04b0b37c1a2acfea27b0"
+  },
+  "log": "reciprocal-combination-reconciliation-evidence/terminal-publication-helper-tests02.log",
+  "log_sha256": "f32e00889c415099b8db24f67fee10549c5c1108b8761498352a3f6af1d40330",
+  "real_admission_metadata_only_bindings": 281,
+  "returncode": 0,
+  "scope": "Tiny external synthetic metadata/mode/body fixtures only; no runner, scientific payload or GitHub call",
+  "tests": 26
+}

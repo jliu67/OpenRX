@@ -1,0 +1,170 @@
+[
+  {
+    "case": "bounded-64-zero",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-zero"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-64-walking",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-walking"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-64-prng",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-128-zero",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-zero"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-128-walking",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-walking"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-128-prng",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-128-prng"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-256-zero",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-zero"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-256-walking",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-walking"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-256-prng",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-256-prng"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-4096-zero",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-zero"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-4096-walking",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-walking"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "bounded-4096-prng",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-4096-prng"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "full-actual-final7",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-actual-final7"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  },
+  {
+    "case": "full-pattern",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/scratchpad-finalization-oracle",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/scratchpad.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern/register-file.bin",
+      "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/full-pattern"
+    ],
+    "cwd": "/tmp/openrx-combined-source-0kazbk4f",
+    "timeout_seconds": 120,
+    "returncode": 0
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "name": "bounded-64-prng",
+  "directory": "/home/server/openrx-local/v1/executions/20261015T194652Z-334cfc1d0428/combined-finalization/fixtures/bounded-64-prng",
+  "scratchpad_bytes": 64,
+  "aes_64byte_groups": 1,
+  "memory_reads128": 4,
+  "kind": "prng",
+  "seed": "0x7361726174636872",
+  "input_scratchpad_sha256": "f6ffd95172096c0af345e0cbb4a1c1896e82713372e1c0c24d290604c1e028c2",
+  "input_register_sha256": "ec09c33cbf50c256841d1f0dff89f2370338d507d8f96a4a37827244840e8d2f",
+  "a_replacement_only": true,
+  "digest32_not_truncated64": true,
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file"
+}

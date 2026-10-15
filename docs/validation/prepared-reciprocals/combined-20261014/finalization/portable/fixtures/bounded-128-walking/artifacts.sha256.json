@@ -1,0 +1,13 @@
+{
+  "aes-hash.hex": "71ae93bc1f73245ad7b8cc3184eb6a5e7186f4244781c403ee8b5e3c30904a70",
+  "case.json": "2084332beef1b9cd0d804ea2d95ed14da7dcdebfb99f16e9047860296584d5d4",
+  "digest32.hex": "528fe2d1eb525107b0235470bffeb31d907a17e0b99d3b862af3d63b9679e8ae",
+  "digest64.hex": "b60bb5ae74b4f88d5fffc88095a3ea448bacabadce47c1b4054645babe228c4a",
+  "native-inputs.json": "7dea7ef12626c12c441110d08dad6da081701fa926e0418240f2bc41914158b4",
+  "native-oracle.log": "c2aa66cf003825432d3a4972643f06f9d4187c5142449d1c87b1bdcb5a3c5fd4",
+  "register-file.bin": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+  "rf-final.hex": "0f0f9a732bac99904ab7442fc3acbc7a843d4af2cef70a23a9428e707f1b92d8",
+  "rf-in.hex": "f42af3801232ffb0bef735ab4c868fcc88e056722445524f84c2a8d289f3a6c7",
+  "scratchpad.bin": "055828904759fb49cdb8d7af6d569bfdfcf235a277ec783e4eab63b2728b8dc8",
+  "scratchpad.hex": "0432188dfdf81b5d632340e91277814c21fb0aad503bfcdb1de6c9a1c954522d"
+}

@@ -1,0 +1,6 @@
+warning: Some design elements have no explicit time unit and/or
+       : time precision. This may cause confusing timing results.
+       : Affected design elements are:
+       :   -- module randomx_prepared_rcp_guard declared here: rtl/execute/randomx_prepared_rcp_guard.v:4
+       :   -- module randomx_program_reciprocals declared here: rtl/execute/randomx_program_reciprocals.v:6
+       :   -- module randomx_reciprocal32 declared here: rtl/execute/randomx_reciprocal32.v:4

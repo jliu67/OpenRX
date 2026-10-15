@@ -1,0 +1,453 @@
+Running as unit: openrx-prepared-sequence-regression-01.service
+START vendor
+PASS vendor
+START compile-oracle
+PASS compile-oracle
+START compile-vpi
+PASS compile-vpi
+START oracle-v2-short
+PASS oracle-v2-short
+START compile-rtl-1-0
+PASS compile-rtl-1-0
+START rtl-1-0
+PASS rtl-1-0
+START compile-rtl-1-1
+PASS compile-rtl-1-1
+START rtl-1-1
+PASS rtl-1-1
+START compile-rtl-program-reset-1
+PASS compile-rtl-program-reset-1
+START rtl-program-reset-1
+PASS rtl-program-reset-1
+START oracle-v1-short
+PASS oracle-v1-short
+START compile-rtl-0-0
+PASS compile-rtl-0-0
+START rtl-0-0
+PASS rtl-0-0
+START compile-rtl-0-1
+PASS compile-rtl-0-1
+START rtl-0-1
+PASS rtl-0-1
+START compile-rtl-program-reset-0
+PASS compile-rtl-program-reset-0
+START rtl-program-reset-0
+PASS rtl-program-reset-0
+START compile-rtl-control
+PASS compile-rtl-control
+START rtl-control
+PASS rtl-control
+START compile-rtl-cancel
+PASS compile-rtl-cancel
+START rtl-cancel
+PASS rtl-cancel
+START oracle-v2-first
+PASS oracle-v2-first
+START compile-rtl-first
+PASS compile-rtl-first
+START rtl-first
+PASS rtl-first
+START synth-control-default
+PASS synth-control-default
+START compile-mapped-control-default
+PASS compile-mapped-control-default
+START mapped-control-default
+PASS mapped-control-default
+START synth-control-short
+PASS synth-control-short
+START compile-mapped-control-1-0
+PASS compile-mapped-control-1-0
+START mapped-control-1-0
+PASS mapped-control-1-0
+START compile-mapped-control-1-1
+PASS compile-mapped-control-1-1
+START mapped-control-1-1
+PASS mapped-control-1-1
+START compile-mapped-program-reset-1
+PASS compile-mapped-program-reset-1
+START mapped-program-reset-1
+PASS mapped-program-reset-1
+START compile-mapped-control-0-0
+PASS compile-mapped-control-0-0
+START mapped-control-0-0
+PASS mapped-control-0-0
+START compile-mapped-control-0-1
+PASS compile-mapped-control-0-1
+START mapped-control-0-1
+PASS mapped-control-0-1
+START compile-mapped-program-reset-0
+PASS compile-mapped-program-reset-0
+START mapped-program-reset-0
+PASS mapped-program-reset-0
+START synth-sequence-default
+PASS synth-sequence-default
+START compile-mapped-first
+PASS compile-mapped-first
+START mapped-first
+PASS mapped-first
+START compile-mapped-cancel
+PASS compile-mapped-cancel
+START mapped-cancel
+PASS mapped-cancel
+{
+  "accepted_parent": "7f299c74f81332257eefd775086b355969ad85f3",
+  "programs": 8,
+  "native_iterations_per_program": 2048,
+  "profile_iterations": 4,
+  "full_v2_requested": false,
+  "synthesis_requested": true,
+  "rtl": {
+    "rtl-1-0": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=1 stall=0 total_iterations=32 actual_instructions=12331 bytecode_events=2568 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=110934 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=0 rom_stale=0 sp_stale=0 ds_stale=0",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 1,
+      "stall": 0,
+      "total_iterations": 32,
+      "actual_instructions": 12331,
+      "bytecode_events": 2568,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 110934,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 0,
+      "rom_stale": 0,
+      "sp_stale": 0,
+      "ds_stale": 0
+    },
+    "rtl-1-1": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=1 stall=1 total_iterations=32 actual_instructions=12331 bytecode_events=2568 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=185396 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=8 rom_stale=12331 sp_stale=2140 ds_stale=32",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 1,
+      "stall": 1,
+      "total_iterations": 32,
+      "actual_instructions": 12331,
+      "bytecode_events": 2568,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 185396,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 8,
+      "rom_stale": 12331,
+      "sp_stale": 2140,
+      "ds_stale": 32
+    },
+    "rtl-program-reset-1": {
+      "record": "PASS program_sequence_cancel v2=1 native_iterations=4 held_program_reset=1 late_meta_rom_sp_ds_drop=1 all_memory_bytes_preserved=2097152 version_restart=1",
+      "v2": 1,
+      "native_iterations": 4,
+      "held_program_reset": 1,
+      "late_meta_rom_sp_ds_drop": 1,
+      "all_memory_bytes_preserved": 2097152,
+      "version_restart": 1
+    },
+    "rtl-0-0": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=0 stall=0 total_iterations=32 actual_instructions=8207 bytecode_events=1855 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=70110 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=0 rom_stale=0 sp_stale=0 ds_stale=0",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 0,
+      "stall": 0,
+      "total_iterations": 32,
+      "actual_instructions": 8207,
+      "bytecode_events": 1855,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 70110,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 0,
+      "rom_stale": 0,
+      "sp_stale": 0,
+      "ds_stale": 0
+    },
+    "rtl-0-1": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=0 stall=1 total_iterations=32 actual_instructions=8207 bytecode_events=1855 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=120864 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=8 rom_stale=8207 sp_stale=1586 ds_stale=32",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 0,
+      "stall": 1,
+      "total_iterations": 32,
+      "actual_instructions": 8207,
+      "bytecode_events": 1855,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 120864,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 8,
+      "rom_stale": 8207,
+      "sp_stale": 1586,
+      "ds_stale": 32
+    },
+    "rtl-program-reset-0": {
+      "record": "PASS program_sequence_cancel v2=0 native_iterations=4 held_program_reset=1 late_meta_rom_sp_ds_drop=1 all_memory_bytes_preserved=2097152 version_restart=1",
+      "v2": 0,
+      "native_iterations": 4,
+      "held_program_reset": 1,
+      "late_meta_rom_sp_ds_drop": 1,
+      "all_memory_bytes_preserved": 2097152,
+      "version_restart": 1
+    },
+    "control": {
+      "record": "PASS program_control programs=8 iterations_per_program=2048 contract_commits=18432 native_entropy_records=8 resets=5 held_error_codes=2 stale_meta=24 stale_backend=18 cycles=37134 arithmetic_backend=contract_stub",
+      "programs": 8,
+      "iterations_per_program": 2048,
+      "contract_commits": 18432,
+      "native_entropy_records": 8,
+      "resets": 5,
+      "held_error_codes": 2,
+      "stale_meta": 24,
+      "stale_backend": 18,
+      "cycles": 37134
+    },
+    "cancel": {
+      "record": "PASS program_cancel metadata_stale=1 reset_metadata_request=1 late_metadata_drop=1 malformed_metadata_held_error=1 reset_pending_load=1 reset_held_store=1 reset_held_fetch=1 reset_running_division=2 reset_running_sqrt=1 late_fetch_drop=1 late_memory_drop=1 committed_prefix_preserved=1",
+      "metadata_stale": 1,
+      "reset_metadata_request": 1,
+      "late_metadata_drop": 1,
+      "malformed_metadata_held_error": 1,
+      "reset_pending_load": 1,
+      "reset_held_store": 1,
+      "reset_held_fetch": 1,
+      "reset_running_division": 2,
+      "reset_running_sqrt": 1,
+      "late_fetch_drop": 1,
+      "late_memory_drop": 1,
+      "committed_prefix_preserved": 1
+    },
+    "first": {
+      "record": "PASS program_sequence_first_iteration v2=1 native_iterations=1 full_register_round_memory_control=1 late_meta_rom_sp_ds_drop=1 all_memory_bytes_preserved=2097152 version_restart=1",
+      "v2": 1,
+      "native_iterations": 1,
+      "full_register_round_memory_control": 1,
+      "late_meta_rom_sp_ds_drop": 1,
+      "all_memory_bytes_preserved": 2097152,
+      "version_restart": 1
+    }
+  },
+  "mapping": {
+    "control-default": {
+      "num_cells": 19435,
+      "flop_cells": 2551,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 881,
+        "$_AND_": 1,
+        "$_AOI3_": 3288,
+        "$_AOI4_": 1707,
+        "$_DFF_P_": 2551,
+        "$_MUX_": 5848,
+        "$_NAND_": 32,
+        "$_NOR_": 24,
+        "$_NOT_": 2993,
+        "$_OAI3_": 165,
+        "$_OAI4_": 16,
+        "$_ORNOT_": 144,
+        "$_OR_": 1675,
+        "$_XNOR_": 1,
+        "$_XOR_": 109
+      },
+      "programs": 8,
+      "iterations_per_program": 2048,
+      "scope": "actual generic mapping; external memories/provider/physical timing and power excluded"
+    },
+    "control-short": {
+      "num_cells": 19443,
+      "flop_cells": 2551,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 882,
+        "$_AND_": 1,
+        "$_AOI3_": 3287,
+        "$_AOI4_": 1707,
+        "$_DFF_P_": 2551,
+        "$_MUX_": 5849,
+        "$_NAND_": 31,
+        "$_NOR_": 25,
+        "$_NOT_": 2992,
+        "$_OAI3_": 165,
+        "$_OAI4_": 16,
+        "$_ORNOT_": 144,
+        "$_OR_": 1682,
+        "$_XNOR_": 1,
+        "$_XOR_": 110
+      },
+      "programs": 8,
+      "iterations_per_program": 4,
+      "scope": "actual generic mapping; external memories/provider/physical timing and power excluded"
+    },
+    "sequence-default": {
+      "num_cells": 293370,
+      "flop_cells": 13055,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 34759,
+        "$_AND_": 6895,
+        "$_AOI3_": 22585,
+        "$_AOI4_": 3223,
+        "$_DFF_PN0_": 12,
+        "$_DFF_P_": 13043,
+        "$_MUX_": 63289,
+        "$_NAND_": 3411,
+        "$_NOR_": 21692,
+        "$_NOT_": 21286,
+        "$_OAI3_": 5518,
+        "$_OAI4_": 5425,
+        "$_ORNOT_": 2619,
+        "$_OR_": 59839,
+        "$_XNOR_": 12417,
+        "$_XOR_": 17357
+      },
+      "programs": 8,
+      "iterations_per_program": 2048,
+      "scope": "actual generic mapping; external memories/provider/physical timing and power excluded"
+    }
+  },
+  "mapped": {
+    "control-default": {
+      "record": "PASS program_control programs=8 iterations_per_program=2048 contract_commits=18432 native_entropy_records=8 resets=5 held_error_codes=2 stale_meta=24 stale_backend=18 cycles=37134 arithmetic_backend=contract_stub",
+      "programs": 8,
+      "iterations_per_program": 2048,
+      "contract_commits": 18432,
+      "native_entropy_records": 8,
+      "resets": 5,
+      "held_error_codes": 2,
+      "stale_meta": 24,
+      "stale_backend": 18,
+      "cycles": 37134
+    },
+    "mapped-control-1-0": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=1 stall=0 total_iterations=32 actual_instructions=12331 bytecode_events=2568 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=110934 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=0 rom_stale=0 sp_stale=0 ds_stale=0",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 1,
+      "stall": 0,
+      "total_iterations": 32,
+      "actual_instructions": 12331,
+      "bytecode_events": 2568,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 110934,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 0,
+      "rom_stale": 0,
+      "sp_stale": 0,
+      "ds_stale": 0
+    },
+    "mapped-control-1-1": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=1 stall=1 total_iterations=32 actual_instructions=12331 bytecode_events=2568 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=185396 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=8 rom_stale=12331 sp_stale=2140 ds_stale=32",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 1,
+      "stall": 1,
+      "total_iterations": 32,
+      "actual_instructions": 12331,
+      "bytecode_events": 2568,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 185396,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 8,
+      "rom_stale": 12331,
+      "sp_stale": 2140,
+      "ds_stale": 32
+    },
+    "mapped-program-reset-1": {
+      "record": "PASS program_sequence_cancel v2=1 native_iterations=4 held_program_reset=1 late_meta_rom_sp_ds_drop=1 all_memory_bytes_preserved=2097152 version_restart=1",
+      "v2": 1,
+      "native_iterations": 4,
+      "held_program_reset": 1,
+      "late_meta_rom_sp_ds_drop": 1,
+      "all_memory_bytes_preserved": 2097152,
+      "version_restart": 1
+    },
+    "mapped-control-0-0": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=0 stall=0 total_iterations=32 actual_instructions=8207 bytecode_events=1855 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=70110 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=0 rom_stale=0 sp_stale=0 ds_stale=0",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 0,
+      "stall": 0,
+      "total_iterations": 32,
+      "actual_instructions": 8207,
+      "bytecode_events": 1855,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 70110,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 0,
+      "rom_stale": 0,
+      "sp_stale": 0,
+      "ds_stale": 0
+    },
+    "mapped-control-0-1": {
+      "record": "PASS program_sequence programs=8 iterations_per_program=4 v2=0 stall=1 total_iterations=32 actual_instructions=8207 bytecode_events=1855 tail_writes=256 full_memory_bytes=2097152 elapsed_cycles=120864 source_DUT_derived=1 native_register_round_memory_control=1 held_inactive=1 meta_stale=8 rom_stale=8207 sp_stale=1586 ds_stale=32",
+      "programs": 8,
+      "iterations_per_program": 4,
+      "v2": 0,
+      "stall": 1,
+      "total_iterations": 32,
+      "actual_instructions": 8207,
+      "bytecode_events": 1855,
+      "tail_writes": 256,
+      "full_memory_bytes": 2097152,
+      "elapsed_cycles": 120864,
+      "source_DUT_derived": 1,
+      "native_register_round_memory_control": 1,
+      "held_inactive": 1,
+      "meta_stale": 8,
+      "rom_stale": 8207,
+      "sp_stale": 1586,
+      "ds_stale": 32
+    },
+    "mapped-program-reset-0": {
+      "record": "PASS program_sequence_cancel v2=0 native_iterations=4 held_program_reset=1 late_meta_rom_sp_ds_drop=1 all_memory_bytes_preserved=2097152 version_restart=1",
+      "v2": 0,
+      "native_iterations": 4,
+      "held_program_reset": 1,
+      "late_meta_rom_sp_ds_drop": 1,
+      "all_memory_bytes_preserved": 2097152,
+      "version_restart": 1
+    },
+    "first": {
+      "record": "PASS program_sequence_first_iteration v2=1 native_iterations=1 full_register_round_memory_control=1 late_meta_rom_sp_ds_drop=1 all_memory_bytes_preserved=2097152 version_restart=1",
+      "v2": 1,
+      "native_iterations": 1,
+      "full_register_round_memory_control": 1,
+      "late_meta_rom_sp_ds_drop": 1,
+      "all_memory_bytes_preserved": 2097152,
+      "version_restart": 1
+    },
+    "cancel": {
+      "record": "PASS program_cancel metadata_stale=1 reset_metadata_request=1 late_metadata_drop=1 malformed_metadata_held_error=1 reset_pending_load=1 reset_held_store=1 reset_held_fetch=1 reset_running_division=2 reset_running_sqrt=1 late_fetch_drop=1 late_memory_drop=1 committed_prefix_preserved=1",
+      "metadata_stale": 1,
+      "reset_metadata_request": 1,
+      "late_metadata_drop": 1,
+      "malformed_metadata_held_error": 1,
+      "reset_pending_load": 1,
+      "reset_held_store": 1,
+      "reset_held_fetch": 1,
+      "reset_running_division": 2,
+      "reset_running_sqrt": 1,
+      "late_fetch_drop": 1,
+      "late_memory_drop": 1,
+      "committed_prefix_preserved": 1
+    }
+  },
+  "boundary": "RTL initializes entropy/config and sequences actual bytecode/iteration execution; software supplies native initial scratchpad, programs from DUT-derived seeds, interprogram BLAKE2b, and deterministic addressed dataset lines; final hash outside",
+  "invalid_parameters_rejected": 4,
+  "mapped_scope": "default8x2048 control counts/contract; actual8x4 v1/v2 mapped-control transitions; default whole-top gates validate one native v2 iteration and cancellation, not a full16384-iteration gate run"
+}
+Finished with result: success
+Main processes terminated with: code=exited/status=0
+Service runtime: 52min 41.878s
+CPU time consumed: 50min 41.267s

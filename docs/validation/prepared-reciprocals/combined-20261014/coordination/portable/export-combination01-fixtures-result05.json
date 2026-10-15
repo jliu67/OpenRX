@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-10-15T20:32:15.396042+00:00",
+  "errors": 0,
+  "failures": 0,
+  "fixture_log": "<EXTERNAL_EVIDENCE>/export-combination01-fixtures05.log",
+  "fixture_log_sha256": "bef15c868d04a2a33b6f83d501abc81c0fe61aedef9190b5880f4c997af09410",
+  "fixture_script_sha256": "540a021757f02657218005410fbf9246737cca9ba2f41743480dae19e5473f33",
+  "helper_path": "<EXTERNAL_EVIDENCE>/export_combination01.py",
+  "helper_sha256": "7dce60b08a02d9ba49edfaa06b6b788b5f3d0faa16b70bdc879989919fda6f44",
+  "scope": "Tiny temporary synthetic files/archives only; no real evidence/archive IO, scientific execution or independent review.",
+  "status": "pass_coauthor_helper_fixtures",
+  "tests": 28
+}

@@ -1,0 +1,21 @@
+{
+  "source": "/tmp/openrx-combined-source-0kazbk4f",
+  "staged_git_tree": "29ac1af8dff303dddd8f84ce0a79fb369f333ec0",
+  "parents": [
+    "35c2cae61092107acb2c684bbca308aca8fb280b",
+    "5f28dd4363504ecf33a8f10451c53405773c564f"
+  ],
+  "source_archive_sha256": "1002c56e3e1bbcb6bb07a995d9a41114ed6a14eddb6b07565461bd7220d33911",
+  "wrapper": "/home/server/Documents/Codex/2026-10-11/task-2/reciprocal-combination-reconciliation-evidence/run_combined_regressions01.py",
+  "wrapper_sha256": "743c8303eda49dcb6698fbe18e399bcc9d574551a045e713af69d568bd4aeda6",
+  "request_key": "issue69-combined-35c-5f-attempt01",
+  "kind": "simulation",
+  "memory_bytes": 4294967296,
+  "runner": "/home/server/openrx-local/v1/releases/runner-v1-657b23f1/local_execution.py",
+  "actual_installed_profile": {
+    "CPUQuota": "600%",
+    "MemorySwapMax": "2G",
+    "TasksMax": 256
+  },
+  "scientific_acceptance": "unverified"
+}

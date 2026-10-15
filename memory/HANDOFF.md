@@ -1,5 +1,91 @@
 # Handoff — actual designated local execution
 
+## 2026-10-15 — PR70 combined-source recovery closeout
+
+[Task #69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70
+`35c2cae61092107acb2c684bbca308aca8fb280b` with merged main
+`5f28dd4363504ecf33a8f10451c53405773c564f`, preserving both parents and accepted
+PR65/68. Strict combined bindings retain every historical manifest, all 219
+original preparation inputs and 73 original sequence-regression inputs. Actual
+native/mapped CI gates remain unconditional.
+
+Verified server closeout covers 362 unit tests, seed18RTL/17mapped/3synthesis and
+finalizer41RTL/19mapped/3synthesis, with native bytes and mapped/RTL records exact.
+Original runner20261014T194137Z-8451bfb57fac remains PROCESS_FAILED: after unit/seed
+commands returned0, an external wrapper KeyError:status prevented finalization.
+Recovery20261015T194652Z-334cfc1d0428 ran only missing finalization from the same
+3309-file frozen source. Both full receipts, sources, outputs and failure survive;
+composite verification never relabels the original wrapper successful.
+
+[Combined evidence](../docs/validation/prepared-reciprocals/combined-20261014/README.md)
+binds commands, native/negative cases, complete archives, source/publication deltas
+and resource checks. Both payloads used actual600%CPU/4GiBRAM/2GiBswap/Tasks256;
+observed stage peaks1,097,007,104/1,921,708,032bytes, zero recorded swap/limit/OOM/
+throttle events. Inherited simulation commands are sequential; no wall-time
+throughput inference follows. Original prepared and sequence results are retained
+exact-input proof, not newly rerun suites. Full-v2/full prepared pipeline, actual
+dataset, calibrated timing and physical power remain unaccepted.
+
+Next: hosted verification and a new independent review of the final exact draft
+[PR #70](https://github.com/jliu67/OpenRX/pull/70) head, recorded on task #69. No own
+merge or new milestone is authorized. This interrupted integration closes here;
+recurring checks remain paused. Earlier dated sections retain their original context.
+
+Whole-machine target:1MH/s under approximately2500W, over400hashes/J and under
+2.5mJ/hash. Include logic, scratchpad/dataset memory, controllers/interconnect,
+clocking and conversion/cooling. Generic cells and fixture clocks establish no
+physical efficiency. Preparation adds3KiB constants and must charge every reload.
+
+## 2026-10-14 — PR70 combined-source reconciliation in progress
+
+Task [#69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70
+`35c2cae61092107acb2c684bbca308aca8fb280b` with accepted main
+`5f28dd4363504ecf33a8f10451c53405773c564f`. PR65 and PR68 are merged after
+independent exact-head reviews; their original sources/manifests/results and the
+original reciprocal candidate remain retained. The merge preserves both parents
+and all execution, hardware-seed, finalization and preparation RTL. Only necessary
+memory conflicts are resolved; changed source-binding context is declared separately.
+
+Combined actual execution, hardware register-file seed and scratchpad-finalization
+regressions are pending at this source snapshot. Original-base passing results are
+retained evidence, not proof of this new combination. Existing native/mapped CI
+gates stay unconditional; focused binding tests are additional checks. No full-v2
+rerun or complete-pipeline performance acceptance is inferred. New independent
+review of the final combined head is required; no own merge is authorized.
+
+The whole-machine goal is **1 MH/s under approximately 2,500 W**, over 400 hashes/J
+and under 2.5 mJ/hash. The electrical boundary must include eventual logic,
+scratchpad/dataset memory, controllers/interconnect, clocking and conversion/cooling
+overhead. Generic cells and modeled clocks do not establish watts or efficiency.
+Preparation's cycle benefit must be weighed against its additional 3 KiB constant
+storage, area/energy and every admission/reload cost. Full-pipeline correctness and
+comparable calibrated performance remain unaccepted.
+
+The following dated sections preserve both parents' original publication states;
+their pending/draft/main8f statements do not describe current accepted main.
+
+## 2026-10-14 — Restore PR70 actual program-sequence regression gate
+
+The historical head1345 source-only route skipped native/mapped integration.
+The corrected gate unconditionally runs the existing --synthesize regression;
+binding/rejection checks remain additional guards. Fresh serial server validation
+passes9RTL/9mapped/4invalid/3actualsynthesis, with exact mapped/RTL PASS equality.
+All219 original science inputs and accepted manifests/old-new binding digests stay
+unchanged. Existing8×4 native v1/v2 tests, default8×2048 control contract and bounded
+whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
+performance acceptance. Sources/complete outputs and superseded binding-only CI
+artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
+Independent exact-head review remains required; no merge. Compute slot released.
+
+Earlier sections retain their historical head-specific status.
+
+
+## Reciprocal preparation candidate — task #69, 2026-10-14
+
+[Task #69](https://github.com/jliu67/OpenRX/issues/69) adds once-per-immutable-program reciprocal preparation above accepted main `8f3b9bc3d7f0182d66185abe95310f0bab00274b`. Final server validation passes eight accounting tests, 48 native iterations/12 admissions, 11 RTL/four mapped checks and three intentional invalid elaborations, with zero final unexpected failures; four failed attempts are preserved. Preparation+execution clocks on the directed corpus are ideal 370444→159376 and stalled 398580→187512, including every reload; no full-hash performance is accepted. Actual default generic cache mappings are 75979/24877 baseline cells/flops and 152277/49640 prepared, guard 390/0; no full prepared-backend/physical PPA claim. [EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) and [evidence](../docs/validation/prepared-reciprocals/README.md) bind exact source, native/clock/synthesis results and fresh kernel receipts. Main 8f, PR65 exact4f and PR68 exacta4 plus all originals remain preserved.
+
+Next action: independent exact-head feature review, then a complete comparable pipeline baseline with initial fill/generation, actual dataset/calibrated memory, 8×2048 execution and interprogram/final hash before performance acceptance. No own merge or architectural widening. Compute slot released; current claim and independent-review handoff receipts are indexed on task #69. Reproduce with `python3 scripts/test_prepared_reciprocals.py --output /tmp/openrx-prepared-reciprocal-validation-UNIQUE --synthesize` only inside a fresh authorized server admission. Draft [PR #70](https://github.com/jliu67/OpenRX/pull/70) preserves the original server result; its CI successor adds only explicit two-path binding guards and bounded hosted checks. All 219 executed inputs and accepted manifests are unchanged. Inherited complete native program-sequence/synthesis replay remains deferred and unexecuted pending fresh authorized serial admission; a hosted guard pass is not that replay. Independent review applies to the final exact head. Bounded successor validation passes 12 parent rejection tests, eight accounting tests and retained-evidence guards; fresh metadata payload peak 21762048 bytes, no swap/limit/OOM/throttle events. The following dated sections are retained historical snapshots.
+
 ## Current finalization feature — task #67, 2026-10-13
 
 Task [#67](https://github.com/jliu67/OpenRX/issues/67) adds a shared-round scan of

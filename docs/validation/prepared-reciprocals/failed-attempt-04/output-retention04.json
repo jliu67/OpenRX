@@ -1,0 +1,8 @@
+{
+  "output": "/tmp/openrx-prepared-reciprocal-validation-04",
+  "artifact_files": 161,
+  "complete_original_artifact_manifest_verified": true,
+  "archive": "/home/server/Documents/Codex/2026-10-11/task-2/reciprocal-preparation-evidence/outputs-attempt04.tar.gz",
+  "archive_sha256": "984f2c656cc0e121258bd02792b278df6772315fc8af52da5e108e1e01d1b969",
+  "resource_receipt": "resource04.json"
+}

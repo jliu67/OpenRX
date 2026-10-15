@@ -1,0 +1,4 @@
+{
+  "scripts/test_regfile_blake2b.py": "d443551cd186bb1020a76fa3439c26a917ffe584aac09487389e0b34d49e376e",
+  "scripts/test_scratchpad_finalization.py": "24324e65a5ee429b32133ef73a06a1cf47695f12f0f5f70a9643ad0c6cdaadac"
+}

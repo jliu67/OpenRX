@@ -25,6 +25,7 @@ from test_divsqrt_execute import RTL, V, LIBS
 from hardfloat_compile_view import prepare as compile_view
 from program_sequence_fixture import prepare as program_fixture
 from regfile_hash_fixture import prepare as hash_fixture
+from combined_source_bindings import validate_context
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '990f36830c5a9854bf8e2cf1fe7fd7d4ccf7f192'
@@ -224,8 +225,7 @@ def main():
         assert sha(accepted_manifest) == ACCEPTED_SHA, 'accepted 69-source manifest identity'
         accepted = json.loads(accepted_manifest.read_text())
         assert len(accepted) == 69
-        for path, digest in accepted.items():
-            assert sha(ROOT / path) == digest, 'accepted source changed: ' + path
+        preserved = validate_context(ROOT, 'regfile')
         assert sha(ROOT / 'vendor/randomx.sha256.json') == VENDOR_SHA
         assert len(json.loads((ROOT / 'vendor/randomx.sha256.json').read_text())) == 171
         run('vendor', ['python3', 'scripts/verify_vendor.py'])
@@ -255,12 +255,14 @@ def main():
             'scripts/hardfloat_compile_view.py', 'scripts/program_sequence_fixture.py'}
         bound |= {IP + path for path in ip['original_files']}
         bound |= {'vendor/randomx/' + path for path in json.loads((ROOT / 'vendor/randomx.sha256.json').read_text())}
+        bound.update(preserved['input_bindings'])
         input_hashes = {path: sha(ROOT / path) for path in sorted(bound)}
         save('inputs.json', input_hashes)
         save('preserved-inputs.json', {'accepted_parent': BASE, 'accepted_source_bindings': 69,
             'accepted_manifest_sha256': ACCEPTED_SHA, 'RandomX_original_files': 171,
             'RandomX_manifest_sha256': VENDOR_SHA, 'BLAKE2_original_files': 5,
-            'BLAKE2_manifest_sha256': IP_MANIFEST_SHA, 'all_original_and_accepted_bytes_unchanged': True})
+            'BLAKE2_manifest_sha256': IP_MANIFEST_SHA,
+            'all_original_IP_and_native_bytes_unchanged': True, **preserved})
         save('accepted-full-register-vector-source.json', {**full_record,
             'provenance_json_sha256': FULL_REGISTER_PROVENANCE_SHA, 'vector_records': 8,
             'use': 'assertion-only native unit corpus; generated short fixtures remain separate connected references'})

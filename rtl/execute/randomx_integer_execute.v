@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Native RandomX instruction execution, including iterative division/square root.
 `default_nettype none
-module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2,DIVSQRT_LANES=2) (
+module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2,DIVSQRT_LANES=2,PREPARED_RCP=0) (
     input wire clk,rst,
     input wire req_valid,output wire req_ready,input wire [15:0] req_tag,
     input wire req_v2,input wire [1:0] req_round_mode,
@@ -10,6 +10,10 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
     output wire prog_valid,input wire prog_ready,output wire [63:0] prog_addr,
     output wire [15:0] prog_tag,input wire prog_rsp_valid,output wire prog_rsp_ready,
     input wire [15:0] prog_rsp_tag,input wire [63:0] prog_rsp_instruction,
+    input wire [15:0] req_program_epoch,prog_rsp_prepared_epoch,
+    input wire [8:0] prog_rsp_prepared_pc,
+    input wire prog_rsp_prepared_error,prog_rsp_rcp_valid,prog_rsp_rcp_nop,
+    input wire [31:0] prog_rsp_rcp_divisor,input wire [63:0] prog_rsp_rcp_value,
     output wire [15:0] mem_tag,
     output wire rd_valid,input wire rd_ready,output wire [20:0] rd_addr,
     input wire rsp_valid,output wire rsp_ready,input wire [15:0] rsp_tag,
@@ -34,7 +38,22 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
         FSWAP=19,FADD_R=20,FADD_M=21,FSUB_R=22,FSUB_M=23,FSCAL=24,FMUL=25,ROUND=26,FDIV=27,FSQRT=28,BAD=31;
     reg [4:0] state_q;
     reg [8:0] pc_q;
-    reg [15:0] tag_q;
+    reg [15:0] tag_q,program_epoch_q;
+    reg [63:0] prepared_rcp_q;
+    wire prepared_packet_valid;wire [63:0] prepared_packet_value;
+    generate if(PREPARED_RCP==1)begin: prepared_guard
+        randomx_prepared_rcp_guard guard(
+            .expected_epoch(program_epoch_q),.packet_epoch(prog_rsp_prepared_epoch),
+            .expected_pc(pc_q),.packet_pc(prog_rsp_prepared_pc),
+            .instruction(prog_rsp_instruction),.packet_value(prog_rsp_rcp_value),
+            .packet_error(prog_rsp_prepared_error),.packet_rcp_valid(prog_rsp_rcp_valid),
+            .packet_nop(prog_rsp_rcp_nop),.packet_divisor(prog_rsp_rcp_divisor),
+            .valid(prepared_packet_valid),.value(prepared_packet_value));
+    end else if(PREPARED_RCP==0)begin: unprepared_guard
+        assign prepared_packet_valid=1;assign prepared_packet_value=0;
+    end else begin: invalid_prepared_parameter
+        integer_execute_requires_PREPARED_RCP_0_or_1 invalid();
+    end endgenerate
     reg v2_q;
     reg [1:0] round_q;
     reg [63:0] program_q,instruction_q,tmp_q,emask0_q,emask1_q;
@@ -111,7 +130,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
         .req_tag(tag_q),.req_a(mul_a_q),.req_b(mul_b_q),.req_high(mul_high_q),.req_signed(mul_signed_q),
         .rsp_valid(mul_rsp_valid),.rsp_ready(!rst && state_q==MUL_WAIT),.rsp_tag(mul_rsp_tag),.rsp_result(mul_result));
     randomx_reciprocal32 reciprocal(
-        .clk(clk),.rst(rst),.req_valid(!rst && state_q==RCP_REQ),.req_ready(rcp_req_ready),
+        .clk(clk),.rst(rst),.req_valid(!rst && PREPARED_RCP==0 && state_q==RCP_REQ),.req_ready(rcp_req_ready),
         .req_tag(tag_q),.req_divisor(instruction_q[63:32]),.rsp_valid(rcp_rsp_valid),
         .rsp_ready(!rst && state_q==RCP_WAIT),.rsp_tag(rcp_rsp_tag),.rsp_result(rcp_result),.rsp_nop(rcp_rsp_nop));
     reg [127:0] fp_a_q,fp_b_q;reg [1:0] fp_op_q;
@@ -201,7 +220,7 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
     endtask
     always @(posedge clk)begin
         if(rst)begin
-            state_q<=IDLE;pc_q<=0;tag_q<=0;v2_q<=0;round_q<=0;program_q<=0;
+            state_q<=IDLE;pc_q<=0;tag_q<=0;program_epoch_q<=0;prepared_rcp_q<=0;v2_q<=0;round_q<=0;program_q<=0;
             instruction_q<=0;tmp_q<=0;r_q<=0;f_q<=0;e_q<=0;a_q<=0;address_q<=0;
             fp_a_q<=0;fp_b_q<=0;fp_op_q<=0;emask0_q<=0;emask1_q<=0;
             commit_q<=0;commit_pc_q<=0;commit_opcode_q<=0;commit_next_q<=0;commit_target_q<=0;
@@ -221,14 +240,15 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
             end
             case(state_q)
                 IDLE:if(req_valid)begin
-                    tag_q<=req_tag;v2_q<=req_v2;round_q<=req_round_mode;program_q<=req_program_addr;
+                    tag_q<=req_tag;program_epoch_q<=req_program_epoch;prepared_rcp_q<=0;v2_q<=req_v2;round_q<=req_round_mode;program_q<=req_program_addr;
                     r_q<=req_r;f_q<=req_f;e_q<=req_e;a_q<=req_a;emask0_q<=req_emask0;emask1_q<=req_emask1;pc_q<=0;state_q<=FETCH_REQ;
                     compile_next_q<=0;branch_target_q<=0;branch_pc_q<=0;
                     for(usage_index=0;usage_index<8;usage_index=usage_index+1)usage_next_q[usage_index]<=0;
                 end
                 FETCH_REQ:if(prog_ready)state_q<=FETCH_RSP;
                 FETCH_RSP:if(prog_rsp_valid && !old_program)begin
-                    instruction_q<=prog_rsp_instruction;state_q<=EXEC;
+                    instruction_q<=prog_rsp_instruction;prepared_rcp_q<=prepared_packet_value;
+                    state_q<=prepared_packet_valid?EXEC:ERROR;
                 end
                 EXEC:case(kind)
                     ADD_RS:if(SERIAL_IADD!=0)begin tmp_q<=add_result;state_q<=IADD_SECOND;end
@@ -263,7 +283,10 @@ module randomx_integer_execute #(parameter integer SERIAL_IADD=0,MUL_RADIX4=0,FP
                         if(!v2_q||cf_value[5:2]==0)round_q<=cf_value[1:0];
                         retire_instruction();
                     end
-                    RCP:if(rcp_nop)retire_instruction();else state_q<=RCP_REQ;
+                    RCP:if(rcp_nop)retire_instruction();
+                        else if(PREPARED_RCP==1)begin
+                            mul_a_q<=rd;mul_b_q<=prepared_rcp_q;mul_high_q<=0;mul_signed_q<=0;state_q<=MUL_REQ;
+                        end else state_q<=RCP_REQ;
                     BRANCH:begin
                         r_q[64*dst+:64]<=branch_result;
                         retire_at(branch_taken?branch_target:pc_q+9'd1);

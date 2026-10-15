@@ -1,0 +1,1016 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2019  Clifford Wolf <clifford@clifford.at>           |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.9 (git sha1 1979e0b)
+
+
+-- Running command `read_verilog -Irtl/execute rtl/execute/randomx_reciprocal32.v rtl/execute/randomx_program_reciprocals.v; chparam -set PREPARE_RCP 0 randomx_program_reciprocals; hierarchy -top randomx_program_reciprocals; proc; opt; memory_dff; opt_clean; tee -o /tmp/openrx-prepared-reciprocal-validation-05/storage-cache-0.txt stat; synth -top randomx_program_reciprocals -flatten; check -assert; tee -o /tmp/openrx-prepared-reciprocal-validation-05/stat-cache-0.txt stat; write_verilog -noattr /tmp/openrx-prepared-reciprocal-validation-05/netlist-cache-0.v; write_json /tmp/openrx-prepared-reciprocal-validation-05/netlist-cache-0.json' --
+
+1. Executing Verilog-2005 frontend: rtl/execute/randomx_reciprocal32.v
+Parsing Verilog input from `rtl/execute/randomx_reciprocal32.v' to AST representation.
+Generating RTLIL representation for module `\randomx_reciprocal32'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: rtl/execute/randomx_program_reciprocals.v
+Parsing Verilog input from `rtl/execute/randomx_program_reciprocals.v' to AST representation.
+Generating RTLIL representation for module `\randomx_program_reciprocals'.
+Successfully finished Verilog frontend.
+
+3. Executing AST frontend in derive mode using pre-parsed AST for module `\randomx_program_reciprocals'.
+Parameter \PREPARE_RCP = 0
+Generating RTLIL representation for module `$paramod\randomx_program_reciprocals\PREPARE_RCP=0'.
+
+4. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1. Analyzing design hierarchy..
+Top module:  \randomx_program_reciprocals
+
+4.2. Analyzing design hierarchy..
+Top module:  \randomx_program_reciprocals
+Removing unused module `\randomx_reciprocal32'.
+Removed 1 unused modules.
+
+5. Executing PROC pass (convert processes to netlists).
+
+5.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+Cleaned up 1 empty switch.
+
+5.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 7 switch rules as full_case in process $proc$rtl/execute/randomx_program_reciprocals.v:93$238 in module randomx_program_reciprocals.
+Removed a total of 0 dead cases.
+
+5.3. Executing PROC_INIT pass (extract init attributes).
+
+5.4. Executing PROC_ARST pass (detect async resets in processes).
+
+5.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+     1/24: $0$memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$175_EN[63:0]$244
+     2/24: $0$memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$175_DATA[63:0]$240
+     3/24: $0$memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$175_ADDR[8:0]$239
+     4/24: $0$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$176_EN[63:0]$243
+     5/24: $0$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$176_DATA[63:0]$242
+     6/24: $0$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$176_ADDR[8:0]$241
+     7/24: $0\fetch_divisor_q[31:0]
+     8/24: $0\fetch_value_q[63:0]
+     9/24: $0\fetch_word_q[63:0]
+    10/24: $0\fetch_pc_q[8:0]
+    11/24: $0\fetch_epoch_q[15:0]
+    12/24: $0\fetch_tag_q[15:0]
+    13/24: $0\fetch_rcp_nop_q[0:0]
+    14/24: $0\fetch_rcp_valid_q[0:0]
+    15/24: $0\fetch_error_q[0:0]
+    16/24: $0\fetch_valid_q[0:0]
+    17/24: $0\pc_q[8:0]
+    18/24: $0\word_q[63:0]
+    19/24: $0\program_addr_q[63:0]
+    20/24: $0\prep_error_q[0:0]
+    21/24: $0\image_valid_q[0:0]
+    22/24: $0\v2_q[0:0]
+    23/24: $0\epoch_q[15:0]
+    24/24: $0\state_q[2:0]
+
+5.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+5.7. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\randomx_program_reciprocals.\state_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$597' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\epoch_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$598' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\v2_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$599' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\image_valid_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$600' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\prep_error_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$601' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\program_addr_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$602' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\word_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$603' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\pc_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$604' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_valid_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$605' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_error_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$606' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_rcp_valid_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$607' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_rcp_nop_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$608' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_tag_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$609' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_epoch_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$610' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_pc_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$611' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_word_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$612' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_value_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$613' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.\fetch_divisor_q' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$614' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.$memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$175_ADDR' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$615' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.$memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$175_DATA' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$616' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$176_ADDR' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$617' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$176_DATA' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$618' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$176_EN' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$619' with positive edge clock.
+Creating register for signal `\randomx_program_reciprocals.$memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$175_EN' using process `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+  created $dff cell `$procdff$620' with positive edge clock.
+
+5.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 17 empty switches in `\randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+Removing empty process `randomx_program_reciprocals.$proc$rtl/execute/randomx_program_reciprocals.v:93$238'.
+Cleaned up 17 empty switches.
+
+6. Executing OPT pass (performing simple optimizations).
+
+6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+<suppressed ~43 debug messages>
+
+6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+<suppressed ~153 debug messages>
+Removed a total of 51 cells.
+
+6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 1/2 on $mux $procmux$427.
+    dead port 2/2 on $mux $procmux$427.
+    dead port 1/2 on $mux $procmux$424.
+    dead port 2/2 on $mux $procmux$424.
+    dead port 1/2 on $mux $procmux$342.
+    dead port 2/2 on $mux $procmux$342.
+    dead port 1/2 on $mux $procmux$330.
+    dead port 2/2 on $mux $procmux$330.
+    dead port 1/2 on $mux $procmux$318.
+    dead port 2/2 on $mux $procmux$318.
+    dead port 1/2 on $mux $procmux$508.
+    dead port 2/2 on $mux $procmux$508.
+    dead port 1/2 on $mux $procmux$505.
+    dead port 2/2 on $mux $procmux$505.
+    dead port 1/2 on $mux $procmux$568.
+    dead port 2/2 on $mux $procmux$568.
+    dead port 1/2 on $mux $procmux$565.
+    dead port 2/2 on $mux $procmux$565.
+    dead port 1/2 on $mux $procmux$482.
+    dead port 2/2 on $mux $procmux$482.
+Removed 20 multiplexer ports.
+<suppressed ~22 debug messages>
+
+6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+    New ctrl vector for $pmux cell $procmux$431: { $procmux$555_CMP $procmux$587_CMP }
+    Consolidated identical input bits for $mux cell $procmux$278:
+      Old ports: A=64'1111111111111111111111111111111111111111111111111111111111111111, B=64'0000000000000000000000000000000000000000000000000000000000000000, Y=$procmux$278_Y
+      New ports: A=1'1, B=1'0, Y=$procmux$278_Y [0]
+      New connections: $procmux$278_Y [63:1] = { $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] $procmux$278_Y [0] }
+    New ctrl vector for $pmux cell $procmux$502: { $procmux$555_CMP $procmux$587_CMP $auto$opt_reduce.cc:132:opt_mux$622 }
+    New ctrl vector for $pmux cell $procmux$479: { $procmux$555_CMP $procmux$587_CMP $auto$opt_reduce.cc:132:opt_mux$624 }
+    New ctrl vector for $pmux cell $procmux$562: { $procmux$555_CMP $procmux$526_CMP $procmux$587_CMP $auto$opt_reduce.cc:132:opt_mux$626 $procmux$563_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$621: { $procmux$563_CMP $procmux$526_CMP $procmux$572_CMP $procmux$575_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$623: { $procmux$563_CMP $procmux$526_CMP $procmux$572_CMP $procmux$575_CMP }
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$625: { $procmux$572_CMP $procmux$575_CMP }
+  Optimizing cells in module \randomx_program_reciprocals.
+    Consolidated identical input bits for $mux cell $procmux$280:
+      Old ports: A=64'0000000000000000000000000000000000000000000000000000000000000000, B=$procmux$278_Y, Y=$procmux$280_Y
+      New ports: A=1'0, B=$procmux$278_Y [0], Y=$procmux$280_Y [0]
+      New connections: $procmux$280_Y [63:1] = { $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] $procmux$280_Y [0] }
+  Optimizing cells in module \randomx_program_reciprocals.
+    Consolidated identical input bits for $mux cell $procmux$282:
+      Old ports: A=64'0000000000000000000000000000000000000000000000000000000000000000, B=$procmux$280_Y, Y=$procmux$282_Y
+      New ports: A=1'0, B=$procmux$280_Y [0], Y=$procmux$282_Y [0]
+      New connections: $procmux$282_Y [63:1] = { $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] $procmux$282_Y [0] }
+  Optimizing cells in module \randomx_program_reciprocals.
+    Consolidated identical input bits for $mux cell $procmux$285:
+      Old ports: A=$procmux$282_Y, B=64'0000000000000000000000000000000000000000000000000000000000000000, Y=$procmux$285_Y
+      New ports: A=$procmux$282_Y [0], B=1'0, Y=$procmux$285_Y [0]
+      New connections: $procmux$285_Y [63:1] = { $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] $procmux$285_Y [0] }
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 11 changes.
+
+6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+6.6. Executing OPT_RMDFF pass (remove dff with constant values).
+Removing $procdff$618 ($dff) from module randomx_program_reciprocals.
+Removing $procdff$619 ($dff) from module randomx_program_reciprocals.
+Removing $procdff$617 ($dff) from module randomx_program_reciprocals.
+Replaced 3 DFF cells.
+
+6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 24 unused cells and 249 unused wires.
+<suppressed ~30 debug messages>
+
+6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+    New input vector for $reduce_or cell $auto$opt_reduce.cc:126:opt_mux$623: { $procmux$323_CMP $procmux$487_CMP $eq$rtl/execute/randomx_program_reciprocals.v:71$205_Y $eq$rtl/execute/randomx_program_reciprocals.v:77$218_Y }
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 1 changes.
+
+6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+6.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+
+6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+6.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+6.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 0 changes.
+
+6.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+6.20. Executing OPT_RMDFF pass (remove dff with constant values).
+
+6.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+
+6.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+6.23. Finished OPT passes. (There is nothing left to do.)
+
+7. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$271' in module `\randomx_program_reciprocals': merged $dff to cell.
+Checking cell `$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$272' in module `\randomx_program_reciprocals': no (compatible) $dff found.
+Checking cell `$memrd$\instructions_q$rtl/execute/randomx_program_reciprocals.v:49$186' in module `\randomx_program_reciprocals': no (compatible) $dff found.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+9. Printing statistics.
+
+=== randomx_program_reciprocals ===
+
+   Number of wires:                172
+   Number of wire bits:           2563
+   Number of public wires:          68
+   Number of public wire bits:    1164
+   Number of memories:               2
+   Number of memory bits:        49152
+   Number of processes:              0
+   Number of cells:                133
+     $add                            2
+     $dff                           17
+     $eq                             8
+     $gt                             1
+     $le                             1
+     $logic_and                     16
+     $logic_not                      6
+     $logic_or                       5
+     $memrd                          1
+     $memwr                          2
+     $mux                           65
+     $ne                             3
+     $pmux                           4
+     $reduce_or                      2
+
+10. Executing SYNTH pass.
+
+10.1. Executing HIERARCHY pass (managing design hierarchy).
+
+10.1.1. Analyzing design hierarchy..
+Top module:  \randomx_program_reciprocals
+
+10.1.2. Analyzing design hierarchy..
+Top module:  \randomx_program_reciprocals
+Removed 0 unused modules.
+
+10.2. Executing PROC pass (convert processes to netlists).
+
+10.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Removed a total of 0 dead cases.
+
+10.2.3. Executing PROC_INIT pass (extract init attributes).
+
+10.2.4. Executing PROC_ARST pass (detect async resets in processes).
+
+10.2.5. Executing PROC_MUX pass (convert decision trees to multiplexers).
+
+10.2.6. Executing PROC_DLATCH pass (convert process syncs to latches).
+
+10.2.7. Executing PROC_DFF pass (convert process syncs to FFs).
+
+10.2.8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+10.3. Executing FLATTEN pass (flatten design).
+No more expansions possible.
+
+10.4. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+10.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+
+10.6. Executing CHECK pass (checking for obvious problems).
+checking module randomx_program_reciprocals..
+found and reported 0 problems.
+
+10.7. Executing OPT pass (performing simple optimizations).
+
+10.7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+10.7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~21 debug messages>
+
+10.7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 0 changes.
+
+10.7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.7.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+
+10.7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+10.7.9. Finished OPT passes. (There is nothing left to do.)
+
+10.8. Executing WREDUCE pass (reducing word size of cells).
+Removed cell randomx_program_reciprocals.$procmux$306 ($mux).
+Removed cell randomx_program_reciprocals.$procmux$313 ($mux).
+Removed cell randomx_program_reciprocals.$procmux$310 ($mux).
+Removed cell randomx_program_reciprocals.$procmux$308 ($mux).
+Removed cell randomx_program_reciprocals.$procmux$299 ($mux).
+Removed cell randomx_program_reciprocals.$procmux$296 ($mux).
+Removed cell randomx_program_reciprocals.$procmux$294 ($mux).
+Removed cell randomx_program_reciprocals.$procmux$292 ($mux).
+Removed top 2 bits (of 3) from port B of cell randomx_program_reciprocals.$procmux$526_CMP0 ($eq).
+Removed top 52 bits (of 64) from port B of cell randomx_program_reciprocals.$add$rtl/execute/randomx_program_reciprocals.v:72$207 ($add).
+Removed top 2 bits (of 3) from port B of cell randomx_program_reciprocals.$ne$rtl/execute/randomx_program_reciprocals.v:76$211 ($ne).
+Removed top 8 bits (of 9) from port B of cell randomx_program_reciprocals.$add$rtl/execute/randomx_program_reciprocals.v:90$266 ($add).
+Removed top 1 bits (of 3) from port B of cell randomx_program_reciprocals.$procmux$575_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell randomx_program_reciprocals.$procmux$587_CMP0 ($eq).
+
+10.9. Executing PEEPOPT pass (run peephole optimizers).
+
+10.10. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 0 unused cells and 8 unused wires.
+<suppressed ~1 debug messages>
+
+10.11. Executing TECHMAP pass (map to technology primitives).
+
+10.11.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+10.11.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~212 debug messages>
+
+10.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module randomx_program_reciprocals:
+  creating $macc model for $add$rtl/execute/randomx_program_reciprocals.v:72$207 ($add).
+  creating $macc model for $add$rtl/execute/randomx_program_reciprocals.v:90$266 ($add).
+  creating $alu model for $macc $add$rtl/execute/randomx_program_reciprocals.v:90$266.
+  creating $alu model for $macc $add$rtl/execute/randomx_program_reciprocals.v:72$207.
+  creating $alu model for $gt$rtl/execute/randomx_program_reciprocals.v:104$251 ($gt): new $alu
+  creating $alu model for $le$rtl/execute/randomx_program_reciprocals.v:105$255 ($le): merged with $gt$rtl/execute/randomx_program_reciprocals.v:104$251.
+  creating $alu cell for $gt$rtl/execute/randomx_program_reciprocals.v:104$251, $le$rtl/execute/randomx_program_reciprocals.v:105$255: $auto$alumacc.cc:474:replace_alu$630
+  creating $alu cell for $add$rtl/execute/randomx_program_reciprocals.v:72$207: $auto$alumacc.cc:474:replace_alu$643
+  creating $alu cell for $add$rtl/execute/randomx_program_reciprocals.v:90$266: $auto$alumacc.cc:474:replace_alu$646
+  created 3 $alu and 0 $macc cells.
+
+10.13. Executing SHARE pass (SAT-based resource sharing).
+
+10.14. Executing OPT pass (performing simple optimizations).
+
+10.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+10.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~19 debug messages>
+
+10.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+    New input vector for $reduce_or cell $auto$alumacc.cc:509:replace_alu$641: { $auto$rtlil.cc:1832:Not$640 $auto$rtlil.cc:1835:ReduceAnd$636 }
+    New input vector for $reduce_and cell $auto$alumacc.cc:64:get_eq$635: { $auto$alumacc.cc:490:replace_alu$631 [0] $auto$alumacc.cc:490:replace_alu$631 [1] $auto$alumacc.cc:490:replace_alu$631 [2] $auto$alumacc.cc:490:replace_alu$631 [3] $auto$alumacc.cc:490:replace_alu$631 [4] $auto$alumacc.cc:490:replace_alu$631 [5] $auto$alumacc.cc:490:replace_alu$631 [6] $auto$alumacc.cc:490:replace_alu$631 [7] $auto$alumacc.cc:490:replace_alu$631 [8] }
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 2 changes.
+
+10.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.14.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+10.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+10.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~19 debug messages>
+
+10.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 0 changes.
+
+10.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.14.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+
+10.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+10.14.16. Finished OPT passes. (There is nothing left to do.)
+
+10.15. Executing FSM pass (extract and optimize FSM).
+
+10.15.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking randomx_program_reciprocals.fetch_divisor_q as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Not marking randomx_program_reciprocals.fetch_value_q as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Found FSM state register randomx_program_reciprocals.state_q.
+
+10.15.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\state_q' from module `\randomx_program_reciprocals'.
+  found $dff cell for state register: $procdff$597
+  root of input selection tree: $0\state_q[2:0]
+  found reset state: 3'000 (guessed from mux tree)
+  found ctrl input: $logic_or$rtl/execute/randomx_program_reciprocals.v:94$245_Y
+  found ctrl input: $eq$rtl/execute/randomx_program_reciprocals.v:77$218_Y
+  found ctrl input: $auto$opt_reduce.cc:132:opt_mux$626
+  found ctrl input: $procmux$283_CMP
+  found ctrl input: $eq$rtl/execute/randomx_program_reciprocals.v:71$205_Y
+  found ctrl input: $eq$rtl/execute/randomx_program_reciprocals.v:70$198_Y
+  found state code: 3'101
+  found ctrl input: \prep_rsp_ready
+  found state code: 3'000
+  found ctrl input: $logic_and$rtl/execute/randomx_program_reciprocals.v:119$261_Y
+  found ctrl input: \load_rsp_error
+  found ctrl input: $eq$rtl/execute/randomx_program_reciprocals.v:89$265_Y
+  found state code: 3'001
+  found ctrl input: \load_req_ready
+  found state code: 3'010
+  found ctrl input: $logic_and$rtl/execute/randomx_program_reciprocals.v:114$259_Y
+  found ctrl output: $eq$rtl/execute/randomx_program_reciprocals.v:77$218_Y
+  found ctrl output: $eq$rtl/execute/randomx_program_reciprocals.v:70$198_Y
+  found ctrl output: $eq$rtl/execute/randomx_program_reciprocals.v:71$205_Y
+  found ctrl output: $ne$rtl/execute/randomx_program_reciprocals.v:76$211_Y
+  found ctrl output: $procmux$323_CMP
+  found ctrl output: $procmux$487_CMP
+  found ctrl output: $procmux$283_CMP
+  ctrl inputs: { $eq$rtl/execute/randomx_program_reciprocals.v:89$265_Y $logic_and$rtl/execute/randomx_program_reciprocals.v:119$261_Y $logic_and$rtl/execute/randomx_program_reciprocals.v:114$259_Y $logic_or$rtl/execute/randomx_program_reciprocals.v:94$245_Y $auto$opt_reduce.cc:132:opt_mux$626 \prep_rsp_ready \load_rsp_error \load_req_ready }
+  ctrl outputs: { $procmux$283_CMP $eq$rtl/execute/randomx_program_reciprocals.v:77$218_Y $ne$rtl/execute/randomx_program_reciprocals.v:76$211_Y $eq$rtl/execute/randomx_program_reciprocals.v:71$205_Y $eq$rtl/execute/randomx_program_reciprocals.v:70$198_Y $procmux$487_CMP $0\state_q[2:0] $procmux$323_CMP }
+  transition:      3'000 8'--00---- ->      3'000 10'0010100000
+  transition:      3'000 8'--10---- ->      3'001 10'0010100010
+  transition:      3'000 8'---1---- ->      3'000 10'0010100000
+  transition:      3'010 8'-0-0---- ->      3'010 10'1010000100
+  transition:      3'010 8'01-0--0- ->      3'001 10'1010000010
+  transition:      3'010 8'11-0--0- ->      3'101 10'1010001010
+  transition:      3'010 8'-1-0--1- ->      3'101 10'1010001010
+  transition:      3'010 8'---1---- ->      3'000 10'1010000000
+  transition:      3'001 8'---0---0 ->      3'001 10'0001000010
+  transition:      3'001 8'---0---1 ->      3'010 10'0001000100
+  transition:      3'001 8'---1---- ->      3'000 10'0001000000
+  transition:      3'101 8'---0-0-- ->      3'101 10'0110001010
+  transition:      3'101 8'---0-1-- ->      3'000 10'0110000000
+  transition:      3'101 8'---1---- ->      3'000 10'0110000000
+
+10.15.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state_q$649' from module `\randomx_program_reciprocals'.
+  Removing unused input signal $auto$opt_reduce.cc:132:opt_mux$626.
+
+10.15.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 17 unused cells and 17 unused wires.
+<suppressed ~18 debug messages>
+
+10.15.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state_q$649' from module `\randomx_program_reciprocals'.
+  Removing unused output signal $0\state_q[2:0] [0].
+  Removing unused output signal $0\state_q[2:0] [1].
+  Removing unused output signal $0\state_q[2:0] [2].
+
+10.15.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\state_q$649' from module `\randomx_program_reciprocals' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  000 -> ---1
+  010 -> --1-
+  001 -> -1--
+  101 -> 1---
+
+10.15.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\state_q$649' from module `\randomx_program_reciprocals':
+-------------------------------------
+
+  Information on FSM $fsm$\state_q$649 (\state_q):
+
+  Number of input signals:    7
+  Number of output signals:   7
+  Number of state bits:       4
+
+  Input signals:
+    0: \load_req_ready
+    1: \load_rsp_error
+    2: \prep_rsp_ready
+    3: $logic_or$rtl/execute/randomx_program_reciprocals.v:94$245_Y
+    4: $logic_and$rtl/execute/randomx_program_reciprocals.v:114$259_Y
+    5: $logic_and$rtl/execute/randomx_program_reciprocals.v:119$261_Y
+    6: $eq$rtl/execute/randomx_program_reciprocals.v:89$265_Y
+
+  Output signals:
+    0: $procmux$323_CMP
+    1: $procmux$487_CMP
+    2: $eq$rtl/execute/randomx_program_reciprocals.v:70$198_Y
+    3: $eq$rtl/execute/randomx_program_reciprocals.v:71$205_Y
+    4: $ne$rtl/execute/randomx_program_reciprocals.v:76$211_Y
+    5: $eq$rtl/execute/randomx_program_reciprocals.v:77$218_Y
+    6: $procmux$283_CMP
+
+  State encoding:
+    0:     4'---1  <RESET STATE>
+    1:     4'--1-
+    2:     4'-1--
+    3:     4'1---
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 7'--00---   ->     0 7'0010100
+      1:     0 7'---1---   ->     0 7'0010100
+      2:     0 7'--10---   ->     2 7'0010100
+      3:     1 7'---1---   ->     0 7'1010000
+      4:     1 7'-0-0---   ->     1 7'1010000
+      5:     1 7'01-0-0-   ->     2 7'1010000
+      6:     1 7'11-0-0-   ->     3 7'1010000
+      7:     1 7'-1-0-1-   ->     3 7'1010000
+      8:     2 7'---1---   ->     0 7'0001000
+      9:     2 7'---0--1   ->     1 7'0001000
+     10:     2 7'---0--0   ->     2 7'0001000
+     11:     3 7'---01--   ->     0 7'0110000
+     12:     3 7'---1---   ->     0 7'0110000
+     13:     3 7'---00--   ->     3 7'0110000
+
+-------------------------------------
+
+10.15.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\state_q$649' from module `\randomx_program_reciprocals'.
+
+10.16. Executing OPT pass (performing simple optimizations).
+
+10.16.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+<suppressed ~5 debug messages>
+
+10.16.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.16.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.16.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 0 unused cells and 10 unused wires.
+<suppressed ~1 debug messages>
+
+10.16.5. Finished fast OPT passes.
+
+10.17. Executing MEMORY pass.
+
+10.17.1. Executing MEMORY_DFF pass (merging $dff cells to $memrd and $memwr).
+Checking cell `$memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$272' in module `\randomx_program_reciprocals': no (compatible) $dff found.
+Checking cell `$memrd$\instructions_q$rtl/execute/randomx_program_reciprocals.v:49$186' in module `\randomx_program_reciprocals': no (compatible) $dff found.
+
+10.17.2. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 1 unused cells and 1 unused wires.
+<suppressed ~2 debug messages>
+
+10.17.3. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+10.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+
+10.17.5. Executing MEMORY_COLLECT pass (generating $mem cells).
+Collecting $memrd, $memwr and $meminit for memory `\instructions_q' in module `\randomx_program_reciprocals':
+  $memwr$\instructions_q$rtl/execute/randomx_program_reciprocals.v:122$271 ($memwr)
+  $memrd$\instructions_q$rtl/execute/randomx_program_reciprocals.v:49$186 ($memrd)
+Collecting $memrd, $memwr and $meminit for memory `\reciprocals_q' in module `\randomx_program_reciprocals':
+  $memwr$\reciprocals_q$rtl/execute/randomx_program_reciprocals.v:131$272 ($memwr)
+
+10.18. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 1 unused cells and 0 unused wires.
+<suppressed ~1 debug messages>
+
+10.19. Executing OPT pass (performing simple optimizations).
+
+10.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+<suppressed ~7 debug messages>
+
+10.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.19.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.19.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+
+10.19.5. Finished fast OPT passes.
+
+10.20. Executing MEMORY_MAP pass (converting $mem cells to logic and flip-flops).
+Mapping memory cell \instructions_q in module \randomx_program_reciprocals:
+  created 384 $dff cells and 0 static cells of width 64.
+  read interface: 0 $dff and 511 $mux cells.
+  write interface: 384 write mux blocks.
+
+10.21. Executing OPT pass (performing simple optimizations).
+
+10.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+<suppressed ~313 debug messages>
+
+10.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~403 debug messages>
+
+10.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+    New input vector for $reduce_or cell $auto$fsm_map.cc:144:implement_pattern_cache$708: { \state_q [0] \state_q [1] \state_q [3] }
+    New input vector for $reduce_or cell $auto$fsm_map.cc:144:implement_pattern_cache$681: { $auto$fsm_map.cc:118:implement_pattern_cache$675 $auto$fsm_map.cc:118:implement_pattern_cache$679 }
+    New input vector for $reduce_or cell $auto$fsm_map.cc:144:implement_pattern_cache$672: { $auto$fsm_map.cc:118:implement_pattern_cache$668 $auto$fsm_map.cc:74:implement_pattern_cache$670 $auto$fsm_map.cc:118:implement_pattern_cache$664 }
+    Consolidated identical input bits for $mux cell $ternary$rtl/execute/randomx_program_reciprocals.v:43$177:
+      Old ports: A=9'011111111, B=9'101111111, Y=\last_pc
+      New ports: A=2'01, B=2'10, Y=\last_pc [8:7]
+      New connections: \last_pc [6:0] = 7'1111111
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 4 changes.
+
+10.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.21.6. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 0 unused cells and 1032 unused wires.
+<suppressed ~1 debug messages>
+
+10.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+<suppressed ~1 debug messages>
+
+10.21.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+10.21.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \randomx_program_reciprocals..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~403 debug messages>
+
+10.21.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \randomx_program_reciprocals.
+Performed a total of 0 changes.
+
+10.21.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+Removed a total of 0 cells.
+
+10.21.13. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.21.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+10.21.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+
+10.21.16. Finished OPT passes. (There is nothing left to do.)
+
+10.22. Executing TECHMAP pass (map to technology primitives).
+
+10.22.1. Executing Verilog-2005 frontend: <techmap.v>
+Parsing Verilog input from `<techmap.v>' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+10.22.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod\_90_pmux\WIDTH=9\S_WIDTH=2 for cells of type $pmux.
+Using template $paramod\_90_pmux\WIDTH=1\S_WIDTH=3 for cells of type $pmux.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=12\B_WIDTH=64\Y_WIDTH=64 for cells of type $alu.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=1\B_WIDTH=9\Y_WIDTH=9 for cells of type $alu.
+Using template $paramod\_90_alu\A_SIGNED=0\B_SIGNED=0\A_WIDTH=9\B_WIDTH=9\Y_WIDTH=9 for cells of type $alu.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=64 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_lcu\WIDTH=9 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2987 debug messages>
+
+10.23. Executing OPT pass (performing simple optimizations).
+
+10.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+<suppressed ~422 debug messages>
+
+10.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+<suppressed ~297 debug messages>
+Removed a total of 99 cells.
+
+10.23.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.23.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 89 unused cells and 353 unused wires.
+<suppressed ~90 debug messages>
+
+10.23.5. Finished fast OPT passes.
+
+10.24. Executing ABC pass (technology mapping using ABC).
+
+10.24.1. Extracting gate netlist of module `\randomx_program_reciprocals' to `<abc-temp-dir>/input.blif'..
+Extracted 51208 gates and 76307 wires to a netlist network with 25097 inputs and 24945 outputs.
+
+10.24.1.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 17 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + retime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+10.24.1.2. Re-integrating ABC results.
+ABC RESULTS:               AND cells:       74
+ABC RESULTS:            ANDNOT cells:      343
+ABC RESULTS:              AOI3 cells:       23
+ABC RESULTS:              AOI4 cells:       11
+ABC RESULTS:               MUX cells:    49383
+ABC RESULTS:              NAND cells:       46
+ABC RESULTS:               NOR cells:       14
+ABC RESULTS:               NOT cells:       32
+ABC RESULTS:              OAI3 cells:       15
+ABC RESULTS:              OAI4 cells:        3
+ABC RESULTS:                OR cells:      925
+ABC RESULTS:             ORNOT cells:      118
+ABC RESULTS:              XNOR cells:       34
+ABC RESULTS:               XOR cells:       88
+ABC RESULTS:        internal signals:    26265
+ABC RESULTS:           input signals:    25097
+ABC RESULTS:          output signals:    24945
+Removing temp directory.
+
+10.25. Executing OPT pass (performing simple optimizations).
+
+10.25.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module randomx_program_reciprocals.
+<suppressed ~12369 debug messages>
+
+10.25.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\randomx_program_reciprocals'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+10.25.3. Executing OPT_RMDFF pass (remove dff with constant values).
+
+10.25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \randomx_program_reciprocals..
+Removed 6 unused cells and 27312 unused wires.
+<suppressed ~9 debug messages>
+
+10.25.5. Finished fast OPT passes.
+
+10.26. Executing HIERARCHY pass (managing design hierarchy).
+
+10.26.1. Analyzing design hierarchy..
+Top module:  \randomx_program_reciprocals
+
+10.26.2. Analyzing design hierarchy..
+Top module:  \randomx_program_reciprocals
+Removed 0 unused modules.
+
+10.27. Printing statistics.
+
+=== randomx_program_reciprocals ===
+
+   Number of wires:              51203
+   Number of wire bits:          76679
+   Number of public wires:         450
+   Number of public wire bits:   25645
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              75979
+     $_ANDNOT_                     343
+     $_AND_                         73
+     $_AOI3_                        23
+     $_AOI4_                        11
+     $_DFF_P_                    24877
+     $_MUX_                      49383
+     $_NAND_                        46
+     $_NOR_                         14
+     $_NOT_                         26
+     $_OAI3_                        15
+     $_OAI4_                         3
+     $_ORNOT_                      118
+     $_OR_                         925
+     $_XNOR_                        34
+     $_XOR_                         88
+
+10.28. Executing CHECK pass (checking for obvious problems).
+checking module randomx_program_reciprocals..
+found and reported 0 problems.
+
+11. Executing CHECK pass (checking for obvious problems).
+checking module randomx_program_reciprocals..
+found and reported 0 problems.
+
+12. Printing statistics.
+
+=== randomx_program_reciprocals ===
+
+   Number of wires:              51203
+   Number of wire bits:          76679
+   Number of public wires:         450
+   Number of public wire bits:   25645
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              75979
+     $_ANDNOT_                     343
+     $_AND_                         73
+     $_AOI3_                        23
+     $_AOI4_                        11
+     $_DFF_P_                    24877
+     $_MUX_                      49383
+     $_NAND_                        46
+     $_NOR_                         14
+     $_NOT_                         26
+     $_OAI3_                        15
+     $_OAI4_                         3
+     $_ORNOT_                      118
+     $_OR_                         925
+     $_XNOR_                        34
+     $_XOR_                         88
+
+13. Executing Verilog backend.
+Dumping module `\randomx_program_reciprocals'.
+
+14. Executing JSON backend.
+
+End of script. Logfile hash: 367d06c5fa
+CPU: user 37.18s system 0.19s, MEM: 269.37 MB total, 252.24 MB resident
+Yosys 0.9 (git sha1 1979e0b)
+Time spent: 31% 18x opt_merge (11 sec), 15% 21x opt_clean (5 sec), ...

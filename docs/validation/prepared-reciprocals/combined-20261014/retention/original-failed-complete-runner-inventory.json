@@ -1,0 +1,2397 @@
+{
+  "directory_count": 3,
+  "file_bytes": 642991333,
+  "file_count": 263,
+  "members": {
+    "combined-commands.json": {
+      "bytes": 597,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017484992341704,
+      "sha256": "5eee0468d7b683d10394ec9842c2ba836374b12fd5dac77c748be63364f21355",
+      "uid": 1000
+    },
+    "combined-regfile": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792017484983341540,
+      "uid": 1000
+    },
+    "combined-regfile/HardFloat-compile-view.json": {
+      "bytes": 745,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947576927407,
+      "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "uid": 1000
+    },
+    "combined-regfile/HardFloat-divSqrt-compile-view.v": {
+      "bytes": 15488,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947576927407,
+      "sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "uid": 1000
+    },
+    "combined-regfile/LICENSE-BLAKE2-original": {
+      "bytes": 1305,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947576927407,
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d",
+      "uid": 1000
+    },
+    "combined-regfile/LICENSE-HardFloat": {
+      "bytes": 1514,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947576927407,
+      "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603",
+      "uid": 1000
+    },
+    "combined-regfile/LICENSE-OpenRX": {
+      "bytes": 1803,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947575927385,
+      "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108",
+      "uid": 1000
+    },
+    "combined-regfile/LICENSE-RandomX": {
+      "bytes": 1561,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947575927385,
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "uid": 1000
+    },
+    "combined-regfile/LICENSE-Yosys-simcells": {
+      "bytes": 1161,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947575927385,
+      "sha256": "92a9456842d6384e548cb8944d1af1e18e7d24c7e31dbbd09ed1e97b0b04e515",
+      "uid": 1000
+    },
+    "combined-regfile/LICENSE-secworks": {
+      "bytes": 1303,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947576927407,
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "uid": 1000
+    },
+    "combined-regfile/accepted-full-register-vector-source.json": {
+      "bytes": 753,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947395923399,
+      "sha256": "0f562429b807f2e9bc02779199d200e1cfeb391289d7a7a1f8c2499a57588f11",
+      "uid": 1000
+    },
+    "combined-regfile/artifacts.sha256.json": {
+      "bytes": 22918,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017484983341540,
+      "sha256": "e7f2a839862fe4613c0940c3aeda16c8ce137a1b360e1ffc8829a4a2eff2ab17",
+      "uid": 1000
+    },
+    "combined-regfile/backend-cancel-view.json": {
+      "bytes": 394,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947579927473,
+      "sha256": "2fb79bb9109c8fddba82a544ed045a31f0049418e2fa5a5061128d08e4ca56ad",
+      "uid": 1000
+    },
+    "combined-regfile/commands.json": {
+      "bytes": 97217,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017482714300100,
+      "sha256": "fa4b8cead6c2ee68862a9ae9ff22ad882e33366dd09a413f460691064a23e91a",
+      "uid": 1000
+    },
+    "combined-regfile/compile-hash-oracle.log": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006956411123028,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-backend-cancel.log": {
+      "bytes": 24327,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792013590674314263,
+      "sha256": "88ceb090d6059f354094abbae5f0820c7bb249139708f56d1468a8d2d599d8e9",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-0-1.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015854309561001,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-0-2.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015939273737880,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-0-3.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016026410948247,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-1-1.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015529266956879,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-1-2.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015635295821815,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-1-3.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015744327704992,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-1-4.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016115189180746,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-cancel-1-5.log": {
+      "bytes": 19927,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016799558993809,
+      "sha256": "01c11bf6bb210e33ca61daca67a899e230604736c2ee9de8464a2018a7791835",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-connected-0-0.log": {
+      "bytes": 20037,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792014759121847927,
+      "sha256": "057427bb711640f4761da1aa2868a2d9338c996056ac3762f3fb3443b5494eab",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-connected-0-1.log": {
+      "bytes": 20037,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015060910749416,
+      "sha256": "057427bb711640f4761da1aa2868a2d9338c996056ac3762f3fb3443b5494eab",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-connected-1-0.log": {
+      "bytes": 20037,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792013626414115496,
+      "sha256": "057427bb711640f4761da1aa2868a2d9338c996056ac3762f3fb3443b5494eab",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-connected-1-1.log": {
+      "bytes": 20037,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792014070807155247,
+      "sha256": "057427bb711640f4761da1aa2868a2d9338c996056ac3762f3fb3443b5494eab",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-hash-32.log": {
+      "bytes": 13859,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792008842277279329,
+      "sha256": "7e39f80c3f6a826e5f278f587b3ec8545a00cd1db48f7c3876328073bb4936d1",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-hash-64.log": {
+      "bytes": 13859,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007135786396257,
+      "sha256": "7fa25e3126efa1c0bb2f66c2e7e24e7697b732d33864af27fe83cabfcb9dbf43",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-hash-seed.log": {
+      "bytes": 13950,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792010511422512310,
+      "sha256": "a27585ecaf317f14c277a483a0798bf9a6fdb4042fcac1e10b20a8dbabacd6a8",
+      "uid": 1000
+    },
+    "combined-regfile/compile-mapped-seed.log": {
+      "bytes": 13853,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792011985453620971,
+      "sha256": "e4ca5fd36d23cdd231602e1c8925a9ecbbf701367d42a8aeb6c18f90cebe57a7",
+      "uid": 1000
+    },
+    "combined-regfile/compile-micro-0-32.log": {
+      "bytes": 453,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957802153833,
+      "sha256": "07ef805574bca6846b842a2f5758a31e01812659996c406be27997f994dd3ebb",
+      "uid": 1000
+    },
+    "combined-regfile/compile-micro-0-64.log": {
+      "bytes": 453,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957673150976,
+      "sha256": "07ef805574bca6846b842a2f5758a31e01812659996c406be27997f994dd3ebb",
+      "uid": 1000
+    },
+    "combined-regfile/compile-micro-1-32.log": {
+      "bytes": 437,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957738152415,
+      "sha256": "d743e80ea35a5daae094558f19abc440b8f712f099cf59724ef1f97774b7b153",
+      "uid": 1000
+    },
+    "combined-regfile/compile-micro-1-64.log": {
+      "bytes": 437,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957608149536,
+      "sha256": "d743e80ea35a5daae094558f19abc440b8f712f099cf59724ef1f97774b7b153",
+      "uid": 1000
+    },
+    "combined-regfile/compile-micro-oracle.log": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957029136714,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "combined-regfile/compile-program-oracle.log": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947579927473,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "combined-regfile/compile-program-vpi.log": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006954083071474,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-backend-cancel.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006981856686641,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-0-1.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007055498319014,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-0-2.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007058592387636,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-0-3.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007061687456283,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-1-1.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007044193068305,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-1-2.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007047943151464,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-1-3.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007051695234672,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-1-4.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007064785525000,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-cancel-1-5.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007084981054027,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-connected-0-0.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007018644501877,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-connected-0-1.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007030435763271,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-connected-1-0.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006982388698427,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-connected-1-1.log": {
+      "bytes": 6330,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006998961065626,
+      "sha256": "c90da81beb5643da092b516f2c64f2b1582e548a39d915761ff894057f70b8a3",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-hash-32.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006967278363706,
+      "sha256": "6cc69afe75b491292a40db7a902d424463fd63950610692f9a1d63dd49a57772",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-hash-64.log": {
+      "bytes": 550,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959489191194,
+      "sha256": "6cc69afe75b491292a40db7a902d424463fd63950610692f9a1d63dd49a57772",
+      "uid": 1000
+    },
+    "combined-regfile/compile-rtl-seed.log": {
+      "bytes": 641,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006974867531810,
+      "sha256": "4ef093013adb8bf11c6e7da932440295c88c62267e109cb2a9df6827cf88a714",
+      "uid": 1000
+    },
+    "combined-regfile/extraction.json": {
+      "bytes": 1802,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947577927429,
+      "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "uid": 1000
+    },
+    "combined-regfile/hash-corpus.json": {
+      "bytes": 341,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959441190131,
+      "sha256": "365b96421e1a07caec8f889101f084b2b0a01caa5cb915a7d4017c2ee716a57b",
+      "uid": 1000
+    },
+    "combined-regfile/hash-oracle": {
+      "bytes": 22584,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o700",
+      "mtime_ns": 1792006957013136360,
+      "sha256": "1accee20ecd029f75cdbb53c9847e23fb789b863219436e7d4effd7e841bbb47",
+      "uid": 1000
+    },
+    "combined-regfile/hash-oracle.log": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959441190131,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "combined-regfile/hash32.hex": {
+      "bytes": 336408,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959461190574,
+      "sha256": "672eccf68673465ae5c519ecfc914f691b02529a466ef8cc36219468d3b9dccc",
+      "uid": 1000
+    },
+    "combined-regfile/hash64.hex": {
+      "bytes": 336408,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959461190574,
+      "sha256": "da3bb34e35dce0ae44fdb8eb971021e81ac851ec22fd432bc30ac4e279b07907",
+      "uid": 1000
+    },
+    "combined-regfile/independent-vector-crosscheck.json": {
+      "bytes": 343,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959480190995,
+      "sha256": "0cc2c9b640b09464b9c050f585ab1ff3ad39f3b99130f5f97b7e7dc9254fb825",
+      "uid": 1000
+    },
+    "combined-regfile/inputs.json": {
+      "bytes": 32307,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947394923377,
+      "sha256": "d0f277cb9406fd46b2ddea3e369f40e15716f42a0eac68c46916f1583c54c1ce",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-backend-cancel.log": {
+      "bytes": 286,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792013623363047048,
+      "sha256": "1cee47ca9f6528843c103a5509a9c23e06274fbb8d60f886fa90937e2a26c081",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-backend-cancel.vvp": {
+      "bytes": 24499311,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792013619070950774,
+      "sha256": "df38f75f2f41900ae82728e2c40b81d1a35f408495b81ba02cf09ab8de27d3d0",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-0-1.log": {
+      "bytes": 296,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015936221660074,
+      "sha256": "986dbff14e4b9d257e9f523253d85b7c61a1bc323e58dd3d5db9d00cf4eeca24",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-0-1.vvp": {
+      "bytes": 24535495,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792015882367282461,
+      "sha256": "b48c062e485f5c03519c0789ae28f157daf671f0bd8480706dfb4dc6a94d39e4",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-0-2.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016023311869979,
+      "sha256": "8270f78903161bc22ebdb2bbfd0d263a0f903621e1581cdfb0264b63f070ee23",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-0-2.vvp": {
+      "bytes": 24535496,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792015967132446825,
+      "sha256": "afde5c9e1dc176a483a70e2d7e67d818182c16c9e9bcd3faf75c312180cc5452",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-0-3.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016112200105865,
+      "sha256": "610de2a243e855b6de6f0ec313650bec21ab17fb4db8fcf28c772b1d885ba656",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-0-3.vvp": {
+      "bytes": 24537363,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792016054503656662,
+      "sha256": "22a4acf7e040a727b4ee57988d4d090682e1c5087f42c9d922ccaa389827f9b3",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-1.log": {
+      "bytes": 296,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015632255740572,
+      "sha256": "9894f2266700c4ba023aac81b2502f84d1b429ab353133e63ae31154e0d6bec4",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-1.vvp": {
+      "bytes": 24535495,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792015557108715752,
+      "sha256": "9dd6b38cc6248b4683465cd053e70ee0742cbd87ac244bc6d64da095a48c368f",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-2.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015741225623729,
+      "sha256": "e90daef063df835e53dc0c0442ebbf24a90c1117023fe612c1cca3d6f190b2e4",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-2.vvp": {
+      "bytes": 24535496,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792015663679577990,
+      "sha256": "3dd3b519d2061966419fc9120b13c916afd7eac7d36ff1791990b4a1c18af168",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-3.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015851336484395,
+      "sha256": "f9f52a1fa58bae8a850f7b74d149ceaa32cc6f89822c67f778dc6d22dd54be77",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-3.vvp": {
+      "bytes": 24537363,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792015772611444038,
+      "sha256": "5726c19dc2b1dab3e25610102aaa137e26ababefae66031226adf00b8abc8d51",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-4.log": {
+      "bytes": 298,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016796535920475,
+      "sha256": "627ac27d414157bfaaebd0195275cbc5a9d2ef70f472af088bfac4b246f0c8dd",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-4.vvp": {
+      "bytes": 24537363,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792016143119879558,
+      "sha256": "78332c851c951517b3e26a9939574aa4d4b59f7f95b138df87b9aa54d34e9f70",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-5.log": {
+      "bytes": 298,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017482652298968,
+      "sha256": "bc9ac36dad45c20df630c756dbdd0f24cc91e2ed878ca16ff9ec374e982f37f5",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-cancel-1-5.vvp": {
+      "bytes": 24536509,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792016827672675563,
+      "sha256": "cb655ca7ec616cdf1fb46087c4d81f0fb28b696dba3ad35b868c9f7b09260687",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-0-0.log": {
+      "bytes": 351,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015057928681190,
+      "sha256": "b027d4e30917dca784857644ea3e97ad4cd51da8263a59e940e15d09b42896ee",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-0-0.vvp": {
+      "bytes": 24530095,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792014787901505755,
+      "sha256": "431d6f0e459dc48554b27de7ad11f3939ca6450f242f8cdc888b4677635308b5",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-0-1.log": {
+      "bytes": 359,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015526259874615,
+      "sha256": "015f01beee2971d0729eac666e35b5ac888fe21bc44997a6bf493e9efe7788ac",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-0-1.vvp": {
+      "bytes": 24530095,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792015089427401870,
+      "sha256": "e08de7e93c236276a92a09c77364bd48aa1d3c9fb36bd5dbda92184cd5b7d2eb",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-1-0.log": {
+      "bytes": 353,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792014067773086346,
+      "sha256": "3d6fb325e575058d5031aa61ab2d4123668076afc21bab614e34fbf0349415fe",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-1-0.vvp": {
+      "bytes": 24530096,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792013655825775750,
+      "sha256": "facfea1f689ddbe3164155577116828d662a7abfec2a1af1746f802a8d97e304",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-1-1.log": {
+      "bytes": 361,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792014756118779289,
+      "sha256": "4d733e9e19fe5c04a1cd89367ec82de07406fb6cc3abcbd4585c7159b1ab5e0e",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-connected-1-1.vvp": {
+      "bytes": 24530096,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792014100325825767,
+      "sha256": "d3fbefd1fb953ab735089112f2bd1c51466bfebc4892cf4c234bdfcf25ff8230",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-hash-32.log": {
+      "bytes": 187,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792010511060503998,
+      "sha256": "acbff189af36837d0b82303be290efe29b88c275fc1a05c074a1d632e1ac7394",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-hash-32.vvp": {
+      "bytes": 16686009,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792008858299650038,
+      "sha256": "99f4950c08e401333c933d7c77662ae7dc982506285f64fe4a6199dffc81e0cc",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-hash-64.log": {
+      "bytes": 187,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792008813133604885,
+      "sha256": "579b5ee16285f4a71af8f77f5c33ad031e2ed771d43844a8921a87ca7ccc6c4b",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-hash-64.vvp": {
+      "bytes": 16687653,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007151499808014,
+      "sha256": "a6494128cf8281aa051fe78bfc874a8008a7449e40000ca89ca0856483045439",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-hash-seed.log": {
+      "bytes": 174,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792011945903705841,
+      "sha256": "008b5e256e0f921aed71ab48dca3c1cf1e594bdbe7bde6ab85f27cd473305dea",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-hash-seed.vvp": {
+      "bytes": 16708401,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792010527265876068,
+      "sha256": "ffbe92afa730e73c08c10bbf96fb63d4035310d4840246668bff6167d9ae8b38",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-seed.log": {
+      "bytes": 174,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792013587670246972,
+      "sha256": "008b5e256e0f921aed71ab48dca3c1cf1e594bdbe7bde6ab85f27cd473305dea",
+      "uid": 1000
+    },
+    "combined-regfile/mapped-seed.vvp": {
+      "bytes": 20927715,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792012016193332045,
+      "sha256": "50d27896da1e427ce458cb5adf44b85173579d983f0222f618ce0e8fcbbfa219",
+      "uid": 1000
+    },
+    "combined-regfile/micro-0-32.log": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957851154918,
+      "sha256": "3ae18e4280d106f73b7010ac22dd9757a142e8ab31854cbd08a0a6328fceb31c",
+      "uid": 1000
+    },
+    "combined-regfile/micro-0-32.vvp": {
+      "bytes": 144839,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006957811154032,
+      "sha256": "0b4831633104c311bf95e98c570715853dd480378d2eefa77724c3dbf458407e",
+      "uid": 1000
+    },
+    "combined-regfile/micro-0-64.log": {
+      "bytes": 65,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957723152083,
+      "sha256": "c1b8bbd08f6cbe2472a0eac863752c266f07bb9c074d315d6919cab4523a5ba8",
+      "uid": 1000
+    },
+    "combined-regfile/micro-0-64.vvp": {
+      "bytes": 144088,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006957682151175,
+      "sha256": "e8b2446bfb5cddf10075fc68b46f820b2af77a168e7f947dcf44af424f9e7224",
+      "uid": 1000
+    },
+    "combined-regfile/micro-1-32.log": {
+      "bytes": 391,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957787153501,
+      "sha256": "9bc271bbf1150ebf9c976826ddecdef49b2fa671402984066015bc143264c677",
+      "uid": 1000
+    },
+    "combined-regfile/micro-1-32.vvp": {
+      "bytes": 142202,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006957746152593,
+      "sha256": "174db1f3c8f8d5056265a9b48c8d842dc55d5a61eaa8b377320032f181b11d2a",
+      "uid": 1000
+    },
+    "combined-regfile/micro-1-64.log": {
+      "bytes": 391,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957658150644,
+      "sha256": "27dcdaee231c25d316a73fcc2e9fa572348320fc94a4b0071f16cc3ed98c1167",
+      "uid": 1000
+    },
+    "combined-regfile/micro-1-64.vvp": {
+      "bytes": 141451,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006957617149736,
+      "sha256": "a138846e18b5591646988d04b3f40077876f2a1496b80bf1a17a0aebe3d749e0",
+      "uid": 1000
+    },
+    "combined-regfile/micro-oracle": {
+      "bytes": 21600,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o700",
+      "mtime_ns": 1792006957588149093,
+      "sha256": "7dcf0c96b246339b3a188b4a11b03d299f4f659ccd8d457b6ba0ddb72fd3320a",
+      "uid": 1000
+    },
+    "combined-regfile/micro-oracle.log": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957597149293,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "combined-regfile/micro-vectors.hex": {
+      "bytes": 771,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957598149315,
+      "sha256": "4a64724d3011b83f6f7c0a82c487e0857f46aaf53501d35c26a2e34522042ce3",
+      "uid": 1000
+    },
+    "combined-regfile/netlist-hash-32.json": {
+      "bytes": 28014052,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792008840788244875,
+      "sha256": "35b4f97954e106307ee85e80515955c11282e7ea318cf43f9ba536e84f211bb3",
+      "uid": 1000
+    },
+    "combined-regfile/netlist-hash-32.v": {
+      "bytes": 3370424,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792008840043227636,
+      "sha256": "5f00b826a3066b12b2bd511060370ddd7b1e6814c0b43dc4a21f5f3796123119",
+      "uid": 1000
+    },
+    "combined-regfile/netlist-hash-64.json": {
+      "bytes": 28166972,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007134329357999,
+      "sha256": "5826e249f0eeaa1d3c7838c8388f722496d1ae77a7a17a04a7fe1df144d35178",
+      "uid": 1000
+    },
+    "combined-regfile/netlist-hash-64.v": {
+      "bytes": 3384780,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007133588338536,
+      "sha256": "54e10800cd18b20ad9465f8ca9888a8c94dcd79773c9fc60b2ce7c6f81168062",
+      "uid": 1000
+    },
+    "combined-regfile/netlist-seed.json": {
+      "bytes": 35785652,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792011983635578911,
+      "sha256": "3562a56d7c1a15df3f231b6d6ccb6d3cac426777e6f4b08638bf8fe3cf54dd96",
+      "uid": 1000
+    },
+    "combined-regfile/netlist-seed.v": {
+      "bytes": 4498585,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792011982692557094,
+      "sha256": "bd2d9ac98e48875b81efb41559ae6825afe6dad52934254bcb7b512071bf4759",
+      "uid": 1000
+    },
+    "combined-regfile/oracle": {
+      "bytes": 70544,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o700",
+      "mtime_ns": 1792006954050070743,
+      "sha256": "137ba98631f8695dd39e1ef954ec7f874a04e221152f10ae4d9d94096eee054c",
+      "uid": 1000
+    },
+    "combined-regfile/oracle-0.log": {
+      "bytes": 134,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959372188603,
+      "sha256": "a37a60750e623af069aaa7fdfdc310e743ddb735f6153127440dd65bf5805bd9",
+      "uid": 1000
+    },
+    "combined-regfile/oracle-1.log": {
+      "bytes": 135,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958596171417,
+      "sha256": "ef3799a66e7343eea1902419a349ae04c0599dadaaaf2b0f15c41be49034ac65",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_bytecode_loop.inc": {
+      "bytes": 1680,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947577927429,
+      "sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_dataset_read.inc": {
+      "bytes": 1652,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947577927429,
+      "sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_destructor.inc": {
+      "bytes": 1552,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947577927429,
+      "sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_float_masks.inc": {
+      "bytes": 1918,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947577927429,
+      "sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_iteration.inc": {
+      "bytes": 3571,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947577927429,
+      "sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_program_float_helpers.inc": {
+      "bytes": 2211,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947578927451,
+      "sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_program_initialize.inc": {
+      "bytes": 2849,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947578927451,
+      "sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "uid": 1000
+    },
+    "combined-regfile/pinned_scratchpad_address.inc": {
+      "bytes": 1688,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947577927429,
+      "sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "uid": 1000
+    },
+    "combined-regfile/preserved-inputs.json": {
+      "bytes": 47014,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947394923377,
+      "sha256": "0dca97505fbb89ae80b56b9557bf812461e5048e3f4a402da86028f123cd5ece",
+      "uid": 1000
+    },
+    "combined-regfile/program-extraction.json": {
+      "bytes": 428,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947578927451,
+      "sha256": "799684afa65f47c0621ead71078acbe6d0070c4ebf7168067cbac82ce5e4da42",
+      "uid": 1000
+    },
+    "combined-regfile/program_source.vpi": {
+      "bytes": 50728,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o700",
+      "mtime_ns": 1792006956375122230,
+      "sha256": "db6d73642cb07fb0dd099798e336e4195100b6d3d747f43184921d7a1e02bccd",
+      "uid": 1000
+    },
+    "combined-regfile/register-inputs.hex": {
+      "bytes": 268812,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959441190131,
+      "sha256": "407604e1ab15365e7359168209d47d172a2080d5604011f1f91b847e36f6b219",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-backend-cancel.log": {
+      "bytes": 286,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006982218694661,
+      "sha256": "1cee47ca9f6528843c103a5509a9c23e06274fbb8d60f886fa90937e2a26c081",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-backend-cancel.vvp": {
+      "bytes": 3806480,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006981951688746,
+      "sha256": "029ca036de804cd9cbc50c6638ddcec72f799609bc70c5eb4f39f4e0f1b00d88",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-0-1.log": {
+      "bytes": 296,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007058411383622,
+      "sha256": "986dbff14e4b9d257e9f523253d85b7c61a1bc323e58dd3d5db9d00cf4eeca24",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-0-1.vvp": {
+      "bytes": 3840867,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007055596321188,
+      "sha256": "38fe8a19bd69d6c913a46cc65701cb253c4a681f728ef362087e6b9a1614ffd0",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-0-2.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007061482451736,
+      "sha256": "8270f78903161bc22ebdb2bbfd0d263a0f903621e1581cdfb0264b63f070ee23",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-0-2.vvp": {
+      "bytes": 3840868,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007058690389810,
+      "sha256": "4a0e9380b99fb4ac7fa15da928a9d789aec0cad65107a1e72edfd10fe7f56e59",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-0-3.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007064581520474,
+      "sha256": "610de2a243e855b6de6f0ec313650bec21ab17fb4db8fcf28c772b1d885ba656",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-0-3.vvp": {
+      "bytes": 3842508,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007061784458435,
+      "sha256": "66fd1bf67bdeeb75083b15e1bb598d2dfb74be2a736667c1ae26f560a221d17f",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-1.log": {
+      "bytes": 296,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007047765147517,
+      "sha256": "9894f2266700c4ba023aac81b2502f84d1b429ab353133e63ae31154e0d6bec4",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-1.vvp": {
+      "bytes": 3840867,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007044292070500,
+      "sha256": "5d591bdba37f0ee2e341a9e7d163e40a9fab37785af44ef48688abc09f836c68",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-2.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007051498230303,
+      "sha256": "e90daef063df835e53dc0c0442ebbf24a90c1117023fe612c1cca3d6f190b2e4",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-2.vvp": {
+      "bytes": 3840868,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007048041153637,
+      "sha256": "35549ca7fc12acdd7ee9e6396b43eaf545af8c0f4f61e1f7f510ecc5e86f6af0",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-3.log": {
+      "bytes": 297,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007055302314667,
+      "sha256": "f9f52a1fa58bae8a850f7b74d149ceaa32cc6f89822c67f778dc6d22dd54be77",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-3.vvp": {
+      "bytes": 3842508,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007051793236845,
+      "sha256": "a58523ceaea8551643f3ea30958bc7be2bfa1fe83558e5d39c8db7be1ee0c926",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-4.log": {
+      "bytes": 298,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007084779048655,
+      "sha256": "627ac27d414157bfaaebd0195275cbc5a9d2ef70f472af088bfac4b246f0c8dd",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-4.vvp": {
+      "bytes": 3842508,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007064884527195,
+      "sha256": "5a9ee97c53aaaf8f447dbbafdab2dfe603a1cbe4f5d593713e2f85d6840eb59e",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-5.log": {
+      "bytes": 298,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007105389595267,
+      "sha256": "bc9ac36dad45c20df630c756dbdd0f24cc91e2ed878ca16ff9ec374e982f37f5",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-cancel-1-5.vvp": {
+      "bytes": 3841654,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007085079056633,
+      "sha256": "d6b4e192c98db1f90500b4e873583755fa3601281eea136f90e6eae7ce6f8c1c",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-0-0.log": {
+      "bytes": 351,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007030248759125,
+      "sha256": "b027d4e30917dca784857644ea3e97ad4cd51da8263a59e940e15d09b42896ee",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-0-0.vvp": {
+      "bytes": 3835252,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007018743504072,
+      "sha256": "ee9cdfdf2ae751ef55d8c5c9d38d5a35682f92ded68b0ba5e4d380713d38d039",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-0-1.log": {
+      "bytes": 359,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007043993063870,
+      "sha256": "015f01beee2971d0729eac666e35b5ac888fe21bc44997a6bf493e9efe7788ac",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-0-1.vvp": {
+      "bytes": 3835252,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792007030533765444,
+      "sha256": "10e2fabfa5bf975cb4dde7ebf336369a9cfdf1e172f67cd01122b224e95b783a",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-1-0.log": {
+      "bytes": 353,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006998756061083,
+      "sha256": "3d6fb325e575058d5031aa61ab2d4123668076afc21bab614e34fbf0349415fe",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-1-0.vvp": {
+      "bytes": 3835253,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006982486700599,
+      "sha256": "520294ab2cd977093543ef4478c03cd06b904377fcbf3404d395698942df2bf8",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-1-1.log": {
+      "bytes": 361,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007018443497421,
+      "sha256": "4d733e9e19fe5c04a1cd89367ec82de07406fb6cc3abcbd4585c7159b1ab5e0e",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-connected-1-1.vvp": {
+      "bytes": 3835253,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006999060067820,
+      "sha256": "84c306cc579116a14262ad1dab8f1cb0a8aee68f4d33e3c564368d86e2205832",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-hash-32.log": {
+      "bytes": 187,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006974846531345,
+      "sha256": "acbff189af36837d0b82303be290efe29b88c275fc1a05c074a1d632e1ac7394",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-hash-32.vvp": {
+      "bytes": 211263,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006967290363972,
+      "sha256": "26b68b5504a2bcdb07f90608a5842f7225b07b6219f283026f69008b9cab365a",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-hash-64.log": {
+      "bytes": 187,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006967231362665,
+      "sha256": "579b5ee16285f4a71af8f77f5c33ad031e2ed771d43844a8921a87ca7ccc6c4b",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-hash-64.vvp": {
+      "bytes": 210512,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006959501191460,
+      "sha256": "ed6f5eedd4121a3d2ff1e40026d466a0545bee444f8a108d99e8b55cef0a2d2c",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-seed.log": {
+      "bytes": 174,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006981683682808,
+      "sha256": "008b5e256e0f921aed71ab48dca3c1cf1e594bdbe7bde6ab85f27cd473305dea",
+      "uid": 1000
+    },
+    "combined-regfile/rtl-seed.vvp": {
+      "bytes": 231755,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o755",
+      "mtime_ns": 1792006974880532098,
+      "sha256": "afeb617d72e279f5b1e1876cb432d6cea0ee60a1d6b174287e67d290028d49a0",
+      "uid": 1000
+    },
+    "combined-regfile/stat-hash-32.txt": {
+      "bytes": 1074,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792008838019180801,
+      "sha256": "64607194b8a7097016718b6059b566dfa2fdb31edc6d8e57ab2acd87910ca17d",
+      "uid": 1000
+    },
+    "combined-regfile/stat-hash-64.txt": {
+      "bytes": 1074,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007131474282991,
+      "sha256": "9c5c65a161ae5a6b2c1992a2b7d29cc00ff0c56e424550085185301b31cb99f8",
+      "uid": 1000
+    },
+    "combined-regfile/stat-seed.txt": {
+      "bytes": 1071,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792011979933493261,
+      "sha256": "8bb84eca9d6f0e65924ebe975f07816ed96c68b6ef06b852d179909f3fc793bf",
+      "uid": 1000
+    },
+    "combined-regfile/summary.json": {
+      "bytes": 38614,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017482712300063,
+      "sha256": "27d8c086904a3ef6a23c499766e66d07720fc1fd3a01e7b8d6adae6b2f847ae4",
+      "uid": 1000
+    },
+    "combined-regfile/synth-hash-32.log": {
+      "bytes": 135019,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792008840870246772,
+      "sha256": "0c8bacd03fe98006443f57bd951258ba95cf1647d3196592981eee1026e57d7a",
+      "uid": 1000
+    },
+    "combined-regfile/synth-hash-64.log": {
+      "bytes": 134942,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792007134411360152,
+      "sha256": "67173f2168ed4251cf813333bd0872eefd7fbc22cacb536a423316d4a880a5ba",
+      "uid": 1000
+    },
+    "combined-regfile/synth-seed.log": {
+      "bytes": 149053,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792011983737581271,
+      "sha256": "c4805cdeecb2bf3ad11686db336261f2947cd7207b76d8b3e80cb355f7b4da91",
+      "uid": 1000
+    },
+    "combined-regfile/tb_program_cancel-wrapper-view.v": {
+      "bytes": 18201,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947578927451,
+      "sha256": "cd7d8c2d8d153e06d8d1e8e9cacaee6deedfbda453843972ab7648706c4bb30c",
+      "uid": 1000
+    },
+    "combined-regfile/tools.json": {
+      "bytes": 6794,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947575927385,
+      "sha256": "2bf3b485ba45b3cd91a778b301cda584a4080fae6cbdceca3718dae1d42d2c20",
+      "uid": 1000
+    },
+    "combined-regfile/v1": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792007058294381027,
+      "uid": 1000
+    },
+    "combined-regfile/v1/accesses.hex": {
+      "bytes": 41910,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959372188603,
+      "sha256": "ad2a58b7f701bfdbcf9279178d1547bdcbb94a9d5c046b9fb3076903bff4a963",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-initial.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016056442705489,
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-0.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016057483731700,
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-1.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015145658688551,
+      "sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-2.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015200007932310,
+      "sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-3.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015254344175897,
+      "sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-4.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015307958717424,
+      "sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-5.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015365255372782,
+      "sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-6.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015417917867859,
+      "sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "uid": 1000
+    },
+    "combined-regfile/v1/actual-program-7.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792015475218468855,
+      "sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "uid": 1000
+    },
+    "combined-regfile/v1/events.mem": {
+      "bytes": 42665,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959405189334,
+      "sha256": "6cbec69312dcc38f42f5e8e1cb8e3f873701969a68eed00509220b99443e58fa",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-0.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958800175935,
+      "sha256": "fa16a10bd9d6f68c6093330776bc7a065b7a276057e69153e9806a781059647d",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-1.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958882177751,
+      "sha256": "86b86f2d20b233e6311e7f4bd616e312aa725fc739e4c77ffe461ba16c691f9b",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-2.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958963179545,
+      "sha256": "9a0a3f467e695b4d65402a7ebdf998b00ee8158ed8356722dbc49863473ca5d4",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-3.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959045181361,
+      "sha256": "bedb1b2b59002dbc6a949854aba1907eca1ef72858fd7ca12c201c65a84ea69c",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-4.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959126183155,
+      "sha256": "98d02305c29bf3b034f09342955e2b21c4c96aaae58703b6071a208721e09acc",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-5.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959209184993,
+      "sha256": "ca2af9f1d09313e9ba8b8a4b8c1480e8c6e77cf671d570b31db14c057ba0799d",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-6.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959291186809,
+      "sha256": "ffb18a0676638d6f30e6fee82dd70975c747381a4e2e805da8caba3ff09aaecb",
+      "uid": 1000
+    },
+    "combined-regfile/v1/final-7.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959372188603,
+      "sha256": "528d86da4577d34cd59ff4b8dd4e1fdd00c48bb92da783d771d6390f30057b2c",
+      "uid": 1000
+    },
+    "combined-regfile/v1/initial.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958718174119,
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "uid": 1000
+    },
+    "combined-regfile/v1/iterations.hex": {
+      "bytes": 19284,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959372188603,
+      "sha256": "df5c833580df430574224809b817bb6557cc49500ca70060b8a045638346de22",
+      "uid": 1000
+    },
+    "combined-regfile/v1/iterations.mem": {
+      "bytes": 20288,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959402189267,
+      "sha256": "a0906f58aa6ecf94f58caf8b247c2d2780d80bfdbe10859e43d494e560f9bc19",
+      "uid": 1000
+    },
+    "combined-regfile/v1/metadata.hex": {
+      "bytes": 3645,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959372188603,
+      "sha256": "8edde208de4a0920f42766c86710f35a540edfad2ef43b3e47d661014bfa557e",
+      "uid": 1000
+    },
+    "combined-regfile/v1/metadata.mem": {
+      "bytes": 3616,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959402189267,
+      "sha256": "3c66c588af71a36e248b908b15331f44ac8b232e6e84eca8b641e97c7e5cf9d0",
+      "uid": 1000
+    },
+    "combined-regfile/v1/oracle-summary.json": {
+      "bytes": 377,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959372188603,
+      "sha256": "ab08fd824f2281e6ab430a7c90fe378c4475ebe071d21bb16fafb5ef818576c0",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-0.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958719174141,
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-1.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958800175935,
+      "sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-2.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958882177751,
+      "sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-3.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958963179545,
+      "sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-4.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959045181361,
+      "sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-5.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959127183177,
+      "sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-6.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959209184993,
+      "sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-7.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959291186809,
+      "sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "uid": 1000
+    },
+    "combined-regfile/v1/program-registers.hex": {
+      "bytes": 4136,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959372188603,
+      "sha256": "f491ca68094871a20fe6a9fe8639609e6cd7f1c7b9b9dfe4ace8669b87ef211d",
+      "uid": 1000
+    },
+    "combined-regfile/v1/restart-initial.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016112058102307,
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "uid": 1000
+    },
+    "combined-regfile/v1/restart-program.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016112074102708,
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "uid": 1000
+    },
+    "combined-regfile/v1/sequence_sizes.vh": {
+      "bytes": 82,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006959405189334,
+      "sha256": "b981b1ef763cdc23ce7dbc9385bc603a8bec5a77900e62dffe863696ca491358",
+      "uid": 1000
+    },
+    "combined-regfile/v2": {
+      "gid": 1000,
+      "kind": "directory",
+      "mode": "0o700",
+      "mtime_ns": 1792007047644144833,
+      "uid": 1000
+    },
+    "combined-regfile/v2/accesses.hex": {
+      "bytes": 57737,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958596171417,
+      "sha256": "e720e2146675e2d135ee61322eee586b3147471fc8cf5a51d894e72d20afbd9b",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-initial.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016829577721745,
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-0.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016830668748193,
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-1.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016907280603886,
+      "sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-2.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792016984602474121,
+      "sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-3.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017065172420485,
+      "sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-4.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017141153254033,
+      "sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-5.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017233389477680,
+      "sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-6.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017317343426950,
+      "sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "uid": 1000
+    },
+    "combined-regfile/v2/actual-program-7.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017404058895408,
+      "sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "uid": 1000
+    },
+    "combined-regfile/v2/events.mem": {
+      "bytes": 59064,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958632172214,
+      "sha256": "432947e0cefe9a07ee839a737b334612bda20c5a340e7fac907119c93fc8440c",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-0.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958027158816,
+      "sha256": "88cda23b8b6f1f9ec2b30f8555815e267f681d9dd431d9e056ac30fe80cd4ca9",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-1.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958107160587,
+      "sha256": "121df7ab281d1c98e5fd703a777bae455a0150223a4d15b194f7768ded98b264",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-2.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958189162403,
+      "sha256": "b59cf0ad6b7fbadbc5a968162fa8524b34ffeda07a937d0114dd22d4f604780b",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-3.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958271164219,
+      "sha256": "8f8956490f7ff909e02e940d1eb59ad3a9f11df6e28d81f9b9739bd20e92345c",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-4.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958352166013,
+      "sha256": "8d653aaeeb6f964a3098629350d7ae191ba4f41327c336145c632e3f9c81a8ac",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-5.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958433167807,
+      "sha256": "d92413bd7a20ba5680a9bf19eb450143737c7dc5093783120f1271bfa329ec27",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-6.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958514169601,
+      "sha256": "955c76f7a3714954b8eec329109c13f09f0dde6285c2bc692311a6b1c2313f6b",
+      "uid": 1000
+    },
+    "combined-regfile/v2/final-7.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958595171395,
+      "sha256": "d6f5d4c440d15ef774372f1cb9a4ae05e478ac506f3c694990598d8d845fe52f",
+      "uid": 1000
+    },
+    "combined-regfile/v2/initial.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957944156977,
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "uid": 1000
+    },
+    "combined-regfile/v2/iterations.hex": {
+      "bytes": 19296,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958596171417,
+      "sha256": "91bfbfff55923c6c013a8cdff82af7f3206c7e3d823df9aca3053673fdc947c0",
+      "uid": 1000
+    },
+    "combined-regfile/v2/iterations.mem": {
+      "bytes": 20288,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958628172126,
+      "sha256": "7b3fa80505803f9667fe247842e59c6b99b4e5e87f617380e66bd4c1b132f8f9",
+      "uid": 1000
+    },
+    "combined-regfile/v2/metadata.hex": {
+      "bytes": 3642,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958596171417,
+      "sha256": "fa8eefc70ec9e8b541471717d9cd7e13ea12c83a5569dcc559d67073e405b7ae",
+      "uid": 1000
+    },
+    "combined-regfile/v2/metadata.mem": {
+      "bytes": 3616,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958628172126,
+      "sha256": "6bf00140d66999599330532175186ffd550171b580e2a4d2999ce5ba708dd714",
+      "uid": 1000
+    },
+    "combined-regfile/v2/oracle-summary.json": {
+      "bytes": 379,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958596171417,
+      "sha256": "7e50065e7c6a77beb7d44c96663035f96aa28a2cb247706bc836091b9c42dca9",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-0.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006957944156977,
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-1.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958027158816,
+      "sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-2.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958107160587,
+      "sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-3.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958190162425,
+      "sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-4.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958271164219,
+      "sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-5.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958352166013,
+      "sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-6.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958433167807,
+      "sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-7.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958514169601,
+      "sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "uid": 1000
+    },
+    "combined-regfile/v2/program-registers.hex": {
+      "bytes": 4136,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958596171417,
+      "sha256": "8804210cd859626fca7cdc82d573c0012a81dff4db18a3b4d756d6139dd5e719",
+      "uid": 1000
+    },
+    "combined-regfile/v2/restart-initial.hex": {
+      "bytes": 4325376,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017482511296394,
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "uid": 1000
+    },
+    "combined-regfile/v2/restart-program.mem": {
+      "bytes": 6528,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017482526296669,
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "uid": 1000
+    },
+    "combined-regfile/v2/sequence_sizes.vh": {
+      "bytes": 83,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006958632172214,
+      "sha256": "bdeb54dd8f5838a63cb706fa1f97f3a43c35a8cd7dc9848bdf6275e17fbdcd60",
+      "uid": 1000
+    },
+    "combined-regfile/vendor.log": {
+      "bytes": 32,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947345922292,
+      "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "uid": 1000
+    },
+    "combined-regfile/yosys-cell-model.json": {
+      "bytes": 744,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947575927385,
+      "sha256": "8ad3e7ddc2bc20baf9a6be6118d35999c4f6b4a0de036e37a5da2332c6fc2254",
+      "uid": 1000
+    },
+    "combined-regfile/yosys-simcells.v": {
+      "bytes": 31442,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006947574927362,
+      "sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+      "uid": 1000
+    },
+    "combined-resource-stages.json": {
+      "bytes": 1795,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017485024342290,
+      "sha256": "eb4ea5a59a78d7c95fac9a9056db1baada8d64a77e549e87e808c061ff5f4b5c",
+      "uid": 1000
+    },
+    "events.jsonl": {
+      "bytes": 1460,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017486006360239,
+      "sha256": "3ed7e573c145d8dd65ad97e55a7cf30b646ca3013bc06efa60164774c1de2b7c",
+      "uid": 1000
+    },
+    "events.lock": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006897739824397,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "finalize.lock": {
+      "bytes": 0,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017485621353202,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "uid": 1000
+    },
+    "manifest.json": {
+      "bytes": 588344,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006897599821300,
+      "sha256": "728e8ca907f2522d09f9da66952b52dd87ce5e300a1be0cd77efa44176d0e469",
+      "uid": 1000
+    },
+    "prelaunch-kernel-check.json": {
+      "bytes": 2318,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006899968873710,
+      "sha256": "7c835d4fdd97ccd1ae47beedf73337e22a45a07462919fe9e7b2430334496560",
+      "uid": 1000
+    },
+    "prelaunch-resource-check.json": {
+      "bytes": 415,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006899932872914,
+      "sha256": "73fffca66153e7b4be9756bd949c1f6b66e9a2eae67e55435cf96d1c6a32dee5",
+      "uid": 1000
+    },
+    "process-result.json": {
+      "bytes": 142,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017485447350021,
+      "sha256": "ec156b610a9ef3c666388823cae6b0a1a326b47eb9aebf393ee3688b7238b10d",
+      "uid": 1000
+    },
+    "receipt.json": {
+      "bytes": 54428,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017488411404241,
+      "sha256": "52e03b5aaf61d022951a660e58256b0797c6077c2c2b085a51226b86a979adbf",
+      "uid": 1000
+    },
+    "regfile-console.log": {
+      "bytes": 42910,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017482712300063,
+      "sha256": "bcbf13b8bda3b2819b265d07510988fb7a6f9b4dc8b92c1ad6647ac8e52d7868",
+      "uid": 1000
+    },
+    "retained-input-byte-check.json": {
+      "bytes": 531,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006900093876476,
+      "sha256": "53763d59ea253bd0d745c8c33eb012f2d4c614a837c7378e13040d5d405e623b",
+      "uid": 1000
+    },
+    "runner.py": {
+      "bytes": 47618,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006897549820194,
+      "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+      "uid": 1000
+    },
+    "stderr.log": {
+      "bytes": 254,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792017485093343551,
+      "sha256": "98297580265c4bfb65c7c8bcbf7bd34bf4c978b14911639bfb39cdb1b1d306d1",
+      "uid": 1000
+    },
+    "stdout.log": {
+      "bytes": 105,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006946905912549,
+      "sha256": "4b38f80e8add5b8ef7aa1f49299b645478f62dc79a511f901b4c656b385b4cc0",
+      "uid": 1000
+    },
+    "submission-command.json": {
+      "bytes": 871,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006897636822118,
+      "sha256": "af1470ad6e08c3a7fdd4dea6009bb45e1f772eedb6a546098fe18ed30d7a2212",
+      "uid": 1000
+    },
+    "submission-result.json": {
+      "bytes": 41,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006897799825725,
+      "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b",
+      "uid": 1000
+    },
+    "unit-tests-console.log": {
+      "bytes": 30993,
+      "gid": 1000,
+      "kind": "file",
+      "mode": "0o600",
+      "mtime_ns": 1792006946888912172,
+      "sha256": "b92801ea88c5770656e07f465f9ce92460aefb6bc8cc2c7c9ae45a363e8e1a69",
+      "uid": 1000
+    }
+  },
+  "root": "/home/server/openrx-local/v1/executions/20261014T194137Z-8451bfb57fac",
+  "root_mode": "0o700"
+}

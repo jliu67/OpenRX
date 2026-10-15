@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "accepted_parent": "7f299c74f81332257eefd775086b355969ad85f3",
+  "candidate_base": "8f3b9bc3d7f0182d66185abe95310f0bab00274b",
+  "accepted_manifest": {
+    "path": "docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json",
+    "sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7"
+  },
+  "executed_inputs": {
+    "path": "docs/validation/prepared-reciprocals/server/inputs.json",
+    "sha256": "e99a52558ba45e4a75635ac36e992a311ac07c0bd60ab075eeceb14489ad8227"
+  },
+  "default_prepared_rcp": 0,
+  "overrides": {
+    "rtl/execute/randomx_integer_execute.v": {
+      "module": "randomx_integer_execute",
+      "accepted_sha256": "9b28b3cbb5ae39091cf602a1dbb84b6cfb491d50e96dbc754ef931c22a3a4a75",
+      "candidate_sha256": "7f605141b5696f9e39621f28ea3e4ab16723ce0b2c812ec7456f1e76090c0b09"
+    },
+    "rtl/execute/randomx_integer_iteration.v": {
+      "module": "randomx_integer_iteration",
+      "accepted_sha256": "ed3458c6e5afee6bb37a1ea3eb73dfa89985fefdc47426d8051178b17e3420df",
+      "candidate_sha256": "1de7700181aa5dfebfbd7a3b6aa971ad72c2c52fffe2c46938143e43093ff661"
+    }
+  },
+  "reason": "Task69 adds optional immutable-image reciprocal metadata to these two interfaces. Both preserve PREPARED_RCP=0 as the default. The accepted compatibility manifest and native goldens retain their original bytes; the declared successor bytes are bound to the completed server run. The integer-differential integration gate executes native program sequencing, actual generic synthesis and mapped integration for candidate and legacy sources. The separate binding job checks source bytes, substitution rejection and retained server evidence."
+}

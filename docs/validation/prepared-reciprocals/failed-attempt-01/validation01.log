@@ -1,0 +1,41 @@
+START vendor
+PASS vendor
+START model-guards
+PASS model-guards
+START compile-native-oracle
+PASS compile-native-oracle
+START native-oracle
+PASS native-oracle
+START invalid-cache
+EXPECTED FAILURE invalid-cache
+START invalid-executor
+EXPECTED FAILURE invalid-executor
+START invalid-legacy-netlist
+EXPECTED FAILURE invalid-legacy-netlist
+START compile-rtl-cache-0-0
+PASS compile-rtl-cache-0-0
+START rtl-cache-0-0
+PASS rtl-cache-0-0
+START compile-rtl-cache-0-1
+PASS compile-rtl-cache-0-1
+START rtl-cache-0-1
+PASS rtl-cache-0-1
+START compile-rtl-cache-1-0
+PASS compile-rtl-cache-1-0
+START rtl-cache-1-0
+PASS rtl-cache-1-0
+START compile-rtl-cache-1-1
+PASS compile-rtl-cache-1-1
+START rtl-cache-1-1
+PASS rtl-cache-1-1
+START compile-rtl-iteration-0-0
+Traceback (most recent call last):
+  File "/tmp/openrx-prepared-reciprocals-blrqic4m/scripts/test_prepared_reciprocals.py", line 264, in <module>
+    main()
+  File "/tmp/openrx-prepared-reciprocals-blrqic4m/scripts/test_prepared_reciprocals.py", line 203, in main
+    run('compile-' + label, ['iverilog', '-g2012', '-Wall', *includes,
+  File "/tmp/openrx-prepared-reciprocals-blrqic4m/scripts/test_prepared_reciprocals.py", line 93, in run
+    proc.check_returncode()
+  File "/usr/lib/python3.10/subprocess.py", line 457, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/usr/bin/time', '-v', '-o', '/tmp/openrx-prepared-reciprocal-validation-01/compile-rtl-iteration-0-0.time.txt', 'iverilog', '-g2012', '-Wall', '-Irtl/execute', '-Irtl/execute/vendor/hardfloat/', '-Irtl/execute/vendor/hardfloat/8086-SSE', '-I/tmp/openrx-prepared-reciprocal-validation-01', '-s', 'tb_prepared_reciprocal_iteration', '-Ptb_prepared_reciprocal_iteration.PREPARED_RCP=0', '-Ptb_prepared_reciprocal_iteration.STALL=0', '-o', '/tmp/openrx-prepared-reciprocal-validation-01/rtl-iteration-0-0.vvp', 'rtl/aes/vendor/secworks/aes_sbox.v', 'rtl/aes/vendor/secworks/aes_inv_sbox.v', 'rtl/aes/randomx_aes_round.v', 'rtl/aes/randomx_v2_aes_mix.v', 'rtl/aes/randomx_exec_aes_commit.v', 'rtl/iteration/randomx_iteration_store.v', 'rtl/engine/randomx_i32_to_f64.v', 'rtl/engine/randomx_iteration_engine.v', 'rtl/execute/randomx_mul64.v', 'rtl/execute/randomx_reciprocal32.v', 'rtl/execute/randomx_integer_execute.v', 'rtl/execute/randomx_integer_iteration.v', 'rtl/execute/vendor/hardfloat/HardFloat_primitives.v', 'rtl/execute/vendor/hardfloat/HardFloat_rawFN.v', 'rtl/execute/vendor/hardfloat/isSigNaNRecFN.v', 'rtl/execute/vendor/hardfloat/fNToRecFN.v', 'rtl/execute/vendor/hardfloat/recFNToFN.v', 'rtl/execute/vendor/hardfloat/addRecFN.v', 'rtl/execute/vendor/hardfloat/mulRecFN.v', 'rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v', 'rtl/execute/randomx_fp64.v', 'rtl/execute/randomx_fp128.v', '/tmp/openrx-prepared-reciprocal-validation-01/HardFloat-divSqrt-compile-view.v', 'rtl/execute/randomx_divsqrt64.v', 'rtl/execute/randomx_divsqrt128.v', 'rtl/execute/randomx_program_reciprocals.v', 'rtl/execute/randomx_prepared_rcp_guard.v', 'rtl/execute/randomx_prepared_integer_iteration.v', 'rtl/execute/tests/tb_prepared_reciprocal_iteration.v']' returned non-zero exit status 1.

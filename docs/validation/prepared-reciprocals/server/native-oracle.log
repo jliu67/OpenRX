@@ -1,0 +1,1 @@
+PASS prepared_reciprocal_native admissions=12 iterations=48 instruction_steps=15424 dynamic_rcp=10520 dynamic_active_rcp=4264 dynamic_nop_rcp=6256 branches=200 taken=16 low64_wraps=2427 bytecode_reads=1536 stores=208 full_memory_snapshots=12 full_memory_bytes=2097152

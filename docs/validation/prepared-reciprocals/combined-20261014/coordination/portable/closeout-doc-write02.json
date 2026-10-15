@@ -1,0 +1,14 @@
+{
+  "added_readme": "/tmp/openrx-reciprocal-combination-fjvwsr3u/feature/docs/validation/prepared-reciprocals/combined-20261014/README.md",
+  "changed_metadata": [
+    "memory/STATE.md",
+    "memory/HANDOFF.md",
+    "memory/SESSION_LOG.md",
+    "memory/DECISIONS.md",
+    "experiments/EXP-013-prepared-program-reciprocals.md",
+    "docs/validation/prepared-reciprocals/README.md"
+  ],
+  "original_sources_and_receipts_preserved": true,
+  "publication_requires_verified_export_and_exact_source_stage": true,
+  "unchanged_scientific_provenance_inputs": 281
+}

@@ -1,0 +1,51 @@
+{
+  "status": "pass",
+  "rtl_checks": 9,
+  "mapped_checks": 9,
+  "actual_synthesis_targets": 3,
+  "invalid_parameter_guards": 4,
+  "positive_commands": 45,
+  "unexpected_failures": 0,
+  "profile_iterations_per_program": 4,
+  "programs": 8,
+  "native_versions": [
+    1,
+    2
+  ],
+  "full_v2_rerun": false,
+  "all_mapped_pass_records_equal_rtl": true,
+  "all9_rtl_records_equal_preserved_accepted_component": true,
+  "generic_mappings": {
+    "control-default": {
+      "cells": 19435,
+      "flops": 2551,
+      "generic_only": true
+    },
+    "control-short": {
+      "cells": 19443,
+      "flops": 2551,
+      "generic_only": true
+    },
+    "sequence-default": {
+      "cells": 293370,
+      "flops": 13055,
+      "generic_only": true
+    }
+  },
+  "executed_source_files_unchanged": 2737,
+  "driver_input_bindings": 73,
+  "all219_original_scientific_bindings_unchanged": true,
+  "generated_compile_view_and_extracted_native_bodies_unchanged": true,
+  "final_complete_output_manifest_files": 197,
+  "full_pipeline_performance_accepted": false,
+  "boundary": "RTL initializes entropy/config and sequences actual bytecode/iteration execution; software supplies native initial scratchpad, programs from DUT-derived seeds, interprogram BLAKE2b, and deterministic addressed dataset lines; final hash outside",
+  "mapped_scope": "default8x2048 control counts/contract; actual8x4 v1/v2 mapped-control transitions; default whole-top gates validate one native v2 iteration and cancellation, not a full16384-iteration gate run",
+  "fixture_provenance": "Native fixtures and generated packed files retained in complete final manifest; no retrospective pre-use immutability claim.",
+  "resource": {
+    "wall_seconds": 3161.643753796001,
+    "peak_bytes": 7516192768,
+    "swap_peak_bytes": 1597886464,
+    "memory_events": "low 0\nhigh 0\nmax 2117\noom 0\noom_kill 0\noom_group_kill 0",
+    "cpu_stat": "usage_usec 3041236463\nuser_usec 3024748604\nsystem_usec 16487859\ncore_sched.force_idle_usec 0\nnr_periods 31592\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0"
+  }
+}

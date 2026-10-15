@@ -1,0 +1,11 @@
+{
+  "native_originals": 171,
+  "HardFloat_originals": 12,
+  "secworks_originals": 3,
+  "all_original_bytes_unchanged": true,
+  "intentional_executor_changes": [
+    "rtl/execute/randomx_integer_execute.v",
+    "rtl/execute/randomx_integer_iteration.v"
+  ],
+  "base": "8f3b9bc3d7f0182d66185abe95310f0bab00274b"
+}

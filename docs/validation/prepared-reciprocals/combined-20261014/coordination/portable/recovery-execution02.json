@@ -1,0 +1,20 @@
+{
+  "at_epoch": 1792093612.7359571,
+  "execution_id": "20261015T194652Z-334cfc1d0428",
+  "execution_root": "<FINALIZER_RECOVERY_EXECUTION_ROOT>",
+  "immutable_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "memory_bytes": 4294967296,
+  "original_failed_execution": "20261014T194137Z-8451bfb57fac",
+  "parents": [
+    "35c2cae61092107acb2c684bbca308aca8fb280b",
+    "5f28dd4363504ecf33a8f10451c53405773c564f"
+  ],
+  "request_key": "issue69-combined-finalization-recovery02",
+  "runner": "/home/server/openrx-local/v1/releases/runner-v1-657b23f1/local_execution.py",
+  "scope": "missing finalization only; original completed unit/seed scope is recovered, not rerun",
+  "source": "<FROZEN_SOURCE>",
+  "source_archive_sha256": "1002c56e3e1bbcb6bb07a995d9a41114ed6a14eddb6b07565461bd7220d33911",
+  "source_tree": "29ac1af8dff303dddd8f84ce0a79fb369f333ec0",
+  "wrapper": "<EXTERNAL_EVIDENCE>/run_missing_finalization02.py",
+  "wrapper_sha256": "d81a18d389496d97882fd0cab66eb6eb74c2b8c3dfbcb2bad442880b0f9ecd30"
+}

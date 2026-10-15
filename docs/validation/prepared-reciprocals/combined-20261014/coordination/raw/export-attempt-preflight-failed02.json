@@ -1,0 +1,8 @@
+{
+  "status": "failed_export_preflight",
+  "returncode": 1,
+  "error": "Original failed-wrapper diagnostic differs; never relabel it as success",
+  "exporter_sha256": "99cff6243ba97061e6cdef68a8bfecf710dc546e8628d209c7899eddaa9113f5",
+  "no_export_destination_created": true,
+  "scientific_results_invalidated": false
+}

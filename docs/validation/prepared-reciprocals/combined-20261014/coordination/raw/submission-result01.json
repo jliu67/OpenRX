@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "python3",
+    "/home/server/openrx-local/v1/releases/runner-v1-657b23f1/local_execution.py",
+    "--root",
+    "/home/server/openrx-local/v1",
+    "submit",
+    "--request-key",
+    "issue69-combined-35c-5f-attempt01",
+    "--kind",
+    "simulation",
+    "--cwd",
+    "/tmp/openrx-combined-source-0kazbk4f",
+    "--input",
+    "/home/server/Documents/Codex/2026-10-11/task-2/reciprocal-combination-reconciliation-evidence/run_combined_regressions01.py",
+    "--source",
+    "/tmp/openrx-combined-source-0kazbk4f",
+    "--memory-bytes",
+    "4294967296",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/server/Documents/Codex/2026-10-11/task-2/reciprocal-combination-reconciliation-evidence/run_combined_regressions01.py",
+    "/tmp/openrx-combined-source-0kazbk4f",
+    "{execution_dir}"
+  ],
+  "returncode": 0,
+  "stdout": "{\n  \"execution_id\": \"20261014T194137Z-8451bfb57fac\"\n}\n",
+  "stderr": ""
+}

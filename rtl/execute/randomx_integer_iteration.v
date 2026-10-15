@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Integer hardware execution connected to the accepted iteration controller.
 `default_nettype none
-module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,COALESCE_LINES=1,SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2,DIVSQRT_LANES=2)(
+module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,COALESCE_LINES=1,SERIAL_IADD=0,MUL_RADIX4=0,FP_LANES=2,DIVSQRT_LANES=2,PREPARED_RCP=0)(
     input wire  clk,
     input wire  rst,
     input wire  req_valid,
@@ -66,6 +66,10 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
     output wire  prog_rsp_ready,
     input wire [15:0] prog_rsp_tag,
     input wire [63:0] prog_rsp_instruction,
+    input wire [15:0] req_program_epoch,prog_rsp_prepared_epoch,
+    input wire [8:0] prog_rsp_prepared_pc,
+    input wire prog_rsp_prepared_error,prog_rsp_rcp_valid,prog_rsp_rcp_nop,
+    input wire [31:0] prog_rsp_rcp_divisor,input wire [63:0] prog_rsp_rcp_value,
     output wire  error_valid,
     input wire  error_ready,
     output wire [15:0] error_tag,
@@ -79,7 +83,19 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
     output wire [8:0] commit_next_pc,commit_branch_target,
     output wire [511:0] commit_f,commit_e,output wire [1:0] commit_round_mode
 );
+`ifdef INTEGER_EXECUTE_NETLIST
+    // This legacy macro binds the accepted default runtime-reciprocal ABI.
+    // Prepared metadata must never silently connect to an incompatible netlist.
+    generate if(PREPARED_RCP!=0)begin: incompatible_prepared_netlist
+        integer_iteration_legacy_netlist_requires_PREPARED_RCP_0 invalid();
+    end endgenerate
+`endif
     reg abort_q;
+    reg [15:0] program_epoch_q;
+    always @(posedge clk)begin
+        if(rst)program_epoch_q<=0;
+        else if(req_valid&&req_ready)program_epoch_q<=req_program_epoch;
+    end
     wire internal_rst=rst|abort_q;
     always @(posedge clk)begin
         if(rst)abort_q<=0;else abort_q<=error_valid && error_ready;
@@ -209,7 +225,7 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
 `ifdef INTEGER_EXECUTE_NETLIST
     randomx_integer_execute execute (
 `else
-    randomx_integer_execute #(.SERIAL_IADD(SERIAL_IADD),.MUL_RADIX4(MUL_RADIX4),.FP_LANES(FP_LANES),.DIVSQRT_LANES(DIVSQRT_LANES)) execute(
+    randomx_integer_execute #(.SERIAL_IADD(SERIAL_IADD),.MUL_RADIX4(MUL_RADIX4),.FP_LANES(FP_LANES),.DIVSQRT_LANES(DIVSQRT_LANES),.PREPARED_RCP(PREPARED_RCP)) execute(
 `endif
         .clk(clk),
         .rst(internal_rst),
@@ -253,6 +269,12 @@ module randomx_integer_iteration #(parameter integer LANES=4,SERIAL_CONVERT=0,CO
         .prog_rsp_ready(prog_rsp_ready),
         .prog_rsp_tag(prog_rsp_tag),
         .prog_rsp_instruction(prog_rsp_instruction),
+`ifndef INTEGER_EXECUTE_NETLIST
+        .req_program_epoch(program_epoch_q),.prog_rsp_prepared_epoch(prog_rsp_prepared_epoch),
+        .prog_rsp_prepared_pc(prog_rsp_prepared_pc),.prog_rsp_prepared_error(prog_rsp_prepared_error),
+        .prog_rsp_rcp_valid(prog_rsp_rcp_valid),.prog_rsp_rcp_nop(prog_rsp_rcp_nop),
+        .prog_rsp_rcp_divisor(prog_rsp_rcp_divisor),.prog_rsp_rcp_value(prog_rsp_rcp_value),
+`endif
         .error_valid(error_valid),
         .error_ready(error_ready),
         .error_tag(error_tag),

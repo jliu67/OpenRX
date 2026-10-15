@@ -1,0 +1,15 @@
+{
+  "artifact_manifest_sha256": "d002d55d751718f79df5aee0e08d56e8c5cb91e6e76f18fdc8b20caf766c078f",
+  "directory_in_source": "docs/validation/program-sequence-20261013/full-v2-8x2048",
+  "memory_artifact": "<FROZEN_SOURCE>/docs/validation/program-sequence-20261013/full-v2-8x2048/final-7.hex.gz",
+  "memory_artifact_sha256": "3a0b6b353ce195d885b0cd189c740ea4cafddac39d570b4585b220fb3072ee8e",
+  "memory_binary_sha256": "3d246e1712b76da87f6914b0241a4189c0f72e768f9798a4d1ec58bbc87b5a7b",
+  "memory_hex_sha256": "e5061265e2cf3635e9cdf6c5b2093bb5ebf9373fce868a753a757b1a3775023c",
+  "no_program_chain_rerun": true,
+  "program_index": 7,
+  "registers_artifact": "<FROZEN_SOURCE>/docs/validation/program-sequence-20261013/full-v2-8x2048/program-registers.hex",
+  "registers_artifact_sha256": "b7ec8f825f289807c8d70a809dcb9b5b1dce598fe219efa20d72f35f34898798",
+  "round_mode": 3,
+  "selected_register_binary_sha256": "4bd288682ffe0f5f2395ba9d3429149487f4af942bed2988337651edc6237c90",
+  "source": "accepted native-v2 eight-program x2048 final program7 artifacts"
+}

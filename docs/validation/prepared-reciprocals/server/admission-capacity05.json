@@ -1,0 +1,12 @@
+{
+  "at_epoch": 1791940343.8258972,
+  "MemAvailable": 8973471744,
+  "SwapFree": 4923817984,
+  "load": [
+    0.470703125,
+    0.5087890625,
+    0.3603515625
+  ],
+  "global_slot_probe_free": true,
+  "mapping_estimate": "prior100k-cell mapping peak1.90GiB; now real6KiB mappedstore,4GiB candidate adequate until measured"
+}

@@ -1,0 +1,425 @@
+{
+  "admissions": [
+    {
+      "admission": 0,
+      "first_case": 0,
+      "immutable_instruction_bytes_sha256": "284922beb8d34241b1b0cc9ff4635265d1594021d364e26e1e434866d3f5b311",
+      "iterations": 4,
+      "native_compile_nanoseconds": 3376,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 4,
+      "static_rcp": 260,
+      "template": "A",
+      "v2": 1
+    },
+    {
+      "admission": 1,
+      "first_case": 4,
+      "immutable_instruction_bytes_sha256": "284922beb8d34241b1b0cc9ff4635265d1594021d364e26e1e434866d3f5b311",
+      "iterations": 4,
+      "native_compile_nanoseconds": 3275,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 4,
+      "static_rcp": 260,
+      "template": "A",
+      "v2": 1
+    },
+    {
+      "admission": 2,
+      "first_case": 8,
+      "immutable_instruction_bytes_sha256": "f9cb167db013a7c3c8e7dc1e9eb3834f729ec8d53bd448ba8695d4a6717e7589",
+      "iterations": 4,
+      "native_compile_nanoseconds": 4253,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 13,
+      "static_rcp": 23,
+      "template": "B",
+      "v2": 1
+    },
+    {
+      "admission": 3,
+      "first_case": 12,
+      "immutable_instruction_bytes_sha256": "13f912cf9a350f2b28ffa37170af301ddb33e4e37fbac77f01b0988efe930022",
+      "iterations": 4,
+      "native_compile_nanoseconds": 7729,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 16384,
+      "static_active_rcp": 260,
+      "static_rcp": 260,
+      "template": "C",
+      "v2": 1
+    },
+    {
+      "admission": 4,
+      "first_case": 16,
+      "immutable_instruction_bytes_sha256": "4b276c068d2c61ea0bf69c5afd98b6aa4b770f67ba499b0e3ba00654cf33becc",
+      "iterations": 4,
+      "native_compile_nanoseconds": 7467,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 16384,
+      "static_active_rcp": 260,
+      "static_rcp": 260,
+      "template": "D",
+      "v2": 1
+    },
+    {
+      "admission": 5,
+      "first_case": 20,
+      "immutable_instruction_bytes_sha256": "284922beb8d34241b1b0cc9ff4635265d1594021d364e26e1e434866d3f5b311",
+      "iterations": 4,
+      "native_compile_nanoseconds": 3158,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 4,
+      "static_rcp": 260,
+      "template": "A",
+      "v2": 1
+    },
+    {
+      "admission": 6,
+      "first_case": 24,
+      "immutable_instruction_bytes_sha256": "f536c427228aa5b4164197d1289c866f1bd43fd2292f445298227ca509878152",
+      "iterations": 4,
+      "native_compile_nanoseconds": 1500,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 0,
+      "static_rcp": 256,
+      "template": "A",
+      "v2": 0
+    },
+    {
+      "admission": 7,
+      "first_case": 28,
+      "immutable_instruction_bytes_sha256": "f536c427228aa5b4164197d1289c866f1bd43fd2292f445298227ca509878152",
+      "iterations": 4,
+      "native_compile_nanoseconds": 1459,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 0,
+      "static_rcp": 256,
+      "template": "A",
+      "v2": 0
+    },
+    {
+      "admission": 8,
+      "first_case": 32,
+      "immutable_instruction_bytes_sha256": "5b2d7d969ef333056af17e984b25e8cc828750c662740bcddf6ba621aabb9efb",
+      "iterations": 4,
+      "native_compile_nanoseconds": 3176,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 9,
+      "static_rcp": 19,
+      "template": "B",
+      "v2": 0
+    },
+    {
+      "admission": 9,
+      "first_case": 36,
+      "immutable_instruction_bytes_sha256": "07cebb24c78f246b30af5a5e1a95888726e5f7299c64e4af36f293128edab6a7",
+      "iterations": 4,
+      "native_compile_nanoseconds": 6076,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 16384,
+      "static_active_rcp": 256,
+      "static_rcp": 256,
+      "template": "C",
+      "v2": 0
+    },
+    {
+      "admission": 10,
+      "first_case": 40,
+      "immutable_instruction_bytes_sha256": "db16ec94a01c9a41b3bf1703ac748bd3bbe8687f38ea90624bc390655da499f7",
+      "iterations": 4,
+      "native_compile_nanoseconds": 5885,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 16384,
+      "static_active_rcp": 256,
+      "static_rcp": 256,
+      "template": "D",
+      "v2": 0
+    },
+    {
+      "admission": 11,
+      "first_case": 44,
+      "immutable_instruction_bytes_sha256": "f536c427228aa5b4164197d1289c866f1bd43fd2292f445298227ca509878152",
+      "iterations": 4,
+      "native_compile_nanoseconds": 1628,
+      "native_compile_timing_scope": "instrumentation only, uncontrolled native wall time; no performance acceptance",
+      "program_address": 4096,
+      "static_active_rcp": 0,
+      "static_rcp": 256,
+      "template": "A",
+      "v2": 0
+    }
+  ],
+  "assertion_only": [
+    "steps.mem",
+    "targets.mem",
+    "reciprocal_plan.mem",
+    "primitive-metadata.mem",
+    "case_vectors.vh",
+    "final-*.hex"
+  ],
+  "boundary": "native full iteration and full2MiB snapshots; addressed fixture dataset; no full dataset or final hash",
+  "branch_lexical_NOP_target_checks": 2,
+  "iterations": 48,
+  "iterations_per_admission": 4,
+  "low64_wraps": 2427,
+  "memory_snapshots": {
+    "final-0.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "4e4368409be787d2ff93a0b50af820a1e647c2a5e6da996b94afae119e2b852a"
+    },
+    "final-1.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "8af2ca780991b7594308a4b34da10dd0de319d159912bc9f93e6a61be8b076e7"
+    },
+    "final-10.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "2e4faebc98ed005fbc8b5b526840ad3be853ddab960edb817497889c62559d60"
+    },
+    "final-11.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "850ac944ec38d23933d1f863c31e234e78f9451b9520eb2ef7870f73c4f4d7d1"
+    },
+    "final-2.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "13f2f4e3d59ef3e1039e5667fa253b0e86a5966ef98dcfcea679dd6017abcb56"
+    },
+    "final-3.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "cfa506cbbe62c83b82d1c1180c2886a2dcee9d52d617f9e3e9d02ac8c8bb60ca"
+    },
+    "final-4.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "80047468aaacb0557de277f22c22ebf97a626f4b118824b09b08e9c141a25c02"
+    },
+    "final-5.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "2e6c056f7ac8e8f21c22da84583bf4015d1d544def10508593af7adecb9110b4"
+    },
+    "final-6.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "007ab66bae87e82a26ce1b6abc9084b7fd720c113e9448db6e5366a6166f8c45"
+    },
+    "final-7.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "0edb024869e2196bb49fe8540b45feb06565a7a321e60916d46d92c3248a6a4e"
+    },
+    "final-8.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "b2354232cbe57a05646a55802688733d14f425a254b71b737c89a5e808e5e627"
+    },
+    "final-9.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "6f16cfaa59a25f7cdace9f24b3567738bff50f94b4beffbf4bac07110841f099"
+    },
+    "initial.hex": {
+      "bytes": 4325376,
+      "raw_memory_bytes": 2097152,
+      "rows": 131072,
+      "sha256": "7427794e6d0c7d64ada5263946ea198fc5a0f0dfe68ff9ab025e06f0b18cc5d9"
+    }
+  },
+  "native_source_pin": "aaafe71322df6602c21a5c72937ac284724ae561",
+  "performance_scope": "paired baseline/prepared RTL and model must include per-admission preparation and use identical immutable program/lookup/event-ordinal stalls; this helper makes no performance acceptance",
+  "primitive": [
+    {
+      "static_active_rcp": 128,
+      "static_nop_rcp": 96,
+      "static_rcp": 224,
+      "v2": 0
+    },
+    {
+      "static_active_rcp": 128,
+      "static_nop_rcp": 96,
+      "static_rcp": 224,
+      "v2": 1
+    }
+  ],
+  "raw_DUT_inputs": [
+    "initial.hex",
+    "programs.mem",
+    "primitive-programs.mem",
+    "admission request/config inputs"
+  ],
+  "same_address_different_program_replacements_per_version": 2,
+  "same_program_reloads_per_version": 2,
+  "sizes": {
+    "BYTECODE_READS": 1536,
+    "BYTECODE_STORES": 208,
+    "ITERATIONS_PER_ADMISSION": 4,
+    "PRIMITIVE_ACTIVE_RCP_PER_VERSION": 128,
+    "PRIMITIVE_NOP_RCP_PER_VERSION": 96,
+    "PRIMITIVE_PROGRAM_WORDS": 1024,
+    "PRIMITIVE_RCP_PER_VERSION": 224,
+    "TOTAL_ADMISSIONS": 12,
+    "TOTAL_DYNAMIC_ACTIVE_RCP": 4264,
+    "TOTAL_DYNAMIC_NOP_RCP": 6256,
+    "TOTAL_DYNAMIC_RCP": 10520,
+    "TOTAL_EVENTS": 1744,
+    "TOTAL_ITERATIONS": 48,
+    "TOTAL_PROGRAM_WORDS": 6144,
+    "TOTAL_STATIC_ACTIVE_RCP": 1066,
+    "TOTAL_STATIC_RCP": 2622,
+    "TOTAL_STEPS": 15424
+  },
+  "source_unchanged_after_preparation": true,
+  "versions": {
+    "0": {
+      "active_divisors": [
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        65537,
+        1073741825,
+        2147483646,
+        2147483647,
+        2147483649,
+        2147483651,
+        2147483656,
+        4294967293,
+        4294967294,
+        4294967295
+      ],
+      "active_dst_src_alias_tuples": 512,
+      "active_raw_encodings": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "dynamic_instruction_counts": {
+        "CBRANCH": 52,
+        "CFROUND": 32,
+        "FADD_M": 32,
+        "FADD_R": 32,
+        "FDIV_M": 32,
+        "FMUL_R": 32,
+        "FSCAL_R": 32,
+        "FSQRT_R": 32,
+        "FSUB_M": 32,
+        "FSUB_R": 32,
+        "FSWAP_R": 32,
+        "IADD_M": 36,
+        "IADD_RS": 36,
+        "IMULH_M": 32,
+        "IMULH_R": 32,
+        "IMUL_M": 32,
+        "IMUL_R": 36,
+        "IMUL_RCP": 5212,
+        "INEG_R": 36,
+        "IROL_R": 32,
+        "IROR_R": 32,
+        "ISMULH_M": 32,
+        "ISMULH_R": 32,
+        "ISTORE": 44,
+        "ISUB_M": 36,
+        "ISUB_R": 40,
+        "ISWAP_R": 32,
+        "IXOR_M": 36,
+        "IXOR_R": 36
+      },
+      "static_nop_encoding_divisor_pairs": 264
+    },
+    "1": {
+      "active_divisors": [
+        3,
+        5,
+        6,
+        7,
+        9,
+        10,
+        65537,
+        1073741825,
+        2147483646,
+        2147483647,
+        2147483649,
+        2147483651,
+        2147483656,
+        4294967293,
+        4294967294,
+        4294967295
+      ],
+      "active_dst_src_alias_tuples": 512,
+      "active_raw_encodings": [
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "dynamic_instruction_counts": {
+        "CBRANCH": 148,
+        "CFROUND": 128,
+        "FADD_M": 128,
+        "FADD_R": 128,
+        "FDIV_M": 128,
+        "FMUL_R": 128,
+        "FSCAL_R": 128,
+        "FSQRT_R": 128,
+        "FSUB_M": 128,
+        "FSUB_R": 128,
+        "FSWAP_R": 128,
+        "IADD_M": 156,
+        "IADD_RS": 156,
+        "IMULH_M": 128,
+        "IMULH_R": 128,
+        "IMUL_M": 128,
+        "IMUL_R": 156,
+        "IMUL_RCP": 5308,
+        "INEG_R": 156,
+        "IROL_R": 152,
+        "IROR_R": 152,
+        "ISMULH_M": 128,
+        "ISMULH_R": 128,
+        "ISTORE": 164,
+        "ISUB_M": 156,
+        "ISUB_R": 160,
+        "ISWAP_R": 152,
+        "IXOR_M": 156,
+        "IXOR_R": 156
+      },
+      "static_nop_encoding_divisor_pairs": 264
+    }
+  }
+}

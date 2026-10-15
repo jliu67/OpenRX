@@ -1,0 +1,14 @@
+{
+  "a_replacement_only": true,
+  "aes_64byte_groups": 1,
+  "digest32_not_truncated64": true,
+  "directory": "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/bounded-64-walking",
+  "input_register_sha256": "ba04ef823c2817cd85b2dc167b1f8eb2dae807efd261f9093cad477122220ea2",
+  "input_scratchpad_sha256": "4e6b0b60b98bf1872c3f65a0e763a2ea4d3c097f54b32dde681333845d351116",
+  "kind": "walking",
+  "memory_reads128": 4,
+  "name": "bounded-64-walking",
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file",
+  "scratchpad_bytes": 64,
+  "seed": "0x7362726174636872"
+}

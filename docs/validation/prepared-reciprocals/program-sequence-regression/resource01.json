@@ -1,0 +1,65 @@
+{
+  "at_epoch": 1791948378.411647,
+  "actual_kernel_limits": {
+    "cpu.max": "600000 100000",
+    "memory.max": "7516192768",
+    "memory.swap.max": "2147483648",
+    "pids.max": "128"
+  },
+  "ancestors": {
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-prepared-sequence-regression-01.service": {
+      "cpu.max": "600000 100000",
+      "memory.max": "7516192768",
+      "memory.swap.max": "2147483648",
+      "pids.max": "128"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup/user.slice/user-1000.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "41887"
+    },
+    "/sys/fs/cgroup/user.slice": {
+      "cpu.max": "max 100000",
+      "memory.max": "max",
+      "memory.swap.max": "max",
+      "pids.max": "max"
+    },
+    "/sys/fs/cgroup": {}
+  },
+  "affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "MemAvailable": 9168822272,
+  "SwapFree": 4891049984,
+  "global_nonblocking_lock": true,
+  "workers": 1,
+  "reason": "Authorized PR70 default native program sequence regression and real mapped integration; unchanged test_program_sequence.py --synthesize, no --full-v2. One serial worker, six CPUs/600%,7GiB RAM/2GiB swap/Tasks128. Related actual default divsqrt whole-backend synthesis peak8053063680bytes plus593715200bytes swap, no OOM. Current roughly9.1GB MemAvailable supports7GiB RAM plus fresh1GiB OS reserve;2GiB swap accommodates related measured working set and older installed Yosys0.9 mapping. Constraints reflect current available headroom, not the smaller cache/component job. Memory pressure is reported honestly and not assumed zero. No unrelated workload or full-pipeline performance measurement.",
+  "owned_descendants_after_payload": [],
+  "returncode": 0,
+  "wall_seconds": 3161.643753796001,
+  "kernel_final": {
+    "cpu.stat": "usage_usec 3041236463\nuser_usec 3024748604\nsystem_usec 16487859\ncore_sched.force_idle_usec 0\nnr_periods 31592\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+    "memory.peak": "7516192768",
+    "memory.events": "low 0\nhigh 0\nmax 2117\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.peak": "1597886464",
+    "pids.current": "1"
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "parents": {
+    "reviewed_pr70": "35c2cae61092107acb2c684bbca308aca8fb280b",
+    "merged_main": "5f28dd4363504ecf33a8f10451c53405773c564f"
+  },
+  "original_declaration": {
+    "path": "docs/validation/prepared-reciprocals/parent-source-bindings.json",
+    "sha256": "76db0119fe6a87d06838954b19049c7fcefa185d23027fe4adbd6dbca8f8636d"
+  },
+  "historical_manifests": {
+    "legacy53": {
+      "path": "docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json",
+      "sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7",
+      "source_count": 53
+    },
+    "sequence69": {
+      "path": "docs/validation/program-sequence-20261013/server-current/inputs.json",
+      "sha256": "3ef49b7f6ffbce270676aa5f45cecd344008a08009e19cf6184cecc04e29822b",
+      "source_count": 69
+    },
+    "prepared219": {
+      "path": "docs/validation/prepared-reciprocals/server/inputs.json",
+      "sha256": "e99a52558ba45e4a75635ac36e992a311ac07c0bd60ab075eeceb14489ad8227",
+      "source_count": 219
+    },
+    "regression73": {
+      "path": "docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json",
+      "sha256": "f70cacc7702f2a2ecd62a7e6761cc47ed15047d1313008772ccb5ef51b801fe2",
+      "source_count": 73
+    },
+    "regfile246": {
+      "path": "docs/validation/regfile-blake2b-20261013/server/inputs.json",
+      "sha256": "5235c3cff1de5ac3fcc16f56b7ccae07c9296f001179d3b99ce97cda9ff93328",
+      "source_count": 246
+    },
+    "finalizer259": {
+      "path": "docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json",
+      "sha256": "2a2af1d12308eb9a69a28df47a87181b7aa3148c08b3f9a96c188e05ad786912",
+      "source_count": 259
+    }
+  },
+  "executed_finalizer_manifest": {
+    "path": "docs/validation/scratchpad-finalization-20261013/server/inputs.json",
+    "sha256": "893a051b7a726f3454077ae63ee0eae217362ad56d171e6f768ffb624da91a21",
+    "source_count": 258
+  },
+  "successors": {
+    "rtl/execute/randomx_integer_execute.v": {
+      "kind": "reviewed_prepared_rtl",
+      "sha256": "7f605141b5696f9e39621f28ea3e4ab16723ce0b2c812ec7456f1e76090c0b09",
+      "validation_state": "reviewed_parent_source_match"
+    },
+    "rtl/execute/randomx_integer_iteration.v": {
+      "kind": "reviewed_prepared_rtl",
+      "sha256": "1de7700181aa5dfebfbd7a3b6aa971ad72c2c52fffe2c46938143e43093ff661",
+      "validation_state": "reviewed_parent_source_match"
+    },
+    "scripts/test_program_sequence.py": {
+      "kind": "reviewed_program_sequence_driver",
+      "sha256": "c2fae959e8b88b15e9c381c59da896eeb2b8faf0bf89400d907f32cb880904fc",
+      "validation_state": "reviewed_parent_source_match"
+    },
+    "scripts/test_regfile_blake2b.py": {
+      "kind": "binding_report_driver",
+      "sha256": "d443551cd186bb1020a76fa3439c26a917ffe584aac09487389e0b34d49e376e",
+      "validation_state": "staged_not_executed"
+    },
+    "scripts/test_scratchpad_finalization.py": {
+      "kind": "binding_report_driver",
+      "sha256": "24324e65a5ee429b32133ef73a06a1cf47695f12f0f5f70a9643ad0c6cdaadac",
+      "validation_state": "staged_not_executed"
+    },
+    ".github/workflows/integer-execute.yml": {
+      "kind": "workflow_dependency_triggers",
+      "sha256": "1b47936383540a6015aed7785668103f88e353979a44dfae7986485b6c486da9",
+      "validation_state": "staged_not_executed"
+    },
+    ".github/workflows/regfile-blake2b.yml": {
+      "kind": "workflow_dependency_triggers",
+      "sha256": "9119d79089df28f0f8543a25a228c2043201c0f856fc5717fa992cd50ca93deb",
+      "validation_state": "staged_not_executed"
+    },
+    ".github/workflows/scratchpad-finalization.yml": {
+      "kind": "workflow_dependency_triggers",
+      "sha256": "bb244c03e3e1f0de212c3d5db73f454b12d609dc000fd8c6faae230ec5bec45e",
+      "validation_state": "staged_not_executed"
+    }
+  },
+  "scope": "Additive source reconciliation of exact reviewed PR70 and merged main parents. Immutable historical maps and the original PR70 declaration remain preserved. The prepared219 and program-sequence-regression73 live inputs are strict and support retaining only their original evidence. The seed/finalizer drivers and workflow dependencies are staged metadata successors; this declaration performs no native, HDL or synthesis execution and grants no combined-context acceptance. Actual program-sequence, seed and finalizer --synthesize gates remain unconditional; fresh combined-context validation is recorded separately."
+}

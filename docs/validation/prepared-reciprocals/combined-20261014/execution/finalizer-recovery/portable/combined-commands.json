@@ -1,0 +1,15 @@
+[
+  {
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "scripts/test_scratchpad_finalization.py",
+      "--output",
+      "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization",
+      "--synthesize"
+    ],
+    "label": "finalization",
+    "returncode": 0,
+    "wall_seconds": 2573.404558083974
+  }
+]

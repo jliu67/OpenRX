@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "source_binding_checks": 1,
+  "parent_rejection_tests": 12,
+  "accounting_tests": 8,
+  "unexpected_failures": 0,
+  "complete_native_program_sequence_synthesis_replay": "deferred_unexecuted",
+  "fresh_scientific_native_simulation_synthesis": false,
+  "all219_scientific_input_bindings_unchanged": true,
+  "global_slot_released_after_payload": true,
+  "source_archive_sha256": "396f1634a84cc0e3f11412946d435c349bc3ec0e0b8e4e98b3e4a9c5330c69ab",
+  "output_archive_sha256": "8dd8f5d572cb12b86a0ce3472260150dc5aea583d80c6c03aec1c93fb365192b",
+  "complete_output_files": 11,
+  "complete_tar_inventory_bytes_and_original_modes_verified": true,
+  "kernel_peak_bytes": 21762048,
+  "swap_peak_bytes": 0,
+  "limit_oom_kill_throttle_events": 0,
+  "one_serial_worker": true
+}

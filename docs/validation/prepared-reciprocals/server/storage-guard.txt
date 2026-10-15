@@ -1,0 +1,23 @@
+
+7. Printing statistics.
+
+=== randomx_prepared_rcp_guard ===
+
+   Number of wires:                 40
+   Number of wire bits:            399
+   Number of public wires:          15
+   Number of public wire bits:     312
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 28
+     $and                            1
+     $eq                             5
+     $ge                             1
+     $logic_and                      9
+     $logic_not                      7
+     $logic_or                       2
+     $lt                             1
+     $mux                            1
+     $sub                            1
+

@@ -1,0 +1,9 @@
+{
+  "python": {
+    "invoked": "/usr/bin/python3",
+    "resolved": "/usr/bin/python3.10",
+    "sha256": "a2f33a6e006989270f4340528eb61f8f97366e00a5d1b602ac8672ea44fc56ae",
+    "version": "Python 3.10.12",
+    "capture": "post-check identity; journal uses /usr/bin/python3 in all commands"
+  }
+}

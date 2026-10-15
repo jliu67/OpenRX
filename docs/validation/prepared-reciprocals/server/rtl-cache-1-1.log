@@ -1,0 +1,1 @@
+PASS prepared_reciprocals prepare_rcp=1 stall=1 native_guard_packets=640 guard_rejections=4224 preparations=6 preparation_clocks=53096 load_reads=2020 fetches=1038 fetch_errors=13 native_rcp_metadata=673 native_nop_metadata=288 stale_load_errors=24 resets=1 cancels=4 held_load_fetch_prep=1 logical_image_invalidation=1 v2_to_v1_tail_invalid=1 unsigned_native_values=1

@@ -1,0 +1,14 @@
+{
+  "a_replacement_only": true,
+  "aes_64byte_groups": 32768,
+  "digest32_not_truncated64": true,
+  "directory": "<FINALIZER_RECOVERY_EXECUTION_ROOT>/combined-finalization/fixtures/full-actual-final7",
+  "input_register_sha256": "4bd288682ffe0f5f2395ba9d3429149487f4af942bed2988337651edc6237c90",
+  "input_scratchpad_sha256": "3d246e1712b76da87f6914b0241a4189c0f72e768f9798a4d1ec58bbc87b5a7b",
+  "kind": "accepted-full-native-v2-program7",
+  "memory_reads128": 131072,
+  "name": "full-actual-final7",
+  "scope": "native expected assertions; hardware receives only scratchpad and original raw register file",
+  "scratchpad_bytes": 2097152,
+  "seed": null
+}

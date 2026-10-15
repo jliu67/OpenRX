@@ -20,6 +20,7 @@ import time
 
 sys.dont_write_bytecode = True
 from scratchpad_finalization_fixture import prepare
+from combined_source_bindings import validate_context
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '4f095fc147b5bc78de79746a0a172f38e34d6450'
@@ -182,8 +183,7 @@ def main():
         assert sha(ROOT / ACCEPTED) == ACCEPTED_SHA, 'validated/frozen draft 246-source manifest identity'
         accepted = json.loads((ROOT / ACCEPTED).read_text())
         assert len(accepted) == 246
-        for path, digest in accepted.items():
-            assert sha(ROOT / path) == digest, 'validated/frozen draft source changed: ' + path
+        preserved = validate_context(ROOT, 'finalizer')
         run('vendor', ['python3', 'scripts/verify_vendor.py'])
         pins = [('rtl/aes/vendor/secworks/UPSTREAM.json', 'files'),
                 (HASH + 'vendor/blake2/manifest.json', 'original_files')]
@@ -201,11 +201,14 @@ def main():
         bound |= {'vendor/randomx/' + path for path in json.loads((ROOT / 'vendor/randomx.sha256.json').read_text())}
         bound |= {'docs/validation/program-sequence-20261013/full-v2-8x2048/final-7.hex.gz',
                   'docs/validation/program-sequence-20261013/full-v2-8x2048/program-registers.hex'}
+        bound.update(preserved['input_bindings'])
         input_hashes = {path: sha(ROOT / path) for path in sorted(bound)}
         save('inputs.json', input_hashes)
         save('preserved-inputs.json', {'validated_draft_parent': BASE, 'validated_draft_source_bindings': 246,
              'RandomX_original_files': 171, 'secworks_original_files': 3, 'BLAKE_original_files': 5,
-             'all_original_and_validated_draft_bytes_unchanged': True})
+             'all_original_IP_and_native_bytes_unchanged': True,
+             'all_original_and_validated_draft_bytes_unchanged': preserved['all_original_and_accepted_bytes_unchanged'],
+             **preserved})
         run('staging-guards', ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tests',
                               '-p', 'test_scratchpad_finalization_staging.py', '-v'])
         tools = {}

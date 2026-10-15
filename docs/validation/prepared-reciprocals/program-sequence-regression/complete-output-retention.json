@@ -1,0 +1,1006 @@
+{
+  "output": "/tmp/openrx-prepared-program-sequence-regression-01",
+  "files": {
+    "compile-rtl-cancel.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "rtl-0-0.log": {
+      "sha256": "86d3163ad768a577553e773b97d2779174f4e06c409757c85b25568ee6e0d91d",
+      "bytes": 323,
+      "mode": "0o664"
+    },
+    "mapped-control-1-0.log": {
+      "sha256": "33e1a4033c9a70170129d709638066fc868fc20836747664494cdf8c7a4b5b6f",
+      "bytes": 325,
+      "mode": "0o664"
+    },
+    "rtl-cancel.vvp": {
+      "sha256": "c4bcbb1a16a14274423f6ed80a56b916bab9d67bcaab1ea62eb9b70c94b86007",
+      "bytes": 3566337,
+      "mode": "0o755"
+    },
+    "rtl-program-reset-0.vvp": {
+      "sha256": "88ccd2fb73962eceddbe2b4d398c39c2e2b010e2367abda16802df9c50b10abd",
+      "bytes": 3593139,
+      "mode": "0o755"
+    },
+    "mapped-control-0-0.vvp": {
+      "sha256": "48a4c188994ae18044949f77922afb849a7e703aa28aee9f090b2daaf0b6d887",
+      "bytes": 10546644,
+      "mode": "0o755"
+    },
+    "netlist-control-default.v": {
+      "sha256": "9cfa89fda8d264631a02b793b98c51ba1713796406867fe763838f8cf0751bd1",
+      "bytes": 1207936,
+      "mode": "0o664"
+    },
+    "rtl-0-1.log": {
+      "sha256": "4d1223ab88bbef3a96905588a9f83dd0e7e03d55befa86b46a9640bc22f3cdfb",
+      "bytes": 331,
+      "mode": "0o664"
+    },
+    "rtl-program-reset-0.log": {
+      "sha256": "39ae3c0eec550f21cb9d266e67e467f44e7dd595a88565b434507ab19d8e3e05",
+      "bytes": 155,
+      "mode": "0o664"
+    },
+    "HardFloat-compile-view.json": {
+      "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5",
+      "bytes": 745,
+      "mode": "0o664"
+    },
+    "compile-mapped-cancel.log": {
+      "sha256": "171ec58af83f07147e368540d98f38b90fa0f2c2900ac4550c33db39ded47d01",
+      "bytes": 311,
+      "mode": "0o664"
+    },
+    "compile-vpi.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o664"
+    },
+    "netlist-sequence-default.v": {
+      "sha256": "051438a9144db6d98a96732717728971cff186157c1bf68627b4741bbc20975c",
+      "bytes": 23113878,
+      "mode": "0o664"
+    },
+    "preserved-inputs.json": {
+      "sha256": "d8bfc4c09a102ef3d0ff765883e21f3921dd94ac7a6b3124c33aea61cad92adb",
+      "bytes": 1877,
+      "mode": "0o664"
+    },
+    "rtl-1-1.vvp": {
+      "sha256": "2ba65b845f0ef7fe04b6e04d6412ecc8cadf8d5a35fbe29fe41baede171be90b",
+      "bytes": 3593140,
+      "mode": "0o755"
+    },
+    "rtl-cancel.log": {
+      "sha256": "1cee47ca9f6528843c103a5509a9c23e06274fbb8d60f886fa90937e2a26c081",
+      "bytes": 286,
+      "mode": "0o664"
+    },
+    "rtl-first.vvp": {
+      "sha256": "7f498135fecf692bb7211ad419ec7b41b9b0a5b3ea6bb571688ebefaaeef8aa3",
+      "bytes": 3593122,
+      "mode": "0o755"
+    },
+    "mapped-program-reset-0.vvp": {
+      "sha256": "8a2702084482a6234144b27275e3e945c89fca8bba798ac261743c4c7f575527",
+      "bytes": 10546644,
+      "mode": "0o755"
+    },
+    "mapped-first.vvp": {
+      "sha256": "8a21d4269b982a2f117921b5fdf8d4a390f9569c926668bd4d26096cc0b57907",
+      "bytes": 80742585,
+      "mode": "0o755"
+    },
+    "pinned_iteration.inc": {
+      "sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "bytes": 3571,
+      "mode": "0o664"
+    },
+    "compile-mapped-control-1-0.log": {
+      "sha256": "b62a5f13b320fee11e26d0c29ddefcbd44dddd0d882b2227de3804dcb6fd3069",
+      "bytes": 5717,
+      "mode": "0o664"
+    },
+    "compile-oracle.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o664"
+    },
+    "compile-rtl-1-1.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "commands.json": {
+      "sha256": "694d2850d3dfd5fd0e9fb25a383bf4374eadd237f9a95d2fe5604f2e81ff3ad2",
+      "bytes": 45896,
+      "mode": "0o664"
+    },
+    "mapped-cancel.vvp": {
+      "sha256": "a778ad7e6af9ac1647aa8b29adb6740a35d1486ae378a11e50a7da9d6bcd5284",
+      "bytes": 80716213,
+      "mode": "0o755"
+    },
+    "mapped-control-1-1.log": {
+      "sha256": "15455fe64170e9d892095d0ec02af15a605e66e5ff385d422203632f63b6217c",
+      "bytes": 333,
+      "mode": "0o664"
+    },
+    "LICENSE-secworks": {
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80",
+      "bytes": 1303,
+      "mode": "0o664"
+    },
+    "rtl-program-reset-1.vvp": {
+      "sha256": "2888ec337ea249b1b0bee9d346a553e5da321bc35cc4c3433f8a2f160786a174",
+      "bytes": 3593140,
+      "mode": "0o755"
+    },
+    "mapped-program-reset-1.vvp": {
+      "sha256": "2a4442a58b6791c0bada637b217288052f5b1d03e31d9c4a8bfc3fb88794feb1",
+      "bytes": 10546645,
+      "mode": "0o755"
+    },
+    "compile-mapped-control-default.log": {
+      "sha256": "0b5b482b92b3bdc8ff2bc1db9b1b714bc4388e84ebfe7e811f8b4617ec07893b",
+      "bytes": 309,
+      "mode": "0o664"
+    },
+    "netlist-control-short.v": {
+      "sha256": "ed7459976d28867a0c932fe515a119f89cb58f073b6f34ea222708cf11812cb6",
+      "bytes": 1208427,
+      "mode": "0o664"
+    },
+    "synth-control-short.log": {
+      "sha256": "ddf36446d17cbeed75f748267829f01690f18fa364f28bc9d106b63232be2956",
+      "bytes": 69629,
+      "mode": "0o664"
+    },
+    "compile-rtl-first.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "oracle-v2-short.log": {
+      "sha256": "ef3799a66e7343eea1902419a349ae04c0599dadaaaf2b0f15c41be49034ac65",
+      "bytes": 135,
+      "mode": "0o664"
+    },
+    "pinned_dataset_read.inc": {
+      "sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "bytes": 1652,
+      "mode": "0o664"
+    },
+    "compile-rtl-0-0.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "invalid-0-2048.log": {
+      "sha256": "d899514037653116c11371082a6b067dcccb52cfad885846248feeca1d9ca712",
+      "bytes": 297,
+      "mode": "0o664"
+    },
+    "synth-sequence-default.log": {
+      "sha256": "cdf29fc0a6d3bf947a0ed884882206dfbf36b798039383f0e0bed4d98d9cd4a4",
+      "bytes": 79421528,
+      "mode": "0o664"
+    },
+    "oracle-v1-short.log": {
+      "sha256": "a37a60750e623af069aaa7fdfdc310e743ddb735f6153127440dd65bf5805bd9",
+      "bytes": 134,
+      "mode": "0o664"
+    },
+    "compile-mapped-control-0-0.log": {
+      "sha256": "b62a5f13b320fee11e26d0c29ddefcbd44dddd0d882b2227de3804dcb6fd3069",
+      "bytes": 5717,
+      "mode": "0o664"
+    },
+    "mapped-cancel.log": {
+      "sha256": "1cee47ca9f6528843c103a5509a9c23e06274fbb8d60f886fa90937e2a26c081",
+      "bytes": 286,
+      "mode": "0o664"
+    },
+    "mapped-program-reset-1.log": {
+      "sha256": "c15ea1430dc342382e00860366218916a00c4f71ca6e14f8275f1acdd674313b",
+      "bytes": 155,
+      "mode": "0o664"
+    },
+    "pinned_bytecode_loop.inc": {
+      "sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "bytes": 1680,
+      "mode": "0o664"
+    },
+    "inputs.json": {
+      "sha256": "f70cacc7702f2a2ecd62a7e6761cc47ed15047d1313008772ccb5ef51b801fe2",
+      "bytes": 8166,
+      "mode": "0o664"
+    },
+    "mapped-control-0-1.log": {
+      "sha256": "4d1223ab88bbef3a96905588a9f83dd0e7e03d55befa86b46a9640bc22f3cdfb",
+      "bytes": 331,
+      "mode": "0o664"
+    },
+    "oracle-v2-first.log": {
+      "sha256": "29066742250556263602da3517af991e125dfdb2e1c336216f0e2ce36b21278c",
+      "bytes": 132,
+      "mode": "0o664"
+    },
+    "vendor.log": {
+      "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98",
+      "bytes": 32,
+      "mode": "0o664"
+    },
+    "rtl-control.log": {
+      "sha256": "329f4ca49814b9cbcb1e6ac943d7ca4606717d8e51abe9b4590dc490533af9d4",
+      "bytes": 213,
+      "mode": "0o664"
+    },
+    "rtl-0-1.vvp": {
+      "sha256": "90a396ad9cc7c48abda297eb8aed53d43318a600900f0f299ca6b79eb012b760",
+      "bytes": 3593139,
+      "mode": "0o755"
+    },
+    "compile-rtl-0-1.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "synth-control-default.log": {
+      "sha256": "1a01368427fb565779fa6f4c7a63e15e53b9eb27243094519cf0f8390314b452",
+      "bytes": 69162,
+      "mode": "0o664"
+    },
+    "mapped-program-reset-0.log": {
+      "sha256": "39ae3c0eec550f21cb9d266e67e467f44e7dd595a88565b434507ab19d8e3e05",
+      "bytes": 155,
+      "mode": "0o664"
+    },
+    "compile-mapped-first.log": {
+      "sha256": "171ec58af83f07147e368540d98f38b90fa0f2c2900ac4550c33db39ded47d01",
+      "bytes": 311,
+      "mode": "0o664"
+    },
+    "netlist-sequence-default.json": {
+      "sha256": "8c8e221f1eadd84d04d253e8515d9d9831acf08585abb4fbdb7bb8370d8641ed",
+      "bytes": 189673543,
+      "mode": "0o664"
+    },
+    "LICENSE-RandomX": {
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e",
+      "bytes": 1561,
+      "mode": "0o664"
+    },
+    "compile-mapped-control-1-1.log": {
+      "sha256": "b62a5f13b320fee11e26d0c29ddefcbd44dddd0d882b2227de3804dcb6fd3069",
+      "bytes": 5717,
+      "mode": "0o664"
+    },
+    "rtl-1-1.log": {
+      "sha256": "15455fe64170e9d892095d0ec02af15a605e66e5ff385d422203632f63b6217c",
+      "bytes": 333,
+      "mode": "0o664"
+    },
+    "oracle": {
+      "sha256": "137ba98631f8695dd39e1ef954ec7f874a04e221152f10ae4d9d94096eee054c",
+      "bytes": 70544,
+      "mode": "0o775"
+    },
+    "stat-control-short.txt": {
+      "sha256": "33a9122897984fa42db20d63065a9b66da7f718740796b8597a126c3f145e3a8",
+      "bytes": 957,
+      "mode": "0o664"
+    },
+    "stat-control-default.txt": {
+      "sha256": "160581a4c7366ed6fcdba1d7c9e903552a66fb12281621967a56ac1c7dc2dfff",
+      "bytes": 957,
+      "mode": "0o664"
+    },
+    "tools.json": {
+      "sha256": "e59193bc50325c4d85447eb6d9022fb541e29c3a351a8e852e98b7969623d54d",
+      "bytes": 4494,
+      "mode": "0o664"
+    },
+    "mapped-control-0-0.log": {
+      "sha256": "86d3163ad768a577553e773b97d2779174f4e06c409757c85b25568ee6e0d91d",
+      "bytes": 323,
+      "mode": "0o664"
+    },
+    "invalid-8-2049.log": {
+      "sha256": "d899514037653116c11371082a6b067dcccb52cfad885846248feeca1d9ca712",
+      "bytes": 297,
+      "mode": "0o664"
+    },
+    "artifacts.sha256.json": {
+      "sha256": "167723c705ca4940322b85cf4ae6ee240d55d028106e529bfbaee28ed65d0761",
+      "bytes": 18917,
+      "mode": "0o664"
+    },
+    "compile-rtl-1-0.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "compile-rtl-program-reset-0.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "pinned_program_initialize.inc": {
+      "sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "bytes": 2849,
+      "mode": "0o664"
+    },
+    "mapped-first.log": {
+      "sha256": "d6c01d10207d26d53021d74e77f6dbc4b5f14fb090256dc0d164ba3c63661b62",
+      "bytes": 180,
+      "mode": "0o664"
+    },
+    "compile-mapped-program-reset-1.log": {
+      "sha256": "b62a5f13b320fee11e26d0c29ddefcbd44dddd0d882b2227de3804dcb6fd3069",
+      "bytes": 5717,
+      "mode": "0o664"
+    },
+    "invalid-9-2048.log": {
+      "sha256": "d899514037653116c11371082a6b067dcccb52cfad885846248feeca1d9ca712",
+      "bytes": 297,
+      "mode": "0o664"
+    },
+    "compile-mapped-program-reset-0.log": {
+      "sha256": "b62a5f13b320fee11e26d0c29ddefcbd44dddd0d882b2227de3804dcb6fd3069",
+      "bytes": 5717,
+      "mode": "0o664"
+    },
+    "compile-mapped-control-0-1.log": {
+      "sha256": "b62a5f13b320fee11e26d0c29ddefcbd44dddd0d882b2227de3804dcb6fd3069",
+      "bytes": 5717,
+      "mode": "0o664"
+    },
+    "rtl-1-0.vvp": {
+      "sha256": "2a039d562dcd14d44cfc38af5f2560e76cc306f0de5280082a7c299a9ea27c2a",
+      "bytes": 3593140,
+      "mode": "0o755"
+    },
+    "rtl-1-0.log": {
+      "sha256": "33e1a4033c9a70170129d709638066fc868fc20836747664494cdf8c7a4b5b6f",
+      "bytes": 325,
+      "mode": "0o664"
+    },
+    "rtl-control.vvp": {
+      "sha256": "78f476960b243d2113611c941d8de56cca503c234ae6b53bb82db568077fb399",
+      "bytes": 112189,
+      "mode": "0o755"
+    },
+    "mapped-control-default.log": {
+      "sha256": "329f4ca49814b9cbcb1e6ac943d7ca4606717d8e51abe9b4590dc490533af9d4",
+      "bytes": 213,
+      "mode": "0o664"
+    },
+    "pinned_scratchpad_address.inc": {
+      "sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "bytes": 1688,
+      "mode": "0o664"
+    },
+    "stat-sequence-default.txt": {
+      "sha256": "98474bb58d22f18d796994723382d90e0e0b72dd35cf15b1276fc2624ad482c6",
+      "bytes": 998,
+      "mode": "0o664"
+    },
+    "netlist-control-default.json": {
+      "sha256": "44ffba12f939a244ecdca2a2fbee523dfadfbc6f03c5bf3340be04982ccc47da",
+      "bytes": 11566940,
+      "mode": "0o664"
+    },
+    "mapped-control-0-1.vvp": {
+      "sha256": "f5898bc1cd526ef32e3350c994efba15b898444409452eec5a531fd193b43e01",
+      "bytes": 10546644,
+      "mode": "0o755"
+    },
+    "program_source.vpi": {
+      "sha256": "db6d73642cb07fb0dd099798e336e4195100b6d3d747f43184921d7a1e02bccd",
+      "bytes": 50728,
+      "mode": "0o775"
+    },
+    "extraction.json": {
+      "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "bytes": 1802,
+      "mode": "0o664"
+    },
+    "invalid-8-0.log": {
+      "sha256": "d899514037653116c11371082a6b067dcccb52cfad885846248feeca1d9ca712",
+      "bytes": 297,
+      "mode": "0o664"
+    },
+    "summary.json": {
+      "sha256": "b10e169fb9574697a333c2d9fcec6d9ceb97e08e7ab5841032726e350f6c9b8b",
+      "bytes": 14427,
+      "mode": "0o664"
+    },
+    "program-extraction.json": {
+      "sha256": "239fa5418e514ab64e9893601c2b034c9155a5fdfd5e90ff7d9bf1c459c09e94",
+      "bytes": 420,
+      "mode": "0o664"
+    },
+    "compile-rtl-program-reset-1.log": {
+      "sha256": "2acad9cb00ff74471928b32564c8530449e00e8f30df01ae6497286cf630fe9a",
+      "bytes": 5679,
+      "mode": "0o664"
+    },
+    "rtl-program-reset-1.log": {
+      "sha256": "c15ea1430dc342382e00860366218916a00c4f71ca6e14f8275f1acdd674313b",
+      "bytes": 155,
+      "mode": "0o664"
+    },
+    "pinned_destructor.inc": {
+      "sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "bytes": 1552,
+      "mode": "0o664"
+    },
+    "netlist-control-short.json": {
+      "sha256": "576f6193827e054f72c9942aabac7f949cb25b042f0a247a7d1f5c6aa5feb299",
+      "bytes": 11571706,
+      "mode": "0o664"
+    },
+    "compile-rtl-control.log": {
+      "sha256": "6c7dc024b59cab38b509e627daf30524f148cbb246b03a37fe8cc45a0dc59a52",
+      "bytes": 269,
+      "mode": "0o664"
+    },
+    "rtl-first.log": {
+      "sha256": "d6c01d10207d26d53021d74e77f6dbc4b5f14fb090256dc0d164ba3c63661b62",
+      "bytes": 180,
+      "mode": "0o664"
+    },
+    "LICENSE-HardFloat": {
+      "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603",
+      "bytes": 1514,
+      "mode": "0o664"
+    },
+    "pinned_program_float_helpers.inc": {
+      "sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2",
+      "bytes": 2211,
+      "mode": "0o664"
+    },
+    "pinned_float_masks.inc": {
+      "sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "bytes": 1918,
+      "mode": "0o664"
+    },
+    "mapped-control-default.vvp": {
+      "sha256": "2f3fab20085dde37e72ef6b9c4bba70e14ad323a18d3e562140d9f1c7d9da5ce",
+      "bytes": 7062397,
+      "mode": "0o755"
+    },
+    "HardFloat-divSqrt-compile-view.v": {
+      "sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3",
+      "bytes": 15488,
+      "mode": "0o664"
+    },
+    "rtl-0-0.vvp": {
+      "sha256": "7a3e25b9ccbdc66c7313e62524d286f7f6736ef38f4e296781d960214a6b2489",
+      "bytes": 3593139,
+      "mode": "0o755"
+    },
+    "mapped-control-1-1.vvp": {
+      "sha256": "3e18c13c60f967fd9ba79108325c12fe75e7b89bd4a364eeb3d1d08be05519ff",
+      "bytes": 10546645,
+      "mode": "0o755"
+    },
+    "LICENSE-OpenRX": {
+      "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108",
+      "bytes": 1803,
+      "mode": "0o664"
+    },
+    "mapped-control-1-0.vvp": {
+      "sha256": "8eebf275721f73c0b1964793b36ff8ece0e13577ef86e18d62433f7823d3ebce",
+      "bytes": 10546645,
+      "mode": "0o755"
+    },
+    "v1-short/actual-program-4.mem": {
+      "sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/final-5.hex": {
+      "sha256": "ca2af9f1d09313e9ba8b8a4b8c1480e8c6e77cf671d570b31db14c057ba0799d",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/program-2.mem": {
+      "sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/metadata.hex": {
+      "sha256": "8edde208de4a0920f42766c86710f35a540edfad2ef43b3e47d661014bfa557e",
+      "bytes": 3645,
+      "mode": "0o664"
+    },
+    "v1-short/metadata.mem": {
+      "sha256": "3c66c588af71a36e248b908b15331f44ac8b232e6e84eca8b641e97c7e5cf9d0",
+      "bytes": 3616,
+      "mode": "0o664"
+    },
+    "v1-short/actual-program-0.mem": {
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/initial.hex": {
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/oracle-summary.json": {
+      "sha256": "ab08fd824f2281e6ab430a7c90fe378c4475ebe071d21bb16fafb5ef818576c0",
+      "bytes": 377,
+      "mode": "0o664"
+    },
+    "v1-short/final-6.hex": {
+      "sha256": "ffb18a0676638d6f30e6fee82dd70975c747381a4e2e805da8caba3ff09aaecb",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/actual-program-1.mem": {
+      "sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/actual-program-3.mem": {
+      "sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/program-5.mem": {
+      "sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/final-1.hex": {
+      "sha256": "86b86f2d20b233e6311e7f4bd616e312aa725fc739e4c77ffe461ba16c691f9b",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/actual-program-6.mem": {
+      "sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/events.mem": {
+      "sha256": "6cbec69312dcc38f42f5e8e1cb8e3f873701969a68eed00509220b99443e58fa",
+      "bytes": 42665,
+      "mode": "0o664"
+    },
+    "v1-short/iterations.hex": {
+      "sha256": "df5c833580df430574224809b817bb6557cc49500ca70060b8a045638346de22",
+      "bytes": 19284,
+      "mode": "0o664"
+    },
+    "v1-short/actual-program-5.mem": {
+      "sha256": "b6185810e8db1737bdcb892d7f97ae4d3579c9904e8fd648f924e642eabf9b0c",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/program-6.mem": {
+      "sha256": "4ec2d0ff100f818f02c55e23f099505a9578f1c27ed88aea36302c0cceb2d4a2",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/actual-initial.hex": {
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/iterations.mem": {
+      "sha256": "a0906f58aa6ecf94f58caf8b247c2d2780d80bfdbe10859e43d494e560f9bc19",
+      "bytes": 20288,
+      "mode": "0o664"
+    },
+    "v1-short/accesses.hex": {
+      "sha256": "ad2a58b7f701bfdbcf9279178d1547bdcbb94a9d5c046b9fb3076903bff4a963",
+      "bytes": 41910,
+      "mode": "0o664"
+    },
+    "v1-short/actual-program-7.mem": {
+      "sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/program-7.mem": {
+      "sha256": "98103ad8a8471b41e8a87ced29d750e2b508d01cd1bee7aec888e1f1d81ff9c0",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/final-4.hex": {
+      "sha256": "98d02305c29bf3b034f09342955e2b21c4c96aaae58703b6071a208721e09acc",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/final-0.hex": {
+      "sha256": "fa16a10bd9d6f68c6093330776bc7a065b7a276057e69153e9806a781059647d",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/program-0.mem": {
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/program-1.mem": {
+      "sha256": "43808c1be5701c41cf6ecb157011f7972fd878abf329235931f961ad4df6c296",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/program-4.mem": {
+      "sha256": "30ac7d078b5e4053a3f032b205b521ef77487030b3be4671e06ad4d9231ca53a",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/program-registers.hex": {
+      "sha256": "f491ca68094871a20fe6a9fe8639609e6cd7f1c7b9b9dfe4ace8669b87ef211d",
+      "bytes": 4136,
+      "mode": "0o664"
+    },
+    "v1-short/program-3.mem": {
+      "sha256": "387e5c5748f95779c52318768f9aee515e38521ed31d60c04adf756806a89ae2",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/actual-program-2.mem": {
+      "sha256": "fef8a21286e753e742945d49297ad9b6cb06dbefcd3a2153076685d0d3749ab1",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v1-short/sequence_sizes.vh": {
+      "sha256": "b981b1ef763cdc23ce7dbc9385bc603a8bec5a77900e62dffe863696ca491358",
+      "bytes": 82,
+      "mode": "0o664"
+    },
+    "v1-short/final-2.hex": {
+      "sha256": "9a0a3f467e695b4d65402a7ebdf998b00ee8158ed8356722dbc49863473ca5d4",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/final-7.hex": {
+      "sha256": "528d86da4577d34cd59ff4b8dd4e1fdd00c48bb92da783d771d6390f30057b2c",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v1-short/final-3.hex": {
+      "sha256": "bedb1b2b59002dbc6a949854aba1907eca1ef72858fd7ca12c201c65a84ea69c",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/final-5.hex": {
+      "sha256": "ee057027bf3d1823d7fe5e2afe4a90483dad4d10cdbde2ec4417a920414d331a",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/program-2.mem": {
+      "sha256": "4f8934d8b8a3bc6d68b4a8a2eb92a9a1e83b3d088e86920c867824378c844b1c",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/metadata.hex": {
+      "sha256": "77efd0cc6d75532fc4105e78620a4167f8b3a74a4860133fe092529f13d6de8f",
+      "bytes": 3644,
+      "mode": "0o664"
+    },
+    "v2-first/metadata.mem": {
+      "sha256": "10fb735975cd35f66b85ca89988b664988f2f488a2812b22775350009584fc2c",
+      "bytes": 3616,
+      "mode": "0o664"
+    },
+    "v2-first/actual-program-0.mem": {
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/initial.hex": {
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/oracle-summary.json": {
+      "sha256": "816c8a28a8c6d48fe67f2655ae04c6e3c2a69f39b409a1dc9184edf3228f928c",
+      "bytes": 375,
+      "mode": "0o664"
+    },
+    "v2-first/final-6.hex": {
+      "sha256": "fb5851f0f8f0db36787ea9f86988309c70648d1c49574bae4b294c94759c87b6",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/program-5.mem": {
+      "sha256": "bc4266c1b378a51bc98661cf2630e74f2e2e35e9318248da164a9c5ef512c493",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/final-1.hex": {
+      "sha256": "1f59a91afcac72e36370f0abc963bc08187f81214e726c442ea3cae0369bf14f",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/events.mem": {
+      "sha256": "7332e2cb0c78812b89ad69e3ce06e9208a09c95b2f96e828be6965b3706977ef",
+      "bytes": 14743,
+      "mode": "0o664"
+    },
+    "v2-first/iterations.hex": {
+      "sha256": "6315fce23e8318e45409377c6c1b0aab172a88b66952448e7735d81c807af239",
+      "bytes": 4814,
+      "mode": "0o664"
+    },
+    "v2-first/program-6.mem": {
+      "sha256": "0901b66c993906251be5b4e47ffa26dbc58e0e35c6fefbd0a88c40f51b9c6386",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/actual-initial.hex": {
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/iterations.mem": {
+      "sha256": "be54a8f35c3c1a882363a7998e4d066d0f3ae596493b67384b618329f28153d4",
+      "bytes": 5072,
+      "mode": "0o664"
+    },
+    "v2-first/accesses.hex": {
+      "sha256": "6a9e1fc7cf75980be55416218d786eda45cb913fd05eda8f6aab51456a2fc549",
+      "bytes": 14500,
+      "mode": "0o664"
+    },
+    "v2-first/program-7.mem": {
+      "sha256": "32094a06a6f695a6c984340fb3ab55ee7808f98a5bbd41553acabd5aa5a41683",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/final-4.hex": {
+      "sha256": "741dfe16fe692fa08c4ad7acaa091ea77fffef0e49d8aef65c5e515aa3429e00",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/final-0.hex": {
+      "sha256": "2a61302e6509eca54b62b3da2722c509c3eee2cae4b1c16c8522f9e393abe3cb",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/program-0.mem": {
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/program-1.mem": {
+      "sha256": "70e6b57a009dd981efc5c4b5f9ddcb3d00b3176e9b7026bd20d774518136eb01",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/program-4.mem": {
+      "sha256": "c36844c81c2b309790a38d5cec0d1f85c6cccc89130e622565d6862685140245",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/program-registers.hex": {
+      "sha256": "03ce321277580878f931eb7e16a06f2314606687c21c013fe8c6d03bd34a6105",
+      "bytes": 4136,
+      "mode": "0o664"
+    },
+    "v2-first/program-3.mem": {
+      "sha256": "e91bc4fe55bc411587f0ca4d0b551ffb4657342bc60186e2911066f73599919e",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-first/sequence_sizes.vh": {
+      "sha256": "f8567e129ff5730f4b6caf2eded4aa8f37135831c360f9bc8930f48c545243c4",
+      "bytes": 80,
+      "mode": "0o664"
+    },
+    "v2-first/final-2.hex": {
+      "sha256": "7a01e7aaf681ff491c00df29c99458777bcd99b96fc6e2e219ba0b2a16b41038",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/final-7.hex": {
+      "sha256": "01d2b74a8e633b37642b8d605432b6021d2210e4b6fb0ec54d34f082aab23826",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-first/final-3.hex": {
+      "sha256": "8f54a040b9b0cf5cc3fc853f272cf38de576ae12a2b914fbf0bfd5870b8e9704",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-4.mem": {
+      "sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/final-5.hex": {
+      "sha256": "d92413bd7a20ba5680a9bf19eb450143737c7dc5093783120f1271bfa329ec27",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/program-2.mem": {
+      "sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/metadata.hex": {
+      "sha256": "fa8eefc70ec9e8b541471717d9cd7e13ea12c83a5569dcc559d67073e405b7ae",
+      "bytes": 3642,
+      "mode": "0o664"
+    },
+    "v2-short/metadata.mem": {
+      "sha256": "6bf00140d66999599330532175186ffd550171b580e2a4d2999ce5ba708dd714",
+      "bytes": 3616,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-0.mem": {
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/initial.hex": {
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/oracle-summary.json": {
+      "sha256": "7e50065e7c6a77beb7d44c96663035f96aa28a2cb247706bc836091b9c42dca9",
+      "bytes": 379,
+      "mode": "0o664"
+    },
+    "v2-short/final-6.hex": {
+      "sha256": "955c76f7a3714954b8eec329109c13f09f0dde6285c2bc692311a6b1c2313f6b",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-1.mem": {
+      "sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-3.mem": {
+      "sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/program-5.mem": {
+      "sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/final-1.hex": {
+      "sha256": "121df7ab281d1c98e5fd703a777bae455a0150223a4d15b194f7768ded98b264",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-6.mem": {
+      "sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/events.mem": {
+      "sha256": "432947e0cefe9a07ee839a737b334612bda20c5a340e7fac907119c93fc8440c",
+      "bytes": 59064,
+      "mode": "0o664"
+    },
+    "v2-short/iterations.hex": {
+      "sha256": "91bfbfff55923c6c013a8cdff82af7f3206c7e3d823df9aca3053673fdc947c0",
+      "bytes": 19296,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-5.mem": {
+      "sha256": "cd5ef8fe4ffe94a968b223dbe236137427b16f8cfb82003c2a9be310f2933f2d",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/program-6.mem": {
+      "sha256": "80f7e55829a72835e664d2e303534e3e9d2f639d9f5a0d2ef3f0a2babb553140",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/actual-initial.hex": {
+      "sha256": "454fd425aeece1e87124c09182b439d97d8ee6758b0d24a3951454b79c59a364",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/iterations.mem": {
+      "sha256": "7b3fa80505803f9667fe247842e59c6b99b4e5e87f617380e66bd4c1b132f8f9",
+      "bytes": 20288,
+      "mode": "0o664"
+    },
+    "v2-short/accesses.hex": {
+      "sha256": "e720e2146675e2d135ee61322eee586b3147471fc8cf5a51d894e72d20afbd9b",
+      "bytes": 57737,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-7.mem": {
+      "sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/program-7.mem": {
+      "sha256": "18ac22db4a3cdb9a41d39a959f68d9d48f1a67796cae7eca2eab36b7d0444f44",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/final-4.hex": {
+      "sha256": "8d653aaeeb6f964a3098629350d7ae191ba4f41327c336145c632e3f9c81a8ac",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/final-0.hex": {
+      "sha256": "88cda23b8b6f1f9ec2b30f8555815e267f681d9dd431d9e056ac30fe80cd4ca9",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/program-0.mem": {
+      "sha256": "a96468cebfd1a644703f2d5a5b2c2cba1b778d3d8301b4aad246d48d845ad533",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/program-1.mem": {
+      "sha256": "73b78342484b7066462f40ed57b71f0c0f2a90bd84e18586d808f44e1366ae9c",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/program-4.mem": {
+      "sha256": "b8dfd511799cd7054c7207317d8499172d175f4783d91cccc30109bb1048cc47",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/program-registers.hex": {
+      "sha256": "8804210cd859626fca7cdc82d573c0012a81dff4db18a3b4d756d6139dd5e719",
+      "bytes": 4136,
+      "mode": "0o664"
+    },
+    "v2-short/program-3.mem": {
+      "sha256": "5d208246ca6ab4e9b90c9417b4c6e84f4296fde4acf4d93964dc1a4dbcfcd815",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/actual-program-2.mem": {
+      "sha256": "4608844baf2a29a4e3eb123cb84d37d57b9e4c3fe7b80aad1973a3853e0baa4a",
+      "bytes": 6528,
+      "mode": "0o664"
+    },
+    "v2-short/sequence_sizes.vh": {
+      "sha256": "bdeb54dd8f5838a63cb706fa1f97f3a43c35a8cd7dc9848bdf6275e17fbdcd60",
+      "bytes": 83,
+      "mode": "0o664"
+    },
+    "v2-short/final-2.hex": {
+      "sha256": "b59cf0ad6b7fbadbc5a968162fa8524b34ffeda07a937d0114dd22d4f604780b",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/final-7.hex": {
+      "sha256": "d6f5d4c440d15ef774372f1cb9a4ae05e478ac506f3c694990598d8d845fe52f",
+      "bytes": 4325376,
+      "mode": "0o664"
+    },
+    "v2-short/final-3.hex": {
+      "sha256": "8f8956490f7ff909e02e940d1eb59ad3a9f11df6e28d81f9b9739bd20e92345c",
+      "bytes": 4325376,
+      "mode": "0o664"
+    }
+  },
+  "file_count": 198,
+  "archive": "/home/server/Documents/Codex/2026-10-11/task-2/program-sequence-regression-evidence/regression-output01.tar.gz",
+  "archive_sha256": "4f662a9da460beb9b1ff6275dbdba21aef8b93eddea5fb20fc0c5b958fb5a2a2",
+  "complete_tar_inventory_bytes_and_original_modes_verified": true,
+  "read_only_execute_preserved": true,
+  "archive_bytes": 119156140,
+  "git_file_limit_bytes": 104857600,
+  "published_archive_in_git": false,
+  "reason": "Complete archive exceeds GitHub100MiB file limit; retain entire verified archive and readonly output on authorized server under source-retention policy. No Git LFS/install/release or archive splitting.",
+  "github_file_limit_source": "https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github",
+  "duplicate_preserved": "/home/server/Documents/Codex/2026-10-11/task-2/program-sequence-regression-evidence/oversize-publication-copy.tar.gz"
+}
