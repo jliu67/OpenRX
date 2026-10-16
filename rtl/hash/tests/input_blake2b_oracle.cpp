@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Native expected digests call unchanged pinned blake2b.c only.
+#include <stddef.h>
 #include "blake2/blake2.h"
 #include <array>
 #include <cstdint>
