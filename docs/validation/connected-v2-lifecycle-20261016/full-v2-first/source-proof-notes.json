@@ -1,0 +1,4 @@
+{
+  "earlier_read_only_archive_attempt": "A streaming git archive comparison ended with a bare AssertionError and is not accepted as binding evidence. No source was mutated.",
+  "accepted_replacement": "public-source-proof.json verifies every git ls-tree/cat-file blob, size and execute bit directly against all4106 frozen manifest rows."
+}

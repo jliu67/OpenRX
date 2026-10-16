@@ -1,0 +1,82 @@
+[
+  {
+    "package": "flex",
+    "path": "usr/bin/flex++",
+    "original_target": "flex",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "4cabd101467c6b428e3fd9b5a7dee0785b3108657ae0a5d85947956329d7047b"
+  },
+  {
+    "package": "flex",
+    "path": "usr/bin/lex",
+    "original_target": "flex",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "4cabd101467c6b428e3fd9b5a7dee0785b3108657ae0a5d85947956329d7047b"
+  },
+  {
+    "package": "flex",
+    "path": "usr/share/man/man1/flex++.1.gz",
+    "original_target": "flex.1.gz",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "d4846b0181951fb83dd2f8f5ca168f4fbe0c84a90aca1d3805659b3601819cf5"
+  },
+  {
+    "package": "flex",
+    "path": "usr/share/man/man1/lex.1.gz",
+    "original_target": "flex.1.gz",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "d4846b0181951fb83dd2f8f5ca168f4fbe0c84a90aca1d3805659b3601819cf5"
+  },
+  {
+    "package": "libfl2",
+    "path": "usr/lib/x86_64-linux-gnu/libfl.so.2",
+    "original_target": "libfl.so.2.0.0",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "5185b288296cad6112b49d9b7333e2de26ccb5e50b27a304c2f37e620112d8ba"
+  },
+  {
+    "package": "libfl-dev",
+    "path": "usr/lib/x86_64-linux-gnu/libfl.so",
+    "original_target": "libfl.so.2.0.0",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "5185b288296cad6112b49d9b7333e2de26ccb5e50b27a304c2f37e620112d8ba"
+  },
+  {
+    "package": "libfl-dev",
+    "path": "usr/lib/x86_64-linux-gnu/libl.a",
+    "original_target": "libfl.a",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "071bbc813b32bdcc088bcb121ae46883ae5951b0bf2528e88928a0ec0c1d93cd"
+  },
+  {
+    "package": "libfl-dev",
+    "path": "usr/share/doc/libfl-dev/NEWS.Debian.gz",
+    "original_target": "../flex/NEWS.Debian.gz",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "a772a4cdf7c97ebd7e41fea23a6774a7600c7800596c6c82b721d7a13db0f5f9"
+  },
+  {
+    "package": "libfl-dev",
+    "path": "usr/share/doc/libfl-dev/README.md.gz",
+    "original_target": "../flex/README.md.gz",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "bc1e6efead9521d46512a374a95bb5c3d3145693bb9827676c8b6e630bea449a"
+  },
+  {
+    "package": "libfl-dev",
+    "path": "usr/share/doc/libfl-dev/changelog.Debian.gz",
+    "original_target": "../flex/changelog.Debian.gz",
+    "hardlink": false,
+    "derivation": "regular byte-identical alias",
+    "sha256": "ad35235790b0e86c2734952d057f38d557262c8b18c4a622bb5d8af9d7211a83"
+  }
+]

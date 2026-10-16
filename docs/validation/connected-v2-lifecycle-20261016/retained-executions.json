@@ -1,0 +1,267 @@
+{
+  "attempt03-not-admitted": {
+    "directory": "/home/server/Documents/Codex/2026-10-11/task-2/connected-v2-lifecycle-evidence-20261016/attempt03",
+    "execution": null,
+    "files": {
+      "submit.stderr": {
+        "bytes": 130,
+        "sha256": "4981d08c864368db72335e6a8f9780466376274f6f769666fd262abb859ea0ec"
+      },
+      "submit.stdout": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "simulation_result": null,
+    "status": "not_admitted_missing_accepted_tool_receipt"
+  },
+  "failed-compile01": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T003327Z-886c521e8e09",
+    "files": {
+      "manifest.json": {
+        "bytes": 754615,
+        "sha256": "82b66d20fb92758819d9f837ee6498a2adcdc8e6ae5777613cebefd3069d80d7"
+      },
+      "receipt.json": {
+        "bytes": 11206,
+        "sha256": "8d8ea6e11e72bb6225a1a24f4fb50112c91ec4780979c3dfb4cea7a73b9b4eac"
+      },
+      "stderr.log": {
+        "bytes": 3385,
+        "sha256": "0b5b020eb30e924925327e5091e42bfa959d55ed2b2fb5e801f61831f2b137e8"
+      },
+      "stdout.log": {
+        "bytes": 181,
+        "sha256": "f3c2d5316638f00c35b85f4a08004625ea4963796401bf8058995f2caa94c3ef"
+      }
+    },
+    "finalizer_errors": [],
+    "process": {
+      "finished_at": "2026-10-16T00:33:36.684986+00:00",
+      "returncode": 1,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_FAILED"
+    }
+  },
+  "failed-tool-finalization01": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T005347Z-7ecf4d0d9dcf",
+    "files": {
+      "manifest.json": {
+        "bytes": 755023,
+        "sha256": "4b5f885edeceb03abbaa0d47a5ad8f116fb918ddf79feb4ae106f4b1356f91f5"
+      },
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 2754,
+        "sha256": "07a7620961ec882946eb274f2da978b61d32a02913a81d61fd27dfafce2d995a"
+      }
+    },
+    "finalizer_errors": [
+      "/home/server/openrx-local/v1/executions/20261016T005347Z-7ecf4d0d9dcf/finalizer-timeout-error-19c9e42dd430442c9547b6121dc13d11.json"
+    ]
+  },
+  "full-v2-first": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T010320Z-b2c8ed47ab4c",
+    "files": {
+      "manifest.json": {
+        "bytes": 1593700,
+        "sha256": "6628ebbe41257675443ce59269436358b6dc868ed7500413601f552d3c3af4a0"
+      },
+      "receipt.json": {
+        "bytes": 41185,
+        "sha256": "992096b5d44e7375a98af6ea6e0c50fdfb253a5c6f7e438216a82d79fb4f7f6a"
+      },
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 359,
+        "sha256": "03fc94785d2effe0ecd3b471c610020ceb0a692571bd8b56a15e888d8fceb66c"
+      }
+    },
+    "finalizer_errors": [],
+    "process": {
+      "finished_at": "2026-10-16T01:44:44.833321+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "source": {
+      "base": "aebe30a0c2d1547fed6b66976ba0757b4b66389a",
+      "files": 4106,
+      "git_metadata": false,
+      "read_only": true,
+      "source": "/tmp/openrx-connected-v2-attempt05-fmxu0t7x/source"
+    },
+    "source_manifest_sha256": "d322bd2399d8b935fd02a09c5f5e90edc9ca4588e8aec397d807d8d9795c6f2b"
+  },
+  "icarus-bounded": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T003513Z-18a0cadf8aeb",
+    "files": {
+      "manifest.json": {
+        "bytes": 754625,
+        "sha256": "706c7ef652f55ae784606edc090fbc8d0c3f78a7a93974878b2ae1dc72edf9ad"
+      },
+      "receipt.json": {
+        "bytes": 14296,
+        "sha256": "8db2050673f5b068a75e09a5228fb2e69d2fc7120690065b83e23e2221a0fc94"
+      },
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 446,
+        "sha256": "0e2616b431fe61857d784f492636293daed0d19f31e49e89c2e3ecf5ea922062"
+      }
+    },
+    "finalizer_errors": [],
+    "process": {
+      "finished_at": "2026-10-16T00:51:33.292177+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    }
+  },
+  "icarus-capacity": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T020318Z-caa9e8d3a25c",
+    "files": {
+      "manifest.json": {
+        "bytes": 766808,
+        "sha256": "5032232a71d252104daa797ca5770d79e64f74931f841fd0a64cb6c7b1d9ca2a"
+      },
+      "receipt.json": {
+        "bytes": 15197,
+        "sha256": "a57778ec2494a79c1d6addc487efd1d62c3b12b805e5f57c3baaf4eaa31605ec"
+      },
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 475,
+        "sha256": "d23843d97d65c5738133b2a482d4ad8ed00a48ade0bea6ff26b26626ff9388fb"
+      }
+    },
+    "finalizer_errors": [],
+    "process": {
+      "finished_at": "2026-10-16T02:03:28.554368+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "source": {
+      "base": "aebe30a0c2d1547fed6b66976ba0757b4b66389a",
+      "feature_parent": "c96e96ab1eb46cb727b21befffa526e637ebed4a",
+      "files": 4170,
+      "git_metadata": false,
+      "read_only": true,
+      "source": "/tmp/openrx-connected-v2-attempt07-irhlnh0e/source"
+    },
+    "source_manifest_sha256": "56108c243c4aeb0e9c807fc674301701cce8cb0d0cf2d57ed53aea2806075007"
+  },
+  "recovery-paired": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T014629Z-8c43e1ea115d",
+    "files": {
+      "manifest.json": {
+        "bytes": 1605433,
+        "sha256": "50442a11fce22e6196ba6c4d88aa09def104110dba7b1f70f09f10a6c825b209"
+      },
+      "receipt.json": {
+        "bytes": 533615,
+        "sha256": "05ec9d10429792f9eb438444976b344144b9a8be060fcacd282bd5d54b3c887b"
+      },
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 2810,
+        "sha256": "c949db7d06b17669331f0d5b737aa12cbf592530ac51dcbf638e74b167c4e338"
+      }
+    },
+    "finalizer_errors": [],
+    "process": {
+      "finished_at": "2026-10-16T02:02:08.218727+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "source": {
+      "base": "aebe30a0c2d1547fed6b66976ba0757b4b66389a",
+      "feature_parent": "c96e96ab1eb46cb727b21befffa526e637ebed4a",
+      "files": 4170,
+      "git_metadata": false,
+      "read_only": true,
+      "source": "/tmp/openrx-connected-v2-attempt06-0gnyih5b/source"
+    },
+    "source_manifest_sha256": "593854d954960da5c024497ed30c1b56bbfac2a72d43335b23293544937c4d59"
+  },
+  "tool-build02": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4",
+    "files": {
+      "manifest.json": {
+        "bytes": 755023,
+        "sha256": "aa3a4c3b034f39311402880ad005c8f77564f65652badc8b43d2788c3b4f16ea"
+      },
+      "receipt.json": {
+        "bytes": 1636828,
+        "sha256": "0c0b59dd20ed177dd879ee6924005d223be58d51a9821da3e36a2f29e44427bc"
+      },
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 2598,
+        "sha256": "84ab1741874d132ca21086b0c3ffd0695f298755eb63ede11c94d7245c101d40"
+      }
+    },
+    "finalizer_errors": [],
+    "process": {
+      "finished_at": "2026-10-16T01:00:22.306297+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    }
+  },
+  "verilator-bounded": {
+    "directory": "/home/server/openrx-local/v1/executions/20261016T010110Z-84a498089b69",
+    "files": {
+      "manifest.json": {
+        "bytes": 1593696,
+        "sha256": "665c90002590d228731caf3a9952032a52ddf0a19b1d31b717aac561a859cf92"
+      },
+      "receipt.json": {
+        "bytes": 62701,
+        "sha256": "6c981b18a868406be68c8c2ca69a97802927c9866b0b47348e72410056ba622f"
+      },
+      "stderr.log": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout.log": {
+        "bytes": 458,
+        "sha256": "58fdd59a5880bc1187ff004039959cb3cb4d70c6bc8951a3fada21250de3ed53"
+      }
+    },
+    "finalizer_errors": [],
+    "process": {
+      "finished_at": "2026-10-16T01:02:55.505263+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    }
+  }
+}

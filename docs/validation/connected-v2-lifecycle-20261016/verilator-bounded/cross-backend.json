@@ -1,0 +1,20 @@
+{
+  "icarus_execution": "/home/server/openrx-local/v1/executions/20261016T003513Z-18a0cadf8aeb",
+  "verilator_execution": "/home/server/openrx-local/v1/executions/20261016T010110Z-84a498089b69",
+  "bounded_only": true,
+  "results": {
+    "baseline-ideal": {
+      "pass_record_equal": true,
+      "closing_cycle_ledger_and_traffic_equal": true,
+      "record": "PASS prepared_hash_lifecycle prepared=0 programs=1 iterations_per_program=1 stall=0 total_iterations=1 actual_instructions=384 bytecode_events=88 admissions=1 loaded_words=384 hardware_seeds=0 initial_writes=131072 final_reads=131072 cycles=528407 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1"
+    },
+    "prepared-ideal": {
+      "pass_record_equal": true,
+      "closing_cycle_ledger_and_traffic_equal": true,
+      "record": "PASS prepared_hash_lifecycle prepared=1 programs=1 iterations_per_program=1 stall=0 total_iterations=1 actual_instructions=384 bytecode_events=88 admissions=1 loaded_words=384 hardware_seeds=0 initial_writes=131072 final_reads=131072 cycles=528407 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1"
+    },
+    "initial.hex": "byte-identical",
+    "final-0.hex": "byte-identical",
+    "final-a.hex": "byte-identical"
+  }
+}

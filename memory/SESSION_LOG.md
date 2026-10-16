@@ -922,3 +922,22 @@ Next: hosted verification and a new independent review of the final exact draft
 [PR #70](https://github.com/jliu67/OpenRX/pull/70) head, recorded on task #69. No own
 merge or new milestone is authorized. This interrupted integration closes here;
 recurring checks remain paused. Earlier dated sections retain their original context.
+
+
+## 2026-10-16 — first default connected native-v2 RTL hash
+
+Task71/draftPR73 source c96e96ab passes 8×2,048 with actual native light dataset
+values, all iteration states/bytecode events, seven hardware seeds, every 2 MiB
+program boundary and native final32-byte digest. Full immutable execution
+20261016T010320Z-b2c8ed47ab4c exits0; integrity verification passes; 4,106 complete
+public source blobs/sizes/execute bits match its frozen source. Total known
+hardware/transport clocks40,975,538; provider device cost, frequency, watts and
+area remain unknown. Initial duplicate-module compile, failed tool symlink
+finalization and unadmitted tool-reuse attempt remain retained unchanged.
+Serial successor execution20261016T014629Z-8c43e1ea115d passes four8×2 hash
+modes, six cancellations, eight matching errors, capacity/reset and31 unit checks;
+receipt integrity verifies. A fresh Icarus capacity-only check separately covers
+four-state behavior. Source deltas distinguish this successor from full c96; the
+default full hash was not rerun on it. Independent final-head review remains.
+[Experiment/evidence](../experiments/EXP-014-connected-v2-lifecycle.md). No own merge
+or architectural commitment. Earlier stopped/audit work is not resumed.

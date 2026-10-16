@@ -1,5 +1,24 @@
 # Current state — actual local execution activation
 
+## 2026-10-16 — first default connected v2 hash
+
+[Task #71](https://github.com/jliu67/OpenRX/issues/71) / [draft PR #73](https://github.com/jliu67/OpenRX/pull/73)
+passes one native-reference-correct 8×2,048 v2 hash from exact public source
+`c96e96ab1eb46cb727b21befffa526e637ebed4a`: 16,384 iteration states, 6,306,885
+retirements, 1,434,807 bytecode events, eight admissions, seven hardware seeds,
+all 2 MiB per program and final digest. Immutable execution
+`20261016T010320Z-b2c8ed47ab4c` exits0 and integrity verifies; its disjoint
+hardware/transport total is 40,975,538 clocks. [EXP-014](../experiments/EXP-014-connected-v2-lifecycle.md)
+separates actual native light dataset values/software initialization/generation
+from unknown physical timing/power. Whole-machine target remains 1 MH/s below
+2,500 W including memories, PHY/controllers, fans and PSU losses. No architecture
+choice or own merge follows. The separately validated recovery/observer successor passes four 8×2 hash modes,
+six cancellation modes, eight matching errors, batch/hash capacity and drained
+reset recovery, plus 31 unit checks. A separate Icarus capacity-only check covers
+four-state behavior. Exact consumed-source deltas remain explicit; full 8×2,048
+was not rerun on the successor. Independent final-head review remains required. Earlier dated status
+sections retain their original source-specific context.
+
 ## 2026-10-15 — PR70 combined-source recovery closeout
 
 [Task #69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70

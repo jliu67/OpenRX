@@ -1,0 +1,2 @@
+PASS lifecycle_capacity programs=8 exact_capacity_allowed=1 insufficient_batch_refused=1 hash_wrap_refused=1 drained_reset_recovery=1
+- rtl/hash/tests/tb_prepared_hash_lifecycle.v:353: Verilog $finish

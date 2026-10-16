@@ -283,3 +283,19 @@ Composite closeout binds both runner attempts and retains original failure;
 neither source-only checks nor partial/skipped execution can satisfy a gate.
 Publication changes only declared metadata/evidence; new exact-head independent
 review remains required. No full prepared hash, physical PPA or own merge follows.
+
+
+## D052 — connect actual native values before architecture feasibility, 2026-10-16
+
+Use captured input and actual hardware-derived seeds for native software fill/
+program callbacks; use unchanged pinned initDatasetItem values rather than an
+addressed placeholder. Keep callback host seconds and unknown device/physical
+cost separate from a closing transport/hardware ledger. Prove one complete default
+v2 hash against unchanged randomx_calculate_hash, then validate recovery and
+namespace reservation independently. Reserve a whole batch's image epochs before
+admission; preserve generations across cancel/error and require drained transports
+before hard reset. Retain exact full-source evidence and declared successors.
+First correctness proof selects no engine count, issue width, scratchpad arrangement,
+process or memory technology; physical efficiency and independent review remain
+separate gates. [Task71](https://github.com/jliu67/OpenRX/issues/71) /
+[EXP-014](../experiments/EXP-014-connected-v2-lifecycle.md).

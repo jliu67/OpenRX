@@ -1,0 +1,2 @@
+PASS prepared_hash_lifecycle prepared=0 programs=8 iterations_per_program=2 stall=1 total_iterations=16 actual_instructions=6167 bytecode_events=1334 admissions=8 loaded_words=3072 hardware_seeds=7 initial_writes=131072 final_reads=131072 cycles=1658825 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1
+- rtl/hash/tests/tb_prepared_hash_lifecycle.v:696: Verilog $finish

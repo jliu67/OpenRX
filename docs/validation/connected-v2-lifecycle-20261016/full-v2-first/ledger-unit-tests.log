@@ -1,0 +1,15 @@
+test_closing_partition (test_lifecycle_ledger.LedgerTest) ... ok
+test_logical_dataset_size_is_not_materialized_bytes (test_lifecycle_ledger.LedgerTest) ... ok
+test_native_work_counts_must_match (test_lifecycle_ledger.LedgerTest) ... ok
+test_negative_or_fractional_cycles_rejected (test_lifecycle_ledger.LedgerTest) ... ok
+test_nonclosing_nested_partition (test_lifecycle_ledger.LedgerTest) ... ok
+test_nonclosing_outer_partition (test_lifecycle_ledger.LedgerTest) ... ok
+test_partial_beat_traffic_rejected (test_lifecycle_ledger.LedgerTest) ... ok
+test_provider_seconds_cannot_become_device_cycles (test_lifecycle_ledger.LedgerTest) ... ok
+test_stalls_cannot_be_added_as_an_outer_stage (test_lifecycle_ledger.LedgerTest) ... ok
+test_useful_bytes_cannot_exceed_bus_traffic (test_lifecycle_ledger.LedgerTest) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+OK

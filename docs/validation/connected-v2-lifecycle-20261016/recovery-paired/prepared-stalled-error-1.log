@@ -1,0 +1,2 @@
+PASS lifecycle_matching_error port=1 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1
+- rtl/hash/tests/tb_prepared_hash_lifecycle.v:422: Verilog $finish

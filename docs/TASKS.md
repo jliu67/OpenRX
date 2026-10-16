@@ -1,5 +1,22 @@
 # OpenRX project board
 
+## Connected hash and accepted-parent status — 2026-10-16
+
+PR [65](https://github.com/jliu67/OpenRX/pull/65), [68](https://github.com/jliu67/OpenRX/pull/68)
+and [70](https://github.com/jliu67/OpenRX/pull/70) are merged; accepted parent main
+is `aebe30a0c2d1547fed6b66976ba0757b4b66389a`. Their earlier draft/review statements
+below retain dated publication context. [Task #71](https://github.com/jliu67/OpenRX/issues/71)
+/ [draft PR #73](https://github.com/jliu67/OpenRX/pull/73) proves one full default
+8×2,048 connected v2 RTL hash with actual native dataset values and final digest.
+[EXP-014](../experiments/EXP-014-connected-v2-lifecycle.md) binds exact c96 source,
+full result and software/physical boundaries. The separately validated successor
+passes four 8×2 hash modes, six cancellations, eight matching errors, capacity/reset
+checks and 31 unit tests, with a separate four-state capacity check. Independent
+final-head review remains required. Architecture
+feasibility [#72](https://github.com/jliu67/OpenRX/issues/72) remains secondary,
+with no selected architecture or physical-efficiency acceptance. #16/M1–M5 gates
+and all historical evidence remain unchanged.
+
 ## Native register-file hashing — task #64, 2026-10-13
 
 [Task #64](https://github.com/jliu67/OpenRX/issues/64) connects native hardware BLAKE2b seeds above independently accepted PR63 `990f36830c5a9854bf8e2cf1fe7fd7d4ccf7f192` ([review](https://github.com/jliu67/OpenRX/pull/63#pullrequestreview-5505712453)). All 18 RTL/17 mapped modes pass: balanced 524 native messages per 32/64-byte digest, held/reset/errors, four actual hardware-seed chains and eight native cancellation modes. Hash/bridge latency is 56/58 modeled clocks, last-program bypass zero; exactly seven seeds per eight programs adds 414 fixture clocks in each profile. Actual new-stage mapping includes 1,024 inherited latches, reported separately from flops; it excludes the preserved backend. [Design](../rtl/hash/README.md), [EXP-011](../experiments/EXP-011-native-regfile-blake2b.md) and [evidence](../docs/validation/regfile-blake2b-20261013/README.md) retain exact sources/outputs/resources/failures. At initial publication, new independent review and hosted verification are pending; subsequent results are recorded on task #64 and the draft PR. No merge is authorized. Full dataset, external AES stages, complete hardware finalization and physical PPA remain open. Earlier component sections retain their dated boundaries; 69 accepted inputs, 171 native files and five IP originals and all original assets remain unchanged.

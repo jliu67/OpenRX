@@ -1,0 +1,549 @@
+{
+  "backend": "verilator",
+  "balanced_variant_cycle_comparison": true,
+  "base": "aebe30a0c2d1547fed6b66976ba0757b4b66389a",
+  "boundary": "Software input BLAKE2b, scratchpad AES fill, AES program generation and pinned native light dataset provider; hardware scratchpad transport, immutable preparation, execution, 7 interprogram hashes, finalizer/digest. Provider host seconds are separate. No complete ASIC, physical DRAM timing, MHz or watts claim.",
+  "cancellation": {
+    "prepared-stalled-cancel-1": "PASS lifecycle_cancel phase=1 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+    "prepared-stalled-cancel-2": "PASS lifecycle_cancel phase=2 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+    "prepared-stalled-cancel-3": "PASS lifecycle_cancel phase=3 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+    "prepared-stalled-cancel-4": "PASS lifecycle_cancel phase=4 completed_iterations=2 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+    "prepared-stalled-cancel-5": "PASS lifecycle_cancel phase=5 completed_iterations=16 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+    "prepared-stalled-cancel-6": "PASS lifecycle_cancel phase=6 completed_iterations=16 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1"
+  },
+  "canonical_reference": {
+    "bounded_iteration_profile": true,
+    "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+    "canonical_host_seconds": 0,
+    "canonical_randomx_calculate_hash_verified": false,
+    "dataset": "pinned initDatasetItem native light mode",
+    "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642052616e646f6d58207632206c6966656379636c65203230323631303136"
+  },
+  "capacity_checks": {
+    "prepared-ideal-capacity": "PASS lifecycle_capacity programs=8 exact_capacity_allowed=1 insufficient_batch_refused=1 hash_wrap_refused=1 drained_reset_recovery=1"
+  },
+  "compile_only": false,
+  "device_frequency_hz": null,
+  "event_trace": true,
+  "full_v2_requested": false,
+  "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642052616e646f6d58207632206c6966656379636c65203230323631303136",
+  "interfaces_only": false,
+  "iterations": 2,
+  "matching_errors": {
+    "prepared-stalled-error-1": "PASS lifecycle_matching_error port=1 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-2": "PASS lifecycle_matching_error port=2 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-3": "PASS lifecycle_matching_error port=3 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-4": "PASS lifecycle_matching_error port=4 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-5": "PASS lifecycle_matching_error port=5 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-6": "PASS lifecycle_matching_error port=6 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-7": "PASS lifecycle_matching_error port=7 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-8": "PASS lifecycle_matching_error port=8 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1"
+  },
+  "native_library": {
+    "PIC_flags_sha256": "db413b693f8ed729e283b5c0fd25ceaf541d825933b89f9d1ff1a84584b8707a",
+    "build_sha256": "293080fda2fb9bc1f29424c05d5a0e4b26da5142d28398247c4bc3394995c975",
+    "execution": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71",
+    "library": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+    "manifest_sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d",
+    "native_source_files_verified": 171,
+    "receipt_sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc",
+    "reconfigured_or_modified": false,
+    "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+  },
+  "native_reference": {
+    "branches": 585,
+    "bytecode_events": 1334,
+    "cfround": 22,
+    "dataset": "pinned initDatasetItem actual native dataset, light mode",
+    "dynamic_active_reciprocals": 190,
+    "fp": 2174,
+    "initialization_program_generation_interprogram_BLAKE2b_final_hash": "software providers separately timed; hardware seed/finalizer connected by lifecycle",
+    "instruction_steps": 6167,
+    "iterations_per_program": 2,
+    "native_default_iterations": 2048,
+    "native_default_programs": 8,
+    "programs": 8,
+    "static_active_reciprocals": 95,
+    "total_iterations": 16,
+    "v2": 1
+  },
+  "paired_cycle_comparisons": {
+    "ideal": {
+      "dynamic_active_reciprocals": 190,
+      "execution_saved_cycles": 12540,
+      "measured_reciprocal_cycles_each": 66,
+      "native_work_and_common_stages_equal": true,
+      "net_saved_cycles": 6270,
+      "physical_timing_or_power_accepted": false,
+      "preparation_added_cycles": 6270,
+      "static_active_reciprocals": 95
+    },
+    "stalled": {
+      "dynamic_active_reciprocals": 190,
+      "execution_saved_cycles": 12540,
+      "measured_reciprocal_cycles_each": 66,
+      "native_work_and_common_stages_equal": true,
+      "net_saved_cycles": 6270,
+      "physical_timing_or_power_accepted": false,
+      "preparation_added_cycles": 6270,
+      "static_active_reciprocals": 95
+    }
+  },
+  "physical_area": null,
+  "power_watts": null,
+  "profiles": {
+    "baseline-ideal": {
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 1.6227e-05,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.836844765,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 0.000420639,
+        "dataset_requests": 16,
+        "initialization_host_seconds": 0.088926893,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0.001712355,
+        "program_generations": 8,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null
+      },
+      "ledger": {
+        "cycles": 583950,
+        "dataset_logical_bytes": 1024,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "logical_bytecode_memory_bytes": 10672,
+        "logical_entry_bytes": 2048,
+        "logical_tail_bytes": 2048,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          6167,
+          6167,
+          6167,
+          1001,
+          1001,
+          333,
+          0,
+          16,
+          0,
+          911,
+          911,
+          190,
+          12350,
+          1788,
+          1788,
+          244,
+          13467
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          393225,
+          1,
+          57,
+          1
+        ],
+        "nested_iteration_phases": [
+          16,
+          64,
+          64,
+          64,
+          64,
+          0,
+          16,
+          52501,
+          16,
+          16,
+          16,
+          144
+        ],
+        "nested_reply_waits": {
+          "dataset": 16,
+          "program": 3072,
+          "scratchpad": 132201
+        },
+        "nested_stalls": {
+          "dataset_request": 0,
+          "program_load": 0,
+          "sp_request": 0,
+          "sp_write": 0
+        },
+        "physical_port_read_bytes": 2115216,
+        "physical_port_write_bus_bytes": 2104528,
+        "preparation_reciprocals": 0,
+        "program_image_load_bytes": 24576,
+        "runtime_reciprocals": 190,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 34,
+          "execution": 52981,
+          "finalization": 393286,
+          "held_return": 1,
+          "initialization_transport": 131074,
+          "interprogram_seed": 414,
+          "program_preparation": 6160
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 0,
+          "metadata": 0,
+          "program": 0,
+          "scratchpad": 0
+        },
+        "strobed_write_bytes": 2101864,
+        "untimed_provider_device_cycles": null
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=0 programs=8 iterations_per_program=2 stall=0 total_iterations=16 actual_instructions=6167 bytecode_events=1334 admissions=8 loaded_words=3072 hardware_seeds=7 initial_writes=131072 final_reads=131072 cycles=583950 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "trace_sha256": "74ea3e8035ef68907408c7b199725318de079138a79743eb0bf4c11ca9abe8ef"
+    },
+    "baseline-stalled": {
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 1.5107e-05,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.844345334,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 0.0004379770000000001,
+        "dataset_requests": 16,
+        "initialization_host_seconds": 0.082200259,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0.0017495389999999998,
+        "program_generations": 8,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null
+      },
+      "ledger": {
+        "cycles": 1658825,
+        "dataset_logical_bytes": 1024,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "logical_bytecode_memory_bytes": 10672,
+        "logical_entry_bytes": 2048,
+        "logical_tail_bytes": 2048,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          6167,
+          6167,
+          6167,
+          3003,
+          5005,
+          999,
+          0,
+          16,
+          0,
+          911,
+          911,
+          190,
+          12350,
+          1788,
+          1788,
+          244,
+          13467
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          1179657,
+          1,
+          57,
+          1
+        ],
+        "nested_iteration_phases": [
+          16,
+          192,
+          320,
+          192,
+          320,
+          0,
+          16,
+          59173,
+          48,
+          80,
+          16,
+          400
+        ],
+        "nested_reply_waits": {
+          "dataset": 80,
+          "program": 15360,
+          "scratchpad": 661005
+        },
+        "nested_stalls": {
+          "dataset_request": 32,
+          "program_load": 6144,
+          "sp_request": 264402,
+          "sp_write": 263066
+        },
+        "physical_port_read_bytes": 2115216,
+        "physical_port_write_bus_bytes": 2104528,
+        "preparation_reciprocals": 0,
+        "program_image_load_bytes": 24576,
+        "runtime_reciprocals": 190,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 82,
+          "execution": 60773,
+          "finalization": 1179718,
+          "held_return": 4,
+          "initialization_transport": 393218,
+          "interprogram_seed": 438,
+          "program_preparation": 24592
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 32,
+          "metadata": 16,
+          "program": 6144,
+          "scratchpad": 264402
+        },
+        "strobed_write_bytes": 2101864,
+        "untimed_provider_device_cycles": null
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=0 programs=8 iterations_per_program=2 stall=1 total_iterations=16 actual_instructions=6167 bytecode_events=1334 admissions=8 loaded_words=3072 hardware_seeds=7 initial_writes=131072 final_reads=131072 cycles=1658825 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "trace_sha256": "8a302dd0217f679881901396cab2bc564d99cd3b17cd21d2754e85200d3ca2d1"
+    },
+    "prepared-ideal": {
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 1.6617e-05,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.846029102,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 0.000433182,
+        "dataset_requests": 16,
+        "initialization_host_seconds": 0.086771041,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0.0016319289999999998,
+        "program_generations": 8,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null
+      },
+      "ledger": {
+        "cycles": 577680,
+        "dataset_logical_bytes": 1024,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "logical_bytecode_memory_bytes": 10672,
+        "logical_entry_bytes": 2048,
+        "logical_tail_bytes": 2048,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          6167,
+          6167,
+          6167,
+          1001,
+          1001,
+          333,
+          0,
+          16,
+          0,
+          911,
+          911,
+          0,
+          0,
+          1788,
+          1788,
+          244,
+          13467
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          393225,
+          1,
+          57,
+          1
+        ],
+        "nested_iteration_phases": [
+          16,
+          64,
+          64,
+          64,
+          64,
+          0,
+          16,
+          39961,
+          16,
+          16,
+          16,
+          144
+        ],
+        "nested_reply_waits": {
+          "dataset": 16,
+          "program": 3072,
+          "scratchpad": 132201
+        },
+        "nested_stalls": {
+          "dataset_request": 0,
+          "program_load": 0,
+          "sp_request": 0,
+          "sp_write": 0
+        },
+        "physical_port_read_bytes": 2115216,
+        "physical_port_write_bus_bytes": 2104528,
+        "preparation_reciprocals": 95,
+        "program_image_load_bytes": 24576,
+        "runtime_reciprocals": 0,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 34,
+          "execution": 40441,
+          "finalization": 393286,
+          "held_return": 1,
+          "initialization_transport": 131074,
+          "interprogram_seed": 414,
+          "program_preparation": 12430
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 0,
+          "metadata": 0,
+          "program": 0,
+          "scratchpad": 0
+        },
+        "strobed_write_bytes": 2101864,
+        "untimed_provider_device_cycles": null
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=1 programs=8 iterations_per_program=2 stall=0 total_iterations=16 actual_instructions=6167 bytecode_events=1334 admissions=8 loaded_words=3072 hardware_seeds=7 initial_writes=131072 final_reads=131072 cycles=577680 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "trace_sha256": "61e9db0584f83b1b446eb0f19edf3246a08e217734cb08c125240f6c3bd0b85d"
+    },
+    "prepared-stalled": {
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 1.6618e-05,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.839128806,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 0.0004167990000000001,
+        "dataset_requests": 16,
+        "initialization_host_seconds": 0.083057175,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0.001706225,
+        "program_generations": 8,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null
+      },
+      "ledger": {
+        "cycles": 1652555,
+        "dataset_logical_bytes": 1024,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "logical_bytecode_memory_bytes": 10672,
+        "logical_entry_bytes": 2048,
+        "logical_tail_bytes": 2048,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          6167,
+          6167,
+          6167,
+          3003,
+          5005,
+          999,
+          0,
+          16,
+          0,
+          911,
+          911,
+          0,
+          0,
+          1788,
+          1788,
+          244,
+          13467
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          1179657,
+          1,
+          57,
+          1
+        ],
+        "nested_iteration_phases": [
+          16,
+          192,
+          320,
+          192,
+          320,
+          0,
+          16,
+          46633,
+          48,
+          80,
+          16,
+          400
+        ],
+        "nested_reply_waits": {
+          "dataset": 80,
+          "program": 15360,
+          "scratchpad": 661005
+        },
+        "nested_stalls": {
+          "dataset_request": 32,
+          "program_load": 6144,
+          "sp_request": 264402,
+          "sp_write": 263066
+        },
+        "physical_port_read_bytes": 2115216,
+        "physical_port_write_bus_bytes": 2104528,
+        "preparation_reciprocals": 95,
+        "program_image_load_bytes": 24576,
+        "runtime_reciprocals": 0,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 82,
+          "execution": 48233,
+          "finalization": 1179718,
+          "held_return": 4,
+          "initialization_transport": 393218,
+          "interprogram_seed": 438,
+          "program_preparation": 30862
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 32,
+          "metadata": 16,
+          "program": 6144,
+          "scratchpad": 264402
+        },
+        "strobed_write_bytes": 2101864,
+        "untimed_provider_device_cycles": null
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=1 programs=8 iterations_per_program=2 stall=1 total_iterations=16 actual_instructions=6167 bytecode_events=1334 admissions=8 loaded_words=3072 hardware_seeds=7 initial_writes=131072 final_reads=131072 cycles=1652555 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "trace_sha256": "9432ffef00d784fa79a59c30c95b9a913c6cd4356f627d8997b66e93ced41ccf"
+    }
+  },
+  "programs": 8,
+  "schema": "openrx.connected-prepared-v2.v1",
+  "simulation_state_model": "two-state; bounded cross-check with Icarus required",
+  "source_unchanged_after_run": true,
+  "status": "pass_connected_native_reference",
+  "tools": {
+    "g++": {
+      "path": "/usr/bin/x86_64-linux-gnu-g++-11",
+      "sha256": "2360901d864cf10bfd6296e261cb2c14053552a80377761ab07146ec9ec9a2c0",
+      "version": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    "iverilog": {
+      "path": "/usr/bin/iverilog",
+      "sha256": "1ba67856249142771239573b5d51c7f6e4d67a1e7931a0d0fab56e0d473d2167",
+      "version": "Icarus Verilog version 11.0 (stable) ()\n\nCopyright 1998-2020 Stephen Williams\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 11.0 (stable) ()\n\nCopyright (c) 1999-2020 Stephen Williams (steve@icarus.com)\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 11.0 (stable) ()\n\nCopyright (c) 1998-2020 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 11.0 (stable) ()\n\nCopyright (c) 2001-2020 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n"
+    },
+    "verilator": {
+      "binary_sha256": "d7f6b1ccd5b83ae7cfb1a7ea1778504cf86a29245b4249e1820df9b8978d1ab1",
+      "receipt_sha256": "0c0b59dd20ed177dd879ee6924005d223be58d51a9821da3e36a2f29e44427bc",
+      "root": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "version": "Verilator 5.020 2024-01-01 rev UNKNOWN.REV\n"
+    },
+    "vvp": {
+      "path": "/usr/bin/vvp",
+      "sha256": "075b114070eed3bc72e0e4559decf40520f3b693b1da9c94bba1defe8896966d",
+      "version": "Icarus Verilog runtime version 11.0 (stable) ()\n\nCopyright 1998-2020 Stephen Williams\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n"
+    }
+  },
+  "variants": [
+    "baseline",
+    "prepared"
+  ],
+  "whole_machine_efficiency_accepted": false
+}

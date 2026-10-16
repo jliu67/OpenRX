@@ -1,0 +1,75 @@
+[
+  {
+    "label": "autoconf",
+    "argv": [
+      "autoconf"
+    ],
+    "cwd": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+    "environment_overrides": {
+      "PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/bin:/usr/local/bin:/usr/bin:/bin",
+      "VERILATOR_ROOT": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "BISON_PKGDATADIR": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/share/bison",
+      "LD_LIBRARY_PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu",
+      "CPPFLAGS": "-I/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/include",
+      "LDFLAGS": "-L/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu"
+    },
+    "returncode": 0,
+    "elapsed_seconds": 0.3034781040623784
+  },
+  {
+    "label": "configure",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292/configure"
+    ],
+    "cwd": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+    "environment_overrides": {
+      "PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/bin:/usr/local/bin:/usr/bin:/bin",
+      "VERILATOR_ROOT": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "BISON_PKGDATADIR": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/share/bison",
+      "LD_LIBRARY_PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu",
+      "CPPFLAGS": "-I/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/include",
+      "LDFLAGS": "-L/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu"
+    },
+    "returncode": 0,
+    "elapsed_seconds": 7.57354390702676
+  },
+  {
+    "label": "build",
+    "argv": [
+      "make",
+      "-C",
+      "src",
+      "-j6",
+      "opt"
+    ],
+    "cwd": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+    "environment_overrides": {
+      "PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/bin:/usr/local/bin:/usr/bin:/bin",
+      "VERILATOR_ROOT": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "BISON_PKGDATADIR": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/share/bison",
+      "LD_LIBRARY_PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu",
+      "CPPFLAGS": "-I/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/include",
+      "LDFLAGS": "-L/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu"
+    },
+    "returncode": 0,
+    "elapsed_seconds": 94.3032395929331
+  },
+  {
+    "label": "version",
+    "argv": [
+      "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292/bin/verilator",
+      "--version"
+    ],
+    "cwd": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+    "environment_overrides": {
+      "PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/bin:/usr/local/bin:/usr/bin:/bin",
+      "VERILATOR_ROOT": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "BISON_PKGDATADIR": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/share/bison",
+      "LD_LIBRARY_PATH": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu",
+      "CPPFLAGS": "-I/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/include",
+      "LDFLAGS": "-L/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/dependencies/usr/lib/x86_64-linux-gnu"
+    },
+    "returncode": 0,
+    "elapsed_seconds": 0.20126099803019315
+  }
+]
