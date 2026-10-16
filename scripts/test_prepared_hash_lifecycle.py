@@ -171,7 +171,11 @@ def main():
     parser.add_argument('--full-v2', action='store_true')
     parser.add_argument('--compile-only', action='store_true')
     parser.add_argument('--cancellation', action='store_true')
+    parser.add_argument('--cancellation-phases', nargs='+', type=int, choices=range(1, 7), default=list(range(1, 7)),
+                        help='Selected cancellation phases; default retains all six existing checks')
     parser.add_argument('--matching-errors', action='store_true', help='Six provider errors plus invalid input/write, held return and fresh-generation handoff')
+    parser.add_argument('--error-ports', nargs='+', type=int, choices=range(1, 9), default=list(range(1, 9)),
+                        help='Selected matching error ports; default retains all eight existing checks')
     parser.add_argument('--capacity-checks', action='store_true', help='Batch-epoch/hash-tag exhaustion and drained hard-reset recovery')
     parser.add_argument('--interfaces-only', action='store_true', help='Run requested recovery/capacity checks without a completed-hash claim')
     parser.add_argument('--input-hex', default=MESSAGE.hex())
@@ -181,6 +185,8 @@ def main():
         parser.error('duplicate output profiles are not permitted')
     if len(args.variants) != len(set(args.variants)):
         parser.error('duplicate variants are not permitted')
+    if len(args.cancellation_phases) != len(set(args.cancellation_phases)) or len(args.error_ports) != len(set(args.error_ports)):
+        parser.error('duplicate recovery selections are not permitted')
     if args.interfaces_only and (args.full_v2 or args.compile_only or not
                                 (args.cancellation or args.matching_errors or args.capacity_checks)):
         parser.error('interfaces-only requires a recovery/capacity check and cannot select full-v2/compile-only')
@@ -210,6 +216,7 @@ def main():
                'iterations': args.iterations, 'full_v2_requested': args.full_v2,
                'compile_only': args.compile_only, 'variants': args.variants, 'event_trace': args.event_trace,
                'interfaces_only': args.interfaces_only, 'hardware_fill': args.hardware_fill,
+               'selected_cancellation_phases': args.cancellation_phases, 'selected_error_ports': args.error_ports,
                'backend': args.backend, 'simulation_state_model': 'four-state' if args.backend == 'icarus' else 'two-state; bounded cross-check with Icarus required',
                'balanced_variant_cycle_comparison': False, 'paired_cycle_comparisons': {},
                'profiles': {}, 'cancellation': {}, 'matching_errors': {}, 'capacity_checks': {},
@@ -380,10 +387,10 @@ def main():
                 for prepared in [int(name == 'prepared') for name in args.variants]:
                     profile(prepared, stalled)
         if args.cancellation and not args.compile_only:
-            for phase in range(1, 7):
+            for phase in args.cancellation_phases:
                 profile(1, 1, phase)
         if args.matching_errors and not args.compile_only:
-            for error_port in range(1, 9):
+            for error_port in args.error_ports:
                 profile(1, 1, error_port=error_port)
         if args.capacity_checks and not args.compile_only:
             profile(1, 0, capacity=1)
