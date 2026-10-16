@@ -1,0 +1,303 @@
+{
+  "actions": "Read-only file/archive/receipt/hash/source comparison. Only requested review/proof JSONs written in@TMP@. No simulation,build,test,newjob,source or package edits,workingdocreview,publication,issue orhubaction.",
+  "blocking_findings": [],
+  "package_root": "@TMP@/openrx-inputhash-evidence-stage/public",
+  "packages": {
+    "connected01-partial": {
+      "all_archive_member_CRC_hash_size_and_expanded_bytes_verify": true,
+      "all_public_presentations_match_index_and_archive": true,
+      "archive_bytes": 676002,
+      "archive_entries": 58,
+      "archive_index_sha256": "f980dd6f7fd12b47643832fe5aa638c47affc2f682938900084644e2bd245537",
+      "archive_sha256": "fe50b8c7f2d686f82585c13f5e9c61082ff3e7b1d028b6e3abde7cc67c44a854",
+      "coverage_complete_disjoint": true,
+      "execution_id": "20261016T175815Z-3eb05e9e8f2a",
+      "export_index_sha256": "f6b66c738fd99b8eb8c1f572ab4c8af4a48656c73e0ce88b11bd21f210d61ec0",
+      "original_receipt_artifact_total": 608,
+      "process": {
+        "finished_at": "2026-10-16T18:02:48.934641+00:00",
+        "returncode": 1,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_FAILED"
+      },
+      "public_files": 8,
+      "raw_and_portable_origins": {
+        "all_source_and_result_hash_strings_preserved": true,
+        "archive_index_sha256": "f980dd6f7fd12b47643832fe5aa638c47affc2f682938900084644e2bd245537",
+        "archive_sha256": "fe50b8c7f2d686f82585c13f5e9c61082ff3e7b1d028b6e3abde7cc67c44a854",
+        "derived_metadata_or_history_records": 5,
+        "export_index_sha256": "f6b66c738fd99b8eb8c1f572ab4c8af4a48656c73e0ce88b11bd21f210d61ec0",
+        "mismatches": [],
+        "no_known_private_prefix_leaks": true,
+        "origin_classification_counts": {
+          "derived-metadata": 5,
+          "derived-portable-copy": 29,
+          "verbatim-copy": 24
+        },
+        "portable_transform_typed_json_or_exact_text_reverse_proof": true,
+        "process_rc": 1,
+        "process_status": "PROCESS_FAILED",
+        "raw_or_portable_records_actual_reproductions": 53,
+        "readable_summary_actual_origin": "output/failure.json",
+        "receipt_sha256": "b42d8f24954ebcde7b1de4ba82b7fed7173d704510e504994a153e14117e0e19",
+        "resource_fields_and_raw_statuses_unchanged": true,
+        "scientific_acceptance_unchanged": "unverified"
+      },
+      "raw_manifest_sha256": "7cac2dbc735b950772884b7e23ea27c5734dd487c556b491b65c380dfd7fa0ff",
+      "raw_receipt_sha256": "b42d8f24954ebcde7b1de4ba82b7fed7173d704510e504994a153e14117e0e19",
+      "retained_only_receipt_artifacts": 558,
+      "scientific_acceptance": "unverified",
+      "selected_receipt_artifacts": 50,
+      "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+      "source_tree": "aa082fb5255320aba24f25c28a212fd8608e83ba"
+    },
+    "failed01": {
+      "all_archive_member_CRC_hash_size_and_expanded_bytes_verify": true,
+      "all_public_presentations_match_index_and_archive": true,
+      "archive_bytes": 230835,
+      "archive_entries": 28,
+      "archive_index_sha256": "022320a10c5a9deb3ce63592e8e60d642c8b3281cc14c646bfd0fbfc0ff5da9c",
+      "archive_sha256": "e6585d0f22167eb002d8df657a4bd8a87e4c9a7ecb9bac6ad03e44f830834206",
+      "coverage_complete_disjoint": true,
+      "execution_id": "20261016T174934Z-6e9224e12533",
+      "export_index_sha256": "cff684ade4c18e91ada7f28defc1c80ea0d2daf2a2bb8776fb22d8f228a9c30d",
+      "original_receipt_artifact_total": 22,
+      "process": {
+        "finished_at": "2026-10-16T17:49:38.946151+00:00",
+        "returncode": 1,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_FAILED"
+      },
+      "public_files": 8,
+      "raw_and_portable_origins": {
+        "all_source_and_result_hash_strings_preserved": true,
+        "archive_index_sha256": "022320a10c5a9deb3ce63592e8e60d642c8b3281cc14c646bfd0fbfc0ff5da9c",
+        "archive_sha256": "e6585d0f22167eb002d8df657a4bd8a87e4c9a7ecb9bac6ad03e44f830834206",
+        "derived_metadata_or_history_records": 5,
+        "export_index_sha256": "cff684ade4c18e91ada7f28defc1c80ea0d2daf2a2bb8776fb22d8f228a9c30d",
+        "mismatches": [],
+        "no_known_private_prefix_leaks": true,
+        "origin_classification_counts": {
+          "derived-git-diff": 1,
+          "derived-metadata": 4,
+          "derived-portable-copy": 14,
+          "verbatim-copy": 9
+        },
+        "portable_transform_typed_json_or_exact_text_reverse_proof": true,
+        "process_rc": 1,
+        "process_status": "PROCESS_FAILED",
+        "raw_or_portable_records_actual_reproductions": 23,
+        "readable_summary_actual_origin": "output/summary.json",
+        "receipt_sha256": "2e842357884076d732d4d480e82ee7e63de9c8aa7ab2301f52862673bc45db3b",
+        "resource_fields_and_raw_statuses_unchanged": true,
+        "scientific_acceptance_unchanged": "unverified"
+      },
+      "raw_manifest_sha256": "b08f6700bdd0b5417c315ca641dd088dd8a480980ac88aae93954280c6cd94d3",
+      "raw_receipt_sha256": "2e842357884076d732d4d480e82ee7e63de9c8aa7ab2301f52862673bc45db3b",
+      "retained_only_receipt_artifacts": 1,
+      "scientific_acceptance": "unverified",
+      "selected_receipt_artifacts": 21,
+      "source_commit": "aa7c804e8f3ae9496a61427d316de7a5e3818bc6",
+      "source_tree": "d19c5afdfa5a65f9ca45ec2fcb9689698730ec56"
+    },
+    "standalone02": {
+      "all_archive_member_CRC_hash_size_and_expanded_bytes_verify": true,
+      "all_public_presentations_match_index_and_archive": true,
+      "archive_bytes": 297786,
+      "archive_entries": 109,
+      "archive_index_sha256": "2ec091e35e4a58b35bc61655fc94cc6b95daf3648057f2c92425f86f4fd0693e",
+      "archive_sha256": "0ce39271767cf4014f6c186d7f8641def636c766eda3945e358ac97b6b0dceaa",
+      "coverage_complete_disjoint": true,
+      "execution_id": "20261016T175348Z-0d85cf342e1a",
+      "export_index_sha256": "ce68c862bffd592374008088d84a20ad2e5ae2c4bb19d9c390bba1d718dabc9c",
+      "original_receipt_artifact_total": 112,
+      "process": {
+        "finished_at": "2026-10-16T17:56:01.241737+00:00",
+        "returncode": 0,
+        "scientific_acceptance": "unverified",
+        "signals": [],
+        "status": "PROCESS_EXITED"
+      },
+      "public_files": 8,
+      "raw_and_portable_origins": {
+        "all_source_and_result_hash_strings_preserved": true,
+        "archive_index_sha256": "2ec091e35e4a58b35bc61655fc94cc6b95daf3648057f2c92425f86f4fd0693e",
+        "archive_sha256": "0ce39271767cf4014f6c186d7f8641def636c766eda3945e358ac97b6b0dceaa",
+        "derived_metadata_or_history_records": 5,
+        "export_index_sha256": "ce68c862bffd592374008088d84a20ad2e5ae2c4bb19d9c390bba1d718dabc9c",
+        "mismatches": [],
+        "no_known_private_prefix_leaks": true,
+        "origin_classification_counts": {
+          "derived-git-diff": 1,
+          "derived-metadata": 4,
+          "derived-portable-copy": 57,
+          "verbatim-copy": 47
+        },
+        "portable_transform_typed_json_or_exact_text_reverse_proof": true,
+        "process_rc": 0,
+        "process_status": "PROCESS_EXITED",
+        "raw_or_portable_records_actual_reproductions": 104,
+        "readable_summary_actual_origin": "output/summary.json",
+        "receipt_sha256": "f910b192e792f417fbdca242f730def3945bece4a31b82f16915da065c90be07",
+        "resource_fields_and_raw_statuses_unchanged": true,
+        "scientific_acceptance_unchanged": "unverified"
+      },
+      "raw_manifest_sha256": "0b23600864c75dda6996fd05a50febcca91de820ef4669db9ff228327a755c7a",
+      "raw_receipt_sha256": "f910b192e792f417fbdca242f730def3945bece4a31b82f16915da065c90be07",
+      "retained_only_receipt_artifacts": 10,
+      "scientific_acceptance": "unverified",
+      "selected_receipt_artifacts": 102,
+      "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+      "source_tree": "aa082fb5255320aba24f25c28a212fd8608e83ba"
+    }
+  },
+  "partial_connected_evidence_copy_checks": {
+    "assertion_input_and_program_calls": [
+      1,
+      2
+    ],
+    "complete_new_backend_parity_claim": false,
+    "controls": [
+      "cancel8",
+      "error7"
+    ],
+    "full_payload_pass_claim": false,
+    "input_hash_stage_cycles": 30,
+    "live_input_fill_program_calls": [
+      0,
+      0,
+      0
+    ],
+    "nested_input_hash_phases": [
+      1,
+      28,
+      1
+    ],
+    "normal_SRAM_native_digest_records_preserved": true,
+    "normal_profiles": [
+      {
+        "cycles": 534040,
+        "profile": "prepared-ideal"
+      },
+      {
+        "cycles": 1583565,
+        "profile": "prepared-stalled"
+      }
+    ],
+    "prior_raw_subresult_review": "@TMP@/openrx-inputhash-boundary-failure-reuse-assessment.json"
+  },
+  "portable_transform_review": {
+    "JSON_policy": "Strict duplicate-key rejection;replace only parsed strings/keys using ranked literal prefix aliases;sortkeys/indent2/UTF8/LF. Reverse restores typed JSON content.",
+    "compact_exports_are_not_raw_runner_verifiable_executions": true,
+    "config": "@TMP@/openrx-inputhash-package-config.json",
+    "config_sha256": "7030ce240537ac9d0d22d441743b7fc62f2a9709787d55edaf74d3c73aade81c",
+    "derived_metadata_and_Git_fix_patches_explicitly_classified": true,
+    "different_portable_bytes_explicitly_classified_derived": true,
+    "each_portable_record_independently_reproduced_with_exact_declared_transform": true,
+    "helper": "@TMP@/openrx-inputhash-package.py",
+    "helper_sha256": "4908951720ce8bfe19824404511bfaa86a4ebc8a797310ed89e56e46463d9563",
+    "identity_records_explicitly_classified_verbatim": true,
+    "no_known_private_prefix_leaks_found": true,
+    "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+    "private_alias_values_not_published_in_report": true,
+    "raw_hashes_and_source_commit_hash_strings_preserved": true,
+    "raw_selected_bytes_checked_against_actual_originals_and_receipt": true,
+    "raw_sources_outputs_and_private_map_remain_retained": true,
+    "text_policy": "Ranked literal UTF8prefix replacement only;reverse restores exact original text bytes.",
+    "typed_numbers_booleans_null_preserved": true
+  },
+  "preserved_scope_limits": [
+    "InputBLAKE2b supports0..80bytes only;all47representableinvalidlengths81..127 inRTL andedges81/127 mapped.",
+    "Native614andmapped26 are corpusrows,not claims of614unique inputs or all614mapped.",
+    "Mapping38538genericcells/3753flops/1024inheritedlatches covers actualinputwrapper+acceptedcompressioncore only,not wholelifecycle or physicalPPA.",
+    "Connectednormaldataisbounded2programsx1iteration;cancel/boundarysuccessorsareprefixes,notsecondcompletehashes.",
+    "NativeLightcache/dataset/device service remains external/untimed;no default8x2048 replacement,fullhashperformance,wholeenginemapping,architecture orphysicalASIC claim."
+  ],
+  "raw_status_and_failure_integrity": {
+    "all_raw_scientific_acceptance_values_remain": "unverified",
+    "connected01_status": "PROCESS_FAILED,rc1;boundary prefix failed andIcarus was notrun.",
+    "failed01_status": "PROCESS_FAILED,rc1;native oracle compilation failed before vectors/RTL/mapping.",
+    "failed_header_and_boundary_logs_visible": true,
+    "header_fix_history": "Exact minimalstddef.h Gitdiff and before/after digests bound to failed/successful original source manifests;failed execution retained.",
+    "partial_subcase_observations": "Two completedVerilator normal2x1 profiles pluscancel8/error7 PASS logs are explicitly observations within a failedpayload;no wholepayloadpass or scientific acceptance is added.",
+    "public_partial_summary_origin": "Publicsummary.json is a readable presentation of actualoutput/failure.json,as declared byexportindex;no nonexistent output/verilator/summary.json is fabricated.",
+    "standalone02_status": "PROCESS_EXITED,rc0;bounded native/RTL/mapped results copied accurately."
+  },
+  "result": "accepted_three_completed_package_exports_preliminary_only",
+  "review_scope": "Only failed01,standalone02,connected01-partial staged compact evidence. No recovery02 package,working documentation,publication successor head or whole-composite scientific acceptance reviewed here.",
+  "reviewed_at_utc": "2026-10-16T18:20:15.458961+00:00",
+  "reviewer": "Independent merge_gate_review agent with separate provider_ledger_review archive/coverage and status cross-check",
+  "schema": "openrx.inputhash.preliminary-evidence-package-review.v1",
+  "standalone_evidence_copy_checks": {
+    "RTL_invalid_lengths": 47,
+    "all_mapped_records_equal_RTL": true,
+    "all_selected_runtime_command_returncodes_zero": true,
+    "archived_minimal_fix_patches_equal_actual_Git_diffs": true,
+    "constant_availability_cycles": 28,
+    "fixture_hashes_verified": 4,
+    "mapped_invalid_lengths": [
+      81,
+      127
+    ],
+    "mapping": {
+      "digest_bytes": 64,
+      "flop_cells": 3753,
+      "inherited_latch_cells": 1024,
+      "max_input_bytes": 80,
+      "num_cells": 38538,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 5846,
+        "$_AND_": 417,
+        "$_AOI3_": 1761,
+        "$_AOI4_": 1307,
+        "$_DFF_PN0_": 2571,
+        "$_DFF_PN1_": 2,
+        "$_DFF_P_": 1180,
+        "$_DLATCH_P_": 1024,
+        "$_MUX_": 6599,
+        "$_NAND_": 245,
+        "$_NOR_": 851,
+        "$_NOT_": 2055,
+        "$_OAI3_": 1898,
+        "$_OAI4_": 2810,
+        "$_ORNOT_": 1201,
+        "$_OR_": 3592,
+        "$_XNOR_": 2281,
+        "$_XOR_": 2898
+      },
+      "scope": "Actual new input wrapper plus unchanged compression core; inherited G operand latches reported separately. No whole-lifecycle mapping or physical timing/area/power.",
+      "top": "randomx_input_blake2b"
+    },
+    "mismatches": [],
+    "native_corpus_rows": 614,
+    "preserved_IP_source_and_fixture_integrity_gates_true": true,
+    "preserved_core_sha256": "74921226713d4546c6e8e2485a7205499f8b48a1d9cc355e6315769738c5bda8",
+    "source_input_hashes_verified": 185,
+    "standalone_RTL_PASS_records": 18,
+    "standalone_mapped_PASS_records": 16,
+    "tail_poison_rows": 162,
+    "valid_lengths": 81
+  },
+  "still_pending": [
+    "Recovery02 terminalsuccess andimmutable receipt verification.",
+    "Independent composite scientific evidence review after actualIcarus/boundary/parityresults.",
+    "Recovery package exact-origin/coverage review.",
+    "Final documentation/publication-head extension review."
+  ],
+  "supporting_proofs": [
+    {
+      "path": "@TMP@/openrx-inputhash-evidence-stage/packaging-audit01.json",
+      "sha256": "2abab5ac2e669b6d8cfab479ae2712fa3bccc2bdc049081ffa6e6fbe84e11904"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-evidence-transform-proof.json",
+      "sha256": "f00b629461603e3bb4a6b9685a8098c1db6d8df40449929920cd4a7f59e61f43"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-evidence-science-copy-proof.json",
+      "sha256": "c5104a438037a9c7f9af72c0c01cfe926193891faeef64d6477c8c0634a061aa"
+    }
+  ]
+}

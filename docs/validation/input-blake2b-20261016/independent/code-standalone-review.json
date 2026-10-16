@@ -1,0 +1,326 @@
+{
+  "actions": "Focused read-only source/scientificartifact/receipt/hash/archivecomparison. No newbuild,simulation,test,job,source orpackageedit,workingdocreview,publication,issue orhubaction;only independentreview/proofJSONs written in@TMP@.",
+  "blocking_findings": [],
+  "connected_completed_subresults": {
+    "assertion_only_input_and_program_calls": [
+      1,
+      2
+    ],
+    "complete_old_success_summary_exists": false,
+    "controls": {
+      "prepared-stalled-cancel-8": {
+        "record": "PASS lifecycle_cancel phase=8 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+        "returncode": 0
+      },
+      "prepared-stalled-error-7": {
+        "record": "PASS lifecycle_matching_error port=7 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+        "returncode": 0
+      }
+    },
+    "input_hash_stage_cycles": 30,
+    "live_input_fill_program_provider_calls": [
+      0,
+      0,
+      0
+    ],
+    "nested_input_hash_phases": [
+      1,
+      28,
+      1
+    ],
+    "normal_profiles": {
+      "prepared-ideal": {
+        "actual_digest_matches_native": true,
+        "cycles": 534040,
+        "input_hash_cycles": 30,
+        "nested_input_hash_phases": [
+          1,
+          28,
+          1
+        ],
+        "provider_counts": {
+          "assertion_only_input_hash_calls": 1,
+          "assertion_only_program_generations": 2,
+          "input_hash_calls": 0,
+          "program_generations": 0,
+          "software_fill_provider_calls": 0
+        },
+        "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=0 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=534040 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+        "returncode": 0
+      },
+      "prepared-stalled": {
+        "actual_digest_matches_native": true,
+        "cycles": 1583565,
+        "input_hash_cycles": 30,
+        "nested_input_hash_phases": [
+          1,
+          28,
+          1
+        ],
+        "provider_counts": {
+          "assertion_only_input_hash_calls": 1,
+          "assertion_only_program_generations": 2,
+          "input_hash_calls": 0,
+          "program_generations": 0,
+          "software_fill_provider_calls": 0
+        },
+        "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=1 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=1583565 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+        "returncode": 0
+      }
+    },
+    "receipt_bound_selected_artifacts_verified": 44,
+    "scientific_scope": "Accepted for explicit source-bound reuse as successful subcommands within failedrun;not a completedconnected/composite pass.",
+    "source03_manifest_files_verified": 4654,
+    "source_reuse_gate": "All four compile/runtimecommandsrc0 withINPUT_HASH_BOUNDARY_TEST0. Changedhelper isnotexecuted in theseprofiles. Production/provider/driver/unit/nativecode unchanged.",
+    "units_passed": 56
+  },
+  "final_publication_metadata_review": {
+    "required": "Pin finalmetadatahead and prove runtime/sourceevidence equivalence,allpublicindices/origins and accurateboundedstatements;rootownsdocs/publication.",
+    "status": "pending",
+    "working_documents_not_reviewed": true
+  },
+  "limits": [
+    "Only0..80byte unkeyedBLAKE2b-512;no generalinputlength support.",
+    "614native and26mapped counts are corpusrows,not unique-input or full614mapped claims.",
+    "Standalonemapping covers newinputwrapper+unchangedcompressioncore,includingreported1024inheritedlatches;no whole-lifecycle orphysicalmapping.",
+    "Connectedcompletedprofiles are2programsx1iteration;recovery/boundarysuccessors areprefixes,notextra completedhashes.",
+    "No newdefault8x2048 or alternativefullhashperformance derivation from thisstage.",
+    "NativeLightcache/dataset/device service remains external/untimed;noarchitectureselection,physicalASIC/PPA/MHz/area/power/whole-machinetarget acceptance."
+  ],
+  "preserved_failure_history": {
+    "connected01": {
+      "execution": "20261016T175815Z-3eb05e9e8f2a",
+      "minimal_fix": "2b33e60 adds exactlytwo#1settlingdelays inside boundary-only helper,retaining allassertions and noaddedclockedge.",
+      "receipt_sha256": "b42d8f24954ebcde7b1de4ba82b7fed7173d704510e504994a153e14117e0e19",
+      "source": "307cc9ceef0328021aa7063b0930120b72884099",
+      "status": "PROCESS_FAILED rc1;boundaryprofile-6;Icarusnotrun.",
+      "whole_execution_stays_failed": true
+    },
+    "standalone01": {
+      "execution": "20261016T174934Z-6e9224e12533",
+      "failed_stage": "Nativeoraclecompile before vectors/RTL/mapping.",
+      "minimal_fix": "307cc9c addsstddef.h before the native header;runtime algorithm unchanged.",
+      "source": "aa7c804e8f3ae9496a61427d316de7a5e3818bc6",
+      "status": "PROCESS_FAILED rc1"
+    }
+  },
+  "production_and_native_contract_acceptance": [
+    "Wrapper captures rawinput640bits,length7bits andtag16bits;validrange0..80 inclusive. Invalid81..127 returns heldzero-seederror without corestart.",
+    "All valid inputs use one zero-padded128B final BLAKE2b-512 compression,includingempty. Digest64,key0,fanout1,depth1,12rounds,actual bytecounter;noSHA suffix/length padding.",
+    "Byteb maps caller[8*b+:8] to coreblock[1023-8*b-:8] and coredigest[511-8*b-:8] back to seed[8*b+:8]. Captured length/final remain stable through the later CTRL_INIT sampling edge.",
+    "Each request usesinit,nevernext. START\u2192WAIT avoids old sticky corevalid. Heldtag/seed/error cannot be replaced byanother request. Reset/cancel gate transfers and reset/invalidate both wrapper and core.",
+    "ExplicitHARDWARE_INPUT_HASH defaults0 and requiresHARDWARE_FILL1. The historical softwareprovider path remains available through the disabled-mode branch.",
+    "Lifecycle captures request/generation and accepts only matching,error-free internal seed before offering fill. Hardwareinput suppresses liveexternalinit requests and drains removedprovider writes/replies without seed/status effects.",
+    "Live scratchpad RAM is written only from accepted DUT writes in hardware modes. Nativeinputseed,gold scratchpad/program images and native generation are assertion-only;they do not drive live hardwareseed or generatedprogram paths.",
+    "Cancellation/error invalidates ownership and preserves acceptedpriorSRAMwrites. Newinput/generation must obtain a freshhashseed. Phase10 inputhash accounting is disjoint fromfill/program/otherphases,withzerohostproviderwait inHI1."
+  ],
+  "recovery_and_composite_acceptance": {
+    "completed_observation_from_parent": "FixedVerilatorboundaryPASS observed;Icarusnormal/boundary/parity stillrunning at lastnotification.",
+    "execution": "20261016T181450Z-21a4c330bba8",
+    "required_remaining": [
+      "Terminalrc0 andimmutableverificationtrue.",
+      "ActualIcarusnormal/boundaryPASS and complete oldVerilator/newIcarus idealledger/PASS/trace/digest comparison.",
+      "Exactly18nativefiles with equalmembership/bytes acrossoldVerilator,newVerilatorboundary,newIcarus.",
+      "Fourthpublicpackage actualorigin/transform/complete-disjointcoverage review."
+    ],
+    "source": "2b33e60d039a9a50cb540ef2c41561de8f4035a1",
+    "static_recovery_request_review": {
+      "path": "@TMP@/openrx-inputhash-connected02-static-review.json",
+      "sha256": "8f0b36587d2a5b0dd7ce3d2ef5f85149385572f62bf98086b021b3308cdd07f2"
+    },
+    "status": "pending",
+    "terminal_success_and_installed_runner_immutable_verify": "Not yet provided/accepted."
+  },
+  "result": "bounded_code_and_standalone_accepted_composite_and_final_publication_review_pending",
+  "reviewed_at_utc": "2026-10-16T18:26:50.254493+00:00",
+  "reviewer": "Independent merge_gate_review agent with separate provider_ledger_review source/evidence checks",
+  "schema": "openrx.inputhash.independent-bounded-review.v1",
+  "source": {
+    "accepted_base": "eed374b28e9e2efa71bc16f5ba15e999e2940415",
+    "blob_mismatches": [],
+    "complete_tracked_blobs_compared_to_exact_Git_objects": 4654,
+    "frozen_snapshot": "@SOURCE04@",
+    "metadata_author_workspace_excluded": true,
+    "production_core_native_vendor_and_default_paths_preserved_as_scoped": true,
+    "reviewed_head": "2b33e60d039a9a50cb540ef2c41561de8f4035a1",
+    "reviewed_tree": "44139b83a1d3754da1aa54a78b92b5c308a4ae42",
+    "runtime_and_test_paths_reviewed": {
+      "rtl/hash/randomx_input_blake2b.v": {
+        "bytes": 2444,
+        "sha256": "afe533c723475bf9ef656139f9ea2c3aa85f38a0c6e1153f09b9786461b684de"
+      },
+      "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+        "bytes": 31795,
+        "sha256": "1d671a885309e2663786ae3d897bb6eb4164ed5e2c0ad47677ee660a4a0b2422"
+      },
+      "rtl/hash/tests/input_blake2b_oracle.cpp": {
+        "bytes": 4073,
+        "sha256": "a301e3a5126913277dcd3a4fcfe55febb1c28a66a479bfb9ec79206e2af9e881"
+      },
+      "rtl/hash/tests/lifecycle_source_dpi.cpp": {
+        "bytes": 5341,
+        "sha256": "0a5e2a4a29afc92242c54a87041760d6d0e52b4298c3c169f0336abfc4111fd3"
+      },
+      "rtl/hash/tests/lifecycle_source_vpi.cpp": {
+        "bytes": 7576,
+        "sha256": "19b8a95a199071ae319223a51bb805b740fbfb638916644242e857c62b09026a"
+      },
+      "rtl/hash/tests/tb_input_blake2b.v": {
+        "bytes": 10384,
+        "sha256": "97263ec35cb69256356f2826827ad1354a87d8e4a128156b0e7d39b76633a060"
+      },
+      "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+        "bytes": 69469,
+        "sha256": "a12e116572bbce5b464f0934d20955dbe0c33464b3f0bc1459904e8b985abd57"
+      },
+      "scripts/test_input_blake2b.py": {
+        "bytes": 15535,
+        "sha256": "d4dbcf01b0610f9b7122ffd14dee4b50b9c0e9c608535484c67254bff3e84f31"
+      },
+      "scripts/test_prepared_hash_lifecycle.py": {
+        "bytes": 34666,
+        "sha256": "71b96fe676d0a67cf5f6b25a4348ab4ea47ca57e6ea54d7452b316b3180a26a5"
+      },
+      "tests/test_lifecycle_ledger.py": {
+        "bytes": 13400,
+        "sha256": "f8fb731ec841f7a19cf83a963926d6e0f1193d80a31a120c6f0e987c368ba78d"
+      },
+      "tests/test_lifecycle_staging.py": {
+        "bytes": 4081,
+        "sha256": "fe747d968ac2598d83b7ad02b99116e4ae256414a650ea760aaa3ab1437abef4"
+      }
+    }
+  },
+  "standalone_scientific_acceptance": {
+    "RTL_PASS_records": 18,
+    "all112_actual_artifacts_hash_and_size_verified": true,
+    "all16_mapped_records_equal_corresponding_RTL": true,
+    "all185_consumed_source_inputs_match_source03_and_source04": true,
+    "all34_records_equal_actual_logs": true,
+    "all4654_manifest_source_files_verified": true,
+    "all4_generated_fixture_bindings_verified": true,
+    "all5_recorded_tool_executables_verified": true,
+    "arbitrary_rows": 128,
+    "availability_cycles": 28,
+    "commands_rc0": 40,
+    "component_inputs_unchanged_in_source04": true,
+    "corpus_rows": 614,
+    "execution": "20261016T175348Z-0d85cf342e1a",
+    "focused_mapped_rows": 26,
+    "held_response_observers_are_separate": true,
+    "installed_runner_integrity_verified": true,
+    "mapped_PASS_records": 16,
+    "mapping": {
+      "digest_bytes": 64,
+      "flop_cells": 3753,
+      "inherited_latch_cells": 1024,
+      "max_input_bytes": 80,
+      "num_cells": 38538,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 5846,
+        "$_AND_": 417,
+        "$_AOI3_": 1761,
+        "$_AOI4_": 1307,
+        "$_DFF_PN0_": 2571,
+        "$_DFF_PN1_": 2,
+        "$_DFF_P_": 1180,
+        "$_DLATCH_P_": 1024,
+        "$_MUX_": 6599,
+        "$_NAND_": 245,
+        "$_NOR_": 851,
+        "$_NOT_": 2055,
+        "$_OAI3_": 1898,
+        "$_OAI4_": 2810,
+        "$_ORNOT_": 1201,
+        "$_OR_": 3592,
+        "$_XNOR_": 2281,
+        "$_XOR_": 2898
+      },
+      "scope": "Actual new input wrapper plus unchanged compression core; inherited G operand latches reported separately. No whole-lifecycle mapping or physical timing/area/power.",
+      "top": "randomx_input_blake2b"
+    },
+    "original_manifest_sha256": "0b23600864c75dda6996fd05a50febcca91de820ef4669db9ff228327a755c7a",
+    "original_receipt_sha256": "f910b192e792f417fbdca242f730def3945bece4a31b82f16915da065c90be07",
+    "process": {
+      "finished_at": "2026-10-16T17:56:01.241737+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "receipt_scientific_acceptance_unchanged": "unverified",
+    "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+    "source_fixture_IP_integrity_gates_true": true,
+    "source_snapshot": "@SOURCE03@",
+    "status": "accepted bounded standalone native/RTL/mapped evidence",
+    "tail_poison_rows": 162,
+    "unsupported_RTL_lengths": 47,
+    "unsupported_mapped_lengths": [
+      81,
+      127
+    ],
+    "valid_lengths": 81
+  },
+  "supporting_proofs": [
+    {
+      "path": "@TMP@/openrx-inputhash-standalone-independent-proof.json",
+      "sha256": "8a0b44acdb4be23b17ddeaa4054e3b5dc4d9f420f41492701d229b27ccb63679"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-evidence-science-copy-proof.json",
+      "sha256": "c5104a438037a9c7f9af72c0c01cfe926193891faeef64d6477c8c0634a061aa"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-connected02-static-proof.json",
+      "sha256": "0958e01ca02fb4ffa6c609face570469694475556e9d0f5761697de59d6b7788"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-integration-static-review.json",
+      "sha256": "4f1276cca728c21ea951d28a7e07add86d55cc1a72eb1bc8ea4b75c2734f25e0"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-connected02-static-review.json",
+      "sha256": "8f0b36587d2a5b0dd7ce3d2ef5f85149385572f62bf98086b021b3308cdd07f2"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-boundary-failure-reuse-assessment.json",
+      "sha256": "d76dc22ece49ab2268d941472012a22bcf34043fcf69478617451c7b0c2a1efb"
+    },
+    {
+      "path": "@TMP@/openrx-inputhash-evidence-review-preliminary.json",
+      "sha256": "3c23bcd41ad9b7a7c58c9b79519af0dd312d6782ce689e03c21a6a581516443c"
+    }
+  ],
+  "three_public_packages": {
+    "accepted_packages": [
+      "failed01",
+      "standalone02",
+      "connected01-partial"
+    ],
+    "archives_portable_transforms_and_rawstatus_integrity_accepted": true,
+    "coverage": {
+      "connected01-partial": {
+        "retained_only": 558,
+        "selected": 50,
+        "total": 608
+      },
+      "failed01": {
+        "retained_only": 1,
+        "selected": 21,
+        "total": 22
+      },
+      "standalone02": {
+        "retained_only": 10,
+        "selected": 102,
+        "total": 112
+      }
+    },
+    "not_a_complete_runner_verifiable_portable_execution": true,
+    "preliminary_export_review": {
+      "path": "@TMP@/openrx-inputhash-evidence-review-preliminary.json",
+      "sha256": "3c23bcd41ad9b7a7c58c9b79519af0dd312d6782ce689e03c21a6a581516443c"
+    },
+    "raw_path_alias_map_is_retained_private_and_hash_bound": true,
+    "raw_scientific_acceptance_values_remain_unverified": true
+  }
+}

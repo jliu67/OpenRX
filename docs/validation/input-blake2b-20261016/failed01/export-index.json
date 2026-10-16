@@ -1,0 +1,212 @@
+{
+  "complete_receipt_coverage": {
+    "artifact_count": 22,
+    "files": [
+      {
+        "archive_entry": "records/events.jsonl",
+        "bytes": 1460,
+        "disposition": "selected",
+        "original_relative": "events.jsonl",
+        "sha256": "618d619ef9048437d206ce0a959d3241b9e95cc92550d6a20819462cc750d73a"
+      },
+      {
+        "archive_entry": "records/manifest.json",
+        "bytes": 854472,
+        "disposition": "selected",
+        "original_relative": "manifest.json",
+        "sha256": "b08f6700bdd0b5417c315ca641dd088dd8a480980ac88aae93954280c6cd94d3"
+      },
+      {
+        "archive_entry": "records/output/LICENSE-BLAKE2-original",
+        "bytes": 1305,
+        "disposition": "selected",
+        "original_relative": "output/LICENSE-BLAKE2-original",
+        "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+      },
+      {
+        "archive_entry": "records/output/LICENSE-RandomX",
+        "bytes": 1561,
+        "disposition": "selected",
+        "original_relative": "output/LICENSE-RandomX",
+        "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+      },
+      {
+        "archive_entry": "records/output/artifacts.sha256.json",
+        "bytes": 998,
+        "disposition": "selected",
+        "original_relative": "output/artifacts.sha256.json",
+        "sha256": "749bf3df0e7cda12eb82985f167595f818ac099bc8527974f6caf040d2813ff0"
+      },
+      {
+        "archive_entry": "records/output/commands.json",
+        "bytes": 1519,
+        "disposition": "selected",
+        "original_relative": "output/commands.json",
+        "sha256": "10e0a69f52ad3b0a0f42f9c79203ff8a9acf2f021f181e49847a1a0168ba15fc"
+      },
+      {
+        "archive_entry": "records/output/compile-native-oracle.log",
+        "bytes": 2275,
+        "disposition": "selected",
+        "original_relative": "output/compile-native-oracle.log",
+        "sha256": "7833e1c76089284e8cd8cfb434c3746a5278cb741c9b58edaa969a794b82aa75"
+      },
+      {
+        "archive_entry": "records/output/compile-native-oracle.time.txt",
+        "bytes": 987,
+        "disposition": "selected",
+        "original_relative": "output/compile-native-oracle.time.txt",
+        "sha256": "da9d61946848ad01b443cd5fd5b6edccbf0fd5aa0df84328e2676b11a65727a0"
+      },
+      {
+        "archive_entry": "records/output/inputs.json",
+        "bytes": 21101,
+        "disposition": "selected",
+        "original_relative": "output/inputs.json",
+        "sha256": "e0433ab8a392310740e7f75e0be88ed0a99a34267170076a86c4b08f0d513736"
+      },
+      {
+        "archive_entry": "records/output/preserved-IP.json",
+        "bytes": 1233,
+        "disposition": "selected",
+        "original_relative": "output/preserved-IP.json",
+        "sha256": "4eaabdcf960ff3433551b11ed754c7b09008afc155d8a421d171044bfaa24994"
+      },
+      {
+        "archive_entry": "records/output/summary.json",
+        "bytes": 1037,
+        "disposition": "selected",
+        "original_relative": "output/summary.json",
+        "sha256": "42cb615d2a69264bfa370a0843ba2a3de1b2ad91abb54936fcb48b53d15d7f7a"
+      },
+      {
+        "archive_entry": "records/output/tools.json",
+        "bytes": 5526,
+        "disposition": "selected",
+        "original_relative": "output/tools.json",
+        "sha256": "3e07944550101213373cc05fd6fda4bc490c003e1217584bfd9e2ef0a77ca94d"
+      },
+      {
+        "archive_entry": "records/output/vendor.log",
+        "bytes": 32,
+        "disposition": "selected",
+        "original_relative": "output/vendor.log",
+        "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+      },
+      {
+        "archive_entry": "records/output/vendor.time.txt",
+        "bytes": 750,
+        "disposition": "selected",
+        "original_relative": "output/vendor.time.txt",
+        "sha256": "09f87781f46735b114773445e0a052d041b9a5f196c91c9b82a43e2010c1b526"
+      },
+      {
+        "archive_entry": "records/prelaunch-kernel-check.json",
+        "bytes": 2318,
+        "disposition": "selected",
+        "original_relative": "prelaunch-kernel-check.json",
+        "sha256": "6eee232791c6fbf328527ef5131bc0a1f5e224e454196acdf5ec3093a839da17"
+      },
+      {
+        "archive_entry": "records/prelaunch-resource-check.json",
+        "bytes": 415,
+        "disposition": "selected",
+        "original_relative": "prelaunch-resource-check.json",
+        "sha256": "195ce3695690ed4fe711b89f84a1f7b5fa538e5ccb75a27cf1bee822879fe9e7"
+      },
+      {
+        "archive_entry": "records/process-result.json",
+        "bytes": 142,
+        "disposition": "selected",
+        "original_relative": "process-result.json",
+        "sha256": "57f441df9c630df309295d631033cb5e93c57c010ec77acffa614eb4dfa923a8"
+      },
+      {
+        "bytes": 47618,
+        "disposition": "retained-only",
+        "original_relative": "runner.py",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b"
+      },
+      {
+        "archive_entry": "records/stderr.log",
+        "bytes": 1072,
+        "disposition": "selected",
+        "original_relative": "stderr.log",
+        "sha256": "6074b2499c63a34676e2143b26f3fd48c8903676bc3b1bc57c55f262c4e234c2"
+      },
+      {
+        "archive_entry": "records/stdout.log",
+        "bytes": 53,
+        "disposition": "selected",
+        "original_relative": "stdout.log",
+        "sha256": "0bed5cdae758128fc6529aa9bdcc014c6c833436d4927483076c30ac1368a00b"
+      },
+      {
+        "archive_entry": "records/submission-command.json",
+        "bytes": 871,
+        "disposition": "selected",
+        "original_relative": "submission-command.json",
+        "sha256": "a197c26071211caedacb9adb40f643d110ad65f905f93100f00d6feecfaac2c0"
+      },
+      {
+        "archive_entry": "records/submission-result.json",
+        "bytes": 41,
+        "disposition": "selected",
+        "original_relative": "submission-result.json",
+        "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+      }
+    ],
+    "retained_only_count": 1,
+    "selected_count": 21,
+    "selected_retained_intersection_count": 0,
+    "union_matches_receipt": true
+  },
+  "execution_id": "20261016T174934Z-6e9224e12533",
+  "identity_note": "Portable/selected copies are not a complete original execution and are not host-runner-verifiable; original verification used retained raw paths and bytes.",
+  "index_self_excluded_to_avoid_recursive_hash": true,
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "public_files": {
+    "archive-index.json": {
+      "bytes": 18472,
+      "presentation_of_archive_entry": null,
+      "sha256": "022320a10c5a9deb3ce63592e8e60d642c8b3281cc14c646bfd0fbfc0ff5da9c"
+    },
+    "execution.json": {
+      "bytes": 2943,
+      "presentation_of_archive_entry": "execution.json",
+      "sha256": "636d347d00dad11edda38178972e0b1aac17290a416993396d962c6876328f6b"
+    },
+    "failure.log": {
+      "bytes": 2275,
+      "presentation_of_archive_entry": "records/output/compile-native-oracle.log",
+      "sha256": "7833e1c76089284e8cd8cfb434c3746a5278cb741c9b58edaa969a794b82aa75"
+    },
+    "records.zip": {
+      "bytes": 230835,
+      "presentation_of_archive_entry": null,
+      "sha256": "e6585d0f22167eb002d8df657a4bd8a87e4c9a7ecb9bac6ad03e44f830834206"
+    },
+    "resources.json": {
+      "bytes": 5740,
+      "presentation_of_archive_entry": "resources.json",
+      "sha256": "d416a1f2b963300e6200da65c200a0af36c95c64d919d64af12122646e8f602a"
+    },
+    "summary.json": {
+      "bytes": 983,
+      "presentation_of_archive_entry": "records/output/summary.json",
+      "sha256": "cbc350a0a11f7187a2230fee57bdb09e1f0a2efe43fd299d2fe6543c90d1143e"
+    },
+    "verify.json": {
+      "bytes": 155,
+      "presentation_of_archive_entry": "verify.json",
+      "sha256": "e5435d6840055b3c190e2af58895e9cc1401466e9f8f4b14b0540c9eeb388b3c"
+    }
+  },
+  "raw_manifest_sha256": "b08f6700bdd0b5417c315ca641dd088dd8a480980ac88aae93954280c6cd94d3",
+  "raw_receipt_sha256": "2e842357884076d732d4d480e82ee7e63de9c8aa7ab2301f52862673bc45db3b",
+  "root_verify_sha256": "e5435d6840055b3c190e2af58895e9cc1401466e9f8f4b14b0540c9eeb388b3c",
+  "schema": "openrx.compact-export-index.v2",
+  "scientific_acceptance": "unverified",
+  "sources_bound_by_full_portable_manifest": true
+}

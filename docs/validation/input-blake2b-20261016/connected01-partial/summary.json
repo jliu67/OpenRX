@@ -1,0 +1,5 @@
+{
+  "error": "Command '['/usr/bin/time', '-v', '-o', '@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator.time.txt', '/usr/bin/python3.10', '-B', '@SOURCE03@/scripts/test_prepared_hash_lifecycle.py', '--native-library', '@EXECUTIONS@/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a', '--native-build-execution', '@EXECUTIONS@/20261012T013303Z-848c58102f71', '--hardware-input-hash', '--hardware-fill', '--hardware-program', '--programs', '2', '--iterations', '1', '--variants', 'prepared', '--event-trace', '--timeout', '3600', '--input-hash-boundaries', '--output', '@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator', '--backend', 'verilator', '--profiles', 'ideal', 'stalled', '--verilator-root', '@EXECUTIONS@/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292', '--verilator-build-execution', '@EXECUTIONS@/20261016T005835Z-851d576006d4', '--cancellation', '--cancellation-phases', '8', '--matching-errors', '--error-ports', '7']' returned non-zero exit status 1.",
+  "partial_results_not_passed": true,
+  "type": "CalledProcessError"
+}

@@ -1,5 +1,33 @@
 # Agent instructions
 
+## Bounded hardware input BLAKE2b — 2026-10-16
+
+Above accepted main `eed374b28e9e2efa71bc16f5ba15e999e2940415` (merged PR #77),
+[EXP-018](experiments/EXP-018-bounded-input-blake2b.md) and
+[evidence](docs/validation/input-blake2b-20261016/README.md) record the 0–80-byte
+input BLAKE2b-512 wrapper using the unchanged accepted compression core.
+Explicit `HARDWARE_INPUT_HASH=1` requires hardware fill; default zero preserves
+historical reproduction. Unsupported lengths 81–127 return held errors.
+
+Standalone validation passes 614 native vectors, 18 RTL and 16 bounded mapped
+modes; actual wrapper/core mapping is 38,538 generic cells, 3,753 flop cells and
+1,024 inherited latch cells. Result availability is 28 modeled clocks. The
+connected 2×1 composite passes ideal cross-backend/stalled/reference checks,
+input-stage cancellation/held error and both-backend boundary prefixes, plus
+56 unit checks. Ideal/stalled totals are 534,040/1,583,565 clocks; the disjoint
+input stage is 30 clocks, with zero live input/fill/program provider calls.
+Original failed attempts remain failed; exact sources, two boundary-helper
+settling delays, raw receipts and retained-subresult reuse are explicitly bound.
+
+Native Light cache/dataset and physical device service remain external/untimed.
+No new default 8×2,048 run, whole-engine mapping, physical PPA or architecture
+selection follows. The feature PR records independent exact-head review, hosted
+checks and normal merge/postmerge outcome. Existing task #71 records execution
+requests; no new issue, hub notice or standing Git mirror is created. Next
+concrete component is one prepared native superscalar-program executor; cache
+export/service and autonomous setup remain separate work. Earlier dated sections
+retain their source-specific historical context.
+
 ## Native AES program generation candidate — 2026-10-16
 
 Above accepted main `548ed2d` (merged PR #76 / completed task #75), [EXP-017](experiments/EXP-017-native-program-generation.md) and [evidence](docs/validation/program-generation-20261016/README.md) bind native fillAes4Rx4 to standalone `0d70bf0` and connected `8100bee`. All 15 native, 44 RTL and 24 bounded mapped modes pass, including ten complete 3,200-byte profiles. Default generator-only mapping is 36,836 generic cells, 540 flop cells and zero latches; it excludes the connected image buffer and engine.

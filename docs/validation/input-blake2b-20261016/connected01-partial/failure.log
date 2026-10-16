@@ -1,0 +1,3 @@
+[330000] %Fatal: tb_prepared_hash_lifecycle.v:604: Assertion failed in TOP.tb_prepared_hash_lifecycle.input_boundary_case.boundary_case: input boundary prefix retained ownership
+%Error: rtl/hash/tests/tb_prepared_hash_lifecycle.v:604: Verilog $stop
+Aborting...

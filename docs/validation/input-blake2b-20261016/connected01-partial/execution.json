@@ -1,0 +1,409 @@
+{
+  "boundary": null,
+  "complete_output_retained": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output",
+  "completed_pass_log_observations": [
+    {
+      "interpretation": "Observed completed subcase; does not promote a failed whole payload to pass.",
+      "observed_record": "PASS lifecycle_cancel phase=8 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+      "original_relative": "output/verilator/prepared-stalled-cancel-8.log",
+      "raw": {
+        "bytes": 341,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-stalled-cancel-8.log",
+        "sha256": "e7d5afc6e50f9de26aa478666b31c2dbe208c1297c5f2072295e628fcbafd230"
+      }
+    },
+    {
+      "interpretation": "Observed completed subcase; does not promote a failed whole payload to pass.",
+      "observed_record": "PASS lifecycle_matching_error port=7 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+      "original_relative": "output/verilator/prepared-stalled-error-7.log",
+      "raw": {
+        "bytes": 248,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-stalled-error-7.log",
+        "sha256": "611598a3f750e6969194fec5cc47f534d6b8bd5e2c75cf28b1d5fed892796a1f"
+      }
+    }
+  ],
+  "completed_profiles_within_failed_payload": [
+    {
+      "backend": "verilator",
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 3.961e-06,
+        "assertion_only_input_hash_calls": 1,
+        "assertion_only_input_hash_host_seconds": 5.5e-07,
+        "assertion_only_program_generation_host_seconds": 0.00046504900000000004,
+        "assertion_only_program_generations": 2,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.842480767,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 5.8754e-05,
+        "dataset_requests": 2,
+        "initialization_host_seconds": 0,
+        "input_hash_calls": 0,
+        "input_hash_host_seconds": 0,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0,
+        "program_generations": 0,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null,
+        "software_fill_provider_calls": 0
+      },
+      "interpretation": "Observed completed profile within a failed whole payload; no whole-payload pass or final scientific acceptance.",
+      "ledger": {
+        "cycles": 534040,
+        "dataset_logical_bytes": 128,
+        "hardware_fill_enabled": true,
+        "hardware_input_hash_enabled": true,
+        "hardware_program_enabled": true,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "input_hash_bytes": 55,
+        "logical_bytecode_memory_bytes": 1296,
+        "logical_entry_bytes": 256,
+        "logical_tail_bytes": 256,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          769,
+          769,
+          769,
+          119,
+          119,
+          43,
+          0,
+          2,
+          0,
+          110,
+          110,
+          0,
+          0,
+          214,
+          214,
+          30,
+          1655
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          393225,
+          1,
+          57,
+          1
+        ],
+        "nested_initialization": {
+          "fill_phases": [
+            1,
+            131072,
+            1
+          ],
+          "provider_wait": 0
+        },
+        "nested_input_hash_phases": [
+          1,
+          28,
+          1
+        ],
+        "nested_iteration_phases": [
+          2,
+          8,
+          8,
+          8,
+          8,
+          0,
+          2,
+          4923,
+          2,
+          2,
+          2,
+          18
+        ],
+        "nested_program_generation_phases": [
+          4,
+          1600,
+          2
+        ],
+        "nested_reply_waits": {
+          "dataset": 2,
+          "program": 768,
+          "scratchpad": 131207
+        },
+        "nested_stalls": {
+          "dataset_request": 0,
+          "program_load": 0,
+          "sp_request": 0,
+          "sp_write": 0
+        },
+        "physical_port_read_bytes": 2099312,
+        "physical_port_write_bus_bytes": 2098096,
+        "preparation_reciprocals": 22,
+        "program_generation_output_bytes": 6400,
+        "program_image_load_bytes": 6144,
+        "program_image_storage_bytes": 3200,
+        "program_image_transport": "internal_generated_buffer",
+        "removed_initialization_replies_drained": 0,
+        "removed_initialization_writes_drained": 0,
+        "removed_provider_replies_drained": {
+          "metadata": 0,
+          "program": 0
+        },
+        "runtime_reciprocals": 0,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 8,
+          "execution": 4983,
+          "finalization": 393286,
+          "held_return": 1,
+          "initialization_hardware_fill": 131074,
+          "input_hash": 30,
+          "interprogram_seed": 60,
+          "program_generation": 1606,
+          "program_preparation": 2992
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 0,
+          "metadata": 0,
+          "program": 0,
+          "scratchpad": 0
+        },
+        "strobed_write_bytes": 2097752,
+        "untimed_provider_device_cycles": null
+      },
+      "observed_record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=0 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=534040 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "profile": "prepared-ideal",
+      "raw_ledger": {
+        "bytes": 1696,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-ideal/ledger.json",
+        "sha256": "9bf60e2d246e75d558ce1b6d05bfaca6e8d2210d4651e8ab7dbe014966d2c4a7"
+      },
+      "raw_log": {
+        "bytes": 405,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-ideal.log",
+        "sha256": "6e973f5dd23387312461d92a73adc40aa52fbfa5e87d18af7dd6a8c28da2cb87"
+      },
+      "raw_provider": {
+        "bytes": 887,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-ideal/provider-host-time.json",
+        "sha256": "dabf044ae23db425c246d17c010e2eaf50e2681beae2bd6e25d01354933fda63"
+      }
+    },
+    {
+      "backend": "verilator",
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 4.184e-06,
+        "assertion_only_input_hash_calls": 1,
+        "assertion_only_input_hash_host_seconds": 5.52e-07,
+        "assertion_only_program_generation_host_seconds": 0.0005074179999999999,
+        "assertion_only_program_generations": 2,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.849541732,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 5.3837999999999995e-05,
+        "dataset_requests": 2,
+        "initialization_host_seconds": 0,
+        "input_hash_calls": 0,
+        "input_hash_host_seconds": 0,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0,
+        "program_generations": 0,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null,
+        "software_fill_provider_calls": 0
+      },
+      "interpretation": "Observed completed profile within a failed whole payload; no whole-payload pass or final scientific acceptance.",
+      "ledger": {
+        "cycles": 1583565,
+        "dataset_logical_bytes": 128,
+        "hardware_fill_enabled": true,
+        "hardware_input_hash_enabled": true,
+        "hardware_program_enabled": true,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "input_hash_bytes": 55,
+        "logical_bytecode_memory_bytes": 1296,
+        "logical_entry_bytes": 256,
+        "logical_tail_bytes": 256,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          769,
+          769,
+          769,
+          357,
+          595,
+          129,
+          0,
+          2,
+          0,
+          110,
+          110,
+          0,
+          0,
+          214,
+          214,
+          30,
+          1655
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          1179657,
+          1,
+          57,
+          1
+        ],
+        "nested_initialization": {
+          "fill_phases": [
+            1,
+            393216,
+            1
+          ],
+          "provider_wait": 0
+        },
+        "nested_input_hash_phases": [
+          1,
+          28,
+          1
+        ],
+        "nested_iteration_phases": [
+          2,
+          24,
+          40,
+          24,
+          40,
+          0,
+          2,
+          5723,
+          6,
+          10,
+          2,
+          50
+        ],
+        "nested_program_generation_phases": [
+          4,
+          1600,
+          2
+        ],
+        "nested_reply_waits": {
+          "dataset": 10,
+          "program": 768,
+          "scratchpad": 656035
+        },
+        "nested_stalls": {
+          "dataset_request": 4,
+          "program_load": 0,
+          "sp_request": 262414,
+          "sp_write": 262262
+        },
+        "physical_port_read_bytes": 2099312,
+        "physical_port_write_bus_bytes": 2098096,
+        "preparation_reciprocals": 22,
+        "program_generation_output_bytes": 6400,
+        "program_image_load_bytes": 6144,
+        "program_image_storage_bytes": 3200,
+        "program_image_transport": "internal_generated_buffer",
+        "removed_initialization_replies_drained": 2,
+        "removed_initialization_writes_drained": 2,
+        "removed_provider_replies_drained": {
+          "metadata": 2,
+          "program": 2
+        },
+        "runtime_reciprocals": 0,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 8,
+          "execution": 5923,
+          "finalization": 1179718,
+          "held_return": 4,
+          "initialization_hardware_fill": 393218,
+          "input_hash": 30,
+          "interprogram_seed": 66,
+          "program_generation": 1606,
+          "program_preparation": 2992
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 4,
+          "metadata": 0,
+          "program": 0,
+          "scratchpad": 262414
+        },
+        "strobed_write_bytes": 2097752,
+        "untimed_provider_device_cycles": null
+      },
+      "observed_record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=1 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=1583565 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "profile": "prepared-stalled",
+      "raw_ledger": {
+        "bytes": 1721,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-stalled/ledger.json",
+        "sha256": "dea3fc7baf5d85aad7af77350793558a2a2ec665a60a5f3c5f5c40e10df89924"
+      },
+      "raw_log": {
+        "bytes": 406,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-stalled.log",
+        "sha256": "b0a434508e1375fc4341971b446aa91bcc1ced9627f8b6d5760b388ee4c245e9"
+      },
+      "raw_provider": {
+        "bytes": 899,
+        "path": "@EXECUTIONS@/20261016T175815Z-3eb05e9e8f2a/output/verilator/prepared-stalled/provider-host-time.json",
+        "sha256": "32657516204a41a20e2f862a0b0157df195938092d7145af1835acefdd2a6a8d"
+      }
+    }
+  ],
+  "counts": {},
+  "coverage_is_complete_and_disjoint": true,
+  "execution_id": "20261016T175815Z-3eb05e9e8f2a",
+  "identity_note": "Portable/selected copies are not a complete original execution and are not host-runner-verifiable; original verification used retained raw paths and bytes.",
+  "mapping": {},
+  "no_source_build_result_checkpoint_modified": true,
+  "observed_driver_status": null,
+  "observed_native_corpus_file_count": 18,
+  "original_receipt_artifact_count": 608,
+  "package": "connected01-partial",
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "process": {
+    "finished_at": "2026-10-16T18:02:48.934641+00:00",
+    "returncode": 1,
+    "scientific_acceptance": "unverified",
+    "signals": [],
+    "status": "PROCESS_FAILED"
+  },
+  "raw_manifest": {
+    "bytes": 1693669,
+    "sha256": "7cac2dbc735b950772884b7e23ea27c5734dd487c556b491b65c380dfd7fa0ff"
+  },
+  "raw_receipt": {
+    "bytes": 157503,
+    "sha256": "b42d8f24954ebcde7b1de4ba82b7fed7173d704510e504994a153e14117e0e19"
+  },
+  "raw_root_verification": {
+    "bytes": 155,
+    "sha256": "87b1147cb56e111805d097c98942d993d8b2993b50fb4f0af9876975af5a92f8"
+  },
+  "retained_only_artifact_count": 558,
+  "retained_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "runner_verify": {
+    "execution_id": "20261016T175815Z-3eb05e9e8f2a",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_FAILED"
+  },
+  "schema": "openrx.compact-evidence.v2",
+  "scientific_acceptance": "unverified",
+  "scope": "Failed connected payload: 56 unit checks and two completed Verilator 2x1 profiles, input-stage cancellation and invalid-length error-port7 pass records are preserved; boundary-prefix bench then failed and Icarus was not run. No whole-payload or new full-hash pass.",
+  "selected_original_artifact_count": 50,
+  "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+  "source_directory_binding": {
+    "kind": "directory",
+    "path": "@SOURCE03@",
+    "sha256": "686378ce838ec93ca0d486b7fbee78b317514da8ac90ce3785966cc6a4ac7a07"
+  },
+  "source_file_count": 4654,
+  "source_git_status_porcelain_at_export": "",
+  "source_tree": "aa082fb5255320aba24f25c28a212fd8608e83ba",
+  "systemd": {
+    "EXIT_CODE": "exited",
+    "EXIT_STATUS": "1",
+    "SERVICE_RESULT": "exit-code"
+  },
+  "whole_payload_failed": true
+}

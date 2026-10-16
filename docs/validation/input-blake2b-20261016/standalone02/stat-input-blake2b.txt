@@ -1,0 +1,32 @@
+
+5. Printing statistics.
+
+=== randomx_input_blake2b ===
+
+   Number of wires:              32715
+   Number of wire bits:          46286
+   Number of public wires:         130
+   Number of public wire bits:   12530
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              38538
+     $_ANDNOT_                    5846
+     $_AND_                        417
+     $_AOI3_                      1761
+     $_AOI4_                      1307
+     $_DFF_PN0_                   2571
+     $_DFF_PN1_                      2
+     $_DFF_P_                     1180
+     $_DLATCH_P_                  1024
+     $_MUX_                       6599
+     $_NAND_                       245
+     $_NOR_                        851
+     $_NOT_                       2055
+     $_OAI3_                      1898
+     $_OAI4_                      2810
+     $_ORNOT_                     1201
+     $_OR_                        3592
+     $_XNOR_                      2281
+     $_XOR_                       2898
+

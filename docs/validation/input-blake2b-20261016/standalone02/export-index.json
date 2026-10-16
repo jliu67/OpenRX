@@ -1,0 +1,842 @@
+{
+  "complete_receipt_coverage": {
+    "artifact_count": 112,
+    "files": [
+      {
+        "archive_entry": "records/events.jsonl",
+        "bytes": 1458,
+        "disposition": "selected",
+        "original_relative": "events.jsonl",
+        "sha256": "daf1202455d4802282276f12dd5c45d1bfe2dd9b43ea2ce1277b9ac8ccead459"
+      },
+      {
+        "archive_entry": "records/manifest.json",
+        "bytes": 854472,
+        "disposition": "selected",
+        "original_relative": "manifest.json",
+        "sha256": "0b23600864c75dda6996fd05a50febcca91de820ef4669db9ff228327a755c7a"
+      },
+      {
+        "archive_entry": "records/output/LICENSE-BLAKE2-original",
+        "bytes": 1305,
+        "disposition": "selected",
+        "original_relative": "output/LICENSE-BLAKE2-original",
+        "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+      },
+      {
+        "archive_entry": "records/output/LICENSE-RandomX",
+        "bytes": 1561,
+        "disposition": "selected",
+        "original_relative": "output/LICENSE-RandomX",
+        "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+      },
+      {
+        "archive_entry": "records/output/artifacts.sha256.json",
+        "bytes": 10201,
+        "disposition": "selected",
+        "original_relative": "output/artifacts.sha256.json",
+        "sha256": "ac8df4f5aba514e463eb6c385cb3df6de7362fc5228803fdafb93d1ed056c199"
+      },
+      {
+        "archive_entry": "records/output/commands.json",
+        "bytes": 24830,
+        "disposition": "selected",
+        "original_relative": "output/commands.json",
+        "sha256": "b24c1742b4557786f96d64a72185c80b6bbf2b11e13b4bfde8d29fe088af5b1f"
+      },
+      {
+        "archive_entry": "records/output/compile-mapped.log",
+        "bytes": 8298,
+        "disposition": "selected",
+        "original_relative": "output/compile-mapped.log",
+        "sha256": "2e1e8dea273c95602c960941564c738e0f74f15adc3c8febb16fa65c9fac7c6c"
+      },
+      {
+        "archive_entry": "records/output/compile-mapped.time.txt",
+        "bytes": 1112,
+        "disposition": "selected",
+        "original_relative": "output/compile-mapped.time.txt",
+        "sha256": "dcb89f036655187e0e2f13cc21f0571a5a9b2c901fd451ca3a35333c695d738b"
+      },
+      {
+        "archive_entry": "records/output/compile-native-oracle.log",
+        "bytes": 0,
+        "disposition": "selected",
+        "original_relative": "output/compile-native-oracle.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive_entry": "records/output/compile-native-oracle.time.txt",
+        "bytes": 951,
+        "disposition": "selected",
+        "original_relative": "output/compile-native-oracle.time.txt",
+        "sha256": "46027d7fc51a746d9f63349f8856dc50078c4c876e858797f6d1e022eaf6365f"
+      },
+      {
+        "archive_entry": "records/output/compile-rtl.log",
+        "bytes": 546,
+        "disposition": "selected",
+        "original_relative": "output/compile-rtl.log",
+        "sha256": "165cb14713ce61caf22c8fd05e01ee2746e872ba9e5f3fa6e9986e31e85c7833"
+      },
+      {
+        "archive_entry": "records/output/compile-rtl.time.txt",
+        "bytes": 978,
+        "disposition": "selected",
+        "original_relative": "output/compile-rtl.time.txt",
+        "sha256": "223a0e20a2668d6187227894f19059ac65d13e8851f996673fd908cdef3d0d42"
+      },
+      {
+        "archive_entry": "records/output/corpus.json",
+        "bytes": 814,
+        "disposition": "selected",
+        "original_relative": "output/corpus.json",
+        "sha256": "3d4f1e238c3709e1e38ec00734426bbc3cbfef18c22872f519c4ed9915452433"
+      },
+      {
+        "archive_entry": "records/output/fixtures.sha256.json",
+        "bytes": 358,
+        "disposition": "selected",
+        "original_relative": "output/fixtures.sha256.json",
+        "sha256": "5fa6dac3328463af6d042b6c9c1662f6f812ce6a3547461a85dc33c50a86e930"
+      },
+      {
+        "bytes": 585,
+        "disposition": "retained-only",
+        "original_relative": "output/fixtures/control.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0e533c656a7137c7c1e7e8247b5d38a0eba01aeb696049ebc8f4ad67277c1a4b"
+      },
+      {
+        "bytes": 7610,
+        "disposition": "retained-only",
+        "original_relative": "output/fixtures/mapped-vectors.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "6384312d0095cf0bd3b0053506d5dae90193f034c59ad9af3304e47a031abb4c"
+      },
+      {
+        "archive_entry": "records/output/fixtures/native-summary.json",
+        "bytes": 251,
+        "disposition": "selected",
+        "original_relative": "output/fixtures/native-summary.json",
+        "sha256": "e676ab9c572f825e6a51d476c4bdf13b6e17a2efdd3c521b9f950061477e7dc2"
+      },
+      {
+        "bytes": 179822,
+        "disposition": "retained-only",
+        "original_relative": "output/fixtures/vectors.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "bcebbde0dc53c9d08bbf24a2f5c5159a0b914cdd74c589ea153717d4c0cadb58"
+      },
+      {
+        "bytes": 31784,
+        "disposition": "retained-only",
+        "original_relative": "output/input-blake2b-oracle",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "8029b7d5d74b4cdeb44880ddc979373386782e76eddc3d4e00d8e8a1d4588350"
+      },
+      {
+        "archive_entry": "records/output/inputs.json",
+        "bytes": 21101,
+        "disposition": "selected",
+        "original_relative": "output/inputs.json",
+        "sha256": "15a59c5b7e1386024b92ffb2a9019a1a40a78987120175673ec962b0e9c6c0c1"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_before.log",
+        "bytes": 267,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_before.log",
+        "sha256": "5ca01598318c0282cfe82a39d7ac64deaa2b0a3545421359ae57e5d0dc414243"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_before.time.txt",
+        "bytes": 940,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_before.time.txt",
+        "sha256": "6da893b938040febe98958f210c61c012dc06f186d43ac25021fe11ac01b4fcc"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_early.log",
+        "bytes": 265,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_early.log",
+        "sha256": "56818037fa82e76ea6ce989fd8f769dec989d1bc9e669f4800e769dca2a09f6a"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_early.time.txt",
+        "bytes": 939,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_early.time.txt",
+        "sha256": "c8b2b516ddc0646bcd20b59eef3c3c9e500b9171dd2ecdc30bae133458c9fec5"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_final.log",
+        "bytes": 266,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_final.log",
+        "sha256": "a018085adaba20a6d8f1fffb76f7e9c565527d4b58c2e5a02c4b6a803284796e"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_final.time.txt",
+        "bytes": 940,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_final.time.txt",
+        "sha256": "376ae3cbeb803a2f75da993b20ebf9169dbb7a26521f8ece4ea75b6ab9200db7"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_middle.log",
+        "bytes": 267,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_middle.log",
+        "sha256": "c44e3aa36dcc99e9f79cfeadac385962665174f5e247320a0b38564d251928a0"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_middle.time.txt",
+        "bytes": 940,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_middle.time.txt",
+        "sha256": "0437384082b191a0a1510c6251c8e601e85d2f415a6f8cf9126a604e391dff4b"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_return.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_return.log",
+        "sha256": "ad9e064312f05b979a311a22472738786fdefaaf61336abf073f3726bb9493bb"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_return.time.txt",
+        "bytes": 940,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_return.time.txt",
+        "sha256": "ecdd30a0d8c91c8e6466a4c07eceeaffbb8b8c5abbaeee029d0717d9bac910aa"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_start.log",
+        "bytes": 265,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_start.log",
+        "sha256": "9c04db1b6960c1f963a01d961ca876800ed0627caab7458aed0e12c5b601b7cb"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-cancel_start.time.txt",
+        "bytes": 938,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-cancel_start.time.txt",
+        "sha256": "1b4febd4fdddb76ff0cc77775423db802471fdb3f80e75f83d51cb6803cff388"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-held_request.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-held_request.log",
+        "sha256": "5d2f2b5437833c13ac78262fb4678faf98821adf889bb1c530dd621785c173ce"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-held_request.time.txt",
+        "bytes": 939,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-held_request.time.txt",
+        "sha256": "81e9c776ed5025843c48e2407c7c45dcf5656f20bcda0c4a854f5c3b5b812ff8"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-held_response.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-held_response.log",
+        "sha256": "385567c2597bb9efa1855d106b696aa2c74af1d6341d58fedc56e419fb171e99"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-held_response.time.txt",
+        "bytes": 940,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-held_response.time.txt",
+        "sha256": "d25da0685deacb9a10ac8482a99d74ce6c3c88c7682fd949a2c4579bbc0a9e69"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-invalid_edges.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-invalid_edges.log",
+        "sha256": "efb1428d2c04278b911749bda6d359c49ac2044e8bc68b60fd9071474a20aa84"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-invalid_edges.time.txt",
+        "bytes": 940,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-invalid_edges.time.txt",
+        "sha256": "ce908a80dcdb0d1b4c435459b39ec045ca7559bf01666bd4092c69ca1a253845"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_before.log",
+        "bytes": 266,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_before.log",
+        "sha256": "882072ba07ecd0dfe82671436b3f9b536dc825cc8c7df0199f9be6fc9b2d2bd0"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_before.time.txt",
+        "bytes": 939,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_before.time.txt",
+        "sha256": "acea42e5eea4b4ae12dd6c54b8573220c1d663ce1a258c70fd681934d1ff0e4d"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_early.log",
+        "bytes": 264,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_early.log",
+        "sha256": "29f40decfb5789934ea3dde7a3c7e41ae8b4db7fe727ef0b0e372e42171ba4dd"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_early.time.txt",
+        "bytes": 938,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_early.time.txt",
+        "sha256": "05c3106bff192ba4e08acb813fbf1cfd7686ec61f9655399ed24bbc1db63d1d8"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_final.log",
+        "bytes": 265,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_final.log",
+        "sha256": "b7e99ee60ccda11490d62faabfca0e1ff1637ef8d41fb751cfd92b26f0dd539a"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_final.time.txt",
+        "bytes": 937,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_final.time.txt",
+        "sha256": "ba096113685e721c12db4a79ed7e097a28cb1588e5105a30aa99785a4d448918"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_middle.log",
+        "bytes": 266,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_middle.log",
+        "sha256": "593544536c9b74bb1258d9c9f49489a0f59b345321d0a3a290d53e1379a7c670"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_middle.time.txt",
+        "bytes": 939,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_middle.time.txt",
+        "sha256": "87e030198f9ac167389528633c8fdc66a07925069b1efee2ff41f1c083c1f3b8"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_return.log",
+        "bytes": 267,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_return.log",
+        "sha256": "d9c742035f8bef03bb7990d148352388e39cd11b0eac387c822b5dff90f15f82"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_return.time.txt",
+        "bytes": 940,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_return.time.txt",
+        "sha256": "997bc1bc19e4230a480c26d0e32ac5d5250c81142850773d16161839284b4190"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_start.log",
+        "bytes": 264,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_start.log",
+        "sha256": "6f05f6fe8fe4bfad110136931ecbb9c389d201bb50126267aafbdbae82c28c84"
+      },
+      {
+        "archive_entry": "records/output/mapped-control-reset_start.time.txt",
+        "bytes": 937,
+        "disposition": "selected",
+        "original_relative": "output/mapped-control-reset_start.time.txt",
+        "sha256": "931c0f28aca7166ab379886997689347693b452f0b8d987f4f992af53d5cc9f6"
+      },
+      {
+        "archive_entry": "records/output/mapped-corpus.log",
+        "bytes": 264,
+        "disposition": "selected",
+        "original_relative": "output/mapped-corpus.log",
+        "sha256": "31b7e79c0138a2b33b87821d0be61281e17bd51a54b45b41be1ee1c1727a28f6"
+      },
+      {
+        "archive_entry": "records/output/mapped-corpus.time.txt",
+        "bytes": 943,
+        "disposition": "selected",
+        "original_relative": "output/mapped-corpus.time.txt",
+        "sha256": "890744875fdaa92c51bb57409d7c6f9c367e28c42ac049bc11078f21636ad94a"
+      },
+      {
+        "bytes": 14494656,
+        "disposition": "retained-only",
+        "original_relative": "output/mapped.vvp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d8a1a4ed1b0559cb5716d7dca8aa0090640bbecd17840f5582dd463a1ea2d004"
+      },
+      {
+        "archive_entry": "records/output/native-oracle.log",
+        "bytes": 109,
+        "disposition": "selected",
+        "original_relative": "output/native-oracle.log",
+        "sha256": "350d5a0b1352d9cdc3596e76226c6db153199de0e186b67d9206041ef08a0a64"
+      },
+      {
+        "archive_entry": "records/output/native-oracle.time.txt",
+        "bytes": 898,
+        "disposition": "selected",
+        "original_relative": "output/native-oracle.time.txt",
+        "sha256": "afc8942ebeb7d406c6f6cd7cffda555e20a4dd7f6a40db88a98b2696a20377cb"
+      },
+      {
+        "bytes": 23928589,
+        "disposition": "retained-only",
+        "original_relative": "output/netlist-input-blake2b.json",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "df63b12b89dfa4438321d431b8de2c1b7d1379f6deec6e8c5fab90d4f75395e3"
+      },
+      {
+        "bytes": 2817222,
+        "disposition": "retained-only",
+        "original_relative": "output/netlist-input-blake2b.v",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "eab6627baf6e5d869dbefb50d59b23d9a0df1b70acd5f539d206f925d010944a"
+      },
+      {
+        "archive_entry": "records/output/preserved-IP.json",
+        "bytes": 1233,
+        "disposition": "selected",
+        "original_relative": "output/preserved-IP.json",
+        "sha256": "4eaabdcf960ff3433551b11ed754c7b09008afc155d8a421d171044bfaa24994"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_before.log",
+        "bytes": 267,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_before.log",
+        "sha256": "5ca01598318c0282cfe82a39d7ac64deaa2b0a3545421359ae57e5d0dc414243"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_before.time.txt",
+        "bytes": 933,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_before.time.txt",
+        "sha256": "342245ce5a7e890cbc1694d94de6ebf6e8dbe011304c26081e9f34659be26d8f"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_early.log",
+        "bytes": 265,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_early.log",
+        "sha256": "56818037fa82e76ea6ce989fd8f769dec989d1bc9e669f4800e769dca2a09f6a"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_early.time.txt",
+        "bytes": 933,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_early.time.txt",
+        "sha256": "18a5651386a354d4d1c8f239262af86cfd54cf65676682ac88079a3cca6a02b0"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_final.log",
+        "bytes": 266,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_final.log",
+        "sha256": "a018085adaba20a6d8f1fffb76f7e9c565527d4b58c2e5a02c4b6a803284796e"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_final.time.txt",
+        "bytes": 932,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_final.time.txt",
+        "sha256": "54192cb950d81b44d4b7b8bed3c36394f8cf0126251f90827b97db81c57fb188"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_middle.log",
+        "bytes": 267,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_middle.log",
+        "sha256": "c44e3aa36dcc99e9f79cfeadac385962665174f5e247320a0b38564d251928a0"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_middle.time.txt",
+        "bytes": 934,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_middle.time.txt",
+        "sha256": "db9eccf1de148ab577a7e317aa7e484b6f3d365a9624b893c29d76ec383e657a"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_return.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_return.log",
+        "sha256": "ad9e064312f05b979a311a22472738786fdefaaf61336abf073f3726bb9493bb"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_return.time.txt",
+        "bytes": 934,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_return.time.txt",
+        "sha256": "e298a9bf416cce554fb7b4e1ac7a60c47a5fa2b78492dffb99afcf45402563e2"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_start.log",
+        "bytes": 265,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_start.log",
+        "sha256": "9c04db1b6960c1f963a01d961ca876800ed0627caab7458aed0e12c5b601b7cb"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-cancel_start.time.txt",
+        "bytes": 932,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-cancel_start.time.txt",
+        "sha256": "ab113c1f8564400c35858a4a3150c04f9d3fceef243a2ed1eb5eb8a392c05a47"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-held_request.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-held_request.log",
+        "sha256": "5d2f2b5437833c13ac78262fb4678faf98821adf889bb1c530dd621785c173ce"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-held_request.time.txt",
+        "bytes": 933,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-held_request.time.txt",
+        "sha256": "4c9ad3bb326e3aa0fcc5fa6ece5f69cc707a12b2607bb082deb51ffab299c00e"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-held_response.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-held_response.log",
+        "sha256": "385567c2597bb9efa1855d106b696aa2c74af1d6341d58fedc56e419fb171e99"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-held_response.time.txt",
+        "bytes": 934,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-held_response.time.txt",
+        "sha256": "4a236b289bc0f6efe3a14bcf1eda378a9400fad8411b07a3423ba80d80742f85"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-invalid_all.log",
+        "bytes": 270,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-invalid_all.log",
+        "sha256": "596524770dc067f6f44f0f7119433f88abd5b689b7b2880d99d02a49f296b767"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-invalid_all.time.txt",
+        "bytes": 931,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-invalid_all.time.txt",
+        "sha256": "0b21066f99072112d1bdf9f1c7f52b6caab4fce40282513e0647193fb34cb312"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-invalid_edges.log",
+        "bytes": 268,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-invalid_edges.log",
+        "sha256": "efb1428d2c04278b911749bda6d359c49ac2044e8bc68b60fd9071474a20aa84"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-invalid_edges.time.txt",
+        "bytes": 934,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-invalid_edges.time.txt",
+        "sha256": "ca28c11d7b8e916f3e9c7e963564c86653b61e2cdef846efe103e8f46c0fefa2"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_before.log",
+        "bytes": 266,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_before.log",
+        "sha256": "882072ba07ecd0dfe82671436b3f9b536dc825cc8c7df0199f9be6fc9b2d2bd0"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_before.time.txt",
+        "bytes": 933,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_before.time.txt",
+        "sha256": "0696f6cc7a1c2e3b40b508b09fc8f98aa2f6116c43cddfc306b383f6e4055bdc"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_early.log",
+        "bytes": 264,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_early.log",
+        "sha256": "29f40decfb5789934ea3dde7a3c7e41ae8b4db7fe727ef0b0e372e42171ba4dd"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_early.time.txt",
+        "bytes": 931,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_early.time.txt",
+        "sha256": "bbb436f3f6f6c24e9c97f0b66c6a163c24030784c3c412e9a710950e70bbcfea"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_final.log",
+        "bytes": 265,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_final.log",
+        "sha256": "b7e99ee60ccda11490d62faabfca0e1ff1637ef8d41fb751cfd92b26f0dd539a"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_final.time.txt",
+        "bytes": 931,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_final.time.txt",
+        "sha256": "3186db7043e76acfbd9e32fa32306e995f3d60203ebf3f0454220091ea894712"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_middle.log",
+        "bytes": 266,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_middle.log",
+        "sha256": "593544536c9b74bb1258d9c9f49489a0f59b345321d0a3a290d53e1379a7c670"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_middle.time.txt",
+        "bytes": 933,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_middle.time.txt",
+        "sha256": "7cbd13ced31c418cefdf850897aaff3c0b3d18e4d4ff5a93d91daf3a7987e9b5"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_return.log",
+        "bytes": 267,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_return.log",
+        "sha256": "d9c742035f8bef03bb7990d148352388e39cd11b0eac387c822b5dff90f15f82"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_return.time.txt",
+        "bytes": 933,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_return.time.txt",
+        "sha256": "1bb84961243e9b46a958226d5d6b627546f30fa030b2b18122b1727610bc9f4a"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_start.log",
+        "bytes": 264,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_start.log",
+        "sha256": "6f05f6fe8fe4bfad110136931ecbb9c389d201bb50126267aafbdbae82c28c84"
+      },
+      {
+        "archive_entry": "records/output/rtl-control-reset_start.time.txt",
+        "bytes": 931,
+        "disposition": "selected",
+        "original_relative": "output/rtl-control-reset_start.time.txt",
+        "sha256": "fc637bca4c89996de171a00e00676a9ed5fd6c6f40a4d9166b5e220dd6562f7c"
+      },
+      {
+        "archive_entry": "records/output/rtl-corpus.log",
+        "bytes": 269,
+        "disposition": "selected",
+        "original_relative": "output/rtl-corpus.log",
+        "sha256": "1351886402a8dd007b83d39fc4678a0fcf7cb1c0970d7a4cc5b40926036410ee"
+      },
+      {
+        "archive_entry": "records/output/rtl-corpus.time.txt",
+        "bytes": 928,
+        "disposition": "selected",
+        "original_relative": "output/rtl-corpus.time.txt",
+        "sha256": "53c671c25857a9f465af3dbd94258b872bb7c8e618ed5bb549fc497bed392be7"
+      },
+      {
+        "archive_entry": "records/output/rtl-mapped-corpus.log",
+        "bytes": 264,
+        "disposition": "selected",
+        "original_relative": "output/rtl-mapped-corpus.log",
+        "sha256": "31b7e79c0138a2b33b87821d0be61281e17bd51a54b45b41be1ee1c1727a28f6"
+      },
+      {
+        "archive_entry": "records/output/rtl-mapped-corpus.time.txt",
+        "bytes": 933,
+        "disposition": "selected",
+        "original_relative": "output/rtl-mapped-corpus.time.txt",
+        "sha256": "47d268456d9a780111ffb63a33ab4389db456e6d14dd718602197aa75069f3e5"
+      },
+      {
+        "bytes": 314592,
+        "disposition": "retained-only",
+        "original_relative": "output/rtl.vvp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "336edd666aa797f280a311f301345502778238d193d5a778ceffe5bc9febc11e"
+      },
+      {
+        "archive_entry": "records/output/stat-input-blake2b.txt",
+        "bytes": 1072,
+        "disposition": "selected",
+        "original_relative": "output/stat-input-blake2b.txt",
+        "sha256": "5af76271272556c574674ad103301c762c4ac7e2863bc5e8190e70e8508e4816"
+      },
+      {
+        "archive_entry": "records/output/summary.json",
+        "bytes": 26169,
+        "disposition": "selected",
+        "original_relative": "output/summary.json",
+        "sha256": "6604346226124d849eb73255985b172432d5bb7ed129366a8b794e2cf1fc123f"
+      },
+      {
+        "archive_entry": "records/output/synth-input-blake2b.log",
+        "bytes": 159558,
+        "disposition": "selected",
+        "original_relative": "output/synth-input-blake2b.log",
+        "sha256": "e626a44330390471e10bb2e08f80476e969905a3982cbfe82706684e97a6bb55"
+      },
+      {
+        "archive_entry": "records/output/synth-input-blake2b.time.txt",
+        "bytes": 1256,
+        "disposition": "selected",
+        "original_relative": "output/synth-input-blake2b.time.txt",
+        "sha256": "68c34fd276e76de5c4bfb5ab28ea5689b637bad89f9f95d6ee093e24f4ebb297"
+      },
+      {
+        "archive_entry": "records/output/tools.json",
+        "bytes": 5526,
+        "disposition": "selected",
+        "original_relative": "output/tools.json",
+        "sha256": "3e07944550101213373cc05fd6fda4bc490c003e1217584bfd9e2ef0a77ca94d"
+      },
+      {
+        "archive_entry": "records/output/vendor.log",
+        "bytes": 32,
+        "disposition": "selected",
+        "original_relative": "output/vendor.log",
+        "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+      },
+      {
+        "archive_entry": "records/output/vendor.time.txt",
+        "bytes": 751,
+        "disposition": "selected",
+        "original_relative": "output/vendor.time.txt",
+        "sha256": "3645e2e7bfaf17d0a1e2704b3f4e8c977fe97a0e077c64e4c385175c465bbbc0"
+      },
+      {
+        "archive_entry": "records/output/yosys-cell-model.json",
+        "bytes": 273,
+        "disposition": "selected",
+        "original_relative": "output/yosys-cell-model.json",
+        "sha256": "31344a7ef632a7f7cdb256d658accdc620e360a3f970070828a451d4ef9849ad"
+      },
+      {
+        "bytes": 31442,
+        "disposition": "retained-only",
+        "original_relative": "output/yosys-simcells.v",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51"
+      },
+      {
+        "archive_entry": "records/prelaunch-kernel-check.json",
+        "bytes": 2318,
+        "disposition": "selected",
+        "original_relative": "prelaunch-kernel-check.json",
+        "sha256": "0152289da94af5530eb1c866d2ddd915140f73ffeebbbefb40255b2f697b2a01"
+      },
+      {
+        "archive_entry": "records/prelaunch-resource-check.json",
+        "bytes": 415,
+        "disposition": "selected",
+        "original_relative": "prelaunch-resource-check.json",
+        "sha256": "11ebbde5d8cebcf71ebc77c75478d161b89127c6a0c84df1a72c9ac8dcad77e6"
+      },
+      {
+        "archive_entry": "records/process-result.json",
+        "bytes": 142,
+        "disposition": "selected",
+        "original_relative": "process-result.json",
+        "sha256": "02c779478a683e382d1de7dec0084305286bce13b18e49eb63cad0ee4b503d9e"
+      },
+      {
+        "bytes": 47618,
+        "disposition": "retained-only",
+        "original_relative": "runner.py",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b"
+      },
+      {
+        "archive_entry": "records/stderr.log",
+        "bytes": 0,
+        "disposition": "selected",
+        "original_relative": "stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive_entry": "records/stdout.log",
+        "bytes": 2442,
+        "disposition": "selected",
+        "original_relative": "stdout.log",
+        "sha256": "93b2cc6757b01c40aeb03430077af3711070f87039e20e3097424392469ff0d7"
+      },
+      {
+        "archive_entry": "records/submission-command.json",
+        "bytes": 871,
+        "disposition": "selected",
+        "original_relative": "submission-command.json",
+        "sha256": "7e2701795b0eafcb5610874f0f1324bf86c857bb4baee13ed674e692d4efbd7d"
+      },
+      {
+        "archive_entry": "records/submission-result.json",
+        "bytes": 41,
+        "disposition": "selected",
+        "original_relative": "submission-result.json",
+        "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+      }
+    ],
+    "retained_only_count": 10,
+    "selected_count": 102,
+    "selected_retained_intersection_count": 0,
+    "union_matches_receipt": true
+  },
+  "execution_id": "20261016T175348Z-0d85cf342e1a",
+  "identity_note": "Portable/selected copies are not a complete original execution and are not host-runner-verifiable; original verification used retained raw paths and bytes.",
+  "index_self_excluded_to_avoid_recursive_hash": true,
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "public_files": {
+    "archive-index.json": {
+      "bytes": 73010,
+      "presentation_of_archive_entry": null,
+      "sha256": "2ec091e35e4a58b35bc61655fc94cc6b95daf3648057f2c92425f86f4fd0693e"
+    },
+    "execution.json": {
+      "bytes": 4109,
+      "presentation_of_archive_entry": "execution.json",
+      "sha256": "c3cf7bf784eb291d0939079d955432b14f86b69bd34ca33a7b1b0f38d11d8feb"
+    },
+    "records.zip": {
+      "bytes": 297786,
+      "presentation_of_archive_entry": null,
+      "sha256": "0ce39271767cf4014f6c186d7f8641def636c766eda3945e358ac97b6b0dceaa"
+    },
+    "resources.json": {
+      "bytes": 5740,
+      "presentation_of_archive_entry": "resources.json",
+      "sha256": "0a39e0e0781d4a86002289136f71514dd6348602b7b69e588b8deb854f2c3271"
+    },
+    "stat-input-blake2b.txt": {
+      "bytes": 1072,
+      "presentation_of_archive_entry": "records/output/stat-input-blake2b.txt",
+      "sha256": "5af76271272556c574674ad103301c762c4ac7e2863bc5e8190e70e8508e4816"
+    },
+    "summary.json": {
+      "bytes": 26169,
+      "presentation_of_archive_entry": "records/output/summary.json",
+      "sha256": "89153245fbcb2206b4138e1cdcf250d0e6ccc8d375c1747525b6e1a23818d8de"
+    },
+    "verify.json": {
+      "bytes": 155,
+      "presentation_of_archive_entry": "verify.json",
+      "sha256": "95c20f7ff27bf6fe15345765823c40ca5077472c04089ba11a3a068b42634342"
+    }
+  },
+  "raw_manifest_sha256": "0b23600864c75dda6996fd05a50febcca91de820ef4669db9ff228327a755c7a",
+  "raw_receipt_sha256": "f910b192e792f417fbdca242f730def3945bece4a31b82f16915da065c90be07",
+  "root_verify_sha256": "95c20f7ff27bf6fe15345765823c40ca5077472c04089ba11a3a068b42634342",
+  "schema": "openrx.compact-export-index.v2",
+  "scientific_acceptance": "unverified",
+  "sources_bound_by_full_portable_manifest": true
+}

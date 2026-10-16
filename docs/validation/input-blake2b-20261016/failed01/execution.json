@@ -1,0 +1,69 @@
+{
+  "boundary": "Unkeyed BLAKE2b-512 input length0..80 only; unsupported81..127 returns held error. New input wrapper reuses unchanged accepted compression core. Native Light dataset and physical memory service remain external; no general input or physical PPA claim.",
+  "complete_output_retained": "@EXECUTIONS@/20261016T174934Z-6e9224e12533/output",
+  "counts": {},
+  "coverage_is_complete_and_disjoint": true,
+  "execution_id": "20261016T174934Z-6e9224e12533",
+  "identity_note": "Portable/selected copies are not a complete original execution and are not host-runner-verifiable; original verification used retained raw paths and bytes.",
+  "mapping": {},
+  "no_source_build_result_checkpoint_modified": true,
+  "observed_driver_status": "failed",
+  "original_receipt_artifact_count": 22,
+  "package": "failed01",
+  "preserved_failure_history": [
+    {
+      "after_file_sha256": "a301e3a5126913277dcd3a4fcfe55febb1c28a66a479bfb9ec79206e2af9e881",
+      "before_file_sha256": "fa7d4c8dadb9dc0b9ec14661d5c3111afa734f1e4a91be3f1e582bb1d2fceb74",
+      "failed_execution": "20261016T174934Z-6e9224e12533",
+      "failure_retained": true,
+      "fix_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+      "minimal_fix_archive_entry": "history/minimal-oracle-header-fix.patch",
+      "successful_execution": "20261016T175348Z-0d85cf342e1a"
+    }
+  ],
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "process": {
+    "finished_at": "2026-10-16T17:49:38.946151+00:00",
+    "returncode": 1,
+    "scientific_acceptance": "unverified",
+    "signals": [],
+    "status": "PROCESS_FAILED"
+  },
+  "raw_manifest": {
+    "bytes": 854472,
+    "sha256": "b08f6700bdd0b5417c315ca641dd088dd8a480980ac88aae93954280c6cd94d3"
+  },
+  "raw_receipt": {
+    "bytes": 4670,
+    "sha256": "2e842357884076d732d4d480e82ee7e63de9c8aa7ab2301f52862673bc45db3b"
+  },
+  "raw_root_verification": {
+    "bytes": 155,
+    "sha256": "e5435d6840055b3c190e2af58895e9cc1401466e9f8f4b14b0540c9eeb388b3c"
+  },
+  "retained_only_artifact_count": 1,
+  "retained_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "runner_verify": {
+    "execution_id": "20261016T174934Z-6e9224e12533",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_FAILED"
+  },
+  "schema": "openrx.compact-evidence.v2",
+  "scientific_acceptance": "unverified",
+  "selected_original_artifact_count": 21,
+  "source_commit": "aa7c804e8f3ae9496a61427d316de7a5e3818bc6",
+  "source_directory_binding": {
+    "kind": "directory",
+    "path": "@SOURCE01@",
+    "sha256": "8855b57ed9b1c11a030a92101102cfaf291f9fd2748e8af6179945fd5670e985"
+  },
+  "source_file_count": 4654,
+  "source_git_status_porcelain_at_export": "",
+  "source_tree": "d19c5afdfa5a65f9ca45ec2fcb9689698730ec56",
+  "systemd": {
+    "EXIT_CODE": "exited",
+    "EXIT_STATUS": "1",
+    "SERVICE_RESULT": "exit-code"
+  }
+}

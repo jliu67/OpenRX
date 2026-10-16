@@ -1,0 +1,254 @@
+{
+  "allowed_metadata_paths": [
+    "AGENTS.md",
+    "README.md",
+    "memory/STATE.md",
+    "memory/HANDOFF.md",
+    "memory/SESSION_LOG.md",
+    "memory/DECISIONS.md",
+    "rtl/hash/INPUT_HASH.md",
+    "experiments/EXP-018-bounded-input-blake2b.md",
+    "docs/validation/input-blake2b-20261016/**"
+  ],
+  "base_commit": "eed374b28e9e2efa71bc16f5ba15e999e2940415",
+  "external_orchestration": [
+    {
+      "logical_path": "@TMP@/openrx-inputhash-connected-check.py",
+      "meaning": "original partial failed connected payload",
+      "sha256": "fe47b44674b38154937854c57855f565319101e49cd854abe5da2eace4f8843c"
+    },
+    {
+      "logical_path": "@TMP@/openrx-inputhash-connected-recovery-check.py",
+      "meaning": "new boundary/Icarus plus receipt-checked preserved subresult composition",
+      "sha256": "3e60f9449abe487c971019c493c57d0e865e440a293629c3b27aa351fc7c173e"
+    }
+  ],
+  "files": {
+    "rtl/hash/randomx_input_blake2b.v": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "afe533c723475bf9ef656139f9ea2c3aa85f38a0c6e1153f09b9786461b684de",
+        "size_bytes": 2444
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "afe533c723475bf9ef656139f9ea2c3aa85f38a0c6e1153f09b9786461b684de",
+        "size_bytes": 2444
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "afe533c723475bf9ef656139f9ea2c3aa85f38a0c6e1153f09b9786461b684de",
+        "size_bytes": 2444
+      },
+      "source04_equals_publication": true
+    },
+    "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "1d671a885309e2663786ae3d897bb6eb4164ed5e2c0ad47677ee660a4a0b2422",
+        "size_bytes": 31795
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "1d671a885309e2663786ae3d897bb6eb4164ed5e2c0ad47677ee660a4a0b2422",
+        "size_bytes": 31795
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "1d671a885309e2663786ae3d897bb6eb4164ed5e2c0ad47677ee660a4a0b2422",
+        "size_bytes": 31795
+      },
+      "source04_equals_publication": true
+    },
+    "rtl/hash/tests/input_blake2b_oracle.cpp": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "a301e3a5126913277dcd3a4fcfe55febb1c28a66a479bfb9ec79206e2af9e881",
+        "size_bytes": 4073
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "a301e3a5126913277dcd3a4fcfe55febb1c28a66a479bfb9ec79206e2af9e881",
+        "size_bytes": 4073
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "a301e3a5126913277dcd3a4fcfe55febb1c28a66a479bfb9ec79206e2af9e881",
+        "size_bytes": 4073
+      },
+      "source04_equals_publication": true
+    },
+    "rtl/hash/tests/lifecycle_source_dpi.cpp": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "0a5e2a4a29afc92242c54a87041760d6d0e52b4298c3c169f0336abfc4111fd3",
+        "size_bytes": 5341
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "0a5e2a4a29afc92242c54a87041760d6d0e52b4298c3c169f0336abfc4111fd3",
+        "size_bytes": 5341
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "0a5e2a4a29afc92242c54a87041760d6d0e52b4298c3c169f0336abfc4111fd3",
+        "size_bytes": 5341
+      },
+      "source04_equals_publication": true
+    },
+    "rtl/hash/tests/lifecycle_source_vpi.cpp": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "19b8a95a199071ae319223a51bb805b740fbfb638916644242e857c62b09026a",
+        "size_bytes": 7576
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "19b8a95a199071ae319223a51bb805b740fbfb638916644242e857c62b09026a",
+        "size_bytes": 7576
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "19b8a95a199071ae319223a51bb805b740fbfb638916644242e857c62b09026a",
+        "size_bytes": 7576
+      },
+      "source04_equals_publication": true
+    },
+    "rtl/hash/tests/tb_input_blake2b.v": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "97263ec35cb69256356f2826827ad1354a87d8e4a128156b0e7d39b76633a060",
+        "size_bytes": 10384
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "97263ec35cb69256356f2826827ad1354a87d8e4a128156b0e7d39b76633a060",
+        "size_bytes": 10384
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "97263ec35cb69256356f2826827ad1354a87d8e4a128156b0e7d39b76633a060",
+        "size_bytes": 10384
+      },
+      "source04_equals_publication": true
+    },
+    "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "a12e116572bbce5b464f0934d20955dbe0c33464b3f0bc1459904e8b985abd57",
+        "size_bytes": 69469
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "d0447185379fe6f07a234deac3d5fbb3586c6e3d96d2439b1444267cd272af48",
+        "size_bytes": 69463
+      },
+      "source03_equals_source04": false,
+      "source04": {
+        "executable": false,
+        "sha256": "a12e116572bbce5b464f0934d20955dbe0c33464b3f0bc1459904e8b985abd57",
+        "size_bytes": 69469
+      },
+      "source04_equals_publication": true
+    },
+    "scripts/test_input_blake2b.py": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "d4dbcf01b0610f9b7122ffd14dee4b50b9c0e9c608535484c67254bff3e84f31",
+        "size_bytes": 15535
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "d4dbcf01b0610f9b7122ffd14dee4b50b9c0e9c608535484c67254bff3e84f31",
+        "size_bytes": 15535
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "d4dbcf01b0610f9b7122ffd14dee4b50b9c0e9c608535484c67254bff3e84f31",
+        "size_bytes": 15535
+      },
+      "source04_equals_publication": true
+    },
+    "scripts/test_prepared_hash_lifecycle.py": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "71b96fe676d0a67cf5f6b25a4348ab4ea47ca57e6ea54d7452b316b3180a26a5",
+        "size_bytes": 34666
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "71b96fe676d0a67cf5f6b25a4348ab4ea47ca57e6ea54d7452b316b3180a26a5",
+        "size_bytes": 34666
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "71b96fe676d0a67cf5f6b25a4348ab4ea47ca57e6ea54d7452b316b3180a26a5",
+        "size_bytes": 34666
+      },
+      "source04_equals_publication": true
+    },
+    "tests/test_lifecycle_ledger.py": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "f8fb731ec841f7a19cf83a963926d6e0f1193d80a31a120c6f0e987c368ba78d",
+        "size_bytes": 13400
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "f8fb731ec841f7a19cf83a963926d6e0f1193d80a31a120c6f0e987c368ba78d",
+        "size_bytes": 13400
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "f8fb731ec841f7a19cf83a963926d6e0f1193d80a31a120c6f0e987c368ba78d",
+        "size_bytes": 13400
+      },
+      "source04_equals_publication": true
+    },
+    "tests/test_lifecycle_staging.py": {
+      "publication_runtime": {
+        "executable": false,
+        "sha256": "fe747d968ac2598d83b7ad02b99116e4ae256414a650ea760aaa3ab1437abef4",
+        "size_bytes": 4081
+      },
+      "source03": {
+        "executable": false,
+        "sha256": "fe747d968ac2598d83b7ad02b99116e4ae256414a650ea760aaa3ab1437abef4",
+        "size_bytes": 4081
+      },
+      "source03_equals_source04": true,
+      "source04": {
+        "executable": false,
+        "sha256": "fe747d968ac2598d83b7ad02b99116e4ae256414a650ea760aaa3ab1437abef4",
+        "size_bytes": 4081
+      },
+      "source04_equals_publication": true
+    }
+  },
+  "only_runtime_successor_delta": "Exactly two #1 settling delays in boundary-only task input_boundary_case. No production RTL, assertions, clock edges or text outside helper changes. Preserved completed profiles compile INPUT_HASH_BOUNDARY_TEST=0. See raw receipt-bound recovery source-proof and independent assessment.",
+  "publication_successor_rule": "Relative to recovery source04 only declared metadata may change. All 11 runtime/test paths remain exact. All other tracked paths, native files, compression core and IP remain unchanged; original manifests bind full preserved snapshots. This file does not claim the metadata successor whole tree was locally executed.",
+  "recovery_source": {
+    "commit": "2b33e60d039a9a50cb540ef2c41561de8f4035a1",
+    "full_source_identity": "0004aabe96504ad26888baa843cd10269fb7b81b28447aa92f4bccb556d9d11a",
+    "logical_snapshot": "@SOURCE04@",
+    "tracked_blob_count": 4654,
+    "tree": "44139b83a1d3754da1aa54a78b92b5c308a4ae42"
+  },
+  "schema": "openrx.executed-source.v2",
+  "standalone_and_partial_connected_source": {
+    "commit": "307cc9ceef0328021aa7063b0930120b72884099",
+    "full_source_identity": "686378ce838ec93ca0d486b7fbee78b317514da8ac90ce3785966cc6a4ac7a07",
+    "logical_snapshot": "@SOURCE03@",
+    "tracked_blob_count": 4654,
+    "tree": "aa082fb5255320aba24f25c28a212fd8608e83ba"
+  }
+}
