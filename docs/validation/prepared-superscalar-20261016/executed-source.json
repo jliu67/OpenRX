@@ -32,7 +32,7 @@
       "manifest_sha256": "7069e13dea4e314dd09c0bfeec5e668a128ac6c28585678b88aaf5835d054cec"
     }
   },
-  "publication_delta": "Declared documentation/evidence/memory additions only after executed6f; the four new runtime/test files and existing multiplier remain byte-identical. Final exact-head review and hosted checks are separate.",
+  "publication_delta": "Declared documentation/evidence/memory additions above executed6f form first publication0be. A subsequent hosted-only workflow invocation changes simulation concurrency from implicit six workers to explicit two after a retained mapped-cancel wall-timeout; documentation declares that correction. The four new runtime/test files and existing multiplier remain byte-identical, with all cases, assertions and timeouts unchanged. Final exact-head review and hosted checks are separate.",
   "verification_rule": "Compare actual file bytes and Git identities to the bound originals; embedded hash claims alone do not establish trusted identity. Original host receipts have external journal bindings, separate from public derivatives.",
   "originals_preserved": true
 }

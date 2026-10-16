@@ -102,11 +102,20 @@ output directory outside source. The exact two-phase request records are on
 and [task71 synthesis](https://github.com/jliu67/OpenRX/issues/71#issuecomment-6224765511).
 They bind the actual source, runner, command arrays, tools, prior receipt and
 resources. The standalone driver also supports correctness followed by mapping
-inside one admitted payload, as used by the new hosted workflow:
+inside one admitted payload. A local six-worker invocation is:
 
 ```text
 python3 -B scripts/test_superscalar_execute.py --out FRESH_OUTSIDE_SOURCE --jobs 6 --synthesize
 ```
+
+The hosted workflow explicitly uses `--jobs 2` with the same driver, cases,
+assertions and 1,800-second command limit. Its first six-worker run at publication
+head `0beab95f65ffdee5b1b831e2f3c432d152a1ae4d` failed when `mapped-cancel`
+reached that limit. Native generation, all ten RTL modes, synthesis and the other
+six mapped modes passed; all 1,178 hosted fixture files exactly matched the
+retained local bytes. The failed log and complete artifact remain retained.
+The lower-concurrency hosted result requires its own completed check; this
+change does not turn the first failed run into a pass or repeat local science.
 
 The local correctness attempt reuses the exact retained native archive; hosted
 reproduction compiles five unchanged pinned native translation units. Neither

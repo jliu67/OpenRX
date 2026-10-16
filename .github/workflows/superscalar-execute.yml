@@ -28,7 +28,7 @@ jobs:
         run: |
           python3 -B scripts/test_superscalar_execute.py \
             --out "$RUNNER_TEMP/superscalar-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
-            --synthesize
+            --jobs 2 --synthesize
           echo "Executed bounded prepared-program native differential, lifecycle checks and actual generic synthesis/mapped comparison. Program preparation, cache initialization and memory service remain external; no physical PPA or complete dataset-generator claim." >> "$GITHUB_STEP_SUMMARY"
       - name: Retain complete licensed outputs
         if: always()
