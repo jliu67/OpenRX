@@ -1,5 +1,39 @@
 # OpenRX
 
+## Prepared native superscalar executor — 2026-10-16
+
+Above accepted main `9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a` (PR #78),
+[EXP-019](experiments/EXP-019-prepared-superscalar-execute.md) and
+[evidence](docs/validation/prepared-superscalar-20261016/README.md) bind one
+prepared native superscalar-program executor. It processes all 14 opcodes in
+order using the unchanged accepted multiplier, with an explicit tagged external
+instruction/reciprocal service. Existing VM/lifecycle defaults remain unchanged.
+
+Clean executed source `6f65049c` passes 130 native cases, all 7,779 retirement
+states and ten RTL modes. A separate verified request reuses all 1,178 fixtures
+without native/RTL regeneration; seven mapped modes over the explicit 116-case
+subset pass. Reset/cancel, held/stale/malformed transfers, full 512-instruction
+and zero-length programs, global reciprocal indices through 65,537 and real
+transaction-generation exhaustion are covered. Both first attempts passed;
+original runner scientific-unverified classifications remain unchanged, alongside
+separate independent bounded scientific acceptance.
+
+Recorded local default mapping is 19,604 generic cells, 1,410 flops and zero
+latches. The [component profile](docs/validation/prepared-superscalar-20261016/component-profile.json)
+retains per-program operations and modeled clocks: sixteen complete generated
+programs measure 6,511–6,749 clocks with ideal instruction service. These are
+component measurements, with external service and physical costs still explicit.
+
+Program/table preparation, immutable image service, Argon2/cache initialization,
+cache-line service and the eight-step dataset-item controller remain external.
+The next gap is exact item seeding, program/cache-XOR/post-XOR address recurrence
+and a bound prepared-cache/program/table export. No next-stage work, complete
+dataset generator, new full 8×2,048 hash, memory-technology choice, architecture
+selection or physical/whole-machine PPA is claimed. Existing task #71 retains
+plain execution records; no new issue, hub notice, standing mirror or Git sync is
+created. The feature PR records final exact-head review, hosted checks and normal
+merge/postmerge outcome. Earlier dated sections retain source-specific history.
+
 ## Bounded hardware input BLAKE2b — 2026-10-16
 
 Above accepted main `eed374b28e9e2efa71bc16f5ba15e999e2940415` (merged PR #77),

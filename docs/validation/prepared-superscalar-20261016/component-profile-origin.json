@@ -1,0 +1,22 @@
+{
+  "schema": "openrx.component-profile-export-origin.v1",
+  "kind": "derived_component_measurements_not_runner_receipt",
+  "original_profile_sha256": "9985aa6b7ea3338c5cc838c1606484b3fff7675e35258a6f0190bbbfcc3f0e1f",
+  "original_profile_bytes": 22822,
+  "public_profile_sha256": "27d74e7a907b2ac81e4da084826cc55bb036176586969db5e0d57d9bb31e8f71",
+  "public_profile_bytes": 22837,
+  "transformation": {
+    "method": "ParseJSON, replace exactly one retained-path field, serialize indent2 plus newline; all other JSON values identical.",
+    "json_pointer": "/original_profile_derivation/path",
+    "original_value": "/tmp/openrx-superscalar-correctness-component-profile.json",
+    "public_value": "RETAINED_DERIVATION/openrx-superscalar-correctness-component-profile.json"
+  },
+  "data_origins": {
+    "correctness_receipt_sha256": "f7598ff088d64e4be511cc9c6e8d89a5e67a14c9b1c591856757e5aea058e060",
+    "correctness_summary_sha256": "55faf19e62880f0856fab3377535a16e017caf7255953c0903847b2fbc2c7133",
+    "synthesis_receipt_sha256": "27591eb90d4e8f06d90dca641d830a1f9c9fd35dd57c656a7b93e4db05c2231c",
+    "synthesis_summary_sha256": "751b9d550dcd1f921e9d0be8bb7502d54f03a44eb06fb2bc8f1ab3e8b736b5eb"
+  },
+  "numeric_and_hash_values_unchanged": true,
+  "scope": "Per-program bounded hardware-clock/opcode/multiply/fetch counts plus actual generic mapping. No extrapolation to complete dataset, whole hash or physical performance."
+}

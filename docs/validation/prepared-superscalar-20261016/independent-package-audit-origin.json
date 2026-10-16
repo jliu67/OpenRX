@@ -1,0 +1,9 @@
+{
+  "schema": "openrx.package-audit-copy-origin.v1",
+  "copy_kind": "verbatim-copy",
+  "original_sha256": "77226d1eb707dfc614f1a96c341623b6593e8441bfb571f8e3a01a8dc1799a8f",
+  "public_sha256": "77226d1eb707dfc614f1a96c341623b6593e8441bfb571f8e3a01a8dc1799a8f",
+  "bytes": 1652,
+  "prefix_substitutions": 0,
+  "scope": "Audit of original two packages only; later separately indexed supplements excluded from that audit."
+}

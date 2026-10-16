@@ -1,0 +1,261 @@
+{
+  "all_actual_fixture_records_selected": true,
+  "complete_output_retained": "@SUPERSCALAR_EXECUTIONS@/20261016T210802Z-d50e99dbfb16/output",
+  "correctness_completed": true,
+  "counts": {
+    "mapped_modes_newly_executed": 0,
+    "native_cases": 130,
+    "native_retirements": 7779,
+    "rtl_modes_newly_executed": 10
+  },
+  "coverage_is_complete_and_disjoint": true,
+  "execution_id": "20261016T210802Z-d50e99dbfb16",
+  "identity_note": "Portable selected derivatives are not a complete raw execution or host-runner-verifiable substitute; original integrity verification used retained raw bytes/paths.",
+  "mapping": {},
+  "no_source_build_result_checkpoint_modified": true,
+  "observed_driver_status": "pass_correctness",
+  "original_receipt_artifact_count": 1238,
+  "original_status": "PROCESS_EXITED",
+  "package": "correctness01",
+  "private_alias_map_sha256": "48eeacc1938318bf433e89bc74daf09287e0e3c38af9a538015db4366b2587ba",
+  "process": {
+    "finished_at": "2026-10-16T21:08:13.879288+00:00",
+    "returncode": 0,
+    "scientific_acceptance": "unverified",
+    "signals": [],
+    "status": "PROCESS_EXITED"
+  },
+  "raw_inventory_hashes_for_retained_only_artifacts": "Taken unchanged from the integrity-verified original receipt; not a fresh rehash of large retained binaries.",
+  "raw_manifest": {
+    "bytes": 867160,
+    "sha256": "6da3cb365c3b505a507a49d4a499c203749d22224738aa53a90d43bfb9d76032"
+  },
+  "raw_receipt": {
+    "bytes": 256343,
+    "sha256": "f7598ff088d64e4be511cc9c6e8d89a5e67a14c9b1c591856757e5aea058e060"
+  },
+  "raw_request": {
+    "bytes": 8925,
+    "sha256": "0b79e49b611b3a825597831cb09637d49cc65af7dbfbd236d49eb50bc14a89e2"
+  },
+  "raw_root_verification": {
+    "bytes": 155,
+    "sha256": "3a78584de4d6cf3b4c9ba91922f33b59857464099dd8b2afe422cc474fa3be30"
+  },
+  "raw_science_pass_required_before_export": true,
+  "request_key": "superscalar-correctness-20261016-01",
+  "retained_only_artifact_count": 4,
+  "retained_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "root_pinned_support_records": [
+    {
+      "archive_entry": "support/openrx-superscalar-correctness01-request.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness01-request.json",
+      "raw": {
+        "bytes": 8925,
+        "sha256": "0b79e49b611b3a825597831cb09637d49cc65af7dbfbd236d49eb50bc14a89e2"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-request.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-request.json",
+      "raw": {
+        "bytes": 8185,
+        "sha256": "97c811f38172cdd5936a1bae79bb80bbaabb0e3ec06eb04fc5fda0147bbe0312"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-correctness01-admission-review.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness01-admission-review.json",
+      "raw": {
+        "bytes": 9031,
+        "sha256": "d1a02f8f2fdb03e95736c87d1ad48c562db9c02e1b4509ad3f834f9c6f88f4d5"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-admission-review.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-admission-review.json",
+      "raw": {
+        "bytes": 9073,
+        "sha256": "5dd633fd3403c3af951b79cf4faaa337f4ecd58edd0879924478025c2c948356"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-correctness01-static-proof.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness01-static-proof.json",
+      "raw": {
+        "bytes": 3530,
+        "sha256": "9b767fc8f2298317d393239ba0232401ca1857af617ef8a82ccaec79424593a8"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-static-proof.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-static-proof.json",
+      "raw": {
+        "bytes": 2815,
+        "sha256": "30baa533eb156fa900445dff799b08cef74e882861df10befe164cde815fdca4"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-dependency-review.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-dependency-review.json",
+      "raw": {
+        "bytes": 17342,
+        "sha256": "a93fdb1f9a3b1deac8257e395c9db29b2836fd52041ae299a9d2a7874a909539"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-ownership-ci-preflight.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-ownership-ci-preflight.json",
+      "raw": {
+        "bytes": 39591,
+        "sha256": "1425d7d6ca8a76ac0c10337d377e19bd07ff4cabd77019b2b927579ab768bd9e"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-bench-static-review-preliminary.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-bench-static-review-preliminary.json",
+      "raw": {
+        "bytes": 3076,
+        "sha256": "2b4c51d84bbed1bfc8094f4795256242923e27056d683d4dbec52d00b2dd7093"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-implementation-static-review-preliminary.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-implementation-static-review-preliminary.json",
+      "raw": {
+        "bytes": 4405,
+        "sha256": "74374ced5fc158543b886f48f70e5fa5cea461fdade8de2d5d9837c1b48e069a"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-readonly-source-observations-20261016.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-readonly-source-observations-20261016.json",
+      "raw": {
+        "bytes": 179473,
+        "sha256": "47f5b2a210bb35644634979c1bb5a110309498760ab94245a4bc0cb1a5893985"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-source01-identity.json",
+      "original_path_alias": "@SUPERSCALAR_SOURCE01@-identity.json",
+      "raw": {
+        "bytes": 1132054,
+        "sha256": "98dffdba5d04d3856ca267a0a5c1934f7402410c424f447baef9243a0415246e"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-two-phase-admission-pattern.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-two-phase-admission-pattern.json",
+      "raw": {
+        "bytes": 4650,
+        "sha256": "43c6e5b41db2cf0fef9c56b6e91b14322156ba8917df0315bfbc4738b40e26f2"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-preflight.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-preflight.json",
+      "raw": {
+        "bytes": 29333,
+        "sha256": "bd9cc50e84afce37b85c253af1bf5ca16b0de449ed2d0d8f1aa16c90b605fdc7"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-correctness01-result.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness01-result.json",
+      "raw": {
+        "bytes": 713,
+        "sha256": "d3e4f338e5f4dcffaa49d82546d576171e99811915caa48a2cdd229aa959bd88"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-result.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-result.json",
+      "raw": {
+        "bytes": 4178,
+        "sha256": "bbebe1770b270e9aad8efda87cb68f73ff195e0ed1b49640d255dab2dbd0dae1"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-correctness-component-profile.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness-component-profile.json",
+      "raw": {
+        "bytes": 14857,
+        "sha256": "10ad160babb3114b592900fc62699e3fedf996fe8899175098ef7241d04723f9"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-correctness01-execution-observation.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness01-execution-observation.json",
+      "raw": {
+        "bytes": 5440,
+        "sha256": "97edbebdbba7e81f759ac91148d7e94a2616016e4c702ee00d2ec3a53f463983"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-execution-observation.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-execution-observation.json",
+      "raw": {
+        "bytes": 5445,
+        "sha256": "ed17c77267b88f0df7f102dbf71d3f8cd7e780d297711295949d7f77d2e44e59"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-correctness01-fresh-prelaunch.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness01-fresh-prelaunch.json",
+      "raw": {
+        "bytes": 2282,
+        "sha256": "0f1ab7115cb1ed10afd18226ce78a6cb3b4aa47c4ca63ce024c6528827caff1b"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-fresh-prelaunch.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-fresh-prelaunch.json",
+      "raw": {
+        "bytes": 298,
+        "sha256": "dad94f553dc2b60fdf723611c414a176ca4503f608e8f2b733909a18f14c9304"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-correctness01-kernel-finalizer-witness.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-correctness01-kernel-finalizer-witness.json",
+      "raw": {
+        "bytes": 250,
+        "sha256": "57711e9ad30e7a61e299ee45b3335b4f79a1a20485883d2f0c04733707872760"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-live-mapped-witness.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-live-mapped-witness.json",
+      "raw": {
+        "bytes": 746,
+        "sha256": "6c1117d4096602eab18c77a9b878967721527599305d3dd7e3c0d40fd2d990b2"
+      }
+    },
+    {
+      "archive_entry": "support/openrx-superscalar-synthesis01-mapped-tail-witness.json",
+      "original_path_alias": "@SUPERSCALAR_TMP@/openrx-superscalar-synthesis01-mapped-tail-witness.json",
+      "raw": {
+        "bytes": 1053,
+        "sha256": "b9d03c5d9f6dd3975f7f96a6c7f847e71a7c630669d95c3763bd8ae034e34f0f"
+      }
+    }
+  ],
+  "runner_verify": {
+    "execution_id": "20261016T210802Z-d50e99dbfb16",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "schema": "openrx.compact-superscalar-evidence.v1",
+  "scientific_acceptance": "unverified",
+  "scope": "One externally prepared native superscalar program; host program/table preparation remains external. No cache/Argon/dataset allocation, full-hash performance, physical PPA or architecture selection.",
+  "selected_original_artifact_count": 1234,
+  "source_commit": "6f65049c32e5e065a711d105cf2eb42204ed2285",
+  "source_directory_binding": {
+    "kind": "directory",
+    "path": "@SUPERSCALAR_SOURCE01@",
+    "sha256": "863a4277b50d23869b66e560c173a2dbbe69357cb78a6227751e3b3f2c2a87b1"
+  },
+  "source_file_count": 4718,
+  "source_tree": "19ac91c6bbcab959cfeae9fc1305ff137d9fdf3a"
+}

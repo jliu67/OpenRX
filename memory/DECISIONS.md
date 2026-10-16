@@ -351,3 +351,25 @@ declaration, historical map and runtime input. Reject mutated workflow bytes and
 stale declared digests in retained isolated fixtures. Keep all failed hosted
 archives and distinct local/hosted mapping identities; current-head gates remain
 required.
+
+
+## 2026-10-16 — one prepared native superscalar program boundary
+
+- Use the pinned native 14-opcode superscalar semantics and unchanged accepted
+  `randomx_mul64`, with in-order execution. The VM decoder has different aliases,
+  immediates and reciprocal meaning and does not supply this decoder.
+- Keep program/reciprocal preparation and immutable instruction service external.
+  Capture count, address register and table size. Bind each response to a 32-bit
+  transaction identity, 16-bit image epoch and 9-bit PC. Prepared RCP immediates
+  are full global table indices; 0/1/2/4 are valid indices. Fail closed on bad
+  matching packets and generation exhaustion. Cancel cannot recycle identities;
+  reset requires provider quiescence. Raw rotate immediate is limited to 0–63.
+- Validate correctness before mapping, then reuse actual receipt-bound fixtures
+  without regenerating completed work. Source `6f65049c` passes both original
+  attempts, with independent bounded review and complete original preservation.
+- Retain per-program operation/fetch counts and modeled cycles in a separate
+  component profile. Local default mapping of 19,604 cells / 1,410 flops / zero
+  latches excludes storage, cache service and preparation. Whole-machine
+  efficiency, physical PPA, memory technology and architecture remain unresolved.
+  Next work requires exact eight-step program/cache-XOR/address control and an
+  immutable prepared-asset export/service; no next-stage work is launched here.

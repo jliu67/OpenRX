@@ -1,0 +1,38 @@
+{
+  "schema": "openrx.prepared-superscalar.executed-source.v1",
+  "base": "9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+  "executed_head": "6f65049c32e5e065a711d105cf2eb42204ed2285",
+  "executed_tree": "19ac91c6bbcab959cfeae9fc1305ff137d9fdf3a",
+  "full_source_identity": "0fc0f7acc491d9afce219893fbb52131dc684d03781da2dc247edda81bfe439f",
+  "tracked_files": 4718,
+  "runtime_files": {
+    "rtl/execute/randomx_superscalar_execute.v": "9c66895aa41a75ae313113d58e63564d5ed9093de10570755f1f161f4fabd24b",
+    "rtl/execute/tests/tb_superscalar_execute.v": "33d7cc3396edf08f3a3e0827a5178ee18a366d19e9438e024e9dc60ea224fd24",
+    "rtl/execute/tests/superscalar_oracle.cpp": "87903992307cff10c2495993942381f3805e73de1757e38422ac84c8bc0fee6e",
+    "scripts/test_superscalar_execute.py": "a89e73f513c3806746fbbac37b3a4fdcb8cf98feb9fa45d1ad641cd3f46dfbd7",
+    "rtl/execute/randomx_mul64.v": "e0a42d6005fac370cb431fd8cdb0cfe8138a8260306b57a0ee428743569d1b0f"
+  },
+  "native_pin": {
+    "tag": "v2.0.1",
+    "commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+    "lock_sha256": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd",
+    "manifest_sha256": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+  },
+  "executions": {
+    "correctness01": {
+      "id": "20261016T210802Z-d50e99dbfb16",
+      "request_sha256": "0b79e49b611b3a825597831cb09637d49cc65af7dbfbd236d49eb50bc14a89e2",
+      "receipt_sha256": "f7598ff088d64e4be511cc9c6e8d89a5e67a14c9b1c591856757e5aea058e060",
+      "manifest_sha256": "6da3cb365c3b505a507a49d4a499c203749d22224738aa53a90d43bfb9d76032"
+    },
+    "synthesis01": {
+      "id": "20261016T211324Z-b1d24eb3f1fe",
+      "request_sha256": "97c811f38172cdd5936a1bae79bb80bbaabb0e3ec06eb04fc5fda0147bbe0312",
+      "receipt_sha256": "27591eb90d4e8f06d90dca641d830a1f9c9fd35dd57c656a7b93e4db05c2231c",
+      "manifest_sha256": "7069e13dea4e314dd09c0bfeec5e668a128ac6c28585678b88aaf5835d054cec"
+    }
+  },
+  "publication_delta": "Declared documentation/evidence/memory additions only after executed6f; the four new runtime/test files and existing multiplier remain byte-identical. Final exact-head review and hosted checks are separate.",
+  "verification_rule": "Compare actual file bytes and Git identities to the bound originals; embedded hash claims alone do not establish trusted identity. Original host receipts have external journal bindings, separate from public derivatives.",
+  "originals_preserved": true
+}

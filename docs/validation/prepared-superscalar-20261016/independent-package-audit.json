@@ -1,0 +1,28 @@
+{
+  "schema": "openrx.superscalar-independent-package-audit.v1",
+  "reviewer": "independent read-only child agent /root/focused_review/package_contract_review",
+  "result": "pass",
+  "blockers": [],
+  "package_index_sha256": "e4386a5060250ed117ee7873b9d7dd7257e2d8999cdba6ce1153f5f9ec222c69",
+  "raw_receipt_artifacts_rehashed": 2466,
+  "both_archives_expanded_copies_public_indexes_origins_verified": true,
+  "fixtures_selected_per_package": 1178,
+  "root_pinned_support_records_per_package": 24,
+  "coverage": {
+    "correctness01": {"selected": 1234, "retained_only": 4, "receipt_artifacts": 1238},
+    "synthesis01": {"selected": 1223, "retained_only": 5, "receipt_artifacts": 1228}
+  },
+  "raw_origin_transformations_reverse_correctly": true,
+  "typed_JSON_values_opaque_hashes_identity_labels_preserved": true,
+  "independent_in_memory_deterministic_ZIP_reconstruction_matches": true,
+  "archive_sha256": {
+    "correctness01": "58883c0e12fa60e79de78018562988cf5edb6a3ff083944ed709e77b53cbe00c",
+    "synthesis01": "e180a1be12f9643561614aeb7a26d1ca43c3ec96ed9d1f5abdc601fe24c17bc3"
+  },
+  "public_package_file_count_excluding_top_level_index": 22,
+  "public_package_bytes_excluding_top_level_index": 11156134,
+  "top_level_index_bytes": 7057,
+  "original_receipt_statuses": "Both PROCESS_EXITED, rc0, scientific_acceptance unverified; unchanged",
+  "audit_did_not_modify_or_invoke_helper_export_scientific_payload_or_publication": true,
+  "scope_limit": "Portable package/origin/inventory audit only. Later separately indexed science-review and profile supplements are outside this audit; no new scientific or physical-performance acceptance."
+}
