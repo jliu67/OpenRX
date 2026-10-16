@@ -1,0 +1,270 @@
+{
+  "artifact_mismatches": [],
+  "completed_controls": {
+    "prepared-stalled-cancel-8": {
+      "record": "PASS lifecycle_cancel phase=8 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",
+      "returncode": 0
+    },
+    "prepared-stalled-error-7": {
+      "record": "PASS lifecycle_matching_error port=7 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+      "returncode": 0
+    }
+  },
+  "completed_normal_profiles": {
+    "prepared-ideal": {
+      "actual_digest_matches_native": true,
+      "cycles": 534040,
+      "input_hash_cycles": 30,
+      "nested_input_hash_phases": [
+        1,
+        28,
+        1
+      ],
+      "provider_counts": {
+        "assertion_only_input_hash_calls": 1,
+        "assertion_only_program_generations": 2,
+        "input_hash_calls": 0,
+        "program_generations": 0,
+        "software_fill_provider_calls": 0
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=0 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=534040 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "returncode": 0
+    },
+    "prepared-stalled": {
+      "actual_digest_matches_native": true,
+      "cycles": 1583565,
+      "input_hash_cycles": 30,
+      "nested_input_hash_phases": [
+        1,
+        28,
+        1
+      ],
+      "provider_counts": {
+        "assertion_only_input_hash_calls": 1,
+        "assertion_only_program_generations": 2,
+        "input_hash_calls": 0,
+        "program_generations": 0,
+        "software_fill_provider_calls": 0
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=1 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=1583565 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "returncode": 0
+    }
+  },
+  "completed_units": 56,
+  "composite_requirements": [
+    "Bind each reused raw command/PASS/ledger/provider/native/trace artifact to this retained failed receipt and old source.",
+    "Keep overallrun01 PROCESS_FAILED1 and failed boundary visible;no success summary is invented.",
+    "Verify successor changes only the two helper delays and production/normaltest paths remain unchanged.",
+    "Run only missing/fixed Verilator boundary plus Icarus ideal/boundary in a new admitted execution and retain all failures.",
+    "Revalidate raw retained normal ledgers/provider counts and compare complete old Verilator ideal ledger/PASS/trace/digest/native corpus to new Icarus.",
+    "Do not add partial/composite timings into a new fullhash performance claim."
+  ],
+  "failed_boundary": {
+    "fatal_line": 604,
+    "label": "prepared-ideal-input-boundaries",
+    "passed": false,
+    "returncode": -6
+  },
+  "failed_execution": "20261016T175815Z-3eb05e9e8f2a",
+  "icarus_started": false,
+  "original_overall_status_remains_failed": true,
+  "original_process": {
+    "finished_at": "2026-10-16T18:02:48.934641+00:00",
+    "returncode": 1,
+    "scientific_acceptance": "unverified",
+    "signals": [],
+    "status": "PROCESS_FAILED"
+  },
+  "original_receipt_sha256": "b42d8f24954ebcde7b1de4ba82b7fed7173d704510e504994a153e14117e0e19",
+  "prior_success_summary_exists": false,
+  "proposed_fix_scope": "Exactly two #1 delays inside input_boundary_case after cancel deassert;no production/driver/provider/golden changes. Exact successor diff must be confirmed before acceptance.",
+  "race_analysis": "At helper lines591/603,cancel is deasserted with a blocking assignment at negedge and req_ready is checked immediately. Its continuous-assignment dependency active=!rst&&!cancel has not been allowed to settle. Lifecycle/wrapper state was reset at the preceding asserted-cancel posedge. A #1 delay before each following ownership check lets combinational gating settle while retaining every assertion.",
+  "result": "two_helper_settling_delays_appropriate_completed_subcommands_reusable_in_explicit_composite",
+  "reuse_scope": "Normal ideal/stalled,cancel8,error7 all run with INPUT_HASH_BOUNDARY_TEST0. The changed helper is called only through check_input_boundaries when that parameter is1;these completed profiles do not execute it. Units do not execute SV helper code.",
+  "review_actions": "Read-only source and retained artifact hash comparisons;no build,test,simulation,launch,source edit or public action.",
+  "reviewed_at_utc": "2026-10-16T18:06:52.337077+00:00",
+  "schema": "openrx.inputhash.boundary-failure-reuse-assessment.v1",
+  "selected_actual_receipt_artifact_bindings_verified": 44,
+  "selected_bindings": {
+    "manifest.json": {
+      "bytes": 1693669,
+      "sha256": "7cac2dbc735b950772884b7e23ea27c5734dd487c556b491b65c380dfd7fa0ff"
+    },
+    "output/commands.json": {
+      "bytes": 1775,
+      "sha256": "b57715406b3f035f6dd081b2f9f94ff716f1a35dfcc81c213dfa16f623fb0f4f"
+    },
+    "output/failure.json": {
+      "bytes": 1306,
+      "sha256": "122e4c207cb9a986d104629a2b53eb6106c9005d26ac7a65b6ce02458e8360cf"
+    },
+    "output/focused-unit-tests.log": {
+      "bytes": 5114,
+      "sha256": "225ee0c8f675e548f26f0e11907a2b94a695cc50c310d2dfb7c839014a0a3ee8"
+    },
+    "output/verilator/commands.json": {
+      "bytes": 27075,
+      "sha256": "9229a84fb6c4c1fac78b7cfb67089d85c6dcc0a8025beeb09ab163a6e05c2e62"
+    },
+    "output/verilator/failure.json": {
+      "bytes": 719,
+      "sha256": "580dfd0d93af8a117344d79103c63313b548d9f2dd3293b9a23649b00b703873"
+    },
+    "output/verilator/inputs.json": {
+      "bytes": 30702,
+      "sha256": "37f2f58f7e50393294bfdc2838429b5333df7910f94fbc55745567d15599d909"
+    },
+    "output/verilator/native-reference.log": {
+      "bytes": 134,
+      "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+    },
+    "output/verilator/native-reference/accesses.hex": {
+      "bytes": 3646,
+      "sha256": "c6ce6563e4f13d56f608f2bcf165c08c810531c8070ac071412c8af5c172a1c4"
+    },
+    "output/verilator/native-reference/events.mem": {
+      "bytes": 3726,
+      "sha256": "a4b90f2c1bf76e79421bbc4454d1e220b6ed379bb9e5782b8ed75a12af99cdb0"
+    },
+    "output/verilator/native-reference/final-0.hex": {
+      "bytes": 4325376,
+      "sha256": "c5cf81821119bdc35fe75fd61608a155e9fa30cc28e24b26e55d554b68b13efb"
+    },
+    "output/verilator/native-reference/final-1.hex": {
+      "bytes": 4325376,
+      "sha256": "78a6b8dbe1086c01096e1c43e747e28de256c926511561ac08b5b7db9aaefa2c"
+    },
+    "output/verilator/native-reference/final-a.hex": {
+      "bytes": 129,
+      "sha256": "46a340e781beffd0476f67c8da5b5df731f652d9f2a7ab386851bdec8ae849f0"
+    },
+    "output/verilator/native-reference/final-digest32.hex": {
+      "bytes": 65,
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "output/verilator/native-reference/final-rf.hex": {
+      "bytes": 513,
+      "sha256": "273f84a5486ba2ba92545aeebeafe9e460ada065f7a2b300f39a54ab7c3499c2"
+    },
+    "output/verilator/native-reference/full-reference.json": {
+      "bytes": 352,
+      "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+    },
+    "output/verilator/native-reference/initial.hex": {
+      "bytes": 4325376,
+      "sha256": "c23bde9fddadce72d31d590a0143cb44e646885a0f544030b9764685cf200558"
+    },
+    "output/verilator/native-reference/iterations.hex": {
+      "bytes": 1200,
+      "sha256": "8bb50034865542761f12f2de3d6549144745652659db67196e4c9ef3937f8765"
+    },
+    "output/verilator/native-reference/iterations.mem": {
+      "bytes": 1268,
+      "sha256": "191bea37a7119bed6c0bea74177b6489290255ceed5bb415dc3702b587cd8475"
+    },
+    "output/verilator/native-reference/metadata.hex": {
+      "bytes": 910,
+      "sha256": "564ad4b40b26b353d7be647dcf292ef22319e05255c8bee4d39406595a414abb"
+    },
+    "output/verilator/native-reference/metadata.mem": {
+      "bytes": 904,
+      "sha256": "b353e3a67055e842436d33a7454ddb37f0429b591accb99cb743dc857020367b"
+    },
+    "output/verilator/native-reference/oracle-summary.json": {
+      "bytes": 498,
+      "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+    },
+    "output/verilator/native-reference/program-0.mem": {
+      "bytes": 6528,
+      "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+    },
+    "output/verilator/native-reference/program-1.mem": {
+      "bytes": 6528,
+      "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+    },
+    "output/verilator/native-reference/program-registers.hex": {
+      "bytes": 1034,
+      "sha256": "45c0c878d5615ee7cec8fa6cf5c16960c6dca58eb4aadc37b922296d208e74fc"
+    },
+    "output/verilator/native-reference/sequence_sizes.vh": {
+      "bytes": 79,
+      "sha256": "38fd9622f79ef58f282d960d587e9f01e5165b27c61d29ec85fa3f8dfc039ca2"
+    },
+    "output/verilator/prepared-ideal-input-boundaries.log": {
+      "bytes": 261,
+      "sha256": "9996005a87a29a27bec4d78e98a4e3386781a0641ab167c31f7d7d7232224578"
+    },
+    "output/verilator/prepared-ideal.log": {
+      "bytes": 405,
+      "sha256": "6e973f5dd23387312461d92a73adc40aa52fbfa5e87d18af7dd6a8c28da2cb87"
+    },
+    "output/verilator/prepared-ideal/actual-final-digest32.hex": {
+      "bytes": 65,
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "output/verilator/prepared-ideal/actual-program-0.mem": {
+      "bytes": 6528,
+      "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+    },
+    "output/verilator/prepared-ideal/actual-program-1.mem": {
+      "bytes": 6528,
+      "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+    },
+    "output/verilator/prepared-ideal/ledger.json": {
+      "bytes": 1696,
+      "sha256": "9bf60e2d246e75d558ce1b6d05bfaca6e8d2210d4651e8ab7dbe014966d2c4a7"
+    },
+    "output/verilator/prepared-ideal/provider-host-time.json": {
+      "bytes": 887,
+      "sha256": "dabf044ae23db425c246d17c010e2eaf50e2681beae2bd6e25d01354933fda63"
+    },
+    "output/verilator/prepared-ideal/trace.csv": {
+      "bytes": 11828327,
+      "sha256": "2bdfeebc427e5f13e4d6fd7df3cb55210a9b579d0dbed53d6e217479dbff5962"
+    },
+    "output/verilator/prepared-stalled-cancel-8.log": {
+      "bytes": 341,
+      "sha256": "e7d5afc6e50f9de26aa478666b31c2dbe208c1297c5f2072295e628fcbafd230"
+    },
+    "output/verilator/prepared-stalled-error-7.log": {
+      "bytes": 248,
+      "sha256": "611598a3f750e6969194fec5cc47f534d6b8bd5e2c75cf28b1d5fed892796a1f"
+    },
+    "output/verilator/prepared-stalled.log": {
+      "bytes": 406,
+      "sha256": "b0a434508e1375fc4341971b446aa91bcc1ced9627f8b6d5760b388ee4c245e9"
+    },
+    "output/verilator/prepared-stalled/actual-final-digest32.hex": {
+      "bytes": 65,
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "output/verilator/prepared-stalled/actual-program-0.mem": {
+      "bytes": 6528,
+      "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+    },
+    "output/verilator/prepared-stalled/actual-program-1.mem": {
+      "bytes": 6528,
+      "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+    },
+    "output/verilator/prepared-stalled/ledger.json": {
+      "bytes": 1721,
+      "sha256": "dea3fc7baf5d85aad7af77350793558a2a2ec665a60a5f3c5f5c40e10df89924"
+    },
+    "output/verilator/prepared-stalled/provider-host-time.json": {
+      "bytes": 899,
+      "sha256": "32657516204a41a20e2f862a0b0157df195938092d7145af1835acefdd2a6a8d"
+    },
+    "output/verilator/prepared-stalled/trace.csv": {
+      "bytes": 11975715,
+      "sha256": "14fafba3e3842ece26fb4e800504fa1e76ad09b97d56abe31c2963985cdd0ce6"
+    },
+    "process-result.json": {
+      "bytes": 142,
+      "sha256": "8d4da83ca08f33815327441267bb75ba7b43fd99e5d64aa6f4183577f1d6deed"
+    }
+  },
+  "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+  "source_manifest_files_verified": 4654,
+  "source_mismatches": [],
+  "source_snapshot": "@SOURCE03@"
+}

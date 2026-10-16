@@ -1,0 +1,176 @@
+{
+  "derivation": "selected manifest resource fields plus complete receipt-bound prelaunch observations",
+  "original_manifest_sha256": "0b23600864c75dda6996fd05a50febcca91de820ef4669db9ff228327a755c7a",
+  "prelaunch_kernel_check": {
+    "errors": [],
+    "observed": {
+      "at": "2026-10-16T17:53:51.101027+00:00",
+      "groups": [
+        {
+          "files": {
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "",
+            "cpu.max": "600000 100000",
+            "cpuset.cpus.effective": null,
+            "memory.high": "max",
+            "memory.max": "4294967296",
+            "memory.swap.max": "2147483648",
+            "pids.max": "256"
+          },
+          "is_root": false,
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261016T175348Z-0d85cf342e1a.service"
+        },
+        {
+          "files": {
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "cpu.max": "max 100000",
+            "cpuset.cpus.effective": null,
+            "memory.high": "max",
+            "memory.max": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max"
+          },
+          "is_root": false,
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice"
+        },
+        {
+          "files": {
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "cpu.max": "max 100000",
+            "cpuset.cpus.effective": null,
+            "memory.high": "max",
+            "memory.max": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max"
+          },
+          "is_root": false,
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service"
+        },
+        {
+          "files": {
+            "cgroup.controllers": "cpu memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "cpu.max": "max 100000",
+            "cpuset.cpus.effective": null,
+            "memory.high": "max",
+            "memory.max": "max",
+            "memory.swap.max": "max",
+            "pids.max": "41887"
+          },
+          "is_root": false,
+          "path": "/sys/fs/cgroup/user.slice/user-1000.slice"
+        },
+        {
+          "files": {
+            "cgroup.controllers": "cpuset cpu io memory pids",
+            "cgroup.subtree_control": "cpu memory pids",
+            "cpu.max": "max 100000",
+            "cpuset.cpus.effective": "0-5",
+            "memory.high": "max",
+            "memory.max": "max",
+            "memory.swap.max": "max",
+            "pids.max": "max"
+          },
+          "is_root": false,
+          "path": "/sys/fs/cgroup/user.slice"
+        },
+        {
+          "files": {
+            "cgroup.controllers": "cpuset cpu io memory hugetlb pids rdma misc",
+            "cgroup.subtree_control": "cpuset cpu io memory pids",
+            "cpu.max": null,
+            "cpuset.cpus.effective": "0-5",
+            "memory.high": null,
+            "memory.max": null,
+            "memory.swap.max": null,
+            "pids.max": null
+          },
+          "is_root": true,
+          "path": "/sys/fs/cgroup"
+        }
+      ],
+      "service_cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261016T175348Z-0d85cf342e1a.service",
+      "worker_allowed_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    "production_enforced": true,
+    "production_required": true,
+    "safe": true,
+    "scope": "Exact named service limits and visible ancestor constraints before payload; direct nonproduction worker tests have no service cgroup"
+  },
+  "prelaunch_resource_check": {
+    "available_bytes": 8505298944,
+    "observed": {
+      "allowed_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "at": "2026-10-16T17:53:51.063325+00:00",
+      "logical_cpus": 6,
+      "memory_bytes": {
+        "MemAvailable": 8505298944,
+        "MemTotal": 16725934080,
+        "SwapFree": 4443000832,
+        "SwapTotal": 8589930496
+      }
+    },
+    "profile": "owner-local-max-v1",
+    "required_available_bytes": 5368709120,
+    "safe": true,
+    "scope": "Fresh headroom check under the global execution lock; bound limits are not changed"
+  },
+  "resource_profile": {
+    "admission": {
+      "allowed_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "at": "2026-10-16T17:53:48.225580+00:00",
+      "logical_cpus": 6,
+      "memory_bytes": {
+        "MemAvailable": 8510935040,
+        "MemTotal": 16725934080,
+        "SwapFree": 4443000832,
+        "SwapTotal": 8589930496
+      }
+    },
+    "allocation_slack_bytes": 3142225920,
+    "default_rounding_bytes": 268435456,
+    "kernel_memory_max_bytes": 4294967296,
+    "kernel_page_bytes": 4096,
+    "kernel_rounding": "Linux page_counter limits truncate byte requests to whole pages; default 256MiB blocks are page aligned",
+    "memory_cap_bytes": 15032385536,
+    "memory_margin_bytes": 1073741824,
+    "name": "owner-local-max-v1",
+    "rationale": "All six CPUs available; RAM uses measured safe headroom, rounded down in 256MiB blocks for executor fluctuations. Exact known-workload requests must fit the same ceiling. One resource slot remains.",
+    "requested_memory_bytes": 4294967296,
+    "safe_ceiling_bytes": 7437193216,
+    "selected_memory_bytes": 4294967296,
+    "swap_is_reservation": false
+  },
+  "resources": {
+    "CPUQuota": "600%",
+    "MemoryMax": "4294967296",
+    "MemorySwapMax": "2G",
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "TasksMax": 256,
+    "global_slots": 1
+  }
+}

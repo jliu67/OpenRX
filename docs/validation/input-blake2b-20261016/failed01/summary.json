@@ -1,0 +1,10 @@
+{
+  "boundary": "Unkeyed BLAKE2b-512 input length0..80 only; unsupported81..127 returns held error. New input wrapper reuses unchanged accepted compression core. Native Light dataset and physical memory service remain external; no general input or physical PPA claim.",
+  "compression_contract": "One zero-padded128B final block, exact byte counter including0, DIGEST_LENGTH64/KEY_LENGTH0/FANOUT1/DEPTH1/twelve rounds. Length/descriptor captured; no0x80 or SHA length suffix.",
+  "error": "Command '['/usr/bin/time', '-v', '-o', '@EXECUTIONS@/20261016T174934Z-6e9224e12533/output/compile-native-oracle.time.txt', 'g++', '-O2', '-std=c++17', '-Wall', '-Wextra', '-Ivendor/randomx/src', 'rtl/hash/tests/input_blake2b_oracle.cpp', 'vendor/randomx/src/blake2/blake2b.c', '-o', '@EXECUTIONS@/20261016T174934Z-6e9224e12533/output/input-blake2b-oracle']' returned non-zero exit status 1.",
+  "mapped": {},
+  "mapping": {},
+  "rtl": {},
+  "status": "failed",
+  "synthesis_requested": true
+}

@@ -1,0 +1,111 @@
+{
+  "boundary": "Unkeyed BLAKE2b-512 input length0..80 only; unsupported81..127 returns held error. New input wrapper reuses unchanged accepted compression core. Native Light dataset and physical memory service remain external; no general input or physical PPA claim.",
+  "complete_output_retained": "@EXECUTIONS@/20261016T175348Z-0d85cf342e1a/output",
+  "counts": {
+    "mapped_modes": 16,
+    "native_vectors": 614,
+    "request_to_response_availability_cycles": 28,
+    "rtl_modes": 18,
+    "tail_poison_cases": 162,
+    "unsupported_lengths_mapped": [
+      81,
+      127
+    ],
+    "unsupported_lengths_rtl": 47,
+    "valid_lengths": 81
+  },
+  "coverage_is_complete_and_disjoint": true,
+  "execution_id": "20261016T175348Z-0d85cf342e1a",
+  "identity_note": "Portable/selected copies are not a complete original execution and are not host-runner-verifiable; original verification used retained raw paths and bytes.",
+  "mapping": {
+    "input-blake2b": {
+      "digest_bytes": 64,
+      "flop_cells": 3753,
+      "inherited_latch_cells": 1024,
+      "max_input_bytes": 80,
+      "num_cells": 38538,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 5846,
+        "$_AND_": 417,
+        "$_AOI3_": 1761,
+        "$_AOI4_": 1307,
+        "$_DFF_PN0_": 2571,
+        "$_DFF_PN1_": 2,
+        "$_DFF_P_": 1180,
+        "$_DLATCH_P_": 1024,
+        "$_MUX_": 6599,
+        "$_NAND_": 245,
+        "$_NOR_": 851,
+        "$_NOT_": 2055,
+        "$_OAI3_": 1898,
+        "$_OAI4_": 2810,
+        "$_ORNOT_": 1201,
+        "$_OR_": 3592,
+        "$_XNOR_": 2281,
+        "$_XOR_": 2898
+      },
+      "scope": "Actual new input wrapper plus unchanged compression core; inherited G operand latches reported separately. No whole-lifecycle mapping or physical timing/area/power.",
+      "top": "randomx_input_blake2b"
+    }
+  },
+  "no_source_build_result_checkpoint_modified": true,
+  "observed_driver_status": "pass",
+  "original_receipt_artifact_count": 112,
+  "package": "standalone02",
+  "preserved_failure_history": [
+    {
+      "after_file_sha256": "a301e3a5126913277dcd3a4fcfe55febb1c28a66a479bfb9ec79206e2af9e881",
+      "before_file_sha256": "fa7d4c8dadb9dc0b9ec14661d5c3111afa734f1e4a91be3f1e582bb1d2fceb74",
+      "failed_execution": "20261016T174934Z-6e9224e12533",
+      "failure_retained": true,
+      "fix_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+      "minimal_fix_archive_entry": "history/minimal-oracle-header-fix.patch",
+      "successful_execution": "20261016T175348Z-0d85cf342e1a"
+    }
+  ],
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "process": {
+    "finished_at": "2026-10-16T17:56:01.241737+00:00",
+    "returncode": 0,
+    "scientific_acceptance": "unverified",
+    "signals": [],
+    "status": "PROCESS_EXITED"
+  },
+  "raw_manifest": {
+    "bytes": 854472,
+    "sha256": "0b23600864c75dda6996fd05a50febcca91de820ef4669db9ff228327a755c7a"
+  },
+  "raw_receipt": {
+    "bytes": 23173,
+    "sha256": "f910b192e792f417fbdca242f730def3945bece4a31b82f16915da065c90be07"
+  },
+  "raw_root_verification": {
+    "bytes": 155,
+    "sha256": "95c20f7ff27bf6fe15345765823c40ca5077472c04089ba11a3a068b42634342"
+  },
+  "retained_only_artifact_count": 10,
+  "retained_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "runner_verify": {
+    "execution_id": "20261016T175348Z-0d85cf342e1a",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "schema": "openrx.compact-evidence.v2",
+  "scientific_acceptance": "unverified",
+  "selected_original_artifact_count": 102,
+  "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+  "source_directory_binding": {
+    "kind": "directory",
+    "path": "@SOURCE03@",
+    "sha256": "686378ce838ec93ca0d486b7fbee78b317514da8ac90ce3785966cc6a4ac7a07"
+  },
+  "source_file_count": 4654,
+  "source_git_status_porcelain_at_export": "",
+  "source_tree": "aa082fb5255320aba24f25c28a212fd8608e83ba",
+  "systemd": {
+    "EXIT_CODE": "exited",
+    "EXIT_STATUS": "0",
+    "SERVICE_RESULT": "success"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "derivation": "Additive compact CI binding recovery export, with complete local receipt partition and separately bound retained hosted history.",
+  "hosted_history_member_count": 115,
+  "hosted_history_zip_bytes": 222621518,
+  "hosted_history_zip_count": 5,
+  "index_self_excluded_to_avoid_recursive_hash": true,
+  "new_local_execution": "20261016T184732Z-7c6f2889a8e8",
+  "original_five_hosted_failures_preserved": true,
+  "package": {
+    "archive": {
+      "bytes": 536126,
+      "sha256": "56cca34defcba1b1257b15b8543af41227695ff0e9236e372a985739bdff6088"
+    },
+    "archive_entry_count": 106,
+    "complete_local_receipt_artifacts": 578,
+    "directory": "ci-binding-recovery",
+    "public_bytes": 943871,
+    "public_file_count": 13,
+    "public_files": {
+      "archive-index.json": {
+        "bytes": 88073,
+        "sha256": "30d1d1edb4bfe98ff544c0e41b2f8f347540e5d2d7ce52d37477858623e070e2"
+      },
+      "change.json": {
+        "bytes": 1010,
+        "sha256": "13a503a53ebe7da4fee8c347e8b87266a47c671ae29daac9b4312dd9191ab718"
+      },
+      "execution.json": {
+        "bytes": 2496,
+        "sha256": "acd9d95026caedd2cd06b65c9a08c09fb1ada1b58f1a3ef7cb4e3eb82f605b99"
+      },
+      "export-index.json": {
+        "bytes": 269102,
+        "sha256": "50a0316056ea8ec4ef1a6cb243b6c43bbca067d23c8904a325a277bfa3f6f458"
+      },
+      "failure-excerpts.json": {
+        "bytes": 9682,
+        "sha256": "9c39402b7cb8c6d01a235f85223db326d06b8470365cc56d594ac50677c27bd2"
+      },
+      "hosted-history.json": {
+        "bytes": 26601,
+        "sha256": "5c5202cdae96d281ab39bfd657eb071ddd3d5be91f6c05986a72780443c8c489"
+      },
+      "mapping-context.json": {
+        "bytes": 718,
+        "sha256": "326eb136565a8ee997a9077cd07ee167a18538ab77a70b093e107b451f8b0658"
+      },
+      "prelaunch-history.json": {
+        "bytes": 1054,
+        "sha256": "7afe677cdfd3fd8d2c19fdb0d804fb90dbffce9de1ad9e334767f78e27647895"
+      },
+      "records.zip": {
+        "bytes": 536126,
+        "sha256": "56cca34defcba1b1257b15b8543af41227695ff0e9236e372a985739bdff6088"
+      },
+      "resources.json": {
+        "bytes": 5740,
+        "sha256": "2833a739a7b6b0098811e61e905fc99e7db2f3c6a2c32d8553a709647bfbdd26"
+      },
+      "status.json": {
+        "bytes": 2130,
+        "sha256": "139a0edb564badb22356f1c225764196b62fd0d2c73fabf59b2511c478df24ef"
+      },
+      "summary.json": {
+        "bytes": 984,
+        "sha256": "ef68d4e6f88c486fa9b1040cb1686459d978d9587574a175cd682a3c67fd8ded"
+      },
+      "verify.json": {
+        "bytes": 155,
+        "sha256": "daf777dcb19aff5e56e502545fcdda9a099ba7084c832edbe6754fb6f23efe3d"
+      }
+    },
+    "retained_only_local_receipt_artifacts": 525,
+    "selected_local_receipt_artifacts": 53,
+    "selected_supplemental_files": 37
+  },
+  "previous_evidence_set_index_sha256": "c07486d60355de3ed9002cfa089a9a6ee67e74da78cd3b8659df5531290d082f",
+  "previous_public_bytes_unchanged": true,
+  "previous_public_file_count": 33,
+  "prior_public_inventory_archive_entry": "prior-33-public-bindings.json",
+  "prior_public_inventory_sha256": "d64c17e306b64a3d2eff21514751e87290929c479b906aa47d10145cfd2d402e",
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "raw_checks_sha256": "ef68d4e6f88c486fa9b1040cb1686459d978d9587574a175cd682a3c67fd8ded",
+  "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+  "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116",
+  "root_verify_sha256": "daf777dcb19aff5e56e502545fcdda9a099ba7084c832edbe6754fb6f23efe3d",
+  "schema": "openrx.ci-binding-recovery-package-set.v1",
+  "scientific_acceptance": "unverified",
+  "source_commit": "3d81d80c4c3eff798a5354470470f4bc1a0eed0d",
+  "source_tree": "5ceafbc0e90121f67030ea18bf612d7f6627cf2d",
+  "verification_boundary": "Original installed-runner verification applies to retained raw paths and bytes. Portable selected copies are explicitly derived or verbatim and not a complete host-verifiable execution."
+}

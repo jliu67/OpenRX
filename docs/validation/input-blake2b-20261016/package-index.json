@@ -1,0 +1,236 @@
+{
+  "connected_result_is_composite_across_two_executions_and_sources": true,
+  "derivation": "Index of completed compact exports and their raw-origin bindings; separate from final scientific review.",
+  "original_failure_statuses_preserved": true,
+  "packages": [
+    {
+      "archive_entries": 28,
+      "execution_id": "20261016T174934Z-6e9224e12533",
+      "files": {
+        "archive-index.json": {
+          "bytes": 18472,
+          "sha256": "022320a10c5a9deb3ce63592e8e60d642c8b3281cc14c646bfd0fbfc0ff5da9c"
+        },
+        "execution.json": {
+          "bytes": 2943,
+          "sha256": "636d347d00dad11edda38178972e0b1aac17290a416993396d962c6876328f6b"
+        },
+        "export-index.json": {
+          "bytes": 8498,
+          "sha256": "cff684ade4c18e91ada7f28defc1c80ea0d2daf2a2bb8776fb22d8f228a9c30d"
+        },
+        "failure.log": {
+          "bytes": 2275,
+          "sha256": "7833e1c76089284e8cd8cfb434c3746a5278cb741c9b58edaa969a794b82aa75"
+        },
+        "records.zip": {
+          "bytes": 230835,
+          "sha256": "e6585d0f22167eb002d8df657a4bd8a87e4c9a7ecb9bac6ad03e44f830834206"
+        },
+        "resources.json": {
+          "bytes": 5740,
+          "sha256": "d416a1f2b963300e6200da65c200a0af36c95c64d919d64af12122646e8f602a"
+        },
+        "summary.json": {
+          "bytes": 983,
+          "sha256": "cbc350a0a11f7187a2230fee57bdb09e1f0a2efe43fd299d2fe6543c90d1143e"
+        },
+        "verify.json": {
+          "bytes": 155,
+          "sha256": "e5435d6840055b3c190e2af58895e9cc1401466e9f8f4b14b0540c9eeb388b3c"
+        }
+      },
+      "observed_driver_status": "failed",
+      "package": "failed01",
+      "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+      "process_returncode": 1,
+      "process_status": "PROCESS_FAILED",
+      "public_bytes": 269901,
+      "public_file_count": 8,
+      "raw_manifest_sha256": "b08f6700bdd0b5417c315ca641dd088dd8a480980ac88aae93954280c6cd94d3",
+      "raw_receipt_sha256": "2e842357884076d732d4d480e82ee7e63de9c8aa7ab2301f52862673bc45db3b",
+      "receipt_artifacts": 22,
+      "retained_only_artifacts": 1,
+      "root_verify_sha256": "e5435d6840055b3c190e2af58895e9cc1401466e9f8f4b14b0540c9eeb388b3c",
+      "scientific_acceptance": "unverified",
+      "selected_original_artifacts": 21,
+      "source_commit": "aa7c804e8f3ae9496a61427d316de7a5e3818bc6",
+      "source_tree": "d19c5afdfa5a65f9ca45ec2fcb9689698730ec56"
+    },
+    {
+      "archive_entries": 109,
+      "execution_id": "20261016T175348Z-0d85cf342e1a",
+      "files": {
+        "archive-index.json": {
+          "bytes": 73010,
+          "sha256": "2ec091e35e4a58b35bc61655fc94cc6b95daf3648057f2c92425f86f4fd0693e"
+        },
+        "execution.json": {
+          "bytes": 4109,
+          "sha256": "c3cf7bf784eb291d0939079d955432b14f86b69bd34ca33a7b1b0f38d11d8feb"
+        },
+        "export-index.json": {
+          "bytes": 36518,
+          "sha256": "ce68c862bffd592374008088d84a20ad2e5ae2c4bb19d9c390bba1d718dabc9c"
+        },
+        "records.zip": {
+          "bytes": 297786,
+          "sha256": "0ce39271767cf4014f6c186d7f8641def636c766eda3945e358ac97b6b0dceaa"
+        },
+        "resources.json": {
+          "bytes": 5740,
+          "sha256": "0a39e0e0781d4a86002289136f71514dd6348602b7b69e588b8deb854f2c3271"
+        },
+        "stat-input-blake2b.txt": {
+          "bytes": 1072,
+          "sha256": "5af76271272556c574674ad103301c762c4ac7e2863bc5e8190e70e8508e4816"
+        },
+        "summary.json": {
+          "bytes": 26169,
+          "sha256": "89153245fbcb2206b4138e1cdcf250d0e6ccc8d375c1747525b6e1a23818d8de"
+        },
+        "verify.json": {
+          "bytes": 155,
+          "sha256": "95c20f7ff27bf6fe15345765823c40ca5077472c04089ba11a3a068b42634342"
+        }
+      },
+      "observed_driver_status": "pass",
+      "package": "standalone02",
+      "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+      "process_returncode": 0,
+      "process_status": "PROCESS_EXITED",
+      "public_bytes": 444559,
+      "public_file_count": 8,
+      "raw_manifest_sha256": "0b23600864c75dda6996fd05a50febcca91de820ef4669db9ff228327a755c7a",
+      "raw_receipt_sha256": "f910b192e792f417fbdca242f730def3945bece4a31b82f16915da065c90be07",
+      "receipt_artifacts": 112,
+      "retained_only_artifacts": 10,
+      "root_verify_sha256": "95c20f7ff27bf6fe15345765823c40ca5077472c04089ba11a3a068b42634342",
+      "scientific_acceptance": "unverified",
+      "selected_original_artifacts": 102,
+      "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+      "source_tree": "aa082fb5255320aba24f25c28a212fd8608e83ba"
+    },
+    {
+      "archive_entries": 58,
+      "execution_id": "20261016T175815Z-3eb05e9e8f2a",
+      "files": {
+        "archive-index.json": {
+          "bytes": 39678,
+          "sha256": "f980dd6f7fd12b47643832fe5aa638c47affc2f682938900084644e2bd245537"
+        },
+        "execution.json": {
+          "bytes": 14646,
+          "sha256": "5b3bc3e42399a96f0196a21bcd71eb3b70fc32a6ab620488672125274baeac8c"
+        },
+        "export-index.json": {
+          "bytes": 274702,
+          "sha256": "f6b66c738fd99b8eb8c1f572ab4c8af4a48656c73e0ce88b11bd21f210d61ec0"
+        },
+        "failure.log": {
+          "bytes": 261,
+          "sha256": "9996005a87a29a27bec4d78e98a4e3386781a0641ab167c31f7d7d7232224578"
+        },
+        "records.zip": {
+          "bytes": 676002,
+          "sha256": "fe50b8c7f2d686f82585c13f5e9c61082ff3e7b1d028b6e3abde7cc67c44a854"
+        },
+        "resources.json": {
+          "bytes": 5740,
+          "sha256": "b3cfda19e6ec779079d37fe4eb29fe3e063931a1ffbe9556129f2f5d32ea2fd4"
+        },
+        "summary.json": {
+          "bytes": 1124,
+          "sha256": "4dda81a7fc265443ae0f1fcea9422f43aaa4ff9e084c3eedb1cd57f967c7e67c"
+        },
+        "verify.json": {
+          "bytes": 155,
+          "sha256": "87b1147cb56e111805d097c98942d993d8b2993b50fb4f0af9876975af5a92f8"
+        }
+      },
+      "observed_driver_status": null,
+      "package": "connected01-partial",
+      "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+      "process_returncode": 1,
+      "process_status": "PROCESS_FAILED",
+      "public_bytes": 1012308,
+      "public_file_count": 8,
+      "raw_manifest_sha256": "7cac2dbc735b950772884b7e23ea27c5734dd487c556b491b65c380dfd7fa0ff",
+      "raw_receipt_sha256": "b42d8f24954ebcde7b1de4ba82b7fed7173d704510e504994a153e14117e0e19",
+      "receipt_artifacts": 608,
+      "retained_only_artifacts": 558,
+      "root_verify_sha256": "87b1147cb56e111805d097c98942d993d8b2993b50fb4f0af9876975af5a92f8",
+      "scientific_acceptance": "unverified",
+      "selected_original_artifacts": 50,
+      "source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+      "source_tree": "aa082fb5255320aba24f25c28a212fd8608e83ba"
+    },
+    {
+      "archive_entries": 79,
+      "execution_id": "20261016T181450Z-21a4c330bba8",
+      "files": {
+        "archive-index.json": {
+          "bytes": 54804,
+          "sha256": "a1b94ae19331b5d76f6529dae90e39cddac56a82378b35a76f74637860458e35"
+        },
+        "composite-binding.json": {
+          "bytes": 1809,
+          "sha256": "5c2ddbfb9c3e8c4d60d69ede567e1614173e7ace57209bb01b24de1aed93b269"
+        },
+        "execution.json": {
+          "bytes": 5633,
+          "sha256": "bc16f98689ab4e67db1b127e34caff584582a79cfb90eea1a02bed82ceb2e198"
+        },
+        "export-index.json": {
+          "bytes": 100010,
+          "sha256": "8b519073622bf459141e6cca3fbad66f2928bcd4fe2434365fb919c7a3863805"
+        },
+        "records.zip": {
+          "bytes": 809147,
+          "sha256": "029e84f540825f9b66128c4dc89a6050e32e9cc957f6769f9364bcdb484e52a5"
+        },
+        "resources.json": {
+          "bytes": 5740,
+          "sha256": "ad94400d725747373fdf84c8137e2e8bad243e6800c79fca40a5fd2e71339ebd"
+        },
+        "summary.json": {
+          "bytes": 1239,
+          "sha256": "19c325cc1895a2a333bee5144da8f8a100fe6da033f84017e161af2fff436e12"
+        },
+        "verify.json": {
+          "bytes": 155,
+          "sha256": "ce03b7c834b5b2c3695c0e2b04395a321062ddc42737d3a8ec9f4f02227f2aee"
+        }
+      },
+      "observed_driver_status": "pass_composite_bounded_hardware_input_hash_integration",
+      "package": "connected02-recovery",
+      "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+      "process_returncode": 0,
+      "process_status": "PROCESS_EXITED",
+      "public_bytes": 978537,
+      "public_file_count": 8,
+      "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+      "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5",
+      "receipt_artifacts": 235,
+      "retained_only_artifacts": 166,
+      "root_verify_sha256": "ce03b7c834b5b2c3695c0e2b04395a321062ddc42737d3a8ec9f4f02227f2aee",
+      "scientific_acceptance": "unverified",
+      "selected_original_artifacts": 69,
+      "source_commit": "2b33e60d039a9a50cb540ef2c41561de8f4035a1",
+      "source_tree": "44139b83a1d3754da1aa54a78b92b5c308a4ae42"
+    }
+  ],
+  "private_alias_map_values_published": false,
+  "public_index_self_excluded_to_avoid_recursive_hash": true,
+  "schema": "openrx.compact-evidence-package-set.v1",
+  "scientific_acceptance": "unverified",
+  "totals": {
+    "archive_entries": 274,
+    "packages": 4,
+    "public_bytes_in_packages": 2705305,
+    "public_files_in_packages": 32,
+    "receipt_artifacts": 977,
+    "retained_only_artifacts": 735,
+    "selected_original_artifacts": 242
+  }
+}

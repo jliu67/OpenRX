@@ -1,0 +1,38 @@
+{
+  "corrected_source_commit": "3d81d80c4c3eff798a5354470470f4bc1a0eed0d",
+  "corrected_source_tree": "5ceafbc0e90121f67030ea18bf612d7f6627cf2d",
+  "derivation": "Distinct original hosted failures, bounded hosted subgate, and new local source-binding checks; not a claim of new-head hosted CI success.",
+  "failed_publication_head": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+  "hosted_input_hash_subgate_pass_does_not_promote_failed_workflow": true,
+  "new_head_hosted_ci_acceptance_not_claimed": true,
+  "new_local_checks": {
+    "elapsed_seconds": 3.3454980960814282,
+    "fresh_native_hdl_or_synthesis_performed": false,
+    "historical_manifests_original_declaration_and_guard_preserved": true,
+    "negative_checks": {
+      "mutated-workflow": {
+        "error": "combined live successor changed: .github/workflows/regfile-blake2b.yml",
+        "rejected": true
+      },
+      "stale-workflow-declaration": {
+        "error": "combined live successor changed: .github/workflows/regfile-blake2b.yml",
+        "rejected": true
+      }
+    },
+    "original_prepared219_and_regression73_live_bytes_unchanged": true,
+    "positive_source_guard": true,
+    "source_head": "3d81d80c4c3eff798a5354470470f4bc1a0eed0d",
+    "source_tree": "5ceafbc0e90121f67030ea18bf612d7f6627cf2d",
+    "staged_declaration_sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881",
+    "status": "pass_staged_workflow_binding_correction",
+    "unit_tests": 18,
+    "workflow_sha256": "d1990ab5e179a9c6dad0dedb6c74dbf71039e6a0c3e9c24f07ba21e3f5c5be32"
+  },
+  "new_local_execution": "20261016T184732Z-7c6f2889a8e8",
+  "old_five_hosted_check_failures_preserved": true,
+  "only_fix": "One existing staged declaration workflow SHA corrected from9119d790 to actuald1990ab5; no guard/RTL/historical manifest change.",
+  "prior_33_public_file_binding_inventory_sha256": "d64c17e306b64a3d2eff21514751e87290929c479b906aa47d10145cfd2d402e",
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "schema": "openrx.ci-binding-recovery-public-context.v1",
+  "scientific_acceptance": "unverified"
+}

@@ -324,3 +324,30 @@ not supply missing physical characterization or validate alternative hardware.
 ## D053 — move initial AES fill across the provider boundary
 
 Reuse the existing licensed AES round with pinned fillAes1Rx4 directions, keys and byte order. In explicit hardware mode the live host provides only actual input BLAKE2b seed; hardware owns all initial writes and post-fill seed. Preserve legacy default reproduction. State advances only on accepted writes; hold output through backpressure, keep INIT ownership through seed validation, allocate fresh generations after cancellation, and preserve accepted memory writes. Drain stale transfers, reject matching unsolicited writes, and acknowledge a matching seed response only when its state can consume it. Charge one closing initialization stage, replacing old transport without double counting. Keep standalone full-image, bounded mapped and bounded connected proof distinct; retain untimed program generation, dataset and input hash costs and physical unknowns. [EXP-016](../experiments/EXP-016-initial-scratchpad-fill.md).
+
+
+## 2026-10-16 — bounded input hardware and explicit composite recovery
+
+Use the accepted BLAKE2b core for the existing 0–80-byte descriptor; reject every
+representable unsupported length. Preserve the historical default provider path.
+Input hashing owns no scratchpad and must finish before hardware fill. Drain
+removed initialization traffic rather than allowing it to seed/fault the active
+generation. Keep native input/program calls assertion-only and clocks disjoint.
+
+Retain both failed payloads and compose verified completed subresults only after
+binding their actual bytes to the trusted original receipt. The recovery changes
+exactly two boundary-helper settling delays, runs missing backend/boundary gates
+and requires complete ideal parity. Generic mapping and bounded 2×1 correctness
+do not establish physical PPA, new default full-hash timing or Light dataset
+hardware. One prepared superscalar-program executor is the next concrete gap;
+its future validation cost remains unbound until its corpus/implementation exist.
+
+
+## 2026-10-16 — retain strict guards when extending workflow metadata
+
+Bind the added standalone CI step by updating the existing allowlisted staged
+workflow digest. Preserve its staged-not-executed state and every guard, original
+declaration, historical map and runtime input. Reject mutated workflow bytes and
+stale declared digests in retained isolated fixtures. Keep all failed hosted
+archives and distinct local/hosted mapping identities; current-head gates remain
+required.

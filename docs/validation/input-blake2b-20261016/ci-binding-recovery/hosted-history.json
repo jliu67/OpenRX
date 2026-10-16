@@ -1,0 +1,797 @@
+{
+  "artifacts": [
+    {
+      "actual_sha256_matches_index": true,
+      "artifact_id": 12067418423,
+      "artifact_url": "https://github.com/jliu67/OpenRX/actions/runs/38948748573/artifacts/12067418423",
+      "bytes": 11560,
+      "complete_central_directory": [
+        {
+          "bytes": 70641,
+          "compressed_bytes": 11092,
+          "crc32": "64169a55",
+          "path": "build/validation/phase1-tests.log"
+        },
+        {
+          "bytes": 185,
+          "compressed_bytes": 140,
+          "crc32": "9c03a86c",
+          "path": "benchmarks/results/README.md"
+        }
+      ],
+      "downloaded_at_utc": "2026-10-16T18:41:56.845537+00:00",
+      "github_digest_matches": true,
+      "head_sha": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+      "original_zip_retained": true,
+      "path": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/push_foundation-12067418423.zip",
+      "role": "push_foundation",
+      "run_id": 38948748573,
+      "sha256": "e2122732db38fe84338b4de6acbbe20425518add56655914039fe7c62311a3fb",
+      "zip_member_count": 2,
+      "zip_member_index": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/push_foundation-zip-members.json",
+      "zip_members_extracted": false
+    },
+    {
+      "actual_sha256_matches_index": true,
+      "artifact_id": 12067408825,
+      "artifact_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842538/artifacts/12067408825",
+      "bytes": 1424,
+      "complete_central_directory": [
+        {
+          "bytes": 163,
+          "compressed_bytes": 129,
+          "crc32": "25efbed2",
+          "path": "combined-report.json"
+        },
+        {
+          "bytes": 2291,
+          "compressed_bytes": 1027,
+          "crc32": "9e1a02a6",
+          "path": "report.json"
+        }
+      ],
+      "downloaded_at_utc": "2026-10-16T18:41:57.458439+00:00",
+      "github_digest_matches": true,
+      "head_sha": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+      "original_zip_retained": true,
+      "path": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/prepared_parent-12067408825.zip",
+      "role": "prepared_parent",
+      "run_id": 38948842538,
+      "sha256": "d8e104f0c75d84f1ff0915f8ba36af5bf2ecbe094afeef747a1ea03ddab13323",
+      "zip_member_count": 2,
+      "zip_member_index": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/prepared_parent-zip-members.json",
+      "zip_members_extracted": false
+    },
+    {
+      "actual_sha256_matches_index": true,
+      "artifact_id": 12067830080,
+      "artifact_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842578/artifacts/12067830080",
+      "bytes": 11560,
+      "complete_central_directory": [
+        {
+          "bytes": 70641,
+          "compressed_bytes": 11092,
+          "crc32": "0495e89c",
+          "path": "build/validation/phase1-tests.log"
+        },
+        {
+          "bytes": 185,
+          "compressed_bytes": 140,
+          "crc32": "9c03a86c",
+          "path": "benchmarks/results/README.md"
+        }
+      ],
+      "downloaded_at_utc": "2026-10-16T18:41:57.769864+00:00",
+      "github_digest_matches": true,
+      "head_sha": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+      "original_zip_retained": true,
+      "path": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/pr_foundation-12067830080.zip",
+      "role": "pr_foundation",
+      "run_id": 38948842578,
+      "sha256": "f8dea6441bf8f730d8ce1f43e15d7ff4bcf7a8c06707c455dcd4e7a31f54f92b",
+      "zip_member_count": 2,
+      "zip_member_index": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/pr_foundation-zip-members.json",
+      "zip_members_extracted": false
+    },
+    {
+      "actual_sha256_matches_index": true,
+      "artifact_id": 12067488741,
+      "artifact_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842626/artifacts/12067488741",
+      "bytes": 2449017,
+      "complete_central_directory": [
+        {
+          "bytes": 1305,
+          "compressed_bytes": 702,
+          "crc32": "d6e9f6e6",
+          "path": "input-blake2b-38948842626-1/LICENSE-BLAKE2-original"
+        },
+        {
+          "bytes": 10201,
+          "compressed_bytes": 3767,
+          "crc32": "97543be7",
+          "path": "input-blake2b-38948842626-1/artifacts.sha256.json"
+        },
+        {
+          "bytes": 1561,
+          "compressed_bytes": 827,
+          "crc32": "c19e7d78",
+          "path": "input-blake2b-38948842626-1/LICENSE-RandomX"
+        },
+        {
+          "bytes": 22932,
+          "compressed_bytes": 1872,
+          "crc32": "ad1acd11",
+          "path": "input-blake2b-38948842626-1/commands.json"
+        },
+        {
+          "bytes": 18416,
+          "compressed_bytes": 1348,
+          "crc32": "717ba01d",
+          "path": "input-blake2b-38948842626-1/compile-mapped.log"
+        },
+        {
+          "bytes": 1037,
+          "compressed_bytes": 488,
+          "crc32": "e10a9941",
+          "path": "input-blake2b-38948842626-1/compile-mapped.time.txt"
+        },
+        {
+          "bytes": 0,
+          "compressed_bytes": 2,
+          "crc32": "00000000",
+          "path": "input-blake2b-38948842626-1/compile-native-oracle.log"
+        },
+        {
+          "bytes": 931,
+          "compressed_bytes": 485,
+          "crc32": "4e051e0a",
+          "path": "input-blake2b-38948842626-1/compile-native-oracle.time.txt"
+        },
+        {
+          "bytes": 546,
+          "compressed_bytes": 222,
+          "crc32": "f811b1ba",
+          "path": "input-blake2b-38948842626-1/compile-rtl.log"
+        },
+        {
+          "bytes": 953,
+          "compressed_bytes": 476,
+          "crc32": "f1f53daf",
+          "path": "input-blake2b-38948842626-1/compile-rtl.time.txt"
+        },
+        {
+          "bytes": 814,
+          "compressed_bytes": 430,
+          "crc32": "c502a6eb",
+          "path": "input-blake2b-38948842626-1/corpus.json"
+        },
+        {
+          "bytes": 585,
+          "compressed_bytes": 243,
+          "crc32": "8418c685",
+          "path": "input-blake2b-38948842626-1/fixtures/control.hex"
+        },
+        {
+          "bytes": 7610,
+          "compressed_bytes": 1117,
+          "crc32": "95a4f24a",
+          "path": "input-blake2b-38948842626-1/fixtures/mapped-vectors.hex"
+        },
+        {
+          "bytes": 251,
+          "compressed_bytes": 175,
+          "crc32": "e23d4131",
+          "path": "input-blake2b-38948842626-1/fixtures/native-summary.json"
+        },
+        {
+          "bytes": 179822,
+          "compressed_bytes": 52939,
+          "crc32": "e3b457cc",
+          "path": "input-blake2b-38948842626-1/fixtures/vectors.hex"
+        },
+        {
+          "bytes": 358,
+          "compressed_bytes": 234,
+          "crc32": "f8cc09ca",
+          "path": "input-blake2b-38948842626-1/fixtures.sha256.json"
+        },
+        {
+          "bytes": 31768,
+          "compressed_bytes": 10919,
+          "crc32": "23e0d0af",
+          "path": "input-blake2b-38948842626-1/input-blake2b-oracle"
+        },
+        {
+          "bytes": 21101,
+          "compressed_bytes": 8485,
+          "crc32": "7ef6d4a0",
+          "path": "input-blake2b-38948842626-1/inputs.json"
+        },
+        {
+          "bytes": 337,
+          "compressed_bytes": 220,
+          "crc32": "2dbd3616",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_before.log"
+        },
+        {
+          "bytes": 890,
+          "compressed_bytes": 455,
+          "crc32": "7b8735fc",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_before.time.txt"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 218,
+          "crc32": "bda2304e",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_early.log"
+        },
+        {
+          "bytes": 888,
+          "compressed_bytes": 455,
+          "crc32": "7ea684b5",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_early.time.txt"
+        },
+        {
+          "bytes": 336,
+          "compressed_bytes": 220,
+          "crc32": "dbb92efc",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_final.log"
+        },
+        {
+          "bytes": 890,
+          "compressed_bytes": 456,
+          "crc32": "4c8a3aa8",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_final.time.txt"
+        },
+        {
+          "bytes": 337,
+          "compressed_bytes": 221,
+          "crc32": "197c4530",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_middle.log"
+        },
+        {
+          "bytes": 890,
+          "compressed_bytes": 456,
+          "crc32": "ae3e0371",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_middle.time.txt"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 223,
+          "crc32": "8d9ace88",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_return.log"
+        },
+        {
+          "bytes": 890,
+          "compressed_bytes": 458,
+          "crc32": "cdd0f607",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_return.time.txt"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 218,
+          "crc32": "50f9e4e5",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_start.log"
+        },
+        {
+          "bytes": 888,
+          "compressed_bytes": 455,
+          "crc32": "eb0a36b5",
+          "path": "input-blake2b-38948842626-1/mapped-control-cancel_start.time.txt"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 217,
+          "crc32": "d1ace774",
+          "path": "input-blake2b-38948842626-1/mapped-control-held_request.log"
+        },
+        {
+          "bytes": 890,
+          "compressed_bytes": 456,
+          "crc32": "239ef368",
+          "path": "input-blake2b-38948842626-1/mapped-control-held_request.time.txt"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 220,
+          "crc32": "3b50bc8f",
+          "path": "input-blake2b-38948842626-1/mapped-control-held_response.log"
+        },
+        {
+          "bytes": 891,
+          "compressed_bytes": 457,
+          "crc32": "704fcf7c",
+          "path": "input-blake2b-38948842626-1/mapped-control-held_response.time.txt"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 220,
+          "crc32": "23874a8a",
+          "path": "input-blake2b-38948842626-1/mapped-control-invalid_edges.log"
+        },
+        {
+          "bytes": 890,
+          "compressed_bytes": 455,
+          "crc32": "a1920616",
+          "path": "input-blake2b-38948842626-1/mapped-control-invalid_edges.time.txt"
+        },
+        {
+          "bytes": 889,
+          "compressed_bytes": 454,
+          "crc32": "6d4d38cf",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_before.time.txt"
+        },
+        {
+          "bytes": 336,
+          "compressed_bytes": 219,
+          "crc32": "71b80e49",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_before.log"
+        },
+        {
+          "bytes": 334,
+          "compressed_bytes": 217,
+          "crc32": "89d4b671",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_early.log"
+        },
+        {
+          "bytes": 887,
+          "compressed_bytes": 454,
+          "crc32": "577ebbe5",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_early.time.txt"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 220,
+          "crc32": "6deb7547",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_final.log"
+        },
+        {
+          "bytes": 888,
+          "compressed_bytes": 455,
+          "crc32": "3258d8b5",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_final.time.txt"
+        },
+        {
+          "bytes": 336,
+          "compressed_bytes": 220,
+          "crc32": "45797d6f",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_middle.log"
+        },
+        {
+          "bytes": 888,
+          "compressed_bytes": 454,
+          "crc32": "a40ea3ab",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_middle.time.txt"
+        },
+        {
+          "bytes": 337,
+          "compressed_bytes": 221,
+          "crc32": "761287d5",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_return.log"
+        },
+        {
+          "bytes": 889,
+          "compressed_bytes": 455,
+          "crc32": "9f5fa8e9",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_return.time.txt"
+        },
+        {
+          "bytes": 334,
+          "compressed_bytes": 217,
+          "crc32": "648f62da",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_start.log"
+        },
+        {
+          "bytes": 888,
+          "compressed_bytes": 455,
+          "crc32": "8d489934",
+          "path": "input-blake2b-38948842626-1/mapped-control-reset_start.time.txt"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 217,
+          "crc32": "64824213",
+          "path": "input-blake2b-38948842626-1/mapped-corpus.log"
+        },
+        {
+          "bytes": 892,
+          "compressed_bytes": 455,
+          "crc32": "c8aeb2d8",
+          "path": "input-blake2b-38948842626-1/mapped-corpus.time.txt"
+        },
+        {
+          "bytes": 10799978,
+          "compressed_bytes": 1251745,
+          "crc32": "348acf7b",
+          "path": "input-blake2b-38948842626-1/mapped.vvp"
+        },
+        {
+          "bytes": 848,
+          "compressed_bytes": 403,
+          "crc32": "d0e3bbda",
+          "path": "input-blake2b-38948842626-1/native-oracle.time.txt"
+        },
+        {
+          "bytes": 109,
+          "compressed_bytes": 95,
+          "crc32": "ce1549ea",
+          "path": "input-blake2b-38948842626-1/native-oracle.log"
+        },
+        {
+          "bytes": 19708824,
+          "compressed_bytes": 657861,
+          "crc32": "9b80ae26",
+          "path": "input-blake2b-38948842626-1/netlist-input-blake2b.json"
+        },
+        {
+          "bytes": 2406675,
+          "compressed_bytes": 339760,
+          "crc32": "137f161e",
+          "path": "input-blake2b-38948842626-1/netlist-input-blake2b.v"
+        },
+        {
+          "bytes": 1233,
+          "compressed_bytes": 726,
+          "crc32": "2a2220d9",
+          "path": "input-blake2b-38948842626-1/preserved-IP.json"
+        },
+        {
+          "bytes": 337,
+          "compressed_bytes": 220,
+          "crc32": "2dbd3616",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_before.log"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 218,
+          "crc32": "bda2304e",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_early.log"
+        },
+        {
+          "bytes": 882,
+          "compressed_bytes": 444,
+          "crc32": "d5b18c3e",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_early.time.txt"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 450,
+          "crc32": "2888a806",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_before.time.txt"
+        },
+        {
+          "bytes": 336,
+          "compressed_bytes": 220,
+          "crc32": "dbb92efc",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_final.log"
+        },
+        {
+          "bytes": 882,
+          "compressed_bytes": 448,
+          "crc32": "9c33d393",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_final.time.txt"
+        },
+        {
+          "bytes": 337,
+          "compressed_bytes": 221,
+          "crc32": "197c4530",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_middle.log"
+        },
+        {
+          "bytes": 884,
+          "compressed_bytes": 448,
+          "crc32": "60c049a8",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_middle.time.txt"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 223,
+          "crc32": "8d9ace88",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_return.log"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 448,
+          "crc32": "ddb14afe",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_return.time.txt"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 218,
+          "crc32": "50f9e4e5",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_start.log"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 444,
+          "crc32": "acb09cbf",
+          "path": "input-blake2b-38948842626-1/rtl-control-cancel_start.time.txt"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 217,
+          "crc32": "d1ace774",
+          "path": "input-blake2b-38948842626-1/rtl-control-held_request.log"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 449,
+          "crc32": "da02b7b7",
+          "path": "input-blake2b-38948842626-1/rtl-control-held_request.time.txt"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 220,
+          "crc32": "3b50bc8f",
+          "path": "input-blake2b-38948842626-1/rtl-control-held_response.log"
+        },
+        {
+          "bytes": 884,
+          "compressed_bytes": 449,
+          "crc32": "602aa4d5",
+          "path": "input-blake2b-38948842626-1/rtl-control-held_response.time.txt"
+        },
+        {
+          "bytes": 341,
+          "compressed_bytes": 224,
+          "crc32": "05375a99",
+          "path": "input-blake2b-38948842626-1/rtl-control-invalid_all.log"
+        },
+        {
+          "bytes": 338,
+          "compressed_bytes": 220,
+          "crc32": "23874a8a",
+          "path": "input-blake2b-38948842626-1/rtl-control-invalid_edges.log"
+        },
+        {
+          "bytes": 882,
+          "compressed_bytes": 444,
+          "crc32": "3b21b092",
+          "path": "input-blake2b-38948842626-1/rtl-control-invalid_all.time.txt"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 447,
+          "crc32": "a449bb51",
+          "path": "input-blake2b-38948842626-1/rtl-control-invalid_edges.time.txt"
+        },
+        {
+          "bytes": 336,
+          "compressed_bytes": 219,
+          "crc32": "71b80e49",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_before.log"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 444,
+          "crc32": "3a6897e5",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_before.time.txt"
+        },
+        {
+          "bytes": 334,
+          "compressed_bytes": 217,
+          "crc32": "89d4b671",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_early.log"
+        },
+        {
+          "bytes": 882,
+          "compressed_bytes": 446,
+          "crc32": "a5239555",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_early.time.txt"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 220,
+          "crc32": "6deb7547",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_final.log"
+        },
+        {
+          "bytes": 881,
+          "compressed_bytes": 447,
+          "crc32": "7539c6c6",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_final.time.txt"
+        },
+        {
+          "bytes": 336,
+          "compressed_bytes": 220,
+          "crc32": "45797d6f",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_middle.log"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 445,
+          "crc32": "3e932a13",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_middle.time.txt"
+        },
+        {
+          "bytes": 337,
+          "compressed_bytes": 221,
+          "crc32": "761287d5",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_return.log"
+        },
+        {
+          "bytes": 882,
+          "compressed_bytes": 447,
+          "crc32": "50597b9c",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_return.time.txt"
+        },
+        {
+          "bytes": 334,
+          "compressed_bytes": 217,
+          "crc32": "648f62da",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_start.log"
+        },
+        {
+          "bytes": 882,
+          "compressed_bytes": 443,
+          "crc32": "634c3474",
+          "path": "input-blake2b-38948842626-1/rtl-control-reset_start.time.txt"
+        },
+        {
+          "bytes": 342,
+          "compressed_bytes": 222,
+          "crc32": "1d042910",
+          "path": "input-blake2b-38948842626-1/rtl-corpus.log"
+        },
+        {
+          "bytes": 877,
+          "compressed_bytes": 446,
+          "crc32": "042bd142",
+          "path": "input-blake2b-38948842626-1/rtl-corpus.time.txt"
+        },
+        {
+          "bytes": 335,
+          "compressed_bytes": 217,
+          "crc32": "64824213",
+          "path": "input-blake2b-38948842626-1/rtl-mapped-corpus.log"
+        },
+        {
+          "bytes": 883,
+          "compressed_bytes": 445,
+          "crc32": "cd92d23d",
+          "path": "input-blake2b-38948842626-1/rtl-mapped-corpus.time.txt"
+        },
+        {
+          "bytes": 317966,
+          "compressed_bytes": 37636,
+          "crc32": "4f07f86b",
+          "path": "input-blake2b-38948842626-1/rtl.vvp"
+        },
+        {
+          "bytes": 994,
+          "compressed_bytes": 292,
+          "crc32": "c35da621",
+          "path": "input-blake2b-38948842626-1/stat-input-blake2b.txt"
+        },
+        {
+          "bytes": 26130,
+          "compressed_bytes": 1835,
+          "crc32": "f1143d37",
+          "path": "input-blake2b-38948842626-1/summary.json"
+        },
+        {
+          "bytes": 291229,
+          "compressed_bytes": 21945,
+          "crc32": "b25c543f",
+          "path": "input-blake2b-38948842626-1/synth-input-blake2b.log"
+        },
+        {
+          "bytes": 1178,
+          "compressed_bytes": 533,
+          "crc32": "82f3b13f",
+          "path": "input-blake2b-38948842626-1/synth-input-blake2b.time.txt"
+        },
+        {
+          "bytes": 5578,
+          "compressed_bytes": 1122,
+          "crc32": "89a449b4",
+          "path": "input-blake2b-38948842626-1/tools.json"
+        },
+        {
+          "bytes": 32,
+          "compressed_bytes": 34,
+          "crc32": "5cc70074",
+          "path": "input-blake2b-38948842626-1/vendor.log"
+        },
+        {
+          "bytes": 750,
+          "compressed_bytes": 376,
+          "crc32": "20bebeac",
+          "path": "input-blake2b-38948842626-1/vendor.time.txt"
+        },
+        {
+          "bytes": 273,
+          "compressed_bytes": 165,
+          "crc32": "751ead9e",
+          "path": "input-blake2b-38948842626-1/yosys-cell-model.json"
+        },
+        {
+          "bytes": 87795,
+          "compressed_bytes": 5534,
+          "crc32": "681513d8",
+          "path": "input-blake2b-38948842626-1/yosys-simcells.v"
+        },
+        {
+          "bytes": 176,
+          "compressed_bytes": 134,
+          "crc32": "46251384",
+          "path": "regfile-blake2b-38948842626-1/artifacts.sha256.json"
+        },
+        {
+          "bytes": 3,
+          "compressed_bytes": 5,
+          "crc32": "7068d244",
+          "path": "regfile-blake2b-38948842626-1/commands.json"
+        },
+        {
+          "bytes": 183,
+          "compressed_bytes": 148,
+          "crc32": "c5f5601c",
+          "path": "regfile-blake2b-38948842626-1/failure.json"
+        }
+      ],
+      "downloaded_at_utc": "2026-10-16T18:41:58.703618+00:00",
+      "github_digest_matches": true,
+      "head_sha": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+      "original_zip_retained": true,
+      "path": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/native_hash-12067488741.zip",
+      "role": "native_hash",
+      "run_id": 38948842626,
+      "sha256": "4f719cb3c824ff0fcca9faaf0b2f61d3a5712934cf4aa26ae1c827a1abb61254",
+      "zip_member_count": 105,
+      "zip_member_index": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/native_hash-zip-members.json",
+      "zip_members_extracted": false
+    },
+    {
+      "actual_sha256_matches_index": true,
+      "artifact_id": 12067309030,
+      "artifact_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842528/artifacts/12067309030",
+      "bytes": 220147957,
+      "complete_central_directory": [
+        {
+          "bytes": 745,
+          "compressed_bytes": 750,
+          "crc32": "bfaf6d73",
+          "path": "scratchpad-finalization-38948842528-1-output-complete.tar.gz"
+        },
+        {
+          "bytes": 220188232,
+          "compressed_bytes": 220146058,
+          "crc32": "730b1d25",
+          "path": "scratchpad-finalization-38948842528-1-source-complete.tar.gz"
+        },
+        {
+          "bytes": 151,
+          "compressed_bytes": 125,
+          "crc32": "6eae0ad9",
+          "path": "scratchpad-finalization-38948842528-1-output-complete.tar.gz.sha256"
+        },
+        {
+          "bytes": 151,
+          "compressed_bytes": 126,
+          "crc32": "d051887c",
+          "path": "scratchpad-finalization-38948842528-1-source-complete.tar.gz.sha256"
+        }
+      ],
+      "downloaded_at_utc": "2026-10-16T18:45:01.220146+00:00",
+      "github_digest_matches": true,
+      "head_sha": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+      "original_zip_retained": true,
+      "path": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/finalization-12067309030.zip",
+      "role": "finalization",
+      "run_id": 38948842528,
+      "sha256": "4929ef70ab18900143fc6ef9cb2128bc376e6f1a71c7a94b25f55f9e8a338a49",
+      "zip_member_count": 4,
+      "zip_member_index": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/finalization-zip-members.json",
+      "zip_members_extracted": false
+    }
+  ],
+  "derivation": "All five retained original GitHub artifact ZIPs hashed against supplied index; complete central-directory inventory, not newly hashed full member contents.",
+  "original_head": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+  "original_status_preserved": "Five completed failing checks preserved; integercheck may still be running separately. This record does not claim allchecks passed/terminal.",
+  "raw_origin_index_sha256": "7064eb349670b023a873657403ae2a19dab5d830f611902a8995dcf2865d59a2",
+  "scientific_acceptance": "unverified",
+  "zip_bytes": 222621518,
+  "zip_count": 5,
+  "zip_members": 115
+}

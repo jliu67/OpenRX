@@ -1,0 +1,1703 @@
+{
+  "complete_receipt_coverage": {
+    "artifact_count": 235,
+    "files": [
+      {
+        "archive_entry": "records/events.jsonl",
+        "bytes": 1459,
+        "disposition": "selected",
+        "original_relative": "events.jsonl",
+        "sha256": "9ca203bd9daadd96d8b981d9dd5206f5b57a3203cb4b574b2240a1dc5c29cf8c"
+      },
+      {
+        "archive_entry": "records/manifest.json",
+        "bytes": 2550657,
+        "disposition": "selected",
+        "original_relative": "manifest.json",
+        "sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd"
+      },
+      {
+        "archive_entry": "records/output/checks.json",
+        "bytes": 1239,
+        "disposition": "selected",
+        "original_relative": "output/checks.json",
+        "sha256": "19c325cc1895a2a333bee5144da8f8a100fe6da033f84017e161af2fff436e12"
+      },
+      {
+        "archive_entry": "records/output/commands.json",
+        "bytes": 2338,
+        "disposition": "selected",
+        "original_relative": "output/commands.json",
+        "sha256": "da8ed490fbc159a29103a4a878fd78ed048a9e9545564f498c893a3a90afdb43"
+      },
+      {
+        "archive_entry": "records/output/icarus.log",
+        "bytes": 644,
+        "disposition": "selected",
+        "original_relative": "output/icarus.log",
+        "sha256": "8aa1e3e28e6031f4d1917f8c7bbc7569d8af5c0e5a0ab24edbabf3514e26365c"
+      },
+      {
+        "archive_entry": "records/output/icarus.time.txt",
+        "bytes": 1344,
+        "disposition": "selected",
+        "original_relative": "output/icarus.time.txt",
+        "sha256": "44fec85f80ea3dc2df818b0ab5a75a0a741890405a4ff8d2f4ae043d8786a8e9"
+      },
+      {
+        "archive_entry": "records/output/icarus/HardFloat-compile-view.json",
+        "bytes": 745,
+        "disposition": "selected",
+        "original_relative": "output/icarus/HardFloat-compile-view.json",
+        "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+      },
+      {
+        "bytes": 15488,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/HardFloat-divSqrt-compile-view.v",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3"
+      },
+      {
+        "archive_entry": "records/output/icarus/LICENSE-BLAKE2",
+        "bytes": 1305,
+        "disposition": "selected",
+        "original_relative": "output/icarus/LICENSE-BLAKE2",
+        "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+      },
+      {
+        "archive_entry": "records/output/icarus/LICENSE-HardFloat",
+        "bytes": 1514,
+        "disposition": "selected",
+        "original_relative": "output/icarus/LICENSE-HardFloat",
+        "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+      },
+      {
+        "archive_entry": "records/output/icarus/LICENSE-OpenRX",
+        "bytes": 1803,
+        "disposition": "selected",
+        "original_relative": "output/icarus/LICENSE-OpenRX",
+        "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+      },
+      {
+        "archive_entry": "records/output/icarus/LICENSE-RandomX",
+        "bytes": 1561,
+        "disposition": "selected",
+        "original_relative": "output/icarus/LICENSE-RandomX",
+        "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+      },
+      {
+        "archive_entry": "records/output/icarus/LICENSE-secworks",
+        "bytes": 1303,
+        "disposition": "selected",
+        "original_relative": "output/icarus/LICENSE-secworks",
+        "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+      },
+      {
+        "archive_entry": "records/output/icarus/artifacts.sha256.json",
+        "bytes": 6189,
+        "disposition": "selected",
+        "original_relative": "output/icarus/artifacts.sha256.json",
+        "sha256": "840133958d77025c6fe6de434c72bf414b6526936c9e4055ff706032e173863c"
+      },
+      {
+        "archive_entry": "records/output/icarus/commands.json",
+        "bytes": 11389,
+        "disposition": "selected",
+        "original_relative": "output/icarus/commands.json",
+        "sha256": "433027f0e7b1372d22c5080a0db4d335c06629dc38e47ac63453126a616592b5"
+      },
+      {
+        "archive_entry": "records/output/icarus/compile-prepared-ideal-input-boundaries.log",
+        "bytes": 6045,
+        "disposition": "selected",
+        "original_relative": "output/icarus/compile-prepared-ideal-input-boundaries.log",
+        "sha256": "a0fec4b929b1bad6f890a8fd5a73121f5b8d515c6fce25ecc8efb3cd1560b03a"
+      },
+      {
+        "archive_entry": "records/output/icarus/compile-prepared-ideal.log",
+        "bytes": 6045,
+        "disposition": "selected",
+        "original_relative": "output/icarus/compile-prepared-ideal.log",
+        "sha256": "a0fec4b929b1bad6f890a8fd5a73121f5b8d515c6fce25ecc8efb3cd1560b03a"
+      },
+      {
+        "archive_entry": "records/output/icarus/compile-reference.log",
+        "bytes": 0,
+        "disposition": "selected",
+        "original_relative": "output/icarus/compile-reference.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive_entry": "records/output/icarus/compile-vpi.log",
+        "bytes": 0,
+        "disposition": "selected",
+        "original_relative": "output/icarus/compile-vpi.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive_entry": "records/output/icarus/extraction.json",
+        "bytes": 1802,
+        "disposition": "selected",
+        "original_relative": "output/icarus/extraction.json",
+        "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+      },
+      {
+        "archive_entry": "records/output/icarus/inputs.json",
+        "bytes": 30702,
+        "disposition": "selected",
+        "original_relative": "output/icarus/inputs.json",
+        "sha256": "492f4951454523c67465b268acac03db93198df4ee7c26687b1be03f87fa8474"
+      },
+      {
+        "archive_entry": "records/output/icarus/lifecycle-unit-tests.log",
+        "bytes": 5114,
+        "disposition": "selected",
+        "original_relative": "output/icarus/lifecycle-unit-tests.log",
+        "sha256": "5e66abffe888a10ed44490ecf006cede6df229056340888079c2e3d418aa1349"
+      },
+      {
+        "bytes": 303352,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/lifecycle_source.vpi",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "28f8e49fcf4d665e7032a1b3f01c715be4463b45e2421ef06a56928122c98327"
+      },
+      {
+        "archive_entry": "records/output/icarus/native-reference.log",
+        "bytes": 134,
+        "disposition": "selected",
+        "original_relative": "output/icarus/native-reference.log",
+        "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+      },
+      {
+        "bytes": 3646,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/accesses.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c6ce6563e4f13d56f608f2bcf165c08c810531c8070ac071412c8af5c172a1c4"
+      },
+      {
+        "bytes": 3726,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/events.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "a4b90f2c1bf76e79421bbc4454d1e220b6ed379bb9e5782b8ed75a12af99cdb0"
+      },
+      {
+        "bytes": 4325376,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/final-0.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c5cf81821119bdc35fe75fd61608a155e9fa30cc28e24b26e55d554b68b13efb"
+      },
+      {
+        "bytes": 4325376,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/final-1.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "78a6b8dbe1086c01096e1c43e747e28de256c926511561ac08b5b7db9aaefa2c"
+      },
+      {
+        "bytes": 129,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/final-a.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "46a340e781beffd0476f67c8da5b5df731f652d9f2a7ab386851bdec8ae849f0"
+      },
+      {
+        "archive_entry": "records/output/icarus/native-reference/final-digest32.hex",
+        "bytes": 65,
+        "disposition": "selected",
+        "original_relative": "output/icarus/native-reference/final-digest32.hex",
+        "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+      },
+      {
+        "bytes": 513,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/final-rf.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "273f84a5486ba2ba92545aeebeafe9e460ada065f7a2b300f39a54ab7c3499c2"
+      },
+      {
+        "archive_entry": "records/output/icarus/native-reference/full-reference.json",
+        "bytes": 352,
+        "disposition": "selected",
+        "original_relative": "output/icarus/native-reference/full-reference.json",
+        "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+      },
+      {
+        "bytes": 4325376,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/initial.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c23bde9fddadce72d31d590a0143cb44e646885a0f544030b9764685cf200558"
+      },
+      {
+        "bytes": 1200,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/iterations.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "8bb50034865542761f12f2de3d6549144745652659db67196e4c9ef3937f8765"
+      },
+      {
+        "bytes": 1268,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/iterations.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "191bea37a7119bed6c0bea74177b6489290255ceed5bb415dc3702b587cd8475"
+      },
+      {
+        "bytes": 910,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/metadata.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "564ad4b40b26b353d7be647dcf292ef22319e05255c8bee4d39406595a414abb"
+      },
+      {
+        "bytes": 904,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/metadata.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "b353e3a67055e842436d33a7454ddb37f0429b591accb99cb743dc857020367b"
+      },
+      {
+        "archive_entry": "records/output/icarus/native-reference/oracle-summary.json",
+        "bytes": 498,
+        "disposition": "selected",
+        "original_relative": "output/icarus/native-reference/oracle-summary.json",
+        "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+      },
+      {
+        "bytes": 6528,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/program-0.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+      },
+      {
+        "bytes": 6528,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/program-1.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+      },
+      {
+        "bytes": 1034,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/program-registers.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "45c0c878d5615ee7cec8fa6cf5c16960c6dca58eb4aadc37b922296d208e74fc"
+      },
+      {
+        "bytes": 79,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/native-reference/sequence_sizes.vh",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "38fd9622f79ef58f282d960d587e9f01e5165b27c61d29ec85fa3f8dfc039ca2"
+      },
+      {
+        "bytes": 1680,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_bytecode_loop.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d"
+      },
+      {
+        "bytes": 1652,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_dataset_read.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e"
+      },
+      {
+        "bytes": 1552,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_destructor.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9"
+      },
+      {
+        "bytes": 1918,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_float_masks.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b"
+      },
+      {
+        "bytes": 3571,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_iteration.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404"
+      },
+      {
+        "bytes": 2211,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_program_float_helpers.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2"
+      },
+      {
+        "bytes": 2849,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_program_initialize.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a"
+      },
+      {
+        "bytes": 1688,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/pinned_scratchpad_address.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492"
+      },
+      {
+        "archive_entry": "records/output/icarus/prepared-ideal-input-boundaries.log",
+        "bytes": 181,
+        "disposition": "selected",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries.log",
+        "sha256": "a18bba9b7afd8086c43e033951e283d1195d76dff9166973550269fb01603595"
+      },
+      {
+        "bytes": 5908206,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries.vvp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5090da48967368739c234aa8f616290a546bdaa2185122aaaadb12bb0bf1444a"
+      },
+      {
+        "archive_entry": "records/output/icarus/prepared-ideal-input-boundaries/input-boundary-checks.json",
+        "bytes": 234,
+        "disposition": "selected",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries/input-boundary-checks.json",
+        "sha256": "d8bc53bdb6c6c6afec657a13cbf0d7b495d8bb2694cdf2f7ac6c129e1edfa2b7"
+      },
+      {
+        "archive_entry": "records/output/icarus/prepared-ideal-input-boundaries/provider-host-time.json",
+        "bytes": 836,
+        "disposition": "selected",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries/provider-host-time.json",
+        "sha256": "9cfbdf91ccd6846083b81d2d1caf671fcd4429cc7110f1343462c7ffaf5966eb"
+      },
+      {
+        "bytes": 126,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries/trace.csv",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "6533ba3ff9ad2b135129be7520830c2a19976a349dae6d82826df1e69446cc53"
+      },
+      {
+        "archive_entry": "records/output/icarus/prepared-ideal.log",
+        "bytes": 337,
+        "disposition": "selected",
+        "original_relative": "output/icarus/prepared-ideal.log",
+        "sha256": "f018e41dce2d503a45d9370184824b71704c86853880045397b9e5140a6f3784"
+      },
+      {
+        "bytes": 5908113,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/prepared-ideal.vvp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "173be28c30f7c009ca73afb0a9771b6e96e76f3955c654a31ac488a61a2613fb"
+      },
+      {
+        "archive_entry": "records/output/icarus/prepared-ideal/actual-final-digest32.hex",
+        "bytes": 65,
+        "disposition": "selected",
+        "original_relative": "output/icarus/prepared-ideal/actual-final-digest32.hex",
+        "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+      },
+      {
+        "bytes": 6528,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/prepared-ideal/actual-program-0.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+      },
+      {
+        "bytes": 6528,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/prepared-ideal/actual-program-1.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+      },
+      {
+        "archive_entry": "records/output/icarus/prepared-ideal/ledger.json",
+        "bytes": 1696,
+        "disposition": "selected",
+        "original_relative": "output/icarus/prepared-ideal/ledger.json",
+        "sha256": "9bf60e2d246e75d558ce1b6d05bfaca6e8d2210d4651e8ab7dbe014966d2c4a7"
+      },
+      {
+        "archive_entry": "records/output/icarus/prepared-ideal/provider-host-time.json",
+        "bytes": 887,
+        "disposition": "selected",
+        "original_relative": "output/icarus/prepared-ideal/provider-host-time.json",
+        "sha256": "931536752e34a9171e1e2bed43b543e1fbba4e4c0b51bbeb6f0f7ffd8f1e686c"
+      },
+      {
+        "bytes": 11828327,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/prepared-ideal/trace.csv",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "2bdfeebc427e5f13e4d6fd7df3cb55210a9b579d0dbed53d6e217479dbff5962"
+      },
+      {
+        "archive_entry": "records/output/icarus/program-extraction.json",
+        "bytes": 324,
+        "disposition": "selected",
+        "original_relative": "output/icarus/program-extraction.json",
+        "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+      },
+      {
+        "bytes": 250136,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/reference",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c23e69af3d0d661c1e0d6d54d4a6b3472de7d304c5e5cfa436f8171062b9a0ad"
+      },
+      {
+        "archive_entry": "records/output/icarus/summary.json",
+        "bytes": 14466,
+        "disposition": "selected",
+        "original_relative": "output/icarus/summary.json",
+        "sha256": "d0b950dc2a64c7c4b22669e53273fbcd456a124e84adebe3e477633b1e5caab6"
+      },
+      {
+        "bytes": 24,
+        "disposition": "retained-only",
+        "original_relative": "output/icarus/test-tmp/lifecycle-staging-pd21qlr0/existing/original-receipt",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ad78e2fe07113ff8547c2efed33c65e4e1e7b547195a600fb31d0c5c8828923f"
+      },
+      {
+        "archive_entry": "records/output/icarus/vendor.log",
+        "bytes": 32,
+        "disposition": "selected",
+        "original_relative": "output/icarus/vendor.log",
+        "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+      },
+      {
+        "archive_entry": "records/output/parity-evidence.json",
+        "bytes": 3180,
+        "disposition": "selected",
+        "original_relative": "output/parity-evidence.json",
+        "sha256": "5715a3ee8990291fa97a632739c7bbab170c2a9bd96839cd32b80faf98a6f499"
+      },
+      {
+        "archive_entry": "records/output/preserved-subresults.json",
+        "bytes": 14362,
+        "disposition": "selected",
+        "original_relative": "output/preserved-subresults.json",
+        "sha256": "8440d61f16d0eb7361ea6529ea13543ad8d40eefdfa42abe99ef8ef12cfc1d65"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries.log",
+        "bytes": 505,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries.log",
+        "sha256": "035c4dd1facdace7ac31dd8a42fb24c7cf072635f0070eb8f15810d459a0a3a9"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries.time.txt",
+        "bytes": 1620,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries.time.txt",
+        "sha256": "18857933a1ea94c7aba1091a6bf933a78b95125eb5bdcd49f1824ba8ab8c70a0"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/HardFloat-compile-view.json",
+        "bytes": 745,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/HardFloat-compile-view.json",
+        "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+      },
+      {
+        "bytes": 15488,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/HardFloat-divSqrt-compile-view.v",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "507eba9680a1ef065304ea4cbf84854c6be1ef4bda8e83d423c481e2b7e59bc3"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/LICENSE-BLAKE2",
+        "bytes": 1305,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/LICENSE-BLAKE2",
+        "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/LICENSE-HardFloat",
+        "bytes": 1514,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/LICENSE-HardFloat",
+        "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/LICENSE-OpenRX",
+        "bytes": 1803,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/LICENSE-OpenRX",
+        "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/LICENSE-RandomX",
+        "bytes": 1561,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/LICENSE-RandomX",
+        "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/LICENSE-secworks",
+        "bytes": 1303,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/LICENSE-secworks",
+        "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/artifacts.sha256.json",
+        "bytes": 21839,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/artifacts.sha256.json",
+        "sha256": "a6dd7f41e01be8e39cd432c47ce2a7138b9d24069cb3115e1afcd3db7f3331ce"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/commands.json",
+        "bytes": 7137,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/commands.json",
+        "sha256": "0233566a99d25cdea7dd789ab8385cec809c3399fc01adade39229cdfe1f74f8"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/compile-prepared-ideal-input-boundaries.log",
+        "bytes": 256203,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/compile-prepared-ideal-input-boundaries.log",
+        "sha256": "daeb621ef69ec1934b45c13a68f63e9c8e13181a7dac52d1476ba4e7ea939ecc"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/compile-reference.log",
+        "bytes": 0,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/compile-reference.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/extraction.json",
+        "bytes": 1802,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/extraction.json",
+        "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/inputs.json",
+        "bytes": 30702,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/inputs.json",
+        "sha256": "492f4951454523c67465b268acac03db93198df4ee7c26687b1be03f87fa8474"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/lifecycle-unit-tests.log",
+        "bytes": 5114,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/lifecycle-unit-tests.log",
+        "sha256": "ec38bb0fba8429b73946b0d4b51dfad59959a9f27d09a369c5f71152e3cf9881"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/native-reference.log",
+        "bytes": 134,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/native-reference.log",
+        "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+      },
+      {
+        "bytes": 3646,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/accesses.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c6ce6563e4f13d56f608f2bcf165c08c810531c8070ac071412c8af5c172a1c4"
+      },
+      {
+        "bytes": 3726,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/events.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "a4b90f2c1bf76e79421bbc4454d1e220b6ed379bb9e5782b8ed75a12af99cdb0"
+      },
+      {
+        "bytes": 4325376,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/final-0.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c5cf81821119bdc35fe75fd61608a155e9fa30cc28e24b26e55d554b68b13efb"
+      },
+      {
+        "bytes": 4325376,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/final-1.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "78a6b8dbe1086c01096e1c43e747e28de256c926511561ac08b5b7db9aaefa2c"
+      },
+      {
+        "bytes": 129,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/final-a.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "46a340e781beffd0476f67c8da5b5df731f652d9f2a7ab386851bdec8ae849f0"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/native-reference/final-digest32.hex",
+        "bytes": 65,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/native-reference/final-digest32.hex",
+        "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+      },
+      {
+        "bytes": 513,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/final-rf.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "273f84a5486ba2ba92545aeebeafe9e460ada065f7a2b300f39a54ab7c3499c2"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/native-reference/full-reference.json",
+        "bytes": 352,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/native-reference/full-reference.json",
+        "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+      },
+      {
+        "bytes": 4325376,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/initial.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c23bde9fddadce72d31d590a0143cb44e646885a0f544030b9764685cf200558"
+      },
+      {
+        "bytes": 1200,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/iterations.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "8bb50034865542761f12f2de3d6549144745652659db67196e4c9ef3937f8765"
+      },
+      {
+        "bytes": 1268,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/iterations.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "191bea37a7119bed6c0bea74177b6489290255ceed5bb415dc3702b587cd8475"
+      },
+      {
+        "bytes": 910,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/metadata.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "564ad4b40b26b353d7be647dcf292ef22319e05255c8bee4d39406595a414abb"
+      },
+      {
+        "bytes": 904,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/metadata.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "b353e3a67055e842436d33a7454ddb37f0429b591accb99cb743dc857020367b"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/native-reference/oracle-summary.json",
+        "bytes": 498,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/native-reference/oracle-summary.json",
+        "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+      },
+      {
+        "bytes": 6528,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/program-0.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+      },
+      {
+        "bytes": 6528,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/program-1.mem",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+      },
+      {
+        "bytes": 1034,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/program-registers.hex",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "45c0c878d5615ee7cec8fa6cf5c16960c6dca58eb4aadc37b922296d208e74fc"
+      },
+      {
+        "bytes": 79,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/native-reference/sequence_sizes.vh",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "38fd9622f79ef58f282d960d587e9f01e5165b27c61d29ec85fa3f8dfc039ca2"
+      },
+      {
+        "bytes": 5548,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "51038fc3c076314bf98fd492c97f73be17f5dfba4493bd09ce6d9a6f277d9c80"
+      },
+      {
+        "bytes": 101,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "034f39ab6a3880b6a59db2a27e8daae8cd272d2bb70e3be2eae862e51244628e"
+      },
+      {
+        "bytes": 4384,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle.h",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "9f9fc7faca8a0683ba40d9d7e48b040ff2359b350ac6092613bde197501a9349"
+      },
+      {
+        "bytes": 2462,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle.mk",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "e022389c48f65ce6da10bad1e528949c4c30da787315a12f6d69fc9571fd3743"
+      },
+      {
+        "bytes": 10584,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "7e3402eed764f1f284eabe571ac5c97d8f6987a711caf1257b8a094deeddcdbd"
+      },
+      {
+        "bytes": 1314278,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__ALL.a",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "1afd18583e8c308beea368e61a7d2f3faeb4857fa6e5557d6b3ed3b920bc89ac"
+      },
+      {
+        "bytes": 10061,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__ConstPool_0.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "20518e461cc0e3f7ad6b4d14f8f2220279c860bb067a2e757dcc788f70c224bd"
+      },
+      {
+        "bytes": 243,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__ConstPool_0.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "a83f86dddfcddf5a1b177db2a38a3f8bd299e74e0bf6a9b076a27f71fb4208e8"
+      },
+      {
+        "bytes": 4712,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__ConstPool_0.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "dddb1f4c76ff86d2840bbc9ee90dfa7a022068feb165d7be2bb5879a9379e955"
+      },
+      {
+        "bytes": 738,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Dpi.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "b3d6791dcd3055aa62b9abae256062060e459f794b262e56a861661197874b0a"
+      },
+      {
+        "bytes": 298,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Dpi.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d026e223962b560779a0e05a2a0110d9d5548538b26b688b720601baced195b6"
+      },
+      {
+        "bytes": 1944,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Dpi.h",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "00f2b6adddc4192d79cbc1e05c51f31f619bc1f5df9d350bafd941c62251f572"
+      },
+      {
+        "bytes": 848,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Dpi.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0a7b67d082fb5853156b516f942a1c75ffdc39a782faec256cd936fb5a26fb91"
+      },
+      {
+        "bytes": 5184,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Syms.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d3627d3d8385168cd535b96dbaca4fa60d34de21e466a82ba41778fa587e5fb1"
+      },
+      {
+        "bytes": 283,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Syms.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "04db83d77c1935cbd15524d876044fea13ea215bcc0732f0186dcf6aa75d3102"
+      },
+      {
+        "bytes": 2411,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Syms.h",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "2bbbfaa75fa1832c5cb2873bf10911e04404c4b13295e3b4e8c7b485b89a4c2c"
+      },
+      {
+        "bytes": 8216,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__Syms.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "49be92c0cb58df76d662adaaba2818fbfd1ed2b8df075ebf7dca3c1f5f579a73"
+      },
+      {
+        "bytes": 939785,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root.h",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "9a48a95bc7e5453d919f714196c075394c2d2fafac79dcf4db2d0adf7c7a2195"
+      },
+      {
+        "bytes": 2340115,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__0.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5ebe22258fda31bec659b3f2d87861717646fb7700a296470301bfb837070a73"
+      },
+      {
+        "bytes": 209,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__0.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0dab2e9b7a94e26a08edce91c7d3f01d486dbbb7614ad2b1460ed9bb138d48f3"
+      },
+      {
+        "bytes": 86616,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__0.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c294cbccb740172dd1dfc390a5126753954bb704030fcc2210de1f25e2ae009f"
+      },
+      {
+        "bytes": 2248988,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__0__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d7d3b62bf7b87df101995b2595b245e6bd7df571d012b85974cdc8cb7d30656e"
+      },
+      {
+        "bytes": 221,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__0__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "e806530ac465be228f5fefb3a38e1e095303660ea07a5200c152e0d99a631be8"
+      },
+      {
+        "bytes": 23968,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__0__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "7959ee9154e6b674827812e38b4ed1111618bc3166238b23abd5a5c3a55f6703"
+      },
+      {
+        "bytes": 1628989,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__1.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "33885f37424eb69ff35f325903116def8cc7dda9d6883d1dee61dc44507c5a0e"
+      },
+      {
+        "bytes": 209,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__1.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "7545b66ff9b0fbb45a77666bd04ba723455f66ebb0a98e3d62dbd6533a3bbfca"
+      },
+      {
+        "bytes": 72408,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__1.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "edb5a118feab67defd5c45e03869ef2360140775fd0379197a593f3820a0bb08"
+      },
+      {
+        "bytes": 1658432,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__1__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "3eeee9fbcdb499248031118cb57e9fe696b147dd6bccab078bc35885c18da1b0"
+      },
+      {
+        "bytes": 221,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__1__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d4c74ab0efff7c271cfffd8ca3e24dc0fd77e7fb8c88d93b0815eaba55020e2b"
+      },
+      {
+        "bytes": 64968,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__1__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5e7296409be86e22de3944fd11ed05115aa732777e7932f902801d80ce41d4a3"
+      },
+      {
+        "bytes": 1004738,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__2.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "689f4786a3e93ba2a2f6bb30932fb20843dad655f6b6a2d758747344eb1e9a46"
+      },
+      {
+        "bytes": 209,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__2.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "cdd1c557e818e7408a854c64b403cbb56c88444ca201b08932c479563d6a5bf6"
+      },
+      {
+        "bytes": 42848,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__2.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "b2077cb47947d78a31f77aaf227e8a28095cc447bb033d707082d9c1b18a0687"
+      },
+      {
+        "bytes": 984785,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__2__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "e588cb474db7ee3635f98ef3925c9ab18d67682c17200f8b8161c0bab61054cc"
+      },
+      {
+        "bytes": 221,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__2__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "e372e607a15437997a5c7bb8b1f6583c39e8eb060645b43a99e2b8f68b6606b2"
+      },
+      {
+        "bytes": 207816,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_h8bc7825d__2__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "9bb1b45eaa72ad2c723f262b5dc445bbe934fc09559fbd1bd06394f3e4f470c4"
+      },
+      {
+        "bytes": 2101749,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__0.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "789a556737fd0c2673818b313ebdd46e00f443463b988077e79163abbcf4106b"
+      },
+      {
+        "bytes": 245,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__0.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d034537319a7b6ee2cac0a194a57d8673dc06e07461caed882830707602ab0cb"
+      },
+      {
+        "bytes": 429032,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__0.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c16983891898ca0dcbe81890b783a7bdfcc49a558f89c9d526c5abfd8dd48d2d"
+      },
+      {
+        "bytes": 2030254,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__0__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "fcf805b0e4a082680324fe32a514abc8ec57fdf87e57a70af0a0dc059b4feb1d"
+      },
+      {
+        "bytes": 257,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__0__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d2d817f42be0b92ef5f0b945b9b93206a0e05cf610a9a4488e516d7d6f3eb88a"
+      },
+      {
+        "bytes": 43064,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__0__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "a2f8e146630c2b218aabbc0aba704de4a69e09ebb54777ae25e5b5a87892ff4f"
+      },
+      {
+        "bytes": 1080240,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__1.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5b300252563b211e65cc427ac192f13417c38cc6cdf3da9db06eb54162833977"
+      },
+      {
+        "bytes": 245,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__1.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "769173ecf24fef36e07c7914daee0d80c49a19b91cdb06350e4bce6cc1eb577b"
+      },
+      {
+        "bytes": 76384,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__1.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "16ee37f9ca30db32c9872e102b137225a70cddad1145aa8114314aaf58a88960"
+      },
+      {
+        "bytes": 1000453,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__1__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "be17f9bf3b2375d69d76270011801dd3501d88b969d75da03db6aeff5dbd5120"
+      },
+      {
+        "bytes": 257,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__1__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "f6db37e8393b48b1d3f15c864e648e12d04edffe85a107471f535d4d00d642ce"
+      },
+      {
+        "bytes": 43000,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__1__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "8eabebdaba3f2f84fdfb45bf284815446c5a8cac924d89d3bd2b1c24591c6529"
+      },
+      {
+        "bytes": 24219,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__2.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "08857979500f93f7ab50e3a207eea96dc30d63fbb1f01b1ce7e43b2a5cbec40f"
+      },
+      {
+        "bytes": 245,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__2.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ffaeb06e4b6f8ea2dac02ab6004d6a41b38c240541726d75c6e6b7fcabdc8535"
+      },
+      {
+        "bytes": 11784,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__DepSet_hc8363d40__2.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "4fa1a052c1d9f3614777a74634662dbbf33ca266a983f148080b88325394dc9a"
+      },
+      {
+        "bytes": 954,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "44e769c176dac2da6396b1091b0b59da9c5b9e84298b54982763802476e182b2"
+      },
+      {
+        "bytes": 215,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c4b08b72754d4924e7443a4f582b6ed48bc5f229b20998f60cd62e27bd2c4c58"
+      },
+      {
+        "bytes": 9672,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle___024root__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "eb09fb0c6915d6fdcc7e15d6c41cc3cfe22563459078b5f873f794c11c4e2755"
+      },
+      {
+        "bytes": 1027,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__main.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "fee05f19eac949865754328b83ce2018369322224aff18298d8be14a228c12be"
+      },
+      {
+        "bytes": 262,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__main.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "deaaf029c227ae6572ac24bc6f05ae0231920e3f792afc2ae74b324c940d01fd"
+      },
+      {
+        "bytes": 4704,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__main.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "963f0c6f5eca42f40223ddf3082a552edb8a1d8b3ea6dfb77829b27b335cb769"
+      },
+      {
+        "bytes": 826,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__pch.h",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "7644e2b387e720f8d89e9324698dce08720109bbce586d4ecfbf0736d372a904"
+      },
+      {
+        "bytes": 1847,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__pch.h.fast.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "2eb2257a05f5c11d02816f2683929256ad90c1ccb7c9aab15db640bf9aa3a386"
+      },
+      {
+        "bytes": 94139425,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__pch.h.fast.gch",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "393798b2bbeece42c747cbcbd4301d339621295153dce27d0c09a01dc4f0e8ce"
+      },
+      {
+        "bytes": 1847,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__pch.h.slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "4bb87aaee6e7035465cddaf81ca3d1224b4498e03a60743353cb22b13c3afd15"
+      },
+      {
+        "bytes": 94139425,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__pch.h.slow.gch",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "6904c391493fbe5d38998bab244fe99e2013879528eae944d2bd8518383da094"
+      },
+      {
+        "bytes": 9314,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__ver.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "6802e5ee4c6074b54d12f50a54945616d77e93126d541d4b6e19cfa831fdc217"
+      },
+      {
+        "bytes": 18365,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle__verFiles.dat",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "78c39626663345816432c1d3409b3862cc43273186f6c69c0844ca313de639d3"
+      },
+      {
+        "bytes": 3015,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_classes.mk",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0b9f4a4967812fe4835faf4aead8be8fdcfeec6ebaa91552d773f73677f1f54a"
+      },
+      {
+        "bytes": 6715,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64.h",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "1f2114ac9b3b89ea14d63bf7b3c112e913b2ce7c543204ae3eace49e9c9ffc47"
+      },
+      {
+        "bytes": 4562,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h51550700__0.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ac3cb47c84e0508d99587487e4a8057b0edf1ba409518fdbd4d3d9c8cdc33977"
+      },
+      {
+        "bytes": 233,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h51550700__0.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "28c400bc3adaaf8dde8607e23cb25a38ddf857740e99bc9fe54605fc6276a31d"
+      },
+      {
+        "bytes": 1648,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h51550700__0.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "54a31d4695183a1bd53eb98a8cac3ac2360a9f91af308d9c46caa628e78065f6"
+      },
+      {
+        "bytes": 7245,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h51550700__0__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "2c02dddcc2c82544eeee9635c35972330c1f330e7eabac876f88722427a63646"
+      },
+      {
+        "bytes": 245,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h51550700__0__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "498d56b0a573d80bf5001e8a39cf3581853d10cb2e6f5b96f6122cf1123e96eb"
+      },
+      {
+        "bytes": 4576,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h51550700__0__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "76b6454ad92a30fb72753cdc055ed21723b5a9c65963004d9c5711a1c8df56e4"
+      },
+      {
+        "bytes": 417718,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h8285b62f__0.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "34d94a8083e247c4e148d9825a84a707678ba2f868d8ba42a336514c48520627"
+      },
+      {
+        "bytes": 269,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h8285b62f__0.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "4b87b052154eb0bbc6cbafc84f1062dd18fe30ae70a62c64e21cbd8a503bb593"
+      },
+      {
+        "bytes": 35648,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h8285b62f__0.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c55c1e4c0cbcaad4998fe9d700fa2070217398e8f9cf3d19a22c82de8104b244"
+      },
+      {
+        "bytes": 382167,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h8285b62f__0__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "481be987007f6f517b5d37630355a1f91681438de20eff9981a44bf66922c68f"
+      },
+      {
+        "bytes": 281,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h8285b62f__0__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c3fb55bc1ed041b92743e2d226bdcb10cbb4f5c39bf5087052fb3aa2946a65fb"
+      },
+      {
+        "bytes": 29952,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__DepSet_h8285b62f__0__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "7bea611512400ab9e75310dbe8a58e077f3530165dac4dcff6b7f1f467f99afd"
+      },
+      {
+        "bytes": 984,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "a34f7f2152d6af6d760d1100324c043c190c0fca21b8b7555c3d7e205a1bcdfc"
+      },
+      {
+        "bytes": 239,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ec1a86d4eacb50d88c517f59892c404997a73aa6575a28188ba99be26c32f802"
+      },
+      {
+        "bytes": 3232,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_divsqrt64__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d945ddb0d63a424294919bb076c240565a4b971c8e03fce93db5cb56053e93f1"
+      },
+      {
+        "bytes": 1429,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64.h",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "616d3cbf5aa0112ab0150e96b9394778be642c6d305619c8b689ac45b1737a6d"
+      },
+      {
+        "bytes": 567467,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_h6553226c__0.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "775aaf807155a61d636b09051f1c11300398b912f2a3794d8f0b1e2759c33193"
+      },
+      {
+        "bytes": 254,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_h6553226c__0.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "f879f73bd0c1da00f2e2d658c219eb1d2a0beb1dff5b7d33e609161e21faa97d"
+      },
+      {
+        "bytes": 36064,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_h6553226c__0.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "da245ee65712d2f427e74345cf55649f87e9d7d124a92d973fe3c93d5c0e13a1"
+      },
+      {
+        "bytes": 560930,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_h6553226c__0__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "80f603f18dab796de98a45809314cbb538ab4c85082a83ca41e4ea6e900ff82e"
+      },
+      {
+        "bytes": 266,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_h6553226c__0__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "820b4175768cc239fa5819d01761fccb4c1e2017adafae2a8f8a3e0c7d898bde"
+      },
+      {
+        "bytes": 35376,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_h6553226c__0__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "00677b1708bfe6e476e43d8d98e28ffff9b1a8918fe5a7bf7c64b2c89b413e9e"
+      },
+      {
+        "bytes": 1453,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_hf8a29b41__0__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5c815a0458392191565f5dfe2ca2e6a9967295f4bae055c0c4b318142a2df9a9"
+      },
+      {
+        "bytes": 230,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_hf8a29b41__0__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "3175a440ce77d4f6213bf5d9b6ac41e4eed0779a3cc4ff79b9222e12ed02bd93"
+      },
+      {
+        "bytes": 2176,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__DepSet_hf8a29b41__0__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5174e256a1c8566d4386f2f53b7f55c086faa89af4c52d025d3365851300ca2c"
+      },
+      {
+        "bytes": 939,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__Slow.cpp",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "49a3f95d11c946e99364c879e9efa0bb23d1f801e055fda7f91670795155f072"
+      },
+      {
+        "bytes": 224,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__Slow.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "d1674671828e44c4c0113b8cccb1271684a5813da0d7371be451a3ab29d830a4"
+      },
+      {
+        "bytes": 3192,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/Vtb_prepared_hash_lifecycle_randomx_fp64__Slow.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "a7da4dd411cd85ad87a83d00d1d4d645bc774dea8332d9e8f60b3d8786a21d51"
+      },
+      {
+        "bytes": 1269,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/lifecycle_source_dpi.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "60855a2ea7036a5b59c668822d45633bf2977dae8386d98f207ebc82b5480da9"
+      },
+      {
+        "bytes": 36568,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/lifecycle_source_dpi.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ffff467898506147b2ace604246b73f391f1985575d0c1a5a53ef2c7e5800c91"
+      },
+      {
+        "bytes": 1404632,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/sim",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c6b9d2d7136f674fe5f21a80cddc86b6336480e8f8896ca11b7d62f9aacefa33"
+      },
+      {
+        "bytes": 1730,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0a8cbbacf6930ec9bef7909bad5df2de176bb9c2847759a30f174de0150d4e4f"
+      },
+      {
+        "bytes": 299752,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "9aeb35ee9f8fd5d4a1224232d38335d5546077136b02a135c60be6066e3309a3"
+      },
+      {
+        "bytes": 1885,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated_dpi.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "73e35c9e9e56891a816c81aa794dfbcd01396d34ee701cb191bcd9c409b13249"
+      },
+      {
+        "bytes": 54456,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated_dpi.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "8a51062afac9ecb72167a9ea8359f9474175bd116df54e05cb26356527a5beae"
+      },
+      {
+        "bytes": 1117,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated_threads.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "dc12f636750db11b44ccf9daa29c8896e2dc2c74ae94106d5dc41ad9ef3ad397"
+      },
+      {
+        "bytes": 29272,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated_threads.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "29809fc9ca7412ef1cd405e1c0d934e1c127c1ff243f9cae733412667ae2c20c"
+      },
+      {
+        "bytes": 1114,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated_timing.d",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0d18d081a92c87a39c23717709b6f06b87b47341efb0df8f323d718055db3eb9"
+      },
+      {
+        "bytes": 11992,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/obj-prepared-ideal-input-boundaries/verilated_timing.o",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "b63ba6e563c41a49d0e82e32112fa5ddf3ec8cec79b4edf9d5209363adb7628d"
+      },
+      {
+        "bytes": 1680,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_bytecode_loop.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d"
+      },
+      {
+        "bytes": 1652,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_dataset_read.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e"
+      },
+      {
+        "bytes": 1552,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_destructor.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9"
+      },
+      {
+        "bytes": 1918,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_float_masks.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b"
+      },
+      {
+        "bytes": 3571,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_iteration.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404"
+      },
+      {
+        "bytes": 2211,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_program_float_helpers.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2"
+      },
+      {
+        "bytes": 2849,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_program_initialize.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a"
+      },
+      {
+        "bytes": 1688,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/pinned_scratchpad_address.inc",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/prepared-ideal-input-boundaries.log",
+        "bytes": 248,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/prepared-ideal-input-boundaries.log",
+        "sha256": "738d01cedc5dd75ce41a991551b6f74c765102dc92b9bd1d55ec75416dea5406"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/prepared-ideal-input-boundaries/input-boundary-checks.json",
+        "bytes": 234,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/prepared-ideal-input-boundaries/input-boundary-checks.json",
+        "sha256": "d8bc53bdb6c6c6afec657a13cbf0d7b495d8bb2694cdf2f7ac6c129e1edfa2b7"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/prepared-ideal-input-boundaries/provider-host-time.json",
+        "bytes": 836,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/prepared-ideal-input-boundaries/provider-host-time.json",
+        "sha256": "0ae3f7b1d277d8d36b91cf7eb88bac70a4428691d603de61f0285abdada79387"
+      },
+      {
+        "bytes": 126,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/prepared-ideal-input-boundaries/trace.csv",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "6533ba3ff9ad2b135129be7520830c2a19976a349dae6d82826df1e69446cc53"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/program-extraction.json",
+        "bytes": 324,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/program-extraction.json",
+        "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+      },
+      {
+        "bytes": 250136,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/reference",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "c23e69af3d0d661c1e0d6d54d4a6b3472de7d304c5e5cfa436f8171062b9a0ad"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/summary.json",
+        "bytes": 10397,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/summary.json",
+        "sha256": "7c39ec68b4aae399616b0034501e3d652e976658c7ca1876e17fe7addfe34907"
+      },
+      {
+        "bytes": 24,
+        "disposition": "retained-only",
+        "original_relative": "output/verilator-boundaries/test-tmp/lifecycle-staging-t72_5w4p/existing/original-receipt",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "ad78e2fe07113ff8547c2efed33c65e4e1e7b547195a600fb31d0c5c8828923f"
+      },
+      {
+        "archive_entry": "records/output/verilator-boundaries/vendor.log",
+        "bytes": 32,
+        "disposition": "selected",
+        "original_relative": "output/verilator-boundaries/vendor.log",
+        "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+      },
+      {
+        "archive_entry": "records/prelaunch-kernel-check.json",
+        "bytes": 2318,
+        "disposition": "selected",
+        "original_relative": "prelaunch-kernel-check.json",
+        "sha256": "9ec9c243191cbe5e797dd94596a5d83f581912631bbd3d9dad297fdd4af7faad"
+      },
+      {
+        "archive_entry": "records/prelaunch-resource-check.json",
+        "bytes": 415,
+        "disposition": "selected",
+        "original_relative": "prelaunch-resource-check.json",
+        "sha256": "48cd75f88b38c97e8b01ed7843ec5f62076231251a2b1d9af1ae6780a13e7152"
+      },
+      {
+        "archive_entry": "records/process-result.json",
+        "bytes": 142,
+        "disposition": "selected",
+        "original_relative": "process-result.json",
+        "sha256": "4eb0c24f0939632357974278a0fdc17d25c0396130974e9ce7bbff0f3cfac899"
+      },
+      {
+        "bytes": 47618,
+        "disposition": "retained-only",
+        "original_relative": "runner.py",
+        "reason": "Raw fixture/image/trace, netlist, binary/build artifact, or original runner remains retained; no claim of deletion or omission from original receipt.",
+        "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b"
+      },
+      {
+        "archive_entry": "records/stderr.log",
+        "bytes": 0,
+        "disposition": "selected",
+        "original_relative": "stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "archive_entry": "records/stdout.log",
+        "bytes": 1209,
+        "disposition": "selected",
+        "original_relative": "stdout.log",
+        "sha256": "bdc3d608907caee0637f322dd2f30eb686c22522ae62298136825f6d1dec8fe2"
+      },
+      {
+        "archive_entry": "records/submission-command.json",
+        "bytes": 871,
+        "disposition": "selected",
+        "original_relative": "submission-command.json",
+        "sha256": "d63bcf6df5487e8ba9e1054a12e1fe86d1875ffa9846894c8344d4bda9752be7"
+      },
+      {
+        "archive_entry": "records/submission-result.json",
+        "bytes": 41,
+        "disposition": "selected",
+        "original_relative": "submission-result.json",
+        "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+      }
+    ],
+    "retained_only_count": 166,
+    "selected_count": 69,
+    "selected_retained_intersection_count": 0,
+    "union_matches_receipt": true
+  },
+  "execution_id": "20261016T181450Z-21a4c330bba8",
+  "identity_note": "Portable/selected copies are not a complete original execution and are not host-runner-verifiable; original verification used retained raw paths and bytes.",
+  "index_self_excluded_to_avoid_recursive_hash": true,
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "public_files": {
+    "archive-index.json": {
+      "bytes": 54804,
+      "presentation_of_archive_entry": null,
+      "sha256": "a1b94ae19331b5d76f6529dae90e39cddac56a82378b35a76f74637860458e35"
+    },
+    "composite-binding.json": {
+      "bytes": 1809,
+      "presentation_of_archive_entry": "composite-binding.json",
+      "sha256": "5c2ddbfb9c3e8c4d60d69ede567e1614173e7ace57209bb01b24de1aed93b269"
+    },
+    "execution.json": {
+      "bytes": 5633,
+      "presentation_of_archive_entry": "execution.json",
+      "sha256": "bc16f98689ab4e67db1b127e34caff584582a79cfb90eea1a02bed82ceb2e198"
+    },
+    "records.zip": {
+      "bytes": 809147,
+      "presentation_of_archive_entry": null,
+      "sha256": "029e84f540825f9b66128c4dc89a6050e32e9cc957f6769f9364bcdb484e52a5"
+    },
+    "resources.json": {
+      "bytes": 5740,
+      "presentation_of_archive_entry": "resources.json",
+      "sha256": "ad94400d725747373fdf84c8137e2e8bad243e6800c79fca40a5fd2e71339ebd"
+    },
+    "summary.json": {
+      "bytes": 1239,
+      "presentation_of_archive_entry": "records/output/checks.json",
+      "sha256": "19c325cc1895a2a333bee5144da8f8a100fe6da033f84017e161af2fff436e12"
+    },
+    "verify.json": {
+      "bytes": 155,
+      "presentation_of_archive_entry": "verify.json",
+      "sha256": "ce03b7c834b5b2c3695c0e2b04395a321062ddc42737d3a8ec9f4f02227f2aee"
+    }
+  },
+  "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+  "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5",
+  "root_verify_sha256": "ce03b7c834b5b2c3695c0e2b04395a321062ddc42737d3a8ec9f4f02227f2aee",
+  "schema": "openrx.compact-export-index.v2",
+  "scientific_acceptance": "unverified",
+  "sources_bound_by_full_portable_manifest": true
+}

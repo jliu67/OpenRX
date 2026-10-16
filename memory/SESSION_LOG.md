@@ -999,3 +999,43 @@ Accepted main is `548ed2d31fe6be7d2edc2036961dc7745e9e7219`: PR #76 merged after
 The 15 native, 44 RTL and 24 bounded mapped checks pass, including ten complete 3,200-byte profiles and 800 ideal generator clocks. Generator-only mapping is 36,836 cells, 540 flop cells and zero latches, excluding the image buffer, preparation and execution. Connected 2×1 ideal/stalled/focused recovery and 45 unit checks pass. Complete ideal four-state/two-state ledger, trace, digest and native corpus agree. Measured totals are 534,012 ideal and 1,583,537 stalled clocks; two program generations account for 1,606, including metadata overhead. Live software generation calls are zero; native generation is assertion-only.
 
 Input BLAKE2b and native Light dataset/device service remain host/device gaps. No new default full hash, complete recovery matrix, full mapped Program/connected engine, physical PPA or architecture acceptance follows. Independent bounded review is preserved; exact publication-head review and hosted checks are separate draft gates. Parent handles normal merge gates. Ownership was checked for duplicates; separate task-issue registration remains pending. Hub #5 remains blocked and task #72 board notices are handled separately. Earlier dated records preserve their original context.
+
+
+## Bounded hardware input BLAKE2b — 2026-10-16
+
+Above accepted main `eed374b28e9e2efa71bc16f5ba15e999e2940415` (merged PR #77),
+[EXP-018](../experiments/EXP-018-bounded-input-blake2b.md) and
+[evidence](../docs/validation/input-blake2b-20261016/README.md) record the 0–80-byte
+input BLAKE2b-512 wrapper using the unchanged accepted compression core.
+Explicit `HARDWARE_INPUT_HASH=1` requires hardware fill; default zero preserves
+historical reproduction. Unsupported lengths 81–127 return held errors.
+
+Standalone validation passes 614 native vectors, 18 RTL and 16 bounded mapped
+modes; actual wrapper/core mapping is 38,538 generic cells, 3,753 flop cells and
+1,024 inherited latch cells. Result availability is 28 modeled clocks. The
+connected 2×1 composite passes ideal cross-backend/stalled/reference checks,
+input-stage cancellation/held error and both-backend boundary prefixes, plus
+56 unit checks. Ideal/stalled totals are 534,040/1,583,565 clocks; the disjoint
+input stage is 30 clocks, with zero live input/fill/program provider calls.
+Original failed attempts remain failed; exact sources, two boundary-helper
+settling delays, raw receipts and retained-subresult reuse are explicitly bound.
+
+Native Light cache/dataset and physical device service remain external/untimed.
+No new default 8×2,048 run, whole-engine mapping, physical PPA or architecture
+selection follows. The feature PR records independent exact-head review, hosted
+checks and normal merge/postmerge outcome. Existing task #71 records execution
+requests; no new issue, hub notice or standing Git mirror is created. Next
+concrete component is one prepared native superscalar-program executor; cache
+export/service and autonomous setup remain separate work. Earlier dated sections
+retain their source-specific historical context.
+
+
+## 2026-10-16 — input-hash CI binding metadata correction
+
+Hosted publication `f17fc8ce` passed the new standalone input gate but failed
+five strict source checks because the staged workflow digest was stale. The
+successor updates only that existing metadata digest; guard/historical/runtime
+bytes stay exact. Eighteen source-only tests and both substitution rejections
+pass with verified receipt `20261016T184732Z-7c6f2889a8e8`. Failed hosted logs and
+complete archives remain retained; current PR78 checks and exact-head review are
+the final publication/merge authority.

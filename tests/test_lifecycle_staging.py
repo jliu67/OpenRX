@@ -52,7 +52,7 @@ class StagingTest(unittest.TestCase):
         self.reject('--error-ports', '1', '1')
 
     def test_recovery_selections_stay_in_documented_range(self):
-        self.reject('--cancellation-phases', '8')
+        self.reject('--cancellation-phases', '9')
         self.reject('--error-ports', '9')
 
     def test_generation_cancel_requires_hardware_program_mode(self):
@@ -61,6 +61,19 @@ class StagingTest(unittest.TestCase):
     def test_removed_program_provider_cannot_supply_matching_errors(self):
         self.reject('--hardware-program', '--matching-errors', '--error-ports', '2')
         self.reject('--hardware-program', '--matching-errors', '--error-ports', '3')
+
+    def test_input_hash_requires_hardware_fill(self):
+        self.reject('--hardware-input-hash')
+
+    def test_input_boundary_prefix_requires_hardware_input_hash(self):
+        self.reject('--input-hash-boundaries')
+
+    def test_input_hash_cancel_requires_hardware_mode(self):
+        self.reject('--cancellation', '--cancellation-phases', '8')
+
+    def test_removed_initialization_provider_cannot_supply_matching_errors(self):
+        self.reject('--hardware-fill', '--hardware-input-hash', '--matching-errors', '--error-ports', '1')
+        self.reject('--hardware-fill', '--hardware-input-hash', '--matching-errors', '--error-ports', '8')
 
     def test_malformed_input_is_rejected(self):
         self.reject('--input-hex', 'not-hex')

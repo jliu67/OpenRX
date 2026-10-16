@@ -1,0 +1,51 @@
+{
+  "files": {
+    "boundary-failure-reuse-assessment.json": {
+      "kind": "portable-prefix-replacement-derivative",
+      "original_bytes": 12385,
+      "original_sha256": "d76dc22ece49ab2268d941472012a22bcf34043fcf69478617451c7b0c2a1efb",
+      "public_bytes": 12365,
+      "public_sha256": "9438bb38baa57fa2dffa4801656d7f0cbf776ba7c75de3492af1b3f289929188",
+      "retained_original_logical_name": "@TMP@/openrx-inputhash-boundary-failure-reuse-assessment.json"
+    },
+    "code-standalone-review.json": {
+      "kind": "portable-prefix-replacement-derivative",
+      "original_bytes": 15321,
+      "original_sha256": "eea679a6354cc373df12f7b248fbc596669ad2c2e33f75d29635de99c881ae09",
+      "public_bytes": 15291,
+      "public_sha256": "1ecdb027c70245042a936e5387c26b3abce7373159aa0c4de6024be10143963e",
+      "retained_original_logical_name": "@TMP@/openrx-inputhash-independent-review.json"
+    },
+    "final-bounded-review.json": {
+      "kind": "portable-prefix-replacement-derivative",
+      "original_bytes": 26087,
+      "original_sha256": "beb654e7c169e108cb7bbb6c99c750475b89867d307c770525d37ffb76cc8cc4",
+      "public_bytes": 25997,
+      "public_sha256": "ab55e61ea07a2efeca29c658fc6cb85ecc6179e7ddf84f2bd1ee90067a71080e",
+      "retained_original_logical_name": "@TMP@/openrx-inputhash-independent-review-final.json"
+    },
+    "preliminary-export-review.json": {
+      "kind": "portable-prefix-replacement-derivative",
+      "original_bytes": 14928,
+      "original_sha256": "3c23bcd41ad9b7a7c58c9b79519af0dd312d6782ce689e03c21a6a581516443c",
+      "public_bytes": 14936,
+      "public_sha256": "56784359d4185e0307428bf810cc294b99a89605714d2d7f78ce057cc68f2211",
+      "retained_original_logical_name": "@TMP@/openrx-inputhash-evidence-review-preliminary.json"
+    }
+  },
+  "ordered_aliases": [
+    "@EXECUTIONS@",
+    "@SOURCE01@",
+    "@SOURCE02@",
+    "@SOURCE03@",
+    "@SOURCE04@",
+    "@RUNNER@",
+    "@AUTHOR@",
+    "@CODEX_HOME@",
+    "@HOST_HOME@",
+    "@TMP@"
+  ],
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "schema": "openrx.portable-independent-review-index.v1",
+  "transformation": "Ordered UTF-8 literal prefix replacements; all other bytes unchanged. Public renders are derivatives of retained independent reports."
+}

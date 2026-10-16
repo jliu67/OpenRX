@@ -1,0 +1,38 @@
+{
+  "both_sources_and_old_receipt_manifest_bound_to_recovery": true,
+  "changed_source_files": [
+    "rtl/hash/tests/tb_prepared_hash_lifecycle.v"
+  ],
+  "derivation": "Cross-check of both original receipts/manifests and exact source-byte delta; separate from final scientific review.",
+  "normal_result_sources_remain_distinct": true,
+  "observed_composite_status": "pass_composite_bounded_hardware_input_hash_integration",
+  "old_execution": "20261016T175815Z-3eb05e9e8f2a",
+  "old_process_returncode_preserved": 1,
+  "old_process_status_preserved": "PROCESS_FAILED",
+  "old_raw_manifest": {
+    "bytes": 1693669,
+    "sha256": "7cac2dbc735b950772884b7e23ea27c5734dd487c556b491b65c380dfd7fa0ff"
+  },
+  "old_raw_receipt": {
+    "bytes": 157503,
+    "sha256": "b42d8f24954ebcde7b1de4ba82b7fed7173d704510e504994a153e14117e0e19"
+  },
+  "old_source_commit": "307cc9ceef0328021aa7063b0930120b72884099",
+  "old_source_directory_sha256": "686378ce838ec93ca0d486b7fbee78b317514da8ac90ce3785966cc6a4ac7a07",
+  "only_delta": "Exactly two #1 settle delays inside the boundary-only test helper; bytes outside the helper are unchanged.",
+  "original_failed_run_not_reclassified": true,
+  "recovery_execution": "20261016T181450Z-21a4c330bba8",
+  "recovery_process_status": "PROCESS_EXITED",
+  "recovery_raw_manifest": {
+    "bytes": 2550657,
+    "sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd"
+  },
+  "recovery_raw_receipt": {
+    "bytes": 58410,
+    "sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+  },
+  "recovery_source_commit": "2b33e60d039a9a50cb540ef2c41561de8f4035a1",
+  "recovery_source_directory_sha256": "0004aabe96504ad26888baa843cd10269fb7b81b28447aa92f4bccb556d9d11a",
+  "scientific_acceptance": "unverified",
+  "unchanged_other_source_files": 4653
+}

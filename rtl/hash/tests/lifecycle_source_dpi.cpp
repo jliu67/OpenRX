@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include <iostream>
 
-static double initial_seconds=0,input_hash_seconds=0,generation_seconds=0,assertion_seconds=0,assertion_generation_seconds=0;
-static unsigned generations=0,input_hash_calls=0,software_fill_calls=0,assertion_generations=0;
+static double initial_seconds=0,input_hash_seconds=0,generation_seconds=0,assertion_seconds=0,assertion_generation_seconds=0,assertion_input_hash_seconds=0;
+static unsigned generations=0,input_hash_calls=0,software_fill_calls=0,assertion_generations=0,assertion_input_hash_calls=0;
 template<class Function> static void checked(Function fn) {
  try { fn(); }
  catch(const std::exception& error) {
@@ -25,16 +25,19 @@ extern "C" void rx_life_initial(const svBitVecVal* value,int length,const char* 
   initial_seconds+=lifecycle_native::seconds(started);++software_fill_calls;
  });
 }
-extern "C" void rx_life_input_hash(const svBitVecVal* value,int length,svBitVecVal* result) {
+static void input_hash(const svBitVecVal* value,int length,svBitVecVal* result,bool assertion_only) {
  checked([&] {
   if(length<0||length>80)throw std::runtime_error("input length");
   lifecycle_native::dataset();auto started=lifecycle_native::Clock::now();
   auto* bytes=reinterpret_cast<const uint8_t*>(value);
   std::vector<uint8_t> input(bytes,bytes+length);alignas(16) uint8_t seed[64];
   lifecycle_native::input_hash(input,seed);std::memcpy(result,seed,64);
-  input_hash_seconds+=lifecycle_native::seconds(started);++input_hash_calls;
+  if(assertion_only){assertion_input_hash_seconds+=lifecycle_native::seconds(started);++assertion_input_hash_calls;}
+  else {input_hash_seconds+=lifecycle_native::seconds(started);++input_hash_calls;}
  });
 }
+extern "C" void rx_life_input_hash(const svBitVecVal* value,int length,svBitVecVal* result) {input_hash(value,length,result,false);}
+extern "C" void rx_life_input_hash_assertion(const svBitVecVal* value,int length,svBitVecVal* result) {input_hash(value,length,result,true);}
 static void generate(const svBitVecVal* value,const char* filename,svBitVecVal* entropy,bool assertion_only) {
  checked([&] {
   alignas(16) uint8_t seed[64];std::memcpy(seed,value,64);auto started=lifecycle_native::Clock::now();
@@ -66,6 +69,7 @@ extern "C" void rx_provider_stats(const char* filename) {
    <<"\"cache_bytes\":268435456,\"logical_dataset_bytes\":2181038016,\"materialized_dataset_bytes\":0,\"cache_key\":\""<<lifecycle_native::cache_key<<"\","
    <<"\"cache_initialization_host_seconds\":"<<d.initialization_seconds<<",\"initialization_host_seconds\":"<<initial_seconds
    <<",\"input_hash_host_seconds\":"<<input_hash_seconds<<",\"input_hash_calls\":"<<input_hash_calls
+   <<",\"assertion_only_input_hash_host_seconds\":"<<assertion_input_hash_seconds<<",\"assertion_only_input_hash_calls\":"<<assertion_input_hash_calls
    <<",\"software_fill_provider_calls\":"<<software_fill_calls
    <<",\"program_generation_host_seconds\":"<<generation_seconds<<",\"program_generations\":"<<generations
    <<",\"assertion_only_program_generation_host_seconds\":"<<assertion_generation_seconds<<",\"assertion_only_program_generations\":"<<assertion_generations

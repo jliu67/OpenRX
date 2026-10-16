@@ -1,0 +1,31 @@
+In file included from rtl/hash/tests/input_blake2b_oracle.cpp:3:
+vendor/randomx/src/blake2/blake2.h:97:44: error: ‘size_t’ has not been declared
+   97 |         int blake2b_init(blake2b_state *S, size_t outlen);
+      |                                            ^~~~~~
+vendor/randomx/src/blake2/blake2.h:98:48: error: ‘size_t’ has not been declared
+   98 |         int blake2b_init_key(blake2b_state *S, size_t outlen, const void *key,
+      |                                                ^~~~~~
+vendor/randomx/src/blake2/blake2.h:99:17: error: ‘size_t’ has not been declared
+   99 |                 size_t keylen);
+      |                 ^~~~~~
+vendor/randomx/src/blake2/blake2.h:101:62: error: ‘size_t’ has not been declared
+  101 |         int blake2b_update(blake2b_state *S, const void *in, size_t inlen);
+      |                                                              ^~~~~~
+vendor/randomx/src/blake2/blake2.h:102:56: error: ‘size_t’ has not been declared
+  102 |         int blake2b_final(blake2b_state *S, void *out, size_t outlen);
+      |                                                        ^~~~~~
+vendor/randomx/src/blake2/blake2.h:105:32: error: ‘size_t’ has not been declared
+  105 |         int blake2b(void *out, size_t outlen, const void *in, size_t inlen,
+      |                                ^~~~~~
+vendor/randomx/src/blake2/blake2.h:105:63: error: ‘size_t’ has not been declared
+  105 |         int blake2b(void *out, size_t outlen, const void *in, size_t inlen,
+      |                                                               ^~~~~~
+vendor/randomx/src/blake2/blake2.h:106:34: error: ‘size_t’ has not been declared
+  106 |                 const void *key, size_t keylen);
+      |                                  ^~~~~~
+vendor/randomx/src/blake2/blake2.h:109:37: error: ‘size_t’ has not been declared
+  109 |         int blake2b_long(void *out, size_t outlen, const void *in, size_t inlen);
+      |                                     ^~~~~~
+vendor/randomx/src/blake2/blake2.h:109:68: error: ‘size_t’ has not been declared
+  109 |         int blake2b_long(void *out, size_t outlen, const void *in, size_t inlen);
+      |                                                                    ^~~~~~

@@ -108,6 +108,57 @@ class LedgerTest(unittest.TestCase):
         self.hardware_program()
         driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, True)
 
+    def hardware_input_hash(self):
+        self.hardware_fill()
+        self.ledger['stage_cycles']['initialization_hardware_fill'] -= 2
+        self.ledger['nested_initialization']['provider_wait'] = 0
+        self.ledger['cycles'] += 28
+        self.ledger['stage_cycles']['input_hash'] = 30
+        self.ledger.update(hardware_input_hash_enabled=True, nested_input_hash_phases=[1, 28, 1],
+            input_hash_bytes=80, removed_initialization_replies_drained=0, removed_initialization_writes_drained=0)
+        self.provider.update(input_hash_calls=0, input_hash_host_seconds=0, assertion_only_input_hash_calls=1)
+
+    def test_hardware_input_hash_has_disjoint_device_partition(self):
+        self.hardware_input_hash()
+        driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, False, True, 80)
+
+    def test_hardware_input_hash_cannot_use_live_host_hash(self):
+        self.hardware_input_hash()
+        self.provider['input_hash_calls'] = 1
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, False, True, 80)
+
+    def test_hardware_input_hash_requires_independent_oracle(self):
+        self.hardware_input_hash()
+        self.provider['assertion_only_input_hash_calls'] = 0
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, False, True, 80)
+
+    def test_hardware_input_hash_cycles_must_close(self):
+        self.hardware_input_hash()
+        self.ledger['nested_input_hash_phases'][1] += 1
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, False, True, 80)
+
+    def test_hardware_input_hash_length_must_match_request(self):
+        self.hardware_input_hash()
+        self.ledger['input_hash_bytes'] = 79
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, False, True, 80)
+
+    def test_hardware_input_hash_does_not_double_count_provider_wait(self):
+        self.hardware_input_hash()
+        self.ledger['nested_initialization']['provider_wait'] = 2
+        self.ledger['stage_cycles']['initialization_hardware_fill'] += 2
+        self.ledger['cycles'] += 2
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, False, True, 80)
+
+    def test_all_three_hardware_stages_have_distinct_partitions(self):
+        self.hardware_input_hash()
+        self.hardware_program()
+        driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, True, True, 80)
+
     def test_stalls_cannot_be_added_as_an_outer_stage(self):
         self.ledger['stage_cycles']['memory_stall'] = 4
         self.ledger['cycles'] += 4

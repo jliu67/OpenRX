@@ -78,7 +78,7 @@
     },
     ".github/workflows/regfile-blake2b.yml": {
       "kind": "workflow_dependency_triggers",
-      "sha256": "9119d79089df28f0f8543a25a228c2043201c0f856fc5717fa992cd50ca93deb",
+      "sha256": "d1990ab5e179a9c6dad0dedb6c74dbf71039e6a0c3e9c24f07ba21e3f5c5be32",
       "validation_state": "staged_not_executed"
     },
     ".github/workflows/scratchpad-finalization.yml": {

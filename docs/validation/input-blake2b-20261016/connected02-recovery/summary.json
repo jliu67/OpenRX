@@ -1,0 +1,41 @@
+{
+  "boundary_invalid_lengths": [
+    81,
+    127
+  ],
+  "boundary_valid_lengths": [
+    0,
+    80
+  ],
+  "complete_ideal_ledger_record_trace_digest_equal": true,
+  "elapsed_seconds": 903.1982224900275,
+  "ideal_cycles": 534040,
+  "input_hash_cycles": 30,
+  "iterations_per_program": 1,
+  "live_input_hash_fill_program_provider_calls": [
+    0,
+    0,
+    0
+  ],
+  "native_corpus_files_compared": 18,
+  "nested_input_hash_phases": [
+    1,
+    28,
+    1
+  ],
+  "new_boundary_prefix_profiles": 2,
+  "new_default_full_workload": false,
+  "new_icarus_normal_profiles": 1,
+  "normal_profiles": 3,
+  "original_execution": "20261016T175815Z-3eb05e9e8f2a",
+  "original_execution_remains_failed": true,
+  "original_source": "307cc9ceef0328021aa7063b0930120b72884099",
+  "programs": 2,
+  "recovery_source": "2b33e60d039a9a50cb540ef2c41561de8f4035a1",
+  "remaining_boundary": "Native Light cache/dataset and physical device service remain external/untimed; no generalinput above80, physical PPA, architecture selection or whole-machine claim.",
+  "reused_cancel8_profiles": 1,
+  "reused_error7_profiles": 1,
+  "reused_normal_verilator_profiles": 2,
+  "stalled_cycles": 1583565,
+  "status": "pass_composite_bounded_hardware_input_hash_integration"
+}

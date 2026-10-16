@@ -1,0 +1,92 @@
+{
+  "actions": "Read-only actual receipt/source/input/guard/log/fixture/kernel/retainedartifact inspection. No builds, tests, jobs, source/evidence edits or public actions.",
+  "actual_acceptance": {
+    "all_actual_unit_records_OK": true,
+    "elapsed_driver_seconds": 3.3454980960814282,
+    "existing_units": 18,
+    "fresh_historical_combined_execution_acceptance": false,
+    "fresh_native_HDL_synthesis_work": false,
+    "negative_fixture_independent_check": "Separate provider_ledger_review agent also verified exact fixture membership and byte deltas.",
+    "negative_fixtures": "Separate retained output copies, each282files. One appends only the declared workflow comment; one changes only that declared workflow digest to64zeros. Every other byte matches source05. Both reject with exact combined live successor changed: .github/workflows/regfile-blake2b.yml.",
+    "positive_guard": "pass;281actual input hashes verified; prepared219/regression73 live bytes and original declaration unchanged; all staged states remain staged_not_executed."
+  },
+  "actual_resources": {
+    "CPU_max": "600000 100000",
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "fresh_locked_MemAvailable_bytes": 8273305600,
+    "kernel_errors": [],
+    "memory_max_bytes": 1073741824,
+    "memory_swap_max_bytes": 2147483648,
+    "production_enforced": true,
+    "required_payload_plus_margin_bytes": 2147483648,
+    "safe": true,
+    "separate_live_kernel_witness_agrees": true,
+    "tasks_max": 256,
+    "visible_ancestor_constraints_checked": true
+  },
+  "blocking_findings": [],
+  "execution": {
+    "actual_receipt_artifacts_verified": 578,
+    "checks_sha256": "ef68d4e6f88c486fa9b1040cb1686459d978d9587574a175cd682a3c67fd8ded",
+    "executable_and_immutable_runner_actual_hashes_verified": true,
+    "id": "20261016T184732Z-7c6f2889a8e8",
+    "installed_runner_integrity_verified": true,
+    "logical_path": "@EXECUTIONS@/20261016T184732Z-7c6f2889a8e8",
+    "manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+    "process": {
+      "finished_at": "2026-10-16T18:47:39.446107+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116",
+    "regular_input_files_verified": 3
+  },
+  "independent_hardware_science_unchanged": {
+    "original_final_report_sha256": "beb654e7c169e108cb7bbb6c99c750475b89867d307c770525d37ffb76cc8cc4",
+    "public_final_report_sha256": "ab55e61ea07a2efeca29c658fc6cb85ecc6179e7ddf84f2bd1ee90067a71080e",
+    "scope": "This tiny check adds source-binding validation only; existing bounded0..80 input and2x1composite acceptance/limits remain unchanged."
+  },
+  "preserved_f17_failures": {
+    "five_artifact_ZIPs_actual_hashes_equal_retained_GitHub_digest_metadata": true,
+    "five_original_and_preserved_failure_logs_byte_equal_with_expected_guard_error": true,
+    "head": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+    "hosted_mapping": "Tool-specific hosted observation33177genericcells/3366flops/1024inheritedlatches, separate from original local38538/3753/1024; no physical inference.",
+    "hosted_standalone_summary_is_exact_actual_native_hash_ZIP_member": true,
+    "index_sha256": "7064eb349670b023a873657403ae2a19dab5d830f611902a8995dcf2865d59a2",
+    "old_request_rejection": "V1 symlink input was rejected before executionID or payload; stdout/stderr and both request versions remain retained.",
+    "original_checks_remain_failed": true,
+    "prior_reviews_unchanged": {
+      "ci-fix-admission-review": "8a3e3291cc37fd06daf814e11c2694705689b65cccc1ee73fd5a21aa34453024",
+      "ci-fix-admission-review-v2": "4d944910f3638a3e3ec0fc3968fd557fa5fd7e86a809b9de3a863c6b463198c5",
+      "publication-head-review": "61786e2382d2b8ec4c5d0730c2f830f5316e0e380a2c1d3ed2b472445ae7e563"
+    }
+  },
+  "remaining_gates": [
+    "Public CI package archive/origin/transform review when packaging completes.",
+    "Final exact metadata successor, applicable hosted CI on that head and normal merge eligibility remain separate. No merge acceptance."
+  ],
+  "result": "accepted_bounded_source_binding_validation_public_export_and_final_head_pending",
+  "reviewed_at_utc": "2026-10-16T18:51:48.796224+00:00",
+  "schema": "openrx.inputhash.ci-fix-independent-validation-review.v1",
+  "source": {
+    "actual_directory_sha256": "9695be7c7c68471f96a1c0ef85ee5a9702a4ffc4116ffa272624185ca78f6fd8",
+    "actual_source_files_verified": 4695,
+    "change": "One digest in an existing STAGED workflow row; staged_not_executed, guard/runtime/testcode/original declaration and all pinned historical manifests unchanged.",
+    "head": "3d81d80c4c3eff798a5354470470f4bc1a0eed0d",
+    "snapshot": "@SOURCE05@",
+    "tree": "5ceafbc0e90121f67030ea18bf612d7f6627cf2d"
+  },
+  "supporting_proof": {
+    "logical_path": "@TMP@/openrx-inputhash-ci-fix-validation-proof.json",
+    "sha256": "b269db197004058f19d74ff13f35afc10764838968075bf7b281011f94ab002d"
+  }
+}

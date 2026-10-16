@@ -1,0 +1,1265 @@
+{
+  "archive": {
+    "bytes": 809147,
+    "sha256": "029e84f540825f9b66128c4dc89a6050e32e9cc957f6769f9364bcdb484e52a5"
+  },
+  "determinism": {
+    "compression": "deflate9",
+    "ordering": "lexicographic archive entry",
+    "python": "3.10.12",
+    "same-process-rebuild-byte-equal": true,
+    "timestamp": "1980-01-01T00:00:00",
+    "unix_mode": "100644",
+    "zlib": "1.2.11"
+  },
+  "entries": {
+    "composite-binding.json": {
+      "bytes": 1809,
+      "origin": {
+        "derivation": "both raw execution/source bindings and exact boundary-only source delta",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+        "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+      },
+      "sha256": "5c2ddbfb9c3e8c4d60d69ede567e1614173e7ace57209bb01b24de1aed93b269"
+    },
+    "coverage.json": {
+      "bytes": 94416,
+      "origin": {
+        "derivation": "complete selected/retained-only partition",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+        "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+      },
+      "sha256": "0f0a5855e465d7af05416451b41106542d896ffd259b03709b3185404f09b63b"
+    },
+    "execution.json": {
+      "bytes": 5633,
+      "origin": {
+        "derivation": "selected execution/source/count/mapping facts; no scientific acceptance added",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+        "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+      },
+      "sha256": "bc16f98689ab4e67db1b127e34caff584582a79cfb90eea1a02bed82ceb2e198"
+    },
+    "external/bounded-connected-recovery-check.py": {
+      "bytes": 12119,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_kind": "manifest-bound external reproduction wrapper",
+        "original_path_alias": "@TMP@/openrx-inputhash-connected-recovery-check.py",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 12220,
+          "sha256": "3e60f9449abe487c971019c493c57d0e865e440a293629c3b27aa351fc7c173e"
+        },
+        "transform": "utf8-literal-prefix-alias"
+      },
+      "sha256": "7b671c3ce522cf579b4530155ace5361de309be01f273f2af2c1fe84a0177d10"
+    },
+    "history/boundary-helper-settle-fix.patch": {
+      "bytes": 1776,
+      "origin": {
+        "after": {
+          "bytes": 69469,
+          "sha256": "a12e116572bbce5b464f0934d20955dbe0c33464b3f0bc1459904e8b985abd57"
+        },
+        "before": {
+          "bytes": 69463,
+          "sha256": "d0447185379fe6f07a234deac3d5fbb3586c6e3d96d2439b1444267cd272af48"
+        },
+        "fix_commit": "2b33e60d039a9a50cb540ef2c41561de8f4035a1",
+        "kind": "derived-git-diff",
+        "meaning": "Exactly two #1 settle delays after cancel deassertion inside the boundary-only helper; no production change or rerun of previously completed Verilator profiles.",
+        "target": "rtl/hash/tests/tb_prepared_hash_lifecycle.v"
+      },
+      "sha256": "01643463b92147bfeaec2ab9120a09c5feb3be42747467c17549296b56d8638c"
+    },
+    "native-corpus-bindings.json": {
+      "bytes": 3667,
+      "origin": {
+        "derivation": "complete 18-file native corpus subset of retained original receipt inventory",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+        "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+      },
+      "sha256": "e25131f9d0e19ec88de211ca8b17b6367dd9550291dd1f435d555ae304635f3f"
+    },
+    "original-receipt.json": {
+      "bytes": 60149,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_kind": "retained original receipt",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 58410,
+          "sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "a570e188415a98766f948926d9f50eaf84cc22adfa19240910bc0847204d642a"
+    },
+    "records/events.jsonl": {
+      "bytes": 1432,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "events.jsonl",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1459,
+          "sha256": "9ca203bd9daadd96d8b981d9dd5206f5b57a3203cb4b574b2240a1dc5c29cf8c"
+        },
+        "transform": "utf8-literal-prefix-alias"
+      },
+      "sha256": "d0b9745a89f32c158c19bdc0541f9490bc755283a1a1d358dafc3fc3b904541b"
+    },
+    "records/manifest.json": {
+      "bytes": 3384516,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "manifest.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2550657,
+          "sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "fcf02315145107a28d9968011f0e808561db7850f6ad063a6a745d38927e46b5"
+    },
+    "records/output/checks.json": {
+      "bytes": 1239,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/checks.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1239,
+          "sha256": "19c325cc1895a2a333bee5144da8f8a100fe6da033f84017e161af2fff436e12"
+        },
+        "transform": "identity"
+      },
+      "sha256": "19c325cc1895a2a333bee5144da8f8a100fe6da033f84017e161af2fff436e12"
+    },
+    "records/output/commands.json": {
+      "bytes": 2042,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/commands.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2338,
+          "sha256": "da8ed490fbc159a29103a4a878fd78ed048a9e9545564f498c893a3a90afdb43"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "36d9358d84b92acb46f34d07e63e34ab410a1056ac6dc4e13294e417716a9fb3"
+    },
+    "records/output/icarus.log": {
+      "bytes": 644,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 644,
+          "sha256": "8aa1e3e28e6031f4d1917f8c7bbc7569d8af5c0e5a0ab24edbabf3514e26365c"
+        },
+        "transform": "identity"
+      },
+      "sha256": "8aa1e3e28e6031f4d1917f8c7bbc7569d8af5c0e5a0ab24edbabf3514e26365c"
+    },
+    "records/output/icarus.time.txt": {
+      "bytes": 1243,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus.time.txt",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1344,
+          "sha256": "44fec85f80ea3dc2df818b0ab5a75a0a741890405a4ff8d2f4ae043d8786a8e9"
+        },
+        "transform": "utf8-literal-prefix-alias"
+      },
+      "sha256": "5ded8dc51215cb84e612512bdaccc1eb205450450245b0fc2cef582b1a7ec992"
+    },
+    "records/output/icarus/HardFloat-compile-view.json": {
+      "bytes": 745,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/HardFloat-compile-view.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 745,
+          "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "d8be4e7b04fa907e1094d2da5eb004c450d43fce44935b8f34cb64aebc64d165"
+    },
+    "records/output/icarus/LICENSE-BLAKE2": {
+      "bytes": 1305,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/LICENSE-BLAKE2",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1305,
+          "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+    },
+    "records/output/icarus/LICENSE-HardFloat": {
+      "bytes": 1514,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/LICENSE-HardFloat",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1514,
+          "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+        },
+        "transform": "identity"
+      },
+      "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+    },
+    "records/output/icarus/LICENSE-OpenRX": {
+      "bytes": 1803,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/LICENSE-OpenRX",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1803,
+          "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+        },
+        "transform": "identity"
+      },
+      "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+    },
+    "records/output/icarus/LICENSE-RandomX": {
+      "bytes": 1561,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/LICENSE-RandomX",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1561,
+          "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+        },
+        "transform": "identity"
+      },
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+    },
+    "records/output/icarus/LICENSE-secworks": {
+      "bytes": 1303,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/LICENSE-secworks",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1303,
+          "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+        },
+        "transform": "identity"
+      },
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+    },
+    "records/output/icarus/artifacts.sha256.json": {
+      "bytes": 6189,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/artifacts.sha256.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 6189,
+          "sha256": "840133958d77025c6fe6de434c72bf414b6526936c9e4055ff706032e173863c"
+        },
+        "transform": "identity"
+      },
+      "sha256": "840133958d77025c6fe6de434c72bf414b6526936c9e4055ff706032e173863c"
+    },
+    "records/output/icarus/commands.json": {
+      "bytes": 10588,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/commands.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 11389,
+          "sha256": "433027f0e7b1372d22c5080a0db4d335c06629dc38e47ac63453126a616592b5"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "6aef3754ef489ac1fa75d150dc304d697778ede0eaae82fe8281a942947a5d73"
+    },
+    "records/output/icarus/compile-prepared-ideal-input-boundaries.log": {
+      "bytes": 5991,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/compile-prepared-ideal-input-boundaries.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 6045,
+          "sha256": "a0fec4b929b1bad6f890a8fd5a73121f5b8d515c6fce25ecc8efb3cd1560b03a"
+        },
+        "transform": "utf8-literal-prefix-alias"
+      },
+      "sha256": "4f43a8429e9af7976f1685e395c413ceb8d12dfde6bd2e42b9e48e2f1f6bd2e5"
+    },
+    "records/output/icarus/compile-prepared-ideal.log": {
+      "bytes": 5991,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/compile-prepared-ideal.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 6045,
+          "sha256": "a0fec4b929b1bad6f890a8fd5a73121f5b8d515c6fce25ecc8efb3cd1560b03a"
+        },
+        "transform": "utf8-literal-prefix-alias"
+      },
+      "sha256": "4f43a8429e9af7976f1685e395c413ceb8d12dfde6bd2e42b9e48e2f1f6bd2e5"
+    },
+    "records/output/icarus/compile-reference.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/compile-reference.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "records/output/icarus/compile-vpi.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/compile-vpi.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "records/output/icarus/extraction.json": {
+      "bytes": 1802,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/extraction.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1802,
+          "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "5c9e5ea5c963514e637ff03ab1828e40f23344d82f724021cb0125dae5bf71a5"
+    },
+    "records/output/icarus/inputs.json": {
+      "bytes": 30702,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 30702,
+          "sha256": "492f4951454523c67465b268acac03db93198df4ee7c26687b1be03f87fa8474"
+        },
+        "transform": "identity"
+      },
+      "sha256": "492f4951454523c67465b268acac03db93198df4ee7c26687b1be03f87fa8474"
+    },
+    "records/output/icarus/lifecycle-unit-tests.log": {
+      "bytes": 5114,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/lifecycle-unit-tests.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 5114,
+          "sha256": "5e66abffe888a10ed44490ecf006cede6df229056340888079c2e3d418aa1349"
+        },
+        "transform": "identity"
+      },
+      "sha256": "5e66abffe888a10ed44490ecf006cede6df229056340888079c2e3d418aa1349"
+    },
+    "records/output/icarus/native-reference.log": {
+      "bytes": 134,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/native-reference.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 134,
+          "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+        },
+        "transform": "identity"
+      },
+      "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+    },
+    "records/output/icarus/native-reference/final-digest32.hex": {
+      "bytes": 65,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/native-reference/final-digest32.hex",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 65,
+          "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+        },
+        "transform": "identity"
+      },
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "records/output/icarus/native-reference/full-reference.json": {
+      "bytes": 377,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/native-reference/full-reference.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 352,
+          "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "b579e2f4dcc25cb3890ab28d7e16513654b242757df4f309a775e20bdef82cc3"
+    },
+    "records/output/icarus/native-reference/oracle-summary.json": {
+      "bytes": 559,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/native-reference/oracle-summary.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 498,
+          "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "295f38451fe38e7c7c97ba73769f90783d5630ec716bbff438e32b9d1c6bd1d0"
+    },
+    "records/output/icarus/prepared-ideal-input-boundaries.log": {
+      "bytes": 181,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 181,
+          "sha256": "a18bba9b7afd8086c43e033951e283d1195d76dff9166973550269fb01603595"
+        },
+        "transform": "identity"
+      },
+      "sha256": "a18bba9b7afd8086c43e033951e283d1195d76dff9166973550269fb01603595"
+    },
+    "records/output/icarus/prepared-ideal-input-boundaries/input-boundary-checks.json": {
+      "bytes": 297,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries/input-boundary-checks.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 234,
+          "sha256": "d8bc53bdb6c6c6afec657a13cbf0d7b495d8bb2694cdf2f7ac6c129e1edfa2b7"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "1fee029c09d0bdd3fbf8c137d7e52b0dcacc88647cd67cc5ce11dac501448ad9"
+    },
+    "records/output/icarus/prepared-ideal-input-boundaries/provider-host-time.json": {
+      "bytes": 901,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/prepared-ideal-input-boundaries/provider-host-time.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 836,
+          "sha256": "9cfbdf91ccd6846083b81d2d1caf671fcd4429cc7110f1343462c7ffaf5966eb"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "2afaaa183da2997390c996c6ce181f05953a13ad8b42b49c5ebfea997d1bf21f"
+    },
+    "records/output/icarus/prepared-ideal.log": {
+      "bytes": 337,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/prepared-ideal.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 337,
+          "sha256": "f018e41dce2d503a45d9370184824b71704c86853880045397b9e5140a6f3784"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f018e41dce2d503a45d9370184824b71704c86853880045397b9e5140a6f3784"
+    },
+    "records/output/icarus/prepared-ideal/actual-final-digest32.hex": {
+      "bytes": 65,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/prepared-ideal/actual-final-digest32.hex",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 65,
+          "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+        },
+        "transform": "identity"
+      },
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "records/output/icarus/prepared-ideal/ledger.json": {
+      "bytes": 2242,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/prepared-ideal/ledger.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1696,
+          "sha256": "9bf60e2d246e75d558ce1b6d05bfaca6e8d2210d4651e8ab7dbe014966d2c4a7"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "b4d3b5d7a993102f9310093285746d7726bed256de18cb49c80d172551747793"
+    },
+    "records/output/icarus/prepared-ideal/provider-host-time.json": {
+      "bytes": 941,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/prepared-ideal/provider-host-time.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 887,
+          "sha256": "931536752e34a9171e1e2bed43b543e1fbba4e4c0b51bbeb6f0f7ffd8f1e686c"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "42a2c23dfdb86076fc440413bb91a4b12f351aae6a8307f4c7763a4c9c5035d7"
+    },
+    "records/output/icarus/program-extraction.json": {
+      "bytes": 324,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/program-extraction.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 324,
+          "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+    },
+    "records/output/icarus/summary.json": {
+      "bytes": 14412,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/icarus/summary.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 14466,
+          "sha256": "d0b950dc2a64c7c4b22669e53273fbcd456a124e84adebe3e477633b1e5caab6"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "92a46b8a9ca6153c23512b7d20c5fc0f7420d7f7e59460b6f048f93ccc031f36"
+    },
+    "records/output/icarus/vendor.log": {
+      "bytes": 32,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/icarus/vendor.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 32,
+          "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+        },
+        "transform": "identity"
+      },
+      "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+    },
+    "records/output/parity-evidence.json": {
+      "bytes": 3180,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/parity-evidence.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 3180,
+          "sha256": "5715a3ee8990291fa97a632739c7bbab170c2a9bd96839cd32b80faf98a6f499"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "a93980971e9445aec4a33f21bbc9f306b1db2f23977368f5ad6622782b71b1b4"
+    },
+    "records/output/preserved-subresults.json": {
+      "bytes": 14362,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/preserved-subresults.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 14362,
+          "sha256": "8440d61f16d0eb7361ea6529ea13543ad8d40eefdfa42abe99ef8ef12cfc1d65"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "0c7d7cbce5db8be5237903b6531823da6da637b1fb2040fa25b4cd38313b2410"
+    },
+    "records/output/verilator-boundaries.log": {
+      "bytes": 505,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 505,
+          "sha256": "035c4dd1facdace7ac31dd8a42fb24c7cf072635f0070eb8f15810d459a0a3a9"
+        },
+        "transform": "identity"
+      },
+      "sha256": "035c4dd1facdace7ac31dd8a42fb24c7cf072635f0070eb8f15810d459a0a3a9"
+    },
+    "records/output/verilator-boundaries.time.txt": {
+      "bytes": 1465,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries.time.txt",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1620,
+          "sha256": "18857933a1ea94c7aba1091a6bf933a78b95125eb5bdcd49f1824ba8ab8c70a0"
+        },
+        "transform": "utf8-literal-prefix-alias"
+      },
+      "sha256": "3445807e3afdb970340b47eb7bba11b072c5eed0e803c6412e9e390256ef33e1"
+    },
+    "records/output/verilator-boundaries/HardFloat-compile-view.json": {
+      "bytes": 745,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/HardFloat-compile-view.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 745,
+          "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "d8be4e7b04fa907e1094d2da5eb004c450d43fce44935b8f34cb64aebc64d165"
+    },
+    "records/output/verilator-boundaries/LICENSE-BLAKE2": {
+      "bytes": 1305,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/LICENSE-BLAKE2",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1305,
+          "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+    },
+    "records/output/verilator-boundaries/LICENSE-HardFloat": {
+      "bytes": 1514,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/LICENSE-HardFloat",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1514,
+          "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+        },
+        "transform": "identity"
+      },
+      "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+    },
+    "records/output/verilator-boundaries/LICENSE-OpenRX": {
+      "bytes": 1803,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/LICENSE-OpenRX",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1803,
+          "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+        },
+        "transform": "identity"
+      },
+      "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+    },
+    "records/output/verilator-boundaries/LICENSE-RandomX": {
+      "bytes": 1561,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/LICENSE-RandomX",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1561,
+          "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+        },
+        "transform": "identity"
+      },
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+    },
+    "records/output/verilator-boundaries/LICENSE-secworks": {
+      "bytes": 1303,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/LICENSE-secworks",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1303,
+          "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+        },
+        "transform": "identity"
+      },
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+    },
+    "records/output/verilator-boundaries/artifacts.sha256.json": {
+      "bytes": 21839,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/artifacts.sha256.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 21839,
+          "sha256": "a6dd7f41e01be8e39cd432c47ce2a7138b9d24069cb3115e1afcd3db7f3331ce"
+        },
+        "transform": "identity"
+      },
+      "sha256": "a6dd7f41e01be8e39cd432c47ce2a7138b9d24069cb3115e1afcd3db7f3331ce"
+    },
+    "records/output/verilator-boundaries/commands.json": {
+      "bytes": 6505,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/commands.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 7137,
+          "sha256": "0233566a99d25cdea7dd789ab8385cec809c3399fc01adade39229cdfe1f74f8"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "251401f5987acc03e1fc14e8a025c22372f81b6146f317d2152079d30cfc0e04"
+    },
+    "records/output/verilator-boundaries/compile-prepared-ideal-input-boundaries.log": {
+      "bytes": 251854,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/compile-prepared-ideal-input-boundaries.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 256203,
+          "sha256": "daeb621ef69ec1934b45c13a68f63e9c8e13181a7dac52d1476ba4e7ea939ecc"
+        },
+        "transform": "utf8-literal-prefix-alias"
+      },
+      "sha256": "5d09733d7fb3cf5ed075a229ec579b74353fb82b8e42b5d79b2a13c2feea892c"
+    },
+    "records/output/verilator-boundaries/compile-reference.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/compile-reference.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "records/output/verilator-boundaries/extraction.json": {
+      "bytes": 1802,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/extraction.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1802,
+          "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "5c9e5ea5c963514e637ff03ab1828e40f23344d82f724021cb0125dae5bf71a5"
+    },
+    "records/output/verilator-boundaries/inputs.json": {
+      "bytes": 30702,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 30702,
+          "sha256": "492f4951454523c67465b268acac03db93198df4ee7c26687b1be03f87fa8474"
+        },
+        "transform": "identity"
+      },
+      "sha256": "492f4951454523c67465b268acac03db93198df4ee7c26687b1be03f87fa8474"
+    },
+    "records/output/verilator-boundaries/lifecycle-unit-tests.log": {
+      "bytes": 5114,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/lifecycle-unit-tests.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 5114,
+          "sha256": "ec38bb0fba8429b73946b0d4b51dfad59959a9f27d09a369c5f71152e3cf9881"
+        },
+        "transform": "identity"
+      },
+      "sha256": "ec38bb0fba8429b73946b0d4b51dfad59959a9f27d09a369c5f71152e3cf9881"
+    },
+    "records/output/verilator-boundaries/native-reference.log": {
+      "bytes": 134,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/native-reference.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 134,
+          "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+        },
+        "transform": "identity"
+      },
+      "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+    },
+    "records/output/verilator-boundaries/native-reference/final-digest32.hex": {
+      "bytes": 65,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/native-reference/final-digest32.hex",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 65,
+          "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+        },
+        "transform": "identity"
+      },
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "records/output/verilator-boundaries/native-reference/full-reference.json": {
+      "bytes": 377,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/native-reference/full-reference.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 352,
+          "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "b579e2f4dcc25cb3890ab28d7e16513654b242757df4f309a775e20bdef82cc3"
+    },
+    "records/output/verilator-boundaries/native-reference/oracle-summary.json": {
+      "bytes": 559,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/native-reference/oracle-summary.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 498,
+          "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "295f38451fe38e7c7c97ba73769f90783d5630ec716bbff438e32b9d1c6bd1d0"
+    },
+    "records/output/verilator-boundaries/prepared-ideal-input-boundaries.log": {
+      "bytes": 248,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/prepared-ideal-input-boundaries.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 248,
+          "sha256": "738d01cedc5dd75ce41a991551b6f74c765102dc92b9bd1d55ec75416dea5406"
+        },
+        "transform": "identity"
+      },
+      "sha256": "738d01cedc5dd75ce41a991551b6f74c765102dc92b9bd1d55ec75416dea5406"
+    },
+    "records/output/verilator-boundaries/prepared-ideal-input-boundaries/input-boundary-checks.json": {
+      "bytes": 297,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/prepared-ideal-input-boundaries/input-boundary-checks.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 234,
+          "sha256": "d8bc53bdb6c6c6afec657a13cbf0d7b495d8bb2694cdf2f7ac6c129e1edfa2b7"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "1fee029c09d0bdd3fbf8c137d7e52b0dcacc88647cd67cc5ce11dac501448ad9"
+    },
+    "records/output/verilator-boundaries/prepared-ideal-input-boundaries/provider-host-time.json": {
+      "bytes": 913,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/prepared-ideal-input-boundaries/provider-host-time.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 836,
+          "sha256": "0ae3f7b1d277d8d36b91cf7eb88bac70a4428691d603de61f0285abdada79387"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "4f0b371a667ab1a469f1aa147be6b1414bf7921b62e12611090afc59da5c16aa"
+    },
+    "records/output/verilator-boundaries/program-extraction.json": {
+      "bytes": 324,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/program-extraction.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 324,
+          "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+    },
+    "records/output/verilator-boundaries/summary.json": {
+      "bytes": 10316,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/verilator-boundaries/summary.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 10397,
+          "sha256": "7c39ec68b4aae399616b0034501e3d652e976658c7ca1876e17fe7addfe34907"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "7ef72504544b8a40f21cd60a126aa4913db22c0683c8ed57d977a76deac7d520"
+    },
+    "records/output/verilator-boundaries/vendor.log": {
+      "bytes": 32,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/verilator-boundaries/vendor.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 32,
+          "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+        },
+        "transform": "identity"
+      },
+      "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+    },
+    "records/prelaunch-kernel-check.json": {
+      "bytes": 3316,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "prelaunch-kernel-check.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2318,
+          "sha256": "9ec9c243191cbe5e797dd94596a5d83f581912631bbd3d9dad297fdd4af7faad"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "029673a7d8ff0419bb76a744dbea406b1b45053f6d2a755b2bc13bfbbea43b3b"
+    },
+    "records/prelaunch-resource-check.json": {
+      "bytes": 551,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "prelaunch-resource-check.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 415,
+          "sha256": "48cd75f88b38c97e8b01ed7843ec5f62076231251a2b1d9af1ae6780a13e7152"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "20fa2264c530dd06c42a7ad89c4118c270796e37e6bdd38dd7ed6e30c850e834"
+    },
+    "records/process-result.json": {
+      "bytes": 163,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "process-result.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 142,
+          "sha256": "4eb0c24f0939632357974278a0fdc17d25c0396130974e9ce7bbff0f3cfac899"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "bb7727b7e533a1e9ba516578d23c2ff0fd95760be153e3baa7b9e31a4e26a181"
+    },
+    "records/stderr.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "stderr.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "records/stdout.log": {
+      "bytes": 1209,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "stdout.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1209,
+          "sha256": "bdc3d608907caee0637f322dd2f30eb686c22522ae62298136825f6d1dec8fe2"
+        },
+        "transform": "identity"
+      },
+      "sha256": "bdc3d608907caee0637f322dd2f30eb686c22522ae62298136825f6d1dec8fe2"
+    },
+    "records/submission-command.json": {
+      "bytes": 915,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "submission-command.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 871,
+          "sha256": "d63bcf6df5487e8ba9e1054a12e1fe86d1875ffa9846894c8344d4bda9752be7"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "165ea64cb1aa7a97e2e517bdf8414b649a50dca0238bea06c6e9176600f2d8c7"
+    },
+    "records/submission-result.json": {
+      "bytes": 54,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "submission-result.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 41,
+          "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+        },
+        "transform": "json-string-prefix-alias-and-canonical-serialization"
+      },
+      "sha256": "83395cbaf5cbebe654f352914cdd7b569643698a8b687ae84b6ea7e5b6f4dd9e"
+    },
+    "resources.json": {
+      "bytes": 5740,
+      "origin": {
+        "derivation": "resource selection; typed values unchanged",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+        "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+      },
+      "sha256": "ad94400d725747373fdf84c8137e2e8bad243e6800c79fca40a5fd2e71339ebd"
+    },
+    "transform-policy.json": {
+      "bytes": 3442,
+      "origin": {
+        "derivation": "exact portable serialization and private-prefix alias policy",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "54597eb382a8d7b8086127f9c734f1c5861ed20ce657638a87c8e0b267e65cfd",
+        "raw_receipt_sha256": "b217ccc28415db5b17e3f9fee79f02fedd416933f79d6c21c270861a88f55da5"
+      },
+      "sha256": "d01bc9ef51a989ec4fd875ba6610798d6e3d00d01233c87b03ca470cb1979aca"
+    },
+    "verify.json": {
+      "bytes": 155,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_kind": "root-supplied installed-runner verification result",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 155,
+          "sha256": "ce03b7c834b5b2c3695c0e2b04395a321062ddc42737d3a8ec9f4f02227f2aee"
+        },
+        "transform": "identity"
+      },
+      "sha256": "ce03b7c834b5b2c3695c0e2b04395a321062ddc42737d3a8ec9f4f02227f2aee"
+    }
+  },
+  "entry_count": 79,
+  "ordered_entries": [
+    "composite-binding.json",
+    "coverage.json",
+    "execution.json",
+    "external/bounded-connected-recovery-check.py",
+    "history/boundary-helper-settle-fix.patch",
+    "native-corpus-bindings.json",
+    "original-receipt.json",
+    "records/events.jsonl",
+    "records/manifest.json",
+    "records/output/checks.json",
+    "records/output/commands.json",
+    "records/output/icarus.log",
+    "records/output/icarus.time.txt",
+    "records/output/icarus/HardFloat-compile-view.json",
+    "records/output/icarus/LICENSE-BLAKE2",
+    "records/output/icarus/LICENSE-HardFloat",
+    "records/output/icarus/LICENSE-OpenRX",
+    "records/output/icarus/LICENSE-RandomX",
+    "records/output/icarus/LICENSE-secworks",
+    "records/output/icarus/artifacts.sha256.json",
+    "records/output/icarus/commands.json",
+    "records/output/icarus/compile-prepared-ideal-input-boundaries.log",
+    "records/output/icarus/compile-prepared-ideal.log",
+    "records/output/icarus/compile-reference.log",
+    "records/output/icarus/compile-vpi.log",
+    "records/output/icarus/extraction.json",
+    "records/output/icarus/inputs.json",
+    "records/output/icarus/lifecycle-unit-tests.log",
+    "records/output/icarus/native-reference.log",
+    "records/output/icarus/native-reference/final-digest32.hex",
+    "records/output/icarus/native-reference/full-reference.json",
+    "records/output/icarus/native-reference/oracle-summary.json",
+    "records/output/icarus/prepared-ideal-input-boundaries.log",
+    "records/output/icarus/prepared-ideal-input-boundaries/input-boundary-checks.json",
+    "records/output/icarus/prepared-ideal-input-boundaries/provider-host-time.json",
+    "records/output/icarus/prepared-ideal.log",
+    "records/output/icarus/prepared-ideal/actual-final-digest32.hex",
+    "records/output/icarus/prepared-ideal/ledger.json",
+    "records/output/icarus/prepared-ideal/provider-host-time.json",
+    "records/output/icarus/program-extraction.json",
+    "records/output/icarus/summary.json",
+    "records/output/icarus/vendor.log",
+    "records/output/parity-evidence.json",
+    "records/output/preserved-subresults.json",
+    "records/output/verilator-boundaries.log",
+    "records/output/verilator-boundaries.time.txt",
+    "records/output/verilator-boundaries/HardFloat-compile-view.json",
+    "records/output/verilator-boundaries/LICENSE-BLAKE2",
+    "records/output/verilator-boundaries/LICENSE-HardFloat",
+    "records/output/verilator-boundaries/LICENSE-OpenRX",
+    "records/output/verilator-boundaries/LICENSE-RandomX",
+    "records/output/verilator-boundaries/LICENSE-secworks",
+    "records/output/verilator-boundaries/artifacts.sha256.json",
+    "records/output/verilator-boundaries/commands.json",
+    "records/output/verilator-boundaries/compile-prepared-ideal-input-boundaries.log",
+    "records/output/verilator-boundaries/compile-reference.log",
+    "records/output/verilator-boundaries/extraction.json",
+    "records/output/verilator-boundaries/inputs.json",
+    "records/output/verilator-boundaries/lifecycle-unit-tests.log",
+    "records/output/verilator-boundaries/native-reference.log",
+    "records/output/verilator-boundaries/native-reference/final-digest32.hex",
+    "records/output/verilator-boundaries/native-reference/full-reference.json",
+    "records/output/verilator-boundaries/native-reference/oracle-summary.json",
+    "records/output/verilator-boundaries/prepared-ideal-input-boundaries.log",
+    "records/output/verilator-boundaries/prepared-ideal-input-boundaries/input-boundary-checks.json",
+    "records/output/verilator-boundaries/prepared-ideal-input-boundaries/provider-host-time.json",
+    "records/output/verilator-boundaries/program-extraction.json",
+    "records/output/verilator-boundaries/summary.json",
+    "records/output/verilator-boundaries/vendor.log",
+    "records/prelaunch-kernel-check.json",
+    "records/prelaunch-resource-check.json",
+    "records/process-result.json",
+    "records/stderr.log",
+    "records/stdout.log",
+    "records/submission-command.json",
+    "records/submission-result.json",
+    "resources.json",
+    "transform-policy.json",
+    "verify.json"
+  ],
+  "schema": "openrx.compact-archive-index.v1"
+}
