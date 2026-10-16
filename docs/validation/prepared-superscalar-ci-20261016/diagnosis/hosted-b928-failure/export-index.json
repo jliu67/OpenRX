@@ -1,0 +1,38 @@
+{
+  "archive_entries": 95,
+  "full_mode_acceptance": false,
+  "index_self_excluded": true,
+  "package": "hosted-b928-failure",
+  "public_files": {
+    "archive-index.json": {
+      "bytes": 79864,
+      "sha256": "8041661380179a1f67e73c470f48831cfad401d08e7dd65c6d0deed933f619ae"
+    },
+    "coverage.json": {
+      "bytes": 483182,
+      "sha256": "de7a6acd68c8c438ac031347bc5705a730f37e4426907f4a93b138999c70ed4c"
+    },
+    "observation.json": {
+      "bytes": 4686,
+      "sha256": "2bfc26f3717288582e7adebc9cc08afb6722728b9345b632bcc4ff9baf9d2c2b"
+    },
+    "records.zip": {
+      "bytes": 398114,
+      "sha256": "05d7921f432ad2c807931dd45d88b96b618b1429ba922e146a5838d0f53776d9"
+    }
+  },
+  "schema": "openrx.diagnostic-export-index.v1",
+  "scientific_acceptance": "unverified",
+  "scope_partition_counts": {
+    "complete_capture_top_level_files": {
+      "retained_only": 1,
+      "selected": 9,
+      "total": 10
+    },
+    "complete_original_ZIP_regular_members": {
+      "retained_only": 1181,
+      "selected": 78,
+      "total": 1259
+    }
+  }
+}

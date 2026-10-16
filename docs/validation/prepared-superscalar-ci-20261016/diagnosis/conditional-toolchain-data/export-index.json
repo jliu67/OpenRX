@@ -1,0 +1,27 @@
+{
+  "archive_entries": 8,
+  "full_mode_acceptance": false,
+  "index_self_excluded": true,
+  "package": "conditional-toolchain-data",
+  "public_files": {
+    "archive-index.json": {
+      "bytes": 6064,
+      "sha256": "0f8d95a45236e2273bfe42886adffe96e89b52ddf95e3accc37cfe92ba6d4376"
+    },
+    "coverage.json": {
+      "bytes": 3,
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    "observation.json": {
+      "bytes": 299,
+      "sha256": "cddc5bfe29822ca2fe54abe4bb3879597447c0e4fc0b543646b3d6f7d9d5851c"
+    },
+    "records.zip": {
+      "bytes": 23833,
+      "sha256": "8f9abeec75c954d77252a341a131e41de0e396a10c3ad119d70df70e44efc5ee"
+    }
+  },
+  "schema": "openrx.diagnostic-export-index.v1",
+  "scientific_acceptance": "unverified",
+  "scope_partition_counts": {}
+}

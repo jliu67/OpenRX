@@ -7,6 +7,8 @@ on:
       - 'rtl/execute/tests/superscalar_oracle.cpp'
       - 'rtl/execute/tests/tb_superscalar_execute.v'
       - 'scripts/test_superscalar_execute.py'
+      - 'scripts/check_superscalar_toolchain.py'
+      - 'scripts/superscalar-toolchain.lock.json'
       - 'vendor/randomx/**'
       - 'vendor/randomx.lock.json'
       - 'vendor/randomx.sha256.json'
@@ -17,13 +19,37 @@ permissions:
 jobs:
   superscalar-differential:
     runs-on: ubuntu-24.04
+    # Match the raw mapping/simulator toolchain with completed local evidence.
+    # Pin the official image; keep this isolated from the runner's packages.
+    container:
+      image: ubuntu:22.04@sha256:5ec03bb3441e8b0bf3b4f9cd4629a1ae763010dc3035bb8da3ae6cf026486401
     timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
     steps:
-      - uses: actions/checkout@v4
-      - name: Install official HDL packages
+      - name: Install pinned official HDL packages and build dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install --no-install-recommends -y iverilog yosys
+          apt-get update
+          mkdir -p "$RUNNER_TEMP/superscalar-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          cd "$RUNNER_TEMP/superscalar-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          apt-get download iverilog=11.0-1.1 yosys=0.9-2 \
+            berkeley-abc=1.01+20211229git48498af+dfsg-2
+          printf '%s\n' \
+            '56b2b91e23f51c571b8cf43ef2df3a137a1bf4b6bcbff0fa3463b5b89403a852  iverilog_11.0-1.1_amd64.deb' \
+            'b9f27c0a999753ecc12efa31ebdf97de5a0ca4f970780ddf580b8668a47e8a20  yosys_0.9-2_amd64.deb' \
+            '5f9d897a2a215d36dc1526cf377910deeccf8ba62749e7abdab92a520a310219  berkeley-abc_1.01+20211229git48498af+dfsg-2_amd64.deb' \
+            > packages.sha256
+          sha256sum -c packages.sha256
+          DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+            ca-certificates git python3 build-essential cmake time \
+            ./iverilog_11.0-1.1_amd64.deb ./yosys_0.9-2_amd64.deb \
+            ./berkeley-abc_1.01+20211229git48498af+dfsg-2_amd64.deb
+      - uses: actions/checkout@v4
+      - name: Verify and retain exact tool identities
+        run: |
+          python3 -B scripts/check_superscalar_toolchain.py \
+            --output "$RUNNER_TEMP/superscalar-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/identity.json"
       - name: Compare prepared native programs, lifecycle and mapped execution
         run: |
           python3 -B scripts/test_superscalar_execute.py \
@@ -36,3 +62,9 @@ jobs:
         with:
           name: superscalar-execute-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/superscalar-execute-${{ github.run_id }}-${{ github.run_attempt }}/
+      - name: Retain exact toolchain packages and identity
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: superscalar-toolchain-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/superscalar-toolchain-${{ github.run_id }}-${{ github.run_attempt }}/

@@ -1,0 +1,38 @@
+{
+  "archive_entries": 94,
+  "full_mode_acceptance": false,
+  "index_self_excluded": true,
+  "package": "hosted-0be-failure",
+  "public_files": {
+    "archive-index.json": {
+      "bytes": 78798,
+      "sha256": "751aec6e0e8eeca1d267faa299d8b6d0822a32a750c6763a030560895f321dc8"
+    },
+    "coverage.json": {
+      "bytes": 482843,
+      "sha256": "0c68b845e72fb3c3cd99e27c1b27ca077e4e8829c1e024169218287c7f2224a0"
+    },
+    "observation.json": {
+      "bytes": 5054,
+      "sha256": "7aa12a073423a62afbf97ef94e1d2473e76c1e36aca883cdfe858578caaa7ebc"
+    },
+    "records.zip": {
+      "bytes": 396338,
+      "sha256": "f1ebbd140d47535c28abcc4cff814549b92485b640a88190f086c7d251bc2e76"
+    }
+  },
+  "schema": "openrx.diagnostic-export-index.v1",
+  "scientific_acceptance": "unverified",
+  "scope_partition_counts": {
+    "complete_capture_top_level_files": {
+      "retained_only": 1,
+      "selected": 8,
+      "total": 9
+    },
+    "complete_original_ZIP_regular_members": {
+      "retained_only": 1181,
+      "selected": 78,
+      "total": 1259
+    }
+  }
+}
