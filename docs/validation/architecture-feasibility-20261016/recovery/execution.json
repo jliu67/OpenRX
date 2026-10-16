@@ -1,0 +1,38 @@
+{
+  "child_max_rss_kib": 32244,
+  "elapsed_seconds": 217.60215791198425,
+  "execution_id": "20261016T065700Z-fe5c0263613b",
+  "integrity_verification": {
+    "execution_id": "20261016T065700Z-fe5c0263613b",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "original_artifact_index_verified_unchanged": true,
+  "prelaunch_kernel_check_safe": true,
+  "process_returncode": 0,
+  "production_enforced": true,
+  "resource_observation": "During-run cgroup samples showed no CPU throttle or memory limit/OOM event; no final cgroup peak or whole-host utilization claim. One worker replays the compact independent windows.",
+  "runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "saved_author_head_unchanged": "46fa0737f0e818c9147a687613d38aedd6b0cf0d",
+  "saved_author_tree_unchanged": "1059a182633f9dd82fa5aa67eaee5840b8906187",
+  "scientific_acceptance": "focused model checks pass; no ASIC/alternative full-hash acceptance",
+  "service_limits": {
+    "cgroup.controllers": "cpu memory pids",
+    "cgroup.subtree_control": "",
+    "cpu.max": "600000 100000",
+    "cpuset.cpus.effective": null,
+    "memory.high": "max",
+    "memory.max": "1073741824",
+    "memory.swap.max": "2147483648",
+    "pids.max": "256"
+  },
+  "worker_allowed_cpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}

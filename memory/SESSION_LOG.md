@@ -958,3 +958,26 @@ PPA, alternative full-hash timing or target acceptance is claimed. Delivery uses
 a feature draft PR for independent review; no merge, settings, credentials or
 spending change. Next: configurable context-tagged blocking hardware and actual
 readiness/resource instrumentation before more aggressive issue/queues.
+
+## 2026-10-16 — task #72 focused recovery and draft publication
+
+Recovered clean model head46fa0737/tree1059a182 above mainf13e5b5 in a separate
+temporary feature branch; original author workspace and every output remain
+unchanged. Replaced embedded-hash recognition with actual full-evidence and
+12-file fixture digest binding; untrusted inputs preserve provenance and stop
+before accepted-run comparisons. Added transaction-rate, bank-port and explicit
+controller-service constraints to the rejection gate. Missing physical/service
+terms stay unresolved. Focused independent review found no remaining blocker in
+these two fixes and verified all trusted bindings; 16 targeted tests pass.
+
+All67 architecture tests pass. Admitted compact execution
+20261016T065700Z-fe5c0263613b exits0 and integrity verifies: 488 comparison rows
+and eight scalar equations remain byte-identical, while sensitivity gains only
+three unknown gate fields. Actual prelaunch CPU600%/RAM1GiB/swap2GiB/Tasks256;
+one worker, 217.60s, child peak RSS32,244KiB. During-run samples show no throttle
+or memory-limit/OOM event; no final cgroup/whole-host utilization measurement.
+No full trace, native build, RTL/hash simulation, architecture selection or
+physical/alternative full-hash acceptance. Original artifact index still verifies.
+The [additive recovery evidence](../docs/validation/architecture-feasibility-20261016/recovery/README.md)
+binds tests, inputs, code and receipt. Draft PR and exact head are handed off on
+task72 for independent final review; no merge or standing mirror/sync is created.

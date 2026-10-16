@@ -51,3 +51,14 @@ native values and the existing complete lifecycle. Evidence from that wrapper
 should gate additional nonblocking queues or wider issue.
 
 Independent review is required before merge; this task performs no merge.
+
+## Focused recovery — 2026-10-16
+
+Recovery reuses saved model head `46fa0737` and preserves all original outputs.
+Only the two review blockers change: actual evidence/fixture bytes must match
+trusted bindings, and conditional passes require transaction, bank-port and
+controller-service constraints. [Recovery checks](../docs/validation/architecture-feasibility-20261016/recovery/README.md)
+retain focused tests, the unchanged 488 comparison rows/eight scalar equations
+and the additional unresolved gate fields. No original full trace or RTL/native
+simulation is repeated. Physical unknowns and alternative full-hash timing remain
+unresolved; the draft final head requires independent review before any merge.

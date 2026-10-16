@@ -1,5 +1,16 @@
 # Current state — actual local execution activation
 
+## 2026-10-16 — task #72 focused recovery
+
+Recovered saved `46fa0737` in a separate temporary feature branch. The two review
+blockers are fixed: accepted attribution checks actual evidence/fixture bytes
+against trusted bindings; conditional passes require transaction-rate, bank-port
+and controller-service constraints. Missing physical/service inputs stay unknown.
+The [recovery evidence](../docs/validation/architecture-feasibility-20261016/recovery/README.md)
+records 67 focused tests and compact reproduction, with original outputs retained.
+Draft publication requests independent review of the exact final head; no merge,
+architecture selection or alternative full-hash/physical performance acceptance.
+
 ## 2026-10-16 — executable architectural feasibility gate, task #72
 
 [EXP-015](../experiments/EXP-015-architecture-feasibility.md) adds the executable

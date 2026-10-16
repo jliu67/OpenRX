@@ -1,5 +1,20 @@
 # Handoff — actual designated local execution
 
+## 2026-10-16 — task #72 recovery review handoff
+
+The isolated recovery starts at saved `46fa0737f0e818c9147a687613d38aedd6b0cf0d`
+above main `f13e5b5223e87c91a848adedc23502b5a42d4754`. Review the two focused
+fixes in `tools/architecture/run.py` and `envelope.py`, their rejection tests and
+[recovery evidence](../docs/validation/architecture-feasibility-20261016/recovery/README.md).
+Exact portable inputs are verified; changed metadata/bytes are untrusted and
+stop accepted-run comparisons. Even identical-source `extract` metadata can
+differ; the accepted executable path is compact `reproduce` with pinned bytes.
+Transaction/bank-port rates and controller-service conditions must be supplied
+before a conditional pass. Physical unknowns and alternative full-hash timing
+remain unresolved. Original sources and outputs are preserved. Final draft PR
+and exact head are recorded on [task #72](https://github.com/jliu67/OpenRX/issues/72);
+independent review remains required and no merge is authorized.
+
 ## 2026-10-16 — task #72 executable model delivery
 
 Start with [model contract/reproduction](../tools/architecture/README.md),

@@ -17,7 +17,7 @@ python3 -B -m tools.architecture.run reproduce \
   --output /tmp/openrx-architecture-reproduction-new --workers 1
 diff -u docs/validation/architecture-feasibility-20261016/comparisons.json \
   /tmp/openrx-architecture-reproduction-new/comparisons.json
-diff -u docs/validation/architecture-feasibility-20261016/sensitivity.json \
+diff -u docs/validation/architecture-feasibility-20261016/recovery/sensitivity.json \
   /tmp/openrx-architecture-reproduction-new/sensitivity.json
 ```
 
@@ -38,6 +38,8 @@ untrusted input before replay or comparisons. Different extraction metadata also
 changes byte identity: `extract` preserves its extracted inputs and untrusted
 provenance, then stops before accepted-run comparisons. Extending these bindings
 requires review of the new exact inputs; changing a source-map claim is insufficient.
+The recovery sensitivity artifact adds the missing gate conditions; earlier
+artifacts remain preserved in the parent evidence directory.
 
 ## Evidence and timing boundaries
 
