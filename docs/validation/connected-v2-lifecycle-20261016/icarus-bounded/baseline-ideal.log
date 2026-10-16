@@ -1,0 +1,1 @@
+PASS prepared_hash_lifecycle prepared=0 programs=1 iterations_per_program=1 stall=0 total_iterations=1 actual_instructions=384 bytecode_events=88 admissions=1 loaded_words=384 hardware_seeds=0 initial_writes=131072 final_reads=131072 cycles=528407 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1

@@ -70,17 +70,19 @@ def reused_library(library, execution, source):
             'PIC_flags_sha256': sha(flags), 'reconfigured_or_modified': False}
 
 
-def validate_ledger(ledger, provider, iterations, programs):
+def validate_ledger(ledger, provider, iterations, programs, native, prepared):
     assert set(ledger['stage_cycles']) == {'initialization_transport', 'control_and_metadata',
         'program_preparation', 'execution', 'interprogram_seed', 'finalization', 'held_return'}
     assert type(ledger['cycles']) is int and ledger['cycles'] > 0
     assert all(type(value) is int and value >= 0 for value in ledger['stage_cycles'].values())
     assert len(ledger['nested_iteration_phases']) == 12 and len(ledger['nested_finalization_phases']) == 6
+    assert len(ledger['nested_executor_phases']) == 18
     assert all(type(value) is int and value >= 0 for value in
-               ledger['nested_iteration_phases'] + ledger['nested_finalization_phases'])
+               ledger['nested_iteration_phases'] + ledger['nested_finalization_phases'] + ledger['nested_executor_phases'])
     assert sum(ledger['stage_cycles'].values()) == ledger['cycles']
     assert sum(ledger['nested_iteration_phases']) == ledger['stage_cycles']['execution']
     assert sum(ledger['nested_finalization_phases']) == ledger['stage_cycles']['finalization']
+    assert sum(ledger['nested_executor_phases']) == ledger['nested_iteration_phases'][7]
     assert ledger['scratchpad_bytes'] == 2097152
     for name in ('physical_port_read_bytes', 'physical_port_write_bus_bytes', 'strobed_write_bytes',
                  'logical_bytecode_memory_bytes', 'logical_entry_bytes', 'logical_tail_bytes'):
@@ -90,12 +92,56 @@ def validate_ledger(ledger, provider, iterations, programs):
     assert ledger['logical_entry_bytes'] == programs * iterations * 128
     assert ledger['logical_tail_bytes'] == programs * iterations * 128
     assert ledger['dataset_logical_bytes'] == programs * iterations * 64
+    assert ledger['logical_bytecode_memory_bytes'] == native['bytecode_events'] * 8
     assert ledger['program_image_load_bytes'] == programs * 384 * 8
     assert ledger['untimed_provider_device_cycles'] is None
     assert provider['provider_device_cycles'] is None
     assert provider['dataset_requests'] == programs * iterations and provider['program_generations'] == programs
     assert provider['cache_bytes'] == 268435456 and provider['logical_dataset_bytes'] == 2181038016
     assert provider['materialized_dataset_bytes'] == 0
+    for name in ('preparation_reciprocals', 'runtime_reciprocals'):
+        assert type(ledger[name]) is int and ledger[name] >= 0
+    assert ledger['preparation_reciprocals'] == (native['static_active_reciprocals'] if prepared else 0)
+    assert ledger['runtime_reciprocals'] == (0 if prepared else native['dynamic_active_reciprocals'])
+
+
+def compare_variants(baseline, prepared, native):
+    """Compare equal native work and derive reciprocal cost from observed cycles."""
+    for name in ('scratchpad_bytes', 'physical_port_read_bytes', 'physical_port_write_bus_bytes',
+                 'strobed_write_bytes', 'dataset_logical_bytes', 'logical_bytecode_memory_bytes',
+                 'logical_entry_bytes', 'logical_tail_bytes', 'program_image_load_bytes'):
+        assert baseline[name] == prepared[name], 'paired workload mismatch: ' + name
+    for name in baseline['stage_cycles']:
+        if name not in ('program_preparation', 'execution'):
+            assert baseline['stage_cycles'][name] == prepared['stage_cycles'][name], 'common stage changed: ' + name
+    for phase in range(12):
+        if phase != 7:
+            assert baseline['nested_iteration_phases'][phase] == prepared['nested_iteration_phases'][phase]
+    for phase in range(18):
+        if phase not in (12, 13):
+            assert baseline['nested_executor_phases'][phase] == prepared['nested_executor_phases'][phase]
+    static, dynamic = native['static_active_reciprocals'], native['dynamic_active_reciprocals']
+    assert baseline['preparation_reciprocals'] == prepared['runtime_reciprocals'] == 0
+    assert prepared['preparation_reciprocals'] == static and baseline['runtime_reciprocals'] == dynamic
+    assert prepared['nested_executor_phases'][12:14] == [0, 0]
+    request, wait = baseline['nested_executor_phases'][12:14]
+    assert request == dynamic
+    if dynamic:
+        wait_each, remainder = divmod(wait, dynamic)
+        assert not remainder and wait_each > 0
+        cost = 1 + wait_each
+    else:
+        assert static == wait == 0
+        cost = None
+    added = prepared['stage_cycles']['program_preparation'] - baseline['stage_cycles']['program_preparation']
+    saved = baseline['stage_cycles']['execution'] - prepared['stage_cycles']['execution']
+    assert added == (cost or 0) * static and saved == (cost or 0) * dynamic
+    assert baseline['cycles'] - prepared['cycles'] == saved - added
+    return {'native_work_and_common_stages_equal': True, 'static_active_reciprocals': static,
+            'dynamic_active_reciprocals': dynamic, 'measured_reciprocal_cycles_each': cost,
+            'preparation_added_cycles': added, 'execution_saved_cycles': saved,
+            'net_saved_cycles': baseline['cycles'] - prepared['cycles'],
+            'physical_timing_or_power_accepted': False}
 
 
 def main():
@@ -107,13 +153,16 @@ def main():
     parser.add_argument('--iterations', type=int, default=2)
     parser.add_argument('--profiles', nargs='+', choices=['ideal', 'stalled'], default=['ideal', 'stalled'])
     parser.add_argument('--variants', nargs='+', choices=['baseline', 'prepared'], default=['baseline', 'prepared'])
-    parser.add_argument('--event-trace', action='store_true', help='Keep every retirement/transfer/phase transition instead of idle cycle rows')
+    parser.add_argument('--event-trace', action='store_true', help='Keep retirements/transfers and outer/iteration/executor transitions instead of idle rows')
     parser.add_argument('--backend', choices=['icarus', 'verilator'], default='icarus')
     parser.add_argument('--verilator-root', type=Path)
     parser.add_argument('--verilator-build-execution', type=Path)
     parser.add_argument('--full-v2', action='store_true')
     parser.add_argument('--compile-only', action='store_true')
     parser.add_argument('--cancellation', action='store_true')
+    parser.add_argument('--matching-errors', action='store_true', help='Six provider errors plus invalid input/write, held return and fresh-generation handoff')
+    parser.add_argument('--capacity-checks', action='store_true', help='Batch-epoch/hash-tag exhaustion and drained hard-reset recovery')
+    parser.add_argument('--interfaces-only', action='store_true', help='Run requested recovery/capacity checks without a completed-hash claim')
     parser.add_argument('--input-hex', default=MESSAGE.hex())
     parser.add_argument('--timeout', type=int, default=10800)
     args = parser.parse_args()
@@ -121,6 +170,9 @@ def main():
         parser.error('duplicate output profiles are not permitted')
     if len(args.variants) != len(set(args.variants)):
         parser.error('duplicate variants are not permitted')
+    if args.interfaces_only and (args.full_v2 or args.compile_only or not
+                                (args.cancellation or args.matching_errors or args.capacity_checks)):
+        parser.error('interfaces-only requires a recovery/capacity check and cannot select full-v2/compile-only')
     if args.full_v2:
         args.programs, args.iterations = 8, 2048
     if not 1 <= args.iterations <= 2048 or args.timeout <= 0:
@@ -146,8 +198,10 @@ def main():
                'base': 'aebe30a0c2d1547fed6b66976ba0757b4b66389a', 'programs': args.programs,
                'iterations': args.iterations, 'full_v2_requested': args.full_v2,
                'compile_only': args.compile_only, 'variants': args.variants, 'event_trace': args.event_trace,
+               'interfaces_only': args.interfaces_only,
                'backend': args.backend, 'simulation_state_model': 'four-state' if args.backend == 'icarus' else 'two-state; bounded cross-check with Icarus required',
-               'balanced_variant_cycle_comparison': len(args.variants) == 2, 'profiles': {}, 'cancellation': {},
+               'balanced_variant_cycle_comparison': False, 'paired_cycle_comparisons': {},
+               'profiles': {}, 'cancellation': {}, 'matching_errors': {}, 'capacity_checks': {},
                'input_hex': message.hex(), 'power_watts': None, 'device_frequency_hz': None,
                'physical_area': None, 'whole_machine_efficiency_accepted': False}
     compat = None
@@ -186,10 +240,13 @@ def main():
         inputs.update(str(path.relative_to(ROOT)) for path in (ROOT / 'rtl').rglob('*')
                       if path.is_file() and (path.suffix in ('.vh', '.vi') or path.name in ('LICENSE', 'manifest.json', 'UPSTREAM.json')))
         inputs.update(['rtl/execute/tests/program_native_helpers.hpp', 'vendor/randomx.sha256.json', 'vendor/randomx.lock.json'])
-        inputs.add('tests/test_lifecycle_ledger.py')
+        inputs.update(str(path.relative_to(ROOT)) for path in (ROOT / 'tests').glob('test_lifecycle_*.py'))
         hashes = {name: sha(ROOT / name) for name in sorted(inputs)}
         save(out / 'inputs.json', hashes)
-        run('ledger-unit-tests', ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_lifecycle_ledger.py', '-v'])
+        test_tmp = out / 'test-tmp'
+        test_tmp.mkdir()
+        run('lifecycle-unit-tests', ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_lifecycle_*.py', '-v'],
+            env=dict(os.environ, TMPDIR=str(test_tmp)))
         run('vendor', ['python3', '-B', 'scripts/verify_vendor.py'])
         for tool, flag in [('g++', '--version'), ('iverilog', '-V'), ('vvp', '-V')]:
             executable = Path(shutil.which(tool)).resolve()
@@ -248,15 +305,21 @@ def main():
         corpus = prepare_assertions(gold)
         summary['native_reference'] = corpus
         summary['canonical_reference'] = json.loads((gold / 'full-reference.json').read_text())
+        native_counts = json.loads((gold / 'oracle-summary.json').read_text())
         assert summary['canonical_reference']['canonical_randomx_calculate_hash_verified'] == (args.programs == 8 and args.iterations == 2048)
         includes = ['-Irtl/execute', '-I' + V, '-I' + V + '8086-SSE', '-Irtl/hash/vendor/blake2', '-I' + str(gold)]
 
-        def profile(prepared, stalled, cancellation=0):
+        def profile(prepared, stalled, cancellation=0, error_port=0, capacity=0):
             name = ('prepared' if prepared else 'baseline') + ('-stalled' if stalled else '-ideal')
             if cancellation:
                 name += '-cancel-' + str(cancellation)
+            if error_port:
+                name += '-error-' + str(error_port)
+            if capacity:
+                name += '-capacity'
             parameters = {'PROGRAMS': args.programs, 'ITERATIONS': args.iterations, 'PREPARED_RCP': prepared,
-                          'EVENT_TRACE': int(args.event_trace), 'STALL': stalled, 'CANCEL_PHASE': cancellation}
+                          'EVENT_TRACE': int(args.event_trace), 'STALL': stalled, 'CANCEL_PHASE': cancellation,
+                          'ERROR_PORT': error_port, 'CAPACITY_TEST': capacity}
             if args.backend == 'icarus':
                 binary = out / (name + '.vvp')
                 run('compile-' + name, ['iverilog', '-g2012', '-Wall', *includes, '-s', 'tb_prepared_hash_lifecycle',
@@ -268,6 +331,7 @@ def main():
                 cppflags = '-std=c++20 -O2 ' + ' '.join('-I' + str(ROOT / path) for path in
                     ('vendor/randomx/src', 'rtl/execute/tests', 'rtl/hash/tests'))
                 run('compile-' + name, [str(toolroot / 'bin/verilator'), '--binary', '--timing', '-j', '6', '-Wno-fatal',
+                    '-MAKEFLAGS', 'OPT_FAST=-O3',
                     '--top-module', 'tb_prepared_hash_lifecycle', '--Mdir', str(directory), '-o', 'sim',
                     *includes, *['-G' + key + '=' + str(value) for key, value in parameters.items()],
                     '-CFLAGS', cppflags, '-LDFLAGS', str(library) + ' -pthread -ldl',
@@ -282,46 +346,55 @@ def main():
                        '+input_bytes=' + str(len(message))], env=backend_env)
             records = [line for line in (out / (name + '.log')).read_text().splitlines() if line.startswith('PASS ')]
             assert len(records) == 1
-            if cancellation:
+            if capacity:
+                assert records[0].startswith('PASS lifecycle_capacity programs=' + str(args.programs) + ' ')
+                summary['capacity_checks'][name] = records[0]
+            elif error_port:
+                assert records[0].startswith('PASS lifecycle_matching_error port=' + str(error_port) + ' ')
+                summary['matching_errors'][name] = records[0]
+            elif cancellation:
                 assert records[0].startswith('PASS lifecycle_cancel phase=' + str(cancellation) + ' ')
                 summary['cancellation'][name] = records[0]
             else:
                 assert records[0].startswith('PASS prepared_hash_lifecycle ')
                 ledger = json.loads((directory / 'ledger.json').read_text())
                 provider = json.loads((directory / 'provider-host-time.json').read_text())
-                validate_ledger(ledger, provider, args.iterations, args.programs)
-                if prepared:
-                    assert ledger['runtime_reciprocals'] == 0
-                else:
-                    assert ledger['preparation_reciprocals'] == 0
+                validate_ledger(ledger, provider, args.iterations, args.programs, native_counts, prepared)
                 summary['profiles'][name] = {'record': records[0], 'ledger': ledger, 'host_provider': provider,
                                              'trace_sha256': sha(directory / 'trace.csv')}
 
-        for stalled in [int(name == 'stalled') for name in args.profiles]:
-            for prepared in [int(name == 'prepared') for name in args.variants]:
-                profile(prepared, stalled)
+        if not args.interfaces_only:
+            for stalled in [int(name == 'stalled') for name in args.profiles]:
+                for prepared in [int(name == 'prepared') for name in args.variants]:
+                    profile(prepared, stalled)
         if args.cancellation and not args.compile_only:
             for phase in range(1, 7):
                 profile(1, 1, phase)
+        if args.matching_errors and not args.compile_only:
+            for error_port in range(1, 9):
+                profile(1, 1, error_port=error_port)
+        if args.capacity_checks and not args.compile_only:
+            profile(1, 0, capacity=1)
         for mode in args.profiles:
-            if args.compile_only or len(args.variants) != 2:
+            if args.compile_only or args.interfaces_only or len(args.variants) != 2:
                 continue
             baseline = summary['profiles']['baseline-' + mode]['ledger']
             prepared = summary['profiles']['prepared-' + mode]['ledger']
-            assert all(baseline[name] == prepared[name] for name in
-                       ['scratchpad_bytes', 'physical_port_read_bytes', 'physical_port_write_bus_bytes',
-                        'strobed_write_bytes', 'dataset_logical_bytes', 'logical_bytecode_memory_bytes',
-                        'logical_entry_bytes', 'logical_tail_bytes', 'program_image_load_bytes'])
+            summary['paired_cycle_comparisons'][mode] = compare_variants(baseline, prepared, native_counts)
+        summary['balanced_variant_cycle_comparison'] = bool(summary['paired_cycle_comparisons'])
         assert all(sha(ROOT / name) == value for name, value in hashes.items()), 'source changed during execution'
         assert sha(library) == summary['native_library']['sha256']
-        summary['status'] = 'compile_only' if args.compile_only else 'pass_connected_native_reference'
+        summary['status'] = ('compile_only' if args.compile_only else
+                             'pass_lifecycle_interfaces' if args.interfaces_only else 'pass_connected_native_reference')
         summary['source_unchanged_after_run'] = True
         summary['boundary'] = ('Software input BLAKE2b, scratchpad AES fill, AES program generation and pinned native light dataset provider; '
                                f'hardware scratchpad transport, immutable preparation, execution, {args.programs - 1} interprogram hashes, finalizer/digest. '
                                'Provider host seconds are separate. No complete ASIC, physical DRAM timing, MHz or watts claim.')
         save(out / 'summary.json', summary)
         print(json.dumps({'status': summary['status'], 'profiles': len(summary['profiles']),
-                          'cancellation': len(summary['cancellation']), 'full_v2': args.full_v2}), flush=True)
+                          'cancellation': len(summary['cancellation']), 'matching_errors': len(summary['matching_errors']),
+                          'capacity_checks': len(summary['capacity_checks']),
+                          'full_v2': args.full_v2}), flush=True)
     except Exception as error:
         save(out / 'failure.json', {'type': type(error).__name__, 'error': str(error),
                                     'completed_profiles': list(summary['profiles']), 'unfinished_not_passed': True})

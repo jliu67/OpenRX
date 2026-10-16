@@ -1,0 +1,1 @@
+PASS native_lifecycle_reference programs=8 iterations_per_program=2 v2=1 total_iterations=16 instruction_steps=6167 bytecode_events=1334

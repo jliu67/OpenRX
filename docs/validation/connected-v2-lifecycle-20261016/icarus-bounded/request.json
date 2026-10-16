@@ -1,0 +1,27 @@
+{
+  "request_key": "task71-connected-v2-attempt02-20261016",
+  "source": "/tmp/openrx-connected-v2-attempt02-irblncah/source",
+  "payload": [
+    "/usr/bin/python3",
+    "-B",
+    "/tmp/openrx-connected-v2-attempt02-irblncah/source/scripts/test_prepared_hash_lifecycle.py",
+    "--output",
+    "{execution_dir}/output",
+    "--native-library",
+    "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+    "--native-build-execution",
+    "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71",
+    "--programs",
+    "1",
+    "--iterations",
+    "1",
+    "--profiles",
+    "ideal",
+    "--timeout",
+    "1800"
+  ],
+  "memory_bytes": 6442450944,
+  "source_manifest_sha256": "2333337038fa5fb5ceee0f0be9afe2d74c2c4b2f07bb2d3e3e212ffb8144bb44",
+  "preservation": "Keep every prior source, execution, failure and receipt; no in-place repair/resume.",
+  "model": "Actual pinned native light dataset item provider; software input/AES fill/program generation host time separate. Hardware transport/preparation/execution/seed/finalizer. No physical timing/power claim."
+}

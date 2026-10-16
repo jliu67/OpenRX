@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-16T01:36:31.574895+00:00",
+  "cgroup": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261016T010320Z-b2c8ed47ab4c.service",
+  "actual_kernel_files": {
+    "cpu.max": "600000 100000",
+    "cpu.stat": "usage_usec 2032501447\nuser_usec 2026835749\nsystem_usec 5665698\ncore_sched.force_idle_usec 0\nnr_periods 19883\nnr_throttled 1\nthrottled_usec 369\nnr_bursts 0\nburst_usec 0",
+    "memory.max": "6442450944",
+    "memory.current": "1046491136",
+    "memory.peak": "1549221888",
+    "memory.events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0",
+    "memory.swap.max": "2147483648",
+    "memory.swap.current": "0",
+    "memory.swap.peak": "0",
+    "pids.max": "256",
+    "pids.current": "8"
+  }
+}

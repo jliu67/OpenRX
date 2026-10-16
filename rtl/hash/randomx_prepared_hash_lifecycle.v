@@ -119,6 +119,7 @@ module randomx_prepared_hash_lifecycle #(
  reg [50:0] expected_sp_q;reg [31:0] expected_ds_q;
  reg [2:0] expected_meta_program_q;
  wire [3:0] chain_phase;
+ wire chain_epoch_capacity_exhausted;
  wire  chain_start_valid;
  wire  chain_start_ready;
  wire [15:0] chain_start_tag;
@@ -202,7 +203,7 @@ module randomx_prepared_hash_lifecycle #(
  wire current_sp_error=sp_wait_q&&sp_rsp_tag==expected_sp_q;
  wire current_ds_error=ds_wait_q&&ds_rsp_tag==expected_ds_q;
  wire current_meta_error=meta_wait_q&&meta_rsp_program==expected_meta_program_q;
- assign generation_exhausted=generation_counter_q==16'hffff;
+ assign generation_exhausted=generation_counter_q==16'hffff||chain_epoch_capacity_exhausted;
  assign req_ready=active&&state_q==IDLE&&!generation_exhausted;
  assign init_req_valid=active&&state_q==INIT_REQUEST;
  assign init_req_tag=generation_q;assign init_req_input=input_q;assign init_req_input_bytes=input_bytes_q;
@@ -261,6 +262,7 @@ module randomx_prepared_hash_lifecycle #(
   .prep_commit_valid(prep_commit_valid),
   .prep_commit_epoch(prep_commit_epoch),
   .prep_commit_program(prep_commit_program),
+  .epoch_capacity_exhausted(chain_epoch_capacity_exhausted),
   .start_valid(chain_start_valid),
   .start_ready(chain_start_ready),
   .start_tag(chain_start_tag),
@@ -395,7 +397,7 @@ module randomx_prepared_hash_lifecycle #(
    case(state_q)
     IDLE:if(req_valid&&req_ready)begin
      generation_q<=generation_counter_q+16'd1;user_tag_q<=req_tag;input_q<=req_input;input_bytes_q<=req_input_bytes;
-     init_beats_q<=0;seed_q<=0;digest_q<=0;error_code_q<=0;
+     init_beats_q<=0;seed_q<=0;digest_q<=0;error_program_q<=0;error_code_q<=req_input_bytes>80?2'd1:2'd0;error_pc_q<=0;error_opcode_q<=0;
      state_q<=req_input_bytes>80?ERROR:INIT_REQUEST;
     end
     INIT_REQUEST:if(init_req_ready)state_q<=INIT_STREAM;

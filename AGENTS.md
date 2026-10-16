@@ -1,5 +1,21 @@
 # Agent instructions
 
+## Connected default v2 hash — task #71, 2026-10-16
+
+[Task #71](https://github.com/jliu67/OpenRX/issues/71) / [draft PR #73](https://github.com/jliu67/OpenRX/pull/73)
+now proves one default 8×2,048 native-reference-correct connected v2 RTL hash
+from exact public source `c96e96ab`; all 16,384 iteration states, seven hardware
+seeds, each 2 MiB program boundary and final digest pass. [EXP-014](experiments/EXP-014-connected-v2-lifecycle.md)
+and [design](rtl/hash/LIFECYCLE.md) retain software-provider boundaries and exact
+source/receipt evidence. The separately validated recovery/observer successor passes four 8×2 hash modes,
+six cancellations, eight matching errors, capacity/reset checks and 31 unit checks;
+its exact source differs from the first full run as declared in the evidence.
+New independent final-head review is required before acceptance or merge.
+Prioritize correctness before feasibility; do not commit an engine count, issue
+width, scratchpad organization, process or memory technology without evidence.
+All protected originals/assets, one-slot admission and existing scientific gates
+remain. Earlier dated snapshots below are historical.
+
 ## Current finalization feature — task #67, 2026-10-13
 
 Task [#67](https://github.com/jliu67/OpenRX/issues/67) adds a shared-round scan of

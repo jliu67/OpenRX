@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 `timescale 1ns/1ps
-module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0,EVENT_TRACE=0);
+module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0,ERROR_PORT=0,CAPACITY_TEST=0,EVENT_TRACE=0);
 `ifdef VERILATOR
  import "DPI-C" function void rx_life_initial(input bit[639:0] value,input int length,input string filename,output bit[511:0] result);
  import "DPI-C" function void rx_generate(input bit[511:0] value,input string filename,output bit[1023:0] entropy);
@@ -313,15 +313,45 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  wire [255:0] now_ds={ds_req_tag,ds_req_addr,ds_prefetch_addr};
  wire [4095:0] now_program={program_done_tag,program_done_index,program_done_iterations,program_done_round_mode,
   program_done_r,program_done_f,program_done_e,program_done_a,program_done_seed_valid,program_done_seed};
- wire [4095:0] now_done={done_tag,done_round_mode,done_r,done_f,done_e,done_a,done_mx,done_ma,done_spaddr0,done_spaddr1};
+ wire [4095:0] now_done={done_tag,done_round_mode,done_r,done_f,done_e,done_a,done_mx,done_ma,done_spaddr0,done_spaddr1,rsp_digest,rsp_error,error_program,error_code,error_pc,error_opcode};
+ wire [4095:0] now_response={rsp_tag,rsp_round_mode,rsp_r,rsp_f,rsp_e,rsp_a,rsp_digest,rsp_error,error_tag,error_program,error_code,error_pc,error_opcode};
  integer initializing=0,initial_index=0,init_writes=0,final_reads=0,admissions=0,loaded_words=0;
  integer ledger[0:9],iteration_detail[0:11],final_detail[0:5],exec_detail[0:17];
  integer trace_file,ledger_file,stage_sum=0,phase_index=0,final_phase_index=0,byte_index=0;
- integer last_trace_phase=-1;
+ integer last_trace_phase=-1,last_trace_iteration=-1,last_trace_execute=-1;
  integer logical_sp_bytes=0,physical_read_bytes=0,physical_write_bus_bytes=0,useful_write_bytes=0;
  integer final_wait=0,held_response=0;reg [15:0] init_generation=0;reg [639:0] input_value=0;integer input_bytes=0;
  reg [511:0] expected_seed,native_expected_seed;reg [15:0] last_epoch=0;reg [24:0] current_load=0;
  integer seed_hashes=0;
+ integer matching_fault_accepted=0;
+ task check_capacity;begin
+  req_valid=0;
+  force dut.chain.iteration_chain.epoch_counter_q=65535-PROGRAMS;#1;
+  if(generation_exhausted||!req_ready)$fatal(1,"exact remaining batch capacity was rejected");
+  force dut.chain.iteration_chain.epoch_counter_q=65536-PROGRAMS;#1;
+  if(!generation_exhausted||req_ready)$fatal(1,"insufficient batch capacity was accepted");
+  req_valid=1;
+  repeat(3)begin @(posedge clk);#1;
+   if(init_req_valid||sp_wr_valid||meta_req_valid||dut.chain_start_valid)$fatal(1,"exhausted batch emitted work");
+   @(negedge clk);
+  end
+  req_valid=0;release dut.chain.iteration_chain.epoch_counter_q;
+  // No transports were admitted; a hard reset can now restart the namespaces.
+  rst=1;@(posedge clk);#1;@(negedge clk);rst=0;#1;
+  if(generation_exhausted||!req_ready)$fatal(1,"drained reset did not clear capacity exhaustion");
+  force dut.generation_counter_q=16'hffff;#1;
+  if(!generation_exhausted||req_ready)$fatal(1,"hash generation wrap was accepted");
+  req_valid=1;
+  repeat(3)begin @(posedge clk);#1;if(init_req_valid||sp_wr_valid||meta_req_valid)$fatal(1,"exhausted hash emitted work");@(negedge clk);end
+  req_valid=0;release dut.generation_counter_q;
+  rst=1;@(posedge clk);#1;@(negedge clk);rst=0;#1;
+  if(generation_exhausted||!req_ready)$fatal(1,"drained reset did not clear hash exhaustion");
+  req_valid=1;req_tag=16'h9001;req_input=input_value;req_input_bytes=input_bytes;
+  @(posedge clk);#1;@(negedge clk);req_valid=0;
+  if(!init_req_valid||init_req_tag!==16'd1)$fatal(1,"reset did not restart fresh initialization");
+  $display("PASS lifecycle_capacity programs=%0d exact_capacity_allowed=1 insufficient_batch_refused=1 hash_wrap_refused=1 drained_reset_recovery=1",PROGRAMS);
+  $finish;
+ end endtask
  wire prep_rcp_fire;
  generate if(PREPARED_RCP)begin: observed_prepared
   assign prep_rcp_fire=dut.chain.iteration_chain.iteration.cache.prepared.reciprocal.req_valid&&dut.chain.iteration_chain.iteration.cache.prepared.reciprocal.req_ready;
@@ -352,6 +382,45 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   $display("PASS lifecycle_cancel phase=%0d completed_iterations=%0d accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",CANCEL_PHASE,global_iteration);
   $finish;
  end endtask
+ task matching_error_and_restart;begin
+  if(!ERROR_PORT||!rsp_valid||!rsp_error||rsp_tag!==16'h4000||error_tag!==16'h4000||error_code==0||rsp_digest!==0||req_ready)
+   $fatal(1,"matching provider error was not returned");
+  if(matching_fault_accepted!=1||error_code!==((ERROR_PORT==1||ERROR_PORT==7||ERROR_PORT==8)?2'd1:2'd3))
+   $fatal(1,"selected matching fault was not accepted or returned the wrong error code");
+  if((ERROR_PORT==1||ERROR_PORT==8)&&init_writes!=3)$fatal(1,"initializer fault coverage");
+  if(ERROR_PORT==7&&(init_writes||loaded_words||admissions))$fatal(1,"invalid input emitted work");
+  if(ERROR_PORT==5&&(!dataset_taken||global_iteration!=0||final_reads))$fatal(1,"dataset fault stage coverage");
+  if(ERROR_PORT==6&&(programs_finished!=PROGRAMS||global_iteration!=TOTAL_ITERATIONS||final_reads==0))$fatal(1,"finalizer fault stage coverage");
+  for(i=0;i<131072;i=i+1)cancel_ram[i]=ram[i];
+  saved_done=now_response;
+  repeat(3)begin
+   @(negedge clk);rsp_ready=0;
+   @(posedge clk);#1;
+   if(!rsp_valid||!error_valid||now_response!==saved_done||init_req_valid||sp_wr_valid||sp_rd_valid||ds_req_valid||prog_valid||meta_req_valid||program_done_valid||iteration_commit_valid||commit_valid)
+    $fatal(1,"held matching error changed or issued work");
+  end
+  @(negedge clk);rsp_ready=1;@(posedge clk);#1;@(negedge clk);rsp_ready=0;
+  if(!req_ready||rsp_valid||error_valid)$fatal(1,"matching error did not retire");
+  // A retired failed generation cannot mutate SRAM or seed its successor.
+  init_wr_valid=1;init_wr_tag=batch_tag;init_wr_addr=0;init_wr_data=0;init_wr_strb=16'hffff;
+  init_rsp_valid=1;init_rsp_tag=batch_tag;init_rsp_seed=0;init_rsp_error=1;
+  meta_rsp_valid=1;meta_rsp_tag=batch_tag;meta_rsp_program=0;meta_rsp_error=1;
+  sp_rsp_valid=1;sp_rsp_tag=sp_tag;sp_rsp_error=1;
+  prog_rsp_valid=1;prog_rsp_tag=rom_tag;prog_rsp_error=1;
+  ds_rsp_valid=1;ds_rsp_tag=ds_tag;ds_rsp_error=1;
+  repeat(3)begin @(posedge clk);#1;
+   if(!req_ready||!init_wr_ready||!init_rsp_ready||!meta_rsp_ready||!sp_rsp_ready||!prog_rsp_ready||!ds_rsp_ready||init_req_valid||sp_wr_valid||sp_rd_valid||rsp_valid||error_valid||program_done_valid||commit_valid||iteration_commit_valid)
+    $fatal(1,"late failed generation was not drained");
+   @(negedge clk);
+  end
+  init_wr_valid=0;init_rsp_valid=0;meta_rsp_valid=0;sp_rsp_valid=0;prog_rsp_valid=0;ds_rsp_valid=0;
+  for(i=0;i<131072;i=i+1)if(ram[i]!==cancel_ram[i])$fatal(1,"matching error rolled back accepted writes");
+  req_valid=1;req_tag=16'h9001;req_input=input_value;req_input_bytes=input_bytes;
+  @(posedge clk);#1;@(negedge clk);req_valid=0;
+  if(!init_req_valid||init_req_tag!==batch_tag+1||meta_req_valid||sp_wr_valid)$fatal(1,"fresh generation after matching error");
+  $display("PASS lifecycle_matching_error port=%0d selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",ERROR_PORT);
+  $finish;
+ end endtask
  initial begin #2000000000;$fatal(1,"sequence simulation deadlock");end
  initial begin
   if(!$value$plusargs("directory=%s",directory)||!$value$plusargs("output=%s",output_directory)||
@@ -368,15 +437,22 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   $sformat(path,"%0s/events.mem",directory);$readmemh(path,events);
   $sformat(path,"%0s/initial.hex",directory);$readmemh(path,gold_ram);
   batch_tag=16'd1;inner_tag=batch_tag;
-  rst=1;@(posedge clk);#1;@(negedge clk);rst=0;req_valid=1;req_tag=16'h4000;req_input=input_value;req_input_bytes=input_bytes;#1;
-  if(!req_ready)$fatal(1,"hash not ready");@(posedge clk);#1;@(negedge clk);req_valid=0;
+  rst=1;@(posedge clk);#1;@(negedge clk);rst=0;
+  if(CAPACITY_TEST)check_capacity();
+  req_valid=1;req_tag=16'h4000;req_input=input_value;req_input_bytes=ERROR_PORT==7?7'd81:input_bytes;#1;
+  if(!req_ready)$fatal(1,"hash not ready");@(posedge clk);
+  if(ERROR_PORT==7&&req_valid&&req_ready&&req_input_bytes==81)matching_fault_accepted=1;
+  #1;@(negedge clk);req_valid=0;
   while(!accepted_done)begin
    // Only actual provider/DUT state drives these inputs; gold is assertion-only.
    req_tag=~req_tag;req_input=~req_input;req_input_bytes=~req_input_bytes;
    init_req_ready=!initializing;
    init_wr_valid=initializing&&initial_index<131072;init_wr_tag=init_generation;
    init_wr_addr=initial_index*16;init_wr_data=initial_ram[initial_index<131072?initial_index:0];init_wr_strb=16'hffff;
+   if(ERROR_PORT==8&&initializing&&initial_index>=3)init_wr_strb=16'h00ff;
    init_rsp_valid=initializing&&initial_index==131072;init_rsp_tag=init_generation;init_rsp_seed=seed;
+   init_rsp_error=ERROR_PORT==1;
+   if(ERROR_PORT==1&&initializing&&initial_index>=3)begin init_wr_valid=0;init_rsp_valid=1;end
    meta_req_ready=!meta_pending&&(!STALL||meta_stalls>=2);
    if(meta_delay>0)meta_delay=meta_delay-1;
    meta_rsp_valid=meta_pending&&meta_delay==0;meta_rsp_tag=meta_tag;meta_rsp_program=meta_program;
@@ -385,6 +461,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     if(meta_injected==0)meta_rsp_tag=batch_tag-1;else meta_rsp_program=meta_program-1;
     meta_rsp_entropy=~native_entropy;meta_rsp_error=1;
    end
+   if(ERROR_PORT==2&&meta_rsp_valid&&meta_injected>=2)meta_rsp_error=1;
    sp_rd_ready=!sp_pending&&(!STALL||rd_stalls>=2);sp_wr_ready=!STALL||wr_stalls>=2;
    if(sp_delay>0)sp_delay=sp_delay-1;
    sp_rsp_valid=sp_pending&&sp_delay==0;sp_rsp_tag=sp_tag;sp_rsp_data=sp_data;sp_rsp_error=0;
@@ -392,6 +469,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     sp_rsp_tag=sp_injected==0?sp_tag^(51'b1<<35):sp_tag^51'b1;
     sp_rsp_data=~sp_data;sp_rsp_error=1;
    end
+   if(sp_rsp_valid&&sp_injected>=2&&((ERROR_PORT==4&&sp_tag[34:33]==1)||(ERROR_PORT==6&&sp_tag[34:33]==2)))sp_rsp_error=1;
    prog_ready=!rom_pending&&(!STALL||rom_stalls>=2);
    if(rom_delay>0)rom_delay=rom_delay-1;
    prog_rsp_valid=rom_pending&&rom_delay==0;prog_rsp_tag=rom_tag;prog_rsp_instruction=rom_data;prog_rsp_error=0;
@@ -399,6 +477,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     prog_rsp_tag=rom_injected==0?rom_tag^(41'b1<<25):rom_tag^(41'b1<<9);
     prog_rsp_instruction=~rom_data;prog_rsp_error=1;
    end
+   if(ERROR_PORT==3&&prog_rsp_valid&&rom_injected>=2)prog_rsp_error=1;
    ds_req_ready=!ds_pending&&(!STALL||ds_stalls>=2);
    if(ds_delay>0)ds_delay=ds_delay-1;
    ds_rsp_valid=ds_pending&&ds_delay==0;ds_rsp_tag=ds_tag;ds_rsp_data=ds_data;ds_rsp_error=0;
@@ -406,8 +485,17 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     ds_rsp_tag=ds_injected==0?ds_tag^(32'b1<<16):ds_tag^32'b1;
     ds_rsp_data=~ds_data;ds_rsp_error=1;
    end
-   program_done_ready=!(CANCEL_PHASE==4)&&(!STALL||program_hold>=3);rsp_ready=!(CANCEL_PHASE==6)&&(!STALL||done_hold>=3);
+   if(ERROR_PORT==5&&ds_rsp_valid&&ds_injected>=2)ds_rsp_error=1;
+   program_done_ready=!(CANCEL_PHASE==4)&&(!STALL||program_hold>=3);rsp_ready=!ERROR_PORT&&!(CANCEL_PHASE==6)&&(!STALL||done_hold>=3);
    @(posedge clk);
+   if((ERROR_PORT==1&&phase==1&&init_rsp_valid&&init_rsp_ready&&init_rsp_tag==batch_tag&&init_rsp_error)||
+      (ERROR_PORT==2&&meta_pending&&meta_rsp_valid&&meta_rsp_ready&&meta_rsp_tag==meta_tag&&meta_rsp_program==meta_program&&meta_rsp_error)||
+      (ERROR_PORT==3&&rom_pending&&prog_rsp_valid&&prog_rsp_ready&&prog_rsp_tag==rom_tag&&prog_rsp_error)||
+      (ERROR_PORT==4&&sp_pending&&sp_rsp_valid&&sp_rsp_ready&&sp_rsp_tag==sp_tag&&sp_tag[34:33]==1&&sp_rsp_error)||
+      (ERROR_PORT==5&&ds_pending&&ds_rsp_valid&&ds_rsp_ready&&ds_rsp_tag==ds_tag&&ds_rsp_error)||
+      (ERROR_PORT==6&&sp_pending&&sp_rsp_valid&&sp_rsp_ready&&sp_rsp_tag==sp_tag&&sp_tag[34:33]==2&&sp_rsp_error)||
+      (ERROR_PORT==8&&phase==1&&init_wr_valid&&init_wr_ready&&init_wr_tag==batch_tag&&init_wr_strb!=16'hffff))
+    matching_fault_accepted=matching_fault_accepted+1;
    if(phase<1||phase>9||(^phase)===1'bx)$fatal(1,"invalid outer ledger phase");
    ledger[phase]=ledger[phase]+1;
    if(sp_rd_valid&&!sp_rd_ready)stall_sp_requests=stall_sp_requests+1;
@@ -428,9 +516,10 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    if(phase==6)begin final_phase_index=dut.finalizer.state_q;if(final_phase_index>5)$fatal(1,"finalizer phase");final_detail[final_phase_index]=final_detail[final_phase_index]+1;end
    if(prep_rcp_fire)preparation_reciprocals=preparation_reciprocals+1;
    if(dut.chain.iteration_chain.iteration.iteration.execute.reciprocal.req_valid&&dut.chain.iteration_chain.iteration.iteration.execute.reciprocal.req_ready)runtime_reciprocals=runtime_reciprocals+1;
-   if(!EVENT_TRACE||phase!=last_trace_phase||commit_valid||sp_rd_valid&&sp_rd_ready||sp_wr_valid&&sp_wr_ready||ds_req_valid&&ds_req_ready||prep_commit_valid||program_done_valid||rsp_valid)
+   if(!EVENT_TRACE||phase!=last_trace_phase||iteration_phase!=last_trace_iteration||execute_phase!=last_trace_execute||commit_valid||sp_rd_valid&&sp_rd_ready||sp_wr_valid&&sp_wr_ready||ds_req_valid&&ds_req_ready||prep_commit_valid||program_done_valid||rsp_valid)
     $fdisplay(trace_file,"%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0h,%0d,%0h,%0h,%0d,%0h",cycle,phase,iteration_phase,execute_phase,commit_valid,commit_pc,sp_rd_valid&&sp_rd_ready,sp_rd_addr,sp_wr_valid&&sp_wr_ready,sp_wr_addr,sp_wr_strb,ds_req_valid&&ds_req_ready,ds_req_addr);
    last_trace_phase=phase;
+   last_trace_iteration=iteration_phase;last_trace_execute=execute_phase;
    if(phase==4&&iteration_phase==7&&!kernel_started)begin kernel_started=1;route=64'hcbf29ce484222325;steps=0;end
    if(init_req_valid&&init_req_ready)begin
     init_generation=init_req_tag;initializing=1;initial_index=0;
@@ -444,7 +533,10 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     if(prep_commit_program!==active_program||prep_commit_epoch<=last_epoch)$fatal(1,"admission ownership/epoch");
     last_epoch=prep_commit_epoch;admissions=admissions+1;
    end
-   if(error_valid)$fatal(1,"sequence returned error program=%0d code=%0d pc=%0d opcode=%0d",error_program,error_code,error_pc,error_opcode);
+   if(error_valid)begin
+    if(ERROR_PORT)matching_error_and_restart();
+    else $fatal(1,"sequence returned error program=%0d code=%0d pc=%0d opcode=%0d",error_program,error_code,error_pc,error_opcode);
+   end
    if(held_read&&(!sp_rd_valid||now_read!==saved_read))$fatal(1,"held SRAM read changed");
    if(held_write&&(!sp_wr_valid||now_write!==saved_write))$fatal(1,"held SRAM write changed");
    if(held_rom&&(!prog_valid||now_rom!==saved_rom))$fatal(1,"held instruction request changed");
@@ -572,6 +664,8 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     if(meta_req_valid||prog_valid||sp_rd_valid||sp_wr_valid||ds_req_valid)$fatal(1,"completed batch emitted requests");
     if(final_reads!=131072||init_writes!=131072||admissions!=PROGRAMS||loaded_words!=PROGRAMS*384)$fatal(1,"complete ownership/admission accounting");
     for(i=0;i<131072;i=i+1)if(ram[i]!==gold_ram[i])$fatal(1,"finalizer modified memory");
+    $sformat(path,"%0s/actual-final-digest32.hex",output_directory);ledger_file=$fopen(path,"w");
+    if(!ledger_file)$fatal(1,"actual digest output open");$fdisplay(ledger_file,"%064h",rsp_digest);$fclose(ledger_file);
     accepted_done=1;final_native_completions=final_native_completions+1;
    end
    if((CANCEL_PHASE==1&&init_writes==3)||(CANCEL_PHASE==2&&loaded_words==3)||
@@ -586,11 +680,16 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   if(stage_sum!=ledger[4])$fatal(1,"nonclosing nested iteration ledger");
   stage_sum=0;for(i=0;i<6;i=i+1)stage_sum=stage_sum+final_detail[i];
   if(stage_sum!=ledger[6])$fatal(1,"nonclosing nested finalization ledger");
+  stage_sum=0;for(i=0;i<18;i=i+1)stage_sum=stage_sum+exec_detail[i];
+  if(stage_sum!=iteration_detail[7])$fatal(1,"nonclosing nested executor ledger");
+  if(STALL&&(meta_drops!=2*PROGRAMS||rom_drops!=2*loaded_words||sp_drops!=2*reads||ds_drops!=2*TOTAL_ITERATIONS))$fatal(1,"stale error injection coverage");
   $fclose(trace_file);$sformat(path,"%0s/provider-host-time.json",output_directory);`RX_STATS(path);
   $sformat(path,"%0s/ledger.json",output_directory);ledger_file=$fopen(path,"w");if(!ledger_file)$fatal(1,"ledger write");
   $fdisplay(ledger_file,"{\"cycles\":%0d,\"stage_cycles\":{\"initialization_transport\":%0d,\"control_and_metadata\":%0d,\"program_preparation\":%0d,\"execution\":%0d,\"interprogram_seed\":%0d,\"finalization\":%0d,\"held_return\":%0d},",cycle,ledger[1],ledger[2],ledger[3],ledger[4],ledger[5],ledger[6],ledger[8]);
   $fdisplay(ledger_file,"\"nested_iteration_phases\":[%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d],\"nested_finalization_phases\":[%0d,%0d,%0d,%0d,%0d,%0d],",iteration_detail[0],iteration_detail[1],iteration_detail[2],iteration_detail[3],iteration_detail[4],iteration_detail[5],iteration_detail[6],iteration_detail[7],iteration_detail[8],iteration_detail[9],iteration_detail[10],iteration_detail[11],final_detail[0],final_detail[1],final_detail[2],final_detail[3],final_detail[4],final_detail[5]);
   $fdisplay(ledger_file,"\"nested_stalls\":{\"sp_request\":%0d,\"sp_write\":%0d,\"dataset_request\":%0d,\"program_load\":%0d},\"preparation_reciprocals\":%0d,\"runtime_reciprocals\":%0d,",stall_sp_requests,stall_sp_writes,stall_dataset_requests,stall_program_loads,preparation_reciprocals,runtime_reciprocals);
+  $fdisplay(ledger_file,"\"nested_executor_phases\":[%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d],",exec_detail[0],exec_detail[1],exec_detail[2],exec_detail[3],exec_detail[4],exec_detail[5],exec_detail[6],exec_detail[7],exec_detail[8],exec_detail[9],exec_detail[10],exec_detail[11],exec_detail[12],exec_detail[13],exec_detail[14],exec_detail[15],exec_detail[16],exec_detail[17]);
+  $fdisplay(ledger_file,"\"nested_reply_waits\":{\"scratchpad\":%0d,\"dataset\":%0d,\"program\":%0d},\"stale_error_replies_dropped\":{\"metadata\":%0d,\"program\":%0d,\"scratchpad\":%0d,\"dataset\":%0d},",waiting_sp_replies,waiting_dataset_replies,waiting_program_replies,meta_drops,rom_drops,sp_drops,ds_drops);
   $fdisplay(ledger_file,"\"scratchpad_bytes\":2097152,\"physical_port_read_bytes\":%0d,\"physical_port_write_bus_bytes\":%0d,\"strobed_write_bytes\":%0d,\"dataset_logical_bytes\":%0d,\"logical_bytecode_memory_bytes\":%0d,\"logical_entry_bytes\":%0d,\"logical_tail_bytes\":%0d,\"initialization_and_finalization_bytes_each\":2097152,\"program_image_load_bytes\":%0d,\"native_dataset_internal_physical_bytes\":null,\"untimed_provider_device_cycles\":null}",physical_read_bytes,physical_write_bus_bytes,useful_write_bytes,TOTAL_ITERATIONS*64,TOTAL_EVENTS*8,TOTAL_ITERATIONS*128,TOTAL_ITERATIONS*128,loaded_words*8);
   $fclose(ledger_file);
   $display("PASS prepared_hash_lifecycle prepared=%0d programs=%0d iterations_per_program=%0d stall=%0d total_iterations=%0d actual_instructions=%0d bytecode_events=%0d admissions=%0d loaded_words=%0d hardware_seeds=%0d initial_writes=%0d final_reads=%0d cycles=%0d native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",PREPARED_RCP,PROGRAMS,ITERATIONS,STALL,global_iteration,total_instructions,event_index,admissions,loaded_words,seed_hashes,init_writes,final_reads,cycle);

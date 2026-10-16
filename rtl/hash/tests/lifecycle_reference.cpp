@@ -13,6 +13,7 @@ using sequence_fixture::hex;
 #include "pinned_program_float_helpers.inc"
 static std::ofstream events,iterations,metadata,finalregs;
 static uint64_t event_count=0,total_steps=0,total_branches=0,total_fp=0,total_cf=0;
+static uint64_t static_active_rcp=0,dynamic_active_rcp=0;
 static unsigned current_program=0,current_iteration=0;
 class Fixture final:public randomx_vm,public BytecodeMachine {
 public:
@@ -29,6 +30,10 @@ public:
  void prepare(uint8_t seed[64],bool v2,uint8_t* memory){
   vmFlags=v2?RANDOMX_FLAG_V2:RANDOMX_FLAG_DEFAULT;scratchpad=memory;
   sequence_fixture::generate(seed,program);
+  for(unsigned pc=0;pc<384;++pc){
+   const auto& op=program(pc);uint32_t divisor=op.getImm32();
+   if(op.opcode>=ceil_ISMULH_M&&op.opcode<ceil_IMUL_RCP&&divisor&&(divisor&(divisor-1)))++static_active_rcp;
+  }
 #include "pinned_program_initialize.inc"
  }
  void write_metadata(){
@@ -81,6 +86,8 @@ private:
   if(read)event(false,address,load64(scratchpad+address));
   BytecodeMachine::executeInstruction(ibc,pc,scratchpad,config,flags);
   unsigned raw=program(before).opcode;uint64_t word=(uint64_t(before)<<17)|(uint64_t(raw)<<9)|unsigned(pc+1);
+  uint32_t divisor=program(before).getImm32();
+  if(raw>=ceil_ISMULH_M&&raw<ceil_IMUL_RCP&&divisor&&(divisor&(divisor-1)))++dynamic_active_rcp;
   route=(route^word)*UINT64_C(0x100000001b3);++steps;++total_steps;
   if(ibc.type==InstructionType::CBRANCH)++total_branches;
   if(raw>=124&&raw<214)++total_fp;
@@ -121,6 +128,6 @@ int main(int argc,char**argv){
   <<",\"canonical_host_seconds\":"<<canonical_seconds<<",\"dataset\":\"pinned initDatasetItem native light mode\",\"cache_key\":\""<<lifecycle_native::cache_key
   <<"\",\"input_hex\":\""<<argv[5]<<"\",\"bounded_iteration_profile\":"<<(count!=2048?"true":"false")<<"}\n";
  events.close();iterations.close();metadata.close();finalregs.close();if(!events||!iterations||!metadata||!finalregs)throw std::runtime_error("trace write");
- std::ofstream summary(out+"/oracle-summary.json");summary<<"{\"programs\":"<<programs<<",\"iterations_per_program\":"<<count<<",\"total_iterations\":"<<programs*count<<",\"v2\":"<<unsigned(v2)<<",\"instruction_steps\":"<<total_steps<<",\"bytecode_events\":"<<event_count<<",\"branches\":"<<total_branches<<",\"fp\":"<<total_fp<<",\"cfround\":"<<total_cf<<",\"dataset\":\"pinned initDatasetItem actual native dataset, light mode\",\"native_default_programs\":8,\"native_default_iterations\":2048,\"initialization_program_generation_interprogram_BLAKE2b_final_hash\":\"software providers separately timed; hardware seed/finalizer connected by lifecycle\"}\n";
+ std::ofstream summary(out+"/oracle-summary.json");summary<<"{\"programs\":"<<programs<<",\"iterations_per_program\":"<<count<<",\"total_iterations\":"<<programs*count<<",\"v2\":"<<unsigned(v2)<<",\"instruction_steps\":"<<total_steps<<",\"bytecode_events\":"<<event_count<<",\"branches\":"<<total_branches<<",\"fp\":"<<total_fp<<",\"cfround\":"<<total_cf<<",\"static_active_reciprocals\":"<<static_active_rcp<<",\"dynamic_active_reciprocals\":"<<dynamic_active_rcp<<",\"dataset\":\"pinned initDatasetItem actual native dataset, light mode\",\"native_default_programs\":8,\"native_default_iterations\":2048,\"initialization_program_generation_interprogram_BLAKE2b_final_hash\":\"software providers separately timed; hardware seed/finalizer connected by lifecycle\"}\n";
  std::cout<<"PASS native_lifecycle_reference programs="<<programs<<" iterations_per_program="<<count<<" v2="<<v2<<" total_iterations="<<programs*count<<" instruction_steps="<<total_steps<<" bytecode_events="<<event_count<<"\n";
 }

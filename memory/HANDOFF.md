@@ -1,5 +1,32 @@
 # Handoff — actual designated local execution
 
+## 2026-10-16 — connected default v2 hash review handoff
+
+[Task #71](https://github.com/jliu67/OpenRX/issues/71) / [draft PR #73](https://github.com/jliu67/OpenRX/pull/73)
+now has a first default native-reference-correct v2 RTL hash at exact source
+`c96e96ab1eb46cb727b21befffa526e637ebed4a`. [EXP-014](../experiments/EXP-014-connected-v2-lifecycle.md)
+and [evidence](../docs/validation/connected-v2-lifecycle-20261016/README.md) bind
+16,384 iterations, full memory/seed/digest checks, 40,975,538 hardware/transport
+clocks and successful receipt verification. All 4,106 public-tree blob bytes,
+sizes and execute bits match the frozen full source. Software fill/generation and
+native light dataset callbacks remain explicit; no physical PPA or architecture
+is selected. The separately validated recovery/observer successor passes four 8×2 hash modes,
+six cancellations, eight matching errors, capacity/reset and 31 unit checks;
+a separate Icarus capacity-only check covers four-state behavior. Full 8×2,048
+belongs to c96 and was not rerun on the successor; consumed-source deltas are
+explicit. Next: check hosted final-head gates and independently review PR73's
+implementation, source bindings, ledgers and negative cases before acceptance. Preserve every original,
+failed attempt and immutable asset. No own merge, restored retired checkout,
+permanent editable mirror or Git synchronization is authorized.
+
+For reproduction, use the exact commands and retained library/tool identities in
+EXP-014/evidence with a fresh immutable-runner request and output. The full source
+checkpoint is c96; successor source hashes/deltas and both recovery receipts are
+published separately. Heavy work remains serialized. The temporary editable
+authoring workspace is retired read-only at this handoff; all frozen sources,
+complete outputs and failures remain retained. Task72 feasibility is released
+without an architecture/model result; correctness delivery took priority.
+
 ## 2026-10-15 — PR70 combined-source recovery closeout
 
 [Task #69](https://github.com/jliu67/OpenRX/issues/69) reconciles reviewed PR70

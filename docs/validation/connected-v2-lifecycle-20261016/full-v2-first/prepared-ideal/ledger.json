@@ -1,0 +1,4 @@
+{"cycles":40975538,"stage_cycles":{"initialization_transport":131074,"control_and_metadata":34,"program_preparation":12232,"execution":40438497,"interprogram_seed":414,"finalization":393286,"held_return":1},
+"nested_iteration_phases":[16384,65536,65536,65536,65536,0,16384,39946977,16384,16384,16384,147456],"nested_finalization_phases":[1,1,393225,1,57,1],
+"nested_stalls":{"sp_request":0,"sp_write":0,"dataset_request":0,"program_load":0},"preparation_reciprocals":92,"runtime_reciprocals":0,
+"scratchpad_bytes":2097152,"physical_port_read_bytes":20778432,"physical_port_write_bus_bytes":10567088,"strobed_write_bytes":7380696,"dataset_logical_bytes":1048576,"logical_bytecode_memory_bytes":11478456,"logical_entry_bytes":2097152,"logical_tail_bytes":2097152,"initialization_and_finalization_bytes_each":2097152,"program_image_load_bytes":24576,"native_dataset_internal_physical_bytes":null,"untimed_provider_device_cycles":null}

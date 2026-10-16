@@ -10,6 +10,7 @@ module randomx_prepared_program_sequence #(parameter integer PROGRAMS=8,ITERATIO
  output reg prep_commit_valid,
  output wire [15:0] prep_commit_epoch,
  output wire [2:0] prep_commit_program,
+ output wire epoch_capacity_exhausted,
  input wire  start_valid,
  output wire  start_ready,
  input wire [15:0] start_tag,
@@ -160,7 +161,10 @@ module randomx_prepared_program_sequence #(parameter integer PROGRAMS=8,ITERATIO
  wire image_valid,image_v2;wire [15:0] image_epoch;wire [63:0] image_program_addr;
  wire [1:0] iteration_error_reason;
  wire stale_meta=meta_rsp_tag!=meta_req_tag||meta_rsp_program!=meta_req_program;
- assign start_ready=!core_rst&&control_start_ready&&epoch_counter_q!=16'hffff;
+ // Reserve enough unique admission epochs for the entire batch before taking
+ // its start. Refuse an unfinishable batch rather than hanging after init.
+ assign epoch_capacity_exhausted=epoch_counter_q>(65535-PROGRAMS);
+ assign start_ready=!core_rst&&control_start_ready&&!epoch_capacity_exhausted;
  assign meta_rsp_ready=!core_rst&&(stale_meta||(pending_q&&meta_state_q==M_IDLE));
  assign error_valid=!core_rst&&(meta_state_q==M_FAULT||control_error_valid);
  assign error_tag=meta_state_q==M_FAULT?meta_tag_q:control_error_tag;
@@ -211,7 +215,7 @@ module randomx_prepared_program_sequence #(parameter integer PROGRAMS=8,ITERATIO
 `endif
   .clk(clk),
   .rst(core_rst),
-  .start_valid(start_valid&&epoch_counter_q!=16'hffff),
+  .start_valid(start_valid&&!epoch_capacity_exhausted),
   .start_ready(control_start_ready),
   .start_tag(start_tag),
   .start_v2(start_v2),

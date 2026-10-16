@@ -1,0 +1,22 @@
+{
+  "url": "https://github.com/jliu67/OpenRX/pull/73",
+  "commit": "c96e96ab1eb46cb727b21befffa526e637ebed4a",
+  "tree": "06aecaac35c3c5b3faa5edbfca739c6d9c8113c5",
+  "source": "/tmp/openrx-connected-v2-attempt05-fmxu0t7x/source",
+  "all_11_source_files_identical_to_bounded_attempt04": true,
+  "full_attempt05_pending": true,
+  "hashes": {
+    "rtl/execute/randomx_prepared_program_sequence.v": "1157221da392f3306fa99edd67b2e61d3d6818dcd06214fe3cc658fd5e6783fb",
+    "rtl/hash/randomx_prepared_program_hash_sequence.v": "2d59f3e0719ff281763a434f85c9c10e0faefe1914e656f129772fbc0337a866",
+    "rtl/hash/randomx_prepared_hash_lifecycle.v": "9b99025b7cd9811532a6b2012760767ad1ac5b1dda05468074cfa62af552e073",
+    "rtl/hash/tests/lifecycle_native.hpp": "ccb09303d08f2bee95d7a484e042ab064bdc55b4041ccc06b6457bb7e3b6d223",
+    "rtl/hash/tests/lifecycle_source_vpi.cpp": "38d2294d5e3cbef311f521b2e416c8550db786e5b35f7a147c12a368e3000872",
+    "rtl/hash/tests/lifecycle_reference.cpp": "384d05c0f5a714d75ae1c45a07d9822602cb737af6ee170e21ad6cc65327a4fc",
+    "rtl/hash/tests/tb_prepared_hash_lifecycle.v": "4b7570b3a59c3f7457736f0acb2aee92b982f086d8254748fc04d3f9a8778710",
+    "scripts/test_prepared_hash_lifecycle.py": "c46e15f67edf20d124824a2be8ef635279067d4d954f73c3996372c8c90c80c4",
+    "rtl/hash/tests/lifecycle_source_dpi.cpp": "334a39b4bf1fea10eaa631c2bd906485afccfe3edabd58095688d481882b131b",
+    "scripts/build_lifecycle_verilator.py": "d5b694add3bba9cae6f893a26b2c8c65b81f41fecb984db71d8ed82d161ba5a9",
+    "tests/test_lifecycle_ledger.py": "0191df277f492713f3d3aa197a73045d230163be59952b3023c76cf5c5459142"
+  },
+  "failed_origin_fetch_preserved": "exit128; temporary Git repository has no origin; explicit public URL fetch succeeded without configuring remotes/settings"
+}

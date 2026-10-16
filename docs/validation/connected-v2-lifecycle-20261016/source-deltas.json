@@ -1,0 +1,44 @@
+{
+  "changed_consumed_inputs": {
+    "rtl/execute/randomx_prepared_program_sequence.v": {
+      "full_c96_sha256": "1157221da392f3306fa99edd67b2e61d3d6818dcd06214fe3cc658fd5e6783fb",
+      "recovery_sha256": "9d40cf6f59b961a91f1bcd9f670bfe807687d1d92b1f5f79b45f9d428f9d0b7e"
+    },
+    "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+      "full_c96_sha256": "9b99025b7cd9811532a6b2012760767ad1ac5b1dda05468074cfa62af552e073",
+      "recovery_sha256": "af3466488fa15168006efd1081c7392ca93943f4659af393dbf2878e1c33825e"
+    },
+    "rtl/hash/randomx_prepared_program_hash_sequence.v": {
+      "full_c96_sha256": "2d59f3e0719ff281763a434f85c9c10e0faefe1914e656f129772fbc0337a866",
+      "recovery_sha256": "f9c72ab988650eaac75ea7bfce7b155b885f57bf65b14e70f907e4e5d97a66b7"
+    },
+    "rtl/hash/tests/lifecycle_reference.cpp": {
+      "full_c96_sha256": "384d05c0f5a714d75ae1c45a07d9822602cb737af6ee170e21ad6cc65327a4fc",
+      "recovery_sha256": "137f03c76e4022209fc482b486d5784a95e743824d5986cc25089dc7a388212b"
+    },
+    "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+      "full_c96_sha256": "4b7570b3a59c3f7457736f0acb2aee92b982f086d8254748fc04d3f9a8778710",
+      "recovery_sha256": "da2069e033072e089b0a8c371bff4a468950f55313f0f9a478f5808ba4b1feaa"
+    },
+    "scripts/test_prepared_hash_lifecycle.py": {
+      "full_c96_sha256": "c46e15f67edf20d124824a2be8ef635279067d4d954f73c3996372c8c90c80c4",
+      "recovery_sha256": "fea4b9e8b3f969eeb3cd941105c217d4059e8249d6028919b63cc5af4a209f9a"
+    },
+    "tests/test_lifecycle_ledger.py": {
+      "full_c96_sha256": "0191df277f492713f3d3aa197a73045d230163be59952b3023c76cf5c5459142",
+      "recovery_sha256": "84cae8f38a5fca77eb08a8d7bbdbc4cd213cd89ca986aca86e6adbaf8da6efc5"
+    },
+    "tests/test_lifecycle_staging.py": {
+      "full_c96_sha256": null,
+      "recovery_sha256": "585f24772ac4bbd3d9b17ea3e0a1d83ba6b586bac47150c659ed2bb831959cce"
+    }
+  },
+  "four_state_capacity_execution": "20261016T020318Z-caa9e8d3a25c",
+  "full_default_execution": "20261016T010320Z-b2c8ed47ab4c",
+  "full_default_public_commit": "c96e96ab1eb46cb727b21befffa526e637ebed4a",
+  "full_default_rerun_on_successor": false,
+  "publication_all_consumed_inputs_identical": true,
+  "rationale": "Successor changes batch-capacity admission, error diagnostics, assertion harness, native reciprocal counts and ledger validation. Accepted math/iteration/native dataset implementations remain byte-identical. Default full correctness belongs to c96; successor has four 8x2 native hash modes plus cancellation/error/capacity tests. Documentation/evidence additions do not enter compilation.",
+  "recovery_and_four_state_all_consumed_inputs_identical": true,
+  "recovery_execution": "20261016T014629Z-8c43e1ea115d"
+}

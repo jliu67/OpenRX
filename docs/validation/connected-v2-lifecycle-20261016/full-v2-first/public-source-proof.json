@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-16T01:25:21.178286+00:00",
+  "commit": "c96e96ab1eb46cb727b21befffa526e637ebed4a",
+  "tree": "06aecaac35c3c5b3faa5edbfca739c6d9c8113c5",
+  "execution": "20261016T010320Z-b2c8ed47ab4c",
+  "source": "/tmp/openrx-connected-v2-attempt05-fmxu0t7x/source",
+  "files_verified": 4106,
+  "all_git_blob_bytes_sizes_and_execute_bits_match_frozen_manifest": true,
+  "source_manifest_sha256": "d322bd2399d8b935fd02a09c5f5e90edc9ca4588e8aec397d807d8d9795c6f2b",
+  "method": "Read exact git ls-tree and cat-file --batch objects; independently compare SHA256, size and execute bits against every frozen-source manifest row. No working-tree content, archive attribute substitution, or source mutation."
+}

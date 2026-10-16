@@ -1,5 +1,19 @@
 # OpenRX
 
+## Connected default v2 hash — task #71, 2026-10-16
+
+[Draft PR #73](https://github.com/jliu67/OpenRX/pull/73) at source `c96e96ab`
+passes one native-reference-correct 8×2,048 v2 RTL hash using actual native
+light-mode dataset values: 16,384 iterations, seven hardware seeds, every 2 MiB
+program boundary and final 32-byte digest. [EXP-014](experiments/EXP-014-connected-v2-lifecycle.md)
+binds the exact 40,975,538-clock hardware/transport ledger and verified receipt.
+Software initialization/program generation and untimed native dataset service
+remain explicit; architecture and physical PPA are unselected. The separately validated recovery/observer successor passes four 8×2 native hash
+modes, six cancellations, eight matching errors, capacity/reset checks and 31 unit
+checks. [Evidence](docs/validation/connected-v2-lifecycle-20261016/README.md) separates
+its source from the first full run. Independent final-head review is required;
+PR73 remains draft. Dated sections below retain their original context.
+
 ## Current finalization feature — task #67, 2026-10-13
 
 Task [#67](https://github.com/jliu67/OpenRX/issues/67) adds a shared-round scan of

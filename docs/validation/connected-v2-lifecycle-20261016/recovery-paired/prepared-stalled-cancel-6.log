@@ -1,0 +1,2 @@
+PASS lifecycle_cancel phase=6 completed_iterations=16 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1
+- rtl/hash/tests/tb_prepared_hash_lifecycle.v:383: Verilog $finish

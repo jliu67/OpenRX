@@ -19,6 +19,8 @@ class LedgerTest(unittest.TestCase):
             'interprogram_seed': 10, 'finalization': 28, 'held_return': 0},
             'nested_iteration_phases': [30] + [0] * 11,
             'nested_finalization_phases': [28] + [0] * 5,
+            'nested_executor_phases': [0] * 18,
+            'preparation_reciprocals': 0, 'runtime_reciprocals': 0,
             'scratchpad_bytes': 2097152, 'dataset_logical_bytes': 64,
             'program_image_load_bytes': 3072, 'untimed_provider_device_cycles': None,
             'physical_port_read_bytes': 2097280, 'physical_port_write_bus_bytes': 2097280,
@@ -27,9 +29,10 @@ class LedgerTest(unittest.TestCase):
         self.provider = {'provider_device_cycles': None, 'dataset_requests': 1,
             'program_generations': 1, 'cache_bytes': 268435456,
             'logical_dataset_bytes': 2181038016, 'materialized_dataset_bytes': 0}
+        self.native = {'static_active_reciprocals': 0, 'dynamic_active_reciprocals': 0, 'bytecode_events': 2}
 
     def check(self):
-        driver.validate_ledger(self.ledger, self.provider, 1, 1)
+        driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1)
 
     def test_closing_partition(self):
         self.check()
@@ -81,6 +84,81 @@ class LedgerTest(unittest.TestCase):
 
     def test_partial_beat_traffic_rejected(self):
         self.ledger['physical_port_read_bytes'] += 1
+        with self.assertRaises(AssertionError):
+            self.check()
+
+    def test_nonclosing_executor_partition(self):
+        self.ledger['nested_executor_phases'][0] = 1
+        with self.assertRaises(AssertionError):
+            self.check()
+
+    def test_missing_positive_preparation_work(self):
+        self.native['static_active_reciprocals'] = 2
+        with self.assertRaises(AssertionError):
+            self.check()
+
+    def test_missing_positive_runtime_work(self):
+        self.native['dynamic_active_reciprocals'] = 2
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 0)
+
+    def test_logical_bytecode_bytes_require_native_events(self):
+        self.ledger['logical_bytecode_memory_bytes'] += 8
+        with self.assertRaises(AssertionError):
+            self.check()
+
+
+class PairedCycleTest(unittest.TestCase):
+    def setUp(self):
+        fixture = LedgerTest()
+        fixture.setUp()
+        self.baseline = fixture.ledger
+        self.baseline['nested_iteration_phases'] = [0] * 7 + [30] + [0] * 4
+        self.baseline['nested_executor_phases'] = [0] * 18
+        self.baseline['nested_executor_phases'][3] = 18
+        self.baseline['nested_executor_phases'][12:14] = [3, 9]
+        self.baseline['runtime_reciprocals'] = 3
+        self.prepared = copy.deepcopy(self.baseline)
+        self.prepared['cycles'] -= 8
+        self.prepared['stage_cycles']['program_preparation'] += 4
+        self.prepared['stage_cycles']['execution'] -= 12
+        self.prepared['nested_iteration_phases'][7] -= 12
+        self.prepared['nested_executor_phases'][12:14] = [0, 0]
+        self.prepared['preparation_reciprocals'] = 1
+        self.prepared['runtime_reciprocals'] = 0
+        self.native = {'static_active_reciprocals': 1, 'dynamic_active_reciprocals': 3}
+
+    def check(self):
+        return driver.compare_variants(self.baseline, self.prepared, self.native)
+
+    def test_observed_reciprocal_cycle_equations(self):
+        result = self.check()
+        self.assertEqual(result['measured_reciprocal_cycles_each'], 4)
+        self.assertEqual(result['net_saved_cycles'], 8)
+
+    def test_hidden_common_stage_change_rejected(self):
+        self.prepared['stage_cycles']['finalization'] += 1
+        self.prepared['cycles'] += 1
+        with self.assertRaises(AssertionError):
+            self.check()
+
+    def test_unrelated_executor_saving_rejected(self):
+        self.prepared['nested_executor_phases'][3] -= 1
+        with self.assertRaises(AssertionError):
+            self.check()
+
+    def test_uncharged_preparation_rejected(self):
+        self.prepared['stage_cycles']['program_preparation'] -= 1
+        with self.assertRaises(AssertionError):
+            self.check()
+
+    def test_fractional_reciprocal_latency_rejected(self):
+        self.baseline['nested_executor_phases'][13] += 1
+        with self.assertRaises(AssertionError):
+            self.check()
+
+    def test_wrong_positive_count_rejected(self):
+        self.prepared['preparation_reciprocals'] = 2
         with self.assertRaises(AssertionError):
             self.check()
 

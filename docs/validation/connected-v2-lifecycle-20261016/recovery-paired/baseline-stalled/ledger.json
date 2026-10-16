@@ -1,0 +1,6 @@
+{"cycles":1658825,"stage_cycles":{"initialization_transport":393218,"control_and_metadata":82,"program_preparation":24592,"execution":60773,"interprogram_seed":438,"finalization":1179718,"held_return":4},
+"nested_iteration_phases":[16,192,320,192,320,0,16,59173,48,80,16,400],"nested_finalization_phases":[1,1,1179657,1,57,1],
+"nested_stalls":{"sp_request":264402,"sp_write":263066,"dataset_request":32,"program_load":6144},"preparation_reciprocals":0,"runtime_reciprocals":190,
+"nested_executor_phases":[0,6167,6167,6167,3003,5005,999,0,16,0,911,911,190,12350,1788,1788,244,13467],
+"nested_reply_waits":{"scratchpad":661005,"dataset":80,"program":15360},"stale_error_replies_dropped":{"metadata":16,"program":6144,"scratchpad":264402,"dataset":32},
+"scratchpad_bytes":2097152,"physical_port_read_bytes":2115216,"physical_port_write_bus_bytes":2104528,"strobed_write_bytes":2101864,"dataset_logical_bytes":1024,"logical_bytecode_memory_bytes":10672,"logical_entry_bytes":2048,"logical_tail_bytes":2048,"initialization_and_finalization_bytes_each":2097152,"program_image_load_bytes":24576,"native_dataset_internal_physical_bytes":null,"untimed_provider_device_cycles":null}
