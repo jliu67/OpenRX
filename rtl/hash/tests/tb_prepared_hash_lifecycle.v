@@ -588,7 +588,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     if(kill&&boundary_clocks==3)begin
      if(boundary_requests!=1||dut.ih_rsp_valid)$fatal(1,"input boundary cancel did not hit active hash");
      cancel=1;#1;if(sp_wr_valid||dut.ih_req_valid||dut.ih_rsp_valid)$fatal(1,"input boundary cancel suppression");
-     @(posedge clk);#1;@(negedge clk);cancel=0;init_rsp_valid=0;init_wr_valid=0;
+     @(posedge clk);#1;@(negedge clk);cancel=0;init_rsp_valid=0;init_wr_valid=0;#1;
      if(!req_ready||dut.ih_rsp_valid||dut.fill_wr_valid)$fatal(1,"input boundary cancel retained ownership");
      boundary_cancel_seed=boundary_seed;boundary_canceled=boundary_canceled+1;disable boundary_case;
     end
@@ -600,7 +600,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    #1;if(dut.state_q!=9||dut.seed_q!==boundary_seed||!dut.fill_start_valid||!dut.fill_req_ready||sp_wr_valid)$fatal(1,"input boundary fill did not receive completed seed");
    // Cancel before the filler can accept its request: prefix checks stay cheap.
    @(negedge clk);cancel=1;#1;if(sp_wr_valid||dut.ih_rsp_valid)$fatal(1,"input boundary prefix cancel suppression");
-   @(posedge clk);#1;@(negedge clk);cancel=0;init_rsp_valid=0;init_wr_valid=0;
+   @(posedge clk);#1;@(negedge clk);cancel=0;init_rsp_valid=0;init_wr_valid=0;#1;
    if(!req_ready||dut.ih_rsp_valid||dut.fill_wr_valid)$fatal(1,"input boundary prefix retained ownership");
    boundary_valid=boundary_valid+1;
   end
