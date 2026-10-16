@@ -29,7 +29,7 @@ class TraceTests(unittest.TestCase):
             "13,8,0,0,0,0,0,0,0,0,ffff,0,0"])
         result = evidence.stream_trace(path, 14, [[0]])
         self.assertEqual(result["stage_cycles"]["execution"], 11)
-        self.assertEqual(result["nested_iteration_phases"][7], 9)
+        self.assertIsNone(result["nested_iteration_phases"])
         self.assertEqual(result["events"]["scratchpad_reads16"], 1)
         self.assertEqual(result["events"]["scratchpad_strobed_write_bytes"], 8)
         self.assertEqual(result["events"]["dataset_requests64"], 1)
@@ -93,7 +93,8 @@ class EquationTests(unittest.TestCase):
         trace = {"instruction_families": {}, "active_reciprocal_commits": 0,
                  "nested_iteration_phases": fixture["nested_iteration_phases"],
                  "stage_cycles": fixture["stage_cycles"], "total_cycles": fixture["cycles"]}
-        result = evidence.source_cycle_equations(trace, 8, 16384, 92)
+        result = evidence.source_cycle_equations(trace, 8, 16384, 92,
+                                                 iteration_counters=fixture["nested_iteration_phases"])
         self.assertEqual(result["total_cycle_residual"], 0)
         self.assertFalse(any(result["stage_cycle_residuals"].values()))
         self.assertFalse(any(result["iteration_phase_residuals"]))
@@ -106,9 +107,9 @@ class EquationTests(unittest.TestCase):
         trace = {"instruction_families": {}, "active_reciprocal_commits": 0,
                  "nested_iteration_phases": [0] * 12,
                  "stage_cycles": dict.fromkeys(evidence.STAGES.values(), 0), "total_cycles": 0}
-        first = evidence.source_cycle_equations(trace, 1, 1, 0)
+        first = evidence.source_cycle_equations(trace, 1, 1, 0, iteration_counters=[0] * 12)
         trace["stage_cycles"]["program_preparation"] = first["expected_stage_cycles"]["program_preparation"] + 1
-        second = evidence.source_cycle_equations(trace, 1, 1, 0)
+        second = evidence.source_cycle_equations(trace, 1, 1, 0, iteration_counters=[0] * 12)
         self.assertEqual(second["stage_cycle_residuals"]["program_preparation"], 1)
 
     def test_opcode_boundaries_and_reciprocal_nops(self):
@@ -164,6 +165,30 @@ class EndToEndEvidenceTests(unittest.TestCase):
         report = self.run_extract()
         self.assertEqual(report["calibration"]["total_cycle_residual"], 0)
         self.assertIsNone(report["trace"]["executor_state_durations"])
+        self.assertIsNone(report["trace"]["nested_iteration_phases"])
+        self.assertEqual(report["accepted_nested_iteration_counters"],
+                         self.summary["profiles"]["prepared-ideal"]["ledger"]["nested_iteration_phases"])
+
+    def test_outer_only_observer_does_not_infer_nested_state_spans(self):
+        # Remove two nested transitions as the actual c96 EVENT_TRACE observer
+        # does. Outer stage boundaries and transaction/commit rows survive.
+        rows = self.trace.read_text().splitlines()
+        self.trace.write_text("\n".join(row for row in rows if not row.startswith(("131089,", "131097,"))) + "\n")
+        self.summary["profiles"]["prepared-ideal"]["trace_sha256"] = evidence.sha256_file(self.trace)
+        report = self.run_extract()
+        self.assertEqual(report["calibration"]["total_cycle_residual"], 0)
+        self.assertIsNone(report["trace"]["nested_iteration_phases"])
+
+    def test_scan_diagnostics_survive_later_validation_failure(self):
+        self.summary["profiles"]["prepared-ideal"]["trace_sha256"] = "0" * 64
+        self.summary_path.write_text(json.dumps(self.summary))
+        diagnostic = self.directory / "diagnostic.json"
+        with self.assertRaisesRegex(ValueError, "trace SHA256"):
+            evidence.extract_evidence(self.summary_path, self.trace, self.native,
+                                      diagnostic_output=diagnostic)
+        saved = json.loads(diagnostic.read_text())
+        self.assertEqual(saved["classification"], "prevalidation_scan_diagnostics_not_accepted_results")
+        self.assertEqual(saved["trace"]["trace_sha256"], evidence.sha256_file(self.trace))
 
     def test_unknown_host_provider_device_cycles_remain_unknown(self):
         self.summary["profiles"]["prepared-ideal"]["host_provider"]["provider_device_cycles"] = 1

@@ -1,0 +1,105 @@
+{
+  "note": "Exact bounded input slices. Small source digests are included; any null large-file digest must be bound through its accepted manifest.",
+  "source_inputs": {
+    "accesses": {
+      "bytes": 30029,
+      "hash_policy": "whole file only when <=32MiB; otherwise use accepted manifest",
+      "path": "native-reference/accesses.hex",
+      "sha256": "aef22dc9478ad2909ea953245b19129297637622389e5dfdb74527eb568a4da8"
+    },
+    "iterations": {
+      "path": "native-reference/iterations.hex",
+      "sha256": "16abec540ce9746c42a11e17ff0254286ab70e6288114bd25026244badd97f82"
+    },
+    "program-0": {
+      "path": "native-reference/program-0.mem",
+      "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+    },
+    "program-1": {
+      "path": "native-reference/program-1.mem",
+      "sha256": "005108dec03308f65eda8f561497b1d21862c5d67cb11ec8af4d5edf2cf8e384"
+    },
+    "program-2": {
+      "path": "native-reference/program-2.mem",
+      "sha256": "ea5f0a410d9845c76dfdd0f5db35360eea0206ea66972a6e7f0e7e0d7030cd3f"
+    },
+    "program-3": {
+      "path": "native-reference/program-3.mem",
+      "sha256": "0d4f54ec419bbb4a6c23b357277ab5c382784801ceab70dc5dbfc010829fd6df"
+    },
+    "program-4": {
+      "path": "native-reference/program-4.mem",
+      "sha256": "61574ff62cbc22bdc53097779659421c632b9b5923e4bcc4ddf5dac9242ad697"
+    },
+    "program-5": {
+      "path": "native-reference/program-5.mem",
+      "sha256": "2d52c7a22773c0bf3d861874d8820ba49714fc50cb9d9329391e698ca403e56c"
+    },
+    "program-6": {
+      "path": "native-reference/program-6.mem",
+      "sha256": "96b734f9f0b30a96511668b583eda0ee011176292f3542ac6eae5e96f414dc42"
+    },
+    "program-7": {
+      "path": "native-reference/program-7.mem",
+      "sha256": "ccbecd8ddb3f89302733843ae7b16bf401d8677e860fdcce0bab5f0933f16a59"
+    },
+    "trace": {
+      "bytes": 13106324,
+      "hash_policy": "whole file only when <=32MiB; otherwise use accepted manifest",
+      "path": "prepared-ideal/trace.csv",
+      "sha256": "61e9db0584f83b1b446eb0f19edf3246a08e217734cb08c125240f6c3bd0b85d"
+    }
+  },
+  "source_native_directory": "retained:accepted-short/native-reference",
+  "source_trace": "retained:accepted-short/prepared-ideal/trace.csv",
+  "windows": [
+    {
+      "sample_global_iteration": 0,
+      "source_event_count": 88,
+      "source_event_start": 0,
+      "source_global_iteration": 0
+    },
+    {
+      "sample_global_iteration": 1,
+      "source_event_count": 86,
+      "source_event_start": 176,
+      "source_global_iteration": 2
+    },
+    {
+      "sample_global_iteration": 2,
+      "source_event_count": 68,
+      "source_event_start": 348,
+      "source_global_iteration": 4
+    },
+    {
+      "sample_global_iteration": 3,
+      "source_event_count": 78,
+      "source_event_start": 484,
+      "source_global_iteration": 6
+    },
+    {
+      "sample_global_iteration": 4,
+      "source_event_count": 81,
+      "source_event_start": 640,
+      "source_global_iteration": 8
+    },
+    {
+      "sample_global_iteration": 5,
+      "source_event_count": 90,
+      "source_event_start": 802,
+      "source_global_iteration": 10
+    },
+    {
+      "sample_global_iteration": 6,
+      "source_event_count": 85,
+      "source_event_start": 982,
+      "source_global_iteration": 12
+    },
+    {
+      "sample_global_iteration": 7,
+      "source_event_count": 92,
+      "source_event_start": 1150,
+      "source_global_iteration": 14
+    }
+  ]
+}

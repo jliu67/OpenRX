@@ -97,7 +97,7 @@ def latency_requirement(hps, requests_per_hash, service_latency_s, ready_per_con
     return {"necessary_outstanding_requests": outstanding,
             "necessary_contexts_if_ready_limit_is_valid": math.ceil(outstanding / ready_per_context),
             "ready_per_context": ready_per_context,
-            "scope": "Little's law necessary average bound; excludes scan, dataset and latency tails"}
+            "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"}
 
 
 def full_wall_power(hps, dynamic_j_per_hash, static_dc_w, psu_efficiency, ac_auxiliary_w):

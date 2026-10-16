@@ -1,9 +1,9 @@
 """Stream preserved connected RTL evidence; never run RandomX or an HDL simulator.
 
-The accepted c96 event trace retains outer/iteration transitions and accepted
-transactions. Its executor-state column is sampled, not transition complete.
-Outer/iteration durations belong to the preceding row; flags count once at their
-row. The final duration closes against the separately recorded clock count.
+The accepted c96 event trace retains outer transitions and accepted transactions.
+Its iteration/executor columns are sampled, not transition complete. Only outer
+durations belong to the preceding row; flags count once at their row. The final
+duration closes against the separately recorded clock count.
 """
 from __future__ import annotations
 
@@ -80,7 +80,7 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
     """
     require(type(total_cycles) is int and total_cycles > 0, "positive integer total cycles required")
     require(type(sample_iterations_per_program) is int and sample_iterations_per_program > 0, "positive sample iteration count required")
-    outer, iteration, executor_rows = Counter(), [0] * 12, [0] * 18
+    outer, iteration_rows, executor_rows = Counter(), [0] * 12, [0] * 18
     events, op_counts, active_ops = Counter(), Counter(), Counter()
     digest = hashlib.sha256()
     previous = None
@@ -88,6 +88,7 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
     program = -1
     global_iteration = -1
     program_iteration = -1
+    dataset_seen = False
     sample_rows = 0
     sample_context = Path(sample_trace_output).open("x") if sample_trace_output else nullcontext(None)
     with Path(path).open("rb") as stream, sample_context as sample:
@@ -99,8 +100,6 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
 
         def account(row, duration):
             outer[row[1]] += duration
-            if row[1] == 4:
-                iteration[row[2]] += duration
 
         for raw in stream:
             digest.update(raw)
@@ -116,8 +115,10 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
                         "accepted scratchpad address outside aligned image")
             require(not dataset or row[12] >= 0 and row[12] % 64 == 0,
                     "unaligned dataset request")
-            if phase == 4 and ip == 7:
-                executor_rows[ep] += 1
+            if phase == 4:
+                iteration_rows[ip] += 1
+                if ip == 7:
+                    executor_rows[ep] += 1
             if previous is None:
                 require(cycle == 0, "trace must start at clock zero")
             else:
@@ -127,9 +128,16 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
             if phase == 3 and (previous is None or previous[1] != 3):
                 program += 1
                 program_iteration = -1
-            if phase == 4 and ip == 0 and (previous is None or previous[1:3] != (4, 0)):
+                dataset_seen = False
+            # One accepted dataset request closes bytecode each iteration.
+            # The next controller IDLE observation or first accepted entry read
+            # identifies the following iteration without inventing durations.
+            new_iteration = phase == 4 and (program_iteration < 0 or
+                dataset_seen and (ip == 0 or ip == 1 and read))
+            if new_iteration:
                 global_iteration += 1
                 program_iteration += 1
+                dataset_seen = False
             if commit:
                 require(phase == 4 and ip == 7, "commit outside bytecode execution")
                 require(0 <= program < len(programs) and pc < len(programs[program]), "commit PC/program outside image")
@@ -143,10 +151,12 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
             events["scratchpad_write_bus16"] += write
             events["scratchpad_strobed_write_bytes"] += strobe.bit_count() * write
             events["dataset_requests64"] += dataset
+            if dataset:
+                dataset_seen = True
             # Keep the next iteration's initial row as a closing sentinel too.
             selected = phase == 3 and (previous is None or previous[1] != 3)
             selected |= phase == 4 and 0 <= program_iteration < sample_iterations_per_program
-            selected |= previous is not None and previous[1:3] == (4, 11) and phase == 4 and ip == 0 and program_iteration == sample_iterations_per_program
+            selected |= new_iteration and program_iteration == sample_iterations_per_program
             if sample and selected:
                 sample.write(raw.decode().rstrip() + f",{program},{global_iteration}\n")
                 sample_rows += 1
@@ -156,12 +166,15 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
         account(previous, total_cycles - previous[0])
     return {"trace_sha256": digest.hexdigest(), "trace_rows": rows,
             "total_cycles": total_cycles, "stage_cycles": {name: outer[key] for key, name in STAGES.items()},
-            "nested_iteration_phases": iteration,
+            "nested_iteration_phases": None,
+            "sampled_iteration_state_row_counts": iteration_rows,
+            "iteration_state_coverage": "sampled only; c96 CSV omits iteration transitions; do not integrate sampled states",
             "sampled_executor_state_row_counts": executor_rows,
             "executor_state_durations": None,
             "executor_state_coverage": "sampled only; c96 CSV omits executor transitions; do not integrate sampled states",
             "events": dict(events), "instruction_families": dict(sorted(op_counts.items())),
-            "programs_observed": program + 1, "iterations_observed": global_iteration + 1,
+            "programs_observed": program + 1, "iterations_observed": events["dataset_requests64"],
+            "iteration_count_basis": "one accepted dataset request per iteration; no duration inference",
             "active_reciprocal_commits": active_ops["IMUL_RCP"],
             "sample_rows": sample_rows,
             "sample_scope": "first whole iteration per program; discontinuous clocks" if sample_trace_output else None}
@@ -216,13 +229,16 @@ def extract_native_locality(directory):
                          for size in PREFIXES]}
 
 
-def source_cycle_equations(trace, programs, iterations, static_reciprocals, words_per_program=384):
+def source_cycle_equations(trace, programs, iterations, static_reciprocals, words_per_program=384,
+                           iteration_counters=None):
     """Default ideal RTL state equations with an explicit measured executor term.
 
     This is a source-state replay/calibration, not an independently predictive
     instruction timing model. The accepted CSV cannot resolve executor states.
     """
-    executor_wait = trace["nested_iteration_phases"][7]
+    require(iteration_counters is not None and len(iteration_counters) == 12,
+            "accepted per-clock iteration ledger counters required")
+    executor_wait = iteration_counters[7]
     iteration_costs = {"controller_idle": 1, "entry_read_requests": 8,
                        "entry_read_replies": 8, "executor_admission": 1,
                        "dataset_request": 1, "dataset_reply": 1,
@@ -252,16 +268,18 @@ def source_cycle_equations(trace, programs, iterations, static_reciprocals, word
                          "finalization": "3*scratchpad_beats + 8 extra AES rounds + IDLE1 + AES_START1 + AES_return1 + HASH_START1 + HASH_WAIT57 + RETURN1",
                          "regfile_hash": "2 blocks*(request1 + core_init1 + 12 rounds*2 + finalize1 + response1) = 56"},
             "measured_unpredicted_inputs": {"executor_EX_WAIT_aggregate_cycles": executor_wait},
+            "iteration_counter_provenance": "accepted testbench per-clock ledger counters; not reconstructed from sampled CSV",
             "iteration_nonexecutor_cycles_per_iteration": iteration_costs,
             "expected_iteration_phases": expected_iteration,
-            "iteration_phase_residuals": [a - b for a, b in zip(trace["nested_iteration_phases"], expected_iteration)],
+            "iteration_phase_residuals": [a - b for a, b in zip(iteration_counters, expected_iteration)],
             "executor_phase_residuals": None,
             "expected_stage_cycles": expected, "stage_cycle_residuals": residuals,
             "total_cycle_residual": trace["total_cycles"] - sum(expected.values()),
             "unexplained_fitted_cycles": 0}
 
 
-def extract_evidence(summary_path, trace_path, native_reference, output=None, sample_trace_output=None, source_root=None, sample_iterations_per_program=1):
+def extract_evidence(summary_path, trace_path, native_reference, output=None, sample_trace_output=None, source_root=None,
+                     sample_iterations_per_program=1, diagnostic_output=None):
     summary_path, trace_path, native_reference = map(Path, (summary_path, trace_path, native_reference))
     summary = json.loads(summary_path.read_text())
     require(summary.get("status") == "pass_connected_native_reference", "reference-correct connected summary required")
@@ -271,9 +289,16 @@ def extract_evidence(summary_path, trace_path, native_reference, output=None, sa
             "untimed host providers cannot acquire invented device clocks")
     programs = read_programs(native_reference, summary["programs"])
     trace = stream_trace(trace_path, ledger["cycles"], programs, sample_trace_output, sample_iterations_per_program)
+    if diagnostic_output:
+        with Path(diagnostic_output).open("x") as stream:
+            json.dump({"classification": "prevalidation_scan_diagnostics_not_accepted_results",
+                       "trace": trace, "accepted_ledger": ledger,
+                       "summary_sha256": sha256_file(summary_path)}, stream, indent=2, sort_keys=True)
+            stream.write("\n")
     require(trace["trace_sha256"] == profile["trace_sha256"], "trace SHA256 differs from accepted summary")
-    for field in ("stage_cycles", "nested_iteration_phases"):
-        require(trace[field] == ledger[field], f"trace/ledger mismatch: {field}")
+    require(trace["stage_cycles"] == ledger["stage_cycles"], "trace/ledger mismatch: stage_cycles")
+    require(sum(ledger["nested_iteration_phases"]) == ledger["stage_cycles"]["execution"],
+            "accepted nested iteration ledger does not close execution stage")
     locality = extract_native_locality(native_reference)
     native = summary["native_reference"]
     require(locality["iterations"] == native["total_iterations"] and locality["instruction_steps"] == native["instruction_steps"], "native workload count mismatch")
@@ -290,7 +315,8 @@ def extract_evidence(summary_path, trace_path, native_reference, output=None, sa
         require(value == ledger[field], f"accepted transaction/ledger mismatch: {field}")
     static_reciprocals = sum(active_reciprocal(word) for image in programs for word in image)
     require(static_reciprocals == ledger["preparation_reciprocals"], "static prepared reciprocal count mismatch")
-    calibration = source_cycle_equations(trace, summary["programs"], locality["iterations"], static_reciprocals, len(programs[0]))
+    calibration = source_cycle_equations(trace, summary["programs"], locality["iterations"], static_reciprocals,
+                                         len(programs[0]), iteration_counters=ledger["nested_iteration_phases"])
     require(calibration["total_cycle_residual"] == 0 and not any(calibration["stage_cycle_residuals"].values())
             and not any(calibration["iteration_phase_residuals"]), "source-state replay has unexplained fixed-stage cycles")
     source_root = Path(source_root) if source_root else Path(__file__).resolve().parents[2]
@@ -303,20 +329,23 @@ def extract_evidence(summary_path, trace_path, native_reference, output=None, sa
         binding["identical_to_executed_input"] = binding["current_sha256"] == binding["executed_input_sha256"] if binding["executed_input_sha256"] else None
     report = {"schema": "openrx.architecture.evidence.v1", "classification": "measured_one_connected_native_v2_workload",
               **locality, "trace": trace, "calibration": calibration,
+              "accepted_nested_iteration_counters": ledger["nested_iteration_phases"],
+              "accepted_nested_iteration_counter_source": "summary profiles.prepared-ideal.ledger; direct per-clock testbench counters",
               "summary_sha256": sha256_file(summary_path), "source_bindings": source_bindings,
               "program_sha256": {f"program-{p}.mem": sha256_file(native_reference / f"program-{p}.mem") for p in range(len(programs))},
               "provider": provider,
-              "provenance": {"measured": ["accepted outer/iteration clock partitions and transaction flags",
+              "provenance": {"measured": ["accepted outer clock partitions and transaction flags from CSV",
+                                          "nested iteration clock partitions from accepted direct testbench ledger counters",
                                           "native bytecode/outer scratchpad and dataset addresses for one workload",
                                           "dynamic commit PCs decoded against bound immutable program images"],
                              "source_derived": ["fixed ideal RTL stage/state equations; default parameters"],
                              "assumed": ["scenario use beyond the single measured workload"],
-                             "unknown": ["executor-state durations in c96 trace", "untimed provider device costs",
+                             "unknown": ["iteration/executor-state durations from c96 sampled CSV", "untimed provider device costs",
                                          "physical clock, memory service/traffic, area and full-system energy"]},
               "limitations": ["one accepted workload is not a distribution or physical performance measurement",
                               "native dataset generated in light mode from 256 MiB cache; no materialized full dataset or DRAM timing",
                               "input hashing, initial fill, program generation and dataset generation have unknown untimed device costs",
-                              "CSV samples executor state without all transitions; no executor-state durations can be inferred",
+                              "CSV samples iteration and executor states without all transitions; no nested state durations can be inferred from CSV",
                               "CSV lacks operand values, reply flags and detailed readiness; reordered comparisons require explicit assumptions",
                               "source equations replay measured entire executor wait aggregate; not independent full-hash timing prediction"],
               "device_frequency_hz": None, "physical_power_watts": None, "demonstrated_asic_feasibility": False}
@@ -335,9 +364,11 @@ def main():
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--sample-trace-output", type=Path)
     parser.add_argument("--sample-iterations-per-program", type=int, default=1)
+    parser.add_argument("--diagnostic-output", type=Path)
     args = parser.parse_args()
     report = extract_evidence(args.summary, args.trace, args.native_reference, args.output, args.sample_trace_output,
-                              sample_iterations_per_program=args.sample_iterations_per_program)
+                              sample_iterations_per_program=args.sample_iterations_per_program,
+                              diagnostic_output=args.diagnostic_output)
     print(json.dumps({"output": str(args.output), "trace_sha256": report["trace"]["trace_sha256"],
                       "cycles": report["trace"]["total_cycles"], "cycle_residual": report["calibration"]["total_cycle_residual"]}))
 

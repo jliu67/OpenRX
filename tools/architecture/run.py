@@ -123,7 +123,7 @@ def provenance(full, full_evidence_path, trace, fixture):
         },
         "measured_simulation": {
             "full_workload": "c96e96ab1eb46cb727b21befffa526e637ebed4a, 8 programs x 2048 iterations, actual light dataset values, canonical digest matched" if full_recognized else "unrecognized input; no accepted-run attribution",
-            "bounded_workload": "accepted successor execution 20261016T014629Z-8c43e1ea115d, prepared-ideal 8x2; first iteration per program" if short_recognized else "unrecognized input; no accepted-run attribution",
+            "bounded_workload": "accepted reviewed successor source d3ed89861b2d8d9c6ea9a938079de6506a81ec21, prepared-ideal 8x2; first iteration per program" if short_recognized else "unrecognized input; no accepted-run attribution",
             "provider_boundary": "input BLAKE2b, initial fill, program generation, native light dataset generation are untimed host providers",
         },
         "source_derived": ["register dependencies and opcode classes", "lifecycle fixed-state equations", "2MiB distinct mutable state per live context", "fill/final scan bytes"],
@@ -151,10 +151,12 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     if args.command == "extract":
         full = evidence.extract_evidence(args.full_output / "summary.json", args.full_output / "prepared-ideal/trace.csv",
-                args.full_output / "native-reference", source_root=args.source_root)
+                args.full_output / "native-reference", source_root=args.source_root,
+                diagnostic_output=args.output / "full-scan-diagnostics.json")
         dump(args.output / "full-evidence.json", full)
         short = evidence.extract_evidence(args.short_output / "summary.json", args.short_output / "prepared-ideal/trace.csv",
-                args.short_output / "native-reference", source_root=args.source_root)
+                args.short_output / "native-reference", source_root=args.source_root,
+                diagnostic_output=args.output / "short-scan-diagnostics.json")
         dump(args.output / "short-evidence.json", short)
         trace = native_trace.extract(args.short_output / "prepared-ideal/trace.csv", args.short_output / "native-reference", max_iterations=8,
                 first_iteration_per_program=True, fixture_output=args.output / "fixture")
