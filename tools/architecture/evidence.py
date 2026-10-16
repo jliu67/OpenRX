@@ -168,10 +168,10 @@ def stream_trace(path, total_cycles, programs, sample_trace_output=None, sample_
             "total_cycles": total_cycles, "stage_cycles": {name: outer[key] for key, name in STAGES.items()},
             "nested_iteration_phases": None,
             "sampled_iteration_state_row_counts": iteration_rows,
-            "iteration_state_coverage": "sampled only; c96 CSV omits iteration transitions; do not integrate sampled states",
+            "iteration_state_coverage": "not reconstructed by this extractor; c96 CSV omits iteration transitions; richer successor is analyzed separately",
             "sampled_executor_state_row_counts": executor_rows,
             "executor_state_durations": None,
-            "executor_state_coverage": "sampled only; c96 CSV omits executor transitions; do not integrate sampled states",
+            "executor_state_coverage": "not reconstructed by this extractor; c96 CSV omits executor transitions; richer successor is analyzed separately",
             "events": dict(events), "instruction_families": dict(sorted(op_counts.items())),
             "programs_observed": program + 1, "iterations_observed": events["dataset_requests64"],
             "iteration_count_basis": "one accepted dataset request per iteration; no duration inference",
@@ -234,7 +234,7 @@ def source_cycle_equations(trace, programs, iterations, static_reciprocals, word
     """Default ideal RTL state equations with an explicit measured executor term.
 
     This is a source-state replay/calibration, not an independently predictive
-    instruction timing model. The accepted CSV cannot resolve executor states.
+    instruction timing model. The full c96 CSV cannot resolve executor states.
     """
     require(iteration_counters is not None and len(iteration_counters) == 12,
             "accepted per-clock iteration ledger counters required")
@@ -345,7 +345,7 @@ def extract_evidence(summary_path, trace_path, native_reference, output=None, sa
               "limitations": ["one accepted workload is not a distribution or physical performance measurement",
                               "native dataset generated in light mode from 256 MiB cache; no materialized full dataset or DRAM timing",
                               "input hashing, initial fill, program generation and dataset generation have unknown untimed device costs",
-                              "CSV samples iteration and executor states without all transitions; no nested state durations can be inferred from CSV",
+                              "General extractor does not reconstruct nested CSV timing: c96 lacks transitions; richer successor timing is analyzed separately",
                               "CSV lacks operand values, reply flags and detailed readiness; reordered comparisons require explicit assumptions",
                               "source equations replay measured entire executor wait aggregate; not independent full-hash timing prediction"],
               "device_frequency_hz": None, "physical_power_watts": None, "demonstrated_asic_feasibility": False}

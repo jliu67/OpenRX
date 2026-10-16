@@ -12,7 +12,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from . import envelope, evidence, native_trace
+from . import baseline, envelope, evidence, native_trace
 from .scheduler import Config, MemorySpec, MicroOp, UnitSpec, simulate
 
 
@@ -170,6 +170,7 @@ def main():
                                      first_iteration_per_program=True)
         full_evidence_path, fixture = args.evidence, args.fixture
     dump(args.output / "comparisons.json", compare(trace, args.workers))
+    dump(args.output / "baseline-calibration.json", baseline.calibrate(trace))
     dump(args.output / "sensitivity.json", envelope.sensitivity(full))
     dump(args.output / "provenance.json", provenance(full, full_evidence_path, trace, fixture))
     digest_index = {str(p.relative_to(args.output)): evidence.sha256_file(p)

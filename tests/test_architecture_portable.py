@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from tools.architecture import native_trace
+from tools.architecture import baseline, native_trace
 from tools.architecture.run import compare, provenance
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,6 +20,16 @@ class PortableTraceTests(unittest.TestCase):
         self.assertTrue(all(i["route_verified"] and i["memory_addresses_verified"] for i in trace["iterations"]))
         self.assertEqual({op["unit"] for op in trace["operations"]},
                          {"integer", "float", "multiply", "control", "divsqrt"})
+
+    def test_scalar_protocol_equations_close_actual_windows(self):
+        trace = native_trace.extract(FIXTURE / "trace.csv", FIXTURE / "native",
+                                    max_iterations=8, first_iteration_per_program=True)
+        output = baseline.calibrate(trace)
+        self.assertEqual([r["residual_cycles"] for r in output["windows"]], [0] * 8)
+        self.assertFalse(output["independent_full_hash_prediction"])
+        trace["windows"][0]["operations"][-1]["commit_cycle"] += 1
+        with self.assertRaisesRegex(ValueError, "residual"):
+            baseline.calibrate(trace)
 
     def test_cli_comparison_contract_does_not_promote_windows_to_hashes(self):
         small = {"windows": [{"program": 0, "iteration": 0, "operations": [

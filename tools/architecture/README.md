@@ -105,6 +105,15 @@ entry/AES/tail and dataset dependencies are absent from these scheduling windows
 their full-hash alternatives remain unvalidated. Do not extrapolate a window
 speed ratio to the whole hash or combine independent sweep minima into a design.
 
+`baseline-calibration.json` separately checks each detailed scalar window against
+`2*instructions + measured nonmemory service + 2*loads + stores` clocks from
+first fetch to final commit, plus one RETURN clock for executor wait. The two
+fetch states and load request/reply states each consume one ideal clock; accepted
+stores consume one. All eight residuals are zero. FU service remains a measured
+operand-dependent input, rather than an independently predicted latency. The
+architectural scenarios omit these RTL fetch/protocol costs and therefore model
+a changed interface; their scalar scenario is not presented as the RTL baseline.
+
 ## Resource and energy rejection tests
 
 `envelope.py` adapts the preserved scratchpad handoff helpers, replacing their
