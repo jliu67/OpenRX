@@ -1,0 +1,24 @@
+{
+  "classification": "compact measured ledger copied from accepted connected native-v2 execution, not synthetic scheduler work",
+  "source_execution": "20261016T010320Z-b2c8ed47ab4c",
+  "trace_sha256": "a71126245eb351f378fdd2c74a8fa5cd860c4a5ed1030447e6ea66aadf1fd964",
+  "cycles": 40975538,
+  "programs": 8,
+  "iterations_per_program": 2048,
+  "instruction_commits": 6306885,
+  "bytecode_events": 1434807,
+  "static_active_reciprocals": 92,
+  "stage_cycles": {
+    "control_and_metadata": 34,
+    "execution": 40438497,
+    "finalization": 393286,
+    "held_return": 1,
+    "initialization_transport": 131074,
+    "interprogram_seed": 414,
+    "program_preparation": 12232
+  },
+  "nested_iteration_phases": [16384, 65536, 65536, 65536, 65536, 0, 16384, 39946977, 16384, 16384, 16384, 147456],
+  "executor_state_durations": null,
+  "provider_device_cycles": null,
+  "dataset_provider": "native light cache; 268435456-byte cache; materialized full dataset bytes=0"
+}
