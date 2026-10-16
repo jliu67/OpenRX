@@ -70,12 +70,15 @@ def reused_library(library, execution, source):
             'PIC_flags_sha256': sha(flags), 'reconfigured_or_modified': False}
 
 
-def validate_ledger(ledger, provider, iterations, programs, native, prepared, hardware_fill=False, hardware_program=False):
+def validate_ledger(ledger, provider, iterations, programs, native, prepared, hardware_fill=False, hardware_program=False, hardware_input_hash=False, input_bytes=None):
     initialization = 'initialization_hardware_fill' if hardware_fill else 'initialization_transport'
     stages = {initialization, 'control_and_metadata', 'program_preparation', 'execution',
               'interprogram_seed', 'finalization', 'held_return'}
     if hardware_program:
         stages.add('program_generation')
+    if hardware_input_hash:
+        assert hardware_fill
+        stages.add('input_hash')
     assert set(ledger['stage_cycles']) == stages
     assert type(ledger['cycles']) is int and ledger['cycles'] > 0
     assert all(type(value) is int and value >= 0 for value in ledger['stage_cycles'].values())
@@ -111,8 +114,20 @@ def validate_ledger(ledger, provider, iterations, programs, native, prepared, ha
         assert all(type(value) is int and value >= 0 for value in
                    [nested['provider_wait'], *nested['fill_phases']])
         assert nested['provider_wait'] + sum(nested['fill_phases']) == ledger['stage_cycles'][initialization]
-        assert provider['input_hash_calls'] == 1 and provider['software_fill_provider_calls'] == 0
+        assert provider['input_hash_calls'] == (0 if hardware_input_hash else 1) and provider['software_fill_provider_calls'] == 0
         assert provider['initialization_host_seconds'] == 0
+    if hardware_input_hash:
+        assert ledger['hardware_input_hash_enabled'] is True
+        nested = ledger['nested_input_hash_phases']
+        assert len(nested) == 3 and all(type(value) is int and value >= 0 for value in nested)
+        assert sum(nested) == ledger['stage_cycles']['input_hash']
+        assert ledger['nested_initialization']['provider_wait'] == 0
+        assert type(ledger['input_hash_bytes']) is int and 0 <= ledger['input_hash_bytes'] <= 80
+        if input_bytes is not None:
+            assert ledger['input_hash_bytes'] == input_bytes
+        assert provider['input_hash_host_seconds'] == 0 and provider['assertion_only_input_hash_calls'] == 1
+        for name in ('removed_initialization_replies_drained', 'removed_initialization_writes_drained'):
+            assert type(ledger[name]) is int and ledger[name] >= 0
     if hardware_program:
         assert ledger['hardware_program_enabled'] is True
         nested = ledger['nested_program_generation_phases']
@@ -180,14 +195,16 @@ def main():
     parser.add_argument('--event-trace', action='store_true', help='Keep retirements/transfers and outer/iteration/executor transitions instead of idle rows')
     parser.add_argument('--hardware-fill', action='store_true', help='Host supplies input BLAKE2b seed only; synthesizable AES fills the initial image')
     parser.add_argument('--hardware-program', action='store_true', help='Synthesizable AES generates the entropy/instruction image; native generation is assertion-only')
+    parser.add_argument('--hardware-input-hash', action='store_true', help='Synthesizable input BLAKE2b feeds hardware fill; native input hashing is assertion-only')
+    parser.add_argument('--input-hash-boundaries', action='store_true', help='Check empty/max80/cancelled/changed input and invalid81/127 lifecycle prefixes without SRAM writes')
     parser.add_argument('--backend', choices=['icarus', 'verilator'], default='icarus')
     parser.add_argument('--verilator-root', type=Path)
     parser.add_argument('--verilator-build-execution', type=Path)
     parser.add_argument('--full-v2', action='store_true')
     parser.add_argument('--compile-only', action='store_true')
     parser.add_argument('--cancellation', action='store_true')
-    parser.add_argument('--cancellation-phases', nargs='+', type=int, choices=range(1, 8), default=list(range(1, 7)),
-                        help='Selected cancellation phases; default retains six existing checks; phase7 cancels hardware program generation')
+    parser.add_argument('--cancellation-phases', nargs='+', type=int, choices=range(1, 9), default=list(range(1, 7)),
+                        help='Selected cancellation phases; default retains six existing checks; phase7 cancels program generation, phase8 input hashing')
     parser.add_argument('--matching-errors', action='store_true', help='Six provider errors plus invalid input/write, held return and fresh-generation handoff')
     parser.add_argument('--error-ports', nargs='+', type=int, choices=range(1, 9), default=list(range(1, 9)),
                         help='Selected matching error ports; default retains all eight existing checks')
@@ -204,10 +221,18 @@ def main():
         parser.error('duplicate recovery selections are not permitted')
     if args.cancellation and 7 in args.cancellation_phases and not args.hardware_program:
         parser.error('cancellation phase7 requires hardware program generation')
+    if args.cancellation and 8 in args.cancellation_phases and not args.hardware_input_hash:
+        parser.error('cancellation phase8 requires hardware input hashing')
+    if args.hardware_input_hash and not args.hardware_fill:
+        parser.error('hardware input hashing requires hardware fill')
+    if args.input_hash_boundaries and not args.hardware_input_hash:
+        parser.error('input hash boundary prefixes require hardware input hashing')
+    if args.hardware_input_hash and args.matching_errors and set(args.error_ports) & {1, 8}:
+        parser.error('hardware input hashing drains the removed initialization provider; select applicable error ports excluding1/8')
     if args.hardware_program and args.matching_errors and set(args.error_ports) & {2, 3}:
         parser.error('hardware program generation drains external metadata/program responses; select applicable error ports excluding2/3')
     if args.interfaces_only and (args.full_v2 or args.compile_only or not
-                                (args.cancellation or args.matching_errors or args.capacity_checks)):
+                                (args.cancellation or args.matching_errors or args.capacity_checks or args.input_hash_boundaries)):
         parser.error('interfaces-only requires a recovery/capacity check and cannot select full-v2/compile-only')
     if args.full_v2:
         args.programs, args.iterations = 8, 2048
@@ -231,14 +256,15 @@ def main():
     out.mkdir()
     commands = []
     summary = {'schema': 'openrx.connected-prepared-v2.v1', 'status': 'pending',
-               'base': '548ed2d31fe6be7d2edc2036961dc7745e9e7219', 'programs': args.programs,
+               'base': 'eed374b28e9e2efa71bc16f5ba15e999e2940415', 'programs': args.programs,
                'iterations': args.iterations, 'full_v2_requested': args.full_v2,
                'compile_only': args.compile_only, 'variants': args.variants, 'event_trace': args.event_trace,
                'interfaces_only': args.interfaces_only, 'hardware_fill': args.hardware_fill, 'hardware_program': args.hardware_program,
+               'hardware_input_hash': args.hardware_input_hash,
                'selected_cancellation_phases': args.cancellation_phases, 'selected_error_ports': args.error_ports,
                'backend': args.backend, 'simulation_state_model': 'four-state' if args.backend == 'icarus' else 'two-state; bounded cross-check with Icarus required',
                'balanced_variant_cycle_comparison': False, 'paired_cycle_comparisons': {},
-               'profiles': {}, 'cancellation': {}, 'matching_errors': {}, 'capacity_checks': {},
+               'profiles': {}, 'cancellation': {}, 'matching_errors': {}, 'capacity_checks': {}, 'input_hash_boundary_checks': {},
                'input_hex': message.hex(), 'power_watts': None, 'device_frequency_hz': None,
                'physical_area': None, 'whole_machine_efficiency_accepted': False}
     compat = None
@@ -346,7 +372,7 @@ def main():
         assert summary['canonical_reference']['canonical_randomx_calculate_hash_verified'] == (args.programs == 8 and args.iterations == 2048)
         includes = ['-Irtl/execute', '-I' + V, '-I' + V + '8086-SSE', '-Irtl/hash/vendor/blake2', '-I' + str(gold)]
 
-        def profile(prepared, stalled, cancellation=0, error_port=0, capacity=0):
+        def profile(prepared, stalled, cancellation=0, error_port=0, capacity=0, input_boundaries=False):
             name = ('prepared' if prepared else 'baseline') + ('-stalled' if stalled else '-ideal')
             if cancellation:
                 name += '-cancel-' + str(cancellation)
@@ -354,9 +380,13 @@ def main():
                 name += '-error-' + str(error_port)
             if capacity:
                 name += '-capacity'
+            if input_boundaries:
+                name += '-input-boundaries'
             parameters = {'PROGRAMS': args.programs, 'ITERATIONS': args.iterations, 'PREPARED_RCP': prepared,
                           'HARDWARE_FILL': int(args.hardware_fill),
                           'HARDWARE_PROGRAM': int(args.hardware_program),
+                          'HARDWARE_INPUT_HASH': int(args.hardware_input_hash),
+                          'INPUT_HASH_BOUNDARY_TEST': int(input_boundaries),
                           'EVENT_TRACE': int(args.event_trace), 'STALL': stalled, 'CANCEL_PHASE': cancellation,
                           'ERROR_PORT': error_port, 'CAPACITY_TEST': capacity}
             if args.backend == 'icarus':
@@ -385,7 +415,18 @@ def main():
                        '+input_bytes=' + str(len(message))], env=backend_env)
             records = [line for line in (out / (name + '.log')).read_text().splitlines() if line.startswith('PASS ')]
             assert len(records) == 1
-            if capacity:
+            if input_boundaries:
+                assert records[0].startswith('PASS lifecycle_input_hash_boundaries ')
+                checks = json.loads((directory / 'input-boundary-checks.json').read_text())
+                provider = json.loads((directory / 'provider-host-time.json').read_text())
+                assert checks['prefix_only'] and checks['valid_seed_prefixes'] == 3
+                assert checks['canceled_input_hashes'] == 1 and checks['invalid_lengths'] == [81, 127]
+                assert checks['valid_lengths'] == [0, 80] and checks['changed_input_successor']
+                assert checks['native_seed_equal'] and checks['removed_provider_drained'] and checks['accepted_sram_writes'] == 0
+                assert provider['input_hash_calls'] == provider['software_fill_provider_calls'] == provider['program_generations'] == provider['dataset_requests'] == 0
+                assert provider['assertion_only_input_hash_calls'] == 4
+                summary['input_hash_boundary_checks'][name] = {'record': records[0], 'checks': checks, 'host_provider': provider}
+            elif capacity:
                 assert records[0].startswith('PASS lifecycle_capacity programs=' + str(args.programs) + ' ')
                 summary['capacity_checks'][name] = records[0]
             elif error_port:
@@ -398,7 +439,7 @@ def main():
                 assert records[0].startswith('PASS prepared_hash_lifecycle ')
                 ledger = json.loads((directory / 'ledger.json').read_text())
                 provider = json.loads((directory / 'provider-host-time.json').read_text())
-                validate_ledger(ledger, provider, args.iterations, args.programs, native_counts, prepared, args.hardware_fill, args.hardware_program)
+                validate_ledger(ledger, provider, args.iterations, args.programs, native_counts, prepared, args.hardware_fill, args.hardware_program, args.hardware_input_hash, len(message))
                 summary['profiles'][name] = {'record': records[0], 'ledger': ledger, 'host_provider': provider,
                                              'trace_sha256': sha(directory / 'trace.csv')}
 
@@ -414,6 +455,8 @@ def main():
                 profile(1, 1, error_port=error_port)
         if args.capacity_checks and not args.compile_only:
             profile(1, 0, capacity=1)
+        if args.input_hash_boundaries and not args.compile_only:
+            profile(1, 0, input_boundaries=True)
         for mode in args.profiles:
             if args.compile_only or args.interfaces_only or len(args.variants) != 2:
                 continue
@@ -426,16 +469,18 @@ def main():
         summary['status'] = ('compile_only' if args.compile_only else
                              'pass_lifecycle_interfaces' if args.interfaces_only else 'pass_connected_native_reference')
         summary['source_unchanged_after_run'] = True
-        summary['boundary'] = ('Software input BLAKE2b, ' + ('' if args.hardware_fill else 'scratchpad AES fill, ') +
+        summary['boundary'] = (('' if args.hardware_input_hash else 'Software input BLAKE2b, ') + ('' if args.hardware_fill else 'scratchpad AES fill, ') +
                                ('' if args.hardware_program else 'AES program generation, ') + 'pinned native light dataset provider; ' +
                                ('hardware initial scratchpad AES fill/transport, ' if args.hardware_fill else 'hardware scratchpad transport, ') +
                                ('hardware AES program generation and local image buffer, ' if args.hardware_program else '') +
+                               ('hardware input BLAKE2b, ' if args.hardware_input_hash else '') +
                                f'immutable preparation, execution, {args.programs - 1} interprogram hashes, finalizer/digest. '
                                'Provider host seconds are separate. No complete ASIC, physical DRAM timing, MHz or watts claim.')
         save(out / 'summary.json', summary)
         print(json.dumps({'status': summary['status'], 'profiles': len(summary['profiles']),
                           'cancellation': len(summary['cancellation']), 'matching_errors': len(summary['matching_errors']),
                           'capacity_checks': len(summary['capacity_checks']),
+                          'input_hash_boundary_checks': len(summary['input_hash_boundary_checks']),
                           'full_v2': args.full_v2}), flush=True)
     except Exception as error:
         save(out / 'failure.json', {'type': type(error).__name__, 'error': str(error),

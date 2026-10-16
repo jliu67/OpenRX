@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Connected v2 hash ownership. Native initialization/program generation/dataset
-// callbacks have explicit optional hardware replacements. Input BLAKE2b and
-// dataset service remain host boundaries in both hardware AES modes.
+// callbacks have explicit optional hardware replacements. Dataset service is
+// still a provider boundary when all three optional hardware stages are enabled.
 `default_nettype none
 module randomx_prepared_hash_lifecycle #(
- parameter integer PROGRAMS=8,ITERATIONS=2048,PREPARED_RCP=1,SCRATCHPAD_BYTES=2097152,HARDWARE_FILL=0,HARDWARE_PROGRAM=0
+ parameter integer PROGRAMS=8,ITERATIONS=2048,PREPARED_RCP=1,SCRATCHPAD_BYTES=2097152,HARDWARE_FILL=0,HARDWARE_PROGRAM=0,HARDWARE_INPUT_HASH=0
 )(
  input wire clk,rst,cancel,
  input wire req_valid,output wire req_ready,input wire [15:0] req_tag,
@@ -22,7 +22,7 @@ module randomx_prepared_hash_lifecycle #(
  output wire [255:0] rsp_digest,output wire rsp_error,
  output wire error_valid,output wire [15:0] error_tag,output wire [2:0] error_program,
  output wire [1:0] error_code,output wire [8:0] error_pc,output wire [7:0] error_opcode,
- output wire [3:0] phase,output wire [1:0] init_fill_phase,output wire [1:0] program_gen_phase,output wire [1:0] scratchpad_owner,output wire generation_exhausted,
+ output wire [3:0] phase,output wire [1:0] init_fill_phase,output wire [1:0] program_gen_phase,output wire [1:0] input_hash_phase,output wire [1:0] scratchpad_owner,output wire generation_exhausted,
  output wire  prep_commit_valid,
  output wire [15:0] prep_commit_epoch,
  output wire [2:0] prep_commit_program,
@@ -106,7 +106,7 @@ module randomx_prepared_hash_lifecycle #(
  output wire [511:0] commit_e,
  output wire [1:0] commit_round_mode
 );
- localparam [3:0] IDLE=0,INIT_REQUEST=1,INIT_STREAM=2,CHAIN_START=3,RUN=4,FIN_START=5,FIN_WAIT=6,RETURN=7,ERROR=8,FILL_START=9,FILL_RUN=10;
+ localparam [3:0] IDLE=0,INIT_REQUEST=1,INIT_STREAM=2,CHAIN_START=3,RUN=4,FIN_START=5,FIN_WAIT=6,RETURN=7,ERROR=8,FILL_START=9,FILL_RUN=10,INPUT_START=11,INPUT_WAIT=12;
  localparam [1:0] OWNER_INIT=0,OWNER_EXEC=1,OWNER_FINAL=2,OWNER_NONE=3;
  localparam [21:0] FINAL_CAPACITY=SCRATCHPAD_BYTES;
  reg [3:0] state_q;reg [15:0] generation_counter_q,generation_q,user_tag_q;
@@ -196,6 +196,8 @@ module randomx_prepared_hash_lifecycle #(
  wire fill_req_ready,fill_wr_valid,fill_rsp_valid;
  wire [20:0] fill_wr_addr;wire [127:0] fill_wr_data;wire [15:0] fill_wr_strb,fill_wr_tag,fill_rsp_tag;
  wire [511:0] fill_rsp_seed;wire [1:0] fill_phase;
+ wire ih_req_valid,ih_req_ready,ih_rsp_valid,ih_rsp_ready,ih_rsp_error;
+ wire [15:0] ih_rsp_tag;wire [511:0] ih_rsp_seed;wire [1:0] ih_phase;
  // A generated image is private until all 3,200 bytes and the generator return
  // have been accepted. Reset/cancel invalidates ownership without clearing RAM.
  localparam [2:0] PG_IDLE=0,PG_START=1,PG_FILL=2,PG_META=3,PG_READY=4;
@@ -213,8 +215,9 @@ module randomx_prepared_hash_lifecycle #(
  wire active=!rst&&!cancel;
  wire init_stale=init_wr_tag!=generation_q;
  wire init_bad=init_beats_q>=SCRATCHPAD_BYTES/16||init_wr_addr!={init_beats_q[16:0],4'b0}||init_wr_strb!=16'hffff;
- wire hardware_init_fault=HARDWARE_FILL&&init_wr_valid&&!init_stale&&
+ wire hardware_init_fault=HARDWARE_FILL&&!HARDWARE_INPUT_HASH&&init_wr_valid&&!init_stale&&
                           (state_q==INIT_STREAM||state_q==FILL_START||state_q==FILL_RUN);
+ wire fill_start_valid=active&&state_q==FILL_START&&!hardware_init_fault;
  wire exec_reply=sp_rsp_tag[50:35]==generation_q&&sp_rsp_tag[34:33]==OWNER_EXEC&&state_q==RUN;
  wire final_reply=sp_rsp_tag[50:35]==generation_q&&sp_rsp_tag[34:33]==OWNER_FINAL&&state_q==FIN_WAIT;
  wire dataset_reply=ds_rsp_tag[31:16]==generation_q&&state_q==RUN;
@@ -225,16 +228,17 @@ module randomx_prepared_hash_lifecycle #(
  wire current_meta_error=meta_wait_q&&meta_rsp_program==expected_meta_program_q;
  assign generation_exhausted=generation_counter_q==16'hffff||chain_epoch_capacity_exhausted;
  assign req_ready=active&&state_q==IDLE&&!generation_exhausted;
- assign init_req_valid=active&&state_q==INIT_REQUEST;
+ assign init_req_valid=!HARDWARE_INPUT_HASH&&active&&state_q==INIT_REQUEST;
  assign init_req_tag=generation_q;assign init_req_input=input_q;assign init_req_input_bytes=input_bytes_q;
- // In hardware mode stale external writes are drained. A matching host write
- // after the initialization request was accepted is a protocol error and never
- // reaches memory. INIT_REQUEST drains writes without interpreting them.
- assign init_wr_ready=active&&(HARDWARE_FILL||init_stale||state_q!=INIT_STREAM||init_bad||sp_wr_ready);
+ // Hardware input hashing removes the host initialization provider entirely:
+ // all its writes/responses drain without affecting the seed or request status.
+ // In seed-provider mode a matching host write after the initialization request
+ // was accepted is an error; INIT_REQUEST drains uninterpreted writes.
+ assign init_wr_ready=active&&(HARDWARE_INPUT_HASH||HARDWARE_FILL||init_stale||state_q!=INIT_STREAM||init_bad||sp_wr_ready);
  // A matching hardware-mode seed offered together with the request must wait
  // for INIT_STREAM, the state that consumes it. Stale responses may still drain.
- assign init_rsp_ready=active&&(HARDWARE_FILL?(init_rsp_tag!=generation_q||state_q!=INIT_REQUEST):
-                              (init_rsp_tag!=generation_q||state_q!=INIT_STREAM||init_rsp_error||init_beats_q==SCRATCHPAD_BYTES/16));
+ assign init_rsp_ready=active&&(HARDWARE_INPUT_HASH||(HARDWARE_FILL?(init_rsp_tag!=generation_q||state_q!=INIT_REQUEST):
+                              (init_rsp_tag!=generation_q||state_q!=INIT_STREAM||init_rsp_error||init_beats_q==SCRATCHPAD_BYTES/16)));
  assign rsp_valid=active&&(state_q==RETURN||state_q==ERROR);assign rsp_error=state_q==ERROR;
  assign rsp_tag=user_tag_q;assign rsp_r=r_q;assign rsp_f=f_q;assign rsp_e=e_q;assign rsp_a=a_q;
  assign rsp_round_mode=round_q;assign rsp_digest=digest_q;
@@ -243,12 +247,14 @@ module randomx_prepared_hash_lifecycle #(
  assign scratchpad_owner=(state_q==INIT_REQUEST||state_q==INIT_STREAM||state_q==FILL_START||state_q==FILL_RUN)?OWNER_INIT:state_q==RUN?OWNER_EXEC:
                          (state_q==FIN_START||state_q==FIN_WAIT)?OWNER_FINAL:OWNER_NONE;
  // Exactly one outer phase per admitted clock. Stall counters are nested observers.
- assign phase=cancel?4'd9:(state_q==INIT_REQUEST||state_q==INIT_STREAM||state_q==FILL_START||state_q==FILL_RUN)?4'd1:
+ assign phase=cancel?4'd9:(state_q==INPUT_START||state_q==INPUT_WAIT)?4'd10:
+              (state_q==INIT_REQUEST||state_q==INIT_STREAM||state_q==FILL_START||state_q==FILL_RUN)?4'd1:
               state_q==RUN?(HARDWARE_PROGRAM&&(pg_state_q==PG_START||pg_state_q==PG_FILL||pg_state_q==PG_META)?4'd7:chain_phase):(state_q==FIN_START||state_q==FIN_WAIT)?
               4'd6:
               (state_q==RETURN||state_q==ERROR)?4'd8:4'd2;
  assign init_fill_phase=HARDWARE_FILL&&(state_q==FILL_START||state_q==FILL_RUN)?fill_phase:2'd0;
  assign program_gen_phase=HARDWARE_PROGRAM&&active&&state_q==RUN?pg_phase:2'd0;
+ assign input_hash_phase=HARDWARE_INPUT_HASH&&active&&(state_q==INPUT_START||state_q==INPUT_WAIT)?ih_phase:2'd0;
  assign chain_start_valid=active&&state_q==CHAIN_START;assign chain_start_tag=generation_q;assign chain_start_v2=1'b1;
  assign meta_req_valid=!HARDWARE_PROGRAM&&active&&state_q==RUN&&chain_meta_req_valid;
  assign chain_meta_req_ready=active&&state_q==RUN&&(HARDWARE_PROGRAM?
@@ -291,10 +297,20 @@ module randomx_prepared_hash_lifecycle #(
  assign sp_wr_tag=HARDWARE_FILL&&state_q==FILL_RUN?{fill_wr_tag,OWNER_INIT,15'b0,init_beats_q}:
                   state_q==INIT_STREAM?{generation_q,OWNER_INIT,15'b0,init_beats_q}:{generation_q,OWNER_EXEC,17'b0,chain_sp_wr_tag};
  assign chain_sp_wr_ready=active&&state_q==RUN&&sp_wr_ready;
+ assign ih_req_valid=HARDWARE_INPUT_HASH&&active&&state_q==INPUT_START;
+ assign ih_rsp_ready=HARDWARE_INPUT_HASH&&active&&state_q==INPUT_WAIT;
+ generate if(HARDWARE_INPUT_HASH)begin: hardware_input_hash
+  randomx_input_blake2b input_hasher(
+   .clk(clk),.rst(rst),.cancel(cancel||state_q==ERROR),
+   .req_valid(ih_req_valid),.req_ready(ih_req_ready),.req_tag(generation_q),.req_input(input_q),.req_input_bytes(input_bytes_q),
+   .rsp_valid(ih_rsp_valid),.rsp_ready(ih_rsp_ready),.rsp_tag(ih_rsp_tag),.rsp_seed(ih_rsp_seed),.rsp_error(ih_rsp_error),.phase(ih_phase));
+ end else begin: software_input_hash
+  assign ih_req_ready=0;assign ih_rsp_valid=0;assign ih_rsp_tag=0;assign ih_rsp_seed=0;assign ih_rsp_error=0;assign ih_phase=0;
+ end endgenerate
  generate if(HARDWARE_FILL)begin: hardware_initial_fill
   randomx_initial_scratchpad_fill #(.SCRATCHPAD_BYTES(SCRATCHPAD_BYTES)) filler(
    .clk(clk),.rst(rst),.cancel(cancel||state_q==ERROR),
-   .req_valid(active&&state_q==FILL_START&&!hardware_init_fault),.req_ready(fill_req_ready),.req_tag(generation_q),.req_seed(seed_q),
+   .req_valid(fill_start_valid),.req_ready(fill_req_ready),.req_tag(generation_q),.req_seed(seed_q),
    .sp_wr_valid(fill_wr_valid),.sp_wr_ready(active&&state_q==FILL_RUN&&sp_wr_ready&&!hardware_init_fault),
    .sp_wr_addr(fill_wr_addr),.sp_wr_data(fill_wr_data),.sp_wr_strb(fill_wr_strb),.sp_wr_tag(fill_wr_tag),
    .rsp_valid(fill_rsp_valid),.rsp_ready(active&&state_q==FILL_RUN),.rsp_tag(fill_rsp_tag),.rsp_seed(fill_rsp_seed),.phase(fill_phase)
@@ -441,6 +457,10 @@ module randomx_prepared_hash_lifecycle #(
   lifecycle_hardware_fill_requires_boolean_0_or_1 invalid();end endgenerate
  generate if(HARDWARE_PROGRAM!=0&&HARDWARE_PROGRAM!=1)begin: invalid_program_mode
   lifecycle_hardware_program_requires_boolean_0_or_1 invalid();end endgenerate
+ generate if(HARDWARE_INPUT_HASH!=0&&HARDWARE_INPUT_HASH!=1)begin: invalid_input_mode
+  lifecycle_hardware_input_hash_requires_boolean_0_or_1 invalid();end endgenerate
+ generate if(HARDWARE_INPUT_HASH&&!HARDWARE_FILL)begin: invalid_input_fill_dependency
+  lifecycle_hardware_input_hash_requires_hardware_fill invalid();end endgenerate
  always @(posedge clk)begin
   if(rst||cancel||state_q==ERROR||state_q==IDLE)begin
    pg_state_q<=PG_IDLE;pg_tag_q<=0;pg_program_q<=0;pg_seed_q<=0;pg_beats_q<=0;pg_entropy_q<=0;
@@ -493,7 +513,13 @@ module randomx_prepared_hash_lifecycle #(
     IDLE:if(req_valid&&req_ready)begin
      generation_q<=generation_counter_q+16'd1;user_tag_q<=req_tag;input_q<=req_input;input_bytes_q<=req_input_bytes;
      init_beats_q<=0;seed_q<=0;digest_q<=0;error_program_q<=0;error_code_q<=req_input_bytes>80?2'd1:2'd0;error_pc_q<=0;error_opcode_q<=0;
-     state_q<=req_input_bytes>80?ERROR:INIT_REQUEST;
+     state_q<=req_input_bytes>80?ERROR:HARDWARE_INPUT_HASH?INPUT_START:INIT_REQUEST;
+    end
+    INPUT_START:if(ih_req_ready)state_q<=INPUT_WAIT;
+    INPUT_WAIT:if(ih_rsp_valid&&ih_rsp_ready)begin
+     if(ih_rsp_error)begin error_code_q<=1;state_q<=ERROR;end
+     else if(ih_rsp_tag!=generation_q)begin error_code_q<=3;state_q<=ERROR;end
+     else begin seed_q<=ih_rsp_seed;state_q<=FILL_START;end
     end
     INIT_REQUEST:if(init_req_ready)state_q<=INIT_STREAM;
     INIT_STREAM:begin
@@ -507,12 +533,12 @@ module randomx_prepared_hash_lifecycle #(
      end
     end
     FILL_START:begin
-     if(init_wr_valid&&init_wr_ready&&!init_stale)begin error_code_q<=1;state_q<=ERROR;end
+     if(!HARDWARE_INPUT_HASH&&init_wr_valid&&init_wr_ready&&!init_stale)begin error_code_q<=1;state_q<=ERROR;end
      else if(fill_req_ready)state_q<=FILL_RUN;
     end
     FILL_RUN:begin
      if(sp_wr_valid&&sp_wr_ready)init_beats_q<=init_beats_q+18'd1;
-     if(init_wr_valid&&init_wr_ready&&!init_stale)begin error_code_q<=1;state_q<=ERROR;end
+     if(!HARDWARE_INPUT_HASH&&init_wr_valid&&init_wr_ready&&!init_stale)begin error_code_q<=1;state_q<=ERROR;end
      else if(fill_rsp_valid)begin
       if(fill_rsp_tag!=generation_q||init_beats_q!=SCRATCHPAD_BYTES/16)begin error_code_q<=3;state_q<=ERROR;end
       else begin seed_q<=fill_rsp_seed;state_q<=CHAIN_START;end
