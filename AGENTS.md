@@ -1,5 +1,9 @@
 # Agent instructions
 
+## Hardware initial AES fill candidate — 2026-10-16
+
+[EXP-016](experiments/EXP-016-initial-scratchpad-fill.md) and [evidence](docs/validation/initial-scratchpad-fill-20261016/README.md) record a bounded hardware initial-fill implementation above merged main `b8cd0707`. Executed standalone `825f255` and connected `e22c8e0` sources are preserved. Four complete 2 MiB native images, 30 RTL / 18 bounded mapped modes, actual default synthesis and connected 2×1 ideal/stalled/recovery checks pass with verified receipts. Explicit `HARDWARE_FILL=1` uses seed-only input hashing and hardware writes/post-fill seed; legacy default preserves historical reproduction. This is not a new default 8×2,048 result or physical PPA/architecture acceptance. Independent final publication-head review and hosted checks remain separate. [Task #75](https://github.com/jliu67/OpenRX/issues/75) now records this owner-authorized implementation and publication. Read its final handoff for the public draft head, independent review and hosted gates. No hub5 communication is permitted in this session. Older dated snapshots below retain their original context.
+
 ## Connected default v2 hash — task #71, 2026-10-16
 
 [Task #71](https://github.com/jliu67/OpenRX/issues/71) / [draft PR #73](https://github.com/jliu67/OpenRX/pull/73)

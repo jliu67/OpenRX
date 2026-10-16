@@ -20,8 +20,8 @@ static void write_bytes(vpiHandle h,const void* input,size_t size){
  for(size_t i=0;i<size/4;++i){std::memcpy(&bits[i].aval,bytes+4*i,4);bits[i].bval=0;}
  s_vpi_value v{};v.format=vpiVectorVal;v.value.vector=bits.data();vpi_put_value(h,&v,nullptr,vpiNoDelay);
 }
-static double initial_seconds=0,generation_seconds=0,assertion_seconds=0;
-static unsigned generations=0;
+static double initial_seconds=0,input_hash_seconds=0,generation_seconds=0,assertion_seconds=0;
+static unsigned generations=0,input_hash_calls=0,software_fill_calls=0;
 static PLI_INT32 initial(PLI_BYTE8*){try{
  auto a=arguments();if(a.size()!=4)throw std::runtime_error("rx_life_initial arguments");
  uint8_t bytes[80];read_bytes(a[0],bytes,80);s_vpi_value n{};n.format=vpiIntVal;vpi_get_value(a[1],&n);
@@ -29,8 +29,17 @@ static PLI_INT32 initial(PLI_BYTE8*){try{
  lifecycle_native::dataset();auto started=lifecycle_native::Clock::now();
  std::vector<uint8_t> input(bytes,bytes+n.value.integer),mem(randomx::ScratchpadSize);alignas(16) uint8_t seed[64];
  lifecycle_native::initial(input,seed,mem);sequence_fixture::image(string_value(a[2]),mem);write_bytes(a[3],seed,64);
- initial_seconds+=lifecycle_native::seconds(started);
+ initial_seconds+=lifecycle_native::seconds(started);++software_fill_calls;
  }catch(const std::exception& e){vpi_printf("FAIL native source initial: %s\n",e.what());vpi_control(vpiFinish,1);}return 0;}
+static PLI_INT32 input_hash(PLI_BYTE8*){try{
+ auto a=arguments();if(a.size()!=3)throw std::runtime_error("rx_life_input_hash arguments");
+ uint8_t bytes[80];read_bytes(a[0],bytes,80);s_vpi_value n{};n.format=vpiIntVal;vpi_get_value(a[1],&n);
+ if(n.value.integer<0||n.value.integer>80)throw std::runtime_error("input length");
+ lifecycle_native::dataset();auto started=lifecycle_native::Clock::now();
+ std::vector<uint8_t> input(bytes,bytes+n.value.integer);alignas(16) uint8_t seed[64];
+ lifecycle_native::input_hash(input,seed);write_bytes(a[2],seed,64);
+ input_hash_seconds+=lifecycle_native::seconds(started);++input_hash_calls;
+ }catch(const std::exception& e){vpi_printf("FAIL native source input hash: %s\n",e.what());vpi_control(vpiFinish,1);}return 0;}
 static PLI_INT32 generate(PLI_BYTE8*){try{
  auto a=arguments();if(a.size()!=3)throw std::runtime_error("rx_generate arguments");alignas(16) uint8_t seed[64];read_bytes(a[0],seed,64);
  auto started=lifecycle_native::Clock::now();randomx::Program p;sequence_fixture::generate(seed,p);sequence_fixture::words(string_value(a[1]),p);write_bytes(a[2],&p,128);generation_seconds+=lifecycle_native::seconds(started);++generations;
@@ -50,13 +59,15 @@ static PLI_INT32 statistics(PLI_BYTE8*){try{
   <<"{\"provider\":\"pinned randomx::initDatasetItem, native light cache; not a physical DRAM model\","
   <<"\"cache_bytes\":268435456,\"logical_dataset_bytes\":2181038016,\"materialized_dataset_bytes\":0,\"cache_key\":\""<<lifecycle_native::cache_key<<"\","
   <<"\"cache_initialization_host_seconds\":"<<d.initialization_seconds<<",\"initialization_host_seconds\":"<<initial_seconds
+  <<",\"input_hash_host_seconds\":"<<input_hash_seconds<<",\"input_hash_calls\":"<<input_hash_calls
+  <<",\"software_fill_provider_calls\":"<<software_fill_calls
   <<",\"program_generation_host_seconds\":"<<generation_seconds<<",\"program_generations\":"<<generations
   <<",\"dataset_provider_host_seconds\":"<<d.item_seconds<<",\"dataset_requests\":"<<d.item_requests
   <<",\"assertion_only_hash_host_seconds\":"<<assertion_seconds<<",\"provider_device_cycles\":null,\"provider_internal_physical_traffic_bytes\":null}\n";
  if(!out)throw std::runtime_error("provider statistics write");
  }catch(const std::exception& e){vpi_printf("FAIL native statistics: %s\n",e.what());vpi_control(vpiFinish,1);}return 0;}
 static void register_tasks(){
- for(auto pair:std::vector<std::pair<const char*,PLI_INT32(*)(PLI_BYTE8*)>>{{"$rx_life_initial",initial},{"$rx_generate",generate},{"$rx_next_seed",next_seed},{"$rx_dataset",dataset_read},{"$rx_provider_stats",statistics}}){
+ for(auto pair:std::vector<std::pair<const char*,PLI_INT32(*)(PLI_BYTE8*)>>{{"$rx_life_initial",initial},{"$rx_life_input_hash",input_hash},{"$rx_generate",generate},{"$rx_next_seed",next_seed},{"$rx_dataset",dataset_read},{"$rx_provider_stats",statistics}}){
   s_vpi_systf_data d{};d.type=vpiSysTask;d.tfname=(PLI_BYTE8*)pair.first;d.calltf=pair.second;vpi_register_systf(&d);
  }
 }

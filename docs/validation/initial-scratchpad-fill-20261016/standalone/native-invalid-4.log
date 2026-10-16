@@ -1,0 +1,1 @@
+FAIL native_initial_scratchpad_fill: seed kind must be zero, ones, incrementing or prng

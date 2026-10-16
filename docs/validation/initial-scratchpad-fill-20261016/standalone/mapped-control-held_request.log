@@ -1,0 +1,1 @@
+PASS initial_scratchpad_fill bytes=256 mode=held_request requests=2 completed=2 full_images=2 verified_writes=32 primary_writes=16 availability_cycles=27 stall_cycles=21 held_request_cycles=33 held_response_cycles=10 aborts=0 aborted_writes=0 native_final_seed=1 accepted_writes_persist=1

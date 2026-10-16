@@ -1,0 +1,9 @@
+{
+  "complete_output_retained": "/home/server/openrx-local/v1/executions/20261016T084736Z-e61113d5b84c/output",
+  "execution_id": "20261016T084736Z-e61113d5b84c",
+  "integrity_verified": true,
+  "manifest_sha256": "b524fc4deb37b7d07ad1bf0b63c57bbcfab9a99fcde6409384fb07f1bc4f0241",
+  "original_execution": "/home/server/openrx-local/v1/executions/20261016T084736Z-e61113d5b84c",
+  "original_receipt_sha256": "a3be00bf67b4506a97f1222dceb45a44fb4c5d54ca379639f26ee9c1917519cf",
+  "scientific_acceptance": "unverified"
+}

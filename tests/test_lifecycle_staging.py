@@ -47,6 +47,14 @@ class StagingTest(unittest.TestCase):
     def test_duplicate_variants_do_not_alias_output(self):
         self.reject('--variants', 'prepared', 'prepared')
 
+    def test_duplicate_recovery_selections_do_not_alias_output(self):
+        self.reject('--cancellation-phases', '1', '1')
+        self.reject('--error-ports', '1', '1')
+
+    def test_recovery_selections_stay_in_documented_range(self):
+        self.reject('--cancellation-phases', '7')
+        self.reject('--error-ports', '9')
+
     def test_malformed_input_is_rejected(self):
         self.reject('--input-hex', 'not-hex')
 

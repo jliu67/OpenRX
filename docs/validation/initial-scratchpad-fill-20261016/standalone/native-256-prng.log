@@ -1,0 +1,1 @@
+PASS native_initial_scratchpad_fill bytes=256 seed=prng continuation=1 postfill_seed=1

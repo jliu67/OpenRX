@@ -1,0 +1,42 @@
+test_closing_partition (test_lifecycle_ledger.LedgerTest) ... ok
+test_hardware_fill_cannot_double_count_old_transport (test_lifecycle_ledger.LedgerTest) ... ok
+test_hardware_fill_cannot_use_host_fill_as_live_provider (test_lifecycle_ledger.LedgerTest) ... ok
+test_hardware_fill_nested_cycles_must_close (test_lifecycle_ledger.LedgerTest) ... ok
+test_hardware_fill_replaces_existing_initialization_stage (test_lifecycle_ledger.LedgerTest) ... ok
+test_logical_bytecode_bytes_require_native_events (test_lifecycle_ledger.LedgerTest) ... ok
+test_logical_dataset_size_is_not_materialized_bytes (test_lifecycle_ledger.LedgerTest) ... ok
+test_missing_positive_preparation_work (test_lifecycle_ledger.LedgerTest) ... ok
+test_missing_positive_runtime_work (test_lifecycle_ledger.LedgerTest) ... ok
+test_native_work_counts_must_match (test_lifecycle_ledger.LedgerTest) ... ok
+test_negative_or_fractional_cycles_rejected (test_lifecycle_ledger.LedgerTest) ... ok
+test_nonclosing_executor_partition (test_lifecycle_ledger.LedgerTest) ... ok
+test_nonclosing_nested_partition (test_lifecycle_ledger.LedgerTest) ... ok
+test_nonclosing_outer_partition (test_lifecycle_ledger.LedgerTest) ... ok
+test_partial_beat_traffic_rejected (test_lifecycle_ledger.LedgerTest) ... ok
+test_provider_seconds_cannot_become_device_cycles (test_lifecycle_ledger.LedgerTest) ... ok
+test_stalls_cannot_be_added_as_an_outer_stage (test_lifecycle_ledger.LedgerTest) ... ok
+test_useful_bytes_cannot_exceed_bus_traffic (test_lifecycle_ledger.LedgerTest) ... ok
+test_fractional_reciprocal_latency_rejected (test_lifecycle_ledger.PairedCycleTest) ... ok
+test_hidden_common_stage_change_rejected (test_lifecycle_ledger.PairedCycleTest) ... ok
+test_observed_reciprocal_cycle_equations (test_lifecycle_ledger.PairedCycleTest) ... ok
+test_uncharged_preparation_rejected (test_lifecycle_ledger.PairedCycleTest) ... ok
+test_unrelated_executor_saving_rejected (test_lifecycle_ledger.PairedCycleTest) ... ok
+test_wrong_positive_count_rejected (test_lifecycle_ledger.PairedCycleTest) ... ok
+test_compiled_backend_requires_retained_tool (test_lifecycle_staging.StagingTest) ... ok
+test_duplicate_profiles_do_not_alias_output (test_lifecycle_staging.StagingTest) ... ok
+test_duplicate_recovery_selections_do_not_alias_output (test_lifecycle_staging.StagingTest) ... ok
+test_duplicate_variants_do_not_alias_output (test_lifecycle_staging.StagingTest) ... ok
+test_existing_output_is_preserved (test_lifecycle_staging.StagingTest) ... ok
+test_interface_only_cannot_claim_a_full_hash (test_lifecycle_staging.StagingTest) ... ok
+test_interface_only_requires_an_actual_test (test_lifecycle_staging.StagingTest) ... ok
+test_library_reuse_requires_provenance (test_lifecycle_staging.StagingTest) ... ok
+test_malformed_input_is_rejected (test_lifecycle_staging.StagingTest) ... ok
+test_nonpositive_duration_is_rejected (test_lifecycle_staging.StagingTest) ... ok
+test_oversized_input_is_rejected (test_lifecycle_staging.StagingTest) ... ok
+test_recovery_selections_stay_in_documented_range (test_lifecycle_staging.StagingTest) ... ok
+test_source_tree_output_is_rejected_without_mutation (test_lifecycle_staging.StagingTest) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 1.022s
+
+OK

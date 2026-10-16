@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/tmp/openrx-initial-fill-source01/scripts/test_initial_scratchpad_fill.py", line 299, in <module>
+    main()
+  File "/tmp/openrx-initial-fill-source01/scripts/test_initial_scratchpad_fill.py", line 186, in main
+    run('vendor', ['python3', '-B', 'scripts/verify_vendor.py'])
+  File "/tmp/openrx-initial-fill-source01/scripts/test_initial_scratchpad_fill.py", line 116, in run
+    result.check_returncode()
+  File "/usr/lib/python3.10/subprocess.py", line 457, in check_returncode
+    raise CalledProcessError(self.returncode, self.args, self.stdout,
+subprocess.CalledProcessError: Command '['/usr/bin/time', '-v', '-o', '/home/server/openrx-local/v1/executions/20261016T082210Z-a670422823b2/output/vendor.time.txt', 'python3', '-B', 'scripts/verify_vendor.py']' returned non-zero exit status 1.
