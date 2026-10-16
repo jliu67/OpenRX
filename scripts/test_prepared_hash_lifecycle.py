@@ -70,10 +70,13 @@ def reused_library(library, execution, source):
             'PIC_flags_sha256': sha(flags), 'reconfigured_or_modified': False}
 
 
-def validate_ledger(ledger, provider, iterations, programs, native, prepared, hardware_fill=False):
+def validate_ledger(ledger, provider, iterations, programs, native, prepared, hardware_fill=False, hardware_program=False):
     initialization = 'initialization_hardware_fill' if hardware_fill else 'initialization_transport'
-    assert set(ledger['stage_cycles']) == {initialization, 'control_and_metadata',
-        'program_preparation', 'execution', 'interprogram_seed', 'finalization', 'held_return'}
+    stages = {initialization, 'control_and_metadata', 'program_preparation', 'execution',
+              'interprogram_seed', 'finalization', 'held_return'}
+    if hardware_program:
+        stages.add('program_generation')
+    assert set(ledger['stage_cycles']) == stages
     assert type(ledger['cycles']) is int and ledger['cycles'] > 0
     assert all(type(value) is int and value >= 0 for value in ledger['stage_cycles'].values())
     assert len(ledger['nested_iteration_phases']) == 12 and len(ledger['nested_finalization_phases']) == 6
@@ -97,7 +100,8 @@ def validate_ledger(ledger, provider, iterations, programs, native, prepared, ha
     assert ledger['program_image_load_bytes'] == programs * 384 * 8
     assert ledger['untimed_provider_device_cycles'] is None
     assert provider['provider_device_cycles'] is None
-    assert provider['dataset_requests'] == programs * iterations and provider['program_generations'] == programs
+    assert provider['dataset_requests'] == programs * iterations
+    assert provider['program_generations'] == (0 if hardware_program else programs)
     assert provider['cache_bytes'] == 268435456 and provider['logical_dataset_bytes'] == 2181038016
     assert provider['materialized_dataset_bytes'] == 0
     if hardware_fill:
@@ -109,6 +113,16 @@ def validate_ledger(ledger, provider, iterations, programs, native, prepared, ha
         assert nested['provider_wait'] + sum(nested['fill_phases']) == ledger['stage_cycles'][initialization]
         assert provider['input_hash_calls'] == 1 and provider['software_fill_provider_calls'] == 0
         assert provider['initialization_host_seconds'] == 0
+    if hardware_program:
+        assert ledger['hardware_program_enabled'] is True
+        nested = ledger['nested_program_generation_phases']
+        assert len(nested) == 3 and all(type(value) is int and value >= 0 for value in nested)
+        assert sum(nested) == ledger['stage_cycles']['program_generation']
+        assert ledger['program_generation_output_bytes'] == programs * 3200
+        assert ledger['program_image_storage_bytes'] == 3200
+        assert ledger['program_image_transport'] == 'internal_generated_buffer'
+        assert provider['program_generation_host_seconds'] == 0
+        assert provider['assertion_only_program_generations'] == programs
     for name in ('preparation_reciprocals', 'runtime_reciprocals'):
         assert type(ledger[name]) is int and ledger[name] >= 0
     assert ledger['preparation_reciprocals'] == (native['static_active_reciprocals'] if prepared else 0)
@@ -165,14 +179,15 @@ def main():
     parser.add_argument('--variants', nargs='+', choices=['baseline', 'prepared'], default=['baseline', 'prepared'])
     parser.add_argument('--event-trace', action='store_true', help='Keep retirements/transfers and outer/iteration/executor transitions instead of idle rows')
     parser.add_argument('--hardware-fill', action='store_true', help='Host supplies input BLAKE2b seed only; synthesizable AES fills the initial image')
+    parser.add_argument('--hardware-program', action='store_true', help='Synthesizable AES generates the entropy/instruction image; native generation is assertion-only')
     parser.add_argument('--backend', choices=['icarus', 'verilator'], default='icarus')
     parser.add_argument('--verilator-root', type=Path)
     parser.add_argument('--verilator-build-execution', type=Path)
     parser.add_argument('--full-v2', action='store_true')
     parser.add_argument('--compile-only', action='store_true')
     parser.add_argument('--cancellation', action='store_true')
-    parser.add_argument('--cancellation-phases', nargs='+', type=int, choices=range(1, 7), default=list(range(1, 7)),
-                        help='Selected cancellation phases; default retains all six existing checks')
+    parser.add_argument('--cancellation-phases', nargs='+', type=int, choices=range(1, 8), default=list(range(1, 7)),
+                        help='Selected cancellation phases; default retains six existing checks; phase7 cancels hardware program generation')
     parser.add_argument('--matching-errors', action='store_true', help='Six provider errors plus invalid input/write, held return and fresh-generation handoff')
     parser.add_argument('--error-ports', nargs='+', type=int, choices=range(1, 9), default=list(range(1, 9)),
                         help='Selected matching error ports; default retains all eight existing checks')
@@ -187,6 +202,10 @@ def main():
         parser.error('duplicate variants are not permitted')
     if len(args.cancellation_phases) != len(set(args.cancellation_phases)) or len(args.error_ports) != len(set(args.error_ports)):
         parser.error('duplicate recovery selections are not permitted')
+    if args.cancellation and 7 in args.cancellation_phases and not args.hardware_program:
+        parser.error('cancellation phase7 requires hardware program generation')
+    if args.hardware_program and args.matching_errors and set(args.error_ports) & {2, 3}:
+        parser.error('hardware program generation drains external metadata/program responses; select applicable error ports excluding2/3')
     if args.interfaces_only and (args.full_v2 or args.compile_only or not
                                 (args.cancellation or args.matching_errors or args.capacity_checks)):
         parser.error('interfaces-only requires a recovery/capacity check and cannot select full-v2/compile-only')
@@ -212,10 +231,10 @@ def main():
     out.mkdir()
     commands = []
     summary = {'schema': 'openrx.connected-prepared-v2.v1', 'status': 'pending',
-               'base': 'b8cd07070f4e38a0e784e0b123225856c7879f6f', 'programs': args.programs,
+               'base': '548ed2d31fe6be7d2edc2036961dc7745e9e7219', 'programs': args.programs,
                'iterations': args.iterations, 'full_v2_requested': args.full_v2,
                'compile_only': args.compile_only, 'variants': args.variants, 'event_trace': args.event_trace,
-               'interfaces_only': args.interfaces_only, 'hardware_fill': args.hardware_fill,
+               'interfaces_only': args.interfaces_only, 'hardware_fill': args.hardware_fill, 'hardware_program': args.hardware_program,
                'selected_cancellation_phases': args.cancellation_phases, 'selected_error_ports': args.error_ports,
                'backend': args.backend, 'simulation_state_model': 'four-state' if args.backend == 'icarus' else 'two-state; bounded cross-check with Icarus required',
                'balanced_variant_cycle_comparison': False, 'paired_cycle_comparisons': {},
@@ -337,6 +356,7 @@ def main():
                 name += '-capacity'
             parameters = {'PROGRAMS': args.programs, 'ITERATIONS': args.iterations, 'PREPARED_RCP': prepared,
                           'HARDWARE_FILL': int(args.hardware_fill),
+                          'HARDWARE_PROGRAM': int(args.hardware_program),
                           'EVENT_TRACE': int(args.event_trace), 'STALL': stalled, 'CANCEL_PHASE': cancellation,
                           'ERROR_PORT': error_port, 'CAPACITY_TEST': capacity}
             if args.backend == 'icarus':
@@ -378,7 +398,7 @@ def main():
                 assert records[0].startswith('PASS prepared_hash_lifecycle ')
                 ledger = json.loads((directory / 'ledger.json').read_text())
                 provider = json.loads((directory / 'provider-host-time.json').read_text())
-                validate_ledger(ledger, provider, args.iterations, args.programs, native_counts, prepared, args.hardware_fill)
+                validate_ledger(ledger, provider, args.iterations, args.programs, native_counts, prepared, args.hardware_fill, args.hardware_program)
                 summary['profiles'][name] = {'record': records[0], 'ledger': ledger, 'host_provider': provider,
                                              'trace_sha256': sha(directory / 'trace.csv')}
 
@@ -407,8 +427,9 @@ def main():
                              'pass_lifecycle_interfaces' if args.interfaces_only else 'pass_connected_native_reference')
         summary['source_unchanged_after_run'] = True
         summary['boundary'] = ('Software input BLAKE2b, ' + ('' if args.hardware_fill else 'scratchpad AES fill, ') +
-                               'AES program generation and pinned native light dataset provider; ' +
+                               ('' if args.hardware_program else 'AES program generation, ') + 'pinned native light dataset provider; ' +
                                ('hardware initial scratchpad AES fill/transport, ' if args.hardware_fill else 'hardware scratchpad transport, ') +
+                               ('hardware AES program generation and local image buffer, ' if args.hardware_program else '') +
                                f'immutable preparation, execution, {args.programs - 1} interprogram hashes, finalizer/digest. '
                                'Provider host seconds are separate. No complete ASIC, physical DRAM timing, MHz or watts claim.')
         save(out / 'summary.json', summary)
