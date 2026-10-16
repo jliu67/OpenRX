@@ -1,0 +1,2171 @@
+{
+  "capacity_sweep": [
+    {
+      "contexts": 1,
+      "external_backing_bytes": 2080768,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 2097152,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 16384,
+      "residence_budget_s": 1e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 2,
+      "external_backing_bytes": 4161536,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 4194304,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 32768,
+      "residence_budget_s": 2e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4,
+      "external_backing_bytes": 8323072,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 8388608,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 65536,
+      "residence_budget_s": 4e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 8,
+      "external_backing_bytes": 16646144,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 16777216,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 131072,
+      "residence_budget_s": 8e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16,
+      "external_backing_bytes": 33292288,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 33554432,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 262144,
+      "residence_budget_s": 1.6e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 64,
+      "external_backing_bytes": 133169152,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 134217728,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 1048576,
+      "residence_budget_s": 6.4e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 256,
+      "external_backing_bytes": 532676608,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 536870912,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 4194304,
+      "residence_budget_s": 0.000256,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1024,
+      "external_backing_bytes": 2130706432,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 2147483648,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 16777216,
+      "residence_budget_s": 0.001024,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4096,
+      "external_backing_bytes": 8522825728,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 8589934592,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 67108864,
+      "residence_budget_s": 0.004096,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16384,
+      "external_backing_bytes": 34091302912,
+      "hot_prefix_bytes": 16384,
+      "logical_state_bytes": 34359738368,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 268435456,
+      "residence_budget_s": 0.016384,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1,
+      "external_backing_bytes": 2031616,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 2097152,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 65536,
+      "residence_budget_s": 1e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 2,
+      "external_backing_bytes": 4063232,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 4194304,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 131072,
+      "residence_budget_s": 2e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4,
+      "external_backing_bytes": 8126464,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 8388608,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 262144,
+      "residence_budget_s": 4e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 8,
+      "external_backing_bytes": 16252928,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 16777216,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 524288,
+      "residence_budget_s": 8e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16,
+      "external_backing_bytes": 32505856,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 33554432,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 1048576,
+      "residence_budget_s": 1.6e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 64,
+      "external_backing_bytes": 130023424,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 134217728,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 4194304,
+      "residence_budget_s": 6.4e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 256,
+      "external_backing_bytes": 520093696,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 536870912,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 16777216,
+      "residence_budget_s": 0.000256,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1024,
+      "external_backing_bytes": 2080374784,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 2147483648,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 67108864,
+      "residence_budget_s": 0.001024,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4096,
+      "external_backing_bytes": 8321499136,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 8589934592,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 268435456,
+      "residence_budget_s": 0.004096,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16384,
+      "external_backing_bytes": 33285996544,
+      "hot_prefix_bytes": 65536,
+      "logical_state_bytes": 34359738368,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 1073741824,
+      "residence_budget_s": 0.016384,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1,
+      "external_backing_bytes": 1835008,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 2097152,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 262144,
+      "residence_budget_s": 1e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 2,
+      "external_backing_bytes": 3670016,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 4194304,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 524288,
+      "residence_budget_s": 2e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4,
+      "external_backing_bytes": 7340032,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 8388608,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 1048576,
+      "residence_budget_s": 4e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 8,
+      "external_backing_bytes": 14680064,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 16777216,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 2097152,
+      "residence_budget_s": 8e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16,
+      "external_backing_bytes": 29360128,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 33554432,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 4194304,
+      "residence_budget_s": 1.6e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 64,
+      "external_backing_bytes": 117440512,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 134217728,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 16777216,
+      "residence_budget_s": 6.4e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 256,
+      "external_backing_bytes": 469762048,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 536870912,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 67108864,
+      "residence_budget_s": 0.000256,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1024,
+      "external_backing_bytes": 1879048192,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 2147483648,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 268435456,
+      "residence_budget_s": 0.001024,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4096,
+      "external_backing_bytes": 7516192768,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 8589934592,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 1073741824,
+      "residence_budget_s": 0.004096,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16384,
+      "external_backing_bytes": 30064771072,
+      "hot_prefix_bytes": 262144,
+      "logical_state_bytes": 34359738368,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 4294967296,
+      "residence_budget_s": 0.016384,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1,
+      "external_backing_bytes": 1572864,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 2097152,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 524288,
+      "residence_budget_s": 1e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 2,
+      "external_backing_bytes": 3145728,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 4194304,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 1048576,
+      "residence_budget_s": 2e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4,
+      "external_backing_bytes": 6291456,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 8388608,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 2097152,
+      "residence_budget_s": 4e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 8,
+      "external_backing_bytes": 12582912,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 16777216,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 4194304,
+      "residence_budget_s": 8e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16,
+      "external_backing_bytes": 25165824,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 33554432,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 8388608,
+      "residence_budget_s": 1.6e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 64,
+      "external_backing_bytes": 100663296,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 134217728,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 33554432,
+      "residence_budget_s": 6.4e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 256,
+      "external_backing_bytes": 402653184,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 536870912,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 134217728,
+      "residence_budget_s": 0.000256,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1024,
+      "external_backing_bytes": 1610612736,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 2147483648,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 536870912,
+      "residence_budget_s": 0.001024,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4096,
+      "external_backing_bytes": 6442450944,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 8589934592,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 2147483648,
+      "residence_budget_s": 0.004096,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16384,
+      "external_backing_bytes": 25769803776,
+      "hot_prefix_bytes": 524288,
+      "logical_state_bytes": 34359738368,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 8589934592,
+      "residence_budget_s": 0.016384,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 2097152,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 2097152,
+      "residence_budget_s": 1e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 2,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 4194304,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 4194304,
+      "residence_budget_s": 2e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 8388608,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 8388608,
+      "residence_budget_s": 4e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 8,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 16777216,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 16777216,
+      "residence_budget_s": 8e-06,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 33554432,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 33554432,
+      "residence_budget_s": 1.6e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 64,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 134217728,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 134217728,
+      "residence_budget_s": 6.4e-05,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 256,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 536870912,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 536870912,
+      "residence_budget_s": 0.000256,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 1024,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 2147483648,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 2147483648,
+      "residence_budget_s": 0.001024,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 4096,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 8589934592,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 8589934592,
+      "residence_budget_s": 0.004096,
+      "shared_pool_saves_active_image_bits": false
+    },
+    {
+      "contexts": 16384,
+      "external_backing_bytes": 0,
+      "hot_prefix_bytes": 2097152,
+      "logical_state_bytes": 34359738368,
+      "metadata_ecc_queues_registers_program_bytes": null,
+      "on_chip_image_bytes": 34359738368,
+      "residence_budget_s": 0.016384,
+      "shared_pool_saves_active_image_bits": false
+    }
+  ],
+  "classification": "necessary_bounds_and_explicit_scenarios",
+  "dataset": {
+    "internal_generation_or_cache_physical_traffic": null,
+    "logical_bytes_per_hash": 1048576,
+    "requests_per_hash": 16384,
+    "required_payload_Bps": 1048576000000,
+    "source": "accepted native light values from 256 MiB cache; no whole dataset materialized"
+  },
+  "dataset_latency_sweep": [
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 492,
+      "necessary_outstanding_requests": 492,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 246,
+      "necessary_outstanding_requests": 492,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 123,
+      "necessary_outstanding_requests": 492,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 1639,
+      "necessary_outstanding_requests": 1639,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 820,
+      "necessary_outstanding_requests": 1639,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 410,
+      "necessary_outstanding_requests": 1639,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 4916,
+      "necessary_outstanding_requests": 4916,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 2458,
+      "necessary_outstanding_requests": 4916,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "necessary_contexts_if_ready_limit_is_valid": 1229,
+      "necessary_outstanding_requests": 4916,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    }
+  ],
+  "gate": {
+    "demonstrated_asic_feasibility": false,
+    "rejections": [],
+    "status": "unresolved",
+    "unknown": [
+      "correctness_for_proposed_hardware",
+      "complete_path_throughput",
+      "whole_machine_wall_power",
+      "sustainable_bandwidth",
+      "live_state_capacity",
+      "independent_outstanding_requests"
+    ]
+  },
+  "latency_sweep": [
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 10651,
+      "necessary_outstanding_requests": 10651,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 5326,
+      "necessary_outstanding_requests": 10651,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 2663,
+      "necessary_outstanding_requests": 10651,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 35503,
+      "necessary_outstanding_requests": 35503,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 17752,
+      "necessary_outstanding_requests": 35503,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 8876,
+      "necessary_outstanding_requests": 35503,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 106510,
+      "necessary_outstanding_requests": 106510,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 53255,
+      "necessary_outstanding_requests": 106510,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 16384,
+      "necessary_contexts_if_ready_limit_is_valid": 26628,
+      "necessary_outstanding_requests": 106510,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 9100,
+      "necessary_outstanding_requests": 9100,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 4550,
+      "necessary_outstanding_requests": 9100,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 2275,
+      "necessary_outstanding_requests": 9100,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 30333,
+      "necessary_outstanding_requests": 30333,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 15167,
+      "necessary_outstanding_requests": 30333,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 7584,
+      "necessary_outstanding_requests": 30333,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 90999,
+      "necessary_outstanding_requests": 90999,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 45500,
+      "necessary_outstanding_requests": 90999,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 65536,
+      "necessary_contexts_if_ready_limit_is_valid": 22750,
+      "necessary_outstanding_requests": 90999,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 3139,
+      "necessary_outstanding_requests": 3139,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 1570,
+      "necessary_outstanding_requests": 3139,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 785,
+      "necessary_outstanding_requests": 3139,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 10461,
+      "necessary_outstanding_requests": 10461,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 5231,
+      "necessary_outstanding_requests": 10461,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 2616,
+      "necessary_outstanding_requests": 10461,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 31383,
+      "necessary_outstanding_requests": 31383,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 15692,
+      "necessary_outstanding_requests": 31383,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 262144,
+      "necessary_contexts_if_ready_limit_is_valid": 7846,
+      "necessary_outstanding_requests": 31383,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 2828,
+      "necessary_outstanding_requests": 2828,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 1414,
+      "necessary_outstanding_requests": 2828,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 707,
+      "necessary_outstanding_requests": 2828,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 9427,
+      "necessary_outstanding_requests": 9427,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 4714,
+      "necessary_outstanding_requests": 9427,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 2357,
+      "necessary_outstanding_requests": 9427,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 28279,
+      "necessary_outstanding_requests": 28279,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 14140,
+      "necessary_outstanding_requests": 28279,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 524288,
+      "necessary_contexts_if_ready_limit_is_valid": 7070,
+      "necessary_outstanding_requests": 28279,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 30
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 100
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    },
+    {
+      "hot_prefix_bytes": 2097152,
+      "necessary_contexts_if_ready_limit_is_valid": 0,
+      "necessary_outstanding_requests": 0,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails",
+      "service_latency_ns": 300
+    }
+  ],
+  "physical_inputs": {
+    "clock_hz": null,
+    "complete_wall_power_w": null,
+    "controller_sustainable_random_Bps": null,
+    "dataset_energy_j_per_hash": null,
+    "engine_count_selected": null,
+    "process": null,
+    "sram_leakage_w": null,
+    "sram_macro_area_mm2": null
+  },
+  "placement_sweep": [
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.3791281108337194e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 1510811,
+      "external_transfer_bytes_per_hash": 12086488,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 12086488000000,
+      "required_scratchpad_transactions_per_s": 1510811000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.182680815374119e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 1658585,
+      "external_transfer_bytes_per_hash": 13268680,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 13268680000000,
+      "required_scratchpad_transactions_per_s": 1658585000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.8494048289765103e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 990547,
+      "external_transfer_bytes_per_hash": 15848752,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 15848752000000,
+      "required_scratchpad_transactions_per_s": 990547000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.6223895362987464e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 1138321,
+      "external_transfer_bytes_per_hash": 18213136,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 18213136000000,
+      "required_scratchpad_transactions_per_s": 1138321000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.2795915265408166e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 730415,
+      "external_transfer_bytes_per_hash": 23373280,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 23373280000000,
+      "required_scratchpad_transactions_per_s": 730415000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.0720182182034937e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 878189,
+      "external_transfer_bytes_per_hash": 28102048,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 28102048000000,
+      "required_scratchpad_transactions_per_s": 878189000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 7.917222687937892e-12,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 600349,
+      "external_transfer_bytes_per_hash": 38422336,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 38422336000000,
+      "required_scratchpad_transactions_per_s": 600349000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 12086488,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 6.386877425582761e-12,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 355030,
+      "external_transactions_per_hash": 748123,
+      "external_transfer_bytes_per_hash": 47879872,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 16384,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 47879872000000,
+      "required_scratchpad_transactions_per_s": 748123000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.5243729215323113e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 1416342,
+      "external_transfer_bytes_per_hash": 11330736,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 11330736000000,
+      "required_scratchpad_transactions_per_s": 1416342000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.3306716689965924e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 1544947,
+      "external_transfer_bytes_per_hash": 12359576,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 12359576000000,
+      "required_scratchpad_transactions_per_s": 1544947000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.0056942461927108e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 908254,
+      "external_transfer_bytes_per_hash": 14532064,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 14532064000000,
+      "required_scratchpad_transactions_per_s": 908254000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.77171068446428e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 1036859,
+      "external_transfer_bytes_per_hash": 16589744,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 16589744000000,
+      "required_scratchpad_transactions_per_s": 1036859000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.421533877358518e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 654210,
+      "external_transfer_bytes_per_hash": 20934720,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 20934720000000,
+      "required_scratchpad_transactions_per_s": 654210000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.1973796658341334e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 782815,
+      "external_transfer_bytes_per_hash": 25050080,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 25050080000000,
+      "required_scratchpad_transactions_per_s": 782815000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 8.982825642233228e-12,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 527188,
+      "external_transfer_bytes_per_hash": 33740032,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 33740032000000,
+      "required_scratchpad_transactions_per_s": 527188000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 11330736,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 7.264176697506758e-12,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 303328,
+      "external_transactions_per_hash": 655793,
+      "external_transfer_bytes_per_hash": 41970752,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 65536,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 41970752000000,
+      "required_scratchpad_transactions_per_s": 655793000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 3.3191602535179915e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 1045807,
+      "external_transfer_bytes_per_hash": 8366456,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 8366456000000,
+      "required_scratchpad_transactions_per_s": 1045807000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 3.178417760245795e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 1097920,
+      "external_transfer_bytes_per_hash": 8783360,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 8783360000000,
+      "required_scratchpad_transactions_per_s": 1097920000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9935014675341594e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 586919,
+      "external_transfer_bytes_per_hash": 9390704,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 9390704000000,
+      "required_scratchpad_transactions_per_s": 586919000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.7720887125160382e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 639032,
+      "external_transfer_bytes_per_hash": 10224512,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 10224512000000,
+      "required_scratchpad_transactions_per_s": 639032000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.502447193159134e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 357475,
+      "external_transfer_bytes_per_hash": 11439200,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 11439200000000,
+      "required_scratchpad_transactions_per_s": 357475000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.2076393221749e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 409588,
+      "external_transfer_bytes_per_hash": 13106816,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 13106816000000,
+      "required_scratchpad_transactions_per_s": 409588000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.8842590984691494e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 242753,
+      "external_transfer_bytes_per_hash": 15536192,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 15536192000000,
+      "required_scratchpad_transactions_per_s": 242753000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 8366456,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.5687751004016066e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 104607,
+      "external_transactions_per_hash": 294866,
+      "external_transfer_bytes_per_hash": 18871424,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 262144,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 18871424000000,
+      "required_scratchpad_transactions_per_s": 294866000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 3.789245672135791e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 899806,
+      "external_transfer_bytes_per_hash": 7198448,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 7198448000000,
+      "required_scratchpad_transactions_per_s": 899806000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 3.6313360713800985e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 944634,
+      "external_transfer_bytes_per_hash": 7557072,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 7557072000000,
+      "required_scratchpad_transactions_per_s": 944634000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 3.410178197906882e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 507198,
+      "external_transfer_bytes_per_hash": 8115168,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 8115168000000,
+      "required_scratchpad_transactions_per_s": 507198000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 3.162637921374696e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 552026,
+      "external_transfer_bytes_per_hash": 8832416,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 8832416000000,
+      "required_scratchpad_transactions_per_s": 552026000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.8416365498658565e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 310894,
+      "external_transfer_bytes_per_hash": 9948608,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 9948608000000,
+      "required_scratchpad_transactions_per_s": 310894000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.5137390923833302e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 355722,
+      "external_transfer_bytes_per_hash": 11383104,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 11383104000000,
+      "required_scratchpad_transactions_per_s": 355722000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.1310599844626975e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 212742,
+      "external_transfer_bytes_per_hash": 13615488,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 13615488000000,
+      "required_scratchpad_transactions_per_s": 212742000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 7198448,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 1.782347583900947e-11,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 94262,
+      "external_transactions_per_hash": 257570,
+      "external_transfer_bytes_per_hash": 16484480,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 524288,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 16484480000000,
+      "required_scratchpad_transactions_per_s": 257570000000
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 8,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 16,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 32,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": false,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    },
+    {
+      "algorithmic_cold_bytes_per_hash": 0,
+      "all_wall_energy_ceiling_j_per_transferred_bit": 2.9802322387695313e-10,
+      "cache_or_combining_model": "none",
+      "ceiling_scope": "optimistic rejection ceiling assigns ALL wall energy to scratchpad+dataset transfers",
+      "cold_execution_reads_per_hash": 0,
+      "external_transactions_per_hash": 0,
+      "external_transfer_bytes_per_hash": 0,
+      "granule_bytes": 64,
+      "hot_prefix_bytes": 2097152,
+      "partial_store_read_modify_write": true,
+      "required_dataset_Bps": 1048576000000,
+      "required_scratchpad_Bps": 0,
+      "required_scratchpad_transactions_per_s": 0
+    }
+  ],
+  "port_sweep": [
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 2483383000000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 1241691500000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 1241691500000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 620845750000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 620845750000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 310422875000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 310422875000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 155211437500.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 155211437500.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 77605718750.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 77605718750.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 2483383000000,
+      "necessary_clock_hz_if_perfectly_balanced": 38802859375.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 2483383,
+      "width_bytes": 8
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 1959095000000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 979547500000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 979547500000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 489773750000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 489773750000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 244886875000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 244886875000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 122443437500.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 122443437500.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 61221718750.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 61221718750.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 1959095000000,
+      "necessary_clock_hz_if_perfectly_balanced": 30610859375.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1959095,
+      "width_bytes": 16
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 1696951000000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 848475500000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 848475500000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 424237750000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 424237750000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 212118875000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 212118875000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 106059437500.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 106059437500.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 53029718750.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 53029718750.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 1696951000000,
+      "necessary_clock_hz_if_perfectly_balanced": 26514859375.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1696951,
+      "width_bytes": 32
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 1565879000000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 1,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 782939500000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 782939500000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 2,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 391469750000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 391469750000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 4,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 195734875000.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 195734875000.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 8,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 97867437500.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 97867437500.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 16,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 48933718750.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 48933718750.0,
+      "ports_per_bank": 1,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    },
+    {
+      "actual_bank_conflicts_and_ready_time": "scheduler_required",
+      "banks": 32,
+      "necessary_aggregate_bank_port_clocks_per_s": 1565879000000,
+      "necessary_clock_hz_if_perfectly_balanced": 24466859375.0,
+      "ports_per_bank": 2,
+      "service_operations_per_hash": 1565879,
+      "width_bytes": 64
+    }
+  ],
+  "power": {
+    "missing": [
+      "dynamic.compute",
+      "dynamic.scratchpad_dynamic",
+      "dynamic.dataset_dynamic",
+      "dynamic.controllers_phy",
+      "dynamic.fabric_clock",
+      "dynamic.input_hash_fill_program_dataset_generation",
+      "static.logic_leakage",
+      "static.sram_leakage",
+      "static.memory_refresh_static",
+      "static.vrm_losses",
+      "static.fans",
+      "static.auxiliary_dc",
+      "psu_efficiency",
+      "ac_auxiliary_w"
+    ],
+    "status": "unresolved",
+    "wall_j_per_hash": null,
+    "wall_power_w": null
+  },
+  "random_service_sweep": [
+    {
+      "assumed_random_to_peak_efficiency": 0.1,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 16384,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 394709120000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.25,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 16384,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 157883648000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.5,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 16384,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 78941824000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.8,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 16384,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 49338640000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.1,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 65536,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 347886080000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.25,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 65536,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 139154432000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.5,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 65536,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 69577216000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.8,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 65536,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 43485760000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.1,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 262144,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 165847680000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.25,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 262144,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 66339072000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.5,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 262144,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 33169536000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.8,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 262144,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 20730960000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.1,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 524288,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 146640640000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.25,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 524288,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 58656256000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.5,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 524288,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 29328128000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.8,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 524288,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 18330080000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.1,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 2097152,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 10485760000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.25,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 2097152,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 4194304000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.5,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 2097152,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 2097152000000.0
+    },
+    {
+      "assumed_random_to_peak_efficiency": 0.8,
+      "controller_bank_tRC_tFAW_refresh_turnaround_transaction_capacity": null,
+      "hot_prefix_bytes": 2097152,
+      "measured_efficiency": null,
+      "necessary_peak_Bps_for_scratchpad_and_dataset": 1310720000000.0
+    }
+  ],
+  "schema": "openrx.architecture.envelope.v1",
+  "strict_wall_energy_ceiling_j_per_hash": 0.0025,
+  "strict_wall_limit_w": 2500,
+  "target_hps": 1000000,
+  "time_multiplex": {
+    "Bps_per_switch_per_hash_at_target": 4194304000000,
+    "full_image_save_restore_bytes_per_switch": 4194304,
+    "resident_backing_required": true,
+    "switches_per_hash": null
+  }
+}

@@ -21,7 +21,10 @@ diff -u docs/validation/architecture-feasibility-20261016/sensitivity.json \
   /tmp/openrx-architecture-reproduction-new/sensitivity.json
 ```
 
-The output directory must be new. `--workers 1..6` changes host parallelism,
+The output directory must be new. On the designated project server, submit this
+payload through the installed admission/global lock and substitute its execution
+output directory; the portable `/tmp` example describes standalone reproduction.
+`--workers 1..6` changes host parallelism,
 not modeled hardware. Full trace extraction uses `run extract --help`, retained
 accepted evidence and the installed server admission/global lock. Reproduction
 needs only the compact committed fixture and derived full-workload counts.
@@ -82,7 +85,9 @@ operation in flight. Limited nonblocking and dual issue use eight trace position
 of lookahead, including holes already issued. Dual issue retains the same FU
 pool; width alone grants neither extra units nor more independent reads.
 Memory enforces bank ports, aggregate bytes/cycle, outstanding queue capacity
-through response, and finite response latency. The reference scenario has eight
+through complete memory-macro completion, and finite response latency. Queue
+slots remain reserved during the post-response compute portion too, a conservative
+occupancy assumption. The reference scenario has eight
 shared banks, one port each, 16 B/cycle and eight outstanding requests. These are
 assumptions, not an implementation commitment. Bank mapping is address/8 modulo
 bank count; repeated contexts replay the same window and therefore its correlated

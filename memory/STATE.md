@@ -1,5 +1,21 @@
 # Current state — actual local execution activation
 
+## 2026-10-16 — executable architectural feasibility gate, task #72
+
+[EXP-015](../experiments/EXP-015-architecture-feasibility.md) adds the executable
+[model](../tools/architecture/README.md), 58 passing focused tests, eight portable
+actual bytecode windows and 488 constrained comparison rows. Admitted extraction
+and compact reproduction receipts verify; comparison/sensitivity bytes reproduce
+exactly. Fixed-state full-source replay and bounded scalar protocol residuals are
+zero with measured executor/FU service explicit. The first parser failure remains
+preserved; old sparse CSV nested durations stay null. Real native-dataset locality
+replaces the preliminary synthetic scratchpad inputs. [Results](../docs/validation/architecture-feasibility-20261016/README.md)
+retain unknown host-provider device costs and physical power/timing. Alternative
+full-hash throughput and the 1 MH/s below 2,500 W target remain unresolved. Next
+bounded hardware: configurable context-tagged blocking dispatch and explicit
+readiness/arbitration instrumentation with native value checks. Draft feature PR
+and independent review only; no production architecture choice or own merge.
+
 ## 2026-10-16 — first default connected v2 hash
 
 [Task #71](https://github.com/jliu67/OpenRX/issues/71) / [draft PR #73](https://github.com/jliu67/OpenRX/pull/73)

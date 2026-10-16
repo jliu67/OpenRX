@@ -941,3 +941,20 @@ four-state behavior. Source deltas distinguish this successor from full c96; the
 default full hash was not rerun on it. Independent final-head review remains.
 [Experiment/evidence](../experiments/EXP-014-connected-v2-lifecycle.md). No own merge
 or architectural commitment. Earlier stopped/audit work is not resumed.
+
+## 2026-10-16 — task #72 executable feasibility model
+
+Implemented stdlib trace/ledger/locality extraction, source protocol calibration,
+dependency/resource-constrained scheduling, scratchpad/dataset/concurrency and
+whole-wall-energy necessary bounds. Reused accepted full c96 native-dataset
+and detailed short successor evidence, preserving all originals. Initial parser
+failure exposed missing nested transitions in the older sparse observer; those
+CSV timings remain null and accepted per-clock counters are explicitly separate.
+Corrected admitted extraction and compact reproduction both verify; all 488
+comparison rows and sensitivity artifacts match byte-for-byte. Eight scalar
+protocol windows have zero residual with measured FU spans explicit; 58 focused
+tests and 171-file vendor integrity pass. No new RTL/native simulation, physical
+PPA, alternative full-hash timing or target acceptance is claimed. Delivery uses
+a feature draft PR for independent review; no merge, settings, credentials or
+spending change. Next: configurable context-tagged blocking hardware and actual
+readiness/resource instrumentation before more aggressive issue/queues.
