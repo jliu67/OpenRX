@@ -341,3 +341,13 @@ and requires complete ideal parity. Generic mapping and bounded 2×1 correctness
 do not establish physical PPA, new default full-hash timing or Light dataset
 hardware. One prepared superscalar-program executor is the next concrete gap;
 its future validation cost remains unbound until its corpus/implementation exist.
+
+
+## 2026-10-16 — retain strict guards when extending workflow metadata
+
+Bind the added standalone CI step by updating the existing allowlisted staged
+workflow digest. Preserve its staged-not-executed state and every guard, original
+declaration, historical map and runtime input. Reject mutated workflow bytes and
+stale declared digests in retained isolated fixtures. Keep all failed hosted
+archives and distinct local/hosted mapping identities; current-head gates remain
+required.

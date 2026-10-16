@@ -19,6 +19,14 @@ input stage is 30 clocks, with zero live input/fill/program provider calls.
 Original failed attempts remain failed; exact sources, two boundary-helper
 settling delays, raw receipts and retained-subresult reuse are explicitly bound.
 
+Hosted publication `f17fc8ce` passed the new standalone input gate but failed
+five strict source checks because the staged workflow digest was stale. The
+successor updates only that existing metadata digest; guard/historical/runtime
+bytes stay exact. Eighteen source-only tests and both substitution rejections
+pass with verified receipt `20261016T184732Z-7c6f2889a8e8`. Failed hosted logs and
+complete archives remain retained; current PR78 checks and exact-head review are
+the final publication/merge authority.
+
 Native Light cache/dataset and physical device service remain external/untimed.
 No new default 8×2,048 run, whole-engine mapping, physical PPA or architecture
 selection follows. The feature PR records independent exact-head review, hosted

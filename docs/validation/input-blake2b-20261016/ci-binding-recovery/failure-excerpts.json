@@ -1,0 +1,110 @@
+{
+  "derivation": "Exact bounded one-based line windows from five retained original complete failing CI logs; raw log and excerpt SHA anchors included. Not complete logs.",
+  "failed_head": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+  "logs": [
+    {
+      "job_id": 117134457977,
+      "original_log_retained": true,
+      "raw_log_bytes": 131323,
+      "raw_log_sha256": "57bff1526050a05bba013b71edbc4dee238e2c03dfe34acfd1755ba9643c2d75",
+      "role": "push_foundation",
+      "run_id": 38948748573,
+      "run_url": "https://github.com/jliu67/OpenRX/actions/runs/38948748573",
+      "windows": [
+        {
+          "first_line_one_based": 616,
+          "last_line_inclusive": 620,
+          "raw_excerpt_sha256": "e3a5c003ffabfeaff879d9ee200e8b0c73784bff9f06bc6f7163c4e07bf165df",
+          "text": "correctness\tPhase 1 tooling regression tests\t2026-10-16T18:38:08.4361561Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/combined_source_bindings.py\", line 113, in validate\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:08.4362333Z     require(sha(source_path(root, relative)) == row['sha256'], 'combined live successor changed: ' + relative)\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:08.4363087Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/prepared_parent_bindings.py\", line 46, in require\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:08.4363620Z     raise ValueError(message)\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:08.4364052Z ValueError: combined live successor changed: .github/workflows/regfile-blake2b.yml\n"
+        },
+        {
+          "first_line_one_based": 687,
+          "last_line_inclusive": 688,
+          "raw_excerpt_sha256": "f7aa86ef4c99fb7291744f0afc0f52c569e0658eed549ceda2670fe607981b00",
+          "text": "correctness\tPhase 1 tooling regression tests\t2026-10-16T18:38:08.4450348Z FAILED (failures=3, errors=3)\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:08.4592631Z ##[error]Process completed with exit code 1.\n"
+        }
+      ]
+    },
+    {
+      "job_id": 117134778412,
+      "original_log_retained": true,
+      "raw_log_bytes": 41409,
+      "raw_log_sha256": "1c49f5c7909acd195a3a0ce3baca3c9835c21baf9aa826eb58da289ee482bd5f",
+      "role": "prepared_parent",
+      "run_id": 38948842538,
+      "run_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842538",
+      "windows": [
+        {
+          "first_line_one_based": 200,
+          "last_line_inclusive": 205,
+          "raw_excerpt_sha256": "41ef67f19e48f4dce35572b13f2897557d4068858178f4fe7c68f3569f34cbf8",
+          "text": "Prepared parent source and retained evidence only\tVerify combined source bindings without executing workloads\t2026-10-16T18:38:35.6028002Z {\nPrepared parent source and retained evidence only\tVerify combined source bindings without executing workloads\t2026-10-16T18:38:35.6029079Z   \"status\": \"failed\",\nPrepared parent source and retained evidence only\tVerify combined source bindings without executing workloads\t2026-10-16T18:38:35.6029571Z   \"error\": \"combined live successor changed: .github/workflows/regfile-blake2b.yml\",\nPrepared parent source and retained evidence only\tVerify combined source bindings without executing workloads\t2026-10-16T18:38:35.6030145Z   \"fresh_native_or_hdl_validation_performed\": false\nPrepared parent source and retained evidence only\tVerify combined source bindings without executing workloads\t2026-10-16T18:38:35.6030503Z }\nPrepared parent source and retained evidence only\tVerify combined source bindings without executing workloads\t2026-10-16T18:38:35.6088353Z ##[error]Process completed with exit code 1.\n"
+        }
+      ]
+    },
+    {
+      "job_id": 117134777679,
+      "original_log_retained": true,
+      "raw_log_bytes": 132784,
+      "raw_log_sha256": "122bcd4d423fdb836b5714ec3d5216a0571fc9371f4249ad3e136f6daa75556d",
+      "role": "pr_foundation",
+      "run_id": 38948842578,
+      "run_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842578",
+      "windows": [
+        {
+          "first_line_one_based": 632,
+          "last_line_inclusive": 636,
+          "raw_excerpt_sha256": "d289be8011585aa40d2804f7dbec068fd34e6a33fff3fd2c592eb35f5d2908f8",
+          "text": "correctness\tPhase 1 tooling regression tests\t2026-10-16T18:38:51.3394257Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/combined_source_bindings.py\", line 113, in validate\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:51.3394603Z     require(sha(source_path(root, relative)) == row['sha256'], 'combined live successor changed: ' + relative)\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:51.3394943Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/prepared_parent_bindings.py\", line 46, in require\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:51.3395184Z     raise ValueError(message)\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:51.3395395Z ValueError: combined live successor changed: .github/workflows/regfile-blake2b.yml\n"
+        },
+        {
+          "first_line_one_based": 703,
+          "last_line_inclusive": 704,
+          "raw_excerpt_sha256": "f51efc039e78249c02a3a518ad5ae5d891fc85979bd6f6c5eebabb1b7327325e",
+          "text": "correctness\tPhase 1 tooling regression tests\t2026-10-16T18:38:51.3412239Z FAILED (failures=3, errors=3)\ncorrectness\tPhase 1 tooling regression tests\t2026-10-16T18:38:51.3576005Z ##[error]Process completed with exit code 1.\n"
+        }
+      ]
+    },
+    {
+      "job_id": 117134778572,
+      "original_log_retained": true,
+      "raw_log_bytes": 48831,
+      "raw_log_sha256": "50e297f2e2df3a501b4d7dd98663ccbda4f2b2fc62d77ae04d6d5cd5e6231949",
+      "role": "native_hash",
+      "run_id": 38948842626,
+      "run_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842626",
+      "windows": [
+        {
+          "first_line_one_based": 302,
+          "last_line_inclusive": 302,
+          "raw_excerpt_sha256": "00dbced3b80ed2a471856d755609cfe92ebfb60da550f57e1a5dbe7f9733899d",
+          "text": "native-hash-differential\tCheck bounded input BLAKE2b and mapped recovery\t2026-10-16T18:39:54.0506679Z PASS input_blake2b_suite native_vectors=614 valid_lengths=81 rtl_modes=18 mapped_modes=16\n"
+        },
+        {
+          "first_line_one_based": 318,
+          "last_line_inclusive": 323,
+          "raw_excerpt_sha256": "7b9f0b02974917960c9f1b0fcde23f0c9f1c923e58a77ec01cb38514ff32f0ea",
+          "text": "native-hash-differential\tCheck native digests, connected hardware seeds and new mapped stages\t2026-10-16T18:39:54.2592403Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/combined_source_bindings.py\", line 113, in validate\nnative-hash-differential\tCheck native digests, connected hardware seeds and new mapped stages\t2026-10-16T18:39:54.2593815Z     require(sha(source_path(root, relative)) == row['sha256'], 'combined live successor changed: ' + relative)\nnative-hash-differential\tCheck native digests, connected hardware seeds and new mapped stages\t2026-10-16T18:39:54.2595247Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/prepared_parent_bindings.py\", line 46, in require\nnative-hash-differential\tCheck native digests, connected hardware seeds and new mapped stages\t2026-10-16T18:39:54.2596238Z     raise ValueError(message)\nnative-hash-differential\tCheck native digests, connected hardware seeds and new mapped stages\t2026-10-16T18:39:54.2597073Z ValueError: combined live successor changed: .github/workflows/regfile-blake2b.yml\nnative-hash-differential\tCheck native digests, connected hardware seeds and new mapped stages\t2026-10-16T18:39:54.2715566Z ##[error]Process completed with exit code 1.\n"
+        }
+      ]
+    },
+    {
+      "job_id": 117134777584,
+      "original_log_retained": true,
+      "raw_log_bytes": 44805,
+      "raw_log_sha256": "56396a50189d1d0132636683ca9dac76122d39b209df09d85ffd5e5d98e93407",
+      "role": "finalization",
+      "run_id": 38948842528,
+      "run_url": "https://github.com/jliu67/OpenRX/actions/runs/38948842528",
+      "windows": [
+        {
+          "first_line_one_based": 237,
+          "last_line_inclusive": 242,
+          "raw_excerpt_sha256": "a53ee73571f05a7b816b5290eed877ddf4b8f4566f44bae914794471fff99107",
+          "text": "native-finalization-differential\tCheck actual scratchpad reduction, digest and new stage gates\t2026-10-16T18:38:51.4479246Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/combined_source_bindings.py\", line 113, in validate\nnative-finalization-differential\tCheck actual scratchpad reduction, digest and new stage gates\t2026-10-16T18:38:51.4480386Z     require(sha(source_path(root, relative)) == row['sha256'], 'combined live successor changed: ' + relative)\nnative-finalization-differential\tCheck actual scratchpad reduction, digest and new stage gates\t2026-10-16T18:38:51.4481528Z   File \"/home/runner/work/OpenRX/OpenRX/scripts/prepared_parent_bindings.py\", line 46, in require\nnative-finalization-differential\tCheck actual scratchpad reduction, digest and new stage gates\t2026-10-16T18:38:51.4482316Z     raise ValueError(message)\nnative-finalization-differential\tCheck actual scratchpad reduction, digest and new stage gates\t2026-10-16T18:38:51.4482974Z ValueError: combined live successor changed: .github/workflows/regfile-blake2b.yml\nnative-finalization-differential\tCheck actual scratchpad reduction, digest and new stage gates\t2026-10-16T18:38:51.4614774Z ##[error]Process completed with exit code 1.\n"
+        }
+      ]
+    }
+  ],
+  "scientific_acceptance": "unverified"
+}

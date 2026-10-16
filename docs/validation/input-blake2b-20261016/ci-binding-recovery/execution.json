@@ -1,0 +1,61 @@
+{
+  "boundary": null,
+  "complete_output_retained": "@EXECUTIONS@/20261016T184732Z-7c6f2889a8e8/output",
+  "counts": {
+    "unit_tests": 18
+  },
+  "coverage_is_complete_and_disjoint": true,
+  "execution_id": "20261016T184732Z-7c6f2889a8e8",
+  "identity_note": "Portable/selected copies are not a complete original execution and are not host-runner-verifiable; original verification used retained raw paths and bytes.",
+  "mapping": {},
+  "no_source_build_result_checkpoint_modified": true,
+  "observed_driver_status": "pass_staged_workflow_binding_correction",
+  "original_receipt_artifact_count": 578,
+  "package": "ci-binding-recovery",
+  "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+  "process": {
+    "finished_at": "2026-10-16T18:47:39.446107+00:00",
+    "returncode": 0,
+    "scientific_acceptance": "unverified",
+    "signals": [],
+    "status": "PROCESS_EXITED"
+  },
+  "raw_manifest": {
+    "bytes": 861407,
+    "sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d"
+  },
+  "raw_receipt": {
+    "bytes": 139082,
+    "sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+  },
+  "raw_root_verification": {
+    "bytes": 155,
+    "sha256": "daf777dcb19aff5e56e502545fcdda9a099ba7084c832edbe6754fb6f23efe3d"
+  },
+  "retained_only_artifact_count": 525,
+  "retained_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "runner_verify": {
+    "execution_id": "20261016T184732Z-7c6f2889a8e8",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "schema": "openrx.compact-evidence.v2",
+  "scientific_acceptance": "unverified",
+  "scope": "Source binding correction only:18 existing unit tests, positive unchanged guard and two retained negative cases. No HDL/native/synthesis work; hosted historical failures remain failed and new-head hosted CI acceptance is separate.",
+  "selected_original_artifact_count": 53,
+  "source_commit": "3d81d80c4c3eff798a5354470470f4bc1a0eed0d",
+  "source_directory_binding": {
+    "kind": "directory",
+    "path": "@TMP@/openrx-inputhash-source05",
+    "sha256": "9695be7c7c68471f96a1c0ef85ee5a9702a4ffc4116ffa272624185ca78f6fd8"
+  },
+  "source_file_count": 4695,
+  "source_git_status_porcelain_at_export": "",
+  "source_tree": "5ceafbc0e90121f67030ea18bf612d7f6627cf2d",
+  "systemd": {
+    "EXIT_CODE": "exited",
+    "EXIT_STATUS": "0",
+    "SERVICE_RESULT": "success"
+  }
+}

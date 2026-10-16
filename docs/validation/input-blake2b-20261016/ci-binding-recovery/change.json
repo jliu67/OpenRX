@@ -1,0 +1,18 @@
+{
+  "schema": "openrx.ci-workflow-staged-binding-correction.v1",
+  "failed_publication_head": "f17fc8ce1c3e1937a403f810739276fb50a2b178",
+  "path": "docs/validation/prepared-reciprocals/combined-source-bindings.json",
+  "original_declaration_sha256": "bb0eb642fab1e1be8d0a80377d1fc59e4612227979619352312dcca9410daffd",
+  "corrected_declaration_sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881",
+  "only_semantic_change": {
+    "successors": {
+      ".github/workflows/regfile-blake2b.yml": {
+        "old_sha256": "9119d79089df28f0f8543a25a228c2043201c0f856fc5717fa992cd50ca93deb",
+        "new_sha256": "d1990ab5e179a9c6dad0dedb6c74dbf71039e6a0c3e9c24f07ba21e3f5c5be32"
+      }
+    }
+  },
+  "validation_state_unchanged": "staged_not_executed",
+  "guard_code_runtime_and_historical_manifests_unchanged": true,
+  "scope": "Bind already published added unconditional standalone CI step and upload paths; no guard weakening, native/HDL change or fresh historical workload acceptance."
+}

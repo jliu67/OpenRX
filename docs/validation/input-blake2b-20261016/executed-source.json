@@ -8,9 +8,26 @@
     "memory/DECISIONS.md",
     "rtl/hash/INPUT_HASH.md",
     "experiments/EXP-018-bounded-input-blake2b.md",
-    "docs/validation/input-blake2b-20261016/**"
+    "docs/validation/input-blake2b-20261016/**",
+    "docs/validation/prepared-reciprocals/combined-source-bindings.json"
   ],
   "base_commit": "eed374b28e9e2efa71bc16f5ba15e999e2940415",
+  "ci_metadata_successor": {
+    "changed_path": "docs/validation/prepared-reciprocals/combined-source-bindings.json",
+    "checks_sha256": "ef68d4e6f88c486fa9b1040cb1686459d978d9587574a175cd682a3c67fd8ded",
+    "focused_validation_execution": "20261016T184732Z-7c6f2889a8e8",
+    "full_source_identity": "9695be7c7c68471f96a1c0ef85ee5a9702a4ffc4116ffa272624185ca78f6fd8",
+    "logical_snapshot": "@TMP@/openrx-inputhash-source05",
+    "new_sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881",
+    "old_sha256": "bb0eb642fab1e1be8d0a80377d1fc59e4612227979619352312dcca9410daffd",
+    "only_semantic_change": "Existing staged workflow SHA updated9119d790..\u2192d1990ab5.. to bind added standalone CI step. kind and staged_not_executed state unchanged. Guard code, original declaration, all historical manifests and all11 hardware/runtime files stay exact.",
+    "receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116",
+    "scope": "18 existing source-binding unit tests, positive guard and two exact rejection fixtures; no native/HDL/synthesis rerun.",
+    "source_commit": "3d81d80c4c3eff798a5354470470f4bc1a0eed0d",
+    "source_only_driver_sha256": "d636849d9f0d29b592b9f53e902cb36ad563b8759c1351a9346b221e31d35f6b",
+    "source_tree": "5ceafbc0e90121f67030ea18bf612d7f6627cf2d",
+    "tracked_blob_count": 4695
+  },
   "external_orchestration": [
     {
       "logical_path": "@TMP@/openrx-inputhash-connected-check.py",

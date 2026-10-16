@@ -146,3 +146,35 @@ architecture selection or whole-machine target acceptance. The historical full
 record stays attributed to `c96e96ab` at 40,975,538 hardware/transport clocks.
 Final independent exact-head review, applicable hosted CI and normal merge
 safeguards remain separate from the local component evidence.
+
+## Hosted source-binding correction
+
+[CI recovery export](ci-binding-recovery/execution.json),
+[package index](ci-binding-recovery-package-index.json) and
+[independent source-only validation](ci-binding-recovery-independent-validation-review.json)
+bind the focused correction and preserved failure history.
+
+Initial publication `f17fc8ce1c3e1937a403f810739276fb50a2b178` added the
+unconditional standalone input check but retained the earlier staged workflow
+SHA in the combined-source declaration. Five hosted jobs rejected the changed
+workflow at that guard; their complete original logs and five artifact ZIPs
+(222,621,518 bytes) remain retained with GitHub digest matches. The hosted input
+step itself passed 614 native, 18 RTL and 16 mapped modes before the subsequent
+historical gate rejected the stale declaration. Hosted mapping is separately
+33,177 generic cells, 3,366 flop cells and 1,024 inherited latches; it does not
+replace the earlier local tool/result identity or establish physical PPA.
+
+Source `3d81d80c4c3eff798a5354470470f4bc1a0eed0d` changes exactly the existing
+staged workflow digest from `9119d790…` to actual `d1990ab5…`. Kind, staged state,
+guard code, immutable historical maps, native sources and all 11 runtime/test
+paths remain unchanged. A first tiny request was rejected before launch because
+its Python input was a symlink; the revised request binds the regular interpreter.
+No payload or scientific failure is attributed to that prelaunch rejection.
+
+Admitted source-only execution `20261016T184732Z-7c6f2889a8e8` passes all 18
+existing binding tests, the positive guard and isolated mutated-workflow/stale-
+digest rejection cases in 3.345 seconds. Its original receipt integrity verifies.
+Actual kernel limits are CPU600000/100000, 1 GiB RAM, 2 GiB swap and Tasks256;
+allowed CPUs are0–5 with no tighter ancestor ceilings. No native/HDL/synthesis
+work was performed. The original hosted jobs retain their actual outcomes;
+normal successor-head CI and independent exact-head review remain separate.

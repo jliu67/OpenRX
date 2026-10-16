@@ -1,0 +1,17 @@
+{
+  "derivation": "Distinct actual hosted and prior local standalone mapped counts; these are separate tool contexts, not combined estimates.",
+  "hosted": {
+    "cells": 33177,
+    "flops": 3366,
+    "inherited_latches": 1024,
+    "original_summary_sha256": "a606027815f5ad607e5c3b627dc59e4ec8a8c1a70c2147b2c734ffad5d6d2e03"
+  },
+  "local": {
+    "cells": 38538,
+    "flops": 3753,
+    "inherited_latches": 1024,
+    "prior_public_summary_sha256": "89153245fbcb2206b4138e1cdcf250d0e6ccc8d375c1747525b6e1a23818d8de"
+  },
+  "scientific_acceptance": "unverified",
+  "scope": "Standalone input wrapper plus unchanged compression core; no lifecycle mapping, physical PPA, whole-machine or architecture selection claim."
+}

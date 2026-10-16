@@ -1,0 +1,1740 @@
+{
+  "archive": {
+    "bytes": 536126,
+    "sha256": "56cca34defcba1b1257b15b8543af41227695ff0e9236e372a985739bdff6088"
+  },
+  "determinism": {
+    "compression": "deflate9",
+    "ordering": "lexicographic archive entry",
+    "python": "3.10.12",
+    "same-process-rebuild-byte-equal": true,
+    "timestamp": "1980-01-01T00:00:00",
+    "unix_mode": "100644",
+    "zlib": "1.2.11"
+  },
+  "entries": {
+    "coverage.json": {
+      "bytes": 241171,
+      "origin": {
+        "derivation": "complete selected/retained-only partition",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "0b783542becf78812ee23dfd84f23aa4c0ea2ca6e4ee91cd9928ceab56bf1cb5"
+    },
+    "execution.json": {
+      "bytes": 2496,
+      "origin": {
+        "derivation": "selected execution/source/count/mapping facts; no scientific acceptance added",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "acd9d95026caedd2cd06b65c9a08c09fb1ada1b58f1a3ef7cb4e3eb82f605b99"
+    },
+    "external/bounded-ci-binding-check.py": {
+      "bytes": 3845,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_kind": "manifest-bound external reproduction wrapper",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-binding-check.py",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 3845,
+          "sha256": "d636849d9f0d29b592b9f53e902cb36ad563b8759c1351a9346b221e31d35f6b"
+        },
+        "transform": "identity"
+      },
+      "sha256": "d636849d9f0d29b592b9f53e902cb36ad563b8759c1351a9346b221e31d35f6b"
+    },
+    "guard-failure-excerpts.json": {
+      "bytes": 9682,
+      "origin": {
+        "derivation": "Exact bounded one-based line windows from five retained original complete failing CI logs; raw log and excerpt SHA anchors included. Not complete logs.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "9c39402b7cb8c6d01a235f85223db326d06b8470365cc56d594ac50677c27bd2"
+    },
+    "hosted-artifact-coverage.json": {
+      "bytes": 26601,
+      "origin": {
+        "derivation": "All five retained original GitHub artifact ZIPs hashed against supplied index; complete central-directory inventory, not newly hashed full member contents.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "5c5202cdae96d281ab39bfd657eb071ddd3d5be91f6c05986a72780443c8c489"
+    },
+    "hosted-original/completed-failure-logs-index.json": {
+      "bytes": 2338,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/completed-failure-logs-index.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2328,
+          "sha256": "0da2692da8719138a507f09c204aaab99d8d8bcbb13b64020c4c5d1d9234fddd"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "70f614e8be9b84e77c904d11bacca2688e7776544ff9bb8b95b6f85bc6fb0531"
+    },
+    "hosted-original/finalization-12067309030.zip.metadata.json": {
+      "bytes": 544,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/finalization-12067309030.zip.metadata.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 543,
+          "sha256": "7e0d6203655fd2cfcb8bb532bd966eed6118acf07b86b91b0e56c4c56b412d95"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "17d497bb89087cefc8d5deda73a06846c916f0778a57124deb60d9675c28c680"
+    },
+    "hosted-original/finalization-zip-members.json": {
+      "bytes": 653,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/finalization-zip-members.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 653,
+          "sha256": "daf04151fa1d700ee8f73728070c423685b8c3ad4d45b53853b2a0d42ada433a"
+        },
+        "transform": "identity"
+      },
+      "sha256": "daf04151fa1d700ee8f73728070c423685b8c3ad4d45b53853b2a0d42ada433a"
+    },
+    "hosted-original/github-artifact-metadata.json": {
+      "bytes": 4312,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/github-artifact-metadata.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 4312,
+          "sha256": "794906bfe69d4c371e63c1fc54b3b2129577f6afc01b9af4208ff63216f33017"
+        },
+        "transform": "identity"
+      },
+      "sha256": "794906bfe69d4c371e63c1fc54b3b2129577f6afc01b9af4208ff63216f33017"
+    },
+    "hosted-original/hosted-inputhash-summary-observation.json": {
+      "bytes": 2005,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/hosted-inputhash-summary-observation.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2003,
+          "sha256": "0389b7d5da5261d0acf6a8070937890de6d7f052f981a068f33d112eb8d24acd"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "0476ebd3b8d31277ca8a34cb8c8527264f1d8fd2882cea1ca11195ad49df11ae"
+    },
+    "hosted-original/hosted-inputhash-tools-source-observation.json": {
+      "bytes": 6264,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/hosted-inputhash-tools-source-observation.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 6264,
+          "sha256": "089f5ca86c6e0052eef9c4c66c086c9c4038ece57890930bbc977e9222764136"
+        },
+        "transform": "identity"
+      },
+      "sha256": "089f5ca86c6e0052eef9c4c66c086c9c4038ece57890930bbc977e9222764136"
+    },
+    "hosted-original/index.json": {
+      "bytes": 8778,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/index.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 8755,
+          "sha256": "7064eb349670b023a873657403ae2a19dab5d830f611902a8995dcf2865d59a2"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "a20df8d677ef7599a95d791b424d6772abba6a02a4441f0c809ce8c2e28c9654"
+    },
+    "hosted-original/native-hash-zip-members.json": {
+      "bytes": 15879,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/native-hash-zip-members.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 15879,
+          "sha256": "e221f1656b20195d6184c8593be3cc3c0b73330d69bfcd7f2bb15f89a90176ee"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e221f1656b20195d6184c8593be3cc3c0b73330d69bfcd7f2bb15f89a90176ee"
+    },
+    "hosted-original/native-inputhash-hosted-summary.json": {
+      "bytes": 26130,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/native-inputhash-hosted-summary.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 26130,
+          "sha256": "a606027815f5ad607e5c3b627dc59e4ec8a8c1a70c2147b2c734ffad5d6d2e03"
+        },
+        "transform": "identity"
+      },
+      "sha256": "a606027815f5ad607e5c3b627dc59e4ec8a8c1a70c2147b2c734ffad5d6d2e03"
+    },
+    "hosted-original/native_hash-12067488741.zip.metadata.json": {
+      "bytes": 540,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/native_hash-12067488741.zip.metadata.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 539,
+          "sha256": "1d9132f93ec43ea2ccd0263fb231a784530d2a4b990127ea3d6d132be97a616f"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "58a4601156ce10188d40fad9bf1abfe93f9381ccf2afa08e376f2da897fecf56"
+    },
+    "hosted-original/native_hash-zip-members.json": {
+      "bytes": 15879,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/native_hash-zip-members.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 15879,
+          "sha256": "e221f1656b20195d6184c8593be3cc3c0b73330d69bfcd7f2bb15f89a90176ee"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e221f1656b20195d6184c8593be3cc3c0b73330d69bfcd7f2bb15f89a90176ee"
+    },
+    "hosted-original/pr_foundation-12067830080.zip.metadata.json": {
+      "bytes": 542,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/pr_foundation-12067830080.zip.metadata.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 541,
+          "sha256": "f5feea97e4c684dc935bbc76ff83b1a8d5583c0332d2388b668de454deff957f"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "5269b4c81d3c4c1f8e29e2662f03a43909e7267ee27aa8c5a463002de29920fa"
+    },
+    "hosted-original/pr_foundation-zip-members.json": {
+      "bytes": 260,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/pr_foundation-zip-members.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 260,
+          "sha256": "027b47bd9ad6ecc7a041a74df5e13c5d80e5395195c963ea6c7755f85a940e0a"
+        },
+        "transform": "identity"
+      },
+      "sha256": "027b47bd9ad6ecc7a041a74df5e13c5d80e5395195c963ea6c7755f85a940e0a"
+    },
+    "hosted-original/prepared_parent-12067408825.zip.metadata.json": {
+      "bytes": 545,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/prepared_parent-12067408825.zip.metadata.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 544,
+          "sha256": "c0ea00c1a363135ca68479670d0e9ece5c2d9f74ce2840fe15095909b2dbd12c"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "305b6a19e2e88e8b3125bddcd96c6322e1dc05ea0dc171d62bd40af39e351451"
+    },
+    "hosted-original/prepared_parent-zip-members.json": {
+      "bytes": 228,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/prepared_parent-zip-members.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 228,
+          "sha256": "22de43be6c3dcbc4c25208a98ec8ad71b4abe1992eda0edd33137cbdb8bc76aa"
+        },
+        "transform": "identity"
+      },
+      "sha256": "22de43be6c3dcbc4c25208a98ec8ad71b4abe1992eda0edd33137cbdb8bc76aa"
+    },
+    "hosted-original/push_foundation-12067418423.zip.metadata.json": {
+      "bytes": 546,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/push_foundation-12067418423.zip.metadata.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 545,
+          "sha256": "49e12afc44f514ebe0b11fa6aaf53c191a778a1fbd8e2a08661b2076d2ec5ff9"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "419070262cbe182ecbbd4bd5a44dcec56a442e266ec61ef2b43bf32249fc3e0d"
+    },
+    "hosted-original/push_foundation-zip-members.json": {
+      "bytes": 260,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original hosted CI capture or member observation; original raw SHA/size explicitly bound",
+        "original_path_alias": "@TMP@/openrx-inputhash-f17-ci-failure-artifacts-20261016T184152Z/push_foundation-zip-members.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 260,
+          "sha256": "6f2fbb35dedfe4ed650572f954ca3d785e344f762aa76a9133fa1fa6301ba849"
+        },
+        "transform": "identity"
+      },
+      "sha256": "6f2fbb35dedfe4ed650572f954ca3d785e344f762aa76a9133fa1fa6301ba849"
+    },
+    "hosted-retained-file-inventory.json": {
+      "bytes": 8289,
+      "origin": {
+        "derivation": "Complete flat retained hosted evidence directory inventory at packaging; every original remains untouched.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "10725ee09e2b46cfb93b109bce54d23edbdd8a53d72a3c3f16ee510e0177ca6e"
+    },
+    "mapping-context.json": {
+      "bytes": 718,
+      "origin": {
+        "derivation": "Distinct actual hosted and prior local standalone mapped counts; these are separate tool contexts, not combined estimates.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "326eb136565a8ee997a9077cd07ee167a18538ab77a70b093e107b451f8b0658"
+    },
+    "original-receipt.json": {
+      "bytes": 143222,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_kind": "retained original receipt",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 139082,
+          "sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "81d82b016bcfc485606dc9bd277aad8813385c5f9fb8ada546982d66c3d47c01"
+    },
+    "prelaunch-history.json": {
+      "bytes": 1054,
+      "origin": {
+        "derivation": "Retained request and runner stderr bindings. The first request was rejected before launch; it has no process receipt and is not a failed executed workload.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "7afe677cdfd3fd8d2c19fdb0d804fb90dbffce9de1ad9e334767f78e27647895"
+    },
+    "prelaunch/first-admission-stderr.txt": {
+      "bytes": 82,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Original runner symlink-input rejection before launch",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-admission-stderr.txt",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 82,
+          "sha256": "672b46c510ef83b161137289e2b4b6b9672027cd2a7ab6272afe6309910d62ed"
+        },
+        "transform": "identity"
+      },
+      "sha256": "672b46c510ef83b161137289e2b4b6b9672027cd2a7ab6272afe6309910d62ed"
+    },
+    "prelaunch/first-admission-stdout.txt": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Original empty first-admission stdout; no receipt or execution",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-admission-stdout.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "prelaunch/kernel-witness.json": {
+      "bytes": 695,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Root-supplied derivative kernel witness; full actual receipt-bound prelaunch records also preserved",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-kernel-witness.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 695,
+          "sha256": "44c8cf62803d12b462551ef2a80606c5058b36dbff34c511a71be095ede61607"
+        },
+        "transform": "identity"
+      },
+      "sha256": "44c8cf62803d12b462551ef2a80606c5058b36dbff34c511a71be095ede61607"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-admission-review-v2.json": {
+      "bytes": 3712,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-admission-review-v2.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 3712,
+          "sha256": "4d944910f3638a3e3ec0fc3968fd557fa5fd7e86a809b9de3a863c6b463198c5"
+        },
+        "transform": "identity"
+      },
+      "sha256": "4d944910f3638a3e3ec0fc3968fd557fa5fd7e86a809b9de3a863c6b463198c5"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-admission-review.json": {
+      "bytes": 5487,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-admission-review.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 5487,
+          "sha256": "8a3e3291cc37fd06daf814e11c2694705689b65cccc1ee73fd5a21aa34453024"
+        },
+        "transform": "identity"
+      },
+      "sha256": "8a3e3291cc37fd06daf814e11c2694705689b65cccc1ee73fd5a21aa34453024"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-change.json": {
+      "bytes": 1010,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-change.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1010,
+          "sha256": "13a503a53ebe7da4fee8c347e8b87266a47c671ae29daac9b4312dd9191ab718"
+        },
+        "transform": "identity"
+      },
+      "sha256": "13a503a53ebe7da4fee8c347e8b87266a47c671ae29daac9b4312dd9191ab718"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-original-declaration.json": {
+      "bytes": 4474,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-original-declaration.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 4474,
+          "sha256": "bb0eb642fab1e1be8d0a80377d1fc59e4612227979619352312dcca9410daffd"
+        },
+        "transform": "identity"
+      },
+      "sha256": "bb0eb642fab1e1be8d0a80377d1fc59e4612227979619352312dcca9410daffd"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-preflight.json": {
+      "bytes": 7894,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-preflight.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 7993,
+          "sha256": "9603fabca0fe3ca537ff6e7bd84696c85a6f444a2887902e43916226f6b794ba"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "7f6e19d7f1935ed11b35e8acb687e02b891739c5d929214f71f7bde83085e8ec"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-request-comment.json": {
+      "bytes": 1596,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-request-comment.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1591,
+          "sha256": "306c256328f62b61cf87a4fd543bd161e8c66073803ac4018af7100a1f316f6f"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "aaa5aea9ce13e66c30019fcc0478a53168b04eea4c39685985946ab7e9100ea7"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-request-published.json": {
+      "bytes": 3375,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-request-published.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 3374,
+          "sha256": "ccc7a269b35ff5050f1a3fded926f931516788550f20ec5459b1ea29ec10a7b8"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "f5bc35ff44d0c86ba05af3bfa0e9d4b2e820f0f2f66d854852d6988f60892665"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-request-v2-comment.json": {
+      "bytes": 2155,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-request-v2-comment.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2150,
+          "sha256": "facab5020ca3bf91d1a2721884c9ee4727d16444a2aa2933deac71cec85aef4c"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "7dcc67145726b43047afb941f6bdf35ce81531078e0ede19271cb794bb5aad74"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-request-v2-published.json": {
+      "bytes": 3934,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-request-v2-published.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 3933,
+          "sha256": "6da4fd497a5e82af2935baae70c29740784b4a72dc9d7dab8c6d38398291bfd4"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "d69ef981f418a5949330eaf5373587e982a74f16acc5149a538c60ce2da34cfc"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-request-v2.json": {
+      "bytes": 1743,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-request-v2.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1742,
+          "sha256": "de76b4d747313b33e8edb829cd565c2c36007fc9792351c8b75b785740304019"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "4b8f8479a176b519a9e55082f76c8bc23610e1bbccf540b016670a2cc591d9ea"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-request.json": {
+      "bytes": 1316,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-request.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1315,
+          "sha256": "a68d3ec85e92003a7816315a8a1c57e3b813c90fc905656d5163cacb5cf8be8d"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "011209f2b3e800f2ab4b158339d3e2d28704947905e837512af6a16734fcd884"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-static-proof.json": {
+      "bytes": 2040,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-static-proof.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2040,
+          "sha256": "a81bf073cb99a3587f92a6c91311d2ecb2a9ed1e8dbbc864a77c90c711825610"
+        },
+        "transform": "identity"
+      },
+      "sha256": "a81bf073cb99a3587f92a6c91311d2ecb2a9ed1e8dbbc864a77c90c711825610"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-submit-v2.json": {
+      "bytes": 764,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-submit-v2.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 799,
+          "sha256": "20ebcb23b366d3bff2d9d6e56287e2bb70062a77c33099c98e153a4b89ab780c"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "86880ef637753ad113d3953987a90b6fbc2d577a16ceda6b25777cbe073d0068"
+    },
+    "prelaunch/openrx-inputhash-ci-fix-submit.json": {
+      "bytes": 761,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original root-supplied change/request/review or preflight; no runtime status is inferred from review",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-submit.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 796,
+          "sha256": "c98a1de083f43a64f0fbde50daad6e63b0d71a525c6c5b4bf569bed089d5407a"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "2ec41648b1ff1de92c7088d9e172d0aca6c5c9acf65746900567c64ebe894f5b"
+    },
+    "prior-33-public-bindings.json": {
+      "bytes": 4721,
+      "origin": {
+        "derivation": "Exact SHA/size inventory of all unchanged previous public evidence files",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "d64c17e306b64a3d2eff21514751e87290929c479b906aa47d10145cfd2d402e"
+    },
+    "records/events.jsonl": {
+      "bytes": 1431,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "events.jsonl",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1458,
+          "sha256": "20fffbf95f6c3df98f31632ddc16acaddcfdfcce27cf2b849148aeeaf8bd052d"
+        },
+        "transform": "utf8-literal-prefix-alias-with-literal-escape"
+      },
+      "sha256": "966b2fb49a4b6b99b78546cf485864b0b93aa9d2eaacba595833e825b246d4f7"
+    },
+    "records/manifest.json": {
+      "bytes": 1115531,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "manifest.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 861407,
+          "sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "b19eeefc0be7bcaba404ccb309f074810e7107e35a2f65f121e86d271529a3e5"
+    },
+    "records/output/binding-report.json": {
+      "bytes": 46421,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/binding-report.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 46421,
+          "sha256": "7e52d77f2129d2803df185b64dec15abe16c8ba2f783db5676137ce0712cb5b4"
+        },
+        "transform": "identity"
+      },
+      "sha256": "7e52d77f2129d2803df185b64dec15abe16c8ba2f783db5676137ce0712cb5b4"
+    },
+    "records/output/checks.json": {
+      "bytes": 984,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/checks.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 984,
+          "sha256": "ef68d4e6f88c486fa9b1040cb1686459d978d9587574a175cd682a3c67fd8ded"
+        },
+        "transform": "identity"
+      },
+      "sha256": "ef68d4e6f88c486fa9b1040cb1686459d978d9587574a175cd682a3c67fd8ded"
+    },
+    "records/output/combined-unit.log": {
+      "bytes": 2135,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/combined-unit.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2135,
+          "sha256": "5a1fe906e57e01a7c86c762a19cfcb109efa58ca02a00d9635d5256e0e75bd91"
+        },
+        "transform": "identity"
+      },
+      "sha256": "5a1fe906e57e01a7c86c762a19cfcb109efa58ca02a00d9635d5256e0e75bd91"
+    },
+    "records/output/mutated-workflow/docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json": {
+      "bytes": 5885,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 5885,
+          "sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7"
+        },
+        "transform": "identity"
+      },
+      "sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7"
+    },
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/combined-source-bindings.json": {
+      "bytes": 4474,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/prepared-reciprocals/combined-source-bindings.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 4474,
+          "sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881"
+    },
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/parent-source-bindings.json": {
+      "bytes": 1698,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/prepared-reciprocals/parent-source-bindings.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1698,
+          "sha256": "76db0119fe6a87d06838954b19049c7fcefa185d23027fe4adbd6dbca8f8636d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "76db0119fe6a87d06838954b19049c7fcefa185d23027fe4adbd6dbca8f8636d"
+    },
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json": {
+      "bytes": 8166,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 8166,
+          "sha256": "f70cacc7702f2a2ecd62a7e6761cc47ed15047d1313008772ccb5ef51b801fe2"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f70cacc7702f2a2ecd62a7e6761cc47ed15047d1313008772ccb5ef51b801fe2"
+    },
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/server/inputs.json": {
+      "bytes": 25041,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/prepared-reciprocals/server/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 25041,
+          "sha256": "e99a52558ba45e4a75635ac36e992a311ac07c0bd60ab075eeceb14489ad8227"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e99a52558ba45e4a75635ac36e992a311ac07c0bd60ab075eeceb14489ad8227"
+    },
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/surrounding-stages.json": {
+      "bytes": 2467,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/prepared-reciprocals/surrounding-stages.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2465,
+          "sha256": "7cb600d78689c3c25c0887045a58b67d95e004c200be9543d7ee22d7479e2a0e"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "07ba8413d8b8a765c5d4e680ae780fd4c8162bbb681abb16d4845cd9f93bb5bb"
+    },
+    "records/output/mutated-workflow/docs/validation/program-sequence-20261013/full-v2-8x2048/artifacts.sha256.json": {
+      "bytes": 4080,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/program-sequence-20261013/full-v2-8x2048/artifacts.sha256.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 4080,
+          "sha256": "d002d55d751718f79df5aee0e08d56e8c5cb91e6e76f18fdc8b20caf766c078f"
+        },
+        "transform": "identity"
+      },
+      "sha256": "d002d55d751718f79df5aee0e08d56e8c5cb91e6e76f18fdc8b20caf766c078f"
+    },
+    "records/output/mutated-workflow/docs/validation/program-sequence-20261013/server-current/inputs.json": {
+      "bytes": 7653,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/program-sequence-20261013/server-current/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 7653,
+          "sha256": "3ef49b7f6ffbce270676aa5f45cecd344008a08009e19cf6184cecc04e29822b"
+        },
+        "transform": "identity"
+      },
+      "sha256": "3ef49b7f6ffbce270676aa5f45cecd344008a08009e19cf6184cecc04e29822b"
+    },
+    "records/output/mutated-workflow/docs/validation/regfile-blake2b-20261013/server/inputs.json": {
+      "bytes": 27957,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/regfile-blake2b-20261013/server/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 27957,
+          "sha256": "5235c3cff1de5ac3fcc16f56b7ccae07c9296f001179d3b99ce97cda9ff93328"
+        },
+        "transform": "identity"
+      },
+      "sha256": "5235c3cff1de5ac3fcc16f56b7ccae07c9296f001179d3b99ce97cda9ff93328"
+    },
+    "records/output/mutated-workflow/docs/validation/scratchpad-finalization-20261013/server/inputs.json": {
+      "bytes": 29430,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/scratchpad-finalization-20261013/server/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 29430,
+          "sha256": "893a051b7a726f3454077ae63ee0eae217362ad56d171e6f768ffb624da91a21"
+        },
+        "transform": "identity"
+      },
+      "sha256": "893a051b7a726f3454077ae63ee0eae217362ad56d171e6f768ffb624da91a21"
+    },
+    "records/output/mutated-workflow/docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json": {
+      "bytes": 29582,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 29582,
+          "sha256": "2a2af1d12308eb9a69a28df47a87181b7aa3148c08b3f9a96c188e05ad786912"
+        },
+        "transform": "identity"
+      },
+      "sha256": "2a2af1d12308eb9a69a28df47a87181b7aa3148c08b3f9a96c188e05ad786912"
+    },
+    "records/output/mutated-workflow/rtl/aes/vendor/secworks/UPSTREAM.json": {
+      "bytes": 588,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/rtl/aes/vendor/secworks/UPSTREAM.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 588,
+          "sha256": "32c8cc826a71c46429a1ae954f2c052e8786dca995d80427a7502ec3c85f07da"
+        },
+        "transform": "identity"
+      },
+      "sha256": "32c8cc826a71c46429a1ae954f2c052e8786dca995d80427a7502ec3c85f07da"
+    },
+    "records/output/mutated-workflow/rtl/execute/vendor/hardfloat/manifest.json": {
+      "bytes": 1540,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/rtl/execute/vendor/hardfloat/manifest.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1540,
+          "sha256": "9a37a9e67cf22899acdd77e04e858889dda80436b9c4f00f605715c3b7376aef"
+        },
+        "transform": "identity"
+      },
+      "sha256": "9a37a9e67cf22899acdd77e04e858889dda80436b9c4f00f605715c3b7376aef"
+    },
+    "records/output/mutated-workflow/rtl/hash/tests/accepted-full-registers.json": {
+      "bytes": 526,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/mutated-workflow/rtl/hash/tests/accepted-full-registers.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 525,
+          "sha256": "c2d3f4d5173375cc13f867ddc03319c1babe8b2d2f50c8174ff60574a4c7756a"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "b9615d658f547e82ae766922cea1e9c2ace659421f90b57af72deab198d4ff07"
+    },
+    "records/output/mutated-workflow/rtl/hash/vendor/blake2/LICENSE": {
+      "bytes": 1305,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/rtl/hash/vendor/blake2/LICENSE",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1305,
+          "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+    },
+    "records/output/mutated-workflow/rtl/hash/vendor/blake2/manifest.json": {
+      "bytes": 842,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/mutated-workflow/rtl/hash/vendor/blake2/manifest.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 841,
+          "sha256": "7e09b930df6133ccd5453fdd09eead183212cf2978865a104e96e938d6cc508e"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "c9a4aa0e1600fac00c29460c94807256716e0bd246651efe866226f78bdd74a6"
+    },
+    "records/output/mutated-workflow/vendor/randomx.lock.json": {
+      "bytes": 247,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/vendor/randomx.lock.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 247,
+          "sha256": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd"
+        },
+        "transform": "identity"
+      },
+      "sha256": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd"
+    },
+    "records/output/mutated-workflow/vendor/randomx.sha256.json": {
+      "bytes": 17049,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/vendor/randomx.sha256.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 17049,
+          "sha256": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+    },
+    "records/output/mutated-workflow/vendor/randomx/CMakeLists.txt": {
+      "bytes": 12955,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/vendor/randomx/CMakeLists.txt",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 12955,
+          "sha256": "f20d3d9a02855abfd70d933fc01ac4dc311606df8884e1fc207f82c59f8fc794"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f20d3d9a02855abfd70d933fc01ac4dc311606df8884e1fc207f82c59f8fc794"
+    },
+    "records/output/mutated-workflow/vendor/randomx/LICENSE": {
+      "bytes": 1561,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/mutated-workflow/vendor/randomx/LICENSE",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1561,
+          "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+        },
+        "transform": "identity"
+      },
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+    },
+    "records/output/source-guard.log": {
+      "bytes": 46421,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/source-guard.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 46421,
+          "sha256": "7e52d77f2129d2803df185b64dec15abe16c8ba2f783db5676137ce0712cb5b4"
+        },
+        "transform": "identity"
+      },
+      "sha256": "7e52d77f2129d2803df185b64dec15abe16c8ba2f783db5676137ce0712cb5b4"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json": {
+      "bytes": 5885,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 5885,
+          "sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7"
+        },
+        "transform": "identity"
+      },
+      "sha256": "c2ac02cc67539a065ab96f40d3ba00c18f474294ebda082133c4ddb67e6464b7"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/combined-source-bindings.json": {
+      "bytes": 4474,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/prepared-reciprocals/combined-source-bindings.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 4474,
+          "sha256": "3656251bc39c2e68f7cfd786651ed678f38469532eabe5583cb3b6ecdf979fee"
+        },
+        "transform": "identity"
+      },
+      "sha256": "3656251bc39c2e68f7cfd786651ed678f38469532eabe5583cb3b6ecdf979fee"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/parent-source-bindings.json": {
+      "bytes": 1698,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/prepared-reciprocals/parent-source-bindings.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1698,
+          "sha256": "76db0119fe6a87d06838954b19049c7fcefa185d23027fe4adbd6dbca8f8636d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "76db0119fe6a87d06838954b19049c7fcefa185d23027fe4adbd6dbca8f8636d"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json": {
+      "bytes": 8166,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 8166,
+          "sha256": "f70cacc7702f2a2ecd62a7e6761cc47ed15047d1313008772ccb5ef51b801fe2"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f70cacc7702f2a2ecd62a7e6761cc47ed15047d1313008772ccb5ef51b801fe2"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/server/inputs.json": {
+      "bytes": 25041,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/prepared-reciprocals/server/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 25041,
+          "sha256": "e99a52558ba45e4a75635ac36e992a311ac07c0bd60ab075eeceb14489ad8227"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e99a52558ba45e4a75635ac36e992a311ac07c0bd60ab075eeceb14489ad8227"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/surrounding-stages.json": {
+      "bytes": 2467,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/prepared-reciprocals/surrounding-stages.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2465,
+          "sha256": "7cb600d78689c3c25c0887045a58b67d95e004c200be9543d7ee22d7479e2a0e"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "07ba8413d8b8a765c5d4e680ae780fd4c8162bbb681abb16d4845cd9f93bb5bb"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/program-sequence-20261013/full-v2-8x2048/artifacts.sha256.json": {
+      "bytes": 4080,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/program-sequence-20261013/full-v2-8x2048/artifacts.sha256.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 4080,
+          "sha256": "d002d55d751718f79df5aee0e08d56e8c5cb91e6e76f18fdc8b20caf766c078f"
+        },
+        "transform": "identity"
+      },
+      "sha256": "d002d55d751718f79df5aee0e08d56e8c5cb91e6e76f18fdc8b20caf766c078f"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/program-sequence-20261013/server-current/inputs.json": {
+      "bytes": 7653,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/program-sequence-20261013/server-current/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 7653,
+          "sha256": "3ef49b7f6ffbce270676aa5f45cecd344008a08009e19cf6184cecc04e29822b"
+        },
+        "transform": "identity"
+      },
+      "sha256": "3ef49b7f6ffbce270676aa5f45cecd344008a08009e19cf6184cecc04e29822b"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/regfile-blake2b-20261013/server/inputs.json": {
+      "bytes": 27957,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/regfile-blake2b-20261013/server/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 27957,
+          "sha256": "5235c3cff1de5ac3fcc16f56b7ccae07c9296f001179d3b99ce97cda9ff93328"
+        },
+        "transform": "identity"
+      },
+      "sha256": "5235c3cff1de5ac3fcc16f56b7ccae07c9296f001179d3b99ce97cda9ff93328"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/scratchpad-finalization-20261013/server/inputs.json": {
+      "bytes": 29430,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/scratchpad-finalization-20261013/server/inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 29430,
+          "sha256": "893a051b7a726f3454077ae63ee0eae217362ad56d171e6f768ffb624da91a21"
+        },
+        "transform": "identity"
+      },
+      "sha256": "893a051b7a726f3454077ae63ee0eae217362ad56d171e6f768ffb624da91a21"
+    },
+    "records/output/stale-workflow-declaration/docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json": {
+      "bytes": 29582,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 29582,
+          "sha256": "2a2af1d12308eb9a69a28df47a87181b7aa3148c08b3f9a96c188e05ad786912"
+        },
+        "transform": "identity"
+      },
+      "sha256": "2a2af1d12308eb9a69a28df47a87181b7aa3148c08b3f9a96c188e05ad786912"
+    },
+    "records/output/stale-workflow-declaration/rtl/aes/vendor/secworks/UPSTREAM.json": {
+      "bytes": 588,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/rtl/aes/vendor/secworks/UPSTREAM.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 588,
+          "sha256": "32c8cc826a71c46429a1ae954f2c052e8786dca995d80427a7502ec3c85f07da"
+        },
+        "transform": "identity"
+      },
+      "sha256": "32c8cc826a71c46429a1ae954f2c052e8786dca995d80427a7502ec3c85f07da"
+    },
+    "records/output/stale-workflow-declaration/rtl/execute/vendor/hardfloat/manifest.json": {
+      "bytes": 1540,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/rtl/execute/vendor/hardfloat/manifest.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1540,
+          "sha256": "9a37a9e67cf22899acdd77e04e858889dda80436b9c4f00f605715c3b7376aef"
+        },
+        "transform": "identity"
+      },
+      "sha256": "9a37a9e67cf22899acdd77e04e858889dda80436b9c4f00f605715c3b7376aef"
+    },
+    "records/output/stale-workflow-declaration/rtl/hash/tests/accepted-full-registers.json": {
+      "bytes": 526,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/stale-workflow-declaration/rtl/hash/tests/accepted-full-registers.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 525,
+          "sha256": "c2d3f4d5173375cc13f867ddc03319c1babe8b2d2f50c8174ff60574a4c7756a"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "b9615d658f547e82ae766922cea1e9c2ace659421f90b57af72deab198d4ff07"
+    },
+    "records/output/stale-workflow-declaration/rtl/hash/vendor/blake2/LICENSE": {
+      "bytes": 1305,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/rtl/hash/vendor/blake2/LICENSE",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1305,
+          "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+    },
+    "records/output/stale-workflow-declaration/rtl/hash/vendor/blake2/manifest.json": {
+      "bytes": 842,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "output/stale-workflow-declaration/rtl/hash/vendor/blake2/manifest.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 841,
+          "sha256": "7e09b930df6133ccd5453fdd09eead183212cf2978865a104e96e938d6cc508e"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "c9a4aa0e1600fac00c29460c94807256716e0bd246651efe866226f78bdd74a6"
+    },
+    "records/output/stale-workflow-declaration/vendor/randomx.lock.json": {
+      "bytes": 247,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/vendor/randomx.lock.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 247,
+          "sha256": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd"
+        },
+        "transform": "identity"
+      },
+      "sha256": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd"
+    },
+    "records/output/stale-workflow-declaration/vendor/randomx.sha256.json": {
+      "bytes": 17049,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/vendor/randomx.sha256.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 17049,
+          "sha256": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+    },
+    "records/output/stale-workflow-declaration/vendor/randomx/CMakeLists.txt": {
+      "bytes": 12955,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/vendor/randomx/CMakeLists.txt",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 12955,
+          "sha256": "f20d3d9a02855abfd70d933fc01ac4dc311606df8884e1fc207f82c59f8fc794"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f20d3d9a02855abfd70d933fc01ac4dc311606df8884e1fc207f82c59f8fc794"
+    },
+    "records/output/stale-workflow-declaration/vendor/randomx/LICENSE": {
+      "bytes": 1561,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "output/stale-workflow-declaration/vendor/randomx/LICENSE",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 1561,
+          "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+        },
+        "transform": "identity"
+      },
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+    },
+    "records/prelaunch-kernel-check.json": {
+      "bytes": 2318,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "prelaunch-kernel-check.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 2318,
+          "sha256": "ca5c8e41e7335bfd211819cd3062ef18818ec182521065d17a72210feb8b08fe"
+        },
+        "transform": "identity"
+      },
+      "sha256": "ca5c8e41e7335bfd211819cd3062ef18818ec182521065d17a72210feb8b08fe"
+    },
+    "records/prelaunch-resource-check.json": {
+      "bytes": 415,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "prelaunch-resource-check.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 415,
+          "sha256": "a5a0baa06b0ff3b9bc72e911d434f2ef26740da24497dff588d9735471e55821"
+        },
+        "transform": "identity"
+      },
+      "sha256": "a5a0baa06b0ff3b9bc72e911d434f2ef26740da24497dff588d9735471e55821"
+    },
+    "records/process-result.json": {
+      "bytes": 142,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "process-result.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 142,
+          "sha256": "701a4c6fc6293798887c600563e72360e5fd12e770772c063bc134f77fdbb004"
+        },
+        "transform": "identity"
+      },
+      "sha256": "701a4c6fc6293798887c600563e72360e5fd12e770772c063bc134f77fdbb004"
+    },
+    "records/stderr.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "stderr.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "transform": "identity"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "records/stdout.log": {
+      "bytes": 910,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "stdout.log",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 910,
+          "sha256": "ba0cbbd945b422168dc4d80d1bdd4a4587ec49379354154c6658de07b520faa9"
+        },
+        "transform": "identity"
+      },
+      "sha256": "ba0cbbd945b422168dc4d80d1bdd4a4587ec49379354154c6658de07b520faa9"
+    },
+    "records/submission-command.json": {
+      "bytes": 915,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_relative": "submission-command.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 871,
+          "sha256": "29b0950687d2abfb0d8df3464577e2fd2186353a77553fd5b3d6372d16b6d759"
+        },
+        "transform": "json-string-prefix-alias-with-literal-escape-and-canonical-serialization"
+      },
+      "sha256": "6ed8f98153e39cdd46721505b669eafdbbfd3ae7283de91ea95c07027ee6aa73"
+    },
+    "records/submission-result.json": {
+      "bytes": 41,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_relative": "submission-result.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 41,
+          "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+        },
+        "transform": "identity"
+      },
+      "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+    },
+    "resources.json": {
+      "bytes": 5740,
+      "origin": {
+        "derivation": "resource selection; typed values unchanged",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "2833a739a7b6b0098811e61e905fc99e7db2f3c6a2c32d8553a709647bfbdd26"
+    },
+    "review/independent-actual-validation-proof.json": {
+      "bytes": 5122,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Retained original independent actual validation proof; separate from machine scientific acceptance",
+        "original_path_alias": "@TMP@/openrx-inputhash-ci-fix-validation-proof.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 5122,
+          "sha256": "b269db197004058f19d74ff13f35afc10764838968075bf7b281011f94ab002d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "b269db197004058f19d74ff13f35afc10764838968075bf7b281011f94ab002d"
+    },
+    "source/corrected-declaration.json": {
+      "bytes": 4474,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Exact corrected source05 declaration bytes",
+        "original_path_alias": "@TMP@/openrx-inputhash-source05/docs/validation/prepared-reciprocals/combined-source-bindings.json",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 4474,
+          "sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881"
+        },
+        "transform": "identity"
+      },
+      "sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881"
+    },
+    "source/unchanged-workflow.yml": {
+      "bytes": 3046,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "origin_boundary": "Retained supplemental history; not asserted to be an artifact of the local execution receipt.",
+        "original_kind": "Exact already-published workflow bytes; guard now binds this actual digest",
+        "original_path_alias": "@TMP@/openrx-inputhash-source05/.github/workflows/regfile-blake2b.yml",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 3046,
+          "sha256": "d1990ab5e179a9c6dad0dedb6c74dbf71039e6a0c3e9c24f07ba21e3f5c5be32"
+        },
+        "transform": "identity"
+      },
+      "sha256": "d1990ab5e179a9c6dad0dedb6c74dbf71039e6a0c3e9c24f07ba21e3f5c5be32"
+    },
+    "static-source-check.json": {
+      "bytes": 1079,
+      "origin": {
+        "derivation": "Independent packager read-only Git and source-byte checks; exact one digest replacement; not runtime acceptance",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "fc5da70d5b941b81504e16d3cc7d644a1ba483d808f2978f0988c8a4b5d257e0"
+    },
+    "status.json": {
+      "bytes": 2130,
+      "origin": {
+        "derivation": "Distinct original hosted failures, bounded hosted subgate, and new local source-binding checks; not a claim of new-head hosted CI success.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "139a0edb564badb22356f1c225764196b62fd0d2c73fabf59b2511c478df24ef"
+    },
+    "supplemental-origin-bindings.json": {
+      "bytes": 15790,
+      "origin": {
+        "derivation": "Complete selected supplemental file raw bindings; separate from local receipt artifact coverage",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "2dc5a1b87430cdf219d4bc36136441dff769ea523f355d209b96867cc3404c41"
+    },
+    "transform-policy.json": {
+      "bytes": 4494,
+      "origin": {
+        "derivation": "exact portable serialization and private-prefix alias policy",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw_manifest_sha256": "c3c0b9c664bcdb891a561372ce4a53c15a98408f29b42aebe9a27bab171abe3d",
+        "raw_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116"
+      },
+      "sha256": "2604f898a3c6f8f4c703607053eea66eaff59038f5414d5cb92400c000d1a68b"
+    },
+    "verify.json": {
+      "bytes": 155,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_kind": "root-supplied installed-runner verification result",
+        "private_alias_map_sha256": "5861215cdb4e73e925efe938ebc4e26cfd0f89cc55a5dc804ee004f2b349d3a2",
+        "raw": {
+          "bytes": 155,
+          "sha256": "daf777dcb19aff5e56e502545fcdda9a099ba7084c832edbe6754fb6f23efe3d"
+        },
+        "transform": "identity"
+      },
+      "sha256": "daf777dcb19aff5e56e502545fcdda9a099ba7084c832edbe6754fb6f23efe3d"
+    }
+  },
+  "entry_count": 106,
+  "ordered_entries": [
+    "coverage.json",
+    "execution.json",
+    "external/bounded-ci-binding-check.py",
+    "guard-failure-excerpts.json",
+    "hosted-artifact-coverage.json",
+    "hosted-original/completed-failure-logs-index.json",
+    "hosted-original/finalization-12067309030.zip.metadata.json",
+    "hosted-original/finalization-zip-members.json",
+    "hosted-original/github-artifact-metadata.json",
+    "hosted-original/hosted-inputhash-summary-observation.json",
+    "hosted-original/hosted-inputhash-tools-source-observation.json",
+    "hosted-original/index.json",
+    "hosted-original/native-hash-zip-members.json",
+    "hosted-original/native-inputhash-hosted-summary.json",
+    "hosted-original/native_hash-12067488741.zip.metadata.json",
+    "hosted-original/native_hash-zip-members.json",
+    "hosted-original/pr_foundation-12067830080.zip.metadata.json",
+    "hosted-original/pr_foundation-zip-members.json",
+    "hosted-original/prepared_parent-12067408825.zip.metadata.json",
+    "hosted-original/prepared_parent-zip-members.json",
+    "hosted-original/push_foundation-12067418423.zip.metadata.json",
+    "hosted-original/push_foundation-zip-members.json",
+    "hosted-retained-file-inventory.json",
+    "mapping-context.json",
+    "original-receipt.json",
+    "prelaunch-history.json",
+    "prelaunch/first-admission-stderr.txt",
+    "prelaunch/first-admission-stdout.txt",
+    "prelaunch/kernel-witness.json",
+    "prelaunch/openrx-inputhash-ci-fix-admission-review-v2.json",
+    "prelaunch/openrx-inputhash-ci-fix-admission-review.json",
+    "prelaunch/openrx-inputhash-ci-fix-change.json",
+    "prelaunch/openrx-inputhash-ci-fix-original-declaration.json",
+    "prelaunch/openrx-inputhash-ci-fix-preflight.json",
+    "prelaunch/openrx-inputhash-ci-fix-request-comment.json",
+    "prelaunch/openrx-inputhash-ci-fix-request-published.json",
+    "prelaunch/openrx-inputhash-ci-fix-request-v2-comment.json",
+    "prelaunch/openrx-inputhash-ci-fix-request-v2-published.json",
+    "prelaunch/openrx-inputhash-ci-fix-request-v2.json",
+    "prelaunch/openrx-inputhash-ci-fix-request.json",
+    "prelaunch/openrx-inputhash-ci-fix-static-proof.json",
+    "prelaunch/openrx-inputhash-ci-fix-submit-v2.json",
+    "prelaunch/openrx-inputhash-ci-fix-submit.json",
+    "prior-33-public-bindings.json",
+    "records/events.jsonl",
+    "records/manifest.json",
+    "records/output/binding-report.json",
+    "records/output/checks.json",
+    "records/output/combined-unit.log",
+    "records/output/mutated-workflow/docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json",
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/combined-source-bindings.json",
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/parent-source-bindings.json",
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json",
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/server/inputs.json",
+    "records/output/mutated-workflow/docs/validation/prepared-reciprocals/surrounding-stages.json",
+    "records/output/mutated-workflow/docs/validation/program-sequence-20261013/full-v2-8x2048/artifacts.sha256.json",
+    "records/output/mutated-workflow/docs/validation/program-sequence-20261013/server-current/inputs.json",
+    "records/output/mutated-workflow/docs/validation/regfile-blake2b-20261013/server/inputs.json",
+    "records/output/mutated-workflow/docs/validation/scratchpad-finalization-20261013/server/inputs.json",
+    "records/output/mutated-workflow/docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json",
+    "records/output/mutated-workflow/rtl/aes/vendor/secworks/UPSTREAM.json",
+    "records/output/mutated-workflow/rtl/execute/vendor/hardfloat/manifest.json",
+    "records/output/mutated-workflow/rtl/hash/tests/accepted-full-registers.json",
+    "records/output/mutated-workflow/rtl/hash/vendor/blake2/LICENSE",
+    "records/output/mutated-workflow/rtl/hash/vendor/blake2/manifest.json",
+    "records/output/mutated-workflow/vendor/randomx.lock.json",
+    "records/output/mutated-workflow/vendor/randomx.sha256.json",
+    "records/output/mutated-workflow/vendor/randomx/CMakeLists.txt",
+    "records/output/mutated-workflow/vendor/randomx/LICENSE",
+    "records/output/source-guard.log",
+    "records/output/stale-workflow-declaration/docs/validation/divsqrt-execute-20261013/compat-rtl-inputs.json",
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/combined-source-bindings.json",
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/parent-source-bindings.json",
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/program-sequence-regression/inputs.json",
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/server/inputs.json",
+    "records/output/stale-workflow-declaration/docs/validation/prepared-reciprocals/surrounding-stages.json",
+    "records/output/stale-workflow-declaration/docs/validation/program-sequence-20261013/full-v2-8x2048/artifacts.sha256.json",
+    "records/output/stale-workflow-declaration/docs/validation/program-sequence-20261013/server-current/inputs.json",
+    "records/output/stale-workflow-declaration/docs/validation/regfile-blake2b-20261013/server/inputs.json",
+    "records/output/stale-workflow-declaration/docs/validation/scratchpad-finalization-20261013/server/inputs.json",
+    "records/output/stale-workflow-declaration/docs/validation/scratchpad-finalization-20261013/server/published-head-inputs.json",
+    "records/output/stale-workflow-declaration/rtl/aes/vendor/secworks/UPSTREAM.json",
+    "records/output/stale-workflow-declaration/rtl/execute/vendor/hardfloat/manifest.json",
+    "records/output/stale-workflow-declaration/rtl/hash/tests/accepted-full-registers.json",
+    "records/output/stale-workflow-declaration/rtl/hash/vendor/blake2/LICENSE",
+    "records/output/stale-workflow-declaration/rtl/hash/vendor/blake2/manifest.json",
+    "records/output/stale-workflow-declaration/vendor/randomx.lock.json",
+    "records/output/stale-workflow-declaration/vendor/randomx.sha256.json",
+    "records/output/stale-workflow-declaration/vendor/randomx/CMakeLists.txt",
+    "records/output/stale-workflow-declaration/vendor/randomx/LICENSE",
+    "records/prelaunch-kernel-check.json",
+    "records/prelaunch-resource-check.json",
+    "records/process-result.json",
+    "records/stderr.log",
+    "records/stdout.log",
+    "records/submission-command.json",
+    "records/submission-result.json",
+    "resources.json",
+    "review/independent-actual-validation-proof.json",
+    "source/corrected-declaration.json",
+    "source/unchanged-workflow.yml",
+    "static-source-check.json",
+    "status.json",
+    "supplemental-origin-bindings.json",
+    "transform-policy.json",
+    "verify.json"
+  ],
+  "schema": "openrx.compact-archive-index.v1"
+}

@@ -1,0 +1,14 @@
+{
+  "derivation": "Retained request and runner stderr bindings. The first request was rejected before launch; it has no process receipt and is not a failed executed workload.",
+  "executed_v2_receipt_sha256": "721e37ed7db977300a0a822f9ca389007ac67fe950d252b471bd41f7cb1cb116",
+  "first_request_key": "inputhash-ci-workflow-binding-20261016-01",
+  "first_request_never_launched": true,
+  "first_request_sha256": "a68d3ec85e92003a7816315a8a1c57e3b813c90fc905656d5163cacb5cf8be8d",
+  "first_stdout_bytes": 0,
+  "rejection_stderr_sha256": "672b46c510ef83b161137289e2b4b6b9672027cd2a7ab6272afe6309910d62ed",
+  "rejection_text": "local execution: Artifact must be a regular file, not a symlink: /usr/bin/python3\n",
+  "scientific_acceptance": "unverified",
+  "v2_change": "Resolve interpreter input from /usr/bin/python3 symlink to regular /usr/bin/python3.10; source/driver/work/resources unchanged.",
+  "v2_request_key": "inputhash-ci-workflow-binding-20261016-02",
+  "v2_request_sha256": "de76b4d747313b33e8edb829cd565c2c36007fc9792351c8b75b785740304019"
+}

@@ -1,0 +1,23 @@
+{
+  "elapsed_seconds": 3.3454980960814282,
+  "fresh_native_hdl_or_synthesis_performed": false,
+  "historical_manifests_original_declaration_and_guard_preserved": true,
+  "negative_checks": {
+    "mutated-workflow": {
+      "error": "combined live successor changed: .github/workflows/regfile-blake2b.yml",
+      "rejected": true
+    },
+    "stale-workflow-declaration": {
+      "error": "combined live successor changed: .github/workflows/regfile-blake2b.yml",
+      "rejected": true
+    }
+  },
+  "original_prepared219_and_regression73_live_bytes_unchanged": true,
+  "positive_source_guard": true,
+  "source_head": "3d81d80c4c3eff798a5354470470f4bc1a0eed0d",
+  "source_tree": "5ceafbc0e90121f67030ea18bf612d7f6627cf2d",
+  "staged_declaration_sha256": "f631404ff34edd5e51475c200427540547dd992d12b887fb30d97ad11d586881",
+  "status": "pass_staged_workflow_binding_correction",
+  "unit_tests": 18,
+  "workflow_sha256": "d1990ab5e179a9c6dad0dedb6c74dbf71039e6a0c3e9c24f07ba21e3f5c5be32"
+}

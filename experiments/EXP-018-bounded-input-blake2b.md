@@ -109,3 +109,14 @@ physical PPA, architecture selection or whole-machine target follows. The
 historical full measurement remains source `c96e96ab` at 40,975,538
 hardware/transport clocks; it is not relabeled as this source or hardware mode.
 Independent scientific/final-head review and hosted CI remain separate gates.
+
+## Hosted binding metadata successor
+
+The first public head's new standalone CI step passed, but its historical source
+guard rejected the unchanged declaration's stale workflow digest. The correction
+updates only that existing staged digest; guard code, original/historical maps
+and all hardware inputs stay unchanged. Eighteen source-only tests and explicit
+workflow/stale-digest rejection cases pass under verified runner receipt
+`20261016T184732Z-7c6f2889a8e8`. Complete failed hosted logs/archives remain
+retained; no result is relabeled. See the evidence record for distinct hosted
+mapping counts, prelaunch interpreter-binding rejection and successor gates.

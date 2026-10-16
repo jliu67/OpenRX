@@ -1028,3 +1028,14 @@ requests; no new issue, hub notice or standing Git mirror is created. Next
 concrete component is one prepared native superscalar-program executor; cache
 export/service and autonomous setup remain separate work. Earlier dated sections
 retain their source-specific historical context.
+
+
+## 2026-10-16 — input-hash CI binding metadata correction
+
+Hosted publication `f17fc8ce` passed the new standalone input gate but failed
+five strict source checks because the staged workflow digest was stale. The
+successor updates only that existing metadata digest; guard/historical/runtime
+bytes stay exact. Eighteen source-only tests and both substitution rejections
+pass with verified receipt `20261016T184732Z-7c6f2889a8e8`. Failed hosted logs and
+complete archives remain retained; current PR78 checks and exact-head review are
+the final publication/merge authority.
