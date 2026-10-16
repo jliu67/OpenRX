@@ -1,0 +1,38 @@
+name: Prepared native superscalar program executor
+on:
+  pull_request:
+    paths:
+      - 'rtl/execute/randomx_superscalar_execute.v'
+      - 'rtl/execute/randomx_mul64.v'
+      - 'rtl/execute/tests/superscalar_oracle.cpp'
+      - 'rtl/execute/tests/tb_superscalar_execute.v'
+      - 'scripts/test_superscalar_execute.py'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx.lock.json'
+      - 'vendor/randomx.sha256.json'
+      - '.github/workflows/superscalar-execute.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  superscalar-differential:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install official HDL packages
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Compare prepared native programs, lifecycle and mapped execution
+        run: |
+          python3 -B scripts/test_superscalar_execute.py \
+            --out "$RUNNER_TEMP/superscalar-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
+          echo "Executed bounded prepared-program native differential, lifecycle checks and actual generic synthesis/mapped comparison. Program preparation, cache initialization and memory service remain external; no physical PPA or complete dataset-generator claim." >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain complete licensed outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: superscalar-execute-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/superscalar-execute-${{ github.run_id }}-${{ github.run_attempt }}/
