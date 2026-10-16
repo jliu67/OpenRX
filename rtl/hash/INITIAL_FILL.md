@@ -40,8 +40,12 @@ The lifecycle retains its monotonically allocated hash generation and INIT
 scratchpad owner through input hashing, fill admission, all writes and returned
 seed validation. Program preparation/execution cannot start before those writes
 complete. In hardware mode the host returns only the input-hash seed; matching
-unsolicited host writes during initialization are errors and emit no SRAM write.
-Stale tags are drained. Cancellation requires a fresh generation and fresh seed;
+seed responses offered alongside request acceptance are held until the following
+response-consumption state. Ready stays low for that matching response during
+the request state, so no acknowledged seed is lost. Matching unsolicited host
+writes after initialization request acceptance are errors and emit no SRAM write;
+writes offered before acceptance are drained. Stale tags are drained.
+Cancellation requires a fresh generation and fresh seed;
 it does not roll back memory. Hard reset retains the existing drained-transport
 requirement. The fill capacity is a 64-byte multiple from 64 bytes through 2 MiB;
 the connected normal workload uses the full 2 MiB.

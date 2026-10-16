@@ -323,6 +323,8 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  integer initializing=0,initial_index=0,init_writes=0,final_reads=0,admissions=0,loaded_words=0;
  integer ledger[0:9],iteration_detail[0:11],final_detail[0:5],exec_detail[0:17];
  integer init_provider_wait=0,fill_detail[0:2],init_response_drops=0,init_write_drops=0;
+ integer init_input_hash_calls=0,init_same_cycle_offers=0,init_same_cycle_accepts=0;
+ reg init_request_seed_pending=0;reg [528:0] held_init_response;
  integer trace_file,ledger_file,stage_sum=0,phase_index=0,final_phase_index=0,byte_index=0;
  integer last_trace_phase=-1,last_trace_iteration=-1,last_trace_execute=-1;
  integer logical_sp_bytes=0,physical_read_bytes=0,physical_write_bus_bytes=0,useful_write_bytes=0;
@@ -498,16 +500,27 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    // Only actual provider/DUT state drives these inputs; gold is assertion-only.
    req_tag=~req_tag;req_input=~req_input;req_input_bytes=~req_input_bytes;
    init_req_ready=!initializing;
+   if(HARDWARE_FILL&&init_req_valid&&init_req_ready)begin
+    if(init_input_hash_calls!=0)$fatal(1,"hardware input hash callback repeated");
+    if(init_req_input!==input_value||init_req_input_bytes!==input_bytes)$fatal(1,"captured hash input changed");
+    // Offer the live seed before the request-accepting edge. It must be held
+    // until the following INIT_STREAM edge, without a duplicate native call.
+    init_generation=init_req_tag;`RX_INPUT_HASH(init_req_input,init_req_input_bytes,seed);
+    init_input_hash_calls=init_input_hash_calls+1;init_request_seed_pending=1;
+   end
    init_wr_valid=!HARDWARE_FILL&&initializing&&initial_index<131072;init_wr_tag=init_generation;
    init_wr_addr=initial_index*16;init_wr_data=initial_ram[initial_index<131072?initial_index:0];init_wr_strb=16'hffff;
    if(ERROR_PORT==8&&!HARDWARE_FILL&&initializing&&initial_index>=3)init_wr_strb=16'h00ff;
    if(ERROR_PORT==8&&HARDWARE_FILL&&init_writes>=3)begin init_wr_valid=1;init_wr_tag=batch_tag;init_wr_strb=16'h00ff;end
    // Stale writes and stale error responses must drain without affecting fill.
-   if(HARDWARE_FILL&&STALL&&initializing&&init_write_drops==0)begin init_wr_valid=1;init_wr_tag=batch_tag-1;init_wr_strb=0;end
-   init_rsp_valid=initializing&&(HARDWARE_FILL||initial_index==131072);init_rsp_tag=init_generation;init_rsp_seed=seed;
+   if(HARDWARE_FILL&&STALL&&phase==1&&init_input_hash_calls&& !init_request_seed_pending&&init_write_drops==0)begin init_wr_valid=1;init_wr_tag=batch_tag-1;init_wr_strb=0;end
+   init_rsp_valid=HARDWARE_FILL?(initializing||init_request_seed_pending):(initializing&&initial_index==131072);
+   init_rsp_tag=init_generation;init_rsp_seed=seed;
    init_rsp_error=ERROR_PORT==1;
    if(ERROR_PORT==1&&!HARDWARE_FILL&&initializing&&initial_index>=3)begin init_wr_valid=0;init_rsp_valid=1;end
-   if(HARDWARE_FILL&&STALL&&init_rsp_valid&&init_response_drops<2)begin init_rsp_tag=batch_tag-1;init_rsp_seed=~seed;init_rsp_error=1;end
+   if(HARDWARE_FILL&&STALL&&phase==1&&init_input_hash_calls&&!init_request_seed_pending&&init_response_drops<2)begin
+    init_rsp_valid=1;init_rsp_tag=batch_tag-1;init_rsp_seed=~seed;init_rsp_error=1;
+   end
    meta_req_ready=!meta_pending&&(!STALL||meta_stalls>=2);
    if(meta_delay>0)meta_delay=meta_delay-1;
    meta_rsp_valid=meta_pending&&meta_delay==0;meta_rsp_tag=meta_tag;meta_rsp_program=meta_program;
@@ -585,7 +598,10 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    if(init_req_valid&&init_req_ready)begin
     init_generation=init_req_tag;initializing=1;initial_index=0;
     if(init_req_input!==input_value||init_req_input_bytes!==input_bytes)$fatal(1,"captured hash input changed");
-    if(HARDWARE_FILL)`RX_INPUT_HASH(init_req_input,init_req_input_bytes,seed);
+    if(HARDWARE_FILL)begin
+     if(!init_rsp_valid||init_rsp_tag!==init_req_tag||init_rsp_seed!==seed||init_rsp_ready||!init_request_seed_pending)$fatal(1,"same-cycle input seed was lost or accepted too early");
+     held_init_response={init_rsp_tag,init_rsp_seed,init_rsp_error};init_same_cycle_offers=init_same_cycle_offers+1;
+    end
     else begin
      $sformat(path,"%0s/actual-initial.hex",output_directory);`RX_INITIAL(init_req_input,init_req_input_bytes,path,seed);$readmemh(path,initial_ram);
      for(i=0;i<131072;i=i+1)if(initial_ram[i]!==gold_ram[i])$fatal(1,"native initial scratchpad disagreement");
@@ -597,7 +613,13 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    end
    if(init_rsp_valid&&init_rsp_ready)begin
     if(HARDWARE_FILL&&init_rsp_tag!=batch_tag)init_response_drops=init_response_drops+1;
-    else initializing=0;
+    else begin
+     if(HARDWARE_FILL&&init_request_seed_pending)begin
+      if(dut.state_q!=2||{init_rsp_tag,init_rsp_seed,init_rsp_error}!==held_init_response)$fatal(1,"held input seed changed before acceptance");
+      init_request_seed_pending=0;init_same_cycle_accepts=init_same_cycle_accepts+1;
+     end
+     initializing=0;
+    end
    end
    if(prep_commit_valid)begin
     if(prep_commit_program!==active_program||prep_commit_epoch<=last_epoch)$fatal(1,"admission ownership/epoch");
@@ -750,6 +772,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   if(stage_sum!=cycle)$fatal(1,"nonclosing outer cycle ledger");
   if(HARDWARE_FILL&&init_provider_wait+fill_detail[0]+fill_detail[1]+fill_detail[2]!=ledger[1])$fatal(1,"nonclosing initialization ledger");
   if(HARDWARE_FILL&&STALL&&(init_response_drops!=2||init_write_drops!=1))$fatal(1,"stale initialization coverage");
+  if(HARDWARE_FILL&&(init_input_hash_calls!=1||init_same_cycle_offers!=1||init_same_cycle_accepts!=1||init_request_seed_pending))$fatal(1,"same-cycle initialization response coverage");
   stage_sum=0;for(i=0;i<12;i=i+1)stage_sum=stage_sum+iteration_detail[i];
   if(stage_sum!=ledger[4])$fatal(1,"nonclosing nested iteration ledger");
   stage_sum=0;for(i=0;i<6;i=i+1)stage_sum=stage_sum+final_detail[i];

@@ -213,10 +213,14 @@ module randomx_prepared_hash_lifecycle #(
  assign req_ready=active&&state_q==IDLE&&!generation_exhausted;
  assign init_req_valid=active&&state_q==INIT_REQUEST;
  assign init_req_tag=generation_q;assign init_req_input=input_q;assign init_req_input_bytes=input_bytes_q;
- // In hardware mode stale external writes are drained. A matching write while
- // initialization owns SRAM is a protocol error and never reaches memory.
+ // In hardware mode stale external writes are drained. A matching host write
+ // after the initialization request was accepted is a protocol error and never
+ // reaches memory. INIT_REQUEST drains writes without interpreting them.
  assign init_wr_ready=active&&(HARDWARE_FILL||init_stale||state_q!=INIT_STREAM||init_bad||sp_wr_ready);
- assign init_rsp_ready=active&&(HARDWARE_FILL||init_rsp_tag!=generation_q||state_q!=INIT_STREAM||init_rsp_error||init_beats_q==SCRATCHPAD_BYTES/16);
+ // A matching hardware-mode seed offered together with the request must wait
+ // for INIT_STREAM, the state that consumes it. Stale responses may still drain.
+ assign init_rsp_ready=active&&(HARDWARE_FILL?(init_rsp_tag!=generation_q||state_q!=INIT_REQUEST):
+                              (init_rsp_tag!=generation_q||state_q!=INIT_STREAM||init_rsp_error||init_beats_q==SCRATCHPAD_BYTES/16));
  assign rsp_valid=active&&(state_q==RETURN||state_q==ERROR);assign rsp_error=state_q==ERROR;
  assign rsp_tag=user_tag_q;assign rsp_r=r_q;assign rsp_f=f_q;assign rsp_e=e_q;assign rsp_a=a_q;
  assign rsp_round_mode=round_q;assign rsp_digest=digest_q;
