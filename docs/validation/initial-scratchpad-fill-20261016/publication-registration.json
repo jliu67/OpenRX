@@ -2,6 +2,7 @@
   "authorization_status": "initial denial resolved; one retry succeeded under explicit owner hardware/repository continuation",
   "claim_comment": "https://github.com/jliu67/OpenRX/issues/75#issuecomment-6212225342",
   "claim_session": "codex/initial-fill-20261016-0915",
+  "current_claim_comment": "https://github.com/jliu67/OpenRX/issues/75#issuecomment-6212263195",
   "executed_code_unchanged": true,
   "hub5": "separately forbidden; no action",
   "issue": "https://github.com/jliu67/OpenRX/issues/75",
@@ -9,5 +10,6 @@
   "prior_final_head_review_sha256": "fd8cfa6b8f188d3de943e8a943726f0e265ab97c5938084e65a9cf6e986e28b6",
   "prior_reviewed_local_head": "fe2ef7b7deeadf7bbb0cf551e01a0c172b36824a",
   "prior_reviewed_local_tree": "cf8857d529ee643256493423b3b78d7bdfd1a756",
-  "public_review_and_hosted_checks": "final results recorded on task75; no acceptance inferred before actual completion"
+  "public_review_and_hosted_checks": "final results recorded on task75; no acceptance inferred before actual completion",
+  "registry_correction": "Released and reclaimed same session after adding required task-v2 marker and ### Dependencies / - #71 syntax. Task71 rechecked closed completed; no new payload."
 }
