@@ -135,7 +135,16 @@ def full_wall_power(hps, dynamic_j_per_hash, static_dc_w, psu_efficiency, ac_aux
 
 def rejection_gate(hps=None, wall_w=None, required_bandwidth=None, available_bandwidth=None,
                    required_capacity=None, available_capacity=None, required_outstanding=None,
-                   supported_outstanding=None, correctness=None):
+                   supported_outstanding=None, correctness=None, *,
+                   required_transactions_per_s=None, available_transactions_per_s=None,
+                   required_bank_port_operations_per_s=None, available_bank_port_operations_per_s=None,
+                   controller_service_constraints_satisfied=None):
+    """Necessary conditional checks; absent memory service constraints stay unknown.
+
+    Controller service must cover bank timing/conflicts, turnaround, refresh and
+    tail latency at the same traffic pattern and operating point as the supplied
+    rates. A supplied True records that conditional input, not physical proof.
+    """
     reasons, unknown = [], []
     if correctness is not None and type(correctness) is not bool:
         raise ValueError("correctness must be boolean or unknown")
@@ -151,14 +160,27 @@ def rejection_gate(hps=None, wall_w=None, required_bandwidth=None, available_ban
         unknown.append("whole_machine_wall_power")
     elif nonnegative(wall_w) >= WALL_LIMIT_W:
         reasons.append("wall_power_not_below_2500W")
+    if (controller_service_constraints_satisfied is not None
+            and type(controller_service_constraints_satisfied) is not bool):
+        raise ValueError("controller_service_constraints_satisfied must be boolean or unknown")
+    if controller_service_constraints_satisfied is False:
+        reasons.append("controller_service_constraints_failed")
+    elif controller_service_constraints_satisfied is None:
+        unknown.append("controller_bank_timing_turnaround_refresh_tail_latency")
     for name, demand, supply in (
         ("sustainable_bandwidth", required_bandwidth, available_bandwidth),
+        ("sustainable_transactions_per_s", required_transactions_per_s, available_transactions_per_s),
+        ("bank_port_operations_per_s", required_bank_port_operations_per_s, available_bank_port_operations_per_s),
         ("live_state_capacity", required_capacity, available_capacity),
         ("independent_outstanding_requests", required_outstanding, supported_outstanding),
     ):
+        if demand is not None:
+            nonnegative(demand, name + " demand")
+        if supply is not None:
+            nonnegative(supply, name + " supply")
         if demand is None or supply is None:
             unknown.append(name)
-        elif nonnegative(demand) > nonnegative(supply):
+        elif demand > supply:
             reasons.append(name + "_exceeded")
     return {"status": "rejected" if reasons else "unresolved" if unknown else "conditional_inputs_pass",
             "rejections": reasons, "unknown": unknown, "demonstrated_asic_feasibility": False}

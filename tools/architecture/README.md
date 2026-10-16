@@ -30,6 +30,15 @@ accepted evidence and the installed server admission/global lock. Reproduction
 needs only the compact committed fixture and derived full-workload counts.
 No workload or RTL simulation is launched by these commands.
 
+Accepted-run attribution requires the actual full-evidence SHA-256 and every
+portable fixture file digest to match the trusted bindings in `run.py`, recorded
+from preserved run03 and source `46fa0737`. Embedded trace/source-map hash claims
+cannot establish identity. `reproduce` writes `provenance.json` and rejects an
+untrusted input before replay or comparisons. Different extraction metadata also
+changes byte identity: `extract` preserves its extracted inputs and untrusted
+provenance, then stops before accepted-run comparisons. Extending these bindings
+requires review of the new exact inputs; changing a source-map claim is insufficient.
+
 ## Evidence and timing boundaries
 
 The full 8×2,048 v2 connected run executed source `c96e96ab1eb46cb727b21befffa526e637ebed4a`
@@ -154,7 +163,12 @@ costs. Avoid double counting PHY energy already included in a memory term.
 
 Reject correctness/order loss, capacity/independent-outstanding/bandwidth demand
 above validated supply, throughput below 1 MH/s, or wall power **>=2,500 W**.
-Unknown required fields keep the gate unresolved. Even complete hypothetical
+`rejection_gate` also requires separate transactions/s and bank-port operations/s
+demand/supply bounds and `controller_service_constraints_satisfied`. The latter
+must cover bank timing/conflicts, turnaround, refresh and tail latency for the
+same traffic pattern and operating point; false rejects and missing stays unknown.
+Bytes/s alone cannot satisfy these checks. Unknown required fields keep the gate
+unresolved. Even complete hypothetical
 inputs passing these necessary conditions are only conditional; they never prove
 ASIC feasibility. Clock, process, SRAM macro area/access/leakage and physical
 memory service/energy remain unknown. Generic cell counts do not establish them.

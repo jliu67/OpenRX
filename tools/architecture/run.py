@@ -16,6 +16,25 @@ from . import baseline, envelope, evidence, native_trace
 from .scheduler import Config, MemorySpec, MicroOp, UnitSpec, simulate
 
 
+# Trusted bindings from preserved run03 and the reviewed portable fixture at
+# 46fa0737. Never infer identity from hash claims inside a supplied input.
+ACCEPTED_FULL_EVIDENCE_SHA256 = "33f4cbe95805d33068fa9eceee90820f230cd0457d06f35407f9323d1d547ecf"
+ACCEPTED_FIXTURE_SHA256 = {
+    "native/accesses.hex": "aa494e27e6ecf52b174721839343708c3e6924583c6d0b993201fc302e7e9582",
+    "native/iterations.hex": "19a9b94844998bc7db6442fe7b9116f7ee3039861fe7592803d0f0a82593ce41",
+    "native/program-0.mem": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec",
+    "native/program-1.mem": "005108dec03308f65eda8f561497b1d21862c5d67cb11ec8af4d5edf2cf8e384",
+    "native/program-2.mem": "ea5f0a410d9845c76dfdd0f5db35360eea0206ea66972a6e7f0e7e0d7030cd3f",
+    "native/program-3.mem": "0d4f54ec419bbb4a6c23b357277ab5c382784801ceab70dc5dbfc010829fd6df",
+    "native/program-4.mem": "61574ff62cbc22bdc53097779659421c632b9b5923e4bcc4ddf5dac9242ad697",
+    "native/program-5.mem": "2d52c7a22773c0bf3d861874d8820ba49714fc50cb9d9329391e698ca403e56c",
+    "native/program-6.mem": "96b734f9f0b30a96511668b583eda0ee011176292f3542ac6eae5e96f414dc42",
+    "native/program-7.mem": "ccbecd8ddb3f89302733843ae7b16bf401d8677e860fdcce0bab5f0933f16a59",
+    "source-map.json": "4c00dc1b5356ec0a05f45cecf8e3075c178a8a31eacb0d52797570f023f0f942",
+    "trace.csv": "d8682dcafb9021b4adf2b51abe04b7d2e1da44139e131c767a0fbc2cf001e808",
+}
+
+
 def dump(path, value):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -105,19 +124,27 @@ def compare(trace, workers=1):
 
 
 def provenance(full, full_evidence_path, trace, fixture):
+    full_bytes = Path(full_evidence_path).read_bytes()
+    full_sha = hashlib.sha256(full_bytes).hexdigest()
+    fixture_hashes = {str(p.relative_to(fixture)): evidence.sha256_file(p)
+                      for p in sorted(fixture.rglob("*")) if p.is_file()}
     full_trace_sha = full.get("trace", {}).get("trace_sha256")
-    source_map = json.loads((fixture / "source-map.json").read_text())
+    source_map_path = fixture / "source-map.json"
+    source_map = json.loads(source_map_path.read_text()) if source_map_path.is_file() else {}
     short_trace_sha = source_map.get("source_inputs", {}).get("trace", {}).get("sha256")
-    full_recognized = full_trace_sha == "a71126245eb351f378fdd2c74a8fa5cd860c4a5ed1030447e6ea66aadf1fd964"
-    short_recognized = short_trace_sha == "61e9db0584f83b1b446eb0f19edf3246a08e217734cb08c125240f6c3bd0b85d"
+    full_recognized = (full_sha == ACCEPTED_FULL_EVIDENCE_SHA256
+                       and json.loads(full_bytes) == full)
+    short_recognized = fixture_hashes == ACCEPTED_FIXTURE_SHA256
     return {
         "input_bindings": {
-            "full_evidence_sha256": evidence.sha256_file(full_evidence_path),
+            "identity_status": "accepted_inputs_verified" if full_recognized and short_recognized else "untrusted_input",
+            "trusted_binding_source": "preserved_run03_and_portable_fixture_at_46fa0737",
+            "full_evidence_sha256": full_sha,
+            "trusted_full_evidence_sha256": ACCEPTED_FULL_EVIDENCE_SHA256,
             "full_accepted_trace_recognized": full_recognized,
             "bounded_accepted_trace_recognized": short_recognized,
-            "fixture_files_sha256": {str(p.relative_to(fixture)): evidence.sha256_file(p)
-                                     for p in sorted(fixture.rglob("*")) if p.is_file()},
-            "bounded_source_inputs_sha256": {k: v.get("sha256") for k, v in source_map["source_inputs"].items()},
+            "fixture_files_sha256": fixture_hashes,
+            "bounded_source_inputs_sha256": {k: v.get("sha256") for k, v in source_map.get("source_inputs", {}).items()},
             "full_source_trace_sha256": full_trace_sha,
             "bounded_source_trace_sha256": short_trace_sha,
         },
@@ -166,13 +193,17 @@ def main():
         full = json.loads(args.evidence.read_text())
         if full.get("schema") != "openrx.architecture.evidence.v1":
             raise ValueError("full evidence schema required")
-        trace = native_trace.extract(args.fixture / "trace.csv", args.fixture / "native", max_iterations=8,
-                                     first_iteration_per_program=True)
         full_evidence_path, fixture = args.evidence, args.fixture
+    attribution = provenance(full, full_evidence_path, None, fixture)
+    dump(args.output / "provenance.json", attribution)
+    if attribution["input_bindings"]["identity_status"] != "accepted_inputs_verified":
+        raise ValueError("untrusted input: actual evidence/fixture bytes differ from trusted accepted bindings; see provenance.json")
+    if args.command == "reproduce":
+        trace = native_trace.extract(fixture / "trace.csv", fixture / "native", max_iterations=8,
+                                     first_iteration_per_program=True)
     dump(args.output / "comparisons.json", compare(trace, args.workers))
     dump(args.output / "baseline-calibration.json", baseline.calibrate(trace))
     dump(args.output / "sensitivity.json", envelope.sensitivity(full))
-    dump(args.output / "provenance.json", provenance(full, full_evidence_path, trace, fixture))
     digest_index = {str(p.relative_to(args.output)): evidence.sha256_file(p)
                     for p in sorted(args.output.rglob("*")) if p.is_file()}
     dump(args.output / "artifacts.sha256.json", digest_index)
