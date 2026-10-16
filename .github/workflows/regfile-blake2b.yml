@@ -11,6 +11,7 @@ on:
       - 'vendor/randomx.sha256.json'
       - 'vendor/randomx.lock.json'
       - 'scripts/test_regfile_blake2b.py'
+      - 'scripts/test_input_blake2b.py'
       - 'scripts/regfile_hash_fixture.py'
       - 'scripts/test_divsqrt_execute.py'
       - 'scripts/test_iteration_engine.py'
@@ -48,6 +49,11 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y iverilog yosys
+      - name: Check bounded input BLAKE2b and mapped recovery
+        run: |
+          python3 scripts/test_input_blake2b.py \
+            --output "$RUNNER_TEMP/input-blake2b-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --synthesize
       - name: Check native digests, connected hardware seeds and new mapped stages
         run: |
           python3 scripts/test_regfile_blake2b.py \
@@ -58,4 +64,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: regfile-blake2b-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ runner.temp }}/regfile-blake2b-${{ github.run_id }}-${{ github.run_attempt }}/
+          path: |
+            ${{ runner.temp }}/input-blake2b-${{ github.run_id }}-${{ github.run_attempt }}/
+            ${{ runner.temp }}/regfile-blake2b-${{ github.run_id }}-${{ github.run_attempt }}/
