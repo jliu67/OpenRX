@@ -38,7 +38,7 @@ Connected immutable execution `20261016T084736Z-e61113d5b84c` exits 0 and [integ
 
 ## Independent bounded review
 
-[Independent review](independent-review.json) accepts the declared standalone and bounded connected scope with zero blockers. It verifies all 4,295 frozen source blobs, 936 receipt artifacts and the separate output indices. Original sources, assets, failures and complete outputs remain preserved. Publication and applicable hosted checks are pending; no new implementation issue, claim or draft PR exists. New connected proof is v2 only; the default full workload, complete recovery matrix and separate v1 connected replay were not rerun.
+[Independent review](independent-review.json) accepts the declared standalone and bounded connected scope with zero blockers. It verifies all 4,295 frozen source blobs, 936 receipt artifacts and the separate output indices. Original sources, assets, failures and complete outputs remain preserved. [Task #75](https://github.com/jliu67/OpenRX/issues/75) records the scoped implementation claim and final draft publication, exact public head and applicable hosted checks. Those public gates are separate from the retained execution evidence. New connected proof is v2 only; the default full workload, complete recovery matrix and separate v1 connected replay were not rerun.
 
 ## Accounting and claim boundary
 

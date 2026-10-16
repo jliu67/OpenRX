@@ -1,10 +1,10 @@
 # Current state — actual local execution activation
 
-## 2026-10-16 — hardware initial scratchpad AES fill candidate
+## 2026-10-16 — hardware initial scratchpad AES fill, task #75
 
 Above merged main `b8cd0707`, [EXP-016](../experiments/EXP-016-initial-scratchpad-fill.md) replaces live initial software AES fill in explicit `HARDWARE_FILL=1` mode using the existing licensed round. Four full 2 MiB native comparisons, 30 RTL / 18 bounded mapped modes and actual default mapping of 36,168 generic cells / 547 flops / zero latches pass. Connected 2×1 ideal four-state and two-state digests and ledgers agree; two-state stalled completion, changed-input cancellation/restart and two initialization errors pass. All 37 focused unit checks pass. [Evidence](../docs/validation/initial-scratchpad-fill-20261016/README.md) separates exact standalone `825f255` and connected `e22c8e0` code from publication documentation, preserving complete sources, outputs, failures and successful receipt integrity.
 
-Ideal initialization is 131,076 clocks. Replace the old 131,074 transport clocks in the historical 40,975,538 total; derived 40,975,540 is not a new full-hash measurement. Host input BLAKE2b, program generation and native light dataset callbacks remain untimed; physical ASIC/PPA and architecture selection remain unresolved. Legacy fill remains the default for historical reproduction. Next bounded gap: AES program generation from actual seeds. Read the final handoff for independent publication-head review, hosted gates and publication status. No merge is requested. Original task72 / PR74 merged at `b8cd0707`; older pending statements below retain dated context. No hub5 action is authorized in this session.
+Ideal initialization is 131,076 clocks. Replace the old 131,074 transport clocks in the historical 40,975,538 total; derived 40,975,540 is not a new full-hash measurement. Host input BLAKE2b, program generation and native light dataset callbacks remain untimed; physical ASIC/PPA and architecture selection remain unresolved. Legacy fill remains the default for historical reproduction. Next bounded gap: AES program generation from actual seeds. Read [task #75](https://github.com/jliu67/OpenRX/issues/75) for the exact public draft head, independent publication-head review and hosted gates. No merge is requested. Original task72 / PR74 merged at `b8cd0707`; older pending statements below retain dated context. No hub5 action is authorized in this session.
 
 ## 2026-10-16 — task #72 focused recovery
 
