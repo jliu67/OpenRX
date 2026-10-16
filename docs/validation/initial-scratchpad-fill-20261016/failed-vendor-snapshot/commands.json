@@ -1,0 +1,22 @@
+[
+  {
+    "label": "vendor",
+    "argv": [
+      "python3",
+      "-B",
+      "scripts/verify_vendor.py"
+    ],
+    "cwd": "/tmp/openrx-initial-fill-source01",
+    "timeout_seconds": 1800,
+    "expected_failure": false,
+    "returncode": 1,
+    "error": "Command '['/usr/bin/time', '-v', '-o', '/home/server/openrx-local/v1/executions/20261016T082210Z-a670422823b2/output/vendor.time.txt', 'python3', '-B', 'scripts/verify_vendor.py']' returned non-zero exit status 1.",
+    "elapsed_seconds": 0.06423267000354826,
+    "resources": {
+      "peak_rss_kib": 14592,
+      "user_seconds": 0.03,
+      "system_seconds": 0.01,
+      "cpu_percent": 97.0
+    }
+  }
+]

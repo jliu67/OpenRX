@@ -1,0 +1,20 @@
+{
+  "icarus": {
+    "Elapsed (wall clock) time (h:mm:ss or m:ss)": "14:22.02",
+    "Exit status": "0",
+    "Maximum resident set size (kbytes)": "308260",
+    "Percent of CPU this job got": "100%",
+    "Swaps": "0",
+    "System time (seconds)": "46.94",
+    "User time (seconds)": "815.26"
+  },
+  "verilator": {
+    "Elapsed (wall clock) time (h:mm:ss or m:ss)": "4:09.46",
+    "Exit status": "0",
+    "Maximum resident set size (kbytes)": "379420",
+    "Percent of CPU this job got": "195%",
+    "Swaps": "0",
+    "System time (seconds)": "18.28",
+    "User time (seconds)": "468.49"
+  }
+}

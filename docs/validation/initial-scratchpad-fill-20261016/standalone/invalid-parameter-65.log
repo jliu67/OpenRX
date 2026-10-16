@@ -1,0 +1,5 @@
+rtl/hash/randomx_initial_scratchpad_fill.v:34: error: Unknown module type: initial_scratchpad_fill_requires_multiple_of_64_between_64_and_2097152
+1 error(s) during elaboration.
+*** These modules were missing:
+        initial_scratchpad_fill_requires_multiple_of_64_between_64_and_2097152 referenced 1 times.
+***

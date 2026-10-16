@@ -1,0 +1,21 @@
+{
+  "boundary": "Host input BLAKE2b, AES program generation and native light dataset provider remain untimed; physical feasibility and alternative full-hash performance unresolved.",
+  "completed_profiles": 3,
+  "elapsed_seconds": 1111.5073655350134,
+  "focused_cancellation_profiles": 1,
+  "focused_initialization_errors": 2,
+  "historical_stage_substitution": {
+    "classification": "derived stage substitution only; no new full-hash measurement",
+    "derived_known_hardware_transport_cycles": 40975540,
+    "inserted_measured_initialization_hardware_fill_cycles": 131076,
+    "new_full_workload_measured_cycles": null,
+    "prior_hardware_transport_cycles": 40975538,
+    "removed_initialization_transport_cycles": 131074,
+    "stage_delta_cycles": 2
+  },
+  "icarus_verilator_ideal_ledger_and_digest_equal": true,
+  "iterations_per_program": 1,
+  "programs": 2,
+  "standalone_full_v2_rerun": false,
+  "status": "pass_bounded_hardware_fill_integration"
+}

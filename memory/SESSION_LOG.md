@@ -981,3 +981,8 @@ physical/alternative full-hash acceptance. Original artifact index still verifie
 The [additive recovery evidence](../docs/validation/architecture-feasibility-20261016/recovery/README.md)
 binds tests, inputs, code and receipt. Draft PR and exact head are handed off on
 task72 for independent final review; no merge or standing mirror/sync is created.
+
+
+## 2026-10-16 — hardware initial AES fill implementation and bounded proof
+
+Implemented on temporary feature branch above `b8cd0707`, preserving originals. Native `fillAes1Rx4` semantics reuse proven AES RTL, with transaction handshakes, held seed, accepted write persistence, INIT ownership/generation and post-fill seed integration. Independent static review caught/fixed same-cycle seed response acknowledgement before actual connected tests. Standalone execution `20261016T082316Z-86c364941cf5` passes 12 native / 30 RTL / four full 2 MiB / 18 bounded mapped checks and capacity guards, maps actual default 36,168 cells / 547 flops / zero latches and integrity verifies. First vendor-snapshot preflight failure `20261016T082210Z-a670422823b2` is retained; fresh snapshot restored six unchanged export-ignored assets. Connected execution `20261016T084736Z-e61113d5b84c` passes bounded 2×1 ideal cross-backend / stalled plus focused cancellation/errors and integrity verifies. All 37 cheap unit checks pass. No full 8×2,048 repeat or physical claim. New ideal initialization 131,076 replaces old 131,074 only; derived historical total 40,975,540 is not a new full measurement. Complete [evidence](../docs/validation/initial-scratchpad-fill-20261016/README.md) and exact code 825/e22 remain retained. Draft publication / final-head review outcome follows separately; no merge requested. Hub5 remains forbidden.

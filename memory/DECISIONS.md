@@ -319,3 +319,8 @@ remain untrusted until reviewed bindings are added. Gate conditional passes on
 transaction-rate and bank-port demand/supply plus explicit controller-service
 constraints; omitted constraints keep the result unresolved. These checks do
 not supply missing physical characterization or validate alternative hardware.
+
+
+## D053 — move initial AES fill across the provider boundary
+
+Reuse the existing licensed AES round with pinned fillAes1Rx4 directions, keys and byte order. In explicit hardware mode the live host provides only actual input BLAKE2b seed; hardware owns all initial writes and post-fill seed. Preserve legacy default reproduction. State advances only on accepted writes; hold output through backpressure, keep INIT ownership through seed validation, allocate fresh generations after cancellation, and preserve accepted memory writes. Drain stale transfers, reject matching unsolicited writes, and acknowledge a matching seed response only when its state can consume it. Charge one closing initialization stage, replacing old transport without double counting. Keep standalone full-image, bounded mapped and bounded connected proof distinct; retain untimed program generation, dataset and input hash costs and physical unknowns. [EXP-016](../experiments/EXP-016-initial-scratchpad-fill.md).

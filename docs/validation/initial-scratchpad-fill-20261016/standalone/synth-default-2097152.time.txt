@@ -1,0 +1,23 @@
+	Command being timed: "yosys -p read_verilog rtl/aes/vendor/secworks/aes_sbox.v rtl/aes/vendor/secworks/aes_inv_sbox.v rtl/aes/randomx_aes_round.v rtl/hash/randomx_initial_scratchpad_fill.v; chparam -set SCRATCHPAD_BYTES 2097152 randomx_initial_scratchpad_fill; synth -top randomx_initial_scratchpad_fill -flatten; check -assert; tee -o /home/server/openrx-local/v1/executions/20261016T082316Z-86c364941cf5/output/stat-default-2097152.txt stat; write_verilog -noattr /home/server/openrx-local/v1/executions/20261016T082316Z-86c364941cf5/output/netlist-default-2097152.v; write_json /home/server/openrx-local/v1/executions/20261016T082316Z-86c364941cf5/output/netlist-default-2097152.json"
+	User time (seconds): 83.57
+	System time (seconds): 0.51
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:24.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 754900
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 41
+	Minor (reclaiming a frame) page faults: 275562
+	Voluntary context switches: 70
+	Involuntary context switches: 461
+	Swaps: 0
+	File system inputs: 11808
+	File system outputs: 66520
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

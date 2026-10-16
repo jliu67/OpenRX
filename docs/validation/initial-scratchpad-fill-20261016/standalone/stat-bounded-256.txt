@@ -1,0 +1,29 @@
+
+8. Printing statistics.
+
+=== randomx_initial_scratchpad_fill ===
+
+   Number of wires:              37034
+   Number of wire bits:          54195
+   Number of public wires:        2075
+   Number of public wire bits:   18693
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:              36182
+     $_ANDNOT_                    1476
+     $_AND_                        517
+     $_AOI3_                      1884
+     $_AOI4_                        16
+     $_DFF_P_                      547
+     $_MUX_                       2225
+     $_NAND_                        74
+     $_NOR_                       3872
+     $_NOT_                        677
+     $_OAI3_                       578
+     $_OAI4_                       531
+     $_ORNOT_                      185
+     $_OR_                       21763
+     $_XNOR_                       426
+     $_XOR_                       1411
+

@@ -1,5 +1,17 @@
 # Handoff — actual designated local execution
 
+## 2026-10-16 — hardware initial scratchpad AES fill candidate
+
+Above merged main `b8cd0707`, [EXP-016](../experiments/EXP-016-initial-scratchpad-fill.md) replaces live initial software AES fill in explicit `HARDWARE_FILL=1` mode using the existing licensed round. Four full 2 MiB native comparisons, 30 RTL / 18 bounded mapped modes and actual default mapping of 36,168 generic cells / 547 flops / zero latches pass. Connected 2×1 ideal four-state and two-state digests and ledgers agree; two-state stalled completion, changed-input cancellation/restart and two initialization errors pass. All 37 focused unit checks pass. [Evidence](../docs/validation/initial-scratchpad-fill-20261016/README.md) separates exact standalone `825f255` and connected `e22c8e0` code from publication documentation, preserving complete sources, outputs, failures and successful receipt integrity.
+
+Ideal initialization is 131,076 clocks. Replace the old 131,074 transport clocks in the historical 40,975,538 total; derived 40,975,540 is not a new full-hash measurement. Host input BLAKE2b, program generation and native light dataset callbacks remain untimed; physical ASIC/PPA and architecture selection remain unresolved. Legacy fill remains the default for historical reproduction. Next bounded gap: AES program generation from actual seeds. Read the final handoff for independent publication-head review, hosted gates and publication status. No merge is requested. Original task72 / PR74 merged at `b8cd0707`; older pending statements below retain dated context. No hub5 action is authorized in this session.
+
+### Local delivery and publication blocker
+
+The temporary feature checkout is `/tmp/openrx-initial-fill-author`, branch `feature/hardware-initial-scratchpad-fill`. All code/results are concrete and reviewable. Complete original execution sources/results and the preserved task72 author/results are untouched; no standing mirror or Git sync is restored. Source work is quiescent after the final handoff commit; retain the checkout as the exact publication source until resolved.
+
+Automatic approval review denied creating the scoped implementation issue in `jliu67/OpenRX` before execution because it judged that public project commitment outside trusted task72 authorization. No issue or claim was created. A permission question is pending and has no answer; do not retry that action without materially new relevant human authorization. AGENTS requires one issue per independent task. Draft publication therefore remains pending that coordination prerequisite; no new feature branch was pushed and no draft PR was created. Hub5 remains expressly forbidden. The parent can provide the relevant user authorization, register/claim the scoped issue, then publish this exact reviewed feature branch as a draft and obtain applicable hosted gates. Do not merge as part of this handoff.
+
 ## 2026-10-16 — task #72 recovery review handoff
 
 The isolated recovery starts at saved `46fa0737f0e818c9147a687613d38aedd6b0cf0d`

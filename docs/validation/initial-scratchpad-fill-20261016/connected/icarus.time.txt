@@ -1,0 +1,23 @@
+	Command being timed: "/usr/bin/python3.10 -B /tmp/openrx-initial-fill-source03/scripts/test_prepared_hash_lifecycle.py --native-library /home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a --native-build-execution /home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71 --hardware-fill --programs 2 --iterations 1 --variants prepared --event-trace --timeout 3600 --output /home/server/openrx-local/v1/executions/20261016T084736Z-e61113d5b84c/output/icarus --backend icarus --profiles ideal"
+	User time (seconds): 815.26
+	System time (seconds): 46.94
+	Percent of CPU this job got: 100%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:22.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 308260
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 29124062
+	Voluntary context switches: 17440
+	Involuntary context switches: 5730
+	Swaps: 0
+	File system inputs: 80
+	File system outputs: 60984
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

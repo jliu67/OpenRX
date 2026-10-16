@@ -1,0 +1,336 @@
+{
+  "backend": "verilator",
+  "balanced_variant_cycle_comparison": false,
+  "base": "b8cd07070f4e38a0e784e0b123225856c7879f6f",
+  "boundary": "Software input BLAKE2b, AES program generation and pinned native light dataset provider; hardware initial scratchpad AES fill/transport, immutable preparation, execution, 1 interprogram hashes, finalizer/digest. Provider host seconds are separate. No complete ASIC, physical DRAM timing, MHz or watts claim.",
+  "cancellation": {
+    "prepared-stalled-cancel-1": "PASS lifecycle_cancel phase=1 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1"
+  },
+  "canonical_reference": {
+    "bounded_iteration_profile": true,
+    "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+    "canonical_host_seconds": 0,
+    "canonical_randomx_calculate_hash_verified": false,
+    "dataset": "pinned initDatasetItem native light mode",
+    "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642052616e646f6d58207632206c6966656379636c65203230323631303136"
+  },
+  "capacity_checks": {},
+  "compile_only": false,
+  "device_frequency_hz": null,
+  "event_trace": true,
+  "full_v2_requested": false,
+  "hardware_fill": true,
+  "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642052616e646f6d58207632206c6966656379636c65203230323631303136",
+  "interfaces_only": false,
+  "iterations": 1,
+  "matching_errors": {
+    "prepared-stalled-error-1": "PASS lifecycle_matching_error port=1 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+    "prepared-stalled-error-8": "PASS lifecycle_matching_error port=8 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1"
+  },
+  "native_library": {
+    "PIC_flags_sha256": "db413b693f8ed729e283b5c0fd25ceaf541d825933b89f9d1ff1a84584b8707a",
+    "build_sha256": "293080fda2fb9bc1f29424c05d5a0e4b26da5142d28398247c4bc3394995c975",
+    "execution": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71",
+    "library": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+    "manifest_sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d",
+    "native_source_files_verified": 171,
+    "receipt_sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc",
+    "reconfigured_or_modified": false,
+    "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+  },
+  "native_reference": {
+    "branches": 79,
+    "bytecode_events": 162,
+    "cfround": 2,
+    "dataset": "pinned initDatasetItem actual native dataset, light mode",
+    "dynamic_active_reciprocals": 22,
+    "fp": 258,
+    "initialization_program_generation_interprogram_BLAKE2b_final_hash": "software providers separately timed; hardware seed/finalizer connected by lifecycle",
+    "instruction_steps": 769,
+    "iterations_per_program": 1,
+    "native_default_iterations": 2048,
+    "native_default_programs": 8,
+    "programs": 2,
+    "static_active_reciprocals": 22,
+    "total_iterations": 2,
+    "v2": 1
+  },
+  "paired_cycle_comparisons": {},
+  "physical_area": null,
+  "power_watts": null,
+  "profiles": {
+    "prepared-ideal": {
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 4.187e-06,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.861964554,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 5.9562e-05,
+        "dataset_requests": 2,
+        "initialization_host_seconds": 0,
+        "input_hash_calls": 1,
+        "input_hash_host_seconds": 4.55e-07,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0.000466032,
+        "program_generations": 2,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null,
+        "software_fill_provider_calls": 0
+      },
+      "ledger": {
+        "cycles": 532408,
+        "dataset_logical_bytes": 128,
+        "hardware_fill_enabled": true,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "logical_bytecode_memory_bytes": 1296,
+        "logical_entry_bytes": 256,
+        "logical_tail_bytes": 256,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          769,
+          769,
+          769,
+          119,
+          119,
+          43,
+          0,
+          2,
+          0,
+          110,
+          110,
+          0,
+          0,
+          214,
+          214,
+          30,
+          1655
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          393225,
+          1,
+          57,
+          1
+        ],
+        "nested_initialization": {
+          "fill_phases": [
+            1,
+            131072,
+            1
+          ],
+          "provider_wait": 2
+        },
+        "nested_iteration_phases": [
+          2,
+          8,
+          8,
+          8,
+          8,
+          0,
+          2,
+          4923,
+          2,
+          2,
+          2,
+          18
+        ],
+        "nested_reply_waits": {
+          "dataset": 2,
+          "program": 768,
+          "scratchpad": 131207
+        },
+        "nested_stalls": {
+          "dataset_request": 0,
+          "program_load": 0,
+          "sp_request": 0,
+          "sp_write": 0
+        },
+        "physical_port_read_bytes": 2099312,
+        "physical_port_write_bus_bytes": 2098096,
+        "preparation_reciprocals": 22,
+        "program_image_load_bytes": 6144,
+        "runtime_reciprocals": 0,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 10,
+          "execution": 4983,
+          "finalization": 393286,
+          "held_return": 1,
+          "initialization_hardware_fill": 131076,
+          "interprogram_seed": 60,
+          "program_preparation": 2992
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 0,
+          "metadata": 0,
+          "program": 0,
+          "scratchpad": 0
+        },
+        "strobed_write_bytes": 2097752,
+        "untimed_provider_device_cycles": null
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=0 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=532408 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "trace_sha256": "3efc6fbdeecd45a0fc2bc05432919b543029bf97d359d9cede3dd444d0152943"
+    },
+    "prepared-stalled": {
+      "host_provider": {
+        "assertion_only_hash_host_seconds": 4.003999999999999e-06,
+        "cache_bytes": 268435456,
+        "cache_initialization_host_seconds": 0.843970503,
+        "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+        "dataset_provider_host_seconds": 5.4285e-05,
+        "dataset_requests": 2,
+        "initialization_host_seconds": 0,
+        "input_hash_calls": 1,
+        "input_hash_host_seconds": 6.47e-07,
+        "logical_dataset_bytes": 2181038016,
+        "materialized_dataset_bytes": 0,
+        "program_generation_host_seconds": 0.000450333,
+        "program_generations": 2,
+        "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+        "provider_device_cycles": null,
+        "provider_internal_physical_traffic_bytes": null,
+        "software_fill_provider_calls": 0
+      },
+      "ledger": {
+        "cycles": 1586553,
+        "dataset_logical_bytes": 128,
+        "hardware_fill_enabled": true,
+        "initialization_and_finalization_bytes_each": 2097152,
+        "logical_bytecode_memory_bytes": 1296,
+        "logical_entry_bytes": 256,
+        "logical_tail_bytes": 256,
+        "native_dataset_internal_physical_bytes": null,
+        "nested_executor_phases": [
+          0,
+          769,
+          769,
+          769,
+          357,
+          595,
+          129,
+          0,
+          2,
+          0,
+          110,
+          110,
+          0,
+          0,
+          214,
+          214,
+          30,
+          1655
+        ],
+        "nested_finalization_phases": [
+          1,
+          1,
+          1179657,
+          1,
+          57,
+          1
+        ],
+        "nested_initialization": {
+          "fill_phases": [
+            1,
+            393216,
+            1
+          ],
+          "provider_wait": 2
+        },
+        "nested_iteration_phases": [
+          2,
+          24,
+          40,
+          24,
+          40,
+          0,
+          2,
+          5723,
+          6,
+          10,
+          2,
+          50
+        ],
+        "nested_reply_waits": {
+          "dataset": 10,
+          "program": 3840,
+          "scratchpad": 656035
+        },
+        "nested_stalls": {
+          "dataset_request": 4,
+          "program_load": 1536,
+          "sp_request": 262414,
+          "sp_write": 262262
+        },
+        "physical_port_read_bytes": 2099312,
+        "physical_port_write_bus_bytes": 2098096,
+        "preparation_reciprocals": 22,
+        "program_image_load_bytes": 6144,
+        "runtime_reciprocals": 0,
+        "scratchpad_bytes": 2097152,
+        "stage_cycles": {
+          "control_and_metadata": 22,
+          "execution": 5923,
+          "finalization": 1179718,
+          "held_return": 4,
+          "initialization_hardware_fill": 393220,
+          "interprogram_seed": 66,
+          "program_preparation": 7600
+        },
+        "stale_error_replies_dropped": {
+          "dataset": 4,
+          "metadata": 4,
+          "program": 1536,
+          "scratchpad": 262414
+        },
+        "strobed_write_bytes": 2097752,
+        "untimed_provider_device_cycles": null
+      },
+      "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=1 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=1586553 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+      "trace_sha256": "c76b37684458487ac1f343c13b6d720357c0c96bda8ec7af8fd6090139f34e81"
+    }
+  },
+  "programs": 2,
+  "schema": "openrx.connected-prepared-v2.v1",
+  "selected_cancellation_phases": [
+    1
+  ],
+  "selected_error_ports": [
+    1,
+    8
+  ],
+  "simulation_state_model": "two-state; bounded cross-check with Icarus required",
+  "source_unchanged_after_run": true,
+  "status": "pass_connected_native_reference",
+  "tools": {
+    "g++": {
+      "path": "/usr/bin/x86_64-linux-gnu-g++-11",
+      "sha256": "2360901d864cf10bfd6296e261cb2c14053552a80377761ab07146ec9ec9a2c0",
+      "version": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    "iverilog": {
+      "path": "/usr/bin/iverilog",
+      "sha256": "1ba67856249142771239573b5d51c7f6e4d67a1e7931a0d0fab56e0d473d2167",
+      "version": "Icarus Verilog version 11.0 (stable) ()\n\nCopyright 1998-2020 Stephen Williams\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Preprocessor version 11.0 (stable) ()\n\nCopyright (c) 1999-2020 Stephen Williams (steve@icarus.com)\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\nIcarus Verilog Parser/Elaborator version 11.0 (stable) ()\n\nCopyright (c) 1998-2020 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n FLAGS DLL vvp.tgt\nvvp.tgt: Icarus Verilog VVP Code Generator 11.0 (stable) ()\n\nCopyright (c) 2001-2020 Stephen Williams (steve@icarus.com)\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n"
+    },
+    "verilator": {
+      "binary_sha256": "d7f6b1ccd5b83ae7cfb1a7ea1778504cf86a29245b4249e1820df9b8978d1ab1",
+      "receipt_sha256": "0c0b59dd20ed177dd879ee6924005d223be58d51a9821da3e36a2f29e44427bc",
+      "root": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "version": "Verilator 5.020 2024-01-01 rev UNKNOWN.REV\n"
+    },
+    "vvp": {
+      "path": "/usr/bin/vvp",
+      "sha256": "075b114070eed3bc72e0e4559decf40520f3b693b1da9c94bba1defe8896966d",
+      "version": "Icarus Verilog runtime version 11.0 (stable) ()\n\nCopyright 1998-2020 Stephen Williams\n\n  This program is free software; you can redistribute it and/or modify\n  it under the terms of the GNU General Public License as published by\n  the Free Software Foundation; either version 2 of the License, or\n  (at your option) any later version.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.\n\n  You should have received a copy of the GNU General Public License along\n  with this program; if not, write to the Free Software Foundation, Inc.,\n  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n\n"
+    }
+  },
+  "variants": [
+    "prepared"
+  ],
+  "whole_machine_efficiency_accepted": false
+}

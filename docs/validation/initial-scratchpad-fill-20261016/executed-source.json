@@ -1,0 +1,93 @@
+{
+  "base_commit": "b8cd07070f4e38a0e784e0b123225856c7879f6f",
+  "connected_code_commit": "e22c8e01d04af726fd0faa69ec171c13317ac64c",
+  "connected_code_tree": "8cd8008e1d514358b68f400ffb86573870836a67",
+  "connected_snapshot": "/tmp/openrx-initial-fill-source03",
+  "files": {
+    "rtl/hash/INITIAL_FILL.md": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "99f8939c8db7034c241e48694f69a09bd6ad853db2950974a1e82e3232416ccc",
+      "size_bytes": 4145
+    },
+    "rtl/hash/randomx_initial_scratchpad_fill.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "88b57566114875bb2dcadd2d3f21a71f414e0d850357bb6d4c8341d4f2d715ae",
+      "size_bytes": 2747,
+      "standalone_snapshot_equal": true
+    },
+    "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "abb7da95f70acba84fc893b79f89b0c4eb63e5f13b53288ec483285a4e6583a4",
+      "size_bytes": 24987
+    },
+    "rtl/hash/tests/initial_scratchpad_fill_oracle.cpp": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "6af74d1e572a21bb6235194d309acf3f0eeacc4ffdfc0c7d3e8356fc2ace68cb",
+      "size_bytes": 4504,
+      "standalone_snapshot_equal": true
+    },
+    "rtl/hash/tests/lifecycle_native.hpp": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "cca6b45e9bec3b8ccdd4c2ba77046909d8f073d0ff2f171488940d4a60b04c3e",
+      "size_bytes": 2605
+    },
+    "rtl/hash/tests/lifecycle_source_dpi.cpp": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "f48310e0d3a6d09864937eaea352f7c1737936316e5a362476f9b4a010bf3260",
+      "size_bytes": 4091
+    },
+    "rtl/hash/tests/lifecycle_source_vpi.cpp": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "cab096d3bfc471d91fc1fb2902b831e98ef78a9dff0e4245b826df24097ecf50",
+      "size_bytes": 6479
+    },
+    "rtl/hash/tests/tb_initial_scratchpad_fill.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "311f42b3764db56b3ecd291d275a61deee6f686aba7ecd19eef6a333b3e0bb29",
+      "size_bytes": 10223,
+      "standalone_snapshot_equal": true
+    },
+    "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "f993bb6b83c7612e812b252f5e5dba22ad1581bb725c0eead85cb20254752051",
+      "size_bytes": 50494
+    },
+    "scripts/test_initial_scratchpad_fill.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "03928f4e48f1eba9a20f11c33497dba6f22d7f8a1474796c06a3fa65f672ddd5",
+      "size_bytes": 17282,
+      "standalone_snapshot_equal": true
+    },
+    "scripts/test_prepared_hash_lifecycle.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "590a78f8b5054936949a74120d900393c2040c289171e1b1c26ca2df1f15b1d0",
+      "size_bytes": 29019
+    },
+    "tests/test_lifecycle_ledger.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "b39ae38fc7d201401c65d248ae8f9f55e12eb466be0030e99b90418ac746d0f5",
+      "size_bytes": 8435
+    },
+    "tests/test_lifecycle_staging.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "3df9a6f548f247e80874ae0f6953be362306d579ce49559195ef3ecde7db69e1",
+      "size_bytes": 3051
+    }
+  },
+  "publication_successor_rule": "Only declared evidence/memory documentation may differ; all listed executed code bytes must remain equal.",
+  "standalone_code_commit": "825f25502ad74f1dac40d3b287d173aca84ab5c1",
+  "standalone_snapshot": "/tmp/openrx-initial-fill-source02"
+}
