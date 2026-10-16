@@ -52,6 +52,9 @@ jobs:
             --output "$RUNNER_TEMP/superscalar-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/identity.json"
       - name: Compare prepared native programs, lifecycle and mapped execution
         run: |
+          # Trust only this fresh checkout, for this process and its Git children.
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=safe.directory \
+            GIT_CONFIG_VALUE_0="$(pwd -P)" \
           python3 -B scripts/test_superscalar_execute.py \
             --out "$RUNNER_TEMP/superscalar-execute-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
             --jobs 2 --synthesize
