@@ -37,9 +37,12 @@ struct Dataset {
     }
 };
 inline Dataset& dataset() { static Dataset result; return result; }
-inline void initial(const std::vector<uint8_t>& input, uint8_t seed[64], std::vector<uint8_t>& memory) {
+inline void input_hash(const std::vector<uint8_t>& input, uint8_t seed[64]) {
     if (blake2b(seed, 64, input.data(), input.size(), nullptr, 0))
         throw std::runtime_error("native input BLAKE2b");
+}
+inline void initial(const std::vector<uint8_t>& input, uint8_t seed[64], std::vector<uint8_t>& memory) {
+    input_hash(input, seed);
     // fill updates seed in place; program0 must consume this post-fill seed.
     fillAes1Rx4<true>(seed, memory.size(), memory.data());
 }

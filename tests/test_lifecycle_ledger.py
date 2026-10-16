@@ -37,6 +37,35 @@ class LedgerTest(unittest.TestCase):
     def test_closing_partition(self):
         self.check()
 
+    def hardware_fill(self):
+        self.ledger['stage_cycles']['initialization_hardware_fill'] = self.ledger['stage_cycles'].pop('initialization_transport')
+        self.ledger['hardware_fill_enabled'] = True
+        self.ledger['nested_initialization'] = {'provider_wait': 2, 'fill_phases': [1, 16, 1]}
+        self.provider.update(input_hash_calls=1, software_fill_provider_calls=0, initialization_host_seconds=0)
+
+    def test_hardware_fill_replaces_existing_initialization_stage(self):
+        self.hardware_fill()
+        driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True)
+
+    def test_hardware_fill_cannot_double_count_old_transport(self):
+        self.hardware_fill()
+        self.ledger['stage_cycles']['initialization_transport'] = 20
+        self.ledger['cycles'] += 20
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True)
+
+    def test_hardware_fill_cannot_use_host_fill_as_live_provider(self):
+        self.hardware_fill()
+        self.provider['software_fill_provider_calls'] = 1
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True)
+
+    def test_hardware_fill_nested_cycles_must_close(self):
+        self.hardware_fill()
+        self.ledger['nested_initialization']['fill_phases'][1] += 1
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True)
+
     def test_stalls_cannot_be_added_as_an_outer_stage(self):
         self.ledger['stage_cycles']['memory_stall'] = 4
         self.ledger['cycles'] += 4
