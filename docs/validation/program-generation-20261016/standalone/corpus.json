@@ -1,0 +1,105 @@
+{
+  "cases": [
+    {
+      "name": "64-zero",
+      "bytes": 64,
+      "seed": "zero",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/64-zero"
+    },
+    {
+      "name": "64-ones",
+      "bytes": 64,
+      "seed": "ones",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/64-ones"
+    },
+    {
+      "name": "64-incrementing",
+      "bytes": 64,
+      "seed": "incrementing",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/64-incrementing"
+    },
+    {
+      "name": "64-prng",
+      "bytes": 64,
+      "seed": "prng",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/64-prng"
+    },
+    {
+      "name": "64-postfill",
+      "bytes": 64,
+      "seed": "postfill",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/64-postfill"
+    },
+    {
+      "name": "256-zero",
+      "bytes": 256,
+      "seed": "zero",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/256-zero"
+    },
+    {
+      "name": "256-ones",
+      "bytes": 256,
+      "seed": "ones",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/256-ones"
+    },
+    {
+      "name": "256-incrementing",
+      "bytes": 256,
+      "seed": "incrementing",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/256-incrementing"
+    },
+    {
+      "name": "256-prng",
+      "bytes": 256,
+      "seed": "prng",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/256-prng"
+    },
+    {
+      "name": "256-postfill",
+      "bytes": 256,
+      "seed": "postfill",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/256-postfill"
+    },
+    {
+      "name": "3200-zero",
+      "bytes": 3200,
+      "seed": "zero",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/3200-zero"
+    },
+    {
+      "name": "3200-ones",
+      "bytes": 3200,
+      "seed": "ones",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/3200-ones"
+    },
+    {
+      "name": "3200-incrementing",
+      "bytes": 3200,
+      "seed": "incrementing",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/3200-incrementing"
+    },
+    {
+      "name": "3200-prng",
+      "bytes": 3200,
+      "seed": "prng",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/3200-prng"
+    },
+    {
+      "name": "3200-postfill",
+      "bytes": 3200,
+      "seed": "postfill",
+      "directory": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output/fixtures/3200-postfill"
+    }
+  ],
+  "native_function": "fillAes4Rx4<true>",
+  "native_pin": {
+    "repository": "https://github.com/tevador/RandomX",
+    "tag": "v2.0.1",
+    "commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+    "retrieved_utc": "2026-10-08",
+    "license": "BSD-3-Clause",
+    "strategy": "unmodified vendored source snapshot"
+  },
+  "prng_seed": "0x4f70656e52584734",
+  "native_program_bytes": 3200
+}

@@ -1,0 +1,138 @@
+{
+  "argv": [
+    "/usr/bin/python3.10",
+    "-B",
+    "/tmp/openrx-programgen-connected-check.py",
+    "/tmp/openrx-programgen-source02",
+    "/home/server/openrx-local/v1/executions/20261016T150633Z-0fed0ef048dd/output"
+  ],
+  "argv_template": [
+    "/usr/bin/python3.10",
+    "-B",
+    "/tmp/openrx-programgen-connected-check.py",
+    "/tmp/openrx-programgen-source02",
+    "{execution_dir}/output"
+  ],
+  "created_at": "2026-10-16T15:06:33.956124+00:00",
+  "cwd": "/tmp/openrx-programgen-source02",
+  "derivation": "Exact selected fields extracted from the original bound manifest; full directory file lists remain in the retained original.",
+  "env": {
+    "LANG": "C.UTF-8",
+    "PATH": "/usr/local/bin:/usr/bin:/bin"
+  },
+  "executable": {
+    "bytes": 5941864,
+    "path": "/usr/bin/python3.10",
+    "sha256": "a2f33a6e006989270f4340528eb61f8f97366e00a5d1b602ac8672ea44fc56ae"
+  },
+  "execution_id": "20261016T150633Z-0fed0ef048dd",
+  "inputs": [
+    {
+      "bytes": 5914,
+      "path": "/tmp/openrx-programgen-connected-check.py",
+      "sha256": "c75604143876ff4404b30ad26ad76860f6954c863da7b04577f65211f5fa6245"
+    },
+    {
+      "bytes": 786034,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+      "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+    },
+    {
+      "bytes": 716215,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/manifest.json",
+      "sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d"
+    },
+    {
+      "bytes": 40584,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/receipt.json",
+      "sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc"
+    },
+    {
+      "bytes": 4385,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/build.json",
+      "sha256": "293080fda2fb9bc1f29424c05d5a0e4b26da5142d28398247c4bc3394995c975"
+    },
+    {
+      "bytes": 369,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/CMakeFiles/randomx.dir/flags.make",
+      "sha256": "db413b693f8ed729e283b5c0fd25ceaf541d825933b89f9d1ff1a84584b8707a"
+    },
+    {
+      "file_count": 6088,
+      "kind": "directory",
+      "path": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "sha256": "91c011654abefcce5c4876aac76fa62b515bee5ec39055250c9aa7f900ec0579"
+    },
+    {
+      "bytes": 1636828,
+      "path": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/receipt.json",
+      "sha256": "0c0b59dd20ed177dd879ee6924005d223be58d51a9821da3e36a2f29e44427bc"
+    }
+  ],
+  "kind": "validation",
+  "migration_state": "LOCAL_ACTIVE",
+  "original_manifest_sha256": "c1ddca7b8100fef2b6e101968586c28ff0b410ca5dc6a94c46bed6cd4d770b42",
+  "output_rule": "All scientific output must be under {execution_dir}; use this literal argv placeholder",
+  "request_key": "programgen-connected-bounded-20261016-01",
+  "resource_lock": "/home/server/openrx-local/v1/locks/execution.lock",
+  "resource_profile": {
+    "admission": {
+      "allowed_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "at": "2026-10-16T15:06:33.928870+00:00",
+      "logical_cpus": 6,
+      "memory_bytes": {
+        "MemAvailable": 8447066112,
+        "MemTotal": 16725934080,
+        "SwapFree": 4512579584,
+        "SwapTotal": 8589930496
+      }
+    },
+    "allocation_slack_bytes": 3078356992,
+    "default_rounding_bytes": 268435456,
+    "kernel_memory_max_bytes": 4294967296,
+    "kernel_page_bytes": 4096,
+    "kernel_rounding": "Linux page_counter limits truncate byte requests to whole pages; default 256MiB blocks are page aligned",
+    "memory_cap_bytes": 15032385536,
+    "memory_margin_bytes": 1073741824,
+    "name": "owner-local-max-v1",
+    "rationale": "All six CPUs available; RAM uses measured safe headroom, rounded down in 256MiB blocks for executor fluctuations. Exact known-workload requests must fit the same ceiling. One resource slot remains.",
+    "requested_memory_bytes": 4294967296,
+    "safe_ceiling_bytes": 7373324288,
+    "selected_memory_bytes": 4294967296,
+    "swap_is_reservation": false
+  },
+  "resources": {
+    "CPUQuota": "600%",
+    "MemoryMax": "4294967296",
+    "MemorySwapMax": "2G",
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "TasksMax": 256,
+    "global_slots": 1
+  },
+  "resume": "forbidden; separately reviewed incremental build uses a new ID and request key",
+  "runner": {
+    "bytes": 47618,
+    "path": "/home/server/openrx-local/v1/releases/runner-v1-657b23f1/local_execution.py",
+    "sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b"
+  },
+  "schema": "openrx.local.execution.v1",
+  "scientific_acceptance": "unverified",
+  "sources": [
+    {
+      "file_count": 4531,
+      "kind": "directory",
+      "path": "/tmp/openrx-programgen-source02",
+      "sha256": "2cabe76e3b8836882354291b47f71259b88175e368f7ff69ab388e9d25c129a9"
+    }
+  ],
+  "unit": "openrx-20261016T150633Z-0fed0ef048dd.service",
+  "validation_scope": "regression-smoke"
+}

@@ -1,0 +1,61 @@
+{
+  "boundary": "Host input BLAKE2b and native Light dataset/device service remain untimed. Generator mapping excludes the logical 3200-byte image buffer and connected executor. No architecture, MHz/area/watts or physical ASIC/PPA acceptance.",
+  "complete_output_retained": "/home/server/openrx-local/v1/executions/20261016T150633Z-0fed0ef048dd/output",
+  "counts": {
+    "completed_normal_profiles": 3,
+    "focused_generation_cancellation": 1,
+    "focused_initialization_errors": 2,
+    "iterations_per_program": 1,
+    "native_corpus_files_compared": 18,
+    "programs": 2
+  },
+  "cycles": {
+    "icarus": {
+      "prepared-ideal": {
+        "cycles": 534012,
+        "program_generation": 1606
+      }
+    },
+    "verilator": {
+      "prepared-ideal": {
+        "cycles": 534012,
+        "program_generation": 1606
+      },
+      "prepared-stalled": {
+        "cycles": 1583537,
+        "program_generation": 1606
+      }
+    }
+  },
+  "execution_id": "20261016T150633Z-0fed0ef048dd",
+  "exported_at_utc": "2026-10-16T15:27:45.713295+00:00",
+  "identity_note": "Verbatim public copies retain original byte hashes. Derived metadata are separately labeled. Receipt scientific_acceptance remains unverified; process/driver success and original integrity do not substitute for independent scientific review. This subset is not a complete original execution for the host verifier.",
+  "integrity_verified": true,
+  "manifest_sha256": "c1ddca7b8100fef2b6e101968586c28ff0b410ca5dc6a94c46bed6cd4d770b42",
+  "new_default_full_workload": false,
+  "observed_driver_status": "pass_bounded_hardware_program_integration",
+  "omissions": "Complete trace CSV, fixture images/seeds, generated binaries, build outputs and native cache/unit-test payloads remain retained only, with receipt-backed hashes.",
+  "original_execution": "/home/server/openrx-local/v1/executions/20261016T150633Z-0fed0ef048dd",
+  "original_receipt_artifact_count": 672,
+  "original_receipt_sha256": "6653460044d7e965f1e293803c83d49ba9d186828665b87eb0864b6865dfe90f",
+  "process_returncode": 0,
+  "public_files_are_additive_copies": true,
+  "runner_verify": {
+    "execution_id": "20261016T150633Z-0fed0ef048dd",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "scientific_acceptance": "unverified",
+  "scope": "Bounded v2 connected hardware fill/program generation: two programs by one iteration, Icarus ideal plus pinned Verilator ideal/stalled, one generation cancellation and two initialization error paths. Complete ideal record/ledger/trace/digest and18 native assertion corpus files agree across backends. This is separate from standalone generator synthesis; the logical3200-byte image buffer and connected executor are not in that component mapping.",
+  "source_commit": "8100bee97bd592767764e5c9a8d3caa3aa2d7183",
+  "source_directory_binding": {
+    "file_count": 4531,
+    "kind": "directory",
+    "path": "/tmp/openrx-programgen-source02",
+    "sha256": "2cabe76e3b8836882354291b47f71259b88175e368f7ff69ab388e9d25c129a9"
+  },
+  "source_git_status_porcelain_at_export": "",
+  "source_tree": "e0de15f121efdcf2ec3422e59f18af073dd79a85",
+  "verbatim_original_and_bound_input_copy_count": 77
+}

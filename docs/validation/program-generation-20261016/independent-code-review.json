@@ -1,0 +1,213 @@
+{
+  "acceptance_conditions": [
+    "Successful admitted connected execution at the pinned source with native full-image/state/digest agreement.",
+    "Ideal Icarus and Verilator ledger/digest parity plus declared stalled completion/cancellation7/initialization errors.",
+    "Final receipt, source/input bindings and output inventories verified before dynamic acceptance.",
+    "No full-hash derivation from the new generation stage alone; its PG_META handoff reclassification and preparation/control deltas must remain explicit."
+  ],
+  "blocking_findings": [],
+  "core_handshake_review": {
+    "accepted_external_outputs_are_not_rolled_back": true,
+    "cancel_reset_suppress_transfers_and_clear_control": true,
+    "first_three_rounds_are_private_computation": true,
+    "fourth_round_advances_only_on_accepted_output": true,
+    "one_active_request": true,
+    "output_and_response_held_stable_under_backpressure": true,
+    "parameter_bounds_and_address_widths_reviewed": true
+  },
+  "integration_review": {
+    "actual_postfill_and_hardware_interprogram_seed_lineage": true,
+    "all200_image_beats_and_matching_generator_return_required_before_metadata": true,
+    "cancel_error_and_new_hash_invalidate_private_image_ownership": true,
+    "early_matching_metadata_is_held_until_preparation_pending_request": true,
+    "entropy_first8_beats_and_program_next192_beats_correct": true,
+    "external_removed_provider_responses_are_drained_and_do_not_drive_chain": true,
+    "held_metadata_and_instruction_response_fields_are_owned_and_stable": true,
+    "host_metadata_and_instruction_request_outputs_suppressed_in_hardware_mode": true,
+    "live_and_assertion_only_native_time_call_counters_are_separate": true,
+    "native_program_generation_is_assertion_only_in_hardware_mode": true,
+    "pending_fetch_must_drain_before_next_image": true,
+    "private_buffer_fetch_alignment_bounds_program_tag_and_pending_response_reviewed": true,
+    "private_buffer_storage_bytes": 3200
+  },
+  "ledger_and_staging_review": {
+    "assertion_generation_count_must_equal_program_count": true,
+    "driver_base_fixed_to_current_base": true,
+    "duplicate_and_out_of_range_selection_guards_retained": true,
+    "focused_ledger_and_staging_test_deltas_reviewed_without_execution": true,
+    "full3200_bytes_per_program_and_internal_transport_identity_required": true,
+    "generation_phase_includes_PG_META_handoff_reclassification": true,
+    "hardware_mode_requires_zero_live_program_generation_calls_and_host_seconds": true,
+    "legacy_cancellation_defaults1_through6_retained": true,
+    "legacy_hardware_program_default_zero_retained": true,
+    "native_program_generation_device_clocks_remain_null": true,
+    "nested_generator_phases_partition_it": true,
+    "new_cancellation7_requires_hardware_program": true,
+    "one_disjoint_outer_program_generation_stage": true,
+    "program_cache_load_and_preparation_remain_separately_charged": true,
+    "removed_provider_error_ports2_and3_explicitly_rejected_in_hardware_mode_before_output": true
+  },
+  "limits": [
+    "This is exact-code static review; connected validation acceptance remains conditional.",
+    "Standalone mapping covers generator controller and shared AES round, excluding the integration private image buffer and executor.",
+    "No new default8x2048 connected run, full hardware-only hash, full recovery matrix or alternative full-hash performance acceptance follows.",
+    "Host input BLAKE2b and native light dataset service remain untimed providers when both AES hardware modes are enabled.",
+    "No physical memory service, process, area, MHz, wall power, architecture selection or physical ASIC/PPA feasibility is accepted.",
+    "An untracked rtl/hash/PROGRAM_GENERATION.md design note appeared during review; it is outside the pinned commit/frozen snapshot and requires the later metadata-head review. No tracked executable source changed."
+  ],
+  "pinned_semantics": {
+    "byte_order": "Lane0 occupies bits127:0; byte0 occupies bits7:0; native set-vector word order and raw AES round agree.",
+    "eight_raw_keys_match": true,
+    "entropy_bytes": 128,
+    "ideal_core_work_is_not_physical_timing": true,
+    "ideal_core_work_semantic_cycles": 800,
+    "input_seed_is_captured_privately_and_not_mutated_or_returned": true,
+    "instruction_bytes": 3072,
+    "instruction_words": 384,
+    "key_mismatches": [],
+    "lane_directions": [
+      "AESDEC",
+      "AESENC",
+      "AESDEC",
+      "AESENC"
+    ],
+    "lane_key_order": {
+      "lanes0_and1": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "lanes2_and3": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "maximum_program_bytes": 3200,
+    "native_oracle_checks_unchanged_seed_and_repeated_call_restart": true,
+    "primitive": "unchanged pinned fillAes4Rx4",
+    "rounds_per_16byte_output": 4,
+    "rtl_source_sha256": "03f504c22a3f00c50aeb944f0d506566cc5554c4500bbd2c73d1f302edc455a3",
+    "vendor_source_sha256": "5997070fd0309313eaba319f23fd2a8f20d1c95e7a1c3082dd6a041cd47ee39d"
+  },
+  "result": "no_blocking_findings_static_acceptance_conditional_on_connected_validation",
+  "review_actions": {
+    "builds_started": false,
+    "issue_or_hub_action": false,
+    "original_sources_or_evidence_modified": false,
+    "publication_performed": false,
+    "source_edited": false,
+    "tests_or_workloads_run": false
+  },
+  "reviewed_at": "2026-10-16T15:08:21.003338+00:00",
+  "reviewed_source": {
+    "base": "548ed2d31fe6be7d2edc2036961dc7745e9e7219",
+    "changed_file_count": 12,
+    "changed_files": {
+      "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "0a91c32e2f0959b76f9f383cff63655480454f9b92a4b9600ec3b93fe0bd1dbb",
+        "size_bytes": 29694
+      },
+      "rtl/hash/randomx_program_generation.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "03f504c22a3f00c50aeb944f0d506566cc5554c4500bbd2c73d1f302edc455a3",
+        "size_bytes": 3183
+      },
+      "rtl/hash/tests/lifecycle_source_dpi.cpp": {
+        "frozen_snapshot_equal": true,
+        "sha256": "08894fa61daa16b66aff9e1f8a971393ca01a8a489489d3959d87b023ce2746f",
+        "size_bytes": 4723
+      },
+      "rtl/hash/tests/lifecycle_source_vpi.cpp": {
+        "frozen_snapshot_equal": true,
+        "sha256": "9e59cd0cedcd16b9928916e1fe4f5005086374637878874999ac86365222bc10",
+        "size_bytes": 7018
+      },
+      "rtl/hash/tests/program_generation_oracle.cpp": {
+        "frozen_snapshot_equal": true,
+        "sha256": "b4a20387b177229df46e36086b38f96f87329e2add95525564e748ad2dc40d12",
+        "size_bytes": 5295
+      },
+      "rtl/hash/tests/program_generation_postfill_seed.hex": {
+        "frozen_snapshot_equal": true,
+        "sha256": "cd34e2efdbd424dc56a2fcd1fa682f53b53f2e6d19bb417fdf5d0ce343f99b1a",
+        "size_bytes": 129
+      },
+      "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "36db2d5732de9012a46140dc8b71451748cc6247b2ec0f4a7e5cc2a56dfbdb19",
+        "size_bytes": 58422
+      },
+      "rtl/hash/tests/tb_program_generation.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "8cb5b99367e0e4d49a8e0ed362eb675e9caeccee7be79e265d3a9813921e2724",
+        "size_bytes": 10350
+      },
+      "scripts/test_prepared_hash_lifecycle.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "e7ef868a25079d3e2b69b31633bd086de360adaad425749a67e648bd05b9fbf3",
+        "size_bytes": 30753
+      },
+      "scripts/test_program_generation.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "cbdecb6474008de9a2205f0a0dc73b4ddbd23efeb6f8c303dd776b0b5bd5284e",
+        "size_bytes": 18579
+      },
+      "tests/test_lifecycle_ledger.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "e1789ae986905ab8a0cbc73ee2bb133d75368d423ad6609ee5a098ec29e3ccf6",
+        "size_bytes": 10652
+      },
+      "tests/test_lifecycle_staging.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "b1d9275c3a939908276e450385c6dbbd3e38eae9a9091afb60c85cfebfb6ed21",
+        "size_bytes": 3435
+      }
+    },
+    "checkout_clean": false,
+    "complete_blob_mismatches": [],
+    "complete_frozen_blob_equality_to_pinned_git_objects": true,
+    "complete_tracked_blob_count": 4531,
+    "frozen_snapshot": "/tmp/openrx-programgen-source02",
+    "head": "8100bee97bd592767764e5c9a8d3caa3aa2d7183",
+    "head_and_tree_match_pin": true,
+    "tracked_changes": [],
+    "tracked_checkout_clean": true,
+    "tree": "e0de15f121efdcf2ec3422e59f18af073dd79a85",
+    "untracked_metadata_excluded_from_code_review": [
+      "rtl/hash/PROGRAM_GENERATION.md"
+    ]
+  },
+  "reviewer": "independent merge_gate_review agent with separate provider/ledger static cross-check",
+  "schema": "openrx.program-generation.independent-code-review.v1",
+  "test_and_evidence_coupling": {
+    "all_consumed_inputs_match_source01_and_current_code": true,
+    "connected_execution_id": "20261016T150633Z-0fed0ef048dd",
+    "connected_execution_status_at_review": "admitted/running; not accepted yet",
+    "consumed_input_mismatches": [],
+    "observed_standalone_full_program_profiles": 10,
+    "observed_standalone_mapped_modes": 24,
+    "observed_standalone_process_returncode": 0,
+    "observed_standalone_rtl_modes": 44,
+    "observed_standalone_summary_status": "pass",
+    "postfill_fixture": {
+      "accepted_initial_fill_execution": "20261016T082316Z-86c364941cf5",
+      "accepted_manifest_sha256": "2350b29960c25ca878fd8f41ecc345785ae7c5fb45cee26a435bc95deb1f833b",
+      "accepted_seed_path": "2097152-incrementing/seed-out.bin",
+      "decoded_binary_matches_accepted_manifest": true,
+      "decoded_binary_sha256": "c3f23326844561f9c551f5112ed93294e1903333e689226902501d25a02a7758",
+      "decoded_bytes": 64,
+      "hex_matches_accepted_manifest": true,
+      "seed_hex_sha256": "cd34e2efdbd424dc56a2fcd1fa682f53b53f2e6d19bb417fdf5d0ce343f99b1a"
+    },
+    "standalone_code_commit": "0d70bf0cb3031ff5a3cdc26eda88a17254e89d18",
+    "standalone_consumed_input_count": 186,
+    "standalone_executed_sources_unchanged_at_reviewed_head": true,
+    "standalone_execution_id": "20261016T150022Z-f84c623dee4f",
+    "standalone_full_artifact_inventory_not_reverified_in_this_code_review": true,
+    "standalone_receipt_sha256": "441110792f957dc41191a11219abc383198b786b173794189179a787e746eb50"
+  }
+}

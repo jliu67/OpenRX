@@ -1,0 +1,17 @@
+{
+  "boundary": "Host input BLAKE2b and native Light dataset/device service remain untimed. Generator mapping excludes the logical 3200-byte image buffer and connected executor. No architecture, MHz/area/watts or physical ASIC/PPA acceptance.",
+  "completed_normal_profiles": 3,
+  "elapsed_seconds": 1116.8950000751065,
+  "focused_generation_cancellation": 1,
+  "focused_initialization_errors": 2,
+  "icarus_verilator_complete_ideal_ledger_record_trace_digest_and_native_corpus_equal": true,
+  "ideal_cycles": 534012,
+  "ideal_program_generation_cycles": 1606,
+  "iterations_per_program": 1,
+  "native_corpus_files_compared": 18,
+  "native_live_program_provider_calls": 0,
+  "new_default_full_workload": false,
+  "programs": 2,
+  "source_commit": "8100bee97bd592767764e5c9a8d3caa3aa2d7183",
+  "status": "pass_bounded_hardware_program_integration"
+}
