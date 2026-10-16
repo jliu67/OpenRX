@@ -107,6 +107,7 @@ module randomx_prepared_hash_lifecycle #(
 );
  localparam [3:0] IDLE=0,INIT_REQUEST=1,INIT_STREAM=2,CHAIN_START=3,RUN=4,FIN_START=5,FIN_WAIT=6,RETURN=7,ERROR=8;
  localparam [1:0] OWNER_INIT=0,OWNER_EXEC=1,OWNER_FINAL=2,OWNER_NONE=3;
+ localparam [21:0] FINAL_CAPACITY=SCRATCHPAD_BYTES;
  reg [3:0] state_q;reg [15:0] generation_counter_q,generation_q,user_tag_q;
  reg [639:0] input_q;reg [6:0] input_bytes_q;reg [17:0] init_beats_q;
  reg [511:0] seed_q,r_q,f_q,e_q,a_q;reg [1:0] round_q;
@@ -365,7 +366,7 @@ module randomx_prepared_hash_lifecycle #(
  );
  randomx_scratchpad_finalizer #(.SCRATCHPAD_BYTES(SCRATCHPAD_BYTES)) finalizer(
   .clk(clk),.rst(rst||cancel||state_q==ERROR),.req_valid(active&&state_q==FIN_START),.req_ready(final_req_ready),
-  .req_tag(generation_q),.req_scratchpad_bytes(SCRATCHPAD_BYTES),.req_round_mode(round_q),.req_r(r_q),.req_f(f_q),.req_e(e_q),.req_a(a_q),
+  .req_tag(generation_q),.req_scratchpad_bytes(FINAL_CAPACITY),.req_round_mode(round_q),.req_r(r_q),.req_f(f_q),.req_e(e_q),.req_a(a_q),
   .sp_rd_valid(final_sp_rd_valid),.sp_rd_ready(active&&state_q==FIN_WAIT&&sp_rd_ready),.sp_rd_addr(final_sp_rd_addr),.sp_rd_tag(final_sp_rd_tag),
   .sp_rsp_valid(sp_rsp_valid&&final_reply),.sp_rsp_ready(final_sp_rsp_ready),.sp_rsp_data(sp_rsp_data),.sp_rsp_tag(sp_rsp_tag[32:0]),.sp_rsp_error(sp_rsp_error),
   .rsp_valid(final_rsp_valid),.rsp_ready(active&&state_q==FIN_WAIT),.rsp_tag(final_rsp_tag),.rsp_round_mode(final_rsp_round),

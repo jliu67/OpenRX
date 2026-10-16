@@ -9,6 +9,7 @@ import argparse
 from collections import Counter
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
@@ -70,6 +71,8 @@ def reused_library(library, execution, source):
 
 
 def validate_ledger(ledger, provider, iterations, programs):
+    assert set(ledger['stage_cycles']) == {'initialization_transport', 'control_and_metadata',
+        'program_preparation', 'execution', 'interprogram_seed', 'finalization', 'held_return'}
     assert type(ledger['cycles']) is int and ledger['cycles'] > 0
     assert all(type(value) is int and value >= 0 for value in ledger['stage_cycles'].values())
     assert len(ledger['nested_iteration_phases']) == 12 and len(ledger['nested_finalization_phases']) == 6
@@ -79,6 +82,13 @@ def validate_ledger(ledger, provider, iterations, programs):
     assert sum(ledger['nested_iteration_phases']) == ledger['stage_cycles']['execution']
     assert sum(ledger['nested_finalization_phases']) == ledger['stage_cycles']['finalization']
     assert ledger['scratchpad_bytes'] == 2097152
+    for name in ('physical_port_read_bytes', 'physical_port_write_bus_bytes', 'strobed_write_bytes',
+                 'logical_bytecode_memory_bytes', 'logical_entry_bytes', 'logical_tail_bytes'):
+        assert type(ledger[name]) is int and ledger[name] >= 0
+    assert ledger['physical_port_read_bytes'] % 16 == 0 and ledger['physical_port_write_bus_bytes'] % 16 == 0
+    assert ledger['strobed_write_bytes'] <= ledger['physical_port_write_bus_bytes']
+    assert ledger['logical_entry_bytes'] == programs * iterations * 128
+    assert ledger['logical_tail_bytes'] == programs * iterations * 128
     assert ledger['dataset_logical_bytes'] == programs * iterations * 64
     assert ledger['program_image_load_bytes'] == programs * 384 * 8
     assert ledger['untimed_provider_device_cycles'] is None
@@ -96,6 +106,11 @@ def main():
     parser.add_argument('--programs', type=int, default=8, choices=range(1, 9))
     parser.add_argument('--iterations', type=int, default=2)
     parser.add_argument('--profiles', nargs='+', choices=['ideal', 'stalled'], default=['ideal', 'stalled'])
+    parser.add_argument('--variants', nargs='+', choices=['baseline', 'prepared'], default=['baseline', 'prepared'])
+    parser.add_argument('--event-trace', action='store_true', help='Keep every retirement/transfer/phase transition instead of idle cycle rows')
+    parser.add_argument('--backend', choices=['icarus', 'verilator'], default='icarus')
+    parser.add_argument('--verilator-root', type=Path)
+    parser.add_argument('--verilator-build-execution', type=Path)
     parser.add_argument('--full-v2', action='store_true')
     parser.add_argument('--compile-only', action='store_true')
     parser.add_argument('--cancellation', action='store_true')
@@ -104,6 +119,8 @@ def main():
     args = parser.parse_args()
     if len(args.profiles) != len(set(args.profiles)):
         parser.error('duplicate output profiles are not permitted')
+    if len(args.variants) != len(set(args.variants)):
+        parser.error('duplicate variants are not permitted')
     if args.full_v2:
         args.programs, args.iterations = 8, 2048
     if not 1 <= args.iterations <= 2048 or args.timeout <= 0:
@@ -121,26 +138,32 @@ def main():
         parser.error('unambiguous HDL paths required')
     if bool(args.native_library) != bool(args.native_build_execution):
         parser.error('reuse requires both library and immutable build execution')
+    if args.backend == 'verilator' and not (args.verilator_root and args.verilator_build_execution):
+        parser.error('Verilator requires an exact retained build root and execution receipt')
     out.mkdir()
     commands = []
     summary = {'schema': 'openrx.connected-prepared-v2.v1', 'status': 'pending',
                'base': 'aebe30a0c2d1547fed6b66976ba0757b4b66389a', 'programs': args.programs,
                'iterations': args.iterations, 'full_v2_requested': args.full_v2,
-               'compile_only': args.compile_only, 'profiles': {}, 'cancellation': {},
+               'compile_only': args.compile_only, 'variants': args.variants, 'event_trace': args.event_trace,
+               'backend': args.backend, 'simulation_state_model': 'four-state' if args.backend == 'icarus' else 'two-state; bounded cross-check with Icarus required',
+               'balanced_variant_cycle_comparison': len(args.variants) == 2, 'profiles': {}, 'cancellation': {},
                'input_hex': message.hex(), 'power_watts': None, 'device_frequency_hz': None,
                'physical_area': None, 'whole_machine_efficiency_accepted': False}
     compat = None
 
-    def run(label, argv, timeout=args.timeout):
-        if argv[0] == 'iverilog' and compat is not None:
+    def run(label, argv, timeout=args.timeout, env=None):
+        if Path(argv[0]).name in ('iverilog', 'verilator') and compat is not None:
             argv = [str(compat) if item == V + 'divSqrtRecFN_small.v' else item for item in argv]
         row = {'label': label, 'argv': argv, 'cwd': str(ROOT), 'timeout_seconds': timeout}
+        if env is not None:
+            row['environment_overrides'] = {key: value for key, value in env.items() if os.environ.get(key) != value}
         commands.append(row)
         print('START ' + label, flush=True)
         began = time.monotonic()
         try:
             with (out / (label + '.log')).open('w') as stream:
-                process = subprocess.run(argv, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT, timeout=timeout)
+                process = subprocess.run(argv, cwd=ROOT, stdout=stream, stderr=subprocess.STDOUT, timeout=timeout, env=env)
             row['returncode'] = process.returncode
             process.check_returncode()
         except Exception as error:
@@ -153,17 +176,20 @@ def main():
 
     try:
         sources = list(dict.fromkeys([*RTL, *EXTRA,
-                   *[str(path.relative_to(ROOT)) for path in sorted((ROOT / 'rtl/hash').glob('randomx_*.v'))]]))
+                   *[str(path.relative_to(ROOT)) for path in sorted((ROOT / 'rtl/hash').glob('randomx_*.v'))
+                     if path.name != 'randomx_program_hash_sequence.v']]))
         native_sources = [str(path.relative_to(ROOT)) for path in (ROOT / 'vendor/randomx').rglob('*') if path.is_file()]
         inputs = set(sources + native_sources + [TEST + name for name in
-                     ['lifecycle_native.hpp', 'lifecycle_source_vpi.cpp', 'lifecycle_reference.cpp', 'tb_prepared_hash_lifecycle.v']])
+                     ['lifecycle_native.hpp', 'lifecycle_source_vpi.cpp', 'lifecycle_source_dpi.cpp', 'lifecycle_reference.cpp', 'tb_prepared_hash_lifecycle.v']])
         inputs.update(str(path.relative_to(ROOT)) for path in (ROOT / 'scripts').glob('*.py'))
         inputs.update(str(path.relative_to(ROOT)) for path in (ROOT / 'rtl/hash/vendor/blake2').glob('*.v'))
         inputs.update(str(path.relative_to(ROOT)) for path in (ROOT / 'rtl').rglob('*')
                       if path.is_file() and (path.suffix in ('.vh', '.vi') or path.name in ('LICENSE', 'manifest.json', 'UPSTREAM.json')))
         inputs.update(['rtl/execute/tests/program_native_helpers.hpp', 'vendor/randomx.sha256.json', 'vendor/randomx.lock.json'])
+        inputs.add('tests/test_lifecycle_ledger.py')
         hashes = {name: sha(ROOT / name) for name in sorted(inputs)}
         save(out / 'inputs.json', hashes)
+        run('ledger-unit-tests', ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_lifecycle_ledger.py', '-v'])
         run('vendor', ['python3', '-B', 'scripts/verify_vendor.py'])
         for tool, flag in [('g++', '--version'), ('iverilog', '-V'), ('vvp', '-V')]:
             executable = Path(shutil.which(tool)).resolve()
@@ -198,11 +224,24 @@ def main():
         native_includes = ['-I' + str(out), '-Ivendor/randomx/src', '-Irtl/execute/tests', '-I' + TEST]
         run('compile-reference', ['g++', '-std=c++17', '-O2', *native_includes, TEST + 'lifecycle_reference.cpp',
                                   str(library), '-pthread', '-ldl', '-o', str(out / 'reference')])
-        cflags = subprocess.check_output(['iverilog-vpi', '--cflags'], text=True).split()
-        vpi_include = [flag for flag in cflags if flag.startswith('-I')]
-        assert vpi_include
-        run('compile-vpi', ['g++', '-std=c++17', '-O2', '-fPIC', '-shared', *vpi_include, *native_includes,
-                            TEST + 'lifecycle_source_vpi.cpp', str(library), '-pthread', '-ldl', '-o', str(out / 'lifecycle_source.vpi')])
+        backend_env = None
+        if args.backend == 'icarus':
+            cflags = subprocess.check_output(['iverilog-vpi', '--cflags'], text=True).split()
+            vpi_include = [flag for flag in cflags if flag.startswith('-I')]
+            assert vpi_include
+            run('compile-vpi', ['g++', '-std=c++17', '-O2', '-fPIC', '-shared', *vpi_include, *native_includes,
+                                TEST + 'lifecycle_source_vpi.cpp', str(library), '-pthread', '-ldl', '-o', str(out / 'lifecycle_source.vpi')])
+        else:
+            toolroot = args.verilator_root.resolve()
+            toolreceipt = json.loads((args.verilator_build_execution / 'receipt.json').read_text())
+            assert toolreceipt['process']['returncode'] == 0
+            for executable in (toolroot / 'bin/verilator', toolroot / 'bin/verilator_bin'):
+                row = next(item for item in toolreceipt['artifacts'] if Path(item['path']) == executable)
+                assert row['sha256'] == sha(executable)
+            backend_env = dict(os.environ, VERILATOR_ROOT=str(toolroot))
+            summary['tools']['verilator'] = {'root': str(toolroot), 'binary_sha256': sha(toolroot / 'bin/verilator_bin'),
+                'receipt_sha256': sha(args.verilator_build_execution / 'receipt.json'),
+                'version': subprocess.check_output([str(toolroot / 'bin/verilator'), '--version'], env=backend_env, text=True)}
         gold = out / 'native-reference'
         gold.mkdir()
         run('native-reference', [str(out / 'reference'), str(gold), str(args.programs), str(args.iterations), '1', message.hex()])
@@ -216,21 +255,31 @@ def main():
             name = ('prepared' if prepared else 'baseline') + ('-stalled' if stalled else '-ideal')
             if cancellation:
                 name += '-cancel-' + str(cancellation)
-            binary = out / (name + '.vvp')
-            run('compile-' + name, ['iverilog', '-g2012', '-Wall', *includes, '-s', 'tb_prepared_hash_lifecycle',
-                 '-Ptb_prepared_hash_lifecycle.PROGRAMS=' + str(args.programs),
-                 '-Ptb_prepared_hash_lifecycle.ITERATIONS=' + str(args.iterations),
-                 '-Ptb_prepared_hash_lifecycle.PREPARED_RCP=' + str(prepared),
-                 '-Ptb_prepared_hash_lifecycle.STALL=' + str(stalled),
-                 '-Ptb_prepared_hash_lifecycle.CANCEL_PHASE=' + str(cancellation), '-o', str(binary),
-                 *sources, TEST + 'tb_prepared_hash_lifecycle.v'])
+            parameters = {'PROGRAMS': args.programs, 'ITERATIONS': args.iterations, 'PREPARED_RCP': prepared,
+                          'EVENT_TRACE': int(args.event_trace), 'STALL': stalled, 'CANCEL_PHASE': cancellation}
+            if args.backend == 'icarus':
+                binary = out / (name + '.vvp')
+                run('compile-' + name, ['iverilog', '-g2012', '-Wall', *includes, '-s', 'tb_prepared_hash_lifecycle',
+                     *['-Ptb_prepared_hash_lifecycle.' + key + '=' + str(value) for key, value in parameters.items()],
+                     '-o', str(binary), *sources, TEST + 'tb_prepared_hash_lifecycle.v'])
+                simulator = ['vvp', '-M' + str(out), '-mlifecycle_source', str(binary)]
+            else:
+                directory = out / ('obj-' + name)
+                cppflags = '-std=c++20 -O2 ' + ' '.join('-I' + str(ROOT / path) for path in
+                    ('vendor/randomx/src', 'rtl/execute/tests', 'rtl/hash/tests'))
+                run('compile-' + name, [str(toolroot / 'bin/verilator'), '--binary', '--timing', '-j', '6', '-Wno-fatal',
+                    '--top-module', 'tb_prepared_hash_lifecycle', '--Mdir', str(directory), '-o', 'sim',
+                    *includes, *['-G' + key + '=' + str(value) for key, value in parameters.items()],
+                    '-CFLAGS', cppflags, '-LDFLAGS', str(library) + ' -pthread -ldl',
+                    *sources, TEST + 'tb_prepared_hash_lifecycle.v', str(ROOT / TEST / 'lifecycle_source_dpi.cpp')], env=backend_env)
+                simulator = [str(directory / 'sim')]
             if args.compile_only:
                 return
             directory = out / name
             directory.mkdir()
-            run(name, ['vvp', '-M' + str(out), '-mlifecycle_source', str(binary), '+directory=' + str(gold),
+            run(name, [*simulator, '+directory=' + str(gold),
                        '+output=' + str(directory), '+input=' + format(int.from_bytes(message, 'little'), 'x'),
-                       '+input_bytes=' + str(len(message))])
+                       '+input_bytes=' + str(len(message))], env=backend_env)
             records = [line for line in (out / (name + '.log')).read_text().splitlines() if line.startswith('PASS ')]
             assert len(records) == 1
             if cancellation:
@@ -249,13 +298,13 @@ def main():
                                              'trace_sha256': sha(directory / 'trace.csv')}
 
         for stalled in [int(name == 'stalled') for name in args.profiles]:
-            for prepared in (0, 1):
+            for prepared in [int(name == 'prepared') for name in args.variants]:
                 profile(prepared, stalled)
         if args.cancellation and not args.compile_only:
             for phase in range(1, 7):
                 profile(1, 1, phase)
         for mode in args.profiles:
-            if args.compile_only:
+            if args.compile_only or len(args.variants) != 2:
                 continue
             baseline = summary['profiles']['baseline-' + mode]['ledger']
             prepared = summary['profiles']['prepared-' + mode]['ledger']

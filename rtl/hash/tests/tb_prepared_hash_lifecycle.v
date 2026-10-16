@@ -1,6 +1,24 @@
 // SPDX-License-Identifier: BSD-3-Clause
 `timescale 1ns/1ps
-module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0);
+module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0,EVENT_TRACE=0);
+`ifdef VERILATOR
+ import "DPI-C" function void rx_life_initial(input bit[639:0] value,input int length,input string filename,output bit[511:0] result);
+ import "DPI-C" function void rx_generate(input bit[511:0] value,input string filename,output bit[1023:0] entropy);
+ import "DPI-C" function void rx_next_seed(input bit[511:0] r,input bit[511:0] f,input bit[511:0] e,input bit[511:0] a,output bit[511:0] result);
+ import "DPI-C" function void rx_dataset(input bit[63:0] address,output bit[511:0] result);
+ import "DPI-C" function void rx_provider_stats(input string filename);
+`define RX_INITIAL rx_life_initial
+`define RX_GENERATE rx_generate
+`define RX_NEXT rx_next_seed
+`define RX_DATASET rx_dataset
+`define RX_STATS rx_provider_stats
+`else
+`define RX_INITIAL $rx_life_initial
+`define RX_GENERATE $rx_generate
+`define RX_NEXT $rx_next_seed
+`define RX_DATASET $rx_dataset
+`define RX_STATS $rx_provider_stats
+`endif
  reg  clk=0;
  reg  rst=0;
  reg  cancel=0;
@@ -299,6 +317,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  integer initializing=0,initial_index=0,init_writes=0,final_reads=0,admissions=0,loaded_words=0;
  integer ledger[0:9],iteration_detail[0:11],final_detail[0:5],exec_detail[0:17];
  integer trace_file,ledger_file,stage_sum=0,phase_index=0,final_phase_index=0,byte_index=0;
+ integer last_trace_phase=-1;
  integer logical_sp_bytes=0,physical_read_bytes=0,physical_write_bus_bytes=0,useful_write_bytes=0;
  integer final_wait=0,held_response=0;reg [15:0] init_generation=0;reg [639:0] input_value=0;integer input_bytes=0;
  reg [511:0] expected_seed,native_expected_seed;reg [15:0] last_epoch=0;reg [24:0] current_load=0;
@@ -361,20 +380,32 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    meta_req_ready=!meta_pending&&(!STALL||meta_stalls>=2);
    if(meta_delay>0)meta_delay=meta_delay-1;
    meta_rsp_valid=meta_pending&&meta_delay==0;meta_rsp_tag=meta_tag;meta_rsp_program=meta_program;
-   meta_rsp_entropy=native_entropy;meta_rsp_program_addr=64'h10000000+active_program*4096;
-   if(STALL&&meta_rsp_valid&&!meta_injected)begin meta_rsp_tag=batch_tag-1;meta_rsp_entropy=~native_entropy;end
+   meta_rsp_entropy=native_entropy;meta_rsp_program_addr=64'h10000000+active_program*4096;meta_rsp_error=0;
+   if(STALL&&meta_rsp_valid&&meta_injected<2)begin
+    if(meta_injected==0)meta_rsp_tag=batch_tag-1;else meta_rsp_program=meta_program-1;
+    meta_rsp_entropy=~native_entropy;meta_rsp_error=1;
+   end
    sp_rd_ready=!sp_pending&&(!STALL||rd_stalls>=2);sp_wr_ready=!STALL||wr_stalls>=2;
    if(sp_delay>0)sp_delay=sp_delay-1;
-   sp_rsp_valid=sp_pending&&sp_delay==0;sp_rsp_tag=sp_tag;sp_rsp_data=sp_data;
-   if(STALL&&sp_rsp_valid&&!sp_injected)begin sp_rsp_tag=sp_tag^(51'b1<<35);sp_rsp_data=~sp_data;end
+   sp_rsp_valid=sp_pending&&sp_delay==0;sp_rsp_tag=sp_tag;sp_rsp_data=sp_data;sp_rsp_error=0;
+   if(STALL&&sp_rsp_valid&&sp_injected<2)begin
+    sp_rsp_tag=sp_injected==0?sp_tag^(51'b1<<35):sp_tag^51'b1;
+    sp_rsp_data=~sp_data;sp_rsp_error=1;
+   end
    prog_ready=!rom_pending&&(!STALL||rom_stalls>=2);
    if(rom_delay>0)rom_delay=rom_delay-1;
-   prog_rsp_valid=rom_pending&&rom_delay==0;prog_rsp_tag=rom_tag;prog_rsp_instruction=rom_data;
-   if(STALL&&prog_rsp_valid&&!rom_injected)begin prog_rsp_tag=rom_tag^(41'b1<<25);prog_rsp_instruction=~rom_data;end
+   prog_rsp_valid=rom_pending&&rom_delay==0;prog_rsp_tag=rom_tag;prog_rsp_instruction=rom_data;prog_rsp_error=0;
+   if(STALL&&prog_rsp_valid&&rom_injected<2)begin
+    prog_rsp_tag=rom_injected==0?rom_tag^(41'b1<<25):rom_tag^(41'b1<<9);
+    prog_rsp_instruction=~rom_data;prog_rsp_error=1;
+   end
    ds_req_ready=!ds_pending&&(!STALL||ds_stalls>=2);
    if(ds_delay>0)ds_delay=ds_delay-1;
-   ds_rsp_valid=ds_pending&&ds_delay==0;ds_rsp_tag=ds_tag;ds_rsp_data=ds_data;
-   if(STALL&&ds_rsp_valid&&!ds_injected)begin ds_rsp_tag=ds_tag^(32'b1<<16);ds_rsp_data=~ds_data;end
+   ds_rsp_valid=ds_pending&&ds_delay==0;ds_rsp_tag=ds_tag;ds_rsp_data=ds_data;ds_rsp_error=0;
+   if(STALL&&ds_rsp_valid&&ds_injected<2)begin
+    ds_rsp_tag=ds_injected==0?ds_tag^(32'b1<<16):ds_tag^32'b1;
+    ds_rsp_data=~ds_data;ds_rsp_error=1;
+   end
    program_done_ready=!(CANCEL_PHASE==4)&&(!STALL||program_hold>=3);rsp_ready=!(CANCEL_PHASE==6)&&(!STALL||done_hold>=3);
    @(posedge clk);
    if(phase<1||phase>9||(^phase)===1'bx)$fatal(1,"invalid outer ledger phase");
@@ -397,12 +428,14 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    if(phase==6)begin final_phase_index=dut.finalizer.state_q;if(final_phase_index>5)$fatal(1,"finalizer phase");final_detail[final_phase_index]=final_detail[final_phase_index]+1;end
    if(prep_rcp_fire)preparation_reciprocals=preparation_reciprocals+1;
    if(dut.chain.iteration_chain.iteration.iteration.execute.reciprocal.req_valid&&dut.chain.iteration_chain.iteration.iteration.execute.reciprocal.req_ready)runtime_reciprocals=runtime_reciprocals+1;
-   $fdisplay(trace_file,"%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0h,%0d,%0h,%0h,%0d,%0h",cycle,phase,iteration_phase,execute_phase,commit_valid,commit_pc,sp_rd_valid&&sp_rd_ready,sp_rd_addr,sp_wr_valid&&sp_wr_ready,sp_wr_addr,sp_wr_strb,ds_req_valid&&ds_req_ready,ds_req_addr);
+   if(!EVENT_TRACE||phase!=last_trace_phase||commit_valid||sp_rd_valid&&sp_rd_ready||sp_wr_valid&&sp_wr_ready||ds_req_valid&&ds_req_ready||prep_commit_valid||program_done_valid||rsp_valid)
+    $fdisplay(trace_file,"%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0h,%0d,%0h,%0h,%0d,%0h",cycle,phase,iteration_phase,execute_phase,commit_valid,commit_pc,sp_rd_valid&&sp_rd_ready,sp_rd_addr,sp_wr_valid&&sp_wr_ready,sp_wr_addr,sp_wr_strb,ds_req_valid&&ds_req_ready,ds_req_addr);
+   last_trace_phase=phase;
    if(phase==4&&iteration_phase==7&&!kernel_started)begin kernel_started=1;route=64'hcbf29ce484222325;steps=0;end
    if(init_req_valid&&init_req_ready)begin
     init_generation=init_req_tag;initializing=1;initial_index=0;
     if(init_req_input!==input_value||init_req_input_bytes!==input_bytes)$fatal(1,"captured hash input changed");
-    $sformat(path,"%0s/actual-initial.hex",output_directory);$rx_life_initial(init_req_input,init_req_input_bytes,path,seed);$readmemh(path,initial_ram);
+    $sformat(path,"%0s/actual-initial.hex",output_directory);`RX_INITIAL(init_req_input,init_req_input_bytes,path,seed);$readmemh(path,initial_ram);
     for(i=0;i<131072;i=i+1)if(initial_ram[i]!==gold_ram[i])$fatal(1,"native initial scratchpad disagreement");
    end
    if(init_wr_valid&&init_wr_ready)initial_index=initial_index+1;
@@ -434,21 +467,21 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    if(program_done_valid&&!program_done_ready)program_hold=program_hold+1;
    if(done_valid&&!done_ready)done_hold=done_hold+1;
    if(meta_rsp_valid&&meta_rsp_ready)begin
-    if(meta_rsp_tag!=batch_tag)begin meta_injected=1;meta_drops=meta_drops+1;end else meta_pending=0;
+    if(meta_rsp_tag!=batch_tag||meta_rsp_program!=meta_program)begin meta_injected=meta_injected+1;meta_drops=meta_drops+1;end else meta_pending=0;
    end
    if(sp_rsp_valid&&sp_rsp_ready)begin
-    if(sp_rsp_tag!=sp_tag)begin sp_injected=1;sp_drops=sp_drops+1;end else sp_pending=0;
+    if(sp_rsp_tag!=sp_tag)begin sp_injected=sp_injected+1;sp_drops=sp_drops+1;end else sp_pending=0;
    end
    if(prog_rsp_valid&&prog_rsp_ready)begin
-    if(prog_rsp_tag!=rom_tag)begin rom_injected=1;rom_drops=rom_drops+1;end else rom_pending=0;
+    if(prog_rsp_tag!=rom_tag)begin rom_injected=rom_injected+1;rom_drops=rom_drops+1;end else rom_pending=0;
    end
    if(ds_rsp_valid&&ds_rsp_ready)begin
-    if(ds_rsp_tag!=ds_tag)begin ds_injected=1;ds_drops=ds_drops+1;end else ds_pending=0;
+    if(ds_rsp_tag!=ds_tag)begin ds_injected=ds_injected+1;ds_drops=ds_drops+1;end else ds_pending=0;
    end
    if(meta_req_valid&&meta_req_ready)begin
     if(meta_req_tag!==batch_tag||meta_req_program!==programs_finished||meta_pending)$fatal(1,"program request order/tag");
     active_program=meta_req_program;meta_tag=batch_tag;meta_program=meta_req_program;
-    $sformat(path,"%0s/actual-program-%0d.mem",output_directory,active_program);$rx_generate(meta_req_seed,path,native_entropy);$readmemh(path,rom);
+    $sformat(path,"%0s/actual-program-%0d.mem",output_directory,active_program);`RX_GENERATE(meta_req_seed,path,native_entropy);$readmemh(path,rom);
     $sformat(path,"%0s/program-%0d.mem",directory,active_program);$readmemh(path,gold_rom);
     for(i=0;i<384;i=i+1)if(rom[i]!==gold_rom[i])$fatal(1,"actual generated instruction image mismatch");
     if(native_entropy!==gold_meta[active_program][1023:0])$fatal(1,"DUT-derived next-program entropy disagreement at program=%0d",active_program);
@@ -484,7 +517,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     if(ds_pending||dataset_taken||ds_req_tag!=={batch_tag,inner_tag}||ds_req_addr!==gold[global_iteration][2305:2242]||
       ds_prefetch_addr!==gold[global_iteration][2369:2306]||!ds_prefetch_valid)$fatal(1,"native dataset/control state");
     if(event_index!=gold[global_iteration][2497:2466]+gold[global_iteration][2529:2498])$fatal(1,"native bytecode event count");
-    dataset_taken=1;$rx_dataset(ds_req_addr,ds_data);ds_tag=ds_req_tag;ds_pending=1;ds_delay=STALL?3:1;ds_injected=0;ds_stalls=0;
+    dataset_taken=1;`RX_DATASET(ds_req_addr,ds_data);ds_tag=ds_req_tag;ds_pending=1;ds_delay=STALL?3:1;ds_injected=0;ds_stalls=0;
    end
    if(sp_wr_valid&&sp_wr_ready)begin
     if(sp_wr_tag[50:35]!==batch_tag||sp_wr_addr[3:0]!=0)$fatal(1,"SRAM write generation/alignment");
@@ -525,7 +558,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     $sformat(path,"%0s/final-%0d.hex",directory,programs_finished);$readmemh(path,gold_ram);
     for(i=0;i<131072;i=i+1)if(ram[i]!==gold_ram[i])$fatal(1,"native full scratchpad disagreement at program=%0d line=%0d",programs_finished,i);
     // Actual DUT output supplies the next seed; no oracle register ever feeds it.
-    $rx_next_seed(program_done_r,program_done_f,program_done_e,program_done_a,native_expected_seed);
+    `RX_NEXT(program_done_r,program_done_f,program_done_e,program_done_a,native_expected_seed);
     if(program_done_index<PROGRAMS-1)begin
      if(!program_done_seed_valid||program_done_seed!==native_expected_seed)$fatal(1,"hardware/native register digest mismatch");
      seed_hashes=seed_hashes+1;
@@ -553,7 +586,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   if(stage_sum!=ledger[4])$fatal(1,"nonclosing nested iteration ledger");
   stage_sum=0;for(i=0;i<6;i=i+1)stage_sum=stage_sum+final_detail[i];
   if(stage_sum!=ledger[6])$fatal(1,"nonclosing nested finalization ledger");
-  $fclose(trace_file);$sformat(path,"%0s/provider-host-time.json",output_directory);$rx_provider_stats(path);
+  $fclose(trace_file);$sformat(path,"%0s/provider-host-time.json",output_directory);`RX_STATS(path);
   $sformat(path,"%0s/ledger.json",output_directory);ledger_file=$fopen(path,"w");if(!ledger_file)$fatal(1,"ledger write");
   $fdisplay(ledger_file,"{\"cycles\":%0d,\"stage_cycles\":{\"initialization_transport\":%0d,\"control_and_metadata\":%0d,\"program_preparation\":%0d,\"execution\":%0d,\"interprogram_seed\":%0d,\"finalization\":%0d,\"held_return\":%0d},",cycle,ledger[1],ledger[2],ledger[3],ledger[4],ledger[5],ledger[6],ledger[8]);
   $fdisplay(ledger_file,"\"nested_iteration_phases\":[%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d],\"nested_finalization_phases\":[%0d,%0d,%0d,%0d,%0d,%0d],",iteration_detail[0],iteration_detail[1],iteration_detail[2],iteration_detail[3],iteration_detail[4],iteration_detail[5],iteration_detail[6],iteration_detail[7],iteration_detail[8],iteration_detail[9],iteration_detail[10],iteration_detail[11],final_detail[0],final_detail[1],final_detail[2],final_detail[3],final_detail[4],final_detail[5]);
