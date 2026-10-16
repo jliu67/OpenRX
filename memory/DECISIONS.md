@@ -299,3 +299,23 @@ First correctness proof selects no engine count, issue width, scratchpad arrange
 process or memory technology; physical efficiency and independent review remain
 separate gates. [Task71](https://github.com/jliu67/OpenRX/issues/71) /
 [EXP-014](../experiments/EXP-014-connected-v2-lifecycle.md).
+
+## 2026-10-16 — task #72 model evidence boundary
+
+Use the accepted full native-dataset fixture for traffic and lifecycle accounting;
+use its direct per-clock bench counters when sparse CSV omits nested transitions.
+Use the detailed accepted short successor only for its bounded actual bytecode
+windows and explicitly measured FU spans. Keep alternative full-hash timing and
+all uncharacterized device/provider/physical costs unknown. Width, context count,
+FU II and memory policy are scenario inputs, never a production selection. Gate
+further overlap with a parameterized context-tagged blocking hardware experiment,
+finite arbitration/readiness instrumentation and native value/lifecycle checks.
+
+## 2026-10-16 — task #72 recovery input identity and service constraints
+
+Pin the actual preserved full-evidence and portable-fixture bytes independently
+of their embedded source-hash claims. Changed inputs or extraction metadata
+remain untrusted until reviewed bindings are added. Gate conditional passes on
+transaction-rate and bank-port demand/supply plus explicit controller-service
+constraints; omitted constraints keep the result unresolved. These checks do
+not supply missing physical characterization or validate alternative hardware.

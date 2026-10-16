@@ -1,0 +1,118 @@
+{
+  "classification": "source_protocol_accounting_with_measured_operand_dependent_FU_service",
+  "formula": "to_final_commit = 2*instructions + measured_nonmemory_service + 2*loads + stores; executor wait includes one RETURN clock",
+  "independent_full_hash_prediction": false,
+  "limitations": [
+    "Eight disjoint accepted bounded windows only.",
+    "FU service spans are measured inputs; their operand-dependent latencies are not predicted.",
+    "Architectural comparison windows intentionally omit fetch and accepted RTL memory protocol overhead; they are separate changed-interface scenarios."
+  ],
+  "schema": "openrx.architecture.scalar-calibration.v1",
+  "unexplained_fitted_cycles": 0,
+  "windows": [
+    {
+      "instructions": 384,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1589,
+      "observed_first_fetch_to_final_commit_cycles": 2512,
+      "program": 0,
+      "reads": 67,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2513,
+      "source_expected_first_fetch_to_final_commit_cycles": 2512,
+      "source_return_cycles": 1,
+      "stores": 21
+    },
+    {
+      "instructions": 384,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1564,
+      "observed_first_fetch_to_final_commit_cycles": 2481,
+      "program": 1,
+      "reads": 63,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2482,
+      "source_expected_first_fetch_to_final_commit_cycles": 2481,
+      "source_return_cycles": 1,
+      "stores": 23
+    },
+    {
+      "instructions": 384,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1429,
+      "observed_first_fetch_to_final_commit_cycles": 2317,
+      "program": 2,
+      "reads": 52,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2318,
+      "source_expected_first_fetch_to_final_commit_cycles": 2317,
+      "source_return_cycles": 1,
+      "stores": 16
+    },
+    {
+      "instructions": 384,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1819,
+      "observed_first_fetch_to_final_commit_cycles": 2722,
+      "program": 3,
+      "reads": 57,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2723,
+      "source_expected_first_fetch_to_final_commit_cycles": 2722,
+      "source_return_cycles": 1,
+      "stores": 21
+    },
+    {
+      "instructions": 384,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1491,
+      "observed_first_fetch_to_final_commit_cycles": 2397,
+      "program": 4,
+      "reads": 57,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2398,
+      "source_expected_first_fetch_to_final_commit_cycles": 2397,
+      "source_return_cycles": 1,
+      "stores": 24
+    },
+    {
+      "instructions": 384,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1747,
+      "observed_first_fetch_to_final_commit_cycles": 2671,
+      "program": 5,
+      "reads": 66,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2672,
+      "source_expected_first_fetch_to_final_commit_cycles": 2671,
+      "source_return_cycles": 1,
+      "stores": 24
+    },
+    {
+      "instructions": 393,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1427,
+      "observed_first_fetch_to_final_commit_cycles": 2359,
+      "program": 6,
+      "reads": 61,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2360,
+      "source_expected_first_fetch_to_final_commit_cycles": 2359,
+      "source_return_cycles": 1,
+      "stores": 24
+    },
+    {
+      "instructions": 384,
+      "iteration": 0,
+      "measured_nonmemory_service_cycles": 1570,
+      "observed_first_fetch_to_final_commit_cycles": 2508,
+      "program": 7,
+      "reads": 78,
+      "residual_cycles": 0,
+      "source_expected_executor_wait_cycles_including_return": 2509,
+      "source_expected_first_fetch_to_final_commit_cycles": 2508,
+      "source_return_cycles": 1,
+      "stores": 14
+    }
+  ]
+}

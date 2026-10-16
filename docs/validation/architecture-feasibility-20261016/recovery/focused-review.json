@@ -1,0 +1,21 @@
+{
+  "base_head": "46fa0737f0e818c9147a687613d38aedd6b0cf0d",
+  "extract_boundary": "different byte identity including generated metadata is preserved as untrusted and cannot produce accepted-run comparisons",
+  "final_head_review": "required via exact-head PR handoff; reviewed code hashes must match final commit",
+  "independent_focused_tests_passed": 16,
+  "preserved_full_evidence_sha256_verified": "33f4cbe95805d33068fa9eceee90820f230cd0457d06f35407f9323d1d547ecf",
+  "publication_documentation_delta": "Model README reproduction diff now uses additive recovery sensitivity; no executable/test changes after admitted snapshot.",
+  "result": "no remaining blockers",
+  "reviewed_code_commit": "90a7885409825cef69e6d6a9c3891fa81cf95ccd",
+  "reviewed_sha256": {
+    "tests/test_architecture_envelope.py": "856532f7c9ff62627c2a82987f2d3a39313e810984f35b5cfba38da0e5d1c4e2",
+    "tests/test_architecture_provenance.py": "060f904370488294cd209d1800c06a9fb823f15c1a2b754531545b5a1c659ce7",
+    "tools/architecture/README.md": "e06614d6aafb7f71148cef5ba888a62257997075545ab5b214ce3ada3359d4e3",
+    "tools/architecture/envelope.py": "50bf96663cf6a96e184754942dc8052825161cecd92f783f6c962bac5015dcb3",
+    "tools/architecture/run.py": "08382dedb23f7004e34afb1a0f6e7710a4a575182a8ac216f66ccc57ec8a494b"
+  },
+  "reviewer": "independent child agent /root/focused_review",
+  "schema": "openrx.architecture.focused-recovery-review.v1",
+  "scope": "two review blockers only; source and focused tests, no broad model or physical-performance acceptance",
+  "trusted_fixture_files_verified": 12
+}

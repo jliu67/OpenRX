@@ -1,5 +1,44 @@
 # Handoff — actual designated local execution
 
+## 2026-10-16 — task #72 recovery review handoff
+
+The isolated recovery starts at saved `46fa0737f0e818c9147a687613d38aedd6b0cf0d`
+above main `f13e5b5223e87c91a848adedc23502b5a42d4754`. Review the two focused
+fixes in `tools/architecture/run.py` and `envelope.py`, their rejection tests and
+[recovery evidence](../docs/validation/architecture-feasibility-20261016/recovery/README.md).
+Exact portable inputs are verified; changed metadata/bytes are untrusted and
+stop accepted-run comparisons. Even identical-source `extract` metadata can
+differ; the accepted executable path is compact `reproduce` with pinned bytes.
+Transaction/bank-port rates and controller-service conditions must be supplied
+before a conditional pass. Physical unknowns and alternative full-hash timing
+remain unresolved. Original sources and outputs are preserved. Final draft PR
+and exact head are recorded on [task #72](https://github.com/jliu67/OpenRX/issues/72);
+independent review remains required and no merge is authorized.
+
+## 2026-10-16 — task #72 executable model delivery
+
+Start with [model contract/reproduction](../tools/architecture/README.md),
+[EXP-015](../experiments/EXP-015-architecture-feasibility.md) and
+[machine-readable results](../docs/validation/architecture-feasibility-20261016/README.md).
+58 focused tests pass. The admitted preserved-input extraction and separate
+portable reproduction verify; all 488 comparison rows and sensitivity bytes
+match. Eight scalar windows close exactly with measured FU service retained;
+full-source fixed stages close using accepted direct nested bench counters and
+the explicit measured executor aggregate. The older event observer lacks both
+nested transition types; initial parser failure is retained and those CSV
+durations remain null. No RTL/native simulation was rerun.
+
+The numerical alternatives are bytecode-window scenarios, with outer AES/tail,
+dataset service and lifecycle excluded. Full-hash alternative rates, provider
+device work, physical timing/energy and the complete target are unresolved.
+No engine count, process, clock or memory technology is selected. Preserve all
+original full/short traces and bound source snapshots. Use existing admission
+and global lock for heavy work; no standing editable mirror or sync is restored.
+Next justified implementation is a configurable context-tagged blocking wrapper
+with separate mutable namespaces, arbitration and issue/completion/readiness
+instrumentation, checked against native values and the accepted lifecycle.
+Review independently before merge; the author performs no merge.
+
 ## 2026-10-16 — connected default v2 hash review handoff
 
 [Task #71](https://github.com/jliu67/OpenRX/issues/71) / [draft PR #73](https://github.com/jliu67/OpenRX/pull/73)

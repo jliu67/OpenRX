@@ -1,0 +1,407 @@
+{
+  "accepted_nested_iteration_counter_source": "summary profiles.prepared-ideal.ledger; direct per-clock testbench counters",
+  "accepted_nested_iteration_counters": [
+    16,
+    64,
+    64,
+    64,
+    64,
+    0,
+    16,
+    39961,
+    16,
+    16,
+    16,
+    144
+  ],
+  "calibration": {
+    "assumptions": [
+      "ideal accepted replies, no stalls",
+      "default parallel direct multiply/FP/divsqrt",
+      "eight scratchpad entry beats and eight tail beats each iteration"
+    ],
+    "classification": "partial_source_state_equation_replay_with_unpredicted_measured_executor_aggregate",
+    "executor_phase_residuals": null,
+    "expected_iteration_phases": [
+      16,
+      64,
+      64,
+      64,
+      64,
+      0,
+      16,
+      39961,
+      16,
+      16,
+      16,
+      144
+    ],
+    "expected_stage_cycles": {
+      "control_and_metadata": 34,
+      "execution": 40441,
+      "finalization": 393286,
+      "held_return": 1,
+      "initialization_transport": 131074,
+      "interprogram_seed": 414,
+      "program_preparation": 12430
+    },
+    "formulas": {
+      "control_and_metadata": "4*programs + 2 lifecycle admission/return clocks",
+      "execution": "iterations*(IDLE1 + entry_requests8 + entry_replies8 + EX_REQ1 + DS_REQ1 + DS_RSP1 + TAIL_REQ1 + TAIL_WAIT9) + measured_EX_WAIT",
+      "finalization": "3*scratchpad_beats + 8 extra AES rounds + IDLE1 + AES_START1 + AES_return1 + HASH_START1 + HASH_WAIT57 + RETURN1",
+      "initialization_transport": "scratchpad_bytes/16 + 2 request/return clocks",
+      "interprogram_seed": "(programs-1)*(regfile_hash56 + 3 seed states) + 1 last-program bypass",
+      "program_preparation": "programs*(2*words_per_program + 2 admission/return) + active_static_reciprocals*(1 request + 64 iterations + 1 response)",
+      "regfile_hash": "2 blocks*(request1 + core_init1 + 12 rounds*2 + finalize1 + response1) = 56"
+    },
+    "iteration_counter_provenance": "accepted testbench per-clock ledger counters; not reconstructed from sampled CSV",
+    "iteration_nonexecutor_cycles_per_iteration": {
+      "controller_idle": 1,
+      "dataset_reply": 1,
+      "dataset_request": 1,
+      "entry_read_replies": 8,
+      "entry_read_requests": 8,
+      "executor_admission": 1,
+      "tail_admission": 1,
+      "tail_eight_writes_and_return": 9
+    },
+    "iteration_phase_residuals": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "measured_unpredicted_inputs": {
+      "executor_EX_WAIT_aggregate_cycles": 39961
+    },
+    "stage_cycle_residuals": {
+      "control_and_metadata": 0,
+      "execution": 0,
+      "finalization": 0,
+      "held_return": 0,
+      "initialization_transport": 0,
+      "interprogram_seed": 0,
+      "program_preparation": 0
+    },
+    "total_cycle_residual": 0,
+    "unexplained_fitted_cycles": 0
+  },
+  "classification": "measured_one_connected_native_v2_workload",
+  "counts": {
+    "bytecode_read8": 1001,
+    "bytecode_write8": 333,
+    "outer_read64": 32,
+    "outer_write64": 32
+  },
+  "dataset_bytes_per_hash": 1024,
+  "demonstrated_asic_feasibility": false,
+  "device_frequency_hz": null,
+  "instruction_steps": 6167,
+  "iterations": 16,
+  "limitations": [
+    "one accepted workload is not a distribution or physical performance measurement",
+    "native dataset generated in light mode from 256 MiB cache; no materialized full dataset or DRAM timing",
+    "input hashing, initial fill, program generation and dataset generation have unknown untimed device costs",
+    "General extractor does not reconstruct nested CSV timing: c96 lacks transitions; richer successor timing is analyzed separately",
+    "CSV lacks operand values, reply flags and detailed readiness; reordered comparisons require explicit assumptions",
+    "source equations replay measured entire executor wait aggregate; not independent full-hash timing prediction"
+  ],
+  "native_input_sha256": {
+    "accesses.hex": "aef22dc9478ad2909ea953245b19129297637622389e5dfdb74527eb568a4da8",
+    "iterations.hex": "16abec540ce9746c42a11e17ff0254286ab70e6288114bd25026244badd97f82"
+  },
+  "physical_power_watts": null,
+  "prefixes": [
+    {
+      "cold_counts": {
+        "bytecode_read8": 319,
+        "bytecode_write8": 111,
+        "outer_read64": 32,
+        "outer_write64": 32
+      },
+      "hot_counts": {
+        "bytecode_read8": 682,
+        "bytecode_write8": 222,
+        "outer_read64": 0,
+        "outer_write64": 0
+      },
+      "hot_prefix_bytes": 16384
+    },
+    {
+      "cold_counts": {
+        "bytecode_read8": 273,
+        "bytecode_write8": 91,
+        "outer_read64": 32,
+        "outer_write64": 32
+      },
+      "hot_counts": {
+        "bytecode_read8": 728,
+        "bytecode_write8": 242,
+        "outer_read64": 0,
+        "outer_write64": 0
+      },
+      "hot_prefix_bytes": 65536
+    },
+    {
+      "cold_counts": {
+        "bytecode_read8": 80,
+        "bytecode_write8": 28,
+        "outer_read64": 29,
+        "outer_write64": 29
+      },
+      "hot_counts": {
+        "bytecode_read8": 921,
+        "bytecode_write8": 305,
+        "outer_read64": 3,
+        "outer_write64": 3
+      },
+      "hot_prefix_bytes": 262144
+    },
+    {
+      "cold_counts": {
+        "bytecode_read8": 68,
+        "bytecode_write8": 25,
+        "outer_read64": 26,
+        "outer_write64": 26
+      },
+      "hot_counts": {
+        "bytecode_read8": 933,
+        "bytecode_write8": 308,
+        "outer_read64": 6,
+        "outer_write64": 6
+      },
+      "hot_prefix_bytes": 524288
+    },
+    {
+      "cold_counts": {
+        "bytecode_read8": 0,
+        "bytecode_write8": 0,
+        "outer_read64": 0,
+        "outer_write64": 0
+      },
+      "hot_counts": {
+        "bytecode_read8": 1001,
+        "bytecode_write8": 333,
+        "outer_read64": 32,
+        "outer_write64": 32
+      },
+      "hot_prefix_bytes": 2097152
+    }
+  ],
+  "program_sha256": {
+    "program-0.mem": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec",
+    "program-1.mem": "005108dec03308f65eda8f561497b1d21862c5d67cb11ec8af4d5edf2cf8e384",
+    "program-2.mem": "ea5f0a410d9845c76dfdd0f5db35360eea0206ea66972a6e7f0e7e0d7030cd3f",
+    "program-3.mem": "0d4f54ec419bbb4a6c23b357277ab5c382784801ceab70dc5dbfc010829fd6df",
+    "program-4.mem": "61574ff62cbc22bdc53097779659421c632b9b5923e4bcc4ddf5dac9242ad697",
+    "program-5.mem": "2d52c7a22773c0bf3d861874d8820ba49714fc50cb9d9329391e698ca403e56c",
+    "program-6.mem": "96b734f9f0b30a96511668b583eda0ee011176292f3542ac6eae5e96f414dc42",
+    "program-7.mem": "ccbecd8ddb3f89302733843ae7b16bf401d8677e860fdcce0bab5f0933f16a59"
+  },
+  "provenance": {
+    "assumed": [
+      "scenario use beyond the single measured workload"
+    ],
+    "measured": [
+      "accepted outer clock partitions and transaction flags from CSV",
+      "nested iteration clock partitions from accepted direct testbench ledger counters",
+      "native bytecode/outer scratchpad and dataset addresses for one workload",
+      "dynamic commit PCs decoded against bound immutable program images"
+    ],
+    "source_derived": [
+      "fixed ideal RTL stage/state equations; default parameters"
+    ],
+    "unknown": [
+      "iteration/executor-state durations from c96 sampled CSV",
+      "untimed provider device costs",
+      "physical clock, memory service/traffic, area and full-system energy"
+    ]
+  },
+  "provider": {
+    "assertion_only_hash_host_seconds": 1.6617e-05,
+    "cache_bytes": 268435456,
+    "cache_initialization_host_seconds": 0.846029102,
+    "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+    "dataset_provider_host_seconds": 0.000433182,
+    "dataset_requests": 16,
+    "initialization_host_seconds": 0.086771041,
+    "logical_dataset_bytes": 2181038016,
+    "materialized_dataset_bytes": 0,
+    "program_generation_host_seconds": 0.0016319289999999998,
+    "program_generations": 8,
+    "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+    "provider_device_cycles": null,
+    "provider_internal_physical_traffic_bytes": null
+  },
+  "schema": "openrx.architecture.evidence.v1",
+  "source_bindings": {
+    "rtl/engine/randomx_iteration_engine.v": {
+      "current_sha256": "9cdcbf5a28f2616bb9deaf7128f437ab6ee78ac0e2f36f03b4f4451ecc6f8b78",
+      "executed_input_sha256": "9cdcbf5a28f2616bb9deaf7128f437ab6ee78ac0e2f36f03b4f4451ecc6f8b78",
+      "identical_to_executed_input": true
+    },
+    "rtl/execute/randomx_integer_execute.v": {
+      "current_sha256": "7f605141b5696f9e39621f28ea3e4ab16723ce0b2c812ec7456f1e76090c0b09",
+      "executed_input_sha256": "7f605141b5696f9e39621f28ea3e4ab16723ce0b2c812ec7456f1e76090c0b09",
+      "identical_to_executed_input": true
+    },
+    "rtl/execute/randomx_program_reciprocals.v": {
+      "current_sha256": "218dbb0b2e1f7a262dbf611431f8a8cd9a3b5dbba02861cf3509da84b423c98d",
+      "executed_input_sha256": "218dbb0b2e1f7a262dbf611431f8a8cd9a3b5dbba02861cf3509da84b423c98d",
+      "identical_to_executed_input": true
+    },
+    "rtl/execute/randomx_reciprocal32.v": {
+      "current_sha256": "eba445e98069fca0ef58e8a6229ba1c637be9dc9dfd8ecdef015eed837d714f1",
+      "executed_input_sha256": "eba445e98069fca0ef58e8a6229ba1c637be9dc9dfd8ecdef015eed837d714f1",
+      "identical_to_executed_input": true
+    },
+    "rtl/execute/tests/program_sequence_oracle.cpp": {
+      "current_sha256": "de1a816a3d7720b761522780b9a70320e6d3888a086920a27d46d03a22b3147e",
+      "executed_input_sha256": null,
+      "identical_to_executed_input": null
+    },
+    "rtl/hash/randomx_blake2b_chain_core.v": {
+      "current_sha256": "74921226713d4546c6e8e2485a7205499f8b48a1d9cc355e6315769738c5bda8",
+      "executed_input_sha256": "74921226713d4546c6e8e2485a7205499f8b48a1d9cc355e6315769738c5bda8",
+      "identical_to_executed_input": true
+    },
+    "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+      "current_sha256": "af3466488fa15168006efd1081c7392ca93943f4659af393dbf2878e1c33825e",
+      "executed_input_sha256": "af3466488fa15168006efd1081c7392ca93943f4659af393dbf2878e1c33825e",
+      "identical_to_executed_input": true
+    },
+    "rtl/hash/randomx_program_seed.v": {
+      "current_sha256": "9f4305228d23bbbae17183953787b72368c9462716abe47e71b78d932e6f9fdb",
+      "executed_input_sha256": "9f4305228d23bbbae17183953787b72368c9462716abe47e71b78d932e6f9fdb",
+      "identical_to_executed_input": true
+    },
+    "rtl/hash/randomx_regfile_blake2b.v": {
+      "current_sha256": "b794047e47d711aad508d548872b1b118c7878fd2c032ef8b9f5d2e14bd949fc",
+      "executed_input_sha256": "b794047e47d711aad508d548872b1b118c7878fd2c032ef8b9f5d2e14bd949fc",
+      "identical_to_executed_input": true
+    },
+    "rtl/hash/randomx_scratchpad_aes_hash.v": {
+      "current_sha256": "5d44749839a264834563ea4feb8b24058b8081e753b115813f6adc8bbf8099ff",
+      "executed_input_sha256": "5d44749839a264834563ea4feb8b24058b8081e753b115813f6adc8bbf8099ff",
+      "identical_to_executed_input": true
+    },
+    "rtl/hash/randomx_scratchpad_finalizer.v": {
+      "current_sha256": "0b4f87d12bc258e9516f5f8e598e24a9f594db87ae70793074d385f5baa4a75a",
+      "executed_input_sha256": "0b4f87d12bc258e9516f5f8e598e24a9f594db87ae70793074d385f5baa4a75a",
+      "identical_to_executed_input": true
+    },
+    "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+      "current_sha256": "da2069e033072e089b0a8c371bff4a468950f55313f0f9a478f5808ba4b1feaa",
+      "executed_input_sha256": "da2069e033072e089b0a8c371bff4a468950f55313f0f9a478f5808ba4b1feaa",
+      "identical_to_executed_input": true
+    }
+  },
+  "summary_sha256": "4fd38d189c88fdb886d757a145c7584937256b526227b8e83f60905807ad0c33",
+  "trace": {
+    "active_reciprocal_commits": 190,
+    "events": {
+      "dataset_requests64": 16,
+      "instruction_commits": 6167,
+      "scratchpad_reads16": 132201,
+      "scratchpad_strobed_write_bytes": 2101864,
+      "scratchpad_write_bus16": 131533
+    },
+    "executor_state_coverage": "not reconstructed by this extractor; c96 CSV omits executor transitions; richer successor is analyzed separately",
+    "executor_state_durations": null,
+    "instruction_families": {
+      "CBRANCH": 585,
+      "CFROUND": 22,
+      "FADD_M": 100,
+      "FADD_R": 366,
+      "FDIV_M": 96,
+      "FMUL_R": 768,
+      "FSCAL_R": 142,
+      "FSQRT_R": 148,
+      "FSUB_M": 141,
+      "FSUB_R": 413,
+      "FSWAP_R": 62,
+      "IADD_M": 174,
+      "IADD_RS": 392,
+      "IMULH_M": 22,
+      "IMULH_R": 98,
+      "IMUL_M": 118,
+      "IMUL_R": 367,
+      "IMUL_RCP": 190,
+      "INEG_R": 60,
+      "IROL_R": 56,
+      "IROR_R": 174,
+      "ISMULH_M": 26,
+      "ISMULH_R": 90,
+      "ISTORE": 333,
+      "ISUB_M": 200,
+      "ISUB_R": 381,
+      "ISWAP_R": 104,
+      "IXOR_M": 124,
+      "IXOR_R": 415
+    },
+    "iteration_count_basis": "one accepted dataset request per iteration; no duration inference",
+    "iteration_state_coverage": "not reconstructed by this extractor; c96 CSV omits iteration transitions; richer successor is analyzed separately",
+    "iterations_observed": 16,
+    "nested_iteration_phases": null,
+    "programs_observed": 8,
+    "sample_rows": 0,
+    "sample_scope": null,
+    "sampled_executor_state_row_counts": [
+      0,
+      6167,
+      6167,
+      6167,
+      1001,
+      1001,
+      333,
+      0,
+      16,
+      0,
+      911,
+      911,
+      0,
+      0,
+      1788,
+      1788,
+      244,
+      244
+    ],
+    "sampled_iteration_state_row_counts": [
+      16,
+      64,
+      64,
+      64,
+      64,
+      0,
+      16,
+      26738,
+      16,
+      16,
+      16,
+      128
+    ],
+    "stage_cycles": {
+      "control_and_metadata": 34,
+      "execution": 40441,
+      "finalization": 393286,
+      "held_return": 1,
+      "initialization_transport": 131074,
+      "interprogram_seed": 414,
+      "program_preparation": 12430
+    },
+    "total_cycles": 577680,
+    "trace_rows": 289397,
+    "trace_sha256": "61e9db0584f83b1b446eb0f19edf3246a08e217734cb08c125240f6c3bd0b85d"
+  },
+  "unique_dataset_64B_lines": 16,
+  "unique_touched_64B_lines": 651,
+  "unique_written_64B_lines": 288
+}
