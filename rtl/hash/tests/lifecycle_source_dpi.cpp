@@ -5,8 +5,8 @@
 #include <cstdlib>
 #include <iostream>
 
-static double initial_seconds=0,input_hash_seconds=0,generation_seconds=0,assertion_seconds=0;
-static unsigned generations=0,input_hash_calls=0,software_fill_calls=0;
+static double initial_seconds=0,input_hash_seconds=0,generation_seconds=0,assertion_seconds=0,assertion_generation_seconds=0;
+static unsigned generations=0,input_hash_calls=0,software_fill_calls=0,assertion_generations=0;
 template<class Function> static void checked(Function fn) {
  try { fn(); }
  catch(const std::exception& error) {
@@ -35,13 +35,17 @@ extern "C" void rx_life_input_hash(const svBitVecVal* value,int length,svBitVecV
   input_hash_seconds+=lifecycle_native::seconds(started);++input_hash_calls;
  });
 }
-extern "C" void rx_generate(const svBitVecVal* value,const char* filename,svBitVecVal* entropy) {
+static void generate(const svBitVecVal* value,const char* filename,svBitVecVal* entropy,bool assertion_only) {
  checked([&] {
   alignas(16) uint8_t seed[64];std::memcpy(seed,value,64);auto started=lifecycle_native::Clock::now();
   randomx::Program program;sequence_fixture::generate(seed,program);sequence_fixture::words(filename,program);
-  std::memcpy(entropy,&program,128);generation_seconds+=lifecycle_native::seconds(started);++generations;
+  std::memcpy(entropy,&program,128);
+  if(assertion_only){assertion_generation_seconds+=lifecycle_native::seconds(started);++assertion_generations;}
+  else {generation_seconds+=lifecycle_native::seconds(started);++generations;}
  });
 }
+extern "C" void rx_generate(const svBitVecVal* value,const char* filename,svBitVecVal* entropy) {generate(value,filename,entropy,false);}
+extern "C" void rx_generate_assertion(const svBitVecVal* value,const char* filename,svBitVecVal* entropy) {generate(value,filename,entropy,true);}
 extern "C" void rx_next_seed(const svBitVecVal* r,const svBitVecVal* f,const svBitVecVal* e,const svBitVecVal* a,svBitVecVal* result) {
  checked([&] {
   randomx::RegisterFile reg;std::memcpy(reg.r,r,64);std::memcpy(reg.f,f,64);std::memcpy(reg.e,e,64);std::memcpy(reg.a,a,64);
@@ -64,6 +68,7 @@ extern "C" void rx_provider_stats(const char* filename) {
    <<",\"input_hash_host_seconds\":"<<input_hash_seconds<<",\"input_hash_calls\":"<<input_hash_calls
    <<",\"software_fill_provider_calls\":"<<software_fill_calls
    <<",\"program_generation_host_seconds\":"<<generation_seconds<<",\"program_generations\":"<<generations
+   <<",\"assertion_only_program_generation_host_seconds\":"<<assertion_generation_seconds<<",\"assertion_only_program_generations\":"<<assertion_generations
    <<",\"dataset_provider_host_seconds\":"<<d.item_seconds<<",\"dataset_requests\":"<<d.item_requests
    <<",\"assertion_only_hash_host_seconds\":"<<assertion_seconds<<",\"provider_device_cycles\":null,\"provider_internal_physical_traffic_bytes\":null}\n";
   if(!out)throw std::runtime_error("provider statistics write");

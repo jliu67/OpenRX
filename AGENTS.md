@@ -1,5 +1,13 @@
 # Agent instructions
 
+## Native AES program generation candidate — 2026-10-16
+
+Above accepted main `548ed2d` (merged PR #76 / completed task #75), [EXP-017](experiments/EXP-017-native-program-generation.md) and [evidence](docs/validation/program-generation-20261016/README.md) bind native fillAes4Rx4 to standalone `0d70bf0` and connected `8100bee`. All 15 native, 44 RTL and 24 bounded mapped modes pass, including ten complete 3,200-byte profiles. Default generator-only mapping is 36,836 generic cells, 540 flop cells and zero latches; it excludes the connected image buffer and engine.
+
+Explicit `HARDWARE_PROGRAM=1` uses actual post-fill/interprogram seeds and internal entropy/instruction service, with zero live software-generation calls. Default `0` preserves historical reproduction. Connected 2×1 ideal/stalled/focused recovery, 45 unit checks and complete ideal Icarus/Verilator parity pass with independently reviewed receipts. The ideal total is 534,012 clocks, including 1,606 for two program generations and their control/metadata overhead.
+
+No new default 8×2,048 run, whole connected mapping, physical PPA/ASIC or architecture acceptance follows. Host input hashing and native Light dataset/device service remain gaps. Parent handles normal merge gates after draft publication, exact-head review and hosted checks. Separate task-issue registration remains pending; no hub #5 or task #72 notice is authorized here. Earlier dated sections retain historical context.
+
 ## Hardware initial AES fill candidate — 2026-10-16
 
 [EXP-016](experiments/EXP-016-initial-scratchpad-fill.md) and [evidence](docs/validation/initial-scratchpad-fill-20261016/README.md) record a bounded hardware initial-fill implementation above merged main `b8cd0707`. Executed standalone `825f255` and connected `e22c8e0` sources are preserved. Four complete 2 MiB native images, 30 RTL / 18 bounded mapped modes, actual default synthesis and connected 2×1 ideal/stalled/recovery checks pass with verified receipts. Explicit `HARDWARE_FILL=1` uses seed-only input hashing and hardware writes/post-fill seed; legacy default preserves historical reproduction. This is not a new default 8×2,048 result or physical PPA/architecture acceptance. Independent final publication-head review and hosted checks remain separate. [Task #75](https://github.com/jliu67/OpenRX/issues/75) now records this owner-authorized implementation and publication. Read its final handoff for the public draft head, independent review and hosted gates. No hub5 communication is permitted in this session. Older dated snapshots below retain their original context.

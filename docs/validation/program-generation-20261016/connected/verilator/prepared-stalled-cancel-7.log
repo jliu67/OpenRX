@@ -1,0 +1,4 @@
+DETAIL lifecycle_hardware_fill_cancel_fresh_seed changed_input=1 successor_full_scratchpad_bytes=2097152 held_writes=1 stale_initialization_drained=1 postfill_seed=1
+DETAIL lifecycle_hardware_program_cancel_fresh_image changed_input=1 partial_image_invalidated=1 successor_native_image_bytes=3200 fresh_metadata=1
+PASS lifecycle_cancel phase=7 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1
+- rtl/hash/tests/tb_prepared_hash_lifecycle.v:481: Verilog $finish

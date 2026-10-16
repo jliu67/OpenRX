@@ -1,0 +1,9 @@
+{
+  "source": "rtl/hash/tests/program_generation_postfill_seed.hex",
+  "accepted_initial_fill_execution": "20261016T082316Z-86c364941cf5",
+  "accepted_fixture_manifest": "docs/validation/initial-scratchpad-fill-20261016/standalone/fixtures.sha256.json",
+  "accepted_fixture_manifest_sha256": "2350b29960c25ca878fd8f41ecc345785ae7c5fb45cee26a435bc95deb1f833b",
+  "accepted_seed_path": "2097152-incrementing/seed-out.bin",
+  "binary_sha256": "c3f23326844561f9c551f5112ed93294e1903333e689226902501d25a02a7758",
+  "derivation": "Byte-reverse the accepted 512-bit readmemh word; no fill/hash/dataset rerun."
+}

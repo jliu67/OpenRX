@@ -1,15 +1,17 @@
 // SPDX-License-Identifier: BSD-3-Clause
 `timescale 1ns/1ps
-module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0,ERROR_PORT=0,CAPACITY_TEST=0,EVENT_TRACE=0,HARDWARE_FILL=0);
+module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0,ERROR_PORT=0,CAPACITY_TEST=0,EVENT_TRACE=0,HARDWARE_FILL=0,HARDWARE_PROGRAM=0);
 `ifdef VERILATOR
  import "DPI-C" function void rx_life_initial(input bit[639:0] value,input int length,input string filename,output bit[511:0] result);
  import "DPI-C" function void rx_life_input_hash(input bit[639:0] value,input int length,output bit[511:0] result);
+ import "DPI-C" function void rx_generate_assertion(input bit[511:0] value,input string filename,output bit[1023:0] entropy);
  import "DPI-C" function void rx_generate(input bit[511:0] value,input string filename,output bit[1023:0] entropy);
  import "DPI-C" function void rx_next_seed(input bit[511:0] r,input bit[511:0] f,input bit[511:0] e,input bit[511:0] a,output bit[511:0] result);
  import "DPI-C" function void rx_dataset(input bit[63:0] address,output bit[511:0] result);
  import "DPI-C" function void rx_provider_stats(input string filename);
 `define RX_INITIAL rx_life_initial
 `define RX_INPUT_HASH rx_life_input_hash
+`define RX_GENERATE_ASSERTION rx_generate_assertion
 `define RX_GENERATE rx_generate
 `define RX_NEXT rx_next_seed
 `define RX_DATASET rx_dataset
@@ -17,6 +19,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
 `else
 `define RX_INITIAL $rx_life_initial
 `define RX_INPUT_HASH $rx_life_input_hash
+`define RX_GENERATE_ASSERTION $rx_generate_assertion
 `define RX_GENERATE $rx_generate
 `define RX_NEXT $rx_next_seed
 `define RX_DATASET $rx_dataset
@@ -67,7 +70,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  wire [8:0] error_pc;
  wire [7:0] error_opcode;
  wire [3:0] phase;
- wire [1:0] init_fill_phase;
+ wire [1:0] init_fill_phase,program_gen_phase;
  wire [1:0] scratchpad_owner;
  wire  generation_exhausted;
  wire  prep_commit_valid;
@@ -153,7 +156,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  wire [511:0] commit_e;
  wire [1:0] commit_round_mode;
  always #5 clk=~clk;
- randomx_prepared_hash_lifecycle #(.PROGRAMS(PROGRAMS),.ITERATIONS(ITERATIONS),.PREPARED_RCP(PREPARED_RCP),.HARDWARE_FILL(HARDWARE_FILL)) dut(
+ randomx_prepared_hash_lifecycle #(.PROGRAMS(PROGRAMS),.ITERATIONS(ITERATIONS),.PREPARED_RCP(PREPARED_RCP),.HARDWARE_FILL(HARDWARE_FILL),.HARDWARE_PROGRAM(HARDWARE_PROGRAM)) dut(
   .clk(clk),
   .rst(rst),
   .cancel(cancel),
@@ -200,6 +203,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   .error_opcode(error_opcode),
   .phase(phase),
   .init_fill_phase(init_fill_phase),
+  .program_gen_phase(program_gen_phase),
   .scratchpad_owner(scratchpad_owner),
   .generation_exhausted(generation_exhausted),
   .prep_commit_valid(prep_commit_valid),
@@ -291,7 +295,21 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  wire [31:0] done_mx=dut.chain_done_mx,done_ma=dut.chain_done_ma,done_spaddr0=dut.chain_done_spaddr0,done_spaddr1=dut.chain_done_spaddr1;
  wire [3:0] iteration_phase=dut.chain.iteration_chain.iteration.iteration.controller.phase_q;
  wire [4:0] execute_phase=dut.chain.iteration_chain.iteration.iteration.execute.state_q;
-`include "sequence_sizes.vh"
+// Assertion monitors select the actual internal preparation transfers in hardware
+ // mode. External provider pins remain suppressed and cannot supply image data.
+ wire observed_meta_req_valid=HARDWARE_PROGRAM?(dut.active&&dut.state_q==4&&dut.chain_meta_req_valid):meta_req_valid;
+ wire observed_meta_req_ready=HARDWARE_PROGRAM?dut.chain_meta_req_ready:meta_req_ready;
+ wire observed_meta_rsp_valid=HARDWARE_PROGRAM?dut.chain_meta_rsp_valid:meta_rsp_valid;
+ wire observed_meta_rsp_ready=HARDWARE_PROGRAM?dut.chain_meta_rsp_ready:meta_rsp_ready;
+ wire [15:0] observed_meta_rsp_tag=HARDWARE_PROGRAM?dut.chain_meta_rsp_tag:meta_rsp_tag;
+ wire [2:0] observed_meta_rsp_program=HARDWARE_PROGRAM?dut.chain_meta_rsp_program:meta_rsp_program;
+ wire observed_prog_valid=HARDWARE_PROGRAM?(dut.active&&dut.state_q==4&&dut.chain_prog_valid):prog_valid;
+ wire observed_prog_ready=HARDWARE_PROGRAM?dut.chain_prog_ready:prog_ready;
+ wire observed_prog_rsp_valid=HARDWARE_PROGRAM?dut.chain_prog_rsp_valid:prog_rsp_valid;
+ wire observed_prog_rsp_ready=HARDWARE_PROGRAM?dut.chain_prog_rsp_ready:prog_rsp_ready;
+ wire [40:0] observed_prog_rsp_tag=HARDWARE_PROGRAM?{dut.generation_q,dut.chain_prog_rsp_tag}:prog_rsp_tag;
+ wire [63:0] observed_prog_rsp_instruction=HARDWARE_PROGRAM?dut.chain_prog_rsp_instruction:prog_rsp_instruction;
+ `include "sequence_sizes.vh"
  reg [127:0] ram[0:131071],gold_ram[0:131071],initial_ram[0:131071],cancel_ram[0:131071];
  reg [63:0] gold_rom[0:383];reg [511:0] gold_final_a[0:0];reg [2047:0] gold_final_rf[0:0];reg [255:0] gold_digest[0:0];
  reg [63:0] rom[0:383];reg [2529:0] gold[0:TOTAL_ITERATIONS-1];
@@ -322,6 +340,8 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  wire [4095:0] now_response={rsp_tag,rsp_round_mode,rsp_r,rsp_f,rsp_e,rsp_a,rsp_digest,rsp_error,error_tag,error_program,error_code,error_pc,error_opcode};
  integer initializing=0,initial_index=0,init_writes=0,final_reads=0,admissions=0,loaded_words=0;
  integer ledger[0:9],iteration_detail[0:11],final_detail[0:5],exec_detail[0:17];
+ integer program_gen_detail[0:2],generated_beats=0,program_gen_images=0,generation_image_beats=0;
+ integer external_meta_drops=0,external_program_drops=0;
  integer init_provider_wait=0,fill_detail[0:2],init_response_drops=0,init_write_drops=0;
  integer init_input_hash_calls=0,init_same_cycle_offers=0,init_same_cycle_accepts=0;
  reg init_request_seed_pending=0;reg [528:0] held_init_response;
@@ -332,6 +352,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  reg [511:0] expected_seed,native_expected_seed;reg [15:0] last_epoch=0;reg [24:0] current_load=0;
  reg [639:0] restart_input;reg [511:0] restart_seed,restart_expected_seed;integer restart_bytes=0,restart_writes=0,restart_cycles=0,restart_saw_hold=0;
  reg restart_held=0;reg [255:0] restart_saved_write;
+ integer restart_image_beats=0,restart_metadata_accepted=0;
  integer seed_hashes=0;
  integer matching_fault_accepted=0;
  task check_capacity;begin
@@ -372,6 +393,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
  integer stall_sp_requests=0,stall_sp_writes=0,stall_dataset_requests=0,stall_program_loads=0;
  integer waiting_sp_replies=0,waiting_dataset_replies=0,waiting_program_replies=0;
  task cancel_and_restart;begin
+  if(CANCEL_PHASE==7&&(!HARDWARE_PROGRAM||generation_image_beats!=3||dut.pg_state_q!=2))$fatal(1,"hardware image cancellation coverage");
   for(i=0;i<131072;i=i+1)cancel_ram[i]=ram[i];
   @(negedge clk);cancel=1;#1;
   if(sp_wr_valid||sp_rd_valid||ds_req_valid||prog_valid||meta_req_valid||program_done_valid||rsp_valid)$fatal(1,"cancel suppression");
@@ -382,17 +404,18 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   ds_rsp_valid=1;ds_rsp_tag={batch_tag,inner_tag};ds_rsp_data=~ds_data;
   repeat(3)begin @(posedge clk);#1;
    if(!req_ready||!meta_rsp_ready||!sp_rsp_ready||!prog_rsp_ready||!ds_rsp_ready||sp_wr_valid||iteration_commit_valid||commit_valid||rsp_valid)$fatal(1,"canceled late reply suppression");
+   if(HARDWARE_PROGRAM&&(dut.pg_state_q!=0||dut.pg_fetch_pending_q||dut.pg_out_valid||dut.chain_meta_rsp_valid||dut.chain_prog_rsp_valid))$fatal(1,"cancel retained partial generated-image ownership");
    @(negedge clk);
   end
   meta_rsp_valid=0;sp_rsp_valid=0;prog_rsp_valid=0;ds_rsp_valid=0;
   for(i=0;i<131072;i=i+1)if(ram[i]!==cancel_ram[i])$fatal(1,"cancel rolled back accepted writes");
   restart_input=input_value^640'd1;restart_bytes=input_bytes?input_bytes:1;
   req_valid=1;req_tag=16'h9001;
-  req_input=HARDWARE_FILL&&CANCEL_PHASE==1?restart_input:input_value;
-  req_input_bytes=HARDWARE_FILL&&CANCEL_PHASE==1?restart_bytes:input_bytes;
+  req_input=HARDWARE_FILL&&(CANCEL_PHASE==1||CANCEL_PHASE==7)?restart_input:input_value;
+  req_input_bytes=HARDWARE_FILL&&(CANCEL_PHASE==1||CANCEL_PHASE==7)?restart_bytes:input_bytes;
   @(posedge clk);#1;@(negedge clk);req_valid=0;
   if(!init_req_valid||init_req_tag!==batch_tag+1||meta_req_valid||sp_wr_valid)$fatal(1,"fresh generation after cancel");
-  if(HARDWARE_FILL&&CANCEL_PHASE==1)begin
+  if(HARDWARE_FILL&&(CANCEL_PHASE==1||CANCEL_PHASE==7))begin
    if(init_req_input!==restart_input||init_req_input_bytes!==restart_bytes)$fatal(1,"successor did not capture fresh input");
    // The live provider computes only the actual input hash. This separate
    // software fill is an assertion oracle for the cancelled test's successor.
@@ -409,7 +432,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    #1;@(negedge clk);init_wr_valid=0;init_rsp_tag=batch_tag+1;init_rsp_seed=restart_seed;
    @(posedge clk);if(!init_rsp_ready)$fatal(1,"fresh input hash not accepted");
    #1;@(negedge clk);init_rsp_valid=0;
-   while(!meta_req_valid)begin
+   while(!observed_meta_req_valid)begin
     // Several held cycles recur on each write; accepted SRAM bytes persist.
     sp_wr_ready=restart_cycles%7>=3;
     @(posedge clk);
@@ -428,6 +451,31 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    if(restart_writes!=131072||!restart_saw_hold||meta_req_tag!==batch_tag+1||meta_req_program!==0||
       meta_req_seed!==restart_expected_seed)$fatal(1,"successor full fill/postfill seed mismatch");
    $display("DETAIL lifecycle_hardware_fill_cancel_fresh_seed changed_input=1 successor_full_scratchpad_bytes=2097152 held_writes=1 stale_initialization_drained=1 postfill_seed=1");
+   if(CANCEL_PHASE==7)begin
+    // The new input's actual post-fill seed drives a fresh complete image.
+    // These native bytes are assertion-only and never reach the DUT.
+    $sformat(path,"%0s/restart-assertion-only-program.mem",output_directory);
+    `RX_GENERATE_ASSERTION(meta_req_seed,path,native_entropy);$readmemh(path,rom);
+    while(dut.pg_state_q!=4)begin
+     @(posedge clk);
+     if(meta_req_valid||prog_valid||sp_wr_valid||sp_rd_valid||ds_req_valid||rsp_valid||error_valid)$fatal(1,"successor generated-image ownership escaped");
+     if(dut.pg_state_q==1&&dut.pg_seed_q!==restart_expected_seed)$fatal(1,"successor generator did not capture actual new seed");
+     if(dut.pg_out_valid&&dut.pg_out_ready)begin
+      if(restart_image_beats>=200||dut.pg_out_tag!==batch_tag+1||dut.pg_out_addr!==restart_image_beats*16)$fatal(1,"successor generated-image tag/order");
+      if(restart_image_beats<8)expected_data=native_entropy[128*restart_image_beats+:128];
+      else expected_data={rom[2*(restart_image_beats-8)+1],rom[2*(restart_image_beats-8)]};
+      if(dut.pg_out_data!==expected_data)$fatal(1,"successor native program image mismatch");
+      restart_image_beats=restart_image_beats+1;
+     end
+     if(dut.chain_meta_rsp_valid&&dut.chain_meta_rsp_ready)begin
+      if(restart_image_beats!=200||dut.chain_meta_rsp_tag!==batch_tag+1||dut.chain_meta_rsp_program!==0||dut.chain_meta_rsp_entropy!==native_entropy)$fatal(1,"successor generated metadata mismatch");
+      restart_metadata_accepted=restart_metadata_accepted+1;
+     end
+     #1;restart_cycles=restart_cycles+1;if(restart_cycles>2100000)$fatal(1,"successor generation deadlock");@(negedge clk);
+    end
+    if(restart_image_beats!=200||restart_metadata_accepted!=1)$fatal(1,"successor reused partial generated image");
+    $display("DETAIL lifecycle_hardware_program_cancel_fresh_image changed_input=1 partial_image_invalidated=1 successor_native_image_bytes=3200 fresh_metadata=1");
+   end
   end
   $display("PASS lifecycle_cancel phase=%0d completed_iterations=%0d accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1",CANCEL_PHASE,global_iteration);
   $finish;
@@ -478,7 +526,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
      !$value$plusargs("input=%h",input_value)||!$value$plusargs("input_bytes=%d",input_bytes))$fatal(1,"profile arguments missing");
   for(i=0;i<10;i=i+1)ledger[i]=0;for(i=0;i<12;i=i+1)iteration_detail[i]=0;
   for(i=0;i<6;i=i+1)final_detail[i]=0;for(i=0;i<18;i=i+1)exec_detail[i]=0;
-  for(i=0;i<3;i=i+1)fill_detail[i]=0;
+  for(i=0;i<3;i=i+1)begin fill_detail[i]=0;program_gen_detail[i]=0;end
   $sformat(path,"%0s/trace.csv",output_directory);trace_file=$fopen(path,"w");if(!trace_file)$fatal(1,"trace open");
   $fdisplay(trace_file,"cycle,outer_phase,iteration_phase,execute_phase,commit,pc,sp_read,sp_addr,sp_write,write_addr,write_strb,dataset,dataset_addr");
   $sformat(path,"%0s/final-a.hex",directory);$readmemh(path,gold_final_a);
@@ -523,13 +571,13 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    end
    meta_req_ready=!meta_pending&&(!STALL||meta_stalls>=2);
    if(meta_delay>0)meta_delay=meta_delay-1;
-   meta_rsp_valid=meta_pending&&meta_delay==0;meta_rsp_tag=meta_tag;meta_rsp_program=meta_program;
+   meta_rsp_valid=!HARDWARE_PROGRAM&&meta_pending&&meta_delay==0;meta_rsp_tag=meta_tag;meta_rsp_program=meta_program;
    meta_rsp_entropy=native_entropy;meta_rsp_program_addr=64'h10000000+active_program*4096;meta_rsp_error=0;
-   if(STALL&&meta_rsp_valid&&meta_injected<2)begin
+   if(!HARDWARE_PROGRAM&&STALL&&meta_rsp_valid&&meta_injected<2)begin
     if(meta_injected==0)meta_rsp_tag=batch_tag-1;else meta_rsp_program=meta_program-1;
     meta_rsp_entropy=~native_entropy;meta_rsp_error=1;
    end
-   if(ERROR_PORT==2&&meta_rsp_valid&&meta_injected>=2)meta_rsp_error=1;
+   if(!HARDWARE_PROGRAM&&ERROR_PORT==2&&meta_rsp_valid&&meta_injected>=2)meta_rsp_error=1;
    sp_rd_ready=!sp_pending&&(!STALL||rd_stalls>=2);sp_wr_ready=!STALL||wr_stalls>=2;
    if(sp_delay>0)sp_delay=sp_delay-1;
    sp_rsp_valid=sp_pending&&sp_delay==0;sp_rsp_tag=sp_tag;sp_rsp_data=sp_data;sp_rsp_error=0;
@@ -540,12 +588,12 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    if(sp_rsp_valid&&sp_injected>=2&&((ERROR_PORT==4&&sp_tag[34:33]==1)||(ERROR_PORT==6&&sp_tag[34:33]==2)))sp_rsp_error=1;
    prog_ready=!rom_pending&&(!STALL||rom_stalls>=2);
    if(rom_delay>0)rom_delay=rom_delay-1;
-   prog_rsp_valid=rom_pending&&rom_delay==0;prog_rsp_tag=rom_tag;prog_rsp_instruction=rom_data;prog_rsp_error=0;
-   if(STALL&&prog_rsp_valid&&rom_injected<2)begin
+   prog_rsp_valid=!HARDWARE_PROGRAM&&rom_pending&&rom_delay==0;prog_rsp_tag=rom_tag;prog_rsp_instruction=rom_data;prog_rsp_error=0;
+   if(!HARDWARE_PROGRAM&&STALL&&prog_rsp_valid&&rom_injected<2)begin
     prog_rsp_tag=rom_injected==0?rom_tag^(41'b1<<25):rom_tag^(41'b1<<9);
     prog_rsp_instruction=~rom_data;prog_rsp_error=1;
    end
-   if(ERROR_PORT==3&&prog_rsp_valid&&rom_injected>=2)prog_rsp_error=1;
+   if(!HARDWARE_PROGRAM&&ERROR_PORT==3&&prog_rsp_valid&&rom_injected>=2)prog_rsp_error=1;
    ds_req_ready=!ds_pending&&(!STALL||ds_stalls>=2);
    if(ds_delay>0)ds_delay=ds_delay-1;
    ds_rsp_valid=ds_pending&&ds_delay==0;ds_rsp_tag=ds_tag;ds_rsp_data=ds_data;ds_rsp_error=0;
@@ -554,11 +602,15 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     ds_rsp_data=~ds_data;ds_rsp_error=1;
    end
    if(ERROR_PORT==5&&ds_rsp_valid&&ds_injected>=2)ds_rsp_error=1;
+   if(HARDWARE_PROGRAM&&STALL&&dut.pg_state_q==2)begin
+    if(external_meta_drops<2)begin meta_rsp_valid=1;meta_rsp_tag=external_meta_drops==0?batch_tag-1:batch_tag;meta_rsp_program=0;meta_rsp_error=1;end
+    if(external_program_drops<2)begin prog_rsp_valid=1;prog_rsp_tag={external_program_drops==0?batch_tag-16'd1:batch_tag,25'd0};prog_rsp_instruction=0;prog_rsp_error=1;end
+   end
    program_done_ready=!(CANCEL_PHASE==4)&&(!STALL||program_hold>=3);rsp_ready=!ERROR_PORT&&!(CANCEL_PHASE==6)&&(!STALL||done_hold>=3);
    @(posedge clk);
    if((ERROR_PORT==1&&phase==1&&init_rsp_valid&&init_rsp_ready&&init_rsp_tag==batch_tag&&init_rsp_error)||
-      (ERROR_PORT==2&&meta_pending&&meta_rsp_valid&&meta_rsp_ready&&meta_rsp_tag==meta_tag&&meta_rsp_program==meta_program&&meta_rsp_error)||
-      (ERROR_PORT==3&&rom_pending&&prog_rsp_valid&&prog_rsp_ready&&prog_rsp_tag==rom_tag&&prog_rsp_error)||
+      (ERROR_PORT==2&&meta_pending&&observed_meta_rsp_valid&&observed_meta_rsp_ready&&observed_meta_rsp_tag==meta_tag&&observed_meta_rsp_program==meta_program&&meta_rsp_error)||
+      (ERROR_PORT==3&&rom_pending&&observed_prog_rsp_valid&&observed_prog_rsp_ready&&observed_prog_rsp_tag==rom_tag&&prog_rsp_error)||
       (ERROR_PORT==4&&sp_pending&&sp_rsp_valid&&sp_rsp_ready&&sp_rsp_tag==sp_tag&&sp_tag[34:33]==1&&sp_rsp_error)||
       (ERROR_PORT==5&&ds_pending&&ds_rsp_valid&&ds_rsp_ready&&ds_rsp_tag==ds_tag&&ds_rsp_error)||
       (ERROR_PORT==6&&sp_pending&&sp_rsp_valid&&sp_rsp_ready&&sp_rsp_tag==sp_tag&&sp_tag[34:33]==2&&sp_rsp_error)||
@@ -566,6 +618,21 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     matching_fault_accepted=matching_fault_accepted+1;
    if(phase<1||phase>9||(^phase)===1'bx)$fatal(1,"invalid outer ledger phase");
    ledger[phase]=ledger[phase]+1;
+   if(HARDWARE_PROGRAM&&(meta_req_valid||prog_valid))$fatal(1,"hardware program mode emitted a host provider request");
+   if(HARDWARE_PROGRAM&&meta_rsp_valid&&meta_rsp_ready)external_meta_drops=external_meta_drops+1;
+   if(HARDWARE_PROGRAM&&prog_rsp_valid&&prog_rsp_ready)external_program_drops=external_program_drops+1;
+   if(HARDWARE_PROGRAM&&phase==7)begin
+    if(program_gen_phase>2||(^program_gen_phase)===1'bx)$fatal(1,"program generation phase");
+    program_gen_detail[program_gen_phase]=program_gen_detail[program_gen_phase]+1;
+   end
+   if(HARDWARE_PROGRAM&&dut.pg_out_valid&&dut.pg_out_ready)begin
+    if(generation_image_beats>=200||dut.pg_out_tag!==batch_tag||dut.pg_out_addr!==generation_image_beats*16||
+       observed_prog_valid||sp_wr_valid||sp_rd_valid||ds_req_valid)$fatal(1,"hardware program generation ownership/order");
+    if(generation_image_beats<8)expected_data=native_entropy[128*generation_image_beats+:128];
+    else expected_data={rom[2*(generation_image_beats-8)+1],rom[2*(generation_image_beats-8)]};
+    if(dut.pg_out_data!==expected_data)$fatal(1,"native hardware program image mismatch program=%0d beat=%0d",active_program,generation_image_beats);
+    generation_image_beats=generation_image_beats+1;generated_beats=generated_beats+1;
+   end
    if(HARDWARE_FILL&&phase==1)begin
     if(dut.state_q==9||dut.state_q==10)begin
      if(init_fill_phase>2||(^init_fill_phase)===1'bx)$fatal(1,"initial fill phase");
@@ -575,7 +642,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    if(sp_rd_valid&&!sp_rd_ready)stall_sp_requests=stall_sp_requests+1;
    if(sp_wr_valid&&!sp_wr_ready)stall_sp_writes=stall_sp_writes+1;
    if(ds_req_valid&&!ds_req_ready)stall_dataset_requests=stall_dataset_requests+1;
-   if(prog_valid&&!prog_ready)stall_program_loads=stall_program_loads+1;
+   if(observed_prog_valid&&!observed_prog_ready)stall_program_loads=stall_program_loads+1;
    if(sp_pending)waiting_sp_replies=waiting_sp_replies+1;
    if(ds_pending)waiting_dataset_replies=waiting_dataset_replies+1;
    if(rom_pending)waiting_program_replies=waiting_program_replies+1;
@@ -631,48 +698,56 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    end
    if(held_read&&(!sp_rd_valid||now_read!==saved_read))$fatal(1,"held SRAM read changed");
    if(held_write&&(!sp_wr_valid||now_write!==saved_write))$fatal(1,"held SRAM write changed");
-   if(held_rom&&(!prog_valid||now_rom!==saved_rom))$fatal(1,"held instruction request changed");
-   if(held_meta&&(!meta_req_valid||now_meta!==saved_meta))$fatal(1,"held metadata request changed");
+   if(held_rom&&(!observed_prog_valid||now_rom!==saved_rom))$fatal(1,"held instruction request changed");
+   if(held_meta&&(!observed_meta_req_valid||now_meta!==saved_meta))$fatal(1,"held metadata request changed");
    if(held_ds&&(!ds_req_valid||now_ds!==saved_ds))$fatal(1,"held dataset request changed");
    if(held_program&&(!program_done_valid||now_program!==saved_program))$fatal(1,"held program result changed");
    if(held_done&&(!done_valid||now_done!==saved_done))$fatal(1,"held batch result changed");
    held_read=sp_rd_valid&&!sp_rd_ready;saved_read=now_read;
    held_write=sp_wr_valid&&!sp_wr_ready;saved_write=now_write;
-   held_rom=prog_valid&&!prog_ready;saved_rom=now_rom;
-   held_meta=meta_req_valid&&!meta_req_ready;saved_meta=now_meta;
+   held_rom=observed_prog_valid&&!observed_prog_ready;saved_rom=now_rom;
+   held_meta=observed_meta_req_valid&&!observed_meta_req_ready;saved_meta=now_meta;
    held_ds=ds_req_valid&&!ds_req_ready;saved_ds=now_ds;
    held_program=program_done_valid&&!program_done_ready;saved_program=now_program;
    held_done=done_valid&&!done_ready;saved_done=now_done;
-   if(meta_req_valid&&!meta_req_ready)meta_stalls=meta_stalls+1;
+   if(observed_meta_req_valid&&!observed_meta_req_ready)meta_stalls=meta_stalls+1;
    if(sp_rd_valid&&!sp_rd_ready)rd_stalls=rd_stalls+1;
    if(sp_wr_valid&&!sp_wr_ready)wr_stalls=wr_stalls+1;
-   if(prog_valid&&!prog_ready)rom_stalls=rom_stalls+1;
+   if(observed_prog_valid&&!observed_prog_ready)rom_stalls=rom_stalls+1;
    if(ds_req_valid&&!ds_req_ready)ds_stalls=ds_stalls+1;
    if(program_done_valid&&!program_done_ready)program_hold=program_hold+1;
    if(done_valid&&!done_ready)done_hold=done_hold+1;
-   if(meta_rsp_valid&&meta_rsp_ready)begin
-    if(meta_rsp_tag!=batch_tag||meta_rsp_program!=meta_program)begin meta_injected=meta_injected+1;meta_drops=meta_drops+1;end else meta_pending=0;
+   if(observed_meta_rsp_valid&&observed_meta_rsp_ready)begin
+    if(HARDWARE_PROGRAM&&(generation_image_beats!=200||dut.chain_meta_rsp_entropy!==native_entropy))$fatal(1,"metadata escaped incomplete hardware image");
+    if(observed_meta_rsp_tag!=batch_tag||observed_meta_rsp_program!=meta_program)begin meta_injected=meta_injected+1;meta_drops=meta_drops+1;end else meta_pending=0;
    end
    if(sp_rsp_valid&&sp_rsp_ready)begin
     if(sp_rsp_tag!=sp_tag)begin sp_injected=sp_injected+1;sp_drops=sp_drops+1;end else sp_pending=0;
    end
-   if(prog_rsp_valid&&prog_rsp_ready)begin
-    if(prog_rsp_tag!=rom_tag)begin rom_injected=rom_injected+1;rom_drops=rom_drops+1;end else rom_pending=0;
+   if(observed_prog_rsp_valid&&observed_prog_rsp_ready)begin
+    if(HARDWARE_PROGRAM&&observed_prog_rsp_instruction!==rom_data)$fatal(1,"native generated buffer fetch mismatch");
+    if(observed_prog_rsp_tag!=rom_tag)begin rom_injected=rom_injected+1;rom_drops=rom_drops+1;end else rom_pending=0;
    end
    if(ds_rsp_valid&&ds_rsp_ready)begin
     if(ds_rsp_tag!=ds_tag)begin ds_injected=ds_injected+1;ds_drops=ds_drops+1;end else ds_pending=0;
    end
-   if(meta_req_valid&&meta_req_ready)begin
+   if(observed_meta_req_valid&&observed_meta_req_ready)begin
     if(meta_req_tag!==batch_tag||meta_req_program!==programs_finished||meta_pending)$fatal(1,"program request order/tag");
     if(HARDWARE_FILL&&programs_finished==0&&(init_writes!=131072||meta_req_seed!==expected_seed))$fatal(1,"program0 escaped full hardware fill or postfill seed mismatch");
     active_program=meta_req_program;meta_tag=batch_tag;meta_program=meta_req_program;
-    $sformat(path,"%0s/actual-program-%0d.mem",output_directory,active_program);`RX_GENERATE(meta_req_seed,path,native_entropy);$readmemh(path,rom);
+    $sformat(path,"%0s/actual-program-%0d.mem",output_directory,active_program);
+    if(HARDWARE_PROGRAM)begin
+     // Native generation is an assertion oracle; its image never drives a DUT pin.
+     `RX_GENERATE_ASSERTION(meta_req_seed,path,native_entropy);
+     generation_image_beats=0;program_gen_images=program_gen_images+1;
+    end else `RX_GENERATE(meta_req_seed,path,native_entropy);
+    $readmemh(path,rom);
     $sformat(path,"%0s/program-%0d.mem",directory,active_program);$readmemh(path,gold_rom);
     for(i=0;i<384;i=i+1)if(rom[i]!==gold_rom[i])$fatal(1,"actual generated instruction image mismatch");
     if(native_entropy!==gold_meta[active_program][1023:0])$fatal(1,"DUT-derived next-program entropy disagreement at program=%0d",active_program);
     meta_pending=1;meta_delay=STALL?3:1;meta_injected=0;meta_stalls=0;
    end
-   if(prog_valid&&prog_ready)begin
+   if(observed_prog_valid&&observed_prog_ready)begin
     pc=(prog_addr-(64'h10000000+active_program*4096))>>3;
     if(rom_pending||prog_tag[40:25]!==batch_tag||prog_tag[8:0]!==pc||prog_addr[2:0]!=0||pc<0||pc>=384)$fatal(1,"instruction fetch/identity");
     current_load=prog_tag[24:0];loaded_words=loaded_words+1;
@@ -710,7 +785,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     for(byte_index=0;byte_index<16;byte_index=byte_index+1)if(sp_wr_strb[byte_index])useful_write_bytes=useful_write_bytes+1;
     if(sp_wr_tag[34:33]==0)begin
      if(scratchpad_owner!==0||sp_wr_addr!==init_writes*16||sp_wr_strb!==16'hffff)$fatal(1,"exclusive initialization owner");
-     if(HARDWARE_FILL&&(sp_wr_data!==gold_ram[init_writes]||sp_rd_valid||prog_valid||meta_req_valid||ds_req_valid))$fatal(1,"native hardware initial fill data or exclusive ownership");
+     if(HARDWARE_FILL&&(sp_wr_data!==gold_ram[init_writes]||sp_rd_valid||observed_prog_valid||observed_meta_req_valid||ds_req_valid))$fatal(1,"native hardware initial fill data or exclusive ownership");
      init_writes=init_writes+1;
     end else if(sp_wr_tag[34:33]!=1||sp_wr_tag[15:0]!==inner_tag)$fatal(1,"execution write owner/tag");
     else if(!dataset_taken)begin
@@ -755,7 +830,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
     if(global_iteration!=TOTAL_ITERATIONS||programs_finished!=PROGRAMS||done_tag!==16'h4000||
       {done_a,done_e,done_f,done_r}!==gold_final_rf[0]||rsp_digest!==gold_digest[0]||rsp_error||
       {done_spaddr1,done_spaddr0,done_ma,done_mx,done_round_mode}!==gold[TOTAL_ITERATIONS-1][2177:2048])$fatal(1,"batch completion/state");
-    if(meta_req_valid||prog_valid||sp_rd_valid||sp_wr_valid||ds_req_valid)$fatal(1,"completed batch emitted requests");
+    if(observed_meta_req_valid||observed_prog_valid||sp_rd_valid||sp_wr_valid||ds_req_valid)$fatal(1,"completed batch emitted requests");
     if(final_reads!=131072||init_writes!=131072||admissions!=PROGRAMS||loaded_words!=PROGRAMS*384)$fatal(1,"complete ownership/admission accounting");
     for(i=0;i<131072;i=i+1)if(ram[i]!==gold_ram[i])$fatal(1,"finalizer modified memory");
     $sformat(path,"%0s/actual-final-digest32.hex",output_directory);ledger_file=$fopen(path,"w");
@@ -764,7 +839,7 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
    end
    if((CANCEL_PHASE==1&&init_writes==3)||(CANCEL_PHASE==2&&loaded_words==3)||
       (CANCEL_PHASE==3&&ds_pending)||(CANCEL_PHASE==4&&program_done_valid&&program_hold>=4)||
-      (CANCEL_PHASE==5&&final_reads==3)||(CANCEL_PHASE==6&&rsp_valid))cancel_and_restart();
+      (CANCEL_PHASE==5&&final_reads==3)||(CANCEL_PHASE==6&&rsp_valid)||(CANCEL_PHASE==7&&generation_image_beats==3))cancel_and_restart();
    #1;cycle=cycle+1;@(negedge clk);
   end
   if(seed_hashes!=PROGRAMS-1||event_index!=TOTAL_EVENTS||total_instructions!=TOTAL_INSTRUCTIONS||tail_writes!=8*TOTAL_ITERATIONS)$fatal(1,"sequence coverage accounting");
@@ -779,13 +854,21 @@ module tb_prepared_hash_lifecycle #(parameter integer PROGRAMS=8,ITERATIONS=2,PR
   if(stage_sum!=ledger[6])$fatal(1,"nonclosing nested finalization ledger");
   stage_sum=0;for(i=0;i<18;i=i+1)stage_sum=stage_sum+exec_detail[i];
   if(stage_sum!=iteration_detail[7])$fatal(1,"nonclosing nested executor ledger");
-  if(STALL&&(meta_drops!=2*PROGRAMS||rom_drops!=2*loaded_words||sp_drops!=2*reads||ds_drops!=2*TOTAL_ITERATIONS))$fatal(1,"stale error injection coverage");
+  if(HARDWARE_PROGRAM&&(generated_beats!=PROGRAMS*200||program_gen_images!=PROGRAMS||program_gen_detail[0]+program_gen_detail[1]+program_gen_detail[2]!=ledger[7]))$fatal(1,"program generation coverage/ledger");
+  if(HARDWARE_PROGRAM&&STALL&&(external_meta_drops!=2||external_program_drops!=2))$fatal(1,"external removed-provider response drain coverage");
+  if(STALL&&(meta_drops!=(HARDWARE_PROGRAM?0:2*PROGRAMS)||rom_drops!=(HARDWARE_PROGRAM?0:2*loaded_words)||sp_drops!=2*reads||ds_drops!=2*TOTAL_ITERATIONS))$fatal(1,"stale error injection coverage");
   $fclose(trace_file);$sformat(path,"%0s/provider-host-time.json",output_directory);`RX_STATS(path);
   $sformat(path,"%0s/ledger.json",output_directory);ledger_file=$fopen(path,"w");if(!ledger_file)$fatal(1,"ledger write");
-  if(HARDWARE_FILL)begin
-   $fdisplay(ledger_file,"{\"cycles\":%0d,\"hardware_fill_enabled\":true,\"stage_cycles\":{\"initialization_hardware_fill\":%0d,\"control_and_metadata\":%0d,\"program_preparation\":%0d,\"execution\":%0d,\"interprogram_seed\":%0d,\"finalization\":%0d,\"held_return\":%0d},",cycle,ledger[1],ledger[2],ledger[3],ledger[4],ledger[5],ledger[6],ledger[8]);
-   $fdisplay(ledger_file,"\"nested_initialization\":{\"provider_wait\":%0d,\"fill_phases\":[%0d,%0d,%0d]},",init_provider_wait,fill_detail[0],fill_detail[1],fill_detail[2]);
-  end else $fdisplay(ledger_file,"{\"cycles\":%0d,\"hardware_fill_enabled\":false,\"stage_cycles\":{\"initialization_transport\":%0d,\"control_and_metadata\":%0d,\"program_preparation\":%0d,\"execution\":%0d,\"interprogram_seed\":%0d,\"finalization\":%0d,\"held_return\":%0d},",cycle,ledger[1],ledger[2],ledger[3],ledger[4],ledger[5],ledger[6],ledger[8]);
+  $fwrite(ledger_file,"{\"cycles\":%0d,",cycle);
+  if(HARDWARE_FILL)$fwrite(ledger_file,"\"hardware_fill_enabled\":true,");else $fwrite(ledger_file,"\"hardware_fill_enabled\":false,");
+  if(HARDWARE_PROGRAM)$fwrite(ledger_file,"\"hardware_program_enabled\":true,");else $fwrite(ledger_file,"\"hardware_program_enabled\":false,");
+  $fwrite(ledger_file,"\"stage_cycles\":{");
+  if(HARDWARE_FILL)$fwrite(ledger_file,"\"initialization_hardware_fill\":%0d,",ledger[1]);
+  else $fwrite(ledger_file,"\"initialization_transport\":%0d,",ledger[1]);
+  if(HARDWARE_PROGRAM)$fwrite(ledger_file,"\"program_generation\":%0d,",ledger[7]);
+  $fdisplay(ledger_file,"\"control_and_metadata\":%0d,\"program_preparation\":%0d,\"execution\":%0d,\"interprogram_seed\":%0d,\"finalization\":%0d,\"held_return\":%0d},",ledger[2],ledger[3],ledger[4],ledger[5],ledger[6],ledger[8]);
+  if(HARDWARE_FILL)$fdisplay(ledger_file,"\"nested_initialization\":{\"provider_wait\":%0d,\"fill_phases\":[%0d,%0d,%0d]},",init_provider_wait,fill_detail[0],fill_detail[1],fill_detail[2]);
+  if(HARDWARE_PROGRAM)$fdisplay(ledger_file,"\"nested_program_generation_phases\":[%0d,%0d,%0d],\"program_generation_output_bytes\":%0d,\"program_image_storage_bytes\":3200,\"program_image_transport\":\"internal_generated_buffer\",\"removed_provider_replies_drained\":{\"metadata\":%0d,\"program\":%0d},",program_gen_detail[0],program_gen_detail[1],program_gen_detail[2],generated_beats*16,external_meta_drops,external_program_drops);
   $fdisplay(ledger_file,"\"nested_iteration_phases\":[%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d],\"nested_finalization_phases\":[%0d,%0d,%0d,%0d,%0d,%0d],",iteration_detail[0],iteration_detail[1],iteration_detail[2],iteration_detail[3],iteration_detail[4],iteration_detail[5],iteration_detail[6],iteration_detail[7],iteration_detail[8],iteration_detail[9],iteration_detail[10],iteration_detail[11],final_detail[0],final_detail[1],final_detail[2],final_detail[3],final_detail[4],final_detail[5]);
   $fdisplay(ledger_file,"\"nested_stalls\":{\"sp_request\":%0d,\"sp_write\":%0d,\"dataset_request\":%0d,\"program_load\":%0d},\"preparation_reciprocals\":%0d,\"runtime_reciprocals\":%0d,",stall_sp_requests,stall_sp_writes,stall_dataset_requests,stall_program_loads,preparation_reciprocals,runtime_reciprocals);
   $fdisplay(ledger_file,"\"nested_executor_phases\":[%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d,%0d],",exec_detail[0],exec_detail[1],exec_detail[2],exec_detail[3],exec_detail[4],exec_detail[5],exec_detail[6],exec_detail[7],exec_detail[8],exec_detail[9],exec_detail[10],exec_detail[11],exec_detail[12],exec_detail[13],exec_detail[14],exec_detail[15],exec_detail[16],exec_detail[17]);

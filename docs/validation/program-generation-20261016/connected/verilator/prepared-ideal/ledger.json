@@ -1,0 +1,8 @@
+{"cycles":534012,"hardware_fill_enabled":true,"hardware_program_enabled":true,"stage_cycles":{"initialization_hardware_fill":131076,"program_generation":1606,"control_and_metadata":8,"program_preparation":2992,"execution":4983,"interprogram_seed":60,"finalization":393286,"held_return":1},
+"nested_initialization":{"provider_wait":2,"fill_phases":[1,131072,1]},
+"nested_program_generation_phases":[4,1600,2],"program_generation_output_bytes":6400,"program_image_storage_bytes":3200,"program_image_transport":"internal_generated_buffer","removed_provider_replies_drained":{"metadata":0,"program":0},
+"nested_iteration_phases":[2,8,8,8,8,0,2,4923,2,2,2,18],"nested_finalization_phases":[1,1,393225,1,57,1],
+"nested_stalls":{"sp_request":0,"sp_write":0,"dataset_request":0,"program_load":0},"preparation_reciprocals":22,"runtime_reciprocals":0,
+"nested_executor_phases":[0,769,769,769,119,119,43,0,2,0,110,110,0,0,214,214,30,1655],
+"nested_reply_waits":{"scratchpad":131207,"dataset":2,"program":768},"stale_error_replies_dropped":{"metadata":0,"program":0,"scratchpad":0,"dataset":0},
+"scratchpad_bytes":2097152,"physical_port_read_bytes":2099312,"physical_port_write_bus_bytes":2098096,"strobed_write_bytes":2097752,"dataset_logical_bytes":128,"logical_bytecode_memory_bytes":1296,"logical_entry_bytes":256,"logical_tail_bytes":256,"initialization_and_finalization_bytes_each":2097152,"program_image_load_bytes":6144,"native_dataset_internal_physical_bytes":null,"untimed_provider_device_cycles":null}

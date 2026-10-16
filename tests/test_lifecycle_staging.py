@@ -52,8 +52,15 @@ class StagingTest(unittest.TestCase):
         self.reject('--error-ports', '1', '1')
 
     def test_recovery_selections_stay_in_documented_range(self):
-        self.reject('--cancellation-phases', '7')
+        self.reject('--cancellation-phases', '8')
         self.reject('--error-ports', '9')
+
+    def test_generation_cancel_requires_hardware_program_mode(self):
+        self.reject('--cancellation', '--cancellation-phases', '7')
+
+    def test_removed_program_provider_cannot_supply_matching_errors(self):
+        self.reject('--hardware-program', '--matching-errors', '--error-ports', '2')
+        self.reject('--hardware-program', '--matching-errors', '--error-ports', '3')
 
     def test_malformed_input_is_rejected(self):
         self.reject('--input-hex', 'not-hex')

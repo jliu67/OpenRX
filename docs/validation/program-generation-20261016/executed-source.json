@@ -1,0 +1,98 @@
+{
+  "allowed_metadata_paths": [
+    "AGENTS.md",
+    "memory/STATE.md",
+    "memory/HANDOFF.md",
+    "memory/SESSION_LOG.md",
+    "experiments/EXP-017-native-program-generation.md",
+    "rtl/hash/PROGRAM_GENERATION.md",
+    "docs/validation/program-generation-20261016/**"
+  ],
+  "base_commit": "548ed2d31fe6be7d2edc2036961dc7745e9e7219",
+  "connected_code_commit": "8100bee97bd592767764e5c9a8d3caa3aa2d7183",
+  "connected_code_tree": "e0de15f121efdcf2ec3422e59f18af073dd79a85",
+  "connected_snapshot": "/tmp/openrx-programgen-source02",
+  "files": {
+    "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "0a91c32e2f0959b76f9f383cff63655480454f9b92a4b9600ec3b93fe0bd1dbb",
+      "size_bytes": 29694
+    },
+    "rtl/hash/randomx_program_generation.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "03f504c22a3f00c50aeb944f0d506566cc5554c4500bbd2c73d1f302edc455a3",
+      "size_bytes": 3183,
+      "standalone_snapshot_equal": true
+    },
+    "rtl/hash/tests/lifecycle_source_dpi.cpp": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "08894fa61daa16b66aff9e1f8a971393ca01a8a489489d3959d87b023ce2746f",
+      "size_bytes": 4723
+    },
+    "rtl/hash/tests/lifecycle_source_vpi.cpp": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "9e59cd0cedcd16b9928916e1fe4f5005086374637878874999ac86365222bc10",
+      "size_bytes": 7018
+    },
+    "rtl/hash/tests/program_generation_oracle.cpp": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "b4a20387b177229df46e36086b38f96f87329e2add95525564e748ad2dc40d12",
+      "size_bytes": 5295,
+      "standalone_snapshot_equal": true
+    },
+    "rtl/hash/tests/program_generation_postfill_seed.hex": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "cd34e2efdbd424dc56a2fcd1fa682f53b53f2e6d19bb417fdf5d0ce343f99b1a",
+      "size_bytes": 129,
+      "standalone_snapshot_equal": true
+    },
+    "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "36db2d5732de9012a46140dc8b71451748cc6247b2ec0f4a7e5cc2a56dfbdb19",
+      "size_bytes": 58422
+    },
+    "rtl/hash/tests/tb_program_generation.v": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "8cb5b99367e0e4d49a8e0ed362eb675e9caeccee7be79e265d3a9813921e2724",
+      "size_bytes": 10350,
+      "standalone_snapshot_equal": true
+    },
+    "scripts/test_prepared_hash_lifecycle.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "e7ef868a25079d3e2b69b31633bd086de360adaad425749a67e648bd05b9fbf3",
+      "size_bytes": 30753
+    },
+    "scripts/test_program_generation.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "cbdecb6474008de9a2205f0a0dc73b4ddbd23efeb6f8c303dd776b0b5bd5284e",
+      "size_bytes": 18579,
+      "standalone_snapshot_equal": true
+    },
+    "tests/test_lifecycle_ledger.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "e1789ae986905ab8a0cbc73ee2bb133d75368d423ad6609ee5a098ec29e3ccf6",
+      "size_bytes": 10652
+    },
+    "tests/test_lifecycle_staging.py": {
+      "connected_snapshot_equal": true,
+      "executable": false,
+      "sha256": "b1d9275c3a939908276e450385c6dbbd3e38eae9a9091afb60c85cfebfb6ed21",
+      "size_bytes": 3435
+    }
+  },
+  "publication_successor_rule": "Only declared evidence, experiment, design and memory/AGENTS documentation may differ. All 12 executed code/test/fixture paths and consumed native/tool inputs remain byte-identical. Original execution manifests bind the complete 4531-file source snapshots; independent review verifies tracked Git-object equality.",
+  "standalone_code_commit": "0d70bf0cb3031ff5a3cdc26eda88a17254e89d18",
+  "standalone_code_tree": "dfcb107d850b97cfba40e4e9f2cff34ea8007d3f",
+  "standalone_snapshot": "/tmp/openrx-programgen-source01"
+}

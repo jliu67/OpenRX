@@ -1,0 +1,937 @@
+{
+  "files": {
+    "bounded-connected-check.py": {
+      "bytes": 5914,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 5914,
+        "kind": "manifest-bound external wrapper input",
+        "original_path": "/tmp/openrx-programgen-connected-check.py",
+        "sha256": "c75604143876ff4404b30ad26ad76860f6954c863da7b04577f65211f5fa6245"
+      },
+      "sha256": "c75604143876ff4404b30ad26ad76860f6954c863da7b04577f65211f5fa6245"
+    },
+    "checks.json": {
+      "bytes": 849,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 849,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/checks.json",
+        "sha256": "69eea9fe4a5a4137a415e7d84841101da263ad7cd65077a392f5c5754fbd5bab"
+      },
+      "sha256": "69eea9fe4a5a4137a415e7d84841101da263ad7cd65077a392f5c5754fbd5bab"
+    },
+    "commands.json": {
+      "bytes": 2661,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 2661,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/commands.json",
+        "sha256": "c7ce7c7d3a9d7971211d4f40ff4ad097d6de946ba1f2a55ad2206618101cc74e"
+      },
+      "sha256": "c7ce7c7d3a9d7971211d4f40ff4ad097d6de946ba1f2a55ad2206618101cc74e"
+    },
+    "events.jsonl": {
+      "bytes": 1459,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1459,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "events.jsonl",
+        "sha256": "22efd6e6a49ee294900930b3287792c7852021a6ab3fec98e05e4a4f46f49b5d"
+      },
+      "sha256": "22efd6e6a49ee294900930b3287792c7852021a6ab3fec98e05e4a4f46f49b5d"
+    },
+    "execution.json": {
+      "bytes": 3227,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "38c6bec1cc9d97f69ad6713685ffea3d8d8bb2145911f9248e674c948d9c091f"
+    },
+    "focused-unit-tests.log": {
+      "bytes": 4066,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 4066,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/focused-unit-tests.log",
+        "sha256": "3a50b092d7c4b08a0b87c5dd967dc5a33ae15910065a8bc09e496b8d5f4480ad"
+      },
+      "sha256": "3a50b092d7c4b08a0b87c5dd967dc5a33ae15910065a8bc09e496b8d5f4480ad"
+    },
+    "focused-unit-tests.time.txt": {
+      "bytes": 799,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 799,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/focused-unit-tests.time.txt",
+        "sha256": "9ad832287b179490935bc47f8a5090cdddf7ac2debdf1f2e49ed6ab77d02b12f"
+      },
+      "sha256": "9ad832287b179490935bc47f8a5090cdddf7ac2debdf1f2e49ed6ab77d02b12f"
+    },
+    "icarus.log": {
+      "bytes": 445,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 445,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus.log",
+        "sha256": "650d0cceadb50938a66a486c8a694be15f2e805f94179e06453be98cc920ed4c"
+      },
+      "sha256": "650d0cceadb50938a66a486c8a694be15f2e805f94179e06453be98cc920ed4c"
+    },
+    "icarus.time.txt": {
+      "bytes": 1299,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1299,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus.time.txt",
+        "sha256": "37fd77d9073a330f12cfa2a3ef9815bc04838dc2165facbc6b7849b9c9fe8268"
+      },
+      "sha256": "37fd77d9073a330f12cfa2a3ef9815bc04838dc2165facbc6b7849b9c9fe8268"
+    },
+    "icarus/HardFloat-compile-view.json": {
+      "bytes": 745,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 745,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/HardFloat-compile-view.json",
+        "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+      },
+      "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+    },
+    "icarus/LICENSE-BLAKE2": {
+      "bytes": 1305,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1305,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/LICENSE-BLAKE2",
+        "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+      },
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+    },
+    "icarus/LICENSE-HardFloat": {
+      "bytes": 1514,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1514,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/LICENSE-HardFloat",
+        "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+      },
+      "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+    },
+    "icarus/LICENSE-OpenRX": {
+      "bytes": 1803,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1803,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/LICENSE-OpenRX",
+        "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+      },
+      "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+    },
+    "icarus/LICENSE-RandomX": {
+      "bytes": 1561,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1561,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/LICENSE-RandomX",
+        "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+      },
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+    },
+    "icarus/LICENSE-secworks": {
+      "bytes": 1303,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1303,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/LICENSE-secworks",
+        "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+      },
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+    },
+    "icarus/artifacts.sha256.json": {
+      "bytes": 5478,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 5478,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/artifacts.sha256.json",
+        "sha256": "a73b2445de2b037eec410943a17592a49872e744b2ea6a5f8797dba7bce37902"
+      },
+      "sha256": "a73b2445de2b037eec410943a17592a49872e744b2ea6a5f8797dba7bce37902"
+    },
+    "icarus/commands.json": {
+      "bytes": 6936,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 6936,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/commands.json",
+        "sha256": "43f6164424f0ebe1ff3e632b52a659e62bdf8c1b8d368d31cf0ae684db27636c"
+      },
+      "sha256": "43f6164424f0ebe1ff3e632b52a659e62bdf8c1b8d368d31cf0ae684db27636c"
+    },
+    "icarus/compile-prepared-ideal.log": {
+      "bytes": 5952,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 5952,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/compile-prepared-ideal.log",
+        "sha256": "2977bfaec8cb0b672491bf62ebfe72cb62dce3b3ac49c3234029eb5032a4ca81"
+      },
+      "sha256": "2977bfaec8cb0b672491bf62ebfe72cb62dce3b3ac49c3234029eb5032a4ca81"
+    },
+    "icarus/compile-reference.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 0,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/compile-reference.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "icarus/compile-vpi.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 0,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/compile-vpi.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "icarus/extraction.json": {
+      "bytes": 1802,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1802,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/extraction.json",
+        "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+      },
+      "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+    },
+    "icarus/inputs.json": {
+      "bytes": 30493,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 30493,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/inputs.json",
+        "sha256": "7b27503b40707406adeffec47205c50c261cfd00ce6ca6d1bc5c83eab74f4bc8"
+      },
+      "sha256": "7b27503b40707406adeffec47205c50c261cfd00ce6ca6d1bc5c83eab74f4bc8"
+    },
+    "icarus/lifecycle-unit-tests.log": {
+      "bytes": 4066,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 4066,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/lifecycle-unit-tests.log",
+        "sha256": "4f344609bdf6dc68f812930311d3797a266b3fd32a02d45d38a012a70addf13c"
+      },
+      "sha256": "4f344609bdf6dc68f812930311d3797a266b3fd32a02d45d38a012a70addf13c"
+    },
+    "icarus/native-bindings.json": {
+      "bytes": 2887,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "a02857fba27e904fac51c37883e147a5d7d8936299ab019775ba82d4fb7c7424"
+    },
+    "icarus/native-corpus-metadata.json": {
+      "bytes": 1282,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "b0ee234c55ce31b593719bf2d7b46874f5db6c42d47de5919ac57657470d841e"
+    },
+    "icarus/native-reference.log": {
+      "bytes": 134,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 134,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/native-reference.log",
+        "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+      },
+      "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+    },
+    "icarus/native-reference/full-reference.json": {
+      "bytes": 352,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 352,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/native-reference/full-reference.json",
+        "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+      },
+      "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+    },
+    "icarus/native-reference/oracle-summary.json": {
+      "bytes": 498,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 498,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/native-reference/oracle-summary.json",
+        "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+      },
+      "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+    },
+    "icarus/prepared-ideal.log": {
+      "bytes": 337,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 337,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/prepared-ideal.log",
+        "sha256": "28d1a554f4138a4f5e94c2d2f915192e52471f79047fa1ba2b55732741c98e31"
+      },
+      "sha256": "28d1a554f4138a4f5e94c2d2f915192e52471f79047fa1ba2b55732741c98e31"
+    },
+    "icarus/prepared-ideal/actual-final-digest32.hex": {
+      "bytes": 65,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 65,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/prepared-ideal/actual-final-digest32.hex",
+        "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+      },
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "icarus/prepared-ideal/ledger.json": {
+      "bytes": 1501,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1501,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/prepared-ideal/ledger.json",
+        "sha256": "f8fc1a9e0d2a5f7ce811215d6a0c12ad80eac5d63bf77b1f806d576d75d8fd5a"
+      },
+      "sha256": "f8fc1a9e0d2a5f7ce811215d6a0c12ad80eac5d63bf77b1f806d576d75d8fd5a"
+    },
+    "icarus/prepared-ideal/provider-host-time.json": {
+      "bytes": 820,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 820,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/prepared-ideal/provider-host-time.json",
+        "sha256": "65e88ecf671881e10c6d8ea422d6eda41a7552b8e635d6503e16af2905380c4d"
+      },
+      "sha256": "65e88ecf671881e10c6d8ea422d6eda41a7552b8e635d6503e16af2905380c4d"
+    },
+    "icarus/program-extraction.json": {
+      "bytes": 324,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 324,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/program-extraction.json",
+        "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+      },
+      "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+    },
+    "icarus/summary.json": {
+      "bytes": 12285,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 12285,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/summary.json",
+        "sha256": "52f94e90c541c2381f90e05a817c3f4bfe55ea6a1818e7144d4bb0add5413335"
+      },
+      "sha256": "52f94e90c541c2381f90e05a817c3f4bfe55ea6a1818e7144d4bb0add5413335"
+    },
+    "icarus/tools.json": {
+      "bytes": 5115,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "c64ca08c60f8ed1cc07507c0ab34e941ec72df829c0b11838593d89f1b9a928b"
+    },
+    "icarus/vendor.log": {
+      "bytes": 32,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 32,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/icarus/vendor.log",
+        "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+      },
+      "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+    },
+    "manifest-summary.json": {
+      "bytes": 5302,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "68a376f3218dce5000a291d0fe8a1382aae44e856b9ad0cc5ef8e970a6739ea7"
+    },
+    "parity-evidence.json": {
+      "bytes": 3584,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "ab86bcc8431627abaedd8eb72237b735957f9c45388c08d5622a6d9b2b0660b9"
+    },
+    "prelaunch-kernel-check.json": {
+      "bytes": 2318,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 2318,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "prelaunch-kernel-check.json",
+        "sha256": "d7af622d288ea3c1ab82914d4d100db15e69c223427f9d2edc5cd6852ad544f8"
+      },
+      "sha256": "d7af622d288ea3c1ab82914d4d100db15e69c223427f9d2edc5cd6852ad544f8"
+    },
+    "prelaunch-resource-check.json": {
+      "bytes": 415,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 415,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "prelaunch-resource-check.json",
+        "sha256": "75656463fb4f234286823c138991973902c016a984ecece40d86f40ce169d212"
+      },
+      "sha256": "75656463fb4f234286823c138991973902c016a984ecece40d86f40ce169d212"
+    },
+    "process-result.json": {
+      "bytes": 142,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 142,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "process-result.json",
+        "sha256": "d4f2e202a3ba9b3c39fae1b81f4ed2234271a6046f48e989063d348cfe3085d5"
+      },
+      "sha256": "d4f2e202a3ba9b3c39fae1b81f4ed2234271a6046f48e989063d348cfe3085d5"
+    },
+    "receipt.json": {
+      "bytes": 170437,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 170437,
+        "kind": "original receipt with append-only external binding verified",
+        "original_relative": "receipt.json",
+        "sha256": "6653460044d7e965f1e293803c83d49ba9d186828665b87eb0864b6865dfe90f"
+      },
+      "sha256": "6653460044d7e965f1e293803c83d49ba9d186828665b87eb0864b6865dfe90f"
+    },
+    "resources.json": {
+      "bytes": 1551,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "dfd5c3b51d77a646cf46f4eead01338d81889d89f17cb5de1acefcc6f6c6287f"
+    },
+    "retained-only.json": {
+      "bytes": 190503,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "c6dffb1add01666d04f2231d8cf3bef896dd43c28bce82bf35ff2c0d03685c6b"
+    },
+    "stderr.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 0,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "stderr.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.log": {
+      "bytes": 922,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 922,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "stdout.log",
+        "sha256": "f960c3a2d4b6f0fd35e43c3699a62fcac59be02a849b6fde287af3f3ca25db44"
+      },
+      "sha256": "f960c3a2d4b6f0fd35e43c3699a62fcac59be02a849b6fde287af3f3ca25db44"
+    },
+    "submission-argv.json": {
+      "bytes": 1546,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1546,
+        "kind": "local preserved submission argv cross-checked against bound manifest fields and payload argv",
+        "original_path": "/tmp/openrx-programgen-connected-submit.json",
+        "sha256": "d1ab0a72527984f87c35869cb2e9833bc03e36deaae70908088f393e1d48602f"
+      },
+      "sha256": "d1ab0a72527984f87c35869cb2e9833bc03e36deaae70908088f393e1d48602f"
+    },
+    "submission-command.json": {
+      "bytes": 871,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 871,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "submission-command.json",
+        "sha256": "5702edbcfeb5dc272281332331f3be9fcccb439dbd5a8206a29afae626ab71e6"
+      },
+      "sha256": "5702edbcfeb5dc272281332331f3be9fcccb439dbd5a8206a29afae626ab71e6"
+    },
+    "submission-result.json": {
+      "bytes": 41,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 41,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "submission-result.json",
+        "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+      },
+      "sha256": "b73b680cac8697a063d636e56e1787f635972ce1673ab5b22907068dbcb1526b"
+    },
+    "verify.json": {
+      "bytes": 155,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "e24d49bbc054e52955a85b8fdd254fbd678189f22ec8a1df7139fc37d4a0ae43"
+    },
+    "verilator.log": {
+      "bytes": 934,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 934,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator.log",
+        "sha256": "201357753d9534fe774a3507cdeb961c90ce0f73df8e767740088071276fb768"
+      },
+      "sha256": "201357753d9534fe774a3507cdeb961c90ce0f73df8e767740088071276fb768"
+    },
+    "verilator.time.txt": {
+      "bytes": 1632,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1632,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator.time.txt",
+        "sha256": "5a963077a8f00999698629f5e099fc9b3076cdcdf479111e0b926722db238cf2"
+      },
+      "sha256": "5a963077a8f00999698629f5e099fc9b3076cdcdf479111e0b926722db238cf2"
+    },
+    "verilator/HardFloat-compile-view.json": {
+      "bytes": 745,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 745,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/HardFloat-compile-view.json",
+        "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+      },
+      "sha256": "14cb08994b10016a641a69048586ce7ff9bbec2a26d02f19969bdd15190cdee5"
+    },
+    "verilator/LICENSE-BLAKE2": {
+      "bytes": 1305,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1305,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/LICENSE-BLAKE2",
+        "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+      },
+      "sha256": "01a9a4ff4a8c9c21c522d9b10e3583139458994ca122a8939295597d05d7bd4d"
+    },
+    "verilator/LICENSE-HardFloat": {
+      "bytes": 1514,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1514,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/LICENSE-HardFloat",
+        "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+      },
+      "sha256": "c9657dc5148e3dc14850b80fe0a1e0080229352fae792fccb33e15e5f01e3603"
+    },
+    "verilator/LICENSE-OpenRX": {
+      "bytes": 1803,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1803,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/LICENSE-OpenRX",
+        "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+      },
+      "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+    },
+    "verilator/LICENSE-RandomX": {
+      "bytes": 1561,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1561,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/LICENSE-RandomX",
+        "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+      },
+      "sha256": "7d85758a95990168395d0940b2a103b6be0c2eba3995f00cbb59d23a86c2214e"
+    },
+    "verilator/LICENSE-secworks": {
+      "bytes": 1303,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1303,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/LICENSE-secworks",
+        "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+      },
+      "sha256": "81899e14798bc6a06e02f48959e1825b9e631f0415bccf5b74e589dabd7c7f80"
+    },
+    "verilator/artifacts.sha256.json": {
+      "bytes": 86284,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 86284,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/artifacts.sha256.json",
+        "sha256": "a41c7dc3ef8988dd1732924ce941c45eea4379cbae47505983ad0433cbc44195"
+      },
+      "sha256": "a41c7dc3ef8988dd1732924ce941c45eea4379cbae47505983ad0433cbc44195"
+    },
+    "verilator/commands.json": {
+      "bytes": 25931,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 25931,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/commands.json",
+        "sha256": "bbf8eec70668b67662841ae7d58d4d39ee720321653ed441d30a7b78c07f9ba5"
+      },
+      "sha256": "bbf8eec70668b67662841ae7d58d4d39ee720321653ed441d30a7b78c07f9ba5"
+    },
+    "verilator/compile-prepared-ideal.log": {
+      "bytes": 226166,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 226166,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/compile-prepared-ideal.log",
+        "sha256": "4204801b5d613cdfde9e705b3d2c15eaa9474e27909a362cd9c419786f097be5"
+      },
+      "sha256": "4204801b5d613cdfde9e705b3d2c15eaa9474e27909a362cd9c419786f097be5"
+    },
+    "verilator/compile-prepared-stalled-cancel-7.log": {
+      "bytes": 226188,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 226188,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/compile-prepared-stalled-cancel-7.log",
+        "sha256": "48bd55254ba0833451f95606218835aff6a1b03ac5af5f520ba263ac9d232008"
+      },
+      "sha256": "48bd55254ba0833451f95606218835aff6a1b03ac5af5f520ba263ac9d232008"
+    },
+    "verilator/compile-prepared-stalled-error-1.log": {
+      "bytes": 226186,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 226186,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/compile-prepared-stalled-error-1.log",
+        "sha256": "7515b86261a6b29f6cd0b9fe6b3fd6cfe0989b5021936ae153f2c1e4052cd21f"
+      },
+      "sha256": "7515b86261a6b29f6cd0b9fe6b3fd6cfe0989b5021936ae153f2c1e4052cd21f"
+    },
+    "verilator/compile-prepared-stalled-error-8.log": {
+      "bytes": 226186,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 226186,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/compile-prepared-stalled-error-8.log",
+        "sha256": "21381a1d7776dda28bf5acd9ed69bf23f61060b936f80927439d90c30f98943b"
+      },
+      "sha256": "21381a1d7776dda28bf5acd9ed69bf23f61060b936f80927439d90c30f98943b"
+    },
+    "verilator/compile-prepared-stalled.log": {
+      "bytes": 226170,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 226170,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/compile-prepared-stalled.log",
+        "sha256": "bab80dcffdc98ee44553ffbaf5d29245b1318f426b72f67ff3da25a3551e0b8e"
+      },
+      "sha256": "bab80dcffdc98ee44553ffbaf5d29245b1318f426b72f67ff3da25a3551e0b8e"
+    },
+    "verilator/compile-reference.log": {
+      "bytes": 0,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 0,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/compile-reference.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verilator/extraction.json": {
+      "bytes": 1802,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1802,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/extraction.json",
+        "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+      },
+      "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+    },
+    "verilator/inputs.json": {
+      "bytes": 30493,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 30493,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/inputs.json",
+        "sha256": "7b27503b40707406adeffec47205c50c261cfd00ce6ca6d1bc5c83eab74f4bc8"
+      },
+      "sha256": "7b27503b40707406adeffec47205c50c261cfd00ce6ca6d1bc5c83eab74f4bc8"
+    },
+    "verilator/lifecycle-unit-tests.log": {
+      "bytes": 4066,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 4066,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/lifecycle-unit-tests.log",
+        "sha256": "b8e0274960d0f10d039947b4c2ce130ffdb1a682b70838fb3927229281fce63e"
+      },
+      "sha256": "b8e0274960d0f10d039947b4c2ce130ffdb1a682b70838fb3927229281fce63e"
+    },
+    "verilator/native-bindings.json": {
+      "bytes": 2887,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "2e5bc5ca09d8e5fb158e1ed69a1ab75e198a25322331a3567f7b2693adb3eac7"
+    },
+    "verilator/native-corpus-metadata.json": {
+      "bytes": 1282,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "2f75b594cd48358aa963f9651838f3a098a61adf94eda4c8fff39460f80b8be5"
+    },
+    "verilator/native-reference.log": {
+      "bytes": 134,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 134,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/native-reference.log",
+        "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+      },
+      "sha256": "385ad2cad58a70982c33e82dd8346791398765949ad2557d9bc2e2a93154bf4e"
+    },
+    "verilator/native-reference/full-reference.json": {
+      "bytes": 352,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 352,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/native-reference/full-reference.json",
+        "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+      },
+      "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+    },
+    "verilator/native-reference/oracle-summary.json": {
+      "bytes": 498,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 498,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/native-reference/oracle-summary.json",
+        "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+      },
+      "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+    },
+    "verilator/prepared-ideal.log": {
+      "bytes": 404,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 404,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-ideal.log",
+        "sha256": "91681289be99bcd2f4d3a2641a66693662c1a5ef552170935c2d2d9e6ce451b4"
+      },
+      "sha256": "91681289be99bcd2f4d3a2641a66693662c1a5ef552170935c2d2d9e6ce451b4"
+    },
+    "verilator/prepared-ideal/actual-final-digest32.hex": {
+      "bytes": 65,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 65,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-ideal/actual-final-digest32.hex",
+        "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+      },
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "verilator/prepared-ideal/ledger.json": {
+      "bytes": 1501,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1501,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-ideal/ledger.json",
+        "sha256": "f8fc1a9e0d2a5f7ce811215d6a0c12ad80eac5d63bf77b1f806d576d75d8fd5a"
+      },
+      "sha256": "f8fc1a9e0d2a5f7ce811215d6a0c12ad80eac5d63bf77b1f806d576d75d8fd5a"
+    },
+    "verilator/prepared-ideal/provider-host-time.json": {
+      "bytes": 820,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 820,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-ideal/provider-host-time.json",
+        "sha256": "c0344c956cb93d84f45d53e43a057b2fcf847c62a08ce09eefc3ae0a309435bc"
+      },
+      "sha256": "c0344c956cb93d84f45d53e43a057b2fcf847c62a08ce09eefc3ae0a309435bc"
+    },
+    "verilator/prepared-stalled-cancel-7.log": {
+      "bytes": 519,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 519,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-stalled-cancel-7.log",
+        "sha256": "0db3c8e58bfc4ef32a5e784bc228be470844bd131e68c8c2a295681c4df7f65a"
+      },
+      "sha256": "0db3c8e58bfc4ef32a5e784bc228be470844bd131e68c8c2a295681c4df7f65a"
+    },
+    "verilator/prepared-stalled-error-1.log": {
+      "bytes": 248,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 248,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-stalled-error-1.log",
+        "sha256": "e915c041b737258fb2c126a89a0c69b318e555f66f9840ef43a3d2a2fcf44691"
+      },
+      "sha256": "e915c041b737258fb2c126a89a0c69b318e555f66f9840ef43a3d2a2fcf44691"
+    },
+    "verilator/prepared-stalled-error-8.log": {
+      "bytes": 248,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 248,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-stalled-error-8.log",
+        "sha256": "2394b1ea89ca80c29929d3377b377948b3b378d386d5a4317e96341bb100c633"
+      },
+      "sha256": "2394b1ea89ca80c29929d3377b377948b3b378d386d5a4317e96341bb100c633"
+    },
+    "verilator/prepared-stalled.log": {
+      "bytes": 405,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 405,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-stalled.log",
+        "sha256": "e3ad34f475ec27972ba40b16e8a593caabfcd753c65bd21b2a028f4d87e04f11"
+      },
+      "sha256": "e3ad34f475ec27972ba40b16e8a593caabfcd753c65bd21b2a028f4d87e04f11"
+    },
+    "verilator/prepared-stalled/actual-final-digest32.hex": {
+      "bytes": 65,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 65,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-stalled/actual-final-digest32.hex",
+        "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+      },
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    "verilator/prepared-stalled/ledger.json": {
+      "bytes": 1526,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 1526,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-stalled/ledger.json",
+        "sha256": "720495bb341527d27eb00d3d5bfd5df38acb1bab3a9e60a3383e56543baf6359"
+      },
+      "sha256": "720495bb341527d27eb00d3d5bfd5df38acb1bab3a9e60a3383e56543baf6359"
+    },
+    "verilator/prepared-stalled/provider-host-time.json": {
+      "bytes": 820,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 820,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/prepared-stalled/provider-host-time.json",
+        "sha256": "14acfd500c21fd75131a83f4cbbc3f941fea9051165cf18d0034f0cc6f48cae3"
+      },
+      "sha256": "14acfd500c21fd75131a83f4cbbc3f941fea9051165cf18d0034f0cc6f48cae3"
+    },
+    "verilator/program-extraction.json": {
+      "bytes": 324,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 324,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/program-extraction.json",
+        "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+      },
+      "sha256": "f51de06bff8314cd78807455bf7fbb36a9a3b54a4165823e16e9ce14a7d50bf1"
+    },
+    "verilator/summary.json": {
+      "bytes": 17451,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 17451,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/summary.json",
+        "sha256": "aedd143cedcc8eec9c9e6682401e8f9a9cd209876b24398f24c251eec29f2252"
+      },
+      "sha256": "aedd143cedcc8eec9c9e6682401e8f9a9cd209876b24398f24c251eec29f2252"
+    },
+    "verilator/tools.json": {
+      "bytes": 5533,
+      "origin": {
+        "kind": "derived export metadata"
+      },
+      "sha256": "e40981f395147d3fdf827622469919644fad7c5270a54836b37cbe743b6f95db"
+    },
+    "verilator/vendor.log": {
+      "bytes": 32,
+      "origin": {
+        "byte_identical_copy": true,
+        "bytes": 32,
+        "kind": "receipt-verified original execution file",
+        "original_relative": "output/verilator/vendor.log",
+        "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+      },
+      "sha256": "6184962233da532fc48983239e96ae76e411df0e7d512329ed74b71a1ab7ba98"
+    }
+  },
+  "schema": "openrx.compact-evidence-export.v1",
+  "scope": "All public subset files except this self-referential index; copied backend artifact indices refer to complete retained original outputs."
+}

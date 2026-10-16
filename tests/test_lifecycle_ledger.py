@@ -66,6 +66,48 @@ class LedgerTest(unittest.TestCase):
         with self.assertRaises(AssertionError):
             driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True)
 
+    def hardware_program(self):
+        self.ledger['cycles'] += 802
+        self.ledger['stage_cycles']['program_generation'] = 802
+        self.ledger.update(hardware_program_enabled=True,
+            nested_program_generation_phases=[2, 799, 1], program_generation_output_bytes=3200,
+            program_image_storage_bytes=3200, program_image_transport='internal_generated_buffer')
+        self.provider.update(program_generations=0, program_generation_host_seconds=0,
+                             assertion_only_program_generations=1)
+
+    def test_hardware_program_partition_and_assertion_only_oracle(self):
+        self.hardware_program()
+        driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, False, True)
+
+    def test_hardware_program_cannot_hide_live_host_generation(self):
+        self.hardware_program()
+        self.provider['program_generations'] = 1
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, False, True)
+
+    def test_hardware_program_nested_generation_must_close(self):
+        self.hardware_program()
+        self.ledger['nested_program_generation_phases'][1] += 1
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, False, True)
+
+    def test_hardware_program_requires_full_entropy_and_instructions(self):
+        self.hardware_program()
+        self.ledger['program_generation_output_bytes'] = 3072
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, False, True)
+
+    def test_hardware_program_cache_load_is_internal_transport(self):
+        self.hardware_program()
+        self.ledger['program_image_transport'] = 'external_provider'
+        with self.assertRaises(AssertionError):
+            driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, False, True)
+
+    def test_hardware_program_and_initial_fill_have_distinct_partitions(self):
+        self.hardware_fill()
+        self.hardware_program()
+        driver.validate_ledger(self.ledger, self.provider, 1, 1, self.native, 1, True, True)
+
     def test_stalls_cannot_be_added_as_an_outer_stage(self):
         self.ledger['stage_cycles']['memory_stall'] = 4
         self.ledger['cycles'] += 4

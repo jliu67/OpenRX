@@ -1,0 +1,826 @@
+{
+  "acceptance_conditions_all_satisfied": {
+    "45_focused_unit_tests_pass": true,
+    "complete18_file_native_corpus_equal": true,
+    "complete_ideal_actual_trace_digest_and_programs_equal": true,
+    "complete_ideal_ledger_and_pass_record_equal": true,
+    "connected_actual672_artifacts_match_receipt": true,
+    "connected_all4531_source_files_match_admitted_manifest_and_exact8100_git_objects": true,
+    "connected_input_and_output_bindings_match": true,
+    "connected_installed_runner_immutable_verify_true": true,
+    "connected_terminal_complete_parity_checks_exists": true,
+    "connected_terminal_rc0": true,
+    "standalone_consumed186_inputs_match_frozen_and_current_code": true,
+    "standalone_export_239_receipt_copies_plus77_retained_exactly_cover316": true,
+    "standalone_original_316_artifacts_match": true,
+    "standalone_public_245_index_bindings_match": true,
+    "standalone_terminal_rc0": true,
+    "static_review_preserved": true,
+    "tracked_checkout_still_clean": true
+  },
+  "accepted_scope": [
+    "Standalone hardware fillAes4Rx4 generator native bytes, seed preservation, held request/output/return, cancellation/reset and restart;44RTL profiles including10complete3200B profiles.",
+    "Generator-only generic synthesis at default3200B and bounded256B, with24bounded256B mapped execution profiles.",
+    "Connected HF1/HP1 prepared2programs x1iteration with full2MiB scratchpad: Verilator ideal/stalled, Icarus ideal, focused generation cancellation7, initialization errors1/8,45focused unit tests, and complete ideal backend parity."
+  ],
+  "blocking_findings": [],
+  "connected": {
+    "actual_artifact_hash_or_size_mismatches": [],
+    "actual_prelaunch_headroom": {
+      "available_bytes": 8422838272,
+      "observed": {
+        "allowed_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "at": "2026-10-16T15:06:38.633049+00:00",
+        "logical_cpus": 6,
+        "memory_bytes": {
+          "MemAvailable": 8422838272,
+          "MemTotal": 16725934080,
+          "SwapFree": 4512579584,
+          "SwapTotal": 8589930496
+        }
+      },
+      "profile": "owner-local-max-v1",
+      "required_available_bytes": 5368709120,
+      "safe": true,
+      "scope": "Fresh headroom check under the global execution lock; bound limits are not changed"
+    },
+    "actual_prelaunch_kernel": {
+      "errors": [],
+      "observed": {
+        "at": "2026-10-16T15:06:38.662745+00:00",
+        "groups": [
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "",
+              "cpu.max": "600000 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "4294967296",
+              "memory.swap.max": "2147483648",
+              "pids.max": "256"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261016T150633Z-0fed0ef048dd.service"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "max"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "max"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "41887"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpuset cpu io memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": "0-5",
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "max"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpuset cpu io memory hugetlb pids rdma misc",
+              "cgroup.subtree_control": "cpuset cpu io memory pids",
+              "cpu.max": null,
+              "cpuset.cpus.effective": "0-5",
+              "memory.high": null,
+              "memory.max": null,
+              "memory.swap.max": null,
+              "pids.max": null
+            },
+            "is_root": true,
+            "path": "/sys/fs/cgroup"
+          }
+        ],
+        "service_cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261016T150633Z-0fed0ef048dd.service",
+        "worker_allowed_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "production_enforced": true,
+      "production_required": true,
+      "safe": true,
+      "scope": "Exact named service limits and visible ancestor constraints before payload; direct nonproduction worker tests have no service cgroup"
+    },
+    "actual_receipt_artifact_count": 672,
+    "admitted_source_directory_hash": "2cabe76e3b8836882354291b47f71259b88175e368f7ff69ab388e9d25c129a9",
+    "backend_output_indices": {
+      "icarus": {
+        "entries": 55,
+        "mismatches": []
+      },
+      "verilator": {
+        "entries": 597,
+        "mismatches": []
+      }
+    },
+    "bound_input_directories": [
+      {
+        "files": 6088,
+        "mismatches": [],
+        "path": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292"
+      }
+    ],
+    "bound_input_files": [
+      {
+        "matches": true,
+        "path": "/tmp/openrx-programgen-connected-check.py",
+        "sha256": "c75604143876ff4404b30ad26ad76860f6954c863da7b04577f65211f5fa6245"
+      },
+      {
+        "matches": true,
+        "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+        "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+      },
+      {
+        "matches": true,
+        "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/manifest.json",
+        "sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d"
+      },
+      {
+        "matches": true,
+        "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/receipt.json",
+        "sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc"
+      },
+      {
+        "matches": true,
+        "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/build.json",
+        "sha256": "293080fda2fb9bc1f29424c05d5a0e4b26da5142d28398247c4bc3394995c975"
+      },
+      {
+        "matches": true,
+        "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/CMakeFiles/randomx.dir/flags.make",
+        "sha256": "db413b693f8ed729e283b5c0fd25ceaf541d825933b89f9d1ff1a84584b8707a"
+      },
+      {
+        "matches": true,
+        "path": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/receipt.json",
+        "sha256": "0c0b59dd20ed177dd879ee6924005d223be58d51a9821da3e36a2f29e44427bc"
+      }
+    ],
+    "cancellation": {
+      "prepared-stalled-cancel-7": "PASS lifecycle_cancel phase=7 completed_iterations=0 accepted_writes_persist=1 stale_generation_dropped=1 fresh_initialization_required=1"
+    },
+    "checks": {
+      "boundary": "Host input BLAKE2b and native Light dataset/device service remain untimed. Generator mapping excludes the logical 3200-byte image buffer and connected executor. No architecture, MHz/area/watts or physical ASIC/PPA acceptance.",
+      "completed_normal_profiles": 3,
+      "elapsed_seconds": 1116.8950000751065,
+      "focused_generation_cancellation": 1,
+      "focused_initialization_errors": 2,
+      "icarus_verilator_complete_ideal_ledger_record_trace_digest_and_native_corpus_equal": true,
+      "ideal_cycles": 534012,
+      "ideal_program_generation_cycles": 1606,
+      "iterations_per_program": 1,
+      "native_corpus_files_compared": 18,
+      "native_live_program_provider_calls": 0,
+      "new_default_full_workload": false,
+      "programs": 2,
+      "source_commit": "8100bee97bd592767764e5c9a8d3caa3aa2d7183",
+      "status": "pass_bounded_hardware_program_integration"
+    },
+    "complete_admitted_source_count": 4531,
+    "complete_parity": {
+      "complete_ideal_pass_record_equal": true,
+      "complete_ideal_summary_ledger_equal": true,
+      "complete_native_corpus_count": 18,
+      "complete_native_corpus_equal": true,
+      "complete_native_corpus_sha256": {
+        "accesses.hex": "c6ce6563e4f13d56f608f2bcf165c08c810531c8070ac071412c8af5c172a1c4",
+        "events.mem": "a4b90f2c1bf76e79421bbc4454d1e220b6ed379bb9e5782b8ed75a12af99cdb0",
+        "final-0.hex": "c5cf81821119bdc35fe75fd61608a155e9fa30cc28e24b26e55d554b68b13efb",
+        "final-1.hex": "78a6b8dbe1086c01096e1c43e747e28de256c926511561ac08b5b7db9aaefa2c",
+        "final-a.hex": "46a340e781beffd0476f67c8da5b5df731f652d9f2a7ab386851bdec8ae849f0",
+        "final-digest32.hex": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03",
+        "final-rf.hex": "273f84a5486ba2ba92545aeebeafe9e460ada065f7a2b300f39a54ab7c3499c2",
+        "full-reference.json": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608",
+        "initial.hex": "c23bde9fddadce72d31d590a0143cb44e646885a0f544030b9764685cf200558",
+        "iterations.hex": "8bb50034865542761f12f2de3d6549144745652659db67196e4c9ef3937f8765",
+        "iterations.mem": "191bea37a7119bed6c0bea74177b6489290255ceed5bb415dc3702b587cd8475",
+        "metadata.hex": "564ad4b40b26b353d7be647dcf292ef22319e05255c8bee4d39406595a414abb",
+        "metadata.mem": "b353e3a67055e842436d33a7454ddb37f0429b591accb99cb743dc857020367b",
+        "oracle-summary.json": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62",
+        "program-0.mem": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec",
+        "program-1.mem": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165",
+        "program-registers.hex": "45c0c878d5615ee7cec8fa6cf5c16960c6dca58eb4aadc37b922296d208e74fc",
+        "sequence_sizes.vh": "38fd9622f79ef58f282d960d587e9f01e5165b27c61d29ec85fa3f8dfc039ca2"
+      },
+      "paired_actual_files": {
+        "actual-final-digest32.hex": {
+          "equal": true,
+          "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+        },
+        "actual-program-0.mem": {
+          "equal": true,
+          "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+        },
+        "actual-program-1.mem": {
+          "equal": true,
+          "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+        },
+        "ledger.json": {
+          "equal": true,
+          "sha256": "f8fc1a9e0d2a5f7ce811215d6a0c12ad80eac5d63bf77b1f806d576d75d8fd5a"
+        },
+        "trace.csv": {
+          "equal": true,
+          "sha256": "7a0d2ae141823eaf902fdfacf6649d4865ddbf836568b2070e55e1eb5d7c8c56"
+        }
+      }
+    },
+    "consumed_input_maps": {
+      "icarus": {
+        "count": 271,
+        "mismatches": []
+      },
+      "verilator": {
+        "count": 271,
+        "mismatches": []
+      }
+    },
+    "execution_id": "20261016T150633Z-0fed0ef048dd",
+    "focused_units": {
+      "pass_45": true,
+      "sha256": "3a50b092d7c4b08a0b87c5dd967dc5a33ae15910065a8bc09e496b8d5f4480ad"
+    },
+    "independent_raw_proof": {
+      "path": "/tmp/openrx-programgen-connected-independent-proof.json",
+      "sha256": "df75afaccef866742dd4cb21a3c8aae7247df8781b00c28f408db08ddc2e5966"
+    },
+    "manifest_sha256": "c1ddca7b8100fef2b6e101968586c28ff0b410ca5dc6a94c46bed6cd4d770b42",
+    "matching_errors": {
+      "prepared-stalled-error-1": "PASS lifecycle_matching_error port=1 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1",
+      "prepared-stalled-error-8": "PASS lifecycle_matching_error port=8 selected_fault_accepted=1 expected_code_matched=1 held_error=1 late_replies_drained=1 accepted_writes_persist=1 fresh_initialization_required=1"
+    },
+    "original_execution": "/home/server/openrx-local/v1/executions/20261016T150633Z-0fed0ef048dd",
+    "process": {
+      "finished_at": "2026-10-16T15:25:15.784708+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "profiles": {
+      "icarus/prepared-ideal": {
+        "cycles": 534012,
+        "host_provider": {
+          "assertion_only_hash_host_seconds": 1.7877e-05,
+          "assertion_only_program_generation_host_seconds": 0.000535785,
+          "assertion_only_program_generations": 2,
+          "cache_bytes": 268435456,
+          "cache_initialization_host_seconds": 0.863062932,
+          "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+          "dataset_provider_host_seconds": 6.813299999999999e-05,
+          "dataset_requests": 2,
+          "initialization_host_seconds": 0,
+          "input_hash_calls": 1,
+          "input_hash_host_seconds": 1.1277e-05,
+          "logical_dataset_bytes": 2181038016,
+          "materialized_dataset_bytes": 0,
+          "program_generation_host_seconds": 0,
+          "program_generations": 0,
+          "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+          "provider_device_cycles": null,
+          "provider_internal_physical_traffic_bytes": null,
+          "software_fill_provider_calls": 0
+        },
+        "ledger_sha256": "f8fc1a9e0d2a5f7ce811215d6a0c12ad80eac5d63bf77b1f806d576d75d8fd5a",
+        "nested_generation": [
+          4,
+          1600,
+          2
+        ],
+        "provider_sha256": "65e88ecf671881e10c6d8ea422d6eda41a7552b8e635d6503e16af2905380c4d",
+        "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=0 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=534012 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+        "removed_provider_replies_drained": {
+          "metadata": 0,
+          "program": 0
+        },
+        "stage_cycles": {
+          "control_and_metadata": 8,
+          "execution": 4983,
+          "finalization": 393286,
+          "held_return": 1,
+          "initialization_hardware_fill": 131076,
+          "interprogram_seed": 60,
+          "program_generation": 1606,
+          "program_preparation": 2992
+        },
+        "status": "pass_connected_native_reference"
+      },
+      "verilator/prepared-ideal": {
+        "cycles": 534012,
+        "host_provider": {
+          "assertion_only_hash_host_seconds": 3.7819999999999995e-06,
+          "assertion_only_program_generation_host_seconds": 0.0004919729999999999,
+          "assertion_only_program_generations": 2,
+          "cache_bytes": 268435456,
+          "cache_initialization_host_seconds": 0.842395916,
+          "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+          "dataset_provider_host_seconds": 5.3864e-05,
+          "dataset_requests": 2,
+          "initialization_host_seconds": 0,
+          "input_hash_calls": 1,
+          "input_hash_host_seconds": 6.31e-07,
+          "logical_dataset_bytes": 2181038016,
+          "materialized_dataset_bytes": 0,
+          "program_generation_host_seconds": 0,
+          "program_generations": 0,
+          "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+          "provider_device_cycles": null,
+          "provider_internal_physical_traffic_bytes": null,
+          "software_fill_provider_calls": 0
+        },
+        "ledger_sha256": "f8fc1a9e0d2a5f7ce811215d6a0c12ad80eac5d63bf77b1f806d576d75d8fd5a",
+        "nested_generation": [
+          4,
+          1600,
+          2
+        ],
+        "provider_sha256": "c0344c956cb93d84f45d53e43a057b2fcf847c62a08ce09eefc3ae0a309435bc",
+        "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=0 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=534012 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+        "removed_provider_replies_drained": {
+          "metadata": 0,
+          "program": 0
+        },
+        "stage_cycles": {
+          "control_and_metadata": 8,
+          "execution": 4983,
+          "finalization": 393286,
+          "held_return": 1,
+          "initialization_hardware_fill": 131076,
+          "interprogram_seed": 60,
+          "program_generation": 1606,
+          "program_preparation": 2992
+        },
+        "status": "pass_connected_native_reference"
+      },
+      "verilator/prepared-stalled": {
+        "cycles": 1583537,
+        "host_provider": {
+          "assertion_only_hash_host_seconds": 4.6839999999999995e-06,
+          "assertion_only_program_generation_host_seconds": 0.000452431,
+          "assertion_only_program_generations": 2,
+          "cache_bytes": 268435456,
+          "cache_initialization_host_seconds": 0.84027561,
+          "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+          "dataset_provider_host_seconds": 5.3847e-05,
+          "dataset_requests": 2,
+          "initialization_host_seconds": 0,
+          "input_hash_calls": 1,
+          "input_hash_host_seconds": 4.99e-07,
+          "logical_dataset_bytes": 2181038016,
+          "materialized_dataset_bytes": 0,
+          "program_generation_host_seconds": 0,
+          "program_generations": 0,
+          "provider": "pinned randomx::initDatasetItem, native light cache; not a physical DRAM model",
+          "provider_device_cycles": null,
+          "provider_internal_physical_traffic_bytes": null,
+          "software_fill_provider_calls": 0
+        },
+        "ledger_sha256": "720495bb341527d27eb00d3d5bfd5df38acb1bab3a9e60a3383e56543baf6359",
+        "nested_generation": [
+          4,
+          1600,
+          2
+        ],
+        "provider_sha256": "14acfd500c21fd75131a83f4cbbc3f941fea9051165cf18d0034f0cc6f48cae3",
+        "record": "PASS prepared_hash_lifecycle prepared=1 programs=2 iterations_per_program=1 stall=1 total_iterations=2 actual_instructions=769 bytecode_events=162 admissions=2 loaded_words=768 hardware_seeds=1 initial_writes=131072 final_reads=131072 cycles=1583537 native_digest32=1 native_actual_dataset=1 full_scratchpad_bytes=2097152 ledger_closes=1",
+        "removed_provider_replies_drained": {
+          "metadata": 2,
+          "program": 2
+        },
+        "stage_cycles": {
+          "control_and_metadata": 8,
+          "execution": 5923,
+          "finalization": 1179718,
+          "held_return": 4,
+          "initialization_hardware_fill": 393220,
+          "interprogram_seed": 66,
+          "program_generation": 1606,
+          "program_preparation": 2992
+        },
+        "status": "pass_connected_native_reference"
+      }
+    },
+    "receipt_sha256": "6653460044d7e965f1e293803c83d49ba9d186828665b87eb0864b6865dfe90f",
+    "runner_verify": {
+      "execution_id": "20261016T150633Z-0fed0ef048dd",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    },
+    "source_commit": "8100bee97bd592767764e5c9a8d3caa3aa2d7183",
+    "source_manifest_and_pinned_git_blob_mismatches": [],
+    "source_tree": "e0de15f121efdcf2ec3422e59f18af073dd79a85"
+  },
+  "evidence_boundaries": [
+    "No new default8programs x2048iterations workload was run and no alternative full-hash performance number is accepted or derived.",
+    "No full3200B mapped simulation is claimed. Mapping covers generator controller plus shared AES round only; logical3200B image buffer, connected executor and integrated storage mapping remain outside these generic cell counts.",
+    "Host input BLAKE2b, native Light cache/dataset generation and provider service remain separately host-timed or device-untimed; native assertions are validation-only. This does not establish a complete autonomous hardware hash or physical memory timing.",
+    "No architecture selection, ASIC implementation, MHz, area, power, energy or physical PPA acceptance. Generic mapped cell counts and simulated cycle counts retain their stated scopes.",
+    "Host runner receipt scientific_acceptance remains unverified. This independent report supplies separate scoped scientific acceptance without changing retained receipts.",
+    "Source acceptance binds8100bee and retained execution sources. Untracked or future publication metadata, connected compact export and final successor head need their requested metadata-only extension review.",
+    "No public task issue is invented: new issue creation remains denied before execution with permission pending according to parent. This read-only review makes no publication, comment, claim, merge or issue action."
+  ],
+  "result": "accepted_bounded_hardware_program_generation_and_connected_integration",
+  "review_actions": [
+    "Read retained code, receipts, command outcomes, native fixtures, PASS records and ledgers.",
+    "Compared actual bytes/hashes to original manifests, receipt bindings and exact pinned Git blobs.",
+    "No new builds, tests, simulations, reruns, source edits or public actions. Only independent review/proof JSONs were written in /tmp."
+  ],
+  "reviewed_at_utc": "2026-10-16T15:29:24.398902+00:00",
+  "reviewed_source": {
+    "base": "548ed2d31fe6be7d2edc2036961dc7745e9e7219",
+    "changed_file_count": 12,
+    "changed_files": {
+      "rtl/hash/randomx_prepared_hash_lifecycle.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "0a91c32e2f0959b76f9f383cff63655480454f9b92a4b9600ec3b93fe0bd1dbb",
+        "size_bytes": 29694
+      },
+      "rtl/hash/randomx_program_generation.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "03f504c22a3f00c50aeb944f0d506566cc5554c4500bbd2c73d1f302edc455a3",
+        "size_bytes": 3183
+      },
+      "rtl/hash/tests/lifecycle_source_dpi.cpp": {
+        "frozen_snapshot_equal": true,
+        "sha256": "08894fa61daa16b66aff9e1f8a971393ca01a8a489489d3959d87b023ce2746f",
+        "size_bytes": 4723
+      },
+      "rtl/hash/tests/lifecycle_source_vpi.cpp": {
+        "frozen_snapshot_equal": true,
+        "sha256": "9e59cd0cedcd16b9928916e1fe4f5005086374637878874999ac86365222bc10",
+        "size_bytes": 7018
+      },
+      "rtl/hash/tests/program_generation_oracle.cpp": {
+        "frozen_snapshot_equal": true,
+        "sha256": "b4a20387b177229df46e36086b38f96f87329e2add95525564e748ad2dc40d12",
+        "size_bytes": 5295
+      },
+      "rtl/hash/tests/program_generation_postfill_seed.hex": {
+        "frozen_snapshot_equal": true,
+        "sha256": "cd34e2efdbd424dc56a2fcd1fa682f53b53f2e6d19bb417fdf5d0ce343f99b1a",
+        "size_bytes": 129
+      },
+      "rtl/hash/tests/tb_prepared_hash_lifecycle.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "36db2d5732de9012a46140dc8b71451748cc6247b2ec0f4a7e5cc2a56dfbdb19",
+        "size_bytes": 58422
+      },
+      "rtl/hash/tests/tb_program_generation.v": {
+        "frozen_snapshot_equal": true,
+        "sha256": "8cb5b99367e0e4d49a8e0ed362eb675e9caeccee7be79e265d3a9813921e2724",
+        "size_bytes": 10350
+      },
+      "scripts/test_prepared_hash_lifecycle.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "e7ef868a25079d3e2b69b31633bd086de360adaad425749a67e648bd05b9fbf3",
+        "size_bytes": 30753
+      },
+      "scripts/test_program_generation.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "cbdecb6474008de9a2205f0a0dc73b4ddbd23efeb6f8c303dd776b0b5bd5284e",
+        "size_bytes": 18579
+      },
+      "tests/test_lifecycle_ledger.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "e1789ae986905ab8a0cbc73ee2bb133d75368d423ad6609ee5a098ec29e3ccf6",
+        "size_bytes": 10652
+      },
+      "tests/test_lifecycle_staging.py": {
+        "frozen_snapshot_equal": true,
+        "sha256": "b1d9275c3a939908276e450385c6dbbd3e38eae9a9091afb60c85cfebfb6ed21",
+        "size_bytes": 3435
+      }
+    },
+    "complete_frozen_blob_equality_to_pinned_git_objects": true,
+    "complete_tracked_blob_count": 4531,
+    "frozen_snapshot": "/tmp/openrx-programgen-source02",
+    "head": "8100bee97bd592767764e5c9a8d3caa3aa2d7183",
+    "tree": "e0de15f121efdcf2ec3422e59f18af073dd79a85"
+  },
+  "reviewer": "Independent merge_gate_review agent; provider_ledger_review and ledger_static separately cross-checked integration and standalone records",
+  "schema": "openrx.program-generation.independent-validation-review.v1",
+  "semantics_ownership_and_provider_separation": [
+    "Pinned fillAes4Rx4 uses four serialized raw AES rounds: DEC/ENC/DEC/ENC lanes, keys0..3 for lanes0/1 and keys4..7 for lanes2/3; native little-endian byte/lane mapping matches. No pre-XOR or seed writeback is introduced. Full3200B native Program bytes are validated for five seeds, ideal and stalled.",
+    "Request seed is captured privately. Three intermediate rounds stay private; the fourth result, address, tag and return remain held until accepted. Reset/cancel suppress unfinished transfers; already accepted external writes persist.",
+    "Hardware lifecycle captures the actual postfill/interprogram seed; all200 beats and generator return precede metadata visibility.128B entropy and3072B instruction buffer form an internally owned3200B image, with tagged aligned bounded fetches and held replies. No new generation can overwrite a pending fetch.",
+    "Cancel/error invalidates ownership/metadata/fetch state without RAM clearing. Focused cancellation7 aborts generation then verifies changed-input fresh2MiB fill, new postfill seed and complete replacement3200B image/metadata. That successor is not run through a complete hash in recovery coverage.",
+    "Normal profiles issue zero live software program-generation calls and zero software fill calls. Each uses one host input hash and two separately timed assertion-only program generations. Native assertion results do not drive live image or metadata providers.",
+    "Stalled hardware-program profile drains two metadata and two program replies from removed provider ports, including matching and stale forms, without changing native-correct execution.",
+    "Generation is a disjoint outer phase:1606=[4,1600,2]. Complete stage sums close for ideal534012 and stalled1583537 cycles. Preparation remains separately counted; phase7 includes metadata handoff reclassification, so these records do not justify adding1606 to an old full-hash result."
+  ],
+  "standalone": {
+    "actual_artifact_hash_or_size_mismatches": [],
+    "actual_prelaunch_headroom": {
+      "available_bytes": 8353095680,
+      "observed": {
+        "allowed_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "at": "2026-10-16T15:00:25.416352+00:00",
+        "logical_cpus": 6,
+        "memory_bytes": {
+          "MemAvailable": 8353095680,
+          "MemTotal": 16725934080,
+          "SwapFree": 4573372416,
+          "SwapTotal": 8589930496
+        }
+      },
+      "profile": "owner-local-max-v1",
+      "required_available_bytes": 5368709120,
+      "safe": true,
+      "scope": "Fresh headroom check under the global execution lock; bound limits are not changed"
+    },
+    "actual_prelaunch_kernel": {
+      "errors": [],
+      "observed": {
+        "at": "2026-10-16T15:00:25.465654+00:00",
+        "groups": [
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "",
+              "cpu.max": "600000 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "4294967296",
+              "memory.swap.max": "2147483648",
+              "pids.max": "256"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261016T150022Z-f84c623dee4f.service"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "max"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "max"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpu memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": null,
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "41887"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice/user-1000.slice"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpuset cpu io memory pids",
+              "cgroup.subtree_control": "cpu memory pids",
+              "cpu.max": "max 100000",
+              "cpuset.cpus.effective": "0-5",
+              "memory.high": "max",
+              "memory.max": "max",
+              "memory.swap.max": "max",
+              "pids.max": "max"
+            },
+            "is_root": false,
+            "path": "/sys/fs/cgroup/user.slice"
+          },
+          {
+            "files": {
+              "cgroup.controllers": "cpuset cpu io memory hugetlb pids rdma misc",
+              "cgroup.subtree_control": "cpuset cpu io memory pids",
+              "cpu.max": null,
+              "cpuset.cpus.effective": "0-5",
+              "memory.high": null,
+              "memory.max": null,
+              "memory.swap.max": null,
+              "pids.max": null
+            },
+            "is_root": true,
+            "path": "/sys/fs/cgroup"
+          }
+        ],
+        "service_cgroup": "/user.slice/user-1000.slice/user@1000.service/app.slice/openrx-20261016T150022Z-f84c623dee4f.service",
+        "worker_allowed_cpus": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "production_enforced": true,
+      "production_required": true,
+      "safe": true,
+      "scope": "Exact named service limits and visible ancestor constraints before payload; direct nonproduction worker tests have no service cgroup"
+    },
+    "bounded256_mapped_profiles": 24,
+    "code_commit": "0d70bf0cb3031ff5a3cdc26eda88a17254e89d18",
+    "commands": {
+      "expected_failures": 11,
+      "successful": 91,
+      "total": 102,
+      "unexpected_outcomes": []
+    },
+    "consumed_input_count": 186,
+    "consumed_input_mismatches": [],
+    "consumed_inputs_unchanged_through_connected_code_head": true,
+    "execution_id": "20261016T150022Z-f84c623dee4f",
+    "fixture_files_verified": 75,
+    "frozen_source": "/tmp/openrx-programgen-source01",
+    "full_3200_byte_native_profiles": 10,
+    "full_program_cycles": {
+      "accepted_output_beats": 200,
+      "ideal": 800,
+      "stalled": 1000,
+      "stalled_compute": 800,
+      "stalled_output_wait": 200
+    },
+    "manifest_sha256": "4bdcc349c0658fd2a2d52f335f7e91991154c9d0139351e66a139f70bac36da0",
+    "mapped_PASS_records_equal_corresponding_RTL": true,
+    "mapping": {
+      "bounded-256": {
+        "flop_cells": 540,
+        "latch_cells": 0,
+        "num_cells": 36834,
+        "num_cells_by_type": {
+          "$_ANDNOT_": 1463,
+          "$_AND_": 521,
+          "$_AOI3_": 1900,
+          "$_AOI4_": 16,
+          "$_DFF_P_": 540,
+          "$_MUX_": 2743,
+          "$_NAND_": 79,
+          "$_NOR_": 3839,
+          "$_NOT_": 672,
+          "$_OAI3_": 618,
+          "$_OAI4_": 524,
+          "$_ORNOT_": 200,
+          "$_OR_": 21864,
+          "$_XNOR_": 448,
+          "$_XOR_": 1407
+        },
+        "output_bytes": 256,
+        "scope": "Actual new generator controller and reused shared AES round only; no output image memory, executor, physical timing/area/power.",
+        "top": "randomx_program_generation"
+      },
+      "default-3200": {
+        "flop_cells": 540,
+        "latch_cells": 0,
+        "num_cells": 36836,
+        "num_cells_by_type": {
+          "$_ANDNOT_": 1464,
+          "$_AND_": 521,
+          "$_AOI3_": 1900,
+          "$_AOI4_": 16,
+          "$_DFF_P_": 540,
+          "$_MUX_": 2743,
+          "$_NAND_": 80,
+          "$_NOR_": 3839,
+          "$_NOT_": 672,
+          "$_OAI3_": 618,
+          "$_OAI4_": 524,
+          "$_ORNOT_": 201,
+          "$_OR_": 21863,
+          "$_XNOR_": 448,
+          "$_XOR_": 1407
+        },
+        "output_bytes": 3200,
+        "scope": "Actual new generator controller and reused shared AES round only; no output image memory, executor, physical timing/area/power.",
+        "top": "randomx_program_generation"
+      }
+    },
+    "native_fixture_cases": 15,
+    "original_execution": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f",
+    "original_receipt_artifact_count": 316,
+    "postfill_seed_lineage": {
+      "accepted_initial_fill_execution": "20261016T082316Z-86c364941cf5",
+      "accepted_manifest_sha256": "2350b29960c25ca878fd8f41ecc345785ae7c5fb45cee26a435bc95deb1f833b",
+      "accepted_seed_path": "2097152-incrementing/seed-out.bin",
+      "decoded_binary_matches_accepted_manifest": true,
+      "decoded_binary_sha256": "c3f23326844561f9c551f5112ed93294e1903333e689226902501d25a02a7758",
+      "decoded_bytes": 64,
+      "hex_matches_accepted_manifest": true,
+      "seed_hex_sha256": "cd34e2efdbd424dc56a2fcd1fa682f53b53f2e6d19bb417fdf5d0ce343f99b1a"
+    },
+    "process": {
+      "finished_at": "2026-10-16T15:05:11.232959+00:00",
+      "returncode": 0,
+      "scientific_acceptance": "unverified",
+      "signals": [],
+      "status": "PROCESS_EXITED"
+    },
+    "public_copy": {
+      "all316_receipt_artifacts_covered_without_overlap": true,
+      "compact_copy_not_a_complete_runner_execution": true,
+      "copied_receipt_artifacts": 239,
+      "derived_metadata_files": 5,
+      "index_entries": 245,
+      "index_sha256": "2b949a877eb8210a14dd9b634cbd4f4ae00b792e63bc946ddc66d021449786e8",
+      "mismatches": [],
+      "path": "/tmp/openrx-programgen-author/docs/validation/program-generation-20261016/standalone",
+      "receipt_itself_not_in_own_artifact_inventory": true,
+      "retained_only_receipt_artifacts": 77,
+      "total_files": 246,
+      "verbatim_files_including_receipt": 240
+    },
+    "receipt_sha256": "441110792f957dc41191a11219abc383198b786b173794189179a787e746eb50",
+    "rtl_profiles": 44,
+    "runner_verify": {
+      "execution_id": "20261016T150022Z-f84c623dee4f",
+      "integrity_verified": true,
+      "scientific_acceptance": "unverified",
+      "status": "PROCESS_EXITED"
+    },
+    "summary_status": "pass"
+  },
+  "static_review": {
+    "path": "/tmp/openrx-programgen-independent-code-review.json",
+    "preserved_unchanged": true,
+    "sha256": "07745ede26966f6ec01bc148977503e1d96134b651700f6d1032d4693458b3db",
+    "static_findings": "No blocking static findings; conditional validation gates in the prior report are now satisfied for the executed bounded profiles."
+  }
+}

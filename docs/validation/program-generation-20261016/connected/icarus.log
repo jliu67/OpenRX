@@ -1,0 +1,15 @@
+START lifecycle-unit-tests
+PASS lifecycle-unit-tests
+START vendor
+PASS vendor
+START compile-reference
+PASS compile-reference
+START compile-vpi
+PASS compile-vpi
+START native-reference
+PASS native-reference
+START compile-prepared-ideal
+PASS compile-prepared-ideal
+START prepared-ideal
+PASS prepared-ideal
+{"status": "pass_connected_native_reference", "profiles": 1, "cancellation": 0, "matching_errors": 0, "capacity_checks": 0, "full_v2": false}

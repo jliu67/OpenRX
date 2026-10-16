@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Connected v2 hash ownership. Native initialization/program generation/dataset
-// callbacks are external providers. HARDWARE_FILL replaces only initial AES fill;
-// input BLAKE2b, program generation and dataset service remain host boundaries.
+// callbacks have explicit optional hardware replacements. Input BLAKE2b and
+// dataset service remain host boundaries in both hardware AES modes.
 `default_nettype none
 module randomx_prepared_hash_lifecycle #(
- parameter integer PROGRAMS=8,ITERATIONS=2048,PREPARED_RCP=1,SCRATCHPAD_BYTES=2097152,HARDWARE_FILL=0
+ parameter integer PROGRAMS=8,ITERATIONS=2048,PREPARED_RCP=1,SCRATCHPAD_BYTES=2097152,HARDWARE_FILL=0,HARDWARE_PROGRAM=0
 )(
  input wire clk,rst,cancel,
  input wire req_valid,output wire req_ready,input wire [15:0] req_tag,
@@ -22,7 +22,7 @@ module randomx_prepared_hash_lifecycle #(
  output wire [255:0] rsp_digest,output wire rsp_error,
  output wire error_valid,output wire [15:0] error_tag,output wire [2:0] error_program,
  output wire [1:0] error_code,output wire [8:0] error_pc,output wire [7:0] error_opcode,
- output wire [3:0] phase,output wire [1:0] init_fill_phase,output wire [1:0] scratchpad_owner,output wire generation_exhausted,
+ output wire [3:0] phase,output wire [1:0] init_fill_phase,output wire [1:0] program_gen_phase,output wire [1:0] scratchpad_owner,output wire generation_exhausted,
  output wire  prep_commit_valid,
  output wire [15:0] prep_commit_epoch,
  output wire [2:0] prep_commit_program,
@@ -196,6 +196,20 @@ module randomx_prepared_hash_lifecycle #(
  wire fill_req_ready,fill_wr_valid,fill_rsp_valid;
  wire [20:0] fill_wr_addr;wire [127:0] fill_wr_data;wire [15:0] fill_wr_strb,fill_wr_tag,fill_rsp_tag;
  wire [511:0] fill_rsp_seed;wire [1:0] fill_phase;
+ // A generated image is private until all 3,200 bytes and the generator return
+ // have been accepted. Reset/cancel invalidates ownership without clearing RAM.
+ localparam [2:0] PG_IDLE=0,PG_START=1,PG_FILL=2,PG_META=3,PG_READY=4;
+ reg [2:0] pg_state_q,pg_program_q;reg [15:0] pg_tag_q;reg [511:0] pg_seed_q;
+ reg [7:0] pg_beats_q;reg [1023:0] pg_entropy_q;reg [127:0] pg_words_q[0:191];
+ reg pg_fetch_pending_q,pg_fetch_error_q;reg [24:0] pg_fetch_tag_q;reg [63:0] pg_fetch_data_q;
+ wire pg_req_ready,pg_out_valid,pg_out_ready,pg_rsp_valid,pg_rsp_ready;
+ wire [11:0] pg_out_addr;wire [127:0] pg_out_data;wire [15:0] pg_out_tag,pg_rsp_tag;wire [1:0] pg_phase;
+ wire [63:0] pg_base=64'h10000000+{49'b0,pg_program_q,12'b0};
+ wire [63:0] pg_fetch_index=(chain_prog_addr-pg_base)>>3;
+ wire pg_fetch_bad=chain_prog_addr[2:0]!=0||chain_prog_addr<pg_base||pg_fetch_index>=384||chain_prog_tag[8:0]!=pg_fetch_index[8:0];
+ wire pg_out_bad=pg_out_tag!=pg_tag_q||pg_beats_q>=200||pg_out_addr!={pg_beats_q,4'b0};
+ wire pg_bad=HARDWARE_PROGRAM&&state_q==RUN&&pg_state_q==PG_FILL&&
+             ((pg_out_valid&&pg_out_ready&&pg_out_bad)||(pg_rsp_valid&&pg_rsp_ready&&(pg_rsp_tag!=pg_tag_q||pg_beats_q!=200)));
  wire active=!rst&&!cancel;
  wire init_stale=init_wr_tag!=generation_q;
  wire init_bad=init_beats_q>=SCRATCHPAD_BYTES/16||init_wr_addr!={init_beats_q[16:0],4'b0}||init_wr_strb!=16'hffff;
@@ -204,8 +218,8 @@ module randomx_prepared_hash_lifecycle #(
  wire exec_reply=sp_rsp_tag[50:35]==generation_q&&sp_rsp_tag[34:33]==OWNER_EXEC&&state_q==RUN;
  wire final_reply=sp_rsp_tag[50:35]==generation_q&&sp_rsp_tag[34:33]==OWNER_FINAL&&state_q==FIN_WAIT;
  wire dataset_reply=ds_rsp_tag[31:16]==generation_q&&state_q==RUN;
- wire program_reply=prog_rsp_tag[40:25]==generation_q&&state_q==RUN;
- wire metadata_reply=meta_rsp_tag==generation_q&&state_q==RUN;
+ wire program_reply=!HARDWARE_PROGRAM&&prog_rsp_tag[40:25]==generation_q&&state_q==RUN;
+ wire metadata_reply=!HARDWARE_PROGRAM&&meta_rsp_tag==generation_q&&state_q==RUN;
  wire current_sp_error=sp_wait_q&&sp_rsp_tag==expected_sp_q;
  wire current_ds_error=ds_wait_q&&ds_rsp_tag==expected_ds_q;
  wire current_meta_error=meta_wait_q&&meta_rsp_program==expected_meta_program_q;
@@ -230,24 +244,32 @@ module randomx_prepared_hash_lifecycle #(
                          (state_q==FIN_START||state_q==FIN_WAIT)?OWNER_FINAL:OWNER_NONE;
  // Exactly one outer phase per admitted clock. Stall counters are nested observers.
  assign phase=cancel?4'd9:(state_q==INIT_REQUEST||state_q==INIT_STREAM||state_q==FILL_START||state_q==FILL_RUN)?4'd1:
-              state_q==RUN?chain_phase:(state_q==FIN_START||state_q==FIN_WAIT)?
+              state_q==RUN?(HARDWARE_PROGRAM&&(pg_state_q==PG_START||pg_state_q==PG_FILL||pg_state_q==PG_META)?4'd7:chain_phase):(state_q==FIN_START||state_q==FIN_WAIT)?
               4'd6:
               (state_q==RETURN||state_q==ERROR)?4'd8:4'd2;
  assign init_fill_phase=HARDWARE_FILL&&(state_q==FILL_START||state_q==FILL_RUN)?fill_phase:2'd0;
+ assign program_gen_phase=HARDWARE_PROGRAM&&active&&state_q==RUN?pg_phase:2'd0;
  assign chain_start_valid=active&&state_q==CHAIN_START;assign chain_start_tag=generation_q;assign chain_start_v2=1'b1;
- assign meta_req_valid=active&&state_q==RUN&&chain_meta_req_valid;
- assign chain_meta_req_ready=meta_req_ready&&active&&state_q==RUN;
+ assign meta_req_valid=!HARDWARE_PROGRAM&&active&&state_q==RUN&&chain_meta_req_valid;
+ assign chain_meta_req_ready=active&&state_q==RUN&&(HARDWARE_PROGRAM?
+                             ((pg_state_q==PG_IDLE||pg_state_q==PG_READY)&&!pg_fetch_pending_q):meta_req_ready);
  assign meta_req_tag=chain_meta_req_tag;assign meta_req_program=chain_meta_req_program;assign meta_req_seed=seed_q;
- assign chain_meta_rsp_valid=meta_rsp_valid&&metadata_reply&&!meta_rsp_error;
- assign meta_rsp_ready=active&&(!metadata_reply||meta_rsp_error||chain_meta_rsp_ready);
- assign chain_meta_rsp_tag=meta_rsp_tag;assign chain_meta_rsp_program=meta_rsp_program;
- assign chain_meta_rsp_entropy=meta_rsp_entropy;assign chain_meta_rsp_program_addr=meta_rsp_program_addr;
+ assign chain_meta_rsp_valid=HARDWARE_PROGRAM?(active&&state_q==RUN&&pg_state_q==PG_META):(meta_rsp_valid&&metadata_reply&&!meta_rsp_error);
+ assign meta_rsp_ready=active&&(HARDWARE_PROGRAM||!metadata_reply||meta_rsp_error||chain_meta_rsp_ready);
+ assign chain_meta_rsp_tag=HARDWARE_PROGRAM?pg_tag_q:meta_rsp_tag;assign chain_meta_rsp_program=HARDWARE_PROGRAM?pg_program_q:meta_rsp_program;
+ assign chain_meta_rsp_entropy=HARDWARE_PROGRAM?pg_entropy_q:meta_rsp_entropy;
+ assign chain_meta_rsp_program_addr=HARDWARE_PROGRAM?pg_base:meta_rsp_program_addr;
  assign chain_program_done_ready=active&&state_q==RUN&&program_done_ready;
  assign chain_done_ready=active&&state_q==RUN;assign chain_error_ready=active&&state_q==RUN;
- assign prog_valid=active&&state_q==RUN&&chain_prog_valid;assign chain_prog_ready=prog_ready&&active&&state_q==RUN;
+ assign prog_valid=!HARDWARE_PROGRAM&&active&&state_q==RUN&&chain_prog_valid;
+ assign chain_prog_ready=active&&state_q==RUN&&(HARDWARE_PROGRAM?
+                         (pg_state_q==PG_READY&&pg_tag_q==generation_q&&!pg_fetch_pending_q&&!chain_meta_req_valid):prog_ready);
  assign prog_addr=chain_prog_addr;assign prog_tag={generation_q,chain_prog_tag};
- assign chain_prog_rsp_valid=prog_rsp_valid&&program_reply;assign prog_rsp_ready=active&&(!program_reply||chain_prog_rsp_ready);
- assign chain_prog_rsp_tag=prog_rsp_tag[24:0];assign chain_prog_rsp_instruction=prog_rsp_instruction;assign chain_prog_rsp_error=prog_rsp_error;
+ assign chain_prog_rsp_valid=HARDWARE_PROGRAM?(active&&state_q==RUN&&pg_fetch_pending_q):(prog_rsp_valid&&program_reply);
+ assign prog_rsp_ready=active&&(HARDWARE_PROGRAM||!program_reply||chain_prog_rsp_ready);
+ assign chain_prog_rsp_tag=HARDWARE_PROGRAM?pg_fetch_tag_q:prog_rsp_tag[24:0];
+ assign chain_prog_rsp_instruction=HARDWARE_PROGRAM?pg_fetch_data_q:prog_rsp_instruction;
+ assign chain_prog_rsp_error=HARDWARE_PROGRAM?pg_fetch_error_q:prog_rsp_error;
  assign ds_req_valid=active&&state_q==RUN&&chain_ds_req_valid;assign chain_ds_req_ready=ds_req_ready&&active&&state_q==RUN;
  assign ds_req_addr=chain_ds_req_addr;assign ds_req_tag={generation_q,chain_ds_req_tag};
  assign ds_prefetch_addr=chain_ds_prefetch_addr;assign ds_prefetch_valid=active&&state_q==RUN&&chain_ds_prefetch_valid;
@@ -280,6 +302,18 @@ module randomx_prepared_hash_lifecycle #(
  end else begin: software_initial_fill
   assign fill_req_ready=0;assign fill_wr_valid=0;assign fill_wr_addr=0;assign fill_wr_data=0;assign fill_wr_strb=0;assign fill_wr_tag=0;
   assign fill_rsp_valid=0;assign fill_rsp_tag=0;assign fill_rsp_seed=0;assign fill_phase=0;
+ end endgenerate
+ assign pg_out_ready=HARDWARE_PROGRAM&&active&&state_q==RUN&&pg_state_q==PG_FILL;
+ assign pg_rsp_ready=HARDWARE_PROGRAM&&active&&state_q==RUN&&pg_state_q==PG_FILL;
+ generate if(HARDWARE_PROGRAM)begin: hardware_program_generation
+  randomx_program_generation #(.OUTPUT_BYTES(3200)) generator(
+   .clk(clk),.rst(rst),.cancel(cancel||state_q==ERROR),
+   .req_valid(active&&state_q==RUN&&pg_state_q==PG_START),.req_ready(pg_req_ready),.req_tag(pg_tag_q),.req_seed(pg_seed_q),
+   .out_valid(pg_out_valid),.out_ready(pg_out_ready),.out_addr(pg_out_addr),.out_data(pg_out_data),.out_tag(pg_out_tag),
+   .rsp_valid(pg_rsp_valid),.rsp_ready(pg_rsp_ready),.rsp_tag(pg_rsp_tag),.phase(pg_phase));
+ end else begin: software_program_generation
+  assign pg_req_ready=0;assign pg_out_valid=0;assign pg_out_addr=0;assign pg_out_data=0;assign pg_out_tag=0;
+  assign pg_rsp_valid=0;assign pg_rsp_tag=0;assign pg_phase=0;
  end endgenerate
  randomx_prepared_program_hash_sequence #(.PROGRAMS(PROGRAMS),.ITERATIONS(ITERATIONS),.PREPARED_RCP(PREPARED_RCP)) chain(
   .clk(clk),
@@ -405,6 +439,38 @@ module randomx_prepared_hash_lifecycle #(
   lifecycle_requires_64_to_2097152_bytes_in_64_byte_groups invalid();end endgenerate
  generate if(HARDWARE_FILL!=0&&HARDWARE_FILL!=1)begin: invalid_fill_mode
   lifecycle_hardware_fill_requires_boolean_0_or_1 invalid();end endgenerate
+ generate if(HARDWARE_PROGRAM!=0&&HARDWARE_PROGRAM!=1)begin: invalid_program_mode
+  lifecycle_hardware_program_requires_boolean_0_or_1 invalid();end endgenerate
+ always @(posedge clk)begin
+  if(rst||cancel||state_q==ERROR||state_q==IDLE)begin
+   pg_state_q<=PG_IDLE;pg_tag_q<=0;pg_program_q<=0;pg_seed_q<=0;pg_beats_q<=0;pg_entropy_q<=0;
+   pg_fetch_pending_q<=0;pg_fetch_error_q<=0;pg_fetch_tag_q<=0;pg_fetch_data_q<=0;
+  end else if(HARDWARE_PROGRAM)begin
+   if(chain_prog_rsp_valid&&chain_prog_rsp_ready)pg_fetch_pending_q<=0;
+   if(chain_prog_valid&&chain_prog_ready)begin
+    pg_fetch_pending_q<=1;pg_fetch_tag_q<=chain_prog_tag;pg_fetch_error_q<=pg_fetch_bad;
+    if(pg_fetch_bad)pg_fetch_data_q<=0;
+    else pg_fetch_data_q<=pg_fetch_index[0]?pg_words_q[pg_fetch_index[8:1]][127:64]:pg_words_q[pg_fetch_index[8:1]][63:0];
+   end
+   case(pg_state_q)
+    PG_IDLE,PG_READY:if(chain_meta_req_valid&&chain_meta_req_ready)begin
+     pg_tag_q<=chain_meta_req_tag;pg_program_q<=chain_meta_req_program;pg_seed_q<=seed_q;
+     pg_beats_q<=0;pg_entropy_q<=0;pg_state_q<=PG_START;
+    end
+    PG_START:if(pg_req_ready)pg_state_q<=PG_FILL;
+    PG_FILL:begin
+     if(pg_out_valid&&pg_out_ready&&!pg_out_bad)begin
+      if(pg_beats_q<8)pg_entropy_q[128*pg_beats_q[2:0]+:128]<=pg_out_data;
+      else pg_words_q[pg_beats_q-8]<=pg_out_data;
+      pg_beats_q<=pg_beats_q+8'd1;
+     end
+     if(pg_rsp_valid&&pg_rsp_ready&&!pg_bad)pg_state_q<=PG_META;
+    end
+    PG_META:if(chain_meta_rsp_valid&&chain_meta_rsp_ready)pg_state_q<=PG_READY;
+    default:pg_state_q<=PG_IDLE;
+   endcase
+  end
+ end
  always @(posedge clk)begin
   if(rst||cancel||state_q==IDLE||state_q==ERROR)begin
    sp_wait_q<=0;ds_wait_q<=0;meta_wait_q<=0;
@@ -455,7 +521,8 @@ module randomx_prepared_hash_lifecycle #(
     CHAIN_START:if(chain_start_ready)state_q<=RUN;
     RUN:begin
      if(program_done_valid&&chain_program_done_ready&&program_done_seed_valid)seed_q<=program_done_seed;
-     if(chain_error_valid)begin
+     if(pg_bad)begin error_program_q<=pg_program_q;error_code_q<=3;state_q<=ERROR;end
+     else if(chain_error_valid)begin
       error_program_q<=chain_error_program;error_code_q<=chain_error_code;error_pc_q<=chain_error_pc;error_opcode_q<=chain_error_opcode;state_q<=ERROR;
      end else if((meta_rsp_valid&&metadata_reply&&current_meta_error&&meta_rsp_error)||
                  (ds_rsp_valid&&dataset_reply&&current_ds_error&&ds_rsp_error)||

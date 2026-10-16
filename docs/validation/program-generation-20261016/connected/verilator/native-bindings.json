@@ -1,0 +1,54 @@
+{
+  "derivation": "Native/library and retained tool/input bindings extracted from copied summary and original manifest; no native/tool binary or cache is copied.",
+  "external_manifest_input_bindings": [
+    {
+      "bytes": 786034,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+      "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+    },
+    {
+      "bytes": 716215,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/manifest.json",
+      "sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d"
+    },
+    {
+      "bytes": 40584,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/receipt.json",
+      "sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc"
+    },
+    {
+      "bytes": 4385,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/build.json",
+      "sha256": "293080fda2fb9bc1f29424c05d5a0e4b26da5142d28398247c4bc3394995c975"
+    },
+    {
+      "bytes": 369,
+      "path": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/CMakeFiles/randomx.dir/flags.make",
+      "sha256": "db413b693f8ed729e283b5c0fd25ceaf541d825933b89f9d1ff1a84584b8707a"
+    },
+    {
+      "file_count": 6088,
+      "kind": "directory",
+      "path": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/output/verilator-5c5314b39cd888f427807d626e1502cbf222c292",
+      "sha256": "91c011654abefcce5c4876aac76fa62b515bee5ec39055250c9aa7f900ec0579"
+    },
+    {
+      "bytes": 1636828,
+      "path": "/home/server/openrx-local/v1/executions/20261016T005835Z-851d576006d4/receipt.json",
+      "sha256": "0c0b59dd20ed177dd879ee6924005d223be58d51a9821da3e36a2f29e44427bc"
+    }
+  ],
+  "native_library": {
+    "PIC_flags_sha256": "db413b693f8ed729e283b5c0fd25ceaf541d825933b89f9d1ff1a84584b8707a",
+    "build_sha256": "293080fda2fb9bc1f29424c05d5a0e4b26da5142d28398247c4bc3394995c975",
+    "execution": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71",
+    "library": "/home/server/openrx-local/v1/executions/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+    "manifest_sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d",
+    "native_source_files_verified": 171,
+    "receipt_sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc",
+    "reconfigured_or_modified": false,
+    "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+  },
+  "original_manifest_sha256": "c1ddca7b8100fef2b6e101968586c28ff0b410ca5dc6a94c46bed6cd4d770b42",
+  "original_summary_sha256": "aedd143cedcc8eec9c9e6682401e8f9a9cd209876b24398f24c251eec29f2252"
+}

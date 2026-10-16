@@ -1,0 +1,107 @@
+{
+  "ideal_trace": {
+    "icarus": {
+      "bytes": 11828177,
+      "original_path": "/home/server/openrx-local/v1/executions/20261016T150633Z-0fed0ef048dd/output/icarus/prepared-ideal/trace.csv",
+      "sha256": "7a0d2ae141823eaf902fdfacf6649d4865ddbf836568b2070e55e1eb5d7c8c56"
+    },
+    "verilator": {
+      "bytes": 11828177,
+      "original_path": "/home/server/openrx-local/v1/executions/20261016T150633Z-0fed0ef048dd/output/verilator/prepared-ideal/trace.csv",
+      "sha256": "7a0d2ae141823eaf902fdfacf6649d4865ddbf836568b2070e55e1eb5d7c8c56"
+    }
+  },
+  "native_corpus": [
+    {
+      "bytes": 3646,
+      "relative": "accesses.hex",
+      "sha256": "c6ce6563e4f13d56f608f2bcf165c08c810531c8070ac071412c8af5c172a1c4"
+    },
+    {
+      "bytes": 3726,
+      "relative": "events.mem",
+      "sha256": "a4b90f2c1bf76e79421bbc4454d1e220b6ed379bb9e5782b8ed75a12af99cdb0"
+    },
+    {
+      "bytes": 4325376,
+      "relative": "final-0.hex",
+      "sha256": "c5cf81821119bdc35fe75fd61608a155e9fa30cc28e24b26e55d554b68b13efb"
+    },
+    {
+      "bytes": 4325376,
+      "relative": "final-1.hex",
+      "sha256": "78a6b8dbe1086c01096e1c43e747e28de256c926511561ac08b5b7db9aaefa2c"
+    },
+    {
+      "bytes": 129,
+      "relative": "final-a.hex",
+      "sha256": "46a340e781beffd0476f67c8da5b5df731f652d9f2a7ab386851bdec8ae849f0"
+    },
+    {
+      "bytes": 65,
+      "relative": "final-digest32.hex",
+      "sha256": "47978c9e8befce6fbded9dd5c0dc47426ce4a1ee71dd6a649ffdeeaf6daa5e03"
+    },
+    {
+      "bytes": 513,
+      "relative": "final-rf.hex",
+      "sha256": "273f84a5486ba2ba92545aeebeafe9e460ada065f7a2b300f39a54ab7c3499c2"
+    },
+    {
+      "bytes": 352,
+      "relative": "full-reference.json",
+      "sha256": "31457d2b5183422bce9a231d84f5bfdec8c8a109860cf556d8566c502abe4608"
+    },
+    {
+      "bytes": 4325376,
+      "relative": "initial.hex",
+      "sha256": "c23bde9fddadce72d31d590a0143cb44e646885a0f544030b9764685cf200558"
+    },
+    {
+      "bytes": 1200,
+      "relative": "iterations.hex",
+      "sha256": "8bb50034865542761f12f2de3d6549144745652659db67196e4c9ef3937f8765"
+    },
+    {
+      "bytes": 1268,
+      "relative": "iterations.mem",
+      "sha256": "191bea37a7119bed6c0bea74177b6489290255ceed5bb415dc3702b587cd8475"
+    },
+    {
+      "bytes": 910,
+      "relative": "metadata.hex",
+      "sha256": "564ad4b40b26b353d7be647dcf292ef22319e05255c8bee4d39406595a414abb"
+    },
+    {
+      "bytes": 904,
+      "relative": "metadata.mem",
+      "sha256": "b353e3a67055e842436d33a7454ddb37f0429b591accb99cb743dc857020367b"
+    },
+    {
+      "bytes": 498,
+      "relative": "oracle-summary.json",
+      "sha256": "db6057f2b2eeef1f7af454d094e758d1bf8178df02581835381aadfef9d71a62"
+    },
+    {
+      "bytes": 6528,
+      "relative": "program-0.mem",
+      "sha256": "002dc17c9a413e112ff1a15340c4fbb4c67bd17656b4f3e23d09036bd85c08ec"
+    },
+    {
+      "bytes": 6528,
+      "relative": "program-1.mem",
+      "sha256": "baeae55d77ee19da77801b9c308c278b8b16722c45398b1710e4c30622703165"
+    },
+    {
+      "bytes": 1034,
+      "relative": "program-registers.hex",
+      "sha256": "45c0c878d5615ee7cec8fa6cf5c16960c6dca58eb4aadc37b922296d208e74fc"
+    },
+    {
+      "bytes": 79,
+      "relative": "sequence_sizes.vh",
+      "sha256": "38fd9622f79ef58f282d960d587e9f01e5165b27c61d29ec85fa3f8dfc039ca2"
+    }
+  ],
+  "scope": "Receipt-backed hashes for complete retained cross-backend ideal trace and native corpus, plus directly copied actual digest. The bound wrapper checked complete bytes; no trace/fixture payloads are copied into this compact subset."
+}

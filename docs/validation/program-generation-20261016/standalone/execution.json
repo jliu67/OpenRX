@@ -1,0 +1,92 @@
+{
+  "complete_output_retained": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f/output",
+  "counts": {
+    "invalid_hardware_parameter_cases": 4,
+    "mapped_modes": 24,
+    "native_cases": 15,
+    "native_invalid_cases": 7,
+    "rtl_modes": 44
+  },
+  "execution_id": "20261016T150022Z-f84c623dee4f",
+  "exported_at_utc": "2026-10-16T15:09:31.298917+00:00",
+  "identity_note": "Verbatim public copies retain their original byte hashes. Derived execution/manifest/resource/verify/index metadata are separately labeled. This compact subset cannot be passed to the host runner verifier as a complete original execution; verification used the retained original plus append-only receipt binding.",
+  "integrity_verified": true,
+  "manifest_sha256": "4bdcc349c0658fd2a2d52f335f7e91991154c9d0139351e66a139f70bac36da0",
+  "mapping": {
+    "bounded-256": {
+      "flop_cells": 540,
+      "latch_cells": 0,
+      "num_cells": 36834,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 1463,
+        "$_AND_": 521,
+        "$_AOI3_": 1900,
+        "$_AOI4_": 16,
+        "$_DFF_P_": 540,
+        "$_MUX_": 2743,
+        "$_NAND_": 79,
+        "$_NOR_": 3839,
+        "$_NOT_": 672,
+        "$_OAI3_": 618,
+        "$_OAI4_": 524,
+        "$_ORNOT_": 200,
+        "$_OR_": 21864,
+        "$_XNOR_": 448,
+        "$_XOR_": 1407
+      },
+      "output_bytes": 256,
+      "scope": "Actual new generator controller and reused shared AES round only; no output image memory, executor, physical timing/area/power.",
+      "top": "randomx_program_generation"
+    },
+    "default-3200": {
+      "flop_cells": 540,
+      "latch_cells": 0,
+      "num_cells": 36836,
+      "num_cells_by_type": {
+        "$_ANDNOT_": 1464,
+        "$_AND_": 521,
+        "$_AOI3_": 1900,
+        "$_AOI4_": 16,
+        "$_DFF_P_": 540,
+        "$_MUX_": 2743,
+        "$_NAND_": 80,
+        "$_NOR_": 3839,
+        "$_NOT_": 672,
+        "$_OAI3_": 618,
+        "$_OAI4_": 524,
+        "$_ORNOT_": 201,
+        "$_OR_": 21863,
+        "$_XNOR_": 448,
+        "$_XOR_": 1407
+      },
+      "output_bytes": 3200,
+      "scope": "Actual new generator controller and reused shared AES round only; no output image memory, executor, physical timing/area/power.",
+      "top": "randomx_program_generation"
+    }
+  },
+  "observed_component_summary_status": "pass",
+  "omissions": "Generated binaries, netlists, complete fixture images and complete large synthesis logs are retained only, with receipt-backed hashes in retained-only.json and the original full-output artifact index. Public synthesis statistics, generic-cell model and timing/command records are complete additive copies.",
+  "original_execution": "/home/server/openrx-local/v1/executions/20261016T150022Z-f84c623dee4f",
+  "original_receipt_artifact_count": 316,
+  "original_receipt_sha256": "441110792f957dc41191a11219abc383198b786b173794189179a787e746eb50",
+  "process_returncode": 0,
+  "public_files_are_additive_copies": true,
+  "runner_verify": {
+    "execution_id": "20261016T150022Z-f84c623dee4f",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "scientific_acceptance": "unverified",
+  "scope": "Standalone pinned fillAes4Rx4 hardware program generation only: native Program bytes and preserved caller seed; shared AES round/controller synthesis and bounded mapped checks. Connected lifecycle validation is separate. No autonomous/full hardware-only hash, new full-hash performance measurement, physical ASIC/PPA acceptance or architecture choice.",
+  "source_commit": "0d70bf0cb3031ff5a3cdc26eda88a17254e89d18",
+  "source_directory_binding": {
+    "file_count": 4531,
+    "kind": "directory",
+    "path": "/tmp/openrx-programgen-source01",
+    "sha256": "8fc62562834b71d2af25e36193664ef0a0d733d4a48ea53bc72ff1b6f53a1789"
+  },
+  "source_git_status_porcelain_at_export": "",
+  "source_tree": "dfcb107d850b97cfba40e4e9f2cff34ea8007d3f",
+  "verbatim_original_copy_count": 240
+}

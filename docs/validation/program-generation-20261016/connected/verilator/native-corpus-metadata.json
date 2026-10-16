@@ -1,0 +1,29 @@
+{
+  "canonical_reference": {
+    "bounded_iteration_profile": true,
+    "cache_key": "OpenRX connected lifecycle dataset key 20261016",
+    "canonical_host_seconds": 0,
+    "canonical_randomx_calculate_hash_verified": false,
+    "dataset": "pinned initDatasetItem native light mode",
+    "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642052616e646f6d58207632206c6966656379636c65203230323631303136"
+  },
+  "derivation": "Exact native_reference/canonical_reference metadata extracted from copied summary; complete native corpus payloads remain retained.",
+  "native_reference": {
+    "branches": 79,
+    "bytecode_events": 162,
+    "cfround": 2,
+    "dataset": "pinned initDatasetItem actual native dataset, light mode",
+    "dynamic_active_reciprocals": 22,
+    "fp": 258,
+    "initialization_program_generation_interprogram_BLAKE2b_final_hash": "software providers separately timed; hardware seed/finalizer connected by lifecycle",
+    "instruction_steps": 769,
+    "iterations_per_program": 1,
+    "native_default_iterations": 2048,
+    "native_default_programs": 8,
+    "programs": 2,
+    "static_active_reciprocals": 22,
+    "total_iterations": 2,
+    "v2": 1
+  },
+  "original_summary_sha256": "aedd143cedcc8eec9c9e6682401e8f9a9cd209876b24398f24c251eec29f2252"
+}
