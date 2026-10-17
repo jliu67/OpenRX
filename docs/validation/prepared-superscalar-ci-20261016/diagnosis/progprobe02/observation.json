@@ -1,0 +1,82 @@
+{
+  "acceptance": false,
+  "arms": {
+    "hosted": {
+      "acceptance": false,
+      "last_progress": {
+        "aborts": 1,
+        "case": 0,
+        "cases": 2,
+        "commits": 201,
+        "completed": 0,
+        "event_flags": 1,
+        "fetch_pc": 201,
+        "mode": "reset",
+        "pending": 0,
+        "phase": 5,
+        "pre_cancel": 0,
+        "pre_rst": 0,
+        "requests": 202,
+        "responses": 202,
+        "retired": 201,
+        "run_ticks": 3026,
+        "settled_ticks": 3072,
+        "step_calls": 3026,
+        "target": 1,
+        "time_ns": 30717
+      },
+      "outcome": "DIAGNOSTIC_PARTIAL_WALL_LIMIT"
+    },
+    "local": {
+      "acceptance": false,
+      "last_progress": {
+        "aborts": 2,
+        "case": 0,
+        "cases": 4,
+        "commits": 89,
+        "completed": 1,
+        "event_flags": 257,
+        "fetch_pc": 89,
+        "mode": "reset",
+        "pending": 0,
+        "phase": 5,
+        "pre_cancel": 0,
+        "pre_rst": 0,
+        "requests": 90,
+        "responses": 90,
+        "retired": 89,
+        "run_ticks": 1423,
+        "settled_ticks": 8192,
+        "step_calls": 8098,
+        "target": 2,
+        "time_ns": 81917
+      },
+      "outcome": "DIAGNOSTIC_PARTIAL_CLOCK_LIMIT"
+    }
+  },
+  "boundary": "Partial observer-only prefixes. No native generation, synthesis, full-mode rerun or scientific acceptance.",
+  "complete_validation": false,
+  "execution_id": "20261016T231549Z-82a7c5e5e919",
+  "interpretation": "Bounded partial observation only. Normalization result does not support adopting the transform as a fix. Driver/command exit zero is not full validation PASS.",
+  "normalization_is_a_validated_fix": false,
+  "original_runner_status": "PROCESS_EXITED",
+  "raw_manifest": {
+    "bytes": 1041619,
+    "sha256": "3085e8621f85c7eda652825dbf74651e47800dc9e2631594ea0793ce1ed0c096"
+  },
+  "raw_receipt": {
+    "bytes": 6812,
+    "sha256": "def359aed3dc97aff7f00bf10e2b46f6c1cc0c68c5903f6578f9ef0f062d23e2"
+  },
+  "raw_request": {
+    "bytes": 8255,
+    "sha256": "7ff56423ea2758a82628c76f1f9ecdca647119a4e37bf0e49d4c96b943527968"
+  },
+  "raw_root_verify": {
+    "bytes": 155,
+    "sha256": "ed261475ec3e136645213aed9f7d14d0068f0b121ba11461334afe4ffb1a9282"
+  },
+  "raw_summary_status": "DIAGNOSTIC_PARTIAL_OBSERVATION_ONLY",
+  "returncode": 0,
+  "scientific_acceptance": "unverified"
+}

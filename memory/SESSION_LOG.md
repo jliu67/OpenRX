@@ -1039,3 +1039,37 @@ bytes stay exact. Eighteen source-only tests and both substitution rejections
 pass with verified receipt `20261016T184732Z-7c6f2889a8e8`. Failed hosted logs and
 complete archives remain retained; current PR78 checks and exact-head review are
 the final publication/merge authority.
+
+
+## 2026-10-16 — prepared native superscalar program executor
+
+The owner-authorized continuation above accepted PR #78 uses a separate
+`feature/prepared-superscalar-executor` temporary checkout. Pinned v2.0.1 native
+semantics and ownership were checked first: no overlapping open PR or active
+claim. Existing completed task #71 retains plain execution requests. No new
+issue, hub notice, settings/credentials change, cleanup or synchronization was
+performed. Prior accepted sources and original data remain retained.
+
+Clean source `6f65049c` / tree `19ac91c6` passes correctness execution
+`20261016T210802Z-d50e99dbfb16`: 130 native cases, 7,779 retirements and ten RTL
+modes. Receipt `f7598ff0` verifies against the immutable journal. Only the new
+oracle was compiled, reusing the exact retained native library. Separate
+`20261016T211324Z-b1d24eb3f1fe` consumes the verified receipt and all 1,178 actual
+fixtures, with no native generation or completed RTL repeat. Verified receipt
+`27591eb9` binds seven mapped modes over 116 cases and actual synthesis of
+19,604 generic cells, 1,410 flops and zero latches. Both first attempts passed.
+
+Actual under-lock CPU600%, RAM4GiB, swap2GiB, Tasks256 and six-CPU checks pass.
+Six independent modes share one admitted payload. Observed synthesis cgroup peak
+was 536,395,776 bytes with no OOM events. Complete commands, timing/RSS, sources
+and outputs remain retained. Independent bounded science accepts the component;
+separate package audit covers all 2,466 artifact partitions and every fixture.
+The component profile preserves opcode counts and actual per-program ideal
+modeled clocks of 6,511–6,749, without extrapolating to dataset/full-hash cost.
+
+Publication additions document the exact prepared-image/reciprocal contract;
+the five runtime bindings remain byte-identical to `6f65049c`. The feature PR
+records final publication-head review, hosted CI and normal merge outcome.
+Program preparation, cache initialization, cache service and eight-step item
+control remain external. The next controller/export gap is documented only;
+no next-stage code/job, full-hash/PPA or memory choice follows.

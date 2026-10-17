@@ -1,0 +1,22 @@
+{
+  "schema": "openrx.independent-review-portable-origin.v1",
+  "original_sha256": "696f530702fba9c9ccc53feabef77601141a9f33f30f8eb60cbf418bd784471c",
+  "original_bytes": 12662,
+  "public_sha256": "696f530702fba9c9ccc53feabef77601141a9f33f30f8eb60cbf418bd784471c",
+  "public_bytes": 12662,
+  "method": "Original independent review already uses generic references. Canonical JSON serialization is byte-identical to the original; no prefix or scalar value changed.",
+  "private_alias_map_sha256": "48eeacc1938318bf433e89bc74daf09287e0e3c38af9a538015db4366b2587ba",
+  "alias_tokens": [
+    "@SUPERSCALAR_EXECUTIONS@",
+    "@SUPERSCALAR_SOURCE01@",
+    "@SUPERSCALAR_AUTHOR@",
+    "@SUPERSCALAR_RUNNER@",
+    "@SUPERSCALAR_CODEX_HOME@",
+    "@SUPERSCALAR_HOST_HOME@",
+    "@SUPERSCALAR_TMP@"
+  ],
+  "raw_prefix_values_private": true,
+  "review_scope": "Bounded exact6f component science and actual two local executions; publication head and CI remain separate.",
+  "copy_kind": "verbatim-copy",
+  "substitutions_applied": 0
+}

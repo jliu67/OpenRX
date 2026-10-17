@@ -1,0 +1,44 @@
+{
+  "resource_profile": {
+    "admission": {
+      "allowed_cpus": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "at": "2026-10-16T21:13:24.498005+00:00",
+      "logical_cpus": 6,
+      "memory_bytes": {
+        "MemAvailable": 8558071808,
+        "MemTotal": 16725934080,
+        "SwapFree": 4370468864,
+        "SwapTotal": 8589930496
+      }
+    },
+    "allocation_slack_bytes": 3189362688,
+    "default_rounding_bytes": 268435456,
+    "kernel_memory_max_bytes": 4294967296,
+    "kernel_page_bytes": 4096,
+    "kernel_rounding": "Linux page_counter limits truncate byte requests to whole pages; default 256MiB blocks are page aligned",
+    "memory_cap_bytes": 15032385536,
+    "memory_margin_bytes": 1073741824,
+    "name": "owner-local-max-v1",
+    "rationale": "All six CPUs available; RAM uses measured safe headroom, rounded down in 256MiB blocks for executor fluctuations. Exact known-workload requests must fit the same ceiling. One resource slot remains.",
+    "requested_memory_bytes": 4294967296,
+    "safe_ceiling_bytes": 7484329984,
+    "selected_memory_bytes": 4294967296,
+    "swap_is_reservation": false
+  },
+  "resources": {
+    "CPUQuota": "600%",
+    "MemoryMax": "4294967296",
+    "MemorySwapMax": "2G",
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "TasksMax": 256,
+    "global_slots": 1
+  }
+}

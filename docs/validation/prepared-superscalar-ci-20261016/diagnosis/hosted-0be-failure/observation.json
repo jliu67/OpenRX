@@ -1,0 +1,88 @@
+{
+  "acceptance": false,
+  "actual_checkout_binding": {
+    "api_url": "https://api.github.com/repos/jliu67/OpenRX/git/commits/e69c0d58c6c1706b0499797e9a91815c5a7bdf42",
+    "expected_feature_head": "0beab95f65ffdee5b1b831e2f3c432d152a1ae4d",
+    "observed_at_utc": "2026-10-16T22:07:17.655467+00:00",
+    "parents": [
+      "9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+      "0beab95f65ffdee5b1b831e2f3c432d152a1ae4d"
+    ],
+    "raw_API_response": {
+      "author": {
+        "date": "2026-10-16T21:30:41Z",
+        "email": "166252253+jliu67@users.noreply.github.com",
+        "name": "jliu67"
+      },
+      "committer": {
+        "date": "2026-10-16T21:30:41Z",
+        "email": "noreply@github.com",
+        "name": "GitHub"
+      },
+      "html_url": "https://github.com/jliu67/OpenRX/commit/e69c0d58c6c1706b0499797e9a91815c5a7bdf42",
+      "message": "Merge 0beab95f65ffdee5b1b831e2f3c432d152a1ae4d into 9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+      "node_id": "C_kwDOVARvZNoAKGU2OWMwZDU4YzZjMTcwNmIwNDk5Nzk3ZTlhOTE4MTVjNWE3YmRmNDI",
+      "parents": [
+        {
+          "html_url": "https://github.com/jliu67/OpenRX/commit/9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+          "sha": "9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+          "url": "https://api.github.com/repos/jliu67/OpenRX/git/commits/9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a"
+        },
+        {
+          "html_url": "https://github.com/jliu67/OpenRX/commit/0beab95f65ffdee5b1b831e2f3c432d152a1ae4d",
+          "sha": "0beab95f65ffdee5b1b831e2f3c432d152a1ae4d",
+          "url": "https://api.github.com/repos/jliu67/OpenRX/git/commits/0beab95f65ffdee5b1b831e2f3c432d152a1ae4d"
+        }
+      ],
+      "sha": "e69c0d58c6c1706b0499797e9a91815c5a7bdf42",
+      "tree": {
+        "sha": "e8fe3d1c8bc7d7e9e5f4ebcd8b6a119ac58eed51",
+        "url": "https://api.github.com/repos/jliu67/OpenRX/git/trees/e8fe3d1c8bc7d7e9e5f4ebcd8b6a119ac58eed51"
+      },
+      "url": "https://api.github.com/repos/jliu67/OpenRX/git/commits/e69c0d58c6c1706b0499797e9a91815c5a7bdf42",
+      "verification": {
+        "payload": "tree e8fe3d1c8bc7d7e9e5f4ebcd8b6a119ac58eed51\nparent 9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a\nparent 0beab95f65ffdee5b1b831e2f3c432d152a1ae4d\nauthor jliu67 <166252253+jliu67@users.noreply.github.com> 1792186241 -0500\ncommitter GitHub <noreply@github.com> 1792186241 -0500\n\nMerge 0beab95f65ffdee5b1b831e2f3c432d152a1ae4d into 9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a\n",
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq0peBCRC1aQ7uu5UhlAAAXesQAIJF/6M1+dYOo4nsTPtg/sU/\nGwnwXViZ16xTGDILGyXuSo99J2wDkpclhMGeNkraNZ+thW1AWbBgdiphhs/yP5fF\nWstXyLH0s2gEGkXiqg5vrKmh54ZzmfLyWSg5w1KsdWd4pri0LyE1t+EnbGqzYX0v\nDX/xc9zELZkd2lyjb4RWLaFIxSdG94n6VtrnUA/zKnJorakztCJCwWSxn8ppq0YJ\nWw9Z6qxpDqIhbnJEgkVeyLSucq/+4yH6P/9TE2zETPrXoviQAHgDoCw2PSW0LGxq\nnOIq3Is+Kq8LgiNuBBzG8Q8/JPf/Yq50nHBAQVWtQj/NNE0Mu0Zw8PFcu2CdGBGB\nO6zih1T168h/IRB3iPbgDZwoTwnsZV5T3C9rD6HZnc1CUOUmETchfBs3R1N27ZTi\nzO6dZ9O9CCTeEYnfwfB9W6PJHvTf/jwUpB2QE5qkTsW5LZLr+mAK5ylzYWcnwyqi\nKwrHmXBCb/ekUSnofUg9RZPSGGcHMhLHfrtjcdBdG1om0VROvrv8QItRGlPfjKZl\nx3tkBmBQtiQDn7E9IN05Pha5Tu7LwBrcK956a2hVR9u2Xw67wGY6k83/WZ8RFjLZ\n2EP4+z+tvN+wLtBtnI1+PU+DS8UsuvVr2KxVN9g4O/rzfCiteowaNvOa6JaSqV+N\nU5Y24JjjYIAzjsfrt2DC\n=amlF\n-----END PGP SIGNATURE-----\n",
+        "verified": true,
+        "verified_at": "2026-10-16T21:30:42Z"
+      }
+    },
+    "raw_API_response_sha256": "f9bee763020a2748039847b8882bca6c10f5a3000d8e3ef14e8bb562938f31df",
+    "role": "Actual hosted PR merge checkout source identity, separate from workflow/check head_sha.",
+    "sha": "e69c0d58c6c1706b0499797e9a91815c5a7bdf42",
+    "tree": "e8fe3d1c8bc7d7e9e5f4ebcd8b6a119ac58eed51",
+    "tree_equals_published_feature_tree": true
+  },
+  "boundary": "Hosted timeout remains failure. Feature head and actual PR merge checkout are distinct. Empty timeout logs/time/latency files do not establish no progress or descendant termination. Fixture identity is source evidence only.",
+  "complete_members": 1259,
+  "feature_head": "0beab95f65ffdee5b1b831e2f3c432d152a1ae4d",
+  "fixture_members": 1178,
+  "full_original_archive_retained": true,
+  "job_conclusion": "failure",
+  "netlist_and_stat_identities": {
+    "netlist-superscalar.json": {
+      "bytes": 8638013,
+      "sha256": "46c22f5408a38bb93c4a68c99915aed664d902998864b16081732884c43c11b2"
+    },
+    "netlist-superscalar.v": {
+      "bytes": 1057909,
+      "sha256": "55c506db879724c3a6f6a869c13ef964461188ecafcd56ca8399be83381ac5b2"
+    },
+    "stat-superscalar.txt": {
+      "bytes": 844,
+      "sha256": "1f272ac423a1bff55ad2c19afc046d0c44738d6f75b79e527ba7cf71a9babb01"
+    },
+    "yosys-simcells.v": {
+      "bytes": 87795,
+      "sha256": "d9f51c586c0718ff828ba7740d4e7be3de764bef2c546f0bc52d65594ba90344"
+    }
+  },
+  "original_artifact": {
+    "bytes": 3623168,
+    "sha256": "e4bbcc11629fafd74d365c3fbb99a346bac83981cdda313d6d07e0983c4c2e26"
+  },
+  "run_conclusion": "failure",
+  "run_id": 38969870368,
+  "scientific_acceptance": "unverified"
+}

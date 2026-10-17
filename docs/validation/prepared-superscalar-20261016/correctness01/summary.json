@@ -1,0 +1,2377 @@
+{
+  "correctness_completed": true,
+  "fixtures_unchanged_after_run": true,
+  "mapped": {},
+  "mapped_modes_newly_executed": 0,
+  "mapping": {},
+  "mode_parallelism": 6,
+  "native_cases": 130,
+  "native_library": {
+    "archive_rebuilt_or_modified": false,
+    "build_sha256": "293080fda2fb9bc1f29424c05d5a0e4b26da5142d28398247c4bc3394995c975",
+    "execution": "@SUPERSCALAR_EXECUTIONS@/20261012T013303Z-848c58102f71",
+    "flags_sha256": "db413b693f8ed729e283b5c0fd25ceaf541d825933b89f9d1ff1a84584b8707a",
+    "library": "@SUPERSCALAR_EXECUTIONS@/20261012T013303Z-848c58102f71/build-only/native-build/randomx/librandomx.a",
+    "manifest_sha256": "a619a22a70aa3c9ba291ad348336016d24584bcac624601f34c5332d5bc2872d",
+    "native_source_files_verified": 171,
+    "receipt_sha256": "5a23cd8fe45f59c4a84ccb7a7eee554bcbc94d5dfc4432c2e8530b58c9d050bc",
+    "sha256": "bddb3f9a206b1ec34ca78d3a9b13a9388d7312d6660b7d148d4ed514958fb8d6"
+  },
+  "native_retirements": 7779,
+  "parallelism_scope": "Independent simulations only; immutable fixtures and separate logs/results. Native compilation/generation and synthesis are sequential phases.",
+  "rtl": {
+    "rtl-cancel": {
+      "aborts": 18,
+      "cases": 36,
+      "completed": 18,
+      "cycles": 118701,
+      "errors": 0,
+      "mode": "cancel",
+      "muls": 2781,
+      "program_measurements": [],
+      "record": "PASS superscalar_execute mode=cancel cases=36 completed=18 retired=8037 muls=2781 cycles=118701 errors=0 aborts=18 stale=110754 req_stalls=0 rsp_stalls=36",
+      "req_stalls": 0,
+      "retired": 8037,
+      "rsp_stalls": 36,
+      "selection": "cases-control.hex",
+      "stale": 110754
+    },
+    "rtl-corpus": {
+      "aborts": 0,
+      "cases": 130,
+      "completed": 130,
+      "cycles": 115953,
+      "errors": 0,
+      "mode": "corpus",
+      "muls": 2724,
+      "program_measurements": [
+        {
+          "case": 0,
+          "cycles": 6674,
+          "muls": 158,
+          "retired": 434
+        },
+        {
+          "case": 1,
+          "cycles": 6564,
+          "muls": 153,
+          "retired": 454
+        },
+        {
+          "case": 2,
+          "cycles": 6701,
+          "muls": 158,
+          "retired": 443
+        },
+        {
+          "case": 3,
+          "cycles": 6530,
+          "muls": 152,
+          "retired": 454
+        },
+        {
+          "case": 4,
+          "cycles": 6674,
+          "muls": 158,
+          "retired": 434
+        },
+        {
+          "case": 5,
+          "cycles": 6660,
+          "muls": 156,
+          "retired": 452
+        },
+        {
+          "case": 6,
+          "cycles": 6655,
+          "muls": 157,
+          "retired": 439
+        },
+        {
+          "case": 7,
+          "cycles": 6586,
+          "muls": 154,
+          "retired": 450
+        },
+        {
+          "case": 8,
+          "cycles": 6511,
+          "muls": 151,
+          "retired": 459
+        },
+        {
+          "case": 9,
+          "cycles": 6645,
+          "muls": 156,
+          "retired": 447
+        },
+        {
+          "case": 10,
+          "cycles": 6749,
+          "muls": 161,
+          "retired": 425
+        },
+        {
+          "case": 11,
+          "cycles": 6582,
+          "muls": 153,
+          "retired": 460
+        },
+        {
+          "case": 12,
+          "cycles": 6539,
+          "muls": 152,
+          "retired": 457
+        },
+        {
+          "case": 13,
+          "cycles": 6573,
+          "muls": 153,
+          "retired": 457
+        },
+        {
+          "case": 14,
+          "cycles": 6676,
+          "muls": 157,
+          "retired": 446
+        },
+        {
+          "case": 15,
+          "cycles": 6602,
+          "muls": 155,
+          "retired": 444
+        },
+        {
+          "case": 16,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 17,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 18,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 19,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 20,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 21,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 22,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 23,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 24,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 25,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 26,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 27,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 28,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 29,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 30,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 31,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 32,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 33,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 34,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 35,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 36,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 37,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 38,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 39,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 40,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 41,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 42,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 43,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 44,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 45,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 46,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 47,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 48,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 49,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 50,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 51,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 52,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 53,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 54,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 55,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 56,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 57,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 58,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 59,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 60,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 61,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 62,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 63,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 64,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 65,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 66,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 67,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 68,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 69,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 70,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 71,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 72,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 73,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 74,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 75,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 76,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 77,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 78,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 79,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 80,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 81,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 82,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 83,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 84,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 85,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 86,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 87,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 88,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 89,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 90,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 91,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 92,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 93,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 94,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 95,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 96,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 97,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 98,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 99,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 100,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 101,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 102,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 103,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 104,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 105,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 106,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 107,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 108,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 109,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 110,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 111,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 112,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 113,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 114,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 115,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 116,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 117,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 118,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 119,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 120,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 121,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 122,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 123,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 124,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 125,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 126,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 127,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 128,
+          "cycles": 8608,
+          "muls": 208,
+          "retired": 512
+        },
+        {
+          "case": 129,
+          "cycles": 0,
+          "muls": 0,
+          "retired": 0
+        }
+      ],
+      "record": "PASS superscalar_execute mode=corpus cases=130 completed=130 retired=7779 muls=2724 cycles=115953 errors=0 aborts=0 stale=520 req_stalls=0 rsp_stalls=0",
+      "req_stalls": 0,
+      "retired": 7779,
+      "rsp_stalls": 0,
+      "selection": "cases.hex",
+      "stale": 520
+    },
+    "rtl-exhaustion": {
+      "aborts": 1,
+      "cases": 65535,
+      "completed": 65533,
+      "cycles": 6674,
+      "errors": 1,
+      "mode": "exhaustion",
+      "muls": 158,
+      "program_measurements": [],
+      "record": "PASS superscalar_execute mode=exhaustion cases=65535 completed=65533 retired=434 muls=158 cycles=6674 errors=1 aborts=1 stale=4 req_stalls=0 rsp_stalls=0",
+      "req_stalls": 0,
+      "retired": 434,
+      "rsp_stalls": 0,
+      "selection": "cases-control.hex",
+      "stale": 4
+    },
+    "rtl-held": {
+      "aborts": 0,
+      "cases": 2,
+      "completed": 2,
+      "cycles": 13185,
+      "errors": 0,
+      "mode": "held",
+      "muls": 309,
+      "program_measurements": [],
+      "record": "PASS superscalar_execute mode=held cases=2 completed=2 retired=893 muls=309 cycles=13185 errors=0 aborts=0 stale=8 req_stalls=0 rsp_stalls=0",
+      "req_stalls": 0,
+      "retired": 893,
+      "rsp_stalls": 0,
+      "selection": "cases-control.hex",
+      "stale": 8
+    },
+    "rtl-malformed": {
+      "aborts": 0,
+      "cases": 274,
+      "completed": 1,
+      "cycles": 33760,
+      "errors": 273,
+      "mode": "malformed",
+      "muls": 786,
+      "program_measurements": [],
+      "record": "PASS superscalar_execute mode=malformed cases=274 completed=1 retired=2166 muls=786 cycles=33760 errors=273 aborts=0 stale=1096 req_stalls=0 rsp_stalls=0",
+      "req_stalls": 0,
+      "retired": 2166,
+      "rsp_stalls": 0,
+      "selection": "cases-control.hex",
+      "stale": 1096
+    },
+    "rtl-mapped-corpus": {
+      "aborts": 0,
+      "cases": 116,
+      "completed": 116,
+      "cycles": 23217,
+      "errors": 0,
+      "mode": "corpus",
+      "muls": 549,
+      "program_measurements": [
+        {
+          "case": 0,
+          "cycles": 6674,
+          "muls": 158,
+          "retired": 434
+        },
+        {
+          "case": 8,
+          "cycles": 6511,
+          "muls": 151,
+          "retired": 459
+        },
+        {
+          "case": 16,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 17,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 18,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 19,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 20,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 21,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 22,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 23,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 24,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 25,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 26,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 27,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 28,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 29,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 30,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 31,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 32,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 33,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 34,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 35,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 36,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 37,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 38,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 39,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 40,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 41,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 42,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 43,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 44,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 45,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 46,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 47,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 48,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 49,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 50,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 51,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 52,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 53,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 54,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 55,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 56,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 57,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 58,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 59,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 60,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 61,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 62,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 63,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 64,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 65,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 66,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 67,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 68,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 69,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 70,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 71,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 72,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 73,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 74,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 75,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 76,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 77,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 78,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 79,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 80,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 81,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 82,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 83,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 84,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 85,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 86,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 87,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 88,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 89,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 90,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 91,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 92,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 93,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 94,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 95,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 96,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 97,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 98,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 99,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 100,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 101,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 102,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 103,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 104,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 105,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 106,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 107,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 108,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 109,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 110,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 111,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 112,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 113,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 114,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 115,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 116,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 117,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 118,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 119,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 120,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 121,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 122,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 123,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 124,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 125,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 126,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 127,
+          "cycles": 37,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 128,
+          "cycles": 8608,
+          "muls": 208,
+          "retired": 512
+        },
+        {
+          "case": 129,
+          "cycles": 0,
+          "muls": 0,
+          "retired": 0
+        }
+      ],
+      "record": "PASS superscalar_execute mode=corpus cases=116 completed=116 retired=1517 muls=549 cycles=23217 errors=0 aborts=0 stale=464 req_stalls=0 rsp_stalls=0",
+      "req_stalls": 0,
+      "retired": 1517,
+      "rsp_stalls": 0,
+      "selection": "cases-mapped.hex",
+      "stale": 464
+    },
+    "rtl-radix0-corpus": {
+      "aborts": 0,
+      "cases": 116,
+      "completed": 116,
+      "cycles": 5649,
+      "errors": 0,
+      "mode": "corpus",
+      "muls": 549,
+      "program_measurements": [
+        {
+          "case": 0,
+          "cycles": 1618,
+          "muls": 158,
+          "retired": 434
+        },
+        {
+          "case": 8,
+          "cycles": 1679,
+          "muls": 151,
+          "retired": 459
+        },
+        {
+          "case": 16,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 17,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 18,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 19,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 20,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 21,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 22,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 23,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 24,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 25,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 26,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 27,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 28,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 29,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 30,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 31,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 32,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 33,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 34,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 35,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 36,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 37,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 38,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 39,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 40,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 41,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 42,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 43,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 44,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 45,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 46,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 47,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 48,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 49,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 50,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 51,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 52,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 53,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 54,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 55,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 56,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 57,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 58,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 59,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 60,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 61,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 62,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 63,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 64,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 65,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 66,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 67,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 68,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 69,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 70,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 71,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 72,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 73,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 74,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 75,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 76,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 77,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 78,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 79,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 80,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 81,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 82,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 83,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 84,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 85,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 86,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 87,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 88,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 89,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 90,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 91,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 92,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 93,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 94,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 95,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 96,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 97,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 98,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 99,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 100,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 101,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 102,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 103,
+          "cycles": 3,
+          "muls": 0,
+          "retired": 1
+        },
+        {
+          "case": 104,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 105,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 106,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 107,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 108,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 109,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 110,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 111,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 112,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 113,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 114,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 115,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 116,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 117,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 118,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 119,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 120,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 121,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 122,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 123,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 124,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 125,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 126,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 127,
+          "cycles": 5,
+          "muls": 1,
+          "retired": 1
+        },
+        {
+          "case": 128,
+          "cycles": 1952,
+          "muls": 208,
+          "retired": 512
+        },
+        {
+          "case": 129,
+          "cycles": 0,
+          "muls": 0,
+          "retired": 0
+        }
+      ],
+      "record": "PASS superscalar_execute mode=corpus cases=116 completed=116 retired=1517 muls=549 cycles=5649 errors=0 aborts=0 stale=464 req_stalls=0 rsp_stalls=0",
+      "req_stalls": 0,
+      "retired": 1517,
+      "rsp_stalls": 0,
+      "selection": "cases-mapped.hex",
+      "stale": 464
+    },
+    "rtl-reset": {
+      "aborts": 18,
+      "cases": 36,
+      "completed": 18,
+      "cycles": 118665,
+      "errors": 0,
+      "mode": "reset",
+      "muls": 2781,
+      "program_measurements": [],
+      "record": "PASS superscalar_execute mode=reset cases=36 completed=18 retired=8037 muls=2781 cycles=118665 errors=0 aborts=18 stale=72 req_stalls=0 rsp_stalls=0",
+      "req_stalls": 0,
+      "retired": 8037,
+      "rsp_stalls": 0,
+      "selection": "cases-control.hex",
+      "stale": 72
+    },
+    "rtl-stale": {
+      "aborts": 0,
+      "cases": 2,
+      "completed": 2,
+      "cycles": 13193,
+      "errors": 0,
+      "mode": "stale",
+      "muls": 309,
+      "program_measurements": [],
+      "record": "PASS superscalar_execute mode=stale cases=2 completed=2 retired=893 muls=309 cycles=13193 errors=0 aborts=0 stale=12302 req_stalls=6 rsp_stalls=2",
+      "req_stalls": 6,
+      "retired": 893,
+      "rsp_stalls": 2,
+      "selection": "cases-control.hex",
+      "stale": 12302
+    },
+    "rtl-stalled": {
+      "aborts": 0,
+      "cases": 2,
+      "completed": 2,
+      "cycles": 17649,
+      "errors": 0,
+      "mode": "stalled",
+      "muls": 309,
+      "program_measurements": [
+        {
+          "case": 0,
+          "cycles": 8843,
+          "muls": 158,
+          "retired": 434
+        },
+        {
+          "case": 8,
+          "cycles": 8806,
+          "muls": 151,
+          "retired": 459
+        }
+      ],
+      "record": "PASS superscalar_execute mode=stalled cases=2 completed=2 retired=893 muls=309 cycles=17649 errors=0 aborts=0 stale=8 req_stalls=1786 rsp_stalls=2678",
+      "req_stalls": 1786,
+      "retired": 893,
+      "rsp_stalls": 2678,
+      "selection": "cases-control.hex",
+      "stale": 8
+    }
+  },
+  "rtl_modes_newly_executed": 10,
+  "scope": "One externally prepared native superscalar program; host program/table preparation remains external. No cache/Argon/dataset allocation, full-hash performance, physical PPA or architecture selection.",
+  "source_head": "6f65049c32e5e065a711d105cf2eb42204ed2285",
+  "source_unchanged_after_run": true,
+  "status": "pass_correctness"
+}

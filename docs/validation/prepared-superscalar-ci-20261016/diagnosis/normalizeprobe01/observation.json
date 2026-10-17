@@ -1,0 +1,56 @@
+{
+  "acceptance": false,
+  "arms": {
+    "normalized-hosted": {
+      "acceptance": false,
+      "last_progress": {
+        "aborts": 1,
+        "case": 0,
+        "cases": 2,
+        "commits": 0,
+        "completed": 0,
+        "event_flags": 2,
+        "fetch_pc": 0,
+        "mode": "reset",
+        "pending": 0,
+        "phase": 1,
+        "pre_cancel": 0,
+        "pre_rst": 0,
+        "requests": 0,
+        "responses": 0,
+        "retired": 0,
+        "run_ticks": 0,
+        "settled_ticks": 46,
+        "step_calls": 0,
+        "target": 1,
+        "time_ns": 457
+      },
+      "outcome": "DIAGNOSTIC_PARTIAL_WALL_LIMIT"
+    }
+  },
+  "boundary": "One ordinary proc/techmap RESET-prefix experiment in the current binary-control prepared-program domain, using four-state Icarus and unchanged assertions. No arbitrary X/Z equivalence, native generation, full synthesis, full-mode repeat or scientific acceptance.",
+  "complete_validation": false,
+  "execution_id": "20261016T233427Z-f2e3247583c0",
+  "interpretation": "Bounded partial observation only. Normalization result does not support adopting the transform as a fix. Driver/command exit zero is not full validation PASS.",
+  "normalization_is_a_validated_fix": false,
+  "original_runner_status": "PROCESS_EXITED",
+  "raw_manifest": {
+    "bytes": 1058425,
+    "sha256": "df52a87d65d3f3218b79524198876a1ea581979f57dfbc74890d71cb83802bb3"
+  },
+  "raw_receipt": {
+    "bytes": 7030,
+    "sha256": "dec3ce485018d25dda8ca54d419be766162282f658fa70be918447bf6230d7d1"
+  },
+  "raw_request": {
+    "bytes": 10745,
+    "sha256": "6fcb416ef4e5c583d30566060d6cab609b072b614efb50f8c034bd062976419e"
+  },
+  "raw_root_verify": {
+    "bytes": 155,
+    "sha256": "622ac58c7def2113d445332b0d212e204dfedd2c87de6fb24be9be985fe778d0"
+  },
+  "raw_summary_status": "DIAGNOSTIC_PARTIAL_OBSERVATION_ONLY",
+  "returncode": 0,
+  "scientific_acceptance": "unverified"
+}

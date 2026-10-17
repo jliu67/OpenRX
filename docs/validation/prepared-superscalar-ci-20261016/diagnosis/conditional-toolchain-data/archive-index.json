@@ -1,0 +1,136 @@
+{
+  "archive": {
+    "bytes": 23833,
+    "sha256": "8f9abeec75c954d77252a341a131e41de0e396a10c3ad119d70df70e44efc5ee"
+  },
+  "determinism": {
+    "compression": "deflate9",
+    "mode": "100644",
+    "order": "lexical",
+    "python": "3.10.12",
+    "repeat_byte_equal": true,
+    "timestamp": "1980-01-01T00:00:00",
+    "zlib": "1.2.11"
+  },
+  "entries": {
+    "coverage.json": {
+      "bytes": 3,
+      "origin": {
+        "derivation": "Complete disjoint selected/retained-only partition within each explicitly named original scope.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3"
+      },
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+    },
+    "observation.json": {
+      "bytes": 299,
+      "origin": {
+        "derivation": "Existing diagnostic result classification only; no PASS or scientific acceptance added.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3"
+      },
+      "sha256": "cddc5bfe29822ca2fe54abe4bb3879597447c0e4fc0b543646b3d6f7d9d5851c"
+    },
+    "support/local-apt-and-installed-provenance.json": {
+      "bytes": 8740,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_kind": "conditional method or official package identity data only; not a validation result",
+        "original_path_alias": "@RXDIAG_TMP@/openrx-superscalar-toolchain-pin-data02/local-apt-and-installed-provenance.json",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3",
+        "raw": {
+          "bytes": 8724,
+          "sha256": "41426096f8cbe61402109bcc394c928ddde35e04f3b7b21ad60ec65c4c7dbffe"
+        },
+        "transform": "typed-json-string-prefix-alias-canonical-serialization"
+      },
+      "sha256": "66cdd89595985b6d18abc83aa59589e5d305dee6030df0c6674aebad9e5bb7ce"
+    },
+    "support/official-package-payload-comparison.json": {
+      "bytes": 68244,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_kind": "conditional method or official package identity data only; not a validation result",
+        "original_path_alias": "@RXDIAG_TMP@/openrx-superscalar-toolchain-pin-data02/official-package-payload-comparison.json",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3",
+        "raw": {
+          "bytes": 68220,
+          "sha256": "4660b65bbe3f8ebde92a240464d103853f203abc2f731103b4fec09fb72b0729"
+        },
+        "transform": "typed-json-string-prefix-alias-canonical-serialization"
+      },
+      "sha256": "1e7fa19d47d8eed00fe1fcb2bfc3817ac7aaca3bca4c6da9644bcd211307e3a4"
+    },
+    "support/openrx-superscalar-ci-toolchain-method-review.json": {
+      "bytes": 5655,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_kind": "conditional method or official package identity data only; not a validation result",
+        "original_path_alias": "@RXDIAG_TMP@/openrx-superscalar-ci-toolchain-method-review.json",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3",
+        "raw": {
+          "bytes": 5655,
+          "sha256": "c334b99c8d048df6d22a022e7b2dd09e79c6001150359fe5068cb21683fc2314"
+        },
+        "transform": "identity"
+      },
+      "sha256": "c334b99c8d048df6d22a022e7b2dd09e79c6001150359fe5068cb21683fc2314"
+    },
+    "support/openrx-superscalar-official-ubuntu2204-manifest.json": {
+      "bytes": 12454,
+      "origin": {
+        "byte_identical_copy": true,
+        "kind": "verbatim-copy",
+        "original_kind": "conditional method or official package identity data only; not a validation result",
+        "original_path_alias": "@RXDIAG_TMP@/openrx-superscalar-official-ubuntu2204-manifest.json",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3",
+        "raw": {
+          "bytes": 12454,
+          "sha256": "4cc66c153d797d83c5e9b82ebf6ca0a12cdfeffff7e0a2b2cbfcc67e4fbfc7a9"
+        },
+        "transform": "identity"
+      },
+      "sha256": "4cc66c153d797d83c5e9b82ebf6ca0a12cdfeffff7e0a2b2cbfcc67e4fbfc7a9"
+    },
+    "support/openrx-superscalar-toolchain-focused-checks03.json": {
+      "bytes": 1284,
+      "origin": {
+        "byte_identical_copy": false,
+        "kind": "derived-portable-copy",
+        "original_kind": "root current cheap static/negative identity checks03; not a container or scientific result",
+        "original_path_alias": "@RXDIAG_TMP@/openrx-superscalar-toolchain-focused-checks03.json",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3",
+        "raw": {
+          "bytes": 1284,
+          "sha256": "d2dfabf4512d36585d313819fc5b12c4aa6bd384fb14b1757a59e10836869232"
+        },
+        "transform": "typed-json-string-prefix-alias-canonical-serialization"
+      },
+      "sha256": "b7f6507f1ebc2acb05905ef8b1a9407b17dacd075c6bd2af2cab24924cce5783"
+    },
+    "transform-policy.json": {
+      "bytes": 2385,
+      "origin": {
+        "derivation": "Exact transformation contract.",
+        "kind": "derived-metadata",
+        "private_alias_map_sha256": "58f7bf5f831a1e02ddd2090efadee5b0cbae71cd3ccbf26e99713c393b46c3c3"
+      },
+      "sha256": "d00b7a41a79432aad3c8598181418497c5a9cd279b556e18c93d6cef3a613174"
+    }
+  },
+  "entry_count": 8,
+  "ordered_entries": [
+    "coverage.json",
+    "observation.json",
+    "support/local-apt-and-installed-provenance.json",
+    "support/official-package-payload-comparison.json",
+    "support/openrx-superscalar-ci-toolchain-method-review.json",
+    "support/openrx-superscalar-official-ubuntu2204-manifest.json",
+    "support/openrx-superscalar-toolchain-focused-checks03.json",
+    "transform-policy.json"
+  ],
+  "schema": "openrx.diagnostic-archive-index.v1"
+}

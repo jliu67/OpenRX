@@ -1,0 +1,174 @@
+{
+  "acceptance_limits": [
+    "Bounded prepared component only. Host program/reciprocal preparation, immutableinstruction storage/service and arbitration remain external.",
+    "No cache/Argon allocation,cache-line service,eight-program dataset-item controller/address/XORrecurrence,finaldatasetresponse or integrated lifecycle acceptance.",
+    "No full8x2048 hash measurement, full-hash performance derivation, physical frequency/PPA/energy/process or whole-machine efficiency claim; no memorytechnology or architecture selection.",
+    "Public compact packaging,metadata-only publication successor,hostedCI and normalmergegate remain separate reviews; no publication/merge clearance here."
+  ],
+  "actions": "Read-only source,actualreceipts/artifacts/PASS/fixtures/nativeandmappedcoupling/counterprofile/docs inspection; only requested independentreview/prooffiles written. No source/original edits,newtest/native/sim/synthesis/workload,execution/publication/issue/merge.",
+  "actual_correctness_execution": {
+    "RTL_modes": 10,
+    "actual_receipt_artifact_bytes_verified": 1238,
+    "commands_rc0": 14,
+    "current_source_input_hashes_verified": 178,
+    "fixture_file_bytes_verified": 1178,
+    "id": "20261016T210802Z-d50e99dbfb16",
+    "manifest_sha256": "6da3cb365c3b505a507a49d4a499c203749d22224738aa53a90d43bfb9d76032",
+    "mapped_modes": 0,
+    "native_cases": 130,
+    "native_retirements": 7779,
+    "raw_runner_scientific_acceptance": "unverified",
+    "receipt_sha256": "f7598ff088d64e4be511cc9c6e8d89a5e67a14c9b1c591856757e5aea058e060",
+    "returncode": 0,
+    "root_integrity_verified": true,
+    "root_verify_sha256": "3a78584de4d6cf3b4c9ba91922f33b59857464099dd8b2afe422cc474fa3be30",
+    "scope": "Separate bounded scientific acceptance here does not modify or normalize immutable runner scientific_acceptance.",
+    "status_in_actual_summary": "pass_correctness",
+    "summary_sha256": "55faf19e62880f0856fab3377535a16e017caf7255953c0903847b2fbc2c7133",
+    "terminal_status": "PROCESS_EXITED"
+  },
+  "actual_generic_mapping": {
+    "MUL_RADIX4": 1,
+    "flop_cells": 1410,
+    "latch_cells": 0,
+    "num_cells": 19604,
+    "num_cells_by_type": {
+      "$_ANDNOT_": 2557,
+      "$_AND_": 380,
+      "$_AOI3_": 1024,
+      "$_AOI4_": 94,
+      "$_DFF_P_": 1410,
+      "$_MUX_": 7348,
+      "$_NAND_": 129,
+      "$_NOR_": 279,
+      "$_NOT_": 1776,
+      "$_OAI3_": 1060,
+      "$_OAI4_": 674,
+      "$_ORNOT_": 201,
+      "$_OR_": 1202,
+      "$_XNOR_": 539,
+      "$_XOR_": 931
+    },
+    "scope": "Actual prepared program executor and multiplier; excludes external program/table generation/service and cache/dataset/physical implementation.",
+    "top": "randomx_superscalar_execute"
+  },
+  "actual_synthesis_execution": {
+    "actual_receipt_artifact_bytes_verified": 1228,
+    "commands_rc0": 9,
+    "current_input_hashes_verified": 178,
+    "fixture_file_bytes_verified": 1178,
+    "id": "20261016T211324Z-b1d24eb3f1fe",
+    "manifest_sha256": "7069e13dea4e314dd09c0bfeec5e668a128ac6c28585678b88aaf5835d054cec",
+    "mapped_compile_invocations": 1,
+    "mapped_modes": 7,
+    "new_native_or_RTL_modes": 0,
+    "raw_runner_scientific_acceptance": "unverified; preserved unchanged. This report supplies a separate bounded scientific assessment, not a rewrite of runner records.",
+    "receipt_sha256": "27591eb90d4e8f06d90dca641d830a1f9c9fd35dd57c656a7b93e4db05c2231c",
+    "returncode": 0,
+    "root_integrity_verified": true,
+    "root_verify_sha256": "a691a52b7e27a24af8398ef8216f9c4027abdd02382757eb5debd81b194eb597",
+    "status": "PROCESS_EXITED",
+    "summary_sha256": "751b9d550dcd1f921e9d0be8bb7502d54f03a44eb06fb2bc8f1ab3e8b736b5eb",
+    "synthesis_invocations": 1,
+    "validated_reuse": "Externally pinned original receipt f7598ff0... plus actual bound summary/inputs/coverage/fixturehashes and every consumedfixture checked beforecopy.1178copiedfixtures,178inputs and original tenRTL resultrecords match exactly. Neither nativeoracle nor completedRTL reran."
+  },
+  "blocking_findings": [],
+  "counter_and_component_profile": {
+    "abort_scope": "Cancel/reset aggregatecycles/retired/muls count finish_request returnedrequests; checked aborted-prefixwork isexcluded. Do not infer whole-simulation or whole-machinecost from controlaggregates.",
+    "actual_profile_sha256": "10ad160babb3114b592900fc62699e3fedf996fe8899175098ef7241d04723f9",
+    "all16_realprogram_rows_match_actual_native_counts_and_RTL_perprogram_measurements": true,
+    "default_equation": "3*retired+34*muls; full130115953=3*7779+34*2724;116subset23217=3*1517+34*549.",
+    "default_ideal_realprogram_availability_clocks_range": [
+      6511,
+      6749
+    ],
+    "direct_equation": "3*retired+2*muls, measuredonly116subset5649. Unmeasured realprogramdirectrowsremainnull.",
+    "profile_status": "Profile observed is dated correctness_measured_synthesis_and_final_acceptance_pending; actual synthesis acceptance is supplied separately by this final report. No profile file modified by reviewer.",
+    "stalls": "Actual2programstalled17649=13185ideal+1786requeststalls+2678responsestalls, eachonce. Descriptoradmissionedge and heldRETURN clocks excluded; empty/rejecteddescriptors0."
+  },
+  "mapped_validation": {
+    "all7_actual_PASS_records_summary_rows_and_latency_files_byteequal_corresponding_retained_RTL": true,
+    "availability_cycles": 23217,
+    "cases": 116,
+    "coupling": "ActualYosys emittednetlist plus exactboundcopiedsimcells and unchanged frozen assertionbench compiled. Nativegold remains assertions; everycommit/final/cycle/control gate active.",
+    "limits": "No mappedexhaustion run, no directvariantmapping, no full130mappedcorpus claim.",
+    "modes": [
+      "corpus",
+      "stalled",
+      "held",
+      "malformed",
+      "stale",
+      "cancel",
+      "reset"
+    ],
+    "multiplies": 549,
+    "retirements": 1517,
+    "selection": "112opcodecorners+actualcompleteprograms0and8+crafted512+empty. Six control modes use actualprograms0and8."
+  },
+  "mapping_provenance": {
+    "actual_JSON_celltypes_and_stat_count_agree": true,
+    "actual_cellmodel_sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+    "actual_netlistJSON_sha256": "4643ced6018cb1967bc7ccc1784f946173c5f9b63faf86174b0ed9fc0b144b54",
+    "actual_netlist_sha256": "0c0f30635533d7cd038e2d4413efe096be281948852cb145e8ec06430e6e8fc4",
+    "actual_stat_sha256": "aa5d0db67f63863da43d1ce441cb38951fddd50bd4b44c087183cec257929f9a",
+    "check_assert_reports_zero_problems": true,
+    "tool": "Yosys0.9 git1979e0b; generic synth-flatten/check-assert, not physical technology mapping",
+    "yosys_sha256": "dab84e88b53146fe22d675a142de32b1e545ee9b7fe1054238f6220245b24c8d"
+  },
+  "native_and_RTL_validation": {
+    "RTL_modes": "Ten actual jobs: default iterative full130corpus,116subset,stalled,held,malformed,stale,cancel,reset,real65535admission exhaustion; direct MUL_RADIX4=0 only116subset. All14commandsrc0,ten matchingPASSrecords and noFAIL/FATAL.",
+    "coverage": "All14opcodes,all4shifts,rotate0..63,immediate sign classes,all operand-reading aliases,ignoredsrc255,maximumcount and globalRCPwidth association. No Python arithmetic oracle. Every retirement checks full512-bit native postinstruction registerstate; final/selected/prefix/count/error behavior checked.",
+    "intentional_error_rows": "Malformed mode contains273expectederrors, thenfreshnormalcompletion. Exhaustion includesoneinvalid+onecancel descriptor beforelastrealnativeprogramcompletion; these expected outcomes are not failures.",
+    "native_corpus": "130cases=16actualcompleteprograms from2continuous8-program seed contexts+112oneopcodecorners+crafted512+empty;7779 native postinstruction steps. Full preparedtable execution, originaldivisor raw execution and singletontrace agree in nativeoracle. Actualtables243/228entries plus explicitlyhandbuilt65538-entry widthcontext.",
+    "provider_separation": "Live provider uses prepared input instruction/reciprocal vectors and explicit fault injections only. Native intermediate/final register gold is assertion-only. Ambient stale packets cannot overwrite trackedpendingresponses."
+  },
+  "pinned_semantics_acceptance": {
+    "native_pin": {
+      "actual_vendor_files_verified": 171,
+      "commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+      "tag": "v2.0.1"
+    },
+    "operation": "One already prepared program on eight uint64 registers, instruction count0..512 and address register0..7. All14 native superscalar opcode bytes, raw little-endian instruction packing, alias semantics, modulo64-bit arithmetic, signextended32-bit constants, IADD_RS modifier shift, IROR0..63, low/unsignedhigh/signedhigh products align with pinned executeSuperscalar.",
+    "prepared_reciprocal": "Full32-bit prepared index and count with supplied64-bit value; table indices are global per eight-program seed context. Index0/1/2/4 are valid prepared entries, not raw divisors. Service association is checked; arbitrary external supplied value correctness and host preparation remain trusted-input responsibilities.",
+    "transport_lifecycle": "One outstanding held fetch,32-bit generation/usertag service identity plus epoch/PC checks, stale drain without commit, matching earlyresponse held until accepted request, malformed/error failbeforeaffectedretirement, prefixresults/selectedzeroonerror, heldresult/counters, sampled cancel resetting sharedmul, no stalecommit. Realgenerationffff completeslastacceptedprogram and failcloses furtheradmission; fullresetrequires externallyquiescentprovider."
+  },
+  "preserved_reviews_sha256": [
+    "a93fdb1f9a3b1deac8257e395c9db29b2836fd52041ae299a9d2a7874a909539",
+    "74374ced5fc158543b886f48f70e5fa5cea461fdade8de2d5d9837c1b48e069a",
+    "2b4c51d84bbed1bfc8094f4795256242923e27056d683d4dbec52d00b2dd7093",
+    "d1a02f8f2fdb03e95736c87d1ad48c562db9c02e1b4509ad3f834f9c6f88f4d5",
+    "5dd633fd3403c3af951b79cf4faaa337f4ecd58edd0879924478025c2c948356"
+  ],
+  "resource_and_integrity": {
+    "actual_command_resources": "Synthesis44.224seconds/344788KiBpeakRSS; mappedcompile1.221seconds/97320KiBpeak; individualmappedmode elapsed30.8..238.6seconds and atmost33152KiBpeak. These are executor command observations, not physical hardware time or whole-payload memory sums.",
+    "both_actual_named_service_kernel_checks": "safe=true,production_enforced=true,errors=[]; CPU600000/100000,RAM4294967296,swap2147483648,Tasks256,allowedCPUs0..5; visibleancestorsnotighter.",
+    "preservation": "Original receipts,manifests,rawscience_unverifiedstatus,source,inputfixtures,commands,logs,latencyrecords,stat/netlists/model unchanged. Both output inventories complete and actualreceiptbound.",
+    "synthesis_kernelcheck_sha256": "3f3f1049c1aa580aba6723bd41c272a016a5acf5818812bfa385637346957f50"
+  },
+  "result": "accepted_bounded_prepared_superscalar_executor_code_native_RTL_mapped_evidence",
+  "reviewed_at_utc": "2026-10-16T21:21:57.438035+00:00",
+  "reviewer": "Independent merge_gate_review agent; separate provider_ledger_review checked actual native/RTL/mapped ledgers and mapping.",
+  "schema": "openrx.prepared-superscalar.independent-scientific-review.v1",
+  "source": {
+    "all_actual_bytes_modes_complete_membership_and_both_execution_source_rows_verified": true,
+    "author_observation": "At review time all five runtime files in @AUTHOR@ are byteexact with @SOURCE01@; only tracked delta is SUPERSCALAR.md port/counter clarification. No final publication metadata head is accepted by this report.",
+    "base": "9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+    "clean": true,
+    "files": 4718,
+    "full_source_identity_sha256": "0fc0f7acc491d9afce219893fbb52131dc684d03781da2dc247edda81bfe439f",
+    "head": "6f65049c32e5e065a711d105cf2eb42204ed2285",
+    "logical_snapshot": "@SOURCE01@",
+    "runtime_bindings": {
+      "rtl/execute/randomx_mul64.v": "e0a42d6005fac370cb431fd8cdb0cfe8138a8260306b57a0ee428743569d1b0f",
+      "rtl/execute/randomx_superscalar_execute.v": "9c66895aa41a75ae313113d58e63564d5ed9093de10570755f1f161f4fabd24b",
+      "rtl/execute/tests/superscalar_oracle.cpp": "87903992307cff10c2495993942381f3805e73de1757e38422ac84c8bc0fee6e",
+      "rtl/execute/tests/tb_superscalar_execute.v": "33d7cc3396edf08f3a3e0827a5178ee18a366d19e9438e024e9dc60ea224fd24",
+      "scripts/test_superscalar_execute.py": "a89e73f513c3806746fbbac37b3a4fdcb8cf98feb9fa45d1ad641cd3f46dfbd7"
+    },
+    "tree": "19ac91c6bbcab959cfeae9fc1305ff137d9fdf3a"
+  },
+  "supporting_actual_proof": {
+    "logical_path": "@TMP@/openrx-superscalar-final-actual-evidence-proof.json",
+    "sha256": "d22df68837c5a04482079a2185d89ee5ec5460fdb0e3b0e862ae6e9898246b58"
+  }
+}

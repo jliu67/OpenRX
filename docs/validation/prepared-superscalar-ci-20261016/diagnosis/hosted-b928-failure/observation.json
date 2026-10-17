@@ -1,0 +1,84 @@
+{
+  "acceptance": false,
+  "actual_checkout_binding": {
+    "actual_CI_merge_checkout": "9a3330bc2bc7ef79c59f8de06f49961a34d74e35",
+    "observed_at_utc": "2026-10-16T22:58:16.334244+00:00",
+    "parents": [
+      "9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+      "b9283fde8d109cf2a3deafc6dec1fde2137aa9cd"
+    ],
+    "raw_API_response": {
+      "author": {
+        "date": "2026-10-16T22:11:08Z",
+        "email": "166252253+jliu67@users.noreply.github.com",
+        "name": "jliu67"
+      },
+      "committer": {
+        "date": "2026-10-16T22:11:08Z",
+        "email": "noreply@github.com",
+        "name": "GitHub"
+      },
+      "html_url": "https://github.com/jliu67/OpenRX/commit/9a3330bc2bc7ef79c59f8de06f49961a34d74e35",
+      "message": "Merge b9283fde8d109cf2a3deafc6dec1fde2137aa9cd into 9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+      "node_id": "C_kwDOVARvZNoAKDlhMzMzMGJjMmJjN2VmNzljNTlmOGRlMDZmNDk5NjFhMzRkNzRlMzU",
+      "parents": [
+        {
+          "html_url": "https://github.com/jliu67/OpenRX/commit/9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+          "sha": "9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a",
+          "url": "https://api.github.com/repos/jliu67/OpenRX/git/commits/9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a"
+        },
+        {
+          "html_url": "https://github.com/jliu67/OpenRX/commit/b9283fde8d109cf2a3deafc6dec1fde2137aa9cd",
+          "sha": "b9283fde8d109cf2a3deafc6dec1fde2137aa9cd",
+          "url": "https://api.github.com/repos/jliu67/OpenRX/git/commits/b9283fde8d109cf2a3deafc6dec1fde2137aa9cd"
+        }
+      ],
+      "sha": "9a3330bc2bc7ef79c59f8de06f49961a34d74e35",
+      "tree": {
+        "sha": "f45cb46d67b2f225ed52ab91a45f79ac3728f222",
+        "url": "https://api.github.com/repos/jliu67/OpenRX/git/trees/f45cb46d67b2f225ed52ab91a45f79ac3728f222"
+      },
+      "url": "https://api.github.com/repos/jliu67/OpenRX/git/commits/9a3330bc2bc7ef79c59f8de06f49961a34d74e35",
+      "verification": {
+        "payload": "tree f45cb46d67b2f225ed52ab91a45f79ac3728f222\nparent 9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a\nparent b9283fde8d109cf2a3deafc6dec1fde2137aa9cd\nauthor jliu67 <166252253+jliu67@users.noreply.github.com> 1792188668 +0000\ncommitter GitHub <noreply@github.com> 1792188668 +0000\n\nMerge b9283fde8d109cf2a3deafc6dec1fde2137aa9cd into 9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a\n",
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq0qD8CRC1aQ7uu5UhlAAAZDcQAADR5QZbKnbK8ISB6ce/jIL9\nPbeO3nM2HGmE6k7C4YBDLUej7GPu5O9TSLSU6V469UUzGLLa+pHPiw0z5j+QMDa1\noPp4eCDKhY2fgyrLrXxjO3D/kSxCN19M/I4viKGV0uA0ReTWro32sB5sfjPl6aIs\nyZsN/nzQ76F+v5c/DbDAUjgf4mAfo4dfQkH5XzV8WMKzVqW1WNWOmpMTiFW5bb4k\n1+EeTYX0aeBoKNwOh2mEDsd6wwzIavuTIRi4FRreLCbtQusTa63lhfib5SgSDDpw\nuZeDE/PzQFd4QJ66K9B1eyfodt+4Sqlh4lpoD/2OO0mPr0XXQgElYY++XwuPQs63\nF2NDZh+aWp6gXHjiUKC0VsLOdFauUT9jjktCNf6qqBY5RbZJQhtxu9bBRr8X5NHa\ntMSo8X3e54ORMugXl0UyHIhOSvHb4gZKETt622d1C92GIQr4ctp8ufyzU+uG/Arb\n+4ZPifIASEzuEQU37akRMrMYcw0P7sEHsiymGCjimc9zAA6PuzhN3X9AUHezI2Rc\n71I3EYm2hamD4Us/OrU8aZK1AKBxZkJ9THCpJrOMrsTIlul4xXoSSa4jeifqnd+x\n9FAN+md652GJQvbMEhN34DLK2dNVJofxU5/i/nfV8b3BgWEtMDepv1vcT1EoYNAA\nQYBSJ1NcuFaf2rM5DH9t\n=Nip+\n-----END PGP SIGNATURE-----\n",
+        "verified": true,
+        "verified_at": "2026-10-16T22:11:09Z"
+      }
+    },
+    "tree": "f45cb46d67b2f225ed52ab91a45f79ac3728f222",
+    "tree_equals_published_feature_tree": true
+  },
+  "boundary": "Hosted timeout remains failure. Feature head and actual PR merge checkout are distinct. Empty timeout logs/time/latency files do not establish no progress or descendant termination. Fixture identity is source evidence only.",
+  "complete_members": 1259,
+  "feature_head": "b9283fde8d109cf2a3deafc6dec1fde2137aa9cd",
+  "fixture_members": 1178,
+  "full_original_archive_retained": true,
+  "job_conclusion": "failure",
+  "netlist_and_stat_identities": {
+    "netlist-superscalar.json": {
+      "bytes": 8638013,
+      "sha256": "46c22f5408a38bb93c4a68c99915aed664d902998864b16081732884c43c11b2"
+    },
+    "netlist-superscalar.v": {
+      "bytes": 1057909,
+      "sha256": "55c506db879724c3a6f6a869c13ef964461188ecafcd56ca8399be83381ac5b2"
+    },
+    "stat-superscalar.txt": {
+      "bytes": 844,
+      "sha256": "1f272ac423a1bff55ad2c19afc046d0c44738d6f75b79e527ba7cf71a9babb01"
+    },
+    "yosys-simcells.v": {
+      "bytes": 87795,
+      "sha256": "d9f51c586c0718ff828ba7740d4e7be3de764bef2c546f0bc52d65594ba90344"
+    }
+  },
+  "original_artifact": {
+    "bytes": 3623711,
+    "sha256": "fc2b5cb1aaa6457c22b1df64593d0e8b5515280122ba100946c780d60ad4e2b9"
+  },
+  "run_conclusion": "failure",
+  "run_id": 38974202910,
+  "scientific_acceptance": "unverified"
+}

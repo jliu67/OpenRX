@@ -1,0 +1,33 @@
+{
+  "archive_entries": 54,
+  "full_mode_acceptance": false,
+  "index_self_excluded": true,
+  "package": "normalizeprobe01",
+  "public_files": {
+    "archive-index.json": {
+      "bytes": 40959,
+      "sha256": "28f919e45a5ccc2fc4ca6b1c68f969fd44b7a3d1844f160acadf37eb1618dbac"
+    },
+    "coverage.json": {
+      "bytes": 8983,
+      "sha256": "5b70fac51d443a9295493d5fc678a4421cfeab705e7919d07bdd295fc2c904b8"
+    },
+    "observation.json": {
+      "bytes": 1909,
+      "sha256": "443a5e4cbfedd1cee6738d676f59901b3a7de100769984067770718bdf826390"
+    },
+    "records.zip": {
+      "bytes": 1194173,
+      "sha256": "373a506d93a39e8c9f06e40467ae44c7c4d35ee60bc22dfda40a95966e8e20e3"
+    }
+  },
+  "schema": "openrx.diagnostic-export-index.v1",
+  "scientific_acceptance": "unverified",
+  "scope_partition_counts": {
+    "original_receipt_artifacts": {
+      "retained_only": 4,
+      "selected": 28,
+      "total": 32
+    }
+  }
+}

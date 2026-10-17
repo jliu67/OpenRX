@@ -1,0 +1,171 @@
+{
+  "derivation": "Index of completed portable compact exports, raw-origin bindings and complete original receipt partitions; no new scientific execution or acceptance.",
+  "helper": {
+    "bytes": 34961,
+    "sha256": "335eb5dbcc9c481bd1e3e3a28c0f6e0a6f4407722707c37588156bc566348ab0"
+  },
+  "index_self_excluded_to_avoid_recursive_hash": true,
+  "original_statuses_preserved": true,
+  "originals_and_sources_not_modified_by_export": true,
+  "packages": [
+    {
+      "all_actual_fixture_records_selected": true,
+      "archive_entries": 1282,
+      "archive_origin_counts": {
+        "derived-metadata": 6,
+        "derived-portable-copy": 181,
+        "verbatim-copy": 1095
+      },
+      "complete_receipt_coverage_disjoint": true,
+      "execution_id": "20261016T210802Z-d50e99dbfb16",
+      "files": {
+        "archive-index.json": {
+          "bytes": 862518,
+          "sha256": "c2a81732ec2e3642a7d8794512765924f8382d8ba40fa22d85fd450942b91e4b"
+        },
+        "coverage.json": {
+          "bytes": 358166,
+          "sha256": "02d8e86a0fb1699be068bd9b33357113d9ecfaefaaf31883f1105458662860a3"
+        },
+        "execution.json": {
+          "bytes": 10885,
+          "sha256": "08a23a405db2ff782d3488fac6c93778c0c77465be339587a0251ff1dcc9c707"
+        },
+        "export-index.json": {
+          "bytes": 378291,
+          "sha256": "f79b765ff5b8605e0f7ad33e94134ce7aff382bbd83fd20d23bc37750c3a216b"
+        },
+        "fixture-bindings.json": {
+          "bytes": 564618,
+          "sha256": "8ab95e729e9ea2300011018e89cebcf79320e963eadbdc7c223393d4f06b9de0"
+        },
+        "native-coverage.json": {
+          "bytes": 3659,
+          "sha256": "efba64d3baa22a8148a1614091a888a0bf61f1b180d0fd68de0cd546e7eede54"
+        },
+        "records.zip": {
+          "bytes": 3261043,
+          "sha256": "58883c0e12fa60e79de78018562988cf5edb6a3ff083944ed709e77b53cbe00c"
+        },
+        "resources.json": {
+          "bytes": 1355,
+          "sha256": "dbed4adad01b7b2f45d94cc866bff9216aec67869ff79239ce7fd7c6181bb792"
+        },
+        "summary.json": {
+          "bytes": 46971,
+          "sha256": "ea8ba8e05209966d9c1c6c270b3b0b020290fa6805f07b7e1062bffb6743906a"
+        },
+        "verify.json": {
+          "bytes": 155,
+          "sha256": "3a78584de4d6cf3b4c9ba91922f33b59857464099dd8b2afe422cc474fa3be30"
+        }
+      },
+      "observed_driver_status": "pass_correctness",
+      "package": "correctness01",
+      "pinned_support_records": 24,
+      "process_returncode": 0,
+      "process_status": "PROCESS_EXITED",
+      "public_bytes": 5487661,
+      "public_file_count": 10,
+      "raw_manifest_sha256": "6da3cb365c3b505a507a49d4a499c203749d22224738aa53a90d43bfb9d76032",
+      "raw_receipt_sha256": "f7598ff088d64e4be511cc9c6e8d89a5e67a14c9b1c591856757e5aea058e060",
+      "raw_request_sha256": "0b79e49b611b3a825597831cb09637d49cc65af7dbfbd236d49eb50bc14a89e2",
+      "receipt_artifacts": 1238,
+      "retained_only_artifacts": 4,
+      "root_verify_sha256": "3a78584de4d6cf3b4c9ba91922f33b59857464099dd8b2afe422cc474fa3be30",
+      "scientific_acceptance": "unverified",
+      "selected_fixture_records": 1178,
+      "selected_original_artifacts": 1234,
+      "source_commit": "6f65049c32e5e065a711d105cf2eb42204ed2285",
+      "source_tree": "19ac91c6bbcab959cfeae9fc1305ff137d9fdf3a"
+    },
+    {
+      "all_actual_fixture_records_selected": true,
+      "archive_entries": 1272,
+      "archive_origin_counts": {
+        "derived-metadata": 7,
+        "derived-portable-copy": 178,
+        "verbatim-copy": 1087
+      },
+      "complete_receipt_coverage_disjoint": true,
+      "execution_id": "20261016T211324Z-b1d24eb3f1fe",
+      "files": {
+        "archive-index.json": {
+          "bytes": 856229,
+          "sha256": "04eaf3d3e9c35f01d912d15e8d68cd85a800362d4b75eb7ddbbe10e3afb32fdf"
+        },
+        "coverage.json": {
+          "bytes": 355603,
+          "sha256": "e84238a0a40be524ff46e131f277631e20dc554e6426eb852856a19023fa5c0d"
+        },
+        "execution.json": {
+          "bytes": 11529,
+          "sha256": "27cb926db50d7babc874dce4bb1fee4c86c093fb1a8abc8f2d6d112107bc69e5"
+        },
+        "export-index.json": {
+          "bytes": 376016,
+          "sha256": "d8298b3c5d3a769f6cec625cf823e372fa17a1f089fb4efde87e513484599bae"
+        },
+        "fixture-bindings.json": {
+          "bytes": 564618,
+          "sha256": "8ab95e729e9ea2300011018e89cebcf79320e963eadbdc7c223393d4f06b9de0"
+        },
+        "native-coverage.json": {
+          "bytes": 3659,
+          "sha256": "efba64d3baa22a8148a1614091a888a0bf61f1b180d0fd68de0cd546e7eede54"
+        },
+        "netlist-statistics.json": {
+          "bytes": 1576,
+          "sha256": "95c801473ad8a92be8b37eb287b891d4f31828d3d6a81d518bb79f63e4137bfb"
+        },
+        "records.zip": {
+          "bytes": 3427941,
+          "sha256": "e180a1be12f9643561614aeb7a26d1ca43c3ec96ed9d1f5abdc601fe24c17bc3"
+        },
+        "resources.json": {
+          "bytes": 1355,
+          "sha256": "0c55cd4983a16bddb3dcc929b6b8f65a1379704c94f1408f315b560e65461e18"
+        },
+        "stat-superscalar.txt": {
+          "bytes": 961,
+          "sha256": "aa5d0db67f63863da43d1ce441cb38951fddd50bd4b44c087183cec257929f9a"
+        },
+        "summary.json": {
+          "bytes": 68831,
+          "sha256": "a5dbd57c89cb65d5fadcdfd774204b35b972a927639582b786d5c694c8d04163"
+        },
+        "verify.json": {
+          "bytes": 155,
+          "sha256": "a691a52b7e27a24af8398ef8216f9c4027abdd02382757eb5debd81b194eb597"
+        }
+      },
+      "observed_driver_status": "pass",
+      "package": "synthesis01",
+      "pinned_support_records": 24,
+      "process_returncode": 0,
+      "process_status": "PROCESS_EXITED",
+      "public_bytes": 5668473,
+      "public_file_count": 12,
+      "raw_manifest_sha256": "7069e13dea4e314dd09c0bfeec5e668a128ac6c28585678b88aaf5835d054cec",
+      "raw_receipt_sha256": "27591eb90d4e8f06d90dca641d830a1f9c9fd35dd57c656a7b93e4db05c2231c",
+      "raw_request_sha256": "97c811f38172cdd5936a1bae79bb80bbaabb0e3ec06eb04fc5fda0147bbe0312",
+      "receipt_artifacts": 1228,
+      "retained_only_artifacts": 5,
+      "root_verify_sha256": "a691a52b7e27a24af8398ef8216f9c4027abdd02382757eb5debd81b194eb597",
+      "scientific_acceptance": "unverified",
+      "selected_fixture_records": 1178,
+      "selected_original_artifacts": 1223,
+      "source_commit": "6f65049c32e5e065a711d105cf2eb42204ed2285",
+      "source_tree": "19ac91c6bbcab959cfeae9fc1305ff137d9fdf3a"
+    }
+  ],
+  "packaging_attempt01": "Preserved locally as export-attempt01-failure.json: strict pre-existing alias guard failed before any output write; unique new alias namespace used for successful export.",
+  "private_alias_map_not_public": true,
+  "private_alias_map_sha256": "48eeacc1938318bf433e89bc74daf09287e0e3c38af9a538015db4366b2587ba",
+  "ready_config": {
+    "bytes": 16962,
+    "sha256": "97beb62f4e9ab94107a77406a7659014698f0fb827433f4d8943714ed13dd579"
+  },
+  "schema": "openrx.superscalar-package-index.v1",
+  "scientific_acceptance": "unverified"
+}

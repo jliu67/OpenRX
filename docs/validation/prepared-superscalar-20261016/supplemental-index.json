@@ -1,0 +1,32 @@
+{
+  "schema": "openrx.superscalar-supplements-index.v1",
+  "scope": "Separately indexed post-execution derived component profile and bounded independent scientific review; these are not original runner artifacts.",
+  "base_package_index_sha256": "e4386a5060250ed117ee7873b9d7dd7257e2d8999cdba6ce1153f5f9ec222c69",
+  "files": {
+    "component-profile.json": {
+      "sha256": "27d74e7a907b2ac81e4da084826cc55bb036176586969db5e0d57d9bb31e8f71",
+      "bytes": 22837
+    },
+    "component-profile-origin.json": {
+      "sha256": "be2e069ddc3f996d48e92e428851812a63150a218f75bd83fd59869e97fd396e",
+      "bytes": 1435
+    },
+    "independent-review.json": {
+      "sha256": "696f530702fba9c9ccc53feabef77601141a9f33f30f8eb60cbf418bd784471c",
+      "bytes": 12662
+    },
+    "independent-review-origin.json": {
+      "sha256": "f7e821e263576b9862b4853bb6d7ff9fb1210817d0d215b7380d81080072dde3",
+      "bytes": 1022
+    },
+    "independent-package-audit.json": {
+      "sha256": "77226d1eb707dfc614f1a96c341623b6593e8441bfb571f8e3a01a8dc1799a8f",
+      "bytes": 1652
+    },
+    "independent-package-audit-origin.json": {
+      "sha256": "1d5bd60701b90e732a89b6080c9a6de8e2fcf7531acccedbcda36a25ac157245",
+      "bytes": 422
+    }
+  },
+  "originals_preserved": true
+}

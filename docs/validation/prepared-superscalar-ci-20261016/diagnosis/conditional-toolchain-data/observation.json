@@ -1,0 +1,7 @@
+{
+  "acceptance": false,
+  "boundary": "No new toolchain build/container/job or validated production fix is established by this stage.",
+  "production_source_request_and_admission_review": "pending",
+  "scientific_acceptance": "unverified",
+  "status": "CONDITIONAL_METHOD_AND_OFFICIAL_DATA_ONLY"
+}
