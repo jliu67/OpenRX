@@ -373,3 +373,38 @@ required.
   efficiency, physical PPA, memory technology and architecture remain unresolved.
   Next work requires exact eight-step program/cache-XOR/address control and an
   immutable prepared-asset export/service; no next-stage work is launched here.
+
+## D054 — bind one native dataset item to immutable prepared assets, 2026-10-18
+
+Reuse the accepted superscalar executor and multiplier for full-width native
+item seeding and all eight program/cache-XOR/post-XOR address steps. Capture
+and validate all descriptors before execution; bind cache and instruction
+packets to immutable epoch, transaction identity and stage. Reserve all eight
+executor generations before admission, retain spent identities across cancel,
+and require service quiescence before hard reset. Errors retain the specified
+completed-XOR data prefix while counters include actual failing-program work.
+
+Accept exact source `76d3ee59` / tree `ef38f982` only within its independently
+reviewed bounded correctness scope: 20 native cases, 61,568 instruction states,
+160 cache-XOR stages and twelve RTL profiles, bound by verified receipt
+`f3ced2d4` / manifest `08a0a963`. Keep modeled clocks, host preparation costs and
+generic mapping distinct. Default synthesis is 42,132 cells / 4,234 DFF cells /
+zero latches. Mapping execution `20261018T180710Z-118e10af1b32` passes all seven
+profiles and nine commands, retaining 951 artifacts; root verification binds
+receipt `5872e251` / manifest `feb803e5`. Its 181 source bindings and 898 fixtures
+are byte-identical, without Argon/native/RTL repeat. Separate independent bounded
+review accepts the mapped run with no blockers (`acbf8ff5`); original
+scientific-unverified flags remain unchanged. Retain the separate
+[mapped records](../docs/validation/dataset-item-20261018/synthesis01/).
+See [EXP-020](../experiments/EXP-020-native-dataset-item.md),
+[interface](../rtl/dataset/DATASET_ITEM.md) and
+[evidence](../docs/validation/dataset-item-20261018/README.md).
+
+Retain original scientific flags and historical evidence. PR #79's merge
+`74a24e239b938ebaf4874ebd4dae47dd072ad41d` and nine premerge/two postmerge checks
+are complete; do not rerun them. Final publication-head review and six hosted
+checks remain separate gates; the feature PR records the actual head and
+publication outcome. End at a draft PR, without merging this feature. Autonomous cache/Argon2,
+native program/global reciprocal preparation, tagged physical cache service and
+lifecycle integration remain external; new full-hash performance, physical PPA,
+architecture selection and the 1 MH/s below 2,500 W target remain unproven.

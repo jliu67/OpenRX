@@ -1,0 +1,102 @@
+{
+  "base": "74a24e239b938ebaf4874ebd4dae47dd072ad41d",
+  "files": {
+    "README.md": {
+      "bytes": 8888,
+      "sha256": "7aba776aee57aa1a74f194af751c5442f5f3a3b10ff8e182f53bf2484a64c8a1"
+    },
+    "audit-provenance.json": {
+      "bytes": 976,
+      "sha256": "4873a60179e4f67211478946ac4846063f9e6095c113ace6ab77e5778d1a38d3"
+    },
+    "correctness01/component-profile.json": {
+      "bytes": 42159,
+      "sha256": "38ef15c87984f9b9cce597e6fb5c35553e776b4f9c40384e3893d53b82aa4c5e"
+    },
+    "correctness01/correctness-evidence-index.json": {
+      "bytes": 30551,
+      "sha256": "6df6ef82adc7cbd874a506ba8a41e1724ce6c22cba7b29dbcd6c5379d9a6fd6c"
+    },
+    "correctness01/correctness-evidence.zip": {
+      "bytes": 312682,
+      "sha256": "a70fe23634265a02b6cd075bc0ff664f514816f4f0fc291cf95a7204ee46efd2"
+    },
+    "correctness01/correctness-fixtures-index.json": {
+      "bytes": 512649,
+      "sha256": "17c1fc24e8300a230f1203d3859ec8c4eada7a2d5645503349a61e13643c5546"
+    },
+    "correctness01/correctness-fixtures.zip": {
+      "bytes": 1231056,
+      "sha256": "4c356d77cf32bd6c4ac6c67892fe8836e4646ee08ee83d964aeeb967afcce984"
+    },
+    "correctness01/correctness-origin-inventory.json": {
+      "bytes": 494366,
+      "sha256": "9caa9ffb6a0a96e7cc79b792c62963d7777791758a93be278f9f45909199a482"
+    },
+    "correctness01/package-index.json": {
+      "bytes": 2177,
+      "sha256": "48daf638fb5a4ef66d71cd640e4aecb14984ce78a3b5226ba0a59212d49f74f6"
+    },
+    "correctness01/path-alias-rules.json": {
+      "bytes": 1578,
+      "sha256": "8724c6b4cbedbe51eb592ff652e9aafd61266b57c0a09d7d5badc4c12512a298"
+    },
+    "executed-source.json": {
+      "bytes": 22064,
+      "sha256": "8e7468ea436659c7776ff223fb64f5366ea0baa220b908566859440706be8a56"
+    },
+    "independent-mapping-package-audit.json": {
+      "bytes": 7001,
+      "sha256": "1ee4ae1786350dc284354dd6e0f4ff5ce1d00efb2f378d430a9deeec4f8d9149"
+    },
+    "synthesis01/mapping-evidence.zip": {
+      "bytes": 917777,
+      "sha256": "a66e41c336226b77e7dd5860c3fd48c323bd9b040cd570ee69a11754f69a26d8"
+    },
+    "synthesis01/mapping-origin-inventory.json": {
+      "bytes": 382763,
+      "sha256": "d3267ef52d3b3d256d41be0e747432b6113b8d351d4516bc93c274ec8b2f05cb"
+    },
+    "synthesis01/mapping-profile.json": {
+      "bytes": 20584,
+      "sha256": "870983628f99ccb6995ef2f16f593b28d868cb6d0db9232f9adb2d9be9ad7bb2"
+    },
+    "synthesis01/mapping-records-index.json": {
+      "bytes": 54604,
+      "sha256": "45094956f777b0306b42014416d4018f0e7eb3cab692ccd3df9481f692228562"
+    },
+    "synthesis01/mapping-reuse-index.json": {
+      "bytes": 343599,
+      "sha256": "4aa25cee7cc44f755fa9464ea75397065f35b4c89a09cd34379f15486d0c847f"
+    },
+    "synthesis01/package-index.json": {
+      "bytes": 3358,
+      "sha256": "45fdba38a779e6774d20716bd6c64f1704b087d2a0511380b800ec14558129c8"
+    },
+    "synthesis01/path-alias-rules.json": {
+      "bytes": 1647,
+      "sha256": "9b72d74cc7540951abef5afe5fd3d2139cbe65fa80f84267deb65030309e8b2c"
+    }
+  },
+  "final_exact_head_and_hosted_checks": "Recorded separately on draft PR; no author merge.",
+  "indexed_files_excluding_this_index": 19,
+  "original_receipt_scientific_acceptance": "unverified",
+  "originals_preserved": true,
+  "physical_or_full_hash_acceptance": false,
+  "publication_delta": "Documentation, memory and indexed evidence above preserved executed source only; all181 consumed files plus workflow and interface remain unchanged. Connected GitHub API publishes this reviewed tree with main as parent; executed local commit ancestry is preserved locally and not asserted remotely.",
+  "receipt_artifact_counts": {
+    "correctness01": 967,
+    "synthesis01": 951
+  },
+  "schema": "openrx.dataset-item.publication-evidence-index.v1",
+  "separate_independent_package_reviews": {
+    "correctness01": "bfa00cdb7000759f90b23fe9ddb6578a04a0a9065fc2435fe632b102d2577a97",
+    "synthesis01": "24da0dd8124e7e478312e2248069220758db9bd44e3bdc5febfe31d7dbf17213"
+  },
+  "separate_independent_scientific_reviews": {
+    "correctness01": "6e7819d8bfc7e6297905fc7c11bfcd1700b5662f0b7560b5240a42217f3bf636",
+    "synthesis01": "acbf8ff5b8bf631e408d28f52c5a5d24e68e3feaa0efefb5aff0082950cbe871"
+  },
+  "source_head": "76d3ee59b3d02fccb258973d4a0b74dd4adb5d3f",
+  "source_tree": "ef38f9820985a150cd2d569bc43cec6b59b76e53"
+}

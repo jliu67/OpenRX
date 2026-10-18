@@ -1073,3 +1073,44 @@ records final publication-head review, hosted CI and normal merge outcome.
 Program preparation, cache initialization, cache service and eight-step item
 control remain external. The next controller/export gap is documented only;
 no next-stage code/job, full-hash/PPA or memory choice follows.
+
+## 2026-10-18 — native cache-backed dataset-item correctness
+
+The new bounded controller starts above merged PR #79 / main
+`74a24e239b938ebaf4874ebd4dae47dd072ad41d`; that PR's nine premerge and two
+postmerge checks were already complete and were not repeated. Executed source
+`76d3ee59b3d02fccb258973d4a0b74dd4adb5d3f`, tree
+`ef38f9820985a150cd2d569bc43cec6b59b76e53`, reuses the unchanged accepted
+superscalar executor and multiplier. See
+[EXP-020](../experiments/EXP-020-native-dataset-item.md), the
+[interface](../rtl/dataset/DATASET_ITEM.md) and
+[evidence](../docs/validation/dataset-item-20261018/README.md).
+
+Correctness execution `20261018T175827Z-447be94ead08` passes 20 native cases,
+61,568 instruction states, 160 completed cache-XOR stages and twelve RTL
+profiles, with independent bounded scientific acceptance. Verified receipt is
+`f3ced2d4f48eaa7c49359cea893c65666377c7f0a84386c035736357bfb59ad8`;
+manifest is `08a0a963c68dec495201c3c82020db2d7cfdaca796ac9f6ff433af5474573bc7`.
+Original runner scientific flags, source snapshots, fixtures and outputs remain
+unchanged. Ideal native items measure 53,079–53,399 modeled clocks; the first two
+controlled stalled items measure 71,265/71,207.
+
+Separate mapping execution `20261018T180710Z-118e10af1b32` finishes all seven
+mapped profiles PASS and all nine commands rc0, retaining 951 artifacts. Root
+integrity verification binds receipt
+`5872e251d8c345f3ef4327b5c64ba023862c5c8cc7f8a2d7901ce7571ab19815` and manifest
+`feb803e55f01fdac7ad90c4ab126f7cf905f400dc57200cf14b3980d97d70d7c`.
+All 181 source bindings and 898 fixture files are byte-identical; no Argon/native
+preparation or completed RTL work was repeated. Default component synthesis
+reports 42,132 generic cells, 4,234 DFF cells and zero latches. Original runner
+scientific acceptance remains `unverified`; separate independent bounded review
+accepts the mapped run with no blockers, bound by review SHA256
+`acbf8ff5b8bf631e408d28f52c5a5d24e68e3feaa0efefb5aff0082950cbe871`.
+The [mapped records](../docs/validation/dataset-item-20261018/synthesis01/)
+retain this run separately from correctness. Final publication-head review and
+six hosted checks remain separate gates; the feature PR records the actual head
+and publication outcome. This scope ends at a draft PR. Autonomous Argon2/cache
+initialization, native program/global
+reciprocal preparation, physical tagged cache service and lifecycle integration
+remain external. No new full-hash measurement, physical PPA, architecture
+selection or 1 MH/s below 2,500 W proof follows.
