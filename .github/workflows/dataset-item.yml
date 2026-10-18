@@ -1,0 +1,72 @@
+name: Native cache-backed dataset-item controller
+on:
+  pull_request:
+    paths:
+      - 'rtl/dataset/**'
+      - 'rtl/execute/randomx_superscalar_execute.v'
+      - 'rtl/execute/randomx_mul64.v'
+      - 'scripts/test_dataset_item.py'
+      - 'scripts/check_superscalar_toolchain.py'
+      - 'scripts/superscalar-toolchain.lock.json'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx.lock.json'
+      - 'vendor/randomx.sha256.json'
+      - '.github/workflows/dataset-item.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  dataset-item-differential:
+    runs-on: ubuntu-24.04
+    # Match the raw mapping/simulator toolchain with completed local evidence.
+    # Pin the official image; keep this isolated from the runner's packages.
+    container:
+      image: ubuntu:22.04@sha256:5ec03bb3441e8b0bf3b4f9cd4629a1ae763010dc3035bb8da3ae6cf026486401
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Install pinned official HDL packages and build dependencies
+        run: |
+          apt-get update
+          mkdir -p "$RUNNER_TEMP/dataset-item-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          cd "$RUNNER_TEMP/dataset-item-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          apt-get download iverilog=11.0-1.1 yosys=0.9-2 \
+            berkeley-abc=1.01+20211229git48498af+dfsg-2
+          printf '%s\n' \
+            '56b2b91e23f51c571b8cf43ef2df3a137a1bf4b6bcbff0fa3463b5b89403a852  iverilog_11.0-1.1_amd64.deb' \
+            'b9f27c0a999753ecc12efa31ebdf97de5a0ca4f970780ddf580b8668a47e8a20  yosys_0.9-2_amd64.deb' \
+            '5f9d897a2a215d36dc1526cf377910deeccf8ba62749e7abdab92a520a310219  berkeley-abc_1.01+20211229git48498af+dfsg-2_amd64.deb' \
+            > packages.sha256
+          sha256sum -c packages.sha256
+          DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+            ca-certificates git python3 build-essential cmake time \
+            ./iverilog_11.0-1.1_amd64.deb ./yosys_0.9-2_amd64.deb \
+            ./berkeley-abc_1.01+20211229git48498af+dfsg-2_amd64.deb
+      - uses: actions/checkout@v4
+      - name: Verify and retain exact tool identities
+        run: |
+          python3 -B scripts/check_superscalar_toolchain.py \
+            --output "$RUNNER_TEMP/dataset-item-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/identity.json"
+      - name: Compare native dataset items, lifecycle and mapped execution
+        run: |
+          # Trust only this fresh checkout, for this process and its Git children.
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=safe.directory \
+            GIT_CONFIG_VALUE_0="$(pwd -P)" \
+          python3 -B scripts/test_dataset_item.py \
+            --out "$RUNNER_TEMP/dataset-item-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --jobs 2 --synthesize
+          echo "Executed native cache-backed eight-stage dataset-item differential, lifecycle checks and actual generic synthesis/mapped comparison. Argon2 cache/program preparation and cache memory service remain external; no physical PPA or full connected-hash claim." >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain complete licensed outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-item-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/dataset-item-${{ github.run_id }}-${{ github.run_attempt }}/
+      - name: Retain exact toolchain packages and identity
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-item-toolchain-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/dataset-item-toolchain-${{ github.run_id }}-${{ github.run_attempt }}/

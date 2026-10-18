@@ -1,0 +1,20 @@
+{
+  "copy_kind": "derived",
+  "independent_result": "no blockers within bounded mapping-package audit; no new science run or relabeling of original receipts",
+  "original_audit": {
+    "bytes": 6983,
+    "retained": true,
+    "sha256": "24da0dd8124e7e478312e2248069220758db9bd44e3bdc5febfe31d7dbf17213"
+  },
+  "outside_original_runner_receipts": true,
+  "private_map_sha256": "939f33d680fbe8ae5e16c4ea8828b850cf9e7dc8b59656c3e9000e2604bf3179",
+  "private_prefix_map_is_not_published": true,
+  "public_audit": {
+    "bytes": 7001,
+    "path": "independent-mapping-package-audit.json",
+    "sha256": "1ee4ae1786350dc284354dd6e0f4ff5ce1d00efb2f378d430a9deeec4f8d9149"
+  },
+  "rules": "synthesis01/path-alias-rules.json",
+  "schema": "openrx.dataset-item.audit-derivative.v1",
+  "transformation": "JSON key/string literal prefix aliases, sorted-key indent-2 serialization with newline; inverse object equality verified. Numbers, statuses, booleans and opaque hashes unchanged."
+}

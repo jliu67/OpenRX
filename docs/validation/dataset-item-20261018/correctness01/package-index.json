@@ -1,0 +1,53 @@
+{
+  "copy_scope": "Only public/ is intended for publication; private/ is never public.",
+  "execution_id": "20261018T175827Z-447be94ead08",
+  "files": {
+    "component-profile.json": {
+      "bytes": 42159,
+      "sha256": "38ef15c87984f9b9cce597e6fb5c35553e776b4f9c40384e3893d53b82aa4c5e"
+    },
+    "correctness-evidence-index.json": {
+      "bytes": 30551,
+      "sha256": "6df6ef82adc7cbd874a506ba8a41e1724ce6c22cba7b29dbcd6c5379d9a6fd6c"
+    },
+    "correctness-evidence.zip": {
+      "bytes": 312682,
+      "sha256": "a70fe23634265a02b6cd075bc0ff664f514816f4f0fc291cf95a7204ee46efd2"
+    },
+    "correctness-fixtures-index.json": {
+      "bytes": 512649,
+      "sha256": "17c1fc24e8300a230f1203d3859ec8c4eada7a2d5645503349a61e13643c5546"
+    },
+    "correctness-fixtures.zip": {
+      "bytes": 1231056,
+      "sha256": "4c356d77cf32bd6c4ac6c67892fe8836e4646ee08ee83d964aeeb967afcce984"
+    },
+    "correctness-origin-inventory.json": {
+      "bytes": 494366,
+      "sha256": "9caa9ffb6a0a96e7cc79b792c62963d7777791758a93be278f9f45909199a482"
+    },
+    "path-alias-rules.json": {
+      "bytes": 1578,
+      "sha256": "8724c6b4cbedbe51eb592ff652e9aafd61266b57c0a09d7d5badc4c12512a298"
+    }
+  },
+  "fixtures": {
+    "retained_raw_caches": 2,
+    "selected": 896,
+    "total": 898
+  },
+  "original_anchors": {
+    "manifest_sha256": "08a0a963c68dec495201c3c82020db2d7cfdaca796ac9f6ff433af5474573bc7",
+    "receipt_sha256": "f3ced2d4f48eaa7c49359cea893c65666377c7f0a84386c035736357bfb59ad8",
+    "root_verify_sha256": "a50641f82d3c42e144b876f19e02156e007512a9ee4b2368bbcc28e56d456ef8"
+  },
+  "original_receipt_artifacts_covered": 967,
+  "private_exact_alias_map_sha256": "7648528a34c217d9241c813b2b2eefdaf2f10c835ce4c8a4c0ffdf1252b2b1be",
+  "public_path_count_including_this_index": 8,
+  "records_archive_members": 52,
+  "schema": "openrx.dataset-item.correctness-package.v1",
+  "scientific_acceptance": "Original runner remains unverified; final independent scientific/derivative review is separate.",
+  "source_head": "76d3ee59b3d02fccb258973d4a0b74dd4adb5d3f",
+  "source_tree": "ef38f9820985a150cd2d569bc43cec6b59b76e53",
+  "status": "correctness_only_mapping_pending"
+}

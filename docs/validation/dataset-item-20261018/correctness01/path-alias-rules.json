@@ -1,0 +1,34 @@
+{
+  "copy_kind": "derived",
+  "ordered_aliases": [
+    {
+      "alias": "<RETAINED_NATIVE_BUILD_EXECUTION>",
+      "description": "Retained native library build execution"
+    },
+    {
+      "alias": "<CORRECTNESS_EXECUTION>",
+      "description": "Original verified correctness execution directory"
+    },
+    {
+      "alias": "<ROOT_VERIFY_FILE>",
+      "description": "Original root integrity-verification result"
+    },
+    {
+      "alias": "<FROZEN_SOURCE>",
+      "description": "Frozen consumed source checkout"
+    },
+    {
+      "alias": "<HOST_HOME>",
+      "description": "Remaining private host home prefix"
+    },
+    {
+      "alias": "<HOST_TMP>",
+      "description": "Remaining temporary host prefix"
+    }
+  ],
+  "originals": "All original files and exact private prefix map remain retained. Portable records are derivatives, not original receipt bytes, not re-signed receipts, and not a substitute for verification of the retained raw execution.",
+  "private_exact_prefix_map_sha256": "7648528a34c217d9241c813b2b2eefdaf2f10c835ce4c8a4c0ffdf1252b2b1be",
+  "replacement": "Apply each private literal prefix exactly once as a UTF-8 substring replacement, in the displayed order. JSON applies it to keys and string values, then sorted-key indent-2 UTF-8 serialization and one final newline. Non-JSON text is otherwise byte-preserved.",
+  "schema": "openrx.dataset-item.public-path-rules.v1",
+  "unchanged_values": "Numbers, booleans, null, array order and opaque digest strings are unchanged. No arithmetic, status, acceptance or coverage values are rewritten."
+}

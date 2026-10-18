@@ -1,0 +1,42 @@
+{
+  "copy_kind": "derived",
+  "ordered_aliases": [
+    {
+      "alias": "<RETAINED_NATIVE_BUILD_EXECUTION>",
+      "description": "Retained native library build execution"
+    },
+    {
+      "alias": "<CORRECTNESS_EXECUTION>",
+      "description": "Original verified correctness execution"
+    },
+    {
+      "alias": "<MAPPING_EXECUTION>",
+      "description": "Original verified mapping execution"
+    },
+    {
+      "alias": "<ROOT_MAPPING_VERIFY_FILE>",
+      "description": "Original root mapping integrity verification"
+    },
+    {
+      "alias": "<CORRECTNESS_PUBLIC_PACKAGE>",
+      "description": "Accepted immutable correctness package"
+    },
+    {
+      "alias": "<FROZEN_SOURCE>",
+      "description": "Frozen consumed source checkout"
+    },
+    {
+      "alias": "<HOST_HOME>",
+      "description": "Remaining private host home prefix"
+    },
+    {
+      "alias": "<HOST_TMP>",
+      "description": "Remaining temporary host prefix"
+    }
+  ],
+  "originals": "All originals/private prefix map remain retained. Portable records are derivatives, not original receipt bytes, not re-signed receipts and not substitutes for verification of the raw execution.",
+  "private_exact_prefix_map_sha256": "939f33d680fbe8ae5e16c4ea8828b850cf9e7dc8b59656c3e9000e2604bf3179",
+  "replacement": "Apply private literal prefixes once each in the displayed order to JSON keys/string values or UTF-8 text. JSON is sorted-key indent-2 with one final newline; text is otherwise byte-preserved.",
+  "schema": "openrx.dataset-item.mapping-public-path-rules.v1",
+  "unchanged": "Numbers, booleans, null, list order and opaque digest values are unchanged."
+}

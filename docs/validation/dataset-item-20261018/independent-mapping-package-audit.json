@@ -1,0 +1,142 @@
+{
+  "actions": "Read-only raw SHA/size/JSON/ZIP/netlist/profile/resource analysis and new external audit helper/proof/review files only. No native/RTL/build/test job, API, publication, original/package/source mutation or production-driver import.",
+  "actual_original_receipt_artifacts_rehashed": 951,
+  "archive": {
+    "allCRC_member_original_public_and_deterministic_rebuild_exact": true,
+    "all_derivative_transforms_and_inversion_exact": true,
+    "copy_kinds": {
+      "derived": 42,
+      "verbatim": 33
+    },
+    "members": 75,
+    "sha256": "a66e41c336226b77e7dd5860c3fd48c323bd9b040cd570ee69a11754f69a26d8",
+    "uncompressed_bytes": 10208115
+  },
+  "archive_origin_partition": {
+    "outside_receipt_supplemental_origins": 34,
+    "receipt_and_rootverify_anchor_origins": 2,
+    "selected_receipt_origins": 39,
+    "total_unique_origins_and_members": 75
+  },
+  "blocking_findings": [],
+  "execution_id": "20261018T180710Z-118e10af1b32",
+  "metadata_attempt01_failure": {
+    "original_failure_record_sha256": "ab8fa12d70479ec7fde53d08bf70a3bfffc4975e98f2202f6a5b53e67794930a",
+    "public_files_written": 0,
+    "reported_error": "KeyError live_resource_witness on correctness execution-observation schema",
+    "scientific_payload": false,
+    "status_preserved": "failed_before_public_write",
+    "v2_correction_is_data_packaging_only": true
+  },
+  "observed_at_utc": "2026-10-18T18:27:23.686802+00:00",
+  "origin_anchors": {
+    "correctness_package_independent_review_original_sha256": "bfa00cdb7000759f90b23fe9ddb6578a04a0a9065fc2435fe632b102d2577a97",
+    "correctness_package_index_sha256": "48daf638fb5a4ef66d71cd640e4aecb14984ce78a3b5226ba0a59212d49f74f6",
+    "mapping_manifest_sha256": "feb803e55f01fdac7ad90c4ab126f7cf905f400dc57200cf14b3980d97d70d7c",
+    "mapping_receipt_sha256": "5872e251d8c345f3ef4327b5c64ba023862c5c8cc7f8a2d7901ce7571ab19815",
+    "mapping_root_verify_sha256": "c550d2aadb3e707ce9d96f8e2e33746f22caee8e1996146f7b16be9e21b46346"
+  },
+  "origin_partition": {
+    "complete_disjoint_exact_receipt_origin_set": true,
+    "every_selected_export_points_to_exact_matching_archive_origin": true,
+    "retained_duplicate_fixture": 898,
+    "retained_only": 14,
+    "selected_evidence_record": 39
+  },
+  "original_runner_scientific_acceptance": "unverified, preserved unchanged",
+  "portability": {
+    "all33_verbatim_records_actual_byte_equal": true,
+    "all42_derived_records_exact_forward_and_inverse_transform": true,
+    "all75_original_public_SHA_sizes_checked": true,
+    "no_private_prefix_in_public_or_decompressed_member_bytes": true,
+    "portable_receipts_are_derivatives_not_original_host_journal_verification": true,
+    "private_prefix_map_retained_only_in_private": true,
+    "strict_JSON_duplicate_key_and_nonfinite_rejection": true
+  },
+  "profile": {
+    "actual_netlist_stat_and_celltype_counts_recomputed": {
+      "cell_types": {
+        "$_ANDNOT_": 6408,
+        "$_AND_": 717,
+        "$_AOI3_": 2142,
+        "$_AOI4_": 283,
+        "$_DFF_P_": 4234,
+        "$_MUX_": 14217,
+        "$_NAND_": 294,
+        "$_NOR_": 568,
+        "$_NOT_": 4833,
+        "$_OAI3_": 1476,
+        "$_OAI4_": 1223,
+        "$_ORNOT_": 572,
+        "$_OR_": 1951,
+        "$_XNOR_": 1451,
+        "$_XOR_": 1763
+      },
+      "flop_cells": 4234,
+      "generic_cells": 42132,
+      "latch_cells": 0
+    },
+    "all7_exact_mapped_profile_names_PASS_records_terminal_totals_resources_and_raw_latencies_match_accepted_RTL": true,
+    "kernel_peak_is_through_captured_reads_not_final_absent_cgroup_peak": true,
+    "resource_witness_schemas_rederived": 2,
+    "service_profile_rows_rederived_from_raw_descriptors_opcodes_and_returns": 10,
+    "successful_return_rows_separate_from_error_and_aborted_prefix_totals": true
+  },
+  "public_files": {
+    "mapping-evidence.zip": {
+      "bytes": 917777,
+      "sha256": "a66e41c336226b77e7dd5860c3fd48c323bd9b040cd570ee69a11754f69a26d8"
+    },
+    "mapping-origin-inventory.json": {
+      "bytes": 382763,
+      "sha256": "d3267ef52d3b3d256d41be0e747432b6113b8d351d4516bc93c274ec8b2f05cb"
+    },
+    "mapping-profile.json": {
+      "bytes": 20584,
+      "sha256": "870983628f99ccb6995ef2f16f593b28d868cb6d0db9232f9adb2d9be9ad7bb2"
+    },
+    "mapping-records-index.json": {
+      "bytes": 54604,
+      "sha256": "45094956f777b0306b42014416d4018f0e7eb3cab692ccd3df9481f692228562"
+    },
+    "mapping-reuse-index.json": {
+      "bytes": 343599,
+      "sha256": "4aa25cee7cc44f755fa9464ea75397065f35b4c89a09cd34379f15486d0c847f"
+    },
+    "package-index.json": {
+      "bytes": 3358,
+      "sha256": "45fdba38a779e6774d20716bd6c64f1704b087d2a0511380b800ec14558129c8"
+    },
+    "path-alias-rules.json": {
+      "bytes": 1647,
+      "sha256": "9b72d74cc7540951abef5afe5fd3d2139cbe65fa80f84267deb65030309e8b2c"
+    }
+  },
+  "public_paths": 7,
+  "result": "ACCEPT_SCOPED_MAPPING_PUBLIC_DERIVATIVE; NO_BLOCKERS",
+  "reuse": {
+    "all181_source_input_bytes_match_prior_and_bound_manifest": true,
+    "all898_mapping_and_correctness_fixture_pairs_actual_bytes_hashed_equal": true,
+    "all8_original_correctness_public_file_bytes_unchanged": true,
+    "completed_native_and_RTL_not_regenerated": true,
+    "prior_correctness_package_index_sha256": "48daf638fb5a4ef66d71cd640e4aecb14984ce78a3b5226ba0a59212d49f74f6",
+    "prior_correctness_review_sha256": "bfa00cdb7000759f90b23fe9ddb6578a04a0a9065fc2435fe632b102d2577a97",
+    "two256MiB_raw_cache_images_retained_not_exported": true
+  },
+  "review_support": {
+    "audit_helper": "<HOST_TMP>/openrx-dataset-item-mapping-package-audit01.py",
+    "audit_helper_sha256": "2399208655335b0b3d485be127773f756e67a23a8b9144bf96ec27555b6577c2",
+    "data_proof": "<HOST_TMP>/openrx-dataset-item-mapping-audit-data01.json",
+    "data_proof_sha256": "b58d3780e3926c32b0562069a54273ac2234346464a4e18cb9e240d7b70ce066",
+    "separate_agent_partition_alias_review": "package_contract_review: no blockers; exact951 disjoint partition and75 origin/alias checks. Parent independently rechecked partition sets and actual951 byte hashes."
+  },
+  "schema": "openrx.dataset-item.mapping-public-package-independent-review.v1",
+  "scope_and_limits": "Frozen seven-file mapping derivative only, alongside original eight-file correctness package. Default generic mapping and seven declared bounded mapped modes; direct multiplier, other fifteen correctness cases and real namespace exhaustion remain RTL-only as declared. No new science run, full dataset generator/full hash/physical PPA/architecture acceptance. Final publication-head review and hosted gates are separate.",
+  "separate_mapping_scientific_acceptance": {
+    "record": "<HOST_TMP>/openrx-dataset-item-synthesis01-independent-review.json",
+    "result": "ACCEPT_BOUNDED_ACTUAL_DEFAULT_MAPPING_AND_7_MAPPED_PROFILES",
+    "sha256": "acbf8ff5b8bf631e408d28f52c5a5d24e68e3feaa0efefb5aff0082950cbe871"
+  },
+  "source_head": "76d3ee59b3d02fccb258973d4a0b74dd4adb5d3f",
+  "source_tree": "ef38f9820985a150cd2d569bc43cec6b59b76e53"
+}

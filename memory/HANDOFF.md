@@ -1,5 +1,35 @@
 # Handoff — actual designated local execution
 
+## Native cache-backed dataset item — 2026-10-18
+
+Continue from executed source `76d3ee59` / tree `ef38f982` above merged PR #79 /
+main `74a24e239b938ebaf4874ebd4dae47dd072ad41d`. Read
+[EXP-020](../experiments/EXP-020-native-dataset-item.md), the
+[interface](../rtl/dataset/DATASET_ITEM.md) and
+[evidence](../docs/validation/dataset-item-20261018/README.md). Independent bounded
+correctness accepts 20 native cases, 61,568 instruction states, 160 cache-XOR
+stages and twelve RTL profiles. Verified receipt `f3ced2d4` and manifest
+`08a0a963` bind all inputs; originals and scientific flags stay unchanged.
+
+Ideal native items measure 53,079–53,399 modeled clocks; the first two controlled
+stalled items measure 71,265/71,207. Default component synthesis reports 42,132
+generic cells, 4,234 DFF cells and zero latches. All seven mapped profiles pass
+in execution `20261018T180710Z-118e10af1b32`; root integrity verification binds
+receipt `5872e251` / manifest `feb803e5`, with 181 source bindings and 898 fixtures
+byte-identical and no Argon/native/RTL repeat. Read the
+[mapped records](../docs/validation/dataset-item-20261018/synthesis01/).
+Separate independent bounded review accepts the mapped run with no blockers
+(`acbf8ff5`). Final publication-head review and six hosted checks remain separate
+gates; the feature PR records the actual head and publication outcome. This scope
+ends at a draft PR, without merging the feature.
+PR #79 already passed nine premerge and two postmerge checks; do not repeat them.
+
+Autonomous Argon2/cache initialization, native program/global reciprocal
+preparation, physical tagged cache service and lifecycle integration remain
+external. Complete hardware hash integration, physical PPA, architecture
+selection and the 1 MH/s below 2,500 W target remain unproven. Historical sections
+below are preserved with their original source-specific context.
+
 ## Prepared native superscalar executor — 2026-10-16
 
 Above accepted main `9d28cd8e6467fcc6eee9d3a623c38fd796c3cb2a` (PR #78),
