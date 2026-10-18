@@ -1,5 +1,19 @@
 # Handoff — actual designated local execution
 
+## Native dataset lifecycle — 2026-10-18
+
+Above merged PR #80 (`901c6557`), [EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md)
+passes three native-equivalent 2×1 profiles, five recovery prefixes, 32 unit
+checks and service RTL. Mapped functionality passes, terminal integrity is verified, and independent
+bounded review accepts the results with no blockers. Source `f22ad4b7` / tree `bbadcf7e` equals the frozen executed code.
+Ideal hardware is 641,180 modeled clocks, including 106,798 nested dataset
+availability clocks. Read the [contract](../rtl/dataset_service/DATASET_SERVICE.md)
+and [compact results](../docs/validation/dataset-lifecycle-20261018/README.md).
+Cache/superscalar-program/global-reciprocal preparation and physical services remain external; canonical full
+hash/PPA remain unaccepted. Complete raw originals are preserved locally.
+Draft publication, exact-head review and hosted checks remain separate gates;
+parent handles normal merge and updates.
+
 ## Native cache-backed dataset item — 2026-10-18
 
 Continue from executed source `76d3ee59` / tree `ef38f982` above merged PR #79 /

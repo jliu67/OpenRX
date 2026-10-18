@@ -1,5 +1,18 @@
 # Agent instructions
 
+## Native dataset lifecycle — 2026-10-18
+
+Above merged PR #80 (`901c6557`), the optional [EXP-021](experiments/EXP-021-native-dataset-lifecycle.md)
+service/wrapper passes three native-equivalent 2×1 profiles, five recovery
+prefixes and 32 unit checks. Service RTL/mapped outcomes match; separate independent bounded
+review accepts the results with no blockers. Executed public source is `f22ad4b7`, tree `bbadcf7e`.
+Ideal hardware total is 641,180 modeled clocks; its 106,798 dataset availability
+clocks are nested in execution. Service synthesis is 45,670 generic cells,
+4,761 DFF cells and zero latches. See [evidence](docs/validation/dataset-lifecycle-20261018/README.md).
+Preserve the [8,191-item lifetime budget](rtl/dataset_service/DATASET_SERVICE.md),
+legacy default zero and hardware 8×2,048 rejection. Cache/superscalar-program/global-reciprocal preparation,
+physical services, canonical full hash and PPA remain open. Parent owns merge gates.
+
 ## Native cache-backed dataset item — 2026-10-18
 
 Above merged PR #79 / main `74a24e239b938ebaf4874ebd4dae47dd072ad41d`,

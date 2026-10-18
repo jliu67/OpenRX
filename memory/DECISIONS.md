@@ -408,3 +408,13 @@ publication outcome. End at a draft PR, without merging this feature. Autonomous
 native program/global reciprocal preparation, tagged physical cache service and
 lifecycle integration remain external; new full-hash performance, physical PPA,
 architecture selection and the 1 MH/s below 2,500 W target remain unproven.
+
+## D055 — reserve dataset service at hash admission, 2026-10-18
+
+Keep legacy dataset mode default zero; validate the new hardware path at 2×1.
+Capture epoch/descriptors independently of transport generation; validate DS64/tag32.
+Burn full `PROGRAMS*ITERATIONS` reservations from the reset-lifetime 8,191-item
+budget, without success/cancel/error refunds. Require quiescent reset for reuse.
+Reject hardware-mode default 8×2,048 at elaboration; retain the engine's single XOR.
+Reuse exact accepted assets and count item/executor/stalls inside outer execution.
+[EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md) passes bounded native/RTL checks; mapped functionality passes and independent bounded review accepts the results.
