@@ -1,0 +1,124 @@
+name: Prepared native dataset hash lifecycle
+on:
+  pull_request:
+    paths:
+      - 'rtl/dataset_service/**'
+      - 'rtl/hash/randomx_*.v'
+      - 'rtl/hash/tests/tb_dataset_hash_lifecycle.v'
+      - 'rtl/hash/tests/dataset_lifecycle_*'
+      - 'rtl/hash/tests/lifecycle_native.hpp'
+      - 'rtl/hash/tests/lifecycle_reference.cpp'
+      - 'rtl/hash/tests/lifecycle_source_vpi.cpp'
+      - 'rtl/hash/tests/lifecycle_source_dpi.cpp'
+      - 'rtl/hash/vendor/blake2/**'
+      - 'rtl/dataset/randomx_dataset_item.v'
+      - 'rtl/dataset/LICENSE'
+      - 'rtl/execute/randomx_mul64.v'
+      - 'rtl/execute/randomx_superscalar_execute.v'
+      - 'rtl/execute/randomx_reciprocal32.v'
+      - 'rtl/execute/randomx_integer_execute.v'
+      - 'rtl/execute/randomx_integer_iteration.v'
+      - 'rtl/execute/randomx_program_control.v'
+      - 'rtl/execute/randomx_program_reciprocals.v'
+      - 'rtl/execute/randomx_prepared_rcp_guard.v'
+      - 'rtl/execute/randomx_prepared_integer_iteration.v'
+      - 'rtl/execute/randomx_prepared_program_sequence.v'
+      - 'rtl/execute/randomx_fp64.v'
+      - 'rtl/execute/randomx_fp128.v'
+      - 'rtl/execute/randomx_divsqrt64.v'
+      - 'rtl/execute/randomx_divsqrt128.v'
+      - 'rtl/execute/randomx_opcode_ceils.vh'
+      - 'rtl/execute/vendor/hardfloat/**'
+      - 'rtl/execute/tests/program_native_helpers.hpp'
+      - 'rtl/execute/LICENSE'
+      - 'rtl/aes/randomx_aes_round.v'
+      - 'rtl/aes/randomx_v2_aes_mix.v'
+      - 'rtl/aes/randomx_exec_aes_commit.v'
+      - 'rtl/aes/vendor/secworks/aes_sbox.v'
+      - 'rtl/aes/vendor/secworks/aes_inv_sbox.v'
+      - 'rtl/aes/vendor/secworks/LICENSE'
+      - 'rtl/iteration/randomx_iteration_store.v'
+      - 'rtl/engine/randomx_i32_to_f64.v'
+      - 'rtl/engine/randomx_iteration_engine.v'
+      - 'scripts/test_dataset_hash_lifecycle.py'
+      - 'scripts/dataset_lifecycle_support.py'
+      - 'scripts/test_dataset_item.py'
+      - 'scripts/test_divsqrt_execute.py'
+      - 'scripts/test_iteration_engine.py'
+      - 'scripts/divsqrt_fixture.py'
+      - 'scripts/hardfloat_compile_view.py'
+      - 'scripts/program_sequence_fixture.py'
+      - 'scripts/check_superscalar_toolchain.py'
+      - 'scripts/superscalar-toolchain.lock.json'
+      - 'tests/test_dataset_lifecycle_*.py'
+      - 'vendor/randomx/**'
+      - 'vendor/randomx.lock.json'
+      - 'vendor/randomx.sha256.json'
+      - '.github/workflows/dataset-hash-lifecycle.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  dataset-hash-lifecycle-differential:
+    runs-on: ubuntu-24.04
+    # Reuse the accepted dataset-item container and exact official HDL packages.
+    container:
+      image: ubuntu:22.04@sha256:5ec03bb3441e8b0bf3b4f9cd4629a1ae763010dc3035bb8da3ae6cf026486401
+    timeout-minutes: 60
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Install pinned official HDL packages and build dependencies
+        run: |
+          apt-get update
+          mkdir -p "$RUNNER_TEMP/dataset-hash-lifecycle-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          cd "$RUNNER_TEMP/dataset-hash-lifecycle-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          apt-get download iverilog=11.0-1.1 yosys=0.9-2 \
+            berkeley-abc=1.01+20211229git48498af+dfsg-2
+          printf '%s\n' \
+            '56b2b91e23f51c571b8cf43ef2df3a137a1bf4b6bcbff0fa3463b5b89403a852  iverilog_11.0-1.1_amd64.deb' \
+            'b9f27c0a999753ecc12efa31ebdf97de5a0ca4f970780ddf580b8668a47e8a20  yosys_0.9-2_amd64.deb' \
+            '5f9d897a2a215d36dc1526cf377910deeccf8ba62749e7abdab92a520a310219  berkeley-abc_1.01+20211229git48498af+dfsg-2_amd64.deb' \
+            > packages.sha256
+          sha256sum -c packages.sha256
+          DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y \
+            ca-certificates git python3 build-essential cmake time \
+            ./iverilog_11.0-1.1_amd64.deb ./yosys_0.9-2_amd64.deb \
+            ./berkeley-abc_1.01+20211229git48498af+dfsg-2_amd64.deb
+      - uses: actions/checkout@v4
+      - name: Verify and retain exact tool identities
+        run: |
+          python3 -B scripts/check_superscalar_toolchain.py \
+            --output "$RUNNER_TEMP/dataset-hash-lifecycle-toolchain-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/identity.json"
+      - name: Reuse accepted prepared dataset-item assets
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 39161170129
+          name: dataset-item-39161170129-1
+          path: ${{ runner.temp }}/dataset-hash-lifecycle-assets-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Compare bounded native dataset lifecycle and mapped service
+        run: |
+          # Seven prepared files are checked against the committed context lock.
+          # No private local runner receipt is required or claimed in this job.
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=safe.directory \
+            GIT_CONFIG_VALUE_0="$(pwd -P)" \
+          python3 -B scripts/test_dataset_hash_lifecycle.py \
+            --asset-root "$RUNNER_TEMP/dataset-hash-lifecycle-assets-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}/fixtures" \
+            --out "$RUNNER_TEMP/dataset-hash-lifecycle-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}" \
+            --jobs 2 --synthesize
+          echo "Executed bounded 2-program x 1-iteration native-cache dataset/lifecycle comparison, recovery controls and actual mapped service checks. Prepared cache/program/reciprocal assets are reused and identity-checked; autonomous preparation, physical cache service, full default-hash validation and physical PPA remain external." >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain complete licensed outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-hash-lifecycle-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/dataset-hash-lifecycle-${{ github.run_id }}-${{ github.run_attempt }}/
+      - name: Retain exact toolchain packages and identity
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dataset-hash-lifecycle-toolchain-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/dataset-hash-lifecycle-toolchain-${{ github.run_id }}-${{ github.run_attempt }}/
