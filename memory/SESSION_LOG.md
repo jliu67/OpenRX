@@ -1150,3 +1150,16 @@ and 15 named anchors are unchanged; original scientific-unverified flags remain.
 clock ledgers and host costs from the unexecuted default full hash, physical
 services/PPA and architecture selection. Parent owns normal merge after the
 separate final exact-head and hosted-CI gates.
+
+## 2026-10-19 — full default hardware-dataset harness preparation
+
+Above merged PR #82 `fa0bc79b`, prepare the focused EXP-023 driver and full native
+adapter while preserving accepted arithmetic/lifecycle RTL, original two-item
+reference role, prepared cache/program/reciprocal assets and all outputs. The full
+testbench gains an opt-in 64-bit watchdog and sparse flushed progress. Add 30
+synthetic accounting/provenance, output-isolation and staged-mode test definitions;
+they have not run. Independent
+method review and fresh local resource admission own all builds, new compatible
+full native gold, calibration and full simulation. No full hardware-dataset hash,
+new measured runtime, physical PPA or architecture acceptance is claimed.
+

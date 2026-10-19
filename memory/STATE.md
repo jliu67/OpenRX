@@ -1,5 +1,16 @@
 # Current state — actual local execution activation
 
+## Full hardware-dataset hash preparation — 2026-10-19
+
+[EXP-023](../experiments/EXP-023-full-hardware-dataset-hash.md) adds a focused
+admitted preparation/full-run driver above merged PR #82 `fa0bc79b`. It reuses
+accepted cache0/program/reciprocal assets and the unchanged native archive, with
+a scoped full native assertion adapter and the retained comprehensive testbench.
+No new native reference, build, calibration or RTL hash has run yet. Independent
+method review, fresh resource admission, exact prepared-input verification and
+measured runtime feasibility precede the complete default run. Full default
+hardware-dataset correctness and physical PPA remain unproven.
+
 ## Dataset session capacity — 2026-10-19
 
 Above PR #81 merge `a84602c5`, [EXP-022](../experiments/EXP-022-dataset-session-capacity.md)
