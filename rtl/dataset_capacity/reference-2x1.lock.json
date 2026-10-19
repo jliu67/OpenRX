@@ -1,0 +1,156 @@
+{
+  "excluded_nondeterministic_files": [
+    "dataset-native-host-time.json"
+  ],
+  "files": {
+    "accesses.hex": {
+      "bytes": 3711,
+      "sha256": "43c2e0f28a6673d9fd9ce12fba20833949b095ccf1b223a1586eb6fb826dd015"
+    },
+    "dataset-items.hex": {
+      "bytes": 292,
+      "sha256": "5eb5e22e34e9ea8d146231b49c4b9b8f69be674b77b43431dfe7f33141e85ef5"
+    },
+    "events.mem": {
+      "bytes": 3795,
+      "sha256": "4c7172a49a3cbe32ba7ae3f61eac06ac232f13fd7cc15bac70ce86ff2b45ec84"
+    },
+    "final-0.hex": {
+      "bytes": 4325376,
+      "sha256": "3a572c22212312387f8ccc3b22c957dd203e61fbd8a167f2ab5a00d56def07f8"
+    },
+    "final-1.hex": {
+      "bytes": 4325376,
+      "sha256": "163d61829f642a578452daa47a869ee8789153df05c0d8d96bf0ba3df9866c11"
+    },
+    "final-a.hex": {
+      "bytes": 129,
+      "sha256": "50b6356fdb669667b39b34283dc61e35a3679b9089136cfbfebbb1192065d6e7"
+    },
+    "final-digest32.hex": {
+      "bytes": 65,
+      "sha256": "7a0f1baa68d2fcf2e03be66c189243f8cdd6109f32c26fc1cb7c4c2bda9aa349"
+    },
+    "final-rf.hex": {
+      "bytes": 513,
+      "sha256": "ab95e69c46aa00be206e464cb11d4b1b34af5744c4f079c91047d9417c5ba52d"
+    },
+    "full-reference.json": {
+      "bytes": 311,
+      "sha256": "7b3a8a6f82318987280db72ab1709003f71bbcd4025fe819ea552dc85b153a79"
+    },
+    "initial.hex": {
+      "bytes": 4325376,
+      "sha256": "71bee4a260840181b80cc0ff02b16bd82e38c2d8b5fefcd3096195e2c13c9590"
+    },
+    "iterations.hex": {
+      "bytes": 1202,
+      "sha256": "69daaadcf67b0a9c2fe2e1c1b78c2c25bc3d316b49ac186e259cce961ea5807e"
+    },
+    "iterations.mem": {
+      "bytes": 1268,
+      "sha256": "11cba16e6e2549faf109f5e122794633f278b920008b08b9e0deb0d62acf143f"
+    },
+    "metadata.hex": {
+      "bytes": 911,
+      "sha256": "bbe335441b561ee1b6a7027a6ecf353151275c44199534ef5f5cefa1061c4ecc"
+    },
+    "metadata.mem": {
+      "bytes": 904,
+      "sha256": "4a5c485ea6b4441258729a426fb13d769373733104c653242e29a8fc451f3bf6"
+    },
+    "oracle-summary.json": {
+      "bytes": 498,
+      "sha256": "8d142eb8b61ee7cd822dca6d6e73b19f053705d9aa94e3523d12a2dc0b3e5dfb"
+    },
+    "program-0.mem": {
+      "bytes": 6528,
+      "sha256": "a7a8c21a637409719afc76d005c2023cf09e8360b6a7ee56628bc9800383862b"
+    },
+    "program-1.mem": {
+      "bytes": 6528,
+      "sha256": "add45f275bcb2cb72a6d3578a82c197d622498451797d562912beafbdd7b9d9a"
+    },
+    "program-registers.hex": {
+      "bytes": 1034,
+      "sha256": "54d74f49466f7db4f66e9f10d49c7dee47c25554f51c529884a7d93fa6976c82"
+    },
+    "sequence_sizes.vh": {
+      "bytes": 79,
+      "sha256": "d7e895f7d9ca22e1d83f4faefdd9a7f30b758abdea6ce66f5a0968d8382d75f2"
+    }
+  },
+  "hosted_origin": {
+    "api_advertised_sha256": "348ffecdc40349974d65f6fe483669d57bc5cac20e8d4275c656b70faecc34f6",
+    "archive_bytes": 25996721,
+    "archive_bytes_rehashed": false,
+    "artifact_id": 12153157493,
+    "artifact_name": "dataset-hash-lifecycle-39169664749-1",
+    "digest_kind": "GitHub API advertised archive identity; not a local archive-byte rehash",
+    "run_id": 39169664749
+  },
+  "native_pin": "aaafe71322df6602c21a5c72937ac284724ae561",
+  "profile": {
+    "cache_key": "test key 000",
+    "canonical_randomx_calculate_hash_verified": false,
+    "final_digest_hex": "ffbc66a37af9b4f986492b464e92ec15e24157b29cf8e470e44d03eab7d3c8c1",
+    "input_bytes": 52,
+    "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c65203230323631303138",
+    "iterations_per_program": 1,
+    "oracle": {
+      "branches": 78,
+      "bytecode_events": 165,
+      "cfround": 5,
+      "dataset": "pinned initDatasetItem actual native dataset, light mode",
+      "dynamic_active_reciprocals": 27,
+      "fp": 283,
+      "initialization_program_generation_interprogram_BLAKE2b_final_hash": "software providers separately timed; hardware seed/finalizer connected by lifecycle",
+      "instruction_steps": 768,
+      "iterations_per_program": 1,
+      "native_default_iterations": 2048,
+      "native_default_programs": 8,
+      "programs": 2,
+      "static_active_reciprocals": 27,
+      "total_iterations": 2,
+      "v2": 1
+    },
+    "programs": 2,
+    "v2": 1
+  },
+  "public_source": {
+    "head": "f22ad4b722ba6f04fcff4d56f425b6e84f124220",
+    "reference_sources": {
+      "rtl/execute/tests/program_native_helpers.hpp": {
+        "bytes": 1736,
+        "sha256": "5d66a1d45bb45a6d38ec74c38eda7273d4d5d53912ea5002608a340e01170416"
+      },
+      "rtl/hash/tests/dataset_lifecycle_native.hpp": {
+        "bytes": 17998,
+        "sha256": "a8c1f0bb2856f026a0c1046a2c839b36ed9b262648ea322b0eb650d3d9b8a396"
+      },
+      "rtl/hash/tests/dataset_lifecycle_reference.cpp": {
+        "bytes": 655,
+        "sha256": "56a76a90d3dff4809a44ded5c95ca03bbb02153459336f5d1d93c37312617535"
+      },
+      "rtl/hash/tests/lifecycle_native.hpp": {
+        "bytes": 2605,
+        "sha256": "cca6b45e9bec3b8ccdd4c2ba77046909d8f073d0ff2f171488940d4a60b04c3e"
+      },
+      "rtl/hash/tests/lifecycle_reference.cpp": {
+        "bytes": 9871,
+        "sha256": "137f03c76e4022209fc482b486d5784a95e743824d5986cc25089dc7a388212b"
+      },
+      "vendor/randomx.lock.json": {
+        "bytes": 247,
+        "sha256": "2c210a233afaedd668463647d25da27f9ffdb7235e53248f91c6f78c7943e3cd"
+      },
+      "vendor/randomx.sha256.json": {
+        "bytes": 17049,
+        "sha256": "2763c092b465bb99d71d544915b9fd847064ec195cc438c6370c34ecdf9b746d"
+      }
+    },
+    "tree": "bbadcf7edcaecad946ad91cbabf60f9dbac81cc6"
+  },
+  "schema": "openrx.dataset-capacity.reference-lock.v1",
+  "scope": "Trusted deterministic 2-program x 1-iteration native reference file identities and public origin metadata; no private runner-journal anchors."
+}

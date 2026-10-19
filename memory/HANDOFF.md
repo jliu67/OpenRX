@@ -1,5 +1,21 @@
 # Handoff — actual designated local execution
 
+## Dataset session capacity — 2026-10-19
+
+Continue from public executed code `aa6fe690` / tree `1bcde079` above PR #81
+merge `a84602c5`. [EXP-022](../experiments/EXP-022-dataset-session-capacity.md) passes
+16,384 protocol items/131,072 private program admissions, 60 new units, native
+case0, short mapping and both native 2×1 profiles plus five recovery prefixes.
+Terminal integrity and independent bounded scientific review accept the results;
+original scientific flags remain unverified. Ideal/stalled totals are
+641,182 / 1,754,985; ideal nested availability 106,800 = core 106,798 + launch 2.
+[Evidence](../docs/validation/dataset-capacity-20261019/README.md) records 302 source
+bindings, retained assets and explicit mapped/prefix limits. Preserve all originals;
+do not repeat completed component campaigns. The default hardware workload now
+elaborates but has not executed. A long run needs a separate reviewed resource/
+runtime admission. Physical services/PPA and architecture remain unresolved.
+Draft exact-head review and hosted checks are separate gates; parent owns merge.
+
 ## Native dataset lifecycle — 2026-10-18
 
 Above merged PR #80 (`901c6557`), [EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md)
