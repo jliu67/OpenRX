@@ -1126,3 +1126,12 @@ modeled clocks, including 106,798 nested item availability clocks. Service-only
 synthesis reports 45,670 generic cells, 4,761 DFF cells and zero latches.
 [Evidence](../docs/validation/dataset-lifecycle-20261018/README.md) retains capacity,
 provider boundaries and physical unknowns; original scientific flags stay unchanged.
+
+## 2026-10-19 — safe dataset capacity candidate
+
+PR #81 merged normally to `a84602c5`. [EXP-022](../experiments/EXP-022-dataset-session-capacity.md)
+adds a new session namespace with accepted cores unchanged, targeting 16,384
+items/131,072 private program admissions. Native gold and prepared assets are
+reused. Static review found and corrected a 171-versus-181 native-manifest count
+in the new verifier before any runtime; previous candidate files are preserved.
+Runtime, mapping and independent measured acceptance await source/request admission.

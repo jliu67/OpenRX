@@ -418,3 +418,12 @@ budget, without success/cancel/error refunds. Require quiescent reset for reuse.
 Reject hardware-mode default 8×2,048 at elaboration; retain the engine's single XOR.
 Reuse exact accepted assets and count item/executor/stalls inside outer execution.
 [EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md) passes bounded native/RTL checks; mapped functionality passes and independent bounded review accepts the results.
+
+## D056 — isolate recycled private item IDs, 2026-10-19
+
+Use a non-recycled outer item namespace and full 64-bit provider tags around
+unchanged accepted cores. Filter old prefixes before reconstructing private tags;
+only an externally quiescent real reset may recycle the outer namespace. Burn
+whole-batch reservations across cancellation/error and fail closed at capacity.
+Keep [EXP-022](../experiments/EXP-022-dataset-session-capacity.md) protocol-capacity
+proof separate from default full-hash and physical-performance acceptance.

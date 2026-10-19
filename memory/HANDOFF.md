@@ -1,5 +1,17 @@
 # Handoff — actual designated local execution
 
+## Dataset session capacity — 2026-10-19
+
+Base is normal PR #81 merge `a84602c5` / tree `17b01d8f`. New
+[EXP-022](../experiments/EXP-022-dataset-session-capacity.md) extends safe item
+capacity through a new 64-bit session interface, leaving accepted modules intact.
+Freeze/review source and concrete inputs before admission; runtime/mapping and
+independent measured acceptance are pending. Reuse accepted prepared data and
+nineteen deterministic native-reference files; do not repeat old campaigns.
+[Evidence](../docs/validation/dataset-capacity-20261019/README.md) keeps the 16,384-item
+protocol proof distinct from the unexecuted full hash and conditional runtime estimates.
+Parent owns normal merge; no architecture or physical-performance acceptance follows.
+
 ## Native dataset lifecycle — 2026-10-18
 
 Above merged PR #80 (`901c6557`), [EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md)

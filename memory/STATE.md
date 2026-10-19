@@ -1,5 +1,14 @@
 # Current state — actual local execution activation
 
+## Dataset session capacity — 2026-10-19
+
+Above normal PR #81 merge `a84602c5`, [EXP-022](../experiments/EXP-022-dataset-session-capacity.md)
+adds a separate session interface while preserving accepted source bytes.
+Default-size reservation/completion, stale-prefix isolation, exact exhaustion,
+short mapping and native 2×1 checks await reviewed admission. Runtime has not
+started; source/static review is underway. Full default hardware hash, physical
+services and PPA remain unresolved. Read the [new evidence](../docs/validation/dataset-capacity-20261019/README.md).
+
 ## Native dataset lifecycle — 2026-10-18
 
 [EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md) connects the accepted

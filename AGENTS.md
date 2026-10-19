@@ -1,5 +1,17 @@
 # Agent instructions
 
+## Dataset session capacity — 2026-10-19
+
+PR #81 is merged at `a84602c5` / tree `17b01d8f`. The next bounded
+[EXP-022](experiments/EXP-022-dataset-session-capacity.md) preserves all accepted
+modules and adds a separate 64-bit session provider interface. It addresses the
+8,191-item dependency with non-recycled external identities and checked wider
+reservations, not a relaxed guard. Static review is underway; runtime/mapping
+and independent measured acceptance remain pending. Planned capacity stress is
+16,384 items/131,072 private program admissions, with native 2×1 comparisons.
+[Evidence](docs/validation/dataset-capacity-20261019/README.md) separates estimates,
+retained host services and the unexecuted default full hash. Parent owns merges.
+
 ## Native dataset lifecycle — 2026-10-18
 
 Above merged PR #80 (`901c6557`), the optional [EXP-021](experiments/EXP-021-native-dataset-lifecycle.md)
