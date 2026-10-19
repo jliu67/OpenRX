@@ -1,0 +1,411 @@
+{
+ "bounded_scope": {
+  "VM_instruction_steps": 768,
+  "bytecode_events": 165,
+  "canonical_randomx_calculate_hash_verified": false,
+  "iterations_per_program": 1,
+  "normal_checks": "Native registers, complete 2 MiB scratchpad at program boundaries, both dataset items and final digest match in each completed 2x1 profile.",
+  "programs": 2,
+  "static_active_VM_reciprocals": 27,
+  "total_iterations": 2,
+  "v2": true
+ },
+ "capacity": {
+  "full_default_hardware_hash": "Not executed; requires a separately reviewed transaction namespace extension or quiescent rotation.",
+  "hardware_dataset_8x2048_elaboration": "explicit_capacity_rejection",
+  "items_per_batch_supported": [
+   1,
+   8191
+  ],
+  "items_reserved_per_accepted_attempt": 2,
+  "legacy_8x2048_default_elaboration": "pass",
+  "reservation": "Whole-batch admission burns the reservation. Cancel/completion do not refund it. Renewal requires externally quiescent hard reset.",
+  "service_unit_budget_batches": 4095,
+  "service_unit_budget_remaining": 1
+ },
+ "classification": "Sanitized derivative summary, not an original runner receipt or a re-signed journal.",
+ "derivation": {
+  "arithmetic": "Actual per-return CSV rows and JSON ledgers; checked stage/nested sums, native item addresses, item equations and digest equality. Completed command records and raw PASS lines gate the listed results.",
+  "omissions": "Private paths, raw journal/input/output hashes and execution IDs, timestamps, host/process dumps, raw traces, binaries and netlists remain in the preserved local originals. This summary publishes technical results and public-source identities only."
+ },
+ "mapping": {
+  "DFF_cells": 4761,
+  "ITEMS_PER_BATCH": 2,
+  "generic_cells": 45670,
+  "latch_cells": 0,
+  "mapped_validation": "pass_exact_RTL_outcomes",
+  "scope": "Service bridge plus unchanged item/executor/multipliers; no whole lifecycle mapping or physical PPA.",
+  "top": "randomx_dataset_service",
+  "top_ports": 90
+ },
+ "native_reference": {
+  "counter_scope": "Direct unchanged native initial fill/program/interprogram/finalization work supplies gold outside callback counts; callback statistics do not time that direct setup.",
+  "dataset_byte_addresses_hex": [
+   "0000000038a2aa80",
+   "000000000f7cf3c0"
+  ],
+  "digest32_hex": "ffbc66a37af9b4f986492b464e92ec15e24157b29cf8e470e44d03eab7d3c8c1",
+  "fresh_gold_items": 2,
+  "separate_service_RTL_assertion_only_items": 5,
+  "separate_service_mapped_assertion_only_items": 5
+ },
+ "nested_clock_interpretation": {
+  "availability_vs_phase": "item_cycles/request_to_first_response measures accepted item request to first offered response. Occupied phase bins include return/handoff edges. For these two items, item-phase sum and dataset wait equal availability sum + 2; they are not interchangeable.",
+  "ideal": {
+   "availability_sum": 106798,
+   "dataset_wait": 106800,
+   "item_phase_sum": 106800
+  },
+  "ideal_item_equation": "3*3563 + 34*1254 + 74 = 53399",
+  "nesting": "Service-phase sums close the outer execution partition. Item and dataset counters are nested and never added again to the outer total.",
+  "physical_frequency_or_time_inference": null,
+  "stalled": {
+   "availability_sum": 171082,
+   "dataset_wait": 171084,
+   "item_phase_sum": 171084
+  },
+  "stalled_item_equation": "53325 + 32063 program-service extra + 74 + 79 cache-service extra = 85541"
+ },
+ "normal_profiles": {
+  "hardware-dataset-ideal": {
+   "assertion_only_dataset_calls": 0,
+   "assertion_only_input_hash_program_calls": [
+    1,
+    2
+   ],
+   "dataset": {
+    "cache_request_stalls": 0,
+    "cache_requests": 16,
+    "cache_responses": 16,
+    "cache_service_extra_clocks": 0,
+    "demands": 2,
+    "executor_clocks": 106650,
+    "ideal_executor_clocks_each": 53325,
+    "instruction_request_stalls": 0,
+    "instruction_requests": 7126,
+    "instruction_responses": 7126,
+    "item_availability_clocks": 106798,
+    "item_phase_cycles": [
+     0,
+     2,
+     66,
+     16,
+     106666,
+     16,
+     16,
+     16,
+     2
+    ],
+    "item_returns": 2,
+    "items": 2,
+    "program_service_extra_clocks": 0,
+    "responses": 2,
+    "retirements": 7126,
+    "service_phase_cycles": [
+     4993,
+     106800,
+     0
+    ],
+    "stages": 16,
+    "stale_packets_drained": 0
+   },
+   "dataset_reply_wait_clocks": 106800,
+   "full_native_registers_2MiB_scratchpad_digest_equal": true,
+   "live_input_hash_fill_program_provider_calls": [
+    0,
+    0,
+    0
+   ],
+   "live_native_dataset_calls": 0,
+   "nested_phase_sums": {
+    "executor": 4935,
+    "finalization": 393286,
+    "initial_fill": 131074,
+    "input_hash": 30,
+    "iteration": 111793,
+    "program_generation": 1606
+   },
+   "per_item": [
+    {
+     "address_hex": "0000000038a2aa80",
+     "cache_service_extra": 0,
+     "executor_cycles": 53325,
+     "image_epoch_hex": "4ca3",
+     "instruction_service_extra": 0,
+     "item_cycles": 53399,
+     "muls": 1254,
+     "request_to_first_response": 53399,
+     "retired": 3563,
+     "stages": 8,
+     "tag_hex": "00010001"
+    },
+    {
+     "address_hex": "000000000f7cf3c0",
+     "cache_service_extra": 0,
+     "executor_cycles": 53325,
+     "image_epoch_hex": "4ca3",
+     "instruction_service_extra": 0,
+     "item_cycles": 53399,
+     "muls": 1254,
+     "request_to_first_response": 53399,
+     "retired": 3563,
+     "stages": 8,
+     "tag_hex": "00010002"
+    }
+   ],
+   "stage_cycles": {
+    "control_and_metadata": 8,
+    "execution": 111793,
+    "finalization": 393286,
+    "held_return": 1,
+    "initialization_hardware_fill": 131074,
+    "input_hash": 30,
+    "interprogram_seed": 60,
+    "program_generation": 1606,
+    "program_preparation": 3322
+   },
+   "stage_sum": 641180,
+   "total_modeled_clocks": 641180
+  },
+  "hardware-dataset-stalled": {
+   "assertion_only_dataset_calls": 0,
+   "assertion_only_input_hash_program_calls": [
+    1,
+    2
+   ],
+   "dataset": {
+    "cache_request_stalls": 32,
+    "cache_requests": 16,
+    "cache_responses": 16,
+    "cache_service_extra_clocks": 158,
+    "demands": 2,
+    "executor_clocks": 170776,
+    "ideal_executor_clocks_each": 53325,
+    "instruction_request_stalls": 14252,
+    "instruction_requests": 7126,
+    "instruction_responses": 7126,
+    "item_availability_clocks": 171082,
+    "item_phase_cycles": [
+     0,
+     2,
+     66,
+     16,
+     170792,
+     48,
+     142,
+     16,
+     2
+    ],
+    "item_returns": 2,
+    "items": 2,
+    "program_service_extra_clocks": 64126,
+    "responses": 2,
+    "retirements": 7126,
+    "service_phase_cycles": [
+     5927,
+     171084,
+     0
+    ],
+    "stages": 16,
+    "stale_packets_drained": 3467108
+   },
+   "dataset_reply_wait_clocks": 171084,
+   "full_native_registers_2MiB_scratchpad_digest_equal": true,
+   "live_input_hash_fill_program_provider_calls": [
+    0,
+    0,
+    0
+   ],
+   "live_native_dataset_calls": 0,
+   "nested_phase_sums": {
+    "executor": 5741,
+    "finalization": 1179718,
+    "initial_fill": 393218,
+    "input_hash": 30,
+    "iteration": 177011,
+    "program_generation": 1606
+   },
+   "per_item": [
+    {
+     "address_hex": "0000000038a2aa80",
+     "cache_service_extra": 79,
+     "executor_cycles": 85388,
+     "image_epoch_hex": "4ca3",
+     "instruction_service_extra": 32063,
+     "item_cycles": 85541,
+     "muls": 1254,
+     "request_to_first_response": 85541,
+     "retired": 3563,
+     "stages": 8,
+     "tag_hex": "00010001"
+    },
+    {
+     "address_hex": "000000000f7cf3c0",
+     "cache_service_extra": 79,
+     "executor_cycles": 85388,
+     "image_epoch_hex": "4ca3",
+     "instruction_service_extra": 32063,
+     "item_cycles": 85541,
+     "muls": 1254,
+     "request_to_first_response": 85541,
+     "retired": 3563,
+     "stages": 8,
+     "tag_hex": "00010002"
+    }
+   ],
+   "stage_cycles": {
+    "control_and_metadata": 8,
+    "execution": 177011,
+    "finalization": 1179718,
+    "held_return": 4,
+    "initialization_hardware_fill": 393218,
+    "input_hash": 30,
+    "interprogram_seed": 66,
+    "program_generation": 1606,
+    "program_preparation": 3322
+   },
+   "stage_sum": 1754983,
+   "total_modeled_clocks": 1754983
+  },
+  "software-dataset-ideal": {
+   "assertion_only_dataset_calls": 0,
+   "assertion_only_input_hash_program_calls": [
+    1,
+    2
+   ],
+   "dataset": {
+    "cache_request_stalls": 0,
+    "cache_requests": 0,
+    "cache_responses": 0,
+    "cache_service_extra_clocks": 0,
+    "demands": 2,
+    "executor_clocks": 0,
+    "ideal_executor_clocks_each": 53325,
+    "instruction_request_stalls": 0,
+    "instruction_requests": 0,
+    "instruction_responses": 0,
+    "item_availability_clocks": 0,
+    "item_phase_cycles": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "item_returns": 0,
+    "items": 0,
+    "program_service_extra_clocks": 0,
+    "responses": 2,
+    "retirements": 0,
+    "service_phase_cycles": [
+     0,
+     0,
+     0
+    ],
+    "stages": 0,
+    "stale_packets_drained": 0
+   },
+   "dataset_reply_wait_clocks": 2,
+   "full_native_registers_2MiB_scratchpad_digest_equal": true,
+   "live_input_hash_fill_program_provider_calls": [
+    0,
+    0,
+    0
+   ],
+   "live_native_dataset_calls": 2,
+   "nested_phase_sums": {
+    "executor": 4935,
+    "finalization": 393286,
+    "initial_fill": 131074,
+    "input_hash": 30,
+    "iteration": 4995,
+    "program_generation": 1606
+   },
+   "per_item": [],
+   "stage_cycles": {
+    "control_and_metadata": 8,
+    "execution": 4995,
+    "finalization": 393286,
+    "held_return": 1,
+    "initialization_hardware_fill": 131074,
+    "input_hash": 30,
+    "interprogram_seed": 60,
+    "program_generation": 1606,
+    "program_preparation": 3322
+   },
+   "stage_sum": 534382,
+   "total_modeled_clocks": 534382
+  }
+ },
+ "paired_ideal_closure": {
+  "dataset_reply_wait_delta": 106798,
+  "execution_clock_delta": 106798,
+  "item_availability_sum": 106798,
+  "native_digest_equal": true,
+  "nested_costs_added_twice": false,
+  "non_dataset_nested_work_equal": true,
+  "other_stage_partitions_equal": true,
+  "outer_clock_delta": 106798
+ },
+ "prefix_profiles": {
+  "PASS": {
+   "hardware-cancel-1": "PASS dataset_lifecycle_cancel target=1 changed_generation=1 changed_input=1 stale_replies_drained=1 accepted_writes_persist=1 prefix_only=1",
+   "hardware-cancel-2": "PASS dataset_lifecycle_cancel target=2 changed_generation=1 changed_input=1 stale_replies_drained=1 accepted_writes_persist=1 prefix_only=1",
+   "hardware-cancel-3": "PASS dataset_lifecycle_cancel target=3 changed_generation=1 changed_input=1 stale_replies_drained=1 accepted_writes_persist=1 prefix_only=1",
+   "hardware-error-1": "PASS dataset_lifecycle_error service=1 matching_faults=1 held_error=1 no_wrong_xor=1 changed_generation=1 changed_input=1 prefix_only=1",
+   "hardware-error-2": "PASS dataset_lifecycle_error service=2 matching_faults=1 held_error=1 no_wrong_xor=1 changed_generation=1 changed_input=1 prefix_only=1"
+  },
+  "scope": "Cancellation/matching-error and changed-generation/input recovery prefixes; not additional complete hashes."
+ },
+ "prepared_context": {
+  "cache_key_hex": "74657374206b657920303030",
+  "fresh_Argon_initializations": 0,
+  "fresh_cache_export_bytes": 0,
+  "fresh_superscalar_preparations": 0,
+  "global_reciprocals": 239,
+  "identity": "Actual selected bytes verified against the committed context lock; original raw input bindings retained separately.",
+  "instructions_each_item": 3563,
+  "multiplies_each_item": 1254,
+  "prepared_superscalar_programs": 8,
+  "retained_cache_bytes_loaded": 268435456
+ },
+ "remaining_boundaries": [
+  "Retained native Argon/cache initialization and superscalar/global reciprocal preparation/export.",
+  "Host fixture load, tagged immutable cache/program/table response service and external scratchpad model.",
+  "Assertion-only native input/AES/program/dataset/reference work, separately counted from live provider callbacks.",
+  "Physical cache service/DRAM traffic, frequency, power, area, full default hardware-hash performance and architecture selection remain unknown."
+ ],
+ "schema": "openrx.dataset-lifecycle.bounded-results.v1",
+ "service_unit": {
+  "RTL_PASS": "PASS dataset_service mode=all batch_accepts=4130 ds_accepts=37 ds_returns=33 native_assertions=5 held_checks=132 local_errors=8 child_errors=20 cancellations=4099 stale_packets=110391 budget_batches=4095 budget_remaining=1 reset_recoveries=1 commits=19156 stages=40 service_stalls=7150",
+  "RTL_assertion_only_native_items": 5,
+  "RTL_live_native_dataset_calls": 0,
+  "mapped_PASS": "PASS dataset_service mode=all batch_accepts=4130 ds_accepts=37 ds_returns=33 native_assertions=5 held_checks=132 local_errors=8 child_errors=20 cancellations=4099 stale_packets=110391 budget_batches=4095 budget_remaining=1 reset_recoveries=1 commits=19156 stages=40 service_stalls=7150",
+  "mapped_assertion_only_native_items": 5,
+  "mapped_live_native_dataset_calls": 0,
+  "mapped_status": "pass_exact_RTL_outcomes",
+  "scope": "Counts cover the all-mode suite with explicit resets; the budget segment burns 4095 two-item batches, leaves one slot, refuses the next two-item batch, then performs quiescent reset and recovery."
+ },
+ "source": {
+  "public_code_commit": "f22ad4b722ba6f04fcff4d56f425b6e84f124220",
+  "source_input_index": "docs/validation/dataset-lifecycle-20261018/source-inputs.json",
+  "source_input_index_sha256": "d39ed3f6d6728fd900149c5ef475c8efbbe0c90e53288edc2f94aae7ee779e3c",
+  "tree": "bbadcf7edcaecad946ad91cbabf60f9dbac81cc6"
+ },
+ "status": {
+  "identity_and_ledger_tests_passed": 32,
+  "independent_bounded_acceptance": "accepted_no_blockers_in_explicit_bounded_scope",
+  "normal_profiles_passed": 3,
+  "original_runner_scientific_acceptance": "unverified",
+  "prefix_profiles_passed": 5,
+  "service_RTL": "pass",
+  "service_mapped": "pass",
+  "service_synthesis": "pass",
+  "terminal_integrity_verified_locally": true,
+  "whole_default_hash_or_physical_acceptance": false
+ }
+}

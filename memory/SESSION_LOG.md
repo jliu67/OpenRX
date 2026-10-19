@@ -1114,3 +1114,15 @@ initialization, native program/global
 reciprocal preparation, physical tagged cache service and lifecycle integration
 remain external. No new full-hash measurement, physical PPA, architecture
 selection or 1 MH/s below 2,500 W proof follows.
+
+## 2026-10-18 — bounded dataset lifecycle integration
+
+PR #80 merged normally to `901c6557`, with six head/two postmerge checks passed.
+[EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md) reuses retained assets;
+three 2×1 native comparisons, five recovery prefixes, 32 unit checks and service
+RTL pass. Mapped functionality passes; independent bounded review accepts the results.
+Executed public code `f22ad4b7` / tree `bbadcf7e` measures ideal hardware 641,180
+modeled clocks, including 106,798 nested item availability clocks. Service-only
+synthesis reports 45,670 generic cells, 4,761 DFF cells and zero latches.
+[Evidence](../docs/validation/dataset-lifecycle-20261018/README.md) retains capacity,
+provider boundaries and physical unknowns; original scientific flags stay unchanged.

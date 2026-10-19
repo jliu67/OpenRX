@@ -1,5 +1,18 @@
 # Current state — actual local execution activation
 
+## Native dataset lifecycle — 2026-10-18
+
+[EXP-021](../experiments/EXP-021-native-dataset-lifecycle.md) connects the accepted
+item service to the opt-in lifecycle above merged PR #80 (`901c6557`). Three
+2×1 profiles match native state/full scratchpad/digest; five recovery prefixes,
+32 unit checks and service RTL pass. Mapped functionality passes, terminal integrity is verified, and
+separate independent bounded review accepts the results with no blockers. Public executed tree is `bbadcf7e` at `f22ad4b7`.
+Software/ideal hardware/stalled totals are 534,382 / 641,180 / 1,754,983 modeled
+clocks. Ideal dataset availability adds exactly 106,798 nested clocks.
+[Evidence](../docs/validation/dataset-lifecycle-20261018/README.md) separates remaining
+host services, lifetime capacity, generic synthesis and physical unknowns.
+Earlier evidence/scientific flags retain their original source-specific status.
+
 ## Native cache-backed dataset item — 2026-10-18
 
 Above merged PR #79 / main `74a24e239b938ebaf4874ebd4dae47dd072ad41d`,
