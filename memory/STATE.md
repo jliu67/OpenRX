@@ -1,5 +1,21 @@
 # Current state — actual local execution activation
 
+## Verified current state — 2026-10-19
+
+[Status and provenance](../docs/STATUS.md) reconcile main
+`fa0bc79bdcd89c91aab11596b6f7f5e104aa6884` through merged PR82. PR83 remains draft
+at `8e4164230ce633bbe43a385003659680cfec2925`; PR84 merged only to its feature.
+Execution `20261019T032907Z-e8ffa2ec5555` remains pinned to b5f45998/tree cc1fea90.
+Its later terminal receipt is PROCESS_FAILED/scientific-unverified; the earlier
+six-program/12,288-iteration checkpoint remains partial historical evidence.
+Terminal/source/artifact review is pending with the existing supervisor; no
+restart, duplicate or takeover follows from this correction.
+
+Migration/publication cleanup and the bounded merged components are complete.
+Full hardware-dataset acceptance, autonomous preparation, physical services/PPA,
+architecture selection and the 1 MH/s below 2,500 W target remain unproven.
+Earlier dated entries below retain original sources, failures and scientific gates.
+
 ## Dataset session capacity — 2026-10-19
 
 Above PR #81 merge `a84602c5`, [EXP-022](../experiments/EXP-022-dataset-session-capacity.md)
@@ -896,3 +912,4 @@ Read live task comments and bot receipts for claims. Exact prior STATE/HANDOFF s
 [PR #26](https://github.com/jliu67/OpenRX/pull/26) merged at `77a1641fb85f386bce4a5b51e00dedbe257376f6`, with the exact tested `78599e2812053c85037401e3f2e4d00191428427` tree. All five hosted source-head jobs passed; the independent reviewer checked 257 Python / 107 upstream / six native controls, 38 gem5 host controls, and native/QEMU 39 required plus nine runtime outcomes. Actual hosted guest execution was skipped. [Integration ledger](../docs/validation/m3-fs/stop-file-20261008/integration.json).
 
 The session's [release](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6071620898) is accepted (ready, claim null, no warnings); the required [hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6071623180) is verified. No project simulator or wrapper remains running. Task #16 stays open for the complete unchanged light matrix.
+

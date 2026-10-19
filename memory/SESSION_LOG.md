@@ -1150,3 +1150,18 @@ and 15 named anchors are unchanged; original scientific-unverified flags remain.
 clock ledgers and host costs from the unexecuted default full hash, physical
 services/PPA and architecture selection. Parent owns normal merge after the
 separate final exact-head and hosted-CI gates.
+
+
+## 2026-10-19 — verified status reconciliation
+
+Reconcile current navigation, board, mission/state/handoff and shared-pool summaries
+against GitHub main fa0bc79b through merged PR82, draft PR83 at 8e416423 and PR84's
+feature-only merge. Retain all dated scientific records and original acceptance
+gates. [Status provenance](../docs/status-evidence-20261019.json) binds retained
+preparation, earlier partial supervisor evidence and the later PROCESS_FAILED
+receipt; no hardware-dataset full-hash acceptance is claimed. The existing
+supervisor owns terminal diagnosis/review. Use a documentation-only feature PR,
+independent exact-head review and applicable hosted checks; no main push or merge.
+No scientific workload, build, synthesis, settings/access change, standing clone or
+Git sync was performed for this reconciliation. Historical audit/external-link
+findings and physical/architectural/M1–M5 gates remain open.
