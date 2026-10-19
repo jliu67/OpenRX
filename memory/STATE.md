@@ -2,12 +2,16 @@
 
 ## Dataset session capacity — 2026-10-19
 
-Above normal PR #81 merge `a84602c5`, [EXP-022](../experiments/EXP-022-dataset-session-capacity.md)
-adds a separate session interface while preserving accepted source bytes.
-Default-size reservation/completion, stale-prefix isolation, exact exhaustion,
-short mapping and native 2×1 checks await reviewed admission. Runtime has not
-started; source/static review is underway. Full default hardware hash, physical
-services and PPA remain unresolved. Read the [new evidence](../docs/validation/dataset-capacity-20261019/README.md).
+Above PR #81 merge `a84602c5`, [EXP-022](../experiments/EXP-022-dataset-session-capacity.md)
+passes safe 16,384-item/131,072-private-program capacity, native case0, 60 new
+units, short mapped parity, two native 2×1 profiles and five recovery prefixes.
+Terminal integrity and independent bounded review accept public executed code
+`aa6fe690` / tree `1bcde079`; accepted IP and originals are preserved.
+Ideal/stalled totals are 641,182 / 1,754,985 modeled clocks. Reduced mapping is
+48,190 cells/5,199 DFF/zero latches. [Evidence](../docs/validation/dataset-capacity-20261019/README.md)
+keeps protocol stress and recovery prefixes distinct from the unexecuted default
+8×2,048 hardware hash. Autonomous preparation, physical services/PPA and
+architecture selection remain unresolved; publication-head/hosted gates separate.
 
 ## Native dataset lifecycle — 2026-10-18
 

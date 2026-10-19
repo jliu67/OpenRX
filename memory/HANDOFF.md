@@ -2,15 +2,19 @@
 
 ## Dataset session capacity — 2026-10-19
 
-Base is normal PR #81 merge `a84602c5` / tree `17b01d8f`. New
-[EXP-022](../experiments/EXP-022-dataset-session-capacity.md) extends safe item
-capacity through a new 64-bit session interface, leaving accepted modules intact.
-Freeze/review source and concrete inputs before admission; runtime/mapping and
-independent measured acceptance are pending. Reuse accepted prepared data and
-nineteen deterministic native-reference files; do not repeat old campaigns.
-[Evidence](../docs/validation/dataset-capacity-20261019/README.md) keeps the 16,384-item
-protocol proof distinct from the unexecuted full hash and conditional runtime estimates.
-Parent owns normal merge; no architecture or physical-performance acceptance follows.
+Continue from public executed code `aa6fe690` / tree `1bcde079` above PR #81
+merge `a84602c5`. [EXP-022](../experiments/EXP-022-dataset-session-capacity.md) passes
+16,384 protocol items/131,072 private program admissions, 60 new units, native
+case0, short mapping and both native 2×1 profiles plus five recovery prefixes.
+Terminal integrity and independent bounded scientific review accept the results;
+original scientific flags remain unverified. Ideal/stalled totals are
+641,182 / 1,754,985; ideal nested availability 106,800 = core 106,798 + launch 2.
+[Evidence](../docs/validation/dataset-capacity-20261019/README.md) records 302 source
+bindings, retained assets and explicit mapped/prefix limits. Preserve all originals;
+do not repeat completed component campaigns. The default hardware workload now
+elaborates but has not executed. A long run needs a separate reviewed resource/
+runtime admission. Physical services/PPA and architecture remain unresolved.
+Draft exact-head review and hosted checks are separate gates; parent owns merge.
 
 ## Native dataset lifecycle — 2026-10-18
 

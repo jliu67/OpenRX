@@ -427,3 +427,8 @@ only an externally quiescent real reset may recycle the outer namespace. Burn
 whole-batch reservations across cancellation/error and fail closed at capacity.
 Keep [EXP-022](../experiments/EXP-022-dataset-session-capacity.md) protocol-capacity
 proof separate from default full-hash and physical-performance acceptance.
+
+Bounded EXP-022 closeout accepts 16,384 protocol items/131,072 private admissions,
+native 2×1 and reduced mapped parity with terminal integrity and independent
+review. Preserve the distinction between protocol capacity, native 2×1, recovery
+prefixes and the unexecuted default hardware hash; see the linked evidence.

@@ -2,15 +2,19 @@
 
 ## Dataset session capacity — 2026-10-19
 
-PR #81 is merged at `a84602c5` / tree `17b01d8f`. The next bounded
-[EXP-022](experiments/EXP-022-dataset-session-capacity.md) preserves all accepted
-modules and adds a separate 64-bit session provider interface. It addresses the
-8,191-item dependency with non-recycled external identities and checked wider
-reservations, not a relaxed guard. Static review is underway; runtime/mapping
-and independent measured acceptance remain pending. Planned capacity stress is
-16,384 items/131,072 private program admissions, with native 2×1 comparisons.
-[Evidence](docs/validation/dataset-capacity-20261019/README.md) separates estimates,
-retained host services and the unexecuted default full hash. Parent owns merges.
+[EXP-022](experiments/EXP-022-dataset-session-capacity.md) above merged PR #81
+`a84602c5` passes 16,384 protocol-derived items/131,072 observed private program
+admissions, 60 new units, native case0, short mapped parity, both native 2×1
+profiles and five recovery prefixes. Terminal integrity and independent bounded
+review accept the results. Public executed code is `aa6fe690`, tree `1bcde079`;
+all accepted modules and original outputs remain unchanged. Ideal/stalled totals
+are 641,182 / 1,754,985 modeled clocks, including two launch clocks. Reduced
+SESSION_BITS4/N1 mapping is 48,190 cells/5,199 DFF/zero latches. Read the
+[evidence](docs/validation/dataset-capacity-20261019/README.md) for exact clocks,
+source bindings and limits. Preserve quiescent-reset/nonreuse contracts. Default
+8×2,048 elaborates but remains unexecuted; autonomous preparation, physical
+services/PPA and architecture selection remain open. Parent owns normal merge;
+publication-head review and hosted checks remain separate gates.
 
 ## Native dataset lifecycle — 2026-10-18
 

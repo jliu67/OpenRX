@@ -1,48 +1,52 @@
 # EXP-022: default-size dataset session capacity
 
-Status: implementation and initial static review only. Runtime, mapping and
-independent result acceptance are pending. Base is normal PR #81 merge
-`a84602c5348723e4c388ccd50f3a16096f3054f9`, tree
-`17b01d8f9bf0aeeaa8cf5b75f73f2b8b2be6df63`.
+Status: bounded validation, terminal integrity and independent scientific review
+accepted with no blockers. Publication-head review and hosted checks are separate.
+Base is normal PR #81 merge `a84602c5348723e4c388ccd50f3a16096f3054f9`. Public executed code
+is [`aa6fe690`](https://github.com/jliu67/OpenRX/commit/aa6fe690d3a811440c75a501988f17df887ccd90),
+exact tree `1bcde0790ca3bd05c4acc0cb7a8b35eea7752ca3`.
 
-The accepted 16-bit executor namespace admits 65,535 programs between quiescent
-resets. A default 8×2,048 hash needs 16,384 dataset items and 131,072 superscalar
-program admissions. A 17-bit nonzero namespace still falls one program short.
-The existing 8,191-item guard is therefore a real dependency, not a tuning knob.
+The accepted private executor namespace admits 65,535 programs between quiescent
+resets. A default 8×2,048 hash needs 16,384 dataset items and 131,072 private program
+admissions. A 17-bit nonzero namespace still falls one program short. The former
+8,191-item guard is a real dependency.
 
 The [new capacity namespace](../rtl/dataset_capacity/DATASET_CAPACITY.md) preserves
-all accepted modules byte-for-byte. A session adapter captures an item descriptor,
-allocates a monotonically increasing 32-bit namespace, privately resets the
-unchanged item/executor, and launches it on the next edge. External cache and
-instruction identities are the full 64-bit `{session, private_tag}`. Old sessions
-are filtered before a response can reach a recycled private identity. Cancellation
-and errors burn allocations; the namespace fails closed before wrap. A real
-outer reset still requires externally quiescent providers.
+accepted modules byte-for-byte. A session adapter captures the complete descriptor,
+allocates a monotonically increasing 32-bit namespace, privately resets the unchanged
+item/executor, and launches on the next edge. External cache/fetch tags are full
+64-bit `{session, private_tag}`. Old prefixes are filtered before private IDs are
+reused. Cancellation and errors burn allocations; the namespace fails closed before
+wrap. A real outer reset requires externally quiescent providers. Wider checked
+reservations burn each whole admitted batch without refunds.
 
-The service widens reservation and seen ledgers to 32 bits and checks additions
-in 64 bits. Every batch burns its full reservation at admission, with no refund.
-The new wrapper elaborates the default workload with hardware dataset service;
-legacy mode remains explicit and the old wrapper/accepted campaigns are preserved.
-The adapter is expected to add one measured launch clock per item; raw child,
-executor and session availability are separate, nested counters.
+The default hardware workload now elaborates. Actual bounded checks pass 16,384
+identity-derived item completions and 131,072 observed private program admissions,
+60 new units, poisoned descriptor capture, exact reduced-namespace exhaustion,
+one complete real native item, short mapped parity, two complete native 2×1 profiles
+and five recovery prefixes. No old component campaign or native gold/cache/program
+preparation is repeated. Nineteen deterministic gold files and 52 unique prepared
+context/test files are reused and actually verified.
 
-Planned evidence is one 16,384-item protocol stress batch, smaller exact exhaustion
-and recovery cases, a short mapped subset and two native-equivalent 2×1 connected
-profiles. The stress uses an explicitly declared identity-program derivative of
-retained native-empty data; it is not a completed RandomX hash. Nineteen existing
-deterministic reference files and accepted prepared cache/program/reciprocal data
-are reused. No old component campaign or native gold generation is repeated.
+The adapter adds one measured launch clock per item. Native case0 measures
+53,325 executor / 53,399 core / 53,400 session clocks. Ideal/stalled 2×1 outer totals
+are 641,182 / 1,754,985; item availability is 106,800 / 171,084, nested in execution.
+The ideal outer and dataset-wait delta against the retained software baseline is
+exactly 106,800. Reduced SESSION_BITS4/N1 mapping is 48,190 generic cells, 5,199
+DFF cells and zero latches; it does not establish full-capacity or physical PPA.
 
-Before any default full-hash run, use an admitted resource/runtime plan. The
-known cache-0 item work alone suggests 874,905,600 session clocks for 16,384 items
-(53,399 accepted-core + one adapter launch each). Adding an earlier full-hash
-baseline and known input/program deltas gives a conditional scenario around
-915.9 million modeled clocks. Different work/preparation/transport may change it;
-this is an estimate, not a demonstrated default hash. Retained simulator-rate
-scenarios suggest hours in Verilator or days in VVP, not a reliable time bound.
-This increment does not launch that run.
+The stress uses two explicit zero-effect instructions and retained native-empty
+assertions. It is a protocol-capacity proof, not a completed default RandomX hash.
+Connected control recovery ends at a changed native seed/generation prefix; full
+recovered hashes are not claimed. Complete raw originals and original runner
+scientific-unverified flags remain preserved, with independent bounded acceptance
+recorded separately in [evidence](../docs/validation/dataset-capacity-20261019/README.md).
 
-[Evidence](../docs/validation/dataset-capacity-20261019/README.md) will record the
-actual frozen source, consumed inputs, commands, results and independent review.
-Host cache/superscalar/global reciprocal preparation, immutable physical memory
-services, full canonical hardware hash and physical PPA remain unresolved.
+Before any default full-hash run, use its own reviewed resource/runtime admission.
+The known cache0 item model suggests 874,905,600 session clocks; adding retained
+full-hash baseline and known input/program deltas gives a conditional 915,887,592
+modeled-clock scenario. Retained simulator scenarios suggest about 15.22 hours in
+Verilator or 5.68 days in VVP; they are not measured full-hash results or reliable
+bounds. This increment launches no long default hash. Autonomous cache/program/
+global reciprocal preparation, physical services, full canonical hardware hash,
+physical PPA and architecture selection remain unresolved. Parent owns merge.
