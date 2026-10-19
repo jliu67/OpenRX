@@ -1,0 +1,88 @@
+# Verified project status — 2026-10-19
+
+This is a dated reconciliation of GitHub main
+`fa0bc79bdcd89c91aab11596b6f7f5e104aa6884` and retained execution records.
+Earlier dated status entries remain historical evidence. Their original sources,
+failures, scientific flags and acceptance criteria are unchanged.
+
+## Delivery and acceptance
+
+| Surface | Verified state | Boundary still open |
+| --- | --- | --- |
+| Migration/publication | [#27 complete](https://github.com/jliu67/OpenRX/issues/27#issuecomment-6095961454), explicit LOCAL_ACTIVE release; [#31 cleanup complete](https://github.com/jliu67/OpenRX/issues/31#issuecomment-6099136057) | Every new workload still requires its own source/request/resource admission. No standing editable mirror or Git sync. |
+| Execution components | PR49/51/53/55/57/59/61/63/65/68/70 merged into main; integer/FP/iteration/seed/finalization/prepared-reciprocal work is retained | Component correctness and generic mapping do not establish physical timing, power or area. |
+| Connected software-assisted hash | [PR73 merged](https://github.com/jliu67/OpenRX/pull/73); [qualified independent review](https://github.com/jliu67/OpenRX/pull/73#pullrequestreview-5542293357) accepts the original full-run evidence transfer | The full 8×2,048 result remains attributed to exact `c96e96ab1eb46cb727b21befffa526e637ebed4a`, with software providers and separately validated successor edits. |
+| Later hardware components | PR76/77/78/79/80/81/82 merged; main ends at [PR82](https://github.com/jliu67/OpenRX/pull/82) | Initial fill/program/input hashing, superscalar execution, item/lifecycle/capacity evidence has bounded scopes; default hardware-dataset full-hash acceptance is separate. |
+| Architecture tool | [PR74 merged](https://github.com/jliu67/OpenRX/pull/74); [#72 closeout](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6211077285) accepts the scoped analytical tool | #72 remains open/review. Alternative full-hash timing, physical feasibility and final architecture selection are unresolved. |
+| Full hardware-dataset candidate | [PR83](https://github.com/jliu67/OpenRX/pull/83) remains draft at `8e4164230ce633bbe43a385003659680cfec2925` | Six hosted checks passed at that publication head; the retained full attempt failed and has no scientific acceptance. |
+
+PR84 repaired test discovery and [merged only into PR83's feature branch](https://github.com/jliu67/OpenRX/pull/84),
+producing `8e416423`. It is not a main merge. Its [independent review](https://github.com/jliu67/OpenRX/pull/84#pullrequestreview-5567152029)
+does not rebind execution to the newer publication tree. The six publication-head checks
+include [Foundation](https://github.com/jliu67/OpenRX/actions/runs/39202984697/job/117899719289),
+[RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39202984676/job/117899719410),
+[capacity](https://github.com/jliu67/OpenRX/actions/runs/39202984660/job/117899719220) and
+[finalization](https://github.com/jliu67/OpenRX/actions/runs/39202984654/job/117899719064),
+plus the push Foundation/RISC-V checks. Hosted correctness is not full-hash acceptance.
+
+## Retained full-attempt status
+
+Execution `20261019T032907Z-e8ffa2ec5555` remains bound to source
+`b5f459982e95ad447ba181d957be825e2a0d34d7`, tree
+`cc1fea901c89bd2b4f8b58a0ab0d9b982abf455a`.
+The independently reviewed corrected preparation passed 30 units, canonical full
+native-reference comparison and model compilation; it did not execute the RTL hash.
+
+The retained supervisor checkpoint recorded six of eight program boundaries,
+12,288 iteration states/dataset responses, six complete 2 MiB scratchpad comparisons
+and six seed comparisons. These were earlier partial observations, not final attained coverage or completed acceptance.
+A later terminal receipt, dated 21:33:03 UTC, records `PROCESS_FAILED`, return code 1,
+and scientific acceptance `unverified`; the driver summary says `failed` and
+`full_hash_execution: false`. The retained integrity-verification record reports
+integrity verified. Terminal cause and source/artifact review belong to the existing
+supervisor; this reconciliation makes no failure diagnosis or full-hash pass claim.
+[Compact status provenance](status-evidence-20261019.json) binds the small retained
+records without republishing private host/process/resource details.
+
+Do not restart, duplicate, take over or compete with this execution/supervisor.
+Preserve its frozen inputs, builds, outputs and failures. Any successor requires
+separate authorization/review/admission; this status correction launches no work.
+Complete native comparisons, final digest, nested clock-ledger closure and
+independent scientific/source review remain required for acceptance. The retained
+terminal integrity-verification status is reported above.
+
+## Meaning of the results
+
+[EXP-022](../experiments/EXP-022-dataset-session-capacity.md) proves finite session
+capacity with 16,384 protocol-derived items, plus native item and 2×1 connected
+checks. It does not prove a default hardware-dataset hash. Its ideal/stalled totals
+641,182 / 1,754,985 are modeled clocks. The 874,905,600 full-workload dataset-clock
+sum is an input-derived expectation; neither that sum nor a simulator wall time is
+physical ASIC throughput. Dataset availability stays nested in the outer total.
+
+Autonomous cache/program/table preparation, physical bank/controller/memory services,
+calibrated frequency, physical PPA and architecture selection remain unresolved.
+The whole-machine objective of **1 MH/s below 2,500 W**, including memory,
+PHY/controllers, fans and PSU losses, remains unproven. BOOMV3 is a provisional
+reuse baseline, not identified X9 silicon or an accepted final architecture.
+
+## Shared pool and next handoff
+
+GitHub issue comments/receipts remain the live ownership authority; the Markdown
+board is a summary. The observed open pool is #1/#2/#3/#5/#8/#10/#11/#12/#14/#16/#66/#72.
+#2/#10/#11/#12/#14 are blocked; #3/#8/#66/#72 are in review; #16 is ready.
+Labels do not override manager scope, external prerequisites or scientific gates.
+#71 remains closed for its original accepted lifecycle delivery and is reused as
+an execution record; do not reopen it merely to report later evidence.
+
+Formal #8/M1, physical power #10, profiling #11, selected-core/full-dataset/SMP #3/#16,
+calibrated M4 #14 and architectural M5 #12 remain open. The accepted native pilot
+is distinct from the [later incomplete formal candidate](https://github.com/jliu67/OpenRX/issues/8#issuecomment-6132381807).
+The [bounded gem5 light matrix](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6129532891)
+passes 39 required plus nine runtime controls with optional AES skipped; it does
+not complete those broader gates. #41 is completed planning to reuse, not a new task.
+
+Next status evidence comes from the existing supervisor's terminal review and
+the documentation PR's independent exact-head review/checks. Historical audit #66
+and external-link findings remain scoped to their recorded trees. No milestone,
+claim, dependency, acceptance criterion, setting or access is changed here.

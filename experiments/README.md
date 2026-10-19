@@ -1,5 +1,16 @@
 # Experiments
 
+## Current experiment index — 2026-10-19
+
+[Verified project status](../docs/STATUS.md) distinguishes merged component
+experiments through [EXP-022](EXP-022-dataset-session-capacity.md) from the draft
+[EXP-023 candidate](https://github.com/jliu67/OpenRX/blob/8e4164230ce633bbe43a385003659680cfec2925/experiments/EXP-023-full-hardware-dataset-hash.md).
+PR82 is merged on main; PR83 remains draft. Retained preparation passed, but the
+subsequent frozen b5f45998 full attempt ended PROCESS_FAILED/scientific-unverified.
+The existing supervisor owns terminal review. Earlier six-program observations
+remain partial history; no full hardware-dataset acceptance or physical PPA follows.
+Older entries below retain source-specific publication-stage statements.
+
 ## Executable architecture feasibility — task #72, 2026-10-16
 
 [EXP-015](EXP-015-architecture-feasibility.md) binds the executable trace scheduler,
@@ -108,3 +119,4 @@ intended-core/SMP/BOOM and M1-M5 open. No calibrated timing, physical power, RTL
 whole-Codex-daemon termination, host reboot or complete offline/hermetic dependency closure is claimed.
 Original Library binary remains unavailable; rebuilt binary retains its distinct identity. Preserve
 failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.
+

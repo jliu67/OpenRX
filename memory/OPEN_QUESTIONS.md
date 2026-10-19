@@ -1,5 +1,19 @@
 # Open questions
 
+## Current unresolved gates — 2026-10-19
+
+See [verified status](../docs/STATUS.md). Accepted component integration and the
+software-assisted c96 full hash resolve earlier implementation questions only
+within their recorded boundaries. PR83's retained hardware-dataset attempt ended
+PROCESS_FAILED; the supervisor's terminal diagnosis and independent scientific
+review remain pending. No completed hardware-dataset full hash is accepted.
+
+Autonomous preparation, physical memory/controller service, calibrated timing,
+physical PPA, architecture selection and 1 MH/s below 2,500 W remain unresolved.
+The bounded gem5 light matrix has since passed; selected-core/full-dataset/SMP and
+formal baseline/power/M4/M5 questions remain open. #41 is completed source-only
+planning to reuse. Questions below retain their dated context and original gates.
+
 ## Current bounded questions — X9/v2 priority, 2026-10-12
 
 [Source-only #41](https://github.com/jliu67/OpenRX/issues/41) owns a bounded evidence/
@@ -46,3 +60,4 @@ whole-top native gates are separate scopes; no --full-v2 rerun or full-pipeline
 performance acceptance. Sources/complete outputs and superseded binding-only CI
 artifacts are preserved. [Evidence](../docs/validation/prepared-reciprocals/README.md#restored-integration-gate--2026-10-14).
 Independent exact-head review remains required; no merge. Compute slot released.
+

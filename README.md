@@ -1,5 +1,19 @@
 # OpenRX
 
+## Current delivery — 2026-10-19
+
+[Verified status and evidence](docs/STATUS.md) reconcile main
+`fa0bc79bdcd89c91aab11596b6f7f5e104aa6884` through merged PR82. The accepted
+software-assisted full hash and later bounded hardware components are separate
+results. PR83 remains draft at `8e4164230ce633bbe43a385003659680cfec2925`; PR84
+merged only into its feature branch. The retained b5f45998 hardware-dataset full
+attempt ended PROCESS_FAILED; scientific acceptance remains unverified. The
+previous six-program checkpoint remains partial evidence.
+
+Migration is complete; physical PPA, final architecture and the whole-machine
+1 MH/s below 2,500 W objective remain unproven. Earlier dated status sections
+retain their original source-specific context and do not direct current work.
+
 ## Native cache-backed dataset item — 2026-10-18
 
 Above merged PR #79 / main `74a24e239b938ebaf4874ebd4dae47dd072ad41d`,
@@ -325,7 +339,7 @@ The mission above supersedes the earlier broad X5/RISC-V research scope; its wor
 **⚡ OWNER RESOURCE POLICY:** All Codex agents must maximize safe utilization of the owner's local Ubuntu machine (6 CPU cores, 16 GiB RAM) for authorized OpenRX jobs. Do not default to old sandbox caps. See the prominent mandatory guidance in [AGENTS.md](AGENTS.md#-owner-directive--maximize-local-compute-utilization-all-agents) and the [execution resource policy](docs/LOCAL_RESOURCE_POLICY.md). Scientific and migration gates remain in force.
 
 
-**Current delivery is manager-led.** The active owner-designated manager assigns bounded scopes and coordinates the shared slot; issue claims still record ownership. Apply the [current X9/v2 priority path](docs/ROADMAP.md#current-priority-path--2026-10-12) before browsing the [shared ready-task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready). Completed [#41](https://github.com/jliu67/OpenRX/issues/41) supplies reusable prior evidence; [#48](https://github.com/jliu67/OpenRX/issues/48) / [PR #49](https://github.com/jliu67/OpenRX/pull/49) is the current build-first implementation; #2 X5 reconstruction is priority-blocked, not completed. Follow the manager’s bounded scope and record the claim on its issue; a retained historical milestone or stale ready label cannot override the current priority/acceptance gates. The Markdown board summarizes milestones, not live ownership. [Agent instructions](AGENTS.md) and [protocol](docs/COMMUNICATION.md) explain dependencies and handoffs.
+**Current delivery is manager-led.** The active owner-designated manager assigns bounded scopes and coordinates the shared slot; issue claims still record ownership. Apply the [current X9/v2 priority path](docs/ROADMAP.md#current-priority-path--2026-10-12) before browsing the [shared ready-task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready). Completed [#41](https://github.com/jliu67/OpenRX/issues/41) supplies reusable prior evidence; the [verified delivery status](docs/STATUS.md) records merged components and draft PR83; #2 X5 reconstruction is priority-blocked, not completed. Follow the manager’s bounded scope and record the claim on its issue; a retained historical milestone or stale ready label cannot override the current priority/acceptance gates. The Markdown board summarizes milestones, not live ownership. [Agent instructions](AGENTS.md) and [protocol](docs/COMMUNICATION.md) explain dependencies and handoffs.
 
 - [Project board](docs/TASKS.md): status, blockers and next tasks
 - [Current handoff](memory/HANDOFF.md): reconciled engineering and communication progress
@@ -480,7 +494,8 @@ Timestamped runs under `benchmarks/results/` retain raw logs and JSON metadata. 
 | benchmarks/ | Results, measurement protocols and opt-in steady adapter |
 | experiments/ | Experiment plans and outcomes |
 | simulator/ | Simulator selection/configuration plans |
-| rtl/ | Accepted AES, memory and native execution components; draft hash/finalization integration |
+| rtl/ | Merged bounded AES, memory, native execution and lifecycle components; full hardware-dataset acceptance pending |
 | .github/ | CI, message router, task templates and review checklist |
 
 Repository memory and inboxes are not autonomous workers: an invoked agent must read, update and commit its handoff. No background model execution is implied.
+
