@@ -11,6 +11,12 @@ method review, fresh resource admission, exact prepared-input verification and
 measured runtime feasibility precede the complete default run. Full default
 hardware-dataset correctness and physical PPA remain unproven.
 
+The first admitted preparation at `db85d1e` failed before native/model compilation:
+all 30 unit tests imported their own cached test module instead of the equally
+named driver. The test now loads the driver by exact path with a distinct module
+identity. Original frozen source and failure evidence are retained. The corrected
+tests remain unexecuted pending a new reviewed admission.
+
 ## Dataset session capacity — 2026-10-19
 
 Above PR #81 merge `a84602c5`, [EXP-022](../experiments/EXP-022-dataset-session-capacity.md)

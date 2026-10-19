@@ -1,8 +1,8 @@
 # EXP-023: full default hardware-dataset hash
 
-Status: source prepared for independent method review and local admission. No new
-native reference, model build, calibration prefix or complete RTL run has executed
-for this experiment. Base is PR #82 merge `fa0bc79bdcd89c91aab11596b6f7f5e104aa6884`.
+Status: first admitted preparation failed at the unit-import gate. No new native
+reference, model build, calibration prefix or complete RTL run has executed for
+this experiment. Base is PR #82 merge `fa0bc79bdcd89c91aab11596b6f7f5e104aa6884`.
 
 The [new admitted driver](../scripts/test_dataset_fullhash.py) targets exactly one
 RandomX v2 8×2,048 ideal-service lifecycle using the accepted capacity wrapper,
@@ -57,3 +57,19 @@ scratchpad memory model remain explicit. Their modeled service timing does not
 establish a physical memory/bank/controller implementation. Physical PPA,
 calibrated frequency, architecture selection and the 1 MH/s below 2,500 W target
 remain unproven even if this functional hash completes.
+
+## First preparation failure and focused correction
+
+The first admitted prepare-only attempt at public source `db85d1e` stopped at
+`fullhash-unit`: all 30 tests errored because unittest discovery had already
+registered the test file as `test_dataset_fullhash`. Importing the equally named
+driver returned that cached test module, causing missing-attribute errors. The
+command returned 1 without a wall timeout, and its process group was empty after
+cleanup. No native reference or model build began. Frozen source and all failure
+logs, command records and outputs remain preserved.
+
+The correction loads `scripts/test_dataset_fullhash.py` by its explicit file path
+under a distinct module name. It changes only test import identity and failure
+history; driver logic, native adapter, testbench and accepted assets stay unchanged.
+The corrected tests have not run. A new frozen source and reviewed admission are
+required before retrying preparation; no pass is inferred from this source fix.

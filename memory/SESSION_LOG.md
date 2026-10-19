@@ -1163,3 +1163,15 @@ method review and fresh local resource admission own all builds, new compatible
 full native gold, calibration and full simulation. No full hardware-dataset hash,
 new measured runtime, physical PPA or architecture acceptance is claimed.
 
+## 2026-10-19 — preserve failed preparation and repair test import
+
+The first admitted EXP-023 prepare-only attempt at public source `db85d1e` failed
+its first command: all 30 unit tests errored after the test module imported itself
+through unittest's cached `test_dataset_fullhash` name. Exit status was 1, no wall
+timeout occurred, and the command process group was empty after cleanup. No native
+reference or model build began. Frozen source and complete failure outputs remain
+unchanged. Replace only the ambiguous test import with an explicit driver-path
+load under a distinct module name, and record this failure without changing driver,
+native or testbench behavior. No tests or workloads ran for the correction; a new
+source freeze and reviewed admission own the retry.
+

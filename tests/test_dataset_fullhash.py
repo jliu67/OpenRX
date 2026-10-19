@@ -4,6 +4,7 @@ No HDL compilation, native/reference workload or accepted fixture generation.
 The repeated placeholder addresses/data intentionally are not RandomX gold.
 """
 import copy
+import importlib.util
 from pathlib import Path
 import sys
 import tempfile
@@ -11,7 +12,15 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-import test_dataset_fullhash as full
+# unittest discovery already owns the name "test_dataset_fullhash" for this
+# file. Load the driver by its exact path under a distinct module identity.
+_driver_spec = importlib.util.spec_from_file_location(
+    'openrx_dataset_fullhash_driver_under_test',
+    Path(__file__).resolve().parents[1] / 'scripts/test_dataset_fullhash.py')
+assert _driver_spec is not None and _driver_spec.loader is not None
+full = importlib.util.module_from_spec(_driver_spec)
+sys.modules[_driver_spec.name] = full
+_driver_spec.loader.exec_module(full)
 
 
 def accounting():
