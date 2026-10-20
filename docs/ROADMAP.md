@@ -1,5 +1,15 @@
 # Roadmap and acceptance gates
 
+## Accepted functional boundary — 2026-10-20
+
+[Current status](STATUS.md) and the
+[accepted full result](validation/dataset-fullhash-20261020/README.md) record one
+default hardware-dataset functional hash at public `e8277c6`/tree `cb3e0615`.
+Retained preparation and modeled host memory services remain explicit. The ordered
+engineering path and original M1–M6 acceptance map remain; autonomous setup,
+physical services/PPA, calibrated frequency, final architecture and whole-machine
+goals remain unresolved. Earlier candidate/failure routing is retained history.
+
 ## Current priority and acceptance routing — 2026-10-19
 
 Use the [verified status](STATUS.md) and [current handoff](../memory/HANDOFF.md).

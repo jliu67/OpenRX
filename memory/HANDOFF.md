@@ -1,5 +1,17 @@
 # Handoff — actual designated local execution
 
+## Accepted-result handoff — 2026-10-20
+
+Start with [current status](../docs/STATUS.md) and the
+[accepted result](../docs/validation/dataset-fullhash-20261020/README.md).
+One complete default hardware-dataset functional hash is independently accepted
+at public `e8277c6`/tree `cb3e0615`; no additional hash run is needed. Preserve
+all original sources, assets, outputs, failures and raw scientific flags, including
+the failed attempt's missing original dataset ledger/vectors. Retained preparation
+and modeled host services remain explicit. Physical services/PPA, calibrated
+frequency, autonomous setup, final architecture and whole-machine targets remain
+open. Earlier pending-supervisor and preparation handoffs are dated history.
+
 ## Current handoff — 2026-10-19
 
 Start with [verified status and retained-record provenance](../docs/STATUS.md).

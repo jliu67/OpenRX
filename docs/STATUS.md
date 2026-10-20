@@ -1,3 +1,63 @@
+# Verified project status — 2026-10-20
+
+## Accepted default hardware-dataset result
+
+One default 8×2,048 RandomX v2 functional hardware-dataset hash is
+[independently accepted](https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967)
+at public [source `e8277c63504ef035bb82791263b6842c0cc51f51`](https://github.com/jliu67/OpenRX/commit/e8277c63504ef035bb82791263b6842c0cc51f51),
+tree `cb3e0615f9df861a081ba2cbb1d47c65603b84cd`. The separate reviewer's
+shared-account technical COMMENT accepts this functional result; it is not formal
+GitHub approval. See the [full-result summary](validation/dataset-fullhash-20261020/README.md)
+and [sanitized current evidence](status-evidence-20261020.json).
+
+| Evidence | Accepted bounded result |
+| --- | --- |
+| Native assertions | 16,384 iteration states and 16,384 dataset results; 1,346,699 bytecode accesses; eight complete 2 MiB scratchpad boundaries; seven hardware seed transitions; canonical final-digest equality |
+| Independent trace review | All 28,026,133 retained records streamed; exported addresses, counts, order, port-byte totals and phase closure verified |
+| Clock ledger | 918,672,902 modeled outer clocks, including 874,905,600 nested dataset-availability clocks; actual 3/3/9 dataset phase vectors emitted and checked |
+| Providers | Zero live software input/fill/program/dataset calls, including assertion-only dataset callbacks; allowed input/program assertion counts one/eight |
+| Preserved history | Earlier failed full attempt remains failed/scientific-unverified; its missing original dataset ledger/vectors remain absent; raw scientific flags unchanged |
+
+Full data/register equality where exports omit values remains exact bound-testbench
+assertion evidence. The corrected accepted result is separate from the earlier
+software-assisted c96 full hash, component/capacity results and failed attempts.
+
+## Source publication and dependency merges
+
+[PR86](https://github.com/jliu67/OpenRX/pull/86) merged normally into PR83's feature
+branch as [`af1e23d384c4d23d007da816bd8b97ff12712a34`](https://github.com/jliu67/OpenRX/commit/af1e23d384c4d23d007da816bd8b97ff12712a34);
+that dependency merge retains the accepted tree `cb3e0615f9df861a081ba2cbb1d47c65603b84cd`.
+[PR85](https://github.com/jliu67/OpenRX/pull/85)'s earlier documentation reconciliation
+merged on main as [`eee6af85b22ab01c362f7ae37676df5247df29b2`](https://github.com/jliu67/OpenRX/commit/eee6af85b22ab01c362f7ae37676df5247df29b2).
+Its complete historical sections and provenance remain preserved.
+[PR83](https://github.com/jliu67/OpenRX/pull/83) records final source publication,
+independent exact-head review, applicable hosted checks and normal merge outcome.
+The accepted execution source and later documentation/integration commits have
+distinct identities; the acceptance is not rebound to a later whole tree.
+
+## Remaining gates and handoff
+
+Retained cache/superscalar/reciprocal preparation and modeled host
+cache/program/table/scratchpad memory services remain explicit. Autonomous setup,
+physical memory/controller services, calibrated frequency, physical PPA,
+architecture selection and the whole-machine **1 MH/s below 2,500 W** objective
+remain unvalidated. Generic mapping and modeled clocks do not establish them.
+
+Task71 remains closed for its original accepted lifecycle scope and retains later
+execution records. Broader formal baseline, selected-core/gem5/full-dataset/SMP,
+physical power, profiling and M1–M5 gates remain unchanged. Existing ownership,
+source-retention and one-slot admission policies remain. This accepted hash needs
+no additional scientific run.
+
+---
+
+## Retained reconciliation — 2026-10-19
+
+The complete record below retains its original source and publication stage.
+Its pending-review, draft and next-execution statements describe that dated
+snapshot; the accepted corrected result above supersedes their current-status
+interpretation only. Its original provenance JSON is unchanged.
+
 # Verified project status — 2026-10-19
 
 This is a dated reconciliation of GitHub main

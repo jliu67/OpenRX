@@ -1,5 +1,15 @@
 # Open questions
 
+## Functional question resolved — 2026-10-20
+
+The [accepted default hardware-dataset result](../docs/validation/dataset-fullhash-20261020/README.md)
+resolves whether this exact prepared-service source completes one native-reference
+correct default 8×2,048 functional hash. It leaves autonomous setup, physical memory
+and controller services, calibrated frequency/PPA, architecture selection and the
+whole-machine performance/power objective open. Existing gem5/selected-core/SMP,
+formal baseline and M1–M5 gates are unchanged. Earlier pending full-hash statements
+remain their dated history; the failed attempt is not reclassified.
+
 ## Current unresolved gates — 2026-10-19
 
 See [verified status](../docs/STATUS.md). Accepted component integration and the

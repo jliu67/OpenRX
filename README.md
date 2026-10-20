@@ -1,5 +1,17 @@
 # OpenRX
 
+## Accepted functional hardware-dataset hash — 2026-10-20
+
+One default 8×2,048 RandomX v2 functional hardware-dataset hash is
+[independently accepted](https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967).
+The [result](docs/validation/dataset-fullhash-20261020/README.md) binds public
+`e8277c6`/tree `cb3e0615`, complete native assertions and nested closure within
+918,672,902 modeled clocks. [Current status](docs/STATUS.md) separates accepted
+execution from source merge/check closeout and the earlier failed attempt.
+Retained preparation and modeled host memory services remain explicit; autonomous
+setup, physical PPA, frequency, architecture and the whole-machine target remain
+unvalidated. Earlier dated sections preserve their original evidence boundaries.
+
 ## Current delivery — 2026-10-19
 
 [Verified status and evidence](docs/STATUS.md) reconcile main

@@ -1151,6 +1151,31 @@ clock ledgers and host costs from the unexecuted default full hash, physical
 services/PPA and architecture selection. Parent owns normal merge after the
 separate final exact-head and hosted-CI gates.
 
+## 2026-10-19 — full default hardware-dataset harness preparation
+
+Above merged PR #82 `fa0bc79b`, prepare the focused EXP-023 driver and full native
+adapter while preserving accepted arithmetic/lifecycle RTL, original two-item
+reference role, prepared cache/program/reciprocal assets and all outputs. The full
+testbench gains an opt-in 64-bit watchdog and sparse flushed progress. Add 30
+synthetic accounting/provenance, output-isolation and staged-mode test definitions;
+they have not run. Independent
+method review and fresh local resource admission own all builds, new compatible
+full native gold, calibration and full simulation. No full hardware-dataset hash,
+new measured runtime, physical PPA or architecture acceptance is claimed.
+
+## 2026-10-19 — preserve failed preparation and repair test import
+
+The first admitted EXP-023 prepare-only attempt at public source `db85d1e` failed
+its first command: all 30 unit tests errored after the test module imported itself
+through unittest's cached `test_dataset_fullhash` name. Exit status was 1, no wall
+timeout occurred, and the command process group was empty after cleanup. No native
+reference or model build began. Frozen source and complete failure outputs remain
+unchanged. Replace only the ambiguous test import with an explicit driver-path
+load under a distinct module name, and record this failure without changing driver,
+native or testbench behavior. No tests or workloads ran for the correction; a new
+source freeze and reviewed admission own the retry.
+
+
 
 ## 2026-10-19 — verified status reconciliation
 
@@ -1165,3 +1190,17 @@ independent exact-head review and applicable hosted checks; no main push or merg
 No scientific workload, build, synthesis, settings/access change, standing clone or
 Git sync was performed for this reconciliation. Historical audit/external-link
 findings and physical/architectural/M1–M5 gates remain open.
+
+## 2026-10-20 — accepted default hardware-dataset functional hash
+
+The [independent technical COMMENT](https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967)
+accepts one default 8×2,048 hash at public `e8277c6`/tree `cb3e0615`. Complete
+native assertions, eight scratchpad boundaries, seven seeds, final-digest equality
+and actual nested phase closure pass within 918,672,902 modeled clocks. The
+[result summary](../docs/validation/dataset-fullhash-20261020/README.md) records
+the export/testbench evidence boundary and retained preparation/host services.
+Original failed attempts, missing original failed-run ledger/vectors, raw
+scientific flags and all historical criteria are preserved. Physical services/PPA,
+frequency, autonomous setup, final architecture and whole-machine targets remain
+unvalidated. No additional scientific workload was run for documentation closeout.
+

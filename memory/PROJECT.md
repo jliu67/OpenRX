@@ -1,5 +1,16 @@
 # Project memory
 
+## Functional result within the mission — 2026-10-20
+
+One default 8×2,048 functional hardware-dataset hash is
+[independently accepted](../docs/validation/dataset-fullhash-20261020/README.md),
+separate from the c96 software-assisted result and earlier failed attempt. Exact
+RandomX v2 engineering with v1 regressions and licensed-IP reuse remains the
+mission. Retained preparation and modeled host services remain explicit; autonomous
+setup, physical PPA, frequency, final architecture and the whole-machine 1 MH/s
+below 2,500 W objective remain unvalidated. Prior dated mission/status records
+retain their original context.
+
 ## Current mission and delivery — 2026-10-19
 
 The mission remains exact RandomX v2 ASIC engineering with v1 regressions,

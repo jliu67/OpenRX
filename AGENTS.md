@@ -1,5 +1,20 @@
 # Agent instructions
 
+## Accepted functional hardware-dataset result — 2026-10-20
+
+Read the [current status](docs/STATUS.md) and
+[accepted full-result summary](docs/validation/dataset-fullhash-20261020/README.md).
+One default 8×2,048 functional hardware-dataset hash is independently accepted at
+public `e8277c6`, tree `cb3e0615`; all native assertions, scratchpad boundaries,
+seeds, final digest and nested phase closure pass. Original failures and raw
+scientific flags remain unchanged. Retained preparation and modeled host memory
+services remain explicit; autonomous setup, physical PPA, frequency, architecture
+selection and the whole-machine target remain unvalidated.
+
+This dated section supersedes earlier status/next-action interpretation only.
+Preserve historical records, scientific criteria, source retention and normal
+independent review/check gates. No additional hash run follows from this result.
+
 ## Current delivery and status routing — 2026-10-19
 
 Read the [verified status](docs/STATUS.md) before selecting work. Main is

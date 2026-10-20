@@ -1,5 +1,17 @@
 # Current state — actual local execution activation
 
+## Accepted default hardware-dataset hash — 2026-10-20
+
+The [full result](../docs/validation/dataset-fullhash-20261020/README.md) is
+independently accepted at public `e8277c6`/tree `cb3e0615`: one default 8×2,048
+functional hash, complete native assertions and 918,672,902 modeled outer clocks
+with actual dataset phase-vector closure. The corrected result is separate from
+the retained failed attempt, whose missing original ledger/vectors and raw
+scientific flags remain unchanged. Retained preparation and modeled host memory
+services remain explicit. Autonomous setup, physical services/PPA, frequency,
+architecture selection and the whole-machine target remain open. Earlier dated
+preparation/failure sections retain their original source-specific status.
+
 ## Verified current state — 2026-10-19
 
 [Status and provenance](../docs/STATUS.md) reconcile main
@@ -15,6 +27,24 @@ Migration/publication cleanup and the bounded merged components are complete.
 Full hardware-dataset acceptance, autonomous preparation, physical services/PPA,
 architecture selection and the 1 MH/s below 2,500 W target remain unproven.
 Earlier dated entries below retain original sources, failures and scientific gates.
+
+
+## Full hardware-dataset hash preparation — 2026-10-19
+
+[EXP-023](../experiments/EXP-023-full-hardware-dataset-hash.md) adds a focused
+admitted preparation/full-run driver above merged PR #82 `fa0bc79b`. It reuses
+accepted cache0/program/reciprocal assets and the unchanged native archive, with
+a scoped full native assertion adapter and the retained comprehensive testbench.
+No new native reference, build, calibration or RTL hash has run yet. Independent
+method review, fresh resource admission, exact prepared-input verification and
+measured runtime feasibility precede the complete default run. Full default
+hardware-dataset correctness and physical PPA remain unproven.
+
+The first admitted preparation at `db85d1e` failed before native/model compilation:
+all 30 unit tests imported their own cached test module instead of the equally
+named driver. The test now loads the driver by exact path with a distinct module
+identity. Original frozen source and failure evidence are retained. The corrected
+tests remain unexecuted pending a new reviewed admission.
 
 ## Dataset session capacity — 2026-10-19
 

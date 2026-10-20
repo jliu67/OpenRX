@@ -1,5 +1,16 @@
 # Decision log
 
+## Full default hardware-dataset method — 2026-10-19
+
+Use a separately admitted prepare-only step to create compatible full native gold
+from accepted retained cache0 assets and compile one Verilator model. Pin actual
+prepared input identities externally before a calibration prefix or complete run.
+Keep the accepted two-item reference role and arithmetic/lifecycle RTL unchanged.
+Treat every stopped prefix as incomplete; require all native states, program
+scratchpad boundaries, dataset results, digest and disjoint ledgers before full
+functional correctness. Physical PPA remains a separate unresolved gate. See
+[EXP-023](../experiments/EXP-023-full-hardware-dataset-hash.md).
+
 | ID | Decision | Reason | Revisit when |
 |---|---|---|---|
 | D001 | Target v2 first; compare v1 | Avoid optimizing only an older workload | Upstream algorithm changes |

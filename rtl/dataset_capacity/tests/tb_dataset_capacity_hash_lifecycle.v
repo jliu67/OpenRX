@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 // Capacity-connected derivative of the unchanged accepted dataset lifecycle TB.
-// Reuses retained native 2x1 assertion gold; it never regenerates that gold.
+// Native gold is assertion-only: retained 2x1 by default, separately prepared
+// compatible full gold for the opt-in full driver. No oracle drives DUT inputs.
 `timescale 1ns/1ps
-module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATIONS=1,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0,ERROR_PORT=0,CAPACITY_TEST=0,EVENT_TRACE=0,HARDWARE_FILL=1,HARDWARE_PROGRAM=1,HARDWARE_INPUT_HASH=1,INPUT_HASH_BOUNDARY_TEST=0,HARDWARE_DATASET=1,DATASET_MUL_RADIX4=1,DATASET_CANCEL=0,DATASET_ERROR=0,DATASET_SESSION_BITS=32);
+module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATIONS=1,PREPARED_RCP=1,STALL=0,CANCEL_PHASE=0,ERROR_PORT=0,CAPACITY_TEST=0,EVENT_TRACE=0,HARDWARE_FILL=1,HARDWARE_PROGRAM=1,HARDWARE_INPUT_HASH=1,INPUT_HASH_BOUNDARY_TEST=0,HARDWARE_DATASET=1,DATASET_MUL_RADIX4=1,DATASET_CANCEL=0,DATASET_ERROR=0,DATASET_SESSION_BITS=32,parameter [63:0] WATCHDOG_CYCLES=64'd200000000,parameter integer PROGRESS_ITEMS=0);
 `ifdef VERILATOR
  import "DPI-C" function void rx_life_initial(input bit[639:0] value,input int length,input string filename,output bit[511:0] result);
  import "DPI-C" function void rx_life_input_hash(input bit[639:0] value,input int length,output bit[511:0] result);
@@ -551,6 +552,7 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
  reg [63:0] dataset_programs[0:4095],dataset_reciprocals[0:4095];
  reg [7:0] dataset_cache_bytes[0:63];
  integer dataset_cache_fd,dataset_gold_fd,dataset_rows_fd,dataset_asset_fd;
+ integer progress_fd=0;
  integer dataset_requests_seen=0,dataset_responses_seen=0,dataset_live_calls=0;
  integer dataset_items_seen=0,dataset_item_returns_seen=0,dataset_stage_pulses=0,dataset_commit_pulses=0;
  integer dataset_cache_requests=0,dataset_cache_responses=0,dataset_fetch_requests=0,dataset_fetch_responses=0;
@@ -586,6 +588,16 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
   input [7:0] op;
   begin dataset_is_mul=op==3||op==11||op==12||op==13;end
  endfunction
+ task write_progress;
+  input integer event_kind;
+ begin
+  if(PROGRESS_ITEMS>0)begin
+   $fdisplay(progress_fd,"{\"event_kind\":%0d,\"cycle\":%0d,\"phase\":%0d,\"iterations_checked\":%0d,\"programs_checked\":%0d,\"dataset_items_checked\":%0d,\"dataset_availability_clocks\":%0d}",event_kind,cycle,phase,global_iteration,programs_finished,dataset_item_returns_seen,dataset_available_clocks);
+   $fflush(progress_fd);$fflush(dataset_rows_fd);$fflush(trace_file);
+   $display("PROGRESS dataset_fullhash kind=%0d cycle=%0d iterations=%0d programs=%0d items=%0d dataset_clocks=%0d",event_kind,cycle,global_iteration,programs_finished,dataset_item_returns_seen,dataset_available_clocks);
+   $fflush();
+  end
+ end endtask
  task dataset_assets_load;
   integer status,n,j,asset_case,asset_cache;
   reg [63:0] unused_item;reg [511:0] unused_final;
@@ -806,6 +818,7 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
        dataset_item_rsp_error_stage!==3'b0||dataset_item_rsp_error_pc!==9'b0||dataset_item_rsp_completed_stages!==4'b0)
      $fatal(1,"matching dataset error was not contained at the first-stage fault before XOR");
     dataset_wait_active=0;dataset_item_returns_seen=dataset_item_returns_seen+1;
+    if(PROGRESS_ITEMS>0&&dataset_item_returns_seen%PROGRESS_ITEMS==0)write_progress(1);
    end
   end else if(dataset_item_req_valid||dataset_fetch_valid||dataset_cache_req_valid||dataset_item_commit_valid||dataset_item_stage_valid)
    $fatal(1,"software dataset baseline emitted hardware dataset work");
@@ -894,8 +907,30 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
   $display("PASS dataset_capacity_lifecycle_error service=%0d matching_faults=1 held_error=1 no_wrong_xor=1 changed_generation=1 changed_input=1 prefix_only=1",DATASET_ERROR);
   $finish;
  end endtask
+ // fscanf returns a conversion count at valid EOF in the pinned runtime.
+ // Inspect every trailing byte instead; malformed/partial extra rows must fail.
+ task dataset_assert_native_eof;
+  input integer gold_fd;
+  integer ch,status;
+ begin
+  if(gold_fd===0||^gold_fd===1'bx)$fatal(1,"native dataset gold descriptor invalid");
+`ifdef VERILATOR
+  // The empty conversion probes the actual open FILE without consuming input.
+  status=$fscanf(gold_fd,"");
+  if(status!==0)$fatal(1,"native dataset gold descriptor unavailable");
+`endif
+  status=$fseek(gold_fd,0,1);
+  if(status!==0)$fatal(1,"native dataset gold descriptor unavailable");
+  ch=$fgetc(gold_fd);
+  while(ch!==-1)begin
+   if(((ch>=9&&ch<=13)||ch==32)!==1'b1)$fatal(1,"native dataset gold contains trailing data");
+   ch=$fgetc(gold_fd);
+  end
+  status=$feof(gold_fd);
+  if((status!=0)!==1'b1)$fatal(1,"native dataset gold EOF not confirmed");
+ end endtask
  task dataset_write_ledger;
-  integer fd,n,sum,status;
+  integer fd,n,sum;
  begin
   if(dataset_requests_seen!=TOTAL_ITERATIONS||dataset_responses_seen!=TOTAL_ITERATIONS||ds_pending)$fatal(1,"full dataset demand/response accounting");
   if(HARDWARE_DATASET)begin
@@ -917,8 +952,7 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
     $fatal(1,"nonclosing disjoint dataset child program/cache service costs");
   end else if(dataset_live_calls!=TOTAL_ITERATIONS||dataset_items_seen||dataset_item_returns_seen||dataset_stage_pulses||dataset_cache_requests||dataset_fetch_requests)
    $fatal(1,"software baseline/hardware dataset boundary mismatch");
-  status=$fscanf(dataset_gold_fd,"%h %h\n",dataset_gold_address,dataset_expected_data);
-  if(status!=-1)$fatal(1,"retained native dataset gold contains extra or malformed demand rows");
+  dataset_assert_native_eof(dataset_gold_fd);
   $fclose(dataset_gold_fd);$fclose(dataset_cache_fd);$fclose(dataset_rows_fd);
   $sformat(dataset_path,"%0s/dataset-ledger.json",output_directory);fd=$fopen(dataset_path,"w");if(!fd)$fatal(1,"dataset ledger open");
   $fdisplay(fd,"{\"schema\":\"openrx.dataset-capacity.nested-ledger.v1\",\"hardware_dataset\":%0d,\"outer_cycles\":%0d,\"dataset_costs_are_nested_not_added_to_outer_total\":true,",HARDWARE_DATASET,cycle);
@@ -1161,7 +1195,12 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
   $display("PASS lifecycle_input_hash_boundaries valid_prefixes=3 cancel=1 invalid_lengths=81,127 empty_and_max80=1 changed_input_successor=1 native_seed=1 accepted_sram_writes=0 prefix_only=1");
   $finish;
  end endtask
- initial begin #2000000000;$fatal(1,"sequence simulation deadlock");end
+ // Multiplication is explicitly 64-bit; the old default remains 2e9 ns.
+ // The full driver stays below signed 32-bit cycle/cost-counter overflow.
+ initial begin
+  if(WATCHDOG_CYCLES==0||WATCHDOG_CYCLES>64'd2000000000||PROGRESS_ITEMS<0)$fatal(1,"invalid bounded watchdog/progress parameters");
+  #(WATCHDOG_CYCLES*64'd10);$fatal(1,"sequence simulation deadlock");
+ end
  initial begin
   if(!$value$plusargs("directory=%s",directory)||!$value$plusargs("output=%s",output_directory)||
      !$value$plusargs("input=%h",input_value)||!$value$plusargs("input_bytes=%d",input_bytes))$fatal(1,"profile arguments missing");
@@ -1183,6 +1222,10 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
   if(INPUT_HASH_BOUNDARY_TEST)check_input_boundaries();
   if(CAPACITY_TEST)$fatal(1,"use public dataset-service budget mode instead");
   dataset_assets_load();
+  if(PROGRESS_ITEMS>0)begin
+   $sformat(path,"%0s/progress.jsonl",output_directory);progress_fd=$fopen(path,"w");
+   if(!progress_fd)$fatal(1,"durable progress open");write_progress(0);
+  end
   req_valid=1;req_tag=16'h4000;req_input=input_value;req_input_bytes=ERROR_PORT==7?7'd81:input_bytes;#1;
   if(!req_ready)$fatal(1,"hash not ready");@(posedge clk);
   if(ERROR_PORT==7&&req_valid&&req_ready&&req_input_bytes==81)matching_fault_accepted=1;
@@ -1503,6 +1546,7 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
      seed_hashes=seed_hashes+1;
     end else if(program_done_seed_valid||program_done_seed!==0)$fatal(1,"eighth program incorrectly interprogram-hashed");
     programs_finished=programs_finished+1;program_hold=0;
+    write_progress(2);
    end
    if(done_valid&&done_ready)begin
     if(global_iteration!=TOTAL_ITERATIONS||programs_finished!=PROGRAMS||done_tag!==16'h4000||
@@ -1540,6 +1584,7 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
   if(HARDWARE_PROGRAM&&(generated_beats!=PROGRAMS*200||program_gen_images!=PROGRAMS||program_gen_detail[0]+program_gen_detail[1]+program_gen_detail[2]!=ledger[7]))$fatal(1,"program generation coverage/ledger");
   if(HARDWARE_PROGRAM&&STALL&&(external_meta_drops!=2||external_program_drops!=2))$fatal(1,"external removed-provider response drain coverage");
   if(STALL&&(meta_drops!=(HARDWARE_PROGRAM?0:2*PROGRAMS)||rom_drops!=(HARDWARE_PROGRAM?0:2*loaded_words)||sp_drops!=2*reads||ds_drops!=(HARDWARE_DATASET?0:2*TOTAL_ITERATIONS)))$fatal(1,"stale error injection coverage");
+  write_progress(3);if(PROGRESS_ITEMS>0)$fclose(progress_fd);
   $fclose(trace_file);$sformat(path,"%0s/provider-host-time.json",output_directory);`RX_STATS(path);
   $sformat(path,"%0s/ledger.json",output_directory);ledger_file=$fopen(path,"w");if(!ledger_file)$fatal(1,"ledger write");
   $fwrite(ledger_file,"{\"cycles\":%0d,",cycle);

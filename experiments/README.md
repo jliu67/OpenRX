@@ -1,5 +1,14 @@
 # Experiments
 
+## Accepted EXP-023 result — 2026-10-20
+
+[EXP-023](EXP-023-full-hardware-dataset-hash.md) now has one independently accepted
+default 8×2,048 functional hardware-dataset result at public `e8277c6`/tree
+`cb3e0615`. The [validation summary](../docs/validation/dataset-fullhash-20261020/README.md)
+separates full native assertions and modeled clocks from retained prepared host
+services and unknown physical PPA/frequency/architecture. The prior preparation
+and full-attempt failures remain unchanged; earlier candidate entries are history.
+
 ## Current experiment index — 2026-10-19
 
 [Verified project status](../docs/STATUS.md) distinguishes merged component

@@ -1,5 +1,16 @@
 # OpenRX project board
 
+## Accepted-result board update — 2026-10-20
+
+| Work | Current bounded result |
+| --- | --- |
+| EXP-023 / later task71 records | One default 8×2,048 functional hardware-dataset hash independently accepted at public `e8277c6`/tree `cb3e0615`; [evidence](validation/dataset-fullhash-20261020/README.md). |
+| Original task71 | Remains closed for its original lifecycle delivery; later accepted and failed results remain separate execution records. |
+| Remaining engineering gates | Retained preparation/host services remain explicit; autonomous setup, physical services/PPA, calibrated frequency, architecture and whole-machine targets remain open. |
+
+[Current status](STATUS.md) records actual source merge/check closeout. Older board
+snapshots and scientific criteria remain unchanged; no new workload or claim is assigned.
+
 ## Current board — 2026-10-19
 
 [Verified status and exact evidence](STATUS.md) supersede the dated board snapshots

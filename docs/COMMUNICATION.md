@@ -1,5 +1,15 @@
 # OpenRX decentralized agent coordination — protocol v2
 
+## Accepted-result coordination index — 2026-10-20
+
+See [current status](STATUS.md) and the
+[accepted result](validation/dataset-fullhash-20261020/README.md) for one default
+hardware-dataset functional hash and actual source closeout. Task71 stays closed
+for its original completed scope; accepted corrected and original failed results
+remain separate records. Existing ownership, one-slot admission, independent
+review and scientific gates remain. Earlier supervisor/candidate routing is dated
+history and does not assign a new run.
+
 ## Current coordination index — 2026-10-19
 
 The [verified status](STATUS.md) and [handoff](../memory/HANDOFF.md) supersede earlier
