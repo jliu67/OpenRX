@@ -1,5 +1,29 @@
 # OpenRX decentralized agent coordination — protocol v2
 
+## Accepted-result coordination index — 2026-10-20
+
+See [current status](STATUS.md) and the
+[accepted result](validation/dataset-fullhash-20261020/README.md) for one default
+hardware-dataset functional hash and actual source closeout. Task71 stays closed
+for its original completed scope; accepted corrected and original failed results
+remain separate records. Existing ownership, one-slot admission, independent
+review and scientific gates remain. Earlier supervisor/candidate routing is dated
+history and does not assign a new run.
+
+## Current coordination index — 2026-10-19
+
+The [verified status](STATUS.md) and [handoff](../memory/HANDOFF.md) supersede earlier
+dated current-component pointers below. Main through PR82 contains merged bounded
+components; PR83 remains draft. Its frozen b5f45998 full attempt ended
+PROCESS_FAILED/scientific-unverified, superseding the earlier running checkpoint.
+The existing supervisor owns terminal review; do not duplicate or take over it.
+
+The manager assigns bounded scopes, task comments/receipts record live ownership,
+and historical labels do not prove active work or scientific acceptance. #71 stays
+closed for its original completed lifecycle scope while retaining later execution
+records; #72 stays open/review despite its merged bounded tool. Existing protocol,
+external prerequisites, one-slot admission and independent-review gates remain.
+
 ## Current component sequence — 2026-10-13
 
 [PR49](https://github.com/jliu67/OpenRX/pull/49), [PR51](https://github.com/jliu67/OpenRX/pull/51)
@@ -47,7 +71,7 @@ GitHub is the sole progress publication and coordination authority; there is no 
 
 
 1. Read [AGENTS.md](../AGENTS.md), [ROADMAP.md](ROADMAP.md), [TASKS.md](TASKS.md), memory/PROJECT.md, memory/STATE.md, memory/DECISIONS.md, memory/HANDOFF.md and relevant evidence. Check the actual main HEAD, issue discussions, branches and the newest handoff.
-2. Apply the [current X9/v2 priority overlay](ROADMAP.md#current-priority-path--2026-10-12), then browse the **[shared ready task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready)**, the **[review queue](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Areview)**, **[blocked tasks](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Ablocked)**, and existing milestone/research issues. Follow the active manager’s bounded implementation assignment, prioritizing correctness, reproducible synthesis and measured integration. The ready queue is a router state, not a priority ranking: #2 is owner-priority-blocked and unresolved; [#41](https://github.com/jliu67/OpenRX/issues/41) is bounded source-only X9/v2 target/reuse/AES work. Do not resume deferred X5/M2 merely because its historical milestone is next numerically, or treat #3's historic review label as completed selected-core science.
+2. Apply the [current X9/v2 priority overlay](ROADMAP.md#current-priority-path--2026-10-12), then browse the **[shared ready task pool](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready)**, the **[review queue](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Areview)**, **[blocked tasks](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Ablocked)**, and existing milestone/research issues. Follow the active manager’s bounded implementation assignment, prioritizing correctness, reproducible synthesis and measured integration. The ready queue is a router state, not a priority ranking: #2 is owner-priority-blocked and unresolved; [#41](https://github.com/jliu67/OpenRX/issues/41) is completed source-only X9/v2 planning to reuse. Consult [current status](STATUS.md) for the active delivery handoff. Do not resume deferred X5/M2 merely because its historical milestone is next numerically, or treat #3's historic review label as completed selected-core science.
 3. One independently claimable work package = **one task issue**. Do not place incompatible subtask claims on their shared parent milestone (for example issue #1). Check its exact dependencies, prior commits, warnings, expired/unexpired claim, and external prerequisites.
 4. To take the task, post a new comment whose first line is "/openrx claim agent/unique-session". Under it record base SHA, scoped files, acceptance and any overlap. Wait for the matching bot receipt with valid expiry; claims are **advisory 4-hour leases**, never locks or proof an agent is currently running. Use separate branches/PRs and checked expected-head updates.
 5. Execute and test; document real evidence, skipped tests and errors. Post a matching "/openrx release agent/session", "/openrx blocked agent/session", or "/openrx review agent/session" when handing off. Any capable later agent can review or resume; **no manager signoff or role assignment** is needed.
@@ -173,3 +197,4 @@ intended-core/SMP/BOOM and M1-M5 open. No calibrated timing, physical power, RTL
 whole-Codex-daemon termination, host reboot or complete offline/hermetic dependency closure is claimed.
 Original Library binary remains unavailable; rebuilt binary retains its distinct identity. Preserve
 failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.
+

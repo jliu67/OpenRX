@@ -1,5 +1,17 @@
 # Native dataset gold EOF validation
 
+## Later full-result acceptance — 2026-10-20
+
+After the bounded repair and corrected-model preparation below, one complete
+default 8×2,048 functional hardware-dataset hash is
+[independently accepted](https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967)
+at public `e8277c6`/tree `cb3e0615`. The
+[result summary](../dataset-fullhash-20261020/README.md) records complete native
+assertions and actual nested phase closure. Original failures, raw scientific
+flags, acceptance criteria and prepared host-service boundaries remain unchanged.
+
+## Retained bounded EOF method — 2026-10-19
+
 The full hardware-dataset testbench must consume every required native row and
 reject additional data. A scanner return value alone cannot distinguish valid
 EOF from malformed trailing input consistently across the supported simulators.

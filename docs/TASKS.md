@@ -1,5 +1,38 @@
 # OpenRX project board
 
+## Accepted-result board update — 2026-10-20
+
+| Work | Current bounded result |
+| --- | --- |
+| EXP-023 / later task71 records | One default 8×2,048 functional hardware-dataset hash independently accepted at public `e8277c6`/tree `cb3e0615`; [evidence](validation/dataset-fullhash-20261020/README.md). |
+| Original task71 | Remains closed for its original lifecycle delivery; later accepted and failed results remain separate execution records. |
+| Remaining engineering gates | Retained preparation/host services remain explicit; autonomous setup, physical services/PPA, calibrated frequency, architecture and whole-machine targets remain open. |
+
+[Current status](STATUS.md) records actual source merge/check closeout. Older board
+snapshots and scientific criteria remain unchanged; no new workload or claim is assigned.
+
+## Current board — 2026-10-19
+
+[Verified status and exact evidence](STATUS.md) supersede the dated board snapshots
+below for current delivery. Main is `fa0bc79bdcd89c91aab11596b6f7f5e104aa6884`.
+
+| Work | Current bounded status |
+| --- | --- |
+| #48/#50/#52/#54/#56/#58/#60/#62/#64/#67/#69/#71/#75 | Original component tasks closed; corresponding delivery PRs through PR82 are merged on main. Reuse accepted evidence rather than repeating campaigns. |
+| PR83 / later #71 execution records | Draft at `8e4164230ce633bbe43a385003659680cfec2925`; PR84 merged only into this feature. Frozen b5f45998 full attempt ended PROCESS_FAILED/scientific-unverified; terminal review remains with the existing supervisor. |
+| #72 | PR74 analytical tool merged/accepted for its bounded scope; issue remains open/review, physical and alternative-full-hash feasibility unresolved. |
+| #8/#1 | Accepted exploratory native pilot; later formal candidate incomplete/rejected; formal baseline/M1 open. |
+| #16/#3 | Bounded gem5 light controls accepted; intended-core/full-dataset/SMP and calibrated timing remain open. |
+| #2/#10/#11/#12/#14 | Blocked; original priority, measured-power, profiling, M5 and M4 gates preserved. |
+| #66 | Historical complete-tree audit remains open/review at its recorded trees; this status correction does not claim a new exhaustive external-link audit. |
+| #27/#31 | Migration and publication cleanup complete; no standing editable mirror or automatic Git sync. |
+
+Issue comments/receipts remain live claim authority. The shared pool's ready/review
+labels do not override the manager's bounded scope or scientific prerequisites.
+The earlier six-of-eight witness is partial history, not terminal full-hash coverage
+or acceptance. Modeled clocks, generic mapping and machine targets remain distinct
+from unknown physical PPA. No run, claim, dependency or milestone changes here.
+
 ## Connected hash and accepted-parent status — 2026-10-16
 
 PR [65](https://github.com/jliu67/OpenRX/pull/65), [68](https://github.com/jliu67/OpenRX/pull/68)
@@ -86,7 +119,9 @@ publication context. Issue claims remain the ownership record, the manager assig
 bounded current scopes, and compute is serialized. Full-core/hash, selected-core,
 calibrated timing and physical-power gates remain open.
 
-| Component task | Current bounded state |
+Historical component-table snapshot — 2026-10-13 (superseded by the current board above):
+
+| Component task | Bounded state at that snapshot |
 | --- | --- |
 | [48](https://github.com/jliu67/OpenRX/issues/48) | AES mixer accepted/merged in PR49; completed |
 | [50](https://github.com/jliu67/OpenRX/issues/50) | Ordered iteration stores accepted/merged in PR51; completed |
@@ -304,10 +339,11 @@ The [current handoff](../memory/HANDOFF.md) gives integrated software, accepted 
 
 [Ready tasks](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Aready) · [Needs review](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Areview) · [Blocked](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+is%3Aopen+label%3Aagent%3Atask+label%3Aagent%3Astatus%3Ablocked) · [Notes](https://github.com/jliu67/OpenRandomX/issues?q=is%3Aissue+label%3Aagent%3Amessage).
 
-Phase 1 child issue graph: #8 (measured host baseline; controlled configuration/authorization and current host verification still required); #13 (power importer; independently accepted software, merged and closed as completed); #10 (wall power; depends #8/#9/#13 plus instrument access); #11 (dynamic profiling; depends #8). #9 and #13 record completed software and must not trigger reimplementation. M4 [#14](https://github.com/jliu67/OpenRandomX/issues/14) is gated by milestone #1 and simulator #3. M5 [#12](https://github.com/jliu67/OpenRandomX/issues/12) is gated by #1/#3/#14. #2 is retained but owner-priority-blocked, and #3 remains open for selected-core/reuse evidence rather than broad surveys; bounded source-only #41 is the current target/reuse/AES entry; #4's dated source audit is completed and closed. Inspect current issue comments/receipts for actual claims; an unexpired claim does not prove ongoing execution.
+Phase 1 child issue graph: #8 (measured host baseline; controlled configuration/authorization and current host verification still required); #13 (power importer; independently accepted software, merged and closed as completed); #10 (wall power; depends #8/#9/#13 plus instrument access); #11 (dynamic profiling; depends #8). #9 and #13 record completed software and must not trigger reimplementation. M4 [#14](https://github.com/jliu67/OpenRandomX/issues/14) is gated by milestone #1 and simulator #3. M5 [#12](https://github.com/jliu67/OpenRandomX/issues/12) is gated by #1/#3/#14. #2 is retained but owner-priority-blocked, and #3 remains open for selected-core/reuse evidence rather than broad surveys; bounded source-only #41 is completed planning to reuse; consult [current status](STATUS.md) for delivery; #4's dated source audit is completed and closed. Inspect current issue comments/receipts for actual claims; an unexpired claim does not prove ongoing execution.
 
 The independent [inspection checkpoint](inspection/2026-10-08-incident.md) is preserved alongside the final engineering handoff. Task #20 is independently accepted and closed as completed. #22 is completed after merged PR #23 queued eligible announcements and documented separate-agent review; its actual bot deployment passed. #24's compact handoff policy is also separately accepted and completed, with the duplicate decision ID corrected by its original author. [Coordination evidence](validation/coordination/REVIEW-20261008.md), [policy review](validation/coordination/POLICY-REVIEW-20261008.md).
 
 ## 2026-10-14 bounded component handoff
 
 [Task #69](https://github.com/jliu67/OpenRX/issues/69): immutable reciprocal candidate, final 8 Python/48 native iterations/11 RTL/4 mapped/3 invalid checks pass, complete-pipeline gate skipped, four failures retained. [EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) carries scope/evidence. Independent exact-head review pending; complete-pipeline baseline remains the next performance prerequisite.
+

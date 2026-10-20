@@ -1,5 +1,29 @@
 # Project memory
 
+## Functional result within the mission — 2026-10-20
+
+One default 8×2,048 functional hardware-dataset hash is
+[independently accepted](../docs/validation/dataset-fullhash-20261020/README.md),
+separate from the c96 software-assisted result and earlier failed attempt. Exact
+RandomX v2 engineering with v1 regressions and licensed-IP reuse remains the
+mission. Retained preparation and modeled host services remain explicit; autonomous
+setup, physical PPA, frequency, final architecture and the whole-machine 1 MH/s
+below 2,500 W objective remain unvalidated. Prior dated mission/status records
+retain their original context.
+
+## Current mission and delivery — 2026-10-19
+
+The mission remains exact RandomX v2 ASIC engineering with v1 regressions,
+licensed-IP reuse and an unproven whole-machine 1 MH/s below 2,500 W objective.
+[Verified status](../docs/STATUS.md) records main through merged PR82, the accepted
+software-assisted full hash, bounded later hardware components and draft PR83.
+The retained hardware-dataset full attempt ended PROCESS_FAILED; scientific
+acceptance, physical PPA and final architecture remain unresolved.
+
+Earlier dated component/draft/main pointers below preserve history. They do not
+reassign completed tasks or override current supervisor ownership, manager scope,
+scientific gates or the GitHub-only publication/source-retention policy.
+
 Current compiler compatibility: [Icarus 12 compile view](../rtl/execute/DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. All 12 local RTL records/native fixtures match; corrected hosted checks and independent review remain required.
 
 ## Native division and square root — task #60, 2026-10-13
@@ -108,7 +132,7 @@ Reuse the pinned workload, accepted correctness/benchmark/profiling/power-import
 infrastructure and preserved simulator builds. BOOMV3 remains a provisional
 open-IP baseline requiring exact selected-core verification, not an X9 proxy.
 Study v2 main-loop AES acceleration against the existing scalar software-AES path
-as a profiling/model question; no AES block or new hardware selection is accepted.
+as the original profiling/model question. Later bounded AES components are merged; final architecture selection and physical PPA remain unaccepted.
 Do not promise competitive power/performance/area from functional controls.
 
 Keep research tied to the next concrete reuse or design decision. Broad processor
@@ -213,3 +237,4 @@ Earlier README wording: Research a programmable RISC-V processor optimized for R
 
 ## Prior conversation claims requiring validation
 X5 uses SG2042; X9 achieves 1 MH/s at 2472 W; public X9 shipments were cancelled; Monero has not activated v2. These are leads, not verified project facts. Recheck current primary sources before relying on them.
+

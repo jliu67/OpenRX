@@ -1,0 +1,71 @@
+{
+  "schema": "openrx.status-reconciliation.provenance.v1",
+  "date_utc": "2026-10-19",
+  "scope": "Sanitized status projection from retained records; no new workload or full scientific artifact review. Original records remain unchanged and retained. Hashes identify records, not scientific acceptance.",
+  "main": "fa0bc79bdcd89c91aab11596b6f7f5e104aa6884",
+  "pr83_publication_head": "8e4164230ce633bbe43a385003659680cfec2925",
+  "execution_id": "20261019T032907Z-e8ffa2ec5555",
+  "executed_source_head": "b5f459982e95ad447ba181d957be825e2a0d34d7",
+  "executed_source_tree": "cc1fea901c89bd2b4f8b58a0ab0d9b982abf455a",
+  "earlier_partial_checkpoint": {
+    "observed_at_utc": "2026-10-19T16:59:23.799953+00:00",
+    "program_boundaries": 6,
+    "iteration_states": 12288,
+    "dataset_responses": 12288,
+    "complete_2MiB_scratchpad_comparisons": 6,
+    "seed_comparisons": 6,
+    "final_attained_coverage": false,
+    "scientific_acceptance": false
+  },
+  "later_terminal": {
+    "process_finished_at_utc": "2026-10-19T21:32:51.447236+00:00",
+    "receipt_at_utc": "2026-10-19T21:33:03.622676+00:00",
+    "status": "PROCESS_FAILED",
+    "driver_status": "failed",
+    "runner_returncode": 1,
+    "simulation_command_returncode": -6,
+    "wall_timeout": false,
+    "full_hash_execution": false,
+    "scientific_acceptance": "unverified",
+    "retained_integrity_record_verified": true,
+    "terminal_failure_diagnosis_or_scientific_review_claimed": false
+  },
+  "records": [
+    {
+      "role": "partial-supervisor-handoff",
+      "record_name": "openrx-dataset-fullhash-passive-supervision-handoff02.json",
+      "bytes": 1723,
+      "sha256": "353380d0ca73e62df6168d5f67ce6474c26476a1338568c21163c391d343114b"
+    },
+    {
+      "role": "preparation-independent-review",
+      "record_name": "openrx-dataset-fullhash-prepare02-independent-result-review.json",
+      "bytes": 7916,
+      "sha256": "30d5a5cb421080c3501c3769391de2d127869e3b8c5df739c26e63e206ef7fea"
+    },
+    {
+      "role": "terminal-integrity-record",
+      "record_name": "openrx-dataset-fullhash-full01-terminal-verify01.json",
+      "bytes": 155,
+      "sha256": "a250d2ae52cc14796c6f5937c2ccd05587c99193530563ff53b3dc0ceaa23d3b"
+    },
+    {
+      "role": "terminal-receipt",
+      "record_name": "receipt.json",
+      "bytes": 6713,
+      "sha256": "324fa6099736f67e6b8c90e18637f0eec0f30aac09a8e829fb9f8482d8c94d89"
+    },
+    {
+      "role": "terminal-driver-summary",
+      "record_name": "summary.json",
+      "bytes": 997184,
+      "sha256": "ef0c51a955ca44d63dab569c0dd61500c160af13ad0ddb0aa66593360505fd53"
+    },
+    {
+      "role": "terminal-command-ledger",
+      "record_name": "commands.json",
+      "bytes": 2368,
+      "sha256": "7448fe5c0644e7f86ca645efd27a8c519db798e26cdcc1f9df284afc55346091"
+    }
+  ]
+}

@@ -1,5 +1,28 @@
 # Roadmap and acceptance gates
 
+## Accepted functional boundary — 2026-10-20
+
+[Current status](STATUS.md) and the
+[accepted full result](validation/dataset-fullhash-20261020/README.md) record one
+default hardware-dataset functional hash at public `e8277c6`/tree `cb3e0615`.
+Retained preparation and modeled host memory services remain explicit. The ordered
+engineering path and original M1–M6 acceptance map remain; autonomous setup,
+physical services/PPA, calibrated frequency, final architecture and whole-machine
+goals remain unresolved. Earlier candidate/failure routing is retained history.
+
+## Current priority and acceptance routing — 2026-10-19
+
+Use the [verified status](STATUS.md) and [current handoff](../memory/HANDOFF.md).
+Main through PR82 contains the merged execution/lifecycle/input/program/dataset
+components. PR83 is a draft full-hash candidate; the retained attempt ended
+PROCESS_FAILED with scientific acceptance unverified. The existing supervisor owns
+terminal review; this roadmap assigns no competing or replacement workload.
+
+Retain the original M1–M6 gates below. Accepted components and the PR74 analytical
+tool do not complete controlled baseline, selected-core, calibrated-model or
+physical PPA acceptance. Earlier component-status snapshots remain history; the retained priority
+overlay and acceptance gates still apply; completed #41/#48 are reusable prior work, not the next assignment.
+
 Current compiler compatibility: [Icarus 12 compile view](../rtl/execute/DIVSQRT.md#icarus-12-compatibility-correction--2026-10-13) removes one redundant declaration in a generated copy; original IP/hardware bytes and Yosys sources remain unchanged. All 12 local RTL records/native fixtures match; corrected hosted checks and independent review remain required.
 
 ## Native division and square root — task #60, 2026-10-13
@@ -185,3 +208,4 @@ Original Library binary remains unavailable; rebuilt binary retains its distinct
 failures/safety withdrawals, original scientific assets, exact guest oracles and milestone history.
 
 This infrastructure prerequisite does not complete a scientific milestone.
+

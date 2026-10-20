@@ -1175,3 +1175,32 @@ load under a distinct module name, and record this failure without changing driv
 native or testbench behavior. No tests or workloads ran for the correction; a new
 source freeze and reviewed admission own the retry.
 
+
+
+## 2026-10-19 — verified status reconciliation
+
+Reconcile current navigation, board, mission/state/handoff and shared-pool summaries
+against GitHub main fa0bc79b through merged PR82, draft PR83 at 8e416423 and PR84's
+feature-only merge. Retain all dated scientific records and original acceptance
+gates. [Status provenance](../docs/status-evidence-20261019.json) binds retained
+preparation, earlier partial supervisor evidence and the later PROCESS_FAILED
+receipt; no hardware-dataset full-hash acceptance is claimed. The existing
+supervisor owns terminal diagnosis/review. Use a documentation-only feature PR,
+independent exact-head review and applicable hosted checks; no main push or merge.
+No scientific workload, build, synthesis, settings/access change, standing clone or
+Git sync was performed for this reconciliation. Historical audit/external-link
+findings and physical/architectural/M1–M5 gates remain open.
+
+## 2026-10-20 — accepted default hardware-dataset functional hash
+
+The [independent technical COMMENT](https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967)
+accepts one default 8×2,048 hash at public `e8277c6`/tree `cb3e0615`. Complete
+native assertions, eight scratchpad boundaries, seven seeds, final-digest equality
+and actual nested phase closure pass within 918,672,902 modeled clocks. The
+[result summary](../docs/validation/dataset-fullhash-20261020/README.md) records
+the export/testbench evidence boundary and retained preparation/host services.
+Original failed attempts, missing original failed-run ledger/vectors, raw
+scientific flags and all historical criteria are preserved. Physical services/PPA,
+frequency, autonomous setup, final architecture and whole-machine targets remain
+unvalidated. No additional scientific workload was run for documentation closeout.
+

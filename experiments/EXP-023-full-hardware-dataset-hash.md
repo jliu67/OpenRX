@@ -1,5 +1,23 @@
 # EXP-023: full default hardware-dataset hash
 
+## Accepted functional closeout — 2026-10-20
+
+One default 8×2,048 result is
+[independently accepted](https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967)
+at public `e8277c6`/tree `cb3e0615`. The
+[full-result summary](../docs/validation/dataset-fullhash-20261020/README.md)
+records complete native assertions, eight scratchpad boundaries, seven seed
+transitions, final-digest equality and actual nested phase closure within
+918,672,902 modeled clocks. Retained preparation/host services and all physical
+limits remain explicit. Original failed attempts, missing original failed-run
+ledger/vectors and raw scientific flags remain unchanged.
+
+## Retained preparation and acceptance method — 2026-10-19
+
+The following preparation-stage status and method are preserved from their
+original publication. Later acceptance above does not rewrite these failures or
+change the scientific criteria.
+
 Status: first admitted preparation failed at the unit-import gate. No new native
 reference, model build, calibration prefix or complete RTL run has executed for
 this experiment. Base is PR #82 merge `fa0bc79bdcd89c91aab11596b6f7f5e104aa6884`.

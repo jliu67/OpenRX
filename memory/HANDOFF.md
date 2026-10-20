@@ -1,5 +1,33 @@
 # Handoff — actual designated local execution
 
+## Accepted-result handoff — 2026-10-20
+
+Start with [current status](../docs/STATUS.md) and the
+[accepted result](../docs/validation/dataset-fullhash-20261020/README.md).
+One complete default hardware-dataset functional hash is independently accepted
+at public `e8277c6`/tree `cb3e0615`; no additional hash run is needed. Preserve
+all original sources, assets, outputs, failures and raw scientific flags, including
+the failed attempt's missing original dataset ledger/vectors. Retained preparation
+and modeled host services remain explicit. Physical services/PPA, calibrated
+frequency, autonomous setup, final architecture and whole-machine targets remain
+open. Earlier pending-supervisor and preparation handoffs are dated history.
+
+## Current handoff — 2026-10-19
+
+Start with [verified status and retained-record provenance](../docs/STATUS.md).
+Main `fa0bc79bdcd89c91aab11596b6f7f5e104aa6884` includes PR82. PR83 remains draft
+at `8e4164230ce633bbe43a385003659680cfec2925`, following PR84's feature-only merge.
+The full attempt stays bound to b5f45998/tree cc1fea90. Its terminal receipt now
+records PROCESS_FAILED/scientific-unverified; the earlier six-of-eight checkpoint
+is partial history, not its final coverage or an accepted full hash.
+
+The existing supervisor owns failure/terminal/source/artifact review. Preserve all
+sources, assets, builds, outputs and failures; do not restart, duplicate, message
+or take over that workload. Reuse merged component evidence. Current-status
+correction does not change scientific acceptance or authorize execution/merge.
+Physical PPA, architecture selection and the whole-machine target remain open.
+Earlier dated handoffs below describe their original publication stage.
+
 ## Dataset session capacity — 2026-10-19
 
 Continue from public executed code `aa6fe690` / tree `1bcde079` above PR #81
@@ -972,3 +1000,4 @@ Acceptance requires exit zero, complete runtime/hash frames with zero statuses a
 M0 is complete; M1–M5 remain open. #13 importer software and #4 dated source audit are completed; #20 inspection, #22 queued announcements and #24 compact-handoff policy are completed. #8/#10/#11 require controlled host/counter/meter access. #2 lacks primary X5 board/chip/firmware binding; documented stock SG2042 properties do not identify an X5 derivative. Future Monero activation/live-tip corroboration remains open. Full dataset, intended cores/SMP and selected BOOM Linux boot are separate from Atomic functional controls. M4/M5 still require measured baseline and calibrated model; no RTL, timing or physical efficiency result is established.
 
 All 171 vendor files are now materialized and verified locally; the former four-PDF snapshot omission is resolved. Prior STATE/HANDOFF snapshots are archived under `memory/handoffs/pre-light-resume-*-20261008.md`; original timeout/build/OOM records and SESSION_LOG history remain unchanged. PR #26 integrated at `77a1641fb85f386bce4a5b51e00dedbe257376f6`, with the tested head/tree unchanged. [Final release](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6071620898) is accepted: ready, claim null, no warnings. The required [hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6071623180) was verified. [Integration/CI receipts](../docs/validation/m3-fs/stop-file-20261008/integration.json) preserve exact source/run/job identities.
+

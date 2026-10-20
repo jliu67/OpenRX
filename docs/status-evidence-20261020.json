@@ -1,0 +1,96 @@
+{
+  "schema": "openrx.accepted-functional-hardware-dataset-public-summary.v1",
+  "as_of": "2026-10-20",
+  "scope": "one default RandomX v2 8x2048 functional hardware-dataset hash",
+  "accepted_source": {
+    "public_head": "e8277c63504ef035bb82791263b6842c0cc51f51",
+    "public_tree": "cb3e0615f9df861a081ba2cbb1d47c65603b84cd",
+    "url": "https://github.com/jliu67/OpenRX/commit/e8277c63504ef035bb82791263b6842c0cc51f51"
+  },
+  "independent_acceptance": {
+    "url": "https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967",
+    "review_type": "technical COMMENT by a separate reviewer using the shared account",
+    "formal_github_approval": false
+  },
+  "dependency_merge": {
+    "pull_request": "https://github.com/jliu67/OpenRX/pull/86",
+    "commit": "af1e23d384c4d23d007da816bd8b97ff12712a34",
+    "tree": "cb3e0615f9df861a081ba2cbb1d47c65603b84cd",
+    "destination": "PR83 feature branch"
+  },
+  "historical_documentation_merge": {
+    "pull_request": "https://github.com/jliu67/OpenRX/pull/85",
+    "commit": "eee6af85b22ab01c362f7ae37676df5247df29b2",
+    "retained_provenance": "status-evidence-20261019.json"
+  },
+  "source_publication_closeout": "https://github.com/jliu67/OpenRX/pull/83",
+  "coverage": {
+    "programs": 8,
+    "iterations": 16384,
+    "iteration_state_assertions": 16384,
+    "dataset_result_assertions": 16384,
+    "bytecode_access_assertions": 1346699,
+    "full_2MiB_scratchpad_boundaries": 8,
+    "hardware_seed_transitions": 7,
+    "canonical_final_digest_equality": true,
+    "testbench_PASS_records": 2,
+    "full_hash_validator_passed": true,
+    "independently_streamed_trace_records": 28026133
+  },
+  "evidence_boundary": {
+    "independent_export_checks": [
+      "addresses",
+      "instruction and access counts and order",
+      "port-byte totals",
+      "outer and iteration and executor phase closure"
+    ],
+    "unexported_data_and_register_equality": "exact bound-testbench assertion evidence",
+    "program_oracles": "native assertion images from DUT-derived seeds; hardware-generated images and fetched words separately checked by bound testbench"
+  },
+  "modeled_clocks": {
+    "outer_total": 918672902,
+    "execution_stage": 918128359,
+    "dataset_availability_nested": 874905600,
+    "dataset_core_nested": 874889216,
+    "dataset_executor_nested": 873676800,
+    "dataset_launch_nested": 16384,
+    "actual_dataset_phase_vector_lengths": [
+      3,
+      3,
+      9
+    ],
+    "actual_vectors_emitted_and_closed": true,
+    "dataset_cost_doubleaddition": false
+  },
+  "live_software_provider_calls": {
+    "input": 0,
+    "fill": 0,
+    "program": 0,
+    "dataset": 0,
+    "assertion_only_dataset": 0
+  },
+  "separately_allowed_assertion_calls": {
+    "input": 1,
+    "program": 8
+  },
+  "preserved_history": {
+    "failed_full_attempt_remains_failed_and_scientifically_unverified": true,
+    "original_failed_attempt_dataset_ledger_and_phase_vectors_remain_absent": true,
+    "original_runner_scientific_flags_unchanged": true,
+    "earlier_software_assisted_result_is_separate": true,
+    "all_historical_sources_assets_outputs_and_failures_retained": true
+  },
+  "retained_services": [
+    "cache/superscalar/reciprocal preparation",
+    "modeled host cache/program/table/scratchpad memory services"
+  ],
+  "unvalidated": [
+    "autonomous setup",
+    "physical memory/controller services",
+    "calibrated frequency",
+    "physical PPA",
+    "architecture selection",
+    "whole-machine performance/power objective"
+  ],
+  "additional_scientific_run_needed_for_this_result": false
+}
