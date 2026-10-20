@@ -907,8 +907,30 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
   $display("PASS dataset_capacity_lifecycle_error service=%0d matching_faults=1 held_error=1 no_wrong_xor=1 changed_generation=1 changed_input=1 prefix_only=1",DATASET_ERROR);
   $finish;
  end endtask
+ // fscanf returns a conversion count at valid EOF in the pinned runtime.
+ // Inspect every trailing byte instead; malformed/partial extra rows must fail.
+ task dataset_assert_native_eof;
+  input integer gold_fd;
+  integer ch,status;
+ begin
+  if(gold_fd===0||^gold_fd===1'bx)$fatal(1,"native dataset gold descriptor invalid");
+`ifdef VERILATOR
+  // The empty conversion probes the actual open FILE without consuming input.
+  status=$fscanf(gold_fd,"");
+  if(status!==0)$fatal(1,"native dataset gold descriptor unavailable");
+`endif
+  status=$fseek(gold_fd,0,1);
+  if(status!==0)$fatal(1,"native dataset gold descriptor unavailable");
+  ch=$fgetc(gold_fd);
+  while(ch!==-1)begin
+   if(((ch>=9&&ch<=13)||ch==32)!==1'b1)$fatal(1,"native dataset gold contains trailing data");
+   ch=$fgetc(gold_fd);
+  end
+  status=$feof(gold_fd);
+  if((status!=0)!==1'b1)$fatal(1,"native dataset gold EOF not confirmed");
+ end endtask
  task dataset_write_ledger;
-  integer fd,n,sum,status;
+  integer fd,n,sum;
  begin
   if(dataset_requests_seen!=TOTAL_ITERATIONS||dataset_responses_seen!=TOTAL_ITERATIONS||ds_pending)$fatal(1,"full dataset demand/response accounting");
   if(HARDWARE_DATASET)begin
@@ -930,8 +952,7 @@ module tb_dataset_capacity_hash_lifecycle #(parameter integer PROGRAMS=2,ITERATI
     $fatal(1,"nonclosing disjoint dataset child program/cache service costs");
   end else if(dataset_live_calls!=TOTAL_ITERATIONS||dataset_items_seen||dataset_item_returns_seen||dataset_stage_pulses||dataset_cache_requests||dataset_fetch_requests)
    $fatal(1,"software baseline/hardware dataset boundary mismatch");
-  status=$fscanf(dataset_gold_fd,"%h %h\n",dataset_gold_address,dataset_expected_data);
-  if(status!=-1)$fatal(1,"retained native dataset gold contains extra or malformed demand rows");
+  dataset_assert_native_eof(dataset_gold_fd);
   $fclose(dataset_gold_fd);$fclose(dataset_cache_fd);$fclose(dataset_rows_fd);
   $sformat(dataset_path,"%0s/dataset-ledger.json",output_directory);fd=$fopen(dataset_path,"w");if(!fd)$fatal(1,"dataset ledger open");
   $fdisplay(fd,"{\"schema\":\"openrx.dataset-capacity.nested-ledger.v1\",\"hardware_dataset\":%0d,\"outer_cycles\":%0d,\"dataset_costs_are_nested_not_added_to_outer_total\":true,",HARDWARE_DATASET,cycle);

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Admitted full 8x2048 hardware-dataset hash using retained prepared cache0.
 
---prepare-only builds one model and NEW compatible full native assertion gold;
-it does not execute the RTL workload. A later admitted invocation can reuse that
-output with an externally pinned --prepared-manifest-sha256. No accepted cache,
-superscalar program, reciprocal table, native archive or old campaign is rebuilt.
+--prepare-only builds one model and normally generates compatible native gold.
+--reference-prepared-output instead copies externally pinned v1 gold unchanged.
+Preparation never executes the RTL hash. Later admitted execution requires the
+externally pinned --prepared-manifest-sha256 and actual source/model/gold checks.
+Accepted cache, superscalar programs, reciprocal table, native archive and tools
+are retained throughout.
 """
 import argparse
 from collections import Counter
@@ -35,6 +37,10 @@ IDEAL_EXECUTOR, CORE_OVERHEAD, LAUNCH = 53325, 74, 1
 WATCHDOG = 1500000000
 REFERENCE = TEST + 'dataset_fullhash_reference.cpp'
 PREPARED_SCHEMA = 'openrx.dataset-fullhash.prepared.v1'
+REBUILT_SCHEMA = 'openrx.dataset-fullhash.rebuilt-model.v1'
+# These validation-only files may change while the native generator inputs stay exact.
+REFERENCE_REUSE_CHANGES = {BENCH, 'scripts/test_dataset_fullhash.py', 'tests/test_dataset_fullhash.py'}
+REFERENCE_REUSE_ADDITIONS = {'scripts/test_dataset_gold_eof.py'}
 
 
 def identity(path):
@@ -245,6 +251,96 @@ def verify_prepared(directory, expected_sha, current_sources, message):
     return manifest
 
 
+def verify_reference_preparation(directory, expected_sha, receipt_sha, root_verify, root_verify_sha, current_sources, message):
+    """Reuse gold only: preserve v1 model/source checks for ordinary execution."""
+    directory = Path(directory).absolute()
+    assert directory.is_dir() and all(not p.is_symlink() for p in [directory, *directory.parents])
+    directory = directory.resolve(strict=True)
+    assert re.fullmatch('[0-9a-f]{64}', expected_sha or '')
+    assert sha(regular_under(directory, 'prepared-manifest.json')) == expected_sha
+    manifest = load(directory / 'prepared-manifest.json')
+    assert manifest['schema'] == PREPARED_SCHEMA and manifest['status'] == 'prepared_not_executed'
+    assert set(manifest['source_inputs']) == set(current_sources) - REFERENCE_REUSE_ADDITIONS
+    for name, value in manifest['source_inputs'].items():
+        if name not in REFERENCE_REUSE_CHANGES:
+            assert current_sources[name] == value, 'changed native preparation dependency: ' + name
+    assert manifest['input_hex'] == message.hex()
+    assert manifest['programs'] == PROGRAMS and manifest['iterations'] == ITERATIONS
+    assert manifest['parameters'] == parameters(manifest['parameters']['WATCHDOG_CYCLES'], manifest['parameters']['PROGRESS_ITEMS'])
+    files = manifest['files']
+    assert set(files) == {'obj-fullhash/sim'} | {
+        'native-reference/' + p.name for p in (directory / 'native-reference').iterdir() if p.is_file()}
+    for name, expected in files.items():
+        assert identity(regular_under(directory, name)) == expected, 'retained preparation file: ' + name
+    assert identity(regular_under(directory, 'commands.json')) == manifest['commands_identity']
+    commands = load(directory / 'commands.json')
+    assert commands == manifest['commands']
+    assert [row['label'] for row in commands] == [
+        'fullhash-unit', 'compile-full-reference', 'native-full-reference', 'compile-fullhash']
+    for row in commands:
+        assert row['returncode'] == 0 and row['wall_timeout'] is False
+        assert row['group_empty_after_cleanup'] is True and 'error' not in row
+    assert commands[2]['argv'] == [str(directory / 'reference'), str(directory / 'native-reference'),
+        '8', '2048', '1', message.hex()]
+    assert re.fullmatch('[0-9a-f]{64}', receipt_sha or '')
+    receipt_path = regular_under(directory.parent, 'receipt.json')
+    assert sha(receipt_path) == receipt_sha, 'externally pinned original preparation receipt'
+    receipt = load(receipt_path)
+    assert receipt['status'] == 'PROCESS_EXITED' and receipt['process']['returncode'] == 0
+    artifacts = {row['path']: {'bytes': row['bytes'], 'sha256': row['sha256']} for row in receipt['artifacts']}
+    provenance_files = ['reference', 'extraction.json', 'program-extraction.json',
+        'pinned_iteration.inc', 'pinned_dataset_read.inc', 'pinned_destructor.inc',
+        'pinned_bytecode_loop.inc', 'pinned_scratchpad_address.inc', 'pinned_float_masks.inc',
+        'pinned_program_initialize.inc', 'pinned_program_float_helpers.inc']
+    for name in ['prepared-manifest.json', 'commands.json', *provenance_files, *files]:
+        assert identity(regular_under(directory, name)) == artifacts[str(directory / name)]
+    assert re.fullmatch('[0-9a-f]{64}', root_verify_sha or '')
+    assert identity(root_verify)['sha256'] == root_verify_sha
+    verified = load(root_verify)
+    assert verified['execution_id'] == receipt['execution_id']
+    assert verified['integrity_verified'] is True and verified['status'] == 'PROCESS_EXITED'
+    validate_reference(directory / 'native-reference', message)
+    return manifest
+
+
+def verify_rebuilt(directory, expected_sha, current_sources, message):
+    directory = Path(directory).absolute()
+    assert directory.is_dir() and all(not p.is_symlink() for p in [directory, *directory.parents])
+    directory = directory.resolve(strict=True)
+    assert re.fullmatch('[0-9a-f]{64}', expected_sha or '')
+    assert sha(regular_under(directory, 'prepared-manifest.json')) == expected_sha
+    manifest = load(directory / 'prepared-manifest.json')
+    assert manifest['schema'] == REBUILT_SCHEMA and manifest['status'] == 'prepared_not_executed'
+    assert manifest['source_inputs'] == current_sources
+    assert manifest['source_tree'] == subprocess.check_output(['git', 'rev-parse', 'HEAD^{tree}'], cwd=ROOT, text=True).strip()
+    assert manifest['input_hex'] == message.hex()
+    assert manifest['programs'] == PROGRAMS and manifest['iterations'] == ITERATIONS
+    assert manifest['parameters'] == parameters(manifest['parameters']['WATCHDOG_CYCLES'], manifest['parameters']['PROGRESS_ITEMS'])
+    origin = manifest['reused_reference']
+    original = verify_reference_preparation(Path(origin['path']), origin['manifest_sha256'],
+        origin['receipt_sha256'], Path(origin['root_verify']), origin['root_verify_sha256'], current_sources, message)
+    assert manifest['native_archive_sha256'] == original['native_archive_sha256']
+    assert manifest['prepared_assets'] == original['prepared_assets']
+    assert manifest['verilator_files'] == original['verilator_files']
+    files = manifest['files']
+    assert files['obj-fullhash/sim'] != original['files']['obj-fullhash/sim'], 'original model cannot be relabeled as rebuilt'
+    gold_files = {name: value for name, value in original['files'].items() if name.startswith('native-reference/')}
+    assert {name: value for name, value in files.items() if name != 'obj-fullhash/sim'} == gold_files
+    assert set(files) == {'obj-fullhash/sim'} | {
+        'native-reference/' + p.name for p in (directory / 'native-reference').iterdir() if p.is_file()}
+    for name, expected in files.items():
+        assert identity(regular_under(directory, name)) == expected, 'rebuilt prepared input: ' + name
+    assert identity(regular_under(directory, 'commands.json')) == manifest['commands_identity']
+    commands = load(directory / 'commands.json')
+    assert commands == manifest['commands']
+    assert [row['label'] for row in commands] == ['fullhash-unit', 'compile-fullhash']
+    for row in commands:
+        assert row['returncode'] == 0 and row['wall_timeout'] is False
+        assert row['group_empty_after_cleanup'] is True and 'error' not in row
+    validate_reference(directory / 'native-reference', message)
+    return manifest
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
@@ -260,6 +356,11 @@ def main():
     parser.add_argument('--prepare-only', action='store_true')
     parser.add_argument('--prepared-output', type=Path)
     parser.add_argument('--prepared-manifest-sha256')
+    parser.add_argument('--reference-prepared-output', type=Path, help='prepare-only: copy externally pinned compatible native gold; rebuild model')
+    parser.add_argument('--reference-manifest-sha256')
+    parser.add_argument('--reference-receipt-sha256')
+    parser.add_argument('--reference-root-verify', type=Path)
+    parser.add_argument('--reference-root-verify-sha256')
     parser.add_argument('--simulation-timeout-seconds', type=int)
     parser.add_argument('--watchdog-cycles', type=int, default=WATCHDOG)
     parser.add_argument('--progress-items', type=int, default=64)
@@ -273,6 +374,9 @@ def main():
                       args.simulation_timeout_seconds)
     except AssertionError as error:
         parser.error(str(error))
+    if any((args.reference_prepared_output, args.reference_manifest_sha256, args.reference_receipt_sha256, args.reference_root_verify, args.reference_root_verify_sha256)):
+        if not (args.prepare_only and args.reference_prepared_output and args.reference_manifest_sha256 and args.reference_receipt_sha256 and args.reference_root_verify and args.reference_root_verify_sha256):
+            parser.error('reference reuse requires prepare-only and all original preparation pins')
     params = parameters(args.watchdog_cycles, args.progress_items)
     assert not subprocess.check_output(['git', 'status', '--porcelain'], cwd=ROOT, text=True).strip(), 'freeze clean source before admission'
     sources = list(dict.fromkeys([*EXECUTE_RTL, *EXTRA, *SERVICE_RTL, WRAPPER,
@@ -317,7 +421,9 @@ def main():
         env.pop('RX_PREPARED_REFERENCE_OUTPUT', None)
         if args.prepared_output:
             prepared = args.prepared_output.absolute()
-            manifest = verify_prepared(prepared, args.prepared_manifest_sha256, source_hashes, message)
+            prepared_schema = load(regular_under(prepared, 'prepared-manifest.json'))['schema']
+            verifier = verify_rebuilt if prepared_schema == REBUILT_SCHEMA else verify_prepared
+            manifest = verifier(prepared, args.prepared_manifest_sha256, source_hashes, message)
             assert manifest['parameters'] == params
             assert manifest['native_archive_sha256'] == sha(library)
             assert manifest['prepared_assets'] == summary['prepared_assets']['assets']
@@ -330,25 +436,43 @@ def main():
             run('fullhash-unit', ['python3', '-B', '-m', 'unittest', 'discover', '-s', 'tests', '-p', 'test_dataset_fullhash.py', '-v'])
             compat = compile_view(ROOT / V / 'divSqrtRecFN_small.v', out)
             compile_sources = [str(compat) if name == V + 'divSqrtRecFN_small.v' else name for name in sources]
-            extract(out)
-            virtual = (ROOT / 'vendor/randomx/src/virtual_machine.cpp').read_text()
-            notice = virtual[:virtual.index('*/') + 2] + '\n'
-            bodies = {'pinned_program_initialize.inc': function(virtual, 'void randomx_vm::initialize()', True),
-                'pinned_program_float_helpers.inc': 'namespace randomx {\n' + '\n'.join(function(virtual, name) for name in
-                    ['static inline uint64_t getSmallPositiveFloatBits(', 'static inline uint64_t getStaticExponent(',
-                     'static inline uint64_t getFloatMask(']) + '\n}\n'}
-            for name, body in bodies.items(): (out / name).write_text(notice + body)
-            save(out / 'program-extraction.json', {'source_sha256': sha(ROOT / 'vendor/randomx/src/virtual_machine.cpp'),
-                'generated': {name: sha(out / name) for name in bodies}})
-            run('compile-full-reference', ['g++', '-std=c++17', '-O2', '-Wall', '-Wextra', '-I' + str(out),
-                '-Ivendor/randomx/src', '-Irtl/execute/tests', '-Irtl/hash/tests', '-I' + TEST,
-                REFERENCE, str(library), '-pthread', '-ldl', '-o', str(out / 'reference')], timeout=1800)
-            gold = out / 'native-reference'; gold.mkdir()
-            run('native-full-reference', [str(out / 'reference'), str(gold), '8', '2048', '1', message.hex()],
-                env=dict(env, RX_PREPARED_REFERENCE_OUTPUT=str(gold)), timeout=1800)
-            summary['native_reference'] = prepare_assertions(gold)
-            validate_reference(gold, message)
-            summary['native_reference_generated'] = True
+            if args.reference_prepared_output:
+                original = verify_reference_preparation(args.reference_prepared_output,
+                    args.reference_manifest_sha256, args.reference_receipt_sha256, args.reference_root_verify,
+                    args.reference_root_verify_sha256, source_hashes, message)
+                assert original['native_archive_sha256'] == sha(library)
+                assert original['prepared_assets'] == summary['prepared_assets']['assets']
+                assert original['verilator_files'] == toolfiles
+                gold = out / 'native-reference'; gold.mkdir()
+                for name, expected in original['files'].items():
+                    if name.startswith('native-reference/'):
+                        shutil.copyfile(regular_under(args.reference_prepared_output, name), gold / Path(name).name)
+                        assert identity(gold / Path(name).name) == expected
+                summary['reused_reference'] = {'path': str(args.reference_prepared_output.resolve(strict=True)),
+                    'manifest_sha256': args.reference_manifest_sha256, 'receipt_sha256': args.reference_receipt_sha256,
+                    'root_verify': str(args.reference_root_verify.resolve(strict=True)),
+                    'root_verify_sha256': args.reference_root_verify_sha256}
+                summary['native_reference_generated'] = False
+            else:
+                extract(out)
+                virtual = (ROOT / 'vendor/randomx/src/virtual_machine.cpp').read_text()
+                notice = virtual[:virtual.index('*/') + 2] + '\n'
+                bodies = {'pinned_program_initialize.inc': function(virtual, 'void randomx_vm::initialize()', True),
+                    'pinned_program_float_helpers.inc': 'namespace randomx {\n' + '\n'.join(function(virtual, name) for name in
+                        ['static inline uint64_t getSmallPositiveFloatBits(', 'static inline uint64_t getStaticExponent(',
+                         'static inline uint64_t getFloatMask(']) + '\n}\n'}
+                for name, body in bodies.items(): (out / name).write_text(notice + body)
+                save(out / 'program-extraction.json', {'source_sha256': sha(ROOT / 'vendor/randomx/src/virtual_machine.cpp'),
+                    'generated': {name: sha(out / name) for name in bodies}})
+                run('compile-full-reference', ['g++', '-std=c++17', '-O2', '-Wall', '-Wextra', '-I' + str(out),
+                    '-Ivendor/randomx/src', '-Irtl/execute/tests', '-Irtl/hash/tests', '-I' + TEST,
+                    REFERENCE, str(library), '-pthread', '-ldl', '-o', str(out / 'reference')], timeout=1800)
+                gold = out / 'native-reference'; gold.mkdir()
+                run('native-full-reference', [str(out / 'reference'), str(gold), '8', '2048', '1', message.hex()],
+                    env=dict(env, RX_PREPARED_REFERENCE_OUTPUT=str(gold)), timeout=1800)
+                summary['native_reference'] = prepare_assertions(gold)
+                validate_reference(gold, message)
+                summary['native_reference_generated'] = True
             includes = ['-Irtl/execute', '-I' + V, '-I' + V + '8086-SSE', '-Irtl/hash/vendor/blake2', '-I' + str(gold)]
             cppflags = '-std=c++20 -O2 ' + ' '.join('-I' + str(ROOT / path) for path in
                 ('vendor/randomx/src', 'rtl/execute/tests', 'rtl/hash/tests', TEST))
@@ -360,14 +484,22 @@ def main():
                 str(ROOT / TEST / 'dataset_capacity_source_dpi.cpp')], env=env, timeout=7200)
             files = {'obj-fullhash/sim': identity(out / 'obj-fullhash/sim')}
             files.update({'native-reference/' + path.name: identity(path) for path in sorted(gold.iterdir())})
-            manifest = {'schema': PREPARED_SCHEMA, 'status': 'prepared_not_executed',
+            if args.reference_prepared_output:
+                assert files['obj-fullhash/sim'] != original['files']['obj-fullhash/sim'], 'corrected model must differ from original'
+                assert {name: value for name, value in files.items() if name.startswith('native-reference/')} == {
+                    name: value for name, value in original['files'].items() if name.startswith('native-reference/')}
+            manifest = {'schema': REBUILT_SCHEMA if args.reference_prepared_output else PREPARED_SCHEMA, 'status': 'prepared_not_executed',
                 'source_head': summary['source_head'], 'source_tree': summary['source_tree'], 'source_inputs': source_hashes,
                 'programs': PROGRAMS, 'iterations': ITERATIONS, 'input_hex': message.hex(), 'parameters': params,
                 'files': files, 'native_archive_sha256': sha(library),
                 'prepared_assets': summary['prepared_assets']['assets'], 'verilator_files': toolfiles,
                 'commands_identity': identity(out / 'commands.json'), 'commands': supervisor.commands}
+            if args.reference_prepared_output: manifest['reused_reference'] = summary['reused_reference']
             save(out / 'prepared-manifest.json', manifest)
             summary['prepared_manifest_sha256'] = sha(out / 'prepared-manifest.json')
+        if 'reused_reference' in manifest:
+            origin = manifest['reused_reference']
+            verify_reference_preparation(Path(origin['path']), origin['manifest_sha256'], origin['receipt_sha256'], Path(origin['root_verify']), origin['root_verify_sha256'], source_hashes, message)
         gold = prepared / 'native-reference'
         native, canonical, native_host, items = validate_reference(gold, message)
         summary.update({'native_reference': native, 'canonical_reference': canonical, 'native_host': native_host})
@@ -404,6 +536,9 @@ def main():
         assert sha(library) == summary['native_library']['sha256']
         for name, expected in toolfiles.items(): assert identity(toolroot / name) == expected
         for name, expected in manifest['files'].items(): assert identity(regular_under(prepared, name)) == expected
+        if 'reused_reference' in manifest:
+            origin = manifest['reused_reference']
+            verify_reference_preparation(Path(origin['path']), origin['manifest_sha256'], origin['receipt_sha256'], Path(origin['root_verify']), origin['root_verify_sha256'], source_hashes, message)
         summary['all_consumed_sources_prepared_gold_assets_and_tools_unchanged'] = True
     except BaseException as error:
         summary['status'] = 'failed'; summary['error'] = repr(error)
