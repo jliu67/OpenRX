@@ -1204,3 +1204,33 @@ scientific flags and all historical criteria are preserved. Physical services/PP
 frequency, autonomous setup, final architecture and whole-machine targets remain
 unvalidated. No additional scientific workload was run for documentation closeout.
 
+
+## Hardware-dataset analytical service profile — 2026-10-21
+
+Extended task #72 using the accepted PR86 compact ledgers and existing PR74
+envelope helpers, without modifying original architecture modules, fixtures or
+published numerical gold. Added a separately bound fixture/adapter, 19 provenance
+and accounting test methods, conditional per-interface latency bounds and
+explicit unknown physical fields. The prior approval rejection and prepared
+unrun state remain retained history; the owner subsequently approved the exact
+[bounded execution request](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6306625245).
+
+Actual admitted validation passes all 86 architecture tests, historical
+comparison/sensitivity byte parity and the new profile CLI; all bound source
+bytes remain unchanged. Commands took approximately 59.1 seconds combined;
+this is validation runtime, not RandomX throughput. Actual prelaunch kernel
+limits were CPU 600%, RAM 1 GiB, swap 2 GiB and Tasks 256 on one slot. Reproduction
+used six workers and reported 391% aggregate CPU; maximum GNU time RSS observations
+were 32,224 KiB for units, 32,008 KiB for reproduction and 16,264 KiB for the CLI,
+with zero swaps. Per-command RSS is not aggregate pool memory. Separate independent
+result review accepts this bounded analytical result. Publication-head review and
+applicable hosted checks remain pending.
+
+[EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) and
+[evidence](../docs/validation/hardware-dataset-service-profile-20261021/README.md)
+separate logical output, prepared cache responses and minimum instruction words;
+no off-chip sum is inferred. Retained setup/host services, physical characterization,
+alternative full-hash timing, final architecture and the whole-machine target stay
+open. No native/RTL workload, full hash, physical acceptance or scientific-criteria
+change occurred; #72 remains open.
+

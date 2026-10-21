@@ -1,5 +1,30 @@
 # Handoff — actual designated local execution
 
+## Hardware-dataset service-profile handoff — 2026-10-21
+
+Use [EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) and its
+[compact evidence](../docs/validation/hardware-dataset-service-profile-20261021/README.md)
+for the new analytical adapter. It binds actual bytes of the sanitized accepted
+hardware-dataset fixture before attribution and validates count/clock closure.
+All 86 architecture tests, including 19 new methods, pass; historical comparison
+and sensitivity outputs reproduce byte-for-byte, and the new CLI succeeds.
+Separate independent result review accepts this bounded analytical result.
+Publication-head review and applicable hosted checks remain pending; process
+completion alone does not establish scientific acceptance.
+
+PR74's bytecode windows and c96 source attribution stay separate from PR86's
+hardware-dataset profile. Retained preparation and modeled host services remain
+explicit. Keep all prior failed and accepted runs, frozen sources and raw
+scientific flags; no additional full-hash run is needed. #72 remains open for
+physical/controller/energy characterization and validated alternatives.
+
+The next bounded candidate is shared finite dataset-service arbitration around
+unchanged item-session clients, with explicit client identity and native value
+checks. Select and scope it from current boards; the profile does not select an
+engine count, memory technology or production architecture. Preserve independent
+review, exact-head checks and existing scientific criteria.
+
+
 ## Accepted-result handoff — 2026-10-20
 
 Start with [current status](../docs/STATUS.md) and the
