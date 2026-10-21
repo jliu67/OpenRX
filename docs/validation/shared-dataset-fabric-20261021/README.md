@@ -1,5 +1,67 @@
 # Finite shared dataset-fabric RTL/native evidence — 2026-10-21
 
+## Later bounded synthesis attempt — 2026-10-21 21:51 UTC
+
+The [approved public plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)
+ran as `20261021T214326Z-597d5d52ca81` against PR89 head
+`d3f11cc39a55154ed04ed1aa2a57768531c76ce0`, tree
+`b577a14f5dec92b95457768e2098d418532c7c4a`. Independent result classification is
+**FAIL/incomplete**, not mapped functional acceptance. PR89 remains draft; issue
+#88 is incomplete. This section supersedes only the earlier description of
+mapping as wholly unrun; all original records and earlier text stay intact.
+
+Five of the planned nine sequential commands ran: three tool probes, standalone
+default-channel mapping, then flattened-fabric mapping. The channel completed
+explicit ABC mapping and `check -assert` in 59.309968726 seconds, producing 6,887
+generic cells (801 DFF cells, zero latch cells). Default parameters are `TAG_WIDTH=64`,
+`REQ_WIDTH=28` and `RSP_WIDTH=190`. Counts include diagnostic counters and payload logic,
+are not physical area, and must not be summed with a later flattened fabric that
+contains its channels. Accepted arithmetic was not mapped.
+
+Fabric mapping returned 137 after 120.506375024 seconds, with no fabric netlist.
+This is consistent with the enforced 120-second hard timeout; the retained record
+does not establish an OOM kill. Cumulative execution-cgroup peaks were
+1,073,741,824 bytes RAM and 916,295,680 bytes swap. The wrapper's 2,048 KiB maximum
+RSS is not a measurement of Yosys RSS. Neither mapped bench was compiled, and
+neither mapped protocol nor concurrent-ideal native comparison ran. Byte-exact
+mapped parity therefore remains **unrun**.
+
+Admission was one worker/global slot, CPU600%, RAM1GiB, swap2GiB and Tasks256,
+with 120 seconds plus five seconds supervisory shutdown grace per command and
+no fixed overall deadline. No unit/matrix rerun, native/cache generation or full
+hash occurred. Recorded source/fixture/tool/helper before/after bindings match;
+fresh preflight covered 118 input roots/266 file occurrences. Independent result
+review verified all 40 receipt-bound artifacts and the recorded source/tool/helper
+subsets. It reused separate fresh preflight and receipt fixture maps rather than
+rescanning historical large traces or rehashing the 256 MiB cache again. System
+dynamic libraries are not claimed fully hermetic.
+
+| Preserved public export | SHA256 |
+|---|---|
+| [Raw public summary](synthesis01/public-summary.json) | `fc7c91b043eed18d0b1838c0dfbb0ff3ca5c474a9facb58b51e2f5f7ea594e4b` |
+| [Channel statistics](synthesis01/channel-statistics.json) | `fbc22930556844cbc7cfd9bc4af950e08f299f0570b0cbcb8ec9d1077bc06743` |
+| [Verification summary](synthesis01/verification-summary.json) | `f64b03f838f33508faa6170a6d9c9a60351b49ebadcb5ecb481b4e5a9423a737` |
+| [Independent result review](synthesis01/independent-result-review.json) | `c3f92c0ff5a0952ff62b0adc58c99e03ba0bad9d8b240f6018d8acd9de38f705` |
+
+Terminal receipt SHA256 is
+`dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87`.
+Raw receipt status stays `PROCESS_FAILED` and scientific acceptance `unverified`;
+the raw driver flag stays `unverified_pending_independent_review`. The separate
+review records failure without rewriting those flags. Channel assets, failed
+fabric logs, terminal receipt, source snapshots and earlier failed/accepted
+records remain preserved. No mapped-parity JSON exports exist for this attempt
+because those commands were unrun.
+
+The smallest unfinished scientific step is fabric mapping, followed by the four
+mapped compile/parity commands under applicable admission. No retry is claimed
+here. [PR89](https://github.com/jliu67/OpenRX/pull/89) is the authority for final
+publication-head review, applicable checks and normal merge eligibility. This
+attempt establishes no physical area, frequency, power, service capacity,
+production engine count, complete-hash alternative performance or whole-machine
+target feasibility. Completed migration/default full-hash functional acceptance
+and accepted prefix/matrix evidence remain separate and intact.
+
+
 This is a partial [task #88](https://github.com/jliu67/OpenRX/issues/88) result:
 a two-client finite shared instruction/cache fabric around unchanged accepted
 item-session cores. Prefix protocol/native correctness is independently accepted.

@@ -1,0 +1,53 @@
+{
+  "achieved_hashes_per_second": null,
+  "classification": "bounded modeled component experiment; independent acceptance remains separate",
+  "command_timeout_seconds": 120,
+  "commands": [
+    {
+      "label": "synth-channel-netlist",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 59.30996872601099
+    },
+    {
+      "label": "synth-fabric-netlist",
+      "returncode": 137,
+      "timeout_or_signal_exit": true,
+      "wall_seconds": 120.50637502409518
+    },
+    {
+      "label": "tool-version-iverilog",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.015891304006800056
+    },
+    {
+      "label": "tool-version-vvp",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.007639897055923939
+    },
+    {
+      "label": "tool-version-yosys",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.06411228282377124
+    }
+  ],
+  "demonstrated_asic_feasibility": false,
+  "fixture_receipt_sha256": "f3ced2d4f48eaa7c49359cea893c65666377c7f0a84386c035736357bfb59ad8",
+  "fixtures_unchanged": true,
+  "mapping": {},
+  "native": {},
+  "native_reference_or_cache_regenerated": false,
+  "new_full_hash_executed": false,
+  "phase": "synthesis",
+  "physical_frequency_hz": null,
+  "physical_wall_power_w": null,
+  "schema": "openrx.dataset-shared.validation.v1",
+  "scientific_acceptance": "unverified_pending_independent_review",
+  "source_unchanged": true,
+  "status": "failed",
+  "tool_scope": "bound executables, selected Icarus compiler/VPI helpers and synthesis data; system dynamic libraries are not fully hermetic",
+  "workers_requested": 1
+}

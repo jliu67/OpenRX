@@ -493,3 +493,23 @@ frequency, service capacity, achieved hashes/s or full-hash alternative performa
 is inferred. Reuse retained preparation and preserve all original accepted/failed
 evidence and unchanged scientific acceptance criteria.
 
+
+## Preserve bounded mapping failure and parity gates — 2026-10-21 21:51 UTC
+
+Treat execution `20261021T214326Z-597d5d52ca81` as FAIL/incomplete, as recorded by
+separate [independent result review](../docs/validation/shared-dataset-fabric-20261021/synthesis01/independent-result-review.json).
+A completed standalone channel map does not substitute for the absent flattened
+fabric netlist or unrun mapped protocol/native parity. Preserve channel assets,
+failed logs and raw scientific flags without weakening byte-exact acceptance or
+inferring an OOM kill from memory-cap/signal-9 observations. Any next run needs
+applicable admission; this record claims no retry or validated repair.
+
+Generic cell counts include diagnostic counters and payload logic. A standalone
+channel is contained in the whole fabric; do not add its count to a later fabric
+count or interpret either as physical area/frequency/power. Keep PR89 draft and
+issue #88 incomplete until remaining scientific and final-head review/check gates
+pass. Earlier accepted prefix/matrix and default functional full-hash evidence
+remain intact. Physical service capacity, calibrated PPA, architecture selection
+and complete-hash alternative performance stay open; scientific criteria and all
+historical records are unchanged.
+

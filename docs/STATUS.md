@@ -1,5 +1,27 @@
 # Verified project status — 2026-10-20
 
+## Generic fabric mapping stopped at its bound — 2026-10-21 21:51 UTC
+
+The separately approved [issue #88 plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)
+ran as `20261021T214326Z-597d5d52ca81` on unchanged PR89 source `d3f11cc`.
+Independent result review classifies this stage **FAIL/incomplete**. The standalone
+channel mapped through explicit ABC in 59.309969 seconds: 6,887 generic cells,
+including 801 DFF cells and zero latch cells. Flattened fabric mapping returned
+137 after 120.506375 seconds without a fabric netlist. This is consistent with
+the enforced 120-second timeout; an OOM kill is not established. Both mapped
+compiles and both parity runs remain **unrun**.
+
+[Evidence and review](validation/shared-dataset-fabric-20261021/README.md) preserve
+the failure separately from accepted prefix/matrix results and raw scientific
+flags. Generic counts include diagnostic counters/payload logic, are not physical
+area, and must not be added to a containing fabric count. PR89 remains draft;
+issue #88 is incomplete. Final publication-head review/checks are tracked on
+[PR89](https://github.com/jliu67/OpenRX/pull/89). No physical services,
+PPA/frequency/power, complete-hash alternative performance or target feasibility
+is established. Earlier partial/unrun statements below remain dated history;
+this update changes only the interpretation of that later stage status.
+
+
 ## Shared dataset-fabric RTL/native matrix — 2026-10-21
 
 [Task #88](https://github.com/jliu67/OpenRX/issues/88) and

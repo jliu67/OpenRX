@@ -1,5 +1,27 @@
 # Current state — actual local execution activation
 
+## Latest shared-fabric mapping outcome — 2026-10-21 21:51 UTC
+
+The [approved synthesis/parity plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)
+ran once as `20261021T214326Z-597d5d52ca81` on unchanged PR89 source `d3f11cc`.
+Separate independent result review is **FAIL/incomplete**. The standalone channel
+mapped in 59.309969 seconds with 6,887 generic cells (801 DFF, zero latches),
+including diagnostics/payload logic. Fabric mapping returned 137 after 120.506375
+seconds without a netlist, consistent with its enforced timeout; OOM causation
+is not established. Both mapped compiles and both parity runs are unrun.
+Cumulative cgroup peaks of 1,073,741,824 bytes RAM/916,295,680 bytes swap are
+resource observations, not per-command RSS or physical chip measurements.
+
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) preserves
+the failure, raw scientific flags, channel assets and earlier accepted prefix/matrix
+results. PR89 stays draft; issue #88 remains incomplete. Final publication-head
+review/checks are tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89).
+No full hash, units/matrix or native/cache generation was repeated. Functional
+acceptance and unresolved physical/service/performance gates remain distinct.
+Earlier partial/unrun paragraphs below are dated history, preserved byte-for-byte;
+the later stage status is recorded only by this update.
+
+
 ## Shared dataset-fabric bounded matrix — 2026-10-21
 
 [EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) records the partial

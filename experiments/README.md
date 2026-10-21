@@ -1,5 +1,20 @@
 # Experiments
 
+## Shared-fabric mapping bound reached — 2026-10-21 21:51 UTC
+
+The later [EXP-025 update](EXP-025-shared-dataset-fabric.md) records one approved
+mapping attempt, independently classified **FAIL/incomplete**. Standalone channel
+mapping completed (6,887 generic cells, including 801 DFF and no latches);
+flattened fabric mapping returned 137 after 120.506375 seconds without a netlist.
+This is consistent with its enforced timeout; OOM cause is not established.
+Both mapped compiles and both parity comparisons remain unrun. PR89 stays draft
+and issue #88 incomplete. [Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+preserves channel assets, failed logs, raw flags and accepted prefix/matrix results.
+Generic counts are not physical area or extra cells to sum with enclosing fabric.
+No full hash or physical/performance acceptance is claimed. Earlier experiment
+summaries below are preserved as dated history.
+
+
 ## Shared dataset-fabric experiment — 2026-10-21
 
 [EXP-025](EXP-025-shared-dataset-fabric.md) records a partial two-client finite

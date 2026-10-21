@@ -1,5 +1,32 @@
 # EXP-025: finite shared dataset-service transport
 
+## Later generic mapping attempt — 2026-10-21 21:51 UTC
+
+Current stage: **FAIL/incomplete** after the separately approved
+[bounded plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298).
+Execution `20261021T214326Z-597d5d52ca81` used unchanged PR89 head
+`d3f11cc39a55154ed04ed1aa2a57768531c76ce0`; accepted arithmetic stayed RTL.
+Three tool probes and standalone channel mapping completed. Flattened fabric
+mapping returned 137 at 120.506375 seconds, consistent with its enforced
+120-second timeout; no fabric netlist exists and OOM causation is not established.
+Both mapped compiles and both parity runs did not run.
+
+The default TAG64/REQ28/RSP190 channel completed explicit ABC mapping in
+59.309969 seconds with 6,887 generic cells, including 801 DFF cells and no latches.
+These diagnostic/payload-inclusive counts are not physical area and must not be
+added to a containing whole-fabric count. Cumulative admitted-cgroup peaks were
+1,073,741,824 bytes RAM and 916,295,680 bytes swap; they are not per-command RSS
+or chip measurements.
+
+[Public evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+and separate independent review preserve this failure, channel assets and all
+earlier accepted prefix/matrix results. No full hash, units/matrix or native/cache
+generation was rerun. Fabric mapping and byte-exact mapped protocol/native parity
+remain required; PR89 stays draft. Final publication-head review/checks and
+physical/service/performance gates remain separate. The earlier partial snapshot
+below is preserved as dated history without changing its original bytes.
+
+
 Status: partial — prefix and seven-profile RTL/native matrix independently accepted;
 generic synthesis and mapped parity unrun.
 

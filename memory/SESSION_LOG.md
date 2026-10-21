@@ -1273,3 +1273,28 @@ Retained preparation/modeled host services, physical timing/PPA/power, architect
 selection, complete-hash alternative performance and the whole-machine target remain
 unresolved. PR87's prerequisite merge/review/check closeout is complete.
 
+
+## Shared-fabric bounded mapping failed — 2026-10-21 21:51 UTC
+
+The separately authorized [issue #88 plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)
+ran once as `20261021T214326Z-597d5d52ca81` on unchanged PR89 source `d3f11cc`.
+Five of nine commands ran: three probes, channel mapping, then fabric mapping.
+Channel explicit ABC/check-assert completed in 59.309969 seconds with 6,887 generic
+cells, 801 DFF and zero latches. Fabric mapping returned 137 at 120.506375 seconds
+without a netlist, consistent with its 120-second hard timeout; no affirmative
+OOM-kill cause is established. Both mapped compiles and both parity commands
+were unrun. Independent result review classifies the stage FAIL/incomplete;
+PR89 remains draft and issue #88 incomplete.
+
+One-worker/global-slot admission used CPU600%, RAM1GiB, swap2GiB, Tasks256 and
+120 seconds plus five seconds supervisory grace per command. Cumulative cgroup
+peaks were 1,073,741,824 bytes RAM/916,295,680 bytes swap, not per-command RSS or
+physical performance. [Public evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+retains verified summaries for all 40 receipt-bound artifacts, raw scientific flags,
+channel assets, failed logs and all previous accepted/failed records. Receipt SHA256
+is `dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87`.
+No unit/matrix rerun, native/cache generation or full hash occurred. Generic counts
+include diagnostics/payload logic, are not physical area and must not be added to
+a containing fabric count. Source/criteria are unchanged; final publication-head
+review/checks and physical/service/performance gates remain separate.
+

@@ -1,5 +1,34 @@
 # Handoff — actual designated local execution
 
+## Latest shared-fabric mapping handoff — 2026-10-21 21:51 UTC
+
+Use the later [EXP-025 update](../experiments/EXP-025-shared-dataset-fabric.md)
+and [synthesis evidence](../docs/validation/shared-dataset-fabric-20261021/README.md).
+Approved execution `20261021T214326Z-597d5d52ca81` is terminal `PROCESS_FAILED`;
+independent result review agrees **FAIL/incomplete**. Source
+`d3f11cc39a55154ed04ed1aa2a57768531c76ce0` and retained inputs are unchanged.
+Preserve receipt SHA256
+`dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87`,
+failed fabric logs, channel netlists and all earlier evidence.
+
+Channel mapping completed in 59.309969 seconds: 6,887 generic cells, including
+801 DFF and no latches. These diagnostic/payload-inclusive cells are not physical
+area or additional cost to sum with a containing fabric. Fabric mapping returned
+137 at 120.506375 seconds without a netlist. Enforced timeout is consistent with
+the record; OOM kill is not established. Cumulative cgroup peaks were
+1,073,741,824 bytes RAM and 916,295,680 bytes swap. Both mapped compiles and both
+parity runs remain unrun, so PR89 stays draft and issue #88 incomplete.
+
+The smallest unfinished step is fabric mapping, then four mapped commands under
+applicable admission and unchanged parity gates; no rerun is claimed here.
+Reuse retained fixtures/assets; do not repeat accepted full-hash, prefix/matrix
+or native/cache generation without a specific validation need. Final publication-head
+review/checks and merge eligibility are tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89).
+This component failure neither revokes separate accepted functional/matrix evidence
+nor establishes physical/service/performance results. Earlier handoffs remain
+dated records with original bytes and scientific flags preserved.
+
+
 ## Shared dataset-fabric draft handoff — 2026-10-21
 
 Use [EXP-025](../experiments/EXP-025-shared-dataset-fabric.md),
