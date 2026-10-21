@@ -1,5 +1,25 @@
 # Current state — actual local execution activation
 
+## Shared-fabric verified delivery — 2026-10-21 23:10 UTC
+
+[PR89](https://github.com/jliu67/OpenRX/pull/89) merged normally at
+`b6e71b467bc3c51e1c6734853a08b11412c8653a` at 23:06:29 UTC. Its tree
+`d4455f073c858c7df5bd4d2ea7373fa52650df56` equals reviewed source head
+`f495a34fc8a67f69b7f3e407cc4b509b96b84d64`'s tree.
+[Final-head independent review](https://github.com/jliu67/OpenRX/pull/89#pullrequestreview-5607170870)
+and all five exact-head checks passed; [delivery links](../docs/STATUS.md)
+retain each job. Exact-merge [correctness](https://github.com/jliu67/OpenRX/actions/runs/39691207864/job/119537554342)
+and [scalar](https://github.com/jliu67/OpenRX/actions/runs/39691207800/job/119537553894)
+post-merge checks passed, verified at 23:10 UTC.
+
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) preserves
+original failure, accepted recovery, raw flags and prior records. This later pointer
+supersedes only earlier draft/delivery-status interpretation. Completed functional
+and component acceptance establishes no physical service capacity, calibrated
+PPA/frequency/power or complete-hash alternative performance; those scientific
+and whole-machine target gates remain open with issue #72.
+
+
 ## Latest shared-fabric recovery acceptance — 2026-10-21 22:37 UTC
 
 The [authorized recovery](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)

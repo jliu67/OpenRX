@@ -1,5 +1,26 @@
 # Handoff — actual designated local execution
 
+## Shared-fabric merged-delivery handoff — 2026-10-21 23:10 UTC
+
+Use normal merge `b6e71b467bc3c51e1c6734853a08b11412c8653a` for
+[PR89](https://github.com/jliu67/OpenRX/pull/89), merged at 23:06:29 UTC.
+Tree `d4455f073c858c7df5bd4d2ea7373fa52650df56` equals the reviewed
+`f495a34fc8a67f69b7f3e407cc4b509b96b84d64` head tree.
+[Independent final-head review](https://github.com/jliu67/OpenRX/pull/89#pullrequestreview-5607170870),
+all five exact-head jobs and both exact-merge post-merge jobs passed.
+[Delivery status](../docs/STATUS.md) links every head job; the post-merge
+[correctness](https://github.com/jliu67/OpenRX/actions/runs/39691207864/job/119537554342)
+and [scalar](https://github.com/jliu67/OpenRX/actions/runs/39691207800/job/119537553894)
+results were verified at 23:10 UTC.
+
+[Accepted evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+keeps failed mapping and all three recovery stages distinct. Preserve sources,
+builds, checkpoints, receipts and raw flags; this closeout changes none. Physical
+services, calibrated PPA/frequency/power, architecture selection and complete-hash
+alternatives remain open, as does issue #72. Earlier draft/partial handoffs remain
+dated history, superseded only in their delivery-status interpretation.
+
+
 ## Latest shared-fabric recovery handoff — 2026-10-21 22:37 UTC
 
 [EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) and

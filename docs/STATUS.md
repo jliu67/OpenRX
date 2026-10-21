@@ -1,5 +1,30 @@
 # Verified project status — 2026-10-20
 
+## Shared-fabric delivery verified — 2026-10-21 23:10 UTC
+
+[PR89](https://github.com/jliu67/OpenRX/pull/89) merged normally at
+`b6e71b467bc3c51e1c6734853a08b11412c8653a` on 2026-10-21 at 23:06:29 UTC.
+Its tree `d4455f073c858c7df5bd4d2ea7373fa52650df56` equals the reviewed head
+`f495a34fc8a67f69b7f3e407cc4b509b96b84d64` tree.
+[Independent final-head review](https://github.com/jliu67/OpenRX/pull/89#pullrequestreview-5607170870)
+passed. All five exact-head jobs passed:
+[correctness](https://github.com/jliu67/OpenRX/actions/runs/39688917220/job/119529913097),
+[scalar](https://github.com/jliu67/OpenRX/actions/runs/39688917177/job/119529912958),
+[native finalization](https://github.com/jliu67/OpenRX/actions/runs/39688917129/job/119529912861),
+[correctness](https://github.com/jliu67/OpenRX/actions/runs/39688910672/job/119529890788), and
+[scalar](https://github.com/jliu67/OpenRX/actions/runs/39688910729/job/119529891342).
+Both exact-merge [correctness](https://github.com/jliu67/OpenRX/actions/runs/39691207864/job/119537554342)
+and [scalar](https://github.com/jliu67/OpenRX/actions/runs/39691207800/job/119537553894)
+post-merge checks passed, observed at 23:10 UTC.
+
+[Accepted component evidence](validation/shared-dataset-fabric-20261021/README.md)
+keeps the failed mapping and successful recovery distinct. This delivery closeout
+changes no source, evidence, scientific result or acceptance criterion. Earlier
+draft/partial status remains dated history. Physical services, calibrated
+PPA/frequency/power, architecture selection, complete-hash alternatives and the
+whole-machine target remain open; issue #72 stays open.
+
+
 ## Shared-fabric recovery component validation accepted — 2026-10-21 22:37 UTC
 
 The [approved recovery plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)

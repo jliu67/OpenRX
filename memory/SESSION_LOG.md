@@ -1327,3 +1327,20 @@ Physical service implementation, calibrated PPA and complete-hash alternatives
 remain separate open gates. Earlier stage-review pending statements are dated
 snapshots, not the current combined component-stage result.
 
+
+## Shared-fabric verified merge closeout — 2026-10-21 23:10 UTC
+
+[PR89](https://github.com/jliu67/OpenRX/pull/89) merged normally at
+`b6e71b467bc3c51e1c6734853a08b11412c8653a` at 23:06:29 UTC. Tree
+`d4455f073c858c7df5bd4d2ea7373fa52650df56` equals source head
+`f495a34fc8a67f69b7f3e407cc4b509b96b84d64`'s tree.
+[Final-head independent review](https://github.com/jliu67/OpenRX/pull/89#pullrequestreview-5607170870)
+and all five exact-head checks passed. Both exact-merge post-merge checks passed:
+[correctness](https://github.com/jliu67/OpenRX/actions/runs/39691207864/job/119537554342)
+completed 23:07:40 UTC and [scalar](https://github.com/jliu67/OpenRX/actions/runs/39691207800/job/119537553894)
+completed 23:07:46 UTC, verified at 23:10 UTC. [Current status](../docs/STATUS.md)
+links every pre-merge job. This documentation closeout adds no workload or new
+scientific claim. Failed mapping, accepted recovery and all historical records/raw
+flags remain unchanged. Physical services, calibrated PPA/frequency/power,
+architecture selection and complete-hash alternative performance remain unresolved.
+
