@@ -1234,3 +1234,42 @@ alternative full-hash timing, final architecture and the whole-machine target st
 open. No native/RTL workload, full hash, physical acceptance or scientific-criteria
 change occurred; #72 remains open.
 
+
+## 2026-10-21 — finite shared dataset-fabric prefix and native matrix
+
+Above PR87/main `c5d53686444d11b10edff200e63d7b725ae782b4`, prepare two separate
+one-credit round-robin service channels around unchanged accepted item-session cores.
+The prefix passed 14 support units, 2,045 directed protocol checks/91 ledger
+observations and two native-correct items (7,126 commits, 2,508 multiplies, 16 stages).
+Its source/tool/input-bound receipt and separate independent prefix acceptance remain
+unchanged. The earlier denied matrix publication and unrun handoff remain preserved;
+the owner subsequently approved the exact
+[public request](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6318167243).
+
+Execution `20261021T141051Z-7fb322066922` reused exact prefix VVP binaries for
+seven profiles with six workers: serial-ideal, serial-stalled, concurrent-stalled,
+cancel0, cancel1, malformed-fetch0 and exhaustion. All seven commands exited zero;
+no timeout occurred. Actual kernel limits were CPU600%, RAM1GiB, swap2GiB and
+Tasks256 on one slot. Worker-command elapsed time was 26.444271 seconds; cumulative cgroup
+peak was 71,790,592 bytes with zero swap, 78.970740 CPU seconds and no throttling.
+These are validation-runtime observations, not RandomX physical performance.
+Separate independent bounded matrix-result review passes with no blockers.
+
+Controlled ideal serial/concurrent batches use 113,953 / 61,595 modeled clocks;
+stalled batches use 149,685 / 83,537. Cancellation profiles retain the cancelled
+identity and burn [2,1]/[1,2] namespaces while each produces two successes and one
+abort. Malformed fetch metadata reaches the owning accepted core and yields one
+error while the other client succeeds. Exhaustion completes six items using [3,3]
+namespaces and denies the fourth admission without wrapping. Complete native
+assertions and separate batch/client/channel ledgers are retained in
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) and
+[evidence](../docs/validation/shared-dataset-fabric-20261021/README.md).
+
+No compilation/unit rerun, native/cache generation, synthesis or full hash occurred
+in the matrix. Generic synthesis/mapped parity remain unrun, and the feature/task
+remain partial pending those gates, independent review and exact-head hosted checks.
+Original failed/accepted full-hash records, scientific flags and criteria stay intact.
+Retained preparation/modeled host services, physical timing/PPA/power, architecture
+selection, complete-hash alternative performance and the whole-machine target remain
+unresolved. PR87's prerequisite merge/review/check closeout is complete.
+

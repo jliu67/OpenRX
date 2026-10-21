@@ -1,0 +1,69 @@
+{
+  "schema": "openrx.shared-fabric.public-verification.v1",
+  "base_commit": "c5d53686444d11b10edff200e63d7b725ae782b4",
+  "base_tree": "cec1e8646f483e73fc6719fbd4c21118480eb3cd",
+  "source_manifest_sha256": "40ac32a3a0e949305c10432f4d265903d011105b1d104ad9ac2445bcd6dbd3fe",
+  "input_manifest_sha256": "63ad4f9fd03864ed48ef37ee078c10f3ea5742dc9422542627c996107b117bad",
+  "tool_manifest_sha256": "8a1ad9fb33d5efc102ca1cde36681b3848ad82c1d1a6f1b5cf163fee6d292eb8",
+  "retained_inputs": {
+    "files": 95,
+    "native_item_numbers": [
+      0,
+      10000000
+    ],
+    "prepared_cache_programs_reciprocals_reused": true,
+    "gold_states_assertion_only": true,
+    "host_memory_services_modeled": true
+  },
+  "prefix": {
+    "execution_id": "20261021T032914Z-a5cc7c4a15d0",
+    "receipt_sha256": "3325f8490adb1d5fb7361a640983ff2b9006822943d757b29d2f1b1489816007",
+    "artifacts_verified": 52,
+    "independent_bounded_review": "PASS",
+    "support_tests_passed": 14,
+    "compiled_binaries_reused_in_matrix": true
+  },
+  "matrix": {
+    "execution_id": "20261021T141051Z-7fb322066922",
+    "request_url": "https://github.com/jliu67/OpenRX/issues/88#issuecomment-6318167243",
+    "request_sha256": "742ab47b44c05282712a0e06f358cb46db7bd1da0e07b6f552fe5aa9ebd71880",
+    "receipt_sha256": "728ea10ff95770ebe5fc04df7f64c1458fdb9aaca8f19d2fd2ffe2f60021e8af",
+    "summary_sha256": "b24c42278ff0c25ce8f2a5b2e867965bae99b3c7e1c2538921fe4597a9953a50",
+    "root_integrity_proof_sha256": "40401cf8cf60af76857005076dec13f931dd83605c79e35ed193518deb2463d4",
+    "artifacts_verified": 65,
+    "status": "PROCESS_EXITED",
+    "raw_scientific_acceptance": "unverified",
+    "independent_bounded_review": "PASS",
+    "source_inputs_tools_unchanged": true,
+    "workers_requested": 6,
+    "payload_native_profiles": 7,
+    "wall_seconds_child_start_to_process_exit": 26.486097,
+    "cpu_seconds": 78.97074,
+    "cgroup_memory_peak_bytes": 71790592,
+    "cgroup_swap_peak_bytes": 0,
+    "cpu_throttled_periods": 0,
+    "kernel_enforced": true,
+    "kernel_check_errors": [],
+    "resource_limits": {
+      "cpu_quota": "600%",
+      "memory_max_bytes": 1073741824,
+      "memory_swap_max_bytes": 2147483648,
+      "tasks_max": 256,
+      "slots": 1,
+      "payload_timeout_seconds": 120,
+      "supervisory_grace_seconds": 5
+    },
+    "new_full_hash_executed": false,
+    "synthesis_executed": false,
+    "unit_or_compile_rerun": false,
+    "native_cache_regenerated": false,
+    "child_runtime_seconds": 26.444271
+  },
+  "remaining_gates": [
+    "generic synthesis and mapped parity unrun",
+    "complete issue88 acceptance and exact-head review/checks pending",
+    "physical service/frequency/PPA/power and achieved hashes/s unknown",
+    "whole-machine target and architecture selection unproven"
+  ],
+  "scientific_scope": "Bounded two-item shared-service experiment; modeled clock ratios are not physical speed or complete-hash performance. Original raw scientific flags and historical failures preserved."
+}

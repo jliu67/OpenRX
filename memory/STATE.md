@@ -1,5 +1,31 @@
 # Current state — actual local execution activation
 
+## Shared dataset-fabric bounded matrix — 2026-10-21
+
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) records the partial
+[task #88](https://github.com/jliu67/OpenRX/issues/88) experiment above merged
+PR87/main `c5d5368`. Two unchanged accepted item-session clients share separate
+one-credit round-robin instruction/cache channels, retaining full client-qualified
+tags, cancellation ownership and genuine-quiescent-hard-reset requirements.
+
+The prefix passed 14 support tests, 2,045 protocol checks and two complete native
+items. Seven additional profiles completed using the exact prefix binaries:
+serial ideal/stalled, concurrent stalled, cancel0, cancel1, malformed-fetch0 and
+exhaustion. Separate independent bounded matrix-result review passes with no blockers.
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) keeps prefix/matrix process receipts and independent
+acceptance separate. Generic synthesis and mapped parity remain **unrun**;
+publication-head review and applicable checks remain pending.
+
+Ideal serial/concurrent batch clocks are 113,953 / 61,595; stalled clocks are
+149,685 / 83,537. Client availability/held clocks and channel occupancy/wait clocks
+overlap inside batch elapsed time and must not be summed. Two clients are an
+experiment configuration, not a selected production architecture. No full hash,
+native/cache generation or physical acceptance was repeated. Retained preparation,
+modeled host services and physical/performance gates remain explicit; #72 stays open.
+PR87's final review/head/post-merge gates are complete; its older pending entries
+and all earlier failed/accepted full-hash records remain dated history.
+
+
 ## Hardware-dataset service profile — 2026-10-21
 
 [EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) extends

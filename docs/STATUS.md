@@ -1,5 +1,33 @@
 # Verified project status — 2026-10-20
 
+## Shared dataset-fabric RTL/native matrix — 2026-10-21
+
+[Task #88](https://github.com/jliu67/OpenRX/issues/88) and
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) add a bounded two-client
+finite shared fetch/cache fabric above unchanged accepted item-session cores.
+The prefix passed 14 support tests, 2,045 protocol checks and a reference-correct
+native pair. The separately admitted seven-profile matrix completed with exact
+compiled-prefix binary reuse and no compilation, unit, native/cache-generation,
+synthesis or full-hash rerun. Separate independent bounded matrix-result review passes with no blockers.
+[Evidence](validation/shared-dataset-fabric-20261021/README.md) retains the distinct
+prefix/matrix receipts, source bindings and complete overlapping clock ledgers.
+
+Controlled ideal serial/concurrent batches measure 113,953 / 61,595 modeled clocks;
+stalled batches measure 149,685 / 83,537. Cancellation drains, malformed metadata
+and reduced namespace exhaustion have the recorded expected component outcomes.
+These measurements do not predict complete-hash throughput. Generic synthesis
+and mapped parity remain **unrun**; issue #88 and its feature remain incomplete.
+Publication-head review and applicable hosted checks are separate draft-PR gates.
+
+The prerequisite [PR87](https://github.com/jliu67/OpenRX/pull/87) merged at
+`c5d53686444d11b10edff200e63d7b725ae782b4` after independent exact-head review,
+four head checks and two post-merge checks. Earlier dated pending statements
+retain their original publication stage. Completed migration and accepted default
+functional full-hash evidence are unchanged. Retained preparation/modeled host
+services, physical timing/PPA/power, architecture selection and whole-machine
+performance gates remain open; broader task #72 stays open.
+
+
 ## Accepted default hardware-dataset result
 
 One default 8×2,048 RandomX v2 functional hardware-dataset hash is

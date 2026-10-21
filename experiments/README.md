@@ -1,5 +1,18 @@
 # Experiments
 
+## Shared dataset-fabric experiment — 2026-10-21
+
+[EXP-025](EXP-025-shared-dataset-fabric.md) records a partial two-client finite
+shared instruction/cache service experiment above merged PR87/main `c5d5368`.
+Its prefix passed 14 units, directed protocol and native correctness; seven
+additional native profiles completed through exact prefix binary reuse.
+Separate independent bounded matrix-result review passes with no blockers.
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) separates
+these component results from unrun generic synthesis/mapped parity, publication
+gates and unresolved physical/full-hash performance. Historical experiments,
+failed runs and scientific criteria remain unchanged.
+
+
 ## Accepted EXP-023 result — 2026-10-20
 
 [EXP-023](EXP-023-full-hardware-dataset-hash.md) now has one independently accepted

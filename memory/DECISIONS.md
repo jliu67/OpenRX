@@ -469,3 +469,27 @@ results support choosing a separately bounded finite shared-service experiment,
 not a production engine count or architecture. Preserve all failed/accepted
 full-hash records and unchanged scientific criteria; task #72 remains open.
 
+
+## 2026-10-21 — qualify shared service identities and preserve overlapping ledgers
+
+Use a separate finite shared instruction/cache transport around two unchanged
+accepted item-session clients for [EXP-025](../experiments/EXP-025-shared-dataset-fabric.md).
+Qualify the complete64-bit client tag with an explicit backend client bit:
+independent clients can produce identical lower tags. A captured descriptor owns
+the single channel credit through request acceptance, response wait and held reply.
+Cancellation retains/drains that identity and never refunds namespaces; wrong full
+identities drain as orphans without releasing another owner. Matching malformed
+metadata remains transparent to the owning accepted core. The client bit does not
+make illegal same-client tag reuse or arbitrary pre-hard-reset traffic safe;
+genuine quiescence/removal across both clients/fabric/providers is still required.
+
+Keep batch elapsed clocks distinct from nested client availability/held clocks,
+channel occupancy and arbitration waits. The prefix and seven-profile native
+matrix establish only their recorded component outcomes and source-specific modeled
+clock comparisons. Separate independent bounded matrix-result review passes with no blockers.
+Generic synthesis and mapped parity remain unrun; two clients and one credit are
+experimental controls, not production architecture selection. No physical PPA,
+frequency, service capacity, achieved hashes/s or full-hash alternative performance
+is inferred. Reuse retained preparation and preserve all original accepted/failed
+evidence and unchanged scientific acceptance criteria.
+

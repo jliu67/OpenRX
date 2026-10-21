@@ -1,0 +1,1440 @@
+{
+  "achieved_hashes_per_second": null,
+  "classification": "bounded modeled component experiment; independent acceptance remains separate",
+  "command_timeout_seconds": 120,
+  "commands": [
+    {
+      "label": "native-cancel0",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 12.130549764959142
+    },
+    {
+      "label": "native-cancel1",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 12.083711753133684
+    },
+    {
+      "label": "native-concurrent-stalled",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 8.01099803391844
+    },
+    {
+      "label": "native-exhaustion",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 17.672226489987224
+    },
+    {
+      "label": "native-malformed-fetch0",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 6.45587472897023
+    },
+    {
+      "label": "native-serial-ideal",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 9.823357843095437
+    },
+    {
+      "label": "native-serial-stalled",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 11.981645881896839
+    },
+    {
+      "label": "tool-version-iverilog",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.01583455502986908
+    },
+    {
+      "label": "tool-version-vvp",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.007614920847117901
+    }
+  ],
+  "component_pair_comparison": {
+    "ideal": {
+      "concurrent_batch_cycles": 61595,
+      "scope": "two native component items under identical assumed finite services; not a complete hash",
+      "serial_batch_cycles": 113953
+    },
+    "stalled": {
+      "concurrent_batch_cycles": 83537,
+      "scope": "two native component items under identical assumed finite services; not a complete hash",
+      "serial_batch_cycles": 149685
+    }
+  },
+  "demonstrated_asic_feasibility": false,
+  "fixture_receipt_sha256": "f3ced2d4f48eaa7c49359cea893c65666377c7f0a84386c035736357bfb59ad8",
+  "fixtures_unchanged": true,
+  "mapping": {},
+  "native": {
+    "cancel0": {
+      "aborted_items": 1,
+      "batch_elapsed_cycles": 149693,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": true,
+      "client_availability_cycles": [
+        74837,
+        74845
+      ],
+      "client_core_cycles": [
+        74836,
+        74844
+      ],
+      "client_executor_cycles": [
+        74699,
+        74707
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 7127,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3565,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          8
+        ],
+        "backend_requests": 7128,
+        "backend_responses": 7128,
+        "cancelled_responses": 1,
+        "delivered": [
+          3564,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49887,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": false,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "client": 0,
+          "commits": 1,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            1,
+            44,
+            0,
+            0,
+            0,
+            0
+          ],
+          "multiplies": 1,
+          "namespace": 1,
+          "partial_elapsed_cycles": 80,
+          "session_phase_cycles": [
+            0,
+            1,
+            79
+          ],
+          "stages": 0,
+          "status": "cancelled"
+        },
+        {
+          "availability_cycles": 74845,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74844,
+          "executor_cycles": 74707,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74715,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74844
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": false,
+      "mode_stalled": true,
+      "multiplies": 2509,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "cancel0",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        2,
+        1
+      ],
+      "stages": 16,
+      "status": "pass",
+      "successful_items": 2
+    },
+    "cancel1": {
+      "aborted_items": 1,
+      "batch_elapsed_cycles": 149685,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": true,
+      "client_availability_cycles": [
+        74837,
+        74837
+      ],
+      "client_core_cycles": [
+        74836,
+        74836
+      ],
+      "client_executor_cycles": [
+        74699,
+        74699
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 7127,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3565
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          8
+        ],
+        "backend_requests": 7128,
+        "backend_responses": 7128,
+        "cancelled_responses": 1,
+        "delivered": [
+          3563,
+          3564
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49887,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": false,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "client": 1,
+          "commits": 1,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            1,
+            52,
+            0,
+            0,
+            0,
+            0
+          ],
+          "multiplies": 1,
+          "namespace": 1,
+          "partial_elapsed_cycles": 88,
+          "session_phase_cycles": [
+            0,
+            1,
+            87
+          ],
+          "stages": 0,
+          "status": "cancelled"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": false,
+      "mode_stalled": true,
+      "multiplies": 2509,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "cancel1",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        1,
+        2
+      ],
+      "stages": 16,
+      "status": "pass",
+      "successful_items": 2
+    },
+    "concurrent-ideal": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 61595,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 32,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        61587,
+        61590
+      ],
+      "client_core_cycles": [
+        61586,
+        61589
+      ],
+      "client_executor_cycles": [
+        61504,
+        61507
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          4616,
+          4619
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 14252,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": true,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": false,
+      "mode_stalled": false,
+      "multiplies": 2508,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "concurrent-ideal",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "status": "pass",
+      "successful_items": 2
+    },
+    "concurrent-stalled": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 83537,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        83498,
+        83532
+      ],
+      "client_core_cycles": [
+        83497,
+        83531
+      ],
+      "client_executor_cycles": [
+        83360,
+        83394
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          8661,
+          8695
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49874,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": true,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "availability_cycles": 83498,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 83497,
+          "executor_cycles": 83360,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            83368,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            83497
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 83532,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 83531,
+          "executor_cycles": 83394,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            83402,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            83531
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": false,
+      "mode_stalled": true,
+      "multiplies": 2508,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "concurrent-stalled",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "status": "pass",
+      "successful_items": 2
+    },
+    "exhaustion": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 184787,
+      "cache": {
+        "accepted": [
+          24,
+          24
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 48,
+        "backend_responses": 48,
+        "cancelled_responses": 0,
+        "delivered": [
+          24,
+          24
+        ],
+        "high_water": 1,
+        "occupied_cycles": 96,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        184761,
+        184770
+      ],
+      "client_core_cycles": [
+        184758,
+        184767
+      ],
+      "client_executor_cycles": [
+        184512,
+        184521
+      ],
+      "client_held_backpressure_cycles": [
+        12,
+        12
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 21378,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": true,
+      "fetch": {
+        "accepted": [
+          10689,
+          10689
+        ],
+        "arbitration_wait_cycles": [
+          13848,
+          13857
+        ],
+        "backend_requests": 21378,
+        "backend_responses": 21378,
+        "cancelled_responses": 0,
+        "delivered": [
+          10689,
+          10689
+        ],
+        "high_water": 1,
+        "occupied_cycles": 42756,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": true,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 3,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 3,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": false,
+      "mode_stalled": false,
+      "multiplies": 7524,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "exhaustion",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 6,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        3,
+        3
+      ],
+      "stages": 48,
+      "status": "pass",
+      "successful_items": 6
+    },
+    "malformed-fetch0": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 74849,
+      "cache": {
+        "accepted": [
+          0,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 8,
+        "backend_responses": 8,
+        "cancelled_responses": 0,
+        "delivered": [
+          0,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 71,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        44,
+        74844
+      ],
+      "client_core_cycles": [
+        43,
+        74843
+      ],
+      "client_executor_cycles": [
+        7,
+        74706
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 3563,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 1,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          1,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          7
+        ],
+        "backend_requests": 3564,
+        "backend_responses": 3564,
+        "cancelled_responses": 0,
+        "delivered": [
+          1,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 24943,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": false,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "availability_cycles": 44,
+          "client": 0,
+          "commits": 0,
+          "core_cycles": 43,
+          "executor_cycles": 7,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            1,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          "multiplies": 0,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            43
+          ],
+          "stages": 0,
+          "status": "error"
+        },
+        {
+          "availability_cycles": 74844,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74843,
+          "executor_cycles": 74706,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74714,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74843
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": false,
+      "mode_stalled": true,
+      "multiplies": 1254,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "malformed-fetch0",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 8,
+      "status": "pass",
+      "successful_items": 1
+    },
+    "serial-ideal": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 113953,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 32,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        56971,
+        56971
+      ],
+      "client_core_cycles": [
+        56970,
+        56970
+      ],
+      "client_executor_cycles": [
+        56888,
+        56888
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 14252,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": true,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "availability_cycles": 56971,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 56970,
+          "executor_cycles": 56888,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            56896,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            56970
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 56971,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 56970,
+          "executor_cycles": 56888,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            56896,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            56970
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": true,
+      "mode_stalled": false,
+      "multiplies": 2508,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "serial-ideal",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "status": "pass",
+      "successful_items": 2
+    },
+    "serial-stalled": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 149685,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        74837,
+        74837
+      ],
+      "client_core_cycles": [
+        74836,
+        74836
+      ],
+      "client_executor_cycles": [
+        74699,
+        74699
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49874,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": true,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "availability_cycles": 74837,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": true,
+      "mode_stalled": true,
+      "multiplies": 2508,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "serial-stalled",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "status": "pass",
+      "successful_items": 2
+    }
+  },
+  "native_reference_or_cache_regenerated": false,
+  "new_full_hash_executed": false,
+  "phase": "matrix",
+  "physical_frequency_hz": null,
+  "physical_wall_power_w": null,
+  "schema": "openrx.dataset-shared.validation.v1",
+  "scientific_acceptance": "unverified_pending_independent_review",
+  "source_unchanged": true,
+  "status": "pass_matrix",
+  "tool_scope": "bound executables, selected Icarus compiler/VPI helpers and synthesis data; system dynamic libraries are not fully hermetic",
+  "workers_requested": 6
+}

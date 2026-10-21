@@ -1,0 +1,65 @@
+{
+  "schema": "openrx.shared-fabric.independent-result-review.v1",
+  "at_utc": "2026-10-21T14:18:35.668377+00:00",
+  "reviewer": "independent result-review agent; no implementation edits or validation workloads",
+  "outcome": "PASS",
+  "scope": "Bounded prefix and seven-profile native shared-service matrix only; not complete issue acceptance",
+  "source_manifest_sha256": "40ac32a3a0e949305c10432f4d265903d011105b1d104ad9ac2445bcd6dbd3fe",
+  "execution_id": "20261021T141051Z-7fb322066922",
+  "receipt_sha256": "728ea10ff95770ebe5fc04df7f64c1458fdb9aaca8f19d2fd2ffe2f60021e8af",
+  "summary_sha256": "b24c42278ff0c25ce8f2a5b2e867965bae99b3c7e1c2538921fe4597a9953a50",
+  "request_sha256": "742ab47b44c05282712a0e06f358cb46db7bd1da0e07b6f552fe5aa9ebd71880",
+  "verified": {
+    "receipt_artifacts": 65,
+    "unique_request_inputs": 115,
+    "bound_file_occurrences": 165,
+    "exact_request_argv": true,
+    "prefix_binary_and_result_reuse": true,
+    "unchanged_source_fixture_cache_tools": true,
+    "native_rows": 20,
+    "successful_items": 17,
+    "expected_errors": 1,
+    "cancelled_items": 2,
+    "commits": 60573,
+    "multiplies": 21320,
+    "stages": 136,
+    "phase_vectors_and_core_plus_one": true,
+    "client_and_channel_ledgers": true,
+    "cancellation_ownership_and_namespace": true,
+    "malformed_metadata_error_path": true,
+    "exhaustion_rejects_admission": true,
+    "kernel_limits_and_ancestor_limits": true,
+    "six_worker_scope_and_timeouts": true
+  },
+  "measurements": {
+    "child_runtime_seconds": 26.444271,
+    "process_exit_event_interval_seconds": 26.486097,
+    "cgroup_memory_peak_bytes": 71790592,
+    "cgroup_swap_peak_bytes": 0,
+    "cpu_throttled_periods": 0,
+    "native_command_wall_range_seconds": [
+      6.45587472897023,
+      17.672226489987224
+    ],
+    "modeled_pair_comparison": {
+      "ideal": {
+        "serial": 113953,
+        "concurrent": 61595,
+        "ratio": 1.8500365289390373
+      },
+      "stalled": {
+        "serial": 149685,
+        "concurrent": 83537,
+        "ratio": 1.7918407412284376
+      }
+    }
+  },
+  "limitations": [
+    "Rows repeat two retained native items, not 17 distinct native cases.",
+    "Stale/orphan coverage belongs to separately accepted protocol prefix.",
+    "Retained preparation and modeled host instruction/cache memory services remain explicit.",
+    "Original process receipts and public summaries retain scientific-unverified labels; this review is separate.",
+    "Synthesis and mapped parity are unrun; exact publication-head review and applicable hosted checks remain separate.",
+    "No complete-hash alternative performance, physical PPA/frequency/power, architecture selection or whole-machine target acceptance."
+  ]
+}

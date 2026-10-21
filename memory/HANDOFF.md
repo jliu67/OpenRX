@@ -1,5 +1,39 @@
 # Handoff — actual designated local execution
 
+## Shared dataset-fabric draft handoff — 2026-10-21
+
+Use [EXP-025](../experiments/EXP-025-shared-dataset-fabric.md),
+[the contract](../rtl/dataset_shared/DATASET_SHARED.md) and
+[bounded evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) for [task #88](https://github.com/jliu67/OpenRX/issues/88).
+The unchanged 15-file executed source is bound to manifest
+`40ac32a3a0e949305c10432f4d265903d011105b1d104ad9ac2445bcd6dbd3fe`
+above main `c5d53686444d11b10edff200e63d7b725ae782b4`.
+Prefix execution `20261021T032914Z-a5cc7c4a15d0` passed 14 support units,
+directed protocol and a complete concurrent-ideal native pair. Matrix execution
+`20261021T141051Z-7fb322066922` then completed seven remaining profiles with
+the receipt-bound compiled binaries, without rebuilding or regenerating inputs.
+Separate independent bounded matrix-result review passes with no blockers. Preserve all original receipts and raw
+scientific-unverified fields; process exit and integrity alone are not acceptance.
+
+**Remaining before this task can complete:** separately scoped admission for
+generic new-fabric synthesis and mapped protocol/native parity, independent review
+of those results, final publication-head review and applicable hosted checks.
+The draft feature is partial while mapping remains unrun. Reuse the existing
+source snapshots, retained fixtures and compiled prefix; do not repeat the default
+full hash, native/cache generation, completed protocol/units or the matrix without
+a specific validation need. Fresh boards/claim, permanent key/lock, source/input,
+kernel and measured-resource checks precede any future admitted workload.
+
+Preserve client-qualified full65-bit identities, no-refund cancellation and namespace
+exhaustion, transparent malformed metadata, stable captured descriptors and genuine
+quiescent reset across both clients/fabric/providers. Batch elapsed clocks are
+separate from nested client availability, held-result, occupancy and wait ledgers.
+No physical service/PPA/frequency/power, achieved hashes/s, production engine count,
+complete-hash alternative performance or whole-machine target is accepted.
+The prerequisite PR87 review/check/merge closeout is complete; earlier dated pending
+wording remains historical. Broader #72 and scientific/physical gates stay open.
+
+
 ## Hardware-dataset service-profile handoff — 2026-10-21
 
 Use [EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) and its
