@@ -1,0 +1,72 @@
+{
+  "at_utc": "2026-10-21",
+  "bound_source_files": 32,
+  "bound_source_unchanged": true,
+  "classification": "bounded_analytical_validation_not_physical_performance",
+  "commands": [
+    {
+      "gnu_time_cpu_percent": 85,
+      "gnu_time_max_rss_kib": 32224,
+      "name": "architecture_units",
+      "returncode": 0,
+      "wall_seconds": 1.4726953639183193
+    },
+    {
+      "gnu_time_cpu_percent": 391,
+      "gnu_time_max_rss_kib": 32008,
+      "name": "historical_reproduction",
+      "returncode": 0,
+      "wall_seconds": 57.55054164910689,
+      "workers": 6
+    },
+    {
+      "gnu_time_cpu_percent": 97,
+      "gnu_time_max_rss_kib": 16264,
+      "name": "hardware_dataset_profile_cli",
+      "returncode": 0,
+      "wall_seconds": 0.0642747120000422
+    }
+  ],
+  "fixture_sha256": "fb6a6302dd6c57e835515c9e23ad39e2462e41885dc92bc49b48b056e0e96130",
+  "gnu_time_rss_scope": "per-command observation; not aggregate worker-pool memory",
+  "historical_failed_and_accepted_evidence_preserved": true,
+  "historical_gold_byte_exact": {
+    "comparisons_json": true,
+    "sensitivity_json": true
+  },
+  "independent_review": {
+    "applicable_hosted_checks": "pending",
+    "publication_head_review": "pending",
+    "status": "accepted_bounded_analytical_result"
+  },
+  "issue72_closed": false,
+  "module_sha256": "19c5460a6b182b41606863fff052f5714a05eb99a41e892d1b73136b48452dbc",
+  "native_or_rtl_workloads_launched": false,
+  "new_full_hash_executed": false,
+  "physical_timing_power_or_architecture_acceptance": false,
+  "public_request_url": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6306625245",
+  "raw_process_scientific_acceptance": "unverified_preserved",
+  "resources": {
+    "command_timeout_seconds": 120,
+    "cpu_quota_percent": 600,
+    "fresh_available_memory_bytes": 8364724224,
+    "kernel_and_ancestor_limits_verified": true,
+    "payload_slots": 1,
+    "ram_limit_bytes": 1073741824,
+    "required_memory_with_headroom_bytes": 2147483648,
+    "swap_limit_bytes": 2147483648,
+    "task_limit": 256
+  },
+  "schema": "openrx.hardware-dataset-service-profile.public-validation.v1",
+  "service_demand_sha256": "694b153e2220218c95c84579dfba930707abb439fa1cadce4d42195148f7c42a",
+  "source_base_commit": "00ef5fe379780c3c051e401a1e0656b9796948bb",
+  "source_manifest_sha256": "2d445c0750ccc91d792f49ec7719071d1a74f025f7bc8d0095bd9ad2d0ceaed0",
+  "swaps_observed": 0,
+  "test_sha256": "f637d7318b1ec46b523ec52ef4f056e00430b13a66c5c0a3756bcb362d127b25",
+  "timing_scope": "analytical validation command cost, not RandomX throughput",
+  "unit_tests": {
+    "new_methods": 19,
+    "passed": 86,
+    "skipped": 0
+  }
+}

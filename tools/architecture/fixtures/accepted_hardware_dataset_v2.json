@@ -1,0 +1,119 @@
+{
+  "dataset": {
+    "cache_requests": 131072,
+    "cache_responses": 131072,
+    "cache_service_extra_clocks": 0,
+    "core_item_availability_clocks": 874889216,
+    "demands": 16384,
+    "executor_clocks": 873676800,
+    "instruction_requests": 58376192,
+    "instruction_responses": 58376192,
+    "item_availability_clocks": 874905600,
+    "item_phase_cycles": [
+      0,
+      16384,
+      540672,
+      131072,
+      873807872,
+      131072,
+      131072,
+      131072,
+      16384
+    ],
+    "item_returns": 16384,
+    "items": 16384,
+    "program_service_extra_clocks": 0,
+    "responses": 16384,
+    "retirements": 58376192,
+    "service_phase_cycles": [
+      43206375,
+      874921984,
+      0
+    ],
+    "session_launch_extra_clocks": 16384,
+    "session_phase_cycles": [
+      43206375,
+      16384,
+      874905600
+    ],
+    "stages": 131072
+  },
+  "functional": {
+    "full_scratchpad_boundaries": 8,
+    "hardware_seed_transitions": 7,
+    "live_software_provider_calls": {
+      "dataset": 0,
+      "fill": 0,
+      "input": 0,
+      "program": 0
+    },
+    "native_digest_equal": true
+  },
+  "ledger": {
+    "nested_executor_phases": [
+      0,
+      6306600,
+      6306600,
+      6306600,
+      999700,
+      999700,
+      346999,
+      0,
+      16384,
+      0,
+      954212,
+      954212,
+      0,
+      0,
+      1763516,
+      1763516,
+      285377,
+      15727823
+    ],
+    "nested_iteration_phases": [
+      16384,
+      65536,
+      65536,
+      65536,
+      65536,
+      0,
+      16384,
+      42731239,
+      16384,
+      874921984,
+      16384,
+      147456
+    ],
+    "outer_cycles": 918672902,
+    "stage_cycles": {
+      "control_and_metadata": 26,
+      "execution": 918128359,
+      "finalization": 393286,
+      "held_return": 1,
+      "initialization_hardware_fill": 131074,
+      "input_hash": 30,
+      "interprogram_seed": 414,
+      "program_generation": 6424,
+      "program_preparation": 13288
+    }
+  },
+  "preparation": {
+    "cache_bytes": 268435456,
+    "instruction_word_bytes": 8,
+    "instructions_per_program_capacity": 512,
+    "program_slots": 8,
+    "reciprocal_count": 239,
+    "reciprocal_word_bytes": 8
+  },
+  "schema": "openrx.architecture.hardware-dataset-evidence.v1",
+  "source": {
+    "acceptance_review_url": "https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967",
+    "public_head": "e8277c63504ef035bb82791263b6842c0cc51f51",
+    "public_tree": "cb3e0615f9df861a081ba2cbb1d47c65603b84cd"
+  },
+  "workload": {
+    "iterations_per_program": 2048,
+    "programs": 8,
+    "scratchpad_bytes": 2097152
+  }
+}

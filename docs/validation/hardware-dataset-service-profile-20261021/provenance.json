@@ -1,0 +1,14 @@
+{
+  "accepted_source": {
+    "acceptance_review_url": "https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967",
+    "public_head": "e8277c63504ef035bb82791263b6842c0cc51f51",
+    "public_tree": "cb3e0615f9df861a081ba2cbb1d47c65603b84cd"
+  },
+  "actual_input_sha256": "fb6a6302dd6c57e835515c9e23ad39e2462e41885dc92bc49b48b056e0e96130",
+  "identity_status": "accepted_input_verified",
+  "input_bytes": 2581,
+  "physical_measurement": false,
+  "schema": "openrx.architecture.hardware-dataset-provenance.v1",
+  "trusted_binding_source": "reviewed_public_hardware_dataset_fixture",
+  "trusted_input_sha256": "fb6a6302dd6c57e835515c9e23ad39e2462e41885dc92bc49b48b056e0e96130"
+}

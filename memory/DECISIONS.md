@@ -443,3 +443,29 @@ Bounded EXP-022 closeout accepts 16,384 protocol items/131,072 private admission
 native 2×1 and reduced mapped parity with terminal integrity and independent
 review. Preserve the distinction between protocol capacity, native 2×1, recovery
 prefixes and the unexecuted default hardware hash; see the linked evidence.
+
+## 2026-10-21 — Separate hardware-dataset demand from physical service supply
+
+Extend the accepted task #72 analytical tools through a separately byte-bound
+hardware-dataset fixture and adapter. Preserve PR74's original c96 full-evidence
+and short-window bindings, reproduction outputs and scheduler semantics.
+Accepted request/response counts describe different nested interfaces: logical
+VM dataset output, prepared-cache data and prepared instruction minimum words.
+Do not sum them as off-chip traffic, count 239 reciprocal entries as transactions
+or treat 8-byte instruction words as the complete reply width.
+
+Validate actual fixture bytes, count relationships and complete nested clocks
+before accepted attribution. Keep 874,905,600 dataset availability clocks inside
+the 918,672,902 outer baseline. Use existing necessary latency/transaction/bank/
+controller/energy gates with assumptions explicitly separate from measurements.
+Unknown placement, physical service capacity, latency tails, wire overhead,
+frequency, power and alternative full-hash timing remain unknown.
+
+[EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) records 86
+passing architecture tests, byte-exact historical gold and CLI success, with
+separate independent result review accepting this bounded analytical scope.
+Publication-head review and applicable hosted checks remain required. These
+results support choosing a separately bounded finite shared-service experiment,
+not a production engine count or architecture. Preserve all failed/accepted
+full-hash records and unchanged scientific criteria; task #72 remains open.
+

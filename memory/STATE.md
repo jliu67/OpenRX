@@ -1,5 +1,26 @@
 # Current state — actual local execution activation
 
+## Hardware-dataset service profile — 2026-10-21
+
+[EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) extends
+[task #72](https://github.com/jliu67/OpenRX/issues/72) with a separately bound
+compact profile of the accepted PR86 hardware-dataset result. The admitted
+analytical validation passes 86 architecture tests, including 19 new methods,
+historical comparison/sensitivity byte parity and the profile CLI. Separate independent
+result review accepts the bounded analytical result; publication-head review and
+applicable hosted checks remain pending.
+[Evidence](../docs/validation/hardware-dataset-service-profile-20261021/README.md)
+keeps original PR74 reproduction and all historical inputs unchanged.
+
+Per hash, separate links carry 16,384 logical dataset responses, 131,072 cache
+responses and 58,376,192 prepared instruction responses. Their minimum data
+payloads must not be summed into physical off-chip traffic. Dataset availability
+874,905,600 clocks is nested in the 918,672,902 modeled baseline. No native/RTL
+workload was rerun. Physical service, calibrated frequency/power, alternative
+full-hash performance and architecture selection remain unresolved; #72 stays open.
+Earlier dated records and the accepted/failed full-hash distinction remain intact.
+
+
 ## Accepted default hardware-dataset hash — 2026-10-20
 
 The [full result](../docs/validation/dataset-fullhash-20261020/README.md) is

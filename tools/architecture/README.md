@@ -180,3 +180,57 @@ execution wrapper with independent scratchpad namespaces and explicit issue,
 completion and memory-wait instrumentation, checked against native values and
 the existing complete lifecycle. It tests actual context overlap before adopting
 nonblocking queues or wider issue. It does not select a production engine count.
+
+## Accepted hardware-dataset service profile — 2026-10-21
+
+`hardware_dataset.py` adds a separate, byte-bound compact profile of the accepted
+default 8×2,048 hardware-dataset hash at public source `e8277c63`, tree `cb3e0615`.
+Its fixture is `fixtures/accepted_hardware_dataset_v2.json`; the source and
+[independent functional acceptance](https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967)
+stay distinct from later documentation commits. Actual fixture bytes must match
+the reviewed binding before the tool grants accepted attribution. Embedded source
+or digest claims cannot replace that binding. The legacy `reproduce` command,
+trusted c96 inputs, bounded scheduler windows and historical results are unchanged.
+
+```sh
+python3 -B -m tools.architecture.hardware_dataset \
+  --evidence tools/architecture/fixtures/accepted_hardware_dataset_v2.json \
+  --output /tmp/openrx-hardware-dataset-service-profile-new
+```
+
+Use a new output directory. On the designated server, run this bounded analysis
+through the installed admission/global lock. It reads the compact fixture only;
+it does not scan the large trace, rebuild a native reference or simulate hardware.
+Untrusted input retains `provenance.json` and stops before an accepted report.
+Successful output includes `service-demand.json` and an artifact digest index.
+
+The accepted outer baseline is 918,672,902 modeled clocks. The 874,905,600
+dataset-availability clocks are already nested in execution; the 873,676,800
+dataset-executor clocks are nested further. They are not added to the outer
+total again. The separate VM executor aggregate is 42,731,239 clocks.
+Outer/stage, 12/18 VM phase and actual 3/3/9 dataset-vector relationships close
+before a report is produced. These are modeled clocks, not a physical frequency.
+
+| Observed response interface | Responses/hash | Minimum data payload bytes/hash |
+| --- | ---: | ---: |
+| Logical dataset output to VM | 16,384 | 1,048,576 |
+| Prepared cache-line service | 131,072 | 8,388,608 |
+| Prepared instruction service, raw 64-bit words only | 58,376,192 | 467,009,536 |
+
+These are different nested links. Their payloads must not be summed and called
+off-chip traffic. Cache/program placement, reuse, physical transactions, wire
+overhead and energy remain unknown. Instruction replies also bundle reciprocal
+validity/index/value fields; the 239 prepared table entries are not a separate
+transaction count. The logical retained images include a 256 MiB cache,
+32 KiB of instruction slots and 1,912 reciprocal-data bytes, with physical macro,
+metadata, ECC and queue overhead still unknown. Each live mutable scratchpad still
+requires its own 2 MiB image. Retained preparation is not autonomous hardware setup.
+
+The report reuses the existing latency, complete-power and rejection helpers.
+Per-interface rates at 1 MH/s are necessary target demands, not achieved rates.
+Latency/ready-request sweeps are explicit assumptions; they do not establish
+independent outstanding work, controller timing, bank-port supply or operating
+points. Missing characterized service and energy inputs leave the physical gates
+unresolved. Whole-machine power, achieved hashes/s, alternative full-hash cycles,
+physical frequency and ASIC feasibility remain unknown. The strict 2.5 mJ/hash
+wall-energy ceiling remains a rejection ceiling rather than a memory estimate.
