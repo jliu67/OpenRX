@@ -1,0 +1,1266 @@
+{
+  "accepted_scope": "Seven bounded modeled native component profiles for this exact recovery source,plus separately accepted fresh prefix. This is not mapped parity,full-hash alternative or physical acceptance.",
+  "blocking_findings": [],
+  "command_wall_seconds_sum": 73.37518172641285,
+  "commands": [
+    {
+      "label": "native-cancel0",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 11.277224871795624
+    },
+    {
+      "label": "native-cancel1",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 11.225287190871313
+    },
+    {
+      "label": "native-concurrent-stalled",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 7.403730109101161
+    },
+    {
+      "label": "native-exhaustion",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 17.456351555883884
+    },
+    {
+      "label": "native-malformed-fetch0",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 5.6450581478420645
+    },
+    {
+      "label": "native-serial-ideal",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 8.862628838047385
+    },
+    {
+      "label": "native-serial-stalled",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 11.481319239828736
+    },
+    {
+      "label": "tool-version-iverilog",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.015909336041659117
+    },
+    {
+      "label": "tool-version-vvp",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.007672437001019716
+    }
+  ],
+  "component_pair_comparison": {
+    "ideal": {
+      "concurrent_batch_cycles": 61595,
+      "scope": "two native component items under identical assumed finite services; not a complete hash",
+      "serial_batch_cycles": 113953
+    },
+    "stalled": {
+      "concurrent_batch_cycles": 83537,
+      "scope": "two native component items under identical assumed finite services; not a complete hash",
+      "serial_batch_cycles": 149685
+    }
+  },
+  "execution_id": "20261021T222845Z-8f21db168fd3",
+  "fresh_profile_count": 7,
+  "historical_comparison": {
+    "all_seven_result_jsons_byte_exact": true,
+    "execution_id": "20261021T141051Z-7fb322066922",
+    "receipt_sha256": "728ea10ff95770ebe5fc04df7f64c1458fdb9aaca8f19d2fd2ffe2f60021e8af",
+    "scope": "Additional post-run byte comparisons only; fresh recovery profile assertions and the new same-source prefix are the basis of acceptance."
+  },
+  "immutable_runner_verification": {
+    "execution_id": "20261021T222845Z-8f21db168fd3",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "immutable_runner_verification_sha256": "3ed6f6e21661b9a0d1f67095c140d663b75bfbc66534d70af97f9c3152b5ab0a",
+  "independent_classification": "PASS_MATRIX_ONLY",
+  "independent_findings": [
+    "Every successful item has 3563 commits,1254 multiplies and8 stages; native state and indexed-cache assertions executed in the retained newly compiled bench.",
+    "Cancel0 and cancel1 each preserve one partial1-commit/1-multiply prefix,drain one cancelled fetch,and complete the cancelled client in namespace2 without refunding namespace1.",
+    "Malformed-fetch0 returns a zero-commit owned error for client0 while client1 completes normally.",
+    "Exhaustion completes six items in namespaces1,2,3 per client and denies further admission.",
+    "All per-row session/item vectors close to their own availability or cancelled partial elapsed time; aggregate client core/executor/availability vectors close without adding nested clocks to batch time.",
+    "All fetch/cache single-credit accepted/request/delivered/cancelled/orphan ledgers close before genuine quiescent reset."
+  ],
+  "integrity": {
+    "artifact_mismatches": 0,
+    "bound_file_occurrences": 165,
+    "bound_input_roots": 115,
+    "fixture_before_after_equal": true,
+    "large_input_rehash_limit": "Only the 256 MiB cache was skipped for another reviewer rehash; its pinned identity, separate fresh preflight and unchanged worker before/after fixture maps are retained. Historical large traces were not rescanned.",
+    "live_input_files_independently_size_and_sha256_verified": 164,
+    "prepared_and_actual_normalized_input_bindings_match": true,
+    "receipt_bound_artifacts_independently_verified": 65,
+    "request_payload_argv_equals_actual_manifest_template": true,
+    "source_before_after_equals_independently_accepted_new_prefix_source": true,
+    "system_dynamic_libraries_fully_hermetic_claimed": false,
+    "tools_before_after_equal": true
+  },
+  "merge_eligible_from_this_review": false,
+  "native_reference_or_cache_regenerated": false,
+  "new_full_hash_executed": false,
+  "original_failed_mapping_evidence_preserved": true,
+  "physical_or_target_performance_accepted": false,
+  "planned_and_actual_command_count": 9,
+  "process_returncode": 0,
+  "process_status": "PROCESS_EXITED",
+  "profiles": {
+    "cancel0": {
+      "aborted_items": 1,
+      "batch_elapsed_cycles": 149693,
+      "byte_exact_to_historical_matrix": true,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": true,
+      "client_availability_cycles": [
+        74837,
+        74845
+      ],
+      "client_core_cycles": [
+        74836,
+        74844
+      ],
+      "client_executor_cycles": [
+        74699,
+        74707
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "commits": 7127,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3565,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          8
+        ],
+        "backend_requests": 7128,
+        "backend_responses": 7128,
+        "cancelled_responses": 1,
+        "delivered": [
+          3564,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49887,
+        "orphan_responses": 0
+      },
+      "independent_nested_clock_namespace_and_ownership_ledger_closure": true,
+      "item_rows": [
+        {
+          "client": 0,
+          "commits": 1,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            1,
+            44,
+            0,
+            0,
+            0,
+            0
+          ],
+          "multiplies": 1,
+          "namespace": 1,
+          "partial_elapsed_cycles": 80,
+          "session_phase_cycles": [
+            0,
+            1,
+            79
+          ],
+          "stages": 0,
+          "status": "cancelled"
+        },
+        {
+          "availability_cycles": 74845,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74844,
+          "executor_cycles": 74707,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74715,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74844
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "multiplies": 2509,
+      "quiescent_hard_reset_checked": true,
+      "result_sha256": "c8964789ee9ac401c4dd4452cbfd0c6e71d3e8928ea0c7d33bb84c1e519d8637",
+      "returned_items": 2,
+      "sessions_used": [
+        2,
+        1
+      ],
+      "stages": 16,
+      "successful_items": 2
+    },
+    "cancel1": {
+      "aborted_items": 1,
+      "batch_elapsed_cycles": 149685,
+      "byte_exact_to_historical_matrix": true,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": true,
+      "client_availability_cycles": [
+        74837,
+        74837
+      ],
+      "client_core_cycles": [
+        74836,
+        74836
+      ],
+      "client_executor_cycles": [
+        74699,
+        74699
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "commits": 7127,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3565
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          8
+        ],
+        "backend_requests": 7128,
+        "backend_responses": 7128,
+        "cancelled_responses": 1,
+        "delivered": [
+          3563,
+          3564
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49887,
+        "orphan_responses": 0
+      },
+      "independent_nested_clock_namespace_and_ownership_ledger_closure": true,
+      "item_rows": [
+        {
+          "client": 1,
+          "commits": 1,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            1,
+            52,
+            0,
+            0,
+            0,
+            0
+          ],
+          "multiplies": 1,
+          "namespace": 1,
+          "partial_elapsed_cycles": 88,
+          "session_phase_cycles": [
+            0,
+            1,
+            87
+          ],
+          "stages": 0,
+          "status": "cancelled"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "multiplies": 2509,
+      "quiescent_hard_reset_checked": true,
+      "result_sha256": "3d8620223e5255b1e9d514b1f3bb8a63f5b036dee11848a43fac39a95818859e",
+      "returned_items": 2,
+      "sessions_used": [
+        1,
+        2
+      ],
+      "stages": 16,
+      "successful_items": 2
+    },
+    "concurrent-stalled": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 83537,
+      "byte_exact_to_historical_matrix": true,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        83498,
+        83532
+      ],
+      "client_core_cycles": [
+        83497,
+        83531
+      ],
+      "client_executor_cycles": [
+        83360,
+        83394
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          8661,
+          8695
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49874,
+        "orphan_responses": 0
+      },
+      "independent_nested_clock_namespace_and_ownership_ledger_closure": true,
+      "item_rows": [
+        {
+          "availability_cycles": 83498,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 83497,
+          "executor_cycles": 83360,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            83368,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            83497
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 83532,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 83531,
+          "executor_cycles": 83394,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            83402,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            83531
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "multiplies": 2508,
+      "quiescent_hard_reset_checked": true,
+      "result_sha256": "f28d07adc6d719292bec474a68935c1151149a824ef5101c53aac7ab34a98017",
+      "returned_items": 2,
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "successful_items": 2
+    },
+    "exhaustion": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 184787,
+      "byte_exact_to_historical_matrix": true,
+      "cache": {
+        "accepted": [
+          24,
+          24
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 48,
+        "backend_responses": 48,
+        "cancelled_responses": 0,
+        "delivered": [
+          24,
+          24
+        ],
+        "high_water": 1,
+        "occupied_cycles": 96,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        184761,
+        184770
+      ],
+      "client_core_cycles": [
+        184758,
+        184767
+      ],
+      "client_executor_cycles": [
+        184512,
+        184521
+      ],
+      "client_held_backpressure_cycles": [
+        12,
+        12
+      ],
+      "commits": 21378,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": true,
+      "fetch": {
+        "accepted": [
+          10689,
+          10689
+        ],
+        "arbitration_wait_cycles": [
+          13848,
+          13857
+        ],
+        "backend_requests": 21378,
+        "backend_responses": 21378,
+        "cancelled_responses": 0,
+        "delivered": [
+          10689,
+          10689
+        ],
+        "high_water": 1,
+        "occupied_cycles": 42756,
+        "orphan_responses": 0
+      },
+      "independent_nested_clock_namespace_and_ownership_ledger_closure": true,
+      "item_rows": [
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 2,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 3,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 3,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "multiplies": 7524,
+      "quiescent_hard_reset_checked": true,
+      "result_sha256": "157e48b5bef99006cf3718b24ef3bc608d2e7681cbfcfad7e48106832e47f8ac",
+      "returned_items": 6,
+      "sessions_used": [
+        3,
+        3
+      ],
+      "stages": 48,
+      "successful_items": 6
+    },
+    "malformed-fetch0": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 74849,
+      "byte_exact_to_historical_matrix": true,
+      "cache": {
+        "accepted": [
+          0,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 8,
+        "backend_responses": 8,
+        "cancelled_responses": 0,
+        "delivered": [
+          0,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 71,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        44,
+        74844
+      ],
+      "client_core_cycles": [
+        43,
+        74843
+      ],
+      "client_executor_cycles": [
+        7,
+        74706
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "commits": 3563,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 1,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          1,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          7
+        ],
+        "backend_requests": 3564,
+        "backend_responses": 3564,
+        "cancelled_responses": 0,
+        "delivered": [
+          1,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 24943,
+        "orphan_responses": 0
+      },
+      "independent_nested_clock_namespace_and_ownership_ledger_closure": true,
+      "item_rows": [
+        {
+          "availability_cycles": 44,
+          "client": 0,
+          "commits": 0,
+          "core_cycles": 43,
+          "executor_cycles": 7,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            1,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          "multiplies": 0,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            43
+          ],
+          "stages": 0,
+          "status": "error"
+        },
+        {
+          "availability_cycles": 74844,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74843,
+          "executor_cycles": 74706,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74714,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74843
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "multiplies": 1254,
+      "quiescent_hard_reset_checked": true,
+      "result_sha256": "5dce76e4b721b2caa75c14cb404c901898a5517f14cc9503b9ed513c6417deb4",
+      "returned_items": 2,
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 8,
+      "successful_items": 1
+    },
+    "serial-ideal": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 113953,
+      "byte_exact_to_historical_matrix": true,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 32,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        56971,
+        56971
+      ],
+      "client_core_cycles": [
+        56970,
+        56970
+      ],
+      "client_executor_cycles": [
+        56888,
+        56888
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 14252,
+        "orphan_responses": 0
+      },
+      "independent_nested_clock_namespace_and_ownership_ledger_closure": true,
+      "item_rows": [
+        {
+          "availability_cycles": 56971,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 56970,
+          "executor_cycles": 56888,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            56896,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            56970
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 56971,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 56970,
+          "executor_cycles": 56888,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            56896,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            56970
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "multiplies": 2508,
+      "quiescent_hard_reset_checked": true,
+      "result_sha256": "acd0b8813887c3034987995cbd974d6a1066ab078a38fdec4956dff22079685b",
+      "returned_items": 2,
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "successful_items": 2
+    },
+    "serial-stalled": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 149685,
+      "byte_exact_to_historical_matrix": true,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 142,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        74837,
+        74837
+      ],
+      "client_core_cycles": [
+        74836,
+        74836
+      ],
+      "client_executor_cycles": [
+        74699,
+        74699
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 49874,
+        "orphan_responses": 0
+      },
+      "independent_nested_clock_namespace_and_ownership_ledger_closure": true,
+      "item_rows": [
+        {
+          "availability_cycles": 74837,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 74837,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 74836,
+          "executor_cycles": 74699,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            74707,
+            8,
+            71,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            74836
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "multiplies": 2508,
+      "quiescent_hard_reset_checked": true,
+      "result_sha256": "edb01be7236d0c50676fed11af6d852e99b58e8003628e97550fc185f77b5521",
+      "returned_items": 2,
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "successful_items": 2
+    }
+  },
+  "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_driver_status": "pass_matrix",
+  "raw_receipt_scientific_acceptance": "unverified",
+  "receipt_sha256": "58e00c93f44d4d041cf638351a60048eb9352affedbca5aad1a4d8040b785762",
+  "remaining_gates": [
+    "Recovery synthesis and mapped protocol/native byte-exact parity with independent review",
+    "Published exact-head source/result review and applicable checks before merge",
+    "Physical services,calibrated PPA and complete-hash alternative target-performance validation"
+  ],
+  "request_sha256": "d3530bc279edf51d3c62c3f5a8d5fea77eb37646a8a577118b79f473f7090881",
+  "resources": {
+    "actual_cpu_max": "600000 100000",
+    "actual_memory_max_bytes": 1073741824,
+    "actual_swap_max_bytes": 2147483648,
+    "actual_tasks_max": 256,
+    "cpu_throttled_periods": 0,
+    "cumulative_cgroup_cpu_usage_usec": 75786616,
+    "cumulative_cgroup_memory_peak_bytes": 44003328,
+    "cumulative_cgroup_swap_peak_bytes": 0,
+    "global_slots": 1,
+    "headroom_prelaunch_safe": true,
+    "per_command_timeout_seconds": 120,
+    "production_kernel_and_ancestor_prelaunch_safe": true,
+    "scope": "Cumulative admitted-cgroup host observations,not per-command RSS or physical chip speed,power,area or target performance.",
+    "supervisory_grace_seconds": 5,
+    "workers": 1
+  },
+  "reuse": {
+    "execution_id": "20261021T222437Z-6a260038ca5e",
+    "independent_prefix_review_sha256": "fda4f74c7765a10c64028b4827647d4ab7437b0b0ae065e8332b71c687c2f1bb",
+    "native_binary_sha256": "de6ae942026bc2415993cdb9f8937a7f05f4840282f6de5ca5d22d2a20014ca4",
+    "old_prefix_or_old_binaries_used_as_recovery_source_acceptance": false,
+    "only_new_same_source_prefix_binary_used_for_all_seven_profiles": true,
+    "prefix_independent_acceptance_preceded_matrix_creation": true,
+    "receipt_sha256": "5647ed139f7b18078337b6c7beb277d5b1cfde170a2f2031c44729697e7f346f",
+    "retained_concurrent_ideal_summary_matches_new_prefix": true,
+    "root_verify_sha256": "e06ae8440a095750d98dcbbf5c1d9d162bfe6c91f810b4765bf483173b54416d"
+  },
+  "reviewed_at_utc": "2026-10-21T22:31:56.439599+00:00",
+  "schema": "openrx.dataset-shared.recovery-matrix-independent-review.v1",
+  "source_edits_by_reviewer": 0,
+  "source_manifest_sha256": "1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea",
+  "synthesis_run_in_matrix": false,
+  "tested_channel_sha256": "0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493",
+  "tested_source_scope": "Exact new recovery candidate source manifest; accepted arithmetic, benches and validation code unchanged. Historical acceptance is not transferred to changed RTL.",
+  "units_or_compilation_rerun_in_matrix": false,
+  "workloads_launched_by_reviewer": 0
+}

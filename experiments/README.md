@@ -1,5 +1,48 @@
 # Experiments
 
+## Shared-fabric recovery component stages accepted — 2026-10-21 22:37 UTC
+
+[EXP-025](EXP-025-shared-dataset-fabric.md) now records the independently accepted
+fresh prefix, seven-profile matrix and generic mapping/mapped-parity recovery:
+25 commands, one fixed-slice channel change, accepted arithmetic unchanged.
+Fresh functional JSONs equal history; mapped JSONs equal the new same-source
+prefix. Channel/fabric generic counts are 6,581/14,498 (801/1,615 DFF, no latches),
+including diagnostics/payload logic in nested scopes; they are not physical area.
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) preserves the
+original timeout and all earlier records. PR89 remains draft for final head review
+and applicable checks; no new-head CI success or merge is claimed. No full hash
+was repeated; physical/services/performance and broader issue #72 gates stay open.
+Earlier partial/failure summaries below are preserved as dated history.
+
+
+## Shared-fabric mapping bound reached — 2026-10-21 21:51 UTC
+
+The later [EXP-025 update](EXP-025-shared-dataset-fabric.md) records one approved
+mapping attempt, independently classified **FAIL/incomplete**. Standalone channel
+mapping completed (6,887 generic cells, including 801 DFF and no latches);
+flattened fabric mapping returned 137 after 120.506375 seconds without a netlist.
+This is consistent with its enforced timeout; OOM cause is not established.
+Both mapped compiles and both parity comparisons remain unrun. PR89 stays draft
+and issue #88 incomplete. [Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+preserves channel assets, failed logs, raw flags and accepted prefix/matrix results.
+Generic counts are not physical area or extra cells to sum with enclosing fabric.
+No full hash or physical/performance acceptance is claimed. Earlier experiment
+summaries below are preserved as dated history.
+
+
+## Shared dataset-fabric experiment — 2026-10-21
+
+[EXP-025](EXP-025-shared-dataset-fabric.md) records a partial two-client finite
+shared instruction/cache service experiment above merged PR87/main `c5d5368`.
+Its prefix passed 14 units, directed protocol and native correctness; seven
+additional native profiles completed through exact prefix binary reuse.
+Separate independent bounded matrix-result review passes with no blockers.
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) separates
+these component results from unrun generic synthesis/mapped parity, publication
+gates and unresolved physical/full-hash performance. Historical experiments,
+failed runs and scientific criteria remain unchanged.
+
+
 ## Accepted EXP-023 result — 2026-10-20
 
 [EXP-023](EXP-023-full-hardware-dataset-hash.md) now has one independently accepted

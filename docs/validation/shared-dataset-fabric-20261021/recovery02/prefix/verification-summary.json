@@ -1,0 +1,37 @@
+{
+  "actual_commands": 7,
+  "actual_kernel_safe": true,
+  "all_command_returncodes_zero": true,
+  "changed_channel_sha256": "0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493",
+  "execution_id": "20261021T222437Z-6a260038ca5e",
+  "historical_json_comparisons": {
+    "native-concurrent-ideal.json": {
+      "byte_equal_historical": true,
+      "sha256": "5c0968622dd8a85ff9da5aa47639ea4dbcf9e49c3c49b04024ce1a2f470237a1"
+    },
+    "protocol.json": {
+      "byte_equal_historical": true,
+      "sha256": "c30686c0ecd7543d7a430b1b1b44ca07eb64313c87be94f3cbdf727e15a5a2c6"
+    }
+  },
+  "independent_acceptance": "PASS_PREFIX_ONLY",
+  "independent_review_sha256": "fda4f74c7765a10c64028b4827647d4ab7437b0b0ae065e8332b71c687c2f1bb",
+  "new_full_hash": false,
+  "phase": "prefix",
+  "physical_acceptance": false,
+  "production_enforced": true,
+  "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_scientific_acceptance": "unverified",
+  "raw_status": "PROCESS_EXITED",
+  "receipt_artifact_count": 52,
+  "receipt_sha256": "5647ed139f7b18078337b6c7beb277d5b1cfde170a2f2031c44729697e7f346f",
+  "request_sha256": "2b75fffaaf76961410e0e06d63954c6b2f83778ddc6515e6e48e62bd4890a647",
+  "root_integrity_verified": true,
+  "root_verify_sha256": "e06ae8440a095750d98dcbbf5c1d9d162bfe6c91f810b4765bf483173b54416d",
+  "same_source_new_binaries": {
+    "native.vvp": "de6ae942026bc2415993cdb9f8937a7f05f4840282f6de5ca5d22d2a20014ca4",
+    "protocol.vvp": "33c1d09941393b44f1ab8cc11b54ad7bb3d41e9f91c3ed57084c025380592e03"
+  },
+  "schema": "openrx.dataset-shared.recovery-verification.v1",
+  "source_manifest_sha256": "1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea"
+}

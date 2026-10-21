@@ -469,3 +469,67 @@ results support choosing a separately bounded finite shared-service experiment,
 not a production engine count or architecture. Preserve all failed/accepted
 full-hash records and unchanged scientific criteria; task #72 remains open.
 
+
+## 2026-10-21 — qualify shared service identities and preserve overlapping ledgers
+
+Use a separate finite shared instruction/cache transport around two unchanged
+accepted item-session clients for [EXP-025](../experiments/EXP-025-shared-dataset-fabric.md).
+Qualify the complete64-bit client tag with an explicit backend client bit:
+independent clients can produce identical lower tags. A captured descriptor owns
+the single channel credit through request acceptance, response wait and held reply.
+Cancellation retains/drains that identity and never refunds namespaces; wrong full
+identities drain as orphans without releasing another owner. Matching malformed
+metadata remains transparent to the owning accepted core. The client bit does not
+make illegal same-client tag reuse or arbitrary pre-hard-reset traffic safe;
+genuine quiescence/removal across both clients/fabric/providers is still required.
+
+Keep batch elapsed clocks distinct from nested client availability/held clocks,
+channel occupancy and arbitration waits. The prefix and seven-profile native
+matrix establish only their recorded component outcomes and source-specific modeled
+clock comparisons. Separate independent bounded matrix-result review passes with no blockers.
+Generic synthesis and mapped parity remain unrun; two clients and one credit are
+experimental controls, not production architecture selection. No physical PPA,
+frequency, service capacity, achieved hashes/s or full-hash alternative performance
+is inferred. Reuse retained preparation and preserve all original accepted/failed
+evidence and unchanged scientific acceptance criteria.
+
+
+## Preserve bounded mapping failure and parity gates — 2026-10-21 21:51 UTC
+
+Treat execution `20261021T214326Z-597d5d52ca81` as FAIL/incomplete, as recorded by
+separate [independent result review](../docs/validation/shared-dataset-fabric-20261021/synthesis01/independent-result-review.json).
+A completed standalone channel map does not substitute for the absent flattened
+fabric netlist or unrun mapped protocol/native parity. Preserve channel assets,
+failed logs and raw scientific flags without weakening byte-exact acceptance or
+inferring an OOM kill from memory-cap/signal-9 observations. Any next run needs
+applicable admission; this record claims no retry or validated repair.
+
+Generic cell counts include diagnostic counters and payload logic. A standalone
+channel is contained in the whole fabric; do not add its count to a later fabric
+count or interpret either as physical area/frequency/power. Keep PR89 draft and
+issue #88 incomplete until remaining scientific and final-head review/check gates
+pass. Earlier accepted prefix/matrix and default functional full-hash evidence
+remain intact. Physical service capacity, calibrated PPA, architecture selection
+and complete-hash alternative performance stay open; scientific criteria and all
+historical records are unchanged.
+
+
+## Accept bounded fixed-slice recovery; retain remaining gates — 2026-10-21 22:37 UTC
+
+Accept the separately reviewed fresh prefix, seven-profile matrix and generic
+mapping/mapped-parity results for the exact recovery source bound in
+[recovery evidence](../docs/validation/shared-dataset-fabric-20261021/README.md).
+Changing channel response writes required fresh prefix binaries; historical reuse
+gates were not relaxed. Exact JSON parity and unchanged accepted arithmetic/
+scientific criteria remain required. Preserve the earlier timed-out mapping,
+completed channel assets, original raw flags and all failed/accepted records.
+
+Standalone channel and flattened fabric counts include diagnostic counters/payload
+logic and are nested scopes; never sum them or treat them as physical area,
+frequency, power or complete-hash performance. These independent component reviews
+do not replace final published-head source/result review and applicable checks.
+PR89 remains draft for those gates; no new-head CI success or merge is claimed.
+Physical services, calibrated PPA, architecture selection, complete-hash alternatives
+and the whole-machine target remain open. No full hash or native/cache generation
+was repeated by this recovery.
+

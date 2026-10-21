@@ -1234,3 +1234,96 @@ alternative full-hash timing, final architecture and the whole-machine target st
 open. No native/RTL workload, full hash, physical acceptance or scientific-criteria
 change occurred; #72 remains open.
 
+
+## 2026-10-21 — finite shared dataset-fabric prefix and native matrix
+
+Above PR87/main `c5d53686444d11b10edff200e63d7b725ae782b4`, prepare two separate
+one-credit round-robin service channels around unchanged accepted item-session cores.
+The prefix passed 14 support units, 2,045 directed protocol checks/91 ledger
+observations and two native-correct items (7,126 commits, 2,508 multiplies, 16 stages).
+Its source/tool/input-bound receipt and separate independent prefix acceptance remain
+unchanged. The earlier denied matrix publication and unrun handoff remain preserved;
+the owner subsequently approved the exact
+[public request](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6318167243).
+
+Execution `20261021T141051Z-7fb322066922` reused exact prefix VVP binaries for
+seven profiles with six workers: serial-ideal, serial-stalled, concurrent-stalled,
+cancel0, cancel1, malformed-fetch0 and exhaustion. All seven commands exited zero;
+no timeout occurred. Actual kernel limits were CPU600%, RAM1GiB, swap2GiB and
+Tasks256 on one slot. Worker-command elapsed time was 26.444271 seconds; cumulative cgroup
+peak was 71,790,592 bytes with zero swap, 78.970740 CPU seconds and no throttling.
+These are validation-runtime observations, not RandomX physical performance.
+Separate independent bounded matrix-result review passes with no blockers.
+
+Controlled ideal serial/concurrent batches use 113,953 / 61,595 modeled clocks;
+stalled batches use 149,685 / 83,537. Cancellation profiles retain the cancelled
+identity and burn [2,1]/[1,2] namespaces while each produces two successes and one
+abort. Malformed fetch metadata reaches the owning accepted core and yields one
+error while the other client succeeds. Exhaustion completes six items using [3,3]
+namespaces and denies the fourth admission without wrapping. Complete native
+assertions and separate batch/client/channel ledgers are retained in
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) and
+[evidence](../docs/validation/shared-dataset-fabric-20261021/README.md).
+
+No compilation/unit rerun, native/cache generation, synthesis or full hash occurred
+in the matrix. Generic synthesis/mapped parity remain unrun, and the feature/task
+remain partial pending those gates, independent review and exact-head hosted checks.
+Original failed/accepted full-hash records, scientific flags and criteria stay intact.
+Retained preparation/modeled host services, physical timing/PPA/power, architecture
+selection, complete-hash alternative performance and the whole-machine target remain
+unresolved. PR87's prerequisite merge/review/check closeout is complete.
+
+
+## Shared-fabric bounded mapping failed — 2026-10-21 21:51 UTC
+
+The separately authorized [issue #88 plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)
+ran once as `20261021T214326Z-597d5d52ca81` on unchanged PR89 source `d3f11cc`.
+Five of nine commands ran: three probes, channel mapping, then fabric mapping.
+Channel explicit ABC/check-assert completed in 59.309969 seconds with 6,887 generic
+cells, 801 DFF and zero latches. Fabric mapping returned 137 at 120.506375 seconds
+without a netlist, consistent with its 120-second hard timeout; no affirmative
+OOM-kill cause is established. Both mapped compiles and both parity commands
+were unrun. Independent result review classifies the stage FAIL/incomplete;
+PR89 remains draft and issue #88 incomplete.
+
+One-worker/global-slot admission used CPU600%, RAM1GiB, swap2GiB, Tasks256 and
+120 seconds plus five seconds supervisory grace per command. Cumulative cgroup
+peaks were 1,073,741,824 bytes RAM/916,295,680 bytes swap, not per-command RSS or
+physical performance. [Public evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+retains verified summaries for all 40 receipt-bound artifacts, raw scientific flags,
+channel assets, failed logs and all previous accepted/failed records. Receipt SHA256
+is `dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87`.
+No unit/matrix rerun, native/cache generation or full hash occurred. Generic counts
+include diagnostics/payload logic, are not physical area and must not be added to
+a containing fabric count. Source/criteria are unchanged; final publication-head
+review/checks and physical/service/performance gates remain separate.
+
+
+## Shared-fabric fixed-slice recovery accepted — 2026-10-21 22:37 UTC
+
+The [separately authorized 25-command recovery](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed fresh prefix (7), matrix (9) and synthesis/parity (9) commands, all returning
+zero under the original one-worker/global-slot, CPU 600%, RAM 1 GiB, swap 2 GiB,
+Tasks 256 and 120-second-plus-five-second command bounds. Three separate independent
+reviews accept those bounded component stages. The sole channel change uses
+guarded owner branches/fixed slices for response writes; accepted arithmetic,
+drivers/benches and scientific criteria are unchanged.
+
+Fresh prefix passed 14 support tests, 2,045 protocol checks and a complete native
+pair. Its two JSONs and all seven matrix profile JSONs match historical accepted
+records byte-for-byte. Matrix 20 rows repeat two items, with 17 successes/one expected
+error/two cancellations. Channel mapping completed in 8.961900 seconds (6,581 generic
+cells/801 DFF/no latches); flattened fabric completed in 22.189259 seconds
+(14,498 cells/1,615 DFF/no latches). Mapped protocol/native JSONs equal the new
+same-source prefix. Mapped native host runtime was 51.139495 seconds; generic
+counts and host runtime do not establish physical area/frequency/power/performance.
+
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) retains three
+receipt bindings, independent reviews and unchanged raw scientific flags. Preserve
+the original failed mapping, all earlier failed/accepted records and all assets.
+No full hash or native/cache generation was repeated. PR89 remains draft for
+final publication-head review/checks; no new-head CI success or merge is claimed.
+Physical service implementation, calibrated PPA and complete-hash alternatives
+remain separate open gates. Earlier stage-review pending statements are dated
+snapshots, not the current combined component-stage result.
+

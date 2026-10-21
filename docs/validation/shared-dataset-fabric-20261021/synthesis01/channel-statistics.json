@@ -1,0 +1,28 @@
+{
+  "abc_generic_mapping_completed": true,
+  "by_cell_type": {
+    "$_AND_": 3612,
+    "$_DFF_P_": 801,
+    "$_MUX_": 149,
+    "$_NOT_": 661,
+    "$_OR_": 1505,
+    "$_XOR_": 159
+  },
+  "check_assert_returncode": 0,
+  "dff_cells": 801,
+  "execution_id": "20261021T214326Z-597d5d52ca81",
+  "generic_cells": 6887,
+  "latch_cells": 0,
+  "mapped_functional_parity": "unrun",
+  "netlist_json_sha256": "446da29d06fc68ee81652696e1a5bc4cfe93d40fdb0a42a0c092495f271aabc2",
+  "netlist_verilog_sha256": "1ffcdf9873aa9f3ccd1769ac5124bb26902a497bc1965ed4b4e5884ebc309e51",
+  "parameters": {
+    "REQ_WIDTH": 28,
+    "RSP_WIDTH": 190,
+    "TAG_WIDTH": 64
+  },
+  "physical_acceptance": false,
+  "schema": "openrx.dataset-shared.channel-statistics.v1",
+  "scope": "standalone default channel; not additional cost to sum with enclosing fabric",
+  "source_commit": "d3f11cc39a55154ed04ed1aa2a57768531c76ce0"
+}

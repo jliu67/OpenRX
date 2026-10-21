@@ -1,0 +1,11 @@
+{"schema":"openrx.dataset-shared.native.v1","profile":"cancel1","item_rows":[
+{"client":1,"namespace":1,"status":"cancelled","commits":1,"multiplies":1,"stages":0,"partial_elapsed_cycles":88,"session_phase_cycles":[0,1,87],"item_phase_cycles":[1,1,33,1,52,0,0,0,0]},
+{"client":0,"namespace":1,"status":"success","commits":3563,"multiplies":1254,"stages":8,"availability_cycles":74837,"core_cycles":74836,"executor_cycles":74699,"session_phase_cycles":[0,1,74836],"item_phase_cycles":[1,1,33,8,74707,8,71,8,0]},
+{"client":1,"namespace":2,"status":"success","commits":3563,"multiplies":1254,"stages":8,"availability_cycles":74837,"core_cycles":74836,"executor_cycles":74699,"session_phase_cycles":[0,1,74836],"item_phase_cycles":[1,1,33,8,74707,8,71,8,0]}],"mode_serial":false,"mode_stalled": true,"fixture_cases":[0,1],"fixture_item_numbers":[0,10000000],
+"successful_items":2,"error_items":0,"aborted_items":1,"returned_items":2,"commits":7127,"multiplies":2509,"stages":16,
+"sessions_used":[1,2],"batch_elapsed_cycles":149685,"client_availability_cycles":[74837,74837],"client_core_cycles":[74836,74836],"client_executor_cycles":[74699,74699],"client_held_backpressure_cycles":[4,4],
+"fetch":{"accepted":[3563,3565],"delivered":[3563,3564],"backend_requests":7128,"backend_responses":7128,"cancelled_responses":1,"orphan_responses":0,"occupied_cycles":49887,"arbitration_wait_cycles":[0,8],"high_water":1},
+"cache":{"accepted":[8,8],"delivered":[8,8],"backend_requests":16,"backend_responses":16,"cancelled_responses":0,"orphan_responses":0,"occupied_cycles":142,"arbitration_wait_cycles":[0,0],"high_water":1},
+"identity_collision_checks":{"fetch": true,"cache":false},"cancelled_identity_retained": true,"exhaustion_admission_denied":false,
+"clock_scope":"batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it","phase_scope":"pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector","counters_before_final_quiescent_reset":true,
+"quiescent_hard_reset_checked":true,"status":"pass"}

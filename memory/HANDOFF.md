@@ -1,5 +1,99 @@
 # Handoff — actual designated local execution
 
+## Latest shared-fabric recovery handoff — 2026-10-21 22:37 UTC
+
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) and
+[recovery evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+record independently accepted fresh prefix, matrix and mapping/parity stages.
+All 25 approved commands returned zero. The sole source change is the guarded
+fixed-slice response-write channel, SHA256
+`0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493`;
+complete source manifest is
+`1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea`.
+Fresh same-source binaries were compiled before matrix reuse. Prefix/matrix JSONs
+match history; mapped protocol/native JSONs match the new prefix byte-for-byte.
+
+Executions are prefix `20261021T222437Z-6a260038ca5e`, matrix
+`20261021T222845Z-8f21db168fd3` and synthesis `20261021T223347Z-bec71d887374`.
+Channel/fabric mapping completed in 8.961900/22.189259 seconds, with 6,581/14,498
+generic cells, 801/1,615 DFF cells and no latches. Diagnostic/payload counts are
+nested, not additive physical area. Preserve all source snapshots, three receipts,
+new result reviews, the original failed 40-artifact mapping and old raw flags.
+No full hash or native/cache generation was repeated.
+
+The next gate is final publication-head independent source/result review and
+applicable checks on [PR89](https://github.com/jliu67/OpenRX/pull/89), then normal
+merge eligibility under existing safeguards. PR89 remains draft at this dated
+handoff; no new-head CI success or merge is claimed. Reuse completed assets and
+evidence instead of repeating admitted stages without a specific need. Physical
+services, PPA/frequency/power, architecture selection and complete-hash alternative
+performance remain unresolved. Older partial/failure handoffs remain preserved
+history; their current-stage interpretation is superseded only by this update.
+
+
+## Latest shared-fabric mapping handoff — 2026-10-21 21:51 UTC
+
+Use the later [EXP-025 update](../experiments/EXP-025-shared-dataset-fabric.md)
+and [synthesis evidence](../docs/validation/shared-dataset-fabric-20261021/README.md).
+Approved execution `20261021T214326Z-597d5d52ca81` is terminal `PROCESS_FAILED`;
+independent result review agrees **FAIL/incomplete**. Source
+`d3f11cc39a55154ed04ed1aa2a57768531c76ce0` and retained inputs are unchanged.
+Preserve receipt SHA256
+`dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87`,
+failed fabric logs, channel netlists and all earlier evidence.
+
+Channel mapping completed in 59.309969 seconds: 6,887 generic cells, including
+801 DFF and no latches. These diagnostic/payload-inclusive cells are not physical
+area or additional cost to sum with a containing fabric. Fabric mapping returned
+137 at 120.506375 seconds without a netlist. Enforced timeout is consistent with
+the record; OOM kill is not established. Cumulative cgroup peaks were
+1,073,741,824 bytes RAM and 916,295,680 bytes swap. Both mapped compiles and both
+parity runs remain unrun, so PR89 stays draft and issue #88 incomplete.
+
+The smallest unfinished step is fabric mapping, then four mapped commands under
+applicable admission and unchanged parity gates; no rerun is claimed here.
+Reuse retained fixtures/assets; do not repeat accepted full-hash, prefix/matrix
+or native/cache generation without a specific validation need. Final publication-head
+review/checks and merge eligibility are tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89).
+This component failure neither revokes separate accepted functional/matrix evidence
+nor establishes physical/service/performance results. Earlier handoffs remain
+dated records with original bytes and scientific flags preserved.
+
+
+## Shared dataset-fabric draft handoff — 2026-10-21
+
+Use [EXP-025](../experiments/EXP-025-shared-dataset-fabric.md),
+[the contract](../rtl/dataset_shared/DATASET_SHARED.md) and
+[bounded evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) for [task #88](https://github.com/jliu67/OpenRX/issues/88).
+The unchanged 15-file executed source is bound to manifest
+`40ac32a3a0e949305c10432f4d265903d011105b1d104ad9ac2445bcd6dbd3fe`
+above main `c5d53686444d11b10edff200e63d7b725ae782b4`.
+Prefix execution `20261021T032914Z-a5cc7c4a15d0` passed 14 support units,
+directed protocol and a complete concurrent-ideal native pair. Matrix execution
+`20261021T141051Z-7fb322066922` then completed seven remaining profiles with
+the receipt-bound compiled binaries, without rebuilding or regenerating inputs.
+Separate independent bounded matrix-result review passes with no blockers. Preserve all original receipts and raw
+scientific-unverified fields; process exit and integrity alone are not acceptance.
+
+**Remaining before this task can complete:** separately scoped admission for
+generic new-fabric synthesis and mapped protocol/native parity, independent review
+of those results, final publication-head review and applicable hosted checks.
+The draft feature is partial while mapping remains unrun. Reuse the existing
+source snapshots, retained fixtures and compiled prefix; do not repeat the default
+full hash, native/cache generation, completed protocol/units or the matrix without
+a specific validation need. Fresh boards/claim, permanent key/lock, source/input,
+kernel and measured-resource checks precede any future admitted workload.
+
+Preserve client-qualified full65-bit identities, no-refund cancellation and namespace
+exhaustion, transparent malformed metadata, stable captured descriptors and genuine
+quiescent reset across both clients/fabric/providers. Batch elapsed clocks are
+separate from nested client availability, held-result, occupancy and wait ledgers.
+No physical service/PPA/frequency/power, achieved hashes/s, production engine count,
+complete-hash alternative performance or whole-machine target is accepted.
+The prerequisite PR87 review/check/merge closeout is complete; earlier dated pending
+wording remains historical. Broader #72 and scientific/physical gates stay open.
+
+
 ## Hardware-dataset service-profile handoff — 2026-10-21
 
 Use [EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) and its

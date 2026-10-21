@@ -1,5 +1,78 @@
 # Current state — actual local execution activation
 
+## Latest shared-fabric recovery acceptance — 2026-10-21 22:37 UTC
+
+The [authorized recovery](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed all 25 commands and three independent component-result reviews: fresh
+prefix, seven-profile matrix, generic mapping/mapped parity. One channel-file
+change uses guarded owner branches/fixed response slices; accepted arithmetic
+stays unchanged RTL. Fresh prefix/matrix JSONs equal historical accepted records;
+both mapped JSONs equal the fresh same-source prefix. Matrix rows repeat two
+items (17 successes/one expected error/two cancellations), not 17 distinct cases.
+
+[Recovery evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+binds exact source, receipts, reviews and retained host services. Channel/fabric
+mapping completed in 8.961900/22.189259 seconds, yielding 6,581/14,498 generic cells
+with 801/1,615 DFF cells and no latches. These diagnostic/payload-inclusive nested
+counts are not physical area and must not be summed. The old mapping timeout,
+raw scientific flags and all historical evidence remain unchanged below.
+
+Bounded component stages are accepted. PR89 remains draft for final publication-head
+review/checks, tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89); no new-head
+CI success or merge is claimed here. No full hash or native/cache generation was
+repeated. Physical services, calibrated PPA/frequency/power, architecture selection,
+complete-hash alternative performance and the whole-machine target remain open;
+issue #72 stays open. Earlier partial/failure entries below are dated history.
+
+
+## Latest shared-fabric mapping outcome — 2026-10-21 21:51 UTC
+
+The [approved synthesis/parity plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)
+ran once as `20261021T214326Z-597d5d52ca81` on unchanged PR89 source `d3f11cc`.
+Separate independent result review is **FAIL/incomplete**. The standalone channel
+mapped in 59.309969 seconds with 6,887 generic cells (801 DFF, zero latches),
+including diagnostics/payload logic. Fabric mapping returned 137 after 120.506375
+seconds without a netlist, consistent with its enforced timeout; OOM causation
+is not established. Both mapped compiles and both parity runs are unrun.
+Cumulative cgroup peaks of 1,073,741,824 bytes RAM/916,295,680 bytes swap are
+resource observations, not per-command RSS or physical chip measurements.
+
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) preserves
+the failure, raw scientific flags, channel assets and earlier accepted prefix/matrix
+results. PR89 stays draft; issue #88 remains incomplete. Final publication-head
+review/checks are tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89).
+No full hash, units/matrix or native/cache generation was repeated. Functional
+acceptance and unresolved physical/service/performance gates remain distinct.
+Earlier partial/unrun paragraphs below are dated history, preserved byte-for-byte;
+the later stage status is recorded only by this update.
+
+
+## Shared dataset-fabric bounded matrix — 2026-10-21
+
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) records the partial
+[task #88](https://github.com/jliu67/OpenRX/issues/88) experiment above merged
+PR87/main `c5d5368`. Two unchanged accepted item-session clients share separate
+one-credit round-robin instruction/cache channels, retaining full client-qualified
+tags, cancellation ownership and genuine-quiescent-hard-reset requirements.
+
+The prefix passed 14 support tests, 2,045 protocol checks and two complete native
+items. Seven additional profiles completed using the exact prefix binaries:
+serial ideal/stalled, concurrent stalled, cancel0, cancel1, malformed-fetch0 and
+exhaustion. Separate independent bounded matrix-result review passes with no blockers.
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) keeps prefix/matrix process receipts and independent
+acceptance separate. Generic synthesis and mapped parity remain **unrun**;
+publication-head review and applicable checks remain pending.
+
+Ideal serial/concurrent batch clocks are 113,953 / 61,595; stalled clocks are
+149,685 / 83,537. Client availability/held clocks and channel occupancy/wait clocks
+overlap inside batch elapsed time and must not be summed. Two clients are an
+experiment configuration, not a selected production architecture. No full hash,
+native/cache generation or physical acceptance was repeated. Retained preparation,
+modeled host services and physical/performance gates remain explicit; #72 stays open.
+PR87's final review/head/post-merge gates are complete; its older pending entries
+and all earlier failed/accepted full-hash records remain dated history.
+
+
 ## Hardware-dataset service profile — 2026-10-21
 
 [EXP-024](../experiments/EXP-024-hardware-dataset-service-profile.md) extends

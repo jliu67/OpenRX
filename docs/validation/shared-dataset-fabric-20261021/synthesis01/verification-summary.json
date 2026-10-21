@@ -1,0 +1,35 @@
+{
+  "completed_command_count": 5,
+  "cumulative_admitted_cgroup_peak_bytes": {
+    "memory": 1073741824,
+    "swap": 916295680
+  },
+  "execution_id": "20261021T214326Z-597d5d52ca81",
+  "fabric_netlist_produced": false,
+  "issue_execution_request": "https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298",
+  "mapped_native_comparison": "unrun",
+  "mapped_protocol_comparison": "unrun",
+  "planned_command_count": 9,
+  "raw_receipt_status": "PROCESS_FAILED",
+  "raw_scientific_acceptance": "unverified",
+  "receipt_artifact_count": 40,
+  "receipt_sha256": "dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87",
+  "remaining_commands": [
+    "compile-mapped-protocol",
+    "mapped-protocol",
+    "compile-mapped-native",
+    "mapped-native-concurrent-ideal"
+  ],
+  "request_sha256": "e11b0af9bbfaa412c5d08267cf9ba100ba5c9898e03bb8454167f84c212f2b3a",
+  "resource_scope": "cumulative cgroup observations, not per-command RSS or physical performance",
+  "runner_verification": {
+    "execution_id": "20261021T214326Z-597d5d52ca81",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_FAILED"
+  },
+  "schema": "openrx.dataset-shared.synthesis-verification.v1",
+  "scientific_gate_status": "FAIL/incomplete; independent result review separate; PR remains draft",
+  "source_commit": "d3f11cc39a55154ed04ed1aa2a57768531c76ce0",
+  "termination": "SIGKILL/137 at120.506375s is consistent with enforced120-second hard timeout; OOM kill not established"
+}

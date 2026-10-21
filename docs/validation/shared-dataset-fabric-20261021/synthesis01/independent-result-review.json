@@ -1,0 +1,158 @@
+{
+  "actual_command_count": 5,
+  "actual_commands_in_execution_order": [
+    {
+      "label": "tool-version-iverilog",
+      "returncode": 0
+    },
+    {
+      "label": "tool-version-vvp",
+      "returncode": 0
+    },
+    {
+      "label": "tool-version-yosys",
+      "returncode": 0
+    },
+    {
+      "label": "synth-channel-netlist",
+      "returncode": 0,
+      "wall_seconds": 59.30996872601099
+    },
+    {
+      "label": "synth-fabric-netlist",
+      "returncode": 137,
+      "wall_seconds": 120.50637502409518
+    }
+  ],
+  "admission": {
+    "cpu_quota_percent": 600,
+    "fixed_overall_deadline_promised": false,
+    "global_slots": 1,
+    "memory_max_bytes": 1073741824,
+    "per_command_timeout_seconds": 120,
+    "prelaunch_kernel_limits_safe": true,
+    "prelaunch_resource_check_safe": true,
+    "supervisor_shutdown_grace_seconds": 5,
+    "swap_max_bytes": 2147483648,
+    "tasks_max": 256,
+    "worker_count": 1
+  },
+  "cgroup_observations": {
+    "channel_complete_memory_peak_bytes": 566046720,
+    "channel_complete_swap_peak_bytes": 0,
+    "cpu_throttled_periods": 0,
+    "final_cpu_usage_usec": 91830396,
+    "final_memory_peak_bytes": 1073741824,
+    "final_swap_peak_bytes": 916295680,
+    "scope": "Cumulative observations of the admitted execution cgroup; not per-command RSS, physical chip performance, or a whole-machine power measurement."
+  },
+  "channel": {
+    "cells_by_type": {
+      "$_AND_": 3612,
+      "$_DFF_P_": 801,
+      "$_MUX_": 149,
+      "$_NOT_": 661,
+      "$_OR_": 1505,
+      "$_XOR_": 159
+    },
+    "count_caveat": "Actual generic mapped cells include diagnostic counters and payload logic; they are not physical area. Do not sum this standalone count with a later flattened whole-fabric count.",
+    "dff_cell_count": 801,
+    "explicit_abc_completed": true,
+    "generic_cell_count": 6887,
+    "latch_cell_count": 0,
+    "mapped_functional_parity_accepted": false,
+    "mapping_completed": true,
+    "netlist_json_sha256": "446da29d06fc68ee81652696e1a5bc4cfe93d40fdb0a42a0c092495f271aabc2",
+    "netlist_verilog_sha256": "1ffcdf9873aa9f3ccd1769ac5124bb26902a497bc1965ed4b4e5884ebc309e51",
+    "parameters": {
+      "REQ_WIDTH": 28,
+      "RSP_WIDTH": 190,
+      "TAG_WIDTH": 64
+    },
+    "top": "randomx_dataset_shared_channel",
+    "yosys_check_reported_problems": 0
+  },
+  "execution_id": "20261021T214326Z-597d5d52ca81",
+  "fabric": {
+    "command_timeout_seconds": 120,
+    "last_logged_pass": "PROC_DLATCH",
+    "mapping_completed": false,
+    "measured_wall_seconds": 120.50637502409518,
+    "netlist_produced": false,
+    "oom_cause_established": false,
+    "oom_evidence_caveat": "No affirmative OOM-kill finding is established by the retained evidence. Reaching the memory cap and observing signal 9 do not alone establish an OOM kill.",
+    "oom_finding": false,
+    "returncode": 137,
+    "rss_caveat": "The 2048 KiB maximum RSS belongs to the timed timeout wrapper observation and is not a valid measurement of Yosys RSS.",
+    "termination_classification": "Consistent with the enforced 120-second GNU timeout using signal KILL; no completed fabric result exists.",
+    "time_wrapper_elapsed": "2:00.09",
+    "time_wrapper_maximum_rss_kib": 2048,
+    "time_wrapper_report": "Command terminated by signal 9",
+    "timeout_or_signal_exit": true
+  },
+  "full_stage_accepted": false,
+  "independent_classification": "FAIL/incomplete",
+  "integrity": {
+    "abc_sha256": "9f8539df83c751324a16ee98878b0e7e200a7ed4916d5270da3d9b2390c5ffc7",
+    "actual_abc_independently_verified_live": true,
+    "fresh_preflight_file_occurrences": 266,
+    "fresh_preflight_input_roots": 118,
+    "icarus_helper_files_independently_verified_live": 37,
+    "prefix_receipt_sha256": "3325f8490adb1d5fb7361a640983ff2b9006822943d757b29d2f1b1489816007",
+    "prefix_root_verify_sha256": "c621288c7c02a0e825850281f5e39aba961b3906f30208e66b244e66f11c77fc",
+    "preflight_count_provenance": "Independent preflight report supplied by the coordinator; result reviewer directly verified the final receipt artifacts and the source/tool/helper subsets listed above.",
+    "receipt_bound_artifact_mismatches": 0,
+    "receipt_bound_artifacts_independently_verified": 40,
+    "recorded_fixture_before_after_equal": true,
+    "recorded_selected_fixture_count": 95,
+    "retained_prefix_native_json_sha256": "5c0968622dd8a85ff9da5aa47639ea4dbcf9e49c3c49b04024ce1a2f470237a1",
+    "retained_prefix_protocol_json_sha256": "c30686c0ecd7543d7a430b1b1b44ca07eb64313c87be94f3cbdf727e15a5a2c6",
+    "review_limits": "Historical large traces were not rescanned, and the 256 MiB cache was not independently rehashed again by this result reviewer. The receipt-bound worker before/after fixture maps and separate fresh preflight were reused. Dynamic system libraries are not claimed fully hermetic.",
+    "runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+    "simcells_sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+    "source_before_after_equal": true,
+    "source_files_independently_verified_live": 15,
+    "source_manifest_sha256": "40ac32a3a0e949305c10432f4d265903d011105b1d104ad9ac2445bcd6dbd3fe",
+    "synthesis_helpers_before_after_equal": true,
+    "tool_executables_independently_verified_live": 6,
+    "tools_before_after_equal": true,
+    "yosys_helper_files_independently_verified_live": 99,
+    "yosys_simcells_independently_verified_live": true
+  },
+  "mapped_parity": {
+    "byte_exact_acceptance": false,
+    "native_concurrent_ideal": "unrun",
+    "protocol": "unrun"
+  },
+  "merge_eligible_from_this_result": false,
+  "no_native_or_cache_generation": true,
+  "no_new_full_hash": true,
+  "no_unit_or_matrix_rerun": true,
+  "physical_area_accepted": false,
+  "physical_frequency_accepted": false,
+  "physical_power_accepted": false,
+  "planned_command_count": 9,
+  "prepared_request_sha256": "e11b0af9bbfaa412c5d08267cf9ba100ba5c9898e03bb8454167f84c212f2b3a",
+  "preservation": "Completed channel assets, failed fabric logs, terminal receipt, original sources and earlier accepted evidence are preserved; raw scientific flags are unchanged.",
+  "process_returncode": 1,
+  "process_status": "PROCESS_FAILED",
+  "public_request": "https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298",
+  "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_receipt_scientific_acceptance": "unverified",
+  "receipt_sha256": "dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87",
+  "reviewed_at_utc": "2026-10-21T21:51:01.736512+00:00",
+  "reviewer": "independent read-only result reviewer",
+  "schema": "openrx.dataset-shared.independent-result-review.v1",
+  "scope": "Generic mapping of only the new default shared-service channel and flattened fabric. Accepted arithmetic remains RTL. No physical acceptance.",
+  "smallest_uncompleted_step": "Fabric mapping, followed by the four unrun mapped compile/parity commands; no automatic rerun was performed.",
+  "source_commit": "d3f11cc39a55154ed04ed1aa2a57768531c76ce0",
+  "source_tree": "b577a14f5dec92b95457768e2098d418532c7c4a",
+  "target_performance_accepted": false,
+  "unrun_commands": [
+    "compile-mapped-protocol",
+    "mapped-protocol",
+    "compile-mapped-native",
+    "mapped-native-concurrent-ideal"
+  ],
+  "whole_asic_feasibility_accepted": false
+}

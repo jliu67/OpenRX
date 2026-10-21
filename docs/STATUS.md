@@ -1,5 +1,78 @@
 # Verified project status — 2026-10-20
 
+## Shared-fabric recovery component validation accepted — 2026-10-21 22:37 UTC
+
+The [approved recovery plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed all 25 commands across fresh prefix, seven-profile matrix and generic
+mapping/parity stages. Each stage passed separate independent result review.
+The sole source change replaces variable-indexed response writes with guarded
+owner branches and fixed slices; accepted arithmetic remains unchanged RTL.
+Fresh prefix/matrix JSONs equal their historical accepted records byte-for-byte;
+both mapped JSONs equal the new same-source prefix.
+
+[Recovery evidence](validation/shared-dataset-fabric-20261021/README.md) binds the
+source and all three stages. Channel mapping completed in 8.961900 seconds with
+6,581 generic cells (801 DFF, no latches); flattened fabric mapping completed in
+22.189259 seconds with 14,498 cells (1,615 DFF, no latches). These diagnostics/payload
+counts are not physical area, and the channel is contained in the fabric count.
+The prior timeout and all original evidence/flags remain intact below. This
+completes the bounded component-validation stages; PR89 remains draft for final
+publication-head review/checks, tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89).
+No new-head CI success or merge is claimed here. Physical services, calibrated
+PPA/frequency/power, architecture selection, complete-hash alternatives and the
+whole-machine target remain open; issue #72 stays open.
+
+
+## Generic fabric mapping stopped at its bound — 2026-10-21 21:51 UTC
+
+The separately approved [issue #88 plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)
+ran as `20261021T214326Z-597d5d52ca81` on unchanged PR89 source `d3f11cc`.
+Independent result review classifies this stage **FAIL/incomplete**. The standalone
+channel mapped through explicit ABC in 59.309969 seconds: 6,887 generic cells,
+including 801 DFF cells and zero latch cells. Flattened fabric mapping returned
+137 after 120.506375 seconds without a fabric netlist. This is consistent with
+the enforced 120-second timeout; an OOM kill is not established. Both mapped
+compiles and both parity runs remain **unrun**.
+
+[Evidence and review](validation/shared-dataset-fabric-20261021/README.md) preserve
+the failure separately from accepted prefix/matrix results and raw scientific
+flags. Generic counts include diagnostic counters/payload logic, are not physical
+area, and must not be added to a containing fabric count. PR89 remains draft;
+issue #88 is incomplete. Final publication-head review/checks are tracked on
+[PR89](https://github.com/jliu67/OpenRX/pull/89). No physical services,
+PPA/frequency/power, complete-hash alternative performance or target feasibility
+is established. Earlier partial/unrun statements below remain dated history;
+this update changes only the interpretation of that later stage status.
+
+
+## Shared dataset-fabric RTL/native matrix — 2026-10-21
+
+[Task #88](https://github.com/jliu67/OpenRX/issues/88) and
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) add a bounded two-client
+finite shared fetch/cache fabric above unchanged accepted item-session cores.
+The prefix passed 14 support tests, 2,045 protocol checks and a reference-correct
+native pair. The separately admitted seven-profile matrix completed with exact
+compiled-prefix binary reuse and no compilation, unit, native/cache-generation,
+synthesis or full-hash rerun. Separate independent bounded matrix-result review passes with no blockers.
+[Evidence](validation/shared-dataset-fabric-20261021/README.md) retains the distinct
+prefix/matrix receipts, source bindings and complete overlapping clock ledgers.
+
+Controlled ideal serial/concurrent batches measure 113,953 / 61,595 modeled clocks;
+stalled batches measure 149,685 / 83,537. Cancellation drains, malformed metadata
+and reduced namespace exhaustion have the recorded expected component outcomes.
+These measurements do not predict complete-hash throughput. Generic synthesis
+and mapped parity remain **unrun**; issue #88 and its feature remain incomplete.
+Publication-head review and applicable hosted checks are separate draft-PR gates.
+
+The prerequisite [PR87](https://github.com/jliu67/OpenRX/pull/87) merged at
+`c5d53686444d11b10edff200e63d7b725ae782b4` after independent exact-head review,
+four head checks and two post-merge checks. Earlier dated pending statements
+retain their original publication stage. Completed migration and accepted default
+functional full-hash evidence are unchanged. Retained preparation/modeled host
+services, physical timing/PPA/power, architecture selection and whole-machine
+performance gates remain open; broader task #72 stays open.
+
+
 ## Accepted default hardware-dataset result
 
 One default 8×2,048 RandomX v2 functional hardware-dataset hash is

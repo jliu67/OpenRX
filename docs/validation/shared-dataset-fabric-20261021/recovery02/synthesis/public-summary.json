@@ -1,0 +1,306 @@
+{
+  "achieved_hashes_per_second": null,
+  "classification": "bounded modeled component experiment; independent acceptance remains separate",
+  "command_timeout_seconds": 120,
+  "commands": [
+    {
+      "label": "compile-mapped-native",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.9190660880412906
+    },
+    {
+      "label": "compile-mapped-protocol",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.2654660679399967
+    },
+    {
+      "label": "mapped-native-concurrent-ideal",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 51.13949538883753
+    },
+    {
+      "label": "mapped-protocol",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.2150921190623194
+    },
+    {
+      "label": "synth-channel-netlist",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 8.96189953177236
+    },
+    {
+      "label": "synth-fabric-netlist",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 22.189259118866175
+    },
+    {
+      "label": "tool-version-iverilog",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.016038520028814673
+    },
+    {
+      "label": "tool-version-vvp",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.007710216101258993
+    },
+    {
+      "label": "tool-version-yosys",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "wall_seconds": 0.06408775295130908
+    }
+  ],
+  "demonstrated_asic_feasibility": false,
+  "fixture_receipt_sha256": "f3ced2d4f48eaa7c49359cea893c65666377c7f0a84386c035736357bfb59ad8",
+  "fixtures_unchanged": true,
+  "mapped_native": {
+    "aborted_items": 0,
+    "batch_elapsed_cycles": 61595,
+    "cache": {
+      "accepted": [
+        8,
+        8
+      ],
+      "arbitration_wait_cycles": [
+        0,
+        0
+      ],
+      "backend_requests": 16,
+      "backend_responses": 16,
+      "cancelled_responses": 0,
+      "delivered": [
+        8,
+        8
+      ],
+      "high_water": 1,
+      "occupied_cycles": 32,
+      "orphan_responses": 0
+    },
+    "cancelled_identity_retained": false,
+    "client_availability_cycles": [
+      61587,
+      61590
+    ],
+    "client_core_cycles": [
+      61586,
+      61589
+    ],
+    "client_executor_cycles": [
+      61504,
+      61507
+    ],
+    "client_held_backpressure_cycles": [
+      4,
+      4
+    ],
+    "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+    "commits": 7126,
+    "counters_before_final_quiescent_reset": true,
+    "error_items": 0,
+    "exhaustion_admission_denied": false,
+    "fetch": {
+      "accepted": [
+        3563,
+        3563
+      ],
+      "arbitration_wait_cycles": [
+        4616,
+        4619
+      ],
+      "backend_requests": 7126,
+      "backend_responses": 7126,
+      "cancelled_responses": 0,
+      "delivered": [
+        3563,
+        3563
+      ],
+      "high_water": 1,
+      "occupied_cycles": 14252,
+      "orphan_responses": 0
+    },
+    "fixture_cases": [
+      0,
+      1
+    ],
+    "fixture_item_numbers": [
+      0,
+      10000000
+    ],
+    "identity_collision_checks": {
+      "cache": true,
+      "fetch": true
+    },
+    "item_rows": [
+      {
+        "availability_cycles": 61587,
+        "client": 0,
+        "commits": 3563,
+        "core_cycles": 61586,
+        "executor_cycles": 61504,
+        "item_phase_cycles": [
+          1,
+          1,
+          33,
+          8,
+          61512,
+          8,
+          16,
+          8,
+          0
+        ],
+        "multiplies": 1254,
+        "namespace": 1,
+        "session_phase_cycles": [
+          0,
+          1,
+          61586
+        ],
+        "stages": 8,
+        "status": "success"
+      },
+      {
+        "availability_cycles": 61590,
+        "client": 1,
+        "commits": 3563,
+        "core_cycles": 61589,
+        "executor_cycles": 61507,
+        "item_phase_cycles": [
+          1,
+          1,
+          33,
+          8,
+          61515,
+          8,
+          16,
+          8,
+          0
+        ],
+        "multiplies": 1254,
+        "namespace": 1,
+        "session_phase_cycles": [
+          0,
+          1,
+          61589
+        ],
+        "stages": 8,
+        "status": "success"
+      }
+    ],
+    "mode_serial": false,
+    "mode_stalled": false,
+    "multiplies": 2508,
+    "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+    "profile": "concurrent-ideal",
+    "quiescent_hard_reset_checked": true,
+    "returned_items": 2,
+    "schema": "openrx.dataset-shared.native.v1",
+    "sessions_used": [
+      1,
+      1
+    ],
+    "stages": 16,
+    "status": "pass",
+    "successful_items": 2
+  },
+  "mapped_parity_byte_exact": {
+    "native_concurrent_ideal": true,
+    "protocol": true
+  },
+  "mapped_protocol": {
+    "accepted_count": [
+      12,
+      11
+    ],
+    "arbitration_wait_cycles": [
+      21,
+      29
+    ],
+    "backend_request_count": 23,
+    "backend_response_count": 27,
+    "cancelled_response_count": 3,
+    "checks": 2045,
+    "counter_closure_checks": 91,
+    "counter_snapshot_scope": "before_final_quiescent_reset",
+    "cycles": 91,
+    "delivered_count": [
+      10,
+      10
+    ],
+    "descriptor_hold_cycles": 3,
+    "early_reply_hold_cycles": 3,
+    "fairness_pairs": 8,
+    "foreign_owner_packets": 2,
+    "held_cancel_cases": 1,
+    "high_water_mark": 1,
+    "identical_tag_pairs": 8,
+    "idle_orphan_packets": 1,
+    "issued_cancel_cases": 1,
+    "malformed_payload_forwarded": 1,
+    "nonowner_cancel_cases": 1,
+    "occupied_cycles": 63,
+    "orphan_response_count": 4,
+    "other_client_progress_cases": 1,
+    "queued_cancel_cases": 1,
+    "quiescent_reset_cases": 1,
+    "response_hold_cycles": 7,
+    "same_edge_request_response_cases": 2,
+    "schema": "openrx.shared-dataset-channel-protocol.v1",
+    "status": "pass",
+    "wrong_low_tag_packets": 1
+  },
+  "mapping": {
+    "channel": {
+      "cells_by_type": {
+        "$_AND_": 3414,
+        "$_DFF_P_": 801,
+        "$_MUX_": 152,
+        "$_NOT_": 655,
+        "$_OR_": 1405,
+        "$_XOR_": 154
+      },
+      "flop_cells": 801,
+      "generic_cells": 6581,
+      "latch_cells": 0,
+      "physical_ppa_or_frequency_accepted": false,
+      "scope": "new fabric control only; accepted arithmetic was not synthesized",
+      "top": "randomx_dataset_shared_channel"
+    },
+    "fabric": {
+      "cells_by_type": {
+        "$_AND_": 7837,
+        "$_DFF_P_": 1615,
+        "$_MUX_": 348,
+        "$_NOT_": 1356,
+        "$_OR_": 3047,
+        "$_XOR_": 295
+      },
+      "flop_cells": 1615,
+      "generic_cells": 14498,
+      "latch_cells": 0,
+      "physical_ppa_or_frequency_accepted": false,
+      "scope": "new fabric control only; accepted arithmetic was not synthesized",
+      "top": "randomx_dataset_shared_fabric"
+    }
+  },
+  "mapping_scope": "fabric/control only; unchanged accepted arithmetic remains RTL",
+  "native": {},
+  "native_reference_or_cache_regenerated": false,
+  "new_full_hash_executed": false,
+  "phase": "synthesis",
+  "physical_frequency_hz": null,
+  "physical_wall_power_w": null,
+  "schema": "openrx.dataset-shared.validation.v1",
+  "scientific_acceptance": "unverified_pending_independent_review",
+  "source_unchanged": true,
+  "status": "pass_synthesis",
+  "tool_scope": "bound executables, selected Icarus compiler/VPI helpers and synthesis data; system dynamic libraries are not fully hermetic",
+  "workers_requested": 1
+}
