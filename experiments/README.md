@@ -1,5 +1,20 @@
 # Experiments
 
+## Shared-fabric recovery component stages accepted — 2026-10-21 22:37 UTC
+
+[EXP-025](EXP-025-shared-dataset-fabric.md) now records the independently accepted
+fresh prefix, seven-profile matrix and generic mapping/mapped-parity recovery:
+25 commands, one fixed-slice channel change, accepted arithmetic unchanged.
+Fresh functional JSONs equal history; mapped JSONs equal the new same-source
+prefix. Channel/fabric generic counts are 6,581/14,498 (801/1,615 DFF, no latches),
+including diagnostics/payload logic in nested scopes; they are not physical area.
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) preserves the
+original timeout and all earlier records. PR89 remains draft for final head review
+and applicable checks; no new-head CI success or merge is claimed. No full hash
+was repeated; physical/services/performance and broader issue #72 gates stay open.
+Earlier partial/failure summaries below are preserved as dated history.
+
+
 ## Shared-fabric mapping bound reached — 2026-10-21 21:51 UTC
 
 The later [EXP-025 update](EXP-025-shared-dataset-fabric.md) records one approved

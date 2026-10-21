@@ -1,5 +1,30 @@
 # Current state — actual local execution activation
 
+## Latest shared-fabric recovery acceptance — 2026-10-21 22:37 UTC
+
+The [authorized recovery](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed all 25 commands and three independent component-result reviews: fresh
+prefix, seven-profile matrix, generic mapping/mapped parity. One channel-file
+change uses guarded owner branches/fixed response slices; accepted arithmetic
+stays unchanged RTL. Fresh prefix/matrix JSONs equal historical accepted records;
+both mapped JSONs equal the fresh same-source prefix. Matrix rows repeat two
+items (17 successes/one expected error/two cancellations), not 17 distinct cases.
+
+[Recovery evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+binds exact source, receipts, reviews and retained host services. Channel/fabric
+mapping completed in 8.961900/22.189259 seconds, yielding 6,581/14,498 generic cells
+with 801/1,615 DFF cells and no latches. These diagnostic/payload-inclusive nested
+counts are not physical area and must not be summed. The old mapping timeout,
+raw scientific flags and all historical evidence remain unchanged below.
+
+Bounded component stages are accepted. PR89 remains draft for final publication-head
+review/checks, tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89); no new-head
+CI success or merge is claimed here. No full hash or native/cache generation was
+repeated. Physical services, calibrated PPA/frequency/power, architecture selection,
+complete-hash alternative performance and the whole-machine target remain open;
+issue #72 stays open. Earlier partial/failure entries below are dated history.
+
+
 ## Latest shared-fabric mapping outcome — 2026-10-21 21:51 UTC
 
 The [approved synthesis/parity plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)

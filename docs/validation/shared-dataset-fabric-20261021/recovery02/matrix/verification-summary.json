@@ -1,0 +1,59 @@
+{
+  "actual_commands": 9,
+  "actual_kernel_safe": true,
+  "all_command_returncodes_zero": true,
+  "changed_channel_sha256": "0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493",
+  "command_wall_seconds_sum": 73.37518172641285,
+  "cumulative_cgroup_peak_bytes": {
+    "memory": 44003328,
+    "swap": 0
+  },
+  "execution_id": "20261021T222845Z-8f21db168fd3",
+  "historical_json_comparisons": {
+    "native-cancel0.json": {
+      "byte_equal_historical": true,
+      "sha256": "c8964789ee9ac401c4dd4452cbfd0c6e71d3e8928ea0c7d33bb84c1e519d8637"
+    },
+    "native-cancel1.json": {
+      "byte_equal_historical": true,
+      "sha256": "3d8620223e5255b1e9d514b1f3bb8a63f5b036dee11848a43fac39a95818859e"
+    },
+    "native-concurrent-stalled.json": {
+      "byte_equal_historical": true,
+      "sha256": "f28d07adc6d719292bec474a68935c1151149a824ef5101c53aac7ab34a98017"
+    },
+    "native-exhaustion.json": {
+      "byte_equal_historical": true,
+      "sha256": "157e48b5bef99006cf3718b24ef3bc608d2e7681cbfcfad7e48106832e47f8ac"
+    },
+    "native-malformed-fetch0.json": {
+      "byte_equal_historical": true,
+      "sha256": "5dce76e4b721b2caa75c14cb404c901898a5517f14cc9503b9ed513c6417deb4"
+    },
+    "native-serial-ideal.json": {
+      "byte_equal_historical": true,
+      "sha256": "acd0b8813887c3034987995cbd974d6a1066ab078a38fdec4956dff22079685b"
+    },
+    "native-serial-stalled.json": {
+      "byte_equal_historical": true,
+      "sha256": "edb01be7236d0c50676fed11af6d852e99b58e8003628e97550fc185f77b5521"
+    }
+  },
+  "independent_acceptance": "PASS_MATRIX_ONLY",
+  "independent_review_sha256": "896d0425740209221fa021f2bf9c053deb44a8134abf2a8e4dd5e12e314acc61",
+  "new_full_hash": false,
+  "phase": "matrix",
+  "physical_acceptance": false,
+  "production_enforced": true,
+  "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_scientific_acceptance": "unverified",
+  "raw_status": "PROCESS_EXITED",
+  "receipt_artifact_count": 65,
+  "receipt_sha256": "58e00c93f44d4d041cf638351a60048eb9352affedbca5aad1a4d8040b785762",
+  "request_sha256": "d3530bc279edf51d3c62c3f5a8d5fea77eb37646a8a577118b79f473f7090881",
+  "resource_scope": "cumulative observed admitted cgroup; not per-command RSS or physical performance",
+  "root_integrity_verified": true,
+  "root_verify_sha256": "3ed6f6e21661b9a0d1f67095c140d663b75bfbc66534d70af97f9c3152b5ab0a",
+  "schema": "openrx.dataset-shared.recovery-verification.v1",
+  "source_manifest_sha256": "1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea"
+}

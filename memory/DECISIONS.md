@@ -513,3 +513,23 @@ remain intact. Physical service capacity, calibrated PPA, architecture selection
 and complete-hash alternative performance stay open; scientific criteria and all
 historical records are unchanged.
 
+
+## Accept bounded fixed-slice recovery; retain remaining gates — 2026-10-21 22:37 UTC
+
+Accept the separately reviewed fresh prefix, seven-profile matrix and generic
+mapping/mapped-parity results for the exact recovery source bound in
+[recovery evidence](../docs/validation/shared-dataset-fabric-20261021/README.md).
+Changing channel response writes required fresh prefix binaries; historical reuse
+gates were not relaxed. Exact JSON parity and unchanged accepted arithmetic/
+scientific criteria remain required. Preserve the earlier timed-out mapping,
+completed channel assets, original raw flags and all failed/accepted records.
+
+Standalone channel and flattened fabric counts include diagnostic counters/payload
+logic and are nested scopes; never sum them or treat them as physical area,
+frequency, power or complete-hash performance. These independent component reviews
+do not replace final published-head source/result review and applicable checks.
+PR89 remains draft for those gates; no new-head CI success or merge is claimed.
+Physical services, calibrated PPA, architecture selection, complete-hash alternatives
+and the whole-machine target remain open. No full hash or native/cache generation
+was repeated by this recovery.
+

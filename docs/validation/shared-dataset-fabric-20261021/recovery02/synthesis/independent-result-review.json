@@ -1,0 +1,434 @@
+{
+  "accepted_scope": "Completed bounded generic mapping and mapped protocol/native parity for the exact recovery source, following separately accepted fresh prefix and seven-profile matrix. This review completes those component validation stages only.",
+  "base_source_commit": "d3f11cc39a55154ed04ed1aa2a57768531c76ce0",
+  "blocking_findings": [],
+  "command_wall_seconds_sum": 83.77811480360106,
+  "commands": [
+    {
+      "label": "compile-mapped-native",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.9190660880412906
+    },
+    {
+      "label": "compile-mapped-protocol",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.2654660679399967
+    },
+    {
+      "label": "mapped-native-concurrent-ideal",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 51.13949538883753
+    },
+    {
+      "label": "mapped-protocol",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.2150921190623194
+    },
+    {
+      "label": "synth-channel-netlist",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 8.96189953177236
+    },
+    {
+      "label": "synth-fabric-netlist",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 22.189259118866175
+    },
+    {
+      "label": "tool-version-iverilog",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.016038520028814673
+    },
+    {
+      "label": "tool-version-vvp",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.007710216101258993
+    },
+    {
+      "label": "tool-version-yosys",
+      "returncode": 0,
+      "timeout_or_signal_exit": false,
+      "timeout_seconds": 120,
+      "wall_seconds": 0.06408775295130908
+    }
+  ],
+  "execution_id": "20261021T223347Z-bec71d887374",
+  "immutable_runner_verification": {
+    "execution_id": "20261021T223347Z-bec71d887374",
+    "integrity_verified": true,
+    "scientific_acceptance": "unverified",
+    "status": "PROCESS_EXITED"
+  },
+  "immutable_runner_verification_sha256": "6913c5d7f064e86e80ff66c51567af695603245f76833eebd0b9452b05669c8f",
+  "independent_classification": "PASS_SYNTHESIS_AND_MAPPED_PARITY_ONLY",
+  "integrity": {
+    "actual_abc_sha256": "9f8539df83c751324a16ee98878b0e7e200a7ed4916d5270da3d9b2390c5ffc7",
+    "artifact_mismatches": 0,
+    "bound_file_occurrences": 268,
+    "bound_input_roots": 120,
+    "cache_rehash_limit": "Only the 256 MiB cache was skipped for an additional reviewer rehash; its pinned identity, fresh preflight and unchanged worker before/after fixture maps are retained. No historical large traces were rescanned.",
+    "fixture_before_after_equal": true,
+    "icarus_helper_files_bound": 37,
+    "live_input_files_independently_size_and_sha256_verified": 267,
+    "prepared_and_actual_normalized_input_bindings_match": true,
+    "receipt_bound_artifacts_independently_size_and_sha256_verified": 67,
+    "request_payload_argv_equals_actual_manifest_template": true,
+    "runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+    "simcells_sha256": "f356815daf5dd8d8aaaac69b8ab3ad5b5525142acbdc0dbf7e50225e09424c51",
+    "source_before_after_matches_fresh_prefix_and_matrix": true,
+    "synthesis_helpers_before_after_equal": true,
+    "system_dynamic_libraries_fully_hermetic_claimed": false,
+    "tools_before_after_equal": true,
+    "yosys_helper_files_bound": 99
+  },
+  "mapped_native": {
+    "byte_exact_to_new_same_source_prefix": true,
+    "client_identity_cache_payload_and_actual_dut_indexed_cache_read_assertions_executed": true,
+    "compiled_binary_sha256": "feb7268e70e9ff2eb56a5a1f2fb28eba8d28a50d2cd309c53d2b6cc63dd948f9",
+    "fetch_cache_single_credit_ledgers_and_work_totals_independently_verified": true,
+    "json_sha256": "5c0968622dd8a85ff9da5aa47639ea4dbcf9e49c3c49b04024ce1a2f470237a1",
+    "nested_phase_vectors_not_added_to_batch_elapsed": true,
+    "per_client_session_item_vectors_and_core_plus_one_availability_closure_independently_verified": true,
+    "per_instruction_full_state_pc_opcode_and_stage_cache_final_state_assertions_executed": true,
+    "result": {
+      "aborted_items": 0,
+      "batch_elapsed_cycles": 61595,
+      "cache": {
+        "accepted": [
+          8,
+          8
+        ],
+        "arbitration_wait_cycles": [
+          0,
+          0
+        ],
+        "backend_requests": 16,
+        "backend_responses": 16,
+        "cancelled_responses": 0,
+        "delivered": [
+          8,
+          8
+        ],
+        "high_water": 1,
+        "occupied_cycles": 32,
+        "orphan_responses": 0
+      },
+      "cancelled_identity_retained": false,
+      "client_availability_cycles": [
+        61587,
+        61590
+      ],
+      "client_core_cycles": [
+        61586,
+        61589
+      ],
+      "client_executor_cycles": [
+        61504,
+        61507
+      ],
+      "client_held_backpressure_cycles": [
+        4,
+        4
+      ],
+      "clock_scope": "batch elapsed excludes first acceptance edge; client availability and phase vectors are nested and must not be added to it",
+      "commits": 7126,
+      "counters_before_final_quiescent_reset": true,
+      "error_items": 0,
+      "exhaustion_admission_denied": false,
+      "fetch": {
+        "accepted": [
+          3563,
+          3563
+        ],
+        "arbitration_wait_cycles": [
+          4616,
+          4619
+        ],
+        "backend_requests": 7126,
+        "backend_responses": 7126,
+        "cancelled_responses": 0,
+        "delivered": [
+          3563,
+          3563
+        ],
+        "high_water": 1,
+        "occupied_cycles": 14252,
+        "orphan_responses": 0
+      },
+      "fixture_cases": [
+        0,
+        1
+      ],
+      "fixture_item_numbers": [
+        0,
+        10000000
+      ],
+      "identity_collision_checks": {
+        "cache": true,
+        "fetch": true
+      },
+      "item_rows": [
+        {
+          "availability_cycles": 61587,
+          "client": 0,
+          "commits": 3563,
+          "core_cycles": 61586,
+          "executor_cycles": 61504,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61512,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61586
+          ],
+          "stages": 8,
+          "status": "success"
+        },
+        {
+          "availability_cycles": 61590,
+          "client": 1,
+          "commits": 3563,
+          "core_cycles": 61589,
+          "executor_cycles": 61507,
+          "item_phase_cycles": [
+            1,
+            1,
+            33,
+            8,
+            61515,
+            8,
+            16,
+            8,
+            0
+          ],
+          "multiplies": 1254,
+          "namespace": 1,
+          "session_phase_cycles": [
+            0,
+            1,
+            61589
+          ],
+          "stages": 8,
+          "status": "success"
+        }
+      ],
+      "mode_serial": false,
+      "mode_stalled": false,
+      "multiplies": 2508,
+      "phase_scope": "pre-edge phases are sampled only after descriptor acceptance while the client is owned, stopping at post-edge result availability; session[3] and child item[9] sum to session availability including adapter launch, so child IDLE may include LAUNCH; core availability is separately one clock shorter; these source-specific bins are not the old full-hash observer vector",
+      "profile": "concurrent-ideal",
+      "quiescent_hard_reset_checked": true,
+      "returned_items": 2,
+      "schema": "openrx.dataset-shared.native.v1",
+      "sessions_used": [
+        1,
+        1
+      ],
+      "stages": 16,
+      "status": "pass",
+      "successful_items": 2
+    }
+  },
+  "mapped_protocol": {
+    "byte_exact_to_new_same_source_prefix": true,
+    "compiled_binary_sha256": "eabb096e5959d9ca206ebeef45487aa9375822e11f242dabb8b305d31bc7b218",
+    "json_sha256": "c30686c0ecd7543d7a430b1b1b44ca07eb64313c87be94f3cbdf727e15a5a2c6",
+    "ownership_cancel_orphan_counter_closure_independently_verified": true,
+    "result": {
+      "accepted_count": [
+        12,
+        11
+      ],
+      "arbitration_wait_cycles": [
+        21,
+        29
+      ],
+      "backend_request_count": 23,
+      "backend_response_count": 27,
+      "cancelled_response_count": 3,
+      "checks": 2045,
+      "counter_closure_checks": 91,
+      "counter_snapshot_scope": "before_final_quiescent_reset",
+      "cycles": 91,
+      "delivered_count": [
+        10,
+        10
+      ],
+      "descriptor_hold_cycles": 3,
+      "early_reply_hold_cycles": 3,
+      "fairness_pairs": 8,
+      "foreign_owner_packets": 2,
+      "held_cancel_cases": 1,
+      "high_water_mark": 1,
+      "identical_tag_pairs": 8,
+      "idle_orphan_packets": 1,
+      "issued_cancel_cases": 1,
+      "malformed_payload_forwarded": 1,
+      "nonowner_cancel_cases": 1,
+      "occupied_cycles": 63,
+      "orphan_response_count": 4,
+      "other_client_progress_cases": 1,
+      "queued_cancel_cases": 1,
+      "quiescent_reset_cases": 1,
+      "response_hold_cycles": 7,
+      "same_edge_request_response_cases": 2,
+      "schema": "openrx.shared-dataset-channel-protocol.v1",
+      "status": "pass",
+      "wrong_low_tag_packets": 1
+    }
+  },
+  "mapping_scope": {
+    "accepted_multiplier_superscalar_dataset_and_session_arithmetic_remains_rtl": true,
+    "cache_channel_parameters": {
+      "REQ_WIDTH": 41,
+      "RSP_WIDTH": 554,
+      "TAG_WIDTH": 64
+    },
+    "channel_parameters": {
+      "REQ_WIDTH": 28,
+      "RSP_WIDTH": 190,
+      "TAG_WIDTH": 64
+    },
+    "counts_caveat": "Actual generic-cell instances include diagnostic counters and payload logic. The standalone channel is contained within the whole fabric, so these two counts must not be summed. Generic mapping is not technology-calibrated physical area, timing, power or PPA.",
+    "fabric_contains_fetch_and_cache_channels": true,
+    "mapped_native_compile_uses_fabric_netlist_simcells_and_accepted_arithmetic_rtl": true,
+    "mapped_protocol_compile_uses_channel_netlist_and_simcells": true,
+    "only_new_channel_and_fabric_sent_to_yosys_and_explicit_abc": true
+  },
+  "merge_eligible_from_this_review": false,
+  "native_reference_or_cache_regenerated": false,
+  "netlists": {
+    "channel": {
+      "cells_by_type": {
+        "$_AND_": 3414,
+        "$_DFF_P_": 801,
+        "$_MUX_": 152,
+        "$_NOT_": 655,
+        "$_OR_": 1405,
+        "$_XOR_": 154
+      },
+      "check_assert_reported_problems": 0,
+      "dff_cells": 801,
+      "explicit_abc_mapping_completed": true,
+      "generic_cells": 6581,
+      "latch_cells": 0,
+      "matches_driver_mapping_stats": true,
+      "netlist_json_sha256": "4804800cac92f0a8c16935106dd9b89c34678607a9fff5c8071dc045561f7da9",
+      "netlist_verilog_sha256": "8f08700d2f7c517c7e00ea1d4efb983859c4e034a5e2123530a134a979298528",
+      "only_declared_flattened_top_and_generic_cells": true,
+      "top": "randomx_dataset_shared_channel"
+    },
+    "fabric": {
+      "cells_by_type": {
+        "$_AND_": 7837,
+        "$_DFF_P_": 1615,
+        "$_MUX_": 348,
+        "$_NOT_": 1356,
+        "$_OR_": 3047,
+        "$_XOR_": 295
+      },
+      "check_assert_reported_problems": 0,
+      "dff_cells": 1615,
+      "explicit_abc_mapping_completed": true,
+      "generic_cells": 14498,
+      "latch_cells": 0,
+      "matches_driver_mapping_stats": true,
+      "netlist_json_sha256": "afa314816171ed88f6a51293976fa7948f59e1fffcadd7e0aec9d5228f940bfe",
+      "netlist_verilog_sha256": "e6d74aec990c2e851fc84a024ee3731db696ab97d0514568dba103405b4c5289",
+      "only_declared_flattened_top_and_generic_cells": true,
+      "top": "randomx_dataset_shared_fabric"
+    }
+  },
+  "new_full_hash_executed": false,
+  "no_unit_or_matrix_rerun_in_synthesis": true,
+  "original_failure_preservation": {
+    "all_40_original_artifacts_reverified_intact": true,
+    "execution_id": "20261021T214326Z-597d5d52ca81",
+    "interpretation": "Successful recovery does not overwrite, relabel or erase the original bounded mapping failure.",
+    "original_artifact_total_bytes": 5262104,
+    "raw_scientific_acceptance_retained": "unverified",
+    "raw_status_retained": "PROCESS_FAILED",
+    "receipt_sha256": "dcb150f87a4827201e82269c81afebfbe8b2aaf81b09759c0f669cd5ff0afd87"
+  },
+  "physical_area_frequency_power_or_target_performance_accepted": false,
+  "planned_and_actual_command_count": 9,
+  "process_returncode": 0,
+  "process_status": "PROCESS_EXITED",
+  "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_driver_status": "pass_synthesis",
+  "raw_receipt_scientific_acceptance": "unverified",
+  "receipt_sha256": "2974bca4cf293b1aa23fc6f8d6486f08e3517e38c49afc3aff550a0e34fa41d0",
+  "remaining_gates": [
+    "Publish exact tested source and bounded evidence, then independently review actual final head and applicable checks before merge",
+    "Physical service implementation/capacity, calibrated physical PPA and frequency/power",
+    "Architecture selection and complete-hash alternative target-performance validation"
+  ],
+  "request_sha256": "cca225126e89b46738074b8aa89a58253634b4262c37991e8431a3741b7b542f",
+  "resources": {
+    "actual_cpu_max": "600000 100000",
+    "actual_memory_max_bytes": 1073741824,
+    "actual_swap_max_bytes": 2147483648,
+    "actual_tasks_max": 256,
+    "cpu_throttled_periods": 0,
+    "cumulative_cgroup_cpu_usage_usec": 86531649,
+    "cumulative_cgroup_memory_peak_bytes": 251277312,
+    "cumulative_cgroup_swap_peak_bytes": 0,
+    "global_slots": 1,
+    "headroom_prelaunch_safe": true,
+    "per_command_timeout_seconds": 120,
+    "prelaunch_mem_available_bytes": 8390438912,
+    "production_kernel_and_visible_ancestor_prelaunch_safe": true,
+    "required_mem_available_bytes": 2147483648,
+    "scope": "Cumulative admitted-cgroup host observations; not per-command RSS or physical chip performance, power or PPA.",
+    "supervisory_grace_seconds": 5,
+    "workers": 1
+  },
+  "reuse_and_stage_admission": {
+    "both_current_independent_prior_stage_acceptances_preceded_synthesis_admission": true,
+    "historical_old_source_acceptance_or_binaries_transferred": false,
+    "new_matrix_execution_id": "20261021T222845Z-8f21db168fd3",
+    "new_matrix_independent_review_sha256": "896d0425740209221fa021f2bf9c053deb44a8134abf2a8e4dd5e12e314acc61",
+    "new_matrix_receipt_sha256": "58e00c93f44d4d041cf638351a60048eb9352affedbca5aad1a4d8040b785762",
+    "new_matrix_root_verify_sha256": "3ed6f6e21661b9a0d1f67095c140d663b75bfbc66534d70af97f9c3152b5ab0a",
+    "new_prefix_execution_id": "20261021T222437Z-6a260038ca5e",
+    "new_prefix_independent_review_sha256": "fda4f74c7765a10c64028b4827647d4ab7437b0b0ae065e8332b71c687c2f1bb",
+    "new_prefix_receipt_sha256": "5647ed139f7b18078337b6c7beb277d5b1cfde170a2f2031c44729697e7f346f",
+    "new_prefix_root_verify_sha256": "e06ae8440a095750d98dcbbf5c1d9d162bfe6c91f810b4765bf483173b54416d",
+    "only_new_same_source_prefix_reused": true
+  },
+  "reviewed_at_utc": "2026-10-21T22:37:40.408047+00:00",
+  "schema": "openrx.dataset-shared.recovery-synthesis-independent-review.v1",
+  "source_edits_by_reviewer": 0,
+  "source_identity_scope": "Exact recovery candidate identified by the source manifest; final published-head equality and review/check gates remain separate.",
+  "source_manifest_sha256": "1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea",
+  "tested_channel_sha256": "0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493",
+  "whole_asic_feasibility_accepted": false,
+  "workloads_launched_by_reviewer": 0
+}

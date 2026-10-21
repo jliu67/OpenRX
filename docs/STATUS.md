@@ -1,5 +1,28 @@
 # Verified project status — 2026-10-20
 
+## Shared-fabric recovery component validation accepted — 2026-10-21 22:37 UTC
+
+The [approved recovery plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed all 25 commands across fresh prefix, seven-profile matrix and generic
+mapping/parity stages. Each stage passed separate independent result review.
+The sole source change replaces variable-indexed response writes with guarded
+owner branches and fixed slices; accepted arithmetic remains unchanged RTL.
+Fresh prefix/matrix JSONs equal their historical accepted records byte-for-byte;
+both mapped JSONs equal the new same-source prefix.
+
+[Recovery evidence](validation/shared-dataset-fabric-20261021/README.md) binds the
+source and all three stages. Channel mapping completed in 8.961900 seconds with
+6,581 generic cells (801 DFF, no latches); flattened fabric mapping completed in
+22.189259 seconds with 14,498 cells (1,615 DFF, no latches). These diagnostics/payload
+counts are not physical area, and the channel is contained in the fabric count.
+The prior timeout and all original evidence/flags remain intact below. This
+completes the bounded component-validation stages; PR89 remains draft for final
+publication-head review/checks, tracked on [PR89](https://github.com/jliu67/OpenRX/pull/89).
+No new-head CI success or merge is claimed here. Physical services, calibrated
+PPA/frequency/power, architecture selection, complete-hash alternatives and the
+whole-machine target remain open; issue #72 stays open.
+
+
 ## Generic fabric mapping stopped at its bound — 2026-10-21 21:51 UTC
 
 The separately approved [issue #88 plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)

@@ -69,9 +69,15 @@ module randomx_dataset_shared_channel #(
         client_rsp_tag={2*TAG_WIDTH{1'b0}};
         client_rsp_payload={2*RSP_WIDTH{1'b0}};
         if(active&&backend_rsp_valid&&matching&&response_permitted&&!cancelled_now)begin
-            client_rsp_valid[owner_q]=1'b1;
-            client_rsp_tag[owner_q*TAG_WIDTH+:TAG_WIDTH]=backend_rsp_tag[TAG_WIDTH-1:0];
-            client_rsp_payload[owner_q*RSP_WIDTH+:RSP_WIDTH]=backend_rsp_payload;
+            if(owner_q)begin
+                client_rsp_valid=2'b10;
+                client_rsp_tag[2*TAG_WIDTH-1:TAG_WIDTH]=backend_rsp_tag[TAG_WIDTH-1:0];
+                client_rsp_payload[2*RSP_WIDTH-1:RSP_WIDTH]=backend_rsp_payload;
+            end else begin
+                client_rsp_valid=2'b01;
+                client_rsp_tag[TAG_WIDTH-1:0]=backend_rsp_tag[TAG_WIDTH-1:0];
+                client_rsp_payload[RSP_WIDTH-1:0]=backend_rsp_payload;
+            end
         end
     end
 

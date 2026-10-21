@@ -1,5 +1,101 @@
 # Finite shared dataset-fabric RTL/native evidence — 2026-10-21
 
+## Independently accepted fixed-slice recovery — 2026-10-21 22:37 UTC
+
+The [approved recovery plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed all 25 sequential commands through three conditional admissions.
+Separate independent reviews accept the fresh prefix, seven-profile matrix and
+generic synthesis/mapped-parity stages. This completes those bounded component
+validation stages only. PR89 remains draft for final publication-head review and
+applicable checks; [PR89](https://github.com/jliu67/OpenRX/pull/89) tracks those gates
+and normal merge eligibility. No new-head CI success or merge is claimed here.
+The earlier failed mapping attempt and every original record/flag remain intact.
+
+### Exact changed source and stage bindings
+
+[Source bindings](recovery02/source-bindings.json), SHA256
+`a8b942b2aea57d660cbc6b5f3181833cd9fe027b272ec4909072ea9e01827b86`,
+record publication parent `5258f16a2f4425980fe2cb744e570e00fc546512` and all 15
+executed source/license/design/test/driver files. Only the shared channel changed:
+guarded owner branches/fixed slices replace variable-indexed response valid/tag/
+payload writes. Channel SHA256 is
+`0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493`;
+complete prepared manifest SHA256 is
+`1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea`.
+Accepted arithmetic, drivers, benches and scientific criteria are unchanged.
+The changed RTL required a fresh prefix and new same-source binaries; historical
+binaries were not substituted or reuse gates relaxed.
+
+| Stage | Execution / commands / receipt-bound artifacts | Verification and independent review |
+|---|---|---|
+| Fresh prefix | `20261021T222437Z-6a260038ca5e` / 7 / 52 | [Verification](recovery02/prefix/verification-summary.json), [review](recovery02/prefix/independent-result-review.json) |
+| Seven-profile matrix | `20261021T222845Z-8f21db168fd3` / 9 / 65 | [Verification](recovery02/matrix/verification-summary.json), [review](recovery02/matrix/independent-result-review.json) |
+| Mapping and parity | `20261021T223347Z-bec71d887374` / 9 / 67 | [Verification](recovery02/synthesis/verification-summary.json), [review](recovery02/synthesis/independent-result-review.json) |
+
+Receipt SHA256 values, in the same order, are
+`5647ed139f7b18078337b6c7beb277d5b1cfde170a2f2031c44729697e7f346f`,
+`58e00c93f44d4d041cf638351a60048eb9352affedbca5aad1a4d8040b785762`, and
+`2974bca4cf293b1aa23fc6f8d6486f08e3517e38c49afc3aff550a0e34fa41d0`.
+Independent review SHA256 values are respectively
+`fda4f74c7765a10c64028b4827647d4ab7437b0b0ae065e8332b71c687c2f1bb`,
+`896d0425740209221fa021f2bf9c053deb44a8134abf2a8e4dd5e12e314acc61`, and
+`a2eceaad19bc1d49d9247a19e3d896806e65ee43447fbbd1a223a304324aff14`.
+Public stage bindings: [prefix](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327879517),
+[matrix](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327947425),
+[synthesis](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6328028554).
+
+### Functional and generic mapping results
+
+The fresh prefix passed 14 support tests, 2,045 protocol checks and the complete
+native pair. [Protocol](recovery02/prefix/protocol.json) and
+[native](recovery02/prefix/native-concurrent-ideal.json) JSONs equal their historical
+accepted counterparts byte-for-byte. All seven fresh matrix profile JSONs also
+equal history: serial ideal/stalled, concurrent stalled, cancel0, cancel1,
+malformed-fetch0 and exhaustion. The seven fresh profiles in the [matrix summary](recovery02/matrix/public-summary.json)
+account for 20 rows repeating item numbers 0 and 10,000,000: 17 successes, one
+expected error and two cancellations. The summary also retains the two-row
+concurrent-ideal prefix result separately. These are not 17 distinct native cases.
+Modeled batch, client, phase and shared-channel ledgers retain their nested
+overlapping scopes; they must not be summed into extra elapsed time.
+
+| Generic mapped scope | Host mapping seconds | Generic cells | DFF cells | Latches |
+|---|---:|---:|---:|---:|
+| Standalone default channel | 8.961899532 | 6,581 | 801 | 0 |
+| Flattened whole fabric | 22.189259119 | 14,498 | 1,615 | 0 |
+
+[Mapping statistics](recovery02/synthesis/mapping-statistics.json) include actual
+explicit ABC/check-assert outputs. Counts contain diagnostic counters and payload
+logic, are not physical area, and the standalone channel must not be added to the
+whole fabric that contains its channels. Accepted arithmetic remains RTL.
+[Mapped protocol](recovery02/synthesis/mapped-protocol.json) and
+[mapped concurrent-ideal native](recovery02/synthesis/mapped-native-concurrent-ideal.json)
+JSONs equal the new same-source prefix byte-for-byte. Mapped native retained
+7,126 commits/2,508 multiplies/16 stages and a 61,595-clock batch with client
+availability 61,587/61,590, core 61,586/61,589 and held 4/4 clocks in their original
+separate scopes. Its 51.139495-second host runtime is not physical chip performance.
+
+Each stage used one worker/global slot, CPU 600%, RAM 1 GiB, swap 2 GiB, Tasks 256 and
+120 seconds plus five seconds supervisory grace per command, with no fixed overall
+deadline. All 25 commands returned zero. Cumulative cgroup RAM peaks were
+52,760,576 / 44,003,328 / 251,277,312 bytes for prefix/matrix/synthesis, respectively;
+each observed zero swap and zero CPU throttling. These are admitted host resource
+observations, not per-command RSS or chip measurements. Reviewers verified all
+receipt-bound artifact sizes/hashes, using pinned cache identity/fresh preflight
+and unchanged fixture maps rather than rehashing the 256 MiB cache again or
+rescanning historical large traces. Dynamic system libraries are not claimed fully
+hermetic. Raw process/driver scientific flags remain unchanged; separate independent
+reviews carry the bounded acceptance.
+
+No full hash or native/cache generation occurred in this recovery. The earlier
+40-artifact failed mapping, completed old channel assets and all failed/accepted
+full-hash records remain preserved. Functional/matrix/mapped acceptance does not
+establish autonomous setup, physical memory/controller services, calibrated
+PPA/frequency/power, production engine count, complete-hash alternative performance
+or the whole-machine target. Broader issue #72 and those physical/scientific gates
+remain open; completed migration and prior default full-hash functional acceptance
+stay separate.
+
+
 ## Later bounded synthesis attempt — 2026-10-21 21:51 UTC
 
 The [approved public plan](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327206298)

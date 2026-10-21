@@ -1,5 +1,38 @@
 # EXP-025: finite shared dataset-service transport
 
+## Fixed-slice recovery accepted for bounded components — 2026-10-21 22:37 UTC
+
+The [separately authorized recovery](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed 25 commands across three admitted stages, each independently accepted.
+Only `randomx_dataset_shared_channel.v` changed: guarded owner branches/fixed
+response slices replace variable-indexed valid/tag/payload writes. Channel SHA256
+is `0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493`;
+the complete 15-file source manifest is
+`1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea`.
+Accepted arithmetic and acceptance criteria are unchanged.
+
+The fresh seven-command prefix passed 14 support tests, 2,045 protocol checks and
+a two-item native pair. Its two JSONs match historical accepted results exactly.
+The nine-command matrix reused the fresh same-source binaries; all seven profile
+JSONs match their historical records. Its 20 rows repeat the two retained items:
+17 successes, one expected error and two cancellations, not 17 distinct items.
+
+The final nine commands completed explicit ABC mapping and byte-exact mapped
+protocol/native parity with the fresh prefix. Standalone channel mapping took
+8.961900 seconds, yielding 6,581 generic cells/801 DFF/zero latches. Flattened fabric
+mapping took 22.189259 seconds, yielding 14,498 cells/1,615 DFF/zero latches. Counts
+include diagnostics/payload logic, are not physical area and must not be added
+across these nested scopes. Mapped native host runtime was 51.139495 seconds;
+this is not a chip frequency or complete-hash performance measurement.
+
+[Source, receipts and reviews](../docs/validation/shared-dataset-fabric-20261021/README.md)
+preserve the prior failed mapping and all original raw flags. No full hash or
+native/cache generation was repeated. The bounded component stages are accepted;
+PR89 stays draft for final publication-head review/checks. Physical services,
+PPA/frequency/power, architecture selection and complete-hash alternatives remain
+open. Earlier failed/partial entries below are preserved as dated history.
+
+
 ## Later generic mapping attempt — 2026-10-21 21:51 UTC
 
 Current stage: **FAIL/incomplete** after the separately approved

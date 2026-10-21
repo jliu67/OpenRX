@@ -1298,3 +1298,32 @@ include diagnostics/payload logic, are not physical area and must not be added t
 a containing fabric count. Source/criteria are unchanged; final publication-head
 review/checks and physical/service/performance gates remain separate.
 
+
+## Shared-fabric fixed-slice recovery accepted — 2026-10-21 22:37 UTC
+
+The [separately authorized 25-command recovery](https://github.com/jliu67/OpenRX/issues/88#issuecomment-6327859314)
+completed fresh prefix (7), matrix (9) and synthesis/parity (9) commands, all returning
+zero under the original one-worker/global-slot, CPU 600%, RAM 1 GiB, swap 2 GiB,
+Tasks 256 and 120-second-plus-five-second command bounds. Three separate independent
+reviews accept those bounded component stages. The sole channel change uses
+guarded owner branches/fixed slices for response writes; accepted arithmetic,
+drivers/benches and scientific criteria are unchanged.
+
+Fresh prefix passed 14 support tests, 2,045 protocol checks and a complete native
+pair. Its two JSONs and all seven matrix profile JSONs match historical accepted
+records byte-for-byte. Matrix 20 rows repeat two items, with 17 successes/one expected
+error/two cancellations. Channel mapping completed in 8.961900 seconds (6,581 generic
+cells/801 DFF/no latches); flattened fabric completed in 22.189259 seconds
+(14,498 cells/1,615 DFF/no latches). Mapped protocol/native JSONs equal the new
+same-source prefix. Mapped native host runtime was 51.139495 seconds; generic
+counts and host runtime do not establish physical area/frequency/power/performance.
+
+[Evidence](../docs/validation/shared-dataset-fabric-20261021/README.md) retains three
+receipt bindings, independent reviews and unchanged raw scientific flags. Preserve
+the original failed mapping, all earlier failed/accepted records and all assets.
+No full hash or native/cache generation was repeated. PR89 remains draft for
+final publication-head review/checks; no new-head CI success or merge is claimed.
+Physical service implementation, calibrated PPA and complete-hash alternatives
+remain separate open gates. Earlier stage-review pending statements are dated
+snapshots, not the current combined component-stage result.
+

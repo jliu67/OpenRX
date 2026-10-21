@@ -1,5 +1,36 @@
 # Handoff — actual designated local execution
 
+## Latest shared-fabric recovery handoff — 2026-10-21 22:37 UTC
+
+[EXP-025](../experiments/EXP-025-shared-dataset-fabric.md) and
+[recovery evidence](../docs/validation/shared-dataset-fabric-20261021/README.md)
+record independently accepted fresh prefix, matrix and mapping/parity stages.
+All 25 approved commands returned zero. The sole source change is the guarded
+fixed-slice response-write channel, SHA256
+`0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493`;
+complete source manifest is
+`1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea`.
+Fresh same-source binaries were compiled before matrix reuse. Prefix/matrix JSONs
+match history; mapped protocol/native JSONs match the new prefix byte-for-byte.
+
+Executions are prefix `20261021T222437Z-6a260038ca5e`, matrix
+`20261021T222845Z-8f21db168fd3` and synthesis `20261021T223347Z-bec71d887374`.
+Channel/fabric mapping completed in 8.961900/22.189259 seconds, with 6,581/14,498
+generic cells, 801/1,615 DFF cells and no latches. Diagnostic/payload counts are
+nested, not additive physical area. Preserve all source snapshots, three receipts,
+new result reviews, the original failed 40-artifact mapping and old raw flags.
+No full hash or native/cache generation was repeated.
+
+The next gate is final publication-head independent source/result review and
+applicable checks on [PR89](https://github.com/jliu67/OpenRX/pull/89), then normal
+merge eligibility under existing safeguards. PR89 remains draft at this dated
+handoff; no new-head CI success or merge is claimed. Reuse completed assets and
+evidence instead of repeating admitted stages without a specific need. Physical
+services, PPA/frequency/power, architecture selection and complete-hash alternative
+performance remain unresolved. Older partial/failure handoffs remain preserved
+history; their current-stage interpretation is superseded only by this update.
+
+
 ## Latest shared-fabric mapping handoff — 2026-10-21 21:51 UTC
 
 Use the later [EXP-025 update](../experiments/EXP-025-shared-dataset-fabric.md)

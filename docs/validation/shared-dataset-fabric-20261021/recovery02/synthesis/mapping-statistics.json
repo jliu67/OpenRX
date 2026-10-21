@@ -1,0 +1,43 @@
+{
+  "count_caveat": "Includes diagnostic counters/payload logic; do not sum standalone channel with enclosing whole fabric. Generic counts are not physical PPA.",
+  "execution_id": "20261021T223347Z-bec71d887374",
+  "mapped_acceptance": "driver comparisons passed; independent review separate",
+  "mapping": {
+    "channel": {
+      "DFF_cells": 801,
+      "by_cell_type": {
+        "$_AND_": 3414,
+        "$_DFF_P_": 801,
+        "$_MUX_": 152,
+        "$_NOT_": 655,
+        "$_OR_": 1405,
+        "$_XOR_": 154
+      },
+      "generic_cells": 6581,
+      "latch_cells": 0,
+      "netlist_json_sha256": "4804800cac92f0a8c16935106dd9b89c34678607a9fff5c8071dc045561f7da9",
+      "netlist_verilog_sha256": "8f08700d2f7c517c7e00ea1d4efb983859c4e034a5e2123530a134a979298528",
+      "top": "randomx_dataset_shared_channel"
+    },
+    "fabric": {
+      "DFF_cells": 1615,
+      "by_cell_type": {
+        "$_AND_": 7837,
+        "$_DFF_P_": 1615,
+        "$_MUX_": 348,
+        "$_NOT_": 1356,
+        "$_OR_": 3047,
+        "$_XOR_": 295
+      },
+      "generic_cells": 14498,
+      "latch_cells": 0,
+      "netlist_json_sha256": "afa314816171ed88f6a51293976fa7948f59e1fffcadd7e0aec9d5228f940bfe",
+      "netlist_verilog_sha256": "e6d74aec990c2e851fc84a024ee3731db696ab97d0514568dba103405b4c5289",
+      "top": "randomx_dataset_shared_fabric"
+    }
+  },
+  "physical_acceptance": false,
+  "schema": "openrx.dataset-shared.recovery-mapping-statistics.v1",
+  "scope": "new default channel and flattened fabric; accepted arithmetic remains RTL",
+  "source_manifest_sha256": "1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea"
+}
