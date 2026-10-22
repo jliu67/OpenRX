@@ -1,0 +1,72 @@
+{
+  "schema": "openrx.delivery-docs-source-manifest.v1",
+  "parent": "273cc464836c68fda8c1dd2352fe4029a4255d7f",
+  "base_tree": "2cad6a45f3a67233c36c56e8d95a241faf4d2a4e",
+  "scope": "Additive documentation-only delivery closeout; no accepted validation/source modifications",
+  "self_excluded": true,
+  "files": [
+    {
+      "path": "docs/STATUS.md",
+      "mode": "100644",
+      "bytes": 25863,
+      "sha256": "957354993b0b2e49921d8ba703d9ed4757730624cdc2fff721ebc74f3e6e9670",
+      "git_blob": "d2fbda5c51d926be116dc7577fa92be4e3d50eb9"
+    },
+    {
+      "path": "docs/TASKS.md",
+      "mode": "100644",
+      "bytes": 39689,
+      "sha256": "8d6444abb38ef0b2c2df9de37dc1b10c21b9dc8c2d263d7360c21accbc8d0aaf",
+      "git_blob": "b0b1b86dea79cab43c6fea9e2c6379b78ed64aac"
+    },
+    {
+      "path": "docs/validation/conditional-protocol-floor-closeout-20261022/README.md",
+      "mode": "100644",
+      "bytes": 7384,
+      "sha256": "8be961da5f5f3f8434b207f5a8cd55b6daa789247908f271d80b3fb233259fcb",
+      "git_blob": "65ae3bbf93a7b299bb01e7615a6f387c6fe7b484"
+    },
+    {
+      "path": "docs/validation/conditional-protocol-floor-closeout-20261022/delivery-checks.json",
+      "mode": "100644",
+      "bytes": 4115,
+      "sha256": "aa99d5934e5118b6cfc30765da398d8dd8fcecfabff32ec83215d50947a8764f",
+      "git_blob": "351fc79b2442cf0e9d9c5d0f7154611a707c845d"
+    },
+    {
+      "path": "experiments/EXP-028-conditional-protocol-floor.md",
+      "mode": "100644",
+      "bytes": 6472,
+      "sha256": "a9a318652a2979943df16082925cf7f702574fc13936154d5251cb76cabaf710",
+      "git_blob": "b98939fd4f2b6444c698bc10b50a1d8f96f58c77"
+    },
+    {
+      "path": "memory/DECISIONS.md",
+      "mode": "100644",
+      "bytes": 49531,
+      "sha256": "4642a7356dc17f87b66b7c0806e3f27dcf6714b6768d602117884f95f35dbb44",
+      "git_blob": "2f5a653fe63f5b8bdd819eed28f237a27c257271"
+    },
+    {
+      "path": "memory/HANDOFF.md",
+      "mode": "100644",
+      "bytes": 101826,
+      "sha256": "1257d3b46cfb20525ea1c34b76bb96f4624b7fbd60d92f4f3add66ff99a35ff2",
+      "git_blob": "146c574aa0e80edcbf2ab1d6a647fc535d85289b"
+    },
+    {
+      "path": "memory/SESSION_LOG.md",
+      "mode": "100644",
+      "bytes": 142236,
+      "sha256": "2d480a66ee0b7053ba4c27d9dc4b33466d8d6aa164b506660945dd209ed77539",
+      "git_blob": "e72bd3ea0eda028258e52813c7824fc910e60c51"
+    },
+    {
+      "path": "memory/STATE.md",
+      "mode": "100644",
+      "bytes": 97948,
+      "sha256": "e704f21d6eadc09fd3f92d0c425c2514ef15ad4a29dbe822ef6a1b2c3957d281",
+      "git_blob": "8bc9069b38532d54c014e0bc559a5697a5d427dd"
+    }
+  ]
+}

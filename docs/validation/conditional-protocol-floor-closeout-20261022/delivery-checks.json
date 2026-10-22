@@ -1,0 +1,102 @@
+{
+  "schema": "openrx.protocol-floor-delivery-closeout.v1",
+  "observed_at": "2026-10-22T19:00:32Z",
+  "scientific_result": {
+    "execution": "20261022T181455Z-4424e8848ccf",
+    "accepted_scope": "CONDITIONAL_NECESSARY_CEILINGS_ONLY",
+    "actual_tests": 12,
+    "commands": 2,
+    "all_rc_zero": true,
+    "report_sha256": "456f23c1aa1f7ba921a8f68b1afdd3ae552e609b1600cbcc2ad8d37d8eb7fefd",
+    "receipt_sha256": "45dfccc7b214655ec3734af62870f148ffc55d9891a09cf33778fdeeec5154e4",
+    "source_manifest_sha256": "ea52fe4107df66182ba7e828093a1c4207fbe4dad30c32774e0cb8a982028493",
+    "raw_flags_and_historical_snapshots": "unchanged"
+  },
+  "review": {
+    "identity": "Separate AI agent /root/protocol_admission_1809",
+    "scope": "Independent source/result/privacy/exact-head and retarget applicability review; conditional necessary ceilings only, no human/account-holder approval",
+    "outcome": "PASS",
+    "handoff_url": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6348394688"
+  },
+  "delivery": {
+    "pr": "https://github.com/jliu67/OpenRX/pull/94",
+    "reviewed_head": "e8f8ffb3c03ed6c2638b10e624c8beea47683b20",
+    "merge": "273cc464836c68fda8c1dd2352fe4029a4255d7f",
+    "merged_at": "2026-10-22T18:58:26Z",
+    "tree": "2cad6a45f3a67233c36c56e8d95a241faf4d2a4e",
+    "merge_tree_equals_reviewed_head": true,
+    "parents": [
+      "11e8855ec55dd69546f2c8e0321b2bc4d46d0bd3",
+      "e8f8ffb3c03ed6c2638b10e624c8beea47683b20"
+    ],
+    "method": "Normal expected-head merge; no force or safeguard bypass",
+    "premerge_checks": [
+      {
+        "trigger": "pull_request",
+        "name": "correctness",
+        "url": "https://github.com/jliu67/OpenRX/actions/runs/39832819853/job/120013165117",
+        "result": "success"
+      },
+      {
+        "trigger": "pull_request",
+        "name": "scalar-correctness",
+        "url": "https://github.com/jliu67/OpenRX/actions/runs/39832819991/job/120013165428",
+        "result": "success"
+      },
+      {
+        "trigger": "push",
+        "name": "correctness",
+        "url": "https://github.com/jliu67/OpenRX/actions/runs/39831800792/job/120009572264",
+        "result": "success"
+      },
+      {
+        "trigger": "push",
+        "name": "scalar-correctness",
+        "url": "https://github.com/jliu67/OpenRX/actions/runs/39831800661/job/120009571324",
+        "result": "success"
+      }
+    ],
+    "postmerge_checks": [
+      {
+        "trigger": "push",
+        "name": "correctness",
+        "url": "https://github.com/jliu67/OpenRX/actions/runs/39836025905/job/120024473305",
+        "result": "success",
+        "attempt": 1
+      },
+      {
+        "trigger": "push",
+        "name": "scalar-correctness",
+        "url": "https://github.com/jliu67/OpenRX/actions/runs/39836025949/job/120024473503",
+        "result": "success",
+        "attempt": 1
+      }
+    ],
+    "deferred_steps": [
+      "Full-dataset reference controls (not a performance baseline)",
+      "Same-process native controls (not a performance baseline)"
+    ],
+    "deferred_steps_are_not_passes": true
+  },
+  "original_failures": {
+    "pr93_cancelled_job": "https://github.com/jliu67/OpenRX/actions/runs/39799339116/job/119895244138",
+    "cause": "Explicit GitHub annotation: job exceeded25m0s; package installation was in progress",
+    "retry_once_succeeded": "https://github.com/jliu67/OpenRX/actions/runs/39799339116/job/120013439526",
+    "all_earlier_failed_and_accepted_records": "preserved"
+  },
+  "delivery_only": true,
+  "new_scientific_workload": false,
+  "issue72_closed": false,
+  "physical_acceptance": false,
+  "open_gates": [
+    "characterized SRAM/process/PVT",
+    "actual clock/interface compatibility",
+    "sustainable memory/controller/PHY service and tails",
+    "cache/scratchpad organization",
+    "physical PPA/frequency",
+    "whole-machine power",
+    "achieved hashes/s and target",
+    "architecture selection"
+  ],
+  "historical_snapshot_note": "Initial draft/dependency/pending fields in the accepted evidence and dated documents are preserved; this separate record supersedes only current delivery interpretation."
+}
