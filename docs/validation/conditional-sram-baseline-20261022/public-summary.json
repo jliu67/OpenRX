@@ -1,0 +1,142 @@
+{
+  "actual_unit_tests": 16,
+  "base_commit": "6888f8293a4a4703f714f755cb0c45f15fd1f6f3",
+  "claim": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6342638026",
+  "commands": [
+    {
+      "maximum_resident_set_kbytes": 18688,
+      "name": "memory-baseline-units",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.26547643612138927
+    },
+    {
+      "maximum_resident_set_kbytes": 175076,
+      "name": "build-cacti",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 20.231832964811474
+    },
+    {
+      "maximum_resident_set_kbytes": 4736,
+      "name": "model-bank1",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.0037209661677479744
+    },
+    {
+      "maximum_resident_set_kbytes": 4736,
+      "name": "model-bank4",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.003551249159500003
+    },
+    {
+      "maximum_resident_set_kbytes": 16928,
+      "name": "conditional-report",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.11434818990528584
+    }
+  ],
+  "commands_completed": 5,
+  "compiled_cpp_translation_units": 20,
+  "execution_id": "20261022T140233Z-a4edfd2d9e92",
+  "expected_commands": 5,
+  "generated_binary": {
+    "bytes": 405224,
+    "sha256": "5ba626bd84f0288a4ff54641b79fb159bad39a4a77200c0470de56aa776ab792"
+  },
+  "independent_scientific_review": "PASS_CONDITIONAL_MODEL_COMPARISON_ONLY",
+  "locked_headroom": {
+    "available_bytes": 7142735872,
+    "required_available_bytes": 2147483648,
+    "safe": true
+  },
+  "no_new_full_hash_rtl_gem5_synthesis": true,
+  "observed_kernel": {
+    "errors": [],
+    "leaf_limits": {
+      "cgroup.controllers": "cpu memory pids",
+      "cgroup.subtree_control": "",
+      "cpu.max": "600000 100000",
+      "cpuset.cpus.effective": null,
+      "memory.high": "max",
+      "memory.max": "1073741824",
+      "memory.swap.max": "2147483648",
+      "pids.max": "256"
+    },
+    "production_enforced": true,
+    "safe": true,
+    "visible_ancestors_no_tighter_ceiling": true,
+    "worker_allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  },
+  "physical_acceptance": false,
+  "postcheck": {
+    "all_unchanged": true,
+    "frozen_candidate_files": 57,
+    "original_retained_cacti_and_dram_files": 47,
+    "tools": 7
+  },
+  "public_plan": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6342654553",
+  "raw_artifacts": {
+    "events.jsonl": {
+      "bytes": 1457,
+      "sha256": "f1e2887eda3c31e0157554356c5f14957d9f4d909b44ac9652a5bccb53e20147"
+    },
+    "manifest.json": {
+      "bytes": 20804,
+      "sha256": "d8db35f9a830e69495ab2d9a619ff6203948936710ff0da6dd2be23d39777132"
+    },
+    "prelaunch-kernel-check.json": {
+      "bytes": 2318,
+      "sha256": "59d7dc886219fba49543ce48fb7b5b0ec1b0f437f37cfc364378a82be66f1ed5"
+    },
+    "prelaunch-resource-check.json": {
+      "bytes": 415,
+      "sha256": "6f3fa14ab3f507e998f82d7f8c7617138bd196dad5f6632630a1fe778b79c6ac"
+    },
+    "process-result.json": {
+      "bytes": 142,
+      "sha256": "769efe947ffaf1a082a270d1e295ad903df7c07545c00c053dc287020eb0c62e"
+    },
+    "receipt.json": {
+      "bytes": 21721,
+      "sha256": "546423d415f9366a65159d441151caeb5c3a3e847c25ea991fb14067d1e9447a"
+    },
+    "results/conditional-report/memory-baseline.json": {
+      "bytes": 16811,
+      "sha256": "67deb5c947d346f84c48db5e30b7000a76a8fdd9c8b0fe67bfa81621d81c9bde"
+    },
+    "results/validation-summary.json": {
+      "bytes": 3611,
+      "sha256": "b60289a798fbcd61462e89d7c6df3a5f6c1b6fdb4e69cd1702075976c5056213"
+    }
+  },
+  "raw_report_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_runner_scientific_acceptance": "unverified",
+  "request_key": "issue72-conditional-sram-baseline-20261022-01",
+  "resource_profile": "owner-local-max-v1",
+  "resources": {
+    "CPUQuota": "600%",
+    "MemoryMax": "1073741824",
+    "MemorySwapMax": "2G",
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "TasksMax": 256,
+    "global_slots": 1
+  },
+  "retention": "Complete raw runner record, writable build, binary, logs, original source and historic failures retained locally. Public command prefixes normalized; raw hashes remain authoritative.",
+  "returncode": 0,
+  "schema": "openrx.conditional-sram-public-summary.v1",
+  "skipped_commands": [],
+  "status": "PROCESS_EXITED",
+  "tool_closure_limit": "Pinned executables and installed package metadata; not hermetic headers/shared libraries."
+}

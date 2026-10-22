@@ -1,5 +1,34 @@
 # Handoff — actual designated local execution
 
+## Conditional SRAM comparison handoff — 2026-10-22
+
+Use [EXP-027](../experiments/EXP-027-conditional-sram-baseline.md) and its
+[evidence](../docs/validation/conditional-sram-baseline-20261022/README.md) for
+execution `20261022T140233Z-a4edfd2d9e92`, following the
+[approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6342654553).
+All five commands returned zero: 16 tests, a fresh CACTI build over 20 C++ units,
+one-bank and four-bank cases, and the strict report. Nothing was skipped or
+timed out. Independent result review accepts
+`PASS_CONDITIONAL_MODEL_COMPARISON_ONLY`, no blocking findings. Preserve the raw
+runner `unverified` and driver/report `unverified_pending_independent_review`
+flags, frozen preparation metadata and every historical failed/accepted record.
+
+The fixed 128 KiB, 1 RW port/bank, one-global-credit comparison uses hypothetical
+ITRS45nm HP / 1.0 V / 360 K data. Four banks improve the optimistic rate 3.835×
+through latency, with 40.9% less modeled read energy and 49.6% more organization
+area; no four-bank concurrency multiplier is allowed. Per-bank leakage remains
+separate from whole-organization area and wall power. No physical technology,
+architecture, sustainable-service or achieved-hash-rate acceptance follows.
+
+Finish scoped draft publication, independent published-head review and applicable
+exact-head checks separately; no merge or new-head CI success is claimed here.
+For the next assessment, obtain or bind characterized SRAM/PVT and controller/PHY
+random-service data before defensible physical claims. A follow-up can be
+prepared, but this result authorizes no new model/workload run. No full hash or
+hardware purchase is needed to retain this conditional insight. Broader #72 and
+physical/performance gates remain open.
+
+
 ## Finite-fabric analytical publication handoff — 2026-10-22
 
 Use [EXP-026](../experiments/EXP-026-finite-fabric-service-profile.md) and its
@@ -1164,4 +1193,5 @@ Acceptance requires exit zero, complete runtime/hash frames with zero statuses a
 M0 is complete; M1–M5 remain open. #13 importer software and #4 dated source audit are completed; #20 inspection, #22 queued announcements and #24 compact-handoff policy are completed. #8/#10/#11 require controlled host/counter/meter access. #2 lacks primary X5 board/chip/firmware binding; documented stock SG2042 properties do not identify an X5 derivative. Future Monero activation/live-tip corroboration remains open. Full dataset, intended cores/SMP and selected BOOM Linux boot are separate from Atomic functional controls. M4/M5 still require measured baseline and calibrated model; no RTL, timing or physical efficiency result is established.
 
 All 171 vendor files are now materialized and verified locally; the former four-PDF snapshot omission is resolved. Prior STATE/HANDOFF snapshots are archived under `memory/handoffs/pre-light-resume-*-20261008.md`; original timeout/build/OOM records and SESSION_LOG history remain unchanged. PR #26 integrated at `77a1641fb85f386bce4a5b51e00dedbe257376f6`, with the tested head/tree unchanged. [Final release](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6071620898) is accepted: ready, claim null, no warnings. The required [hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6071623180) was verified. [Integration/CI receipts](../docs/validation/m3-fs/stop-file-20261008/integration.json) preserve exact source/run/job identities.
+
 

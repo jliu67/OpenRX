@@ -1,0 +1,19 @@
+{
+  "blocking_findings": [],
+  "checks": [
+    "57 frozen files and seven tools exact",
+    "all106 receipt-bound artifacts exact",
+    "16 actual tests and20 C++ translation units;5/5 commands rc0,no timeout or skipped stage",
+    "kernel limits and locked headroom match approved bounds",
+    "both CSVs,31 input-echo guards per case,configs,artifact hashes,dimensions,one-credit arithmetic and all five ratios independently recomputed",
+    "raw pending-review flags preserved; two legacy build warnings retained"
+  ],
+  "execution_id": "20261022T140233Z-a4edfd2d9e92",
+  "outcome": "PASS_CONDITIONAL_MODEL_COMPARISON_ONLY",
+  "receipt_sha256": "546423d415f9366a65159d441151caeb5c3a3e847c25ea991fb14067d1e9447a",
+  "report_sha256": "67deb5c947d346f84c48db5e30b7000a76a8fdd9c8b0fe67bfa81621d81c9bde",
+  "reviewed_at": "2026-10-22T14:05:00Z",
+  "reviewer_role": "separate independent result reviewer",
+  "schema": "openrx.independent-conditional-memory-review.v1",
+  "scope": "Conditional CACTI model comparison only. No physical/PPA/frequency/H/s/controller/PHY/cache/scratchpad acceptance."
+}

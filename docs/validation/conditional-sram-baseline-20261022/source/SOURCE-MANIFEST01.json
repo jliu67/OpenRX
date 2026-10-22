@@ -1,0 +1,247 @@
+{
+  "schema": "openrx.conditional-memory-preparation.v1",
+  "status": "UNRUN_CONDITIONAL_CANDIDATE",
+  "created_at": "2026-10-22T03:39:22.861103+00:00",
+  "request_key": "issue72-conditional-sram-baseline-20261022-01",
+  "expected_unit_methods": 16,
+  "expected_timed_commands": 5,
+  "expected_model_evaluations": 2,
+  "actual_tests_models_builds_executed": 0,
+  "files": {
+    "adapter/memory_baseline.py": {
+      "bytes": 26426,
+      "sha256": "1efe3b615e034a46dde561b2d80963faf810028b2a4073fcb8046b3f1617b79d"
+    },
+    "contract.json": {
+      "bytes": 14532,
+      "sha256": "087a18367ddd65bf930e2030070995f0d8e8e2e1adb246d2284be724e7583346"
+    },
+    "inputs/accepted/pr87-service-demand.json": {
+      "bytes": 23806,
+      "sha256": "694b153e2220218c95c84579dfba930707abb439fa1cadce4d42195148f7c42a"
+    },
+    "inputs/accepted/pr91-finite-fabric-service-profile.json": {
+      "bytes": 50216,
+      "sha256": "d6baa3de036273b1ac3918ffb5c3418b98f0130acdb43652380c06648eea81ce"
+    },
+    "inputs/cacti/README": {
+      "bytes": 3969,
+      "sha256": "db49d17d1a2179836051e295f01102323a5ff9fec79da6213846787669e2f6ee"
+    },
+    "inputs/cacti/Ucache.cc": {
+      "bytes": 36154,
+      "sha256": "454dc0d74b8fe26982fd5b46ffb9b64ffe4407fec78dd31afbb77be320c6775f"
+    },
+    "inputs/cacti/Ucache.h": {
+      "bytes": 3635,
+      "sha256": "6de8de5bf382e9f1416229e7605cd46502af86e04dd420789b5c8dd726d1b297"
+    },
+    "inputs/cacti/arbiter.cc": {
+      "bytes": 5808,
+      "sha256": "599bcc28d662df4662438680046ffcf449b74e56aa61c0381750df05f72e7b6f"
+    },
+    "inputs/cacti/arbiter.h": {
+      "bytes": 2767,
+      "sha256": "cd9979df509d38fbf3e0d89bc4942d6550b60c48a1ba3c68ad1e51f705c6e40f"
+    },
+    "inputs/cacti/area.cc": {
+      "bytes": 2058,
+      "sha256": "df9d8b44652f5067de6f924d666d2638eb5a33a19d09803e96c570c41d4bfbfd"
+    },
+    "inputs/cacti/area.h": {
+      "bytes": 2418,
+      "sha256": "12c2bc6e7c11294b7b3a15bf30f2ad5994e6382850e72916cf76e17c93093ded"
+    },
+    "inputs/cacti/bank.cc": {
+      "bytes": 9445,
+      "sha256": "514d1043a35dde8c574e84664923fecb8bbc688963e90358b0b6bd87a426aebc"
+    },
+    "inputs/cacti/bank.h": {
+      "bytes": 2654,
+      "sha256": "6348a65cb1a6cdb0696140f97eae9bbaec106c1b2d7cd45f5dbe0bceba6af6fd"
+    },
+    "inputs/cacti/basic_circuit.cc": {
+      "bytes": 25630,
+      "sha256": "215be7ae91d1ee08fd8b702c52286539cf48eecdfe74a35fe2f07c3cf621ba52"
+    },
+    "inputs/cacti/basic_circuit.h": {
+      "bytes": 5745,
+      "sha256": "cb636637af89fe0ce5496c54c8809854a26c5e720f75d24360b9e168a05db2c1"
+    },
+    "inputs/cacti/batch_tests": {
+      "bytes": 4497,
+      "sha256": "f6b167950fc413e20f79cfb516d3059cfc28ff84e661bdbaea6410447500d3af"
+    },
+    "inputs/cacti/cache.cfg": {
+      "bytes": 6036,
+      "sha256": "fb6c14ea32afc2057b5c19978c79a035527b2adee62b94894751668dafa05470"
+    },
+    "inputs/cacti/cacti.i": {
+      "bytes": 173,
+      "sha256": "9bd4202aec6fd048668f910445f377f835315f53440004d040daf9d12746141f"
+    },
+    "inputs/cacti/cacti.mk": {
+      "bytes": 1233,
+      "sha256": "ccf534ee3616af934c71e23df6c85c6ca53713f0a0bc5784e3730c78610c4f04"
+    },
+    "inputs/cacti/cacti_interface.cc": {
+      "bytes": 5786,
+      "sha256": "3ecb77e00745ea7e5e24b891f10af942e2cc9adf79adc630956b527101f51c4f"
+    },
+    "inputs/cacti/cacti_interface.h": {
+      "bytes": 17364,
+      "sha256": "1eeee79bbb0de2756d04c7ef829f36dcdff63f7620ac175145b8c959536baaf1"
+    },
+    "inputs/cacti/component.cc": {
+      "bytes": 7831,
+      "sha256": "ea7da668fdcf94a1c8bd653ee58f19edb98e82f9c2269fe9a5b08a79cba26f04"
+    },
+    "inputs/cacti/component.h": {
+      "bytes": 3113,
+      "sha256": "98651d467f57c9fde29f050592510e26a36e6ffb7694a4396b34b795eca58793"
+    },
+    "inputs/cacti/const.h": {
+      "bytes": 9551,
+      "sha256": "060bacd7b94ea4451a9d0475f93fcc1d25b319a64ce85d2527ab100feee582e1"
+    },
+    "inputs/cacti/contention.dat": {
+      "bytes": 5001,
+      "sha256": "c16d79858fb7f6881ba3710392e85bcf379adb8ebc0eebdd5349cc0a35497e02"
+    },
+    "inputs/cacti/crossbar.cc": {
+      "bytes": 8261,
+      "sha256": "cd019ba29cb2fb689df9feb222bde3427b7671dcfa70b47c7041bf63edb85fa2"
+    },
+    "inputs/cacti/crossbar.h": {
+      "bytes": 3280,
+      "sha256": "9f12df00c6f69a6b54748f59654a11a10627666a4fdfd1a9a4f4877436a65abb"
+    },
+    "inputs/cacti/decoder.cc": {
+      "bytes": 66575,
+      "sha256": "6eb413369235d8027d874f0a9a12b1279b8f4f4a2c2d6c898f341b11f51973bd"
+    },
+    "inputs/cacti/decoder.h": {
+      "bytes": 7231,
+      "sha256": "4f7da97cb57f1189f8e1b98974ec853d1c0937b25edc285f4887104044832dff"
+    },
+    "inputs/cacti/htree2.cc": {
+      "bytes": 28677,
+      "sha256": "eba9adb56815dae7d2a6f45781e54278416d2db980951a3e14e8f4707fe0b913"
+    },
+    "inputs/cacti/htree2.h": {
+      "bytes": 3689,
+      "sha256": "20f4b389bfde06c1a506762d942cf2ec70e637fdb56f9296e973c177fe2e61f2"
+    },
+    "inputs/cacti/io.cc": {
+      "bytes": 80130,
+      "sha256": "60e8072514526e8133dee5409936ffb3b37a77fcce1dde77e0123f009bc3ed56"
+    },
+    "inputs/cacti/io.h": {
+      "bytes": 2044,
+      "sha256": "bfd3f929d75ec801989a01b81860cc73bb277d6ec22fdb16602caee37fffbf1f"
+    },
+    "inputs/cacti/main.cc": {
+      "bytes": 7318,
+      "sha256": "a275e1f859a84ba90faf15394ea63382ecc331f44cfb28f3b53762b5673a5cd1"
+    },
+    "inputs/cacti/makefile": {
+      "bytes": 407,
+      "sha256": "6fa76e4a333bada92faf2a1c9f40782dc6dd4d092808de3772556e591187e560"
+    },
+    "inputs/cacti/mat.cc": {
+      "bytes": 95410,
+      "sha256": "c5a8ccaa64bcba4ebbd14d02123ddd30fdf6e510b598be2cb9f7b2bdb894fd77"
+    },
+    "inputs/cacti/mat.h": {
+      "bytes": 5445,
+      "sha256": "2280c1fb585d888770d235cbe37bddc3d1c039ee67076c8aa24a3421f7946f74"
+    },
+    "inputs/cacti/nuca.cc": {
+      "bytes": 22926,
+      "sha256": "4feba8567a912f1bcad589497443fd1acd25ba40f044a591f7e7513669f3a514"
+    },
+    "inputs/cacti/nuca.h": {
+      "bytes": 3354,
+      "sha256": "cc5cc15f32bcd989f5ce5a24b97f0567cd88b123edbbcc5e9a4c51a455058448"
+    },
+    "inputs/cacti/parameter.cc": {
+      "bytes": 29998,
+      "sha256": "57d8753aaffd92b59a6aa1320321809dcfbd4c64c5d141f22bd5bde29ce8e365"
+    },
+    "inputs/cacti/parameter.h": {
+      "bytes": 10353,
+      "sha256": "4c5cf5514c92f4a90ef56f77ae5ecc199acf6a203934f443d108a1cd14ea70eb"
+    },
+    "inputs/cacti/router.cc": {
+      "bytes": 11068,
+      "sha256": "c4eda46f93eada420e8e529b0eb5114b0b9d45a76726b96f2074841ea2d19dc6"
+    },
+    "inputs/cacti/router.h": {
+      "bytes": 3781,
+      "sha256": "8e59876bac763ee588d15b0e0f91c026aed842d7b16fc57734d2431f50bdb536"
+    },
+    "inputs/cacti/subarray.cc": {
+      "bytes": 9034,
+      "sha256": "6210e7cdb29f12cdef5fdecd7fc742cdbb2f2ca454e34de6f7b2a8ed6d4854a3"
+    },
+    "inputs/cacti/subarray.h": {
+      "bytes": 2604,
+      "sha256": "5350d51632b5fef29ea35d21a98977d34d69037fa6ff8d52c1f095643d167b5e"
+    },
+    "inputs/cacti/technology.cc": {
+      "bytes": 136185,
+      "sha256": "87261afb3cec128e899278e5b4abf474066f8f2842ff99a0bd958e155e3c0397"
+    },
+    "inputs/cacti/uca.cc": {
+      "bytes": 21779,
+      "sha256": "197bc35665a883a6e2d7b4afa9f04d4ef1f8e33626c4fe1598b97f69621e9248"
+    },
+    "inputs/cacti/uca.h": {
+      "bytes": 3468,
+      "sha256": "071a92966a38c14823b16eef76ccdf576eac0980ed5da9d174e7f07f4759dc75"
+    },
+    "inputs/cacti/wire.cc": {
+      "bytes": 34107,
+      "sha256": "56c497a1a499f0208960592ce44c372ab0a24e8407f17b2db1fe18f5f6a4f705"
+    },
+    "inputs/cacti/wire.h": {
+      "bytes": 4422,
+      "sha256": "0d38e055b2093db00801a2680590144b597709383483e8fb6f3c0bbebf2c437a"
+    },
+    "inputs/configs/bank1.cfg": {
+      "bytes": 6045,
+      "sha256": "a1281741b5a4dea674555d64369a95868a4f0f3c47ab9d813ad6a7317350a908"
+    },
+    "inputs/configs/bank4.cfg": {
+      "bytes": 6045,
+      "sha256": "abf91a0f813747c5fa5ac3bcce4a9fb82bda62d5459b93a90ed2b3a1eb68d7eb"
+    },
+    "inputs/evidence-layout/tb_dataset_shared_native.v": {
+      "bytes": 46653,
+      "sha256": "eda2ba99830af4568a99acbf88a1bda7f6432be68dd642d13d2d49b66c83eb42"
+    },
+    "inputs/gem5/DRAMInterface.py": {
+      "bytes": 54011,
+      "sha256": "bda26244cdc60765a8dc6c75aaf28b7df2ddee35be37affa7936960e83e1887d"
+    },
+    "tests/test_memory_baseline.py": {
+      "bytes": 14982,
+      "sha256": "9085322af7246fa23dc324abb06547bff1bc4ad31968033cf0808f84dddf8335"
+    },
+    "tool-bindings.json": {
+      "bytes": 1906,
+      "sha256": "ab77cc8e6d8357919cd40978df7b8a4456a9f7b0038744959392d9b9c8c02805"
+    },
+    "validation_driver.py": {
+      "bytes": 9754,
+      "sha256": "219ea2ff8b4b50e0d0b618f90ca446fad240894afea562082421af53afd9c4a9"
+    }
+  },
+  "source_file_count": 57,
+  "source_bytes": 1016790,
+  "originals_modified": false,
+  "physical_acceptance": false,
+  "static_checks_scope": "ASTsyntax/methodcountandfileidentityonly; notimports,tests,buildorCACTIevaluation",
+  "predecessor_handoff_sha256": "969ed2d06a143d7ed433eb53fd07447efa58af475ba3d1b362424eb4495e3adf",
+  "predecessor_artifact_index_sha256": "18f57988347d3fe135723da1b28f2ead19368b0e0c8db8520cf0f66d0b92f61f"
+}

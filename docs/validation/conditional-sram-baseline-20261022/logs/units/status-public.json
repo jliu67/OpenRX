@@ -1,0 +1,23 @@
+{
+  "normalization": "Only {EXECUTION}/{SOURCE} path prefixes replaced; original retained separately.",
+  "raw_sha256": "c4bbfdc2c1266929b3361c37a7f139fb6a91b437c5c3770fea697d4b375604c8",
+  "record": {
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_memory_baseline.py",
+      "-v"
+    ],
+    "cwd": "{SOURCE}",
+    "name": "memory-baseline-units",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 0.26547643612138927
+  }
+}

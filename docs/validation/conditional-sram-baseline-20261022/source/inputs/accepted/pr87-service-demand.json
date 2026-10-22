@@ -1,0 +1,525 @@
+{
+  "achieved_hashes_per_second": null,
+  "aggregate_physical_offchip_bytes_per_hash": null,
+  "alternative_full_hash_cycles": null,
+  "assumptions": [
+    "The requested throughput is a target, never an achieved rate.",
+    "Latency and independent ready requests per context are scenario inputs, not characterized service or demonstrated overlap.",
+    "Cache/program placement, reuse, bank mapping, controller timing/refresh/tails, wire overhead and energy are uncharacterized.",
+    "Per-interface payloads describe distinct nested links; no aggregate off-chip traffic is inferred.",
+    "VM bytecode windows and their prior scheduler results remain separate; no full-hash speedup is inferred.",
+    "Earlier failed runs and historical scientific flags retain their original status."
+  ],
+  "classification": "accepted_modeled_service_counts_and_necessary_conditional_bounds",
+  "complete_machine_gate": {
+    "demonstrated_asic_feasibility": false,
+    "rejections": [],
+    "status": "unresolved",
+    "unknown": [
+      "correctness_for_proposed_hardware",
+      "complete_path_throughput",
+      "whole_machine_wall_power",
+      "controller_bank_timing_turnaround_refresh_tail_latency",
+      "sustainable_bandwidth",
+      "sustainable_transactions_per_s",
+      "bank_port_operations_per_s",
+      "live_state_capacity",
+      "independent_outstanding_requests"
+    ]
+  },
+  "demonstrated_asic_feasibility": false,
+  "independent_link_payloads_must_not_be_summed_as_offchip_traffic": true,
+  "interfaces": {
+    "prepared_cache_response": {
+      "characterized_energy_j_per_hash": null,
+      "characterized_service_latency_seconds": null,
+      "characterized_sustainable_responses_per_second": null,
+      "minimum_data_payload_bytes_per_hash": 8388608,
+      "minimum_data_payload_bytes_per_response": 64,
+      "minimum_data_payload_bytes_per_second_at_target": 8388608000000,
+      "payload_scope": "Cache-line data on the prepared service interface; cache placement/reuse and physical traffic are unknown.",
+      "physical_offchip_bytes_per_hash": null,
+      "required_responses_per_second_at_target": 131072000000,
+      "responses_per_hash": 131072,
+      "wire_bytes_per_hash": null
+    },
+    "prepared_instruction_response": {
+      "characterized_energy_j_per_hash": null,
+      "characterized_service_latency_seconds": null,
+      "characterized_sustainable_responses_per_second": null,
+      "minimum_data_payload_bytes_per_hash": 467009536,
+      "minimum_data_payload_bytes_per_response": 8,
+      "minimum_data_payload_bytes_per_second_at_target": 467009536000000,
+      "payload_scope": "Minimum raw 64-bit instruction words only; replies also bundle optional reciprocal fields and transport metadata.",
+      "physical_offchip_bytes_per_hash": null,
+      "required_responses_per_second_at_target": 58376192000000,
+      "responses_per_hash": 58376192,
+      "wire_bytes_per_hash": null
+    },
+    "vm_dataset_response": {
+      "characterized_energy_j_per_hash": null,
+      "characterized_service_latency_seconds": null,
+      "characterized_sustainable_responses_per_second": null,
+      "minimum_data_payload_bytes_per_hash": 1048576,
+      "minimum_data_payload_bytes_per_response": 64,
+      "minimum_data_payload_bytes_per_second_at_target": 1048576000000,
+      "payload_scope": "Logical dataset item output to the VM; not an extra physical-cache read.",
+      "physical_offchip_bytes_per_hash": null,
+      "required_responses_per_second_at_target": 16384000000,
+      "responses_per_hash": 16384,
+      "wire_bytes_per_hash": null
+    }
+  },
+  "latency_sweep": [
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 17,
+      "necessary_outstanding_requests": 17,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 9,
+      "necessary_outstanding_requests": 17,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 5,
+      "necessary_outstanding_requests": 17,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 164,
+      "necessary_outstanding_requests": 164,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 82,
+      "necessary_outstanding_requests": 164,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 41,
+      "necessary_outstanding_requests": 164,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 1639,
+      "necessary_outstanding_requests": 1639,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 820,
+      "necessary_outstanding_requests": 1639,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 410,
+      "necessary_outstanding_requests": 1639,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 4916,
+      "necessary_outstanding_requests": 4916,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 2458,
+      "necessary_outstanding_requests": 4916,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "vm_dataset_response",
+      "necessary_contexts_if_ready_limit_is_valid": 1229,
+      "necessary_outstanding_requests": 4916,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 132,
+      "necessary_outstanding_requests": 132,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 66,
+      "necessary_outstanding_requests": 132,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 33,
+      "necessary_outstanding_requests": 132,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 1311,
+      "necessary_outstanding_requests": 1311,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 656,
+      "necessary_outstanding_requests": 1311,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 328,
+      "necessary_outstanding_requests": 1311,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 13108,
+      "necessary_outstanding_requests": 13108,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 6554,
+      "necessary_outstanding_requests": 13108,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 3277,
+      "necessary_outstanding_requests": 13108,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 39322,
+      "necessary_outstanding_requests": 39322,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 19661,
+      "necessary_outstanding_requests": 39322,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "prepared_cache_response",
+      "necessary_contexts_if_ready_limit_is_valid": 9831,
+      "necessary_outstanding_requests": 39322,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 58377,
+      "necessary_outstanding_requests": 58377,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 29189,
+      "necessary_outstanding_requests": 58377,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 1,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 14595,
+      "necessary_outstanding_requests": 58377,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 583762,
+      "necessary_outstanding_requests": 583762,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 291881,
+      "necessary_outstanding_requests": 583762,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 10,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 145941,
+      "necessary_outstanding_requests": 583762,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 5837620,
+      "necessary_outstanding_requests": 5837620,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 2918810,
+      "necessary_outstanding_requests": 5837620,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 100,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 1459405,
+      "necessary_outstanding_requests": 5837620,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 17512858,
+      "necessary_outstanding_requests": 17512858,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 1,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 8756429,
+      "necessary_outstanding_requests": 17512858,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 2,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    },
+    {
+      "assumed_response_latency_ns": 300,
+      "interface": "prepared_instruction_response",
+      "necessary_contexts_if_ready_limit_is_valid": 4378215,
+      "necessary_outstanding_requests": 17512858,
+      "readiness_is_assumed_not_established_by_issue_width": true,
+      "ready_per_context": 4,
+      "scope": "Little's law necessary average bound for supplied request class only; excludes unlisted traffic and latency tails"
+    }
+  ],
+  "modeled_clock_ledger": {
+    "classification": "modeled_baseline_clocks_not_a_physical_frequency_measurement",
+    "dataset_availability_nested_cycles": 874905600,
+    "dataset_core_nested_cycles": 874889216,
+    "dataset_costs_added_to_outer_twice": false,
+    "dataset_executor_nested_cycles": 873676800,
+    "outer_baseline_cycles": 918672902,
+    "session_launch_nested_cycles": 16384,
+    "stage_cycles": {
+      "control_and_metadata": 26,
+      "execution": 918128359,
+      "finalization": 393286,
+      "held_return": 1,
+      "initialization_hardware_fill": 131074,
+      "input_hash": 30,
+      "interprogram_seed": 414,
+      "program_generation": 6424,
+      "program_preparation": 13288
+    },
+    "vm_executor_nested_cycles": 42731239
+  },
+  "physical_frequency_hz": null,
+  "physical_service_gates": {
+    "prepared_cache_response": {
+      "demonstrated_asic_feasibility": false,
+      "rejections": [],
+      "status": "unresolved",
+      "unknown": [
+        "correctness_for_proposed_hardware",
+        "complete_path_throughput",
+        "whole_machine_wall_power",
+        "controller_bank_timing_turnaround_refresh_tail_latency",
+        "sustainable_bandwidth",
+        "sustainable_transactions_per_s",
+        "bank_port_operations_per_s",
+        "live_state_capacity",
+        "independent_outstanding_requests"
+      ]
+    },
+    "prepared_instruction_response": {
+      "demonstrated_asic_feasibility": false,
+      "rejections": [],
+      "status": "unresolved",
+      "unknown": [
+        "correctness_for_proposed_hardware",
+        "complete_path_throughput",
+        "whole_machine_wall_power",
+        "controller_bank_timing_turnaround_refresh_tail_latency",
+        "sustainable_bandwidth",
+        "sustainable_transactions_per_s",
+        "bank_port_operations_per_s",
+        "live_state_capacity",
+        "independent_outstanding_requests"
+      ]
+    },
+    "vm_dataset_response": {
+      "demonstrated_asic_feasibility": false,
+      "rejections": [],
+      "status": "unresolved",
+      "unknown": [
+        "correctness_for_proposed_hardware",
+        "complete_path_throughput",
+        "whole_machine_wall_power",
+        "controller_bank_timing_turnaround_refresh_tail_latency",
+        "sustainable_bandwidth",
+        "sustainable_transactions_per_s",
+        "bank_port_operations_per_s",
+        "live_state_capacity",
+        "independent_outstanding_requests"
+      ]
+    }
+  },
+  "physical_wall_power_w": null,
+  "power": {
+    "missing": [
+      "dynamic.compute",
+      "dynamic.scratchpad_dynamic",
+      "dynamic.dataset_dynamic",
+      "dynamic.controllers_phy",
+      "dynamic.fabric_clock",
+      "dynamic.input_hash_fill_program_dataset_generation",
+      "static.logic_leakage",
+      "static.sram_leakage",
+      "static.memory_refresh_static",
+      "static.vrm_losses",
+      "static.fans",
+      "static.auxiliary_dc",
+      "psu_efficiency",
+      "ac_auxiliary_w"
+    ],
+    "status": "unresolved",
+    "wall_j_per_hash": null,
+    "wall_power_w": null
+  },
+  "provenance": {
+    "accepted_source": {
+      "acceptance_review_url": "https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967",
+      "public_head": "e8277c63504ef035bb82791263b6842c0cc51f51",
+      "public_tree": "cb3e0615f9df861a081ba2cbb1d47c65603b84cd"
+    },
+    "actual_input_sha256": "fb6a6302dd6c57e835515c9e23ad39e2462e41885dc92bc49b48b056e0e96130",
+    "identity_status": "accepted_input_verified",
+    "input_bytes": 2581,
+    "physical_measurement": false,
+    "schema": "openrx.architecture.hardware-dataset-provenance.v1",
+    "trusted_binding_source": "reviewed_public_hardware_dataset_fixture",
+    "trusted_input_sha256": "fb6a6302dd6c57e835515c9e23ad39e2462e41885dc92bc49b48b056e0e96130"
+  },
+  "reciprocal_transport": {
+    "additional_wire_bytes_per_hash": null,
+    "independent_physical_transactions_per_hash": null,
+    "response_fields": "instruction replies bundle reciprocal valid, 32-bit index and 64-bit value",
+    "separate_logical_request_interface": false,
+    "table_entries_are_not_request_counts": true
+  },
+  "retained_preparation": {
+    "autonomous_preparation_validated": false,
+    "cache_image_bytes": 268435456,
+    "metadata_ecc_queues_physical_macro_overhead_bytes": null,
+    "mutable_scratchpad_bytes_per_context": 2097152,
+    "prepared_instruction_capacity_bytes": 32768,
+    "reciprocal_table_data_bytes": 1912
+  },
+  "schema": "openrx.architecture.hardware-dataset-service-demand.v1",
+  "strict_wall_energy_ceiling_j_per_hash": 0.0025,
+  "target_hashes_per_second": 1000000
+}

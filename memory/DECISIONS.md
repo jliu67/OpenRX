@@ -533,3 +533,31 @@ Physical services, calibrated PPA, architecture selection, complete-hash alterna
 and the whole-machine target remain open. No full hash or native/cache generation
 was repeated by this recovery.
 
+
+
+
+## Keep SRAM baseline acceptance conditional — 2026-10-22
+
+Accept [EXP-027](../experiments/EXP-027-conditional-sram-baseline.md) only as the
+separately reviewed source-bound conditional CACTI comparison recorded in its
+[evidence](../docs/validation/conditional-sram-baseline-20261022/README.md).
+The five-command execution passed 16 tests, a fresh build and both cases, with
+no skipped stages. Preserve frozen preparation snapshots, raw pending-review
+flags, original sources and every earlier failed/accepted result. Final published
+head review and applicable checks remain separate from result acceptance.
+
+Keep fixed 128 KiB, one RW port per bank and one global credit explicit. Use
+`1e9 / max(access_ns, cycle_ns)` only as an optimistic rate with zero protocol,
+assembly and reply-hold overheads; do not multiply by bank count. Four banks
+trade lower modeled latency/read energy for greater whole-organization area
+under hypothetical ITRS45nm HP / 1.0 V / 360 K assumptions. Preserve per-bank
+leakage scope and do not infer whole-machine wall power, achieved hashes/s,
+a selected architecture or physical acceptance.
+
+The next defensible target assessment needs characterized SRAM/process/PVT and
+controller/PHY sustainable random-service data. Retained gem5 metadata alone is
+an annotation, not service validation. Broader issue #72 and physical/performance
+gates remain open. A follow-up may be prepared without presuming execution
+approval or a specialized-hardware purchase; no further run follows from this
+conditional result.
+

@@ -1,0 +1,12 @@
+nuca.cc: In member function 'void Nuca::sim_nuca()':
+nuca.cc:229:29: warning: too many arguments for format [-Wformat-extra-args]
+  229 |             fprintf(stderr, "Incorrect bank count value! Please fix the ",
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+crossbar.cc: In member function 'void Crossbar::compute_power()':
+crossbar.cc:162:16: warning: empty parentheses were disambiguated as a function declaration [-Wvexing-parse]
+  162 |     Wire wreset();
+      |                ^~
+crossbar.cc:162:16: note: remove parentheses to default-initialize a variable
+  162 |     Wire wreset();
+      |                ^~
+      |                --

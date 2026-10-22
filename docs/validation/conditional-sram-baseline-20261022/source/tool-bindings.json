@@ -1,0 +1,51 @@
+{
+  "schema": "openrx.conditional-memory-tools.v1",
+  "files": {
+    "/usr/bin/python3.10": {
+      "resolved_path": "/usr/bin/python3.10",
+      "bytes": 5941864,
+      "sha256": "a2f33a6e006989270f4340528eb61f8f97366e00a5d1b602ac8672ea44fc56ae"
+    },
+    "/usr/bin/time": {
+      "resolved_path": "/usr/bin/time",
+      "bytes": 27160,
+      "sha256": "7310b9b4c51a8f4d26c1af0da250f03a49ec8a8141033123e79196ad18f6c81b"
+    },
+    "/usr/bin/make": {
+      "resolved_path": "/usr/bin/make",
+      "bytes": 255696,
+      "sha256": "92f646030615cd98490a68a94c0aefd87b552be3158b941c02e43b0bfdb576db"
+    },
+    "/usr/bin/g++": {
+      "resolved_path": "/usr/bin/x86_64-linux-gnu-g++-11",
+      "bytes": 932680,
+      "sha256": "2360901d864cf10bfd6296e261cb2c14053552a80377761ab07146ec9ec9a2c0"
+    },
+    "/usr/bin/gcc": {
+      "resolved_path": "/usr/bin/x86_64-linux-gnu-gcc-11",
+      "bytes": 928584,
+      "sha256": "821af3c74506283c179ca413bb33e6b528805a4dd8a5c09df125e5ad560a9e89"
+    },
+    "/usr/bin/as": {
+      "resolved_path": "/usr/bin/x86_64-linux-gnu-as",
+      "bytes": 467352,
+      "sha256": "4e6b50c3faaa834150db32be778fd7d9440a4e1f5fa8beb8a72277b12159d689"
+    },
+    "/usr/bin/ld": {
+      "resolved_path": "/usr/bin/x86_64-linux-gnu-ld.bfd",
+      "bytes": 1736184,
+      "sha256": "58937fc20c21e147883b4fdaa0fc7438a8e8f2bb886cfcaa4896100ca91139e7"
+    }
+  },
+  "installed_package_metadata": [
+    "binutils\t2.38-4ubuntu2.12",
+    "g++\t4:11.2.0-1ubuntu1",
+    "g++-11\t11.4.0-1ubuntu1~22.04.3",
+    "gcc\t4:11.2.0-1ubuntu1",
+    "gcc-11\t11.4.0-1ubuntu1~22.04.3",
+    "libc6-dev:amd64\t2.35-0ubuntu3.15",
+    "libstdc++-11-dev:amd64\t11.4.0-1ubuntu1~22.04.3",
+    "make\t4.3-4.1build1"
+  ],
+  "closure_limit": "Explicitdriver/compiler/make/assembler/linker bytes and installedpackageversions; notcompletehermeticcompilerheaders/sharedlibraryclosure. Noidentityexecutableprobesrun."
+}
