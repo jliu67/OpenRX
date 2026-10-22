@@ -14,9 +14,15 @@ jobs:
       - name: Verify unchanged pinned source
         run: python3 scripts/verify_vendor.py
       - name: Install compiler and functional emulator
+        timeout-minutes: 10
         run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu qemu-user
+          set -euo pipefail
+          mkdir -p build/riscv-validation
+          printf 'APT update started: %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" | tee build/riscv-validation/apt-install.log
+          sudo apt-get -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 -o Acquire::Retries=2 update 2>&1 | tee -a build/riscv-validation/apt-install.log
+          printf 'APT install started: %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" | tee -a build/riscv-validation/apt-install.log
+          sudo apt-get -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 -o Acquire::Retries=2 install -y cmake gcc-14-riscv64-linux-gnu g++-14-riscv64-linux-gnu qemu-user 2>&1 | tee -a build/riscv-validation/apt-install.log
+          printf 'APT install completed: %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" | tee -a build/riscv-validation/apt-install.log
       - name: Record environment and build native probe
         run: |
           mkdir -p build/riscv-validation
