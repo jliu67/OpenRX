@@ -1,0 +1,98 @@
+{
+  "actual_kernel_safe": true,
+  "actual_tests": 98,
+  "allowed_cpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "claim_url": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331297362",
+  "command_timeout_seconds": 120,
+  "command_wall_seconds_sum": 2.2535540251992643,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3.10",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_architecture*.py",
+        "-v"
+      ],
+      "gnu_time_max_rss_kib": 32168,
+      "name": "architecture-units",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 2.0750454200897366
+    },
+    {
+      "argv": [
+        "/usr/bin/python3.10",
+        "-B",
+        "-m",
+        "tools.architecture.finite_fabric",
+        "--evidence",
+        "tools/architecture/fixtures/accepted_finite_fabric_v1.json",
+        "--output",
+        "results/finite-fabric-profile"
+      ],
+      "gnu_time_max_rss_kib": 16888,
+      "name": "finite-fabric-profile",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.11431741714477539
+    },
+    {
+      "argv": [
+        "/usr/bin/python3.10",
+        "-B",
+        "-m",
+        "tools.architecture.hardware_dataset",
+        "--evidence",
+        "tools/architecture/fixtures/accepted_hardware_dataset_v2.json",
+        "--output",
+        "results/hardware-dataset-profile"
+      ],
+      "gnu_time_max_rss_kib": 16172,
+      "name": "hardware-dataset-gold-parity",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.06419118796475232
+    }
+  ],
+  "cpu_percent": 600,
+  "execution_id": "20261022T023803Z-dd124df0248e",
+  "failures_errors_skips": 0,
+  "full_hash_projection": false,
+  "independent_acceptance": "PASS_ANALYTICAL_COMPONENT_REPORT_ONLY",
+  "independent_review_sha256": "f48ec328b04e494db02cf2fe0a46b736bf4a0df7f982f62637b7a0912193fb16",
+  "legacy_pr87_gold_byte_exact": true,
+  "memavailable_at_locked_prelaunch_bytes": 7371055104,
+  "memory_bytes": 1073741824,
+  "new_native_cache_RTL_synthesis_or_full_hash": false,
+  "new_tests": 12,
+  "physical_performance_acceptance": false,
+  "production_enforced": true,
+  "public_request_url": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442",
+  "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_scientific_acceptance": "unverified",
+  "receipt_sha256": "c559b9c620d9a4c12250b72f9a3d98a9214a94147cb26640e2a93885ebfd32c9",
+  "required_memavailable_bytes": 2147483648,
+  "resource_measurement_limit": "GNU time maximum RSS is per command, not aggregate cgroup peak; no post-run cgroup peak sample is claimed.",
+  "retained_tests": 86,
+  "root_integrity_proof_sha256": "60c1f7a8ed1d38dc2da3eddcfaed8b7ec656d9e70c780f54fa12365da6c10837",
+  "schema": "openrx.finite-fabric.public-summary.v1",
+  "source_manifest_sha256": "bdf9150ebe1366f70f1eaea54932e7e948aa0cb30e1b46b3ec5192d2f4016c65",
+  "status": "pass",
+  "supervisory_grace_seconds": 5,
+  "swap_bytes": 2147483648,
+  "tasks": 256,
+  "workers": 1
+}

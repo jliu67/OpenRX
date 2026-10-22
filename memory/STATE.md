@@ -1,5 +1,29 @@
 # Current state — actual local execution activation
 
+## Finite-fabric analytical result — 2026-10-22
+
+[EXP-026](../experiments/EXP-026-finite-fabric-service-profile.md) adds a separate
+byte/source-bound report over 22 accepted [PR89](https://github.com/jliu67/OpenRX/pull/89)
+recovery JSONs, preserving PR74 and [PR87](https://github.com/jliu67/OpenRX/pull/87)
+source/fixtures/gold. The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442)
+ran as `20261022T023803Z-dd124df0248e`; three commands returned zero, actual 98
+architecture methods passed (86+12), and both legacy PR87 JSONs are byte-exact.
+Separate independent review accepts `PASS_ANALYTICAL_COMPONENT_REPORT_ONLY`
+with no findings. [Evidence](../docs/validation/finite-fabric-service-profile-20261022/README.md)
+binds the unchanged 59-file source manifest, frozen files/tools and 26 receipt
+artifacts while preserving raw `unverified` and driver pending-review fields.
+
+Fetch/cache logical descriptors are 93/255 and 106/619 request/response bits.
+The bounded ideal serial/concurrent pair takes 113,953/61,595 modeled clocks;
+stalled takes 149,685/83,537. No full-hash ratio is inferred. Two item clients do
+not establish VM contexts or independent 2 MiB scratchpads. No new native/cache,
+RTL, synthesis or full-hash workload ran. Failed mapping/full-hash evidence,
+accepted records and criteria remain intact. Physical service supply/latency,
+PPA/frequency/power, complete-hash alternatives, architecture selection and the
+whole-machine target remain open. Scoped draft publication, independent final-head
+review and applicable exact-head checks remain future gates; broader #72 is open.
+
+
 ## Shared-fabric verified delivery — 2026-10-21 23:10 UTC
 
 [PR89](https://github.com/jliu67/OpenRX/pull/89) merged normally at

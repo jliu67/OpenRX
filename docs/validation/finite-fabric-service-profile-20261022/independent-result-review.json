@@ -1,0 +1,107 @@
+{
+  "schema": "openrx.finite-fabric-service-profile.independent-result-review.v1",
+  "execution_id": "20261022T023803Z-dd124df0248e",
+  "independent_acceptance": "PASS_ANALYTICAL_COMPONENT_REPORT_ONLY",
+  "findings": [],
+  "review_method": "Read-only static examination of retained logs, JSON, source text and SHA256 bindings; a separate read-only scientific-output checker independently parsed and compared accepted input bytes and report arithmetic. No candidate module imports, CLI execution, tests, reruns, builds, simulation or publication were performed during this review. Only this review JSON was written.",
+  "authorized_request": {
+    "request_key": "issue72-finite-fabric-profile-20261021-01",
+    "public_plan_url": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442",
+    "plan_sha256": "26302f06b08372c5ca7d2f82feb0ee0c4700e1b24094ba3ad81a56f5387b893b",
+    "source_manifest_sha256": "bdf9150ebe1366f70f1eaea54932e7e948aa0cb30e1b46b3ec5192d2f4016c65",
+    "frozen_sha256": "3f75af4e3807dddd9fb5dda79395f170abe6e61a6de1126c298fb3a8dd3500f9",
+    "driver_sha256": "dec0c338c0a8a8fb35fa1b1c0098b10483d35af4c13fea56e6958e668f6e6c4e",
+    "supplied_plan_source_frozen_driver_pins_rechecked": true,
+    "remote_claim_revalidation": "Parent-owned admission evidence; this result review did not poll GitHub."
+  },
+  "retained_execution": {
+    "finalization_event": "FINALIZED",
+    "process_status": "PROCESS_EXITED",
+    "returncode": 0,
+    "signals": [],
+    "receipt_artifacts": 26,
+    "receipt_sha256": "c559b9c620d9a4c12250b72f9a3d98a9214a94147cb26640e2a93885ebfd32c9",
+    "root_integrity_postcheck_sha256": "60c1f7a8ed1d38dc2da3eddcfaed8b7ec656d9e70c780f54fa12365da6c10837",
+    "root_proof_reviewed": true,
+    "root_runner_integrity_verified": true,
+    "root_reports_all_68_frozen_files_and_tools_unchanged": true,
+    "root_reports_59_source_manifest_files_unchanged": true,
+    "raw_scientific_acceptance": "unverified",
+    "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+    "raw_acceptance_fields_preserved": true
+  },
+  "analytical_validation": {
+    "actual_unittest_methods_ok": 98,
+    "retained_unittest_methods_ok": 86,
+    "new_finite_fabric_unittest_methods_ok": 12,
+    "unittest_failures_errors_skips": 0,
+    "actual_log_footer": "Ran 98 tests in 1.571s; OK",
+    "commands": [
+      {"name": "architecture-units", "returncode": 0, "timed_out": false, "driver_wall_seconds": 2.0750454200897366, "gnu_time_max_rss_kib": 32168},
+      {"name": "finite-fabric-profile", "returncode": 0, "timed_out": false, "driver_wall_seconds": 0.11431741714477539, "gnu_time_max_rss_kib": 16888},
+      {"name": "hardware-dataset-gold-parity", "returncode": 0, "timed_out": false, "driver_wall_seconds": 0.06419118796475232, "gnu_time_max_rss_kib": 16172}
+    ],
+    "three_command_order_and_argv_match_plan": true,
+    "legacy_pr87_gold": {
+      "service-demand.json": {"byte_exact_cmp": true, "sha256": "694b153e2220218c95c84579dfba930707abb439fa1cadce4d42195148f7c42a"},
+      "provenance.json": {"byte_exact_cmp": true, "sha256": "3d1a7b0ea16c570b3b7ddbe4a31469e48c95dcd6bb6221d9f6b040a97895c753"}
+    }
+  },
+  "resource_evidence": {
+    "actual_prelaunch_kernel_and_visible_ancestor_records_reviewed": true,
+    "actual_leaf_cpu_max": "600000 100000",
+    "actual_leaf_memory_max_bytes": 1073741824,
+    "actual_leaf_memory_swap_max_bytes": 2147483648,
+    "actual_leaf_pids_max": 256,
+    "worker_allowed_cpus": [0, 1, 2, 3, 4, 5],
+    "fresh_memavailable_bytes": 7371055104,
+    "required_headroom_bytes": 2147483648,
+    "kernel_production_enforced_safe": true,
+    "headroom_safe": true,
+    "sequential_workers": 1,
+    "per_command_timeout_seconds": 120,
+    "supervisory_shutdown_grace_seconds": 5,
+    "measurement_limit": "GNU time RSS values are per-command process measurements, not aggregate cgroup memory peaks; no post-run cgroup peak sample is claimed."
+  },
+  "scientific_output": {
+    "report_sha256": "d6baa3de036273b1ac3918ffb5c3418b98f0130acdb43652380c06648eea81ce",
+    "provenance_sha256": "f6a545471c0fd19001290e8be4c2e592027d27d97bf8031c9a99ab63d780a37d",
+    "registry_sha256": "b8cc39f65341320c18adb64ab2b2ea05db262938de6de5aca91add7d69ed9828",
+    "accepted_component_head": "f495a34fc8a67f69b7f3e407cc4b509b96b84d64",
+    "accepted_component_tree": "d4455f073c858c7df5bd4d2ea7373fa52650df56",
+    "accepted_component_merge": "b6e71b467bc3c51e1c6734853a08b11412c8653a",
+    "accepted_component_review_url": "https://github.com/jliu67/OpenRX/pull/89#pullrequestreview-5607170870",
+    "actual_accepted_public_inputs_verified": 22,
+    "actual_accepted_public_input_bytes": 145352,
+    "identity_status": "accepted_input_verified",
+    "profiles_checked": ["concurrent-ideal", "serial-ideal", "serial-stalled", "concurrent-stalled", "cancel0", "cancel1", "malformed-fetch0", "exhaustion"],
+    "all_profile_rows_counts_phases_namespaces_channels_and_derived_arithmetic_match_bound_inputs": true,
+    "logical_descriptors_excluding_handshakes_bits": {
+      "fetch": {"request": 93, "response": 255},
+      "cache": {"request": 106, "response": 619}
+    },
+    "observed_two_item_batch_ratios": {
+      "ideal": {"numerator": 113953, "denominator": 61595},
+      "stalled": {"numerator": 149685, "denominator": 83537}
+    },
+    "single_owner_credit_arbitration_and_request_response_closure_preserved": true,
+    "source_specific_phase_work_error_cancel_and_namespace_closure_preserved": true,
+    "nested_client_channel_and_batch_clock_scopes_preserved": true,
+    "protocol_coverage_and_separate_generic_channel_fabric_mapping_scopes_preserved": true,
+    "routing_attribution": "Pinned RTL/testbench assertions and accepted independent reviews; aggregate counters alone do not prove packet routing.",
+    "legacy_pr74_pr87_domains_preserved": true
+  },
+  "scope_limits": {
+    "acceptance_scope": "Correct source-bound logical component reporting from accepted retained evidence and the authorized analytical validation only.",
+    "new_native_cache_rtl_synthesis_or_full_hash_workload_performed": false,
+    "full_hash_projection_performed": false,
+    "two_dataset_clients_are_independent_vm_contexts": false,
+    "independent_2mib_scratchpads_validated": 0,
+    "physical_measurement": false,
+    "physical_frequency_service_supply_latency_area_wall_power_and_achieved_hashes_per_second": "unresolved",
+    "complete_machine_or_asic_feasibility_demonstrated": false,
+    "broader_issue72_gates_completed": false,
+    "old_failed_and_accepted_records": "Preserved; not rewritten or reconstructed by this review.",
+    "remaining_work": "Parent-owned scoped draft PR, independent final-head review, applicable exact-head checks and normal merge safeguards remain separate."
+  }
+}

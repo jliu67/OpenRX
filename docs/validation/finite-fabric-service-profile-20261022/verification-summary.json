@@ -1,0 +1,30 @@
+{
+  "actual_tests": 98,
+  "all_22_prior_accepted_component_inputs_byte_verified": true,
+  "all_59_scientific_source_files_unchanged": true,
+  "all_68_frozen_files_and_tools_unchanged": true,
+  "all_receipt_artifacts_verified_and_retained": true,
+  "all_three_returncodes_zero": true,
+  "claim_url": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331297362",
+  "execution_id": "20261022T023803Z-dd124df0248e",
+  "independent_acceptance": "PASS_ANALYTICAL_COMPONENT_REPORT_ONLY",
+  "independent_review_sha256": "f48ec328b04e494db02cf2fe0a46b736bf4a0df7f982f62637b7a0912193fb16",
+  "legacy_pr87_gold_byte_equal": {
+    "provenance.json": true,
+    "service-demand.json": true
+  },
+  "no_command_timeouts": true,
+  "private_journals_published": false,
+  "public_request_url": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442",
+  "raw_driver_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_records_rewritten": false,
+  "raw_scientific_acceptance": "unverified",
+  "receipt_artifact_count": 26,
+  "receipt_sha256": "c559b9c620d9a4c12250b72f9a3d98a9214a94147cb26640e2a93885ebfd32c9",
+  "review_scope": "Bounded analytical component report only; independent final published-head review and checks are separate.",
+  "root_integrity_proof_sha256": "60c1f7a8ed1d38dc2da3eddcfaed8b7ec656d9e70c780f54fa12365da6c10837",
+  "root_runner_integrity_verified": true,
+  "schema": "openrx.finite-fabric.public-verification.v1",
+  "source_bindings_file": "source-bindings.json",
+  "source_manifest_sha256": "bdf9150ebe1366f70f1eaea54932e7e948aa0cb30e1b46b3ec5192d2f4016c65"
+}

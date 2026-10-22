@@ -1,0 +1,120 @@
+{
+  "artifacts": {
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/independent-result-review.json": {
+      "bytes": 32234,
+      "sha256": "896d0425740209221fa021f2bf9c053deb44a8134abf2a8e4dd5e12e314acc61"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/native-cancel0.json": {
+      "bytes": 2366,
+      "sha256": "c8964789ee9ac401c4dd4452cbfd0c6e71d3e8928ea0c7d33bb84c1e519d8637"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/native-cancel1.json": {
+      "bytes": 2366,
+      "sha256": "3d8620223e5255b1e9d514b1f3bb8a63f5b036dee11848a43fac39a95818859e"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/native-concurrent-stalled.json": {
+      "bytes": 2193,
+      "sha256": "f28d07adc6d719292bec474a68935c1151149a824ef5101c53aac7ab34a98017"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/native-exhaustion.json": {
+      "bytes": 3182,
+      "sha256": "157e48b5bef99006cf3718b24ef3bc608d2e7681cbfcfad7e48106832e47f8ac"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/native-malformed-fetch0.json": {
+      "bytes": 2139,
+      "sha256": "5dce76e4b721b2caa75c14cb404c901898a5517f14cc9503b9ed513c6417deb4"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/native-serial-ideal.json": {
+      "bytes": 2181,
+      "sha256": "acd0b8813887c3034987995cbd974d6a1066ab078a38fdec4956dff22079685b"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/native-serial-stalled.json": {
+      "bytes": 2184,
+      "sha256": "edb01be7236d0c50676fed11af6d852e99b58e8003628e97550fc185f77b5521"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/public-summary.json": {
+      "bytes": 35460,
+      "sha256": "f40ddf23003c7edf62f3c4a213cd3eebbd1d9d3e8a72f4c9d26a000c0ea7b357"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/matrix/verification-summary.json": {
+      "bytes": 2550,
+      "sha256": "dfdbd00b8afe201a68d4a9178602da78c92302e8f7add3507bfe860ee061e888"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/prefix/independent-result-review.json": {
+      "bytes": 12314,
+      "sha256": "fda4f74c7765a10c64028b4827647d4ab7437b0b0ae065e8332b71c687c2f1bb"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/prefix/native-concurrent-ideal.json": {
+      "bytes": 2190,
+      "sha256": "5c0968622dd8a85ff9da5aa47639ea4dbcf9e49c3c49b04024ce1a2f470237a1"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/prefix/protocol.json": {
+      "bytes": 939,
+      "sha256": "c30686c0ecd7543d7a430b1b1b44ca07eb64313c87be94f3cbdf727e15a5a2c6"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/prefix/public-summary.json": {
+      "bytes": 6769,
+      "sha256": "63bc329f7e5688d6d6f81fbdc3ffdeb081b240ced98f992709f33bfb2773aee9"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/prefix/verification-summary.json": {
+      "bytes": 1716,
+      "sha256": "b648dbcdcf3bc73be890e5ed3dc0230528fb373ba0b0facfb85a3935f7ef8717"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/source-bindings.json": {
+      "bytes": 3076,
+      "sha256": "a8b942b2aea57d660cbc6b5f3181833cd9fe027b272ec4909072ea9e01827b86"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/synthesis/independent-result-review.json": {
+      "bytes": 15985,
+      "sha256": "a2eceaad19bc1d49d9247a19e3d896806e65ee43447fbbd1a223a304324aff14"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/synthesis/mapped-native-concurrent-ideal.json": {
+      "bytes": 2190,
+      "sha256": "5c0968622dd8a85ff9da5aa47639ea4dbcf9e49c3c49b04024ce1a2f470237a1"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/synthesis/mapped-protocol.json": {
+      "bytes": 939,
+      "sha256": "c30686c0ecd7543d7a430b1b1b44ca07eb64313c87be94f3cbdf727e15a5a2c6"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/synthesis/mapping-statistics.json": {
+      "bytes": 1635,
+      "sha256": "0ab9fc5aaf2c895f43f36c4808d24792fa6b2995e87cf98faf8601e187f818f9"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/synthesis/public-summary.json": {
+      "bytes": 7916,
+      "sha256": "c6872db86d62dcff3502ebf23788a69cb902546292710f17346ec9f12a86baaa"
+    },
+    "docs/validation/shared-dataset-fabric-20261021/recovery02/synthesis/verification-summary.json": {
+      "bytes": 2828,
+      "sha256": "a352090980fc029067830d829f0cbbc739368458e680fe3004333211a527969e"
+    }
+  },
+  "changed_channel_sha256": "0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493",
+  "fabric_sha256": "4c6c4d5c784ad8c310b20afea5ee62fffa7cd910eb6632a76f6daeb1f171c438",
+  "interfaces": {
+    "cache": {
+      "backend_client_id_bits": 1,
+      "client_tag_bits": 64,
+      "request_payload_bits": 41,
+      "response_payload_bits": 554
+    },
+    "fetch": {
+      "backend_client_id_bits": 1,
+      "client_tag_bits": 64,
+      "request_payload_bits": 28,
+      "response_payload_bits": 190
+    }
+  },
+  "prepared_binaries": {
+    "native.vvp": "de6ae942026bc2415993cdb9f8937a7f05f4840282f6de5ca5d22d2a20014ca4",
+    "protocol.vvp": "33c1d09941393b44f1ab8cc11b54ad7bb3d41e9f91c3ed57084c025380592e03"
+  },
+  "schema": "openrx.architecture.finite-fabric-evidence.v1",
+  "source": {
+    "acceptance_review_url": "https://github.com/jliu67/OpenRX/pull/89#pullrequestreview-5607170870",
+    "merge_commit": "b6e71b467bc3c51e1c6734853a08b11412c8653a",
+    "public_head": "f495a34fc8a67f69b7f3e407cc4b509b96b84d64",
+    "public_tree": "d4455f073c858c7df5bd4d2ea7373fa52650df56"
+  },
+  "source_manifest_sha256": "1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea"
+}

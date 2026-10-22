@@ -1,5 +1,29 @@
 # Verified project status — 2026-10-20
 
+## Finite-fabric analytical component report accepted — 2026-10-22
+
+The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442)
+completed as `20261022T023803Z-dd124df0248e`: all three commands returned zero,
+98 actual architecture tests passed (86 retained plus 12 new), and both unchanged
+[PR87](https://github.com/jliu67/OpenRX/pull/87) JSON gold files match byte-for-byte.
+[EXP-026](../experiments/EXP-026-finite-fabric-service-profile.md) profiles 22 bound
+accepted [PR89](https://github.com/jliu67/OpenRX/pull/89) recovery records without
+rerunning native/RTL/synthesis/full-hash work. Separate independent result review
+accepts `PASS_ANALYTICAL_COMPONENT_REPORT_ONLY`, with no findings.
+
+[Evidence](validation/finite-fabric-service-profile-20261022/README.md) retains
+receipt/source/tool bindings and preserves original raw `unverified`/driver pending
+flags. Logical fetch descriptors are 93/255 request/response bits and cache
+106/619 bits. Ideal two-item serial/concurrent batches take 113,953/61,595 modeled
+clocks; stalled batches take 149,685/83,537. These bounded observations are not
+full-hash projections or physical performance. Two dataset clients do not establish
+two VM contexts or independent scratchpads. Physical service, PPA/frequency/power,
+complete-hash alternatives and whole-machine feasibility remain unresolved.
+All failed/accepted historical records remain unchanged. Scoped draft publication,
+independent final-head review and applicable exact-head checks remain separate;
+no new-head CI or merge is claimed, and broader issue #72 remains open.
+
+
 ## Shared-fabric delivery verified — 2026-10-21 23:10 UTC
 
 [PR89](https://github.com/jliu67/OpenRX/pull/89) merged normally at

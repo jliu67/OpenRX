@@ -234,3 +234,58 @@ points. Missing characterized service and energy inputs leave the physical gates
 unresolved. Whole-machine power, achieved hashes/s, alternative full-hash cycles,
 physical frequency and ASIC feasibility remain unknown. The strict 2.5 mJ/hash
 wall-energy ceiling remains a rejection ceiling rather than a memory estimate.
+
+
+## Accepted finite-fabric component service profile — 2026-10-22
+
+`finite_fabric.py` reports the accepted finite two-client dataset fabric separately
+from the PR74 scheduling model and [PR87](https://github.com/jliu67/OpenRX/pull/87)
+hardware-dataset full-hash service profile. Its registry
+`fixtures/accepted_finite_fabric_v1.json` binds 22 actual public recovery JSONs
+(145,352 bytes), exact accepted source/tool identities and logical RTL port widths.
+The accepted component is [PR89](https://github.com/jliu67/OpenRX/pull/89), head
+`f495a34fc8a67f69b7f3e407cc4b509b96b84d64`, tree
+`d4455f073c858c7df5bd4d2ea7373fa52650df56`; its
+[final-head review](https://github.com/jliu67/OpenRX/pull/89#pullrequestreview-5607170870)
+remains the source-acceptance authority. Embedded claims alone cannot grant
+accepted attribution; changed bytes are rejected before a report is produced.
+
+```sh
+python3 -B -m tools.architecture.finite_fabric \
+  --evidence tools/architecture/fixtures/accepted_finite_fabric_v1.json \
+  --output /tmp/openrx-finite-fabric-service-profile-new
+```
+
+Use a new output directory and the designated server's installed admission/global
+lock. The command reads retained compact records; it launches no native generation,
+RTL simulation, synthesis or full hash. Outputs are `finite-fabric-service-profile.json`,
+`provenance.json` and an artifact digest index. The
+[validation record](../../docs/validation/finite-fabric-service-profile-20261022/README.md)
+records 98 actual passing architecture tests (86 retained plus 12 new), all three
+approved commands returning zero, unchanged PR87 JSON gold and separate independent
+acceptance `PASS_ANALYTICAL_COMPONENT_REPORT_ONLY`. Raw runner `unverified` and
+driver `unverified_pending_independent_review` flags are preserved.
+
+| Logical descriptor, excluding handshake/cancel/diagnostic wires | Request bits | Response bits |
+| --- | ---: | ---: |
+| Prepared instruction fetch, including tag and owner bit | 93 | 255 |
+| Prepared cache line, including tag and owner bit | 106 | 619 |
+
+Eight retained profiles cover ideal/stalled serial and concurrent pairs,
+cancellation of each client, malformed fetch and finite namespace exhaustion.
+The controlled ideal pair takes 113,953 serial versus 61,595 concurrent modeled
+clocks; the stalled pair takes 149,685 versus 83,537. These exact two-item ratios
+are not applied to any complete-hash ledger. Owner-credit occupancy includes held
+and protocol time, so it is not provider-only service latency. Per-link descriptor
+bits, nested client/channel clocks and batch elapsed clocks remain separate.
+Routing attribution comes from pinned RTL/testbench assertions and accepted reviews;
+aggregate counters alone do not prove packet routing.
+
+The standalone channel's 6,581 generic cells are contained in the 14,498-cell fabric
+scope; do not add them. Generic diagnostics/payload counts do not establish physical
+area. Two dataset clients are not two complete VM contexts; independent 2 MiB
+scratchpads are unvalidated. Physical off-chip traffic, sustainable service supply,
+latency, frequency, wall power, achieved hashes/s, complete-hash alternatives and
+ASIC feasibility remain unresolved. [EXP-026](../../experiments/EXP-026-finite-fabric-service-profile.md)
+records the bounded interpretation. The broader issue #72 remains open; publication
+still requires independent final-head review and applicable exact-head checks.
