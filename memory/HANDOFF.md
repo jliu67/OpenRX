@@ -1,5 +1,29 @@
 # Handoff — actual designated local execution
 
+## Finite-fabric analytical publication handoff — 2026-10-22
+
+Use [EXP-026](../experiments/EXP-026-finite-fabric-service-profile.md) and its
+[evidence](../docs/validation/finite-fabric-service-profile-20261022/README.md) for
+execution `20261022T023803Z-dd124df0248e`, authorized by the
+[issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442).
+All three commands returned zero; 98 actual methods passed (86 retained+12 new),
+and both unchanged [PR87](https://github.com/jliu67/OpenRX/pull/87) JSON gold files
+match exactly. Independent result review is
+`PASS_ANALYTICAL_COMPONENT_REPORT_ONLY`, no findings. Preserve raw runner
+`unverified`, driver `unverified_pending_independent_review`, original prepared
+metadata, failed mapping/full-hash evidence and every earlier accepted record.
+
+The report reuses 22 published accepted [PR89](https://github.com/jliu67/OpenRX/pull/89)
+recovery inputs; do not duplicate them or rerun their workloads. Its logical
+descriptors, finite credit/phase/namespace checks and bounded two-item clock ratios
+do not establish physical traffic/service, full-hash alternatives, two VM contexts,
+independent scratchpads or whole-machine feasibility. Source/input/tool bindings
+remain exact; publication documentation is a separate addition. Parent owns the
+scoped draft PR, independent final-head review, applicable exact-head checks and
+normal merge safeguards. No new-head CI/merge claim is made. Broader issue #72,
+physical PPA/frequency/power and architecture gates remain open.
+
+
 ## Shared-fabric merged-delivery handoff — 2026-10-21 23:10 UTC
 
 Use normal merge `b6e71b467bc3c51e1c6734853a08b11412c8653a` for

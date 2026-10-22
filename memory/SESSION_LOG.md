@@ -1344,3 +1344,36 @@ scientific claim. Failed mapping, accepted recovery and all historical records/r
 flags remain unchanged. Physical services, calibrated PPA/frequency/power,
 architecture selection and complete-hash alternative performance remain unresolved.
 
+
+
+## Finite-fabric analytical component reporting — 2026-10-22
+
+The [issue #72 claim](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331297362)
+and [approved three-command plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442)
+authorized `20261022T023803Z-dd124df0248e`. A separate analytical module/registry
+and 12 test methods summarize 22 byte-bound accepted
+[PR89](https://github.com/jliu67/OpenRX/pull/89) recovery records. All three commands
+returned zero without timeout; actual discovery passed 98 methods (86 retained+12
+new) with no failures/errors/skips. Both unchanged
+[PR87](https://github.com/jliu67/OpenRX/pull/87) JSON gold files matched byte-for-byte.
+No native/cache generation, RTL simulation, synthesis, full hash or historical
+scheduler reproduction ran. All source/tool/input pins remained unchanged.
+
+Command wall intervals sum to 2.253554025 seconds; GNU time max RSS was
+32,168/16,888/16,172 KiB for units/new CLI/PR87 parity CLI. These are host
+validation observations and per-command RSS, not cgroup peak or physical performance.
+Actual one-slot/one-worker bounds were CPU 600% (six CPUs), RAM 1 GiB, swap 2 GiB,
+Tasks 256 and 120+5 seconds per command. [Evidence](../docs/validation/finite-fabric-service-profile-20261022/README.md)
+binds 26 receipt artifacts and independent acceptance
+`PASS_ANALYTICAL_COMPONENT_REPORT_ONLY`, no findings. Raw runner `unverified`
+and driver `unverified_pending_independent_review` remain unchanged.
+
+[EXP-026](../experiments/EXP-026-finite-fabric-service-profile.md) keeps logical
+fetch 93/255 and cache 106/619 descriptor bits, nested clocks/links and generic cell
+scopes separate. Ideal serial/concurrent clocks 113,953/61,595 and stalled
+149,685/83,537 apply only to the controlled two-item batches. Two clients do not
+validate VM contexts or independent 2 MiB scratchpads. All failed/accepted mapping
+and full-hash records and criteria remain preserved. Physical service/PPA/power,
+full-hash alternatives, architecture and whole-machine target remain unresolved;
+broader issue #72 is open. Scoped draft publication, independent final-head review
+and applicable exact-head checks remain future gates; no merge is claimed.
