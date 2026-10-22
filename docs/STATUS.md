@@ -1,5 +1,26 @@
 # Verified project status — 2026-10-20
 
+## Conditional SRAM delivery — 2026-10-22 14:30 UTC
+
+[PR92](https://github.com/jliu67/OpenRX/pull/92) merged normally at
+`0cb7c7fcc26b9b6d0d0b46453cba6acbbd3bc69e` at 14:30:25 UTC. Merge tree
+`9f9a1d68539a74c4529cf9697aded6754a11631a` equals the independently reviewed
+head `73c5d08ecd3b3a9dca9935c6f6a35cff848356e9` tree. The
+[final-head review](https://github.com/jliu67/OpenRX/pull/92#pullrequestreview-5615633520)
+and all four applicable exact-head checks passed.
+
+The exact-merge push checks
+[Foundation](https://github.com/jliu67/OpenRX/actions/runs/39796233107/job/119884020642)
+and [RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39796233131/job/119884021166)
+both passed, confirmed at 14:47 UTC. The separate
+[closeout record](validation/conditional-sram-closeout-20261022/README.md)
+tracks delivery without changing the original indexed evidence or raw flags.
+Earlier draft/pending statements below retain their dated snapshot meaning.
+Conditional model acceptance is unchanged; physical/PPA, sustainable service,
+wall power, architecture selection and achieved hashes/s remain unresolved.
+Issue #72 stays open, and no additional model or full-hash run follows.
+
+
 ## Conditional SRAM comparison accepted within model scope — 2026-10-22
 
 The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6342654553)
