@@ -1,0 +1,25 @@
+{
+  "schema": "openrx.prepared-fetch-sram.plan.v1",
+  "status": "PREPARED_UNRUN_NOT_EXECUTION_AUTHORIZATION",
+  "request_key": "issue72-prepared-fetch-sram-20261022-01",
+  "expected_python_test_methods": 36,
+  "expected_standalone_scenarios": 12,
+  "commands": [
+    {"name": "units", "argv": ["/usr/bin/python3.10", "-B", "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py", "-v"]},
+    {"name": "image-oracle", "argv": ["/usr/bin/python3.10", "-B", "tools/prepare_image.py", "--source", "{SOURCE}/inputs", "--out", "{OUTPUT}/image"]},
+    {"name": "compile", "argv": ["/usr/bin/iverilog", "-B/usr/lib/x86_64-linux-gnu/ivl", "-g2012", "-s", "tb_prepared_fetch_sram_port", "-o", "{OUTPUT}/bench.vvp", "inputs/channel.v", "rtl/randomx_prepared_fetch_sram_port.v", "rtl/prepared_fetch_sram_behavioral.v", "rtl/tb_prepared_fetch_sram_port.v"]},
+    {"name": "simulate", "argv": ["/usr/bin/vvp", "-M/usr/lib/x86_64-linux-gnu/ivl", "{OUTPUT}/bench.vvp", "+IMAGE_DIR={OUTPUT}/image", "+OUT={OUTPUT}/simulation.json"]}
+  ],
+  "resources": {"workers": 1, "global_slots": 1, "CPUQuota": "600%", "MemoryMax": "1073741824", "MemorySwapMax": "2G", "TasksMax": 256},
+  "per_command_timeout_seconds": 120,
+  "per_command_supervisory_grace_seconds": 5,
+  "simulation_watchdog_clocks": 100000,
+  "maximum_active_command_timeout_budget_seconds": 480,
+  "maximum_shutdown_grace_budget_seconds": 20,
+  "fixed_overall_deadline_promised": false,
+  "failure_policy": "Stop at first failed command, timeout, postcondition or pin mismatch; retain all outputs and leave later commands unrun. No retry/fallback/expansion.",
+  "physical_acceptance": false,
+  "full_hash": false,
+  "native_or_cache_generation": false,
+  "cacti_or_gem5_or_mapping": false
+}

@@ -1,0 +1,13 @@
+SCENARIO 1 sealed_image_admission
+SCENARIO 2 all_3563_active_rows_through_both_clients
+SCENARIO 3 first_padding_and_last_slot_errors_both_clients
+SCENARIO 4 held_reply_and_captured_input_replacement
+SCENARIO 5 cancel_before_backend_issue
+SCENARIO 6 cancel_after_backend_issue
+SCENARIO 7 cancel_held_reply
+SCENARIO 8 nonowner_cancel_does_not_cancel_owner
+SCENARIO 9 opaque_epoch_echo_without_address_selection
+SCENARIO 10 continuous_two_client_three_clock_cadence
+SCENARIO 11 quiescent_reset_retains_immutable_image
+SCENARIO 12 terminal_counter_and_clock_ledger_closure
+PASS prepared_fetch_sram scenarios=12 checks=170056 clocks=21648

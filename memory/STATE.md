@@ -1,5 +1,37 @@
 # Current state — actual local execution activation
 
+## Prepared-fetch SRAM-port execution complete — 2026-10-22 21:33 UTC
+
+The specifically approved [EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md)
+run `20261022T213322Z-acbfc58fe1e4` completed four commands without skip, timeout
+or retry: 36 tests, offline image/oracle comparison, one compile and one
+12-scenario simulation. The exact prepared source manifest remains
+`6a4f3bd1f58fd96573519e931e472abacdef9fcbec6e85bf82058c5c50eb694f`.
+The source snapshot's preparation/UNRUN prose remains dated history; current
+execution evidence is recorded separately.
+
+Observed model totals are 7,199 requests, 7,167 row reads, 32 address errors and
+three cancellation drains; 7,126 exhaustive queries cover all active rows
+through both owners. The 32-capture continuous case spans 31 intervals/93 clocks.
+Total modeled clocks are 21,648; occupied clocks are 14,445 = 14,443 before the
+last reset + 2 after it. See [evidence](../docs/validation/prepared-fetch-sram-port-20261022/README.md).
+
+One worker/global slot used CPU600%, RAM1GiB, swap2GiB and Tasks256, with a
+120-second plus five-second limit per command. Actual command wall times were
+1.672562, 0.164733, 0.032045 and 2.427293 seconds; these are validation costs,
+not hashing throughput. Accepted RTL and retained inputs remain unchanged.
+Separate AI [actual-result review](../docs/validation/prepared-fetch-sram-port-20261022/independent-result-review.json)
+passed for the functional behavioral port only at 21:37:39 UTC. It is not human
+or account-holder approval. Draft publication/head/check gates remain pending.
+
+Offline preload plus a declared behavioral synchronous SRAM port are explicit
+services, not autonomous initialization or a characterized macro. No full hash,
+native/cache generation, CACTI/gem5 or mapping was rerun. Migration and accepted
+functional hash history remain complete within their scopes; physical SRAM/PVT,
+frequency, area/energy, service tails/controller/PHY, wall power, achieved hashes/s
+and architecture/whole-machine performance remain open. Issue #72 stays open.
+
+
 ## PR94 delivery closeout — 2026-10-22 19:00 UTC
 
 [PR94](https://github.com/jliu67/OpenRX/pull/94) merged normally at 18:58:26 UTC as
@@ -1198,5 +1230,6 @@ Read live task comments and bot receipts for claims. Exact prior STATE/HANDOFF s
 [PR #26](https://github.com/jliu67/OpenRX/pull/26) merged at `77a1641fb85f386bce4a5b51e00dedbe257376f6`, with the exact tested `78599e2812053c85037401e3f2e4d00191428427` tree. All five hosted source-head jobs passed; the independent reviewer checked 257 Python / 107 upstream / six native controls, 38 gem5 host controls, and native/QEMU 39 required plus nine runtime outcomes. Actual hosted guest execution was skipped. [Integration ledger](../docs/validation/m3-fs/stop-file-20261008/integration.json).
 
 The session's [release](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6071620898) is accepted (ready, claim null, no warnings); the required [hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6071623180) is verified. No project simulator or wrapper remains running. Task #16 stays open for the complete unchanged light matrix.
+
 
 

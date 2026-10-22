@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/usr/bin/python3.10",
+    "-B",
+    "tools/prepare_image.py",
+    "--source",
+    "SOURCE/inputs",
+    "--out",
+    "OUTPUT/image"
+  ],
+  "cwd": "SOURCE",
+  "name": "image-oracle",
+  "process_group_drained": true,
+  "returncode": 0,
+  "timed_out": false,
+  "wall_seconds": 0.16473297495394945
+}

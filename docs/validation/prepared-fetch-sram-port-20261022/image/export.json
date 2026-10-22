@@ -1,0 +1,27 @@
+{
+  "schema": "openrx.prepared-fetch-export.v1",
+  "kind": "actual-initCache-generated-programs",
+  "scope": "single_retained_cache0_image_only",
+  "rows": 4096,
+  "row_bits": 256,
+  "payload_bits": 161,
+  "reserved_zero_bits": 95,
+  "active_rows": 3563,
+  "padding_rows": 533,
+  "reciprocal_entries": 239,
+  "counts": [
+    447,
+    438,
+    449,
+    447,
+    444,
+    449,
+    452,
+    437
+  ],
+  "physical_acceptance": false,
+  "files": {
+    "rows.mem": "804c9c2cf11246a142715526180352655d6e5974d8d9d61ac6aa36aa5ce719dd",
+    "counts.mem": "e8bd05753ec37ec245f39db0d1dade350bb0571bfba518bd6aea8f84cec7b8f5"
+  }
+}

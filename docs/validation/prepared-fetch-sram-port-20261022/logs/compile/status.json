@@ -1,0 +1,21 @@
+{
+  "argv": [
+    "/usr/bin/iverilog",
+    "-B/usr/lib/x86_64-linux-gnu/ivl",
+    "-g2012",
+    "-s",
+    "tb_prepared_fetch_sram_port",
+    "-o",
+    "OUTPUT/bench.vvp",
+    "inputs/channel.v",
+    "rtl/randomx_prepared_fetch_sram_port.v",
+    "rtl/prepared_fetch_sram_behavioral.v",
+    "rtl/tb_prepared_fetch_sram_port.v"
+  ],
+  "cwd": "SOURCE",
+  "name": "compile",
+  "process_group_drained": true,
+  "returncode": 0,
+  "timed_out": false,
+  "wall_seconds": 0.03204533993266523
+}

@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/usr/bin/python3.10",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "SOURCE",
+  "name": "units",
+  "process_group_drained": true,
+  "returncode": 0,
+  "timed_out": false,
+  "wall_seconds": 1.6725624359678477
+}

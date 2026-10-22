@@ -1,0 +1,1 @@
+{"active_rows": 3563, "outcome": "PASS_CONDITIONAL_IMAGE_PACKING_ONLY", "padding_rows": 533, "physical_acceptance": false}
