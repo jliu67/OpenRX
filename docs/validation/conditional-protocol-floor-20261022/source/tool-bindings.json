@@ -1,0 +1,18 @@
+{
+  "files": {
+    "/usr/bin/python3.10": {
+      "bytes": 5941864,
+      "resolved_path": "/usr/bin/python3.10",
+      "sha256": "a2f33a6e006989270f4340528eb61f8f97366e00a5d1b602ac8672ea44fc56ae"
+    },
+    "/usr/bin/time": {
+      "bytes": 27160,
+      "resolved_path": "/usr/bin/time",
+      "sha256": "7310b9b4c51a8f4d26c1af0da250f03a49ec8a8141033123e79196ad18f6c81b"
+    }
+  },
+  "runner_release": "runner-v1-657b23f1",
+  "runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "schema": "openrx.protocol-floor-tools.v1",
+  "scope": "Python/time bytes pinned explicitly. Outer immutable runner binds its own exact release/hash; no complete hermetic runtime closure."
+}

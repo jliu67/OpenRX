@@ -4,6 +4,7 @@
 
 | Work | Current bounded result |
 | --- | --- |
+| EXP-028 / issue #72, 2026-10-22 | Protocol-floor analytical run completed: 12 tests and two commands pass; [evidence](validation/conditional-protocol-floor-20261022/README.md). Separate AI result review passed within conditional necessary-ceiling scope; publication-head review and applicable checks remain separate. Symbolic two-clock necessary ceilings do not establish actual speedup or physical service; draft stacks on PR93 with its cancelled push scalar merge gate preserved. |
 | PR92 delivery, 2026-10-22 14:30 UTC | Normal merge `0cb7c7fc`, tree equal to reviewed `73c5d08e`; independent final-head review and four head checks pass. Both exact-merge push checks passed at 14:47 UTC; [separate closeout](validation/conditional-sram-closeout-20261022/README.md). Conditional-only scientific and physical/service gates are unchanged; #72 remains open. |
 | EXP-027 / issue #72, 2026-10-22 | Conditional 128 KiB one/four-bank CACTI comparison independently accepted within hypothetical model scope: five commands, 16 tests and both cases pass; [evidence](validation/conditional-sram-baseline-20261022/README.md). Draft delivery review/checks and physical service/PPA gates remain open. |
 | EXP-023 / later task71 records | One default 8×2,048 functional hardware-dataset hash independently accepted at public `e8277c6`/tree `cb3e0615`; [evidence](validation/dataset-fullhash-20261020/README.md). |

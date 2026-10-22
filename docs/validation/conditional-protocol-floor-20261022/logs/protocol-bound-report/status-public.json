@@ -1,0 +1,22 @@
+{
+  "normalization": "Only {SOURCE}/{EXECUTION} prefixes replaced; raw retained locally.",
+  "raw_sha256": "1e9adccf49000714e2d5263f034383a963f04de12fe6ac47e2d8862964c71539",
+  "record": {
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "adapter/sram_protocol_bound.py",
+      "--inputs",
+      "{SOURCE}/inputs",
+      "--registry",
+      "{SOURCE}/input-bindings.json",
+      "--output",
+      "{EXECUTION}/results/protocol-bound-report-output"
+    ],
+    "cwd": "{SOURCE}",
+    "name": "protocol-bound-report",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 0.06421207101084292
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "openrx.independent-protocol-floor-review.v1",
+  "reviewed_at": "2026-10-22T18:17:00Z",
+  "reviewer_identity": "Separate AI agent /root/protocol_admission_1809",
+  "outcome": "PASS_CONDITIONAL_NECESSARY_CEILINGS_ONLY",
+  "blocking_findings": [],
+  "execution_id": "20261022T181455Z-4424e8848ccf",
+  "report_sha256": "456f23c1aa1f7ba921a8f68b1afdd3ae552e609b1600cbcc2ad8d37d8eb7fefd",
+  "receipt_sha256": "45dfccc7b214655ec3734af62870f148ffc55d9891a09cf33778fdeeec5154e4",
+  "checks": [
+    "All22 receipt artifacts,16 frozen source files,two tool files and immutable runner hashes match",
+    "Actual12tests/2commands rc0,no skips/timeouts; exact resource and ancestor/headroom checks safe",
+    "Five rational witnesses,three piecewise regimes and both breakpoints independently recomputed",
+    "Accepted RTL supports2clock capture floor and same-edge backend request/reply without extra response clock",
+    "No actual-speedup,joint-achievability,physical-clock or technology-selection claim; physical unknowns null and raw flags preserved"
+  ],
+  "reviewer_workload_or_public_action": false,
+  "scope": "Separate AI scientific review of conditional necessary ceilings only; no human approval or physical acceptance."
+}

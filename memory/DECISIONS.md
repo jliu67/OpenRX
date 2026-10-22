@@ -561,3 +561,26 @@ gates remain open. A follow-up may be prepared without presuming execution
 approval or a specialized-hardware purchase; no further run follows from this
 conditional result.
 
+
+
+## Keep protocol-floor reporting a necessary-bound calculation — 2026-10-22
+
+[EXP-028](../experiments/EXP-028-conditional-protocol-floor.md) intersects two
+separately necessary ceilings rather than adding unvalidated latencies. Use
+`C_i(P)=min(1e9/T_i,1e9/(2P))` only for symbolic `P>0`, the retained hypothetical
+array model and accepted single-credit capture contract. Same-edge backend
+request/reply remains allowed; do not invent a universal reply edge or
+`ceil(T/P)+2` contract. The ratio of these ceilings is not a bound on actual
+implementation speedup, and their intersection does not prove joint
+attainability. No physical clock, bank choice, engine count, process or memory
+technology follows.
+
+The approved two-command run passed 12 tests and a report; preserve raw
+`unverified`/pending-review flags and earlier evidence unchanged.
+Separate AI result review passed at 18:17 UTC within conditional necessary-ceiling scope;
+publication-head review and applicable checks remain separate gates. Source-specific nested occupancy and
+scripted protocol clocks are not provider latency or sustainable service.
+Physical SRAM/PVT, memory/controller/PHY service and tails, full-system power,
+physical area/frequency, achieved hash rate and architecture gates remain open.
+No further validation or public execution request is authorized by this record.
+

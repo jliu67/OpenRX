@@ -1,0 +1,49 @@
+{
+  "files": {
+    "channel.v": {
+      "bytes": 6387,
+      "sha256": "0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493"
+    },
+    "channel_bench.v": {
+      "bytes": 27225,
+      "sha256": "5468e7a77fe2dcd4c2a6e8e8cde3e953552e3e4f6e662f84b8a5a1a787325f79"
+    },
+    "fabric.v": {
+      "bytes": 5597,
+      "sha256": "4c6c4d5c784ad8c310b20afea5ee62fffa7cd910eb6632a76f6daeb1f171c438"
+    },
+    "mapped_protocol.json": {
+      "bytes": 939,
+      "sha256": "c30686c0ecd7543d7a430b1b1b44ca07eb64313c87be94f3cbdf727e15a5a2c6"
+    },
+    "native_bench.v": {
+      "bytes": 46653,
+      "sha256": "eda2ba99830af4568a99acbf88a1bda7f6432be68dd642d13d2d49b66c83eb42"
+    },
+    "pr89_source_bindings.json": {
+      "bytes": 3076,
+      "sha256": "a8b942b2aea57d660cbc6b5f3181833cd9fe027b272ec4909072ea9e01827b86"
+    },
+    "pr91_report.json": {
+      "bytes": 50216,
+      "sha256": "d6baa3de036273b1ac3918ffb5c3418b98f0130acdb43652380c06648eea81ce"
+    },
+    "pr92_contract.json": {
+      "bytes": 14532,
+      "sha256": "087a18367ddd65bf930e2030070995f0d8e8e2e1adb246d2284be724e7583346"
+    },
+    "pr92_provenance.json": {
+      "bytes": 8986,
+      "sha256": "1689dfdbaf87d1b3563e73134826bae0def89e2cb64652c133e01610cab8afcb"
+    },
+    "pr92_report.json": {
+      "bytes": 16811,
+      "sha256": "67deb5c947d346f84c48db5e30b7000a76a8fdd9c8b0fe67bfa81621d81c9bde"
+    },
+    "rtl_protocol.json": {
+      "bytes": 939,
+      "sha256": "c30686c0ecd7543d7a430b1b1b44ca07eb64313c87be94f3cbdf727e15a5a2c6"
+    }
+  },
+  "schema": "openrx.sram-protocol-bound.inputs.v1"
+}

@@ -1,0 +1,106 @@
+{
+  "actual_unit_tests": 12,
+  "allowed_cpus": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "commands": [
+    {
+      "maximum_resident_set_kbytes": 18944,
+      "name": "protocol-bound-units",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.26552396081387997
+    },
+    {
+      "maximum_resident_set_kbytes": 16832,
+      "name": "protocol-bound-report",
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.06421207101084292
+    }
+  ],
+  "commands_completed": 2,
+  "commands_planned": 2,
+  "execution_id": "20261022T181455Z-4424e8848ccf",
+  "kernel_limits": {
+    "cgroup.controllers": "cpu memory pids",
+    "cgroup.subtree_control": "",
+    "cpu.max": "600000 100000",
+    "cpuset.cpus.effective": null,
+    "memory.high": "max",
+    "memory.max": "1073741824",
+    "memory.swap.max": "2147483648",
+    "pids.max": "256"
+  },
+  "kernel_safe": true,
+  "locked_headroom": {
+    "available_bytes": 6855077888,
+    "required_available_bytes": 2147483648,
+    "safe": true
+  },
+  "no_new_model_build_native_rtl_fullhash": true,
+  "normalization": "Public logs/status replace local prefixes. Original hashes and full records remain retained.",
+  "physical_acceptance": false,
+  "posthash": {
+    "candidate_files": 16,
+    "immutable_runner_unchanged": true,
+    "manifest_unchanged": true,
+    "original_inputs": 11,
+    "tool_files": 2
+  },
+  "production_enforced": true,
+  "public_plan": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6347919145",
+  "raw_artifacts": {
+    "events.jsonl": {
+      "bytes": 1456,
+      "sha256": "97d9bfe6ed75bcbb8d3446da047503062ec7daac4fa2f094769a3c2dedfdd090"
+    },
+    "manifest.json": {
+      "bytes": 9754,
+      "sha256": "2b7a3459d7b13b414901bab50bea73ca8bf742ee320f56b853bad2371a7826d1"
+    },
+    "prelaunch-kernel-check.json": {
+      "bytes": 2318,
+      "sha256": "7177a9a490f9d026047f76a4858b13edf1414a35c2aecc725a13f2b120aab7b0"
+    },
+    "prelaunch-resource-check.json": {
+      "bytes": 415,
+      "sha256": "58ec1a35f0b523d26cb950c72a4b311ad22d7922897d4980972e416a5832e4b7"
+    },
+    "process-result.json": {
+      "bytes": 142,
+      "sha256": "e2a745dec93f48ddd34a9d10ac4d9f8ccb1cc671c3c4d4724ff35190499d1a8f"
+    },
+    "receipt.json": {
+      "bytes": 4881,
+      "sha256": "45dfccc7b214655ec3734af62870f148ffc55d9891a09cf33778fdeeec5154e4"
+    },
+    "results/validation-summary.json": {
+      "bytes": 1802,
+      "sha256": "daacb8ab4c273cb0d0a468e3a01e8cf192c0eed64f86fdf4bbcbe68719a3a5e7"
+    }
+  },
+  "raw_report_scientific_acceptance": "unverified_pending_independent_review",
+  "raw_runner_scientific_acceptance": "unverified",
+  "request_key": "issue72-protocol-floor-20261022-01",
+  "resources": {
+    "CPUQuota": "600%",
+    "MemoryMax": "1073741824",
+    "MemorySwapMax": "2G",
+    "Nice": 10,
+    "NoNewPrivileges": true,
+    "TasksMax": 256,
+    "global_slots": 1
+  },
+  "returncode": 0,
+  "schema": "openrx.protocol-floor-public-summary.v1",
+  "skipped_commands": [],
+  "source_manifest_sha256": "ea52fe4107df66182ba7e828093a1c4207fbe4dad30c32774e0cb8a982028493",
+  "status": "PROCESS_EXITED",
+  "tool_closure_limit": "Pinned Python/time/runner; not complete hermetic shared-library/runtime closure."
+}

@@ -1,5 +1,32 @@
 # Verified project status — 2026-10-20
 
+## Conditional protocol-floor run completed — 2026-10-22
+
+The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6347919145) completed once as
+`20261022T181455Z-4424e8848ccf`: all 12 focused tests passed and the analytical
+report command returned zero. Both commands completed without timeout, skipped
+stage or retry. [EXP-028](../experiments/EXP-028-conditional-protocol-floor.md)
+and its [evidence](validation/conditional-protocol-floor-20261022/README.md)
+bind the executed source, retained inputs, limits and raw flags.
+Separate AI result review passed at 18:17 UTC within conditional necessary-ceiling scope;
+publication-head review and applicable hosted checks remain separate gates.
+
+For symbolic clock period `P>0`, the report intersects each retained array
+ceiling with the accepted channel's two-clock capture floor:
+`C_i(P)=min(1e9/T_i, 1e9/(2P))`. The necessary-ceiling ratio is about 3.835 below
+`P=0.3573965 ns`, narrows as `T1/(2P)` between the breakpoints, and is one at
+or above `P=1.37061 ns`. These are ratios of necessary conditional ceilings,
+not achieved speedup or proof of simultaneous attainability. No physical clock
+is selected, and no CACTI, RTL, gem5, build or full-hash campaign was rerun.
+
+The draft is intended to stack on [PR93](https://github.com/jliu67/OpenRX/pull/93)
+head `3169b2d1`. Its [separate AI-review record](https://github.com/jliu67/OpenRX/pull/93#pullrequestreview-5618779156) is posted;
+PR93's merge remains held on cancelled push scalar check `119895244138`.
+This is a hosted delivery gate, not physical-performance evidence. Broader
+issue #72 and SRAM/PVT, controller/PHY service, physical PPA, power, achieved
+hash rate and architecture-selection gates remain open.
+
+
 ## Conditional SRAM delivery — 2026-10-22 14:30 UTC
 
 [PR92](https://github.com/jliu67/OpenRX/pull/92) merged normally at
