@@ -1,0 +1,102 @@
+{
+  "normalization": "Only {EXECUTION}/{SOURCE} path prefixes replaced; raw flags unchanged.",
+  "raw_sha256": "b60289a798fbcd61462e89d7c6df3a5f6c1b6fdb4e69cd1702075976c5056213",
+  "record": {
+    "actual_unit_tests": 16,
+    "bound_inputs_tools_unchanged": true,
+    "commands": [
+      {
+        "argv": [
+          "/usr/bin/python3.10",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_memory_baseline.py",
+          "-v"
+        ],
+        "cwd": "{SOURCE}",
+        "name": "memory-baseline-units",
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 0.26547643612138927
+      },
+      {
+        "argv": [
+          "/usr/bin/make",
+          "-j1",
+          "NTHREADS=1",
+          "CXX=/usr/bin/g++",
+          "CC=/usr/bin/gcc",
+          "CXXFLAGS=-O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas"
+        ],
+        "cwd": "{EXECUTION}/results/build/cacti",
+        "name": "build-cacti",
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 20.231832964811474
+      },
+      {
+        "argv": [
+          "{EXECUTION}/results/build/cacti/cacti",
+          "-infile",
+          "{EXECUTION}/results/cases/bank1/input.cfg"
+        ],
+        "cwd": "{EXECUTION}/results/cases/bank1",
+        "model_binary_sha256": "5ba626bd84f0288a4ff54641b79fb159bad39a4a77200c0470de56aa776ab792",
+        "name": "model-bank1",
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 0.0037209661677479744
+      },
+      {
+        "argv": [
+          "{EXECUTION}/results/build/cacti/cacti",
+          "-infile",
+          "{EXECUTION}/results/cases/bank4/input.cfg"
+        ],
+        "cwd": "{EXECUTION}/results/cases/bank4",
+        "model_binary_sha256": "5ba626bd84f0288a4ff54641b79fb159bad39a4a77200c0470de56aa776ab792",
+        "name": "model-bank4",
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 0.003551249159500003
+      },
+      {
+        "argv": [
+          "/usr/bin/python3.10",
+          "-B",
+          "adapter/memory_baseline.py",
+          "--contract",
+          "{SOURCE}/contract.json",
+          "--inputs",
+          "{SOURCE}/inputs",
+          "--cases",
+          "{EXECUTION}/results/cases",
+          "--output",
+          "{EXECUTION}/results/conditional-report"
+        ],
+        "cwd": "{SOURCE}",
+        "name": "conditional-report",
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 0.11434818990528584
+      }
+    ],
+    "commands_completed": 5,
+    "conditional_only": true,
+    "generated_binary": {
+      "bytes": 405224,
+      "sha256": "5ba626bd84f0288a4ff54641b79fb159bad39a4a77200c0470de56aa776ab792"
+    },
+    "new_full_hash_or_rtl_or_gem5_simulation": false,
+    "physical_acceptance": false,
+    "schema": "openrx.conditional-memory-validation.v1",
+    "scientific_acceptance": "unverified_pending_independent_review",
+    "source_manifest_sha256": "505b787884969c0312910fcc989f84b4eb5a2c54a04146d35445b9e707b0fee4",
+    "status": "pass_conditional_model_only"
+  }
+}

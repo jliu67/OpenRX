@@ -1,0 +1,24 @@
+{
+  "normalization": "Only {EXECUTION}/{SOURCE} path prefixes replaced; original retained separately.",
+  "raw_sha256": "84a41388d10501bab2c876b345d5b849f3e32e5cd2e606aa387c076a293f7899",
+  "record": {
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "adapter/memory_baseline.py",
+      "--contract",
+      "{SOURCE}/contract.json",
+      "--inputs",
+      "{SOURCE}/inputs",
+      "--cases",
+      "{EXECUTION}/results/cases",
+      "--output",
+      "{EXECUTION}/results/conditional-report"
+    ],
+    "cwd": "{SOURCE}",
+    "name": "conditional-report",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 0.11434818990528584
+  }
+}

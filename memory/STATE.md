@@ -1,5 +1,30 @@
 # Current state — actual local execution activation
 
+## Conditional SRAM baseline result — 2026-10-22
+
+[EXP-027](../experiments/EXP-027-conditional-sram-baseline.md) compares one versus
+four banks at fixed 128 KiB under hypothetical CACTI6.5 ITRS45nm HP / 1.0 V /
+360 K assumptions. The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6342654553)
+ran once as `20261022T140233Z-a4edfd2d9e92`; all five commands returned zero,
+16 actual tests passed, the fresh 20-unit build took 20.232 seconds and both
+model cases passed strict validation without timeout or skipped stages.
+Independent result review accepts `PASS_CONDITIONAL_MODEL_COMPARISON_ONLY`,
+with no blocking findings. [Evidence](../docs/validation/conditional-sram-baseline-20261022/README.md)
+preserves source/tool bindings, raw flags and report SHA256
+`67deb5c947d346f84c48db5e30b7000a76a8fdd9c8b0fe67bfa81621d81c9bde`.
+
+Four banks give 3.835× the optimistic one-credit rate through lower modeled
+latency, 40.9% lower read energy and 49.6% more organization area. One global
+credit remains; zero protocol/assembly/hold overhead is an optimistic bound.
+No bank multiplier, wall-power total, physical service rate or achieved hash
+rate follows. PR87/91 demand and all prior failed/accepted sources and evidence
+remain intact. Characterized SRAM/process/PVT plus controller/PHY sustainable
+random-service data are the next assessment gate. Issue #72 stays open;
+draft publication, independent final-head review and applicable exact-head checks
+remain separate pending delivery gates. No additional execution is authorized
+by this result, and no specialized-hardware purchase is assumed.
+
+
 ## Finite-fabric analytical result — 2026-10-22
 
 [EXP-026](../experiments/EXP-026-finite-fabric-service-profile.md) adds a separate
@@ -1080,4 +1105,5 @@ Read live task comments and bot receipts for claims. Exact prior STATE/HANDOFF s
 [PR #26](https://github.com/jliu67/OpenRX/pull/26) merged at `77a1641fb85f386bce4a5b51e00dedbe257376f6`, with the exact tested `78599e2812053c85037401e3f2e4d00191428427` tree. All five hosted source-head jobs passed; the independent reviewer checked 257 Python / 107 upstream / six native controls, 38 gem5 host controls, and native/QEMU 39 required plus nine runtime outcomes. Actual hosted guest execution was skipped. [Integration ledger](../docs/validation/m3-fs/stop-file-20261008/integration.json).
 
 The session's [release](https://github.com/jliu67/OpenRX/issues/16#issuecomment-6071620898) is accepted (ready, claim null, no warnings); the required [hub bot copy](https://github.com/jliu67/OpenRX/issues/5#issuecomment-6071623180) is verified. No project simulator or wrapper remains running. Task #16 stays open for the complete unchanged light matrix.
+
 

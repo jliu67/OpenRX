@@ -1377,3 +1377,36 @@ and full-hash records and criteria remain preserved. Physical service/PPA/power,
 full-hash alternatives, architecture and whole-machine target remain unresolved;
 broader issue #72 is open. Scoped draft publication, independent final-head review
 and applicable exact-head checks remain future gates; no merge is claimed.
+
+
+
+## Conditional SRAM baseline execution — 2026-10-22
+
+The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6342654553)
+ran once as `20261022T140233Z-a4edfd2d9e92`. All five commands returned zero:
+16 actual tests, a fresh CACTI build over 20 C++ translation units in 20.232
+seconds, one-bank and four-bank model cases, and the strict conditional report.
+No command timed out or was skipped. Bounds were one worker/global slot,
+CPU600%, RAM1 GiB, swap2 GiB, Tasks256 and 120 seconds plus 5 seconds supervisory
+grace per command. Source/tool pins and retained originals remained unchanged;
+two legacy compiler warnings are preserved. No full-hash, RTL, synthesis or
+gem5 workload ran.
+
+Independent result review accepts `PASS_CONDITIONAL_MODEL_COMPARISON_ONLY`,
+with no blocking findings. [EXP-027](../experiments/EXP-027-conditional-sram-baseline.md)
+and [evidence](../docs/validation/conditional-sram-baseline-20261022/README.md)
+retain raw cases, provenance and report SHA256
+`67deb5c947d346f84c48db5e30b7000a76a8fdd9c8b0fe67bfa81621d81c9bde`.
+Raw runner `unverified` and driver/report pending-review fields stay intact.
+
+Under hypothetical ITRS45nm HP / 1.0 V / 360 K assumptions at fixed 128 KiB,
+four banks improve the optimistic single-credit rate 3.835× through reduced
+modeled latency, with 40.9% less read energy and 49.6% more organization area.
+Zero protocol/hold overheads define an upper bound, not a physical service rate;
+no bank-count multiplier or wall-power total is inferred. Characterized SRAM/PVT,
+controller/PHY random-service supply, physical PPA and achieved hash rate remain
+open. Draft publication, independent final-head review and applicable exact-head
+checks are separate pending delivery gates. Historical failed/accepted records
+and scientific criteria remain preserved; no further execution is authorized
+by this result.
+

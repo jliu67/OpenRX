@@ -1,0 +1,68 @@
+Cache size                    : 131072
+Block size                    : 32
+Associativity                 : 1
+Read only ports               : 0
+Write only ports              : 0
+Read write ports              : 1
+Single ended read ports       : 0
+Cache banks (UCA)             : 1
+Technology                    : 0.045
+Temperature                   : 360
+Tag size                      : 42
+array type                    : Scratch RAM
+Model as memory               : 0
+Access mode                   : 0
+Data array cell type          : 0
+Data array peripheral type    : 0
+Tag array cell type           : 0
+Tag array peripheral type     : 0
+Optimization target           : 0
+Design objective (UCA wt)     : 0 0 0 100 0
+Design objective (UCA dev)    : 20 100000 100000 100000 100000
+Cache model                   : 0
+Nuca bank                     : 0
+Wire inside mat               : 1
+Wire outside mat              : 1
+Interconnect projection       : 1
+Wire signalling               : 1
+Print level                   : 0
+ECC overhead                  : 0
+Page size                     : 8192
+Burst length                  : 8
+Internal prefetch width       : 8
+Force cache config            : 1
+Ndwl                          : 2
+Ndbl                          : 2
+Nspd                          : 1
+Ndcm                          : 1
+Ndsam1                        : 2
+Ndsam2                        : 1
+
+---------- CACTI version 6.5, Uniform Cache Access SRAM Model ----------
+
+Cache Parameters:
+    Total cache size (bytes): 131072
+    Number of banks: 1
+    Associativity: direct mapped
+    Block size (bytes): 32
+    Read/write Ports: 1
+    Read ports: 0
+    Write ports: 0
+    Technology size (nm): 45
+
+    Access time (ns): 2.74122
+    Cycle time (ns):  1.40396
+    Total dynamic read energy per access (nJ): 0.214913
+    Total dynamic write energy per access (nJ): 0.412429
+    Total leakage power of a bank (mW): 164.826
+    Total gate leakage power of a bank (mW): 4.74593
+    Cache height x width (mm): 2.84867 x 0.138165
+
+    Best Ndwl : 2
+    Best Ndbl : 2
+    Best Nspd : 1
+    Best Ndcm : 1
+    Best Ndsam L1 : 2
+    Best Ndsam L2 : 1
+
+    Data array, H-tree wire type: Delay optimized global wires

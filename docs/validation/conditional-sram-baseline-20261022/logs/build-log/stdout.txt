@@ -1,0 +1,25 @@
+mkdir obj_opt
+make[1]: Entering directory '{EXECUTION}/results/build/cacti'
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c area.cc -o obj_opt/area.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c bank.cc -o obj_opt/bank.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c mat.cc -o obj_opt/mat.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c main.cc -o obj_opt/main.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c Ucache.cc -o obj_opt/Ucache.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c io.cc -o obj_opt/io.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c technology.cc -o obj_opt/technology.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c basic_circuit.cc -o obj_opt/basic_circuit.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c parameter.cc -o obj_opt/parameter.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c decoder.cc -o obj_opt/decoder.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c component.cc -o obj_opt/component.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c uca.cc -o obj_opt/uca.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c subarray.cc -o obj_opt/subarray.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c wire.cc -o obj_opt/wire.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c htree2.cc -o obj_opt/htree2.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c cacti_interface.cc -o obj_opt/cacti_interface.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c router.cc -o obj_opt/router.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c nuca.cc -o obj_opt/nuca.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c crossbar.cc -o obj_opt/crossbar.o
+/usr/bin/g++ -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas -c arbiter.cc -o obj_opt/arbiter.o
+/usr/bin/g++ obj_opt/area.o obj_opt/bank.o obj_opt/mat.o obj_opt/main.o obj_opt/Ucache.o obj_opt/io.o obj_opt/technology.o obj_opt/basic_circuit.o obj_opt/parameter.o obj_opt/decoder.o obj_opt/component.o obj_opt/uca.o obj_opt/subarray.o obj_opt/wire.o obj_opt/htree2.o obj_opt/cacti_interface.o obj_opt/router.o obj_opt/nuca.o obj_opt/crossbar.o obj_opt/arbiter.o -o obj_opt/cacti -lm -O3 -std=gnu++98 -msse2 -mfpmath=sse -DNTHREADS=1 -Wno-unknown-pragmas  -pthread
+cp -f obj_opt/cacti cacti
+make[1]: Leaving directory '{EXECUTION}/results/build/cacti'

@@ -1,5 +1,30 @@
 # Verified project status — 2026-10-20
 
+## Conditional SRAM comparison accepted within model scope — 2026-10-22
+
+The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6342654553)
+completed as `20261022T140233Z-a4edfd2d9e92`: all five commands returned zero,
+16 actual tests passed, a fresh 20-translation-unit CACTI build completed in
+20.232 seconds, and both model cases passed strict output validation. No stage
+was skipped or timed out. Separate independent result review accepts
+`PASS_CONDITIONAL_MODEL_COMPARISON_ONLY`, with no blocking findings.
+[EXP-027](../experiments/EXP-027-conditional-sram-baseline.md) and its
+[evidence](validation/conditional-sram-baseline-20261022/README.md) bind the
+frozen source, raw results, tools and execution receipt; raw scientific flags
+remain unchanged.
+
+For the hypothetical CACTI6.5 ITRS45nm HP / 1.0 V / 360 K model, four rather than
+one bank at fixed 128 KiB gives 3.835× the optimistic single-credit service rate,
+40.9% lower modeled read energy and 49.6% greater modeled organization area.
+The rate follows reduced modeled latency, with zero protocol/hold overhead and
+no bank-count multiplier. This does not select a technology or architecture or
+validate physical PPA, sustainable service, wall power or achieved hashes/s.
+Characterized SRAM/PVT and controller/PHY random-service evidence remain needed.
+Broader issue #72 stays open. Scoped draft publication, independent final-head
+review and applicable exact-head checks are separate pending delivery gates;
+all historical failed and accepted records remain preserved.
+
+
 ## Finite-fabric analytical component report accepted — 2026-10-22
 
 The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6331310442)
@@ -268,3 +293,4 @@ Next status evidence comes from the existing supervisor's terminal review and
 the documentation PR's independent exact-head review/checks. Historical audit #66
 and external-link findings remain scoped to their recorded trees. No milestone,
 claim, dependency, acceptance criterion, setting or access is changed here.
+

@@ -4,6 +4,7 @@
 
 | Work | Current bounded result |
 | --- | --- |
+| EXP-027 / issue #72, 2026-10-22 | Conditional 128 KiB one/four-bank CACTI comparison independently accepted within hypothetical model scope: five commands, 16 tests and both cases pass; [evidence](validation/conditional-sram-baseline-20261022/README.md). Draft delivery review/checks and physical service/PPA gates remain open. |
 | EXP-023 / later task71 records | One default 8×2,048 functional hardware-dataset hash independently accepted at public `e8277c6`/tree `cb3e0615`; [evidence](validation/dataset-fullhash-20261020/README.md). |
 | Original task71 | Remains closed for its original lifecycle delivery; later accepted and failed results remain separate execution records. |
 | Remaining engineering gates | Retained preparation/host services remain explicit; autonomous setup, physical services/PPA, calibrated frequency, architecture and whole-machine targets remain open. |
@@ -346,4 +347,5 @@ The independent [inspection checkpoint](inspection/2026-10-08-incident.md) is pr
 ## 2026-10-14 bounded component handoff
 
 [Task #69](https://github.com/jliu67/OpenRX/issues/69): immutable reciprocal candidate, final 8 Python/48 native iterations/11 RTL/4 mapped/3 invalid checks pass, complete-pipeline gate skipped, four failures retained. [EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) carries scope/evidence. Independent exact-head review pending; complete-pipeline baseline remains the next performance prerequisite.
+
 
