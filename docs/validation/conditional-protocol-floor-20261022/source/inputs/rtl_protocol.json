@@ -1,0 +1,19 @@
+{
+  "schema": "openrx.shared-dataset-channel-protocol.v1",
+  "status": "pass",
+  "checks": 2045, "cycles": 91, "counter_closure_checks": 91,
+  "fairness_pairs": 8, "identical_tag_pairs": 8,
+  "descriptor_hold_cycles": 3, "response_hold_cycles": 7,
+  "early_reply_hold_cycles": 3, "same_edge_request_response_cases": 2,
+  "queued_cancel_cases": 1, "issued_cancel_cases": 1, "held_cancel_cases": 1,
+  "foreign_owner_packets": 2, "wrong_low_tag_packets": 1, "idle_orphan_packets": 1,
+  "malformed_payload_forwarded": 1, "other_client_progress_cases": 1,
+  "nonowner_cancel_cases": 1, "quiescent_reset_cases": 1,
+  "accepted_count": [12, 11],
+  "delivered_count": [10, 10],
+  "arbitration_wait_cycles": [21, 29],
+  "backend_request_count": 23, "backend_response_count": 27,
+  "cancelled_response_count": 3, "orphan_response_count": 4,
+  "occupied_cycles": 63, "high_water_mark": 1,
+  "counter_snapshot_scope": "before_final_quiescent_reset"
+}

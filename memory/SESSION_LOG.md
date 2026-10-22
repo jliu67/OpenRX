@@ -1433,3 +1433,36 @@ Acceptance remains conditional model comparison only, with physical/PPA,
 sustainable-service, power, architecture selection and achieved-hash-rate gates
 open. Broader issue #72 remains open.
 
+
+
+## Conditional protocol-floor analysis — 2026-10-22
+
+The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6347919145) ran once as
+`20261022T181455Z-4424e8848ccf`. Both commands returned zero: 12 actual focused
+tests passed and the standalone rational report completed. There was no skipped
+stage, timeout, retry or scope expansion. Timed wall durations were 0.265524
+and 0.064212 seconds, under one worker/global slot, CPU600%, RAM1 GiB,
+swap2 GiB, Tasks256 and 120 seconds plus five seconds grace per command.
+The 16 bound files plus manifest, 11 original inputs, two tools and runner
+were checked unchanged. No CACTI, RTL/mapped/gem5, rebuild or full-hash
+campaign was performed.
+
+[EXP-028](../experiments/EXP-028-conditional-protocol-floor.md) and
+[evidence](../docs/validation/conditional-protocol-floor-20261022/README.md)
+retain report SHA256 `456f23c1aa1f7ba921a8f68b1afdd3ae552e609b1600cbcc2ad8d37d8eb7fefd`
+and receipt SHA256 `45dfccc7b214655ec3734af62870f148ffc55d9891a09cf33778fdeeec5154e4`.
+Separate AI result review passed at 18:17 UTC within conditional necessary-ceiling scope;
+exact published-head review and applicable checks remain separate. Raw scientific flags are unchanged.
+
+The source-bound two-clock capture floor yields
+`C_i(P)=min(1e9/T_i,1e9/(2P))`, with symbolic positive period and no selected
+physical frequency. Necessary-ceiling ratio regimes change at 0.3573965 ns
+and 1.37061 ns, from about 3.835 through `T1/(2P)` to one. These ratios do not
+bound actual speedup or establish joint attainability. Same-edge backend
+request/reply is allowed, with no extra response cycle invented.
+
+The draft is intended to stack on PR93 head `3169b2d1`; the approved AI-review
+COMMENT is posted, while its cancelled push scalar check still blocks merge.
+All historical records, raw flags, scientific criteria and physical/service/
+power/H/s gates remain preserved. No next run follows automatically.
+

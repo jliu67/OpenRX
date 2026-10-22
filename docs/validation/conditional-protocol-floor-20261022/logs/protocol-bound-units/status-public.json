@@ -1,0 +1,23 @@
+{
+  "normalization": "Only {SOURCE}/{EXECUTION} prefixes replaced; raw retained locally.",
+  "raw_sha256": "e234d2fefcb764851841fe147290ee2b9d5515e22c911cef7d56c085b3534ab1",
+  "record": {
+    "argv": [
+      "/usr/bin/python3.10",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_sram_protocol_bound.py",
+      "-v"
+    ],
+    "cwd": "{SOURCE}",
+    "name": "protocol-bound-units",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 0.26552396081387997
+  }
+}

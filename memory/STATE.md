@@ -1,5 +1,35 @@
 # Current state — actual local execution activation
 
+## Conditional protocol-floor analytical run — 2026-10-22
+
+Following the [approved plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6347919145), execution
+`20261022T181455Z-4424e8848ccf` passed 12 actual tests and the report command.
+Both approved commands returned zero, with no timeout, skip, retry or expanded
+scope. The timed stages took 0.265524 and 0.064212 seconds. All 16 bound source
+files, the separately bound manifest, 11 original inputs, two tools and the
+immutable runner remain unchanged. [EXP-028](../experiments/EXP-028-conditional-protocol-floor.md)
+and [evidence](../docs/validation/conditional-protocol-floor-20261022/README.md)
+retain report SHA256 `456f23c1aa1f7ba921a8f68b1afdd3ae552e609b1600cbcc2ad8d37d8eb7fefd`
+and receipt SHA256 `45dfccc7b214655ec3734af62870f148ffc55d9891a09cf33778fdeeec5154e4`.
+Separate AI result review passed at 18:17 UTC within conditional necessary-ceiling scope.
+Preserve raw runner `unverified` and report/driver
+`unverified_pending_independent_review` beside this separate acceptance.
+
+The calculation uses `min(1e9/T_i,1e9/(2P))` for symbolic `P>0`. It retains the
+hypothetical CACTI6.5 45 nm ITRS HP / 1 V / 360 K array assumptions and the
+accepted one-credit channel's minimum two-clock capture cadence. Same-edge
+backend request/reply is permitted; no additive `ceil(T/P)+2` latency is
+invented. Breakpoints are 0.3573965 ns and 1.37061 ns. Ratios compare necessary
+ceilings only, not actual performance or joint attainability.
+
+This draft stacks on PR93 head `3169b2d1`; its posted AI review does not waive
+the cancelled push scalar CI gate or authorize merge. No CACTI evaluation, RTL/gem5
+simulation, rebuild or full-hash workload ran. Characterized memory/PVT, sustainable service,
+controller/PHY, physical frequency/area, complete power, achieved H/s and
+architecture selection remain unresolved. No further validation follows
+automatically from this result.
+
+
 ## Conditional SRAM merged delivery — 2026-10-22 14:30 UTC
 
 [PR92](https://github.com/jliu67/OpenRX/pull/92) merged at 14:30:25 UTC as

@@ -1,0 +1,77 @@
+{
+  "changed_files": [
+    "rtl/dataset_shared/randomx_dataset_shared_channel.v"
+  ],
+  "executions": {
+    "matrix": "20261021T222845Z-8f21db168fd3",
+    "prefix": "20261021T222437Z-6a260038ca5e",
+    "synthesis": "20261021T223347Z-bec71d887374"
+  },
+  "files": {
+    "rtl/dataset/LICENSE": {
+      "bytes": 1786,
+      "sha256": "91a087193658c499db82902d2a3e5362fdced2523879fc986833ae37d385dd9e"
+    },
+    "rtl/dataset/randomx_dataset_item.v": {
+      "bytes": 12249,
+      "sha256": "c0b23b9787b34db48bcd708185aaf0e2b6e631074fdd0fe409fd33004b348d42"
+    },
+    "rtl/dataset_capacity/LICENSE": {
+      "bytes": 1786,
+      "sha256": "91a087193658c499db82902d2a3e5362fdced2523879fc986833ae37d385dd9e"
+    },
+    "rtl/dataset_capacity/randomx_dataset_item_session.v": {
+      "bytes": 8825,
+      "sha256": "c9dd8f5347247795ca76113b9f20117093c6755bdbda49993277d142eacf0b0e"
+    },
+    "rtl/dataset_shared/DATASET_SHARED.md": {
+      "bytes": 9281,
+      "sha256": "4b4e48f962abb7433434b2db6aeca8c8760997e338d5d2058a0ab219156385ff"
+    },
+    "rtl/dataset_shared/LICENSE": {
+      "bytes": 1809,
+      "sha256": "b64606a21967b4731adbf9d9113d00f7a3957b292bdc43f8a0b1d389e2b5c470"
+    },
+    "rtl/dataset_shared/randomx_dataset_shared_channel.v": {
+      "bytes": 6387,
+      "sha256": "0d02318cad0991321fed4a365664d231f90f1968ef2e1fdc733c3b5291d06493"
+    },
+    "rtl/dataset_shared/randomx_dataset_shared_fabric.v": {
+      "bytes": 5597,
+      "sha256": "4c6c4d5c784ad8c310b20afea5ee62fffa7cd910eb6632a76f6daeb1f171c438"
+    },
+    "rtl/dataset_shared/tests/tb_dataset_shared_channel.v": {
+      "bytes": 27225,
+      "sha256": "5468e7a77fe2dcd4c2a6e8e8cde3e953552e3e4f6e662f84b8a5a1a787325f79"
+    },
+    "rtl/dataset_shared/tests/tb_dataset_shared_native.v": {
+      "bytes": 46653,
+      "sha256": "eda2ba99830af4568a99acbf88a1bda7f6432be68dd642d13d2d49b66c83eb42"
+    },
+    "rtl/execute/LICENSE": {
+      "bytes": 1803,
+      "sha256": "0513c8be8bd6b105472c60eee3a2b7a0c1941b4fda913257762daf76030ee108"
+    },
+    "rtl/execute/randomx_mul64.v": {
+      "bytes": 3320,
+      "sha256": "e0a42d6005fac370cb431fd8cdb0cfe8138a8260306b57a0ee428743569d1b0f"
+    },
+    "rtl/execute/randomx_superscalar_execute.v": {
+      "bytes": 8538,
+      "sha256": "9c66895aa41a75ae313113d58e63564d5ed9093de10570755f1f161f4fabd24b"
+    },
+    "scripts/test_dataset_shared.py": {
+      "bytes": 44094,
+      "sha256": "b9a2f434643571defcf593cbb23a1b398553966e3f29034ceb951af0ebd0ad6e"
+    },
+    "tests/test_dataset_shared_support.py": {
+      "bytes": 18968,
+      "sha256": "7e7a16dffec03ea3fbbb80e6d0186ad5bed656fe01d3f328a0b501aa75506c67"
+    }
+  },
+  "physical_acceptance": false,
+  "prepared_manifest_sha256": "1176a4a2112e364fb6aec674146273d27729388ef7854a8de56388f03524e5ea",
+  "publication_parent_commit": "5258f16a2f4425980fe2cb744e570e00fc546512",
+  "schema": "openrx.dataset-shared.executed-source-bindings.v1",
+  "scope": "15 source/license/design/test/driver files; only shared channel differs from prior source. Results accepted only through separate independent reviews."
+}

@@ -1,0 +1,55 @@
+{
+  "normalization": "Only {SOURCE}/{EXECUTION} prefixes replaced; raw flags preserved.",
+  "raw_sha256": "daacb8ab4c273cb0d0a468e3a01e8cf192c0eed64f86fdf4bbcbe68719a3a5e7",
+  "record": {
+    "actual_unit_tests": 12,
+    "bound_source_tools_unchanged": true,
+    "commands": [
+      {
+        "argv": [
+          "/usr/bin/python3.10",
+          "-B",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tests",
+          "-p",
+          "test_sram_protocol_bound.py",
+          "-v"
+        ],
+        "cwd": "{SOURCE}",
+        "name": "protocol-bound-units",
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 0.26552396081387997
+      },
+      {
+        "argv": [
+          "/usr/bin/python3.10",
+          "-B",
+          "adapter/sram_protocol_bound.py",
+          "--inputs",
+          "{SOURCE}/inputs",
+          "--registry",
+          "{SOURCE}/input-bindings.json",
+          "--output",
+          "{EXECUTION}/results/protocol-bound-report-output"
+        ],
+        "cwd": "{SOURCE}",
+        "name": "protocol-bound-report",
+        "returncode": 0,
+        "timed_out": false,
+        "wall_seconds": 0.06421207101084292
+      }
+    ],
+    "commands_completed": 2,
+    "commands_planned": 2,
+    "new_full_hash_rtl_cacti_gem5_or_synthesis": false,
+    "physical_acceptance": false,
+    "schema": "openrx.sram-protocol-bound.validation.v1",
+    "scientific_acceptance": "unverified_pending_independent_review",
+    "source_manifest_sha256": "ea52fe4107df66182ba7e828093a1c4207fbe4dad30c32774e0cb8a982028493",
+    "status": "pass_conditional_necessary_ceilings_only"
+  }
+}

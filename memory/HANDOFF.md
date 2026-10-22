@@ -1,5 +1,40 @@
 # Handoff — actual designated local execution
 
+## Conditional protocol-floor publication handoff — 2026-10-22
+
+Use [EXP-028](../experiments/EXP-028-conditional-protocol-floor.md) and its
+[evidence](../docs/validation/conditional-protocol-floor-20261022/README.md) for
+execution `20261022T181455Z-4424e8848ccf`, authorized by the
+[issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6347919145). Actual outcomes: 12 tests passed,
+then one analytical report passed; both commands returned zero with no skipped
+stage, timeout, fallback or retry. Source manifest
+`ea52fe4107df66182ba7e828093a1c4207fbe4dad30c32774e0cb8a982028493`
+remains exact. Preserve raw scientific flags and all prior evidence/failures.
+Separate AI result review passed at 18:17 UTC within conditional necessary-ceiling scope;
+final published-head review and applicable checks remain separate gates.
+
+One worker/global slot retained CPU600%, RAM1 GiB, swap2 GiB, Tasks256 and a
+120-second limit plus five-second grace per command. The two timed commands
+took 0.265524 and 0.064212 seconds; these are host execution times, not chip
+latency. No CACTI/model rebuild, RTL/mapped/gem5 simulation, full hash or old
+analytical CLI was rerun.
+
+The intended draft base is PR93 head `3169b2d1` on
+`codex/conditional-sram-closeout-20261022`. Its
+[separate AI-review COMMENT](https://github.com/jliu67/OpenRX/pull/93#pullrequestreview-5618779156) is posted,
+but cancelled push scalar check `119895244138` still holds its merge.
+Do not waive that gate, merge this dependent draft or rerun validation merely
+to complete delivery. No new validation or public execution request follows
+from this handoff without the required authorization.
+
+Interpret the report as necessary conditional ceilings only: two-clock
+capture spacing intersects retained array ceilings while `P` stays symbolic.
+The ratio becomes one at `P>=1.37061 ns`; this does not bound actual speedup or
+prove achievable throughput. Keep physical/PVT, memory/controller/PHY service,
+latency tails, cache/scratchpad organization, frequency/area, complete power,
+achieved hashes/s and architecture gates open.
+
+
 ## Conditional SRAM delivery handoff — 2026-10-22 14:30 UTC
 
 [PR92](https://github.com/jliu67/OpenRX/pull/92) is merged normally at
