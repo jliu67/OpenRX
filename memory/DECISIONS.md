@@ -584,3 +584,34 @@ Physical SRAM/PVT, memory/controller/PHY service and tails, full-system power,
 physical area/frequency, achieved hash rate and architecture gates remain open.
 No further validation or public execution request is authorized by this record.
 
+
+## PR94 delivery and evidence interpretation — 2026-10-22 19:00 UTC
+
+[PR94](https://github.com/jliu67/OpenRX/pull/94) merged normally at 18:58:26 UTC as
+[`273cc464836c68fda8c1dd2352fe4029a4255d7f`](https://github.com/jliu67/OpenRX/commit/273cc464836c68fda8c1dd2352fe4029a4255d7f).
+Its actual tree `2cad6a45f3a67233c36c56e8d95a241faf4d2a4e` equals the
+reviewed original head `e8f8ffb3c03ed6c2638b10e624c8beea47683b20` tree.
+Separate AI independent review and all four applicable exact-head checks passed
+before merge. Review was performed by a separate AI agent; source and safeguards were preserved.
+Exact-merge attempt1 checks passed, verified at 19:00:32 UTC:
+[Foundation](https://github.com/jliu67/OpenRX/actions/runs/39836025905/job/120024473305)
+(11 successful steps; full-dataset reference and same-process steady controls
+intentionally skipped/deferred) and
+[RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39836025949/job/120024473503)
+(13 successful steps). Skipped controls never count as passes.
+
+Preserve EXP-028's accepted validation folder byte-exact and reconcile delivery
+through additive records and a [separate note](../docs/validation/conditional-protocol-floor-closeout-20261022/README.md).
+Preparation/UNRUN fields, raw pending-review flags and original draft/dependency
+wording retain their dated meaning when separate review, CI and merge complete.
+A documentation delivery or hosted check does not expand scientific acceptance
+or authorize another workload. Keep independent review, applicable exact-head
+checks and protected-branch safeguards for subsequent delivery.
+
+Acceptance remains conditional necessary ceilings only: with symbolic `P>0` ns,
+`C_i(P)=min(1e9/T_i,1e9/(2P))`, using hypothetical 45 nm HP / 1 V / 360 K
+`T1=2.74122 ns` and `T4=0.714793 ns`. This establishes neither actual speedup,
+joint attainability, a physical clock nor bank/architecture selection.
+Characterized process/PVT/SRAM, clock/interface compatibility, sustainable memory
+service and tails, controller/PHY and cache/scratchpad organization, physical
+area/frequency, whole-machine power and achieved hashes/s remain open.

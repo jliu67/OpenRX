@@ -1,5 +1,29 @@
 # OpenRX project board
 
+## PR94 delivery addendum — 2026-10-22 19:00 UTC
+
+[PR94](https://github.com/jliu67/OpenRX/pull/94) merged normally at 18:58:26 UTC as
+[`273cc464836c68fda8c1dd2352fe4029a4255d7f`](https://github.com/jliu67/OpenRX/commit/273cc464836c68fda8c1dd2352fe4029a4255d7f).
+Its actual tree `2cad6a45f3a67233c36c56e8d95a241faf4d2a4e` equals the
+reviewed original head `e8f8ffb3c03ed6c2638b10e624c8beea47683b20` tree.
+Separate AI independent review and all four applicable exact-head checks passed
+before merge. Review was performed by a separate AI agent; source and safeguards were preserved.
+Exact-merge attempt1 checks passed, verified at 19:00:32 UTC:
+[Foundation](https://github.com/jliu67/OpenRX/actions/runs/39836025905/job/120024473305)
+(11 successful steps; full-dataset reference and same-process steady controls
+intentionally skipped/deferred) and
+[RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39836025949/job/120024473503)
+(13 successful steps). Skipped controls never count as passes.
+
+EXP-028's 12 tests and two-command run are complete, with conditional necessary-ceiling
+acceptance only. [Original evidence](validation/conditional-protocol-floor-20261022/README.md)
+and every old board row remain unchanged. The
+[delivery note](validation/conditional-protocol-floor-closeout-20261022/README.md)
+explains historical draft/dependency fields. Issue #72 and physical/PVT,
+sustainable memory/controller/PHY service, calibrated area/frequency, complete
+power, achieved hashes/s and architecture gates remain open. No next workload is authorized here.
+
+
 ## Accepted-result board update — 2026-10-20
 
 | Work | Current bounded result |

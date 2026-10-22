@@ -72,3 +72,41 @@ service/tails, controller/PHY energy, cache/scratchpad organization, physical
 frequency/area, whole-machine power, achieved hashes/s and architecture selection
 remain unresolved. Broader issue #72 stays open; no further validation or public
 execution request follows automatically.
+
+## Delivery addendum — 2026-10-22 19:00 UTC
+
+[PR94](https://github.com/jliu67/OpenRX/pull/94) merged normally at 18:58:26 UTC as
+[`273cc464836c68fda8c1dd2352fe4029a4255d7f`](https://github.com/jliu67/OpenRX/commit/273cc464836c68fda8c1dd2352fe4029a4255d7f).
+Its actual tree `2cad6a45f3a67233c36c56e8d95a241faf4d2a4e` equals the
+reviewed original head `e8f8ffb3c03ed6c2638b10e624c8beea47683b20` tree.
+Separate AI independent review and all four applicable exact-head checks passed
+before merge. Review was performed by a separate AI agent; source and safeguards were preserved.
+Exact-merge attempt1 checks passed, verified at 19:00:32 UTC:
+[Foundation](https://github.com/jliu67/OpenRX/actions/runs/39836025905/job/120024473305)
+(11 successful steps; full-dataset reference and same-process steady controls
+intentionally skipped/deferred) and
+[RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39836025949/job/120024473503)
+(13 successful steps). Skipped controls never count as passes.
+
+The [delivery note](../docs/validation/conditional-protocol-floor-closeout-20261022/README.md)
+reconciles the earlier intended-base and draft/dependency wording. PR93 completed
+ordinary CI recovery and reviewed merge; the original cancelled job is retained
+and never counts as passed. The original [validation bundle](../docs/validation/conditional-protocol-floor-20261022/README.md),
+accepted source, inputs, results, flags and criteria remain unchanged.
+
+The source-manifest SHA256 remains
+`ea52fe4107df66182ba7e828093a1c4207fbe4dad30c32774e0cb8a982028493`;
+report SHA256 `456f23c1aa1f7ba921a8f68b1afdd3ae552e609b1600cbcc2ad8d37d8eb7fefd`;
+receipt SHA256 `45dfccc7b214655ec3734af62870f148ffc55d9891a09cf33778fdeeec5154e4`.
+
+No scientific workload was rerun.
+
+Acceptance remains conditional necessary ceilings only: with symbolic `P>0` ns,
+`C_i(P)=min(1e9/T_i,1e9/(2P))`, using hypothetical 45 nm HP / 1 V / 360 K
+`T1=2.74122 ns` and `T4=0.714793 ns`. This establishes neither actual speedup,
+joint attainability, a physical clock nor bank/architecture selection.
+Characterized process/PVT/SRAM, clock/interface compatibility, sustainable memory
+service and tails, controller/PHY and cache/scratchpad organization, physical
+area/frequency, whole-machine power and achieved hashes/s remain open.
+
+Issue #72 remains open; no further run or public execution request follows automatically.

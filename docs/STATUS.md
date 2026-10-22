@@ -1,5 +1,41 @@
 # Verified project status — 2026-10-20
 
+## PR94 delivery closeout — 2026-10-22 19:00 UTC
+
+[PR94](https://github.com/jliu67/OpenRX/pull/94) merged normally at 18:58:26 UTC as
+[`273cc464836c68fda8c1dd2352fe4029a4255d7f`](https://github.com/jliu67/OpenRX/commit/273cc464836c68fda8c1dd2352fe4029a4255d7f).
+Its actual tree `2cad6a45f3a67233c36c56e8d95a241faf4d2a4e` equals the
+reviewed original head `e8f8ffb3c03ed6c2638b10e624c8beea47683b20` tree.
+Separate AI independent review and all four applicable exact-head checks passed
+before merge. Review was performed by a separate AI agent; source and safeguards were preserved.
+Exact-merge attempt1 checks passed, verified at 19:00:32 UTC:
+[Foundation](https://github.com/jliu67/OpenRX/actions/runs/39836025905/job/120024473305)
+(11 successful steps; full-dataset reference and same-process steady controls
+intentionally skipped/deferred) and
+[RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39836025949/job/120024473503)
+(13 successful steps). Skipped controls never count as passes.
+
+The one approved execution `20261022T181455Z-4424e8848ccf` remains complete:
+12 actual tests and one report/two rc0 commands, without skips, timeouts or retry;
+wall times were 0.265524 and 0.064212 s. No scientific workload was rerun for delivery.
+
+[Original validation evidence](validation/conditional-protocol-floor-20261022/README.md)
+remains byte-exact. A [separate delivery note](validation/conditional-protocol-floor-closeout-20261022/README.md)
+reconciles earlier draft/dependency fields without changing dated history or raw flags.
+PR93's original cancelled CI attempt remains preserved; its ordinary retry and
+reviewed merge completed before PR94 retargeted to main.
+
+Acceptance remains conditional necessary ceilings only: with symbolic `P>0` ns,
+`C_i(P)=min(1e9/T_i,1e9/(2P))`, using hypothetical 45 nm HP / 1 V / 360 K
+`T1=2.74122 ns` and `T4=0.714793 ns`. This establishes neither actual speedup,
+joint attainability, a physical clock nor bank/architecture selection.
+Characterized process/PVT/SRAM, clock/interface compatibility, sustainable memory
+service and tails, controller/PHY and cache/scratchpad organization, physical
+area/frequency, whole-machine power and achieved hashes/s remain open.
+
+Issue #72 stays open. No next validation or public execution request follows automatically.
+
+
 ## Conditional protocol-floor run completed — 2026-10-22
 
 The [approved issue #72 plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6347919145) completed once as
