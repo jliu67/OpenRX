@@ -1,0 +1,78 @@
+{
+  "schema": "openrx.prepared-fetch-sram.public-runtime-resources.v1",
+  "execution_id": "20261022T213322Z-acbfc58fe1e4",
+  "workers": 1,
+  "sequential_commands": 4,
+  "observed_kernel": {
+    "cpu_max": "600000 100000",
+    "memory_max_bytes": 1073741824,
+    "memory_swap_max_bytes": 2147483648,
+    "pids_max": 256,
+    "allowed_cpus": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "no_tighter_visible_ancestors": true,
+    "safe": true,
+    "production_enforced": true
+  },
+  "fresh_prelaunch_headroom": {
+    "safe": true,
+    "available_bytes": 6787280896,
+    "required_available_bytes": 2147483648
+  },
+  "per_command_timeout_seconds": 120,
+  "per_command_supervisory_grace_seconds": 5,
+  "simulation_watchdog_clocks": 100000,
+  "commands": [
+    {
+      "name": "units",
+      "returncode": 0,
+      "timed_out": false,
+      "process_group_drained": true,
+      "wall_seconds": 1.6725624359678477,
+      "peak_rss_kib": 19500,
+      "cpu_percent_reported_by_gnu_time": 93,
+      "swaps": 0
+    },
+    {
+      "name": "image-oracle",
+      "returncode": 0,
+      "timed_out": false,
+      "process_group_drained": true,
+      "wall_seconds": 0.16473297495394945,
+      "peak_rss_kib": 17056,
+      "cpu_percent_reported_by_gnu_time": 99,
+      "swaps": 0
+    },
+    {
+      "name": "compile",
+      "returncode": 0,
+      "timed_out": false,
+      "process_group_drained": true,
+      "wall_seconds": 0.03204533993266523,
+      "peak_rss_kib": 8956,
+      "cpu_percent_reported_by_gnu_time": 105,
+      "swaps": 0
+    },
+    {
+      "name": "simulate",
+      "returncode": 0,
+      "timed_out": false,
+      "process_group_drained": true,
+      "wall_seconds": 2.4272930389270186,
+      "peak_rss_kib": 8960,
+      "cpu_percent_reported_by_gnu_time": 100,
+      "swaps": 0
+    }
+  ],
+  "sum_command_wall_seconds": 4.296633789781481,
+  "maximum_command_peak_rss_kib": 19500,
+  "utilization_note": "The approved commands are sequential dependent Python/Icarus/VVP operations. Six CPUs were available under a 600% quota; reported CPU use reflects these tools and is not a hardware hashing-performance measurement.",
+  "whole_cgroup_peak_memory_bytes": null,
+  "timeout_failure_cleanup_exercised": false
+}

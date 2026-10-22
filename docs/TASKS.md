@@ -1,5 +1,23 @@
 # OpenRX project board
 
+## Prepared-fetch SRAM-port delivery candidate — 2026-10-22 21:33 UTC
+
+| Work | Current bounded result | Remaining delivery gates |
+| --- | --- | --- |
+| EXP-029 / issue #72 | Four approved commands completed once: 36 tests, independent image comparison, standalone compile and 12-scenario simulation; 7,199 requests and explicit reset/clock ledgers pass. [Evidence](validation/prepared-fetch-sram-port-20261022/README.md). | Separate AI actual-result review passed for the functional behavioral port only at 21:37:39 UTC; sanitized draft publication, publication-head review and applicable checks remain pending. |
+
+The [separate AI result review](validation/prepared-fetch-sram-port-20261022/independent-result-review.json)
+is bounded functional acceptance, not human/account-holder approval.
+The candidate serves one retained immutable cache0 program image through the
+unchanged shared channel. Its synchronous-port controller measures three-clock
+capture spacing in the finite continuous case; this is a modeled controller
+result, not a physical clock or a change to EXP-028's necessary two-clock floor.
+Accepted arithmetic/channel, historical failures, raw flags and previous board
+rows remain unchanged. Issue #72 stays open; characterized SRAM/PVT,
+sustainable memory/controller/PHY service, physical area/frequency/energy, wall
+power, achieved hashing performance and architecture gates remain unresolved.
+
+
 ## PR94 delivery addendum — 2026-10-22 19:00 UTC
 
 [PR94](https://github.com/jliu67/OpenRX/pull/94) merged normally at 18:58:26 UTC as
@@ -373,5 +391,6 @@ The independent [inspection checkpoint](inspection/2026-10-08-incident.md) is pr
 ## 2026-10-14 bounded component handoff
 
 [Task #69](https://github.com/jliu67/OpenRX/issues/69): immutable reciprocal candidate, final 8 Python/48 native iterations/11 RTL/4 mapped/3 invalid checks pass, complete-pipeline gate skipped, four failures retained. [EXP-013](../experiments/EXP-013-prepared-program-reciprocals.md) carries scope/evidence. Independent exact-head review pending; complete-pipeline baseline remains the next performance prerequisite.
+
 
 

@@ -1,0 +1,87 @@
+{
+  "actual_unit_tests": 36,
+  "bound_source_tools_unchanged": true,
+  "commands": [
+    {
+      "argv": [
+        "/usr/bin/python3.10",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "SOURCE",
+      "name": "units",
+      "process_group_drained": true,
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 1.6725624359678477
+    },
+    {
+      "argv": [
+        "/usr/bin/python3.10",
+        "-B",
+        "tools/prepare_image.py",
+        "--source",
+        "SOURCE/inputs",
+        "--out",
+        "OUTPUT/image"
+      ],
+      "cwd": "SOURCE",
+      "name": "image-oracle",
+      "process_group_drained": true,
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.16473297495394945
+    },
+    {
+      "argv": [
+        "/usr/bin/iverilog",
+        "-B/usr/lib/x86_64-linux-gnu/ivl",
+        "-g2012",
+        "-s",
+        "tb_prepared_fetch_sram_port",
+        "-o",
+        "OUTPUT/bench.vvp",
+        "inputs/channel.v",
+        "rtl/randomx_prepared_fetch_sram_port.v",
+        "rtl/prepared_fetch_sram_behavioral.v",
+        "rtl/tb_prepared_fetch_sram_port.v"
+      ],
+      "cwd": "SOURCE",
+      "name": "compile",
+      "process_group_drained": true,
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 0.03204533993266523
+    },
+    {
+      "argv": [
+        "/usr/bin/vvp",
+        "-M/usr/lib/x86_64-linux-gnu/ivl",
+        "OUTPUT/bench.vvp",
+        "+IMAGE_DIR=OUTPUT/image",
+        "+OUT=OUTPUT/simulation.json"
+      ],
+      "cwd": "SOURCE",
+      "name": "simulate",
+      "process_group_drained": true,
+      "returncode": 0,
+      "timed_out": false,
+      "wall_seconds": 2.4272930389270186
+    }
+  ],
+  "commands_completed": 4,
+  "commands_planned": 4,
+  "full_hash_or_cacti_or_native_generation_or_mapping": false,
+  "physical_acceptance": false,
+  "schema": "openrx.prepared-fetch-sram.validation.v1",
+  "scientific_acceptance": "unverified_pending_independent_review",
+  "source_manifest_sha256": "6a4f3bd1f58fd96573519e931e472abacdef9fcbec6e85bf82058c5c50eb694f",
+  "status": "pass_functional_behavioral_port_only"
+}

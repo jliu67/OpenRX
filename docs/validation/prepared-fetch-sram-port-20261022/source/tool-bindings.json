@@ -1,0 +1,214 @@
+{
+  "schema": "openrx.prepared-fetch-sram.tools.v1",
+  "prepared_at": "2026-10-22T19:57:20.417738+00:00",
+  "files": {
+    "/usr/bin/python3.10": {
+      "resolved_path": "/usr/bin/python3.10",
+      "bytes": 5941864,
+      "sha256": "a2f33a6e006989270f4340528eb61f8f97366e00a5d1b602ac8672ea44fc56ae"
+    },
+    "/usr/bin/time": {
+      "resolved_path": "/usr/bin/time",
+      "bytes": 27160,
+      "sha256": "7310b9b4c51a8f4d26c1af0da250f03a49ec8a8141033123e79196ad18f6c81b"
+    },
+    "/usr/bin/iverilog": {
+      "resolved_path": "/usr/bin/iverilog",
+      "bytes": 51640,
+      "sha256": "1ba67856249142771239573b5d51c7f6e4d67a1e7931a0d0fab56e0d473d2167"
+    },
+    "/usr/bin/vvp": {
+      "resolved_path": "/usr/bin/vvp",
+      "bytes": 1366664,
+      "sha256": "075b114070eed3bc72e0e4559decf40520f3b693b1da9c94bba1defe8896966d"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/blif-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/blif-s.conf",
+      "bytes": 96,
+      "sha256": "3ce285013d51a0f632be229a513c17d4f8a314319c0e7d7fbbe53a2339580e1c"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/blif.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/blif.conf",
+      "bytes": 96,
+      "sha256": "3ce285013d51a0f632be229a513c17d4f8a314319c0e7d7fbbe53a2339580e1c"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/blif.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/blif.tgt",
+      "bytes": 51440,
+      "sha256": "50e1809f0ace2ec60e9b52d087b242d63b4ab6400d3dbc9e34d53d148dc866fb"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/cadpli.vpl": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/cadpli.vpl",
+      "bytes": 51368,
+      "sha256": "1d4dee10aead0efa10407ab47660f45b21bd5703895c722915a306423e8b4935"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/include/constants.vams": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/include/constants.vams",
+      "bytes": 1377,
+      "sha256": "48cb40767dd73f50a3288c0b8b5fc779a6462b4e27f565dd9aae31a53f4a6f09"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/include/disciplines.vams": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/include/disciplines.vams",
+      "bytes": 1125,
+      "sha256": "6540e1f3f01b64eee3a26239c1bab6fe80db5b1fca30e336fe40189b52add231"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/ivl": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/ivl",
+      "bytes": 2792080,
+      "sha256": "a5574694e4784f690cd8f790b945434878975378408cedefe77d501557d99c9d"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/ivlpp": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/ivlpp",
+      "bytes": 63936,
+      "sha256": "e0906072811986c122f375a47a7ab37f169727550a6cc80519a31dd55603a93c"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/null-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/null-s.conf",
+      "bytes": 65,
+      "sha256": "8a4b79342b5d58fcd576238e928403c986bf623e5e9c63fc7e199f5c5bf57fae"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/null.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/null.conf",
+      "bytes": 18,
+      "sha256": "313ef43d707cf69cabac9b02c1cee5223b7179007aa627c0963a567691751cd0"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/null.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/null.tgt",
+      "bytes": 14480,
+      "sha256": "2c05980a638067240a41bd447f8ffedecc2cfae3cc7a91641be0a80b0e1deb05"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/pcb-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/pcb-s.conf",
+      "bytes": 95,
+      "sha256": "2f184346cab431bfa26ef1bf0a906a8d78469aae495f93974896ec952dee3657"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/pcb.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/pcb.conf",
+      "bytes": 48,
+      "sha256": "5a84492e9e830658590cc28d5c39d8b137124ac2f6e5c111a838d91b99aa3cb9"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/pcb.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/pcb.tgt",
+      "bytes": 63816,
+      "sha256": "9467e761ab8aca847590d8b9111ddab4192703133108583c25baf1e1421ed7c8"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/sizer-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/sizer-s.conf",
+      "bytes": 97,
+      "sha256": "03a8f24468995e87b23840915b613abd339843a6ec6d0931b57ea56720ff415d"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/sizer.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/sizer.conf",
+      "bytes": 97,
+      "sha256": "03a8f24468995e87b23840915b613abd339843a6ec6d0931b57ea56720ff415d"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/sizer.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/sizer.tgt",
+      "bytes": 30960,
+      "sha256": "ac57811d98f01bbf470c7c96e70b711e40eed9d3140515411f8769a15a4003b5"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/stub-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/stub-s.conf",
+      "bytes": 96,
+      "sha256": "ca77cff51d74ad77e33efd589c82fb410823ad88a5933a5e4aca86251250b302"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/stub.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/stub.conf",
+      "bytes": 49,
+      "sha256": "03c9241decbe4502f087790fe7eaf6568fb7992788fbf56be0f69737a98c67fb"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/stub.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/stub.tgt",
+      "bytes": 84192,
+      "sha256": "b77304f95d3086bed2404063193b1ba256986b94795d298459547784e4bbff62"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/system.vpi": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/system.vpi",
+      "bytes": 432880,
+      "sha256": "3dcc3a995c8411dea3e43335b0223ce4b35597ecf281961ec1763c0896a80c4b"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi",
+      "bytes": 23096,
+      "sha256": "cc7a8590da6b5ae041766152eca609081bba0014c3821ea1a9503fa828104323"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi",
+      "bytes": 35024,
+      "sha256": "a6608fd8dfedbc533ce77470b847a59da12961d857878665f29f0d68865b616c"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi",
+      "bytes": 14600,
+      "sha256": "9b0c5436f600de3ea892211e2ed47750ce95ad0ed38b2f6c55e4737a95b07ec5"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vhdl-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vhdl-s.conf",
+      "bytes": 103,
+      "sha256": "d9b3d7de12e25e14c86738110f4e2baf3711f60a161e34ad329104f13ccabc5d"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vhdl.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vhdl.conf",
+      "bytes": 86,
+      "sha256": "7f8563bd0a386bedf111f5f23ce827b8efd6749cb3b104cf236358324ccd840a"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vhdl.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vhdl.tgt",
+      "bytes": 285800,
+      "sha256": "810ea6aec4979b2a9c0442bcec7b4f01bc2e58e294e6134ec5bdf20dc3b5b378"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi",
+      "bytes": 22776,
+      "sha256": "b0aa78fdd6b35b15b55fc087e004a9b430fc8cf2fcf34720af0c13b61188a55f"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi",
+      "bytes": 34984,
+      "sha256": "735cd924dab8310424da41dacc0c0d0236b6f1f4886a4e5f3ab4693d12e19459"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vhdlpp": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vhdlpp",
+      "bytes": 498144,
+      "sha256": "54872cb45ace1e714f75e6d908607b804a31693ad6efdb4410e8cdc480764b9f"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vlog95-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vlog95-s.conf",
+      "bytes": 141,
+      "sha256": "f4f09237dc90f1e4e58658b2bb14bb446e93619c911b8ead10cc0240f64cad51"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vlog95.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vlog95.conf",
+      "bytes": 57,
+      "sha256": "47d4a923819bdf601c5fa62065b6787f81d2ea64cb0e6b33c33c4e9001d356c0"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vlog95.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vlog95.tgt",
+      "bytes": 166040,
+      "sha256": "b394d3d63870d92e7b080594ee6219b61d3f1037702d59e37a7f046ecbb48ed0"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vpi_debug.vpi": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vpi_debug.vpi",
+      "bytes": 14504,
+      "sha256": "6e40cf60d2961896ebc11bc6aeb4caca9130ccd66e8607d5c85e319b8644d134"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vvp-s.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vvp-s.conf",
+      "bytes": 128,
+      "sha256": "34cc3cf237ec8a86b3b740dd656a6953bbe3ff681da0dd0c7dde004c2d98dd84"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vvp.conf": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vvp.conf",
+      "bytes": 81,
+      "sha256": "6013ffb100e35d3a4656d3a24836be36bb782957c174e527c1c570ffe7aa5b41"
+    },
+    "/usr/lib/x86_64-linux-gnu/ivl/vvp.tgt": {
+      "resolved_path": "/usr/lib/x86_64-linux-gnu/ivl/vvp.tgt",
+      "bytes": 190808,
+      "sha256": "55bb915c7506508d49901a6ed369b30ded3f6f2e14d88b76982a4f4b84f91d74"
+    }
+  },
+  "runner_release": "runner-v1-657b23f1",
+  "runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "scope": "Read-only byte bindings, no tool/version probes run. Python,time,Icarus,VVP and complete installed ivl backend directory. Shared-library/OS runtime closure is not hermetic; future admission must rebind live environment."
+}

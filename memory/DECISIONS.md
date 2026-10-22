@@ -615,3 +615,27 @@ joint attainability, a physical clock nor bank/architecture selection.
 Characterized process/PVT/SRAM, clock/interface compatibility, sustainable memory
 service and tails, controller/PHY and cache/scratchpad organization, physical
 area/frequency, whole-machine power and achieved hashes/s remain open.
+
+## Keep prepared-fetch port cadence implementation-specific — 2026-10-22
+
+The one-image [EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md)
+standalone run completed four commands, 36 tests and 12 simulation scenarios.
+Record its three-clock continuous capture spacing only for the explicit
+one-credit adapter plus one-cycle registered behavioral row port. The observed
+E0 capture/E1 row read/E2 consume/E3 next capture does not replace EXP-028's
+necessary two-clock floor, establish a physical SRAM latency/clock or demonstrate
+a one/four-bank speedup.
+
+Keep immutable image admission, request/response identity and cancellation drain
+separate from memory technology. The 128KiB logical row payload excludes counts,
+echo/error, tags, queues, control, ECC and wiring. Offline preload remains an
+external preparation service; no autonomous initialization, full-hash integration
+or physical-performance acceptance follows. Preserve exact prepared/executed
+source and historical raw flags. Separate AI
+[actual-result review](../docs/validation/prepared-fetch-sram-port-20261022/independent-result-review.json)
+passed for the functional behavioral port only at 21:37:39 UTC, without claiming
+human/account-holder approval. Publication-head review/checks remain pending. Revisit physical
+feasibility only with characterized process/PVT/SRAM and realistic controller/PHY,
+timing, energy, whole-wall power and achieved hashing-performance evidence.
+
+

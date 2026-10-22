@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/usr/bin/vvp",
+    "-M/usr/lib/x86_64-linux-gnu/ivl",
+    "OUTPUT/bench.vvp",
+    "+IMAGE_DIR=OUTPUT/image",
+    "+OUT=OUTPUT/simulation.json"
+  ],
+  "cwd": "SOURCE",
+  "name": "simulate",
+  "process_group_drained": true,
+  "returncode": 0,
+  "timed_out": false,
+  "wall_seconds": 2.4272930389270186
+}

@@ -1,5 +1,33 @@
 # Verified project status — 2026-10-20
 
+## Prepared-fetch SRAM-port result — 2026-10-22 21:33 UTC
+
+[EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md) records one completed
+standalone validation above main `90b87f55220151a2bb43ed097c8d55e62a534e0b`.
+Execution `20261022T213322Z-acbfc58fe1e4` completed all four approved commands:
+36 Python tests, offline image export/independent comparison, one Icarus compile
+and a 12-scenario simulation. There were no skips, timeouts or payload retries.
+
+The model checked 7,199 requests: 7,167 row reads, 32 address errors without reads
+and three cancellation drains; both clients queried every one of the 3,563 active
+rows. Its 170,056 checks completed in 21,648 modeled clocks. Continuous traffic
+measured 32 captures across 31 intervals/93 clocks: capture E0, registered row read
+E1, consume E2 and next capture E3 for this particular controller. Occupied clocks
+close as 14,445 = 14,443 before the last reset + 2 after it.
+
+[Evidence](validation/prepared-fetch-sram-port-20261022/README.md) and the
+[port contract](../rtl/prepared_fetch_sram/README.md) keep offline preload and the
+behavioral synchronous memory service explicit. Accepted channel/arithmetic and
+prior evidence remain unchanged. Separate AI [actual-result review](validation/prepared-fetch-sram-port-20261022/independent-result-review.json)
+passed for the functional behavioral port only at 21:37:39 UTC. This is not human
+or account-holder approval. Draft publication, exact publication-head review and
+applicable checks remain pending; no merge or physical acceptance is claimed.
+
+This single-image logical result does not change EXP-028's necessary two-clock
+floor or establish physical SRAM timing, frequency, area, energy, wall power,
+achieved hashes/s or architecture selection. Broader issue #72 remains open.
+
+
 ## PR94 delivery closeout — 2026-10-22 19:00 UTC
 
 [PR94](https://github.com/jliu67/OpenRX/pull/94) merged normally at 18:58:26 UTC as
@@ -377,4 +405,5 @@ Next status evidence comes from the existing supervisor's terminal review and
 the documentation PR's independent exact-head review/checks. Historical audit #66
 and external-link findings remain scoped to their recorded trees. No milestone,
 claim, dependency, acceptance criterion, setting or access is changed here.
+
 

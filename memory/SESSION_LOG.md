@@ -1501,3 +1501,35 @@ service and tails, controller/PHY and cache/scratchpad organization, physical
 area/frequency, whole-machine power and achieved hashes/s remain open.
 
 No further public execution request or validation run is authorized by this closeout.
+
+## Prepared-fetch SRAM-port bounded validation — 2026-10-22 21:33 UTC
+
+The user approved publication and the exact four-command interface validation.
+The [public plan](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6351774332)
+binds source manifest
+`6a4f3bd1f58fd96573519e931e472abacdef9fcbec6e85bf82058c5c50eb694f`.
+Execution `20261022T213322Z-acbfc58fe1e4` then completed all four commands once:
+36 Python test methods, offline retained-image export with independent original-
+field reconstruction, one Icarus compile and one finite 12-scenario simulation.
+No command was skipped or timed out, and no payload retry occurred.
+
+The simulation recorded 170,056 checks over 21,648 modeled clocks. It completed
+7,199 requests/7,167 row reads, 32 no-read address errors and three cancellation
+drains. Both owners queried every active row (7,126 queries); 32 continuous
+captures spanned 31 three-clock intervals/93 clocks. Occupied clocks close at
+14,445 = 14,443 before the last reset + 2 after. Per-command walls were 1.672562,
+0.164733, 0.032045 and 2.427293 seconds under the approved one-worker/global-slot,
+CPU600%/1GiB RAM/2GiB swap/Tasks256 limits and 120s+5s command bounds.
+
+[EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md) and
+[evidence](../docs/validation/prepared-fetch-sram-port-20261022/README.md) separate
+this behavioral service/controller result from physical-memory characterization.
+Accepted channel/arithmetic and all earlier evidence/failure records remain
+unchanged. Separate AI [actual-result review](../docs/validation/prepared-fetch-sram-port-20261022/independent-result-review.json)
+passed for the functional behavioral port only at 21:37:39 UTC, without payload
+rerun or human/account-holder approval. Sanitized draft publication,
+publication-head review and applicable checks remain pending.
+No full hash, native/cache generation, CACTI/gem5, synthesis/mapping or spending
+occurred. Broader issue #72 and physical/performance gates remain open.
+
+

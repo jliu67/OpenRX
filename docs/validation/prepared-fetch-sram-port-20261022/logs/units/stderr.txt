@@ -1,0 +1,41 @@
+test_01_retained_image_counts_and_dimensions (test_export_image.ExportImageTests) ... ok
+test_02_packing_field_boundaries (test_export_image.ExportImageTests) ... ok
+test_03_reserved_and_padding_are_zero (test_export_image.ExportImageTests) ... ok
+test_04_export_exact_text_width_and_counts (test_export_image.ExportImageTests) ... ok
+test_05_existing_output_cannot_reload (test_export_image.ExportImageTests) ... ok
+test_06_wrong_image_kind (test_export_image.ExportImageTests) ... ok
+test_07_native_preparation_flag_required (test_export_image.ExportImageTests) ... ok
+test_08_wrong_case_identity (test_export_image.ExportImageTests) ... ok
+test_09_wrong_cache_descriptor (test_export_image.ExportImageTests) ... ok
+test_10_wrong_retired_total (test_export_image.ExportImageTests) ... ok
+test_11_case_descriptor_binding (test_export_image.ExportImageTests) ... ok
+test_12_exact_admitted_counts (test_export_image.ExportImageTests) ... ok
+test_13_truncated_rows (test_export_image.ExportImageTests) ... ok
+test_14_wide_instruction (test_export_image.ExportImageTests) ... ok
+test_15_nonhex_instruction (test_export_image.ExportImageTests) ... ok
+test_16_reciprocal_flag_range (test_export_image.ExportImageTests) ... ok
+test_17_opcode_requires_reciprocal_flag (test_export_image.ExportImageTests) ... ok
+test_18_index_must_match_instruction_and_global_table (test_export_image.ExportImageTests) ... ok
+test_19_row_reciprocal_value_binding (test_export_image.ExportImageTests) ... ok
+test_20_nonreciprocal_metadata_zero (test_export_image.ExportImageTests) ... ok
+test_21_source_padding_zero (test_export_image.ExportImageTests) ... ok
+test_22_shared_image_pair_identical (test_export_image.ExportImageTests) ... ok
+test_23_reciprocal_table_integer_identity (test_export_image.ExportImageTests) ... ok
+test_24_reciprocal_namespace_index_and_divisor (test_export_image.ExportImageTests) ... ok
+test_01_independent_full_roundtrip_and_scope (test_image_oracle.ImageOracleTests) ... ok
+test_02_instruction_corruption (test_image_oracle.ImageOracleTests) ... ok
+test_03_reciprocal_corruption (test_image_oracle.ImageOracleTests) ... ok
+test_04_global_index_corruption (test_image_oracle.ImageOracleTests) ... ok
+test_05_reciprocal_valid_corruption (test_image_oracle.ImageOracleTests) ... ok
+test_06_padding_cannot_execute (test_image_oracle.ImageOracleTests) ... ok
+test_07_reserved_bits_cannot_hide_data (test_image_oracle.ImageOracleTests) ... ok
+test_08_counts_are_independent_metadata (test_image_oracle.ImageOracleTests) ... ok
+test_09_existing_gold_preserved (test_image_oracle.ImageOracleTests) ... ok
+test_10_existing_report_preserved (test_image_oracle.ImageOracleTests) ... ok
+test_11_truncated_image_rejected (test_image_oracle.ImageOracleTests) ... ok
+test_12_source_metadata_not_inferred_from_export (test_image_oracle.ImageOracleTests) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 1.503s
+
+OK

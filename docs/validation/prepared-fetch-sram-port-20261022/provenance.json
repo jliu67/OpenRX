@@ -1,0 +1,220 @@
+{
+  "schema": "openrx.prepared-fetch-sram.public-provenance.v1",
+  "base_commit": "90b87f55220151a2bb43ed097c8d55e62a534e0b",
+  "base_tree": "e7f91fe69109afae537b7905c7d75866afb63e9c",
+  "source_manifest_sha256": "6a4f3bd1f58fd96573519e931e472abacdef9fcbec6e85bf82058c5c50eb694f",
+  "source_snapshot": {
+    "path": "source/",
+    "exact_files": 85,
+    "listed_manifest_files": 84,
+    "listed_bytes": 493441,
+    "frozen_preparation_records_preserved": "PREPARED/UNRUN labels inside the exact executed source describe the earlier preparation snapshot; current execution outcome is recorded separately."
+  },
+  "retained_fixture_execution_id": "20261018T175827Z-447be94ead08",
+  "execution_id": "20261022T213322Z-acbfc58fe1e4",
+  "public_plan": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6351774332",
+  "claim_comment": "https://github.com/jliu67/OpenRX/issues/72#issuecomment-6351766532",
+  "immutable_runner_sha256": "657b23f16aabbadb534c108ba3d233e7922db70d01dbb5cf7073d594b0e4292b",
+  "raw_private_records_retained": {
+    "manifest.json": {
+      "bytes": 34181,
+      "sha256": "97422c738dc511cd430aa3fffa4902781b5c391284d42101a1052347d80b0851",
+      "exported": false
+    },
+    "receipt.json": {
+      "bytes": 7041,
+      "sha256": "7e67f7b3956be2304b29778da8dc7403b41e82e0d90762e3b886ecae2fe26d4c",
+      "exported": false
+    },
+    "process-result.json": {
+      "bytes": 142,
+      "sha256": "5ed525d6ccf91af7b0ae6597c637435f6ce1bc8115ec9a6c73417063cdb03cc5",
+      "exported": false
+    },
+    "prelaunch-kernel-check.json": {
+      "bytes": 2318,
+      "sha256": "02ed8ef4c5626b82d9389489e40c3a0a5c8b01f904fb1a4afc4bb015a8c35511",
+      "exported": false
+    },
+    "prelaunch-resource-check.json": {
+      "bytes": 415,
+      "sha256": "622bb35111f7353a1c3ca9c3328c44680fe7d30001273fb0dae7f3df79a7ffa4",
+      "exported": false
+    }
+  },
+  "compiled_bench": {
+    "bytes": 310472,
+    "sha256": "a1207c3775d01e16be2cca9e5bc9e069bef3aa8a3877befb208f02f22f926df3",
+    "exported": false,
+    "reason": "Retained locally with the complete execution; compiled file is not needed to inspect source/results and contains local source paths."
+  },
+  "result_records": {
+    "simulation.json": {
+      "public_file": "simulation.json",
+      "bytes": 1136,
+      "sha256": "18eb8e88d7b2a1d1e4b3a566e657bcbf301d2bb7540b9252d7617422cdddcac5",
+      "transform": "exact bytes"
+    },
+    "image/export.json": {
+      "public_file": "image/export.json",
+      "bytes": 617,
+      "sha256": "ec28d7c485abf26915508a1e5a2cf0e57d48a001714af95ae279841623101daa",
+      "transform": "exact bytes"
+    },
+    "image/oracle.json": {
+      "public_file": "image/oracle.json",
+      "bytes": 6969,
+      "sha256": "04a9675fe208250a8074c5db1b9f67ea9cb1b01eed665450b05136e9c310fe95",
+      "transform": "exact bytes"
+    },
+    "image/rows.mem": {
+      "public_file": "image/rows.mem",
+      "bytes": 266240,
+      "sha256": "804c9c2cf11246a142715526180352655d6e5974d8d9d61ac6aa36aa5ce719dd",
+      "transform": "exact bytes"
+    },
+    "image/counts.mem": {
+      "public_file": "image/counts.mem",
+      "bytes": 32,
+      "sha256": "e8bd05753ec37ec245f39db0d1dade350bb0571bfba518bd6aea8f84cec7b8f5",
+      "transform": "exact bytes"
+    },
+    "image/gold-payload.mem": {
+      "public_file": "image/gold-payload.mem",
+      "bytes": 172032,
+      "sha256": "bc9ee56630831b6bc7b44826231a6a09e0287b3bb905c7a8f2e8a087391a7ee8",
+      "transform": "exact bytes"
+    },
+    "units/stdout.txt": {
+      "public_file": "logs/units/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "units/stderr.txt": {
+      "public_file": "logs/units/stderr.txt",
+      "bytes": 2952,
+      "sha256": "7eb8fdee85a4cc53b086f312309f043eae8880b493cb784de71668bbed31f4c2",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "units/time.txt": {
+      "public_file": "logs/units/time.txt",
+      "bytes": 791,
+      "sha256": "a4242195aaa8cb461417d3bdbf7ec6d4fa55dd4f8c8b2e2e7ae1ecdbc3ebc592",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "units/status.json": {
+      "public_file": "logs/units/status.json",
+      "bytes": 394,
+      "sha256": "a5581641737b84f47b2efac9bfe0db0bd9185041327854b2de003f736e63af43",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "image-oracle/stdout.txt": {
+      "public_file": "logs/image-oracle/stdout.txt",
+      "bytes": 123,
+      "sha256": "33ae230499bb3fd318ae5770c67da346c1ca2de33a15b8f1eeb60807f8cc08d1",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "image-oracle/stderr.txt": {
+      "public_file": "logs/image-oracle/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "image-oracle/time.txt": {
+      "public_file": "logs/image-oracle/time.txt",
+      "bytes": 961,
+      "sha256": "8312c564ad0e0a7eab92148506e7b3dc75d0e98602d943887e46a2cf9373ac4f",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "image-oracle/status.json": {
+      "public_file": "logs/image-oracle/status.json",
+      "bytes": 557,
+      "sha256": "21b889c3d6688f0f0b0a2a6816265e2702197fb99f259d924e8d29f54d0bdeff",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "compile/stdout.txt": {
+      "public_file": "logs/compile/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "compile/stderr.txt": {
+      "public_file": "logs/compile/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "compile/time.txt": {
+      "public_file": "logs/compile/time.txt",
+      "bytes": 1022,
+      "sha256": "5d967ab75303b15c2859c2037eaa8c9a8f0f50cdcb8fe6e513557e5347a29861",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "compile/status.json": {
+      "public_file": "logs/compile/status.json",
+      "bytes": 641,
+      "sha256": "c3f50e3368967dc98575a1b76006f21d1ae8bef7a975dcf44eca3b8e0345de27",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "simulate/stdout.txt": {
+      "public_file": "logs/simulate/stdout.txt",
+      "bytes": 634,
+      "sha256": "6066b96ac6171f2d09c19d3d4ff18d7ff89077ffb7ac7ea805d86d5b4efd8582",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "simulate/stderr.txt": {
+      "public_file": "logs/simulate/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "simulate/time.txt": {
+      "public_file": "logs/simulate/time.txt",
+      "bytes": 1043,
+      "sha256": "e59aef3735af5b97f37918e6d60f75e6d2ab47d5bef1b0a52c9b334eb247843b",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "simulate/status.json": {
+      "public_file": "logs/simulate/status.json",
+      "bytes": 620,
+      "sha256": "223950b36dffbb8b3bd3233830bd5df7e281bf9950dccda78c52802643dd8c0e",
+      "transform": "replace bound source/results/execution/preparation absolute prefixes with SOURCE/OUTPUT/EXECUTION/PREPARATION; all other text retained"
+    },
+    "validation-summary.json": {
+      "public_file": "validation-summary.json",
+      "bytes": 3017,
+      "sha256": "cf33473af08ff515e504f156d6c30009f29b80a36d6b17147a9fa8a3f74093d6",
+      "transform": "bound absolute prefix substitutions only; raw scientific classification retained"
+    }
+  },
+  "component_exact_copies": {
+    "rtl/prepared_fetch_sram/randomx_prepared_fetch_sram_port.v": {
+      "candidate_source": "rtl/randomx_prepared_fetch_sram_port.v",
+      "sha256": "14739c85c5a4f353f8070735075eaa4df09531fbf45eb07ebb2d1c5b40326718"
+    },
+    "rtl/prepared_fetch_sram/tests/tb_prepared_fetch_sram_port.v": {
+      "candidate_source": "rtl/tb_prepared_fetch_sram_port.v",
+      "sha256": "9e0c64173dd3307a27b9f7774929e41964bc386e9d6c3f9f4feeee401609e35a"
+    },
+    "rtl/prepared_fetch_sram/tests/prepared_fetch_sram_behavioral.v": {
+      "candidate_source": "rtl/prepared_fetch_sram_behavioral.v",
+      "sha256": "6bb5dd2c161af2cd2da5f2830e21c904bf593332a2157028fcab81f433916573"
+    }
+  },
+  "raw_scientific_flags_preserved": {
+    "receipt": "unverified",
+    "driver": "unverified_pending_independent_review"
+  },
+  "independent_result_review": {
+    "file": "independent-result-review.json",
+    "sha256": "1b139b7ff84afde9b062f117c986b00855249bd72e88b382828b873153441358",
+    "observed_at": "2026-10-22T21:37:39Z",
+    "outcome": "PASS_FUNCTIONAL_BEHAVIORAL_PORT_ONLY",
+    "reviewer": "/root/sram_admission_fresh",
+    "role": "Separate AI actual-result review; not human/account-holder approval",
+    "blockers": []
+  },
+  "publication_head_review_and_checks": "pending; no PR has been created by this preparation",
+  "physical_acceptance": false
+}

@@ -1,0 +1,207 @@
+{
+  "acceptance_scope": "Offline immutable image packing and source binding only; RTL/controller cadence remains separate and unrun until its admitted command.",
+  "achievable_frequency_hz": null,
+  "achieved_hashes_per_second": null,
+  "active_rows": 3563,
+  "cache_id": 0,
+  "controller_phy_characterized": false,
+  "counts": [
+    447,
+    438,
+    449,
+    447,
+    444,
+    449,
+    452,
+    437
+  ],
+  "full_hash_revalidated": false,
+  "global_reciprocal_indices": [
+    0,
+    238
+  ],
+  "image_kind": "prepared-fetch-cache0-one-bank-v1",
+  "independent_gold_from_original_fields": true,
+  "logical_row_bits": 256,
+  "logical_rows": 4096,
+  "oracle_binding": {
+    "bytes": 11017,
+    "sha256": "2f1820f09b5375948af5625c7b6f7a7bdc70c8ff9ca056b27206adac161dc284"
+  },
+  "oracle_imports_exporter": false,
+  "original_source_kind": "actual-initCache-generated-programs",
+  "outcome": "PASS_CONDITIONAL_IMAGE_PACKING_ONLY",
+  "output_bindings": {
+    "counts.mem": {
+      "bytes": 32,
+      "sha256": "e8bd05753ec37ec245f39db0d1dade350bb0571bfba518bd6aea8f84cec7b8f5"
+    },
+    "gold-payload.mem": {
+      "bytes": 172032,
+      "sha256": "bc9ee56630831b6bc7b44826231a6a09e0287b3bb905c7a8f2e8a087391a7ee8"
+    },
+    "rows.mem": {
+      "bytes": 266240,
+      "sha256": "804c9c2cf11246a142715526180352655d6e5974d8d9d61ac6aa36aa5ce719dd"
+    }
+  },
+  "padding_rows": 533,
+  "payload_bits": 161,
+  "physical_area_mm2": null,
+  "physical_energy_j": null,
+  "physical_sram_characterized": false,
+  "reciprocal_rows": 239,
+  "reserved_zero_bits": 95,
+  "schema": 1,
+  "source_bindings": {
+    "cache-0-metadata.json": {
+      "bytes": 241,
+      "sha256": "38c164bf807fa90b9542c06a8607b88df37e1b127c5702be6bcc13d5be922260"
+    },
+    "cache-0-reciprocal-metadata.json": {
+      "bytes": 15668,
+      "sha256": "8512b86d60da7bde5e58287e593e1c20584ac8e33f03307a035f24f9b26e93e3"
+    },
+    "cache-0-reciprocals.mem": {
+      "bytes": 4063,
+      "sha256": "7fa803b7fda105427c06c39ebadac93d19a9029ccbf738e49f69f17b66204f91"
+    },
+    "case-000/metadata.json": {
+      "bytes": 229,
+      "sha256": "63a6c19d9d459064fa6582562e4984caff3977c31d7e088e6c090790c2ddd34b"
+    },
+    "case-000/program-0.mem": {
+      "bytes": 8704,
+      "sha256": "8963df6b318c9bebb51bc2d38214c3552bbb96c19eacb873ffa0c03a8024fdca"
+    },
+    "case-000/program-1.mem": {
+      "bytes": 8704,
+      "sha256": "2cc7c5f794ce94c2d6582dd365d535e5b5a56ecd98f766771b38b4075a869bf2"
+    },
+    "case-000/program-2.mem": {
+      "bytes": 8704,
+      "sha256": "e14aeb40749f0e40c3859e9d500bc784ceac7dd9296389e514b7773bf0abb1a7"
+    },
+    "case-000/program-3.mem": {
+      "bytes": 8704,
+      "sha256": "732c27efbe074a82af239546b6e0f18d1135e1fc3f374173ea547ffec8750d05"
+    },
+    "case-000/program-4.mem": {
+      "bytes": 8704,
+      "sha256": "b09d5b6e37110cd6c6165316dfb764c6eedb39134e59d48a7e639b53eb0f9835"
+    },
+    "case-000/program-5.mem": {
+      "bytes": 8704,
+      "sha256": "4cf40f53f199c250b1f975df0aba978d1c57c1f81cad88f21e185ffc148484ed"
+    },
+    "case-000/program-6.mem": {
+      "bytes": 8704,
+      "sha256": "93e74fe9711fa1abf01c61973bf1105afa04ad4cae1fde7b319c590b7841fde6"
+    },
+    "case-000/program-7.mem": {
+      "bytes": 8704,
+      "sha256": "ba76dba752919c9a949c855dea79f7116ae19204c2d11871aeffe01201806310"
+    },
+    "case-000/rcp-index-0.mem": {
+      "bytes": 4608,
+      "sha256": "88a806088f65090fc6bbcab9ea4e105e6e390638b7a5a6ffcabcdb4040018e55"
+    },
+    "case-000/rcp-index-1.mem": {
+      "bytes": 4608,
+      "sha256": "3666d49380e694966b815d3a7b970c47642fe937f932ab27e9c0c7eafcc938d2"
+    },
+    "case-000/rcp-index-2.mem": {
+      "bytes": 4608,
+      "sha256": "22b989a37590773d9a6d2189010ecaa49ec2e64723e409559d4d361040c457a5"
+    },
+    "case-000/rcp-index-3.mem": {
+      "bytes": 4608,
+      "sha256": "d1b4bcc54f17ccd6a423d7e769af8388da73a8f076f58eb44d410a9d9054639b"
+    },
+    "case-000/rcp-index-4.mem": {
+      "bytes": 4608,
+      "sha256": "dbb8caf8240f2b5eb7a07c435b90327a655bb110068c717d832557052b66dcb8"
+    },
+    "case-000/rcp-index-5.mem": {
+      "bytes": 4608,
+      "sha256": "f3f4f6be3d4983710b3d35b645347f3d11e0f26210e572a26485505025c279c0"
+    },
+    "case-000/rcp-index-6.mem": {
+      "bytes": 4608,
+      "sha256": "807e6650003bd34a3123043b4b7aed4a8cb709156021f157d7e8f1eac813a302"
+    },
+    "case-000/rcp-index-7.mem": {
+      "bytes": 4608,
+      "sha256": "429ce3b2ad93e4bf1a8e1433450e65f99725f2d21ffecc5231ff4f357e55f21e"
+    },
+    "case-000/rcp-valid-0.mem": {
+      "bytes": 1024,
+      "sha256": "f79810c2edb00e7b8c3f539bb1589d9146a164d25603cffe84ad408aa243b0c1"
+    },
+    "case-000/rcp-valid-1.mem": {
+      "bytes": 1024,
+      "sha256": "26fbf68100992da1d84768b46ac5e0e1d605a722aa8c34cbf504908c67517d99"
+    },
+    "case-000/rcp-valid-2.mem": {
+      "bytes": 1024,
+      "sha256": "1b25bf4f66fe7182472e0915d6695190bc6fcb5110b9ff8b2088fbfe7d766772"
+    },
+    "case-000/rcp-valid-3.mem": {
+      "bytes": 1024,
+      "sha256": "67bccb83c2393aea9c47649e5929b54087914035e39578e61997e0eeda5cfe8b"
+    },
+    "case-000/rcp-valid-4.mem": {
+      "bytes": 1024,
+      "sha256": "e2c17dad9d71fb748dbf1e0ac0f3d6c55082720bbd89b3c869181ea5d7992723"
+    },
+    "case-000/rcp-valid-5.mem": {
+      "bytes": 1024,
+      "sha256": "ef96b0be370580cb31c37cbf496af46955671b228c8522996e9d0ae0d0c7bece"
+    },
+    "case-000/rcp-valid-6.mem": {
+      "bytes": 1024,
+      "sha256": "154e47d600750a97ce488c9a69e26204b43e12942d21edd81305ed114104c579"
+    },
+    "case-000/rcp-valid-7.mem": {
+      "bytes": 1024,
+      "sha256": "5fd669cf926526f63e8a87188981e83b456418007a1bd67494b917911ac8d451"
+    },
+    "case-000/reciprocals-0.mem": {
+      "bytes": 8704,
+      "sha256": "86dd9233afdfdc85f506e0d97ad77d5378a47befb649527a178f507a1f1aab21"
+    },
+    "case-000/reciprocals-1.mem": {
+      "bytes": 8704,
+      "sha256": "685c20aa2a3983784ba4f9298972d1591f17295091308867030a12af9a50c7d1"
+    },
+    "case-000/reciprocals-2.mem": {
+      "bytes": 8704,
+      "sha256": "4c59af963ca8fa349f2c776ee86475015ba37e5431cc5c7ed0a1eb9c8d949958"
+    },
+    "case-000/reciprocals-3.mem": {
+      "bytes": 8704,
+      "sha256": "b33da219b1ce792c46fc53981352054f61e1ef4f7822cb56a210cb27227ccc9f"
+    },
+    "case-000/reciprocals-4.mem": {
+      "bytes": 8704,
+      "sha256": "a756ca0f28f83cce58038e583f710dc84aadc7478838bd6dfb149aeb40e7b6e0"
+    },
+    "case-000/reciprocals-5.mem": {
+      "bytes": 8704,
+      "sha256": "e4fe80fee0910b9a76c11b83815f5b913d439c97bf6ba23691046f2ec39ff0a8"
+    },
+    "case-000/reciprocals-6.mem": {
+      "bytes": 8704,
+      "sha256": "df1267bb267f6f1f00e61d64aa4935f8bd31b3280a3aea0624b62b6186bbe4a9"
+    },
+    "case-000/reciprocals-7.mem": {
+      "bytes": 8704,
+      "sha256": "70e41e3f5ed2b83a2ebfbb4cad83d410b2d818850d2985165b2029eb31b33d63"
+    },
+    "cases.hex": {
+      "bytes": 3950,
+      "sha256": "8aa56a7dd9e1c050d7ee7aeca940e60cb9832b1b2c3edaae757f7fff70de1017"
+    }
+  },
+  "wall_power_w": null
+}
