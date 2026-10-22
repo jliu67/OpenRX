@@ -63,3 +63,24 @@ hash rate is accepted. Characterized SRAM/PVT and memory-system service data are
 needed for a defensible target assessment. Broader issue #72 remains open.
 All original failed and accepted records are preserved. This result authorizes
 no follow-up run, full-hash rerun, installation or hardware purchase.
+
+
+## Delivery closeout — 2026-10-22 14:30 UTC
+
+[PR92](https://github.com/jliu67/OpenRX/pull/92) merged normally at 14:30:25 UTC
+as `0cb7c7fcc26b9b6d0d0b46453cba6acbbd3bc69e`, with tree
+`9f9a1d68539a74c4529cf9697aded6754a11631a` equal to reviewed head
+`73c5d08ecd3b3a9dca9935c6f6a35cff848356e9`. The
+[final-head independent review](https://github.com/jliu67/OpenRX/pull/92#pullrequestreview-5615633520)
+and all four applicable exact-head checks passed. The exact-merge
+[Foundation](https://github.com/jliu67/OpenRX/actions/runs/39796233107/job/119884020642)
+and [RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39796233131/job/119884021166)
+push checks both passed, confirmed at 14:47 UTC.
+
+The [separate closeout record](../docs/validation/conditional-sram-closeout-20261022/README.md)
+tracks later delivery while retaining all original indexed scientific evidence,
+raw flags and earlier pending/draft text unchanged. Only current delivery
+interpretation is superseded; the conditional model result and open physical,
+service, wall-power, architecture and achieved-hash-rate gates are unchanged.
+No experiment or full-hash rerun occurred for this closeout.
+

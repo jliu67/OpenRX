@@ -1,5 +1,27 @@
 # Handoff — actual designated local execution
 
+## Conditional SRAM delivery handoff — 2026-10-22 14:30 UTC
+
+[PR92](https://github.com/jliu67/OpenRX/pull/92) is merged normally at
+`0cb7c7fcc26b9b6d0d0b46453cba6acbbd3bc69e` (14:30:25 UTC). Its tree
+`9f9a1d68539a74c4529cf9697aded6754a11631a` equals reviewed head
+`73c5d08ecd3b3a9dca9935c6f6a35cff848356e9`; the
+[final-head review](https://github.com/jliu67/OpenRX/pull/92#pullrequestreview-5615633520)
+and all four applicable head checks passed. The
+exact-merge [Foundation](https://github.com/jliu67/OpenRX/actions/runs/39796233107/job/119884020642)
+and [RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39796233131/job/119884021166)
+push jobs both passed, confirmed at 14:47 UTC; preserve their exact-merge binding.
+
+Use the [separate closeout record](../docs/validation/conditional-sram-closeout-20261022/README.md)
+for delivery pointers. Keep the original indexed 91-file evidence folder,
+frozen sources, report/provenance digests, raw flags and failed/accepted history
+unchanged. Earlier draft/pending text below describes the original snapshot;
+this section supersedes only its current delivery interpretation. No result
+revalidation or new workload ran. Conditional model acceptance does not close
+physical/PPA, sustainable-service, power or achieved-hash-rate gates, select an
+architecture or close broader issue #72.
+
+
 ## Conditional SRAM comparison handoff — 2026-10-22
 
 Use [EXP-027](../experiments/EXP-027-conditional-sram-baseline.md) and its
