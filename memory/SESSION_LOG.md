@@ -1533,3 +1533,20 @@ No full hash, native/cache generation, CACTI/gem5, synthesis/mapping or spending
 occurred. Broader issue #72 and physical/performance gates remain open.
 
 
+
+## Reconcile PR96 delivery documentation (2026-11-04)
+
+Verified [PR96](https://github.com/jliu67/OpenRX/pull/96) merged at
+`69ec04ca7f1efcc7f24557ee85232184d28cf72d` on 2026-10-22 at 23:52:04 UTC.
+The [issue #72 closeout](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6353946679)
+and GitHub check records confirm five successful head checks and both successful
+exact-merge checks. Foundation's full-dataset and same-process controls were
+skipped, not passed. The merge tree matches the separately AI-reviewed tree.
+
+Added dated delivery corrections to STATUS, TASKS, STATE and HANDOFF while
+preserving all prior text and the EXP-029 source/evidence. No code, workflow,
+setting, scientific criterion or historical result was changed. No local test,
+build, simulation or scientific experiment was launched for this correction.
+The documentation change retains independent review and applicable hosted
+delivery checks as separate gates. Issue #72 and physical/performance acceptance
+remain open; no new execution is authorized by the correction.

@@ -1,5 +1,24 @@
 # Current state — actual local execution activation
 
+## PR96 delivery reconciled (recorded 2026-11-04)
+
+[PR96](https://github.com/jliu67/OpenRX/pull/96) merged on 2026-10-22 at
+23:52:04 UTC as `69ec04ca7f1efcc7f24557ee85232184d28cf72d`, with actual
+tree `57a6bc02c59742d2f1165a216c4811bda1b7a42d` matching the separately
+AI-reviewed head. The [issue #72 closeout](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6353946679)
+records all five applicable head checks and both exact-merge checks passing.
+The [status summary](../docs/STATUS.md#pr96-delivery-closeout-recorded-2026-11-04)
+links the checks and retains Foundation's two deferred controls as skipped.
+
+PR96's earlier publication/head/check-pending wording below is a historical
+snapshot. Delivery is complete; the original EXP-029 execution, raw flags,
+cancelled attempts, skipped stages, retries and all retained evidence remain
+unchanged. Functional behavioral-port acceptance does not resolve physical
+SRAM/PVT, realistic service/controller/PHY and latency tails, physical
+timing/area/energy, wall power, achieved hashes/s or architecture selection.
+Issue #72 remains open. This reconciliation authorizes no new workload or
+change to scientific acceptance, independent review or applicable check gates.
+
 ## Prepared-fetch SRAM-port execution complete — 2026-10-22 21:33 UTC
 
 The specifically approved [EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md)

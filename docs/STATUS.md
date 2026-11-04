@@ -1,5 +1,35 @@
 # Verified project status — 2026-10-20
 
+## PR96 delivery closeout (recorded 2026-11-04)
+
+[PR96](https://github.com/jliu67/OpenRX/pull/96) merged on 2026-10-22 at
+23:52:04 UTC as
+[`69ec04ca7f1efcc7f24557ee85232184d28cf72d`](https://github.com/jliu67/OpenRX/commit/69ec04ca7f1efcc7f24557ee85232184d28cf72d).
+The [issue #72 closeout](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6353946679)
+records separate AI publication-head review and all five applicable checks
+passing at head `c3a62d08c35153b0bd3048536309cc7879659297`. The actual merge
+tree `57a6bc02c59742d2f1165a216c4811bda1b7a42d` matches the reviewed tree.
+The exact-merge [Foundation](https://github.com/jliu67/OpenRX/actions/runs/39874559670/job/120156877257)
+and [RISC-V](https://github.com/jliu67/OpenRX/actions/runs/39874559714/job/120156877217)
+checks also passed. Foundation's deferred full-dataset and same-process controls
+were skipped, not passed. Separate AI review is not human/account-holder approval.
+
+This completes PR96 delivery only. Earlier publication/review/check-pending
+statements below retain their dated snapshot meaning and are superseded only
+for that delivery status. Original cancelled attempts, skipped stages, logs,
+passed retries, source-bound evidence and raw scientific flags remain unchanged.
+Successful package retrieval did not establish the earlier cancellation's root
+cause or live-test timeout-failure diagnostic retention.
+
+[EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md) retains bounded
+functional behavioral-port acceptance. Its three modeled clocks between
+continuous captures are implementation-specific; EXP-028's necessary two-clock
+floor is unchanged. Characterized SRAM/process/PVT, realistic memory/controller/
+PHY service and latency tails, physical timing/area/energy, wall power, achieved
+hashes/s and architecture selection remain unresolved. Issue #72 stays open.
+This documentation closeout authorizes no new experiment, rerun or acceptance
+change; subsequent work retains its own review and applicable check gates.
+
 ## Prepared-fetch SRAM-port result — 2026-10-22 21:33 UTC
 
 [EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md) records one completed

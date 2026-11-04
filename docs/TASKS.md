@@ -1,5 +1,21 @@
 # OpenRX project board
 
+## PR96 delivery status (recorded 2026-11-04)
+
+[PR96](https://github.com/jliu67/OpenRX/pull/96) delivery is complete: merged
+2026-10-22 at 23:52:04 UTC as `69ec04ca7f1efcc7f24557ee85232184d28cf72d`.
+The [issue #72 closeout](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6353946679)
+records separate AI exact-head review, five passing head checks and both passing
+exact-merge checks. See the [delivery evidence summary](STATUS.md#pr96-delivery-closeout-recorded-2026-11-04).
+Foundation's deferred full-dataset and same-process controls remain skipped.
+
+The older PR96 candidate row below is dated history, not a current publication
+or review blocker. EXP-029 acceptance remains functional behavioral-port only;
+physical SRAM/PVT, service/controller/PHY, timing/area/energy, wall power,
+achieved hashes/s and architecture gates stay open with issue #72. Historical
+records, scientific criteria and independent review/check gates are unchanged.
+This correction assigns no new execution and does not reserve compute.
+
 ## Prepared-fetch SRAM-port delivery candidate — 2026-10-22 21:33 UTC
 
 | Work | Current bounded result | Remaining delivery gates |
