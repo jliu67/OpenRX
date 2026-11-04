@@ -1,5 +1,27 @@
 # Handoff — actual designated local execution
 
+## PR96 delivery closeout handoff (recorded 2026-11-04)
+
+Use [PR96](https://github.com/jliu67/OpenRX/pull/96),
+the [issue #72 closeout](https://github.com/jliu67/OpenRX/issues/72#issuecomment-6353946679)
+and the [dated delivery summary](../docs/STATUS.md#pr96-delivery-closeout-recorded-2026-11-04):
+PR96 merged on 2026-10-22 at 23:52:04 UTC as
+`69ec04ca7f1efcc7f24557ee85232184d28cf72d`. Separate AI publication-head
+review, all five applicable head checks and both exact-merge checks completed.
+Foundation's deferred full-dataset and same-process controls were skipped,
+never passed. No human/account-holder review approval is claimed.
+
+Do not repeat PR96 publication or EXP-029 validation to satisfy the older
+pending-delivery text below; it remains dated history. Preserve original
+sources, evidence, raw flags, cancelled attempts, skipped stages and retries.
+The functional behavioral-port result leaves physical SRAM/PVT, realistic
+service/controller/PHY and tails, timing/area/energy, wall power, achieved
+hashes/s and architecture selection open. Issue #72 stays open.
+
+Any subsequent proposal retains its own frozen scope, independent review,
+execution admission and applicable delivery checks. This closeout neither
+launches nor authorizes a new experiment and changes no scientific criterion.
+
 ## Prepared-fetch SRAM-port result handoff — 2026-10-22 21:33 UTC
 
 Use [EXP-029](../experiments/EXP-029-prepared-fetch-sram-port.md), the
