@@ -1,5 +1,8 @@
 # OpenRX
 
+Current architecture work and review state: [issue #72](https://github.com/jliu67/OpenRX/issues/72).
+Experimental source: [shared-context VM](experiments/shared_context_vm/).
+
 ## Accepted functional hardware-dataset hash — 2026-10-20
 
 One default 8×2,048 RandomX v2 functional hardware-dataset hash is

@@ -1,0 +1,419 @@
+{
+  "base_main": "5eab59b746b1f83f5a0df71be5b4d1aa482d126d",
+  "cache_key": "test key 000",
+  "compile_files": [
+    "rtl/aes/vendor/secworks/aes_sbox.v",
+    "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+    "rtl/aes/randomx_aes_round.v",
+    "rtl/aes/randomx_v2_aes_mix.v",
+    "rtl/aes/randomx_exec_aes_commit.v",
+    "rtl/iteration/randomx_iteration_store.v",
+    "rtl/engine/randomx_i32_to_f64.v",
+    "rtl/engine/randomx_iteration_engine.v",
+    "rtl/execute/randomx_mul64.v",
+    "rtl/execute/randomx_reciprocal32.v",
+    "rtl/execute/randomx_integer_execute.v",
+    "rtl/execute/randomx_integer_iteration.v",
+    "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+    "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+    "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+    "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+    "rtl/execute/vendor/hardfloat/recFNToFN.v",
+    "rtl/execute/vendor/hardfloat/addRecFN.v",
+    "rtl/execute/vendor/hardfloat/mulRecFN.v",
+    "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+    "rtl/execute/randomx_fp64.v",
+    "rtl/execute/randomx_fp128.v",
+    "@HARDFLOAT_VIEW",
+    "rtl/execute/randomx_divsqrt64.v",
+    "rtl/execute/randomx_divsqrt128.v",
+    "rtl/execute/randomx_program_control.v",
+    "rtl/execute/randomx_program_reciprocals.v",
+    "rtl/execute/randomx_prepared_rcp_guard.v",
+    "rtl/execute/randomx_prepared_integer_iteration.v",
+    "rtl/execute/randomx_prepared_program_sequence.v",
+    "rtl/execute/randomx_superscalar_execute.v",
+    "rtl/dataset/randomx_dataset_item.v",
+    "rtl/dataset_capacity/randomx_dataset_item_session.v",
+    "rtl/dataset_capacity/randomx_dataset_capacity_service.v",
+    "rtl/dataset_capacity/randomx_prepared_dataset_capacity_hash_lifecycle.v",
+    "rtl/hash/randomx_blake2b_chain_core.v",
+    "rtl/hash/randomx_initial_scratchpad_fill.v",
+    "rtl/hash/randomx_input_blake2b.v",
+    "rtl/hash/randomx_prepared_hash_lifecycle.v",
+    "rtl/hash/randomx_prepared_program_hash_sequence.v",
+    "rtl/hash/randomx_program_generation.v",
+    "rtl/hash/randomx_program_seed.v",
+    "rtl/hash/randomx_regfile_blake2b.v",
+    "rtl/hash/randomx_scratchpad_aes_hash.v",
+    "rtl/hash/randomx_scratchpad_finalizer.v"
+  ],
+  "experimental_files": {
+    "common/context_execute.v": "742ad8718459fde9a0a1535ff09c8b0bc6b882a3f29e2e689c72b61baf21f769",
+    "common/iteration_shell.v": "216019df15ed2f6a341b6b30cd8ff62ac9fa5bdcaed25aa5bfabd449c3d4b123",
+    "common/shared_fetch.v": "8b57660f388535306f314b2755136b830edc8734fa9cb7a8c8dd340fe5fe57ff",
+    "common/shared_fu.v": "58fe43a952987d0886c7a7cf11ede5208dd81c910199a91c58bbaa7f231464f8",
+    "tests/contexts16/context_execute.v": "7fb5c482ee7e3b6723b6e255bea10e195289a812457d7fc0e28240f631122cfe",
+    "tests/contexts16/tb_contexts.v": "0d357db41726527608efdc51526a866c0854e72307dcc169041bc6824e736d77",
+    "tests/fetch18/tb_contexts.v": "0451faf166ebc6beebde5462ad12736083c3755cad065ddf8abbceac55ae03a1",
+    "tests/iterations20/tb_contexts.v": "4bfa18012582ba7d3f7da9e0b86497e4fcfd27e567d3729a7df7be386a461588"
+  },
+  "fixtures": {
+    "contexts16": {
+      "events.mem": "0a23e7276ea5efb9f67c1c5b47e9d065a1f419be0226d3e3fd2e5010312ed405",
+      "fixture.vh": "3f7806465c4d24fa105752ed132936473a06eb75d0339fff98b159bfe789b3fa",
+      "reciprocals.mem": "ab2c3acebddcfab44d5f128f899d071dbd9b98e2294c0395d1cae32a37a737d4"
+    },
+    "fetch18": {
+      "events.mem": "0a23e7276ea5efb9f67c1c5b47e9d065a1f419be0226d3e3fd2e5010312ed405",
+      "fixture.vh": "3f7806465c4d24fa105752ed132936473a06eb75d0339fff98b159bfe789b3fa",
+      "reciprocals.mem": "ab2c3acebddcfab44d5f128f899d071dbd9b98e2294c0395d1cae32a37a737d4"
+    },
+    "iterations20": {
+      "events.mem": "a408e9e1f0d70483d8a7e5f8a56c419ec5704c7ee055f2824eeb3b906389fb86",
+      "fixture.vh": "4b5c05a90eb49043d8cbb93b8d655a11db9cd85f98dd2194f1826bd9c2b6a582",
+      "programs.mem": "27b4c497235c8578d5b5c1914b6a00dd637fd81b984a111079c6833c812e653c",
+      "reciprocals.mem": "02fc618ac35932eb765dd5666a993c0c81f93dbe453618c4b2ab339237770dee"
+    }
+  },
+  "golden_files": [
+    {
+      "bytes": 2863,
+      "path": "rtl/aes/randomx_aes_round.v",
+      "sha256": "f0832f4740a1a1eba546937dcb7e83ca2b9b31890b7bb7d87b1e7e85fb6d5d63"
+    },
+    {
+      "bytes": 1442,
+      "path": "rtl/aes/randomx_exec_aes_commit.v",
+      "sha256": "91b2412c0ef33295898301546912b0893a9c771ff7525aa91377c96ffc8c37bc"
+    },
+    {
+      "bytes": 3270,
+      "path": "rtl/aes/randomx_v2_aes_mix.v",
+      "sha256": "09f886b8c808ebd8bc28839f8d7076283e74528e0f1a314bdce1f8f94b94e417"
+    },
+    {
+      "bytes": 11471,
+      "path": "rtl/aes/vendor/secworks/aes_inv_sbox.v",
+      "sha256": "2e64290bf10830008b6cb58427af39e2c6ae9dff5f4cfc282d3afba0cb8dbc35"
+    },
+    {
+      "bytes": 10489,
+      "path": "rtl/aes/vendor/secworks/aes_sbox.v",
+      "sha256": "60e7939de3a539176a8514c2e4a477f603173e6ae40512517ed6dfaaa7483fd9"
+    },
+    {
+      "bytes": 12249,
+      "path": "rtl/dataset/randomx_dataset_item.v",
+      "sha256": "c0b23b9787b34db48bcd708185aaf0e2b6e631074fdd0fe409fd33004b348d42"
+    },
+    {
+      "bytes": 10146,
+      "path": "rtl/dataset_capacity/randomx_dataset_capacity_service.v",
+      "sha256": "30ff80e30e6394fd3e5626f72dd3b25ba701e6ca49fa112eb9c02145c51827b3"
+    },
+    {
+      "bytes": 8825,
+      "path": "rtl/dataset_capacity/randomx_dataset_item_session.v",
+      "sha256": "c9dd8f5347247795ca76113b9f20117093c6755bdbda49993277d142eacf0b0e"
+    },
+    {
+      "bytes": 23533,
+      "path": "rtl/dataset_capacity/randomx_prepared_dataset_capacity_hash_lifecycle.v",
+      "sha256": "fb8f277e494744771c386101c3358caeedea3abe39c30b3fc143c4559c59957f"
+    },
+    {
+      "bytes": 44695,
+      "path": "rtl/dataset_capacity/tests/tb_dataset_capacity.v",
+      "sha256": "fa1fde7a7da68453f908e940f68a53e7643d2ebe0fe3ccf1e11f1286f2bee5a3"
+    },
+    {
+      "bytes": 113533,
+      "path": "rtl/dataset_capacity/tests/tb_dataset_capacity_hash_lifecycle.v",
+      "sha256": "0b9bf0d112647e6ec189b3bc63bb363ebc85a58d6338859513ecdc7c5940d9f7"
+    },
+    {
+      "bytes": 695,
+      "path": "rtl/engine/randomx_i32_to_f64.v",
+      "sha256": "468e34c4ea6d46c9f2123f1829260d2d75e9b11dd8c10cf2a644bb08d6508756"
+    },
+    {
+      "bytes": 12122,
+      "path": "rtl/engine/randomx_iteration_engine.v",
+      "sha256": "9cdcbf5a28f2616bb9deaf7128f437ab6ee78ac0e2f36f03b4f4451ecc6f8b78"
+    },
+    {
+      "bytes": 2560,
+      "path": "rtl/execute/randomx_divsqrt128.v",
+      "sha256": "244d9b45609eea06966487c4194e143cab9b15dcf0d96ea882094e6cfa433baa"
+    },
+    {
+      "bytes": 3282,
+      "path": "rtl/execute/randomx_divsqrt64.v",
+      "sha256": "3e2949d48423c359f448ef57827ca2ccc80e5ad1c4e3089d91f4b8b50a1411ea"
+    },
+    {
+      "bytes": 2511,
+      "path": "rtl/execute/randomx_fp128.v",
+      "sha256": "368bda75d3264c96179797231d1036939dde173be7d55c60cdea21a157a3faff"
+    },
+    {
+      "bytes": 1858,
+      "path": "rtl/execute/randomx_fp64.v",
+      "sha256": "52a5175d03e3db4849d0c6d4a1d0b8630ce668a8ab1fbe0cb072e9eb995c4521"
+    },
+    {
+      "bytes": 19900,
+      "path": "rtl/execute/randomx_integer_execute.v",
+      "sha256": "7f605141b5696f9e39621f28ea3e4ab16723ce0b2c812ec7456f1e76090c0b09"
+    },
+    {
+      "bytes": 10356,
+      "path": "rtl/execute/randomx_integer_iteration.v",
+      "sha256": "1de7700181aa5dfebfbd7a3b6aa971ad72c2c52fffe2c46938143e43093ff661"
+    },
+    {
+      "bytes": 3320,
+      "path": "rtl/execute/randomx_mul64.v",
+      "sha256": "e0a42d6005fac370cb431fd8cdb0cfe8138a8260306b57a0ee428743569d1b0f"
+    },
+    {
+      "bytes": 2785,
+      "path": "rtl/execute/randomx_opcode_ceils.vh",
+      "sha256": "3829fda4fedeff8322170db795ab27ad6bb3e9a449d0630ad587be91493ca09d"
+    },
+    {
+      "bytes": 10339,
+      "path": "rtl/execute/randomx_prepared_integer_iteration.v",
+      "sha256": "f97812cbba814e7632042b09bf3f8bdd89fa6c357486b70a63d8c0f1b5b2e15c"
+    },
+    {
+      "bytes": 15347,
+      "path": "rtl/execute/randomx_prepared_program_sequence.v",
+      "sha256": "9d40cf6f59b961a91f1bcd9f670bfe807687d1d92b1f5f79b45f9d428f9d0b7e"
+    },
+    {
+      "bytes": 1018,
+      "path": "rtl/execute/randomx_prepared_rcp_guard.v",
+      "sha256": "b44699aaa2f4c52230c9ecbfada1cb91341ed3721140753ddeb29fe0098c3a67"
+    },
+    {
+      "bytes": 8843,
+      "path": "rtl/execute/randomx_program_control.v",
+      "sha256": "50e2d7a1f32ebf5aea98093e08b9e9f8e1aeaef3adfd53db319d8ac7c2333570"
+    },
+    {
+      "bytes": 7764,
+      "path": "rtl/execute/randomx_program_reciprocals.v",
+      "sha256": "218dbb0b2e1f7a262dbf611431f8a8cd9a3b5dbba02861cf3509da84b423c98d"
+    },
+    {
+      "bytes": 1885,
+      "path": "rtl/execute/randomx_reciprocal32.v",
+      "sha256": "eba445e98069fca0ef58e8a6229ba1c637be9dc9dfd8ecdef015eed837d714f1"
+    },
+    {
+      "bytes": 8538,
+      "path": "rtl/execute/randomx_superscalar_execute.v",
+      "sha256": "9c66895aa41a75ae313113d58e63564d5ed9093de10570755f1f161f4fabd24b"
+    },
+    {
+      "bytes": 5712,
+      "path": "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "sha256": "5978254ad3781165833345616e4c1c3447cac4a1d8fb73689c2def15f71f52e3"
+    },
+    {
+      "bytes": 2271,
+      "path": "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.vi",
+      "sha256": "a6a6a3b7b86f7cc2e32e147dc9f6943422a611fd6da362f37e18950002a571c4"
+    },
+    {
+      "bytes": 2829,
+      "path": "rtl/execute/vendor/hardfloat/HardFloat_consts.vi",
+      "sha256": "53d4c22ee61b9b81bc763330959327914d8e1952e15f3f66361d1a4e34e2802f"
+    },
+    {
+      "bytes": 2175,
+      "path": "rtl/execute/vendor/hardfloat/HardFloat_localFuncs.vi",
+      "sha256": "e6e8d53f362dc2c9fe14c9b0edbc73bc6367d8899276b3384e947a17029b5d50"
+    },
+    {
+      "bytes": 6610,
+      "path": "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "sha256": "5a1d0823a066395eda8191b3a556c414e6120b8085ff43ce383980d84af47f9f"
+    },
+    {
+      "bytes": 17218,
+      "path": "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "sha256": "353cad0b733c601f5c2449dc75f1ddefa34dc5c2466ac82540302303899fe355"
+    },
+    {
+      "bytes": 11575,
+      "path": "rtl/execute/vendor/hardfloat/addRecFN.v",
+      "sha256": "15fb5387ab0deff63670ed144189e9f263c61ffc909d06697974c49d11ba5dc3"
+    },
+    {
+      "bytes": 15507,
+      "path": "rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v",
+      "sha256": "f76feb5557faa8bcb2868e51bf2ce7d1297be46dd67ae51d509b1ae91066a522"
+    },
+    {
+      "bytes": 3945,
+      "path": "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "sha256": "7aca940370a4ecf1b52774cec62e90252d090f20a4acd5f577cf88565266426c"
+    },
+    {
+      "bytes": 2316,
+      "path": "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "sha256": "77e37250ec9c18c4484c23eda48bfcf7df8dec1a3d3b2c1a1e5804386a25de8b"
+    },
+    {
+      "bytes": 9458,
+      "path": "rtl/execute/vendor/hardfloat/mulRecFN.v",
+      "sha256": "5a6a263dcde9f38f0fabef87ceb41e1bdff63c46d151c7c65e404467354bee43"
+    },
+    {
+      "bytes": 3465,
+      "path": "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "sha256": "62d42a8f004f00f9a688c5e45302ceff22148313b3602840e5d05a13e9391e96"
+    },
+    {
+      "bytes": 26649,
+      "path": "rtl/hash/randomx_blake2b_chain_core.v",
+      "sha256": "74921226713d4546c6e8e2485a7205499f8b48a1d9cc355e6315769738c5bda8"
+    },
+    {
+      "bytes": 2747,
+      "path": "rtl/hash/randomx_initial_scratchpad_fill.v",
+      "sha256": "88b57566114875bb2dcadd2d3f21a71f414e0d850357bb6d4c8341d4f2d715ae"
+    },
+    {
+      "bytes": 2444,
+      "path": "rtl/hash/randomx_input_blake2b.v",
+      "sha256": "afe533c723475bf9ef656139f9ea2c3aa85f38a0c6e1153f09b9786461b684de"
+    },
+    {
+      "bytes": 31795,
+      "path": "rtl/hash/randomx_prepared_hash_lifecycle.v",
+      "sha256": "1d671a885309e2663786ae3d897bb6eb4164ed5e2c0ad47677ee660a4a0b2422"
+    },
+    {
+      "bytes": 10813,
+      "path": "rtl/hash/randomx_prepared_program_hash_sequence.v",
+      "sha256": "f9c72ab988650eaac75ea7bfce7b155b885f57bf65b14e70f907e4e5d97a66b7"
+    },
+    {
+      "bytes": 3183,
+      "path": "rtl/hash/randomx_program_generation.v",
+      "sha256": "03f504c22a3f00c50aeb944f0d506566cc5554c4500bbd2c73d1f302edc455a3"
+    },
+    {
+      "bytes": 2936,
+      "path": "rtl/hash/randomx_program_seed.v",
+      "sha256": "9f4305228d23bbbae17183953787b72368c9462716abe47e71b78d932e6f9fdb"
+    },
+    {
+      "bytes": 2800,
+      "path": "rtl/hash/randomx_regfile_blake2b.v",
+      "sha256": "b794047e47d711aad508d548872b1b118c7878fd2c032ef8b9f5d2e14bd949fc"
+    },
+    {
+      "bytes": 3796,
+      "path": "rtl/hash/randomx_scratchpad_aes_hash.v",
+      "sha256": "5d44749839a264834563ea4feb8b24058b8081e753b115813f6adc8bbf8099ff"
+    },
+    {
+      "bytes": 3688,
+      "path": "rtl/hash/randomx_scratchpad_finalizer.v",
+      "sha256": "0b4f87d12bc258e9516f5f8e598e24a9f594db87ae70793074d385f5baa4a75a"
+    },
+    {
+      "bytes": 3136,
+      "path": "rtl/iteration/randomx_iteration_store.v",
+      "sha256": "dd805cad8d379cf1818d834b692aa7d86cd7c2eccf3eecf560ec35c4b7409968"
+    },
+    {
+      "bytes": 3324,
+      "path": "rtl/hash/vendor/blake2/blake2_G.v",
+      "sha256": "558387e71def9ae0640cfacde202dba747171abd3242a5e00c04f34c8f46a1d8"
+    },
+    {
+      "bytes": 14380,
+      "path": "rtl/hash/vendor/blake2/blake2_m_select.v",
+      "sha256": "492b2e7f64ec494d2c4c6b499a3651ddb64d34b275b62bc91651e0b1712fcb63"
+    }
+  ],
+  "guard_sha256": "c5677bf0e32df534c5ed912650c1216c2fde73ba9df5a82be8ed5fe3b4e503c8",
+  "hardfloat_helper_sha256": "0063c22966f15a0a8dcde18eb142640b7933e0c5b2682961f2ade0f3e6dafdf2",
+  "native_execution": "20261019T221550Z-e63242bc943c",
+  "native_input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c65203230323631303138",
+  "reviews": {
+    "contexts16": "0c642815e8e653d8a3014b3f6a334b82396ae0a92cfc9d846d2262eea7a68af2",
+    "fetch18": "25e5a6f0f73b2376b9399de1e133d1210790a7c8f78868b3b406a535d0ed8974",
+    "iterations20": "c976441ec40e7021ba70b1f5902468472c3f10a19bb67047f61ce2de0baf3445"
+  },
+  "verilator_commit": "5c5314b39cd888f427807d626e1502cbf222c292",
+  "verilator_programs": {
+    "bin/verilator": "59a001ed47f9cccfa1b13acb503708f627b65f523667bdbaddbae9db7b8252b1",
+    "bin/verilator_bin": "d7f6b1ccd5b83ae7cfb1a7ea1778504cf86a29245b4249e1820df9b8978d1ab1"
+  },
+  "verilator_runtime_files": {
+    "include/.gitignore": "4d52bf96ce354d5a662cc9443af5e5555cecac61eb15bc521a50a281243a833e",
+    "include/gtkwave/fastlz.c": "35d2b3ab8ea04615cc56dee1a7017610f459b57aef51d9de69c71c24bd9ee719",
+    "include/gtkwave/fastlz.h": "4dd943f4063e0d13034a87bd66a54f689014b3ea5f92c07b9938f271ffa38a0c",
+    "include/gtkwave/fst_config.h": "d8b84770187034bb7aee6c41eeb49725e84ad9dc1d3302903dfc979b03b4d6ad",
+    "include/gtkwave/fst_win_unistd.h": "15ec1054e9c5fa8118060ca5b5dab0bbb2d4879c43b53c9457cb416fce97b19f",
+    "include/gtkwave/fstapi.c": "41101cac5bcf9dc6594388d793a58b27e2b7f237e32d96fb292cde7d0318c011",
+    "include/gtkwave/fstapi.h": "9b401991a1d433eec862a8636e2d218e9e572df7a4e62643ebccbf88fc417377",
+    "include/gtkwave/lz4.c": "cbd1ab0f75043ddada4d08480a1df36e5aa46483cf7902e330cb6b4a51840e2d",
+    "include/gtkwave/lz4.h": "cee1c5b0b553cd610a73c6823e12b286402644668f7b43037df4c86c388bb41e",
+    "include/gtkwave/wavealloca.h": "c328c316a145aba0473ac6a5201ca832da4bbb5c97374e914cb4ac400b0bb235",
+    "include/verilated.cpp": "b784038c3cf821588ff4576653b540355889c0621bc258d1b349c29a63836c35",
+    "include/verilated.h": "5dae77881c31423d9e0ed126192eaed0721b3f88dd2d7a709c57152e2a861c35",
+    "include/verilated.mk": "6627e31262da0a6fe244b7b81cdae94373f738d2745d6b377a6309740b9935a9",
+    "include/verilated.mk.in": "2c04fc99f2c8f4141c8227a97f95b0f6f9d2998864bbda47a22d5b79f5ff7db0",
+    "include/verilated.v": "9d4e3a95945eb1d446a9c6deae8e702758be970a1ed1903b1930093cab754ebf",
+    "include/verilated_config.h": "95d2fcc785c2f940a3e343d49cfaf5e1e5dfc2125495955de09e7c5e1a920f07",
+    "include/verilated_config.h.in": "536b9d8ae174d2c2c137efd7c4ee0c3b16914e0999fabd8a259973286678e742",
+    "include/verilated_cov.cpp": "891fb8fa8c14f547a2ba6f54d7d4649559777895a7c05882fb125984e6e39b3d",
+    "include/verilated_cov.h": "250013cf22c84dd79901065c7d10937a1fe48ef088f382feab8dfad74c6fd833",
+    "include/verilated_cov_key.h": "161e775d21f12cafc838ce80bd17618141342cf407791414320757c17fad853c",
+    "include/verilated_dpi.cpp": "a13d61239de4c25e1c3af900a12ee4ea08ba6701775a67eec258ee7cee57b492",
+    "include/verilated_dpi.h": "69fa17a0144e9649f40c4dff4469b4890afb65d31217ef8dc6f19a1b7b827db3",
+    "include/verilated_fst_c.cpp": "c7ac049abe738c6a447da40ea2a86e587d01c944dbcf95784e6a2cab02526643",
+    "include/verilated_fst_c.h": "ca77336b3b4708c252fac5ad31b603ae36f7ce5328da7abd92794a614bf85591",
+    "include/verilated_fst_sc.cpp": "4db20e688619bdaa82267405104a182038b5061b90ff02c43ca738050013b5e3",
+    "include/verilated_fst_sc.h": "6620d7d758b5b217b84511c1b44dda9146fc6ec0e7d348a7d9e8a4952cefaf08",
+    "include/verilated_funcs.h": "db34fde6fae46db0dbfa6ad8858d29a6005d2db97b5817e285233fa4d7c2c9d4",
+    "include/verilated_imp.h": "27b13119d9dc0a5be17a3d87e377ba8a7dc00310244ec50f943a20f6ab74c009",
+    "include/verilated_intrinsics.h": "9731d3b3dad87cdf86e1e8e3909f4e477d1251a894f6a5816df509881d545a14",
+    "include/verilated_probdist.cpp": "834dca26103672962f72c8175561ff7360fc16d814b9efbf5c9eb0551b486cd5",
+    "include/verilated_profiler.cpp": "c6c89625b8c93466d00b89cb86c9ef147d9ef613b7efbbbb3055d35d97e3af9f",
+    "include/verilated_profiler.h": "f4836c8eaeeba19ad3858a513825a0ef50530f17b4a11e083ae7e44c89608317",
+    "include/verilated_save.cpp": "0486fac12c0ffe87f220aa92bb5b4594acf4fdf954f3c409424ba892620ae6da",
+    "include/verilated_save.h": "e25098f63bd1866afa751c24846bf1962b8fc37e87fff192ee817ca0a4fe9d29",
+    "include/verilated_sc.h": "22881611a751634ecaf7eb30836199b944dba6a9e80efae7bb2da04d66a1b991",
+    "include/verilated_sc_trace.h": "5734da6f799f650435390cec5ea06cb53cea8be66abdecf47bcf9f1e1cd1a682",
+    "include/verilated_std.sv": "6f7f35a5e9ef796379b32108134ae90543c8509818286ba99a8b1de080a29824",
+    "include/verilated_sym_props.h": "a1dbc1e3a05adf95b3d8d8e849f648c02a06d309e758c1ac129ebcd62e5ff623",
+    "include/verilated_syms.h": "e6a16c7c8052e390a6fc8a28cd7f944e0054e6c3f121f2671389468bb4bfe1f1",
+    "include/verilated_threads.cpp": "c1290e944bb50e80ee5bf27ab1efdc032aac023ade148ef74d6a45db8bb6f132",
+    "include/verilated_threads.h": "2164e6b4aa0f366097d95f9e979ce0f999391e7c46183fd31a869a4f7b662b3d",
+    "include/verilated_timing.cpp": "6b0c49ac5a5a8c74562282fd4ebd2c4a46733ce85f50458da9c0c8928cbf780d",
+    "include/verilated_timing.h": "ed2d0d0c25265210f0ee7ca8cb8d834921221785762fc1c630eb52a01b107b7d",
+    "include/verilated_trace.h": "e75cfc2f3eb93f2a9680e0697501b95249679d4cf4aa1f998de4ce09bbf25fc2",
+    "include/verilated_trace_imp.h": "9512d1d986deefbe0641d4d3c523868f429e26c7195cd31b516b73bc7ee7da9e",
+    "include/verilated_types.h": "dd56d87f929e7c2a10879e245ce1a7fe30056e86d42e37f5eca5fedf4c020a48",
+    "include/verilated_vcd_c.cpp": "ac9353d13ce64c5ef1cea5279893a4c288a22a72d4be1512757ebf98bd3a5120",
+    "include/verilated_vcd_c.h": "63c6de3a22a25d13b8e802d8facb75cf0257fe47acfdf6fe21916535368ddfff",
+    "include/verilated_vcd_sc.cpp": "f8d7875cc945086238dc0db55b729ced24ed1f1d8a62b3235b277bad2dcbb0eb",
+    "include/verilated_vcd_sc.h": "1f62f52c30cdec9113598c0abd698a50cafa515c26cf9e24cd13e28cbbd8f6f8",
+    "include/verilated_vpi.cpp": "f099b4917638437fd853d49bf34a4163848de552a4379a0b34517e5386e4998e",
+    "include/verilated_vpi.h": "29d9299f6de596c1e30ae59626fad50e80b2eb18a369a0dea1332a234fe68108",
+    "include/verilatedos.h": "65774ad8f3dc4384d0d43900cb25dfe6c447229ae36ca4ce64618524c7671246",
+    "include/vltstd/sv_vpi_user.h": "efaf9987f27c9734df3dde28d457fa36c5f64504b86aa292df423bd61cab2a76",
+    "include/vltstd/svdpi.h": "bbe9cb930e7d0c16b9fab2d2744169c2eaaa8cfca797631138883a194681a1fb",
+    "include/vltstd/vpi_user.h": "6ec3e0d8d9fe696fd494b609db9d83d4f61d7d47458b5a19d3bf6de35f3b4d16"
+  },
+  "version": "RandomX v2, pinned vendor source"
+}
