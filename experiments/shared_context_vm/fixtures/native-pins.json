@@ -1,0 +1,58 @@
+{
+  "dataset-items.hex": {
+    "bytes": 2392064,
+    "sha256": "80abe136ff5f2bb6bbf55317df6d6740668deae3a5d351303a6a14ce194b310c"
+  },
+  "events.mem": {
+    "bytes": 30974077,
+    "sha256": "5341fe6dabdf778303f243c6b39f76f9f501d35394c80d9e01957bb8637b78aa"
+  },
+  "final-0.hex": {
+    "bytes": 4325376,
+    "sha256": "01af85e63184cf2d3a73e7460758b6bd632346eba9d8e01832a938f0184078db"
+  },
+  "final-1.hex": {
+    "bytes": 4325376,
+    "sha256": "0f7e97227d3f59f7876b33b0d463a774f94b15ab48e517d6730bd3600474e6d7"
+  },
+  "final-2.hex": {
+    "bytes": 4325376,
+    "sha256": "941bbb873226437177c43f84eead88bc9358d7127cdcf877105e891dad5a4562"
+  },
+  "initial.hex": {
+    "bytes": 4325376,
+    "sha256": "71bee4a260840181b80cc0ff02b16bd82e38c2d8b5fefcd3096195e2c13c9590"
+  },
+  "iterations.hex": {
+    "bytes": 9963452,
+    "sha256": "3431284f400bba0acc53414728fa283c24bdd65186cb42f19d7fd6c91ea48662"
+  },
+  "iterations.mem": {
+    "bytes": 10387456,
+    "sha256": "84cd1d723ffcf74cc73b7297768367f527722b085cd33d21d05ad54d36ef6cb2"
+  },
+  "metadata.hex": {
+    "bytes": 3645,
+    "sha256": "2962df50306be23dddf77d38707706aa3d3bb36657a09e7c33d96311c3ad9dd2"
+  },
+  "metadata.mem": {
+    "bytes": 3616,
+    "sha256": "538c719fc6c9f0df17722d9734fe8de637458086bbca3212590fc34963fe4ce1"
+  },
+  "program-0.mem": {
+    "bytes": 6528,
+    "sha256": "a7a8c21a637409719afc76d005c2023cf09e8360b6a7ee56628bc9800383862b"
+  },
+  "program-1.mem": {
+    "bytes": 6528,
+    "sha256": "c52417ab3bb258d302328ea04eab9ba1b3b815d111a8307522e1907213b572f9"
+  },
+  "program-2.mem": {
+    "bytes": 6528,
+    "sha256": "61b3620076fc78ec750ecd0edc010778ce493813eaf827e670dc922545f8ed72"
+  },
+  "program-3.mem": {
+    "bytes": 6528,
+    "sha256": "e73baa070fd144c584ccb2398e31717df763e80dd4f77b8aa47840fde52d9c26"
+  }
+}
