@@ -7,6 +7,11 @@ import argparse,fcntl,gzip,hashlib,importlib.util,json,os,pwd,re,resource,shutil
 from pathlib import Path
 CODE=Path(__file__).resolve().parents[1];SRC=CODE.parents[1]
 META=CODE/'fixtures/provenance.json';M=json.loads(META.read_text())
+COMPILE_OPTIONS={'verilator':['--cc','--main','--exe','--timing','--top-module','tb_contexts','--output-split','10000','--output-split-cfuncs','1000','-Wno-fatal'],
+ 'cxx':'-std=c++20','link':'-pthread -ldl -Wl,-z,noexecstack',
+ 'make':['-j2','VM_DEFAULT_RULES=0','OPT_FAST=-Os','OPT_SLOW=-Os','OPT_GLOBAL=-Os','model'],
+ 'ordinary_mk':'include Vtb_contexts.mk\n%.o: %.cpp\n\t$(CXX) -Os $(CXXFLAGS) $(CPPFLAGS) -c -o $@ $<\n'}
+INCLUDE_DIRS=['rtl/execute','rtl/execute/vendor/hardfloat','rtl/execute/vendor/hardfloat/8086-SSE','rtl/hash/vendor/blake2']
 MATRIX={'contexts16':[(0,1,0,0),(1,1,0,0),(0,10,0,0),(1,10,0,0),(1,10,1,2)],
  'fetch18':[(0,1,1,0,0,0),(1,0,1,0,0,0),(1,1,1,0,0,0),(1,1,10,0,0,0),(1,1,10,1,2,0),(1,1,1,2,0,0)]+[(1,1,1,0,0,x)for x in(1,2,3,4)],
  'iterations20':[(0,0,1,0,0,0),(0,1,1,0,0,0),(1,0,1,0,0,0),(1,1,1,0,0,0),(0,1,10,0,0,0),(1,1,10,0,0,0)]}
@@ -71,6 +76,28 @@ def command(name,argv,cwd,seconds,allow_stderr=False):
 def stack_flags(p):
  b=Path(p).read_bytes();require(b[:6]==b'\x7fELF\x02\x01','ELF64LE');h=struct.unpack_from('<16sHHIQQQIHHHHHH',b)
  ph=[struct.unpack_from('<IIQQQQQQ',b,h[5]+i*h[9])for i in range(h[10])];s=[x[1]for x in ph if x[0]==0x6474e551];require(s==[6],'explicit RW GNU_STACK, no PF_X');return s[0]
+def compile_sources(compat):
+ # This ordered list drives both compilation and the prelaunch identity check.
+ files=[('hardfloat-compile-view',compat)if x=='@HARDFLOAT_VIEW'else('repo/'+x,SRC/x)for x in M['compile_files']]
+ extra=['tests/contexts16/context_execute.v'if suite=='contexts16'else'common/context_execute.v','common/shared_fu.v']
+ if suite!='contexts16':extra.append('common/shared_fetch.v')
+ if suite=='iterations20':extra.append('common/iteration_shell.v')
+ extra.append('tests/'+suite+'/tb_contexts.v')
+ return files+[('experiment/'+x,CODE/x)for x in extra]
+def compilation_binding(compat):
+ def content(p):
+  value=pin(p);return {'bytes':value['bytes'],'sha256':value['sha256']}
+ return {'schema':'openrx.shared-context-vm.compilation.v1','suite':suite,
+  'sources':[{'name':name,**content(path)}for name,path in compile_sources(compat)],
+  'fixture_header':content(F/'fixture.vh'),
+  'golden_closure':[{'name':x['path'],**content(SRC/x['path'])}for x in M['golden_files']],
+  'compile_view_helper':content(SRC/'scripts/hardfloat_compile_view.py'),
+  'verilator':[{'name':name,**content(VR/name)}for name in sorted({**M['verilator_programs'],**M['verilator_runtime_files']})],
+  'include_order':['fixture']+INCLUDE_DIRS,'options':COMPILE_OPTIONS}
+def check_build_binding(b,compat):
+ require(b.get('mode')=='build'and b.get('status')=='CONTEXTS_BUILD_PASS_PENDING_REVIEW','one exact successful build')
+ require(b.get('suite')==suite,'producing build suite mismatch or missing')
+ require(b.get('compilation_binding')==compilation_binding(compat),'producing compilation inputs mismatch or missing')
 def build():
  # Fresh derivation uses official HARDWARE_DATASET=0 elaboration. Every
  # unmodified HDL file is checked against accepted compiler-input hashes.
@@ -80,28 +107,24 @@ def build():
  spec=importlib.util.spec_from_file_location('shared_vm_compile_view',SRC/'scripts/hardfloat_compile_view.py');view=importlib.util.module_from_spec(spec);spec.loader.exec_module(view)
  compat=view.prepare(SRC/'rtl/execute/vendor/hardfloat/divSqrtRecFN_small.v',OUT)
  result['compile_view']=pin(compat)
- source_files=[str(compat)if x=='@HARDFLOAT_VIEW'else str(SRC/x)for x in M['compile_files']]
- core=CODE/'tests/contexts16/context_execute.v'if suite=='contexts16'else CODE/'common/context_execute.v'
- source_files += [str(core),str(CODE/'common/shared_fu.v')]
- if suite!='contexts16':source_files.append(str(CODE/'common/shared_fetch.v'))
- if suite=='iterations20':source_files.append(str(CODE/'common/iteration_shell.v'))
- source_files.append(str(CODE/'tests'/suite/'tb_contexts.v'))
- includes=['-I'+str(F),'-I'+str(SRC/'rtl/execute'),'-I'+str(SRC/'rtl/execute/vendor/hardfloat'),'-I'+str(SRC/'rtl/execute/vendor/hardfloat/8086-SSE'),'-I'+str(SRC/'rtl/hash/vendor/blake2')]
+ binding=compilation_binding(compat)
+ source_files=[str(path)for name,path in compile_sources(compat)]
+ includes=['-I'+str(F)]+['-I'+str(SRC/x)for x in INCLUDE_DIRS]
  # Standard compiler scratch, not a retained evidence/mirror directory. Source
  # and final artifact are preserved before its ordinary lifecycle cleanup.
  with tempfile.TemporaryDirectory(prefix='openrx-precomputed06-',dir='/dev/shm')as tmp:
   work=Path(tmp);obj=work/'obj';obj.mkdir()
-  argv=[str(VR/'bin/verilator'),'--cc','--main','--exe','--timing','--top-module','tb_contexts','--Mdir',str(obj),'-o','model','--output-split','10000','--output-split-cfuncs','1000','-Wno-fatal',*includes,'-CFLAGS','-std=c++20','-LDFLAGS','-pthread -ldl -Wl,-z,noexecstack',*source_files]
+  argv=[str(VR/'bin/verilator'),*COMPILE_OPTIONS['verilator'],'--Mdir',str(obj),'-o','model',*includes,'-CFLAGS',COMPILE_OPTIONS['cxx'],'-LDFLAGS',COMPILE_OPTIONS['link'],*source_files]
   # Retain all frontend diagnostics under the original accepted -Wno-fatal
   # workflow. New errors are fatal; no warning text is filtered or discarded.
   command('verilate',argv,R,40,allow_stderr=True)
   # The upstream build creates91MiB PCH files, which do not fit the unchanged
   # per-file cap. Ordinary textual-header compilation changes no model source.
-  rules=obj/'ordinary.mk';rules.write_text('include Vtb_contexts.mk\n%.o: %.cpp\n\t$(CXX) -Os $(CXXFLAGS) $(CPPFLAGS) -c -o $@ $<\n')
+  rules=obj/'ordinary.mk';rules.write_text(COMPILE_OPTIONS['ordinary_mk'])
   # Compile the exact pinned Verilator runtime from source, using ordinary
   # textual headers within the same per-file/memory/time caps. No private .o
   # blobs, PCH files or model-specific objects are imported.
-  command('compile-link',['/usr/bin/make','-C',str(obj),'-f','ordinary.mk','-j2','VM_DEFAULT_RULES=0','OPT_FAST=-Os','OPT_SLOW=-Os','OPT_GLOBAL=-Os','model'],R,95)
+  command('compile-link',['/usr/bin/make','-C',str(obj),'-f','ordinary.mk',*COMPILE_OPTIONS['make']],R,95)
   model=obj/'model';require(model.is_file(),'final native executable');stack_flags(model)
   with model.open('rb')as f,(OUT/'model').open('xb')as g:
    for b in iter(lambda:f.read(1048576),b''):g.write(b)
@@ -117,9 +140,11 @@ def build():
    for m in members:
     require(m.isfile()and m.name in expected and not m.name.startswith('/')and '..'not in Path(m.name).parts,'closed archive member');require(hashlib.sha256(tar.extractfile(m).read()).hexdigest()==expected[m.name],'lossless generated source roundtrip')
   result['generated_source_archive']=pin(archive);result['model']=pin(OUT/'model');budget()
- result['status']='CONTEXTS_BUILD_PASS_PENDING_REVIEW'
+ require(compilation_binding(compat)==binding,'post-build compilation input drift')
+ result['compilation_binding']=binding;result['status']='CONTEXTS_BUILD_PASS_PENDING_REVIEW'
 def case():
- buildroot=R/'actual-build';b=json.loads((buildroot/'results.json').read_text());require(b['status']=='CONTEXTS_BUILD_PASS_PENDING_REVIEW','one exact successful build')
+ buildroot=R/'actual-build';b=json.loads((buildroot/'results.json').read_text())
+ check_build_binding(b,buildroot/'HardFloat-divSqrt-compile-view.v')
  require(pin(buildroot/'model')==b['model'],'frozen executable');stack_flags(buildroot/'model');budget(524288+65536)
  argv=[str(buildroot/'model'),'+POLICY='+str(policy),'+READ='+str(rd),'+CANCEL='+str(cancel),'+HOLD='+str(hold),'+FETCH='+str(fetch),'+FAULT='+str(fault),'+RCP='+str(F/'reciprocals.mem'),'+EVENTS='+str(F/'events.mem')]
  if suite=='iterations20':argv += ['+INITIAL'+str(i)+'='+str(G/('initial.hex'if i==0 else'final-'+str(i-1)+'.hex'))for i in range(4)]+['+PROGRAM='+str(F/'programs.mem')]
@@ -132,7 +157,7 @@ def case():
  result['configuration']={'suite':suite,'operands':operands}
  result['status']='FETCH_REJECTION_PASS_PENDING_INDEPENDENT_REVIEW'if fault else'FETCH_NATIVE_COMPONENT_PASS_PENDING_INDEPENDENT_REVIEW'
 
-result={'schema':'openrx.shared-fetch-component.actual.v1','mode':mode,'status':'PREPARING','scientific_acceptance':False,'physical_acceptance':False,'physical_unknowns':117}
+result={'schema':'openrx.shared-fetch-component.actual.v1','mode':mode,'suite':suite,'status':'PREPARING','scientific_acceptance':False,'physical_acceptance':False,'physical_unknowns':117}
 try:
  require(dict(os.environ)==ENV and os.getuid()!=0 and not OUT.exists(),'fresh clean ordinary test context');require(sorted(os.sched_getaffinity(0))==list(range(6)),'six eligible CPUs')
  LOCK=os.open(args.lock,os.O_RDWR|os.O_NOFOLLOW);st=os.fstat(LOCK);require([os.major(st.st_dev),os.minor(st.st_dev),st.st_ino]==args.lock_identity,'original global slot');fcntl.flock(LOCK,fcntl.LOCK_EX|fcntl.LOCK_NB)
