@@ -3,7 +3,7 @@
 External native fixtures and pinned Verilator sources are explicit inputs.
 No dependency installs, native/fullhash replay, uncapped fallback or retries.
 """
-import argparse,fcntl,gzip,hashlib,importlib.util,json,os,pwd,re,resource,shutil,signal,struct,subprocess,tarfile,tempfile,time
+import argparse,fcntl,gzip,hashlib,importlib.util,json,os,pwd,re,resource,shutil,signal,struct,subprocess,sys,tarfile,tempfile,time
 from pathlib import Path
 CODE=Path(__file__).resolve().parents[1];SRC=CODE.parents[1]
 META=CODE/'fixtures/provenance.json';M=json.loads(META.read_text())
