@@ -9,6 +9,10 @@ power/performance/area remain unvalidated.
 conditional models and open physical gates. [Issue #72](https://github.com/jliu67/OpenRX/issues/72)
 tracks current architecture research and review.
 
+The [2026-11-28 audit snapshot](experiments/audit_20261128/) bundles portable
+accounting, selected retained evidence and explicit failed/unrun scopes. Engineering
+is paused for external audit; the snapshot authorizes no workload.
+
 ## What is here
 
 - [RTL components](rtl/) for arithmetic, memory service and the connected hash

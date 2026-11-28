@@ -1562,3 +1562,12 @@ Verified main/PR98/current issue status, GitHub GFM rendering, 37 front-page
 relative links, 28 incoming links/anchors and whitespace/scope checks. No files deleted or experimental
 workloads launched. Documentation PR still requires independent review and
 applicable checks before merge.
+
+## 2026-11-28 — External audit snapshot preparation
+
+Prepared portable whole-machine accounting/tests and selected source/evidence for
+capacity66/frontier/service67, the failed isolation68 collector, unrun correction
+and exact-marker administrative recovery. Public copies label redaction/projection
+and preserve original hashes; unredacted originals remain local. No new native,
+RTL, scheduler, synthesis or recovery run. Engineering paused; exact diff and privacy
+review precede publication, followed by applicable CI. Historical flags/criteria unchanged.

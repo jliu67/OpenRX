@@ -1,0 +1,721 @@
+{
+  "schema": "openrx.audit-publication-provenance.v1",
+  "base": "5fb1d4fa8e33be6b1b86b0f2539ec76ca6329851",
+  "originals_retained_locally": true,
+  "scope": "Publication-only snapshot. Byte-exact,sanitized,projected andlossless representations distinguished. Original hash is not proof of sanitized-copy byte identity. No new experiment/research orphysical acceptance.",
+  "files": [
+    {
+      "path": "README.md",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 4303,
+      "sha256": "4e700c88c2ef52d846bd22a6d41539aab396c04ffae04fc81e488825750230cb"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 6207,
+      "sha256": "80fcfa2f68ed926af7491145fb6961fa7bbf35ce8f27d872f3d22ab153986525"
+    },
+    {
+      "path": "experiments/audit_20261128/README.md",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 5880,
+      "sha256": "2b625cc8e9d8b4fe390c066dcadcce0cec71536f0293b8b959055db3babbb8b5"
+    },
+    {
+      "path": "experiments/audit_20261128/VALIDATION.json",
+      "bytes": 1654,
+      "sha256": "032d2b3f1a214074b160bb28e62ce42aec6612f74209d9279bfc899c3cd791c0",
+      "representation": "publication_support",
+      "note": "Ordinary publication checks only; no new scientific experiment."
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/capacity.hpp",
+      "bytes": 4333,
+      "sha256": "1f20dad992846487a032a44ac606d53a07daf35df9e44840da648a16fe7d6a9a",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 4333,
+      "original_sha256": "1f20dad992846487a032a44ac606d53a07daf35df9e44840da648a16fe7d6a9a"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/census.cpp",
+      "bytes": 14711,
+      "sha256": "abc9d71742fc8e44fbab41037cc7b26b3e66aeea300d9265075e2a66d6346c57",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 14711,
+      "original_sha256": "abc9d71742fc8e44fbab41037cc7b26b3e66aeea300d9265075e2a66d6346c57"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/frontier.py",
+      "bytes": 12085,
+      "sha256": "575b5c6c52d1f675788a3119073430623364e5768bd8a663575c82626dfe9d99",
+      "representation": "portable_path_rebinding",
+      "note": "Same conditional arithmetic and cases;public source paths/hashes andrelative provenance replace private bindings. No scheduler or new physical assumption.",
+      "original_bytes": 12120,
+      "original_sha256": "0353ca3a8af3038ebce9abac48406b0a12124f32ef0fb19c96244443c68a567c"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/extraction.json",
+      "bytes": 1802,
+      "sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1802,
+      "original_sha256": "3d566b564ec90df2d29004c0268e94e73b23c6352501347068449d160bb63dcd"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_bytecode_loop.inc",
+      "bytes": 1680,
+      "sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1680,
+      "original_sha256": "393ec68837832293f81bb48628314d01b105fa370550eb6be7b75b0fe42e9e3d"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_dataset_read.inc",
+      "bytes": 1652,
+      "sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1652,
+      "original_sha256": "c858f052d4581331d4089301c70187a06ec0da1add376acb38b666836b42079e"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_destructor.inc",
+      "bytes": 1552,
+      "sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1552,
+      "original_sha256": "0fb0cbc416cc43ecfc875309c60be3608c2744ffde00a1b339afeec53af701e9"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_float_masks.inc",
+      "bytes": 1918,
+      "sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1918,
+      "original_sha256": "e988324bb182ca92b50a063df79cc653067134bb3a85d6d331f1c9a35052b48b"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_iteration.inc",
+      "bytes": 3571,
+      "sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 3571,
+      "original_sha256": "490ea973983fe89413578bb11d7ef2e614805be8b5be2659051d59fd5179b404"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_program_float_helpers.inc",
+      "bytes": 2211,
+      "sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 2211,
+      "original_sha256": "ff2d50eaa3a0bff543834d05ae0b3b030bf6ca896f401f69d52fc56dbf3aacc2"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_program_initialize.inc",
+      "bytes": 2849,
+      "sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 2849,
+      "original_sha256": "15b748eeed9272e3ca39966d21b949d5b37fa5f29b705e9c1d78e790b385227a"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/include/pinned_scratchpad_address.inc",
+      "bytes": 1688,
+      "sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1688,
+      "original_sha256": "5ed2c95dbf9fc283d9075d0ef3992de6a0a66eca2571be33a3a511369ad7d492"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/locality.hpp",
+      "bytes": 10664,
+      "sha256": "9474d63993e272bf92e8561a7b74116eef0ff0cc1907eef4fcde14c43d9504ce",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 10664,
+      "original_sha256": "9474d63993e272bf92e8561a7b74116eef0ff0cc1907eef4fcde14c43d9504ce"
+    },
+    {
+      "path": "experiments/audit_20261128/capacity66/validate.py",
+      "bytes": 7426,
+      "sha256": "a1a7d10f1cdb4fd0e2b9c44fb5416f5f92b5b1b229edee469b473f4b6f6e17e5",
+      "representation": "portable_path_rebinding",
+      "note": "Validation logic and original exact-stream hash unchanged.",
+      "original_bytes": 7439,
+      "original_sha256": "ec9ddf3950be909d947b7d69b20d63c807a7f2c460a687157a1ae08f43fbfc2f"
+    },
+    {
+      "path": "experiments/audit_20261128/check_snapshot.py",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 5103,
+      "sha256": "02366eaf507033204fa3373980180f10b151781318a0846aa26a57d822e36e6e"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/actual-analysis.json",
+      "bytes": 3177,
+      "sha256": "3fc6457d2af93e00e19c3dc106fa14a6915e8bf6f17f689cd49347e57a701b24",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 53832,
+      "original_sha256": "794a6225eda08c247806f0a73c84f3e08c75d77dc429f346b45cee51eccef806"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/actual-handoff.json",
+      "bytes": 2535,
+      "sha256": "a80d8cd1ed69960be705ac44976affa703d819b03f5c3593eb3e502ca33424f3",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 3238,
+      "original_sha256": "3a1d0b353293f9bda6ea9001c1eef71ca4fd9e2dda2be66aa7248c2753a15941"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/frontier-handoff.json",
+      "bytes": 4985,
+      "sha256": "1b8ff963bacbe6eb9f68ed6f63c3394d57bafad66f16cdb076c8a507da2a053f",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 6038,
+      "original_sha256": "94e9ee75e2fa09e87f0f4f342420ec4a6d242ac1ba57a872c56bcf51565a3a3a"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/frontier-reader-failure.json",
+      "bytes": 415,
+      "sha256": "503e205b2c9c2d393c9c19f18e1eb3a884101e0107bcc5ed750c0bbf051b34e3",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 415,
+      "original_sha256": "503e205b2c9c2d393c9c19f18e1eb3a884101e0107bcc5ed750c0bbf051b34e3"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/frontier.json",
+      "bytes": 26301,
+      "sha256": "b271e5d814fd7c868fbf20d0e70f585b7f6f2d5d2dec1a30febb89cffadb9aaa",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 26654,
+      "original_sha256": "2979a1bdee58a25b650438fbed4b55d00c199ac4b11367637d4ecd981922ba52"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/native.jsonl",
+      "bytes": 107675,
+      "sha256": "ecacfe9843d30c0555fa77b25c512d27da507c03ed40b9081410b3cfe5fb87f1",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 107675,
+      "original_sha256": "ecacfe9843d30c0555fa77b25c512d27da507c03ed40b9081410b3cfe5fb87f1"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/receipt.json",
+      "bytes": 2614,
+      "sha256": "d4b90b11f438eef05fbdaacc44e4bca6616c854727de5f3665b4728c3698ff51",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 2855,
+      "original_sha256": "3c8b55e79649eaee983c1495c23befb42f62238b084a376c47e4135997b21578"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/release.json",
+      "bytes": 165,
+      "sha256": "f8fa069db3f81f086c15c94153c8d3d92da8c6ca3de0b05b4e8e849a7825a4b9",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 165,
+      "original_sha256": "f8fa069db3f81f086c15c94153c8d3d92da8c6ca3de0b05b4e8e849a7825a4b9"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/capacity66/validated.json",
+      "bytes": 4456,
+      "sha256": "fa39ea638b6e63c51e36e2cd4d7d075906eac820fa17ee085c3438f8815c695e",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 32532,
+      "original_sha256": "a3629003e03108959c4ad821cbcaa063ecd3a65c0e3ae4502fe4fa53f5310223"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/hbm2/LICENSE",
+      "bytes": 1798,
+      "sha256": "44be7666a52856a826bc65dee19309557f671428f7bae92142d21583753e9e6f",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1798,
+      "original_sha256": "44be7666a52856a826bc65dee19309557f671428f7bae92142d21583753e9e6f"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/hbm2/organization.json",
+      "bytes": 340,
+      "sha256": "3ce1c221cd1e61cf0971b670a56a81180fdd3f305d74ec10b175a2cfaa5597e7",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 340,
+      "original_sha256": "3ce1c221cd1e61cf0971b670a56a81180fdd3f305d74ec10b175a2cfaa5597e7"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/hbm2/power.json",
+      "bytes": 1590,
+      "sha256": "6e4093401b256fce9c503a87fce17cb48b00cf8e38dac17abe8c41cc0bde45f0",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1590,
+      "original_sha256": "6e4093401b256fce9c503a87fce17cb48b00cf8e38dac17abe8c41cc0bde45f0"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/hbm2/timing.json",
+      "bytes": 619,
+      "sha256": "b5c52430905b1ee43e2d05dfda5365ceb1d351b5f6d73fbf9832ef838736a172",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 619,
+      "original_sha256": "b5c52430905b1ee43e2d05dfda5365ceb1d351b5f6d73fbf9832ef838736a172"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/isolation68/correction-source-only.json",
+      "bytes": 6423,
+      "sha256": "faa4bd2b8f1d54590f0a5d30fe7359d2ec0cb1f84e8a356f017eecb888e77c04",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 7303,
+      "original_sha256": "f14a1af7280bb318b8f3fc8261016d9643dd55c04eda84f702725cd0e9208b69"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/isolation68/failure.json",
+      "bytes": 1392,
+      "sha256": "f99f2bb3e48ff05c684f5b1df809741daeaf7f0a0d5a8e2116320f66084bb6bb",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 2552,
+      "original_sha256": "a157f931ce10869443ff95767124d80f9d8b201dc61418e9a40d8c15b62f55b8"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/isolation68/handoff.json",
+      "bytes": 5017,
+      "sha256": "aa285c458a33186a00011ff2445541ead38d58a0302abc732305854e8682c7e0",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 7077,
+      "original_sha256": "23043a49fa6d8191ec3328681669df7cf04d60983e4dc2c9e7b9508d8b16c90f"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/isolation68/result.json",
+      "bytes": 2646,
+      "sha256": "d0ccc18494ac9c7b661d4584eb637ca091db12e46195f588c83b111e718f389b",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 2881,
+      "original_sha256": "e6caa6033537ae21c7488f428a5cdb3e43e0792b41e40e0c58b3f36b4c1a4736"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/isolation68/simulation.txt",
+      "bytes": 2193,
+      "sha256": "754a1e856fdf112a73a28c44d126110d2bfa433f1524f18fbeb51b0695fadffa",
+      "representation": "sanitized_text_copy",
+      "note": "Only source-location private prefix sanitized; ACT/PASS lines unchanged. Campaign still FAILED_NO_RETRY; generic synthesis unrun.",
+      "original_bytes": 2229,
+      "original_sha256": "c5bed42aad4ffe1f618beaaa6b21e3e954a87d9ddcd1e83aa621aeb6abba4965"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/locality37-native.jsonl",
+      "bytes": 150739,
+      "sha256": "650b11ed43be5c293ac4cc79ba477eb09887c06329a918667320672d4c38188b",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 150739,
+      "original_sha256": "650b11ed43be5c293ac4cc79ba477eb09887c06329a918667320672d4c38188b"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/memory58/reconciliation.json",
+      "bytes": 8194,
+      "sha256": "9131353959ba717799e9c9d1970dcd717d797b0a8006634f0b0a28dd6fa86e67",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 9279,
+      "original_sha256": "fc81487de4e991033f4cd6404038a7b45bfa629e9d3bd12f10e08383543e0529"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model-floor-rows.json",
+      "bytes": 1931,
+      "sha256": "255a5e31ae851bfb210f9fc91b320eb2dc26d8752207c593ff0761b182a8fb38",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 234435,
+      "original_sha256": "1c9e7dc3e9ef295e932851b3cb0a9844d219741e825d3e63e34b2652f7508238"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/area_anchor.json",
+      "bytes": 18999,
+      "sha256": "af6d772e7af4bdc2fbc7a6513022473c8b4eec9191b7c661d9e8f941b12fd573",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 23405,
+      "original_sha256": "4787f726037f73375e40cfca2b3864216f2b441c5d37699656280add23b629d3"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/census.json",
+      "bytes": 13972,
+      "sha256": "3978e4e09cf659dad1db58b20bd1a95f599c90d6c57078a6ef772e6b64d06bbf",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 18835,
+      "original_sha256": "ca8acdc82ed5e226a2193645114c66cc19224a7252b6fbb87f9cac126a969165"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/census_review.json",
+      "bytes": 1201,
+      "sha256": "1713c2decce215608eb090ffa6117c6f501a620b5eae1a05420771064c2f3232",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 17446,
+      "original_sha256": "5c3bcbcaf6f5ccdd9a560b20ebf08961a513f2797156da6a0d7ca9bbae32fe80"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/frontier.json",
+      "bytes": 4796,
+      "sha256": "1f9fc24fb13ee5ca92f4f5501d28ec7184bff3c058683d2018c300f91e7fadf4",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 229670,
+      "original_sha256": "5f339a1428feb3d3d969132614da3ecbf62cbc6e811a970779c29e798631c517"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/frontier_review.json",
+      "bytes": 567,
+      "sha256": "e98a5d42f9fe2f51105e7e14873b3a161c18fad6995284dbc5421eef777de1eb",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 18682,
+      "original_sha256": "c428dd8fbbda091b2dfb7128e93f9bec99a3d9b0727a2a81946f33be2bfc8943"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/locality.json",
+      "bytes": 4380,
+      "sha256": "5e25bb85d960733c3d3b7410fd23d5019997f690f91bc175b700e21c685591bd",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 53423,
+      "original_sha256": "9da8529405751b4fcc12999051d0411a2739427de7bc2733a324222c6d53e977"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/native.jsonl",
+      "bytes": 107302,
+      "sha256": "576c517530f9425a19132d70c2ac66309105a00c48de9052f75e52b6e08a42ba",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 107302,
+      "original_sha256": "576c517530f9425a19132d70c2ac66309105a00c48de9052f75e52b6e08a42ba"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/model/native_review.json",
+      "bytes": 1610,
+      "sha256": "7dba04ae62d0c97e7b216cc7e3c18ba630d71936797dd8366f98446d273ee6d6",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 20904,
+      "original_sha256": "dad87e39ee36d4f14a41d85a94b97e554d77ef393792d14475939a4008d8ddb5"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/reconciliation/intent.json",
+      "bytes": 7664,
+      "sha256": "b074d59eb4f71a8fe34249922439a51e0f1f34c96c4571f03e0e7682c1ad2958",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 10470,
+      "original_sha256": "280fa32f065741b9961708a36ae1b51c2ccb429404c3cfd5873b25f2327e3533"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/reconciliation/journal.jsonl",
+      "bytes": 4006,
+      "sha256": "b2309808c67b9b252d512196813500c0b58312ed3224fb0109d41a250466adf5",
+      "representation": "sanitized_JSONL_copy",
+      "note": "Private paths,process/device/inode identities and kernel lock lines redacted; seven original stages and digests retained.",
+      "original_bytes": 4215,
+      "original_sha256": "259254943ff616cb8be28732948ef2cd9995b22db656bcbc640fbe86935f470c"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/reconciliation/result.json",
+      "bytes": 3070,
+      "sha256": "f7fef00ba3751a38c47be8b6285bd2b854257fb33d6a5c6075e7dd3e28e5b6b8",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 3862,
+      "original_sha256": "b8f41d949db16abf27f01a16aac461415d0b3aa0930eb34d850ff1894d76c9fb"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/service39/early-local.json",
+      "bytes": 33800,
+      "sha256": "0d03409f5ba1f11f00ccb5a50b7dd4314ee8eca47f5b056ccccb1e819d71b151",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 77146,
+      "original_sha256": "e2b24c7ca7b2e3e453cbe74839f8d3a0323804e7e672d28f7453e0f5d51496b4"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/service39/later-tiered.json",
+      "bytes": 32054,
+      "sha256": "724924655d2c2587c2ce88f72535c28ae98638d192fcad5f6e9f12c8bd09fcf8",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 81356,
+      "original_sha256": "b9bfd0a6a71a7bd81d058a3bd3bdaf753cd89f86dc9a9743b36510619e1a7074"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/service39/result.json",
+      "bytes": 10646,
+      "sha256": "063bb3db75d9d8c4becb76d82b304be877e9a960ae50d0c1b0262b6de22c09ac",
+      "representation": "selected_fields_sanitized",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 59355,
+      "original_sha256": "3fb45b60dd3064b05eecbbc891b5d4884f5dcfca52772ca04fd0474bc9e37113"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/service67/handoff.json",
+      "bytes": 7631,
+      "sha256": "ebe981762dd7f67424243c7e37b7b28d01e6e1498e97925a0887efaed59c9cb9",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 9138,
+      "original_sha256": "aca43f67d7395aa9cb192bfedaa56dd731d010a7d1c5988bd7eb6c932b2f7032"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/service67/result.json",
+      "bytes": 25644,
+      "sha256": "34cb4986edefd18138271b6a740cb657793e85d5410a52eb0e837b13f7de09f1",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 26395,
+      "original_sha256": "709dfcfaf92385d9c0dd424e6332a6b411d19ab668864507ffeb00a5034bf579"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/windows/program0.json",
+      "bytes": 299638,
+      "sha256": "af2fad69837b66a3f4ff7524332827931696456e84d85403fe2b7dc5b3aa8278",
+      "representation": "lossless_token_pool",
+      "note": "Exact bytes reconstruct with space-joined tokens and LF; no field omitted or timing invented.",
+      "original_bytes": 576803,
+      "original_sha256": "a9cbe4a9edd8c88336abb7d029c5c273714c3e41df0a2d0edc5fb50ca24fca0c"
+    },
+    {
+      "path": "experiments/audit_20261128/evidence/windows/program1.json",
+      "bytes": 297071,
+      "sha256": "f3da83f2fcc25629318fba102a2eb3295954118a1742e122d926a861ea819adb",
+      "representation": "lossless_token_pool",
+      "note": "Exact bytes reconstruct with space-joined tokens and LF; no field omitted or timing invented.",
+      "original_bytes": 578919,
+      "original_sha256": "ec18c83bb3a8b2099c2fc309deb0dfe26b64f0863c65929cd30d76291b8486aa"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/activity-identities.json",
+      "bytes": 1929,
+      "sha256": "e7650e5397025db796a623f2afc3a9058c6ed8651aaceb6dc067e9d13d8921c0",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1929,
+      "original_sha256": "e7650e5397025db796a623f2afc3a9058c6ed8651aaceb6dc067e9d13d8921c0"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/analyze.py",
+      "bytes": 3706,
+      "sha256": "1776ae5075905d7b04714728c5df5a930a7bb634f4f714d877e5e4a1ea01eb40",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 3706,
+      "original_sha256": "1776ae5075905d7b04714728c5df5a930a7bb634f4f714d877e5e4a1ea01eb40"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/correction01/randomx_fp64_iso68.v",
+      "bytes": 2762,
+      "sha256": "4fe49f0b82d34133d4ddf66d187b2e9faa53428358134d603ac2d6561c4a30f5",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 2762,
+      "original_sha256": "4fe49f0b82d34133d4ddf66d187b2e9faa53428358134d603ac2d6561c4a30f5"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/correction01/tb_compare.v",
+      "bytes": 8708,
+      "sha256": "5e0fcb966dfcbf6cb1edc2e7dd7cf412f381c91272dac883968b3ad1e48cd60f",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 8708,
+      "original_sha256": "5e0fcb966dfcbf6cb1edc2e7dd7cf412f381c91272dac883968b3ad1e48cd60f"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/native12-provenance.json",
+      "bytes": 3208,
+      "sha256": "b85e56eaa2493d0b718f327c1c3269f60073d4c575a90c50ca489360db4940e7",
+      "representation": "sanitized_JSON_copy",
+      "note": "Original preserved locally; identities/private paths redacted; original hash is not the public-copy hash.",
+      "original_bytes": 4440,
+      "original_sha256": "c0f68f77734eade719aff5bd5a84a08242a38e110114375e9b9c1ba95d52123b"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/native12.hex",
+      "bytes": 1260,
+      "sha256": "84a6753b294532ac0a330589062e7236c87c6e2f885a8122b6ea501f3a28099d",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 1260,
+      "original_sha256": "84a6753b294532ac0a330589062e7236c87c6e2f885a8122b6ea501f3a28099d"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/randomx_fp128_iso68.v",
+      "bytes": 2535,
+      "sha256": "a2026a69a80a7dbf59c83e7de952317d945f37f3df6c44587c6eed40aea6620f",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 2535,
+      "original_sha256": "a2026a69a80a7dbf59c83e7de952317d945f37f3df6c44587c6eed40aea6620f"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/randomx_fp64_iso68.v",
+      "bytes": 2625,
+      "sha256": "388d450d1c93ea4666af7e80d9b8d29d922a4de9d10e5183b8a1e86d7c03e6ee",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 2625,
+      "original_sha256": "388d450d1c93ea4666af7e80d9b8d29d922a4de9d10e5183b8a1e86d7c03e6ee"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/tb_compare.v",
+      "bytes": 7055,
+      "sha256": "146230d3cce87e5317f3c0dc3123f8072170dc42c62cc9b4a8a49b77d1671c21",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 7055,
+      "original_sha256": "146230d3cce87e5317f3c0dc3123f8072170dc42c62cc9b4a8a49b77d1671c21"
+    },
+    {
+      "path": "experiments/audit_20261128/reference/model27-analyze.py",
+      "bytes": 22846,
+      "sha256": "04de87c282f2c05971c14eed5553b7b3ffba81e73ff3a0c24635d05f6af3bb6a",
+      "representation": "sanitized_reference_source",
+      "note": "Reference only; operational entry disabled,private paths/host bindings removed. Original bytes/hash preserved locally. Not advertised as a runnable fresh-clone scheduler.",
+      "original_bytes": 22732,
+      "original_sha256": "a2ae5147adf35c17271394c304e202787cf473cb27f5e12944703bf73c3617ea"
+    },
+    {
+      "path": "experiments/audit_20261128/reference/reconciliation04.py.txt",
+      "bytes": 13924,
+      "sha256": "7be7a3149ff913aabbe7ddedf6d315fd01c9508c736a734a7674d054cadf6b7a",
+      "representation": "sanitized_reference_source",
+      "note": "Historical recovery logic only. Entrypoint disabled; local authority and machine identity are not published.",
+      "original_bytes": 13788,
+      "original_sha256": "0b00b6fad6b1db587ce22a4f5ede3412044f47be34ce2945451f4098f879e243"
+    },
+    {
+      "path": "experiments/audit_20261128/reference/service38-backend.py",
+      "bytes": 7115,
+      "sha256": "4ab885c8860e2dc369699ff08c32d15b7ccb40ccd350b3e929c11b161221c5d7",
+      "representation": "sanitized_reference_source",
+      "note": "Reference only; operational entry disabled,private paths/host bindings removed. Original bytes/hash preserved locally. Not advertised as a runnable fresh-clone scheduler.",
+      "original_bytes": 7115,
+      "original_sha256": "4ab885c8860e2dc369699ff08c32d15b7ccb40ccd350b3e929c11b161221c5d7"
+    },
+    {
+      "path": "experiments/audit_20261128/reference/service39-service-adapter.py.txt",
+      "bytes": 12013,
+      "sha256": "d0d13b59819d8d3e7546c70a2b0cfffe7aee85a5ed9fcff7347f2e073148ffd8",
+      "representation": "sanitized_reference_source",
+      "note": "Reference only; operational entry disabled,private paths/host bindings removed. Original bytes/hash preserved locally. Not advertised as a runnable fresh-clone scheduler.",
+      "original_bytes": 12013,
+      "original_sha256": "d0d13b59819d8d3e7546c70a2b0cfffe7aee85a5ed9fcff7347f2e073148ffd8"
+    },
+    {
+      "path": "experiments/audit_20261128/reference/service39-shared.py",
+      "bytes": 9294,
+      "sha256": "c2e1ddabc437c32b1a4698fbdd423ab918c594bae7efcae894eda0c9fd845367",
+      "representation": "sanitized_reference_source",
+      "note": "Reference only; operational entry disabled,private paths/host bindings removed. Original bytes/hash preserved locally. Not advertised as a runnable fresh-clone scheduler.",
+      "original_bytes": 9294,
+      "original_sha256": "c2e1ddabc437c32b1a4698fbdd423ab918c594bae7efcae894eda0c9fd845367"
+    },
+    {
+      "path": "experiments/audit_20261128/reference/service67-compare.py",
+      "bytes": 18352,
+      "sha256": "5d9ef0dc2414754aa5b796a9343bb50c3c1581b108c66105c73517f6e1da9057",
+      "representation": "sanitized_reference_source",
+      "note": "Reference only; operational entry disabled,private paths/host bindings removed. Original bytes/hash preserved locally. Not advertised as a runnable fresh-clone scheduler.",
+      "original_bytes": 19540,
+      "original_sha256": "c51d78d8a723e9fd71ba28c5eae540401484ad2ce736869d4cc83daed345d9db"
+    },
+    {
+      "path": "memory/HANDOFF.md",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 105476,
+      "sha256": "5a6e9c72a79c142013907edd4895127c7d39f6208f64abf2df51822cfd06fa7b"
+    },
+    {
+      "path": "memory/SESSION_LOG.md",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 146498,
+      "sha256": "22427206a708d72956004ab0935a5798e9a6e0388614175efcf16580b80f35f4"
+    },
+    {
+      "path": "memory/STATE.md",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 101624,
+      "sha256": "c03c9870f4fe06bc814fd6fe2f5de6391777e919c47eed57de2c10f3c6e14e6c"
+    },
+    {
+      "path": "tests/test_audit_frontier.py",
+      "bytes": 2555,
+      "sha256": "87408bd9653d3ca8b26540a6370a8f7654651f69dce6b3961960fa582dfec46c",
+      "representation": "portable_import_rebinding",
+      "note": "Seven retained DATA tests,includingcredit/context/port/frequency andreader-regression checks; no simulation.",
+      "original_bytes": 2492,
+      "original_sha256": "bafe5166ca610999965ad33782d8adfe4aa69862aa8d80850bf9a99ca13c293e"
+    },
+    {
+      "path": "tests/test_audit_snapshot.py",
+      "representation": "publication_support",
+      "note": "Audit navigation,ordinary read-only verification or documentation; no new scientific workload.",
+      "bytes": 1489,
+      "sha256": "e8b615e33668ea66d4efccf30a771dbe4af1d0bd33c4fe1c27fbe121689c47a5"
+    },
+    {
+      "path": "tests/test_machine_feasibility.py",
+      "bytes": 18135,
+      "sha256": "9c0a6a7378dacc86c29e3cfa32c2eca50524c03198e9bef103a38b61f124b30f",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 18135,
+      "original_sha256": "9c0a6a7378dacc86c29e3cfa32c2eca50524c03198e9bef103a38b61f124b30f"
+    },
+    {
+      "path": "tools/architecture/fixtures/machine-baseline.json",
+      "bytes": 28011,
+      "sha256": "51c874fe51bb68d5f2d311d690a274990de609f646c7383ae13417a9ba6f9f07",
+      "representation": "portable_fixture_rebinding",
+      "note": "Only source path/byte/hash bindings changed to bundled public copies. Work,scenarios,contracts,unknowns and equations unchanged.",
+      "original_bytes": 28625,
+      "original_sha256": "98cdf19e9e8e692d6a63b3d7f4f58af022acaaef31558bc1a49a9f312e058586"
+    },
+    {
+      "path": "tools/architecture/machine.py",
+      "bytes": 36096,
+      "sha256": "2d43ef6b1aa3b44d1c88d7eabeb6ec8a408b466126dae3232133b1a9b808ad8f",
+      "representation": "byte_exact",
+      "note": "",
+      "original_bytes": 36096,
+      "original_sha256": "2d43ef6b1aa3b44d1c88d7eabeb6ec8a408b466126dae3232133b1a9b808ad8f"
+    }
+  ],
+  "self_hash_excluded": true,
+  "scientific_replay_in_preparation": false
+}

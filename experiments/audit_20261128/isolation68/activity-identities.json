@@ -1,0 +1,130 @@
+[
+  {
+    "id": 0,
+    "variant": "base",
+    "lane": 0,
+    "unit": "add",
+    "kind": "inputs",
+    "width": 134
+  },
+  {
+    "id": 1,
+    "variant": "base",
+    "lane": 0,
+    "unit": "add",
+    "kind": "outputs",
+    "width": 70
+  },
+  {
+    "id": 2,
+    "variant": "base",
+    "lane": 0,
+    "unit": "mul",
+    "kind": "inputs",
+    "width": 133
+  },
+  {
+    "id": 3,
+    "variant": "base",
+    "lane": 0,
+    "unit": "mul",
+    "kind": "outputs",
+    "width": 70
+  },
+  {
+    "id": 4,
+    "variant": "base",
+    "lane": 1,
+    "unit": "add",
+    "kind": "inputs",
+    "width": 134
+  },
+  {
+    "id": 5,
+    "variant": "base",
+    "lane": 1,
+    "unit": "add",
+    "kind": "outputs",
+    "width": 70
+  },
+  {
+    "id": 6,
+    "variant": "base",
+    "lane": 1,
+    "unit": "mul",
+    "kind": "inputs",
+    "width": 133
+  },
+  {
+    "id": 7,
+    "variant": "base",
+    "lane": 1,
+    "unit": "mul",
+    "kind": "outputs",
+    "width": 70
+  },
+  {
+    "id": 8,
+    "variant": "isolated",
+    "lane": 0,
+    "unit": "add",
+    "kind": "inputs",
+    "width": 134
+  },
+  {
+    "id": 9,
+    "variant": "isolated",
+    "lane": 0,
+    "unit": "add",
+    "kind": "outputs",
+    "width": 70
+  },
+  {
+    "id": 10,
+    "variant": "isolated",
+    "lane": 0,
+    "unit": "mul",
+    "kind": "inputs",
+    "width": 133
+  },
+  {
+    "id": 11,
+    "variant": "isolated",
+    "lane": 0,
+    "unit": "mul",
+    "kind": "outputs",
+    "width": 70
+  },
+  {
+    "id": 12,
+    "variant": "isolated",
+    "lane": 1,
+    "unit": "add",
+    "kind": "inputs",
+    "width": 134
+  },
+  {
+    "id": 13,
+    "variant": "isolated",
+    "lane": 1,
+    "unit": "add",
+    "kind": "outputs",
+    "width": 70
+  },
+  {
+    "id": 14,
+    "variant": "isolated",
+    "lane": 1,
+    "unit": "mul",
+    "kind": "inputs",
+    "width": 133
+  },
+  {
+    "id": 15,
+    "variant": "isolated",
+    "lane": 1,
+    "unit": "mul",
+    "kind": "outputs",
+    "width": 70
+  }
+]

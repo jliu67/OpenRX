@@ -1,0 +1,171 @@
+"""One explicitly owner-authorized exact failed-marker reconciliation. No workload.
+
+Implements conditional_future_action_contract in procedure review0b3e927f.
+Never use runner.clear_own_success_marker: original failed status is preserved.
+"""
+import datetime
+import fcntl
+import hashlib
+import json
+import os
+from pathlib import Path
+import signal
+import stat
+import subprocess
+import sys
+import time
+
+HERE=Path(__file__).resolve().parent
+B=HERE.parent.parent
+Q=B.parent.parent/'task-2'
+LOCK=Path('retained-runner:locks/execution.lock')
+MARKER=LOCK.parent/'execution-drain-block.json'
+CASE=B/'isolation68'
+RECEIPT=CASE/'execution01/result.json'
+MARKER_HASH='10ca8a930f8b0e058b80c5d48f2e0baf54fa48ab8f80827e03ee93d2135aa840'
+RECEIPT_HASH='e6caa6033537ae21c7488f428a5cdb3e43e0792b41e40e0c58b3f36b4c1a4736'
+CONFIG_HASH='b9b2b090d74c5e32d1017b4c8c41779c097d52da51d5dedebc75bebca115b25c'
+UNIT='codex-openrx-isolation68-fp128-20261128.scope'
+PGID=[identity-redacted]
+OWNED_PIDS=() # identities redacted; reference only
+SCOPE=Path('[resource-scope-redacted]')/UNIT
+PENDING=[]
+
+
+def need(v,message):
+    if not v:raise RuntimeError(message)
+
+
+def sha(raw):return hashlib.sha256(raw).hexdigest()
+def now():return datetime.datetime.now(datetime.timezone.utc).isoformat()
+def identity(st):return [os.major(st.st_dev),os.minor(st.st_dev),st.st_ino]
+def reference(p):p=Path(p);raw=p.read_bytes();return dict(path=str(p),bytes=len(raw),sha256=sha(raw))
+
+
+def durable(name,raw):
+    fd=os.open(HERE/name,os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+    try:
+        with os.fdopen(fd,'wb',closefd=True)as stream:stream.write(raw);stream.flush();os.fsync(stream.fileno())
+        directory=os.open(HERE,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW)
+        try:os.fsync(directory)
+        finally:os.close(directory)
+    except BaseException:raise
+
+
+def record(name,value):durable(name,(json.dumps(value,sort_keys=True,indent=2)+'\n').encode())
+
+
+def inventory():
+    return [reference(p)for p in sorted(CASE.rglob('*'))if p.is_file()]
+
+
+def lock_witness(fd):
+    need(identity(os.fstat(fd))==[8,3,[identity-redacted]],'original lock identity')
+    matches=[]
+    for line in Path('/proc/locks').read_text().splitlines():
+        fields=line.split()
+        if len(fields)<8 or fields[1:4]!=['FLOCK','ADVISORY','WRITE']:continue
+        dev=fields[5].split(':')
+        if len(dev)==3 and int(fields[4])==os.getpid() and [int(dev[0],16),int(dev[1],16),int(dev[2])]==[8,3,[identity-redacted]]:matches.append(line)
+    need(len(matches)==1,'positive kernel exclusive-flock witness')
+    return dict(owner_PID=os.getpid(),lock_identity=[8,3,[identity-redacted]],kernel_proc_locks_lines=matches)
+
+
+def quiescence():
+    need(os.uname().nodename=='[host-identity-redacted]'and os.getuid()==1000,'exact host/account')
+    present=[pid for pid in OWNED_PIDS if Path('/proc',str(pid)).exists()]
+    members=[];errors=[];vanished=0;scanned=0
+    for path in Path('/proc').iterdir():
+        if not path.name.isdecimal():continue
+        try:
+            raw=(path/'stat').read_text();tail=raw[raw.rfind(')')+2:].split();scanned+=1
+            if int(tail[2])==PGID or int(tail[3])==PGID:members.append(dict(PID=int(path.name),state=tail[0],PGID=int(tail[2]),SID=int(tail[3])))
+        except (FileNotFoundError,ProcessLookupError):vanished+=1
+        except BaseException as error:errors.append(dict(PID=path.name,error=repr(error)))
+    need(not present and not members and not errors,'owned PID/PGID/SID absence certain')
+    need(not SCOPE.exists(),'exact owned scope cgroup absent')
+    query=subprocess.run(['/usr/bin/systemctl','--user','show',UNIT,'--property=LoadState,ActiveState,SubState,ControlGroup,Result'],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=3,check=True)
+    need(not query.stderr,'unit metadata diagnostics empty')
+    props=dict(line.split('=',1)for line in query.stdout.decode().splitlines())
+    need(props.get('LoadState')=='not-found'and props.get('ActiveState')=='inactive'and props.get('SubState')=='dead'and props.get('ControlGroup')=='','terminal absent owned unit')
+    return dict(at_UTC=now(),owned_PIDs_absent=list(OWNED_PIDS),PGID=PGID,SID=PGID,members=members,proc_errors=errors,proc_scanned=scanned,proc_vanished_during_scan=vanished,exact_scope_cgroup_absent=True,unit_properties=props)
+
+
+def main():
+    need(len(sys.argv)==2,'expected immutable reconciler source hash argument')
+    source_hash=sys.argv[1];need(reference(__file__)['sha256']==source_hash,'executed source identity')
+    need(not any((HERE/n).exists()for n in ['journal.jsonl','executed-source.py','preserved-marker.json','intent.json','result.json','failure.json']),'fresh one-shot recovery outputs')
+    need(reference(HERE/'AUTHORIZATION.json')['sha256']=='c28fe3079cc03fd72014cdd0ad5a0f93a0e715c0cadbaa7e7a9c5966ed8a4479','frozen exact owner authority')
+    authority=json.loads((HERE/'AUTHORIZATION.json').read_bytes())
+    need(authority['exact_marker_sha256']==MARKER_HASH and authority['exact_receipt_sha256']==RECEIPT_HASH and authority['trusted_parent_conveyed_explicit_owner_approval']is True and authority['source_thread_id']=='[private-thread-identity-redacted]','specific trusted parent-conveyed owner authority')
+    reviews=[(Q/'compute59-independent-plan-admission-review-20261127.json','0b3e927f2d0f26a50492fcee0802c06293366a1b38955ec697478740d2be70f3'),(HERE/'PARENT-FAILURE-REVIEW.json','dfa979131a6e2afe103701c6a93b86391f7b8fdee7a15d306c40b9bec5693c19')]
+    for path,digest in reviews:need(reference(path)['sha256']==digest,'documented procedure/failure review binding')
+    need(reference(RECEIPT)['sha256']==RECEIPT_HASH,'original failed receipt identity')
+    receipt=json.loads(RECEIPT.read_bytes())
+    need(receipt['status']=='FAILED_NO_RETRY'and receipt['child_rc']==1 and receipt['capture_complete']is True,'truthful original failure')
+    need(receipt['drain']['direct_child_reaped']is True and receipt['drain']['scope_descendants_absent']is True and receipt['drain']['normal_slot_release_allowed']is True,'original positive reap/drain evidence')
+    need(receipt['marker_sha256']==MARKER_HASH and receipt['config_sha256']==CONFIG_HASH and receipt['unit']==UNIT and receipt['registered_PID_PGID']==PGID,'original marker/receipt/owner binding')
+    expected=dict(campaign='fp128-operand-isolation68',config_sha256=CONFIG_HASH,observer_PID=[identity-redacted],reason='active_or_unreconciled_campaign',receipt=str(RECEIPT),schema='openrx.execution-drain-block.v1',unit=UNIT)
+    before=inventory();lockfd=None;markerfd=None;parentfd=None;journal=None;removed=False
+    start=time.monotonic()
+    def signal_record(number,frame):PENDING.append(number)
+    for number in (signal.SIGINT,signal.SIGTERM):signal.signal(number,signal_record)
+    try:
+        lockfd=os.open(LOCK,os.O_RDWR|os.O_NOFOLLOW|os.O_CLOEXEC)
+        need(identity(os.fstat(lockfd))==[8,3,[identity-redacted]],'original exclusive slot')
+        fcntl.flock(lockfd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        journal=os.open(HERE/'journal.jsonl',os.O_WRONLY|os.O_CREAT|os.O_EXCL|os.O_NOFOLLOW,0o600)
+        def log(stage,**details):
+            row=dict(stage=stage,at_UTC=now(),monotonic=time.monotonic(),source_sha256=source_hash,lock=lock_witness(lockfd),pending_signals=list(PENDING),**details)
+            raw=(json.dumps(row,sort_keys=True)+'\n').encode();need(os.write(journal,raw)==len(raw),'complete journal write');os.fsync(journal)
+        log('EXCLUSIVE_LOCK_ACQUIRED')
+        durable('executed-source.py',Path(__file__).read_bytes())
+        need(reference(HERE/'executed-source.py')['sha256']==source_hash,'exact executed source archive')
+        log('EXECUTED_SOURCE_ARCHIVED',archive=reference(HERE/'executed-source.py'))
+        # Pin known historical source/results, not merely the current bytes of
+        # an otherwise mutable inventory. All verification is inside this lock.
+        proofs=[(CASE/'MANIFEST.json','1d67d1b45ba3216df6afc26994de527cab10f468b3623f20b94e2211781d4db0'),(HERE/'CASE-EVIDENCE.json','9b1f0fb042f13f7e92d6540181b9a0ab77dcfa0e7902fec6d3e60048805a96aa')]
+        for proof,digest in proofs:
+            need(reference(proof)['sha256']==digest,'historical manifest identity')
+            for item in json.loads(proof.read_bytes())['files']:need(reference(item['path'])==item,'historical source/result identity')
+        need(inventory()==before,'complete failed campaign inventory stable under lock')
+        parentfd=os.open(MARKER.parent,os.O_RDONLY|os.O_DIRECTORY|os.O_NOFOLLOW|os.O_CLOEXEC)
+        markerfd=os.open(MARKER.name,os.O_RDONLY|os.O_NOFOLLOW|os.O_CLOEXEC,dir_fd=parentfd)
+        original=os.fstat(markerfd)
+        need(stat.S_ISREG(original.st_mode)and stat.S_IMODE(original.st_mode)==0o600 and original.st_uid==1000 and original.st_nlink==1 and original.st_size==412 and identity(original)==[8,3,[identity-redacted]],'exact regular owned marker inode/size')
+        raw=os.pread(markerfd,65537,0);need(len(raw)==412 and sha(raw)==MARKER_HASH and json.loads(raw)==expected,'exact marker bytes/owner/config/unit/receipt')
+        def stable_marker():
+            current=os.stat(MARKER.name,dir_fd=parentfd,follow_symlinks=False);opened=os.fstat(markerfd)
+            fields=lambda s:(s.st_dev,s.st_ino,s.st_uid,s.st_mode,s.st_nlink,s.st_size,s.st_mtime_ns,s.st_ctime_ns)
+            need(fields(current)==fields(original)==fields(opened),'stable fstat/lstat marker identity')
+            need(os.pread(markerfd,65537,0)==raw,'unchanged opened marker bytes')
+        stable_marker();first=quiescence();log('OWNERSHIP_AND_QUIESCENCE_VERIFIED',quiescence=first,marker_sha256=MARKER_HASH,marker_identity=identity(original))
+        durable('preserved-marker.json',raw)
+        intent=dict(schema='openrx.isolation68.normal-owned-marker-reconciliation.v1',status='PREPARED_UNDER_ORIGINAL_LOCK',source=reference(__file__),source_argv=sys.argv,executed_source_archive=reference(HERE/'executed-source.py'),authority=reference(HERE/'AUTHORIZATION.json'),procedure_review=reference(reviews[0][0]),failure_review=reference(reviews[1][0]),marker_sha256=MARKER_HASH,marker_identity=identity(original),failed_receipt=reference(RECEIPT),preserved_marker=reference(HERE/'preserved-marker.json'),failed_campaign_inventory=before,quiescence=first,lock=lock_witness(lockfd),workloads_launched=0)
+        record('intent.json',intent);log('ARCHIVE_AND_INTENT_DURABLE',archive_sha256=reference(HERE/'preserved-marker.json')['sha256'],intent_sha256=reference(HERE/'intent.json')['sha256'])
+        second=quiescence();need(inventory()==before,'all original failure/source evidence preserved before action');need(reference(__file__)['sha256']==source_hash,'source unchanged before action')
+        need(not PENDING,'interruption before action; remain blocked')
+        stable_marker();log('IMMEDIATE_PRE_UNLINK_VERIFIED',quiescence=second,marker_identity=identity(original))
+        need(not PENDING,'interruption before unlink; remain blocked')
+        stable_marker();lock_witness(lockfd)
+        need(reference(HERE/'AUTHORIZATION.json')['sha256']=='c28fe3079cc03fd72014cdd0ad5a0f93a0e715c0cadbaa7e7a9c5966ed8a4479','authority unchanged immediately before action')
+        os.unlink(MARKER.name,dir_fd=parentfd);removed=True;os.fsync(parentfd)
+        need(not os.path.lexists(MARKER),'marker absent after parent fsync');log('OWNED_MARKER_UNLINKED_AND_PARENT_FSYNCED',marker_absent=True)
+        final=quiescence();need(inventory()==before,'all original failure/source evidence unchanged after action');need(reference(HERE/'preserved-marker.json')['sha256']==MARKER_HASH,'exact preserved marker archive')
+        need(reference(HERE/'executed-source.py')['sha256']==source_hash,'preserved executed source after action')
+        need(reference(__file__)['sha256']==source_hash and reference(HERE/'AUTHORIZATION.json')['sha256']=='c28fe3079cc03fd72014cdd0ad5a0f93a0e715c0cadbaa7e7a9c5966ed8a4479','source/authority unchanged after action')
+        result=dict(schema='openrx.isolation68.normal-owned-marker-reconciliation.v1',status='EXACT_OWNED_MARKER_RECONCILED_NO_WORKLOAD',at_UTC=now(),source=reference(__file__),source_argv=sys.argv,executed_source_archive=reference(HERE/'executed-source.py'),authority=reference(HERE/'AUTHORIZATION.json'),procedure_review=reference(reviews[0][0]),failure_review=reference(reviews[1][0]),intent=reference(HERE/'intent.json'),preserved_marker=reference(HERE/'preserved-marker.json'),marker_identity=identity(original),marker_sha256=MARKER_HASH,marker_absent_verified_under_original_lock=True,parent_directory_fsynced=True,failed_receipt=reference(RECEIPT),original_failure_status_unchanged=True,all_failed_campaign_files_unchanged=True,quiescence=final,lock=lock_witness(lockfd),pending_signals=list(PENDING),workloads_launched=0,wall_seconds=time.monotonic()-start,admission='Only this marker prerequisite cleared. Fresh normal review/host/source/runtime/resource/admission gates still apply; no workload authorized.')
+        record('result.json',result);log('RESULT_DURABLE_UNDER_ORIGINAL_LOCK',result_sha256=reference(HERE/'result.json')['sha256'],marker_absent=not os.path.lexists(MARKER))
+        print(json.dumps(dict(status=result['status'],result=reference(HERE/'result.json'),source_sha256=source_hash,marker_absent=True,workloads_launched=0)),flush=True)
+    except BaseException as error:
+        record('failure.json',dict(status='STOPPED_NO_RETRY',error=repr(error),marker_unlinked_in_this_action=removed,marker_present=os.path.lexists(MARKER),source=reference(__file__),workloads_launched=0))
+        raise
+    finally:
+        if journal is not None:os.close(journal)
+        if markerfd is not None:os.close(markerfd)
+        if parentfd is not None:os.close(parentfd)
+        if lockfd is not None:os.close(lockfd)
+
+
+if __name__=='__main__':
+    raise SystemExit('Historical reference only. No recovery action or authority is published.')

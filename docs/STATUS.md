@@ -24,6 +24,10 @@ bounded behavioral SRAM-port result. Deferred controls were skipped, not passed.
 
 ## Current architecture research
 
+Engineering is paused for external audit. The [audit snapshot](../experiments/audit_20261128/)
+provides source, ordinary reproduction and selected retained results, including the
+failed FP activity collector and administrative recovery. It adds no physical acceptance.
+
 The [November 27 milestone](https://github.com/jliu67/OpenRX/issues/72#issuecomment-7212687875)
 separates four-input canonical native counts, bounded mapped-scalar validation
 and source-order locality from physical claims. The

@@ -2,6 +2,10 @@
 
 Current project navigation: [status](../docs/STATUS.md) and [architecture issue #72](https://github.com/jliu67/OpenRX/issues/72). The dated snapshots below are preserved history.
 
+2026-11-28: review the [audit source/evidence snapshot](../experiments/audit_20261128/)
+and its privacy/provenance boundaries. Engineering remains paused; publication needs
+independent exact-diff/privacy review and applicable checks, with no workload authorization.
+
 ## PR96 delivery closeout handoff (recorded 2026-11-04)
 
 Use [PR96](https://github.com/jliu67/OpenRX/pull/96),
