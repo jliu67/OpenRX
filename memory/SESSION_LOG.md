@@ -1550,3 +1550,15 @@ build, simulation or scientific experiment was launched for this correction.
 The documentation change retains independent review and applicable hosted
 delivery checks as separate gates. Issue #72 and physical/performance acceptance
 remain open; no new execution is authorized by the correction.
+
+
+## 2026-11-28 — Simplify documentation entry points
+
+Condensed README and STATUS; current research links route to issue #72 and
+existing experiment/evidence records. Complete prior front-page timelines stay
+linked at main `fee4e697741ce520fa917405a58ec9914f071498`; memory history,
+acceptance criteria, governance and all source/evidence files are preserved.
+Verified main/PR98/current issue status, GitHub GFM rendering, 37 front-page
+relative links, 28 incoming links/anchors and whitespace/scope checks. No files deleted or experimental
+workloads launched. Documentation PR still requires independent review and
+applicable checks before merge.
