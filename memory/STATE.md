@@ -1,5 +1,7 @@
 # Current state — actual local execution activation
 
+Current project navigation: [status](../docs/STATUS.md) and [architecture issue #72](https://github.com/jliu67/OpenRX/issues/72). The dated snapshots below are preserved history.
+
 ## PR96 delivery reconciled (recorded 2026-11-04)
 
 [PR96](https://github.com/jliu67/OpenRX/pull/96) merged on 2026-10-22 at
