@@ -55,7 +55,7 @@ def verify_manifest():
         require(hashlib.sha256(raw).hexdigest()==row['sha256'],'historical public-copy hash: '+row['path'])
         # Retained payloads stay immutable in the live checkout too. The checker
         # is current code; its original bytes were checked above, not rebased.
-        if row['path'].startswith('experiments/audit_20261128/')and path!=HERE/'check_snapshot.py':
+        if row['path'].startswith('experiments/audit_20261128/')and row['path']!='experiments/audit_20261128/check_snapshot.py':
             require(path.read_bytes()==raw,'retained public-copy hash: '+row['path'])
         if row['representation']=='byte_exact':
             require(row['original_sha256']==row['sha256']and row['original_bytes']==row['bytes'],'exact-copy declaration')

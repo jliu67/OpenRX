@@ -52,6 +52,13 @@ class AuditSnapshot(unittest.TestCase):
         with mock.patch.object(Path,'read_bytes',read),self.assertRaisesRegex(ValueError,'immutable local manifest'):
             A.verify_manifest()
 
+    def test_retained_payload_alias_cannot_use_checker_exception(self):
+        target=A.HERE/'evidence/capacity66/native.jsonl';original=Path.resolve
+        def resolve(path,*args,**kwargs):
+            return A.HERE/'check_snapshot.py' if path==target else original(path,*args,**kwargs)
+        with mock.patch.object(Path,'resolve',resolve),self.assertRaisesRegex(ValueError,'retained public-copy hash'):
+            A.verify_manifest()
+
     def test_historical_source_tamper_still_fails(self):
         original=A.git_bytes
         def read(*args):
