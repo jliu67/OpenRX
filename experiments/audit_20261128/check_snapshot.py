@@ -1,12 +1,36 @@
 """Ordinary read-only publication checks; never launch a scientific workload."""
 from pathlib import Path
-import hashlib,json,re
+import hashlib,json,re,subprocess
 
 ROOT=Path(__file__).resolve().parents[2]
 HERE=Path(__file__).resolve().parent
+SNAPSHOT_COMMIT='20e6d4881a3a130bf9f9ba0ee7eecdba584fedad'
+SNAPSHOT_TREE='9e73d07d48c9b87c0cc65122dcd9410daafb8111'
+MANIFEST_PATH='experiments/audit_20261128/PROVENANCE.json'
+MANIFEST_BYTES=35502
+MANIFEST_SHA256='d246c6fe590cfac8b44eb5e401f42bfbc9cdbb0fbf5f52650d57595c4c19e1c5'
+BLOB_CAP=1048576
 
 def require(ok,message):
     if not ok:raise ValueError(message)
+
+def git_bytes(*args):
+    try:
+        return subprocess.run(['git','--no-replace-objects','-C',str(ROOT),*args],
+            check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=10).stdout
+    except (OSError,subprocess.SubprocessError) as e:
+        raise ValueError('Historical snapshot unavailable; fetch the pinned public audit commit: '
+            'git fetch --no-tags --depth=1 origin '+SNAPSHOT_COMMIT) from e
+
+def historical_bytes(relative,size):
+    require(type(relative)is str and not relative.startswith('/')
+        and all(p not in ('','..','.')for p in relative.split('/')),'historical repository path')
+    require(type(size)is int and 0<=size<=BLOB_CAP,'bounded historical blob')
+    obj=SNAPSHOT_COMMIT+':'+relative
+    require(git_bytes('cat-file','-s',obj).strip()==str(size).encode(),'historical blob length: '+relative)
+    raw=git_bytes('cat-file','blob',obj)
+    require(len(raw)==size,'historical blob read length: '+relative)
+    return raw
 
 def decode_window(data):
     require(data['schema']=='openrx.exact-token-pool.v1','token schema')
@@ -19,11 +43,20 @@ def decode_window(data):
     return raw
 
 def verify_manifest():
-    manifest=json.loads((HERE/'PROVENANCE.json').read_bytes())
+    require(git_bytes('rev-parse',SNAPSHOT_COMMIT+'^{tree}').strip().decode()==SNAPSHOT_TREE,'historical tree identity')
+    manifest_raw=historical_bytes(MANIFEST_PATH,MANIFEST_BYTES)
+    require(hashlib.sha256(manifest_raw).hexdigest()==MANIFEST_SHA256,'historical manifest identity')
+    require((HERE/'PROVENANCE.json').read_bytes()==manifest_raw,'immutable local manifest')
+    manifest=json.loads(manifest_raw)
     require(len({r['path']for r in manifest['files']})==len(manifest['files']),'unique publication paths')
     for row in manifest['files']:
         path=(ROOT/row['path']).resolve();require(path.is_relative_to(ROOT),'repository source path')
-        raw=path.read_bytes();require(len(raw)==row['bytes']and hashlib.sha256(raw).hexdigest()==row['sha256'],'public-copy hash: '+row['path'])
+        raw=historical_bytes(row['path'],row['bytes'])
+        require(hashlib.sha256(raw).hexdigest()==row['sha256'],'historical public-copy hash: '+row['path'])
+        # Retained payloads stay immutable in the live checkout too. The checker
+        # is current code; its original bytes were checked above, not rebased.
+        if row['path'].startswith('experiments/audit_20261128/')and row['path']!='experiments/audit_20261128/check_snapshot.py':
+            require(path.read_bytes()==raw,'retained public-copy hash: '+row['path'])
         if row['representation']=='byte_exact':
             require(row['original_sha256']==row['sha256']and row['original_bytes']==row['bytes'],'exact-copy declaration')
     return len(manifest['files'])

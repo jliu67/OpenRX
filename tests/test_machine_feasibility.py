@@ -171,6 +171,7 @@ class MachineFeasibility(unittest.TestCase):
 
     def test_residence_witness_reprovisions_engines_and_costs(self):
         a=self.d["architectures"][0];a["contexts_per_engine"]=4;a["full_hash_residence_cycles"]=40000000
+        a.update(residence_scope="assumed_full_hash",residence_source_id="protocol_assumptions")
         p=self.d["physical"]["unknown"];p["logic_source_id"]="protocol_assumptions"
         p["unit_leakage_W"]={k:0 for k in M.SERVICES}
         p["logic_base_leakage_W_per_engine"]=.001;p["aux_leakage_W_per_context"]=.0001
