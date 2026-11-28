@@ -1,0 +1,168 @@
+{
+  "schema": "openrx.isolation69.portable-source-closure.v1",
+  "scope": "Source/evidence closure only; no executable runner/admission and no new workload authority. Original727 host/runtime pins remain local; this is not a complete portable host-runtime qualification.",
+  "original_config_sha256": "2ffce12387ac2e14938b05dfc36a6ee7ed01e0fb23c6fb3a3c82f79d74e7386d",
+  "source_files": [
+    {
+      "path": "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "bytes": 6610,
+      "sha256": "5a1d0823a066395eda8191b3a556c414e6120b8085ff43ce383980d84af47f9f"
+    },
+    {
+      "path": "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "bytes": 17218,
+      "sha256": "353cad0b733c601f5c2449dc75f1ddefa34dc5c2466ac82540302303899fe355"
+    },
+    {
+      "path": "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "bytes": 2316,
+      "sha256": "77e37250ec9c18c4484c23eda48bfcf7df8dec1a3d3b2c1a1e5804386a25de8b"
+    },
+    {
+      "path": "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "bytes": 3945,
+      "sha256": "7aca940370a4ecf1b52774cec62e90252d090f20a4acd5f577cf88565266426c"
+    },
+    {
+      "path": "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "bytes": 3465,
+      "sha256": "62d42a8f004f00f9a688c5e45302ceff22148313b3602840e5d05a13e9391e96"
+    },
+    {
+      "path": "rtl/execute/vendor/hardfloat/addRecFN.v",
+      "bytes": 11575,
+      "sha256": "15fb5387ab0deff63670ed144189e9f263c61ffc909d06697974c49d11ba5dc3"
+    },
+    {
+      "path": "rtl/execute/vendor/hardfloat/mulRecFN.v",
+      "bytes": 9458,
+      "sha256": "5a6a263dcde9f38f0fabef87ceb41e1bdff63c46d151c7c65e404467354bee43"
+    },
+    {
+      "path": "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "bytes": 5712,
+      "sha256": "5978254ad3781165833345616e4c1c3447cac4a1d8fb73689c2def15f71f52e3"
+    },
+    {
+      "path": "rtl/execute/randomx_fp64.v",
+      "bytes": 1858,
+      "sha256": "52a5175d03e3db4849d0c6d4a1d0b8630ce668a8ab1fbe0cb072e9eb995c4521"
+    },
+    {
+      "path": "rtl/execute/randomx_fp128.v",
+      "bytes": 2511,
+      "sha256": "368bda75d3264c96179797231d1036939dde173be7d55c60cdea21a157a3faff"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/correction01/randomx_fp64_iso68.v",
+      "bytes": 2762,
+      "sha256": "4fe49f0b82d34133d4ddf66d187b2e9faa53428358134d603ac2d6561c4a30f5"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/randomx_fp128_iso68.v",
+      "bytes": 2535,
+      "sha256": "a2026a69a80a7dbf59c83e7de952317d945f37f3df6c44587c6eed40aea6620f"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation69/tb_compare.v",
+      "bytes": 8708,
+      "sha256": "5e0fcb966dfcbf6cb1edc2e7dd7cf412f381c91272dac883968b3ad1e48cd60f"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation68/native12.hex",
+      "bytes": 1260,
+      "sha256": "84a6753b294532ac0a330589062e7236c87c6e2f885a8122b6ea501f3a28099d"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation69/activity-identities.json",
+      "bytes": 1929,
+      "sha256": "e7650e5397025db796a623f2afc3a9058c6ed8651aaceb6dc067e9d13d8921c0"
+    },
+    {
+      "path": "experiments/audit_20261128/isolation69/analyze.py",
+      "bytes": 8827,
+      "sha256": "f531a2e3de760d51a174ffce1a24a37779a6e94d3c1f27a16f7ea184853ec837"
+    }
+  ],
+  "tools": [
+    {
+      "name": "iverilog",
+      "original_binary_sha256": "a6071e4b4a68feafca0c8ee0e6aa275eee9a43a108c62801cfd1eca6eab6d8a3",
+      "version": "Icarus12 family"
+    },
+    {
+      "name": "vvp",
+      "original_binary_sha256": "a10bd7d4a0850308ac8c2c98115b6a3084f9be978307610f2a521190c28f4023",
+      "version": "Icarus12 family"
+    },
+    {
+      "name": "yosys",
+      "original_binary_sha256": "88c0a12bb814a1a8716b1ae10b482e35d3005ed558e1f5f626b3dc983ea3abd0",
+      "version": "Yosys0.33 git2584903a060"
+    }
+  ],
+  "compile": {
+    "executable": "iverilog",
+    "options": [
+      "-g2012",
+      "-Irtl/execute/vendor/hardfloat",
+      "-Irtl/execute/vendor/hardfloat/8086-SSE",
+      "-s",
+      "tb_compare",
+      "-o",
+      "<FRESH_OUTPUT>/pair.vvp"
+    ],
+    "sources": [
+      "rtl/execute/vendor/hardfloat/HardFloat_primitives.v",
+      "rtl/execute/vendor/hardfloat/HardFloat_rawFN.v",
+      "rtl/execute/vendor/hardfloat/isSigNaNRecFN.v",
+      "rtl/execute/vendor/hardfloat/fNToRecFN.v",
+      "rtl/execute/vendor/hardfloat/recFNToFN.v",
+      "rtl/execute/vendor/hardfloat/addRecFN.v",
+      "rtl/execute/vendor/hardfloat/mulRecFN.v",
+      "rtl/execute/vendor/hardfloat/8086-SSE/HardFloat_specialize.v",
+      "rtl/execute/randomx_fp64.v",
+      "rtl/execute/randomx_fp128.v",
+      "experiments/audit_20261128/isolation68/correction01/randomx_fp64_iso68.v",
+      "experiments/audit_20261128/isolation68/randomx_fp128_iso68.v",
+      "experiments/audit_20261128/isolation69/tb_compare.v"
+    ]
+  },
+  "simulation": {
+    "executable": "vvp",
+    "arguments": [
+      "<FRESH_OUTPUT>/pair.vvp",
+      "+vectors=experiments/audit_20261128/isolation68/native12.hex"
+    ]
+  },
+  "generic": {
+    "executable": "yosys",
+    "arguments": [
+      "-Q",
+      "-T",
+      "-s",
+      "<SOURCE_BOUND_SCRIPT>"
+    ],
+    "original_commands": [
+      "read_verilog -sv <PINNED_HARDFLOAT_AND_SELECTED_VARIANT>",
+      "hierarchy -check -top <randomx_fp128_OR_randomx_fp128_iso68>",
+      "proc",
+      "opt",
+      "wreduce",
+      "opt_clean",
+      "check -assert",
+      "tee -o <FRESH_OUTPUT>/<baseline_OR_isolated>-stat.json stat -json -width"
+    ],
+    "original_script_hashes": {
+      "baseline.ys": {
+        "bytes": 1763,
+        "sha256": "94aab7d46951ca2cbe91a3a1fd9c5ad861270b6b3eb1e1564be6d2d5e76d21ae"
+      },
+      "isolated.ys": {
+        "bytes": 1761,
+        "sha256": "12831dbe1a263a44c06a262c9e9d8fdbeeb3a45232a410da6aa5e1457956a41d"
+      }
+    },
+    "scope": "Original plan only; not a completed synthesis or physical mapping."
+  }
+}

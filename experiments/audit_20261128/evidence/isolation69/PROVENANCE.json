@@ -1,0 +1,99 @@
+{
+  "schema": "openrx.isolation69.public-copy-provenance.v1",
+  "scope": "Separate public-copy records; unredacted originals retained locally. Original hashes do not assert sanitized byte identity. No scientific replay or new acceptance.",
+  "sanitized_emitted_bench_path": "/[source-path-redacted]/isolation69/tb_compare.v",
+  "members": [
+    {
+      "file": "simulation.txt",
+      "bytes": 7809,
+      "sha256": "2487253bec56dac5ddf940b815e6c86e94a6cf6412cb69f6631c73411b0aceaf",
+      "original_file": "simulation.stdout",
+      "original": {
+        "bytes": 7861,
+        "sha256": "ea87e26b0c801f3c03412421431541f25a9bfd9c695dcc68ae8933a8008eab7d"
+      },
+      "representation": "sanitized_text_copy",
+      "transformations": [
+        "Only the terminal absolute bench path is replaced by the declared source-path-redacted token; all108 records,values,framing,line,time and counts remain."
+      ]
+    },
+    {
+      "file": "result.json",
+      "bytes": 3707,
+      "sha256": "4b493f3212339659e310287a16fcde869e94f164e2c1ec2dc03cbaaad0152d57",
+      "original_file": "result.json",
+      "original": {
+        "bytes": 2882,
+        "sha256": "c5b185d9c4869dc6c8975c18eec73f42467a607809aceb12c128ec0e0086cd7f"
+      },
+      "representation": "sanitized_JSON_copy",
+      "transformations": [
+        "Resource scope paths/unit,process IDs and local marker hash replaced by explicit tokens. All failure/status,capture,return,drain,caps and hold booleans retained."
+      ]
+    },
+    {
+      "file": "synth-baseline-prefix.txt",
+      "bytes": 215204,
+      "sha256": "468c30094e446de489a9397749401609625ef1ffd4d37469a7bdba59059bb993",
+      "original_file": "synth-baseline.stdout",
+      "original": {
+        "bytes": 262144,
+        "sha256": "531ef23ef306d715c727350a3dadd8857c461204375e5f9226ef47bd8efe963e"
+      },
+      "representation": "sanitized_truncated_capture_prefix",
+      "transformations": [
+        "Only repository/campaign absolute source prefixes are replaced by labelled tokens. The original262144B capture is incomplete; public length differs due to redaction. Warnings,pass log and truncated JSON tail retained."
+      ]
+    },
+    {
+      "file": "status.json",
+      "bytes": 2814,
+      "sha256": "3ea8c609a1173097d7860596f48c13f3b73292ca4a0e99410e4dcac835aeeaf1",
+      "original_file": "ACTUAL-HANDOFF.json",
+      "original": {
+        "bytes": 6502,
+        "sha256": "1b84d4ded31587ace59fc66142eafae44b53956661be0ccdc5959ceefb8aee6c"
+      },
+      "representation": "selected_fields_and_cross_record_projection",
+      "transformations": [
+        "Selected exact stage/counter/cap fields and labelled failure/source hashes from ACTUAL-HANDOFF,failed receipt and capture; no host paths/PIDs. Derived public offsets/lengths label sanitized representation only."
+      ]
+    }
+  ],
+  "source_collector": {
+    "path": "experiments/audit_20261128/isolation69/analyze.py",
+    "representation": "byte_exact_designated_host_collector",
+    "original": {
+      "bytes": 8827,
+      "sha256": "f531a2e3de760d51a174ffce1a24a37779a6e94d3c1f27a16f7ea184853ec837"
+    }
+  },
+  "reused_negative_control": {
+    "path": "experiments/audit_20261128/evidence/isolation68/simulation.txt",
+    "bytes": 2193,
+    "sha256": "754a1e856fdf112a73a28c44d126110d2bfa433f1524f18fbeb51b0695fadffa",
+    "scope": "Original failed88idle X/Z transitions,not erased or superseded into a pass."
+  },
+  "source_closure": {
+    "path": "experiments/audit_20261128/isolation69/REPLAY.json",
+    "bytes": 5907,
+    "sha256": "d017f78d19361a54ae978fb5f36f8d9c5bb0a03933b8c4f536c990259dfff734"
+  },
+  "future_logging": {
+    "path": "experiments/audit_20261128/isolation69/FUTURE-LOGGING.json",
+    "bytes": 1253,
+    "sha256": "efd36f89d5d3c7b2a01326dcf4cd12640f6e3fa6d74eff2641bb9dcfa3ae4ef8"
+  },
+  "original_failure_files": [
+    {
+      "file": "failure.json",
+      "bytes": 2802,
+      "sha256": "e9988321e676d3e0ab662bf91cb404d4004f00e23a213697eb886bc016c6340e"
+    },
+    {
+      "file": "result.json",
+      "bytes": 2882,
+      "sha256": "c5b185d9c4869dc6c8975c18eec73f42467a607809aceb12c128ec0e0086cd7f"
+    }
+  ]
+}

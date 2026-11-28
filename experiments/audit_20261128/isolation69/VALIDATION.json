@@ -1,0 +1,33 @@
+{
+  "schema": "openrx.isolation69.public-DATA-validation.v1",
+  "scope": "Portable retained-evidence/parser/privacy tests only; no simulation,synthesis,native workload or admission.",
+  "tests": 99,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 2.1884343739948235,
+  "argv": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "tests.test_isolation69_snapshot",
+    "tests.test_audit_snapshot",
+    "tests.test_audit_frontier",
+    "tests.test_machine_feasibility",
+    "tests.test_machine_memory_policies",
+    "tests.test_machine_contract_corrections"
+  ],
+  "AS_B": 536870912,
+  "CPU_s": 20,
+  "complete_local_log_sha256": "6396cacb5d02ea3bf457f347d1faab8c3d878c46749e8627ecf215750c6d83e2",
+  "local_log_not_published": true,
+  "source_sha256": {
+    "experiments/audit_20261128/isolation69/analyze.py": "f531a2e3de760d51a174ffce1a24a37779a6e94d3c1f27a16f7ea184853ec837",
+    "experiments/audit_20261128/isolation69/check.py": "021311bc99195c14aa397038b79b5e8b43edd149350a04e05f818503fd7f0125",
+    "tests/test_isolation69_snapshot.py": "6ce7488ef54c22e9ed0276e2eae33a4887bc7cbda986c066827503abe8e6cdad"
+  },
+  "retained_failure_status": "FAILED_NO_RETRY",
+  "future_logging": "UNREVIEWED_SOURCE_ONLY_NOT_ADMITTED_UNRUN",
+  "hosted_CI": "NOT_RUN_FOR_THIS_LOCAL_CANDIDATE"
+}
