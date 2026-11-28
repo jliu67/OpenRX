@@ -2,6 +2,9 @@
 
 Current project navigation: [status](../docs/STATUS.md) and [architecture issue #72](https://github.com/jliu67/OpenRX/issues/72). The dated snapshots below are preserved history.
 
+2026-11-28 audit handoff: engineering is paused. The [source/evidence snapshot](../experiments/audit_20261128/)
+retains unknown physical costs and failed/unrun outcomes; no new scientific run or acceptance.
+
 ## PR96 delivery reconciled (recorded 2026-11-04)
 
 [PR96](https://github.com/jliu67/OpenRX/pull/96) merged on 2026-10-22 at

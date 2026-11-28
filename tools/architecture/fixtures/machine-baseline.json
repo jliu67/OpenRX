@@ -1,0 +1,825 @@
+{
+  "schema": "openrx.machine-feasibility.v1",
+  "target": {
+    "hashes_per_s": 1000000,
+    "wall_limit_W": 2500,
+    "research_fraction": 0.8,
+    "private_capacity_B": 8589934592
+  },
+  "sources": {
+    "native": {
+      "path": "experiments/audit_20261128/evidence/model/native.jsonl",
+      "bytes": 107302,
+      "sha256": "576c517530f9425a19132d70c2ac66309105a00c48de9052f75e52b6e08a42ba",
+      "kind": "native_software",
+      "scope": "Four immutable60B nonce0-3 full canonical v2 digests; source/dependency work, not hardware cycles."
+    },
+    "native_review": {
+      "path": "experiments/audit_20261128/evidence/model/native_review.json",
+      "bytes": 1610,
+      "sha256": "7dba04ae62d0c97e7b216cc7e3c18ba630d71936797dd8366f98446d273ee6d6",
+      "kind": "independent_review",
+      "scope": "Scoped native observation accepted; preserves117 physical unknowns."
+    },
+    "census": {
+      "path": "experiments/audit_20261128/evidence/model/census.json",
+      "bytes": 13972,
+      "sha256": "3978e4e09cf659dad1db58b20bd1a95f599c90d6c57078a6ef772e6b64d06bbf",
+      "kind": "native_software",
+      "scope": "Useful widths, source-derived full-lifecycle AES/BLAKE counters, canonical equality."
+    },
+    "census_review": {
+      "path": "experiments/audit_20261128/evidence/model/census_review.json",
+      "bytes": 1201,
+      "sha256": "1713c2decce215608eb090ffa6117c6f501a620b5eae1a05420771064c2f3232",
+      "kind": "independent_review",
+      "scope": "Four-input actual result scoped acceptance."
+    },
+    "locality": {
+      "path": "experiments/audit_20261128/evidence/model/locality.json",
+      "bytes": 4380,
+      "sha256": "5e25bb85d960733c3d3b7410fd23d5019997f690f91bc175b700e21c685591bd",
+      "kind": "source_order_policy",
+      "scope": "Static256KiB +16KiB spill sector cache,64B RMW/writeback counts; no timed implementation."
+    },
+    "frontier": {
+      "path": "experiments/audit_20261128/evidence/model/frontier.json",
+      "bytes": 4796,
+      "sha256": "1f9fc24fb13ee5ca92f4f5501d28ec7184bff3c058683d2018c300f91e7fadf4",
+      "kind": "conditional_bound",
+      "scope": "Existing resource/capacity frontier; scope retained as comparator, no native replay."
+    },
+    "frontier_review": {
+      "path": "experiments/audit_20261128/evidence/model/frontier_review.json",
+      "bytes": 567,
+      "sha256": "e98a5d42f9fe2f51105e7e14873b3a161c18fad6995284dbc5421eef777de1eb",
+      "kind": "independent_review",
+      "scope": "Scoped arithmetic frontier acceptance."
+    },
+    "v1_regression": {
+      "path": "docs/validation/m3/README.md",
+      "bytes": 7236,
+      "sha256": "845a578c5ce0ca3d067ad10b4f13fc2fe25f856da1c89cc082b96c92d154cc69",
+      "kind": "historical_functional",
+      "scope": "Recorded39 required native/QEMU v1/v2 checks; not new-candidate hardware equivalence."
+    },
+    "envelope_code": {
+      "path": "tools/architecture/envelope.py",
+      "bytes": 13843,
+      "sha256": "50bf96663cf6a96e184754942dc8052825161cecd92f783f6c962bac5015dcb3",
+      "kind": "source_code",
+      "scope": "Reuse existing unknown-preserving complete wall accounting."
+    },
+    "vendor_config": {
+      "path": "vendor/randomx/src/configuration.h",
+      "bytes": 4691,
+      "sha256": "2eea9777204fd25fcd95225474dbec299e56bf56bd5915d4cf0e223ccc7be833",
+      "kind": "source_code",
+      "scope": "Dataset2147483648+33554368B, not256MiB light cache."
+    },
+    "protocol_assumptions": {
+      "kind": "assumed",
+      "technology": null,
+      "corner": null,
+      "scope": "Logical port widths/service and illustrative clocks/utilization; no characterized technology."
+    },
+    "area_anchor": {
+      "path": "experiments/audit_20261128/evidence/model/area_anchor.json",
+      "bytes": 18999,
+      "sha256": "af6d772e7af4bdc2fbc7a6513022473c8b4eec9191b7c661d9e8f941b12fd573",
+      "kind": "retained_published_anchor",
+      "scope": "Yokoyama7nm32768B macro outline only; timing/energy have separate incompletely specified corners."
+    }
+  },
+  "baseline": {
+    "vendor_commit": "aaafe71322df6602c21a5c72937ac284724ae561",
+    "v2_canonical_hashes": 4,
+    "v2_source_ids": [
+      "native",
+      "census_review"
+    ],
+    "v1_source_id": "v1_regression",
+    "v1_regression_scope": "Historical pinned unchanged native/QEMU v1/v2 correctness baseline; every new architecture still has unknown v1 hardware coverage."
+  },
+  "samples": [
+    {
+      "nonce": 0,
+      "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c652032303236313031380000000000000000",
+      "input_sha256": "3fe27813789cfd946bad6edd772cbe97780b9cebcfdaa032b935089c6e513cf0",
+      "digest_hex": "277087ca6bb97eeb72a225506a9880455453021e668ea6396dcb28731fb1d9b4",
+      "canonical_digest_equal": true,
+      "instructions": 6306296,
+      "read8": 1046784,
+      "write8": 396264,
+      "dataset_requests": 16384,
+      "work": {
+        "integer64": 4493066,
+        "mul64": 798282,
+        "FP128": 1894620,
+        "DIVSQRT128": 258673,
+        "bitwise128": 404335,
+        "convert128": 484201,
+        "AES128_round": 530696,
+        "BLAKE2b_compression": 17
+      },
+      "tier_read64": 101419,
+      "tier_write64": 101396,
+      "source_ids": [
+        "native",
+        "census",
+        "locality"
+      ]
+    },
+    {
+      "nonce": 1,
+      "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c652032303236313031380100000000000000",
+      "input_sha256": "7270c56500f0a86ae4eef6324701ef53518688264d13f9aaa86039586f125e31",
+      "digest_hex": "e08bb9529f0058078fc686eb213b88eb54079380ed840f1f70ba0c0ab147f45a",
+      "canonical_digest_equal": true,
+      "instructions": 6307475,
+      "read8": 987422,
+      "write8": 414801,
+      "dataset_requests": 16384,
+      "work": {
+        "integer64": 4364470,
+        "mul64": 999606,
+        "FP128": 1775978,
+        "DIVSQRT128": 238156,
+        "bitwise128": 396068,
+        "convert128": 455415,
+        "AES128_round": 530696,
+        "BLAKE2b_compression": 17
+      },
+      "tier_read64": 99787,
+      "tier_write64": 99763,
+      "source_ids": [
+        "native",
+        "census",
+        "locality"
+      ]
+    },
+    {
+      "nonce": 2,
+      "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c652032303236313031380200000000000000",
+      "input_sha256": "e20136dc6c5f1d37878e7a055ac9daceef97f0de9f7d8b3a0b2f541a230e655e",
+      "digest_hex": "64346834912bc203d1bc4188ab1f696015efbb1d47b21225cf8723d358a7b193",
+      "canonical_digest_equal": true,
+      "instructions": 6306140,
+      "read8": 933841,
+      "write8": 367480,
+      "dataset_requests": 16384,
+      "work": {
+        "integer64": 4383968,
+        "mul64": 876276,
+        "FP128": 1847397,
+        "DIVSQRT128": 232023,
+        "bitwise128": 392035,
+        "convert128": 449228,
+        "AES128_round": 530696,
+        "BLAKE2b_compression": 17
+      },
+      "tier_read64": 94259,
+      "tier_write64": 94238,
+      "source_ids": [
+        "native",
+        "census",
+        "locality"
+      ]
+    },
+    {
+      "nonce": 3,
+      "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c652032303236313031380300000000000000",
+      "input_sha256": "d10a4fab2e14f26725bd51a0cf3f09a1151b0c6312d099021e6b00a7bda6a5ec",
+      "digest_hex": "b14a645cde0e34d419cd85d8b88c26b8453e49529c4fc17d4632b68054e2f6ab",
+      "canonical_digest_equal": true,
+      "instructions": 6306160,
+      "read8": 925583,
+      "write8": 424924,
+      "dataset_requests": 16384,
+      "work": {
+        "integer64": 4209495,
+        "mul64": 1032274,
+        "FP128": 1794200,
+        "DIVSQRT128": 262763,
+        "bitwise128": 441166,
+        "convert128": 480069,
+        "AES128_round": 530696,
+        "BLAKE2b_compression": 17
+      },
+      "tier_read64": 96160,
+      "tier_write64": 96132,
+      "source_ids": [
+        "native",
+        "census",
+        "locality"
+      ]
+    }
+  ],
+  "architectures": [
+    {
+      "id": "A",
+      "organization": "simple banked in-order",
+      "placement": "all_local",
+      "physical_id": "unknown",
+      "contexts_per_engine": 1,
+      "aux_B_per_context": null,
+      "native_dispatch": 1,
+      "native_retire": 1,
+      "fetch_B_per_cycle": 8,
+      "internal_issue": 4,
+      "phase_events_per_iteration": 66,
+      "SP_banks": 8,
+      "SP_bank_II": 2,
+      "SP_credits_per_engine": 4,
+      "SP_read_credit_cycles": 7,
+      "SP_write_credit_cycles": 4,
+      "dataset_credits_per_context": 2,
+      "resources": {
+        "integer64": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "mul64": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "FP128": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "DIVSQRT128": {
+          "count": 1,
+          "latency_cycles": 20,
+          "II_cycles": 21
+        },
+        "bitwise128": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "convert128": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "AES128_round": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "BLAKE2b_compression": {
+          "count": 1,
+          "latency_cycles": null,
+          "II_cycles": null
+        },
+        "SP16_front": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 1
+        },
+        "receiver16_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "return_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "dataset_request": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        }
+      },
+      "full_hash_residence_cycles": null,
+      "complete_engine_service_cycles_per_hash": null,
+      "v2_equivalent": null,
+      "v1_equivalent": null,
+      "finite_schedule_checked": null,
+      "assumptions": [
+        "Conditional logical resources, not mapped area orFmax.20/21 paired DIV service, no hypotheticalII8.",
+        "66 phase retirement events/iteration is an explicit controller granularity; all shared with native retirement. Not a universal algorithmic lower bound.",
+        "integer64 includes observer address/control work; no additional AGU count is silently added.",
+        "7/4 credit-hold clocks are declared favorable read/store minima, not observed fullhash queue residence.",
+        "No trace supplied future branch/address/rounding; source demand floors cannot demonstrate causal scheduling.",
+        "Predecode control events are charged separately forB/D;A/C raw-decode contracts do not inherit that preparation for free or by assumption."
+      ],
+      "predecode_events_per_hash": 0
+    },
+    {
+      "id": "B",
+      "organization": "program-resident finite state, paid4wide macro frontend",
+      "placement": "all_local",
+      "physical_id": "unknown",
+      "contexts_per_engine": 1,
+      "aux_B_per_context": 65536,
+      "native_dispatch": 4,
+      "native_retire": 4,
+      "fetch_B_per_cycle": 32,
+      "internal_issue": 8,
+      "phase_events_per_iteration": 66,
+      "SP_banks": 8,
+      "SP_bank_II": 2,
+      "SP_credits_per_engine": 4,
+      "SP_read_credit_cycles": 7,
+      "SP_write_credit_cycles": 4,
+      "dataset_credits_per_context": 2,
+      "resources": {
+        "integer64": {
+          "count": 2,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "mul64": {
+          "count": 2,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "FP128": {
+          "count": 3,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "DIVSQRT128": {
+          "count": 3,
+          "latency_cycles": 20,
+          "II_cycles": 21
+        },
+        "bitwise128": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "convert128": {
+          "count": 2,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "AES128_round": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "BLAKE2b_compression": {
+          "count": 1,
+          "latency_cycles": null,
+          "II_cycles": null
+        },
+        "SP16_front": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 1
+        },
+        "receiver16_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "return_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "dataset_request": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        }
+      },
+      "full_hash_residence_cycles": null,
+      "complete_engine_service_cycles_per_hash": null,
+      "v2_equivalent": null,
+      "v1_equivalent": null,
+      "finite_schedule_checked": null,
+      "assumptions": [
+        "Conditional logical resources, not mapped area orFmax.20/21 paired DIV service, no hypotheticalII8.",
+        "66 phase retirement events/iteration is an explicit controller granularity; all shared with native retirement. Not a universal algorithmic lower bound.",
+        "integer64 includes observer address/control work; no additional AGU count is silently added.",
+        "7/4 credit-hold clocks are declared favorable read/store minima, not observed fullhash queue residence.",
+        "No trace supplied future branch/address/rounding; source demand floors cannot demonstrate causal scheduling.",
+        "Predecode control events are charged separately forB/D;A/C raw-decode contracts do not inherit that preparation for free or by assumption."
+      ],
+      "predecode_events_per_hash": 6144
+    },
+    {
+      "id": "C",
+      "organization": "multithreaded shared-resource pool, provisioned4contexts",
+      "placement": "all_local",
+      "physical_id": "unknown",
+      "contexts_per_engine": 4,
+      "aux_B_per_context": null,
+      "native_dispatch": 2,
+      "native_retire": 2,
+      "fetch_B_per_cycle": 16,
+      "internal_issue": 4,
+      "phase_events_per_iteration": 66,
+      "SP_banks": 8,
+      "SP_bank_II": 2,
+      "SP_credits_per_engine": 4,
+      "SP_read_credit_cycles": 7,
+      "SP_write_credit_cycles": 4,
+      "dataset_credits_per_context": 2,
+      "resources": {
+        "integer64": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "mul64": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "FP128": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "DIVSQRT128": {
+          "count": 1,
+          "latency_cycles": 20,
+          "II_cycles": 21
+        },
+        "bitwise128": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "convert128": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "AES128_round": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "BLAKE2b_compression": {
+          "count": 1,
+          "latency_cycles": null,
+          "II_cycles": null
+        },
+        "SP16_front": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 1
+        },
+        "receiver16_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "return_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "dataset_request": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        }
+      },
+      "full_hash_residence_cycles": null,
+      "complete_engine_service_cycles_per_hash": null,
+      "v2_equivalent": null,
+      "v1_equivalent": null,
+      "finite_schedule_checked": null,
+      "assumptions": [
+        "Conditional logical resources, not mapped area orFmax.20/21 paired DIV service, no hypotheticalII8.",
+        "66 phase retirement events/iteration is an explicit controller granularity; all shared with native retirement. Not a universal algorithmic lower bound.",
+        "integer64 includes observer address/control work; no additional AGU count is silently added.",
+        "7/4 credit-hold clocks are declared favorable read/store minima, not observed fullhash queue residence.",
+        "No trace supplied future branch/address/rounding; source demand floors cannot demonstrate causal scheduling.",
+        "Predecode control events are charged separately forB/D;A/C raw-decode contracts do not inherit that preparation for free or by assumption."
+      ],
+      "predecode_events_per_hash": 0
+    },
+    {
+      "id": "D",
+      "organization": "same compute asB, conditional272KiB tiered/backing challenger",
+      "placement": "static256K_cache16K_sector",
+      "physical_id": "unknown",
+      "contexts_per_engine": 1,
+      "aux_B_per_context": null,
+      "native_dispatch": 4,
+      "native_retire": 4,
+      "fetch_B_per_cycle": 32,
+      "internal_issue": 8,
+      "phase_events_per_iteration": 66,
+      "SP_banks": 8,
+      "SP_bank_II": 2,
+      "SP_credits_per_engine": 4,
+      "SP_read_credit_cycles": 7,
+      "SP_write_credit_cycles": 4,
+      "dataset_credits_per_context": 2,
+      "resources": {
+        "integer64": {
+          "count": 2,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "mul64": {
+          "count": 2,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "FP128": {
+          "count": 3,
+          "latency_cycles": 3,
+          "II_cycles": 3
+        },
+        "DIVSQRT128": {
+          "count": 3,
+          "latency_cycles": 20,
+          "II_cycles": 21
+        },
+        "bitwise128": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "convert128": {
+          "count": 2,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "AES128_round": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "BLAKE2b_compression": {
+          "count": 1,
+          "latency_cycles": null,
+          "II_cycles": null
+        },
+        "SP16_front": {
+          "count": 1,
+          "latency_cycles": 3,
+          "II_cycles": 1
+        },
+        "receiver16_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "return_grant": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        },
+        "dataset_request": {
+          "count": 1,
+          "latency_cycles": 1,
+          "II_cycles": 1
+        }
+      },
+      "full_hash_residence_cycles": null,
+      "complete_engine_service_cycles_per_hash": null,
+      "v2_equivalent": null,
+      "v1_equivalent": null,
+      "finite_schedule_checked": null,
+      "assumptions": [
+        "Conditional logical resources, not mapped area orFmax.20/21 paired DIV service, no hypotheticalII8.",
+        "66 phase retirement events/iteration is an explicit controller granularity; all shared with native retirement. Not a universal algorithmic lower bound.",
+        "integer64 includes observer address/control work; no additional AGU count is silently added.",
+        "7/4 credit-hold clocks are declared favorable read/store minima, not observed fullhash queue residence.",
+        "No trace supplied future branch/address/rounding; source demand floors cannot demonstrate causal scheduling.",
+        "Predecode control events are charged separately forB/D;A/C raw-decode contracts do not inherit that preparation for free or by assumption."
+      ],
+      "predecode_events_per_hash": 6144
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "optimistic",
+      "frequency_Hz": 2000000000.0,
+      "utilization": 1,
+      "qualification": "illustrative_unqualified",
+      "scope": "Perfect resource utilization, assumed2GHz, no physical feasibility claim."
+    },
+    {
+      "id": "realistic_requested_unqualified",
+      "frequency_Hz": 1000000000.0,
+      "utilization": 0.7,
+      "qualification": "illustrative_unqualified",
+      "scope": "Planning sensitivity only:1GHz/70% supply factor is not calibrated or claimed realistic silicon."
+    },
+    {
+      "id": "conservative_stress",
+      "frequency_Hz": 500000000.0,
+      "utilization": 0.5,
+      "qualification": "illustrative_unqualified",
+      "scope": "Chosen stress sensitivity, not a proven worst-case envelope."
+    }
+  ],
+  "physical": {
+    "unknown": {
+      "logic_base_area_mm2_per_engine": null,
+      "aux_area_mm2_per_context": null,
+      "RF_metadata_J_per_hash": null,
+      "controller_J_per_hash": null,
+      "fabric_clock_J_per_hash": null,
+      "PHY_pJ_per_external_bit": null,
+      "setup_control_and_dataset_init_J_per_hash": null,
+      "AC_auxiliary_W": null,
+      "psu_efficiency": null,
+      "usable_area_mm2_per_die": null,
+      "packaged_die_cost_USD": null,
+      "fixed_board_cost_USD": null,
+      "logic_base_leakage_W_per_engine": null,
+      "aux_leakage_W_per_context": null,
+      "technology": null,
+      "corner": null,
+      "logic_source_id": null,
+      "operation_energy_pJ": {
+        "integer64": null,
+        "mul64": null,
+        "FP128": null,
+        "DIVSQRT128": null,
+        "bitwise128": null,
+        "convert128": null,
+        "AES128_round": null,
+        "BLAKE2b_compression": null
+      },
+      "unit_area_mm2": {
+        "integer64": null,
+        "mul64": null,
+        "FP128": null,
+        "DIVSQRT128": null,
+        "bitwise128": null,
+        "convert128": null,
+        "AES128_round": null,
+        "BLAKE2b_compression": null,
+        "SP16_front": null,
+        "receiver16_grant": null,
+        "return_grant": null,
+        "dataset_request": null
+      },
+      "unit_leakage_W": {
+        "integer64": null,
+        "mul64": null,
+        "FP128": null,
+        "DIVSQRT128": null,
+        "bitwise128": null,
+        "convert128": null,
+        "AES128_round": null,
+        "BLAKE2b_compression": null,
+        "SP16_front": null,
+        "receiver16_grant": null,
+        "return_grant": null,
+        "dataset_request": null
+      },
+      "static_dc_W": {
+        "logic_leakage": null,
+        "sram_leakage": null,
+        "memory_refresh_static": null,
+        "vrm_losses": null,
+        "fans": null,
+        "auxiliary_dc": null
+      },
+      "private_memory": {
+        "capacity_B": null,
+        "response_latency_s": null,
+        "request_II_s": null,
+        "sustained_payload_Bps": null,
+        "sustained_transactions_per_s": null,
+        "outstanding": null,
+        "read_energy_pJ": null,
+        "write_energy_pJ": null,
+        "area_mm2_per_bit": null,
+        "leakage_W_per_bit": null,
+        "schema": "openrx.memory-service-contract.v1",
+        "id": "private16-unknown",
+        "technology": null,
+        "corner": null,
+        "source_ids": [
+          "protocol_assumptions"
+        ],
+        "parameter_sources": {
+          "transaction_B": "protocol_assumptions"
+        },
+        "transaction_B": 16,
+        "qualification": "unknown",
+        "scope": "Machine-aggregate capacity and sustainable service; energy per named16B/64B transaction. Per-device figures require explicit aggregation before use.",
+        "exclusions": [
+          "No measured bank schedule, random efficiency, refresh/turnaround/tails, PVT or interface integration contract."
+        ],
+        "response_interpretation": "unknown"
+      },
+      "external_memory": {
+        "capacity_B": null,
+        "response_latency_s": null,
+        "request_II_s": null,
+        "sustained_payload_Bps": null,
+        "sustained_transactions_per_s": null,
+        "outstanding": null,
+        "read_energy_pJ": null,
+        "write_energy_pJ": null,
+        "area_mm2_per_bit": null,
+        "leakage_W_per_bit": null,
+        "schema": "openrx.memory-service-contract.v1",
+        "id": "external64-unknown",
+        "technology": null,
+        "corner": null,
+        "source_ids": [
+          "protocol_assumptions"
+        ],
+        "parameter_sources": {
+          "transaction_B": "protocol_assumptions"
+        },
+        "transaction_B": 64,
+        "qualification": "unknown",
+        "scope": "Machine-aggregate capacity and sustainable service; energy per named16B/64B transaction. Per-device figures require explicit aggregation before use.",
+        "exclusions": [
+          "No measured bank schedule, random efficiency, refresh/turnaround/tails, PVT or interface integration contract."
+        ],
+        "response_interpretation": "unknown"
+      },
+      "accounting_scope": {
+        "compute": "Primitive work excludes separately charged RF/metadata and memories. Full AES530696/BLAKE17 already include fill/final/program generation; do not charge them again in setup.",
+        "setup": "Only remaining control and amortized dataset initialization, excluding already-counted AES/BLAKE. Dataset preparation cost per epoch/hash remains unknown.",
+        "PHY": "Separate external memory-array and PHY costs; input memory energy must exclude separately charged IO.",
+        "static": "Explicit aggregate static overrides instance-derived figures; not added twice. PSU efficiency applies once to DC; VRM loss is separate. Fans are DC and AC_auxiliary excludes them."
+      },
+      "controller_PHY_interconnect_area_mm2": null,
+      "external_wire_to_payload_ratio": null
+    }
+  },
+  "anchors": [
+    {
+      "id": "Yokoyama7nm-area-only",
+      "role": "capacity_area_only",
+      "source_id": "area_anchor",
+      "macro_B": 32768,
+      "macro_area_mm2": 0.008561565540000001,
+      "scope": "Bare capacity-only footprint; not usable8bank256KiB128b timing/ports, auxiliary2R1W area, ECC/repair or placement."
+    },
+    {
+      "id": "Yokoyama7nm-response-separate",
+      "role": "noncombined_reference",
+      "source_id": "area_anchor",
+      "response_s": 8.2e-10,
+      "corner": ".75V/125C reported shmoo; not initiation interval"
+    },
+    {
+      "id": "Yokoyama-energy-separate",
+      "role": "noncombined_reference",
+      "source_id": "area_anchor",
+      "read64_pJ": 5.8,
+      "write64_pJ": 9.1,
+      "corner": null,
+      "scope": "ReporteduW/MHz, dynamic PVT not fully bound; not joined to area/timing contract."
+    }
+  ],
+  "retained_comparators": {
+    "source_id": "frontier",
+    "bound_model_clocks": {
+      "causal_renamed_original_latency": {
+        "max": 2952335,
+        "mean": 2747575.0,
+        "min": 2613110
+      },
+      "expanded_3DIV_II20_MUL1_AGUfusion": {
+        "max": 2132084,
+        "mean": 2118607.75,
+        "min": 2097885
+      },
+      "expanded_4DIV_II20_MUL1_AGUfusion": {
+        "max": 2046313,
+        "mean": 2020397.0,
+        "min": 2003624
+      },
+      "native_bucket_II2_positive_combo": {
+        "max": 2366129,
+        "mean": 2253945.75,
+        "min": 2175443
+      },
+      "same_expanded_resources_shared_micro_issue4": {
+        "max": 2864163,
+        "mean": 2823911.25,
+        "min": 2790670
+      },
+      "shared_micro4_original_MUL3_AGU_stages": {
+        "max": 3020209,
+        "mean": 2903536.5,
+        "min": 2795799
+      }
+    },
+    "scope": "Different declared resource/control/latency contracts; not automatically applied to new candidates. No new scheduler/calibration.",
+    "vm45": {
+      "actual_four_iteration_batch_HardFloat": 7155,
+      "actual_four_iteration_batch_C910": 5858,
+      "contexts": 2,
+      "full_hash": false,
+      "scope": "Native checked two iterations/nonce; not a fullhash cycle witness."
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "openrx.audit-publication-checks.v1",
+  "scope": "Publication preparation,ordinary standard-library tests andretained-data integrity/arithmetic only. Engineering paused.",
+  "tests": 44,
+  "tests_passed": true,
+  "fresh_isolated_source_copy": true,
+  "fresh_source_copy_bytes": 1917304,
+  "checks": {
+    "public_files_verified": 80,
+    "model_rows": 48,
+    "wall_powers_known": 0,
+    "retained_capacity_hashes": 2,
+    "exact_window_bytes": [
+      576803,
+      578919
+    ],
+    "failed_proxy_preserved": true,
+    "recovery_workloads": 0,
+    "scope": "Publication integrity/arithmetic/cross-record checks only. No native,RTL,scheduler,synthesis,systemd orreconciliation execution."
+  },
+  "full_model_CLI": {
+    "rows": 48,
+    "known_wall_powers": 0,
+    "source_validation": "retained_hashes_and_exact_projection",
+    "no_overwrite_and_complete_output_guards_retained": true
+  },
+  "correction_during_packaging": "Initial thin-copy test harness omitted existing envelope dependency;thecopylist was corrected to include public fixture dependencies. No model/native/scientific result changed. Failure retained locally.",
+  "not_run": [
+    "Native observer/hash/fixture generation",
+    "RTL,Icarus/VVP,scheduler/DRAM simulation or synthesis",
+    "Unrun isolation68correction",
+    "Reconciliation oranyhost-marker action",
+    "Hosted CI:publication andreview not yet performed"
+  ],
+  "public_data_policy": "Original unredacted records retained locally. Copy transformations andoriginal/public hashes inPROVENANCE. Kernel/process/machine identifiers andprivate paths redacted; sanitized copies are not byte-exact originals."
+}
