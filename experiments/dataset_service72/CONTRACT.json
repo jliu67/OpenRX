@@ -1,0 +1,265 @@
+{
+  "schema": "openrx.dataset72.portable-design.v1",
+  "status": "SOURCE_CLOSURE_ONLY_NO_SERVICE_SIMULATION",
+  "scope": "One historical52-byte full-native-v2 input. Exact ordered dataset read64 service only,2MiB all-local privateSP; no external SP backing,cache,RMW or hidden coalescing. No memory simulation or new native capture.",
+  "input": {
+    "records": 16384,
+    "source_bytes": 836535,
+    "source_sha256": "16eb394aa4ca59abbc83364847c965737a3747e5d122651bb4d5c5f1ab3df45f",
+    "address_order_LE64_sha256": "8d5ba9941d076bd71ed3c1a7706a75a8d5ff2d4d890e6e9b6baa549bd373f86f",
+    "native_dataset_lines_unique": 16379,
+    "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c65203230323631303138",
+    "input_sha256": "7f3ffafcb03b5926753514c94764fd976937b14eded11daf7299c9d53414f3e7",
+    "cache_key": "test key 000",
+    "epoch": 19619,
+    "canonical_digest": "4778fba5f3af5094a588969c6de78f70aaf54117e8664c2539387d31eaa24bfa",
+    "source_tree": "cb3e0615f9df861a081ba2cbb1d47c65603b84cd",
+    "programs": 8,
+    "iterations_per_program": 2048,
+    "identity_limit": "Not nonce0/2 of the later60-byte four-input census; no population or identity join.",
+    "source_order_limit": "Legacy model-return progress and53400 generation-availability fields are retained identity data only; neither is request arrival,dependency readiness or physical latency."
+  },
+  "reference": {
+    "part": "AS4C1G8D4-75BCN",
+    "device": "8Gb x8 DDR4",
+    "device_clock_ps": 750,
+    "DQ_peak_transfers_per_s": 2666666666.6666665,
+    "temperature": "85<Tcase<=95C",
+    "rails": [
+      1.14,
+      1.26
+    ],
+    "VPP": [
+      2.375,
+      2.75
+    ],
+    "primary": {
+      "URL": "https://www.alliancememory.com/wp-content/uploads/AS4C1G8D4-75BCN_AllianceMemory_8Gb_DDR4_AS4C512M16D4_AS4C1G8D4_31December2021_v1.1.pdf",
+      "bytes": 4423443,
+      "full_PDF_retained": false,
+      "revision": "1.1 December2021",
+      "sha256": "d6d9e4c1b368d646ca9805744bd39be303b6bd16b8c520841c18db078e245970"
+    },
+    "timing_CK": {
+      "nBL": 4,
+      "nCCDL": 7,
+      "nCCDS": 4,
+      "nCL": 19,
+      "nCWL": 14,
+      "nFAW": 28,
+      "nRAS": 43,
+      "nRC": 62,
+      "nRCD": 19,
+      "nREFI": 5200,
+      "nRFC": 467,
+      "nRP": 19,
+      "nRRDL": 7,
+      "nRRDS": 4,
+      "nRTP": 10,
+      "nWR": 20,
+      "nWTRL": 10,
+      "nWTRS": 4
+    },
+    "energy_per_read_pJ": null,
+    "physical_controller_PHY_service_qualified": false,
+    "installed_tool_qualified": false,
+    "source_revision": "7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da",
+    "sources": [
+      {
+        "bytes": 1123,
+        "sha256": "74a1f19701bb06cb80b4ec31e6de6472f5fd767e5949c1c4d51f70007d18b3f2",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/LICENSE"
+      },
+      {
+        "bytes": 17350,
+        "sha256": "8232b512b2f5eb5f5dfb67e38822d2c151c9b2b9ee17443d7d0b0d8ca1bdfca6",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/python/ramulator/dram/ddr4.py"
+      },
+      {
+        "bytes": 2416,
+        "sha256": "d0e93c8e4c9dd84c5e3b710258ff0c1253113435d9efae1b8b2090efe5151205",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/src/ramulator/controller/impl/generic_ddr_controller.cpp"
+      },
+      {
+        "bytes": 19421,
+        "sha256": "f520df628fd9fe3bc8babe3058b6b5eef40e16cae2f7569066113551206bc9bd",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/src/ramulator/controller/controller_base.cpp"
+      },
+      {
+        "bytes": 6354,
+        "sha256": "1847a96dc2bf663815ec5acbcfb0f84ffbc998a592c0e04d161dc4b1e0b56e37",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/src/ramulator/controller/refresh/impl/all_bank.cpp"
+      },
+      {
+        "bytes": 1768,
+        "sha256": "d822738aa625c45e6026b44401e185637352e710b0d54dbdf575f98a2541959d",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/src/ramulator/controller/scheduler/impl/frfcfs.cpp"
+      },
+      {
+        "bytes": 943,
+        "sha256": "da4674941d1e49a9003314f5b8c06f16eca2259ed9f97bbbe38aad27b19d6784",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/src/ramulator/controller/addr_mapper/impl/ro_ba_ra_co_ch.cpp"
+      },
+      {
+        "bytes": 837,
+        "sha256": "82395d6ac15a3df74d67d147c253eecb3e1dad9cef4901a668cf42381a08a306",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/src/ramulator/controller/addr_mapper/impl/ch_ra_ba_ro_co.cpp"
+      },
+      {
+        "bytes": 5097,
+        "sha256": "1b8a1053729b6707b05a20583d99ea934362e97884f196f46f806e4423d1672e",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/tests/device_timings/test_ddr4.py"
+      },
+      {
+        "bytes": 468,
+        "sha256": "29d656ea45ffa3573d3f60e07f2d16d9c269809fc603526512b980c0d8eac519",
+        "URL": "https://raw.githubusercontent.com/CMU-SAFARI/ramulator2/7bead6cb7c4b03e095c6d4769ae3181a8e0bf6da/tests/latency_throughput/testcases/ddr4.py"
+      }
+    ]
+  },
+  "resources": {
+    "channels": 64,
+    "ranks_per_channel": 1,
+    "devices_x8_per_rank": 8,
+    "bank_groups_per_rank": 4,
+    "banks_per_group": 4,
+    "rows_per_bank": 65536,
+    "columns_per_device_row": 1024,
+    "burst8_transaction_B": 64,
+    "rank_capacity_B": 8589934592,
+    "total_installed_external_B": 549755813888,
+    "total_devices": 512,
+    "shared_dataset_B": 2181038016,
+    "private_SP_B_per_context": 2097152,
+    "private_SP_local_service_latency_II_energy": "UNKNOWN; excluded from dataset-only service qualification,not assumed free for hash residence.",
+    "read_queue_entries_per_channel": 32,
+    "active_entries_per_channel": 16,
+    "priority_entries_per_channel": 16,
+    "write_requests": 0,
+    "probe_or_return_storage_entries_global": 8192,
+    "payload_plus_owner_B_per_entry": 96,
+    "return_storage_B": 786432,
+    "declared_queue_descriptor_B_per_entry": 32,
+    "queue_and_active_storage_B": 196608,
+    "assumption": "Finite declared queue/storage charges,not measured area.8192 slots are a stress-source resource ceiling corresponding to at most4096two-slot contexts,not a demonstrated context population.4096*2MiB already uses8GiB data-only; positive RF/metadata/credits must be added or context count reduced. No8GiB whole-machine fit claim.",
+    "write_queue_entries_per_channel": 32,
+    "write_queue_note": "No writes offered,but the pinned GenericDDR default write buffer is still charged; no unverified queue-elision claim."
+  },
+  "mapping": {
+    "name": "global64B-channel-striping_then_pinned_RoBaRaCoCh",
+    "global_line": "byte_address//64",
+    "channel": "line%64",
+    "intra_channel_line": "line//64",
+    "column": "(intra_line&127)*8",
+    "bank_group": "(intra_line>>7)&3",
+    "bank": "(intra_line>>9)&3",
+    "row": "intra_line>>11",
+    "rank": 0,
+    "base_byte_address": 0,
+    "reconstruction": "closure.location/reconstruct must roundtrip each actual address; padding cannot be addressed.",
+    "assumption": "Global low6 channel routing is chosen,not vendor-measured geometry. Pinned RoBaRaCoCh extracts intra-channel burst column,BG,bank,row; no XOR variant or sweep."
+  },
+  "link_and_owner_contract": {
+    "timebase_ps": 250,
+    "compute_link_clock_ps_assumed": 500,
+    "DDR_clock_ps": 750,
+    "request_header_B": 16,
+    "response_payload_B": 64,
+    "response_owner_header_B": 16,
+    "credit_feedback_header_B": 16,
+    "upstream_service": "Each channel16B/500ps,shared by request and consume/credit feedback,one finite serialized service; header owner table bound to input hash/epoch/program/iteration/sequence.",
+    "downstream_service": "Each channel16B/500ps;80B response consumes5beats; no zero-cost response header.",
+    "CDC_forward_assumed_DDR_cycles": 2,
+    "CDC_return_assumed_compute_cycles": 2,
+    "causal_owner": "(inputSHA,contextID,epoch,program,iteration,sequence,slot). At most2 outstanding per native context,slot=iteration%2; no reuse before matched data consumption and charged feedback completion. Native initialtwoaddresses and it+2hints require actual source evidence; finaltwohints cannot cross program.",
+    "acceptance": "Reserve owner/return storage before request; advance feeder only on true controller acceptance. Refusal does not drop/reorder request or consume an extra slot. Registered state/link/CDC boundaries use strict next edge,never same-edge launch/consume.",
+    "read_completion": "Controller RD+nCL+nBL callback is model full-burst completion only; additionally charge declared return CDC,5response beats,receiver/consumer edge and feedback service before credit release. Compare each64B response against native sparse oracle. No writes/forwarding/merging allowed.",
+    "wrong_or_canceled_owner": "Cancel/new epoch cannot free storage while any prior request/return/feedback is live. Drain or explicitly discard matching stale return; never credit another context. Unknown owner,duplicate response or unbounded cancellation rejects."
+  },
+  "experiments": {
+    "causal": {
+      "status": "BLOCKED_NOT_RUNNABLE",
+      "request_order": "Exact historical16384 entries retained,but no same-input address-ready/consumer/dependency events. No source-clock values manufactured from ordinals or legacy progress.",
+      "whole_hash_clock_screen": {
+        "prior_proposed_max_DDR_CK": 32768,
+        "optimistic_2credit_RD23CK_only_floor_DDR_CK": 188416,
+        "decision": "Even the memory-only conditional lower bound188416CK exceeds32768; full causal hash cannot fit that prior window budget. Do not raise a cap or truncate/relabel a full run. A separately reviewed bounded same-input causal window is needed."
+      },
+      "missing": "Actual same-input conservative source readiness,consumer boundaries,two-ahead ownership and finite compute-work dependency representation; causal63 failed before capture with zero records. No alternate-nonce window join."
+    },
+    "saturated_control": {
+      "status": "DESIGN_ONLY_NO_QUALIFIED_EXECUTABLE_OR_ADMISSION",
+      "scope": "The same exact16384dataset addresses,once,total. Finite feeder always offers the next source-order request when paid links/queues/return slots permit. No uniform/random arrivals,duplicate stream replication,read merging or unbounded initial injection.",
+      "credits": "Probe owners use the same declared8192-entry physical storage ceiling. This is typed exogenous stress,not native per-context2-credit behavior or actual VM concurrency.",
+      "timing": "Cold closed rows and empty queues at tick0; fixed periodic hot refresh every5200DDR CK,including PRE/tRAS/RTP preparation. At least10400CK observation and verified drain,maximum32768CK,first failure stop. Never discard outstanding requests at endpoint.",
+      "meaning": "Finite sampled ordered service vs explicitly saturated offered load only; no achieved fullhash throughput,residence,energy or sustained unseen-nonce guarantee. Both native causal comparison and physical service remain unqualified."
+    }
+  },
+  "ledger": {
+    "prospective_only": true,
+    "request_ledger": "16384fixed32B little-endian rows,max524288B: ordinal/owner identity implicit in fixed position and bound input; sevenu32 ticks(address-ready if actually available,request-link complete,accept,RD callback,usable return,consume,credit-release)+u32 closed flags. Missing causal field cannot use a fake numeric value; saturated mode marks it absent.",
+    "command_ledger": "At most65536fixed12B records,max786432B: ticku32,ownersequ16,channelu8,opcode+bank/BG u8,actual row-or-columnu16,reservedu16. REF owner0; PRE bank tracked explicitly; actual ACT row/RD column retained,not reconstructed as proof of what was issued.",
+    "footer": "Exact count,source/config/input/mode hashes,ledger hashes,complete owned drain,per-channel ACT/RD/PRE/REF and occupancy/latency summaries. No giant stdout; bounded64KiB summary. Overflow or unknown terminal state rejects; no compression/splitting/dropping to bypass limits.",
+    "budget": "These are prospective artifact ceilings,not a fit/admission claim. Existing4MiB complete root,1MiB captured output,589824B reserve and original time/CPU/RAM/file guards remain. Actual backend ELF/runtime+input/output closure is unknown; if complete budget cannot fit,stop. Do not retain both fullhash causal and saturated ledgers under a supposed fit; causal fullhash is already blocked.",
+    "header_identity": "One bound input and one native context0 in causal mode; program/iteration follow global ordinal,namespace/epoch are fixed and nonreused. Saturated probe has a separate namespace and no native-credit claim. Any multicontext extension needs explicit owner records and fresh budget/review."
+  },
+  "independent_validator_acceptance": [
+    "Exact immutable input/key/epoch/digest,native64B sparse values,original receipt/manifest/review joins and16,384address order; separate legacy modeled coordinates from new clock domains.",
+    "All request owners/seqs exactly once;actual mapped channel/BG/bank/row/column roundtrip; program boundaries and two-credit reuse obey actual source events in causal mode. Do not substitute a field-name coverage check for event/dependency correctness.",
+    "One RD per request,no hidden merging/WR/SP traffic; byte-exact64B data,duplicate-address immutable data and tag/epoch matching; reject early/duplicate/stale credit.",
+    "Stream independent command-state legality for ACT/PRE/RD,bank open-row state,all pinned nRCD/nRP/nRAS/nRC/nRRDS/L/nFAW/nCCDS/L/nRTP,nCL+nBL and periodic nREFI/nRFC,plus valid PHY/CDC exclusion/assumption labels. Reuse pinned Ramulator timing implementation; no new service simulator here.",
+    "Paid request/response/feedback link occupancy and strict event ordering,no queue/active/receiver/credit overflow. Inspect whole trace including refresh and drain; max/tail latency,full interval utilization and refusal stalls separate from vendor peak.",
+    "Missing records,wrong identity,unknown returns,incomplete ledger/truncated capture or failed inspection reject; scientific failure/evidence/marker history preserved under unchanged normal containment."
+  ],
+  "reference_corrections": {
+    "original70_record_unchanged": true,
+    "supersedes": "Original one_ACT_per64B_hot_ceiling_Bps active-fraction product is approximate,not conservative periodic bound.",
+    "periodic_max_ACT_per_3900ns": 680,
+    "derivation": "4*ceil((5200-467)/28)=680ACT/period is conservative: allowances include partial finaltFAW block; PRE/other constraints can reduce service.",
+    "one_ACT_per64B_periodic_bound_Bps": 11158974358.97436,
+    "assumption": "Only oneACT per64B miss; not a universal bandwidth ceiling when row hits occur.",
+    "one_channel_1p5MiB": "Adapter validation only; never the architecture discriminator or fullhash service calibration.",
+    "sixtyfour_channel_wire_peak_Bps": 1365333333333.3333,
+    "dataset_target_payload_Bps": 1048576000000,
+    "intermediate_capacity_screen": "The64-channel1.365TB/s wire peak cannot meet retained1/1.5MiB5.59-10.79TB/s payload,even before overhead.2MiB dataset-only1.048576TB/s is not excluded by that wire bound alone.",
+    "conditional_min_non_ACT_fraction_at_target": 0.3189102564102564,
+    "meaning": "About31.89% of reads would need no newACT even at that generous bound; actual timing/order/refresh/link service must be tested,not assumed.",
+    "conservative_activation_threshold_percent": 31.89102564102564
+  },
+  "launch": {
+    "argv": null,
+    "authorization": false,
+    "blockers": [
+      "No qualified existing backend/adapter/runtime closure or authorized bounded execution route is supplied.",
+      "Same-input causal readiness/dependency evidence is missing; no historical-progress-to-clock substitution.",
+      "Full16384causal replay exceeds the prior32768DDR CK window even at the188416CK RD-only two-credit floor."
+    ],
+    "next_gate": "Independent input/source review only. Any later tool qualification or execution needs normal reviewed admission and unchanged resource/evidence safeguards; this artifact supplies no launch authority."
+  },
+  "measurements": {
+    "new_simulations": 0,
+    "new_native_runs": 0,
+    "wall_power_W": null,
+    "full_hash_residence_cycles": null,
+    "measured_sustainable_payload_Bps": null
+  },
+  "intervals": {
+    "active_demand": {
+      "start": "First actually offered request,not first accepted request.",
+      "end": "Last usable response AND owned credit feedback/drain completion.",
+      "meaning": "Finite-window offered-demand completion throughput; include queue refusal,charged links and owned drain. Not sustained device service or full-hash throughput."
+    },
+    "device_service": {
+      "start": "First issued RD",
+      "end": "Last completed DRAM burst",
+      "meaning": "Model-only DRAM command-service interval; excludes source waiting and host links. Report separately,never substitute for usable return."
+    },
+    "observation": {
+      "start": "Model observation start",
+      "end": "At least two fixed refresh intervals plus completion of any started refresh and owned drain,subject to the same32768CK ceiling.",
+      "meaning": "Padding with no offered requests is idle observation. Bytes/padded duration is a duty-cycle average,not loaded sustainable bandwidth. Report demand-active and padded durations separately."
+    },
+    "refresh_coverage": "Report each REF with queued/active owners. Two observed refresh periods with an idle queue do not qualify loaded-refresh bandwidth or latency. If active demand does not span refresh,mark loaded-refresh calibration absent; do not replicate traffic or alter scope to manufacture coverage."
+  },
+  "publication_scope": "One historical52B v2 input; exact data/order,not a nonce population. New timing,service,energy,physical calibration and full-hash residence remain unknown."
+}
