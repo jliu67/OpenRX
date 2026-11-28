@@ -11,6 +11,10 @@ jobs:
     timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+      - name: Obtain exact historical audit objects for snapshot verification
+        # Checkout defaults to depth 1. Fetch one immutable public commit, not
+        # all repository history; the DATA checker also verifies its exact tree.
+        run: git fetch --no-tags --depth=1 origin 20e6d4881a3a130bf9f9ba0ee7eecdba584fedad
       - name: Verify source
         run: python3 scripts/verify_vendor.py
       - name: Phase 1 tooling regression tests
