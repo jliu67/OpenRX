@@ -38,6 +38,8 @@ MEMORY_NUMBERS = MEMORY_FIELDS - {
     "schema", "id", "technology", "corner", "source_ids", "parameter_sources",
     "qualification", "scope", "exclusions", "response_interpretation",
 }
+MEASURED_SERVICE = {"response_latency_s", "request_II_s", "sustained_payload_Bps",
+                    "sustained_transactions_per_s", "outstanding"}
 
 
 def require(ok, message):
@@ -66,6 +68,53 @@ def strict_json(raw):
     return json.loads(raw, object_pairs_hook=pairs, parse_constant=constant)
 
 
+def calibration_record(source, memory):
+    """A measured service value needs a hash-bound, scope-specific DATA record.
+
+    This verifies record identity/application, not the truth of a measurement or
+    its independent review. No such calibration is supplied by the baseline.
+    """
+    require(all(k in source for k in ("path", "sha256", "bytes")), "measured service needs calibration evidence")
+    require(type(source["bytes"]) is int and 0 <= source["bytes"] <= INPUT_CAP
+            and Path(source["path"]).stat().st_size <= INPUT_CAP, "bounded calibration evidence")
+    raw = Path(source["path"]).read_bytes()
+    require(len(raw) <= INPUT_CAP and len(raw) == source["bytes"]
+            and hashlib.sha256(raw).hexdigest() == source["sha256"], "calibration evidence binding")
+    c = strict_json(raw)
+    require(set(c) == {"schema", "qualification", "technology", "corner", "traffic_binding",
+                       "parameters", "response_interpretation", "application"}, "calibration record fields")
+    require(c["schema"] == "openrx.memory-calibration.v1"
+            and c["qualification"] == "qualified_scope_specific", "qualified scope-specific calibration required")
+    require(c["technology"] == memory["technology"] and c["corner"] == memory["corner"], "calibration PVT identity")
+    MP.require_join(c["traffic_binding"], memory.get("traffic_binding"))
+    require(c["response_interpretation"] == memory["response_interpretation"], "calibration latency interpretation")
+    require(set(c["parameters"]) <= MEMORY_NUMBERS, "calibration parameter fields")
+    app = c["application"]
+    require(set(app) == {"frequency_Hz", "hashes_per_s", "input_sha256", "transactions_per_s"}, "calibration application fields")
+    for key in ("frequency_Hz", "transactions_per_s"):
+        require(type(app[key]) is list and 1 <= len(app[key]) <= 16, "bounded calibration application")
+        for value in app[key]:number(value, key, positive=True)
+    number(app["hashes_per_s"], "calibration hashes/s", positive=True)
+    require(type(app["input_sha256"]) is list and 1 <= len(app["input_sha256"]) <= 16
+            and all(type(x) is str and len(x) == 64 and all(c in "0123456789abcdef" for c in x)
+                    for x in app["input_sha256"]), "calibration immutable input scope")
+    return c
+
+
+def measured_service_sources(memory, sources):
+    return {memory["parameter_sources"][k] for k in MEASURED_SERVICE
+            if memory[k] is not None and sources[memory["parameter_sources"][k]]["kind"] == "measured"}
+
+
+def calibration_applies(memory, sources, sample, scenario, hps, rate):
+    for ident in measured_service_sources(memory, sources):
+        c = calibration_record(sources[ident], memory)
+        app = c["application"]
+        require(scenario["frequency_Hz"] in app["frequency_Hz"] and hps == app["hashes_per_s"]
+                and sample["input_sha256"] in app["input_sha256"]
+                and rate in app["transactions_per_s"], "calibration outside actual traffic/load/frequency scope")
+
+
 def memory_contract(m, sources):
     require(set(m) in (MEMORY_FIELDS, MEMORY_FIELDS | {"traffic_binding"}) and m["schema"] == MEMORY_SCHEMA, "memory schema/fields")
     require(m["qualification"] in ("unknown", "assumed", "characterized"), "memory qualification")
@@ -90,6 +139,10 @@ def memory_contract(m, sources):
         if m["qualification"] == "characterized":
             require(p["kind"] == "measured" and m["technology"] and m["corner"],
                     "characterized memory requires bound measured corner")
+        if k in MEASURED_SERVICE and p["kind"] == "measured":
+            c = calibration_record(p, m)
+            require(k in c["parameters"] and type(c["parameters"][k]) is type(m[k])
+                    and c["parameters"][k] == m[k], "measured value differs from calibration evidence")
     require(m["transaction_B"] in (None, 16, 64), "only explicit 16B/64B service contracts supported")
 
 
@@ -150,6 +203,13 @@ def validate(d):
             number(r["II_cycles"], name + " II", positive=True, unknown=True)
         for k in ("full_hash_residence_cycles", "complete_engine_service_cycles_per_hash"):
             number(a[k], k, unknown=True, positive=True)
+        for value, scope, source in (("full_hash_residence_cycles", "residence_scope", "residence_source_id"),
+                                     ("complete_engine_service_cycles_per_hash", "service_scope", "service_source_id")):
+            if a[value] is not None:
+                # No qualified causal full-hash schedule is ingested by this
+                # model yet. Count-only native data must never grant that scope.
+                require(a.get(scope) == "assumed_full_hash", "numeric witness requires assumption-only fullhash scope; no window-to-fullhash residence join")
+                require(d["sources"].get(a.get(source), {}).get("kind") == "assumed", "numeric witness assumption provenance")
         for k in ("v2_equivalent", "v1_equivalent", "finite_schedule_checked"):
             require(a[k] is None or type(a[k]) is bool, k)
         if a["placement"] == "static_prefix":
@@ -167,16 +227,13 @@ def validate(d):
             require(a["credit_contracts"]["dataset"]["per_context"] == a["dataset_credits_per_context"], "dataset credit consistency")
             p = d["physical"][a["physical_id"]]
             require("credit_storage_cost" in p, "credit storage cost/unknowns must be explicit")
-            if a["full_hash_residence_cycles"] is not None:
-                require(a.get("residence_scope") in ("assumed_full_hash", "full_hash_native_checked"), "no window-to-fullhash residence join")
-                if a["residence_scope"] == "full_hash_native_checked":
-                    require(d["sources"].get(a.get("residence_source_id"), {}).get("scope") == MP.FULL,
-                            "fullhash residence source scope")
             for key, name, unit in (("private_memory", "private_macro", MP.MACRO), ("external_memory", "mixed_external", MP.CHILD)):
                 MP.require_join(MP.binding(cap, name, credit_unit=unit), p[key].get("traffic_binding"))
             require(set(p.get("external_classes", {})) == {"dataset", "scratchpad_backing"}, "typed separate external service")
             for name, unit in (("dataset", MP.DATASET), ("scratchpad_backing", MP.CHILD)):
                 MP.require_join(MP.binding(cap, name, credit_unit=unit), p["external_classes"][name].get("traffic_binding"))
+        else:
+            require(not ({"memory_policy_id", "credit_contracts"} & set(a)), "typed policy/credits require static_prefix placement")
     for s in d["scenarios"]:
         number(s["frequency_Hz"], "frequency", positive=True)
         number(s["utilization"], "utilization", positive=True)
@@ -233,6 +290,12 @@ def validate(d):
                 number(c[key], key, unknown=True)
             if any(c[k] is not None for k in ("area_mm2_per_B", "leakage_W_per_B", "event_energy_pJ")) and source["kind"] == "measured":
                 require(p["technology"] and p["corner"], "measured credit costs require bound PVT")
+    for a in d["architectures"]:
+        if a["placement"] != "static_prefix":
+            p = d["physical"][a["physical_id"]]
+            memories = [p["private_memory"], p["external_memory"], *p.get("external_classes", {}).values()]
+            require(not any(measured_service_sources(m, d["sources"]) for m in memories),
+                    "measured service ingestion requires actual typed policy traffic")
 
 
 def demand(sample, architecture, policy=None):
@@ -354,29 +417,24 @@ def access_energy(m, reads, writes):
     return (reads*(m["read_energy_pJ"] or 0)+writes*(m["write_energy_pJ"] or 0))*1e-12
 
 
-def paid_credit_profile(p, work, states):
-    """Additional payload/owner queues are not free auxiliary area/leakage/work."""
+def queue_cost(p, work, states):
+    """Keep queue costs disjoint so an unknown base cannot hide known extras."""
     if "credit_storage_B_per_context" not in work:
-        return p
-    p = copy.deepcopy(p)
-    c = p["credit_storage_cost"]; size = work["credit_storage_B_per_context"]
-    add = lambda original, extra: None if original is None or extra is None else original + extra
-    area = None if c["area_mm2_per_B"] is None else size * c["area_mm2_per_B"]
-    leakage = None if c["leakage_W_per_B"] is None else size * c["leakage_W_per_B"]
-    energy = None if c["event_energy_pJ"] is None else work["credit_events_per_hash"] * c["event_energy_pJ"] * 1e-12
-    p["RF_metadata_J_per_hash"] = add(p["RF_metadata_J_per_hash"], energy)
-    p["aux_area_mm2_per_context"] = add(p["aux_area_mm2_per_context"], area)
-    p["aux_leakage_W_per_context"] = add(p["aux_leakage_W_per_context"], leakage)
-    if p["static_dc_W"]["logic_leakage"] is not None:
-        p["static_dc_W"]["logic_leakage"] = add(p["static_dc_W"]["logic_leakage"], None if leakage is None else states * leakage)
-    return p
+        return None
+    c = p["credit_storage_cost"]; size = states * work["credit_storage_B_per_context"]
+    return dict(area_mm2=None if c["area_mm2_per_B"] is None else size * c["area_mm2_per_B"],
+        leakage_W=None if c["leakage_W_per_B"] is None else size * c["leakage_W_per_B"],
+        event_J_per_hash=None if c["event_energy_pJ"] is None else work["credit_events_per_hash"] * c["event_energy_pJ"] * 1e-12)
 
 
 def cost(p, a, work, engines, states, hot_B, hps, wall_limit):
+    queues = queue_cost(p, work, states)
     q = p["operation_energy_pJ"]
     operation = {k: 0 if work["resource_work"][k]==0 else None if q[k] is None else work["resource_work"][k] * q[k] * 1e-12 for k in OPS}
     compute = complete_sum(operation)
     compute = None if compute is None or p["RF_metadata_J_per_hash"] is None else compute + p["RF_metadata_J_per_hash"]
+    if queues is not None:
+        compute = complete_sum({"base":compute, "queue_events":queues["event_J_per_hash"]})
     private, external = p["private_memory"], p["external_memory"]
     sp = None
     if work["local_macro_access_counts_complete"] and private["read_energy_pJ"] is not None and private["write_energy_pJ"] is not None:
@@ -393,12 +451,18 @@ def cost(p, a, work, engines, states, hot_B, hps, wall_limit):
                    fabric_clock=p["fabric_clock_J_per_hash"],
                    input_hash_fill_program_dataset_generation=p["setup_control_and_dataset_init_J_per_hash"])
     static = dict(p["static_dc_W"])
+    provided_logic_leakage = static["logic_leakage"]
     leak_parts = {k: None if p["unit_leakage_W"][k] is None else engines*r["count"]*p["unit_leakage_W"][k]
                   for k,r in a["resources"].items()}
     leak_parts["base"] = None if p["logic_base_leakage_W_per_engine"] is None else engines*p["logic_base_leakage_W_per_engine"]
     leak_parts["aux"] = None if p["aux_leakage_W_per_context"] is None else states*p["aux_leakage_W_per_context"]
+    if queues is not None:
+        leak_parts["queue_storage"] = queues["leakage_W"]
+        if provided_logic_leakage is not None:
+            static["logic_leakage"] = complete_sum({"provided_base":provided_logic_leakage, "queues":queues["leakage_W"]})
     if static["logic_leakage"] is None:
-        static["logic_leakage"] = complete_sum(leak_parts)
+        if queues is None or provided_logic_leakage is None:
+            static["logic_leakage"] = complete_sum(leak_parts)
     if static["sram_leakage"] is None and private["leakage_W_per_bit"] is not None:
         static["sram_leakage"] = states*hot_B*8*private["leakage_W_per_bit"]
     wall = envelope.full_wall_power(hps, dynamic, static, p["psu_efficiency"], p["AC_auxiliary_W"])
@@ -408,24 +472,33 @@ def cost(p, a, work, engines, states, hot_B, hps, wall_limit):
     partial = dict(operation, RF_metadata=p["RF_metadata_J_per_hash"], SP=sp, external=ext,
                    PHY=io_floor if io is None else io, controller=p["controller_J_per_hash"], fabric=p["fabric_clock_J_per_hash"],
                    setup=p["setup_control_and_dataset_init_J_per_hash"])
+    if queues is not None:
+        partial["queue_events"] = queues["event_J_per_hash"]
     wall["known_DC_contribution_W"] = hps*sum_known(partial)+sum_known(static)
-    if static["logic_leakage"] is None:wall["known_DC_contribution_W"]+=sum_known(leak_parts)
+    if static["logic_leakage"] is None:
+        wall["known_DC_contribution_W"] += (provided_logic_leakage + (queues["leakage_W"] or 0)
+            if queues is not None and provided_logic_leakage is not None else sum_known(leak_parts))
     wall["missing_components"] = [k for k,v in partial.items() if v is None]
     if p["external_wire_to_payload_ratio"] is None:wall["missing_components"].append("external_wire_to_payload_ratio")
+    if queues is not None and queues["leakage_W"] is None:wall["missing_components"].append("queue_storage_leakage")
     parts = {k: None if p["unit_area_mm2"][k] is None else engines * r["count"] * p["unit_area_mm2"][k]
              for k,r in a["resources"].items()}
     parts["logic_control"] = None if p["logic_base_area_mm2_per_engine"] is None else engines * p["logic_base_area_mm2_per_engine"]
     parts["private_aux"] = None if p["aux_area_mm2_per_context"] is None else states * p["aux_area_mm2_per_context"]
+    if queues is not None:
+        parts["queue_storage"] = queues["area_mm2"]
     parts["private_data"] = None if private["area_mm2_per_bit"] is None else states * hot_B * 8 * private["area_mm2_per_bit"]
     parts["global_controller_PHY_interconnect"] = p["controller_PHY_interconnect_area_mm2"]
     # Off-chip dataset capacity is not added to logic die area.
     area = complete_sum(parts)
     dies = math.ceil(area / p["usable_area_mm2_per_die"]) if area is not None and p["usable_area_mm2_per_die"] else None
     usd = None if dies is None or p["packaged_die_cost_USD"] is None or p["fixed_board_cost_USD"] is None else dies * p["packaged_die_cost_USD"] + p["fixed_board_cost_USD"]
-    return {"wall": wall, "area_mm2": area, "known_partial_area_mm2": sum_known(parts),
+    result = {"wall": wall, "area_mm2": area, "known_partial_area_mm2": sum_known(parts),
             "area_unknown": [k for k,v in parts.items() if v is None],
             "chip_count_area_only_floor": dies, "partial_die_board_cost_USD": usd,
             "cost_excludes": ["memory packages", "yield/NRE unless included in packaged price", "cooling/PSU/interconnect"]}
+    if queues is not None:result["queue_contributions"] = queues
+    return result
 
 
 def evaluate(d):
@@ -439,6 +512,14 @@ def evaluate(d):
                 w = demand(s, a, policy)
                 hot = policy["capacity_B"] if policy is not None else SP if a["placement"] == "all_local" else 278528
                 p, application = applicable_profile(d["physical"][a["physical_id"]], a, scenario)
+                if policy is not None:
+                    for name, counts in w["external_classes"].items():
+                        rate = t["hashes_per_s"] * sum(counts.values())
+                        if rate:calibration_applies(p["external_classes"][name], d["sources"], s, scenario, t["hashes_per_s"], rate)
+                    calibration_applies(p["external_memory"], d["sources"], s, scenario, t["hashes_per_s"],
+                                        t["hashes_per_s"] * (w["external_read64"] + w["external_write64"]))
+                    calibration_applies(p["private_memory"], d["sources"], s, scenario, t["hashes_per_s"],
+                                        t["hashes_per_s"] * (w["private_macro_read16"] + w["private_macro_write16"]))
                 floors = {k: w["resource_work"][k] * r["II_cycles"] / r["count"]
                           for k,r in a["resources"].items() if r["II_cycles"] is not None}
                 floors.update(native_dispatch=s["instructions"] / a["native_dispatch"],
@@ -517,7 +598,7 @@ def evaluate(d):
                 if policy is not None:
                     per_state = hot + w["credit_storage_B_per_context"] + (a["aux_B_per_context"] or 0)
                     nominal = (int(t["private_capacity_B"] // (per_state * a["contexts_per_engine"])) * a["contexts_per_engine"]) * f / t["hashes_per_s"]
-                costs=cost(paid_credit_profile(p,w,states),a,w,engines,states,hot,t["hashes_per_s"],t["wall_limit_W"])
+                costs=cost(p,a,w,engines,states,hot,t["hashes_per_s"],t["wall_limit_W"])
                 reasons=[]
                 if capacity_rejected: reasons.append("fixed_pool_private_capacity")
                 if costs["wall"]["known_DC_contribution_W"]>=t["wall_limit_W"]:reasons.append("known_DC_contribution_exceeds_strict_wall_limit")
@@ -559,6 +640,12 @@ def evaluate(d):
                         credit_contracts=a["credit_contracts"], credit_driven_engine_floors=class_engine_floors,
                         residence_scope=a.get("residence_scope"),
                         provisioning_scope='Necessary compute/service/credit concurrency, not a fullhash schedule. Shared queues and parent control costs beyond declared credits remain unknown.')
+                if witness is not None or residence is not None:
+                    rows[-1]["numeric_witness_application"] = {
+                        "service_scope":a.get("service_scope"), "service_source_id":a.get("service_source_id"),
+                        "complete_engine_service_cycles_per_hash":witness,
+                        "residence_scope":a.get("residence_scope"), "residence_source_id":a.get("residence_source_id"),
+                        "achieved_schedule_qualified":False}
     sensitivity={
         "W_per_pJ_per_primitive_event":{k:{"min":min(s["work"][k] for s in d["samples"])*t["hashes_per_s"]*1e-12,
             "max":max(s["work"][k] for s in d["samples"])*t["hashes_per_s"]*1e-12} for k in OPS},

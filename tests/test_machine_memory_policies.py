@@ -58,7 +58,7 @@ class IntermediatePolicies(unittest.TestCase):
 
     def test_larger_residence_reprovisions_every_dependent_count(self):
         old=self.rows()[0];a=self.d['architectures'][0]
-        a.update(contexts_per_engine=4,full_hash_residence_cycles=80000000,residence_scope='assumed_full_hash')
+        a.update(contexts_per_engine=4,full_hash_residence_cycles=80000000,residence_scope='assumed_full_hash',residence_source_id='protocol_assumptions')
         r=self.rows()[0]
         self.assertEqual(r['provisioned_contexts'],40000)
         self.assertEqual(r['target_engine_minimum_or_planning_count'],10000)

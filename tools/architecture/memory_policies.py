@@ -185,6 +185,7 @@ def main(argv=None):
             'Dataset and backing separately assumed100ns fixed usable response/writeack,2 credits/context/class. Backing credits count64B children; each active credit charges64B payload+32B ownership storage. Two enqueue/dequeue events per transfer are an explicit cost proxy.',
             'Source-order static-prefix adjacent64B coalescing,partial-store read64-modify-write64,uncombined masked16B local access. No cache/refill/writeback/tag array. Dynamic coalescing implementation/storage is unqualified.',
             'Context/engine floors charge the maximum of compute,declared fullhash residence if any,and each separate class credit-concurrency bound. Private data,base auxiliary state,paid credits and external suffix backing scale together.',
+            'Numeric fullhash residence/service inputs currently support assumption-only scope with explicit assumption provenance. Native count records never qualify achieved schedules. Measured service requires hash-bound traffic/load/input/frequency calibration records; record validation does not certify measurement truth.',
             'No qualified service/energy/PVT is supplied. Local read/write credit cycles7/4 are inherited assumptions,not the100ns external service or a macro timing claim. Positive unmodeled parent/control/interconnect costs remain unknown.'],
         rows=rows, retained_window_comparators_not_fullhash=window_comparators(windows),
         thresholds=[dict(nonce=x['nonce'],capacity_B=x['local_capacity_B_per_context'],
