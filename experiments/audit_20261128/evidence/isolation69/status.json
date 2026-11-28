@@ -1,0 +1,80 @@
+{
+  "schema": "openrx.isolation69.public-scoped-outcome.v1",
+  "status": "FAILED_NO_RETRY",
+  "raw_handoff_status": "FAILED_NO_RETRY_PENDING_INDEPENDENT_ACTUAL_REVIEW",
+  "overall_pass": false,
+  "scientific_retry_allowed": false,
+  "physical_acceptance": false,
+  "stages": [
+    {
+      "capture_complete": true,
+      "name": "compile",
+      "returncode": 0
+    },
+    {
+      "capture_complete": true,
+      "name": "simulation",
+      "returncode": 0
+    },
+    {
+      "capture_complete": false,
+      "name": "synth-baseline",
+      "returncode": null
+    },
+    {
+      "name": "synth-isolated",
+      "status": "UNRUN_FIRST_FAILURE_STOP"
+    }
+  ],
+  "functional_claim": {
+    "scope": "Designated-host source-bound zero-delay paired RTL miter and boundary activity only",
+    "accepted_pairs": 209,
+    "cycles": 321,
+    "native_results": 12,
+    "native_flags_oracle": false,
+    "baseline_flags_equivalent": true,
+    "corners": 192,
+    "records": 108,
+    "FIRST": 40,
+    "SNAP": 16,
+    "GATE": 2,
+    "ACT": 48,
+    "isolated_idle_held_binary": 0,
+    "isolated_idle_held_fourstate": 0
+  },
+  "synthesis_failure": {
+    "cause": "ValueError('whole command capture exceeded; retained prefix is incomplete')",
+    "original_capture_B": 262144,
+    "public_capture_B": 215204,
+    "original_capture_cap_B": 262144,
+    "original_stat_JSON_start": 257356,
+    "public_stat_JSON_start": 210416,
+    "range_warning_lines": [
+      "[repository]/rtl/execute/vendor/hardfloat/addRecFN.v:133: Warning: Range [2:1] select out of bounds on signal `\\alignDist': Setting 1 MSB bits to undef.",
+      "[repository]/rtl/execute/vendor/hardfloat/addRecFN.v:133: Warning: Range [2:1] select out of bounds on signal `\\alignDist': Setting 1 MSB bits to undef."
+    ],
+    "unaccepted_stat_artifact": {
+      "bytes": 20701,
+      "sha256": "7089116a6ecc0b7616e6b93b215eb47a0ccf0af4c5d77a026a56c70a4756df4a"
+    },
+    "baseline_returncode": null,
+    "isolated_synthesis": "UNRUN_FIRST_FAILURE_STOP"
+  },
+  "compile_vvp_bytes": 1967380,
+  "original_limits": {
+    "root_B": 4194304,
+    "capture_total_B": 1048576,
+    "synth_capture_each_B": 262144,
+    "stat_file_each_B": 65536,
+    "unchanged_reserve_B": 589824,
+    "AS_B": 536870912,
+    "CPU_s": 60,
+    "cleanup_shared_s": 5
+  },
+  "recorded_drain_scope": "The failed attempt recorded verified drain; this is not fresh host health or admission. The durable hold and FAILED_NO_RETRY history remain.",
+  "limits": [
+    "No completed generic structure comparison; baseline rc unknown and isolated synthesis unrun.",
+    "Boundary transition counts are not switched capacitance,representative-duty energy,watts,silicon area,timing,Fmax or whole-hash residence.",
+    "No new simulation/native/synthesis run was performed to prepare this publication."
+  ]
+}

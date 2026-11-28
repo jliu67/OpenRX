@@ -1,0 +1,108 @@
+FIRST id=9 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxx value=Xxxxxxxxxxxxxxxxxx
+FIRST id=11 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxx value=Xxxxxxxxxxxxxxxxxx
+FIRST id=13 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxx value=Xxxxxxxxxxxxxxxxxx
+FIRST id=15 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxx value=Xxxxxxxxxxxxxxxxxx
+FIRST id=8 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx value=0000000000000000000000000000000000
+FIRST id=10 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx value=0000000000000000000000000000000000
+FIRST id=9 phase=0 time=0 prior=Xxxxxxxxxxxxxxxxxx value=XXxxxxxxxxxxxxxxxx
+FIRST id=12 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx value=0000000000000000000000000000000000
+FIRST id=14 phase=0 time=0 prior=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx value=0000000000000000000000000000000000
+FIRST id=13 phase=0 time=0 prior=Xxxxxxxxxxxxxxxxxx value=XXxxxxxxxxxxxxxxxx
+FIRST id=9 phase=0 time=0 prior=XXxxxxxxxxxxxxxxxx value=0Xxxxxxxxxxxxxxxxx
+FIRST id=13 phase=0 time=0 prior=XXxxxxxxxxxxxxxxxx value=0Xxxxxxxxxxxxxxxxx
+FIRST id=11 phase=0 time=0 prior=Xxxxxxxxxxxxxxxxxx value=XXxxxxxxxxxxxxxxxx
+FIRST id=15 phase=0 time=0 prior=Xxxxxxxxxxxxxxxxxx value=XXxxxxxxxxxxxxxxxx
+FIRST id=11 phase=0 time=0 prior=XXxxxxxxxxxxxxxxxx value=00xxxxxxxxxxxxxxxx
+FIRST id=15 phase=0 time=0 prior=XXxxxxxxxxxxxxxxxx value=00xxxxxxxxxxxxxxxx
+GATE label=1 time=27000 accepted=0/0 add=0/0 mul=0/0
+SNAP label=1 id=8 time=27000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=1 id=9 time=27000 unknown=0 prior=000000000000000000 value=000000000000000000
+SNAP label=1 id=10 time=27000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=1 id=11 time=27000 unknown=0 prior=000000000000000000 value=000000000000000000
+SNAP label=1 id=12 time=27000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=1 id=13 time=27000 unknown=0 prior=000000000000000000 value=000000000000000000
+SNAP label=1 id=14 time=27000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=1 id=15 time=27000 unknown=0 prior=000000000000000000 value=000000000000000000
+GATE label=2 time=28000 accepted=0/0 add=0/0 mul=0/0
+SNAP label=2 id=8 time=28000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=2 id=9 time=28000 unknown=0 prior=000000000000000000 value=000000000000000000
+SNAP label=2 id=10 time=28000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=2 id=11 time=28000 unknown=0 prior=000000000000000000 value=000000000000000000
+SNAP label=2 id=12 time=28000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=2 id=13 time=28000 unknown=0 prior=000000000000000000 value=000000000000000000
+SNAP label=2 id=14 time=28000 unknown=0 prior=0000000000000000000000000000000000 value=0000000000000000000000000000000000
+SNAP label=2 id=15 time=28000 unknown=0 prior=000000000000000000 value=000000000000000000
+FIRST id=12 phase=2 time=680000 prior=0000000000000000000000000000000000 value=049a0825e4e80000005228ed1ce9be8d09
+FIRST id=8 phase=2 time=680000 prior=0000000000000000000000000000000000 value=04d1b23d8a8300000044eb582301b85344
+FIRST id=12 phase=2 time=680000 prior=049a0825e4e80000005228ed1ce9be8d09 value=04836825e4e80000004188ed1ce9be8d09
+FIRST id=8 phase=2 time=680000 prior=04d1b23d8a8300000044eb582301b85344 value=04c3b23d8a83000000414b582301b85344
+FIRST id=13 phase=2 time=680000 prior=000000000000000000 value=021210000000000000
+FIRST id=9 phase=2 time=680000 prior=000000000000000000 value=0208c0000000000000
+FIRST id=9 phase=2 time=680000 prior=0208c0000000000000 value=0001c0000000000000
+FIRST id=13 phase=2 time=680000 prior=021210000000000000 value=0001a0000000000000
+FIRST id=14 phase=2 time=700000 prior=0000000000000000000000000000000000 value=013fa939221d02c9428188ed1ce9be8d09
+FIRST id=10 phase=2 time=700000 prior=0000000000000000000000000000000000 value=012f80e52332274432814b582301b85344
+FIRST id=14 phase=2 time=700000 prior=013fa939221d02c9428188ed1ce9be8d09 value=00ffa939221d02c9428188ed1ce9be8d09
+FIRST id=10 phase=2 time=700000 prior=012f80e52332274432814b582301b85344 value=00ef80e52332274432814b582301b85344
+FIRST id=15 phase=2 time=700000 prior=000000000000000000 value=020150000000000000
+FIRST id=11 phase=2 time=700000 prior=000000000000000000 value=021900000000000000
+FIRST id=11 phase=2 time=700000 prior=021900000000000000 value=021900c3cccdc5dd58
+FIRST id=15 phase=2 time=700000 prior=020150000000000000 value=028153979887e2dc9d
+FIRST id=14 phase=0 time=2720000 prior=04f9600000000000008000000000000000 value=00f9600000000000008000000000000000
+FIRST id=10 phase=0 time=2720000 prior=0500000000000000007cb0000000000000 value=0100000000000000007cb0000000000000
+FIRST id=12 phase=0 time=2720000 prior=0000000000000000000000000000000000 value=00f9600000000000008000000000000000
+FIRST id=8 phase=0 time=2720000 prior=0000000000000000000000000000000000 value=0100000000000000007cb0000000000000
+FIRST id=14 phase=0 time=2720000 prior=00f9600000000000008000000000000000 value=0000000000000000000000000000000000
+FIRST id=10 phase=0 time=2720000 prior=0100000000000000007cb0000000000000 value=0000000000000000000000000000000000
+FIRST id=12 phase=0 time=2720000 prior=00f9600000000000008000000000000000 value=00c0000000000000008010000000000000
+FIRST id=8 phase=0 time=2720000 prior=0100000000000000007cb0000000000000 value=0100000000000000006010000000000000
+ACT id=0 phase=1 binary=4315 fourstate=0
+ACT id=0 phase=2 binary=1471 fourstate=0
+ACT id=0 phase=3 binary=2023 fourstate=369
+ACT id=1 phase=1 binary=9727 fourstate=0
+ACT id=1 phase=2 binary=4345 fourstate=0
+ACT id=1 phase=3 binary=4462 fourstate=136
+ACT id=2 phase=1 binary=4283 fourstate=0
+ACT id=2 phase=2 binary=1451 fourstate=0
+ACT id=2 phase=3 binary=2008 fourstate=367
+ACT id=3 phase=1 binary=3249 fourstate=0
+ACT id=3 phase=2 binary=1738 fourstate=0
+ACT id=3 phase=3 binary=1503 fourstate=138
+ACT id=4 phase=1 binary=4317 fourstate=0
+ACT id=4 phase=2 binary=1451 fourstate=0
+ACT id=4 phase=3 binary=2026 fourstate=365
+ACT id=5 phase=1 binary=9397 fourstate=0
+ACT id=5 phase=2 binary=4515 fourstate=0
+ACT id=5 phase=3 binary=4250 fourstate=136
+ACT id=6 phase=1 binary=4285 fourstate=0
+ACT id=6 phase=2 binary=1431 fourstate=0
+ACT id=6 phase=3 binary=2011 fourstate=363
+ACT id=7 phase=1 binary=3297 fourstate=0
+ACT id=7 phase=2 binary=1750 fourstate=0
+ACT id=7 phase=3 binary=1672 fourstate=138
+ACT id=8 phase=1 binary=0 fourstate=0
+ACT id=8 phase=2 binary=1858 fourstate=0
+ACT id=8 phase=3 binary=0 fourstate=0
+ACT id=9 phase=1 binary=0 fourstate=0
+ACT id=9 phase=2 binary=4272 fourstate=0
+ACT id=9 phase=3 binary=0 fourstate=0
+ACT id=10 phase=1 binary=0 fourstate=0
+ACT id=10 phase=2 binary=946 fourstate=0
+ACT id=10 phase=3 binary=0 fourstate=0
+ACT id=11 phase=1 binary=0 fourstate=0
+ACT id=11 phase=2 binary=1014 fourstate=0
+ACT id=11 phase=3 binary=0 fourstate=0
+ACT id=12 phase=1 binary=0 fourstate=0
+ACT id=12 phase=2 binary=1842 fourstate=0
+ACT id=12 phase=3 binary=0 fourstate=0
+ACT id=13 phase=1 binary=0 fourstate=0
+ACT id=13 phase=2 binary=4326 fourstate=0
+ACT id=13 phase=3 binary=0 fourstate=0
+ACT id=14 phase=1 binary=0 fourstate=0
+ACT id=14 phase=2 binary=920 fourstate=0
+ACT id=14 phase=3 binary=0 fourstate=0
+ACT id=15 phase=1 binary=0 fourstate=0
+ACT id=15 phase=2 binary=1012 fourstate=0
+ACT id=15 phase=3 binary=0 fourstate=0
+PASS isolation68 native=12 corners=192 op3=1 unknown_controls=3 unknown_valid=2 idle=64 held=32 reset_cancel=1 accepted=209 cycles=321
+/[source-path-redacted]/isolation69/tb_compare.v:137: $finish called at 3206000 (1ps)
