@@ -1,0 +1,33 @@
+{
+  "schema": "openrx.dataset72.portable-DATA-validation.v1",
+  "scope": "96ordinary DATA tests only; includes20portable dataset closure/privacy/rejection tests plus76existing model/audit tests. No scientific execution.",
+  "tests": 96,
+  "failures": 0,
+  "errors": 0,
+  "seconds": 4.576479064009618,
+  "argv": [
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "-v",
+    "tests.test_dataset72_publication",
+    "tests.test_audit_snapshot",
+    "tests.test_audit_frontier",
+    "tests.test_machine_feasibility",
+    "tests.test_machine_memory_policies",
+    "tests.test_machine_contract_corrections"
+  ],
+  "AS_B": 536870912,
+  "CPU_s": 20,
+  "full_local_log_sha256": "69a116456038fbb2c6907fbad7eb3ac5b884a68ca4ff359de37da2ea5bb4afe4",
+  "source_sha256": {
+    "experiments/dataset_service72/validate.py": "f5212e01c65693d0b8ee19cfe706d110a64167e33a8654ebf4b5bb42e65dc8ec",
+    "tests/test_dataset72_publication.py": "91c3af4a6ace6ce2e2f017d40a6611a1f1e8c6b5281b90d165fd164d7d846308"
+  },
+  "portable_copy_test": "Passed in an isolated temporary directory containing only this package and the existing public accepted-summary file; no original host paths,sources,Git objects,simulator or network needed.",
+  "historical_identity_note": "The exact reconstructed canonical reference includes its historical CPU host-seconds field solely for original byte identity; it is ignored for DDR4 service,latency,energy and residence.",
+  "new_simulations": 0,
+  "new_native_runs": 0,
+  "hosted_CI": "NOT_RUN_NO_PUBLICATION"
+}

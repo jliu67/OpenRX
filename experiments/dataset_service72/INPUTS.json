@@ -1,0 +1,116 @@
+{
+  "schema": "openrx.dataset72.portable-inputs.v1",
+  "scope": "Publication source/data closure only; no new experiment,simulator,service or energy result.",
+  "files": {
+    "templates": {
+      "path": "templates.json",
+      "bytes": 2978,
+      "sha256": "2651b58058cde70d7e1da8036acd39623006863e02ca40feaf8a3af1b1560c42"
+    },
+    "identity": {
+      "path": "identity.json",
+      "bytes": 933,
+      "sha256": "acf46822fb7b340b265c1b4eb471a5925776345ecc7bd8eab9998c2904df1493"
+    },
+    "CONTRACT": {
+      "path": "CONTRACT.json",
+      "bytes": 18302,
+      "sha256": "17097beadc599db97a8ea853fbdeb3d9a9709955acb4597bcf90db41ff6347e0"
+    },
+    "records": {
+      "path": "records.bin",
+      "bytes": 1310720,
+      "sha256": "fd280a2adc790a48fb75680ef229766e3d7a6f55357a4daa436b2c6e92aac4fd"
+    }
+  },
+  "originals": {
+    "ordered": {
+      "bytes": 836535,
+      "sha256": "16eb394aa4ca59abbc83364847c965737a3747e5d122651bb4d5c5f1ab3df45f",
+      "representation": "exact_bytes_reconstructed_from_records_and_template"
+    },
+    "native_items": {
+      "bytes": 2392064,
+      "sha256": "80abe136ff5f2bb6bbf55317df6d6740668deae3a5d351303a6a14ce194b310c",
+      "representation": "exact_bytes_reconstructed_from_records_and_template"
+    },
+    "item_csv": {
+      "bytes": 1343680,
+      "sha256": "6a2afdc0dfbe7d07dff6566548b1942ae27476141bd62aae2a193e848e3b5691",
+      "representation": "exact_bytes_reconstructed_from_records_and_template"
+    },
+    "native_canonical": {
+      "bytes": 318,
+      "sha256": "d32f1c7be4cfa63c952f93b420c874c1b5049f8deaa1942826fb7b09c2ad2fb9",
+      "representation": "exact_bytes_reconstructed_from_records_and_template"
+    },
+    "native_summary": {
+      "bytes": 530,
+      "sha256": "42a9e5fcfee220dd9b3bd946d64e3bef986519aed1a002f3a13dc71a10f68ef6",
+      "representation": "exact_bytes_reconstructed_from_records_and_template"
+    },
+    "native_digest": {
+      "bytes": 65,
+      "sha256": "6f1e7caab64b6c7665a41ccb023b4c17b5af6802a3acfab6225b2c0c2586e447",
+      "representation": "exact_bytes_reconstructed_from_records_and_template"
+    }
+  },
+  "public_projections": {
+    "full_summary": {
+      "representation": "selected_fields_sanitized_to_relative_roles",
+      "original": {
+        "bytes": 1005764,
+        "sha256": "cb773505d7363ba1ae2ef592bd9a7abb0effe2a4ebf00639c34dd7fdc50366ab"
+      },
+      "public_role": "identity",
+      "scope": "Original digest is provenance,not proof of byte equality for this projection. Source originals retained locally; independent exact-copy/field review is separate."
+    },
+    "full_review": {
+      "representation": "selected_fields_sanitized_to_relative_roles",
+      "original": {
+        "bytes": 19637,
+        "sha256": "a4eb07bb57f79e2e47ecac0e3977205822dfa3653c5f96de374268ec0be0252b"
+      },
+      "public_role": "identity",
+      "scope": "Original digest is provenance,not proof of byte equality for this projection. Source originals retained locally; independent exact-copy/field review is separate.",
+      "preserved_native_digest": "4778fba5f3af5094a588969c6de78f70aaf54117e8664c2539387d31eaa24bfa"
+    },
+    "full_manifest": {
+      "representation": "selected_fields_sanitized_to_relative_roles",
+      "original": {
+        "bytes": 2678757,
+        "sha256": "1f10ef9cf15cb2710f8f5cc2237d2d20d12c2c7a6a75f8a2fc7eb1b8ec8ba55f"
+      },
+      "public_role": "identity",
+      "scope": "Original digest is provenance,not proof of byte equality for this projection. Source originals retained locally; independent exact-copy/field review is separate."
+    },
+    "full_receipt": {
+      "representation": "selected_fields_sanitized_to_relative_roles",
+      "original": {
+        "bytes": 6935,
+        "sha256": "5ba78fa21e768149f0462a1784398e1ebdfa2962bb682deb821260fec7c2d6bc"
+      },
+      "public_role": "identity",
+      "scope": "Original digest is provenance,not proof of byte equality for this projection. Source originals retained locally; independent exact-copy/field review is separate."
+    }
+  },
+  "original_preparation": {
+    "source_sha256": "b7d0c7d1fcdd7cba28c0472385bf185c21df02020c0d8642679d3e46be6571b6",
+    "design_sha256": "75a30853335f3cbcb10386f70ef1778ec97ff3f952ab69ab7e5cfc62e3d37007",
+    "inputs_sha256": "cc0dcf3a866c14341b0b945ba0816db9e9cb073fc500e3e62f22fed38fddf3a7",
+    "source_transform": "The7need/strict/mapping/row-validator/causal-coverage/periodic-bound function bodies and immutable constants are reused byte-exact; new public wrapper replaces local absolute-role joins with relative digest-bound data reconstruction. causal_gate is a column-coverage rejection helper,not a qualified event/dependency validator.",
+    "design_transform": "Relative primary-source references and selected native identity; adds explicit active-demand vs idle-padded observation/refresh coverage distinctions. Original local design/evidence is unchanged."
+  },
+  "causal_ready": false,
+  "full_hash_residence_cycles": null,
+  "measured_service_Bps": null,
+  "read_energy_pJ": null,
+  "write_energy_pJ": null,
+  "repository_sources": {
+    "accepted_summary": {
+      "path": "docs/status-evidence-20261020.json",
+      "bytes": 3564,
+      "sha256": "01436fe5ed55642e67cba952056b5f5cff1a9ef903264535a1dc50d760bf8c22"
+    }
+  }
+}

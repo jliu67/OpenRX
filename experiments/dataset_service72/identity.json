@@ -1,0 +1,19 @@
+{
+  "schema": "openrx.dataset72.native-identity-projection.v1",
+  "input_hex": "4f70656e525820636f6e6e65637465642070726570617265642064617461736574206c6966656379636c65203230323631303138",
+  "cache_key": "test key 000",
+  "final_digest_hex": "4778fba5f3af5094a588969c6de78f70aaf54117e8664c2539387d31eaa24bfa",
+  "source_tree": "cb3e0615f9df861a081ba2cbb1d47c65603b84cd",
+  "v2": 1,
+  "programs": 8,
+  "iterations": 2048,
+  "native_canonical_verified": true,
+  "independent_outcome": "accepted_full_hardware_dataset_functional_hash",
+  "full_hash_functionally_accepted": true,
+  "raw_runner_status": "PROCESS_EXITED",
+  "raw_scientific_acceptance": "unverified",
+  "physical_acceptance": false,
+  "accepted_public_source": "e8277c63504ef035bb82791263b6842c0cc51f51",
+  "accepted_public_summary": "docs/status-evidence-20261020.json",
+  "independent_review_URL": "https://github.com/jliu67/OpenRX/pull/86#pullrequestreview-5588318967"
+}
